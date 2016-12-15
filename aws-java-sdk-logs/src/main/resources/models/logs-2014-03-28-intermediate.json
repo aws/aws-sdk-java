@@ -656,7 +656,7 @@
       "asyncReturnType" : "DescribeMetricFiltersResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists the specified metric filters. You can list all the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.</p>",
+      "documentation" : "<p>Lists the specified metric filters. You can list all the metric filters or filter the results by log name, prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is specified incorrectly.</p>"
@@ -793,6 +793,39 @@
       },
       "syncReturnType" : "GetLogEventsResult"
     },
+    "ListTagsLogGroup" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ListTagsLogGroupResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListTagsLogGroupResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult>",
+      "asyncReturnType" : "ListTagsLogGroupResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the tags for the specified log group.</p> <p>To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>"
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service cannot complete the request.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "ListTagsLogGroupRequest",
+        "variableName" : "listTagsLogGroupRequest",
+        "variableType" : "ListTagsLogGroupRequest",
+        "documentation" : "",
+        "simpleType" : "ListTagsLogGroupRequest",
+        "variableSetterType" : "ListTagsLogGroupRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "listTagsLogGroup",
+      "operationName" : "ListTagsLogGroup",
+      "returnType" : {
+        "returnType" : "ListTagsLogGroupResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "ListTagsLogGroupResult"
+    },
     "PutDestination" : {
       "asyncCallableType" : "java.util.concurrent.Callable<PutDestinationResult>",
       "asyncFutureType" : "java.util.concurrent.Future<PutDestinationResult>",
@@ -872,7 +905,7 @@
       "asyncReturnType" : "PutLogEventsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Uploads a batch of log events to the specified log stream.</p> <p>You must include the sequence token obtained from the response of the previous call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of events must satisfy the following constraints:</p> <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li> <p>None of the log events in the batch can be more than 2 hours in the future.</p> </li> <li> <p>None of the log events in the batch can be older than 14 days or the retention period of the log group.</p> </li> <li> <p>The log events in the batch must be in chronological ordered by their timestamp.</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single PutLogEvents request cannot span more than 24 hours. Otherwise, the PutLogEvents operation will fail.</p> </li> </ul>",
+      "documentation" : "<p>Uploads a batch of log events to the specified log stream.</p> <p>You must include the sequence token obtained from the response of the previous call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of events must satisfy the following constraints:</p> <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li> <p>None of the log events in the batch can be more than 2 hours in the future.</p> </li> <li> <p>None of the log events in the batch can be older than 14 days or the retention period of the log group.</p> </li> <li> <p>The log events in the batch must be in chronological ordered by their timestamp (the time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.</p> </li> </ul>",
       "exceptions" : [ {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>A parameter is specified incorrectly.</p>"
@@ -1030,6 +1063,39 @@
       },
       "syncReturnType" : "PutSubscriptionFilterResult"
     },
+    "TagLogGroup" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<TagLogGroupResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<TagLogGroupResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult>",
+      "asyncReturnType" : "TagLogGroupResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Adds or updates the specified tags for the specified log group.</p> <p>To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html\">Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>"
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>A parameter is specified incorrectly.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "TagLogGroupRequest",
+        "variableName" : "tagLogGroupRequest",
+        "variableType" : "TagLogGroupRequest",
+        "documentation" : "",
+        "simpleType" : "TagLogGroupRequest",
+        "variableSetterType" : "TagLogGroupRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "tagLogGroup",
+      "operationName" : "TagLogGroup",
+      "returnType" : {
+        "returnType" : "TagLogGroupResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "TagLogGroupResult"
+    },
     "TestMetricFilter" : {
       "asyncCallableType" : "java.util.concurrent.Callable<TestMetricFilterResult>",
       "asyncFutureType" : "java.util.concurrent.Future<TestMetricFilterResult>",
@@ -1062,6 +1128,36 @@
         "documentation" : null
       },
       "syncReturnType" : "TestMetricFilterResult"
+    },
+    "UntagLogGroup" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<UntagLogGroupResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UntagLogGroupResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult>",
+      "asyncReturnType" : "UntagLogGroupResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Removes the specified tags from the specified log group.</p> <p>To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource does not exist.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "UntagLogGroupRequest",
+        "variableName" : "untagLogGroupRequest",
+        "variableType" : "UntagLogGroupRequest",
+        "documentation" : "",
+        "simpleType" : "UntagLogGroupRequest",
+        "variableSetterType" : "UntagLogGroupRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "untagLogGroup",
+      "operationName" : "UntagLogGroup",
+      "returnType" : {
+        "returnType" : "UntagLogGroupResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "UntagLogGroupResult"
     }
   },
   "shapes" : {
@@ -2242,6 +2338,125 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "tags",
+        "c2jShape" : "Tags",
+        "deprecated" : false,
+        "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@return The key-value pairs to use for the tags.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Map<String,String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : true,
+        "mapModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalMap",
+          "interfaceType" : "java.util.Map",
+          "keyLocationName" : "key",
+          "keyModel" : null,
+          "keyType" : "String",
+          "valueLocationName" : "value",
+          "valueModel" : {
+            "c2jName" : "value",
+            "c2jShape" : "TagValue",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "value",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "value",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Value",
+            "setterDocumentation" : "/**\n@param value */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "value",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "value",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "valueType" : "String",
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "templateType" : "java.util.Map<String,String>",
+          "valueList" : false,
+          "valueSimple" : true
+        },
+        "name" : "Tags",
+        "setterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.Map<String,String>",
+          "documentation" : "",
+          "simpleType" : "Map<String,String>",
+          "variableSetterType" : "java.util.Map<String,String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.Map<String,String>",
+          "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+          "simpleType" : "Map<String,String>",
+          "variableSetterType" : "java.util.Map<String,String>"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "LogGroupName" : {
@@ -2294,6 +2509,126 @@
             "documentation" : "<p>The name of the log group.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Tags" : {
+          "c2jName" : "tags",
+          "c2jShape" : "Tags",
+          "deprecated" : false,
+          "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@return The key-value pairs to use for the tags.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Map<String,String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : true,
+          "mapModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalMap",
+            "interfaceType" : "java.util.Map",
+            "keyLocationName" : "key",
+            "keyModel" : null,
+            "keyType" : "String",
+            "valueLocationName" : "value",
+            "valueModel" : {
+              "c2jName" : "value",
+              "c2jShape" : "TagValue",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "value",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "value",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Value",
+              "setterDocumentation" : "/**\n@param value */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "value",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "value",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "valueType" : "String",
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "templateType" : "java.util.Map<String,String>",
+            "valueList" : false,
+            "valueSimple" : true
+          },
+          "name" : "Tags",
+          "setterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.Map<String,String>",
+            "documentation" : "",
+            "simpleType" : "Map<String,String>",
+            "variableSetterType" : "java.util.Map<String,String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.Map<String,String>",
+            "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+            "simpleType" : "Map<String,String>",
+            "variableSetterType" : "java.util.Map<String,String>"
           },
           "xmlNameSpaceUri" : null
         }
@@ -10109,6 +10444,48 @@
       },
       "wrapper" : false
     },
+    "Distribution" : {
+      "c2jName" : "Distribution",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "Random",
+        "value" : "Random"
+      }, {
+        "name" : "ByLogStream",
+        "value" : "ByLogStream"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "Distribution",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "Distribution",
+        "variableName" : "distribution",
+        "variableType" : "Distribution",
+        "documentation" : null,
+        "simpleType" : "Distribution",
+        "variableSetterType" : "Distribution"
+      },
+      "wrapper" : false
+    },
     "ExportTask" : {
       "c2jName" : "ExportTask",
       "customization" : {
@@ -10287,10 +10664,10 @@
         "c2jName" : "from",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The start time. Events with a timestamp prior to this time are not exported.</p>",
+        "documentation" : "<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@return The start time. Events with a timestamp prior to this time are not exported.*/",
+        "fluentSetterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@return The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -10315,7 +10692,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "From",
-        "setterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time. Events with a timestamp prior to this time are not exported.*/",
+        "setterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "from",
@@ -10325,12 +10702,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "from",
           "variableType" : "Long",
-          "documentation" : "<p>The start time. Events with a timestamp prior to this time are not exported.</p>",
+          "documentation" : "<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -10339,10 +10716,10 @@
         "c2jName" : "to",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The end time. Events with a timestamp later than this time are not exported.</p>",
+        "documentation" : "<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@param to The end time. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@return The end time. Events with a timestamp later than this time are not exported.*/",
+        "fluentSetterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@return The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -10367,7 +10744,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "To",
-        "setterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@param to The end time. Events with a timestamp later than this time are not exported.*/",
+        "setterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "to",
@@ -10377,12 +10754,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@param to The end time. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "to",
           "variableType" : "Long",
-          "documentation" : "<p>The end time. Events with a timestamp later than this time are not exported.</p>",
+          "documentation" : "<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -10760,10 +11137,10 @@
           "c2jName" : "from",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The start time. Events with a timestamp prior to this time are not exported.</p>",
+          "documentation" : "<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@return The start time. Events with a timestamp prior to this time are not exported.*/",
+          "fluentSetterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@return The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -10788,7 +11165,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "From",
-          "setterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time. Events with a timestamp prior to this time are not exported.*/",
+          "setterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "from",
@@ -10798,12 +11175,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The start time. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>\n@param from The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "from",
             "variableType" : "Long",
-            "documentation" : "<p>The start time. Events with a timestamp prior to this time are not exported.</p>",
+            "documentation" : "<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -11025,10 +11402,10 @@
           "c2jName" : "to",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The end time. Events with a timestamp later than this time are not exported.</p>",
+          "documentation" : "<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@param to The end time. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@return The end time. Events with a timestamp later than this time are not exported.*/",
+          "fluentSetterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@return The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -11053,7 +11430,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "To",
-          "setterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@param to The end time. Events with a timestamp later than this time are not exported.*/",
+          "setterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "to",
@@ -11063,12 +11440,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The end time. Events with a timestamp later than this time are not exported.</p>\n@param to The end time. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>\n@param to The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "to",
             "variableType" : "Long",
-            "documentation" : "<p>The end time. Events with a timestamp later than this time are not exported.</p>",
+            "documentation" : "<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -11839,10 +12216,10 @@
         "c2jName" : "startTime",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>",
+        "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@return The start of the time range. Events with a timestamp prior to this time are not returned.*/",
+        "fluentSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -11867,7 +12244,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "StartTime",
-        "setterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range. Events with a timestamp prior to this time are not returned.*/",
+        "setterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "startTime",
@@ -11877,12 +12254,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "startTime",
           "variableType" : "Long",
-          "documentation" : "<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>",
+          "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -11891,10 +12268,10 @@
         "c2jName" : "endTime",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>",
+        "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@return The end of the time range. Events with a timestamp later than this time are not returned.*/",
+        "fluentSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -11919,7 +12296,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EndTime",
-        "setterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not returned.*/",
+        "setterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "endTime",
@@ -11929,12 +12306,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "endTime",
           "variableType" : "Long",
-          "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>",
+          "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -12153,10 +12530,10 @@
           "c2jName" : "endTime",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>",
+          "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@return The end of the time range. Events with a timestamp later than this time are not returned.*/",
+          "fluentSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -12181,7 +12558,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EndTime",
-          "setterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not returned.*/",
+          "setterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "endTime",
@@ -12191,12 +12568,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "endTime",
             "variableType" : "Long",
-            "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>",
+            "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -12591,10 +12968,10 @@
           "c2jName" : "startTime",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>",
+          "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@return The start of the time range. Events with a timestamp prior to this time are not returned.*/",
+          "fluentSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -12619,7 +12996,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "StartTime",
-          "setterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range. Events with a timestamp prior to this time are not returned.*/",
+          "setterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "startTime",
@@ -12629,12 +13006,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "startTime",
             "variableType" : "Long",
-            "documentation" : "<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>",
+            "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -13348,10 +13725,10 @@
         "c2jName" : "timestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The time the event occurred.</p>",
+        "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The time the event occurred.</p>\n@return The time the event occurred.*/",
+        "fluentSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -13376,7 +13753,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Timestamp",
-        "setterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.*/",
+        "setterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "timestamp",
@@ -13386,12 +13763,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "timestamp",
           "variableType" : "Long",
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -13770,10 +14147,10 @@
           "c2jName" : "timestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The time the event occurred.</p>\n@return The time the event occurred.*/",
+          "fluentSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -13798,7 +14175,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Timestamp",
-          "setterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.*/",
+          "setterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "timestamp",
@@ -13808,12 +14185,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "timestamp",
             "variableType" : "Long",
-            "documentation" : "<p>The time the event occurred.</p>",
+            "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -13969,10 +14346,10 @@
         "c2jName" : "startTime",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>",
+        "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@return The start of the time range. Events with a timestamp earlier than this time are not included.*/",
+        "fluentSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -13997,7 +14374,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "StartTime",
-        "setterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range. Events with a timestamp earlier than this time are not included.*/",
+        "setterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "startTime",
@@ -14007,12 +14384,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "startTime",
           "variableType" : "Long",
-          "documentation" : "<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>",
+          "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -14021,10 +14398,10 @@
         "c2jName" : "endTime",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not included.</p>",
+        "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@return The end of the time range. Events with a timestamp later than this time are not included.*/",
+        "fluentSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -14049,7 +14426,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EndTime",
-        "setterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not included.*/",
+        "setterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "endTime",
@@ -14059,12 +14436,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "endTime",
           "variableType" : "Long",
-          "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not included.</p>",
+          "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -14231,10 +14608,10 @@
           "c2jName" : "endTime",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not included.</p>",
+          "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@return The end of the time range. Events with a timestamp later than this time are not included.*/",
+          "fluentSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -14259,7 +14636,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EndTime",
-          "setterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not included.*/",
+          "setterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "endTime",
@@ -14269,12 +14646,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The end of the time range. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>\n@param endTime The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "endTime",
             "variableType" : "Long",
-            "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not included.</p>",
+            "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -14549,10 +14926,10 @@
           "c2jName" : "startTime",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>",
+          "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@return The start of the time range. Events with a timestamp earlier than this time are not included.*/",
+          "fluentSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -14577,7 +14954,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "StartTime",
-          "setterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range. Events with a timestamp earlier than this time are not included.*/",
+          "setterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "startTime",
@@ -14587,12 +14964,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>\n@param startTime The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "startTime",
             "variableType" : "Long",
-            "documentation" : "<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>",
+            "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -15120,10 +15497,10 @@
         "c2jName" : "timestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The time the event occurred.</p>",
+        "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The time the event occurred.</p>\n@return The time the event occurred.*/",
+        "fluentSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -15148,7 +15525,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Timestamp",
-        "setterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.*/",
+        "setterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "timestamp",
@@ -15158,12 +15535,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "timestamp",
           "variableType" : "Long",
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -15279,10 +15656,10 @@
           "c2jName" : "timestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The time the event occurred.</p>\n@return The time the event occurred.*/",
+          "fluentSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -15307,7 +15684,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Timestamp",
-          "setterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.*/",
+          "setterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "timestamp",
@@ -15317,12 +15694,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "timestamp",
             "variableType" : "Long",
-            "documentation" : "<p>The time the event occurred.</p>",
+            "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -15580,6 +15957,428 @@
         "documentation" : null,
         "simpleType" : "LimitExceededException",
         "variableSetterType" : "LimitExceededException"
+      },
+      "wrapper" : false
+    },
+    "ListTagsLogGroupRequest" : {
+      "c2jName" : "ListTagsLogGroupRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : {
+        "action" : "ListTagsLogGroup",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Logs_20140328.ListTagsLogGroup",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "logGroupName",
+        "c2jShape" : "LogGroupName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the log group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "logGroupName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "logGroupName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "LogGroupName",
+        "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the log group.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "LogGroupName" : {
+          "c2jName" : "logGroupName",
+          "c2jShape" : "LogGroupName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "logGroupName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "logGroupName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "LogGroupName",
+          "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the log group.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "logGroupName" ],
+      "shapeName" : "ListTagsLogGroupRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ListTagsLogGroupRequest",
+        "variableName" : "listTagsLogGroupRequest",
+        "variableType" : "ListTagsLogGroupRequest",
+        "documentation" : null,
+        "simpleType" : "ListTagsLogGroupRequest",
+        "variableSetterType" : "ListTagsLogGroupRequest"
+      },
+      "wrapper" : false
+    },
+    "ListTagsLogGroupResult" : {
+      "c2jName" : "ListTagsLogGroupResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "tags",
+        "c2jShape" : "Tags",
+        "deprecated" : false,
+        "documentation" : "<p>The tags.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The tags.</p>\n@return The tags.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Map<String,String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : true,
+        "mapModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalMap",
+          "interfaceType" : "java.util.Map",
+          "keyLocationName" : "key",
+          "keyModel" : null,
+          "keyType" : "String",
+          "valueLocationName" : "value",
+          "valueModel" : {
+            "c2jName" : "value",
+            "c2jShape" : "TagValue",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "value",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "value",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Value",
+            "setterDocumentation" : "/**\n@param value */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "value",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "value",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "valueType" : "String",
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "templateType" : "java.util.Map<String,String>",
+          "valueList" : false,
+          "valueSimple" : true
+        },
+        "name" : "Tags",
+        "setterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.Map<String,String>",
+          "documentation" : "",
+          "simpleType" : "Map<String,String>",
+          "variableSetterType" : "java.util.Map<String,String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.Map<String,String>",
+          "documentation" : "<p>The tags.</p>",
+          "simpleType" : "Map<String,String>",
+          "variableSetterType" : "java.util.Map<String,String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Tags" : {
+          "c2jName" : "tags",
+          "c2jShape" : "Tags",
+          "deprecated" : false,
+          "documentation" : "<p>The tags.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The tags.</p>\n@return The tags.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Map<String,String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : true,
+          "mapModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalMap",
+            "interfaceType" : "java.util.Map",
+            "keyLocationName" : "key",
+            "keyModel" : null,
+            "keyType" : "String",
+            "valueLocationName" : "value",
+            "valueModel" : {
+              "c2jName" : "value",
+              "c2jShape" : "TagValue",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "value",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "value",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Value",
+              "setterDocumentation" : "/**\n@param value */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "value",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "value",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "valueType" : "String",
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "templateType" : "java.util.Map<String,String>",
+            "valueList" : false,
+            "valueSimple" : true
+          },
+          "name" : "Tags",
+          "setterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.Map<String,String>",
+            "documentation" : "",
+            "simpleType" : "Map<String,String>",
+            "variableSetterType" : "java.util.Map<String,String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The tags.</p>\n@param tags The tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.Map<String,String>",
+            "documentation" : "<p>The tags.</p>",
+            "simpleType" : "Map<String,String>",
+            "variableSetterType" : "java.util.Map<String,String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "ListTagsLogGroupResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ListTagsLogGroupResult",
+        "variableName" : "listTagsLogGroupResult",
+        "variableType" : "ListTagsLogGroupResult",
+        "documentation" : null,
+        "simpleType" : "ListTagsLogGroupResult",
+        "variableSetterType" : "ListTagsLogGroupResult"
       },
       "wrapper" : false
     },
@@ -16376,10 +17175,10 @@
         "c2jName" : "firstEventTimestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The time of the first event.</p>",
+        "documentation" : "<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time of the first event.</p>\n@param firstEventTimestamp The time of the first event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The time of the first event.</p>\n@return The time of the first event.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param firstEventTimestamp The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -16404,7 +17203,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "FirstEventTimestamp",
-        "setterDocumentation" : "/**<p>The time of the first event.</p>\n@param firstEventTimestamp The time of the first event.*/",
+        "setterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param firstEventTimestamp The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "firstEventTimestamp",
@@ -16414,12 +17213,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The time of the first event.</p>\n@param firstEventTimestamp The time of the first event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param firstEventTimestamp The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "firstEventTimestamp",
           "variableType" : "Long",
-          "documentation" : "<p>The time of the first event.</p>",
+          "documentation" : "<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -16428,10 +17227,10 @@
         "c2jName" : "lastEventTimestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The time of the last event.</p>",
+        "documentation" : "<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time of the last event.</p>\n@param lastEventTimestamp The time of the last event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The time of the last event.</p>\n@return The time of the last event.*/",
+        "fluentSetterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param lastEventTimestamp The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -16456,7 +17255,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "LastEventTimestamp",
-        "setterDocumentation" : "/**<p>The time of the last event.</p>\n@param lastEventTimestamp The time of the last event.*/",
+        "setterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param lastEventTimestamp The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "lastEventTimestamp",
@@ -16466,12 +17265,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The time of the last event.</p>\n@param lastEventTimestamp The time of the last event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param lastEventTimestamp The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "lastEventTimestamp",
           "variableType" : "Long",
-          "documentation" : "<p>The time of the last event.</p>",
+          "documentation" : "<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -16796,10 +17595,10 @@
           "c2jName" : "firstEventTimestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The time of the first event.</p>",
+          "documentation" : "<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time of the first event.</p>\n@param firstEventTimestamp The time of the first event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The time of the first event.</p>\n@return The time of the first event.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param firstEventTimestamp The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -16824,7 +17623,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "FirstEventTimestamp",
-          "setterDocumentation" : "/**<p>The time of the first event.</p>\n@param firstEventTimestamp The time of the first event.*/",
+          "setterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param firstEventTimestamp The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "firstEventTimestamp",
@@ -16834,12 +17633,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The time of the first event.</p>\n@param firstEventTimestamp The time of the first event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param firstEventTimestamp The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "firstEventTimestamp",
             "variableType" : "Long",
-            "documentation" : "<p>The time of the first event.</p>",
+            "documentation" : "<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -16849,10 +17648,10 @@
           "c2jName" : "lastEventTimestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The time of the last event.</p>",
+          "documentation" : "<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time of the last event.</p>\n@param lastEventTimestamp The time of the last event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The time of the last event.</p>\n@return The time of the last event.*/",
+          "fluentSetterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param lastEventTimestamp The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -16877,7 +17676,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "LastEventTimestamp",
-          "setterDocumentation" : "/**<p>The time of the last event.</p>\n@param lastEventTimestamp The time of the last event.*/",
+          "setterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param lastEventTimestamp The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "lastEventTimestamp",
@@ -16887,12 +17686,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The time of the last event.</p>\n@param lastEventTimestamp The time of the last event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param lastEventTimestamp The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "lastEventTimestamp",
             "variableType" : "Long",
-            "documentation" : "<p>The time of the last event.</p>",
+            "documentation" : "<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -18863,10 +19662,10 @@
         "c2jName" : "timestamp",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
-        "documentation" : "<p>The time the event occurred.</p>",
+        "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The time the event occurred.</p>\n@return The time the event occurred.*/",
+        "fluentSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "getterModel" : {
           "returnType" : "Long",
           "documentation" : null
@@ -18891,7 +19690,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Timestamp",
-        "setterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.*/",
+        "setterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
         "setterModel" : {
           "variableDeclarationType" : "Long",
           "variableName" : "timestamp",
@@ -18901,12 +19700,12 @@
           "variableSetterType" : "Long"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Long",
           "variableName" : "timestamp",
           "variableType" : "Long",
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -19127,10 +19926,10 @@
           "c2jName" : "timestamp",
           "c2jShape" : "Timestamp",
           "deprecated" : false,
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The time the event occurred.</p>\n@return The time the event occurred.*/",
+          "fluentSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@return The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "getterModel" : {
             "returnType" : "Long",
             "documentation" : null
@@ -19155,7 +19954,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Timestamp",
-          "setterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.*/",
+          "setterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.*/",
           "setterModel" : {
             "variableDeclarationType" : "Long",
             "variableName" : "timestamp",
@@ -19165,12 +19964,12 @@
             "variableSetterType" : "Long"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The time the event occurred.</p>\n@param timestamp The time the event occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>\n@param timestamp The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Long",
             "variableName" : "timestamp",
             "variableType" : "Long",
-            "documentation" : "<p>The time the event occurred.</p>",
+            "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -22023,6 +22822,58 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "distribution",
+        "c2jShape" : "Distribution",
+        "deprecated" : false,
+        "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+        "enumType" : "Distribution",
+        "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "distribution",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "distribution",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Distribution",
+        "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "distribution",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "distribution",
+          "variableType" : "String",
+          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "DestinationArn" : {
@@ -22073,6 +22924,59 @@
             "variableName" : "destinationArn",
             "variableType" : "String",
             "documentation" : "<p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> </li> <li> <p>An Amazon Kinesis Firehose stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li> </ul>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Distribution" : {
+          "c2jName" : "distribution",
+          "c2jShape" : "Distribution",
+          "deprecated" : false,
+          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+          "enumType" : "Distribution",
+          "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "distribution",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "distribution",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Distribution",
+          "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@see Distribution*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "distribution",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "distribution",
+            "variableType" : "String",
+            "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -23317,6 +24221,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "distribution",
+        "c2jShape" : "Distribution",
+        "deprecated" : false,
+        "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+        "enumType" : "Distribution",
+        "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "distribution",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "distribution",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Distribution",
+        "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "distribution",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "distribution",
+          "variableType" : "String",
+          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "creationTime",
         "c2jShape" : "Timestamp",
         "deprecated" : false,
@@ -23471,6 +24427,59 @@
             "variableName" : "destinationArn",
             "variableType" : "String",
             "documentation" : "<p>The Amazon Resource Name (ARN) of the destination.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Distribution" : {
+          "c2jName" : "distribution",
+          "c2jShape" : "Distribution",
+          "deprecated" : false,
+          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+          "enumType" : "Distribution",
+          "fluentSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "getterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "distribution",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "distribution",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Distribution",
+          "setterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@see Distribution*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "distribution",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>\n@param distribution The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Distribution*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "distribution",
+            "variableType" : "String",
+            "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -23702,6 +24711,427 @@
         "documentation" : null,
         "simpleType" : "SubscriptionFilter",
         "variableSetterType" : "SubscriptionFilter"
+      },
+      "wrapper" : false
+    },
+    "TagLogGroupRequest" : {
+      "c2jName" : "TagLogGroupRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : {
+        "action" : "TagLogGroup",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Logs_20140328.TagLogGroup",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "logGroupName",
+        "c2jShape" : "LogGroupName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the log group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "logGroupName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "logGroupName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "LogGroupName",
+        "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the log group.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "tags",
+        "c2jShape" : "Tags",
+        "deprecated" : false,
+        "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@return The key-value pairs to use for the tags.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Map<String,String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : true,
+        "mapModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalMap",
+          "interfaceType" : "java.util.Map",
+          "keyLocationName" : "key",
+          "keyModel" : null,
+          "keyType" : "String",
+          "valueLocationName" : "value",
+          "valueModel" : {
+            "c2jName" : "value",
+            "c2jShape" : "TagValue",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "value",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "value",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Value",
+            "setterDocumentation" : "/**\n@param value */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "value",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "value",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "valueType" : "String",
+          "entryType" : "Map.Entry<String, String>",
+          "keySimple" : true,
+          "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "templateType" : "java.util.Map<String,String>",
+          "valueList" : false,
+          "valueSimple" : true
+        },
+        "name" : "Tags",
+        "setterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.Map<String,String>",
+          "documentation" : "",
+          "simpleType" : "Map<String,String>",
+          "variableSetterType" : "java.util.Map<String,String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.Map<String,String>",
+          "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+          "simpleType" : "Map<String,String>",
+          "variableSetterType" : "java.util.Map<String,String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "LogGroupName" : {
+          "c2jName" : "logGroupName",
+          "c2jShape" : "LogGroupName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "logGroupName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "logGroupName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "LogGroupName",
+          "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the log group.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Tags" : {
+          "c2jName" : "tags",
+          "c2jShape" : "Tags",
+          "deprecated" : false,
+          "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@return The key-value pairs to use for the tags.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Map<String,String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : true,
+          "mapModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalMap",
+            "interfaceType" : "java.util.Map",
+            "keyLocationName" : "key",
+            "keyModel" : null,
+            "keyType" : "String",
+            "valueLocationName" : "value",
+            "valueModel" : {
+              "c2jName" : "value",
+              "c2jShape" : "TagValue",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "value",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "value",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Value",
+              "setterDocumentation" : "/**\n@param value */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "value",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "value",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "valueType" : "String",
+            "entryType" : "Map.Entry<String, String>",
+            "keySimple" : true,
+            "templateImplType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "templateType" : "java.util.Map<String,String>",
+            "valueList" : false,
+            "valueSimple" : true
+          },
+          "name" : "Tags",
+          "setterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.Map<String,String>",
+            "documentation" : "",
+            "simpleType" : "Map<String,String>",
+            "variableSetterType" : "java.util.Map<String,String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The key-value pairs to use for the tags.</p>\n@param tags The key-value pairs to use for the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.Map<String,String>",
+            "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+            "simpleType" : "Map<String,String>",
+            "variableSetterType" : "java.util.Map<String,String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "logGroupName", "tags" ],
+      "shapeName" : "TagLogGroupRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "TagLogGroupRequest",
+        "variableName" : "tagLogGroupRequest",
+        "variableType" : "TagLogGroupRequest",
+        "documentation" : null,
+        "simpleType" : "TagLogGroupRequest",
+        "variableSetterType" : "TagLogGroupRequest"
+      },
+      "wrapper" : false
+    },
+    "TagLogGroupResult" : {
+      "c2jName" : "TagLogGroupResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "TagLogGroupResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "TagLogGroupResult",
+        "variableName" : "tagLogGroupResult",
+        "variableType" : "TagLogGroupResult",
+        "documentation" : null,
+        "simpleType" : "TagLogGroupResult",
+        "variableSetterType" : "TagLogGroupResult"
       },
       "wrapper" : false
     },
@@ -24363,6 +25793,427 @@
         "documentation" : null,
         "simpleType" : "TestMetricFilterResult",
         "variableSetterType" : "TestMetricFilterResult"
+      },
+      "wrapper" : false
+    },
+    "UntagLogGroupRequest" : {
+      "c2jName" : "UntagLogGroupRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : {
+        "action" : "UntagLogGroup",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Logs_20140328.UntagLogGroup",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "logGroupName",
+        "c2jShape" : "LogGroupName",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the log group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "logGroupName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "logGroupName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "LogGroupName",
+        "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "logGroupName",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the log group.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "tags",
+        "c2jShape" : "TagList",
+        "deprecated" : false,
+        "documentation" : "<p>The tag keys. The corresponding tags are removed from the log group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n@param tags The tag keys. The corresponding tags are removed from the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n@return The tag keys. The corresponding tags are removed from the log group.*/",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "tags",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tags",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "TagKey",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "getterDocumentation" : "/**\n@return */",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "Tags",
+        "setterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n@param tags The tag keys. The corresponding tags are removed from the log group.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tag keys. The corresponding tags are removed from the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "tags",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The tag keys. The corresponding tags are removed from the log group.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "LogGroupName" : {
+          "c2jName" : "logGroupName",
+          "c2jShape" : "LogGroupName",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the log group.</p>\n@return The name of the log group.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "logGroupName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "logGroupName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "LogGroupName",
+          "setterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The name of the log group.</p>\n@param logGroupName The name of the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "logGroupName",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the log group.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Tags" : {
+          "c2jName" : "tags",
+          "c2jShape" : "TagList",
+          "deprecated" : false,
+          "documentation" : "<p>The tag keys. The corresponding tags are removed from the log group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n@param tags The tag keys. The corresponding tags are removed from the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n@return The tag keys. The corresponding tags are removed from the log group.*/",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "tags",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tags",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "TagKey",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "getterDocumentation" : "/**\n@return */",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "Tags",
+          "setterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n@param tags The tag keys. The corresponding tags are removed from the log group.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The tag keys. The corresponding tags are removed from the log group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tag keys. The corresponding tags are removed from the log group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "tags",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The tag keys. The corresponding tags are removed from the log group.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "logGroupName", "tags" ],
+      "shapeName" : "UntagLogGroupRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "UntagLogGroupRequest",
+        "variableName" : "untagLogGroupRequest",
+        "variableType" : "UntagLogGroupRequest",
+        "documentation" : null,
+        "simpleType" : "UntagLogGroupRequest",
+        "variableSetterType" : "UntagLogGroupRequest"
+      },
+      "wrapper" : false
+    },
+    "UntagLogGroupResult" : {
+      "c2jName" : "UntagLogGroupResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "required" : null,
+      "shapeName" : "UntagLogGroupResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "UntagLogGroupResult",
+        "variableName" : "untagLogGroupResult",
+        "variableType" : "UntagLogGroupResult",
+        "documentation" : null,
+        "simpleType" : "UntagLogGroupResult",
+        "variableSetterType" : "UntagLogGroupResult"
       },
       "wrapper" : false
     }

@@ -661,4 +661,10 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
+    @Override
+    public com.amazonaws.services.polly.presign.AmazonPollyPresigners presigners() {
+        return new com.amazonaws.services.polly.presign.AmazonPollyPresigners(PresignerParams.builder().endpoint(endpoint)
+                .credentialsProvider(awsCredentialsProvider).signerProvider(getSignerProvider()).build());
+    }
+
 }

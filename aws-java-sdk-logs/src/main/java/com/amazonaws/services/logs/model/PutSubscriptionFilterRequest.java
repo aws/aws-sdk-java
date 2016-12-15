@@ -75,6 +75,13 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
+     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * </p>
+     */
+    private String distribution;
 
     /**
      * <p>
@@ -436,6 +443,94 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
+     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
+     *        data randomly.
+     * @see Distribution
+     */
+
+    public void setDistribution(String distribution) {
+        this.distribution = distribution;
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
+     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * </p>
+     * 
+     * @return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *         stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
+     *         data randomly.
+     * @see Distribution
+     */
+
+    public String getDistribution() {
+        return this.distribution;
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
+     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
+     *        data randomly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Distribution
+     */
+
+    public PutSubscriptionFilterRequest withDistribution(String distribution) {
+        setDistribution(distribution);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
+     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
+     *        data randomly.
+     * @see Distribution
+     */
+
+    public void setDistribution(Distribution distribution) {
+        this.distribution = distribution.toString();
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By
+     * default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream. By default, log data is grouped by log stream. For a more even distribution, you can group log
+     *        data randomly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Distribution
+     */
+
+    public PutSubscriptionFilterRequest withDistribution(Distribution distribution) {
+        setDistribution(distribution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -455,7 +550,9 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
         if (getDestinationArn() != null)
             sb.append("DestinationArn: " + getDestinationArn() + ",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: " + getRoleArn() + ",");
+        if (getDistribution() != null)
+            sb.append("Distribution: " + getDistribution());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +587,10 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getDistribution() == null ^ this.getDistribution() == null)
+            return false;
+        if (other.getDistribution() != null && other.getDistribution().equals(this.getDistribution()) == false)
+            return false;
         return true;
     }
 
@@ -503,6 +604,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getFilterPattern() == null) ? 0 : getFilterPattern().hashCode());
         hashCode = prime * hashCode + ((getDestinationArn() == null) ? 0 : getDestinationArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getDistribution() == null) ? 0 : getDistribution().hashCode());
         return hashCode;
     }
 

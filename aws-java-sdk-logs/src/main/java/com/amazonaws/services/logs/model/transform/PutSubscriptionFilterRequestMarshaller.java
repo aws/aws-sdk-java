@@ -74,6 +74,9 @@ public class PutSubscriptionFilterRequestMarshaller implements Marshaller<Reques
             if (putSubscriptionFilterRequest.getRoleArn() != null) {
                 jsonGenerator.writeFieldName("roleArn").writeValue(putSubscriptionFilterRequest.getRoleArn());
             }
+            if (putSubscriptionFilterRequest.getDistribution() != null) {
+                jsonGenerator.writeFieldName("distribution").writeValue(putSubscriptionFilterRequest.getDistribution());
+            }
 
             jsonGenerator.writeEndObject();
 

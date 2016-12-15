@@ -16,12 +16,15 @@ package com.amazonaws.util;
 
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.jar.JarInputStream;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.annotation.ThreadSafe;
 
 import com.amazonaws.internal.config.InternalConfig;
+
+import static com.amazonaws.util.IOUtils.closeQuietly;
 
 /**
  * Utility class for accessing AWS SDK versioning information.
@@ -121,9 +124,7 @@ public class VersionInfoUtils {
             version = "unknown-version";
             platform = "java";
         } finally {
-            try {
-                inputStream.close();
-            } catch (Exception e) {}
+            closeQuietly(inputStream, log);
         }
     }
 
@@ -152,7 +153,8 @@ public class VersionInfoUtils {
             .replace("{os.version}", replaceSpaces(System.getProperty("os.version")))
             .replace("{java.vm.name}", replaceSpaces(System.getProperty("java.vm.name")))
             .replace("{java.vm.version}", replaceSpaces(System.getProperty("java.vm.version")))
-            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")));
+            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")))
+            .replace("{additional.languages}", getAdditionalJvmLanguages());
 
         String language = System.getProperty("user.language");
         String region = System.getProperty("user.region");
@@ -175,5 +177,65 @@ public class VersionInfoUtils {
      */
     private static String replaceSpaces(final String input) {
         return input == null ? UNKNOWN : input.replace(' ', '_');
+    }
+
+    private static String getAdditionalJvmLanguages() {
+        return concat(concat("", scalaVersion(), " "), kotlinVersion(), " ");
+    }
+
+    /**
+     * Attempt to determine if Scala is on the classpath and if so what version is in use.
+     * Does this by looking for a known Scala class (scala.util.Properties) and then calling
+     * a static method on that class via reflection to determine the versionNumberString.
+     *
+     * @return Scala version if any, else empty string
+     */
+    private static String scalaVersion() {
+        String scalaVersion = "";
+        try {
+            Class<?> scalaProperties = Class.forName("scala.util.Properties");
+            scalaVersion = "scala";
+            String version = (String)scalaProperties.getMethod("versionNumberString").invoke(null);
+            scalaVersion = concat(scalaVersion, version, "/");
+        } catch (ClassNotFoundException e) {
+            //Ignore
+        } catch (Exception e) {
+            if (log.isTraceEnabled()){
+                log.trace("Exception attempting to get Scala version.", e);
+            }
+        }
+        return scalaVersion;
+    }
+
+    /**
+     * Attempt to determine if Kotlin is on the classpath and if so what version is in use.
+     * Does this by looking for a known Kotlin class (kotlin.Unit) and then loading the Manifest
+     * from that class' JAR to determine the Kotlin version.
+     *
+     * @return Kotlin version if any, else empty string
+     */
+    private static String kotlinVersion() {
+        String kotlinVersion = "";
+        JarInputStream kotlinJar = null;
+        try {
+            Class<?> kotlinUnit = Class.forName("kotlin.Unit");
+            kotlinVersion = "kotlin";
+            kotlinJar = new JarInputStream(kotlinUnit.getProtectionDomain().getCodeSource().getLocation().openStream());
+            String version = kotlinJar.getManifest().getMainAttributes().getValue("Implementation-Version");
+            kotlinVersion = concat(kotlinVersion, version, "/");
+        } catch (ClassNotFoundException e) {
+            //Ignore
+        } catch (Exception e) {
+            if (log.isTraceEnabled()){
+                log.trace("Exception attempting to get Kotlin version.", e);
+            }
+        } finally {
+            closeQuietly(kotlinJar, log);
+        }
+        return kotlinVersion;
+    }
+
+    private static String concat(String prefix, String suffix, String separator) {
+        return suffix != null && !suffix.isEmpty() ? prefix + separator + suffix : prefix;
     }
 }

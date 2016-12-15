@@ -45,6 +45,12 @@ public class SubscriptionFilter implements Serializable, Cloneable {
     private String roleArn;
     /**
      * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.
+     * </p>
+     */
+    private String distribution;
+    /**
+     * <p>
      * The creation time of the subscription filter.
      * </p>
      */
@@ -230,6 +236,84 @@ public class SubscriptionFilter implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream.
+     * @see Distribution
+     */
+
+    public void setDistribution(String distribution) {
+        this.distribution = distribution;
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.
+     * </p>
+     * 
+     * @return The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *         stream.
+     * @see Distribution
+     */
+
+    public String getDistribution() {
+        return this.distribution;
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Distribution
+     */
+
+    public SubscriptionFilter withDistribution(String distribution) {
+        setDistribution(distribution);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream.
+     * @see Distribution
+     */
+
+    public void setDistribution(Distribution distribution) {
+        this.distribution = distribution.toString();
+    }
+
+    /**
+     * <p>
+     * The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.
+     * </p>
+     * 
+     * @param distribution
+     *        The method used to distribute log data to the destination, when the destination is an Amazon Kinesis
+     *        stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Distribution
+     */
+
+    public SubscriptionFilter withDistribution(Distribution distribution) {
+        setDistribution(distribution);
+        return this;
+    }
+
+    /**
+     * <p>
      * The creation time of the subscription filter.
      * </p>
      * 
@@ -289,6 +373,8 @@ public class SubscriptionFilter implements Serializable, Cloneable {
             sb.append("DestinationArn: " + getDestinationArn() + ",");
         if (getRoleArn() != null)
             sb.append("RoleArn: " + getRoleArn() + ",");
+        if (getDistribution() != null)
+            sb.append("Distribution: " + getDistribution() + ",");
         if (getCreationTime() != null)
             sb.append("CreationTime: " + getCreationTime());
         sb.append("}");
@@ -325,6 +411,10 @@ public class SubscriptionFilter implements Serializable, Cloneable {
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getDistribution() == null ^ this.getDistribution() == null)
+            return false;
+        if (other.getDistribution() != null && other.getDistribution().equals(this.getDistribution()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -342,6 +432,7 @@ public class SubscriptionFilter implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFilterPattern() == null) ? 0 : getFilterPattern().hashCode());
         hashCode = prime * hashCode + ((getDestinationArn() == null) ? 0 : getDestinationArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getDistribution() == null) ? 0 : getDistribution().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }

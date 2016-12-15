@@ -46,7 +46,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * </p>
      */
     private SourceBuildInformation sourceBuildInformation;
-
+    /**
+     * <p>
+     * Reference to the artifact from the AWS CodeBuild build.
+     * </p>
+     */
     private String buildArn;
     /**
      * <p>
@@ -240,7 +244,12 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Reference to the artifact from the AWS CodeBuild build.
+     * </p>
+     * 
      * @param buildArn
+     *        Reference to the artifact from the AWS CodeBuild build.
      */
 
     public void setBuildArn(String buildArn) {
@@ -248,7 +257,11 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Reference to the artifact from the AWS CodeBuild build.
+     * </p>
+     * 
+     * @return Reference to the artifact from the AWS CodeBuild build.
      */
 
     public String getBuildArn() {
@@ -256,7 +269,12 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Reference to the artifact from the AWS CodeBuild build.
+     * </p>
+     * 
      * @param buildArn
+     *        Reference to the artifact from the AWS CodeBuild build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

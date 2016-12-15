@@ -67,6 +67,10 @@ public class SubscriptionFilterJsonUnmarshaller implements Unmarshaller<Subscrip
                     context.nextToken();
                     subscriptionFilter.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("distribution", targetDepth)) {
+                    context.nextToken();
+                    subscriptionFilter.setDistribution(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
                     subscriptionFilter.setCreationTime(context.getUnmarshaller(Long.class).unmarshall(context));

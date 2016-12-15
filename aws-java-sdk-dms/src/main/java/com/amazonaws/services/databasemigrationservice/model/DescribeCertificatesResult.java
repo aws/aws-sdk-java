@@ -27,7 +27,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
     private String marker;
     /**
      * <p>
-     * The SSL certificates associated with the replication instance.
+     * The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * </p>
      */
     private java.util.List<Certificate> certificates;
@@ -74,10 +74,10 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SSL certificates associated with the replication instance.
+     * The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * </p>
      * 
-     * @return The SSL certificates associated with the replication instance.
+     * @return The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -86,11 +86,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SSL certificates associated with the replication instance.
+     * The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * </p>
      * 
      * @param certificates
-     *        The SSL certificates associated with the replication instance.
+     *        The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -104,7 +104,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SSL certificates associated with the replication instance.
+     * The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -113,7 +113,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param certificates
-     *        The SSL certificates associated with the replication instance.
+     *        The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The SSL certificates associated with the replication instance.
+     * The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * </p>
      * 
      * @param certificates
-     *        The SSL certificates associated with the replication instance.
+     *        The Secure Sockets Layer (SSL) certificates associated with the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -95,6 +95,12 @@ public class ReplicationTask implements Serializable, Cloneable {
     private String lastFailureMessage;
     /**
      * <p>
+     * The reason the replication task was stopped.
+     * </p>
+     */
+    private String stopReason;
+    /**
+     * <p>
      * The date the replication task was created.
      * </p>
      */
@@ -630,6 +636,46 @@ public class ReplicationTask implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The reason the replication task was stopped.
+     * </p>
+     * 
+     * @param stopReason
+     *        The reason the replication task was stopped.
+     */
+
+    public void setStopReason(String stopReason) {
+        this.stopReason = stopReason;
+    }
+
+    /**
+     * <p>
+     * The reason the replication task was stopped.
+     * </p>
+     * 
+     * @return The reason the replication task was stopped.
+     */
+
+    public String getStopReason() {
+        return this.stopReason;
+    }
+
+    /**
+     * <p>
+     * The reason the replication task was stopped.
+     * </p>
+     * 
+     * @param stopReason
+     *        The reason the replication task was stopped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withStopReason(String stopReason) {
+        setStopReason(stopReason);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date the replication task was created.
      * </p>
      * 
@@ -817,6 +863,8 @@ public class ReplicationTask implements Serializable, Cloneable {
             sb.append("Status: " + getStatus() + ",");
         if (getLastFailureMessage() != null)
             sb.append("LastFailureMessage: " + getLastFailureMessage() + ",");
+        if (getStopReason() != null)
+            sb.append("StopReason: " + getStopReason() + ",");
         if (getReplicationTaskCreationDate() != null)
             sb.append("ReplicationTaskCreationDate: " + getReplicationTaskCreationDate() + ",");
         if (getReplicationTaskStartDate() != null)
@@ -875,6 +923,10 @@ public class ReplicationTask implements Serializable, Cloneable {
             return false;
         if (other.getLastFailureMessage() != null && other.getLastFailureMessage().equals(this.getLastFailureMessage()) == false)
             return false;
+        if (other.getStopReason() == null ^ this.getStopReason() == null)
+            return false;
+        if (other.getStopReason() != null && other.getStopReason().equals(this.getStopReason()) == false)
+            return false;
         if (other.getReplicationTaskCreationDate() == null ^ this.getReplicationTaskCreationDate() == null)
             return false;
         if (other.getReplicationTaskCreationDate() != null && other.getReplicationTaskCreationDate().equals(this.getReplicationTaskCreationDate()) == false)
@@ -908,6 +960,7 @@ public class ReplicationTask implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReplicationTaskSettings() == null) ? 0 : getReplicationTaskSettings().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getLastFailureMessage() == null) ? 0 : getLastFailureMessage().hashCode());
+        hashCode = prime * hashCode + ((getStopReason() == null) ? 0 : getStopReason().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskCreationDate() == null) ? 0 : getReplicationTaskCreationDate().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskStartDate() == null) ? 0 : getReplicationTaskStartDate().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());

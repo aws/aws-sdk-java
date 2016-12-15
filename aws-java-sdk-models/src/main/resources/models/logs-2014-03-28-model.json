@@ -567,7 +567,7 @@
     "DescribeMetricFilters" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Lists the specified metric filters. You can list all the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.</p>",
+      "documentation" : "<p>Lists the specified metric filters. You can list all the metric filters or filter the results by log name, prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -720,6 +720,40 @@
         "shape" : "GetLogEventsResponse"
       }
     },
+    "ListTagsLogGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the tags for the specified log group.</p> <p>To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListTagsLogGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListTagsLogGroup",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListTagsLogGroupResponse"
+      }
+    },
     "PutDestination" : {
       "authtype" : null,
       "deprecated" : false,
@@ -796,7 +830,7 @@
     "PutLogEvents" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Uploads a batch of log events to the specified log stream.</p> <p>You must include the sequence token obtained from the response of the previous call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of events must satisfy the following constraints:</p> <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li> <p>None of the log events in the batch can be more than 2 hours in the future.</p> </li> <li> <p>None of the log events in the batch can be older than 14 days or the retention period of the log group.</p> </li> <li> <p>The log events in the batch must be in chronological ordered by their timestamp.</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single PutLogEvents request cannot span more than 24 hours. Otherwise, the PutLogEvents operation will fail.</p> </li> </ul>",
+      "documentation" : "<p>Uploads a batch of log events to the specified log stream.</p> <p>You must include the sequence token obtained from the response of the previous call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a>DescribeLogStreams</a>.</p> <p>The batch of events must satisfy the following constraints:</p> <ul> <li> <p>The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</p> </li> <li> <p>None of the log events in the batch can be more than 2 hours in the future.</p> </li> <li> <p>None of the log events in the batch can be older than 14 days or the retention period of the log group.</p> </li> <li> <p>The log events in the batch must be in chronological ordered by their timestamp (the time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC).</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -969,6 +1003,35 @@
       "name" : "PutSubscriptionFilter",
       "output" : null
     },
+    "TagLogGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Adds or updates the specified tags for the specified log group.</p> <p>To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html\">Tag Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "TagLogGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "TagLogGroup",
+      "output" : null
+    },
     "TestMetricFilter" : {
       "authtype" : null,
       "deprecated" : false,
@@ -1002,6 +1065,30 @@
         "resultWrapper" : null,
         "shape" : "TestMetricFilterResponse"
       }
+    },
+    "UntagLogGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Removes the specified tags from the specified log group.</p> <p>To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UntagLogGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UntagLogGroup",
+      "output" : null
     }
   },
   "shapes" : {
@@ -1252,6 +1339,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "LogGroupName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Tags",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -2614,6 +2714,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "Distribution" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "Random", "ByLogStream" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "EventId" : {
       "deprecated" : false,
       "documentation" : null,
@@ -2793,7 +2914,7 @@
         },
         "from" : {
           "deprecated" : false,
-          "documentation" : "<p>The start time. Events with a timestamp prior to this time are not exported.</p>",
+          "documentation" : "<p>The start time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not exported.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2858,7 +2979,7 @@
         },
         "to" : {
           "deprecated" : false,
-          "documentation" : "<p>The end time. Events with a timestamp later than this time are not exported.</p>",
+          "documentation" : "<p>The end time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3172,7 +3293,7 @@
       "members" : {
         "endTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not returned.</p>",
+          "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3263,7 +3384,7 @@
         },
         "startTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The start of the time range. Events with a timestamp prior to this time are not returned.</p>",
+          "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp prior to this time are not returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3453,7 +3574,7 @@
         },
         "timestamp" : {
           "deprecated" : false,
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3521,7 +3642,7 @@
       "members" : {
         "endTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The end of the time range. Events with a timestamp later than this time are not included.</p>",
+          "documentation" : "<p>The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not included.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3599,7 +3720,7 @@
         },
         "startTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The start of the time range. Events with a timestamp earlier than this time are not included.</p>",
+          "documentation" : "<p>The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not included.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3708,7 +3829,7 @@
         },
         "timestamp" : {
           "deprecated" : false,
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3905,6 +4026,76 @@
       "max" : 0,
       "member" : null,
       "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListTagsLogGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "logGroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogGroupName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "logGroupName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListTagsLogGroupResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The tags.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Tags",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4129,7 +4320,7 @@
         },
         "firstEventTimestamp" : {
           "deprecated" : false,
-          "documentation" : "<p>The time of the first event.</p>",
+          "documentation" : "<p>The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4142,7 +4333,7 @@
         },
         "lastEventTimestamp" : {
           "deprecated" : false,
-          "documentation" : "<p>The time of the last event.</p>",
+          "documentation" : "<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4777,7 +4968,7 @@
         },
         "timestamp" : {
           "deprecated" : false,
-          "documentation" : "<p>The time the event occurred.</p>",
+          "documentation" : "<p>The time the event occurred, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5244,6 +5435,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "distribution" : {
+          "deprecated" : false,
+          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more even distribution, you can group log data randomly.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Distribution",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "filterName" : {
           "deprecated" : false,
           "documentation" : "<p>A name for the subscription filter.</p>",
@@ -5633,6 +5837,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "distribution" : {
+          "deprecated" : false,
+          "documentation" : "<p>The method used to distribute log data to the destination, when the destination is an Amazon Kinesis stream.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Distribution",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "filterName" : {
           "deprecated" : false,
           "documentation" : "<p>The name of the subscription filter.</p>",
@@ -5726,6 +5943,174 @@
       "streaming" : false,
       "type" : "list",
       "value" : null,
+      "wrapper" : false
+    },
+    "TagKey" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]+)$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TagKey",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagLogGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "logGroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogGroupName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The key-value pairs to use for the tags.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Tags",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "logGroupName", "tags" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TagValue" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 256,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Tags" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TagKey",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 50,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TagValue",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
       "wrapper" : false
     },
     "TargetArn" : {
@@ -5904,6 +6289,54 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UntagLogGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "logGroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the log group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogGroupName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The tag keys. The corresponding tags are removed from the log group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "logGroupName", "tags" ],
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },

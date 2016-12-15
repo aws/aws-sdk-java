@@ -1038,7 +1038,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Lists the specified metric filters. You can list all the metric filters or filter the results by log name,
-     * prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.
+     * prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.
      * </p>
      * 
      * @param describeMetricFiltersRequest
@@ -1237,6 +1237,53 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
+     * Lists the tags for the specified log group.
+     * </p>
+     * <p>
+     * To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * 
+     * @param listTagsLogGroupRequest
+     * @return Result of the ListTagsLogGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ServiceUnavailableException
+     *         The service cannot complete the request.
+     * @sample AWSLogs.ListTagsLogGroup
+     */
+    @Override
+    public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest listTagsLogGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsLogGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsLogGroupRequest> request = null;
+        Response<ListTagsLogGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsLogGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsLogGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsLogGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsLogGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates a destination. A destination encapsulates a physical resource (such as a Kinesis stream) and
      * enables you to subscribe to a real-time stream of log events of a different account, ingested using
      * <a>PutLogEvents</a>. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the
@@ -1369,7 +1416,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their timestamp.
+     * The log events in the batch must be in chronological ordered by their timestamp (the time the event occurred,
+     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC).
      * </p>
      * </li>
      * <li>
@@ -1379,8 +1427,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * <li>
      * <p>
-     * A batch of log events in a single PutLogEvents request cannot span more than 24 hours. Otherwise, the
-     * PutLogEvents operation will fail.
+     * A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.
      * </p>
      * </li>
      * </ul>
@@ -1614,6 +1661,58 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
+     * Adds or updates the specified tags for the specified log group.
+     * </p>
+     * <p>
+     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
+     * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+     * </p>
+     * 
+     * @param tagLogGroupRequest
+     * @return Result of the TagLogGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter is specified incorrectly.
+     * @sample AWSLogs.TagLogGroup
+     */
+    @Override
+    public TagLogGroupResult tagLogGroup(TagLogGroupRequest tagLogGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagLogGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagLogGroupRequest> request = null;
+        Response<TagLogGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagLogGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagLogGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagLogGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagLogGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to
      * validate the correctness of a metric filter pattern.
      * </p>
@@ -1647,6 +1746,51 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
             HttpResponseHandler<AmazonWebServiceResponse<TestMetricFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TestMetricFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified log group.
+     * </p>
+     * <p>
+     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * 
+     * @param untagLogGroupRequest
+     * @return Result of the UntagLogGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSLogs.UntagLogGroup
+     */
+    @Override
+    public UntagLogGroupResult untagLogGroup(UntagLogGroupRequest untagLogGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagLogGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagLogGroupRequest> request = null;
+        Response<UntagLogGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagLogGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagLogGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagLogGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagLogGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

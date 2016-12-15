@@ -135,6 +135,11 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDestinationResult putDestination(PutDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -165,7 +170,17 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public TagLogGroupResult tagLogGroup(TagLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TestMetricFilterResult testMetricFilter(TestMetricFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagLogGroupResult untagLogGroup(UntagLogGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

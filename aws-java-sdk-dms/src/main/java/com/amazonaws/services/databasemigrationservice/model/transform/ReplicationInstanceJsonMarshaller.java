@@ -131,6 +131,9 @@ public class ReplicationInstanceJsonMarshaller {
             if (replicationInstance.getPubliclyAccessible() != null) {
                 jsonGenerator.writeFieldName("PubliclyAccessible").writeValue(replicationInstance.getPubliclyAccessible());
             }
+            if (replicationInstance.getSecondaryAvailabilityZone() != null) {
+                jsonGenerator.writeFieldName("SecondaryAvailabilityZone").writeValue(replicationInstance.getSecondaryAvailabilityZone());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

@@ -21,6 +21,7 @@ import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.Input;
 import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceMetadata;
+import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
 import com.amazonaws.codegen.model.service.XmlNamespace;
 import com.amazonaws.util.StringUtils;
@@ -84,6 +85,14 @@ public class Utils {
 
         return name.length() < 2 ? StringUtils.upperCase(name) : StringUtils.upperCase(name.substring(0, 1))
                 + name.substring(1);
+    }
+
+    /**
+     * * @param serviceModel Service model to get prefix for.
+     * * @return Prefix to use when writing model files (service and intermediate).
+     */
+    public static String getFileNamePrefix(ServiceModel serviceModel) {
+        return String.format("%s-%s", serviceModel.getMetadata().getEndpointPrefix(), serviceModel.getMetadata().getApiVersion());
     }
 
     /**

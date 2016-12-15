@@ -27,9 +27,10 @@ import com.amazonaws.services.databasemigrationservice.model.*;
  * <fullname>AWS Database Migration Service</fullname>
  * <p>
  * AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and
- * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and
- * MySQL. The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations
- * between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
+ * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora,
+ * MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
+ * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
+ * Server to PostgreSQL.
  * </p>
  */
 public interface AWSDatabaseMigrationService {
@@ -118,6 +119,8 @@ public interface AWSDatabaseMigrationService {
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
      */
     CreateEndpointResult createEndpoint(CreateEndpointRequest createEndpointRequest);
@@ -549,6 +552,28 @@ public interface AWSDatabaseMigrationService {
      * @sample AWSDatabaseMigrationService.ModifyReplicationSubnetGroup
      */
     ModifyReplicationSubnetGroupResult modifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest);
+
+    /**
+     * <p>
+     * Modifies the specified replication task.
+     * </p>
+     * <p>
+     * You can't modify the task endpoints. The task must be stopped before you can modify it.
+     * </p>
+     * 
+     * @param modifyReplicationTaskRequest
+     * @return Result of the ModifyReplicationTask operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
+     * @sample AWSDatabaseMigrationService.ModifyReplicationTask
+     */
+    ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest modifyReplicationTaskRequest);
 
     /**
      * <p>

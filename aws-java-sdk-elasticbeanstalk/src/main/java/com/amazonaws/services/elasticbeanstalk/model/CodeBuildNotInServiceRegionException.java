@@ -14,7 +14,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 /**
  * <p>
- * The CodeBuild service is not supported in this region.
+ * AWS CodeBuild is not available in the specified region.
  * </p>
  */
 public class CodeBuildNotInServiceRegionException extends com.amazonaws.services.elasticbeanstalk.model.AWSElasticBeanstalkException {

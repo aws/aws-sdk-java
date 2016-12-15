@@ -830,6 +830,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
      * </p>
      * </li>
@@ -891,6 +896,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -5527,6 +5537,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
      * </p>
      * </li>
@@ -5588,6 +5603,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -5885,6 +5905,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     *        us-gov-west-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
      *        us-gov-west-1)
      *        </p>
@@ -5957,6 +5983,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle 11g</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -6259,6 +6290,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
      * </p>
      * </li>
@@ -6320,6 +6356,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -6616,6 +6657,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     *         us-gov-west-1)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
      *         us-gov-west-1)
      *         </p>
@@ -6688,6 +6735,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>Oracle 11g</b>
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -6990,6 +7042,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except us-gov-west-1)
      * </p>
      * </li>
@@ -7051,6 +7108,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>Oracle 11g</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
@@ -7348,6 +7410,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
+     *        us-gov-west-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS regions except
      *        us-gov-west-1)
      *        </p>
@@ -7420,6 +7488,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>Oracle 11g</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)

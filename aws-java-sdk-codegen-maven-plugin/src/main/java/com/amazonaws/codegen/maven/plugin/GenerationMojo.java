@@ -15,8 +15,15 @@
  */
 package com.amazonaws.codegen.maven.plugin;
 
-import java.io.File;
-import java.io.IOException;
+import com.amazonaws.codegen.C2jModels;
+import com.amazonaws.codegen.CodeGenerator;
+import com.amazonaws.codegen.internal.Utils;
+import com.amazonaws.codegen.utils.ModelLoaderUtils;
+import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.intermediate.ServiceExamples;
+import com.amazonaws.codegen.model.service.ServiceModel;
+import com.amazonaws.codegen.model.service.Waiters;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -25,7 +32,8 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
-//import com.amazonaws.codegen.ant.task.CodeGeneratorTask;
+import java.io.File;
+import java.util.Optional;
 
 /**
  * The Maven mojo to generate Java client code using aws-java-sdk-code-generator.
@@ -33,29 +41,19 @@ import org.apache.maven.project.MavenProject;
 @Mojo(name = "generate")
 public class GenerationMojo extends AbstractMojo {
 
-    private static final String P_MODEL_FILE = "modelFile";
-    private static final String P_WAITERS_FILE = "waiterFile";
-    private static final String P_EXAMPLES_FILE = "examplesFile";
-    private static final String P_CODEGEN_CONFIG_FILE = "codeGenConfigFile";
-    private static final String P_CUSTOMIZATION_CONFIG_FILE = "customizationConfigFile";
-    private static final String P_OUTPUT_DIRECTORY = "outputDirectory";
-
-    @Parameter(property = P_MODEL_FILE, required = true, defaultValue = "code-gen/model.json")
+    @Parameter(property = "modelFile", defaultValue = "code-gen/service-2.json")
     private String serviceModelLocation;
 
-    @Parameter(property = P_CODEGEN_CONFIG_FILE, required = true, defaultValue = "code-gen/codegen.config")
+    @Parameter(property = "codeGenConfigFile", defaultValue = "code-gen/codegen.config")
     private String codeGenConfigLocation;
 
-    @Parameter(property = P_WAITERS_FILE, required = false, defaultValue = "code-gen/waiters.json")
-    private String waitersModelLocation;
-
-    @Parameter(property = P_CUSTOMIZATION_CONFIG_FILE, required = false, defaultValue = "code-gen/customization.config")
+    @Parameter(property = "customizationConfigFile", defaultValue = "code-gen/customization.config")
     private String customizationConfigLocation;
 
-    @Parameter(property = P_EXAMPLES_FILE, required = false, defaultValue = "code-gen/examples.json")
+    @Parameter(property = "examplesFile", defaultValue = "code-gen/examples-1.json")
     private String serviceExamplesLocation;
 
-    @Parameter(property = P_OUTPUT_DIRECTORY, required = false, defaultValue = "${project.build.directory}/generated-src")
+    @Parameter(property = "outputDirectory", defaultValue = "${project.build.directory}/generated-src")
     private String outputDirectory;
 
     @Parameter(property = "resourcesDirectory", defaultValue = "${basedir}/src/main/resources")
@@ -65,32 +63,55 @@ public class GenerationMojo extends AbstractMojo {
     private MavenProject project;
 
     public void execute() throws MojoExecutionException {
-
-        try {
-            ClassPathUtils.addFile(resourcesDirectory);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        setPropertyIfFileExists(P_MODEL_FILE, resourcesDirectory, serviceModelLocation);
-        setPropertyIfFileExists(P_WAITERS_FILE, resourcesDirectory, waitersModelLocation);
-        setPropertyIfFileExists(P_CODEGEN_CONFIG_FILE, resourcesDirectory, codeGenConfigLocation);
-        setPropertyIfFileExists(P_CUSTOMIZATION_CONFIG_FILE, resourcesDirectory, customizationConfigLocation);
-        setPropertyIfFileExists(P_EXAMPLES_FILE, resourcesDirectory, serviceExamplesLocation);
-
-        System.setProperty(P_OUTPUT_DIRECTORY, outputDirectory);
-/*        try {
-            // CodeGeneratorTask.main(new String[]{});
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
+        generateCode(C2jModels.builder()
+                             .codeGenConfig(loadCodeGenConfig())
+                             .customizationConfig(loadCustomizationConfig())
+                             .serviceModel(loadServiceModel())
+                             // Maven plugin doesn't support Waiters
+                             .waitersModel(new Waiters())
+                             .examplesModel(loadExamplesModel())
+                             .build());
         project.addCompileSourceRoot(outputDirectory);
     }
 
-    private void setPropertyIfFileExists(String propertyKey, String root, String location) {
-        if (new File(root + File.separator + location).exists()) {
-            System.setProperty(propertyKey, location);
-        }
+    private void generateCode(C2jModels models) {
+        new CodeGenerator(models, outputDirectory, resourcesDirectory, Utils.getFileNamePrefix(models.serviceModel())).execute();
     }
+
+    private BasicCodeGenConfig loadCodeGenConfig() throws MojoExecutionException {
+        return loadRequiredModel(BasicCodeGenConfig.class, codeGenConfigLocation);
+    }
+
+    private CustomizationConfig loadCustomizationConfig() {
+        return loadOptionalModel(CustomizationConfig.class, customizationConfigLocation).orElse(new CustomizationConfig());
+    }
+
+    private ServiceModel loadServiceModel() throws MojoExecutionException {
+        return loadRequiredModel(ServiceModel.class, serviceModelLocation);
+    }
+
+    private ServiceExamples loadExamplesModel() {
+        return loadOptionalModel(ServiceExamples.class, serviceExamplesLocation).orElse(new ServiceExamples());
+    }
+
+    /**
+     * Load required model from the project resources.
+     */
+    private <T> T loadRequiredModel(Class<T> clzz, String location) throws MojoExecutionException {
+        return ModelLoaderUtils.loadModel(clzz, getResourceLocation(location));
+    }
+
+    /**
+     * Load an optional model from the project resources.
+     *
+     * @return Model or empty optional if not present.
+     */
+    private <T> Optional<T> loadOptionalModel(Class<T> clzz, String location) {
+        return ModelLoaderUtils.loadOptionalModel(clzz, getResourceLocation(location));
+    }
+
+    private File getResourceLocation(String location) {
+        return new File(resourcesDirectory, location);
+    }
+
 }

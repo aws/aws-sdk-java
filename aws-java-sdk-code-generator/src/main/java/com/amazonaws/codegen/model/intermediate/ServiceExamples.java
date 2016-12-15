@@ -28,7 +28,7 @@ public class ServiceExamples {
     private final String version;
 
     public ServiceExamples() {
-        this.operationExamples = null;
+        this.operationExamples = new HashMap<>();
         this.version = null;
     }
 

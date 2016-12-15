@@ -16,6 +16,7 @@ package com.amazonaws.auth;
 
 import com.amazonaws.SignableRequest;
 import com.amazonaws.auth.internal.AWS4SignerUtils;
+
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -156,6 +157,28 @@ public class AWS4SignerTest {
         signer.sign(request, credentials);
 
         assertNull(request.getHeaders().get("Authorization"));
+    }
+
+    /**
+     * x-amzn-trace-id should not be signed as it may be mutated by proxies or load balancers.
+     */
+    @Test
+    public void xAmznTraceId_NotSigned() throws Exception {
+        AWSCredentials credentials = new BasicAWSCredentials("akid", "skid");
+        SignableRequest<?> request = generateBasicRequest();
+        request.addHeader("X-Amzn-Trace-Id", " Root=1-584b150a-708479cb060007ffbf3ee1da;Parent=36d3dbcfd150aac9;Sampled=1");
+
+        Calendar c = new GregorianCalendar();
+        c.set(1981, 1, 16, 6, 30, 0);
+        c.setTimeZone(TimeZone.getTimeZone("UTC"));
+        signer.setServiceName("demo");
+        signer.setOverrideDate(c.getTime());
+
+        signer.sign(request, credentials);
+
+        assertEquals(
+                "AWS4-HMAC-SHA256 Credential=akid/19810216/us-east-1/demo/aws4_request, SignedHeaders=host;x-amz-archive-description;x-amz-date, Signature=581d0042389009a28d461124138f1fe8eeb8daed87611d2a2b47fd3d68d81d73",
+                request.getHeaders().get("Authorization"));
     }
 
     private SignableRequest<?> generateBasicRequest() {

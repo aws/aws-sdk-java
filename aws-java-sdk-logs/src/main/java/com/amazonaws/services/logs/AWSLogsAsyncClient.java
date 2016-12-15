@@ -865,6 +865,38 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest request) {
+
+        return listTagsLogGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(final ListTagsLogGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsLogGroupResult>() {
+            @Override
+            public ListTagsLogGroupResult call() throws Exception {
+                ListTagsLogGroupResult result;
+
+                try {
+                    result = listTagsLogGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutDestinationResult> putDestinationAsync(PutDestinationRequest request) {
 
         return putDestinationAsync(request, null);
@@ -1057,6 +1089,38 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest request) {
+
+        return tagLogGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(final TagLogGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<TagLogGroupResult>() {
+            @Override
+            public TagLogGroupResult call() throws Exception {
+                TagLogGroupResult result;
+
+                try {
+                    result = tagLogGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(TestMetricFilterRequest request) {
 
         return testMetricFilterAsync(request, null);
@@ -1073,6 +1137,38 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = testMetricFilter(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest request) {
+
+        return untagLogGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(final UntagLogGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagLogGroupResult>() {
+            @Override
+            public UntagLogGroupResult call() throws Exception {
+                UntagLogGroupResult result;
+
+                try {
+                    result = untagLogGroup(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

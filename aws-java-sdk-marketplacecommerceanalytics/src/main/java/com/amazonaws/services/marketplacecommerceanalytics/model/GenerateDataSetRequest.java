@@ -52,6 +52,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     * <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific
+     * Time since 2016-12.</li>
      * </ul>
      * </p>
      */
@@ -122,6 +124,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     * <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific
+     * Time since 2016-12.</li>
      * </ul>
      * </p>
      * 
@@ -162,6 +166,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     *        <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM
+     *        Pacific Time since 2016-12.</li>
      *        </ul>
      * @see DataSetType
      */
@@ -202,6 +208,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     * <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific
+     * Time since 2016-12.</li>
      * </ul>
      * </p>
      * 
@@ -241,6 +249,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *         <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *         <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     *         <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM
+     *         Pacific Time since 2016-12.</li>
      *         </ul>
      * @see DataSetType
      */
@@ -281,6 +291,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     * <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific
+     * Time since 2016-12.</li>
      * </ul>
      * </p>
      * 
@@ -321,6 +333,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     *        <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM
+     *        Pacific Time since 2016-12.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetType
@@ -363,6 +377,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     * <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific
+     * Time since 2016-12.</li>
      * </ul>
      * </p>
      * 
@@ -403,6 +419,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     *        <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM
+     *        Pacific Time since 2016-12.</li>
      *        </ul>
      * @see DataSetType
      */
@@ -443,6 +461,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      * <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      * <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     * <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific
+     * Time since 2016-12.</li>
      * </ul>
      * </p>
      * 
@@ -483,6 +503,8 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
      *        <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li>
+     *        <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM
+     *        Pacific Time since 2016-12.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetType

@@ -27,9 +27,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * an Amazon S3 bucket policy.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      */
     private String name;
@@ -93,9 +92,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based
      *        policy, such as in an Amazon S3 bucket policy.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      */
     public GetFederationTokenRequest(String name) {
         setName(name);
@@ -108,9 +107,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * an Amazon S3 bucket policy.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param name
@@ -118,9 +116,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based
      *        policy, such as in an Amazon S3 bucket policy.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      */
 
     public void setName(String name) {
@@ -134,18 +132,17 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * an Amazon S3 bucket policy.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @return The name of the federated user. The name is used as an identifier for the temporary security credentials
      *         (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based
      *         policy, such as in an Amazon S3 bucket policy.</p>
      *         <p>
-     *         The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *         upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *         the following characters: =,.@-
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-
      */
 
     public String getName() {
@@ -159,9 +156,8 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * an Amazon S3 bucket policy.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param name
@@ -169,9 +165,9 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based
      *        policy, such as in an Amazon S3 bucket policy.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

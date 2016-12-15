@@ -59,6 +59,10 @@ public class CertificateJsonUnmarshaller implements Unmarshaller<Certificate, Js
                     context.nextToken();
                     certificate.setCertificatePem(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CertificateWallet", targetDepth)) {
+                    context.nextToken();
+                    certificate.setCertificateWallet(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
+                }
                 if (context.testExpression("CertificateArn", targetDepth)) {
                     context.nextToken();
                     certificate.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));

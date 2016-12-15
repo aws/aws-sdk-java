@@ -23,6 +23,8 @@ import java.util.Map;
 import java.util.Set;
 
 import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
+import com.amazonaws.services.dynamodbv2.document.internal.ItemValueConformer;
+import com.amazonaws.util.json.Jackson;
 
 
 /**
@@ -30,6 +32,7 @@ import com.amazonaws.services.dynamodbv2.document.internal.InternalUtils;
  */
 public class ValueMap extends FluentHashMap<String, Object> {
     private static final long serialVersionUID = 1L;
+    private static final ItemValueConformer valueConformer = new ItemValueConformer();
 
     /**
      * Sets the value of the specified key in the current ValueMap to the
@@ -190,6 +193,15 @@ public class ValueMap extends FluentHashMap<String, Object> {
      */
     public ValueMap withNull(String key) {
         super.put(key, null);
+        return this;
+    }
+
+    /**
+     * Sets the value of the specified key to an object represented by the JSON
+     * structure passed.
+     */
+    public ValueMap withJSON(String key, String jsonValue) {
+        super.put(key, valueConformer.transform(Jackson.fromJsonString(jsonValue, Object.class)));
         return this;
     }
 

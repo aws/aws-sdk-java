@@ -21,7 +21,8 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name.
+     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
+     * SQLSERVER.
      * </p>
      */
     private String engineName;
@@ -40,11 +41,13 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name.
+     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
+     * SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The database engine name.
+     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
+     *        and SQLSERVER.
      */
 
     public void setEngineName(String engineName) {
@@ -53,10 +56,12 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name.
+     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
+     * SQLSERVER.
      * </p>
      * 
-     * @return The database engine name.
+     * @return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
+     *         SYBASE, and SQLSERVER.
      */
 
     public String getEngineName() {
@@ -65,11 +70,13 @@ public class SupportedEndpointType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The database engine name.
+     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
+     * SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The database engine name.
+     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
+     *        and SQLSERVER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

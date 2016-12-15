@@ -1,0 +1,810 @@
+/*
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.batch.model;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * An object representing an AWS Batch job.
+ * </p>
+ */
+public class JobDetail implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The name of the job.
+     * </p>
+     */
+    private String jobName;
+    /**
+     * <p>
+     * The ID for the job.
+     * </p>
+     */
+    private String jobId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * </p>
+     */
+    private String jobQueue;
+    /**
+     * <p>
+     * The current status for the job.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * A short, human-readable string to provide additional details about the current status of the job.
+     * </p>
+     */
+    private String statusReason;
+    /**
+     * <p>
+     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * </p>
+     */
+    private Long createdAt;
+    /**
+     * <p>
+     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
+     * to the <code>RUNNING</code> state).
+     * </p>
+     */
+    private Long startedAt;
+    /**
+     * <p>
+     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
+     * to the <code>STOPPED</code> state).
+     * </p>
+     */
+    private Long stoppedAt;
+    /**
+     * <p>
+     * A list of job names or IDs on which this job depends.
+     * </p>
+     */
+    private java.util.List<JobDependency> dependsOn;
+    /**
+     * <p>
+     * The job definition that is used by this job.
+     * </p>
+     */
+    private String jobDefinition;
+    /**
+     * <p>
+     * Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     * corresponding parameter defaults from the job definition.
+     * </p>
+     */
+    private java.util.Map<String, String> parameters;
+    /**
+     * <p>
+     * An object representing the details of the container that is associated with the job.
+     * </p>
+     */
+    private ContainerDetail container;
+
+    /**
+     * <p>
+     * The name of the job.
+     * </p>
+     * 
+     * @param jobName
+     *        The name of the job.
+     */
+
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
+    }
+
+    /**
+     * <p>
+     * The name of the job.
+     * </p>
+     * 
+     * @return The name of the job.
+     */
+
+    public String getJobName() {
+        return this.jobName;
+    }
+
+    /**
+     * <p>
+     * The name of the job.
+     * </p>
+     * 
+     * @param jobName
+     *        The name of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withJobName(String jobName) {
+        setJobName(jobName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID for the job.
+     * </p>
+     * 
+     * @param jobId
+     *        The ID for the job.
+     */
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * The ID for the job.
+     * </p>
+     * 
+     * @return The ID for the job.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * The ID for the job.
+     * </p>
+     * 
+     * @param jobId
+     *        The ID for the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * </p>
+     * 
+     * @param jobQueue
+     *        The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     */
+
+    public void setJobQueue(String jobQueue) {
+        this.jobQueue = jobQueue;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     */
+
+    public String getJobQueue() {
+        return this.jobQueue;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * </p>
+     * 
+     * @param jobQueue
+     *        The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withJobQueue(String jobQueue) {
+        setJobQueue(jobQueue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status for the job.
+     * </p>
+     * 
+     * @param status
+     *        The current status for the job.
+     * @see JobStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The current status for the job.
+     * </p>
+     * 
+     * @return The current status for the job.
+     * @see JobStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current status for the job.
+     * </p>
+     * 
+     * @param status
+     *        The current status for the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobStatus
+     */
+
+    public JobDetail withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status for the job.
+     * </p>
+     * 
+     * @param status
+     *        The current status for the job.
+     * @see JobStatus
+     */
+
+    public void setStatus(JobStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The current status for the job.
+     * </p>
+     * 
+     * @param status
+     *        The current status for the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobStatus
+     */
+
+    public JobDetail withStatus(JobStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A short, human-readable string to provide additional details about the current status of the job.
+     * </p>
+     * 
+     * @param statusReason
+     *        A short, human-readable string to provide additional details about the current status of the job.
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * A short, human-readable string to provide additional details about the current status of the job.
+     * </p>
+     * 
+     * @return A short, human-readable string to provide additional details about the current status of the job.
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * A short, human-readable string to provide additional details about the current status of the job.
+     * </p>
+     * 
+     * @param statusReason
+     *        A short, human-readable string to provide additional details about the current status of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     */
+
+    public void setCreatedAt(Long createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * </p>
+     * 
+     * @return The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     */
+
+    public Long getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * </p>
+     * 
+     * @param createdAt
+     *        The Unix timestamp for when the job was created (when the task entered the <code>PENDING</code> state).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withCreatedAt(Long createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
+     * to the <code>RUNNING</code> state).
+     * </p>
+     * 
+     * @param startedAt
+     *        The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code>
+     *        state to the <code>RUNNING</code> state).
+     */
+
+    public void setStartedAt(Long startedAt) {
+        this.startedAt = startedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
+     * to the <code>RUNNING</code> state).
+     * </p>
+     * 
+     * @return The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code>
+     *         state to the <code>RUNNING</code> state).
+     */
+
+    public Long getStartedAt() {
+        return this.startedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
+     * to the <code>RUNNING</code> state).
+     * </p>
+     * 
+     * @param startedAt
+     *        The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code>
+     *        state to the <code>RUNNING</code> state).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withStartedAt(Long startedAt) {
+        setStartedAt(startedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
+     * to the <code>STOPPED</code> state).
+     * </p>
+     * 
+     * @param stoppedAt
+     *        The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code>
+     *        state to the <code>STOPPED</code> state).
+     */
+
+    public void setStoppedAt(Long stoppedAt) {
+        this.stoppedAt = stoppedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
+     * to the <code>STOPPED</code> state).
+     * </p>
+     * 
+     * @return The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code>
+     *         state to the <code>STOPPED</code> state).
+     */
+
+    public Long getStoppedAt() {
+        return this.stoppedAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code> state
+     * to the <code>STOPPED</code> state).
+     * </p>
+     * 
+     * @param stoppedAt
+     *        The Unix timestamp for when the job was stopped (when the task transitioned from the <code>RUNNING</code>
+     *        state to the <code>STOPPED</code> state).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withStoppedAt(Long stoppedAt) {
+        setStoppedAt(stoppedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of job names or IDs on which this job depends.
+     * </p>
+     * 
+     * @return A list of job names or IDs on which this job depends.
+     */
+
+    public java.util.List<JobDependency> getDependsOn() {
+        return dependsOn;
+    }
+
+    /**
+     * <p>
+     * A list of job names or IDs on which this job depends.
+     * </p>
+     * 
+     * @param dependsOn
+     *        A list of job names or IDs on which this job depends.
+     */
+
+    public void setDependsOn(java.util.Collection<JobDependency> dependsOn) {
+        if (dependsOn == null) {
+            this.dependsOn = null;
+            return;
+        }
+
+        this.dependsOn = new java.util.ArrayList<JobDependency>(dependsOn);
+    }
+
+    /**
+     * <p>
+     * A list of job names or IDs on which this job depends.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDependsOn(java.util.Collection)} or {@link #withDependsOn(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dependsOn
+     *        A list of job names or IDs on which this job depends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withDependsOn(JobDependency... dependsOn) {
+        if (this.dependsOn == null) {
+            setDependsOn(new java.util.ArrayList<JobDependency>(dependsOn.length));
+        }
+        for (JobDependency ele : dependsOn) {
+            this.dependsOn.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of job names or IDs on which this job depends.
+     * </p>
+     * 
+     * @param dependsOn
+     *        A list of job names or IDs on which this job depends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withDependsOn(java.util.Collection<JobDependency> dependsOn) {
+        setDependsOn(dependsOn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job definition that is used by this job.
+     * </p>
+     * 
+     * @param jobDefinition
+     *        The job definition that is used by this job.
+     */
+
+    public void setJobDefinition(String jobDefinition) {
+        this.jobDefinition = jobDefinition;
+    }
+
+    /**
+     * <p>
+     * The job definition that is used by this job.
+     * </p>
+     * 
+     * @return The job definition that is used by this job.
+     */
+
+    public String getJobDefinition() {
+        return this.jobDefinition;
+    }
+
+    /**
+     * <p>
+     * The job definition that is used by this job.
+     * </p>
+     * 
+     * @param jobDefinition
+     *        The job definition that is used by this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withJobDefinition(String jobDefinition) {
+        setJobDefinition(jobDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     * corresponding parameter defaults from the job definition.
+     * </p>
+     * 
+     * @return Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     *         corresponding parameter defaults from the job definition.
+     */
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     * corresponding parameter defaults from the job definition.
+     * </p>
+     * 
+     * @param parameters
+     *        Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     *        corresponding parameter defaults from the job definition.
+     */
+
+    public void setParameters(java.util.Map<String, String> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     * corresponding parameter defaults from the job definition.
+     * </p>
+     * 
+     * @param parameters
+     *        Additional parameters passed to the job that replace parameter substitution placeholders or override any
+     *        corresponding parameter defaults from the job definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withParameters(java.util.Map<String, String> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    public JobDetail addParametersEntry(String key, String value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, String>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail clearParametersEntries() {
+        this.parameters = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of the container that is associated with the job.
+     * </p>
+     * 
+     * @param container
+     *        An object representing the details of the container that is associated with the job.
+     */
+
+    public void setContainer(ContainerDetail container) {
+        this.container = container;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of the container that is associated with the job.
+     * </p>
+     * 
+     * @return An object representing the details of the container that is associated with the job.
+     */
+
+    public ContainerDetail getContainer() {
+        return this.container;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of the container that is associated with the job.
+     * </p>
+     * 
+     * @param container
+     *        An object representing the details of the container that is associated with the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withContainer(ContainerDetail container) {
+        setContainer(container);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getJobName() != null)
+            sb.append("JobName: " + getJobName() + ",");
+        if (getJobId() != null)
+            sb.append("JobId: " + getJobId() + ",");
+        if (getJobQueue() != null)
+            sb.append("JobQueue: " + getJobQueue() + ",");
+        if (getStatus() != null)
+            sb.append("Status: " + getStatus() + ",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: " + getStatusReason() + ",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (getStartedAt() != null)
+            sb.append("StartedAt: " + getStartedAt() + ",");
+        if (getStoppedAt() != null)
+            sb.append("StoppedAt: " + getStoppedAt() + ",");
+        if (getDependsOn() != null)
+            sb.append("DependsOn: " + getDependsOn() + ",");
+        if (getJobDefinition() != null)
+            sb.append("JobDefinition: " + getJobDefinition() + ",");
+        if (getParameters() != null)
+            sb.append("Parameters: " + getParameters() + ",");
+        if (getContainer() != null)
+            sb.append("Container: " + getContainer());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof JobDetail == false)
+            return false;
+        JobDetail other = (JobDetail) obj;
+        if (other.getJobName() == null ^ this.getJobName() == null)
+            return false;
+        if (other.getJobName() != null && other.getJobName().equals(this.getJobName()) == false)
+            return false;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
+        if (other.getJobQueue() == null ^ this.getJobQueue() == null)
+            return false;
+        if (other.getJobQueue() != null && other.getJobQueue().equals(this.getJobQueue()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getStartedAt() == null ^ this.getStartedAt() == null)
+            return false;
+        if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
+            return false;
+        if (other.getStoppedAt() == null ^ this.getStoppedAt() == null)
+            return false;
+        if (other.getStoppedAt() != null && other.getStoppedAt().equals(this.getStoppedAt()) == false)
+            return false;
+        if (other.getDependsOn() == null ^ this.getDependsOn() == null)
+            return false;
+        if (other.getDependsOn() != null && other.getDependsOn().equals(this.getDependsOn()) == false)
+            return false;
+        if (other.getJobDefinition() == null ^ this.getJobDefinition() == null)
+            return false;
+        if (other.getJobDefinition() != null && other.getJobDefinition().equals(this.getJobDefinition()) == false)
+            return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
+        if (other.getContainer() == null ^ this.getContainer() == null)
+            return false;
+        if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobQueue() == null) ? 0 : getJobQueue().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
+        hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
+        hashCode = prime * hashCode + ((getDependsOn() == null) ? 0 : getDependsOn().hashCode());
+        hashCode = prime * hashCode + ((getJobDefinition() == null) ? 0 : getJobDefinition().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public JobDetail clone() {
+        try {
+            return (JobDetail) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+}

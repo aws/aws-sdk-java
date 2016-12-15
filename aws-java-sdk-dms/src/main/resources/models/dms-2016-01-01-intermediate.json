@@ -47,7 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSDatabaseMigrationServiceModuleInjector",
     "defaultEndpoint" : "dms.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "dms.us-east-1.amazonaws.com",
-    "documentation" : "<fullname>AWS Database Migration Service</fullname> <p>AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>",
+    "documentation" : "<fullname>AWS Database Migration Service</fullname> <p>AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>",
     "endpointPrefix" : "dms",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -124,6 +124,9 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource could not be found.</p>"
+      }, {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>AWS DMS was denied access to the endpoint.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -1003,6 +1006,45 @@
         "documentation" : "<p/>"
       },
       "syncReturnType" : "ModifyReplicationSubnetGroupResult"
+    },
+    "ModifyReplicationTask" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ModifyReplicationTaskResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ModifyReplicationTaskResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ModifyReplicationTaskRequest, ModifyReplicationTaskResult>",
+      "asyncReturnType" : "ModifyReplicationTaskResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Modifies the specified replication task.</p> <p>You can't modify the task endpoints. The task must be stopped before you can modify it. </p>",
+      "exceptions" : [ {
+        "exceptionName" : "InvalidResourceStateException",
+        "documentation" : "<p>The resource is in a state that prevents it from being used for database migration.</p>"
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The resource could not be found.</p>"
+      }, {
+        "exceptionName" : "ResourceAlreadyExistsException",
+        "documentation" : "<p>The resource you are attempting to create already exists.</p>"
+      }, {
+        "exceptionName" : "KMSKeyNotAccessibleException",
+        "documentation" : "<p>AWS DMS cannot access the KMS key.</p>"
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "ModifyReplicationTaskRequest",
+        "variableName" : "modifyReplicationTaskRequest",
+        "variableType" : "ModifyReplicationTaskRequest",
+        "documentation" : "<p/>",
+        "simpleType" : "ModifyReplicationTaskRequest",
+        "variableSetterType" : "ModifyReplicationTaskRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "modifyReplicationTask",
+      "operationName" : "ModifyReplicationTask",
+      "returnType" : {
+        "returnType" : "ModifyReplicationTaskResult",
+        "documentation" : "<p/>"
+      },
+      "syncReturnType" : "ModifyReplicationTaskResult"
     },
     "RefreshSchemas" : {
       "asyncCallableType" : "java.util.concurrent.Callable<RefreshSchemasResult>",
@@ -2150,10 +2192,10 @@
         "c2jName" : "CertificateIdentifier",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+        "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@return The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+        "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@return The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2178,7 +2220,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CertificateIdentifier",
-        "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+        "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificateIdentifier",
@@ -2188,12 +2230,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificateIdentifier",
           "variableType" : "String",
-          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2202,10 +2244,10 @@
         "c2jName" : "CertificateCreationDate",
         "c2jShape" : "TStamp",
         "deprecated" : false,
-        "documentation" : "<p>the date the certificate was created.</p>",
+        "documentation" : "<p>The date that the certificate was created.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>the date the certificate was created.</p>\n@param certificateCreationDate the date the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>the date the certificate was created.</p>\n@return the date the certificate was created.*/",
+        "fluentSetterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@param certificateCreationDate The date that the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@return The date that the certificate was created.*/",
         "getterModel" : {
           "returnType" : "java.util.Date",
           "documentation" : null
@@ -2230,7 +2272,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CertificateCreationDate",
-        "setterDocumentation" : "/**<p>the date the certificate was created.</p>\n@param certificateCreationDate the date the certificate was created.*/",
+        "setterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@param certificateCreationDate The date that the certificate was created.*/",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "certificateCreationDate",
@@ -2240,12 +2282,12 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>the date the certificate was created.</p>\n@param certificateCreationDate the date the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@param certificateCreationDate The date that the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "certificateCreationDate",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>the date the certificate was created.</p>",
+          "documentation" : "<p>The date that the certificate was created.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -2254,10 +2296,10 @@
         "c2jName" : "CertificatePem",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+        "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@return The contents of the .pem X.509 certificate file.*/",
+        "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@return The contents of the .pem X.509 certificate file for the certificate.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2282,7 +2324,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CertificatePem",
-        "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.*/",
+        "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificatePem",
@@ -2292,14 +2334,66 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificatePem",
           "variableType" : "String",
-          "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+          "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CertificateWallet",
+        "c2jShape" : "CertificateWallet",
+        "deprecated" : false,
+        "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The location of the imported Oracle Wallet certificate for use with SSL.*/",
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "CertificateWallet",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CertificateWallet",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CertificateWallet",
+        "setterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "certificateWallet",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "certificateWallet",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "xmlNameSpaceUri" : null
       }, {
@@ -2410,10 +2504,10 @@
         "c2jName" : "ValidFromDate",
         "c2jShape" : "TStamp",
         "deprecated" : false,
-        "documentation" : "<p>The beginning date the certificate is valid.</p>",
+        "documentation" : "<p>The beginning date that the certificate is valid.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@param validFromDate The beginning date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@return The beginning date the certificate is valid.*/",
+        "fluentSetterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@param validFromDate The beginning date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@return The beginning date that the certificate is valid.*/",
         "getterModel" : {
           "returnType" : "java.util.Date",
           "documentation" : null
@@ -2438,7 +2532,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ValidFromDate",
-        "setterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@param validFromDate The beginning date the certificate is valid.*/",
+        "setterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@param validFromDate The beginning date that the certificate is valid.*/",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "validFromDate",
@@ -2448,12 +2542,12 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@param validFromDate The beginning date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@param validFromDate The beginning date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "validFromDate",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>The beginning date the certificate is valid.</p>",
+          "documentation" : "<p>The beginning date that the certificate is valid.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -2462,10 +2556,10 @@
         "c2jName" : "ValidToDate",
         "c2jShape" : "TStamp",
         "deprecated" : false,
-        "documentation" : "<p>the final date the certificate is valid.</p>",
+        "documentation" : "<p>The final date that the certificate is valid.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@param validToDate the final date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@return the final date the certificate is valid.*/",
+        "fluentSetterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@param validToDate The final date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@return The final date that the certificate is valid.*/",
         "getterModel" : {
           "returnType" : "java.util.Date",
           "documentation" : null
@@ -2490,7 +2584,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ValidToDate",
-        "setterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@param validToDate the final date the certificate is valid.*/",
+        "setterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@param validToDate The final date that the certificate is valid.*/",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "validToDate",
@@ -2500,12 +2594,12 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@param validToDate the final date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@param validToDate The final date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "validToDate",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>the final date the certificate is valid.</p>",
+          "documentation" : "<p>The final date that the certificate is valid.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -2673,10 +2767,10 @@
           "c2jName" : "CertificateCreationDate",
           "c2jShape" : "TStamp",
           "deprecated" : false,
-          "documentation" : "<p>the date the certificate was created.</p>",
+          "documentation" : "<p>The date that the certificate was created.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>the date the certificate was created.</p>\n@param certificateCreationDate the date the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>the date the certificate was created.</p>\n@return the date the certificate was created.*/",
+          "fluentSetterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@param certificateCreationDate The date that the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@return The date that the certificate was created.*/",
           "getterModel" : {
             "returnType" : "java.util.Date",
             "documentation" : null
@@ -2701,7 +2795,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CertificateCreationDate",
-          "setterDocumentation" : "/**<p>the date the certificate was created.</p>\n@param certificateCreationDate the date the certificate was created.*/",
+          "setterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@param certificateCreationDate The date that the certificate was created.*/",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "certificateCreationDate",
@@ -2711,12 +2805,12 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>the date the certificate was created.</p>\n@param certificateCreationDate the date the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The date that the certificate was created.</p>\n@param certificateCreationDate The date that the certificate was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "certificateCreationDate",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>the date the certificate was created.</p>",
+            "documentation" : "<p>The date that the certificate was created.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -2726,10 +2820,10 @@
           "c2jName" : "CertificateIdentifier",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@return The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+          "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@return The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2754,7 +2848,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CertificateIdentifier",
-          "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+          "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificateIdentifier",
@@ -2764,12 +2858,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificateIdentifier",
             "variableType" : "String",
-            "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+            "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2832,10 +2926,10 @@
           "c2jName" : "CertificatePem",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+          "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@return The contents of the .pem X.509 certificate file.*/",
+          "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@return The contents of the .pem X.509 certificate file for the certificate.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2860,7 +2954,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CertificatePem",
-          "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.*/",
+          "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificatePem",
@@ -2870,14 +2964,67 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificatePem",
             "variableType" : "String",
-            "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+            "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "CertificateWallet" : {
+          "c2jName" : "CertificateWallet",
+          "c2jShape" : "CertificateWallet",
+          "deprecated" : false,
+          "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The location of the imported Oracle Wallet certificate for use with SSL.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "CertificateWallet",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CertificateWallet",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CertificateWallet",
+          "setterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "certificateWallet",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "certificateWallet",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "xmlNameSpaceUri" : null
         },
@@ -2991,10 +3138,10 @@
           "c2jName" : "ValidFromDate",
           "c2jShape" : "TStamp",
           "deprecated" : false,
-          "documentation" : "<p>The beginning date the certificate is valid.</p>",
+          "documentation" : "<p>The beginning date that the certificate is valid.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@param validFromDate The beginning date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@return The beginning date the certificate is valid.*/",
+          "fluentSetterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@param validFromDate The beginning date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@return The beginning date that the certificate is valid.*/",
           "getterModel" : {
             "returnType" : "java.util.Date",
             "documentation" : null
@@ -3019,7 +3166,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ValidFromDate",
-          "setterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@param validFromDate The beginning date the certificate is valid.*/",
+          "setterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@param validFromDate The beginning date that the certificate is valid.*/",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "validFromDate",
@@ -3029,12 +3176,12 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The beginning date the certificate is valid.</p>\n@param validFromDate The beginning date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The beginning date that the certificate is valid.</p>\n@param validFromDate The beginning date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "validFromDate",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>The beginning date the certificate is valid.</p>",
+            "documentation" : "<p>The beginning date that the certificate is valid.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -3044,10 +3191,10 @@
           "c2jName" : "ValidToDate",
           "c2jShape" : "TStamp",
           "deprecated" : false,
-          "documentation" : "<p>the final date the certificate is valid.</p>",
+          "documentation" : "<p>The final date that the certificate is valid.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@param validToDate the final date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@return the final date the certificate is valid.*/",
+          "fluentSetterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@param validToDate The final date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@return The final date that the certificate is valid.*/",
           "getterModel" : {
             "returnType" : "java.util.Date",
             "documentation" : null
@@ -3072,7 +3219,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ValidToDate",
-          "setterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@param validToDate the final date the certificate is valid.*/",
+          "setterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@param validToDate The final date that the certificate is valid.*/",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "validToDate",
@@ -3082,12 +3229,12 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>the final date the certificate is valid.</p>\n@param validToDate the final date the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The final date that the certificate is valid.</p>\n@param validToDate The final date that the certificate is valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "validToDate",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>the final date the certificate is valid.</p>",
+            "documentation" : "<p>The final date that the certificate is valid.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -3910,10 +4057,10 @@
         "c2jName" : "EngineName",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+        "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+        "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -3938,7 +4085,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EngineName",
-        "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+        "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
@@ -3948,12 +4095,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
           "variableType" : "String",
-          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4763,10 +4910,10 @@
           "c2jName" : "EngineName",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+          "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -4791,7 +4938,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EngineName",
-          "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+          "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
@@ -4801,12 +4948,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
             "variableType" : "String",
-            "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+            "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5304,7 +5451,7 @@
           "xmlNameSpaceUri" : null
         }
       },
-      "required" : [ "EndpointIdentifier", "EndpointType", "EngineName", "Username", "Password", "ServerName", "Port" ],
+      "required" : [ "EndpointIdentifier", "EndpointType", "EngineName" ],
       "shapeName" : "CreateEndpointRequest",
       "unmarshaller" : null,
       "variable" : {
@@ -8487,10 +8634,10 @@
         "c2jName" : "ReplicationTaskSettings",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>Settings for the task, such as target metadata settings.</p>",
+        "documentation" : "<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@return Settings for the task, such as target metadata settings.*/",
+        "fluentSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@return Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -8515,7 +8662,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ReplicationTaskSettings",
-        "setterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings.*/",
+        "setterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "replicationTaskSettings",
@@ -8525,12 +8672,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "replicationTaskSettings",
           "variableType" : "String",
-          "documentation" : "<p>Settings for the task, such as target metadata settings.</p>",
+          "documentation" : "<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8924,10 +9071,10 @@
           "c2jName" : "ReplicationTaskSettings",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>Settings for the task, such as target metadata settings.</p>",
+          "documentation" : "<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@return Settings for the task, such as target metadata settings.*/",
+          "fluentSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@return Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -8952,7 +9099,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ReplicationTaskSettings",
-          "setterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings.*/",
+          "setterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "replicationTaskSettings",
@@ -8962,12 +9109,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>\n@param replicationTaskSettings Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "replicationTaskSettings",
             "variableType" : "String",
-            "documentation" : "<p>Settings for the task, such as target metadata settings.</p>",
+            "documentation" : "<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9437,10 +9584,10 @@
         "c2jName" : "CertificateArn",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>",
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn the Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@return the Amazon Resource Name (ARN) of the deleted certificate.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@return The Amazon Resource Name (ARN) of the deleted certificate.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -9465,7 +9612,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CertificateArn",
-        "setterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn the Amazon Resource Name (ARN) of the deleted certificate.*/",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the deleted certificate.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificateArn",
@@ -9475,12 +9622,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn the Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificateArn",
           "variableType" : "String",
-          "documentation" : "<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9491,10 +9638,10 @@
           "c2jName" : "CertificateArn",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn the Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@return the Amazon Resource Name (ARN) of the deleted certificate.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@return The Amazon Resource Name (ARN) of the deleted certificate.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -9519,7 +9666,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CertificateArn",
-          "setterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn the Amazon Resource Name (ARN) of the deleted certificate.*/",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the deleted certificate.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificateArn",
@@ -9529,12 +9676,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn the Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the deleted certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificateArn",
             "variableType" : "String",
-            "documentation" : "<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9576,10 +9723,10 @@
         "c2jName" : "Certificate",
         "c2jShape" : "Certificate",
         "deprecated" : false,
-        "documentation" : "<p>The SSL certificate.</p>",
+        "documentation" : "<p>The Secure Sockets Layer (SSL) certificate.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The SSL certificate.</p>\n@param certificate The SSL certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The SSL certificate.</p>\n@return The SSL certificate.*/",
+        "fluentSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@param certificate The Secure Sockets Layer (SSL) certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@return The Secure Sockets Layer (SSL) certificate.*/",
         "getterModel" : {
           "returnType" : "Certificate",
           "documentation" : null
@@ -9604,7 +9751,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Certificate",
-        "setterDocumentation" : "/**<p>The SSL certificate.</p>\n@param certificate The SSL certificate.*/",
+        "setterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@param certificate The Secure Sockets Layer (SSL) certificate.*/",
         "setterModel" : {
           "variableDeclarationType" : "Certificate",
           "variableName" : "certificate",
@@ -9614,12 +9761,12 @@
           "variableSetterType" : "Certificate"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The SSL certificate.</p>\n@param certificate The SSL certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@param certificate The Secure Sockets Layer (SSL) certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Certificate",
           "variableName" : "certificate",
           "variableType" : "Certificate",
-          "documentation" : "<p>The SSL certificate.</p>",
+          "documentation" : "<p>The Secure Sockets Layer (SSL) certificate.</p>",
           "simpleType" : "Certificate",
           "variableSetterType" : "Certificate"
         },
@@ -9630,10 +9777,10 @@
           "c2jName" : "Certificate",
           "c2jShape" : "Certificate",
           "deprecated" : false,
-          "documentation" : "<p>The SSL certificate.</p>",
+          "documentation" : "<p>The Secure Sockets Layer (SSL) certificate.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The SSL certificate.</p>\n@param certificate The SSL certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The SSL certificate.</p>\n@return The SSL certificate.*/",
+          "fluentSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@param certificate The Secure Sockets Layer (SSL) certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@return The Secure Sockets Layer (SSL) certificate.*/",
           "getterModel" : {
             "returnType" : "Certificate",
             "documentation" : null
@@ -9658,7 +9805,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Certificate",
-          "setterDocumentation" : "/**<p>The SSL certificate.</p>\n@param certificate The SSL certificate.*/",
+          "setterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@param certificate The Secure Sockets Layer (SSL) certificate.*/",
           "setterModel" : {
             "variableDeclarationType" : "Certificate",
             "variableName" : "certificate",
@@ -9668,12 +9815,12 @@
             "variableSetterType" : "Certificate"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The SSL certificate.</p>\n@param certificate The SSL certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificate.</p>\n@param certificate The Secure Sockets Layer (SSL) certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Certificate",
             "variableName" : "certificate",
             "variableType" : "Certificate",
-            "documentation" : "<p>The SSL certificate.</p>",
+            "documentation" : "<p>The Secure Sockets Layer (SSL) certificate.</p>",
             "simpleType" : "Certificate",
             "variableSetterType" : "Certificate"
           },
@@ -11622,10 +11769,10 @@
         "c2jName" : "Certificates",
         "c2jShape" : "CertificateList",
         "deprecated" : false,
-        "documentation" : "<p>The SSL certificates associated with the replication instance.</p>",
+        "documentation" : "<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n@param certificates The SSL certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n@return The SSL certificates associated with the replication instance.*/",
+        "fluentSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n@param certificates The Secure Sockets Layer (SSL) certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n@return The Secure Sockets Layer (SSL) certificates associated with the replication instance.*/",
         "getterModel" : {
           "returnType" : "java.util.List<Certificate>",
           "documentation" : null
@@ -11717,7 +11864,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Certificates",
-        "setterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n@param certificates The SSL certificates associated with the replication instance.*/",
+        "setterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n@param certificates The Secure Sockets Layer (SSL) certificates associated with the replication instance.*/",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<Certificate>",
           "variableName" : "certificates",
@@ -11727,12 +11874,12 @@
           "variableSetterType" : "java.util.Collection<Certificate>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificates(java.util.Collection)} or {@link #withCertificates(java.util.Collection)} if you want to override the existing values.</p>\n@param certificates The SSL certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificates(java.util.Collection)} or {@link #withCertificates(java.util.Collection)} if you want to override the existing values.</p>\n@param certificates The Secure Sockets Layer (SSL) certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Certificate>",
           "variableName" : "certificates",
           "variableType" : "java.util.List<Certificate>",
-          "documentation" : "<p>The SSL certificates associated with the replication instance.</p>",
+          "documentation" : "<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>",
           "simpleType" : "List<Certificate>",
           "variableSetterType" : "java.util.Collection<Certificate>"
         },
@@ -11743,10 +11890,10 @@
           "c2jName" : "Certificates",
           "c2jShape" : "CertificateList",
           "deprecated" : false,
-          "documentation" : "<p>The SSL certificates associated with the replication instance.</p>",
+          "documentation" : "<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n@param certificates The SSL certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n@return The SSL certificates associated with the replication instance.*/",
+          "fluentSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n@param certificates The Secure Sockets Layer (SSL) certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n@return The Secure Sockets Layer (SSL) certificates associated with the replication instance.*/",
           "getterModel" : {
             "returnType" : "java.util.List<Certificate>",
             "documentation" : null
@@ -11838,7 +11985,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Certificates",
-          "setterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n@param certificates The SSL certificates associated with the replication instance.*/",
+          "setterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n@param certificates The Secure Sockets Layer (SSL) certificates associated with the replication instance.*/",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<Certificate>",
             "variableName" : "certificates",
@@ -11848,12 +11995,12 @@
             "variableSetterType" : "java.util.Collection<Certificate>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The SSL certificates associated with the replication instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificates(java.util.Collection)} or {@link #withCertificates(java.util.Collection)} if you want to override the existing values.</p>\n@param certificates The SSL certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificates(java.util.Collection)} or {@link #withCertificates(java.util.Collection)} if you want to override the existing values.</p>\n@param certificates The Secure Sockets Layer (SSL) certificates associated with the replication instance.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Certificate>",
             "variableName" : "certificates",
             "variableType" : "java.util.List<Certificate>",
-            "documentation" : "<p>The SSL certificates associated with the replication instance.</p>",
+            "documentation" : "<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>",
             "simpleType" : "List<Certificate>",
             "variableSetterType" : "java.util.Collection<Certificate>"
           },
@@ -19828,10 +19975,10 @@
         "c2jName" : "EngineName",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The database engine name.</p>",
+        "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The database engine name.</p>\n@return The database engine name.*/",
+        "fluentSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -19856,7 +20003,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EngineName",
-        "setterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.*/",
+        "setterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
@@ -19866,12 +20013,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
           "variableType" : "String",
-          "documentation" : "<p>The database engine name.</p>",
+          "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -20667,10 +20814,10 @@
           "c2jName" : "EngineName",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The database engine name.</p>",
+          "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The database engine name.</p>\n@return The database engine name.*/",
+          "fluentSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -20695,7 +20842,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EngineName",
-          "setterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.*/",
+          "setterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
@@ -20705,12 +20852,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
             "variableType" : "String",
-            "documentation" : "<p>The database engine name.</p>",
+            "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21514,10 +21661,10 @@
         "c2jName" : "CertificateIdentifier",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+        "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@return The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+        "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@return The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -21542,7 +21689,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CertificateIdentifier",
-        "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+        "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificateIdentifier",
@@ -21552,12 +21699,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificateIdentifier",
           "variableType" : "String",
-          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -21566,10 +21713,10 @@
         "c2jName" : "CertificatePem",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+        "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@return The contents of the .pem X.509 certificate file.*/",
+        "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@return The contents of the .pem X.509 certificate file for the certificate.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -21594,7 +21741,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CertificatePem",
-        "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.*/",
+        "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificatePem",
@@ -21604,14 +21751,66 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "certificatePem",
           "variableType" : "String",
-          "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+          "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CertificateWallet",
+        "c2jShape" : "CertificateWallet",
+        "deprecated" : false,
+        "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The location of the imported Oracle Wallet certificate for use with SSL.*/",
+        "getterModel" : {
+          "returnType" : "java.nio.ByteBuffer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "CertificateWallet",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CertificateWallet",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CertificateWallet",
+        "setterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "certificateWallet",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.nio.ByteBuffer",
+          "variableName" : "certificateWallet",
+          "variableType" : "java.nio.ByteBuffer",
+          "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+          "simpleType" : "ByteBuffer",
+          "variableSetterType" : "java.nio.ByteBuffer"
         },
         "xmlNameSpaceUri" : null
       } ],
@@ -21620,10 +21819,10 @@
           "c2jName" : "CertificateIdentifier",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@return The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+          "fluentSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@return The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -21648,7 +21847,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CertificateIdentifier",
-          "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].*/",
+          "setterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificateIdentifier",
@@ -21658,12 +21857,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are [A-z_0-9].\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>\n@param certificateIdentifier The customer-assigned name of the certificate. Valid characters are A-z and 0-9.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificateIdentifier",
             "variableType" : "String",
-            "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+            "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21673,10 +21872,10 @@
           "c2jName" : "CertificatePem",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+          "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@return The contents of the .pem X.509 certificate file.*/",
+          "fluentSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@return The contents of the .pem X.509 certificate file for the certificate.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -21701,7 +21900,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CertificatePem",
-          "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.*/",
+          "setterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificatePem",
@@ -21711,14 +21910,67 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file.</p>\n@param certificatePem The contents of the .pem X.509 certificate file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The contents of the .pem X.509 certificate file for the certificate.</p>\n@param certificatePem The contents of the .pem X.509 certificate file for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "certificatePem",
             "variableType" : "String",
-            "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+            "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "CertificateWallet" : {
+          "c2jName" : "CertificateWallet",
+          "c2jShape" : "CertificateWallet",
+          "deprecated" : false,
+          "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n<p>\n{@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}. Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the {@code position}.\n</p>\n@return The location of the imported Oracle Wallet certificate for use with SSL.*/",
+          "getterModel" : {
+            "returnType" : "java.nio.ByteBuffer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "CertificateWallet",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CertificateWallet",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CertificateWallet",
+          "setterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p><p>\nAWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default. Users of the SDK should not perform Base64 encoding on this field.\n</p>\n<p>\nWarning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future major version of the SDK.\n</p>\n\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "certificateWallet",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>\n@param certificateWallet The location of the imported Oracle Wallet certificate for use with SSL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.nio.ByteBuffer",
+            "variableName" : "certificateWallet",
+            "variableType" : "java.nio.ByteBuffer",
+            "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+            "simpleType" : "ByteBuffer",
+            "variableSetterType" : "java.nio.ByteBuffer"
           },
           "xmlNameSpaceUri" : null
         }
@@ -22695,10 +22947,10 @@
         "c2jName" : "EngineName",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+        "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+        "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -22723,7 +22975,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EngineName",
-        "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+        "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
@@ -22733,12 +22985,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
           "variableType" : "String",
-          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -23430,10 +23682,10 @@
           "c2jName" : "EngineName",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+          "fluentSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -23458,7 +23710,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EngineName",
-          "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.*/",
+          "setterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
@@ -23468,12 +23720,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
             "variableType" : "String",
-            "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+            "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -26054,6 +26306,819 @@
         "documentation" : null,
         "simpleType" : "ModifyReplicationSubnetGroupResult",
         "variableSetterType" : "ModifyReplicationSubnetGroupResult"
+      },
+      "wrapper" : false
+    },
+    "ModifyReplicationTaskRequest" : {
+      "c2jName" : "ModifyReplicationTaskMessage",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p/>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : {
+        "action" : "ModifyReplicationTask",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AmazonDMSv20160101.ModifyReplicationTask",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "ReplicationTaskArn",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the replication task.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@param replicationTaskArn The Amazon Resource Name (ARN) of the replication task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@return The Amazon Resource Name (ARN) of the replication task.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ReplicationTaskArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReplicationTaskArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ReplicationTaskArn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@param replicationTaskArn The Amazon Resource Name (ARN) of the replication task.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "replicationTaskArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@param replicationTaskArn The Amazon Resource Name (ARN) of the replication task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "replicationTaskArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the replication task.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ReplicationTaskIdentifier",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param replicationTaskIdentifier The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@return The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ReplicationTaskIdentifier",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReplicationTaskIdentifier",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ReplicationTaskIdentifier",
+        "setterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param replicationTaskIdentifier The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "replicationTaskIdentifier",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param replicationTaskIdentifier The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "replicationTaskIdentifier",
+          "variableType" : "String",
+          "documentation" : "<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MigrationType",
+        "c2jShape" : "MigrationTypeValue",
+        "deprecated" : false,
+        "documentation" : "<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>",
+        "enumType" : "MigrationTypeValue",
+        "fluentSetterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@param migrationType The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@return Returns a reference to this object so that method calls can be chained together.\n@see MigrationTypeValue*/",
+        "getterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@return The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@see MigrationTypeValue*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "MigrationType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MigrationType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "MigrationType",
+        "setterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@param migrationType The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@see MigrationTypeValue*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "migrationType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@param migrationType The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@return Returns a reference to this object so that method calls can be chained together.\n@see MigrationTypeValue*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "migrationType",
+          "variableType" : "String",
+          "documentation" : "<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "TableMappings",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@param tableMappings The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@return The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "TableMappings",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "TableMappings",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "TableMappings",
+        "setterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@param tableMappings The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tableMappings",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@param tableMappings The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "tableMappings",
+          "variableType" : "String",
+          "documentation" : "<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ReplicationTaskSettings",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>JSON file that contains settings for the task, such as target metadata settings.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings JSON file that contains settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@return JSON file that contains settings for the task, such as target metadata settings.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ReplicationTaskSettings",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReplicationTaskSettings",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ReplicationTaskSettings",
+        "setterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings JSON file that contains settings for the task, such as target metadata settings.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "replicationTaskSettings",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings JSON file that contains settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "replicationTaskSettings",
+          "variableType" : "String",
+          "documentation" : "<p>JSON file that contains settings for the task, such as target metadata settings.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "CdcStartTime",
+        "c2jShape" : "TStamp",
+        "deprecated" : false,
+        "documentation" : "<p>The start time for the Change Data Capture (CDC) operation.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@param cdcStartTime The start time for the Change Data Capture (CDC) operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@return The start time for the Change Data Capture (CDC) operation.*/",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "CdcStartTime",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CdcStartTime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "CdcStartTime",
+        "setterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@param cdcStartTime The start time for the Change Data Capture (CDC) operation.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "cdcStartTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@param cdcStartTime The start time for the Change Data Capture (CDC) operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "cdcStartTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The start time for the Change Data Capture (CDC) operation.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "CdcStartTime" : {
+          "c2jName" : "CdcStartTime",
+          "c2jShape" : "TStamp",
+          "deprecated" : false,
+          "documentation" : "<p>The start time for the Change Data Capture (CDC) operation.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@param cdcStartTime The start time for the Change Data Capture (CDC) operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@return The start time for the Change Data Capture (CDC) operation.*/",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "CdcStartTime",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CdcStartTime",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "CdcStartTime",
+          "setterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@param cdcStartTime The start time for the Change Data Capture (CDC) operation.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "cdcStartTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The start time for the Change Data Capture (CDC) operation.</p>\n@param cdcStartTime The start time for the Change Data Capture (CDC) operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "cdcStartTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The start time for the Change Data Capture (CDC) operation.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MigrationType" : {
+          "c2jName" : "MigrationType",
+          "c2jShape" : "MigrationTypeValue",
+          "deprecated" : false,
+          "documentation" : "<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>",
+          "enumType" : "MigrationTypeValue",
+          "fluentSetterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@param migrationType The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@return Returns a reference to this object so that method calls can be chained together.\n@see MigrationTypeValue*/",
+          "getterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@return The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@see MigrationTypeValue*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "MigrationType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MigrationType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "MigrationType",
+          "setterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@param migrationType The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@see MigrationTypeValue*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "migrationType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>\n@param migrationType The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc\n@return Returns a reference to this object so that method calls can be chained together.\n@see MigrationTypeValue*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "migrationType",
+            "variableType" : "String",
+            "documentation" : "<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ReplicationTaskArn" : {
+          "c2jName" : "ReplicationTaskArn",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the replication task.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@param replicationTaskArn The Amazon Resource Name (ARN) of the replication task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@return The Amazon Resource Name (ARN) of the replication task.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ReplicationTaskArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReplicationTaskArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ReplicationTaskArn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@param replicationTaskArn The Amazon Resource Name (ARN) of the replication task.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "replicationTaskArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the replication task.</p>\n@param replicationTaskArn The Amazon Resource Name (ARN) of the replication task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "replicationTaskArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the replication task.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ReplicationTaskIdentifier" : {
+          "c2jName" : "ReplicationTaskIdentifier",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param replicationTaskIdentifier The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@return The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ReplicationTaskIdentifier",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReplicationTaskIdentifier",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ReplicationTaskIdentifier",
+          "setterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param replicationTaskIdentifier The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "replicationTaskIdentifier",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>\n@param replicationTaskIdentifier The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "replicationTaskIdentifier",
+            "variableType" : "String",
+            "documentation" : "<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ReplicationTaskSettings" : {
+          "c2jName" : "ReplicationTaskSettings",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>JSON file that contains settings for the task, such as target metadata settings.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings JSON file that contains settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@return JSON file that contains settings for the task, such as target metadata settings.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ReplicationTaskSettings",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReplicationTaskSettings",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ReplicationTaskSettings",
+          "setterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings JSON file that contains settings for the task, such as target metadata settings.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "replicationTaskSettings",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>JSON file that contains settings for the task, such as target metadata settings.</p>\n@param replicationTaskSettings JSON file that contains settings for the task, such as target metadata settings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "replicationTaskSettings",
+            "variableType" : "String",
+            "documentation" : "<p>JSON file that contains settings for the task, such as target metadata settings.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TableMappings" : {
+          "c2jName" : "TableMappings",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@param tableMappings The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@return The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "TableMappings",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "TableMappings",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "TableMappings",
+          "setterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@param tableMappings The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tableMappings",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>\n@param tableMappings The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "tableMappings",
+            "variableType" : "String",
+            "documentation" : "<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : [ "ReplicationTaskArn" ],
+      "shapeName" : "ModifyReplicationTaskRequest",
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ModifyReplicationTaskRequest",
+        "variableName" : "modifyReplicationTaskRequest",
+        "variableType" : "ModifyReplicationTaskRequest",
+        "documentation" : null,
+        "simpleType" : "ModifyReplicationTaskRequest",
+        "variableSetterType" : "ModifyReplicationTaskRequest"
+      },
+      "wrapper" : false
+    },
+    "ModifyReplicationTaskResult" : {
+      "c2jName" : "ModifyReplicationTaskResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p/>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "hasUriMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ReplicationTask",
+        "c2jShape" : "ReplicationTask",
+        "deprecated" : false,
+        "documentation" : "<p>The replication task that was modified.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The replication task that was modified.</p>\n@param replicationTask The replication task that was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The replication task that was modified.</p>\n@return The replication task that was modified.*/",
+        "getterModel" : {
+          "returnType" : "ReplicationTask",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "ReplicationTask",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReplicationTask",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ReplicationTask",
+        "setterDocumentation" : "/**<p>The replication task that was modified.</p>\n@param replicationTask The replication task that was modified.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "ReplicationTask",
+          "variableName" : "replicationTask",
+          "variableType" : "ReplicationTask",
+          "documentation" : "",
+          "simpleType" : "ReplicationTask",
+          "variableSetterType" : "ReplicationTask"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The replication task that was modified.</p>\n@param replicationTask The replication task that was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "ReplicationTask",
+          "variableName" : "replicationTask",
+          "variableType" : "ReplicationTask",
+          "documentation" : "<p>The replication task that was modified.</p>",
+          "simpleType" : "ReplicationTask",
+          "variableSetterType" : "ReplicationTask"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ReplicationTask" : {
+          "c2jName" : "ReplicationTask",
+          "c2jShape" : "ReplicationTask",
+          "deprecated" : false,
+          "documentation" : "<p>The replication task that was modified.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The replication task that was modified.</p>\n@param replicationTask The replication task that was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The replication task that was modified.</p>\n@return The replication task that was modified.*/",
+          "getterModel" : {
+            "returnType" : "ReplicationTask",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "ReplicationTask",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReplicationTask",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ReplicationTask",
+          "setterDocumentation" : "/**<p>The replication task that was modified.</p>\n@param replicationTask The replication task that was modified.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "ReplicationTask",
+            "variableName" : "replicationTask",
+            "variableType" : "ReplicationTask",
+            "documentation" : "",
+            "simpleType" : "ReplicationTask",
+            "variableSetterType" : "ReplicationTask"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The replication task that was modified.</p>\n@param replicationTask The replication task that was modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "ReplicationTask",
+            "variableName" : "replicationTask",
+            "variableType" : "ReplicationTask",
+            "documentation" : "<p>The replication task that was modified.</p>",
+            "simpleType" : "ReplicationTask",
+            "variableSetterType" : "ReplicationTask"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "required" : null,
+      "shapeName" : "ModifyReplicationTaskResult",
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ModifyReplicationTaskResult",
+        "variableName" : "modifyReplicationTaskResult",
+        "variableType" : "ModifyReplicationTaskResult",
+        "documentation" : null,
+        "simpleType" : "ModifyReplicationTaskResult",
+        "variableSetterType" : "ModifyReplicationTaskResult"
       },
       "wrapper" : false
     },
@@ -29551,6 +30616,58 @@
           "variableSetterType" : "Boolean"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SecondaryAvailabilityZone",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@param secondaryAvailabilityZone The availability zone of the standby replication instance in a Multi-AZ deployment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@return The availability zone of the standby replication instance in a Multi-AZ deployment.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "SecondaryAvailabilityZone",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SecondaryAvailabilityZone",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "SecondaryAvailabilityZone",
+        "setterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@param secondaryAvailabilityZone The availability zone of the standby replication instance in a Multi-AZ deployment.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "secondaryAvailabilityZone",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@param secondaryAvailabilityZone The availability zone of the standby replication instance in a Multi-AZ deployment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "secondaryAvailabilityZone",
+          "variableType" : "String",
+          "documentation" : "<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AllocatedStorage" : {
@@ -30691,6 +31808,59 @@
             "documentation" : "<p>The subnet group for the replication instance.</p>",
             "simpleType" : "ReplicationSubnetGroup",
             "variableSetterType" : "ReplicationSubnetGroup"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SecondaryAvailabilityZone" : {
+          "c2jName" : "SecondaryAvailabilityZone",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@param secondaryAvailabilityZone The availability zone of the standby replication instance in a Multi-AZ deployment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@return The availability zone of the standby replication instance in a Multi-AZ deployment.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "SecondaryAvailabilityZone",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SecondaryAvailabilityZone",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "SecondaryAvailabilityZone",
+          "setterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@param secondaryAvailabilityZone The availability zone of the standby replication instance in a Multi-AZ deployment.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "secondaryAvailabilityZone",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>\n@param secondaryAvailabilityZone The availability zone of the standby replication instance in a Multi-AZ deployment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "secondaryAvailabilityZone",
+            "variableType" : "String",
+            "documentation" : "<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -32504,6 +33674,58 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "StopReason",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The reason the replication task was stopped.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@param stopReason The reason the replication task was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@return The reason the replication task was stopped.*/",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "StopReason",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StopReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "StopReason",
+        "setterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@param stopReason The reason the replication task was stopped.*/",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "stopReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@param stopReason The reason the replication task was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "stopReason",
+          "variableType" : "String",
+          "documentation" : "<p>The reason the replication task was stopped.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "ReplicationTaskCreationDate",
         "c2jShape" : "TStamp",
         "deprecated" : false,
@@ -33291,6 +34513,59 @@
             "variableName" : "status",
             "variableType" : "String",
             "documentation" : "<p>The status of the replication task.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StopReason" : {
+          "c2jName" : "StopReason",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The reason the replication task was stopped.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@param stopReason The reason the replication task was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@return The reason the replication task was stopped.*/",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "StopReason",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StopReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "StopReason",
+          "setterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@param stopReason The reason the replication task was stopped.*/",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "stopReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The reason the replication task was stopped.</p>\n@param stopReason The reason the replication task was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "stopReason",
+            "variableType" : "String",
+            "documentation" : "<p>The reason the replication task was stopped.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -35456,10 +36731,10 @@
         "c2jName" : "EngineName",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The database engine name.</p>",
+        "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The database engine name.</p>\n@return The database engine name.*/",
+        "fluentSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -35484,7 +36759,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "EngineName",
-        "setterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.*/",
+        "setterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
@@ -35494,12 +36769,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "engineName",
           "variableType" : "String",
-          "documentation" : "<p>The database engine name.</p>",
+          "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -35667,10 +36942,10 @@
           "c2jName" : "EngineName",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The database engine name.</p>",
+          "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The database engine name.</p>\n@return The database engine name.*/",
+          "fluentSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -35695,7 +36970,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "EngineName",
-          "setterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.*/",
+          "setterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
@@ -35705,12 +36980,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The database engine name.</p>\n@param engineName The database engine name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>\n@param engineName The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "engineName",
             "variableType" : "String",
-            "documentation" : "<p>The database engine name.</p>",
+            "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

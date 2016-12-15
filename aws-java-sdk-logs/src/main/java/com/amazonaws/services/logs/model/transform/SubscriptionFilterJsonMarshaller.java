@@ -56,6 +56,9 @@ public class SubscriptionFilterJsonMarshaller {
             if (subscriptionFilter.getRoleArn() != null) {
                 jsonGenerator.writeFieldName("roleArn").writeValue(subscriptionFilter.getRoleArn());
             }
+            if (subscriptionFilter.getDistribution() != null) {
+                jsonGenerator.writeFieldName("distribution").writeValue(subscriptionFilter.getDistribution());
+            }
             if (subscriptionFilter.getCreationTime() != null) {
                 jsonGenerator.writeFieldName("creationTime").writeValue(subscriptionFilter.getCreationTime());
             }

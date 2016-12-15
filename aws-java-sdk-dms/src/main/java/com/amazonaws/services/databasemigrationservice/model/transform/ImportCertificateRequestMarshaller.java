@@ -65,6 +65,9 @@ public class ImportCertificateRequestMarshaller implements Marshaller<Request<Im
             if (importCertificateRequest.getCertificatePem() != null) {
                 jsonGenerator.writeFieldName("CertificatePem").writeValue(importCertificateRequest.getCertificatePem());
             }
+            if (importCertificateRequest.getCertificateWallet() != null) {
+                jsonGenerator.writeFieldName("CertificateWallet").writeValue(importCertificateRequest.getCertificateWallet());
+            }
 
             jsonGenerator.writeEndObject();
 

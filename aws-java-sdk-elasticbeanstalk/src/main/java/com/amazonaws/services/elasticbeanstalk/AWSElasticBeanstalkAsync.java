@@ -227,7 +227,21 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Creates an application version for the specified application.
+     * Creates an application version for the specified application. You can create an application version from a source
+     * bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+     * </p>
+     * <p>
+     * Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+     * </p>
+     * <p>
+     * Specify a source bundle in S3 with <code>SourceBundle</code>
+     * </p>
+     * <p>
+     * Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample
+     * application.
      * </p>
      * <note>
      * <p>
@@ -245,7 +259,21 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Creates an application version for the specified application.
+     * Creates an application version for the specified application. You can create an application version from a source
+     * bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+     * </p>
+     * <p>
+     * Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+     * </p>
+     * <p>
+     * Specify a source bundle in S3 with <code>SourceBundle</code>
+     * </p>
+     * <p>
+     * Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample
+     * application.
      * </p>
      * <note>
      * <p>

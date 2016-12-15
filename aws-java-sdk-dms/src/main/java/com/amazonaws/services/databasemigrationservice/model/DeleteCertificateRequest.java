@@ -22,18 +22,18 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * the Amazon Resource Name (ARN) of the deleted certificate.
+     * The Amazon Resource Name (ARN) of the deleted certificate.
      * </p>
      */
     private String certificateArn;
 
     /**
      * <p>
-     * the Amazon Resource Name (ARN) of the deleted certificate.
+     * The Amazon Resource Name (ARN) of the deleted certificate.
      * </p>
      * 
      * @param certificateArn
-     *        the Amazon Resource Name (ARN) of the deleted certificate.
+     *        The Amazon Resource Name (ARN) of the deleted certificate.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -42,10 +42,10 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * the Amazon Resource Name (ARN) of the deleted certificate.
+     * The Amazon Resource Name (ARN) of the deleted certificate.
      * </p>
      * 
-     * @return the Amazon Resource Name (ARN) of the deleted certificate.
+     * @return The Amazon Resource Name (ARN) of the deleted certificate.
      */
 
     public String getCertificateArn() {
@@ -54,11 +54,11 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * the Amazon Resource Name (ARN) of the deleted certificate.
+     * The Amazon Resource Name (ARN) of the deleted certificate.
      * </p>
      * 
      * @param certificateArn
-     *        the Amazon Resource Name (ARN) of the deleted certificate.
+     *        The Amazon Resource Name (ARN) of the deleted certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

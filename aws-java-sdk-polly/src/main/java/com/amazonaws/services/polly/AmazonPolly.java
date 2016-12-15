@@ -269,4 +269,11 @@ public interface AmazonPolly {
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
+    /**
+     * {@link com.amazonaws.services.polly.presign.AmazonPollyPresigners} contains extension methods for presigning
+     * certain requests. The presigner will use the endpoint and credentials currently configured in the client.
+     *
+     * @return Presigners utility object.
+     */
+    com.amazonaws.services.polly.presign.AmazonPollyPresigners presigners();
 }

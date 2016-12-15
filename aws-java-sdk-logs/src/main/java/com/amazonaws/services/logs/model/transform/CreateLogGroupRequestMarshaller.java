@@ -63,6 +63,22 @@ public class CreateLogGroupRequestMarshaller implements Marshaller<Request<Creat
                 jsonGenerator.writeFieldName("logGroupName").writeValue(createLogGroupRequest.getLogGroupName());
             }
 
+            com.amazonaws.internal.SdkInternalMap<String, String> tagsMap = (com.amazonaws.internal.SdkInternalMap<String, String>) createLogGroupRequest
+                    .getTags();
+            if (!tagsMap.isEmpty() || !tagsMap.isAutoConstruct()) {
+                jsonGenerator.writeFieldName("tags");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, String> tagsMapValue : tagsMap.entrySet()) {
+                    if (tagsMapValue.getValue() != null) {
+                        jsonGenerator.writeFieldName(tagsMapValue.getKey());
+
+                        jsonGenerator.writeValue(tagsMapValue.getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

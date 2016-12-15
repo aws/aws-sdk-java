@@ -618,7 +618,7 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Lists the specified metric filters. You can list all the metric filters or filter the results by log name,
-     * prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.
+     * prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.
      * </p>
      * 
      * @param describeMetricFiltersRequest
@@ -630,7 +630,7 @@ public interface AWSLogsAsync extends AWSLogs {
     /**
      * <p>
      * Lists the specified metric filters. You can list all the metric filters or filter the results by log name,
-     * prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.
+     * prefix, metric name, and metric namespace. The results are ASCII-sorted by filter name.
      * </p>
      * 
      * @param describeMetricFiltersRequest
@@ -753,6 +753,39 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
+     * Lists the tags for the specified log group.
+     * </p>
+     * <p>
+     * To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * 
+     * @param listTagsLogGroupRequest
+     * @return A Java Future containing the result of the ListTagsLogGroup operation returned by the service.
+     * @sample AWSLogsAsync.ListTagsLogGroup
+     */
+    java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest);
+
+    /**
+     * <p>
+     * Lists the tags for the specified log group.
+     * </p>
+     * <p>
+     * To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * 
+     * @param listTagsLogGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsLogGroup operation returned by the service.
+     * @sample AWSLogsAsyncHandler.ListTagsLogGroup
+     */
+    java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates or updates a destination. A destination encapsulates a physical resource (such as a Kinesis stream) and
      * enables you to subscribe to a real-time stream of log events of a different account, ingested using
      * <a>PutLogEvents</a>. Currently, the only supported physical resource is a Amazon Kinesis stream belonging to the
@@ -858,7 +891,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their timestamp.
+     * The log events in the batch must be in chronological ordered by their timestamp (the time the event occurred,
+     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC).
      * </p>
      * </li>
      * <li>
@@ -868,8 +902,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * A batch of log events in a single PutLogEvents request cannot span more than 24 hours. Otherwise, the
-     * PutLogEvents operation will fail.
+     * A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.
      * </p>
      * </li>
      * </ul>
@@ -911,7 +944,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their timestamp.
+     * The log events in the batch must be in chronological ordered by their timestamp (the time the event occurred,
+     * expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC).
      * </p>
      * </li>
      * <li>
@@ -921,8 +955,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * A batch of log events in a single PutLogEvents request cannot span more than 24 hours. Otherwise, the
-     * PutLogEvents operation will fail.
+     * A batch of log events in a single request cannot span more than 24 hours. Otherwise, the operation fails.
      * </p>
      * </li>
      * </ul>
@@ -1087,6 +1120,49 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
+     * Adds or updates the specified tags for the specified log group.
+     * </p>
+     * <p>
+     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
+     * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+     * </p>
+     * 
+     * @param tagLogGroupRequest
+     * @return A Java Future containing the result of the TagLogGroup operation returned by the service.
+     * @sample AWSLogsAsync.TagLogGroup
+     */
+    java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest);
+
+    /**
+     * <p>
+     * Adds or updates the specified tags for the specified log group.
+     * </p>
+     * <p>
+     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag Log Groups in Amazon
+     * CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+     * </p>
+     * 
+     * @param tagLogGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagLogGroup operation returned by the service.
+     * @sample AWSLogsAsyncHandler.TagLogGroup
+     */
+    java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to
      * validate the correctness of a metric filter pattern.
      * </p>
@@ -1113,5 +1189,38 @@ public interface AWSLogsAsync extends AWSLogs {
      */
     java.util.concurrent.Future<TestMetricFilterResult> testMetricFilterAsync(TestMetricFilterRequest testMetricFilterRequest,
             com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified log group.
+     * </p>
+     * <p>
+     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * 
+     * @param untagLogGroupRequest
+     * @return A Java Future containing the result of the UntagLogGroup operation returned by the service.
+     * @sample AWSLogsAsync.UntagLogGroup
+     */
+    java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified log group.
+     * </p>
+     * <p>
+     * To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+     * </p>
+     * 
+     * @param untagLogGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagLogGroup operation returned by the service.
+     * @sample AWSLogsAsyncHandler.UntagLogGroup
+     */
+    java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult> asyncHandler);
 
 }

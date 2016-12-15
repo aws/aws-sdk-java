@@ -26,6 +26,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String logGroupName;
+    /**
+     * <p>
+     * The key-value pairs to use for the tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * Default constructor for CreateLogGroupRequest object. Callers should use the setter or fluent setter (with...)
@@ -86,6 +92,70 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The key-value pairs to use for the tags.
+     * </p>
+     * 
+     * @return The key-value pairs to use for the tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The key-value pairs to use for the tags.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value pairs to use for the tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tags);
+    }
+
+    /**
+     * <p>
+     * The key-value pairs to use for the tags.
+     * </p>
+     * 
+     * @param tags
+     *        The key-value pairs to use for the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLogGroupRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateLogGroupRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLogGroupRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -97,7 +167,9 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName());
+            sb.append("LogGroupName: " + getLogGroupName() + ",");
+        if (getTags() != null)
+            sb.append("Tags: " + getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -116,6 +188,10 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -125,6 +201,7 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

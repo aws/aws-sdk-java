@@ -21,18 +21,18 @@ public class DeleteCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The SSL certificate.
+     * The Secure Sockets Layer (SSL) certificate.
      * </p>
      */
     private Certificate certificate;
 
     /**
      * <p>
-     * The SSL certificate.
+     * The Secure Sockets Layer (SSL) certificate.
      * </p>
      * 
      * @param certificate
-     *        The SSL certificate.
+     *        The Secure Sockets Layer (SSL) certificate.
      */
 
     public void setCertificate(Certificate certificate) {
@@ -41,10 +41,10 @@ public class DeleteCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The SSL certificate.
+     * The Secure Sockets Layer (SSL) certificate.
      * </p>
      * 
-     * @return The SSL certificate.
+     * @return The Secure Sockets Layer (SSL) certificate.
      */
 
     public Certificate getCertificate() {
@@ -53,11 +53,11 @@ public class DeleteCertificateResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The SSL certificate.
+     * The Secure Sockets Layer (SSL) certificate.
      * </p>
      * 
      * @param certificate
-     *        The SSL certificate.
+     *        The Secure Sockets Layer (SSL) certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

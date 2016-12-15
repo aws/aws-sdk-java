@@ -38,9 +38,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      */
     private String roleSessionName;
@@ -99,9 +98,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@:\/-
+     * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:\/-
      * </p>
      */
     private String externalId;
@@ -114,9 +113,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      */
     private String serialNumber;
@@ -185,9 +183,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param roleSessionName
@@ -200,9 +197,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        credentials will expose the role session name to the external account in their CloudTrail logs.
      *        </p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      */
 
     public void setRoleSessionName(String roleSessionName) {
@@ -221,9 +218,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @return An identifier for the assumed role session.</p>
@@ -235,9 +231,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         security credentials will expose the role session name to the external account in their CloudTrail logs.
      *         </p>
      *         <p>
-     *         The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *         upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *         the following characters: =,.@-
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-
      */
 
     public String getRoleSessionName() {
@@ -256,9 +252,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * session name to the external account in their CloudTrail logs.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param roleSessionName
@@ -271,9 +266,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        credentials will expose the role session name to the external account in their CloudTrail logs.
      *        </p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,9 +563,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@:\/-
+     * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:\/-
      * </p>
      * 
      * @param externalId
@@ -583,9 +578,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User
      *        Guide</i>.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@:\/-
+     *        The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@:\/-
      */
 
     public void setExternalId(String externalId) {
@@ -603,9 +598,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@:\/-
+     * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:\/-
      * </p>
      * 
      * @return A unique identifier that is used by third parties when assuming roles in their customers' accounts. For
@@ -617,9 +612,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         Use an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User
      *         Guide</i>.</p>
      *         <p>
-     *         The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *         upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *         the following characters: =,.@:\/-
+     *         The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@:\/-
      */
 
     public String getExternalId() {
@@ -637,9 +632,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@:\/-
+     * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@:\/-
      * </p>
      * 
      * @param externalId
@@ -652,9 +647,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        an External ID When Granting Access to Your AWS Resources to a Third Party</a> in the <i>IAM User
      *        Guide</i>.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@:\/-
+     *        The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@:\/-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -672,9 +667,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param serialNumber
@@ -684,9 +678,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a virtual device (such as
      *        <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -702,9 +696,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @return The identification number of the MFA device that is associated with the user who is making the
@@ -713,9 +706,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a virtual device (such as
      *         <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      *         <p>
-     *         The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *         upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *         the following characters: =,.@-
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-
      */
 
     public String getSerialNumber() {
@@ -731,9 +724,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>arn:aws:iam::123456789012:mfa/user</code>).
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param serialNumber
@@ -743,9 +735,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN) for a virtual device (such as
      *        <code>arn:aws:iam::123456789012:mfa/user</code>).</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

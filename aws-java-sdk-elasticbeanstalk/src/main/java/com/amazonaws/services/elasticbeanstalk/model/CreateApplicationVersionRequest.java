@@ -47,17 +47,17 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
      * </p>
-     * <p>
-     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
-     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
-     * Beanstalk uses a sample application.
-     * </p>
      */
     private SourceBuildInformation sourceBuildInformation;
     /**
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon S3 bucket must be in the same region as the environment.
+     * </p>
+     * </note>
      * <p>
      * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
@@ -65,7 +65,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private S3Location sourceBundle;
-
+    /**
+     * <p>
+     * Settings for an AWS CodeBuild build.
+     * </p>
+     */
     private BuildConfiguration buildConfiguration;
     /**
      * <p>
@@ -261,19 +265,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
      * </p>
-     * <p>
-     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
-     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
-     * Beanstalk uses a sample application.
-     * </p>
      * 
      * @param sourceBuildInformation
      *        Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application
-     *        version.</p>
-     *        <p>
-     *        Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>
-     *        ), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     *        provided, Elastic Beanstalk uses a sample application.
+     *        version.
      */
 
     public void setSourceBuildInformation(SourceBuildInformation sourceBuildInformation) {
@@ -284,18 +279,9 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
      * </p>
-     * <p>
-     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
-     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
-     * Beanstalk uses a sample application.
-     * </p>
      * 
      * @return Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application
-     *         version.</p>
-     *         <p>
-     *         Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>
-     *         ), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     *         provided, Elastic Beanstalk uses a sample application.
+     *         version.
      */
 
     public SourceBuildInformation getSourceBuildInformation() {
@@ -306,19 +292,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
      * </p>
-     * <p>
-     * Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but
-     * not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic
-     * Beanstalk uses a sample application.
-     * </p>
      * 
      * @param sourceBuildInformation
      *        Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application
-     *        version.</p>
-     *        <p>
-     *        Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>
-     *        ), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are
-     *        provided, Elastic Beanstalk uses a sample application.
+     *        version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,6 +308,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon S3 bucket must be in the same region as the environment.
+     * </p>
+     * </note>
      * <p>
      * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
@@ -338,7 +320,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sourceBundle
-     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
+     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+     *        <p>
+     *        The Amazon S3 bucket must be in the same region as the environment.
+     *        </p>
+     *        </note>
      *        <p>
      *        Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      *        <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
@@ -353,13 +339,22 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon S3 bucket must be in the same region as the environment.
+     * </p>
+     * </note>
      * <p>
      * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
      * <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.
      * </p>
      * 
-     * @return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
+     * @return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+     *         <p>
+     *         The Amazon S3 bucket must be in the same region as the environment.
+     *         </p>
+     *         </note>
      *         <p>
      *         Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      *         <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
@@ -374,6 +369,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The Amazon S3 bucket and key that identify the location of the source bundle for this version.
      * </p>
+     * <note>
+     * <p>
+     * The Amazon S3 bucket must be in the same region as the environment.
+     * </p>
+     * </note>
      * <p>
      * Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      * <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
@@ -381,7 +381,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sourceBundle
-     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p>
+     *        The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+     *        <p>
+     *        The Amazon S3 bucket must be in the same region as the environment.
+     *        </p>
+     *        </note>
      *        <p>
      *        Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with
      *        <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor
@@ -395,7 +399,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Settings for an AWS CodeBuild build.
+     * </p>
+     * 
      * @param buildConfiguration
+     *        Settings for an AWS CodeBuild build.
      */
 
     public void setBuildConfiguration(BuildConfiguration buildConfiguration) {
@@ -403,7 +412,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Settings for an AWS CodeBuild build.
+     * </p>
+     * 
+     * @return Settings for an AWS CodeBuild build.
      */
 
     public BuildConfiguration getBuildConfiguration() {
@@ -411,7 +424,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Settings for an AWS CodeBuild build.
+     * </p>
+     * 
      * @param buildConfiguration
+     *        Settings for an AWS CodeBuild build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

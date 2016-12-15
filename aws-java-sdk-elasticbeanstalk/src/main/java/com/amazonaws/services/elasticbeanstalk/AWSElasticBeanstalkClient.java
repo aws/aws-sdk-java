@@ -492,7 +492,21 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates an application version for the specified application.
+     * Creates an application version for the specified application. You can create an application version from a source
+     * bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:
+     * </p>
+     * <p>
+     * Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+     * </p>
+     * <p>
+     * Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+     * </p>
+     * <p>
+     * Specify a source bundle in S3 with <code>SourceBundle</code>
+     * </p>
+     * <p>
+     * Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample
+     * application.
      * </p>
      * <note>
      * <p>
@@ -511,9 +525,26 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      * @throws InsufficientPrivilegesException
      *         The specified account does not have sufficient privileges for one of more AWS services.
      * @throws S3LocationNotInServiceRegionException
-     *         The specified S3 bucket does not belong to the S3 region in which the service is running.
+     *         The specified S3 bucket does not belong to the S3 region in which the service is running. The following
+     *         regions are supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         IAD/us-east-1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PDX/us-west-2
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DUB/eu-west-1
+     *         </p>
+     *         </li>
      * @throws CodeBuildNotInServiceRegionException
-     *         The CodeBuild service is not supported in this region.
+     *         AWS CodeBuild is not available in the specified region.
      * @sample AWSElasticBeanstalk.CreateApplicationVersion
      */
     @Override
@@ -785,7 +816,24 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
      *         Unable to perform the specified operation because another operation that effects an element in this
      *         activity is already in progress.
      * @throws S3LocationNotInServiceRegionException
-     *         The specified S3 bucket does not belong to the S3 region in which the service is running.
+     *         The specified S3 bucket does not belong to the S3 region in which the service is running. The following
+     *         regions are supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         IAD/us-east-1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PDX/us-west-2
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DUB/eu-west-1
+     *         </p>
+     *         </li>
      * @sample AWSElasticBeanstalk.DeleteApplicationVersion
      */
     @Override

@@ -26,9 +26,10 @@ import com.amazonaws.services.databasemigrationservice.model.*;
  * <fullname>AWS Database Migration Service</fullname>
  * <p>
  * AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and
- * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and
- * MySQL. The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations
- * between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
+ * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora,
+ * MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
+ * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
+ * Server to PostgreSQL.
  * </p>
  */
 public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationService {
@@ -851,6 +852,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     java.util.concurrent.Future<ModifyReplicationSubnetGroupResult> modifyReplicationSubnetGroupAsync(
             ModifyReplicationSubnetGroupRequest modifyReplicationSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyReplicationSubnetGroupRequest, ModifyReplicationSubnetGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified replication task.
+     * </p>
+     * <p>
+     * You can't modify the task endpoints. The task must be stopped before you can modify it.
+     * </p>
+     * 
+     * @param modifyReplicationTaskRequest
+     * @return A Java Future containing the result of the ModifyReplicationTask operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.ModifyReplicationTask
+     */
+    java.util.concurrent.Future<ModifyReplicationTaskResult> modifyReplicationTaskAsync(ModifyReplicationTaskRequest modifyReplicationTaskRequest);
+
+    /**
+     * <p>
+     * Modifies the specified replication task.
+     * </p>
+     * <p>
+     * You can't modify the task endpoints. The task must be stopped before you can modify it.
+     * </p>
+     * 
+     * @param modifyReplicationTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyReplicationTask operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.ModifyReplicationTask
+     */
+    java.util.concurrent.Future<ModifyReplicationTaskResult> modifyReplicationTaskAsync(ModifyReplicationTaskRequest modifyReplicationTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyReplicationTaskRequest, ModifyReplicationTaskResult> asyncHandler);
 
     /**
      * <p>

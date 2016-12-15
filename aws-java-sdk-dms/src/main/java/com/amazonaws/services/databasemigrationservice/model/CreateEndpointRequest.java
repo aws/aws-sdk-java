@@ -35,8 +35,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
-     * SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
+     * SYBASE, and SQLSERVER.
      * </p>
      */
     private String engineName;
@@ -230,13 +230,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
-     * SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
+     * SYBASE, and SQLSERVER.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-     *        REDSHIFT, and SQLSERVER.
+     *        REDSHIFT, SYBASE, and SQLSERVER.
      */
 
     public void setEngineName(String engineName) {
@@ -245,12 +245,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
-     * SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
+     * SYBASE, and SQLSERVER.
      * </p>
      * 
      * @return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-     *         REDSHIFT, and SQLSERVER.
+     *         REDSHIFT, SYBASE, and SQLSERVER.
      */
 
     public String getEngineName() {
@@ -259,13 +259,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and
-     * SQLSERVER.
+     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
+     * SYBASE, and SQLSERVER.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-     *        REDSHIFT, and SQLSERVER.
+     *        REDSHIFT, SYBASE, and SQLSERVER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

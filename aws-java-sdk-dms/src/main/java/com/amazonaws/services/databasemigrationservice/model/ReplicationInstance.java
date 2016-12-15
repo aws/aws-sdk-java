@@ -173,6 +173,12 @@ public class ReplicationInstance implements Serializable, Cloneable {
      * </p>
      */
     private Boolean publiclyAccessible;
+    /**
+     * <p>
+     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * </p>
+     */
+    private String secondaryAvailabilityZone;
 
     /**
      * <p>
@@ -1298,6 +1304,46 @@ public class ReplicationInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @param secondaryAvailabilityZone
+     *        The availability zone of the standby replication instance in a Multi-AZ deployment.
+     */
+
+    public void setSecondaryAvailabilityZone(String secondaryAvailabilityZone) {
+        this.secondaryAvailabilityZone = secondaryAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @return The availability zone of the standby replication instance in a Multi-AZ deployment.
+     */
+
+    public String getSecondaryAvailabilityZone() {
+        return this.secondaryAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * </p>
+     * 
+     * @param secondaryAvailabilityZone
+     *        The availability zone of the standby replication instance in a Multi-AZ deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationInstance withSecondaryAvailabilityZone(String secondaryAvailabilityZone) {
+        setSecondaryAvailabilityZone(secondaryAvailabilityZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1347,7 +1393,9 @@ public class ReplicationInstance implements Serializable, Cloneable {
         if (getReplicationInstancePrivateIpAddresses() != null)
             sb.append("ReplicationInstancePrivateIpAddresses: " + getReplicationInstancePrivateIpAddresses() + ",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible());
+            sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
+        if (getSecondaryAvailabilityZone() != null)
+            sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }
@@ -1447,6 +1495,10 @@ public class ReplicationInstance implements Serializable, Cloneable {
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
             return false;
+        if (other.getSecondaryAvailabilityZone() == null ^ this.getSecondaryAvailabilityZone() == null)
+            return false;
+        if (other.getSecondaryAvailabilityZone() != null && other.getSecondaryAvailabilityZone().equals(this.getSecondaryAvailabilityZone()) == false)
+            return false;
         return true;
     }
 
@@ -1475,6 +1527,7 @@ public class ReplicationInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReplicationInstancePublicIpAddresses() == null) ? 0 : getReplicationInstancePublicIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getReplicationInstancePrivateIpAddresses() == null) ? 0 : getReplicationInstancePrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode());
         return hashCode;
     }
 

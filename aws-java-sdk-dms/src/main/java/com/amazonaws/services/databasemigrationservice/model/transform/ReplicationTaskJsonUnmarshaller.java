@@ -83,6 +83,10 @@ public class ReplicationTaskJsonUnmarshaller implements Unmarshaller<Replication
                     context.nextToken();
                     replicationTask.setLastFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StopReason", targetDepth)) {
+                    context.nextToken();
+                    replicationTask.setStopReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ReplicationTaskCreationDate", targetDepth)) {
                     context.nextToken();
                     replicationTask.setReplicationTaskCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

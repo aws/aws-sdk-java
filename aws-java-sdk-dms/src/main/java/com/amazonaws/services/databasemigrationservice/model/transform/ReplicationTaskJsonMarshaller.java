@@ -68,6 +68,9 @@ public class ReplicationTaskJsonMarshaller {
             if (replicationTask.getLastFailureMessage() != null) {
                 jsonGenerator.writeFieldName("LastFailureMessage").writeValue(replicationTask.getLastFailureMessage());
             }
+            if (replicationTask.getStopReason() != null) {
+                jsonGenerator.writeFieldName("StopReason").writeValue(replicationTask.getStopReason());
+            }
             if (replicationTask.getReplicationTaskCreationDate() != null) {
                 jsonGenerator.writeFieldName("ReplicationTaskCreationDate").writeValue(replicationTask.getReplicationTaskCreationDate());
             }

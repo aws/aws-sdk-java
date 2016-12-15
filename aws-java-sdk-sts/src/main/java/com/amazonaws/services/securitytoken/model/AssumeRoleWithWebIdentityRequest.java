@@ -34,9 +34,8 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <code>AssumedRoleUser</code> response element.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      */
     private String roleSessionName;
@@ -156,9 +155,8 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <code>AssumedRoleUser</code> response element.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param roleSessionName
@@ -167,9 +165,9 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        application will use are associated with that user. This session name is included as part of the ARN and
      *        assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      */
 
     public void setRoleSessionName(String roleSessionName) {
@@ -184,9 +182,8 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <code>AssumedRoleUser</code> response element.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @return An identifier for the assumed role session. Typically, you pass the name or identifier that is associated
@@ -194,9 +191,9 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *         application will use are associated with that user. This session name is included as part of the ARN and
      *         assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
      *         <p>
-     *         The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *         upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *         the following characters: =,.@-
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-
      */
 
     public String getRoleSessionName() {
@@ -211,9 +208,8 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <code>AssumedRoleUser</code> response element.
      * </p>
      * <p>
-     * The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper-
-     * and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following
-     * characters: =,.@-
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
      * 
      * @param roleSessionName
@@ -222,9 +218,9 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        application will use are associated with that user. This session name is included as part of the ARN and
      *        assumed role ID in the <code>AssumedRoleUser</code> response element.</p>
      *        <p>
-     *        The format for this parameter, as described by its regex pattern, is a string of characters consisting of
-     *        upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of
-     *        the following characters: =,.@-
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

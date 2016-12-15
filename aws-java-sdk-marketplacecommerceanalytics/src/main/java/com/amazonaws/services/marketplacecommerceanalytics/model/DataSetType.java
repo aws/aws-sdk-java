@@ -34,7 +34,8 @@ public enum DataSetType {
     Disbursed_amount_by_age_of_disbursed_funds("disbursed_amount_by_age_of_disbursed_funds"),
     Customer_profile_by_industry("customer_profile_by_industry"),
     Customer_profile_by_revenue("customer_profile_by_revenue"),
-    Customer_profile_by_geography("customer_profile_by_geography");
+    Customer_profile_by_geography("customer_profile_by_geography"),
+    Sales_compensation_billed_revenue("sales_compensation_billed_revenue");
 
     private String value;
 

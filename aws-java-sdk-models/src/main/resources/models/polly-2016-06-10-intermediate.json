@@ -15,7 +15,7 @@
     "customSignerProvider" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
-    "presignersFqcn" : null,
+    "presignersFqcn" : "com.amazonaws.services.polly.presign.AmazonPollyPresigners",
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,

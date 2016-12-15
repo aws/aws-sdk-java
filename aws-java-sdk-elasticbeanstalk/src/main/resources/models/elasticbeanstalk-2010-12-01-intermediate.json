@@ -311,7 +311,7 @@
       "asyncReturnType" : "CreateApplicationVersionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an application version for the specified application.</p> <note> <p>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version.</p> </note>",
+      "documentation" : "<p>Creates an application version for the specified application. You can create an application version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample application.</p> <note> <p>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "TooManyApplicationsException",
         "documentation" : "<p>The specified account has reached its limit of applications.</p>"
@@ -323,10 +323,10 @@
         "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>"
       }, {
         "exceptionName" : "S3LocationNotInServiceRegionException",
-        "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>"
+        "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p> <ul> <li> <p>IAD/us-east-1</p> </li> <li> <p>PDX/us-west-2</p> </li> <li> <p>DUB/eu-west-1</p> </li> </ul>"
       }, {
         "exceptionName" : "CodeBuildNotInServiceRegionException",
-        "documentation" : "<p>The CodeBuild service is not supported in this region.</p>"
+        "documentation" : "<p>AWS CodeBuild is not available in the specified region.</p>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -500,7 +500,7 @@
         "documentation" : "<p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>"
       }, {
         "exceptionName" : "S3LocationNotInServiceRegionException",
-        "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>"
+        "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p> <ul> <li> <p>IAD/us-east-1</p> </li> <li> <p>PDX/us-west-2</p> </li> <li> <p>DUB/eu-west-1</p> </li> </ul>"
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -3298,10 +3298,10 @@
         "c2jName" : "BuildArn",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Reference to the artifact from the AWS CodeBuild build.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param buildArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@param buildArn Reference to the artifact from the AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@return Reference to the artifact from the AWS CodeBuild build.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -3326,7 +3326,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "BuildArn",
-        "setterDocumentation" : "/**\n@param buildArn */",
+        "setterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@param buildArn Reference to the artifact from the AWS CodeBuild build.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "buildArn",
@@ -3336,12 +3336,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**\n@param buildArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@param buildArn Reference to the artifact from the AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "buildArn",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>Reference to the artifact from the AWS CodeBuild build.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3613,10 +3613,10 @@
           "c2jName" : "BuildArn",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Reference to the artifact from the AWS CodeBuild build.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param buildArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@param buildArn Reference to the artifact from the AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@return Reference to the artifact from the AWS CodeBuild build.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -3641,7 +3641,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "BuildArn",
-          "setterDocumentation" : "/**\n@param buildArn */",
+          "setterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@param buildArn Reference to the artifact from the AWS CodeBuild build.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "buildArn",
@@ -3651,12 +3651,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**\n@param buildArn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Reference to the artifact from the AWS CodeBuild build.</p>\n@param buildArn Reference to the artifact from the AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "buildArn",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>Reference to the artifact from the AWS CodeBuild build.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5065,7 +5065,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>Settings for an AWS CodeBuild build.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -5078,10 +5078,10 @@
         "c2jName" : "ArtifactName",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param artifactName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@param artifactName The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@return The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -5106,7 +5106,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ArtifactName",
-        "setterDocumentation" : "/**\n@param artifactName */",
+        "setterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@param artifactName The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "artifactName",
@@ -5116,12 +5116,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**\n@param artifactName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@param artifactName The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "artifactName",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5130,10 +5130,10 @@
         "c2jName" : "CodeBuildServiceRole",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param codeBuildServiceRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@param codeBuildServiceRole The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -5158,7 +5158,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "CodeBuildServiceRole",
-        "setterDocumentation" : "/**\n@param codeBuildServiceRole */",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@param codeBuildServiceRole The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "codeBuildServiceRole",
@@ -5168,12 +5168,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**\n@param codeBuildServiceRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@param codeBuildServiceRole The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "codeBuildServiceRole",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5182,10 +5182,10 @@
         "c2jName" : "ComputeType",
         "c2jShape" : "ComputeType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>",
         "enumType" : "ComputeType",
-        "fluentSetterDocumentation" : "/**\n@param computeType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
-        "getterDocumentation" : "/**\n@return \n@see ComputeType*/",
+        "fluentSetterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@param computeType Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
+        "getterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@return Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@see ComputeType*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -5210,7 +5210,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "ComputeType",
-        "setterDocumentation" : "/**\n@param computeType \n@see ComputeType*/",
+        "setterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@param computeType Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@see ComputeType*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "computeType",
@@ -5220,12 +5220,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**\n@param computeType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
+        "varargSetterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@param computeType Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "computeType",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5234,10 +5234,10 @@
         "c2jName" : "Image",
         "c2jShape" : "NonEmptyString",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The ID of the Docker image to use for this build project.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param image \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@param image The ID of the Docker image to use for this build project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@return The ID of the Docker image to use for this build project.*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -5262,7 +5262,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Image",
-        "setterDocumentation" : "/**\n@param image */",
+        "setterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@param image The ID of the Docker image to use for this build project.*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "image",
@@ -5272,12 +5272,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**\n@param image \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@param image The ID of the Docker image to use for this build project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "image",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The ID of the Docker image to use for this build project.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5286,10 +5286,10 @@
         "c2jName" : "TimeoutInMinutes",
         "c2jShape" : "BoxedInt",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param timeoutInMinutes \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@param timeoutInMinutes How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@return How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.*/",
         "getterModel" : {
           "returnType" : "Integer",
           "documentation" : null
@@ -5314,7 +5314,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "TimeoutInMinutes",
-        "setterDocumentation" : "/**\n@param timeoutInMinutes */",
+        "setterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@param timeoutInMinutes How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.*/",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "timeoutInMinutes",
@@ -5324,12 +5324,12 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**\n@param timeoutInMinutes \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@param timeoutInMinutes How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "timeoutInMinutes",
           "variableType" : "Integer",
-          "documentation" : "",
+          "documentation" : "<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -5340,10 +5340,10 @@
           "c2jName" : "ArtifactName",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param artifactName \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@param artifactName The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@return The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -5368,7 +5368,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ArtifactName",
-          "setterDocumentation" : "/**\n@param artifactName */",
+          "setterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@param artifactName The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "artifactName",
@@ -5378,12 +5378,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**\n@param artifactName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>\n@param artifactName The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "artifactName",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5393,10 +5393,10 @@
           "c2jName" : "CodeBuildServiceRole",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param codeBuildServiceRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@param codeBuildServiceRole The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -5421,7 +5421,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "CodeBuildServiceRole",
-          "setterDocumentation" : "/**\n@param codeBuildServiceRole */",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@param codeBuildServiceRole The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "codeBuildServiceRole",
@@ -5431,12 +5431,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**\n@param codeBuildServiceRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>\n@param codeBuildServiceRole The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "codeBuildServiceRole",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5446,10 +5446,10 @@
           "c2jName" : "ComputeType",
           "c2jShape" : "ComputeType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>",
           "enumType" : "ComputeType",
-          "fluentSetterDocumentation" : "/**\n@param computeType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
-          "getterDocumentation" : "/**\n@return \n@see ComputeType*/",
+          "fluentSetterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@param computeType Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
+          "getterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@return Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@see ComputeType*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -5474,7 +5474,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "ComputeType",
-          "setterDocumentation" : "/**\n@param computeType \n@see ComputeType*/",
+          "setterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@param computeType Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@see ComputeType*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "computeType",
@@ -5484,12 +5484,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**\n@param computeType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
+          "varargSetterDocumentation" : "/**<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>\n@param computeType Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComputeType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "computeType",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>Information about the compute resources the build project will use.</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5499,10 +5499,10 @@
           "c2jName" : "Image",
           "c2jShape" : "NonEmptyString",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The ID of the Docker image to use for this build project.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param image \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@param image The ID of the Docker image to use for this build project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@return The ID of the Docker image to use for this build project.*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -5527,7 +5527,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Image",
-          "setterDocumentation" : "/**\n@param image */",
+          "setterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@param image The ID of the Docker image to use for this build project.*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "image",
@@ -5537,12 +5537,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**\n@param image \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The ID of the Docker image to use for this build project.</p>\n@param image The ID of the Docker image to use for this build project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "image",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The ID of the Docker image to use for this build project.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5552,10 +5552,10 @@
           "c2jName" : "TimeoutInMinutes",
           "c2jShape" : "BoxedInt",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param timeoutInMinutes \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@param timeoutInMinutes How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@return How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.*/",
           "getterModel" : {
             "returnType" : "Integer",
             "documentation" : null
@@ -5580,7 +5580,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "TimeoutInMinutes",
-          "setterDocumentation" : "/**\n@param timeoutInMinutes */",
+          "setterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@param timeoutInMinutes How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.*/",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "timeoutInMinutes",
@@ -5590,12 +5590,12 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**\n@param timeoutInMinutes \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>\n@param timeoutInMinutes How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "timeoutInMinutes",
             "variableType" : "Integer",
-            "documentation" : "",
+            "documentation" : "<p>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -6792,7 +6792,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The CodeBuild service is not supported in this region.</p>",
+      "documentation" : "<p>AWS CodeBuild is not available in the specified region.</p>",
       "enums" : null,
       "errorCode" : "CodeBuildNotInServiceRegionException",
       "hasHeaderMember" : false,
@@ -11191,10 +11191,10 @@
         "c2jName" : "SourceBuildInformation",
         "c2jShape" : "SourceBuildInformation",
         "deprecated" : false,
-        "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+        "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@return Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+        "fluentSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@return Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.*/",
         "getterModel" : {
           "returnType" : "SourceBuildInformation",
           "documentation" : null
@@ -11219,7 +11219,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SourceBuildInformation",
-        "setterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+        "setterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.*/",
         "setterModel" : {
           "variableDeclarationType" : "SourceBuildInformation",
           "variableName" : "sourceBuildInformation",
@@ -11229,12 +11229,12 @@
           "variableSetterType" : "SourceBuildInformation"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "SourceBuildInformation",
           "variableName" : "sourceBuildInformation",
           "variableType" : "SourceBuildInformation",
-          "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+          "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>",
           "simpleType" : "SourceBuildInformation",
           "variableSetterType" : "SourceBuildInformation"
         },
@@ -11243,10 +11243,10 @@
         "c2jName" : "SourceBundle",
         "c2jShape" : "S3Location",
         "deprecated" : false,
-        "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+        "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
         "getterModel" : {
           "returnType" : "S3Location",
           "documentation" : null
@@ -11271,7 +11271,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SourceBundle",
-        "setterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+        "setterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
         "setterModel" : {
           "variableDeclarationType" : "S3Location",
           "variableName" : "sourceBundle",
@@ -11281,12 +11281,12 @@
           "variableSetterType" : "S3Location"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "S3Location",
           "variableName" : "sourceBundle",
           "variableType" : "S3Location",
-          "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+          "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
           "simpleType" : "S3Location",
           "variableSetterType" : "S3Location"
         },
@@ -11295,10 +11295,10 @@
         "c2jName" : "BuildConfiguration",
         "c2jShape" : "BuildConfiguration",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Settings for an AWS CodeBuild build.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param buildConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**\n@return */",
+        "fluentSetterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@param buildConfiguration Settings for an AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@return Settings for an AWS CodeBuild build.*/",
         "getterModel" : {
           "returnType" : "BuildConfiguration",
           "documentation" : null
@@ -11323,7 +11323,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "BuildConfiguration",
-        "setterDocumentation" : "/**\n@param buildConfiguration */",
+        "setterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@param buildConfiguration Settings for an AWS CodeBuild build.*/",
         "setterModel" : {
           "variableDeclarationType" : "BuildConfiguration",
           "variableName" : "buildConfiguration",
@@ -11333,12 +11333,12 @@
           "variableSetterType" : "BuildConfiguration"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**\n@param buildConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@param buildConfiguration Settings for an AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "BuildConfiguration",
           "variableName" : "buildConfiguration",
           "variableType" : "BuildConfiguration",
-          "documentation" : "",
+          "documentation" : "<p>Settings for an AWS CodeBuild build.</p>",
           "simpleType" : "BuildConfiguration",
           "variableSetterType" : "BuildConfiguration"
         },
@@ -11559,10 +11559,10 @@
           "c2jName" : "BuildConfiguration",
           "c2jShape" : "BuildConfiguration",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Settings for an AWS CodeBuild build.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param buildConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**\n@return */",
+          "fluentSetterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@param buildConfiguration Settings for an AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@return Settings for an AWS CodeBuild build.*/",
           "getterModel" : {
             "returnType" : "BuildConfiguration",
             "documentation" : null
@@ -11587,7 +11587,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "BuildConfiguration",
-          "setterDocumentation" : "/**\n@param buildConfiguration */",
+          "setterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@param buildConfiguration Settings for an AWS CodeBuild build.*/",
           "setterModel" : {
             "variableDeclarationType" : "BuildConfiguration",
             "variableName" : "buildConfiguration",
@@ -11597,12 +11597,12 @@
             "variableSetterType" : "BuildConfiguration"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**\n@param buildConfiguration \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Settings for an AWS CodeBuild build.</p>\n@param buildConfiguration Settings for an AWS CodeBuild build.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "BuildConfiguration",
             "variableName" : "buildConfiguration",
             "variableType" : "BuildConfiguration",
-            "documentation" : "",
+            "documentation" : "<p>Settings for an AWS CodeBuild build.</p>",
             "simpleType" : "BuildConfiguration",
             "variableSetterType" : "BuildConfiguration"
           },
@@ -11718,10 +11718,10 @@
           "c2jName" : "SourceBuildInformation",
           "c2jShape" : "SourceBuildInformation",
           "deprecated" : false,
-          "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+          "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@return Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+          "fluentSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@return Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.*/",
           "getterModel" : {
             "returnType" : "SourceBuildInformation",
             "documentation" : null
@@ -11746,7 +11746,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SourceBuildInformation",
-          "setterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+          "setterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.*/",
           "setterModel" : {
             "variableDeclarationType" : "SourceBuildInformation",
             "variableName" : "sourceBuildInformation",
@@ -11756,12 +11756,12 @@
             "variableSetterType" : "SourceBuildInformation"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>\n@param sourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "SourceBuildInformation",
             "variableName" : "sourceBuildInformation",
             "variableType" : "SourceBuildInformation",
-            "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p> <p>Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+            "documentation" : "<p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>",
             "simpleType" : "SourceBuildInformation",
             "variableSetterType" : "SourceBuildInformation"
           },
@@ -11771,10 +11771,10 @@
           "c2jName" : "SourceBundle",
           "c2jShape" : "S3Location",
           "deprecated" : false,
-          "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+          "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@return The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
           "getterModel" : {
             "returnType" : "S3Location",
             "documentation" : null
@@ -11799,7 +11799,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SourceBundle",
-          "setterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
+          "setterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.*/",
           "setterModel" : {
             "variableDeclarationType" : "S3Location",
             "variableName" : "sourceBundle",
@@ -11809,12 +11809,12 @@
             "variableSetterType" : "S3Location"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>\n@param sourceBundle The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "S3Location",
             "variableName" : "sourceBundle",
             "variableType" : "S3Location",
-            "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
+            "documentation" : "<p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>",
             "simpleType" : "S3Location",
             "variableSetterType" : "S3Location"
           },
@@ -44122,7 +44122,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running.</p>",
+      "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p> <ul> <li> <p>IAD/us-east-1</p> </li> <li> <p>PDX/us-west-2</p> </li> <li> <p>DUB/eu-west-1</p> </li> </ul>",
       "enums" : null,
       "errorCode" : "S3LocationNotInServiceRegionException",
       "hasHeaderMember" : false,
@@ -45803,10 +45803,10 @@
         "c2jName" : "SourceType",
         "c2jShape" : "SourceType",
         "deprecated" : false,
-        "documentation" : "<p>The type of repository, such as <code>Git</code>.</p>",
+        "documentation" : "<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>",
         "enumType" : "SourceType",
-        "fluentSetterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@param sourceType The type of repository, such as <code>Git</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
-        "getterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@return The type of repository, such as <code>Git</code>.\n@see SourceType*/",
+        "fluentSetterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@param sourceType The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
+        "getterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@return The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@see SourceType*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -45831,7 +45831,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SourceType",
-        "setterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@param sourceType The type of repository, such as <code>Git</code>.\n@see SourceType*/",
+        "setterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@param sourceType The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@see SourceType*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "sourceType",
@@ -45841,12 +45841,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@param sourceType The type of repository, such as <code>Git</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
+        "varargSetterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@param sourceType The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "sourceType",
           "variableType" : "String",
-          "documentation" : "<p>The type of repository, such as <code>Git</code>.</p>",
+          "documentation" : "<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -45855,10 +45855,10 @@
         "c2jName" : "SourceRepository",
         "c2jShape" : "SourceRepository",
         "deprecated" : false,
-        "documentation" : "<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>",
+        "documentation" : "<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>",
         "enumType" : "SourceRepository",
-        "fluentSetterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@param sourceRepository Location where the repository is stored, such as <code>CodeCommit</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
-        "getterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@return Location where the repository is stored, such as <code>CodeCommit</code>.\n@see SourceRepository*/",
+        "fluentSetterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@param sourceRepository Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
+        "getterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@return Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@see SourceRepository*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -45883,7 +45883,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SourceRepository",
-        "setterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@param sourceRepository Location where the repository is stored, such as <code>CodeCommit</code>.\n@see SourceRepository*/",
+        "setterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@param sourceRepository Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@see SourceRepository*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "sourceRepository",
@@ -45893,12 +45893,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@param sourceRepository Location where the repository is stored, such as <code>CodeCommit</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
+        "varargSetterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@param sourceRepository Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "sourceRepository",
           "variableType" : "String",
-          "documentation" : "<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>",
+          "documentation" : "<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -45907,10 +45907,10 @@
         "c2jName" : "SourceLocation",
         "c2jShape" : "SourceLocation",
         "deprecated" : false,
-        "documentation" : "<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>",
+        "documentation" : "<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@param sourceLocation The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-        "getterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@return The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.*/",
+        "fluentSetterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@param sourceLocation The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "getterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@return The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>*/",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -45935,7 +45935,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "SourceLocation",
-        "setterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@param sourceLocation The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.*/",
+        "setterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@param sourceLocation The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>*/",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "sourceLocation",
@@ -45945,12 +45945,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@param sourceLocation The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@param sourceLocation The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "sourceLocation",
           "variableType" : "String",
-          "documentation" : "<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>",
+          "documentation" : "<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -45961,10 +45961,10 @@
           "c2jName" : "SourceLocation",
           "c2jShape" : "SourceLocation",
           "deprecated" : false,
-          "documentation" : "<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>",
+          "documentation" : "<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@param sourceLocation The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
-          "getterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@return The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.*/",
+          "fluentSetterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@param sourceLocation The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "getterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@return The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -45989,7 +45989,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SourceLocation",
-          "setterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@param sourceLocation The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.*/",
+          "setterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@param sourceLocation The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "sourceLocation",
@@ -45999,12 +45999,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>\n@param sourceLocation The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>\n@param sourceLocation The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "sourceLocation",
             "variableType" : "String",
-            "documentation" : "<p>The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>",
+            "documentation" : "<p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p> <ul> <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li> <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -46014,10 +46014,10 @@
           "c2jName" : "SourceRepository",
           "c2jShape" : "SourceRepository",
           "deprecated" : false,
-          "documentation" : "<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>",
+          "documentation" : "<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>",
           "enumType" : "SourceRepository",
-          "fluentSetterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@param sourceRepository Location where the repository is stored, such as <code>CodeCommit</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
-          "getterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@return Location where the repository is stored, such as <code>CodeCommit</code>.\n@see SourceRepository*/",
+          "fluentSetterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@param sourceRepository Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
+          "getterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@return Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@see SourceRepository*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -46042,7 +46042,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SourceRepository",
-          "setterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@param sourceRepository Location where the repository is stored, such as <code>CodeCommit</code>.\n@see SourceRepository*/",
+          "setterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@param sourceRepository Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@see SourceRepository*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "sourceRepository",
@@ -46052,12 +46052,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>\n@param sourceRepository Location where the repository is stored, such as <code>CodeCommit</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
+          "varargSetterDocumentation" : "/**<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>\n@param sourceRepository Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceRepository*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "sourceRepository",
             "variableType" : "String",
-            "documentation" : "<p>Location where the repository is stored, such as <code>CodeCommit</code>.</p>",
+            "documentation" : "<p>Location where the repository is stored.</p> <ul> <li> <p> <code>CodeCommit</code> </p> </li> <li> <p> <code>S3</code> </p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -46067,10 +46067,10 @@
           "c2jName" : "SourceType",
           "c2jShape" : "SourceType",
           "deprecated" : false,
-          "documentation" : "<p>The type of repository, such as <code>Git</code>.</p>",
+          "documentation" : "<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>",
           "enumType" : "SourceType",
-          "fluentSetterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@param sourceType The type of repository, such as <code>Git</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
-          "getterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@return The type of repository, such as <code>Git</code>.\n@see SourceType*/",
+          "fluentSetterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@param sourceType The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
+          "getterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@return The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@see SourceType*/",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -46095,7 +46095,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "SourceType",
-          "setterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@param sourceType The type of repository, such as <code>Git</code>.\n@see SourceType*/",
+          "setterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@param sourceType The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@see SourceType*/",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "sourceType",
@@ -46105,12 +46105,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The type of repository, such as <code>Git</code>.</p>\n@param sourceType The type of repository, such as <code>Git</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
+          "varargSetterDocumentation" : "/**<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>\n@param sourceType The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SourceType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "sourceType",
             "variableType" : "String",
-            "documentation" : "<p>The type of repository, such as <code>Git</code>.</p>",
+            "documentation" : "<p>The type of repository.</p> <ul> <li> <p> <code>Git</code> </p> </li> <li> <p> <code>Zip</code> </p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

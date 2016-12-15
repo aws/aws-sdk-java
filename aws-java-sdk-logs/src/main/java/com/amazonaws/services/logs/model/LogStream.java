@@ -35,13 +35,13 @@ public class LogStream implements Serializable, Cloneable {
     private Long creationTime;
     /**
      * <p>
-     * The time of the first event.
+     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long firstEventTimestamp;
     /**
      * <p>
-     * The time of the last event.
+     * The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long lastEventTimestamp;
@@ -152,11 +152,11 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the first event.
+     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param firstEventTimestamp
-     *        The time of the first event.
+     *        The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setFirstEventTimestamp(Long firstEventTimestamp) {
@@ -165,10 +165,10 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the first event.
+     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The time of the first event.
+     * @return The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getFirstEventTimestamp() {
@@ -177,11 +177,11 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the first event.
+     * The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param firstEventTimestamp
-     *        The time of the first event.
+     *        The time of the first event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the last event.
+     * The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param lastEventTimestamp
-     *        The time of the last event.
+     *        The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setLastEventTimestamp(Long lastEventTimestamp) {
@@ -205,10 +205,10 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the last event.
+     * The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The time of the last event.
+     * @return The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getLastEventTimestamp() {
@@ -217,11 +217,11 @@ public class LogStream implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time of the last event.
+     * The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param lastEventTimestamp
-     *        The time of the last event.
+     *        The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

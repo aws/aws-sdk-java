@@ -50,6 +50,9 @@ public class CertificateJsonMarshaller {
             if (certificate.getCertificatePem() != null) {
                 jsonGenerator.writeFieldName("CertificatePem").writeValue(certificate.getCertificatePem());
             }
+            if (certificate.getCertificateWallet() != null) {
+                jsonGenerator.writeFieldName("CertificateWallet").writeValue(certificate.getCertificateWallet());
+            }
             if (certificate.getCertificateArn() != null) {
                 jsonGenerator.writeFieldName("CertificateArn").writeValue(certificate.getCertificateArn());
             }

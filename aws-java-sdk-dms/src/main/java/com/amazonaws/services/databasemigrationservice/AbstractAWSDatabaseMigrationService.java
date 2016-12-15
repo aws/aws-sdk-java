@@ -170,6 +170,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RefreshSchemasResult refreshSchemas(RefreshSchemasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

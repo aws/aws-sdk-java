@@ -48,9 +48,10 @@ import com.amazonaws.services.databasemigrationservice.model.transform.*;
  * <fullname>AWS Database Migration Service</fullname>
  * <p>
  * AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and
- * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and
- * MySQL. The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations
- * between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
+ * open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora,
+ * MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
+ * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
+ * Server to PostgreSQL.
  * </p>
  */
 @ThreadSafe
@@ -333,6 +334,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @sample AWSDatabaseMigrationService.CreateEndpoint
      */
     @Override
@@ -1532,6 +1535,58 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<ModifyReplicationSubnetGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ModifyReplicationSubnetGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified replication task.
+     * </p>
+     * <p>
+     * You can't modify the task endpoints. The task must be stopped before you can modify it.
+     * </p>
+     * 
+     * @param modifyReplicationTaskRequest
+     * @return Result of the ModifyReplicationTask operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the KMS key.
+     * @sample AWSDatabaseMigrationService.ModifyReplicationTask
+     */
+    @Override
+    public ModifyReplicationTaskResult modifyReplicationTask(ModifyReplicationTaskRequest modifyReplicationTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyReplicationTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyReplicationTaskRequest> request = null;
+        Response<ModifyReplicationTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyReplicationTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyReplicationTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyReplicationTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ModifyReplicationTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

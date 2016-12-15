@@ -34,13 +34,15 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String logStreamName;
     /**
      * <p>
-     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp earlier than this time are not included.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The end of the time range. Events with a timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp later than this time are not included.
      * </p>
      */
     private Long endTime;
@@ -168,11 +170,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp earlier than this time are not included.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range. Events with a timestamp earlier than this time are not included.
+     *        The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        Events with a timestamp earlier than this time are not included.
      */
 
     public void setStartTime(Long startTime) {
@@ -181,10 +185,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp earlier than this time are not included.
      * </p>
      * 
-     * @return The start of the time range. Events with a timestamp earlier than this time are not included.
+     * @return The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *         Events with a timestamp earlier than this time are not included.
      */
 
     public Long getStartTime() {
@@ -193,11 +199,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The start of the time range. Events with a timestamp earlier than this time are not included.
+     * The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with
+     * a timestamp earlier than this time are not included.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range. Events with a timestamp earlier than this time are not included.
+     *        The start of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
+     *        Events with a timestamp earlier than this time are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +216,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range. Events with a timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp later than this time are not included.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range. Events with a timestamp later than this time are not included.
+     *        The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
+     *        with a timestamp later than this time are not included.
      */
 
     public void setEndTime(Long endTime) {
@@ -221,10 +231,12 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range. Events with a timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp later than this time are not included.
      * </p>
      * 
-     * @return The end of the time range. Events with a timestamp later than this time are not included.
+     * @return The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
+     *         with a timestamp later than this time are not included.
      */
 
     public Long getEndTime() {
@@ -233,11 +245,13 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The end of the time range. Events with a timestamp later than this time are not included.
+     * The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events with a
+     * timestamp later than this time are not included.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range. Events with a timestamp later than this time are not included.
+     *        The end of the time range, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. Events
+     *        with a timestamp later than this time are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

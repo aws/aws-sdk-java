@@ -152,5 +152,5 @@
     "hostNameRegex" : "(.+\\.)?s3-fips-us-gov-west-1\\.amazonaws\\.com",
     "regionName"    : "us-gov-west-1"
   } ],
-  "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}"
+  "userAgentTemplate": "aws-sdk-{platform}/{version} {os.name}/{os.version} {java.vm.name}/{java.vm.version}/{java.version}{language.and.region}{additional.languages}"
 }

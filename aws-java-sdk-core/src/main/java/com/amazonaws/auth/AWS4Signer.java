@@ -65,7 +65,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
     protected static final InternalLogApi log = InternalLogFactory.getLog(AWS4Signer.class);
     private static final int SIGNER_CACHE_MAX_SIZE = 300;
     private static final FIFOCache<SignerKey> signerCache = new FIFOCache<SignerKey>(SIGNER_CACHE_MAX_SIZE);
-    private static final List<String> listOfHeadersToIgnoreInLowerCase = Arrays.asList("connection");
+    private static final List<String> listOfHeadersToIgnoreInLowerCase = Arrays.asList("connection", "x-amzn-trace-id");
 
     private final SdkClock clock;
 

@@ -39,7 +39,6 @@ public final class AmazonPollyPresigners {
 
     private static final int SYNTHESIZE_SPEECH_DEFAULT_EXPIRATION_MINUTES = 15;
 
-
     private final URI endpoint;
     private final PresignerFacade presignerFacade;
     private final SdkClock clock;

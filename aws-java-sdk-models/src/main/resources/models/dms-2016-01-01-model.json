@@ -71,6 +71,11 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundFault"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedFault"
       } ],
       "http" : {
         "method" : "POST",
@@ -1001,6 +1006,50 @@
         "shape" : "ModifyReplicationSubnetGroupResponse"
       }
     },
+    "ModifyReplicationTask" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Modifies the specified replication task.</p> <p>You can't modify the task endpoints. The task must be stopped before you can modify it. </p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidResourceStateFault"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundFault"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceAlreadyExistsFault"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "KMSKeyNotAccessibleFault"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ModifyReplicationTaskMessage",
+        "xmlNamespace" : null
+      },
+      "name" : "ModifyReplicationTask",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ModifyReplicationTaskResponse"
+      }
+    },
     "RefreshSchemas" : {
       "authtype" : null,
       "deprecated" : false,
@@ -1490,7 +1539,7 @@
         },
         "CertificateCreationDate" : {
           "deprecated" : false,
-          "documentation" : "<p>the date the certificate was created.</p>",
+          "documentation" : "<p>The date that the certificate was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1503,7 +1552,7 @@
         },
         "CertificateIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1529,7 +1578,7 @@
         },
         "CertificatePem" : {
           "deprecated" : false,
-          "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+          "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1537,6 +1586,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CertificateWallet" : {
+          "deprecated" : false,
+          "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CertificateWallet",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -1568,7 +1630,7 @@
         },
         "ValidFromDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The beginning date the certificate is valid.</p>",
+          "documentation" : "<p>The beginning date that the certificate is valid.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1581,7 +1643,7 @@
         },
         "ValidToDate" : {
           "deprecated" : false,
-          "documentation" : "<p>the final date the certificate is valid.</p>",
+          "documentation" : "<p>The final date that the certificate is valid.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1632,6 +1694,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CertificateWallet" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "blob",
       "value" : null,
       "wrapper" : false
     },
@@ -1834,7 +1917,7 @@
         },
         "EngineName" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1953,7 +2036,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "EndpointIdentifier", "EndpointType", "EngineName", "Username", "Password", "ServerName", "Port" ],
+      "required" : [ "EndpointIdentifier", "EndpointType", "EngineName" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -2395,7 +2478,7 @@
         },
         "ReplicationTaskSettings" : {
           "deprecated" : false,
-          "documentation" : "<p>Settings for the task, such as target metadata settings.</p>",
+          "documentation" : "<p>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a href=\"http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html\">Task Settings for AWS Database Migration Service Tasks</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2517,7 +2600,7 @@
       "members" : {
         "CertificateArn" : {
           "deprecated" : false,
-          "documentation" : "<p>the Amazon Resource Name (ARN) of the deleted certificate.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the deleted certificate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2552,7 +2635,7 @@
       "members" : {
         "Certificate" : {
           "deprecated" : false,
-          "documentation" : "<p>The SSL certificate.</p>",
+          "documentation" : "<p>The Secure Sockets Layer (SSL) certificate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2970,7 +3053,7 @@
       "members" : {
         "Certificates" : {
           "deprecated" : false,
-          "documentation" : "<p>The SSL certificates associated with the replication instance.</p>",
+          "documentation" : "<p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4155,7 +4238,7 @@
         },
         "EngineName" : {
           "deprecated" : false,
-          "documentation" : "<p>The database engine name.</p>",
+          "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4449,7 +4532,7 @@
       "members" : {
         "CertificateIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are [A-z_0-9].</p>",
+          "documentation" : "<p>The customer-assigned name of the certificate. Valid characters are A-z and 0-9.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4462,7 +4545,7 @@
         },
         "CertificatePem" : {
           "deprecated" : false,
-          "documentation" : "<p>The contents of the .pem X.509 certificate file.</p>",
+          "documentation" : "<p>The contents of the .pem X.509 certificate file for the certificate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4470,6 +4553,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CertificateWallet" : {
+          "deprecated" : false,
+          "documentation" : "<p>The location of the imported Oracle Wallet certificate for use with SSL.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CertificateWallet",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4959,7 +5055,7 @@
         },
         "EngineName" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, and SQLSERVER.</p>",
+          "documentation" : "<p>The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5376,6 +5472,141 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ReplicationSubnetGroup",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ModifyReplicationTaskMessage" : {
+      "deprecated" : false,
+      "documentation" : "<p/>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CdcStartTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The start time for the Change Data Capture (CDC) operation.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TStamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MigrationType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The migration type.</p> <p>Valid values: full-load | cdc | full-load-and-cdc</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MigrationTypeValue",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ReplicationTaskArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the replication task.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ReplicationTaskIdentifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>The replication task identifier.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ReplicationTaskSettings" : {
+          "deprecated" : false,
+          "documentation" : "<p>JSON file that contains settings for the task, such as target metadata settings.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TableMappings" : {
+          "deprecated" : false,
+          "documentation" : "<p>The path of the JSON file that contains the table mappings. Preceed the path with \"file://\".</p> <p>For example, --table-mappings file://mappingfile.json</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ReplicationTaskArn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ModifyReplicationTaskResponse" : {
+      "deprecated" : false,
+      "documentation" : "<p/>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ReplicationTask" : {
+          "deprecated" : false,
+          "documentation" : "<p>The replication task that was modified.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ReplicationTask",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -6075,6 +6306,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "SecondaryAvailabilityZone" : {
+          "deprecated" : false,
+          "documentation" : "<p>The availability zone of the standby replication instance in a Multi-AZ deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "VpcSecurityGroups" : {
           "deprecated" : false,
           "documentation" : "<p>The VPC security group for the instance.</p>",
@@ -6571,6 +6815,19 @@
         "Status" : {
           "deprecated" : false,
           "documentation" : "<p>The status of the replication task.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StopReason" : {
+          "deprecated" : false,
+          "documentation" : "<p>The reason the replication task was stopped.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7341,7 +7598,7 @@
         },
         "EngineName" : {
           "deprecated" : false,
-          "documentation" : "<p>The database engine name.</p>",
+          "documentation" : "<p>The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7915,5 +8172,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS Database Migration Service</fullname> <p>AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>"
+  "documentation" : "<fullname>AWS Database Migration Service</fullname> <p>AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>"
 }

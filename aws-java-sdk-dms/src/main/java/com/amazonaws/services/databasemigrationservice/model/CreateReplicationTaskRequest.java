@@ -81,7 +81,9 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String tableMappings;
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.
      * </p>
      */
     private String replicationTaskSettings;
@@ -505,11 +507,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.
      * </p>
      * 
      * @param replicationTaskSettings
-     *        Settings for the task, such as target metadata settings.
+     *        Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     *        Settings for AWS Database Migration Service Tasks</a>.
      */
 
     public void setReplicationTaskSettings(String replicationTaskSettings) {
@@ -518,10 +524,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.
      * </p>
      * 
-     * @return Settings for the task, such as target metadata settings.
+     * @return Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     *         Settings for AWS Database Migration Service Tasks</a>.
      */
 
     public String getReplicationTaskSettings() {
@@ -530,11 +540,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Settings for the task, such as target metadata settings.
+     * Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     * Settings for AWS Database Migration Service Tasks</a>.
      * </p>
      * 
      * @param replicationTaskSettings
-     *        Settings for the task, such as target metadata settings.
+     *        Settings for the task, such as target metadata settings. For a complete list of task settings, see <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
+     *        Settings for AWS Database Migration Service Tasks</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

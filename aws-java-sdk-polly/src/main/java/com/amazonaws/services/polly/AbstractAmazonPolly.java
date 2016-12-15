@@ -74,4 +74,8 @@ public class AbstractAmazonPolly implements AmazonPolly {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public com.amazonaws.services.polly.presign.AmazonPollyPresigners presigners() {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }
