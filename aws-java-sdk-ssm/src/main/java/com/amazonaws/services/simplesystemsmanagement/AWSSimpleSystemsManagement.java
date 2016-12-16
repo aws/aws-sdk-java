@@ -349,6 +349,25 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Creates a patch baseline.
+     * </p>
+     * 
+     * @param createPatchBaselineRequest
+     * @return Result of the CreatePatchBaseline operation returned by the service.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         to the API with the same idempotency token.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreatePatchBaseline
+     */
+    CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest);
+
+    /**
+     * <p>
      * Deletes an activation. You are not required to delete an activation. If you delete an activation, you can no
      * longer use it to register additional managed instances. Deleting an activation does not de-register managed
      * instances. You must manually de-register managed instances.
@@ -462,6 +481,21 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Deletes a patch baseline.
+     * </p>
+     * 
+     * @param deletePatchBaselineRequest
+     * @return Result of the DeletePatchBaseline operation returned by the service.
+     * @throws ResourceInUseException
+     *         Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeletePatchBaseline
+     */
+    DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest);
+
+    /**
+     * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
      * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
      * </p>
@@ -489,6 +523,22 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.DeregisterManagedInstance
      */
     DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest);
+
+    /**
+     * <p>
+     * Removes a patch group from a patch baseline.
+     * </p>
+     * 
+     * @param deregisterPatchBaselineForPatchGroupRequest
+     * @return Result of the DeregisterPatchBaselineForPatchGroup operation returned by the service.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeregisterPatchBaselineForPatchGroup
+     */
+    DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(
+            DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest);
 
     /**
      * <p>
@@ -590,6 +640,19 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Lists all patches that could possibly be included in a patch baseline.
+     * </p>
+     * 
+     * @param describeAvailablePatchesRequest
+     * @return Result of the DescribeAvailablePatches operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeAvailablePatches
+     */
+    DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest);
+
+    /**
+     * <p>
      * Describes the specified SSM document.
      * </p>
      * 
@@ -654,6 +717,24 @@ public interface AWSSimpleSystemsManagement {
      */
     DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * </p>
+     * 
+     * @param describeEffectivePatchesForPatchBaselineRequest
+     * @return Result of the DescribeEffectivePatchesForPatchBaseline operation returned by the service.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
+     */
+    DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(
+            DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest);
 
     /**
      * <p>
@@ -725,6 +806,73 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.DescribeInstanceInformation
      */
     DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest);
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state of one or more instances.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesRequest
+     * @return Result of the DescribeInstancePatchStates operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstancePatchStates
+     */
+    DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest);
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state for the instances in the specified patch group.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesForPatchGroupRequest
+     * @return Result of the DescribeInstancePatchStatesForPatchGroup operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstancePatchStatesForPatchGroup
+     */
+    DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(
+            DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the patches on the specified instance and their state relative to the patch baseline
+     * being used for the instance.
+     * </p>
+     * 
+     * @param describeInstancePatchesRequest
+     * @return Result of the DescribeInstancePatches operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstancePatches
+     */
+    DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest);
 
     /**
      * <p>
@@ -836,6 +984,47 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Lists the patch baselines in your AWS account.
+     * </p>
+     * 
+     * @param describePatchBaselinesRequest
+     * @return Result of the DescribePatchBaselines operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribePatchBaselines
+     */
+    DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest);
+
+    /**
+     * <p>
+     * Returns high-level aggregated patch compliance state for a patch group.
+     * </p>
+     * 
+     * @param describePatchGroupStateRequest
+     * @return Result of the DescribePatchGroupState operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribePatchGroupState
+     */
+    DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest);
+
+    /**
+     * <p>
+     * Lists all patch groups that have been registered with patch baselines.
+     * </p>
+     * 
+     * @param describePatchGroupsRequest
+     * @return Result of the DescribePatchGroups operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribePatchGroups
+     */
+    DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -883,6 +1072,34 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.GetCommandInvocation
      */
     GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest);
+
+    /**
+     * <p>
+     * Retrieves the default patch baseline.
+     * </p>
+     * 
+     * @param getDefaultPatchBaselineRequest
+     * @return Result of the GetDefaultPatchBaseline operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetDefaultPatchBaseline
+     */
+    GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
+     * AWS-ApplyPatchBaseline Systems Manager document.
+     * </p>
+     * 
+     * @param getDeployablePatchSnapshotForInstanceRequest
+     * @return Result of the GetDeployablePatchSnapshotForInstance operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
+     */
+    GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(
+            GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest);
 
     /**
      * <p>
@@ -1014,6 +1231,36 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.GetParameters
      */
     GetParametersResult getParameters(GetParametersRequest getParametersRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a patch baseline.
+     * </p>
+     * 
+     * @param getPatchBaselineRequest
+     * @return Result of the GetPatchBaseline operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetPatchBaseline
+     */
+    GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Retrieves the patch baseline that should be used for the specified patch group.
+     * </p>
+     * 
+     * @param getPatchBaselineForPatchGroupRequest
+     * @return Result of the GetPatchBaselineForPatchGroup operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetPatchBaselineForPatchGroup
+     */
+    GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest);
 
     /**
      * <p>
@@ -1288,6 +1535,47 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.PutParameter
      */
     PutParameterResult putParameter(PutParameterRequest putParameterRequest);
+
+    /**
+     * <p>
+     * Defines the default patch baseline.
+     * </p>
+     * 
+     * @param registerDefaultPatchBaselineRequest
+     * @return Result of the RegisterDefaultPatchBaseline operation returned by the service.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RegisterDefaultPatchBaseline
+     */
+    RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Registers a patch baseline for a patch group.
+     * </p>
+     * 
+     * @param registerPatchBaselineForPatchGroupRequest
+     * @return Result of the RegisterPatchBaselineForPatchGroup operation returned by the service.
+     * @throws AlreadyExistsException
+     *         Error returned if an attempt is made to register a patch group with a patch baseline that is already
+     *         registered with a different patch baseline.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RegisterPatchBaselineForPatchGroup
+     */
+    RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(
+            RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest);
 
     /**
      * <p>
@@ -1595,6 +1883,21 @@ public interface AWSSimpleSystemsManagement {
      * @sample AWSSimpleSystemsManagement.UpdateManagedInstanceRole
      */
     UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest);
+
+    /**
+     * <p>
+     * Modifies an existing patch baseline. Fields not specified in the request are left unchanged.
+     * </p>
+     * 
+     * @param updatePatchBaselineRequest
+     * @return Result of the UpdatePatchBaseline operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdatePatchBaseline
+     */
+    UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

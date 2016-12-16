@@ -150,6 +150,7 @@ public class QueueBufferConfig {
         maxInflightOutboundBatches = other.maxInflightOutboundBatches;
         maxInflightReceiveBatches = other.maxInflightReceiveBatches;
         visibilityTimeoutSeconds = other.visibilityTimeoutSeconds;
+        flushOnShutdown = other.flushOnShutdown;
     }
 
     @Override

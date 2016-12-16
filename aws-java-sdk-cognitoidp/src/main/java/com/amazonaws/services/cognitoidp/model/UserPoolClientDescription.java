@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The description of the user poool client.
+ * The description of the user pool client.
  * </p>
  */
 public class UserPoolClientDescription implements Serializable, Cloneable {

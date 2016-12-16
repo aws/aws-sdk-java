@@ -59,7 +59,7 @@ public class UserPoolClientType implements Serializable, Cloneable {
     private java.util.Date creationDate;
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      */
     private Integer refreshTokenValidity;
@@ -324,11 +324,11 @@ public class UserPoolClientType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The validity of the refresh token.
+     *        The validity of the refresh token, in days.
      */
 
     public void setRefreshTokenValidity(Integer refreshTokenValidity) {
@@ -337,10 +337,10 @@ public class UserPoolClientType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      * 
-     * @return The validity of the refresh token.
+     * @return The validity of the refresh token, in days.
      */
 
     public Integer getRefreshTokenValidity() {
@@ -349,11 +349,11 @@ public class UserPoolClientType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The validity of the refresh token.
+     *        The validity of the refresh token, in days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

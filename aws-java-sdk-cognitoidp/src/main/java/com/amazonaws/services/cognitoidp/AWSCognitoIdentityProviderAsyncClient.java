@@ -254,6 +254,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<AdminAddUserToGroupResult> adminAddUserToGroupAsync(AdminAddUserToGroupRequest request) {
+
+        return adminAddUserToGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminAddUserToGroupResult> adminAddUserToGroupAsync(final AdminAddUserToGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminAddUserToGroupRequest, AdminAddUserToGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminAddUserToGroupResult>() {
+            @Override
+            public AdminAddUserToGroupResult call() throws Exception {
+                AdminAddUserToGroupResult result;
+
+                try {
+                    result = adminAddUserToGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminConfirmSignUpResult> adminConfirmSignUpAsync(AdminConfirmSignUpRequest request) {
 
         return adminConfirmSignUpAsync(request, null);
@@ -606,6 +638,70 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(AdminListGroupsForUserRequest request) {
+
+        return adminListGroupsForUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(final AdminListGroupsForUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminListGroupsForUserRequest, AdminListGroupsForUserResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminListGroupsForUserResult>() {
+            @Override
+            public AdminListGroupsForUserResult call() throws Exception {
+                AdminListGroupsForUserResult result;
+
+                try {
+                    result = adminListGroupsForUser(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest request) {
+
+        return adminRemoveUserFromGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(final AdminRemoveUserFromGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminRemoveUserFromGroupRequest, AdminRemoveUserFromGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminRemoveUserFromGroupResult>() {
+            @Override
+            public AdminRemoveUserFromGroupResult call() throws Exception {
+                AdminRemoveUserFromGroupResult result;
+
+                try {
+                    result = adminRemoveUserFromGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminResetUserPasswordResult> adminResetUserPasswordAsync(AdminResetUserPasswordRequest request) {
 
         return adminResetUserPasswordAsync(request, null);
@@ -926,6 +1022,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request) {
+
+        return createGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(final CreateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGroupResult>() {
+            @Override
+            public CreateGroupResult call() throws Exception {
+                CreateGroupResult result;
+
+                try {
+                    result = createGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(CreateUserImportJobRequest request) {
 
         return createUserImportJobAsync(request, null);
@@ -1006,6 +1134,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = createUserPoolClient(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request) {
+
+        return deleteGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(final DeleteGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGroupResult>() {
+            @Override
+            public DeleteGroupResult call() throws Exception {
+                DeleteGroupResult result;
+
+                try {
+                    result = deleteGroup(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1374,6 +1534,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest request) {
+
+        return getGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGroupResult> getGroupAsync(final GetGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGroupResult>() {
+            @Override
+            public GetGroupResult call() throws Exception {
+                GetGroupResult result;
+
+                try {
+                    result = getGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest request) {
 
         return getUserAsync(request, null);
@@ -1536,6 +1728,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request) {
+
+        return listGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(final ListGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGroupsResult>() {
+            @Override
+            public ListGroupsResult call() throws Exception {
+                ListGroupsResult result;
+
+                try {
+                    result = listGroups(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserImportJobsResult> listUserImportJobsAsync(ListUserImportJobsRequest request) {
 
         return listUserImportJobsAsync(request, null);
@@ -1648,6 +1872,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = listUsers(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersInGroupResult> listUsersInGroupAsync(ListUsersInGroupRequest request) {
+
+        return listUsersInGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUsersInGroupResult> listUsersInGroupAsync(final ListUsersInGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListUsersInGroupRequest, ListUsersInGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListUsersInGroupResult>() {
+            @Override
+            public ListUsersInGroupResult call() throws Exception {
+                ListUsersInGroupResult result;
+
+                try {
+                    result = listUsersInGroup(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1872,6 +2128,38 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = updateDeviceStatus(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest request) {
+
+        return updateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(final UpdateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGroupResult>() {
+            @Override
+            public UpdateGroupResult call() throws Exception {
+                UpdateGroupResult result;
+
+                try {
+                    result = updateGroup(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

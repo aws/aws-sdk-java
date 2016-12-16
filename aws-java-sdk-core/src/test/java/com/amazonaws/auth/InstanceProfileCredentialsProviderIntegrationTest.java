@@ -18,11 +18,15 @@
  */
 package com.amazonaws.auth;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.fail;
 
+import com.amazonaws.util.LogCaptor;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +36,7 @@ import com.amazonaws.AmazonClientException;
 /**
  * Unit tests for the InstanceProfileCredentialsProvider.
  */
-public class InstanceProfileCredentialsProviderIntegrationTest {
+public class InstanceProfileCredentialsProviderIntegrationTest extends LogCaptor.LogCaptorTestBase {
 
     private EC2MetadataServiceMock mockServer;
 
@@ -143,6 +147,21 @@ public class InstanceProfileCredentialsProviderIntegrationTest {
         assertNotNull(newCredentials);
 
         assertNotSame(credentials, newCredentials);
+    }
+
+    @Test(expected = AmazonClientException.class)
+    public void canBeConfiguredToOnlyRefreshCredentialsAfterFirstCallToGetCredentials() throws InterruptedException {
+        mockServer.setResponseFileName("sessionResponseExpired");
+        mockServer.setAvailableSecurityCredentials("test-credentials");
+
+        InstanceProfileCredentialsProvider credentialsProvider = InstanceProfileCredentialsProvider.createAsyncRefreshingProvider(false);
+        Thread.sleep(1000);
+
+        //Hacky assert but we know that this mockServer will create an exception that will be logged, if there's no log entry
+        //then there's no exception, which means that getCredentials didn't get called on the fetcher
+        assertThat(loggedEvents(), is(empty()));
+
+        credentialsProvider.getCredentials();
     }
 
     private class RefreshThread extends Thread{

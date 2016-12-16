@@ -14,29 +14,9 @@
  */
 package com.amazonaws.services.dynamodbv2.datamodeling;
 
-import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
-import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
-
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
@@ -79,6 +59,26 @@ import com.amazonaws.services.dynamodbv2.model.UpdateItemResult;
 import com.amazonaws.services.dynamodbv2.model.WriteRequest;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.util.VersionInfoUtils;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import static com.amazonaws.services.dynamodbv2.model.KeyType.HASH;
+import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
 
 /**
  * Object mapper for domain-object interaction with DynamoDB.
@@ -895,18 +895,18 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         /**
          * Auto-generates the key.
-         * @param mapping The mapping details.
          */
-        private void onAutoGenerateAssignableKey(DynamoDBMapperFieldModel<Object,Object> field) {
+        private void onAutoGenerateAssignableKey(DynamoDBMapperFieldModel<Object, Object> field) {
             // Generate the new key value first, then ensure it doesn't exist.
             onAutoGenerate(field);
 
-            if ( getLocalSaveBehavior() != SaveBehavior.CLOBBER
-                    && !internalExpectedValueAssertions.containsKey(field.name())) {
+            if (getLocalSaveBehavior() != SaveBehavior.CLOBBER
+                && !internalExpectedValueAssertions.containsKey(field.name())
+                && field.getGenerateStrategy() != DynamoDBAutoGenerateStrategy.ALWAYS) {
                 // Add an expect clause to make sure that the item
                 // doesn't already exist, since it's supposed to be new
                 internalExpectedValueAssertions.put(field.name(),
-                    new ExpectedAttributeValue().withExists(false));
+                                                    new ExpectedAttributeValue().withExists(false));
             }
         }
 
@@ -1391,7 +1391,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         final T object,
         final SaveBehavior saveBehavior
     ) {
-        for (final DynamoDBMapperFieldModel<T,Object> field : model.keys()) {
+        for (final DynamoDBMapperFieldModel<T, Object> field : model.keys()) {
             if (canGenerate(model, object, saveBehavior, field)) {
                 return true;
             }

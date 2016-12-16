@@ -131,6 +131,21 @@ public class UserPoolTypeJsonMarshaller {
                 jsonGenerator.writeFieldName("SmsConfiguration");
                 SmsConfigurationTypeJsonMarshaller.getInstance().marshall(userPoolType.getSmsConfiguration(), jsonGenerator);
             }
+
+            java.util.Map<String, String> userPoolTagsMap = userPoolType.getUserPoolTags();
+            if (userPoolTagsMap != null) {
+                jsonGenerator.writeFieldName("UserPoolTags");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, String> userPoolTagsMapValue : userPoolTagsMap.entrySet()) {
+                    if (userPoolTagsMapValue.getValue() != null) {
+                        jsonGenerator.writeFieldName(userPoolTagsMapValue.getKey());
+
+                        jsonGenerator.writeValue(userPoolTagsMapValue.getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
             if (userPoolType.getSmsConfigurationFailure() != null) {
                 jsonGenerator.writeFieldName("SmsConfigurationFailure").writeValue(userPoolType.getSmsConfigurationFailure());
             }

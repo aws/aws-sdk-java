@@ -1,0 +1,421 @@
+/*
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.simplesystemsmanagement.model;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the
+ * instance.
+ * </p>
+ */
+public class PatchComplianceData implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The title of the patch.
+     * </p>
+     */
+    private String title;
+    /**
+     * <p>
+     * The Microsoft Knowledge Base ID of the patch.
+     * </p>
+     */
+    private String kBId;
+    /**
+     * <p>
+     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * </p>
+     */
+    private String classification;
+    /**
+     * <p>
+     * The severity of the patch (for example, Critical, Important, Moderate).
+     * </p>
+     */
+    private String severity;
+    /**
+     * <p>
+     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
+     * The date/time the patch was installed on the instance.
+     * </p>
+     */
+    private java.util.Date installedTime;
+
+    /**
+     * <p>
+     * The title of the patch.
+     * </p>
+     * 
+     * @param title
+     *        The title of the patch.
+     */
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * <p>
+     * The title of the patch.
+     * </p>
+     * 
+     * @return The title of the patch.
+     */
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    /**
+     * <p>
+     * The title of the patch.
+     * </p>
+     * 
+     * @param title
+     *        The title of the patch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchComplianceData withTitle(String title) {
+        setTitle(title);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Microsoft Knowledge Base ID of the patch.
+     * </p>
+     * 
+     * @param kBId
+     *        The Microsoft Knowledge Base ID of the patch.
+     */
+
+    public void setKBId(String kBId) {
+        this.kBId = kBId;
+    }
+
+    /**
+     * <p>
+     * The Microsoft Knowledge Base ID of the patch.
+     * </p>
+     * 
+     * @return The Microsoft Knowledge Base ID of the patch.
+     */
+
+    public String getKBId() {
+        return this.kBId;
+    }
+
+    /**
+     * <p>
+     * The Microsoft Knowledge Base ID of the patch.
+     * </p>
+     * 
+     * @param kBId
+     *        The Microsoft Knowledge Base ID of the patch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchComplianceData withKBId(String kBId) {
+        setKBId(kBId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * </p>
+     * 
+     * @param classification
+     *        The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     */
+
+    public void setClassification(String classification) {
+        this.classification = classification;
+    }
+
+    /**
+     * <p>
+     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * </p>
+     * 
+     * @return The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     */
+
+    public String getClassification() {
+        return this.classification;
+    }
+
+    /**
+     * <p>
+     * The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * </p>
+     * 
+     * @param classification
+     *        The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchComplianceData withClassification(String classification) {
+        setClassification(classification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity of the patch (for example, Critical, Important, Moderate).
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the patch (for example, Critical, Important, Moderate).
+     */
+
+    public void setSeverity(String severity) {
+        this.severity = severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the patch (for example, Critical, Important, Moderate).
+     * </p>
+     * 
+     * @return The severity of the patch (for example, Critical, Important, Moderate).
+     */
+
+    public String getSeverity() {
+        return this.severity;
+    }
+
+    /**
+     * <p>
+     * The severity of the patch (for example, Critical, Important, Moderate).
+     * </p>
+     * 
+     * @param severity
+     *        The severity of the patch (for example, Critical, Important, Moderate).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchComplianceData withSeverity(String severity) {
+        setSeverity(severity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * </p>
+     * 
+     * @param state
+     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * @see PatchComplianceDataState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * </p>
+     * 
+     * @return The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * @see PatchComplianceDataState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * </p>
+     * 
+     * @param state
+     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceDataState
+     */
+
+    public PatchComplianceData withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * </p>
+     * 
+     * @param state
+     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * @see PatchComplianceDataState
+     */
+
+    public void setState(PatchComplianceDataState state) {
+        this.state = state.toString();
+    }
+
+    /**
+     * <p>
+     * The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * </p>
+     * 
+     * @param state
+     *        The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE or FAILED).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceDataState
+     */
+
+    public PatchComplianceData withState(PatchComplianceDataState state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date/time the patch was installed on the instance.
+     * </p>
+     * 
+     * @param installedTime
+     *        The date/time the patch was installed on the instance.
+     */
+
+    public void setInstalledTime(java.util.Date installedTime) {
+        this.installedTime = installedTime;
+    }
+
+    /**
+     * <p>
+     * The date/time the patch was installed on the instance.
+     * </p>
+     * 
+     * @return The date/time the patch was installed on the instance.
+     */
+
+    public java.util.Date getInstalledTime() {
+        return this.installedTime;
+    }
+
+    /**
+     * <p>
+     * The date/time the patch was installed on the instance.
+     * </p>
+     * 
+     * @param installedTime
+     *        The date/time the patch was installed on the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchComplianceData withInstalledTime(java.util.Date installedTime) {
+        setInstalledTime(installedTime);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getTitle() != null)
+            sb.append("Title: " + getTitle() + ",");
+        if (getKBId() != null)
+            sb.append("KBId: " + getKBId() + ",");
+        if (getClassification() != null)
+            sb.append("Classification: " + getClassification() + ",");
+        if (getSeverity() != null)
+            sb.append("Severity: " + getSeverity() + ",");
+        if (getState() != null)
+            sb.append("State: " + getState() + ",");
+        if (getInstalledTime() != null)
+            sb.append("InstalledTime: " + getInstalledTime());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof PatchComplianceData == false)
+            return false;
+        PatchComplianceData other = (PatchComplianceData) obj;
+        if (other.getTitle() == null ^ this.getTitle() == null)
+            return false;
+        if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
+            return false;
+        if (other.getKBId() == null ^ this.getKBId() == null)
+            return false;
+        if (other.getKBId() != null && other.getKBId().equals(this.getKBId()) == false)
+            return false;
+        if (other.getClassification() == null ^ this.getClassification() == null)
+            return false;
+        if (other.getClassification() != null && other.getClassification().equals(this.getClassification()) == false)
+            return false;
+        if (other.getSeverity() == null ^ this.getSeverity() == null)
+            return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getInstalledTime() == null ^ this.getInstalledTime() == null)
+            return false;
+        if (other.getInstalledTime() != null && other.getInstalledTime().equals(this.getInstalledTime()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
+        hashCode = prime * hashCode + ((getKBId() == null) ? 0 : getKBId().hashCode());
+        hashCode = prime * hashCode + ((getClassification() == null) ? 0 : getClassification().hashCode());
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getInstalledTime() == null) ? 0 : getInstalledTime().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public PatchComplianceData clone() {
+        try {
+            return (PatchComplianceData) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+}

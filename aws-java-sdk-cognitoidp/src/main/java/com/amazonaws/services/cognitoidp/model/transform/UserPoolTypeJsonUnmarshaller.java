@@ -124,6 +124,11 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setSmsConfiguration(SmsConfigurationTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UserPoolTags", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setUserPoolTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("SmsConfigurationFailure", targetDepth)) {
                     context.nextToken();
                     userPoolType.setSmsConfigurationFailure(context.getUnmarshaller(String.class).unmarshall(context));

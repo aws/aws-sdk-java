@@ -115,6 +115,14 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private SmsConfigurationType smsConfiguration;
     /**
      * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     */
+    private java.util.Map<String, String> userPoolTags;
+    /**
+     * <p>
      * The configuration for AdminCreateUser requests.
      * </p>
      */
@@ -878,6 +886,79 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     * 
+     * @return The cost allocation tags for the user pool. For more information, see <a
+     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     *         >Adding Cost Allocation Tags to Your User Pool</a>
+     */
+
+    public java.util.Map<String, String> getUserPoolTags() {
+        return userPoolTags;
+    }
+
+    /**
+     * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     * 
+     * @param userPoolTags
+     *        The cost allocation tags for the user pool. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     */
+
+    public void setUserPoolTags(java.util.Map<String, String> userPoolTags) {
+        this.userPoolTags = userPoolTags;
+    }
+
+    /**
+     * <p>
+     * The cost allocation tags for the user pool. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * </p>
+     * 
+     * @param userPoolTags
+     *        The cost allocation tags for the user pool. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
+     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserPoolTags(java.util.Map<String, String> userPoolTags) {
+        setUserPoolTags(userPoolTags);
+        return this;
+    }
+
+    public UpdateUserPoolRequest addUserPoolTagsEntry(String key, String value) {
+        if (null == this.userPoolTags) {
+            this.userPoolTags = new java.util.HashMap<String, String>();
+        }
+        if (this.userPoolTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.userPoolTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into UserPoolTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest clearUserPoolTagsEntries() {
+        this.userPoolTags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for AdminCreateUser requests.
      * </p>
      * 
@@ -951,6 +1032,8 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
         if (getSmsConfiguration() != null)
             sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
+        if (getUserPoolTags() != null)
+            sb.append("UserPoolTags: " + getUserPoolTags() + ",");
         if (getAdminCreateUserConfig() != null)
             sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig());
         sb.append("}");
@@ -1015,6 +1098,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSmsConfiguration() != null && other.getSmsConfiguration().equals(this.getSmsConfiguration()) == false)
             return false;
+        if (other.getUserPoolTags() == null ^ this.getUserPoolTags() == null)
+            return false;
+        if (other.getUserPoolTags() != null && other.getUserPoolTags().equals(this.getUserPoolTags()) == false)
+            return false;
         if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
@@ -1039,6 +1126,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUserPoolTags() == null) ? 0 : getUserPoolTags().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         return hashCode;
     }

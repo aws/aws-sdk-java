@@ -32,6 +32,7 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable {
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
      * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
+     * The default value for this paameter is 7.
      * </p>
      */
     private Integer unusedAccountValidityDays;
@@ -106,12 +107,13 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable {
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
      * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
+     * The default value for this paameter is 7.
      * </p>
      * 
      * @param unusedAccountValidityDays
      *        The user account expiration limit, in days, after which the account is no longer usable. To reset the
      *        account after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     *        MessageAction parameter.
+     *        MessageAction parameter. The default value for this paameter is 7.
      */
 
     public void setUnusedAccountValidityDays(Integer unusedAccountValidityDays) {
@@ -122,11 +124,12 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable {
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
      * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
+     * The default value for this paameter is 7.
      * </p>
      * 
      * @return The user account expiration limit, in days, after which the account is no longer usable. To reset the
      *         account after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     *         MessageAction parameter.
+     *         MessageAction parameter. The default value for this paameter is 7.
      */
 
     public Integer getUnusedAccountValidityDays() {
@@ -137,12 +140,13 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable {
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
      * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
+     * The default value for this paameter is 7.
      * </p>
      * 
      * @param unusedAccountValidityDays
      *        The user account expiration limit, in days, after which the account is no longer usable. To reset the
      *        account after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     *        MessageAction parameter.
+     *        MessageAction parameter. The default value for this paameter is 7.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

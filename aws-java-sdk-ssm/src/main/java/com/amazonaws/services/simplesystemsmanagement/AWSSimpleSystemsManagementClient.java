@@ -129,6 +129,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     new JsonErrorShapeMetadata().withErrorCode("InvocationDoesNotExist").withModeledClass(
                             com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException.class))
             .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
+                            com.amazonaws.services.simplesystemsmanagement.model.AlreadyExistsException.class))
+            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatch").withModeledClass(
                             com.amazonaws.services.simplesystemsmanagement.model.IdempotentParameterMismatchException.class))
             .addErrorMetadata(
@@ -149,6 +152,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidPermissionType").withModeledClass(
                             com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                            com.amazonaws.services.simplesystemsmanagement.model.ResourceInUseException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidDocument").withModeledClass(
                             com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class))
@@ -890,6 +896,54 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Creates a patch baseline.
+     * </p>
+     * 
+     * @param createPatchBaselineRequest
+     * @return Result of the CreatePatchBaseline operation returned by the service.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         to the API with the same idempotency token.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreatePatchBaseline
+     */
+    @Override
+    public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePatchBaselineRequest> request = null;
+        Response<CreatePatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an activation. You are not required to delete an activation. If you delete an activation, you can no
      * longer use it to register additional managed instances. Deleting an activation does not de-register managed
      * instances. You must manually de-register managed instances.
@@ -1149,6 +1203,50 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Deletes a patch baseline.
+     * </p>
+     * 
+     * @param deletePatchBaselineRequest
+     * @return Result of the DeletePatchBaseline operation returned by the service.
+     * @throws ResourceInUseException
+     *         Error returned if an attempt is made to delete a patch baseline that is registered for a patch group.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeletePatchBaseline
+     */
+    @Override
+    public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePatchBaselineRequest> request = null;
+        Response<DeletePatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
      * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
      * </p>
@@ -1197,6 +1295,53 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DeregisterManagedInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeregisterManagedInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a patch group from a patch baseline.
+     * </p>
+     * 
+     * @param deregisterPatchBaselineForPatchGroupRequest
+     * @return Result of the DeregisterPatchBaselineForPatchGroup operation returned by the service.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeregisterPatchBaselineForPatchGroup
+     */
+    @Override
+    public DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(
+            DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterPatchBaselineForPatchGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterPatchBaselineForPatchGroupRequest> request = null;
+        Response<DeregisterPatchBaselineForPatchGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterPatchBaselineForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterPatchBaselineForPatchGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeregisterPatchBaselineForPatchGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1458,6 +1603,49 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Lists all patches that could possibly be included in a patch baseline.
+     * </p>
+     * 
+     * @param describeAvailablePatchesRequest
+     * @return Result of the DescribeAvailablePatches operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeAvailablePatches
+     */
+    @Override
+    public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAvailablePatchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAvailablePatchesRequest> request = null;
+        Response<DescribeAvailablePatchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAvailablePatchesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAvailablePatchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAvailablePatchesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAvailablePatchesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified SSM document.
      * </p>
      * 
@@ -1615,6 +1803,55 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * </p>
+     * 
+     * @param describeEffectivePatchesForPatchBaselineRequest
+     * @return Result of the DescribeEffectivePatchesForPatchBaseline operation returned by the service.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
+     */
+    @Override
+    public DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(
+            DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEffectivePatchesForPatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEffectivePatchesForPatchBaselineRequest> request = null;
+        Response<DescribeEffectivePatchesForPatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEffectivePatchesForPatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEffectivePatchesForPatchBaselineResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeEffectivePatchesForPatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The status of the associations for the instance(s).
      * </p>
      * 
@@ -1736,6 +1973,165 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstanceInformationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeInstanceInformationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state of one or more instances.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesRequest
+     * @return Result of the DescribeInstancePatchStates operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstancePatchStates
+     */
+    @Override
+    public DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstancePatchStatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstancePatchStatesRequest> request = null;
+        Response<DescribeInstancePatchStatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstancePatchStatesRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstancePatchStatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchStatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInstancePatchStatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state for the instances in the specified patch group.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesForPatchGroupRequest
+     * @return Result of the DescribeInstancePatchStatesForPatchGroup operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstancePatchStatesForPatchGroup
+     */
+    @Override
+    public DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(
+            DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstancePatchStatesForPatchGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstancePatchStatesForPatchGroupRequest> request = null;
+        Response<DescribeInstancePatchStatesForPatchGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstancePatchStatesForPatchGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchStatesForPatchGroupResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeInstancePatchStatesForPatchGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the patches on the specified instance and their state relative to the patch baseline
+     * being used for the instance.
+     * </p>
+     * 
+     * @param describeInstancePatchesRequest
+     * @return Result of the DescribeInstancePatches operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidInstanceIdException
+     *         The following problems can cause this exception:</p>
+     *         <p>
+     *         You do not have permission to access the instance.
+     *         </p>
+     *         <p>
+     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         </p>
+     *         <p>
+     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         or EC2Config service.
+     *         </p>
+     *         <p>
+     *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
+     *         are: Shutting-down and Terminated.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInstancePatches
+     */
+    @Override
+    public DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInstancePatchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInstancePatchesRequest> request = null;
+        Response<DescribeInstancePatchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInstancePatchesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancePatchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInstancePatchesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2071,6 +2467,136 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Lists the patch baselines in your AWS account.
+     * </p>
+     * 
+     * @param describePatchBaselinesRequest
+     * @return Result of the DescribePatchBaselines operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribePatchBaselines
+     */
+    @Override
+    public DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePatchBaselinesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePatchBaselinesRequest> request = null;
+        Response<DescribePatchBaselinesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePatchBaselinesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchBaselinesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePatchBaselinesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePatchBaselinesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns high-level aggregated patch compliance state for a patch group.
+     * </p>
+     * 
+     * @param describePatchGroupStateRequest
+     * @return Result of the DescribePatchGroupState operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribePatchGroupState
+     */
+    @Override
+    public DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePatchGroupStateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePatchGroupStateRequest> request = null;
+        Response<DescribePatchGroupStateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePatchGroupStateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchGroupStateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePatchGroupStateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePatchGroupStateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all patch groups that have been registered with patch baselines.
+     * </p>
+     * 
+     * @param describePatchGroupsRequest
+     * @return Result of the DescribePatchGroups operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DescribePatchGroups
+     */
+    @Override
+    public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePatchGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePatchGroupsRequest> request = null;
+        Response<DescribePatchGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePatchGroupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePatchGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePatchGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -2168,6 +2694,95 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCommandInvocationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCommandInvocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the default patch baseline.
+     * </p>
+     * 
+     * @param getDefaultPatchBaselineRequest
+     * @return Result of the GetDefaultPatchBaseline operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetDefaultPatchBaseline
+     */
+    @Override
+    public GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDefaultPatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDefaultPatchBaselineRequest> request = null;
+        Response<GetDefaultPatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDefaultPatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDefaultPatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDefaultPatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDefaultPatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
+     * AWS-ApplyPatchBaseline Systems Manager document.
+     * </p>
+     * 
+     * @param getDeployablePatchSnapshotForInstanceRequest
+     * @return Result of the GetDeployablePatchSnapshotForInstance operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
+     */
+    @Override
+    public GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(
+            GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDeployablePatchSnapshotForInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeployablePatchSnapshotForInstanceRequest> request = null;
+        Response<GetDeployablePatchSnapshotForInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeployablePatchSnapshotForInstanceRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDeployablePatchSnapshotForInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeployablePatchSnapshotForInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDeployablePatchSnapshotForInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2536,6 +3151,96 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<GetParametersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetParametersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about a patch baseline.
+     * </p>
+     * 
+     * @param getPatchBaselineRequest
+     * @return Result of the GetPatchBaseline operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetPatchBaseline
+     */
+    @Override
+    public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPatchBaselineRequest> request = null;
+        Response<GetPatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the patch baseline that should be used for the specified patch group.
+     * </p>
+     * 
+     * @param getPatchBaselineForPatchGroupRequest
+     * @return Result of the GetPatchBaselineForPatchGroup operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetPatchBaselineForPatchGroup
+     */
+    @Override
+    public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPatchBaselineForPatchGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPatchBaselineForPatchGroupRequest> request = null;
+        Response<GetPatchBaselineForPatchGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPatchBaselineForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getPatchBaselineForPatchGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetPatchBaselineForPatchGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3100,6 +3805,109 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<PutParameterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutParameterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Defines the default patch baseline.
+     * </p>
+     * 
+     * @param registerDefaultPatchBaselineRequest
+     * @return Result of the RegisterDefaultPatchBaseline operation returned by the service.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RegisterDefaultPatchBaseline
+     */
+    @Override
+    public RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerDefaultPatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterDefaultPatchBaselineRequest> request = null;
+        Response<RegisterDefaultPatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterDefaultPatchBaselineRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(registerDefaultPatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterDefaultPatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RegisterDefaultPatchBaselineResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers a patch baseline for a patch group.
+     * </p>
+     * 
+     * @param registerPatchBaselineForPatchGroupRequest
+     * @return Result of the RegisterPatchBaselineForPatchGroup operation returned by the service.
+     * @throws AlreadyExistsException
+     *         Error returned if an attempt is made to register a patch group with a patch baseline that is already
+     *         registered with a different patch baseline.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws ResourceLimitExceededException
+     *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
+     *         Windows have been created).
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.RegisterPatchBaselineForPatchGroup
+     */
+    @Override
+    public RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(
+            RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerPatchBaselineForPatchGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterPatchBaselineForPatchGroupRequest> request = null;
+        Response<RegisterPatchBaselineForPatchGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterPatchBaselineForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(registerPatchBaselineForPatchGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RegisterPatchBaselineForPatchGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3768,6 +4576,50 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<UpdateManagedInstanceRoleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateManagedInstanceRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies an existing patch baseline. Fields not specified in the request are left unchanged.
+     * </p>
+     * 
+     * @param updatePatchBaselineRequest
+     * @return Result of the UpdatePatchBaseline operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdatePatchBaseline
+     */
+    @Override
+    public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePatchBaselineRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePatchBaselineRequest> request = null;
+        Response<UpdatePatchBaselineResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePatchBaselineRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePatchBaselineResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePatchBaselineResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

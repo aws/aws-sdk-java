@@ -74,29 +74,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             .withSupportsCbor(false)
             .withSupportsIon(false)
             .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PasswordResetRequiredException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException.class))
-            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.ConcurrentModificationException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaResponseException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnexpectedLambdaException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UserLambdaValidationException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleTrustRelationshipException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyFailedAttemptsException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleAccessPolicyException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException.class))
@@ -104,26 +86,14 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                     new JsonErrorShapeMetadata().withErrorCode("UsernameExistsException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.UsernameExistsException.class))
             .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CodeDeliveryFailureException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException.class))
-            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("UserImportInProgressException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.UserImportInProgressException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("ExpiredCodeException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class))
             .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.InternalErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidEmailRoleAccessPolicyException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException.class))
-            .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withModeledClass(
-                            com.amazonaws.services.cognitoidp.model.PreconditionNotMetException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("UserNotFoundException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.UserNotFoundException.class))
@@ -148,6 +118,42 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("UserNotConfirmedException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.UserNotConfirmedException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("PasswordResetRequiredException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("UnexpectedLambdaException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.InvalidParameterException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("UserLambdaValidationException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleTrustRelationshipException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("TooManyFailedAttemptsException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("CodeDeliveryFailureException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.InternalErrorException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("InvalidEmailRoleAccessPolicyException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.PreconditionNotMetException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("GroupExistsException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.GroupExistsException.class))
+            .addErrorMetadata(
+                    new JsonErrorShapeMetadata().withErrorCode("UserPoolTaggingException").withModeledClass(
+                            com.amazonaws.services.cognitoidp.model.UserPoolTaggingException.class))
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("InvalidUserPoolConfigurationException").withModeledClass(
                             com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException.class))
@@ -376,7 +382,65 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Adds the specified user to the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminAddUserToGroupRequest
+     * @return Result of the AdminAddUserToGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminAddUserToGroup
+     */
+    @Override
+    public AdminAddUserToGroupResult adminAddUserToGroup(AdminAddUserToGroupRequest adminAddUserToGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(adminAddUserToGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminAddUserToGroupRequest> request = null;
+        Response<AdminAddUserToGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminAddUserToGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminAddUserToGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminAddUserToGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AdminAddUserToGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Confirms user registration as an admin without using a confirmation code. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminConfirmSignUpRequest
@@ -527,6 +591,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Deletes a user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDeleteUserRequest
      *        Represents the request to delete a user as an administrator.
@@ -579,6 +646,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Deletes the user attributes in a user pool as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserAttributesRequest
@@ -634,6 +704,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Disables the specified user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDisableUserRequest
      *        Represents the request to disable any user as an administrator.
@@ -687,6 +760,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Enables the specified user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminEnableUserRequest
      *        Represents the request that enables the user as an administrator.
@@ -739,6 +815,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Forgets the device, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminForgetDeviceRequest
@@ -795,6 +874,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Gets the device, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminGetDeviceRequest
      *        Represents the request to get the device, as an administrator.
@@ -848,6 +930,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Gets the specified user by user name in a user pool as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminGetUserRequest
      *        Represents the request to get the specified user as an administrator.
@@ -900,6 +985,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Initiates the authentication flow, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminInitiateAuthRequest
@@ -977,6 +1065,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Lists devices, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminListDevicesRequest
      *        Represents the request to list devices, as an administrator.
@@ -1028,6 +1119,118 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Lists the groups that the user belongs to.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminListGroupsForUserRequest
+     * @return Result of the AdminListGroupsForUser operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminListGroupsForUser
+     */
+    @Override
+    public AdminListGroupsForUserResult adminListGroupsForUser(AdminListGroupsForUserRequest adminListGroupsForUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(adminListGroupsForUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminListGroupsForUserRequest> request = null;
+        Response<AdminListGroupsForUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminListGroupsForUserRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListGroupsForUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminListGroupsForUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AdminListGroupsForUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified user from the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminRemoveUserFromGroupRequest
+     * @return Result of the AdminRemoveUserFromGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminRemoveUserFromGroup
+     */
+    @Override
+    public AdminRemoveUserFromGroupResult adminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(adminRemoveUserFromGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AdminRemoveUserFromGroupRequest> request = null;
+        Response<AdminRemoveUserFromGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AdminRemoveUserFromGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminRemoveUserFromGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AdminRemoveUserFromGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AdminRemoveUserFromGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Resets the specified user's password in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
@@ -1037,6 +1240,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * if the user pool has phone verification selected and a verified phone number exists for the user, or if email
      * verification is selected and a verified email exists for the user, calling this API will also result in sending a
      * message to the end user with the code to change their password.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminResetUserPasswordRequest
@@ -1101,6 +1307,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Responds to an authentication challenge, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminRespondToAuthChallengeRequest
@@ -1190,6 +1399,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminSetUserSettingsRequest
      *        Represents the request to set user settings as an administrator.
@@ -1240,6 +1452,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Updates the device status as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUpdateDeviceStatusRequest
@@ -1296,6 +1511,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUpdateUserAttributesRequest
@@ -1362,6 +1580,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Signs out users from all devices, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUserGlobalSignOutRequest
@@ -1690,6 +1911,63 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Creates a new group in the specified user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return Result of the CreateGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws GroupExistsException
+     *         This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.CreateGroup
+     */
+    @Override
+    public CreateGroupResult createGroup(CreateGroupRequest createGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGroupRequest> request = null;
+        Response<CreateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates the user import job.
      * </p>
      * 
@@ -1769,6 +2047,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         400.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserPoolTaggingException
+     *         This exception gets thrown when a user pool tag cannot be set or updated.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.CreateUserPool
@@ -1847,6 +2127,59 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserPoolClientResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserPoolClientResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a group. Currently only groups with no members can be deleted.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DeleteGroup
+     */
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGroupRequest> request = null;
+        Response<DeleteGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2144,6 +2477,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception gets thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserPoolTaggingException
+     *         This exception gets thrown when a user pool tag cannot be set or updated.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DescribeUserPool
@@ -2479,6 +2814,59 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Gets a group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return Result of the GetGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.GetGroup
+     */
+    @Override
+    public GetGroupResult getGroup(GetGroupRequest getGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupRequest> request = null;
+        Response<GetGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGroupResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the user attributes and metadata for a user.
      * </p>
      * 
@@ -2799,6 +3187,59 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Lists the groups associated with a user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @return Result of the ListGroups operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListGroups
+     */
+    @Override
+    public ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGroupsRequest> request = null;
+        Response<ListGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGroupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGroupsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the user import jobs.
      * </p>
      * 
@@ -2989,6 +3430,59 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the users in the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listUsersInGroupRequest
+     * @return Result of the ListUsersInGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListUsersInGroup
+     */
+    @Override
+    public ListUsersInGroupResult listUsersInGroup(ListUsersInGroupRequest listUsersInGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUsersInGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUsersInGroupRequest> request = null;
+        Response<ListUsersInGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUsersInGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersInGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListUsersInGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersInGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3460,6 +3954,59 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Updates the specified group with the specified attributes.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateGroup
+     */
+    @Override
+    public UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGroupRequest> request = null;
+        Response<UpdateGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Allows a user to update a specific attribute (one at a time).
      * </p>
      * 
@@ -3573,6 +4120,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception is thrown when the trust relationship is invalid for the role provided for SMS
      *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
      *         provided in the role does not match what is provided in the SMS configuration for the user pool.
+     * @throws UserPoolTaggingException
+     *         This exception gets thrown when a user pool tag cannot be set or updated.
      * @throws InvalidEmailRoleAccessPolicyException
      *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
      *         400.

@@ -109,6 +109,21 @@ public class UpdateUserPoolRequestMarshaller implements Marshaller<Request<Updat
                 jsonGenerator.writeFieldName("SmsConfiguration");
                 SmsConfigurationTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getSmsConfiguration(), jsonGenerator);
             }
+
+            java.util.Map<String, String> userPoolTagsMap = updateUserPoolRequest.getUserPoolTags();
+            if (userPoolTagsMap != null) {
+                jsonGenerator.writeFieldName("UserPoolTags");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, String> userPoolTagsMapValue : userPoolTagsMap.entrySet()) {
+                    if (userPoolTagsMapValue.getValue() != null) {
+                        jsonGenerator.writeFieldName(userPoolTagsMapValue.getKey());
+
+                        jsonGenerator.writeValue(userPoolTagsMapValue.getValue());
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
             if (updateUserPoolRequest.getAdminCreateUserConfig() != null) {
                 jsonGenerator.writeFieldName("AdminCreateUserConfig");
                 AdminCreateUserConfigTypeJsonMarshaller.getInstance().marshall(updateUserPoolRequest.getAdminCreateUserConfig(), jsonGenerator);

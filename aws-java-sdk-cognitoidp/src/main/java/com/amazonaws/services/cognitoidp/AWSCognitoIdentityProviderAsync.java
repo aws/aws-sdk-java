@@ -67,7 +67,43 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Adds the specified user to the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminAddUserToGroupRequest
+     * @return A Java Future containing the result of the AdminAddUserToGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminAddUserToGroup
+     */
+    java.util.concurrent.Future<AdminAddUserToGroupResult> adminAddUserToGroupAsync(AdminAddUserToGroupRequest adminAddUserToGroupRequest);
+
+    /**
+     * <p>
+     * Adds the specified user to the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminAddUserToGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminAddUserToGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminAddUserToGroup
+     */
+    java.util.concurrent.Future<AdminAddUserToGroupResult> adminAddUserToGroupAsync(AdminAddUserToGroupRequest adminAddUserToGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminAddUserToGroupRequest, AdminAddUserToGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Confirms user registration as an admin without using a confirmation code. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminConfirmSignUpRequest
@@ -80,6 +116,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Confirms user registration as an admin without using a confirmation code. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminConfirmSignUpRequest
@@ -137,6 +176,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Deletes a user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDeleteUserRequest
      *        Represents the request to delete a user as an administrator.
@@ -148,6 +190,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Deletes a user as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserRequest
@@ -166,6 +211,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Deletes the user attributes in a user pool as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDeleteUserAttributesRequest
      *        Represents the request to delete user attributes as an administrator.
@@ -178,6 +226,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Deletes the user attributes in a user pool as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserAttributesRequest
@@ -197,6 +248,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Disables the specified user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDisableUserRequest
      *        Represents the request to disable any user as an administrator.
@@ -208,6 +262,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Disables the specified user as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminDisableUserRequest
@@ -226,6 +283,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Enables the specified user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminEnableUserRequest
      *        Represents the request that enables the user as an administrator.
@@ -237,6 +297,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Enables the specified user as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminEnableUserRequest
@@ -255,6 +318,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Forgets the device, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminForgetDeviceRequest
      *        Sends the forgot device request, as an administrator.
@@ -266,6 +332,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Forgets the device, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminForgetDeviceRequest
@@ -284,6 +353,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Gets the device, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminGetDeviceRequest
      *        Represents the request to get the device, as an administrator.
@@ -295,6 +367,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Gets the device, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminGetDeviceRequest
@@ -313,6 +388,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Gets the specified user by user name in a user pool as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminGetUserRequest
      *        Represents the request to get the specified user as an administrator.
@@ -324,6 +402,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Gets the specified user by user name in a user pool as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminGetUserRequest
@@ -342,6 +423,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Initiates the authentication flow, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminInitiateAuthRequest
      *        Initiates the authorization request, as an administrator.
@@ -353,6 +437,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Initiates the authentication flow, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminInitiateAuthRequest
@@ -371,6 +458,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Lists devices, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminListDevicesRequest
      *        Represents the request to list devices, as an administrator.
@@ -382,6 +472,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Lists devices, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminListDevicesRequest
@@ -398,6 +491,72 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Lists the groups that the user belongs to.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminListGroupsForUserRequest
+     * @return A Java Future containing the result of the AdminListGroupsForUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminListGroupsForUser
+     */
+    java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(AdminListGroupsForUserRequest adminListGroupsForUserRequest);
+
+    /**
+     * <p>
+     * Lists the groups that the user belongs to.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminListGroupsForUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminListGroupsForUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminListGroupsForUser
+     */
+    java.util.concurrent.Future<AdminListGroupsForUserResult> adminListGroupsForUserAsync(AdminListGroupsForUserRequest adminListGroupsForUserRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminListGroupsForUserRequest, AdminListGroupsForUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified user from the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminRemoveUserFromGroupRequest
+     * @return A Java Future containing the result of the AdminRemoveUserFromGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminRemoveUserFromGroup
+     */
+    java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest);
+
+    /**
+     * <p>
+     * Removes the specified user from the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminRemoveUserFromGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminRemoveUserFromGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminRemoveUserFromGroup
+     */
+    java.util.concurrent.Future<AdminRemoveUserFromGroupResult> adminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminRemoveUserFromGroupRequest, AdminRemoveUserFromGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Resets the specified user's password in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
@@ -407,6 +566,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * if the user pool has phone verification selected and a verified phone number exists for the user, or if email
      * verification is selected and a verified email exists for the user, calling this API will also result in sending a
      * message to the end user with the code to change their password.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminResetUserPasswordRequest
@@ -428,6 +590,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * verification is selected and a verified email exists for the user, calling this API will also result in sending a
      * message to the end user with the code to change their password.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminResetUserPasswordRequest
      *        Represents the request to reset a user's password as an administrator.
@@ -445,6 +610,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Responds to an authentication challenge, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminRespondToAuthChallengeRequest
      *        The request to respond to the authentication challenge, as an administrator.
@@ -457,6 +625,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Responds to an authentication challenge, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminRespondToAuthChallengeRequest
@@ -476,6 +647,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminSetUserSettingsRequest
      *        Represents the request to set user settings as an administrator.
@@ -487,6 +661,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminSetUserSettingsRequest
@@ -505,6 +682,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Updates the device status as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminUpdateDeviceStatusRequest
      *        The request to update the device status, as an administrator.
@@ -516,6 +696,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Updates the device status as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUpdateDeviceStatusRequest
@@ -534,6 +717,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminUpdateUserAttributesRequest
      *        Represents the request to update the user's attributes as an administrator.
@@ -546,6 +732,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUpdateUserAttributesRequest
@@ -565,6 +754,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Signs out users from all devices, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminUserGlobalSignOutRequest
      *        The request to sign out of all devices, as an administrator.
@@ -576,6 +768,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Signs out users from all devices, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUserGlobalSignOutRequest
@@ -708,6 +903,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Creates a new group in the specified user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return A Java Future containing the result of the CreateGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.CreateGroup
+     */
+    java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest);
+
+    /**
+     * <p>
+     * Creates a new group in the specified user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.CreateGroup
+     */
+    java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates the user import job.
      * </p>
      * 
@@ -792,6 +1020,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<CreateUserPoolClientResult> createUserPoolClientAsync(CreateUserPoolClientRequest createUserPoolClientRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserPoolClientRequest, CreateUserPoolClientResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a group. Currently only groups with no members can be deleted.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DeleteGroup
+     */
+    java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a group. Currently only groups with no members can be deleted.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteGroup
+     */
+    java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1114,6 +1375,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Gets a group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return A Java Future containing the result of the GetGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GetGroup
+     */
+    java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest);
+
+    /**
+     * <p>
+     * Gets a group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetGroup
+     */
+    java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the user attributes and metadata for a user.
      * </p>
      * 
@@ -1263,6 +1557,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Lists the groups associated with a user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @return A Java Future containing the result of the ListGroups operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ListGroups
+     */
+    java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest);
+
+    /**
+     * <p>
+     * Lists the groups associated with a user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGroups operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ListGroups
+     */
+    java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the user import jobs.
      * </p>
      * 
@@ -1376,6 +1703,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the users in the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listUsersInGroupRequest
+     * @return A Java Future containing the result of the ListUsersInGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ListUsersInGroup
+     */
+    java.util.concurrent.Future<ListUsersInGroupResult> listUsersInGroupAsync(ListUsersInGroupRequest listUsersInGroupRequest);
+
+    /**
+     * <p>
+     * Lists the users in the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listUsersInGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUsersInGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ListUsersInGroup
+     */
+    java.util.concurrent.Future<ListUsersInGroupResult> listUsersInGroupAsync(ListUsersInGroupRequest listUsersInGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUsersInGroupRequest, ListUsersInGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1581,6 +1941,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<UpdateDeviceStatusResult> updateDeviceStatusAsync(UpdateDeviceStatusRequest updateDeviceStatusRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceStatusRequest, UpdateDeviceStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified group with the specified attributes.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.UpdateGroup
+     */
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest);
+
+    /**
+     * <p>
+     * Updates the specified group with the specified attributes.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateGroup
+     */
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
 
     /**
      * <p>

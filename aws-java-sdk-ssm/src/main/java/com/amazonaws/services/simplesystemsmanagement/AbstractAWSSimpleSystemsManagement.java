@@ -70,6 +70,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteActivationResult deleteActivation(DeleteActivationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,7 +100,17 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,6 +140,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDocumentResult describeDocument(DescribeDocumentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,12 +160,32 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -186,12 +226,37 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -232,6 +297,16 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public GetParametersResult getParameters(GetParametersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -287,6 +362,16 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public PutParameterResult putParameter(PutParameterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -347,6 +432,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -15,13 +15,20 @@
 package com.amazonaws.smoketest;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
 
 import org.apache.commons.logging.LogFactory;
 
@@ -29,6 +36,8 @@ import org.apache.commons.logging.LogFactory;
  * Utility methods for doing reflection.
  */
 public final class ReflectionUtils {
+
+    private static final Random RANDOM = new Random();
 
     public static <T> Class<T> loadClass(Class<?> base, String name) {
         return loadClass(base.getClassLoader(), name);
@@ -540,6 +549,78 @@ public final class ReflectionUtils {
             }
         }
         return null;
+    }
+
+    public static void setField(Object instance, Field field, Object arg) {
+        try {
+            field.set(instance, arg);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static <T> Object getField(T instance, Field field) {
+        try {
+            return field.get(instance);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static <T> T newInstanceWithAllFieldsSet(Class<T> clz) {
+        List<RandomSupplier<?>> emptyRandomSuppliers = new ArrayList<RandomSupplier<?>>();
+        return newInstanceWithAllFieldsSet(clz, emptyRandomSuppliers);
+    }
+
+    public static <T> T newInstanceWithAllFieldsSet(Class<T> clz, RandomSupplier<?>...suppliers) {
+        return newInstanceWithAllFieldsSet(clz, Arrays.asList(suppliers));
+    }
+
+    public static <T> T newInstanceWithAllFieldsSet(Class<T> clz, List<RandomSupplier<?>> suppliers) {
+        T instance = newInstance(clz);
+        for(Field field: clz.getDeclaredFields()) {
+            if (Modifier.isStatic(field.getModifiers())) {
+                continue;
+            }
+
+            final Class<?> type = field.getType();
+            field.setAccessible(true);
+
+            RandomSupplier<?> supplier = findSupplier(suppliers, type);
+            if (supplier != null) {
+                setField(instance, field, supplier.getNext());
+            } else if (type.isAssignableFrom(int.class) || type.isAssignableFrom(Integer.class)) {
+                setField(instance, field, Math.abs(RANDOM.nextInt()));
+            } else if (type.isAssignableFrom(long.class) || type.isAssignableFrom(Long.class)) {
+                setField(instance, field, Math.abs(RANDOM.nextLong()));
+            } else if (type.isAssignableFrom(Boolean.class) || type.isAssignableFrom(boolean.class)) {
+                Object bool = getField(instance, field);
+                if (bool == null) {
+                    setField(instance, field, RANDOM.nextBoolean());
+                } else {
+                    setField(instance, field, !Boolean.valueOf(bool.toString()));
+                }
+            } else if (type.isAssignableFrom(String.class)) {
+                setField(instance, field, UUID.randomUUID().toString());
+            } else {
+                throw new RuntimeException(String.format("Could not set value for type %s no supplier available.", type));
+            }
+        }
+        return instance;
+    }
+
+    private static RandomSupplier<?> findSupplier(List<RandomSupplier<?>> suppliers, Class<?> type) {
+        for (RandomSupplier<?> supplier : suppliers) {
+            if (type.isAssignableFrom(supplier.targetClass())) {
+                return supplier;
+            }
+        }
+        return null;
+    }
+
+    interface RandomSupplier<T> {
+        T getNext();
+        Class<T> targetClass();
     }
 
     private ReflectionUtils() {

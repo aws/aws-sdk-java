@@ -67,10 +67,59 @@
         "shape" : "AddCustomAttributesResponse"
       }
     },
+    "AdminAddUserToGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Adds the specified user to the specified group.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UserNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "AdminAddUserToGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "AdminAddUserToGroup",
+      "output" : null
+    },
     "AdminConfirmSignUp" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Confirms user registration as an admin without using a confirmation code. Works on any user.</p>",
+      "documentation" : "<p>Confirms user registration as an admin without using a confirmation code. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -253,7 +302,7 @@
     "AdminDeleteUser" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Deletes a user as an administrator. Works on any user.</p>",
+      "documentation" : "<p>Deletes a user as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -302,7 +351,7 @@
     "AdminDeleteUserAttributes" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Deletes the user attributes in a user pool as an administrator. Works on any user.</p>",
+      "documentation" : "<p>Deletes the user attributes in a user pool as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -356,7 +405,7 @@
     "AdminDisableUser" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Disables the specified user as an administrator. Works on any user.</p>",
+      "documentation" : "<p>Disables the specified user as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -410,7 +459,7 @@
     "AdminEnableUser" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Enables the specified user as an administrator. Works on any user.</p>",
+      "documentation" : "<p>Enables the specified user as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -464,7 +513,7 @@
     "AdminForgetDevice" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Forgets the device, as an administrator.</p>",
+      "documentation" : "<p>Forgets the device, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -518,7 +567,7 @@
     "AdminGetDevice" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Gets the device, as an administrator.</p>",
+      "documentation" : "<p>Gets the device, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -572,7 +621,7 @@
     "AdminGetUser" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Gets the specified user by user name in a user pool as an administrator. Works on any user.</p>",
+      "documentation" : "<p>Gets the specified user by user name in a user pool as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -626,7 +675,7 @@
     "AdminInitiateAuth" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Initiates the authentication flow, as an administrator.</p>",
+      "documentation" : "<p>Initiates the authentication flow, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -725,7 +774,7 @@
     "AdminListDevices" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Lists devices, as an administrator.</p>",
+      "documentation" : "<p>Lists devices, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -776,10 +825,113 @@
         "shape" : "AdminListDevicesResponse"
       }
     },
+    "AdminListGroupsForUser" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the groups that the user belongs to.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UserNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "AdminListGroupsForUserRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "AdminListGroupsForUser",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "AdminListGroupsForUserResponse"
+      }
+    },
+    "AdminRemoveUserFromGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Removes the specified user from the specified group.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UserNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "AdminRemoveUserFromGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "AdminRemoveUserFromGroup",
+      "output" : null
+    },
     "AdminResetUserPassword" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Resets the specified user's password in a user pool as an administrator. Works on any user.</p> <p>When a developer calls this API, the current password is invalidated, so it must be changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException exception back and should direct the user down the flow to reset the password, which is the same as the forgot password flow. In addition, if the user pool has phone verification selected and a verified phone number exists for the user, or if email verification is selected and a verified email exists for the user, calling this API will also result in sending a message to the end user with the code to change their password.</p>",
+      "documentation" : "<p>Resets the specified user's password in a user pool as an administrator. Works on any user.</p> <p>When a developer calls this API, the current password is invalidated, so it must be changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException exception back and should direct the user down the flow to reset the password, which is the same as the forgot password flow. In addition, if the user pool has phone verification selected and a verified phone number exists for the user, or if email verification is selected and a verified email exists for the user, calling this API will also result in sending a message to the end user with the code to change their password.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -853,7 +1005,7 @@
     "AdminRespondToAuthChallenge" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Responds to an authentication challenge, as an administrator.</p>",
+      "documentation" : "<p>Responds to an authentication challenge, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -972,7 +1124,7 @@
     "AdminSetUserSettings" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Sets all the user settings for a specified user name. Works on any user.</p>",
+      "documentation" : "<p>Sets all the user settings for a specified user name. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -1021,7 +1173,7 @@
     "AdminUpdateDeviceStatus" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Updates the device status as an administrator.</p>",
+      "documentation" : "<p>Updates the device status as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -1080,7 +1232,7 @@
     "AdminUpdateUserAttributes" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.</p>",
+      "documentation" : "<p>Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -1154,7 +1306,7 @@
     "AdminUserGlobalSignOut" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Signs out users from all devices, as an administrator.</p>",
+      "documentation" : "<p>Signs out users from all devices, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "exception" : false,
@@ -1556,6 +1708,65 @@
         "shape" : "ConfirmSignUpResponse"
       }
     },
+    "CreateGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Creates a new group in the specified user pool.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "GroupExistsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateGroup",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateGroupResponse"
+      }
+    },
     "CreateUserImportJob" : {
       "authtype" : null,
       "deprecated" : false,
@@ -1658,6 +1869,11 @@
         "documentation" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "UserPoolTaggingException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "InternalErrorException"
       } ],
       "http" : {
@@ -1732,6 +1948,50 @@
         "resultWrapper" : null,
         "shape" : "CreateUserPoolClientResponse"
       }
+    },
+    "DeleteGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a group. Currently only groups with no members can be deleted.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteGroup",
+      "output" : null
     },
     "DeleteUser" : {
       "authtype" : "NONE",
@@ -2022,6 +2282,11 @@
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UserPoolTaggingException"
       }, {
         "documentation" : null,
         "exception" : false,
@@ -2375,6 +2640,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetDeviceResponse"
+      }
+    },
+    "GetGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Gets a group.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetGroup",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetGroupResponse"
       }
     },
     "GetUser" : {
@@ -2757,6 +3071,55 @@
         "shape" : "ListDevicesResponse"
       }
     },
+    "ListGroups" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the groups associated with a user pool.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListGroupsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListGroups",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListGroupsResponse"
+      }
+    },
     "ListUserImportJobs" : {
       "authtype" : null,
       "deprecated" : false,
@@ -2946,6 +3309,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "ListUsersResponse"
+      }
+    },
+    "ListUsersInGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the users in the specified group.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListUsersInGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListUsersInGroup",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListUsersInGroupResponse"
       }
     },
     "ResendConfirmationCode" : {
@@ -3491,6 +3903,55 @@
         "shape" : "UpdateDeviceStatusResponse"
       }
     },
+    "UpdateGroup" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Updates the specified group with the specified attributes.</p> <p>Requires developer credentials.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateGroupRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateGroup",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateGroupResponse"
+      }
+    },
     "UpdateUserAttributes" : {
       "authtype" : "NONE",
       "deprecated" : false,
@@ -3654,6 +4115,11 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSmsRoleTrustRelationshipException"
+      }, {
+        "documentation" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UserPoolTaggingException"
       }, {
         "documentation" : null,
         "exception" : false,
@@ -3878,6 +4344,67 @@
       "value" : null,
       "wrapper" : false
     },
+    "AdminAddUserToGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The group name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Username" : {
+          "deprecated" : false,
+          "documentation" : "<p>The username for the user.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UsernameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "Username", "GroupName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "AdminConfirmSignUpRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to confirm user registration.</p>",
@@ -3987,7 +4514,7 @@
         },
         "UnusedAccountValidityDays" : {
           "deprecated" : false,
-          "documentation" : "<p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call AdminCreateUser again, specifying \"RESEND\" for the MessageAction parameter.</p>",
+          "documentation" : "<p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call AdminCreateUser again, specifying \"RESEND\" for the MessageAction parameter. The default value for this paameter is 7.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5054,6 +5581,189 @@
       "pattern" : null,
       "payload" : null,
       "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AdminListGroupsForUserRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The limit of the request to list groups.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "QueryLimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Username" : {
+          "deprecated" : false,
+          "documentation" : "<p>The username for the user.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UsernameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Username", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AdminListGroupsForUserResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Groups" : {
+          "deprecated" : false,
+          "documentation" : "<p>The groups that the user belongs to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AdminRemoveUserFromGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The group name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Username" : {
+          "deprecated" : false,
+          "documentation" : "<p>The username for the user.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UsernameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "Username", "GroupName" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -7012,6 +7722,128 @@
       "value" : null,
       "wrapper" : false
     },
+    "CreateGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>A string containing the description of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DescriptionType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the group. Must be unique.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Precedence" : {
+          "deprecated" : false,
+          "documentation" : "<p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher or null <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens.</p> <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p> <p>The default <code>Precedence</code> value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PrecedenceType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The role ARN for the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ArnType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "GroupName", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateGroupResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Group" : {
+          "deprecated" : false,
+          "documentation" : "<p>The group object for the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateUserImportJobRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to create the user import job.</p>",
@@ -7174,7 +8006,7 @@
         },
         "RefreshTokenValidity" : {
           "deprecated" : false,
-          "documentation" : "<p>Refreshes the token validity.</p>",
+          "documentation" : "<p>The validity of the refresh token, in days.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7462,6 +8294,19 @@
           "shape" : "SmsVerificationMessageType",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "UserPoolTags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The cost allocation tags for the user pool. For more information, see <a href=\"http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html\">Adding Cost Allocation Tags to Your User Pool</a> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolTagsType",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -7580,6 +8425,54 @@
       "required" : null,
       "streaming" : false,
       "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "GroupName", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -8057,6 +8950,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescriptionType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 2048,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -8891,6 +9805,89 @@
       "value" : null,
       "wrapper" : false
     },
+    "GetGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "GroupName", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetGroupResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Group" : {
+          "deprecated" : false,
+          "documentation" : "<p>The group object for the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "GetUserAttributeVerificationCodeRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to get user attribute verification.</p>",
@@ -9117,6 +10114,208 @@
       "max" : 0,
       "member" : null,
       "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GroupExistsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GroupListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "GroupType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GroupNameType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : null,
+      "min" : 1,
+      "pattern" : "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GroupType" : {
+      "deprecated" : false,
+      "documentation" : "<p>The group type.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CreationDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date the group was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>A string containing the description of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DescriptionType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date the group was last modified.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Precedence" : {
+          "deprecated" : false,
+          "documentation" : "<p>A nonnegative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. If a user belongs to two or more groups, it is the group with the highest precedence whose role ARN will be used in the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the user's tokens. Groups with higher <code>Precedence</code> values take precedence over groups with lower <code>Precedence</code> values or with null <code>Precedence</code> values.</p> <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is not set in users' tokens.</p> <p>The default <code>Precedence</code> value is null.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PrecedenceType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The role ARN for the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ArnType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9845,6 +11044,115 @@
       "value" : null,
       "wrapper" : false
     },
+    "ListGroupsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The limit of the request to list groups.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "QueryLimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListGroupsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Groups" : {
+          "deprecated" : false,
+          "documentation" : "<p>The group objects for the groups.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ListOfStringTypes" : {
       "deprecated" : false,
       "documentation" : null,
@@ -10179,6 +11487,128 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "UserPoolListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListUsersInGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The limit of the request to list users.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "QueryLimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "GroupName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListUsersInGroupResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Users" : {
+          "deprecated" : false,
+          "documentation" : "<p>The users returned in the request to list users.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UsersListType",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -10943,6 +12373,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PrecedenceType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
       "value" : null,
       "wrapper" : false
     },
@@ -12350,6 +13801,128 @@
       "value" : null,
       "wrapper" : false
     },
+    "UpdateGroupRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>A string containing the new description of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DescriptionType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GroupName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Precedence" : {
+          "deprecated" : false,
+          "documentation" : "<p>The new precedence value for the group. For more information about this parameter, see <a href=\"API_CreateGroupRequeste.html\">CreateGroupRequest</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PrecedenceType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The new role ARN for the group. This is used for setting the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ArnType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID for the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "GroupName", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateGroupResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Group" : {
+          "deprecated" : false,
+          "documentation" : "<p>The group object for the group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GroupType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "UpdateUserAttributesRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to update user attributes.</p>",
@@ -12499,7 +14072,7 @@
         },
         "RefreshTokenValidity" : {
           "deprecated" : false,
-          "documentation" : "<p>The validity of the refresh token.</p>",
+          "documentation" : "<p>The validity of the refresh token, in days.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -12759,6 +14332,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolTags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The cost allocation tags for the user pool. For more information, see <a href=\"http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html\">Adding Cost Allocation Tags to Your User Pool</a> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolTagsType",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -13243,7 +14829,7 @@
     },
     "UserPoolClientDescription" : {
       "deprecated" : false,
-      "documentation" : "<p>The description of the user poool client.</p>",
+      "documentation" : "<p>The description of the user pool client.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -13440,7 +15026,7 @@
         },
         "RefreshTokenValidity" : {
           "deprecated" : false,
-          "documentation" : "<p>The validity of the refresh token.</p>",
+          "documentation" : "<p>The validity of the refresh token, in days.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -13716,6 +15302,86 @@
       "streaming" : false,
       "type" : "structure",
       "value" : null,
+      "wrapper" : false
+    },
+    "UserPoolTaggingException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception gets thrown when a user pool tag cannot be set or updated.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UserPoolTagsType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StringType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : null,
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StringType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
       "wrapper" : false
     },
     "UserPoolType" : {
@@ -14013,6 +15679,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "StatusType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolTags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The cost allocation tags for the user pool. For more information, see <a href=\"http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html\">Adding Cost Allocation Tags to Your User Pool</a> </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolTagsType",
           "streaming" : false,
           "xmlNamespace" : null
         }

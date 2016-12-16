@@ -40,6 +40,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminAddUserToGroupResult adminAddUserToGroup(AdminAddUserToGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminConfirmSignUpResult adminConfirmSignUp(AdminConfirmSignUpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +100,16 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminListGroupsForUserResult adminListGroupsForUser(AdminListGroupsForUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminRemoveUserFromGroupResult adminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminResetUserPasswordResult adminResetUserPassword(AdminResetUserPasswordRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +160,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUserImportJobResult createUserImportJob(CreateUserImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -156,6 +176,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public CreateUserPoolClientResult createUserPoolClient(CreateUserPoolClientRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -215,6 +240,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserResult getUser(GetUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -240,6 +270,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public ListGroupsResult listGroups(ListGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUserImportJobsResult listUserImportJobs(ListUserImportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -256,6 +291,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public ListUsersResult listUsers(ListUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListUsersInGroupResult listUsersInGroup(ListUsersInGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -291,6 +331,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public UpdateDeviceStatusResult updateDeviceStatus(UpdateDeviceStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

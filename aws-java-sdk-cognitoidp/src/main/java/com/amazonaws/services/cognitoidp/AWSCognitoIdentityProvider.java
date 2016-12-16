@@ -117,7 +117,36 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Adds the specified user to the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminAddUserToGroupRequest
+     * @return Result of the AdminAddUserToGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminAddUserToGroup
+     */
+    AdminAddUserToGroupResult adminAddUserToGroup(AdminAddUserToGroupRequest adminAddUserToGroupRequest);
+
+    /**
+     * <p>
      * Confirms user registration as an admin without using a confirmation code. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminConfirmSignUpRequest
@@ -210,6 +239,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Deletes a user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDeleteUserRequest
      *        Represents the request to delete a user as an administrator.
@@ -233,6 +265,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Deletes the user attributes in a user pool as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminDeleteUserAttributesRequest
@@ -258,6 +293,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Disables the specified user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminDisableUserRequest
      *        Represents the request to disable any user as an administrator.
@@ -282,6 +320,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Enables the specified user as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminEnableUserRequest
      *        Represents the request that enables the user as an administrator.
@@ -305,6 +346,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Forgets the device, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminForgetDeviceRequest
@@ -332,6 +376,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Gets the device, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminGetDeviceRequest
      *        Represents the request to get the device, as an administrator.
@@ -356,6 +403,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Gets the specified user by user name in a user pool as an administrator. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminGetUserRequest
      *        Represents the request to get the specified user as an administrator.
@@ -379,6 +429,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Initiates the authentication flow, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminInitiateAuthRequest
@@ -427,6 +480,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Lists devices, as an administrator.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminListDevicesRequest
      *        Represents the request to list devices, as an administrator.
@@ -449,6 +505,58 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Lists the groups that the user belongs to.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminListGroupsForUserRequest
+     * @return Result of the AdminListGroupsForUser operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminListGroupsForUser
+     */
+    AdminListGroupsForUserResult adminListGroupsForUser(AdminListGroupsForUserRequest adminListGroupsForUserRequest);
+
+    /**
+     * <p>
+     * Removes the specified user from the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param adminRemoveUserFromGroupRequest
+     * @return Result of the AdminRemoveUserFromGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminRemoveUserFromGroup
+     */
+    AdminRemoveUserFromGroupResult adminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest);
+
+    /**
+     * <p>
      * Resets the specified user's password in a user pool as an administrator. Works on any user.
      * </p>
      * <p>
@@ -458,6 +566,9 @@ public interface AWSCognitoIdentityProvider {
      * if the user pool has phone verification selected and a verified phone number exists for the user, or if email
      * verification is selected and a verified email exists for the user, calling this API will also result in sending a
      * message to the end user with the code to change their password.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminResetUserPasswordRequest
@@ -492,6 +603,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Responds to an authentication challenge, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminRespondToAuthChallengeRequest
@@ -550,6 +664,9 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * Sets all the user settings for a specified user name. Works on any user.
      * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
      * 
      * @param adminSetUserSettingsRequest
      *        Represents the request to set user settings as an administrator.
@@ -571,6 +688,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Updates the device status as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUpdateDeviceStatusRequest
@@ -597,6 +717,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUpdateUserAttributesRequest
@@ -633,6 +756,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Signs out users from all devices, as an administrator.
+     * </p>
+     * <p>
+     * Requires developer credentials.
      * </p>
      * 
      * @param adminUserGlobalSignOutRequest
@@ -814,6 +940,34 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Creates a new group in the specified user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return Result of the CreateGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws GroupExistsException
+     *         This exception is thrown when Amazon Cognito encounters a group that already exists in the user pool.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.CreateGroup
+     */
+    CreateGroupResult createGroup(CreateGroupRequest createGroupRequest);
+
+    /**
+     * <p>
      * Creates the user import job.
      * </p>
      * 
@@ -864,6 +1018,8 @@ public interface AWSCognitoIdentityProvider {
      *         400.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserPoolTaggingException
+     *         This exception gets thrown when a user pool tag cannot be set or updated.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.CreateUserPool
@@ -893,6 +1049,30 @@ public interface AWSCognitoIdentityProvider {
      * @sample AWSCognitoIdentityProvider.CreateUserPoolClient
      */
     CreateUserPoolClientResult createUserPoolClient(CreateUserPoolClientRequest createUserPoolClientRequest);
+
+    /**
+     * <p>
+     * Deletes a group. Currently only groups with no members can be deleted.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DeleteGroup
+     */
+    DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
 
     /**
      * <p>
@@ -1035,6 +1215,8 @@ public interface AWSCognitoIdentityProvider {
      *         This exception gets thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
      *         This exception gets thrown when a user is not authorized.
+     * @throws UserPoolTaggingException
+     *         This exception gets thrown when a user pool tag cannot be set or updated.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DescribeUserPool
@@ -1192,6 +1374,30 @@ public interface AWSCognitoIdentityProvider {
      * @sample AWSCognitoIdentityProvider.GetDevice
      */
     GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest);
+
+    /**
+     * <p>
+     * Gets a group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return Result of the GetGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.GetGroup
+     */
+    GetGroupResult getGroup(GetGroupRequest getGroupRequest);
 
     /**
      * <p>
@@ -1367,6 +1573,30 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Lists the groups associated with a user pool.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listGroupsRequest
+     * @return Result of the ListGroups operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListGroups
+     */
+    ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest);
+
+    /**
+     * <p>
      * Lists the user import jobs.
      * </p>
      * 
@@ -1450,6 +1680,30 @@ public interface AWSCognitoIdentityProvider {
      * @sample AWSCognitoIdentityProvider.ListUsers
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Lists the users in the specified group.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param listUsersInGroupRequest
+     * @return Result of the ListUsersInGroup operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListUsersInGroup
+     */
+    ListUsersInGroupResult listUsersInGroup(ListUsersInGroupRequest listUsersInGroupRequest);
 
     /**
      * <p>
@@ -1707,6 +1961,30 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Updates the specified group with the specified attributes.
+     * </p>
+     * <p>
+     * Requires developer credentials.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception gets thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception gets thrown when a user is not authorized.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateGroup
+     */
+    UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
+
+    /**
+     * <p>
      * Allows a user to update a specific attribute (one at a time).
      * </p>
      * 
@@ -1791,6 +2069,8 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when the trust relationship is invalid for the role provided for SMS
      *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
      *         provided in the role does not match what is provided in the SMS configuration for the user pool.
+     * @throws UserPoolTaggingException
+     *         This exception gets thrown when a user pool tag cannot be set or updated.
      * @throws InvalidEmailRoleAccessPolicyException
      *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
      *         400.

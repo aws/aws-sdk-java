@@ -42,7 +42,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private String clientName;
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      */
     private Integer refreshTokenValidity;
@@ -187,11 +187,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The validity of the refresh token.
+     *        The validity of the refresh token, in days.
      */
 
     public void setRefreshTokenValidity(Integer refreshTokenValidity) {
@@ -200,10 +200,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      * 
-     * @return The validity of the refresh token.
+     * @return The validity of the refresh token, in days.
      */
 
     public Integer getRefreshTokenValidity() {
@@ -212,11 +212,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The validity of the refresh token.
+     * The validity of the refresh token, in days.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The validity of the refresh token.
+     *        The validity of the refresh token, in days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

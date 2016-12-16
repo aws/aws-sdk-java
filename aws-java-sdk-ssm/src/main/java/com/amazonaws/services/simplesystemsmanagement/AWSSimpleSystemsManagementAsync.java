@@ -318,6 +318,33 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Creates a patch baseline.
+     * </p>
+     * 
+     * @param createPatchBaselineRequest
+     * @return A Java Future containing the result of the CreatePatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreatePatchBaseline
+     */
+    java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest createPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Creates a patch baseline.
+     * </p>
+     * 
+     * @param createPatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreatePatchBaseline
+     */
+    java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(CreatePatchBaselineRequest createPatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePatchBaselineRequest, CreatePatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an activation. You are not required to delete an activation. If you delete an activation, you can no
      * longer use it to register additional managed instances. Deleting an activation does not de-register managed
      * instances. You must manually de-register managed instances.
@@ -475,6 +502,33 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Deletes a patch baseline.
+     * </p>
+     * 
+     * @param deletePatchBaselineRequest
+     * @return A Java Future containing the result of the DeletePatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeletePatchBaseline
+     */
+    java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest deletePatchBaselineRequest);
+
+    /**
+     * <p>
+     * Deletes a patch baseline.
+     * </p>
+     * 
+     * @param deletePatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeletePatchBaseline
+     */
+    java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest deletePatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePatchBaselineRequest, DeletePatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
      * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
      * </p>
@@ -503,6 +557,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(
             DeregisterManagedInstanceRequest deregisterManagedInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<DeregisterManagedInstanceRequest, DeregisterManagedInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a patch group from a patch baseline.
+     * </p>
+     * 
+     * @param deregisterPatchBaselineForPatchGroupRequest
+     * @return A Java Future containing the result of the DeregisterPatchBaselineForPatchGroup operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DeregisterPatchBaselineForPatchGroup
+     */
+    java.util.concurrent.Future<DeregisterPatchBaselineForPatchGroupResult> deregisterPatchBaselineForPatchGroupAsync(
+            DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest);
+
+    /**
+     * <p>
+     * Removes a patch group from a patch baseline.
+     * </p>
+     * 
+     * @param deregisterPatchBaselineForPatchGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterPatchBaselineForPatchGroup operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeregisterPatchBaselineForPatchGroup
+     */
+    java.util.concurrent.Future<DeregisterPatchBaselineForPatchGroupResult> deregisterPatchBaselineForPatchGroupAsync(
+            DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterPatchBaselineForPatchGroupRequest, DeregisterPatchBaselineForPatchGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -655,6 +740,33 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Lists all patches that could possibly be included in a patch baseline.
+     * </p>
+     * 
+     * @param describeAvailablePatchesRequest
+     * @return A Java Future containing the result of the DescribeAvailablePatches operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeAvailablePatches
+     */
+    java.util.concurrent.Future<DescribeAvailablePatchesResult> describeAvailablePatchesAsync(DescribeAvailablePatchesRequest describeAvailablePatchesRequest);
+
+    /**
+     * <p>
+     * Lists all patches that could possibly be included in a patch baseline.
+     * </p>
+     * 
+     * @param describeAvailablePatchesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAvailablePatches operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAvailablePatches
+     */
+    java.util.concurrent.Future<DescribeAvailablePatchesResult> describeAvailablePatchesAsync(DescribeAvailablePatchesRequest describeAvailablePatchesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAvailablePatchesRequest, DescribeAvailablePatchesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified SSM document.
      * </p>
      * 
@@ -744,6 +856,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * </p>
+     * 
+     * @param describeEffectivePatchesForPatchBaselineRequest
+     * @return A Java Future containing the result of the DescribeEffectivePatchesForPatchBaseline operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeEffectivePatchesForPatchBaseline
+     */
+    java.util.concurrent.Future<DescribeEffectivePatchesForPatchBaselineResult> describeEffectivePatchesForPatchBaselineAsync(
+            DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * </p>
+     * 
+     * @param describeEffectivePatchesForPatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEffectivePatchesForPatchBaseline operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeEffectivePatchesForPatchBaseline
+     */
+    java.util.concurrent.Future<DescribeEffectivePatchesForPatchBaselineResult> describeEffectivePatchesForPatchBaselineAsync(
+            DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEffectivePatchesForPatchBaselineRequest, DescribeEffectivePatchesForPatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
      * The status of the associations for the instance(s).
      * </p>
      * 
@@ -809,6 +952,95 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(
             DescribeInstanceInformationRequest describeInstanceInformationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceInformationRequest, DescribeInstanceInformationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state of one or more instances.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesRequest
+     * @return A Java Future containing the result of the DescribeInstancePatchStates operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeInstancePatchStates
+     */
+    java.util.concurrent.Future<DescribeInstancePatchStatesResult> describeInstancePatchStatesAsync(
+            DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest);
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state of one or more instances.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstancePatchStates operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstancePatchStates
+     */
+    java.util.concurrent.Future<DescribeInstancePatchStatesResult> describeInstancePatchStatesAsync(
+            DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchStatesRequest, DescribeInstancePatchStatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state for the instances in the specified patch group.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesForPatchGroupRequest
+     * @return A Java Future containing the result of the DescribeInstancePatchStatesForPatchGroup operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeInstancePatchStatesForPatchGroup
+     */
+    java.util.concurrent.Future<DescribeInstancePatchStatesForPatchGroupResult> describeInstancePatchStatesForPatchGroupAsync(
+            DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the high-level patch state for the instances in the specified patch group.
+     * </p>
+     * 
+     * @param describeInstancePatchStatesForPatchGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstancePatchStatesForPatchGroup operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstancePatchStatesForPatchGroup
+     */
+    java.util.concurrent.Future<DescribeInstancePatchStatesForPatchGroupResult> describeInstancePatchStatesForPatchGroupAsync(
+            DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchStatesForPatchGroupRequest, DescribeInstancePatchStatesForPatchGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the patches on the specified instance and their state relative to the patch baseline
+     * being used for the instance.
+     * </p>
+     * 
+     * @param describeInstancePatchesRequest
+     * @return A Java Future containing the result of the DescribeInstancePatches operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeInstancePatches
+     */
+    java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(DescribeInstancePatchesRequest describeInstancePatchesRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the patches on the specified instance and their state relative to the patch baseline
+     * being used for the instance.
+     * </p>
+     * 
+     * @param describeInstancePatchesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstancePatches operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstancePatches
+     */
+    java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(DescribeInstancePatchesRequest describeInstancePatchesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchesRequest, DescribeInstancePatchesResult> asyncHandler);
 
     /**
      * <p>
@@ -1027,6 +1259,87 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Lists the patch baselines in your AWS account.
+     * </p>
+     * 
+     * @param describePatchBaselinesRequest
+     * @return A Java Future containing the result of the DescribePatchBaselines operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribePatchBaselines
+     */
+    java.util.concurrent.Future<DescribePatchBaselinesResult> describePatchBaselinesAsync(DescribePatchBaselinesRequest describePatchBaselinesRequest);
+
+    /**
+     * <p>
+     * Lists the patch baselines in your AWS account.
+     * </p>
+     * 
+     * @param describePatchBaselinesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePatchBaselines operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribePatchBaselines
+     */
+    java.util.concurrent.Future<DescribePatchBaselinesResult> describePatchBaselinesAsync(DescribePatchBaselinesRequest describePatchBaselinesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePatchBaselinesRequest, DescribePatchBaselinesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns high-level aggregated patch compliance state for a patch group.
+     * </p>
+     * 
+     * @param describePatchGroupStateRequest
+     * @return A Java Future containing the result of the DescribePatchGroupState operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribePatchGroupState
+     */
+    java.util.concurrent.Future<DescribePatchGroupStateResult> describePatchGroupStateAsync(DescribePatchGroupStateRequest describePatchGroupStateRequest);
+
+    /**
+     * <p>
+     * Returns high-level aggregated patch compliance state for a patch group.
+     * </p>
+     * 
+     * @param describePatchGroupStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePatchGroupState operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribePatchGroupState
+     */
+    java.util.concurrent.Future<DescribePatchGroupStateResult> describePatchGroupStateAsync(DescribePatchGroupStateRequest describePatchGroupStateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePatchGroupStateRequest, DescribePatchGroupStateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all patch groups that have been registered with patch baselines.
+     * </p>
+     * 
+     * @param describePatchGroupsRequest
+     * @return A Java Future containing the result of the DescribePatchGroups operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribePatchGroups
+     */
+    java.util.concurrent.Future<DescribePatchGroupsResult> describePatchGroupsAsync(DescribePatchGroupsRequest describePatchGroupsRequest);
+
+    /**
+     * <p>
+     * Lists all patch groups that have been registered with patch baselines.
+     * </p>
+     * 
+     * @param describePatchGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePatchGroups operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribePatchGroups
+     */
+    java.util.concurrent.Future<DescribePatchGroupsResult> describePatchGroupsAsync(DescribePatchGroupsRequest describePatchGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePatchGroupsRequest, DescribePatchGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -1078,6 +1391,66 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(GetCommandInvocationRequest getCommandInvocationRequest,
             com.amazonaws.handlers.AsyncHandler<GetCommandInvocationRequest, GetCommandInvocationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the default patch baseline.
+     * </p>
+     * 
+     * @param getDefaultPatchBaselineRequest
+     * @return A Java Future containing the result of the GetDefaultPatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetDefaultPatchBaseline
+     */
+    java.util.concurrent.Future<GetDefaultPatchBaselineResult> getDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Retrieves the default patch baseline.
+     * </p>
+     * 
+     * @param getDefaultPatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDefaultPatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetDefaultPatchBaseline
+     */
+    java.util.concurrent.Future<GetDefaultPatchBaselineResult> getDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDefaultPatchBaselineRequest, GetDefaultPatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
+     * AWS-ApplyPatchBaseline Systems Manager document.
+     * </p>
+     * 
+     * @param getDeployablePatchSnapshotForInstanceRequest
+     * @return A Java Future containing the result of the GetDeployablePatchSnapshotForInstance operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetDeployablePatchSnapshotForInstance
+     */
+    java.util.concurrent.Future<GetDeployablePatchSnapshotForInstanceResult> getDeployablePatchSnapshotForInstanceAsync(
+            GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest);
+
+    /**
+     * <p>
+     * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
+     * AWS-ApplyPatchBaseline Systems Manager document.
+     * </p>
+     * 
+     * @param getDeployablePatchSnapshotForInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeployablePatchSnapshotForInstance operation returned by
+     *         the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetDeployablePatchSnapshotForInstance
+     */
+    java.util.concurrent.Future<GetDeployablePatchSnapshotForInstanceResult> getDeployablePatchSnapshotForInstanceAsync(
+            GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeployablePatchSnapshotForInstanceRequest, GetDeployablePatchSnapshotForInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -1304,6 +1677,64 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest getParametersRequest,
             com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about a patch baseline.
+     * </p>
+     * 
+     * @param getPatchBaselineRequest
+     * @return A Java Future containing the result of the GetPatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetPatchBaseline
+     */
+    java.util.concurrent.Future<GetPatchBaselineResult> getPatchBaselineAsync(GetPatchBaselineRequest getPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a patch baseline.
+     * </p>
+     * 
+     * @param getPatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetPatchBaseline
+     */
+    java.util.concurrent.Future<GetPatchBaselineResult> getPatchBaselineAsync(GetPatchBaselineRequest getPatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPatchBaselineRequest, GetPatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the patch baseline that should be used for the specified patch group.
+     * </p>
+     * 
+     * @param getPatchBaselineForPatchGroupRequest
+     * @return A Java Future containing the result of the GetPatchBaselineForPatchGroup operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.GetPatchBaselineForPatchGroup
+     */
+    java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(
+            GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the patch baseline that should be used for the specified patch group.
+     * </p>
+     * 
+     * @param getPatchBaselineForPatchGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPatchBaselineForPatchGroup operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetPatchBaselineForPatchGroup
+     */
+    java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(
+            GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPatchBaselineForPatchGroupRequest, GetPatchBaselineForPatchGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1601,6 +2032,68 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest putParameterRequest,
             com.amazonaws.handlers.AsyncHandler<PutParameterRequest, PutParameterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Defines the default patch baseline.
+     * </p>
+     * 
+     * @param registerDefaultPatchBaselineRequest
+     * @return A Java Future containing the result of the RegisterDefaultPatchBaseline operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.RegisterDefaultPatchBaseline
+     */
+    java.util.concurrent.Future<RegisterDefaultPatchBaselineResult> registerDefaultPatchBaselineAsync(
+            RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest);
+
+    /**
+     * <p>
+     * Defines the default patch baseline.
+     * </p>
+     * 
+     * @param registerDefaultPatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterDefaultPatchBaseline operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterDefaultPatchBaseline
+     */
+    java.util.concurrent.Future<RegisterDefaultPatchBaselineResult> registerDefaultPatchBaselineAsync(
+            RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterDefaultPatchBaselineRequest, RegisterDefaultPatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a patch baseline for a patch group.
+     * </p>
+     * 
+     * @param registerPatchBaselineForPatchGroupRequest
+     * @return A Java Future containing the result of the RegisterPatchBaselineForPatchGroup operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.RegisterPatchBaselineForPatchGroup
+     */
+    java.util.concurrent.Future<RegisterPatchBaselineForPatchGroupResult> registerPatchBaselineForPatchGroupAsync(
+            RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest);
+
+    /**
+     * <p>
+     * Registers a patch baseline for a patch group.
+     * </p>
+     * 
+     * @param registerPatchBaselineForPatchGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterPatchBaselineForPatchGroup operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.RegisterPatchBaselineForPatchGroup
+     */
+    java.util.concurrent.Future<RegisterPatchBaselineForPatchGroupResult> registerPatchBaselineForPatchGroupAsync(
+            RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterPatchBaselineForPatchGroupRequest, RegisterPatchBaselineForPatchGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1941,5 +2434,32 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(
             UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateManagedInstanceRoleRequest, UpdateManagedInstanceRoleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies an existing patch baseline. Fields not specified in the request are left unchanged.
+     * </p>
+     * 
+     * @param updatePatchBaselineRequest
+     * @return A Java Future containing the result of the UpdatePatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdatePatchBaseline
+     */
+    java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest updatePatchBaselineRequest);
+
+    /**
+     * <p>
+     * Modifies an existing patch baseline. Fields not specified in the request are left unchanged.
+     * </p>
+     * 
+     * @param updatePatchBaselineRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePatchBaseline operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdatePatchBaseline
+     */
+    java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(UpdatePatchBaselineRequest updatePatchBaselineRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePatchBaselineRequest, UpdatePatchBaselineResult> asyncHandler);
 
 }

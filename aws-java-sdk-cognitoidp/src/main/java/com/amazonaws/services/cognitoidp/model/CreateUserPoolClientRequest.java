@@ -42,7 +42,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean generateSecret;
     /**
      * <p>
-     * Refreshes the token validity.
+     * The validity of the refresh token, in days.
      * </p>
      */
     private Integer refreshTokenValidity;
@@ -199,11 +199,11 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Refreshes the token validity.
+     * The validity of the refresh token, in days.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        Refreshes the token validity.
+     *        The validity of the refresh token, in days.
      */
 
     public void setRefreshTokenValidity(Integer refreshTokenValidity) {
@@ -212,10 +212,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Refreshes the token validity.
+     * The validity of the refresh token, in days.
      * </p>
      * 
-     * @return Refreshes the token validity.
+     * @return The validity of the refresh token, in days.
      */
 
     public Integer getRefreshTokenValidity() {
@@ -224,11 +224,11 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Refreshes the token validity.
+     * The validity of the refresh token, in days.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        Refreshes the token validity.
+     *        The validity of the refresh token, in days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
