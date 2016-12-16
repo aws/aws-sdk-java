@@ -129,7 +129,7 @@
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
   <properties>
-      <awsjavasdk.version>1.11.68</awsjavasdk.version>
+      <awsjavasdk.version>${project.version}</awsjavasdk.version>
       <jackson.version>2.6.6</jackson.version>
       <ion.java.version>1.0.1</ion.java.version>
       <junit.version>4.12</junit.version>
@@ -163,7 +163,7 @@
       <dependency>
         <groupId>com.amazonaws</groupId>
         <artifactId>jmespath-java</artifactId>
-        <version>1.11.69-SNAPSHOT</version>
+        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
