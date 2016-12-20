@@ -192,9 +192,9 @@ public class Filter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getValues() != null)
-            sb.append("Values: " + getValues());
+            sb.append("Values: ").append(getValues());
         sb.append("}");
         return sb.toString();
     }

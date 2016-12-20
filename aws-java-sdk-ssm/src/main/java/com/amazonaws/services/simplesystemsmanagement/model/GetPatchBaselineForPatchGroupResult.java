@@ -125,9 +125,9 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId() + ",");
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: " + getPatchGroup());
+            sb.append("PatchGroup: ").append(getPatchGroup());
         sb.append("}");
         return sb.toString();
     }

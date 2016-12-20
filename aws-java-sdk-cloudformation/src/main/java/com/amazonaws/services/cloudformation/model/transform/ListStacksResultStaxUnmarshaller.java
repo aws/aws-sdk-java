@@ -45,6 +45,11 @@ public class ListStacksResultStaxUnmarshaller implements Unmarshaller<ListStacks
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("StackSummaries", targetDepth)) {
+                    listStacksResult.withStackSummaries(new ArrayList<StackSummary>());
+                    continue;
+                }
+
                 if (context.testExpression("StackSummaries/member", targetDepth)) {
                     listStacksResult.withStackSummaries(StackSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

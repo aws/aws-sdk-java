@@ -45,6 +45,11 @@ public class DescribeImportSnapshotTasksResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("importSnapshotTaskSet", targetDepth)) {
+                    describeImportSnapshotTasksResult.withImportSnapshotTasks(new ArrayList<ImportSnapshotTask>());
+                    continue;
+                }
+
                 if (context.testExpression("importSnapshotTaskSet/item", targetDepth)) {
                     describeImportSnapshotTasksResult.withImportSnapshotTasks(ImportSnapshotTaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

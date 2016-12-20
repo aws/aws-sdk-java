@@ -418,19 +418,19 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName() + ",");
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getStartFromHead() != null)
-            sb.append("StartFromHead: " + getStartFromHead());
+            sb.append("StartFromHead: ").append(getStartFromHead());
         sb.append("}");
         return sb.toString();
     }

@@ -288,15 +288,15 @@ public class WorkflowExecutionDetail extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionInfo() != null)
-            sb.append("ExecutionInfo: " + getExecutionInfo() + ",");
+            sb.append("ExecutionInfo: ").append(getExecutionInfo()).append(",");
         if (getExecutionConfiguration() != null)
-            sb.append("ExecutionConfiguration: " + getExecutionConfiguration() + ",");
+            sb.append("ExecutionConfiguration: ").append(getExecutionConfiguration()).append(",");
         if (getOpenCounts() != null)
-            sb.append("OpenCounts: " + getOpenCounts() + ",");
+            sb.append("OpenCounts: ").append(getOpenCounts()).append(",");
         if (getLatestActivityTaskTimestamp() != null)
-            sb.append("LatestActivityTaskTimestamp: " + getLatestActivityTaskTimestamp() + ",");
+            sb.append("LatestActivityTaskTimestamp: ").append(getLatestActivityTaskTimestamp()).append(",");
         if (getLatestExecutionContext() != null)
-            sb.append("LatestExecutionContext: " + getLatestExecutionContext());
+            sb.append("LatestExecutionContext: ").append(getLatestExecutionContext());
         sb.append("}");
         return sb.toString();
     }

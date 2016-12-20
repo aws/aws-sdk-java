@@ -266,11 +266,11 @@ public class DomainInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

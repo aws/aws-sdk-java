@@ -141,9 +141,9 @@ public class AttachInternetGatewayRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGatewayId() != null)
-            sb.append("InternetGatewayId: " + getInternetGatewayId() + ",");
+            sb.append("InternetGatewayId: ").append(getInternetGatewayId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId());
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }

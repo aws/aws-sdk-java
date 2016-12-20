@@ -374,15 +374,15 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionName() != null)
-            sb.append("SubscriptionName: " + getSubscriptionName() + ",");
+            sb.append("SubscriptionName: ").append(getSubscriptionName()).append(",");
         if (getSnsTopicArn() != null)
-            sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType() + ",");
+            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getEventCategories() != null)
-            sb.append("EventCategories: " + getEventCategories() + ",");
+            sb.append("EventCategories: ").append(getEventCategories()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }

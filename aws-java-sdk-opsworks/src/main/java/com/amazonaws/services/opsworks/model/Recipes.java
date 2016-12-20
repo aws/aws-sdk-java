@@ -438,15 +438,15 @@ public class Recipes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSetup() != null)
-            sb.append("Setup: " + getSetup() + ",");
+            sb.append("Setup: ").append(getSetup()).append(",");
         if (getConfigure() != null)
-            sb.append("Configure: " + getConfigure() + ",");
+            sb.append("Configure: ").append(getConfigure()).append(",");
         if (getDeploy() != null)
-            sb.append("Deploy: " + getDeploy() + ",");
+            sb.append("Deploy: ").append(getDeploy()).append(",");
         if (getUndeploy() != null)
-            sb.append("Undeploy: " + getUndeploy() + ",");
+            sb.append("Undeploy: ").append(getUndeploy()).append(",");
         if (getShutdown() != null)
-            sb.append("Shutdown: " + getShutdown());
+            sb.append("Shutdown: ").append(getShutdown());
         sb.append("}");
         return sb.toString();
     }

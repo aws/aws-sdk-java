@@ -165,9 +165,9 @@ public class DescribeMaintenanceWindowExecutionsResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutions() != null)
-            sb.append("WindowExecutions: " + getWindowExecutions() + ",");
+            sb.append("WindowExecutions: ").append(getWindowExecutions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

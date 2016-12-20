@@ -352,9 +352,9 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getNotifications() != null)
-            sb.append("Notifications: " + getNotifications());
+            sb.append("Notifications: ").append(getNotifications());
         sb.append("}");
         return sb.toString();
     }

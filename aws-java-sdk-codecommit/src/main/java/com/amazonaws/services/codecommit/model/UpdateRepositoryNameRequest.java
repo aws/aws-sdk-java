@@ -127,9 +127,9 @@ public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOldName() != null)
-            sb.append("OldName: " + getOldName() + ",");
+            sb.append("OldName: ").append(getOldName()).append(",");
         if (getNewName() != null)
-            sb.append("NewName: " + getNewName());
+            sb.append("NewName: ").append(getNewName());
         sb.append("}");
         return sb.toString();
     }

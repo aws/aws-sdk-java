@@ -126,9 +126,9 @@ public class GetDistributionResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistribution() != null)
-            sb.append("Distribution: " + getDistribution() + ",");
+            sb.append("Distribution: ").append(getDistribution()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

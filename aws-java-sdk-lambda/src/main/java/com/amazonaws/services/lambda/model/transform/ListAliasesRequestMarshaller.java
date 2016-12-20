@@ -61,9 +61,7 @@ public class ListAliasesRequestMarshaller implements Marshaller<Request<ListAlia
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases";
 
-        uriResourcePath = uriResourcePath.replace("{FunctionName}",
-                (listAliasesRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listAliasesRequest.getFunctionName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", listAliasesRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         if (listAliasesRequest.getFunctionVersion() != null) {

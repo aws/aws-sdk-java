@@ -270,15 +270,15 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDefaultInstanceName() != null)
-            sb.append("DefaultInstanceName: " + getDefaultInstanceName() + ",");
+            sb.append("DefaultInstanceName: ").append(getDefaultInstanceName()).append(",");
         if (getIamRole() != null)
-            sb.append("IamRole: " + getIamRole() + ",");
+            sb.append("IamRole: ").append(getIamRole()).append(",");
         if (getRegistrationLimit() != null)
-            sb.append("RegistrationLimit: " + getRegistrationLimit() + ",");
+            sb.append("RegistrationLimit: ").append(getRegistrationLimit()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: " + getExpirationDate());
+            sb.append("ExpirationDate: ").append(getExpirationDate());
         sb.append("}");
         return sb.toString();
     }

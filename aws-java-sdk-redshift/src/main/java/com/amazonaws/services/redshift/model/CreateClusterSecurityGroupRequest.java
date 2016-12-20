@@ -362,11 +362,11 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() + ",");
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

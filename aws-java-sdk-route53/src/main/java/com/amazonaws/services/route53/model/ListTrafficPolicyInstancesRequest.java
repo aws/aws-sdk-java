@@ -514,13 +514,13 @@ public class ListTrafficPolicyInstancesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneIdMarker() != null)
-            sb.append("HostedZoneIdMarker: " + getHostedZoneIdMarker() + ",");
+            sb.append("HostedZoneIdMarker: ").append(getHostedZoneIdMarker()).append(",");
         if (getTrafficPolicyInstanceNameMarker() != null)
-            sb.append("TrafficPolicyInstanceNameMarker: " + getTrafficPolicyInstanceNameMarker() + ",");
+            sb.append("TrafficPolicyInstanceNameMarker: ").append(getTrafficPolicyInstanceNameMarker()).append(",");
         if (getTrafficPolicyInstanceTypeMarker() != null)
-            sb.append("TrafficPolicyInstanceTypeMarker: " + getTrafficPolicyInstanceTypeMarker() + ",");
+            sb.append("TrafficPolicyInstanceTypeMarker: ").append(getTrafficPolicyInstanceTypeMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

@@ -133,7 +133,7 @@ public class DeleteServerCertificateRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificateName() != null)
-            sb.append("ServerCertificateName: " + getServerCertificateName());
+            sb.append("ServerCertificateName: ").append(getServerCertificateName());
         sb.append("}");
         return sb.toString();
     }

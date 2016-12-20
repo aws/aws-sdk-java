@@ -224,9 +224,9 @@ public class DeletePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn() + ",");
+            sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: " + getVersionId());
+            sb.append("VersionId: ").append(getVersionId());
         sb.append("}");
         return sb.toString();
     }

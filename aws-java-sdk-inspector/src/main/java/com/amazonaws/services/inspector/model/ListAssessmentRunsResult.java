@@ -168,9 +168,9 @@ public class ListAssessmentRunsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunArns() != null)
-            sb.append("AssessmentRunArns: " + getAssessmentRunArns() + ",");
+            sb.append("AssessmentRunArns: ").append(getAssessmentRunArns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

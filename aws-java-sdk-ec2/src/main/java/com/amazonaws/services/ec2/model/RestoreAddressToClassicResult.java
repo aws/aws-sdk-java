@@ -160,9 +160,9 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }

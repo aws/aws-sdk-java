@@ -100,8 +100,18 @@ public class EvaluationResultStaxUnmarshaller implements Unmarshaller<Evaluation
                     continue;
                 }
 
+                if (context.testExpression("MatchedStatements", targetDepth)) {
+                    evaluationResult.withMatchedStatements(new ArrayList<Statement>());
+                    continue;
+                }
+
                 if (context.testExpression("MatchedStatements/member", targetDepth)) {
                     evaluationResult.withMatchedStatements(StatementStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MissingContextValues", targetDepth)) {
+                    evaluationResult.withMissingContextValues(new ArrayList<String>());
                     continue;
                 }
 
@@ -113,6 +123,11 @@ public class EvaluationResultStaxUnmarshaller implements Unmarshaller<Evaluation
                 if (context.testExpression("EvalDecisionDetails/entry", targetDepth)) {
                     Entry<String, String> entry = EvalDecisionDetailsMapEntryUnmarshaller.getInstance().unmarshall(context);
                     evaluationResult.addEvalDecisionDetailsEntry(entry.getKey(), entry.getValue());
+                    continue;
+                }
+
+                if (context.testExpression("ResourceSpecificResults", targetDepth)) {
+                    evaluationResult.withResourceSpecificResults(new ArrayList<ResourceSpecificResult>());
                     continue;
                 }
 

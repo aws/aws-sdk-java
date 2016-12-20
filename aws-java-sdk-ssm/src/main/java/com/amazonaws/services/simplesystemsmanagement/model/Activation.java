@@ -462,23 +462,23 @@ public class Activation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivationId() != null)
-            sb.append("ActivationId: " + getActivationId() + ",");
+            sb.append("ActivationId: ").append(getActivationId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDefaultInstanceName() != null)
-            sb.append("DefaultInstanceName: " + getDefaultInstanceName() + ",");
+            sb.append("DefaultInstanceName: ").append(getDefaultInstanceName()).append(",");
         if (getIamRole() != null)
-            sb.append("IamRole: " + getIamRole() + ",");
+            sb.append("IamRole: ").append(getIamRole()).append(",");
         if (getRegistrationLimit() != null)
-            sb.append("RegistrationLimit: " + getRegistrationLimit() + ",");
+            sb.append("RegistrationLimit: ").append(getRegistrationLimit()).append(",");
         if (getRegistrationsCount() != null)
-            sb.append("RegistrationsCount: " + getRegistrationsCount() + ",");
+            sb.append("RegistrationsCount: ").append(getRegistrationsCount()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: " + getExpirationDate() + ",");
+            sb.append("ExpirationDate: ").append(getExpirationDate()).append(",");
         if (getExpired() != null)
-            sb.append("Expired: " + getExpired() + ",");
+            sb.append("Expired: ").append(getExpired()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate());
+            sb.append("CreatedDate: ").append(getCreatedDate());
         sb.append("}");
         return sb.toString();
     }

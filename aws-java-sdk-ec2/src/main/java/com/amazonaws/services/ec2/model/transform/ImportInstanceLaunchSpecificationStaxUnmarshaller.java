@@ -50,8 +50,18 @@ public class ImportInstanceLaunchSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("GroupName", targetDepth)) {
+                    importInstanceLaunchSpecification.withGroupNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("GroupName/SecurityGroup", targetDepth)) {
                     importInstanceLaunchSpecification.withGroupNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("GroupId", targetDepth)) {
+                    importInstanceLaunchSpecification.withGroupIds(new ArrayList<String>());
                     continue;
                 }
 

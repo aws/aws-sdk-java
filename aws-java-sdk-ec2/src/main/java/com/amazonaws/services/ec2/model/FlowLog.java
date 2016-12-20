@@ -509,23 +509,23 @@ public class FlowLog implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getFlowLogId() != null)
-            sb.append("FlowLogId: " + getFlowLogId() + ",");
+            sb.append("FlowLogId: ").append(getFlowLogId()).append(",");
         if (getFlowLogStatus() != null)
-            sb.append("FlowLogStatus: " + getFlowLogStatus() + ",");
+            sb.append("FlowLogStatus: ").append(getFlowLogStatus()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getTrafficType() != null)
-            sb.append("TrafficType: " + getTrafficType() + ",");
+            sb.append("TrafficType: ").append(getTrafficType()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getDeliverLogsStatus() != null)
-            sb.append("DeliverLogsStatus: " + getDeliverLogsStatus() + ",");
+            sb.append("DeliverLogsStatus: ").append(getDeliverLogsStatus()).append(",");
         if (getDeliverLogsErrorMessage() != null)
-            sb.append("DeliverLogsErrorMessage: " + getDeliverLogsErrorMessage() + ",");
+            sb.append("DeliverLogsErrorMessage: ").append(getDeliverLogsErrorMessage()).append(",");
         if (getDeliverLogsPermissionArn() != null)
-            sb.append("DeliverLogsPermissionArn: " + getDeliverLogsPermissionArn());
+            sb.append("DeliverLogsPermissionArn: ").append(getDeliverLogsPermissionArn());
         sb.append("}");
         return sb.toString();
     }

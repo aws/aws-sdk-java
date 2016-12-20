@@ -45,6 +45,11 @@ public class DescribeDBLogFilesResultStaxUnmarshaller implements Unmarshaller<De
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("DescribeDBLogFiles", targetDepth)) {
+                    describeDBLogFilesResult.withDescribeDBLogFiles(new ArrayList<DescribeDBLogFilesDetails>());
+                    continue;
+                }
+
                 if (context.testExpression("DescribeDBLogFiles/DescribeDBLogFilesDetails", targetDepth)) {
                     describeDBLogFilesResult.withDescribeDBLogFiles(DescribeDBLogFilesDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -144,13 +144,13 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBudgetName() != null)
-            sb.append("BudgetName: " + getBudgetName() + ",");
+            sb.append("BudgetName: ").append(getBudgetName()).append(",");
         if (getOldNotification() != null)
-            sb.append("OldNotification: " + getOldNotification() + ",");
+            sb.append("OldNotification: ").append(getOldNotification()).append(",");
         if (getNewNotification() != null)
-            sb.append("NewNotification: " + getNewNotification());
+            sb.append("NewNotification: ").append(getNewNotification());
         sb.append("}");
         return sb.toString();
     }

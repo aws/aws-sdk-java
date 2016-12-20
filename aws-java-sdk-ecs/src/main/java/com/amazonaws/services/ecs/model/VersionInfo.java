@@ -179,11 +179,11 @@ public class VersionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion() + ",");
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getAgentHash() != null)
-            sb.append("AgentHash: " + getAgentHash() + ",");
+            sb.append("AgentHash: ").append(getAgentHash()).append(",");
         if (getDockerVersion() != null)
-            sb.append("DockerVersion: " + getDockerVersion());
+            sb.append("DockerVersion: ").append(getDockerVersion());
         sb.append("}");
         return sb.toString();
     }

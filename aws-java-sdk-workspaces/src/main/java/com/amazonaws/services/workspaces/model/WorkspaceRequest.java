@@ -462,21 +462,21 @@ public class WorkspaceRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getVolumeEncryptionKey() != null)
-            sb.append("VolumeEncryptionKey: " + getVolumeEncryptionKey() + ",");
+            sb.append("VolumeEncryptionKey: ").append(getVolumeEncryptionKey()).append(",");
         if (getUserVolumeEncryptionEnabled() != null)
-            sb.append("UserVolumeEncryptionEnabled: " + getUserVolumeEncryptionEnabled() + ",");
+            sb.append("UserVolumeEncryptionEnabled: ").append(getUserVolumeEncryptionEnabled()).append(",");
         if (getRootVolumeEncryptionEnabled() != null)
-            sb.append("RootVolumeEncryptionEnabled: " + getRootVolumeEncryptionEnabled() + ",");
+            sb.append("RootVolumeEncryptionEnabled: ").append(getRootVolumeEncryptionEnabled()).append(",");
         if (getWorkspaceProperties() != null)
-            sb.append("WorkspaceProperties: " + getWorkspaceProperties() + ",");
+            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

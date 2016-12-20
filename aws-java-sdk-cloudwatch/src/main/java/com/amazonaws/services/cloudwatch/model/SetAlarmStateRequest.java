@@ -253,13 +253,13 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getStateValue() != null)
-            sb.append("StateValue: " + getStateValue() + ",");
+            sb.append("StateValue: ").append(getStateValue()).append(",");
         if (getStateReason() != null)
-            sb.append("StateReason: " + getStateReason() + ",");
+            sb.append("StateReason: ").append(getStateReason()).append(",");
         if (getStateReasonData() != null)
-            sb.append("StateReasonData: " + getStateReasonData());
+            sb.append("StateReasonData: ").append(getStateReasonData());
         sb.append("}");
         return sb.toString();
     }

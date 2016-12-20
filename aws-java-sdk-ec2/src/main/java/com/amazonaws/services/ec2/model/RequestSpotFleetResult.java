@@ -81,7 +81,7 @@ public class RequestSpotFleetResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId());
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId());
         sb.append("}");
         return sb.toString();
     }

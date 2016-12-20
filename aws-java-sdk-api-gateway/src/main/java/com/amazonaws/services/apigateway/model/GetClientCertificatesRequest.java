@@ -134,9 +134,9 @@ public class GetClientCertificatesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

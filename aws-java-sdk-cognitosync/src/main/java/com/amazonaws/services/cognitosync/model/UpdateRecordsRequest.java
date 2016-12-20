@@ -362,19 +362,19 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDatasetName() != null)
-            sb.append("DatasetName: " + getDatasetName() + ",");
+            sb.append("DatasetName: ").append(getDatasetName()).append(",");
         if (getDeviceId() != null)
-            sb.append("DeviceId: " + getDeviceId() + ",");
+            sb.append("DeviceId: ").append(getDeviceId()).append(",");
         if (getRecordPatches() != null)
-            sb.append("RecordPatches: " + getRecordPatches() + ",");
+            sb.append("RecordPatches: ").append(getRecordPatches()).append(",");
         if (getSyncSessionToken() != null)
-            sb.append("SyncSessionToken: " + getSyncSessionToken() + ",");
+            sb.append("SyncSessionToken: ").append(getSyncSessionToken()).append(",");
         if (getClientContext() != null)
-            sb.append("ClientContext: " + getClientContext());
+            sb.append("ClientContext: ").append(getClientContext());
         sb.append("}");
         return sb.toString();
     }

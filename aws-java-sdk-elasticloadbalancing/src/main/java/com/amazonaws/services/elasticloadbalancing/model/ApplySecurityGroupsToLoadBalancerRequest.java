@@ -169,9 +169,9 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

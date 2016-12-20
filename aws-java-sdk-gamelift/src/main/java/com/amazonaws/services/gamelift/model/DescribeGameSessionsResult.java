@@ -163,9 +163,9 @@ public class DescribeGameSessionsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessions() != null)
-            sb.append("GameSessions: " + getGameSessions() + ",");
+            sb.append("GameSessions: ").append(getGameSessions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

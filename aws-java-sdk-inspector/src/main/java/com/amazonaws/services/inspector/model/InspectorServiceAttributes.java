@@ -172,11 +172,11 @@ public class InspectorServiceAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getAssessmentRunArn() != null)
-            sb.append("AssessmentRunArn: " + getAssessmentRunArn() + ",");
+            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn()).append(",");
         if (getRulesPackageArn() != null)
-            sb.append("RulesPackageArn: " + getRulesPackageArn());
+            sb.append("RulesPackageArn: ").append(getRulesPackageArn());
         sb.append("}");
         return sb.toString();
     }

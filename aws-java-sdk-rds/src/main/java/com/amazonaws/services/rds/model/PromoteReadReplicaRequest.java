@@ -680,11 +680,11 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getBackupRetentionPeriod() != null)
-            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow());
+            sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow());
         sb.append("}");
         return sb.toString();
     }

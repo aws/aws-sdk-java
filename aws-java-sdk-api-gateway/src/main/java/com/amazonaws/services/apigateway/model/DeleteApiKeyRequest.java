@@ -81,7 +81,7 @@ public class DeleteApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApiKey() != null)
-            sb.append("ApiKey: " + getApiKey());
+            sb.append("ApiKey: ").append(getApiKey());
         sb.append("}");
         return sb.toString();
     }

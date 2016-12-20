@@ -189,9 +189,9 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getForwardingEnabled() != null)
-            sb.append("ForwardingEnabled: " + getForwardingEnabled());
+            sb.append("ForwardingEnabled: ").append(getForwardingEnabled());
         sb.append("}");
         return sb.toString();
     }

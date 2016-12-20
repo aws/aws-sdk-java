@@ -132,9 +132,9 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getService() != null)
-            sb.append("Service: " + getService());
+            sb.append("Service: ").append(getService());
         sb.append("}");
         return sb.toString();
     }

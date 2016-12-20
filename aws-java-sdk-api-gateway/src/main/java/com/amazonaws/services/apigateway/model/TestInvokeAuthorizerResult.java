@@ -390,19 +390,19 @@ public class TestInvokeAuthorizerResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientStatus() != null)
-            sb.append("ClientStatus: " + getClientStatus() + ",");
+            sb.append("ClientStatus: ").append(getClientStatus()).append(",");
         if (getLog() != null)
-            sb.append("Log: " + getLog() + ",");
+            sb.append("Log: ").append(getLog()).append(",");
         if (getLatency() != null)
-            sb.append("Latency: " + getLatency() + ",");
+            sb.append("Latency: ").append(getLatency()).append(",");
         if (getPrincipalId() != null)
-            sb.append("PrincipalId: " + getPrincipalId() + ",");
+            sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getAuthorization() != null)
-            sb.append("Authorization: " + getAuthorization() + ",");
+            sb.append("Authorization: ").append(getAuthorization()).append(",");
         if (getClaims() != null)
-            sb.append("Claims: " + getClaims());
+            sb.append("Claims: ").append(getClaims());
         sb.append("}");
         return sb.toString();
     }

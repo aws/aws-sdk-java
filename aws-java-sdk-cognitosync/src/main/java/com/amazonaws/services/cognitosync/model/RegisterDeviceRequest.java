@@ -259,13 +259,13 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken());
+            sb.append("Token: ").append(getToken());
         sb.append("}");
         return sb.toString();
     }

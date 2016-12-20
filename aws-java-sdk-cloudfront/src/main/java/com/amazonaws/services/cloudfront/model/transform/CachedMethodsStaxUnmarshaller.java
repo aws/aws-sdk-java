@@ -50,6 +50,11 @@ public class CachedMethodsStaxUnmarshaller implements Unmarshaller<CachedMethods
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    cachedMethods.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Method", targetDepth)) {
                     cachedMethods.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

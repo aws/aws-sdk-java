@@ -159,9 +159,9 @@ public class DescribeCacheSecurityGroupsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCacheSecurityGroups() != null)
-            sb.append("CacheSecurityGroups: " + getCacheSecurityGroups());
+            sb.append("CacheSecurityGroups: ").append(getCacheSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

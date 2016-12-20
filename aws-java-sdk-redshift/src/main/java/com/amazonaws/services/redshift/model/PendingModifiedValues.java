@@ -550,23 +550,23 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
         if (getNodeType() != null)
-            sb.append("NodeType: " + getNodeType() + ",");
+            sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getNumberOfNodes() != null)
-            sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
+            sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
         if (getClusterType() != null)
-            sb.append("ClusterType: " + getClusterType() + ",");
+            sb.append("ClusterType: ").append(getClusterType()).append(",");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
-            sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+            sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
+            sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting());
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting());
         sb.append("}");
         return sb.toString();
     }

@@ -389,19 +389,19 @@ public class MetricDatapoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAverage() != null)
-            sb.append("Average: " + getAverage() + ",");
+            sb.append("Average: ").append(getAverage()).append(",");
         if (getMaximum() != null)
-            sb.append("Maximum: " + getMaximum() + ",");
+            sb.append("Maximum: ").append(getMaximum()).append(",");
         if (getMinimum() != null)
-            sb.append("Minimum: " + getMinimum() + ",");
+            sb.append("Minimum: ").append(getMinimum()).append(",");
         if (getSampleCount() != null)
-            sb.append("SampleCount: " + getSampleCount() + ",");
+            sb.append("SampleCount: ").append(getSampleCount()).append(",");
         if (getSum() != null)
-            sb.append("Sum: " + getSum() + ",");
+            sb.append("Sum: ").append(getSum()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: ").append(getUnit());
         sb.append("}");
         return sb.toString();
     }

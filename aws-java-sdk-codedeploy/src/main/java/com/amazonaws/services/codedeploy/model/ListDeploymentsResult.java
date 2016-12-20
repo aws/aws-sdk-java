@@ -166,9 +166,9 @@ public class ListDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeployments() != null)
-            sb.append("Deployments: " + getDeployments() + ",");
+            sb.append("Deployments: ").append(getDeployments()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -175,9 +175,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProtections() != null)
-            sb.append("Protections: " + getProtections() + ",");
+            sb.append("Protections: ").append(getProtections()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

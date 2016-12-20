@@ -246,9 +246,9 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTemplateBody() != null)
-            sb.append("TemplateBody: " + getTemplateBody() + ",");
+            sb.append("TemplateBody: ").append(getTemplateBody()).append(",");
         if (getStagesAvailable() != null)
-            sb.append("StagesAvailable: " + getStagesAvailable());
+            sb.append("StagesAvailable: ").append(getStagesAvailable());
         sb.append("}");
         return sb.toString();
     }

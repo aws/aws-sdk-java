@@ -143,9 +143,9 @@ public class S3Resource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucketArn() != null)
-            sb.append("BucketArn: " + getBucketArn() + ",");
+            sb.append("BucketArn: ").append(getBucketArn()).append(",");
         if (getKeyRange() != null)
-            sb.append("KeyRange: " + getKeyRange());
+            sb.append("KeyRange: ").append(getKeyRange());
         sb.append("}");
         return sb.toString();
     }

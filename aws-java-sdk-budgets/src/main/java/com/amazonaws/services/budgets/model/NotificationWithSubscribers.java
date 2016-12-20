@@ -113,9 +113,9 @@ public class NotificationWithSubscribers implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification() + ",");
+            sb.append("Notification: ").append(getNotification()).append(",");
         if (getSubscribers() != null)
-            sb.append("Subscribers: " + getSubscribers());
+            sb.append("Subscribers: ").append(getSubscribers());
         sb.append("}");
         return sb.toString();
     }

@@ -263,13 +263,13 @@ public class ListAssessmentRunAgentsRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunArn() != null)
-            sb.append("AssessmentRunArn: " + getAssessmentRunArn() + ",");
+            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

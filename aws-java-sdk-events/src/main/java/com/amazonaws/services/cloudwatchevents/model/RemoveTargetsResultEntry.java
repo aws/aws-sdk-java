@@ -172,11 +172,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetId() != null)
-            sb.append("TargetId: " + getTargetId() + ",");
+            sb.append("TargetId: ").append(getTargetId()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }

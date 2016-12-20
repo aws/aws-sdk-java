@@ -140,9 +140,9 @@ public class IPSetSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSetId() != null)
-            sb.append("IPSetId: " + getIPSetId() + ",");
+            sb.append("IPSetId: ").append(getIPSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

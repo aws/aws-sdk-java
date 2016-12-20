@@ -238,11 +238,11 @@ public class InternetGateway implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGatewayId() != null)
-            sb.append("InternetGatewayId: " + getInternetGatewayId() + ",");
+            sb.append("InternetGatewayId: ").append(getInternetGatewayId()).append(",");
         if (getAttachments() != null)
-            sb.append("Attachments: " + getAttachments() + ",");
+            sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

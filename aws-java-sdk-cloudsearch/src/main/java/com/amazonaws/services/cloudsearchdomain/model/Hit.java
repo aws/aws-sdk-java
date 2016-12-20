@@ -290,13 +290,13 @@ public class Hit implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getFields() != null)
-            sb.append("Fields: " + getFields() + ",");
+            sb.append("Fields: ").append(getFields()).append(",");
         if (getExprs() != null)
-            sb.append("Exprs: " + getExprs() + ",");
+            sb.append("Exprs: ").append(getExprs()).append(",");
         if (getHighlights() != null)
-            sb.append("Highlights: " + getHighlights());
+            sb.append("Highlights: ").append(getHighlights());
         sb.append("}");
         return sb.toString();
     }

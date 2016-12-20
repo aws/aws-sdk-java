@@ -203,9 +203,9 @@ public class DeleteSigningCertificateRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId());
         sb.append("}");
         return sb.toString();
     }

@@ -145,7 +145,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDhcpConfigurations() != null)
-            sb.append("DhcpConfigurations: " + getDhcpConfigurations());
+            sb.append("DhcpConfigurations: ").append(getDhcpConfigurations());
         sb.append("}");
         return sb.toString();
     }

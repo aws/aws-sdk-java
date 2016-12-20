@@ -195,11 +195,11 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDeleteElasticIp() != null)
-            sb.append("DeleteElasticIp: " + getDeleteElasticIp() + ",");
+            sb.append("DeleteElasticIp: ").append(getDeleteElasticIp()).append(",");
         if (getDeleteVolumes() != null)
-            sb.append("DeleteVolumes: " + getDeleteVolumes());
+            sb.append("DeleteVolumes: ").append(getDeleteVolumes());
         sb.append("}");
         return sb.toString();
     }

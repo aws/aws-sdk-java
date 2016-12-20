@@ -113,7 +113,7 @@ public class Query implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSelectors() != null)
-            sb.append("Selectors: " + getSelectors());
+            sb.append("Selectors: ").append(getSelectors());
         sb.append("}");
         return sb.toString();
     }

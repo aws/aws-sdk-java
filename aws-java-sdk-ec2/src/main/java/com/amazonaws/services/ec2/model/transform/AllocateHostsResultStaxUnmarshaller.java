@@ -45,6 +45,11 @@ public class AllocateHostsResultStaxUnmarshaller implements Unmarshaller<Allocat
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("hostIdSet", targetDepth)) {
+                    allocateHostsResult.withHostIds(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("hostIdSet/item", targetDepth)) {
                     allocateHostsResult.withHostIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

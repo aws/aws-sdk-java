@@ -943,15 +943,15 @@ public class KeysAndAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeys() != null)
-            sb.append("Keys: " + getKeys() + ",");
+            sb.append("Keys: ").append(getKeys()).append(",");
         if (getAttributesToGet() != null)
-            sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+            sb.append("AttributesToGet: ").append(getAttributesToGet()).append(",");
         if (getConsistentRead() != null)
-            sb.append("ConsistentRead: " + getConsistentRead() + ",");
+            sb.append("ConsistentRead: ").append(getConsistentRead()).append(",");
         if (getProjectionExpression() != null)
-            sb.append("ProjectionExpression: " + getProjectionExpression() + ",");
+            sb.append("ProjectionExpression: ").append(getProjectionExpression()).append(",");
         if (getExpressionAttributeNames() != null)
-            sb.append("ExpressionAttributeNames: " + getExpressionAttributeNames());
+            sb.append("ExpressionAttributeNames: ").append(getExpressionAttributeNames());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class GetCSVHeaderResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getCSVHeader() != null)
-            sb.append("CSVHeader: " + getCSVHeader());
+            sb.append("CSVHeader: ").append(getCSVHeader());
         sb.append("}");
         return sb.toString();
     }

@@ -314,13 +314,13 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getShowCacheNodeInfo() != null)
-            sb.append("ShowCacheNodeInfo: " + getShowCacheNodeInfo());
+            sb.append("ShowCacheNodeInfo: ").append(getShowCacheNodeInfo());
         sb.append("}");
         return sb.toString();
     }

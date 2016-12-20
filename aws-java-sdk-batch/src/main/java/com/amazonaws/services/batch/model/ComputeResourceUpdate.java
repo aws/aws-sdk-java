@@ -172,11 +172,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinvCpus() != null)
-            sb.append("MinvCpus: " + getMinvCpus() + ",");
+            sb.append("MinvCpus: ").append(getMinvCpus()).append(",");
         if (getMaxvCpus() != null)
-            sb.append("MaxvCpus: " + getMaxvCpus() + ",");
+            sb.append("MaxvCpus: ").append(getMaxvCpus()).append(",");
         if (getDesiredvCpus() != null)
-            sb.append("DesiredvCpus: " + getDesiredvCpus());
+            sb.append("DesiredvCpus: ").append(getDesiredvCpus());
         sb.append("}");
         return sb.toString();
     }

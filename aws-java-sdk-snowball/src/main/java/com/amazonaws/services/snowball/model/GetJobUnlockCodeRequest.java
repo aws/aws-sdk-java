@@ -86,7 +86,7 @@ public class GetJobUnlockCodeRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }

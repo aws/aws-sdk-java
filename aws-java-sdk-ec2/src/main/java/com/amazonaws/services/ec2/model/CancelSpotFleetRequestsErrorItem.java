@@ -126,9 +126,9 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError());
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }

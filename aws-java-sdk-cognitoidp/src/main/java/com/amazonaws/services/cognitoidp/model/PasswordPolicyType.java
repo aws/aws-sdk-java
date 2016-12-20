@@ -348,15 +348,15 @@ public class PasswordPolicyType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinimumLength() != null)
-            sb.append("MinimumLength: " + getMinimumLength() + ",");
+            sb.append("MinimumLength: ").append(getMinimumLength()).append(",");
         if (getRequireUppercase() != null)
-            sb.append("RequireUppercase: " + getRequireUppercase() + ",");
+            sb.append("RequireUppercase: ").append(getRequireUppercase()).append(",");
         if (getRequireLowercase() != null)
-            sb.append("RequireLowercase: " + getRequireLowercase() + ",");
+            sb.append("RequireLowercase: ").append(getRequireLowercase()).append(",");
         if (getRequireNumbers() != null)
-            sb.append("RequireNumbers: " + getRequireNumbers() + ",");
+            sb.append("RequireNumbers: ").append(getRequireNumbers()).append(",");
         if (getRequireSymbols() != null)
-            sb.append("RequireSymbols: " + getRequireSymbols());
+            sb.append("RequireSymbols: ").append(getRequireSymbols());
         sb.append("}");
         return sb.toString();
     }

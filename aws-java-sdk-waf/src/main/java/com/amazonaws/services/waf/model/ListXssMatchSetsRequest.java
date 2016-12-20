@@ -172,9 +172,9 @@ public class ListXssMatchSetsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

@@ -140,9 +140,9 @@ public class CreateSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId());
+            sb.append("SnapshotId: ").append(getSnapshotId());
         sb.append("}");
         return sb.toString();
     }

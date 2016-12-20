@@ -80,7 +80,7 @@ public class GetCommitResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommit() != null)
-            sb.append("Commit: " + getCommit());
+            sb.append("Commit: ").append(getCommit());
         sb.append("}");
         return sb.toString();
     }

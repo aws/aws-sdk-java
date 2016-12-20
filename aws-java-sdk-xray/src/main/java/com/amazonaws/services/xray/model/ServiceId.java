@@ -221,13 +221,13 @@ public class ServiceId implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getNames() != null)
-            sb.append("Names: " + getNames() + ",");
+            sb.append("Names: ").append(getNames()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

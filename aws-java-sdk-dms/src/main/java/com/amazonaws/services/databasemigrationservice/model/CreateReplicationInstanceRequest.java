@@ -1129,31 +1129,31 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceIdentifier() != null)
-            sb.append("ReplicationInstanceIdentifier: " + getReplicationInstanceIdentifier() + ",");
+            sb.append("ReplicationInstanceIdentifier: ").append(getReplicationInstanceIdentifier()).append(",");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getReplicationInstanceClass() != null)
-            sb.append("ReplicationInstanceClass: " + getReplicationInstanceClass() + ",");
+            sb.append("ReplicationInstanceClass: ").append(getReplicationInstanceClass()).append(",");
         if (getVpcSecurityGroupIds() != null)
-            sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+            sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier() + ",");
+            sb.append("ReplicationSubnetGroupIdentifier: ").append(getReplicationSubnetGroupIdentifier()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getMultiAZ() != null)
-            sb.append("MultiAZ: " + getMultiAZ() + ",");
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: " + getAutoMinorVersionUpgrade() + ",");
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible());
+            sb.append("PubliclyAccessible: ").append(getPubliclyAccessible());
         sb.append("}");
         return sb.toString();
     }

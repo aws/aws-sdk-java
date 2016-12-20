@@ -53,10 +53,7 @@ public class DeleteReusableDelegationSetRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/delegationset/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (deleteReusableDelegationSetRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteReusableDelegationSetRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteReusableDelegationSetRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

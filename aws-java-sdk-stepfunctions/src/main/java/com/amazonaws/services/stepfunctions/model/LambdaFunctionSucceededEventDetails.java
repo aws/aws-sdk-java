@@ -78,7 +78,7 @@ public class LambdaFunctionSucceededEventDetails implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput());
+            sb.append("Output: ").append(getOutput());
         sb.append("}");
         return sb.toString();
     }

@@ -388,15 +388,15 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobDefinitions() != null)
-            sb.append("JobDefinitions: " + getJobDefinitions() + ",");
+            sb.append("JobDefinitions: ").append(getJobDefinitions()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getJobDefinitionName() != null)
-            sb.append("JobDefinitionName: " + getJobDefinitionName() + ",");
+            sb.append("JobDefinitionName: ").append(getJobDefinitionName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

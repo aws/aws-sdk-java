@@ -168,9 +168,9 @@ public class ListAssessmentTargetsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetArns() != null)
-            sb.append("AssessmentTargetArns: " + getAssessmentTargetArns() + ",");
+            sb.append("AssessmentTargetArns: ").append(getAssessmentTargetArns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

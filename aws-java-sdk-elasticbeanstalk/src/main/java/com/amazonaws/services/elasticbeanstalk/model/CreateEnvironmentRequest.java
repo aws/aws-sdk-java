@@ -987,29 +987,29 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCNAMEPrefix() != null)
-            sb.append("CNAMEPrefix: " + getCNAMEPrefix() + ",");
+            sb.append("CNAMEPrefix: ").append(getCNAMEPrefix()).append(",");
         if (getTier() != null)
-            sb.append("Tier: " + getTier() + ",");
+            sb.append("Tier: ").append(getTier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getOptionSettings() != null)
-            sb.append("OptionSettings: " + getOptionSettings() + ",");
+            sb.append("OptionSettings: ").append(getOptionSettings()).append(",");
         if (getOptionsToRemove() != null)
-            sb.append("OptionsToRemove: " + getOptionsToRemove());
+            sb.append("OptionsToRemove: ").append(getOptionsToRemove());
         sb.append("}");
         return sb.toString();
     }

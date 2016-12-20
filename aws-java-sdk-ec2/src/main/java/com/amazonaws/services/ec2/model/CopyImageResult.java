@@ -81,7 +81,7 @@ public class CopyImageResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId());
+            sb.append("ImageId: ").append(getImageId());
         sb.append("}");
         return sb.toString();
     }

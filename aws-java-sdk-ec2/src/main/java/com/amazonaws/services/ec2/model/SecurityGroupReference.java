@@ -172,11 +172,11 @@ public class SecurityGroupReference implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getReferencingVpcId() != null)
-            sb.append("ReferencingVpcId: " + getReferencingVpcId() + ",");
+            sb.append("ReferencingVpcId: ").append(getReferencingVpcId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
         sb.append("}");
         return sb.toString();
     }

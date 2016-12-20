@@ -125,9 +125,9 @@ public class DescribeLunaClientRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn() + ",");
+            sb.append("ClientArn: ").append(getClientArn()).append(",");
         if (getCertificateFingerprint() != null)
-            sb.append("CertificateFingerprint: " + getCertificateFingerprint());
+            sb.append("CertificateFingerprint: ").append(getCertificateFingerprint());
         sb.append("}");
         return sb.toString();
     }

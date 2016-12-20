@@ -293,13 +293,13 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionArn() != null)
-            sb.append("ExecutionArn: " + getExecutionArn() + ",");
+            sb.append("ExecutionArn: ").append(getExecutionArn()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: " + getReverseOrder() + ",");
+            sb.append("ReverseOrder: ").append(getReverseOrder()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

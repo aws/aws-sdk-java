@@ -137,9 +137,9 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIncludeInactive() != null)
-            sb.append("IncludeInactive: " + getIncludeInactive() + ",");
+            sb.append("IncludeInactive: ").append(getIncludeInactive()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

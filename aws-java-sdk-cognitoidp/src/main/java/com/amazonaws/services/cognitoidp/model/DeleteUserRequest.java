@@ -81,7 +81,7 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken());
+            sb.append("AccessToken: ").append(getAccessToken());
         sb.append("}");
         return sb.toString();
     }

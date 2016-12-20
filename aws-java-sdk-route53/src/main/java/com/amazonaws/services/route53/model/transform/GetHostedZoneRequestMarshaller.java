@@ -51,8 +51,7 @@ public class GetHostedZoneRequestMarshaller implements Marshaller<Request<GetHos
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (getHostedZoneRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getHostedZoneRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getHostedZoneRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

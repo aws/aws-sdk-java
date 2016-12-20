@@ -143,9 +143,9 @@ public class Image implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBytes() != null)
-            sb.append("Bytes: " + getBytes() + ",");
+            sb.append("Bytes: ").append(getBytes()).append(",");
         if (getS3Object() != null)
-            sb.append("S3Object: " + getS3Object());
+            sb.append("S3Object: ").append(getS3Object());
         sb.append("}");
         return sb.toString();
     }

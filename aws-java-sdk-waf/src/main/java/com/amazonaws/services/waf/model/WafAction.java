@@ -331,7 +331,7 @@ public class WafAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

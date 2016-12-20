@@ -3001,120 +3001,123 @@ public class HistoryEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventTimestamp() != null)
-            sb.append("EventTimestamp: " + getEventTimestamp() + ",");
+            sb.append("EventTimestamp: ").append(getEventTimestamp()).append(",");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType() + ",");
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId() + ",");
+            sb.append("EventId: ").append(getEventId()).append(",");
         if (getWorkflowExecutionStartedEventAttributes() != null)
-            sb.append("WorkflowExecutionStartedEventAttributes: " + getWorkflowExecutionStartedEventAttributes() + ",");
+            sb.append("WorkflowExecutionStartedEventAttributes: ").append(getWorkflowExecutionStartedEventAttributes()).append(",");
         if (getWorkflowExecutionCompletedEventAttributes() != null)
-            sb.append("WorkflowExecutionCompletedEventAttributes: " + getWorkflowExecutionCompletedEventAttributes() + ",");
+            sb.append("WorkflowExecutionCompletedEventAttributes: ").append(getWorkflowExecutionCompletedEventAttributes()).append(",");
         if (getCompleteWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("CompleteWorkflowExecutionFailedEventAttributes: " + getCompleteWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("CompleteWorkflowExecutionFailedEventAttributes: ").append(getCompleteWorkflowExecutionFailedEventAttributes()).append(",");
         if (getWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("WorkflowExecutionFailedEventAttributes: " + getWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("WorkflowExecutionFailedEventAttributes: ").append(getWorkflowExecutionFailedEventAttributes()).append(",");
         if (getFailWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("FailWorkflowExecutionFailedEventAttributes: " + getFailWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("FailWorkflowExecutionFailedEventAttributes: ").append(getFailWorkflowExecutionFailedEventAttributes()).append(",");
         if (getWorkflowExecutionTimedOutEventAttributes() != null)
-            sb.append("WorkflowExecutionTimedOutEventAttributes: " + getWorkflowExecutionTimedOutEventAttributes() + ",");
+            sb.append("WorkflowExecutionTimedOutEventAttributes: ").append(getWorkflowExecutionTimedOutEventAttributes()).append(",");
         if (getWorkflowExecutionCanceledEventAttributes() != null)
-            sb.append("WorkflowExecutionCanceledEventAttributes: " + getWorkflowExecutionCanceledEventAttributes() + ",");
+            sb.append("WorkflowExecutionCanceledEventAttributes: ").append(getWorkflowExecutionCanceledEventAttributes()).append(",");
         if (getCancelWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("CancelWorkflowExecutionFailedEventAttributes: " + getCancelWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("CancelWorkflowExecutionFailedEventAttributes: ").append(getCancelWorkflowExecutionFailedEventAttributes()).append(",");
         if (getWorkflowExecutionContinuedAsNewEventAttributes() != null)
-            sb.append("WorkflowExecutionContinuedAsNewEventAttributes: " + getWorkflowExecutionContinuedAsNewEventAttributes() + ",");
+            sb.append("WorkflowExecutionContinuedAsNewEventAttributes: ").append(getWorkflowExecutionContinuedAsNewEventAttributes()).append(",");
         if (getContinueAsNewWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("ContinueAsNewWorkflowExecutionFailedEventAttributes: " + getContinueAsNewWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("ContinueAsNewWorkflowExecutionFailedEventAttributes: ").append(getContinueAsNewWorkflowExecutionFailedEventAttributes()).append(",");
         if (getWorkflowExecutionTerminatedEventAttributes() != null)
-            sb.append("WorkflowExecutionTerminatedEventAttributes: " + getWorkflowExecutionTerminatedEventAttributes() + ",");
+            sb.append("WorkflowExecutionTerminatedEventAttributes: ").append(getWorkflowExecutionTerminatedEventAttributes()).append(",");
         if (getWorkflowExecutionCancelRequestedEventAttributes() != null)
-            sb.append("WorkflowExecutionCancelRequestedEventAttributes: " + getWorkflowExecutionCancelRequestedEventAttributes() + ",");
+            sb.append("WorkflowExecutionCancelRequestedEventAttributes: ").append(getWorkflowExecutionCancelRequestedEventAttributes()).append(",");
         if (getDecisionTaskScheduledEventAttributes() != null)
-            sb.append("DecisionTaskScheduledEventAttributes: " + getDecisionTaskScheduledEventAttributes() + ",");
+            sb.append("DecisionTaskScheduledEventAttributes: ").append(getDecisionTaskScheduledEventAttributes()).append(",");
         if (getDecisionTaskStartedEventAttributes() != null)
-            sb.append("DecisionTaskStartedEventAttributes: " + getDecisionTaskStartedEventAttributes() + ",");
+            sb.append("DecisionTaskStartedEventAttributes: ").append(getDecisionTaskStartedEventAttributes()).append(",");
         if (getDecisionTaskCompletedEventAttributes() != null)
-            sb.append("DecisionTaskCompletedEventAttributes: " + getDecisionTaskCompletedEventAttributes() + ",");
+            sb.append("DecisionTaskCompletedEventAttributes: ").append(getDecisionTaskCompletedEventAttributes()).append(",");
         if (getDecisionTaskTimedOutEventAttributes() != null)
-            sb.append("DecisionTaskTimedOutEventAttributes: " + getDecisionTaskTimedOutEventAttributes() + ",");
+            sb.append("DecisionTaskTimedOutEventAttributes: ").append(getDecisionTaskTimedOutEventAttributes()).append(",");
         if (getActivityTaskScheduledEventAttributes() != null)
-            sb.append("ActivityTaskScheduledEventAttributes: " + getActivityTaskScheduledEventAttributes() + ",");
+            sb.append("ActivityTaskScheduledEventAttributes: ").append(getActivityTaskScheduledEventAttributes()).append(",");
         if (getActivityTaskStartedEventAttributes() != null)
-            sb.append("ActivityTaskStartedEventAttributes: " + getActivityTaskStartedEventAttributes() + ",");
+            sb.append("ActivityTaskStartedEventAttributes: ").append(getActivityTaskStartedEventAttributes()).append(",");
         if (getActivityTaskCompletedEventAttributes() != null)
-            sb.append("ActivityTaskCompletedEventAttributes: " + getActivityTaskCompletedEventAttributes() + ",");
+            sb.append("ActivityTaskCompletedEventAttributes: ").append(getActivityTaskCompletedEventAttributes()).append(",");
         if (getActivityTaskFailedEventAttributes() != null)
-            sb.append("ActivityTaskFailedEventAttributes: " + getActivityTaskFailedEventAttributes() + ",");
+            sb.append("ActivityTaskFailedEventAttributes: ").append(getActivityTaskFailedEventAttributes()).append(",");
         if (getActivityTaskTimedOutEventAttributes() != null)
-            sb.append("ActivityTaskTimedOutEventAttributes: " + getActivityTaskTimedOutEventAttributes() + ",");
+            sb.append("ActivityTaskTimedOutEventAttributes: ").append(getActivityTaskTimedOutEventAttributes()).append(",");
         if (getActivityTaskCanceledEventAttributes() != null)
-            sb.append("ActivityTaskCanceledEventAttributes: " + getActivityTaskCanceledEventAttributes() + ",");
+            sb.append("ActivityTaskCanceledEventAttributes: ").append(getActivityTaskCanceledEventAttributes()).append(",");
         if (getActivityTaskCancelRequestedEventAttributes() != null)
-            sb.append("ActivityTaskCancelRequestedEventAttributes: " + getActivityTaskCancelRequestedEventAttributes() + ",");
+            sb.append("ActivityTaskCancelRequestedEventAttributes: ").append(getActivityTaskCancelRequestedEventAttributes()).append(",");
         if (getWorkflowExecutionSignaledEventAttributes() != null)
-            sb.append("WorkflowExecutionSignaledEventAttributes: " + getWorkflowExecutionSignaledEventAttributes() + ",");
+            sb.append("WorkflowExecutionSignaledEventAttributes: ").append(getWorkflowExecutionSignaledEventAttributes()).append(",");
         if (getMarkerRecordedEventAttributes() != null)
-            sb.append("MarkerRecordedEventAttributes: " + getMarkerRecordedEventAttributes() + ",");
+            sb.append("MarkerRecordedEventAttributes: ").append(getMarkerRecordedEventAttributes()).append(",");
         if (getRecordMarkerFailedEventAttributes() != null)
-            sb.append("RecordMarkerFailedEventAttributes: " + getRecordMarkerFailedEventAttributes() + ",");
+            sb.append("RecordMarkerFailedEventAttributes: ").append(getRecordMarkerFailedEventAttributes()).append(",");
         if (getTimerStartedEventAttributes() != null)
-            sb.append("TimerStartedEventAttributes: " + getTimerStartedEventAttributes() + ",");
+            sb.append("TimerStartedEventAttributes: ").append(getTimerStartedEventAttributes()).append(",");
         if (getTimerFiredEventAttributes() != null)
-            sb.append("TimerFiredEventAttributes: " + getTimerFiredEventAttributes() + ",");
+            sb.append("TimerFiredEventAttributes: ").append(getTimerFiredEventAttributes()).append(",");
         if (getTimerCanceledEventAttributes() != null)
-            sb.append("TimerCanceledEventAttributes: " + getTimerCanceledEventAttributes() + ",");
+            sb.append("TimerCanceledEventAttributes: ").append(getTimerCanceledEventAttributes()).append(",");
         if (getStartChildWorkflowExecutionInitiatedEventAttributes() != null)
-            sb.append("StartChildWorkflowExecutionInitiatedEventAttributes: " + getStartChildWorkflowExecutionInitiatedEventAttributes() + ",");
+            sb.append("StartChildWorkflowExecutionInitiatedEventAttributes: ").append(getStartChildWorkflowExecutionInitiatedEventAttributes()).append(",");
         if (getChildWorkflowExecutionStartedEventAttributes() != null)
-            sb.append("ChildWorkflowExecutionStartedEventAttributes: " + getChildWorkflowExecutionStartedEventAttributes() + ",");
+            sb.append("ChildWorkflowExecutionStartedEventAttributes: ").append(getChildWorkflowExecutionStartedEventAttributes()).append(",");
         if (getChildWorkflowExecutionCompletedEventAttributes() != null)
-            sb.append("ChildWorkflowExecutionCompletedEventAttributes: " + getChildWorkflowExecutionCompletedEventAttributes() + ",");
+            sb.append("ChildWorkflowExecutionCompletedEventAttributes: ").append(getChildWorkflowExecutionCompletedEventAttributes()).append(",");
         if (getChildWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("ChildWorkflowExecutionFailedEventAttributes: " + getChildWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("ChildWorkflowExecutionFailedEventAttributes: ").append(getChildWorkflowExecutionFailedEventAttributes()).append(",");
         if (getChildWorkflowExecutionTimedOutEventAttributes() != null)
-            sb.append("ChildWorkflowExecutionTimedOutEventAttributes: " + getChildWorkflowExecutionTimedOutEventAttributes() + ",");
+            sb.append("ChildWorkflowExecutionTimedOutEventAttributes: ").append(getChildWorkflowExecutionTimedOutEventAttributes()).append(",");
         if (getChildWorkflowExecutionCanceledEventAttributes() != null)
-            sb.append("ChildWorkflowExecutionCanceledEventAttributes: " + getChildWorkflowExecutionCanceledEventAttributes() + ",");
+            sb.append("ChildWorkflowExecutionCanceledEventAttributes: ").append(getChildWorkflowExecutionCanceledEventAttributes()).append(",");
         if (getChildWorkflowExecutionTerminatedEventAttributes() != null)
-            sb.append("ChildWorkflowExecutionTerminatedEventAttributes: " + getChildWorkflowExecutionTerminatedEventAttributes() + ",");
+            sb.append("ChildWorkflowExecutionTerminatedEventAttributes: ").append(getChildWorkflowExecutionTerminatedEventAttributes()).append(",");
         if (getSignalExternalWorkflowExecutionInitiatedEventAttributes() != null)
-            sb.append("SignalExternalWorkflowExecutionInitiatedEventAttributes: " + getSignalExternalWorkflowExecutionInitiatedEventAttributes() + ",");
+            sb.append("SignalExternalWorkflowExecutionInitiatedEventAttributes: ").append(getSignalExternalWorkflowExecutionInitiatedEventAttributes())
+                    .append(",");
         if (getExternalWorkflowExecutionSignaledEventAttributes() != null)
-            sb.append("ExternalWorkflowExecutionSignaledEventAttributes: " + getExternalWorkflowExecutionSignaledEventAttributes() + ",");
+            sb.append("ExternalWorkflowExecutionSignaledEventAttributes: ").append(getExternalWorkflowExecutionSignaledEventAttributes()).append(",");
         if (getSignalExternalWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("SignalExternalWorkflowExecutionFailedEventAttributes: " + getSignalExternalWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("SignalExternalWorkflowExecutionFailedEventAttributes: ").append(getSignalExternalWorkflowExecutionFailedEventAttributes()).append(",");
         if (getExternalWorkflowExecutionCancelRequestedEventAttributes() != null)
-            sb.append("ExternalWorkflowExecutionCancelRequestedEventAttributes: " + getExternalWorkflowExecutionCancelRequestedEventAttributes() + ",");
+            sb.append("ExternalWorkflowExecutionCancelRequestedEventAttributes: ").append(getExternalWorkflowExecutionCancelRequestedEventAttributes())
+                    .append(",");
         if (getRequestCancelExternalWorkflowExecutionInitiatedEventAttributes() != null)
-            sb.append("RequestCancelExternalWorkflowExecutionInitiatedEventAttributes: " + getRequestCancelExternalWorkflowExecutionInitiatedEventAttributes()
-                    + ",");
+            sb.append("RequestCancelExternalWorkflowExecutionInitiatedEventAttributes: ")
+                    .append(getRequestCancelExternalWorkflowExecutionInitiatedEventAttributes()).append(",");
         if (getRequestCancelExternalWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("RequestCancelExternalWorkflowExecutionFailedEventAttributes: " + getRequestCancelExternalWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("RequestCancelExternalWorkflowExecutionFailedEventAttributes: ").append(getRequestCancelExternalWorkflowExecutionFailedEventAttributes())
+                    .append(",");
         if (getScheduleActivityTaskFailedEventAttributes() != null)
-            sb.append("ScheduleActivityTaskFailedEventAttributes: " + getScheduleActivityTaskFailedEventAttributes() + ",");
+            sb.append("ScheduleActivityTaskFailedEventAttributes: ").append(getScheduleActivityTaskFailedEventAttributes()).append(",");
         if (getRequestCancelActivityTaskFailedEventAttributes() != null)
-            sb.append("RequestCancelActivityTaskFailedEventAttributes: " + getRequestCancelActivityTaskFailedEventAttributes() + ",");
+            sb.append("RequestCancelActivityTaskFailedEventAttributes: ").append(getRequestCancelActivityTaskFailedEventAttributes()).append(",");
         if (getStartTimerFailedEventAttributes() != null)
-            sb.append("StartTimerFailedEventAttributes: " + getStartTimerFailedEventAttributes() + ",");
+            sb.append("StartTimerFailedEventAttributes: ").append(getStartTimerFailedEventAttributes()).append(",");
         if (getCancelTimerFailedEventAttributes() != null)
-            sb.append("CancelTimerFailedEventAttributes: " + getCancelTimerFailedEventAttributes() + ",");
+            sb.append("CancelTimerFailedEventAttributes: ").append(getCancelTimerFailedEventAttributes()).append(",");
         if (getStartChildWorkflowExecutionFailedEventAttributes() != null)
-            sb.append("StartChildWorkflowExecutionFailedEventAttributes: " + getStartChildWorkflowExecutionFailedEventAttributes() + ",");
+            sb.append("StartChildWorkflowExecutionFailedEventAttributes: ").append(getStartChildWorkflowExecutionFailedEventAttributes()).append(",");
         if (getLambdaFunctionScheduledEventAttributes() != null)
-            sb.append("LambdaFunctionScheduledEventAttributes: " + getLambdaFunctionScheduledEventAttributes() + ",");
+            sb.append("LambdaFunctionScheduledEventAttributes: ").append(getLambdaFunctionScheduledEventAttributes()).append(",");
         if (getLambdaFunctionStartedEventAttributes() != null)
-            sb.append("LambdaFunctionStartedEventAttributes: " + getLambdaFunctionStartedEventAttributes() + ",");
+            sb.append("LambdaFunctionStartedEventAttributes: ").append(getLambdaFunctionStartedEventAttributes()).append(",");
         if (getLambdaFunctionCompletedEventAttributes() != null)
-            sb.append("LambdaFunctionCompletedEventAttributes: " + getLambdaFunctionCompletedEventAttributes() + ",");
+            sb.append("LambdaFunctionCompletedEventAttributes: ").append(getLambdaFunctionCompletedEventAttributes()).append(",");
         if (getLambdaFunctionFailedEventAttributes() != null)
-            sb.append("LambdaFunctionFailedEventAttributes: " + getLambdaFunctionFailedEventAttributes() + ",");
+            sb.append("LambdaFunctionFailedEventAttributes: ").append(getLambdaFunctionFailedEventAttributes()).append(",");
         if (getLambdaFunctionTimedOutEventAttributes() != null)
-            sb.append("LambdaFunctionTimedOutEventAttributes: " + getLambdaFunctionTimedOutEventAttributes() + ",");
+            sb.append("LambdaFunctionTimedOutEventAttributes: ").append(getLambdaFunctionTimedOutEventAttributes()).append(",");
         if (getScheduleLambdaFunctionFailedEventAttributes() != null)
-            sb.append("ScheduleLambdaFunctionFailedEventAttributes: " + getScheduleLambdaFunctionFailedEventAttributes() + ",");
+            sb.append("ScheduleLambdaFunctionFailedEventAttributes: ").append(getScheduleLambdaFunctionFailedEventAttributes()).append(",");
         if (getStartLambdaFunctionFailedEventAttributes() != null)
-            sb.append("StartLambdaFunctionFailedEventAttributes: " + getStartLambdaFunctionFailedEventAttributes());
+            sb.append("StartLambdaFunctionFailedEventAttributes: ").append(getStartLambdaFunctionFailedEventAttributes());
         sb.append("}");
         return sb.toString();
     }

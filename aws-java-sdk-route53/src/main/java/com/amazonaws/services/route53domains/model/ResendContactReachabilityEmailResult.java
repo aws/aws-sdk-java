@@ -192,11 +192,11 @@ public class ResendContactReachabilityEmailResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: " + getEmailAddress() + ",");
+            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
         if (getIsAlreadyVerified() != null)
-            sb.append("IsAlreadyVerified: " + getIsAlreadyVerified());
+            sb.append("IsAlreadyVerified: ").append(getIsAlreadyVerified());
         sb.append("}");
         return sb.toString();
     }

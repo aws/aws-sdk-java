@@ -79,7 +79,7 @@ public class DeleteJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobQueue() != null)
-            sb.append("JobQueue: " + getJobQueue());
+            sb.append("JobQueue: ").append(getJobQueue());
         sb.append("}");
         return sb.toString();
     }

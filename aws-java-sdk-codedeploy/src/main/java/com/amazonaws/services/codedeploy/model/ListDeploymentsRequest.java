@@ -680,15 +680,15 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupName() != null)
-            sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
+            sb.append("DeploymentGroupName: ").append(getDeploymentGroupName()).append(",");
         if (getIncludeOnlyStatuses() != null)
-            sb.append("IncludeOnlyStatuses: " + getIncludeOnlyStatuses() + ",");
+            sb.append("IncludeOnlyStatuses: ").append(getIncludeOnlyStatuses()).append(",");
         if (getCreateTimeRange() != null)
-            sb.append("CreateTimeRange: " + getCreateTimeRange() + ",");
+            sb.append("CreateTimeRange: ").append(getCreateTimeRange()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

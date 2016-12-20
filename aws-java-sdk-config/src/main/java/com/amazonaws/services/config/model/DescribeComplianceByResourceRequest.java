@@ -392,15 +392,15 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getComplianceTypes() != null)
-            sb.append("ComplianceTypes: " + getComplianceTypes() + ",");
+            sb.append("ComplianceTypes: ").append(getComplianceTypes()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

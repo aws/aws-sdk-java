@@ -205,11 +205,11 @@ public class PortInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFromPort() != null)
-            sb.append("FromPort: " + getFromPort() + ",");
+            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: " + getToPort() + ",");
+            sb.append("ToPort: ").append(getToPort()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol());
+            sb.append("Protocol: ").append(getProtocol());
         sb.append("}");
         return sb.toString();
     }

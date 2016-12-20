@@ -65,10 +65,8 @@ public class DetachPrincipalPolicyRequestMarshaller implements Marshaller<Reques
 
         String uriResourcePath = "/principal-policies/{policyName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (detachPrincipalPolicyRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(detachPrincipalPolicyRequest.getPolicyName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyName",
+                detachPrincipalPolicyRequest.getPolicyName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

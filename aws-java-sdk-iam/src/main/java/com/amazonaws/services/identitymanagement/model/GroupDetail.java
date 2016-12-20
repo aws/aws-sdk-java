@@ -442,19 +442,19 @@ public class GroupDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getGroupPolicyList() != null)
-            sb.append("GroupPolicyList: " + getGroupPolicyList() + ",");
+            sb.append("GroupPolicyList: ").append(getGroupPolicyList()).append(",");
         if (getAttachedManagedPolicies() != null)
-            sb.append("AttachedManagedPolicies: " + getAttachedManagedPolicies());
+            sb.append("AttachedManagedPolicies: ").append(getAttachedManagedPolicies());
         sb.append("}");
         return sb.toString();
     }

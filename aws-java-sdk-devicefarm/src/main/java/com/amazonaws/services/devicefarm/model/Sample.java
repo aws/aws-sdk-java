@@ -1215,11 +1215,11 @@ public class Sample implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl());
+            sb.append("Url: ").append(getUrl());
         sb.append("}");
         return sb.toString();
     }

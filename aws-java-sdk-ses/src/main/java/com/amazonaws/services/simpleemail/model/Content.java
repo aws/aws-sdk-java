@@ -148,9 +148,9 @@ public class Content implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getData() != null)
-            sb.append("Data: " + getData() + ",");
+            sb.append("Data: ").append(getData()).append(",");
         if (getCharset() != null)
-            sb.append("Charset: " + getCharset());
+            sb.append("Charset: ").append(getCharset());
         sb.append("}");
         return sb.toString();
     }

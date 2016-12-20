@@ -257,15 +257,15 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getCurrentRevision() != null)
-            sb.append("CurrentRevision: " + getCurrentRevision() + ",");
+            sb.append("CurrentRevision: ").append(getCurrentRevision()).append(",");
         if (getContinuationToken() != null)
-            sb.append("ContinuationToken: " + getContinuationToken() + ",");
+            sb.append("ContinuationToken: ").append(getContinuationToken()).append(",");
         if (getExecutionDetails() != null)
-            sb.append("ExecutionDetails: " + getExecutionDetails());
+            sb.append("ExecutionDetails: ").append(getExecutionDetails());
         sb.append("}");
         return sb.toString();
     }

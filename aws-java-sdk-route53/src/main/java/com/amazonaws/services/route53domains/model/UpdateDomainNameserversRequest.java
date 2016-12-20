@@ -371,11 +371,11 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getFIAuthKey() != null)
-            sb.append("FIAuthKey: " + getFIAuthKey() + ",");
+            sb.append("FIAuthKey: ").append(getFIAuthKey()).append(",");
         if (getNameservers() != null)
-            sb.append("Nameservers: " + getNameservers());
+            sb.append("Nameservers: ").append(getNameservers());
         sb.append("}");
         return sb.toString();
     }

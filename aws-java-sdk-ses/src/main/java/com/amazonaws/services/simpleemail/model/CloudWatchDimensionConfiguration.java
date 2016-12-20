@@ -412,11 +412,11 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDimensionName() != null)
-            sb.append("DimensionName: " + getDimensionName() + ",");
+            sb.append("DimensionName: ").append(getDimensionName()).append(",");
         if (getDimensionValueSource() != null)
-            sb.append("DimensionValueSource: " + getDimensionValueSource() + ",");
+            sb.append("DimensionValueSource: ").append(getDimensionValueSource()).append(",");
         if (getDefaultDimensionValue() != null)
-            sb.append("DefaultDimensionValue: " + getDefaultDimensionValue());
+            sb.append("DefaultDimensionValue: ").append(getDefaultDimensionValue());
         sb.append("}");
         return sb.toString();
     }

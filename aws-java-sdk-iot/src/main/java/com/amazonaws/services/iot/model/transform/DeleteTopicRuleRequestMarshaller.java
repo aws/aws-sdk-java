@@ -61,9 +61,7 @@ public class DeleteTopicRuleRequestMarshaller implements Marshaller<Request<Dele
 
         String uriResourcePath = "/rules/{ruleName}";
 
-        uriResourcePath = uriResourcePath.replace("{ruleName}",
-                (deleteTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteTopicRuleRequest.getRuleName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", deleteTopicRuleRequest.getRuleName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

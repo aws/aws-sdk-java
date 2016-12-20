@@ -61,13 +61,9 @@ public class RegisterDeviceRequestMarshaller implements Marshaller<Request<Regis
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identity/{IdentityId}/device";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (registerDeviceRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(registerDeviceRequest.getIdentityPoolId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{IdentityId}",
-                (registerDeviceRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(registerDeviceRequest.getIdentityId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                registerDeviceRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", registerDeviceRequest.getIdentityId());
         request.setResourcePath(uriResourcePath);
 
         try {

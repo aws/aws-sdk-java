@@ -173,9 +173,9 @@ public class WorkspaceProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRunningMode() != null)
-            sb.append("RunningMode: " + getRunningMode() + ",");
+            sb.append("RunningMode: ").append(getRunningMode()).append(",");
         if (getRunningModeAutoStopTimeoutInMinutes() != null)
-            sb.append("RunningModeAutoStopTimeoutInMinutes: " + getRunningModeAutoStopTimeoutInMinutes());
+            sb.append("RunningModeAutoStopTimeoutInMinutes: ").append(getRunningModeAutoStopTimeoutInMinutes());
         sb.append("}");
         return sb.toString();
     }

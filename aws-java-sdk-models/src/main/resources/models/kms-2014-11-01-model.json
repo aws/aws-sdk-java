@@ -19,26 +19,31 @@
       "documentation" : "<p>Cancels the deletion of a customer master key (CMK). When this operation is successful, the CMK is set to the <code>Disabled</code> state. To enable a CMK, use <a>EnableKey</a>.</p> <p>For more information about scheduling and canceling deletion of a CMK, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html\">Deleting Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -68,36 +73,43 @@
       "documentation" : "<p>Creates a display name for a customer master key. An alias can be used to identify a key and should be unique. The console enforces a one-to-one mapping between the alias and a key. An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word \"alias\" followed by a forward slash (alias/). An alias that begins with \"aws\" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS).</p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p> <p>To map an alias to a different key, call <a>UpdateAlias</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AlreadyExistsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidAliasNameException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -122,41 +134,49 @@
       "documentation" : "<p>Adds a grant to a key to specify who can use the key and under what conditions. Grants are alternate permission mechanisms to key policies.</p> <p>For more information about grants, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/grants.html\">Grants</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -186,31 +206,37 @@
       "documentation" : "<p>Creates a customer master key (CMK).</p> <p>You can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but CMKs are more commonly used to encrypt data encryption keys (DEKs), which are used to encrypt raw data. For more information about DEKs and the difference between CMKs and DEKs, see the following:</p> <ul> <li> <p>The <a>GenerateDataKey</a> operation</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html\">AWS Key Management Service Concepts</a> in the <i>AWS Key Management Service Developer Guide</i> </p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MalformedPolicyDocumentException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
@@ -240,41 +266,49 @@
       "documentation" : "<p>Decrypts ciphertext. Ciphertext is plaintext that has been previously encrypted by using any of the following functions:</p> <ul> <li> <p> <a>GenerateDataKey</a> </p> </li> <li> <p> <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a>Encrypt</a> </p> </li> </ul> <p>Note that if a caller has been granted access permissions to all keys (through, for example, IAM user policies that grant <code>Decrypt</code> permission on all resources), then ciphertext encrypted by using keys in other accounts where the key grants access to the caller can be decrypted. To remedy this, we recommend that you do not grant <code>Decrypt</code> access in an IAM user policy. Instead grant <code>Decrypt</code> access only in key policies. If you must grant <code>Decrypt</code> access in an IAM user policy, you should scope the resource to specific keys or to specific trusted accounts.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidCiphertextException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KeyUnavailableException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -304,21 +338,25 @@
       "documentation" : "<p>Deletes the specified alias. To map an alias to a different key, call <a>UpdateAlias</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -343,31 +381,37 @@
       "documentation" : "<p>Deletes key material that you previously imported and makes the specified customer master key (CMK) unusable. For more information about importing key material into AWS KMS, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html\">Importing Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>When the specified CMK is in the <code>PendingDeletion</code> state, this operation does not change the CMK's state. Otherwise, it changes the CMK's state to <code>PendingImport</code>.</p> <p>After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the same key material into the CMK.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -392,21 +436,25 @@
       "documentation" : "<p>Provides detailed information about the specified customer master key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
@@ -436,26 +484,31 @@
       "documentation" : "<p>Sets the state of a customer master key (CMK) to disabled, thereby preventing its use for cryptographic operations. For more information about how key state affects the use of a CMK, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html\">How Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -480,36 +533,43 @@
       "documentation" : "<p>Disables rotation of the specified key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
@@ -534,31 +594,37 @@
       "documentation" : "<p>Marks a key as enabled, thereby permitting its use.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -583,36 +649,43 @@
       "documentation" : "<p>Enables rotation of the specified customer master key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
@@ -637,41 +710,49 @@
       "documentation" : "<p>Encrypts plaintext into ciphertext by using a customer master key. The <code>Encrypt</code> function has two primary use cases:</p> <ul> <li> <p>You can encrypt up to 4 KB of arbitrary data such as an RSA key, a database password, or other sensitive customer information.</p> </li> <li> <p>If you are moving encrypted data from one region to another, you can use this API to encrypt in the new region the plaintext data key that was used to encrypt the data in the original region. This provides you with an encrypted copy of the data key that can be decrypted in the new region and used there to decrypt the encrypted data.</p> </li> </ul> <p>Unless you are moving encrypted data from one region to another, you don't use this function to encrypt a generated data key within a region. You retrieve data keys already encrypted by calling the <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> function. Data keys don't need to be encrypted again by calling <code>Encrypt</code>.</p> <p>If you want to encrypt data locally in your application, you can use the <code>GenerateDataKey</code> function to return a plaintext data encryption key and a copy of the key encrypted under the customer master key (CMK) of your choosing.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KeyUnavailableException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidKeyUsageException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -701,41 +782,49 @@
       "documentation" : "<p>Returns a data encryption key that you can use in your application to encrypt data locally.</p> <p>You must specify the customer master key (CMK) under which to generate the data key. You must also specify the length of the data key using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field. You must specify one field or the other, but not both. For common key lengths (128-bit and 256-bit symmetric keys), we recommend that you use <code>KeySpec</code>.</p> <p>This operation returns a plaintext copy of the data key in the <code>Plaintext</code> field of the response, and an encrypted copy of the data key in the <code>CiphertextBlob</code> field. The data key is encrypted under the CMK specified in the <code>KeyId</code> field of the request.</p> <p>We recommend that you use the following pattern to encrypt data locally in your application:</p> <ol> <li> <p>Use this operation (<code>GenerateDataKey</code>) to retrieve a data encryption key.</p> </li> <li> <p>Use the plaintext data encryption key (returned in the <code>Plaintext</code> field of the response) to encrypt data locally, then erase the plaintext data key from memory.</p> </li> <li> <p>Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of the response) alongside the locally encrypted data.</p> </li> </ol> <p>To decrypt data locally:</p> <ol> <li> <p>Use the <a>Decrypt</a> operation to decrypt the encrypted data key into a plaintext copy of the data key.</p> </li> <li> <p>Use the plaintext data key to decrypt data locally, then erase the plaintext data key from memory.</p> </li> </ol> <p>To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return an arbitrary unpredictable byte string, use <a>GenerateRandom</a>.</p> <p>If you use the optional <code>EncryptionContext</code> field, you must store at least enough information to be able to reconstruct the full encryption context when you later send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to choose an encryption context that you can reconstruct on the fly to better secure the ciphertext. For more information, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html\">Encryption Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KeyUnavailableException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidKeyUsageException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -765,41 +854,49 @@
       "documentation" : "<p>Returns a data encryption key encrypted under a customer master key (CMK). This operation is identical to <a>GenerateDataKey</a> but returns only the encrypted copy of the data key.</p> <p>This operation is useful in a system that has multiple components with different degrees of trust. For example, consider a system that stores encrypted data in containers. Each container stores the encrypted data and an encrypted copy of the data key. One component of the system, called the <i>control plane</i>, creates new containers. When it creates a new container, it uses this operation (<code>GenerateDataKeyWithoutPlaintext</code>) to get an encrypted data key and then stores it in the container. Later, a different component of the system, called the <i>data plane</i>, puts encrypted data into the containers. To do this, it passes the encrypted data key to the <a>Decrypt</a> operation, then uses the returned plaintext data key to encrypt data, and finally stores the encrypted data in the container. In this system, the control plane never sees the plaintext data key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KeyUnavailableException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidKeyUsageException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -829,11 +926,13 @@
       "documentation" : "<p>Generates an unpredictable byte string.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
@@ -863,26 +962,31 @@
       "documentation" : "<p>Retrieves a policy attached to the specified key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -912,31 +1016,37 @@
       "documentation" : "<p>Retrieves a Boolean value that indicates whether key rotation is enabled for the specified key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
@@ -966,31 +1076,37 @@
       "documentation" : "<p>Returns the items you need in order to import key material into AWS KMS from your existing key management infrastructure. For more information about importing key material into AWS KMS, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html\">Importing Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>You must specify the key ID of the customer master key (CMK) into which you will import key material. This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must also specify the wrapping algorithm and type of wrapping key (public key) that you will use to encrypt the key material.</p> <p>This operation returns a public key and an import token. Use the public key to encrypt the key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a> request. The public key and import token from the same response must be used together. These items are valid for 24 hours, after which they cannot be used for a subsequent <a>ImportKeyMaterial</a> request. To retrieve new ones, send another <code>GetParametersForImport</code> request.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1020,51 +1136,61 @@
       "documentation" : "<p>Imports key material into an AWS KMS customer master key (CMK) from your existing key management infrastructure. For more information about importing key material into AWS KMS, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html\">Importing Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>You must specify the key ID of the CMK to import the key material into. This CMK's <code>Origin</code> must be <code>EXTERNAL</code>. You must also send an import token and the encrypted key material. Send the import token that you received in the same <a>GetParametersForImport</a> response that contained the public key that you used to encrypt the key material. You must also specify whether the key material expires and if so, when. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. To use the CMK again, you can reimport the same key material. If you set an expiration date, you can change it only by reimporting the same key material and specifying a new expiration date.</p> <p>When this operation is successful, the specified CMK's key state changes to <code>Enabled</code>, and you can use the CMK.</p> <p>After you successfully import key material into a CMK, you can reimport the same key material into that CMK, but you cannot import different key material.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidCiphertextException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IncorrectKeyMaterialException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ExpiredImportTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidImportTokenException"
@@ -1094,16 +1220,19 @@
       "documentation" : "<p>Lists all of the key aliases in the account.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMarkerException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
@@ -1133,31 +1262,37 @@
       "documentation" : "<p>List the grants for a specified key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMarkerException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1187,26 +1322,31 @@
       "documentation" : "<p>Retrieves a list of policies attached to a key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1236,16 +1376,19 @@
       "documentation" : "<p>Lists the customer master keys.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMarkerException"
@@ -1275,26 +1418,31 @@
       "documentation" : "<p>Returns a list of all grants for which the grant's <code>RetiringPrincipal</code> matches the one specified.</p> <p>A typical use is to list all grants that you are able to retire. To retire a grant, use <a>RetireGrant</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMarkerException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
@@ -1324,41 +1472,49 @@
       "documentation" : "<p>Attaches a key policy to the specified customer master key (CMK).</p> <p>For more information about key policies, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html\">Key Policies</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MalformedPolicyDocumentException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedOperationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1383,46 +1539,55 @@
       "documentation" : "<p>Encrypts data on the server side with a new customer master key without exposing the plaintext of the data on the client side. The data is first decrypted and then encrypted. This operation can also be used to change the encryption context of a ciphertext.</p> <p>Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code> on the source key and once as <code>ReEncryptTo</code> on the destination key. We therefore recommend that you include the <code>\"action\":\"kms:ReEncrypt*\"</code> statement in your key policies to permit re-encryption from or to the key. The statement is included automatically when you authorize use of the key through the console but must be included manually when you set a policy by using the <a>PutKeyPolicy</a> function.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DisabledException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidCiphertextException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KeyUnavailableException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidKeyUsageException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1452,31 +1617,37 @@
       "documentation" : "<p>Retires a grant. You can retire a grant when you're done using it to clean up. You should revoke a grant when you intend to actively deny operations that depend on it. The following are permitted to call this API:</p> <ul> <li> <p>The account that created the grant</p> </li> <li> <p>The <code>RetiringPrincipal</code>, if present</p> </li> <li> <p>The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation</p> </li> </ul> <p>The grant to retire must be identified by its grant token or by a combination of the key ARN and the grant ID. A grant token is a unique variable-length base64-encoded string. A grant ID is a 64 character unique identifier of a grant. Both are returned by the <code>CreateGrant</code> function.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantIdException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1501,31 +1672,37 @@
       "documentation" : "<p>Revokes a grant. You can revoke a grant to actively deny operations that depend on it.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGrantIdException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1550,26 +1727,31 @@
       "documentation" : "<p>Schedules the deletion of a customer master key (CMK). You may provide a waiting period, specified in days, before deletion occurs. If you do not provide a waiting period, the default period of 30 days is used. When this operation is successful, the state of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends, you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with it, including all aliases that point to it.</p> <important> <p>Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict the use of a CMK without deleting it, use <a>DisableKey</a>.</p> </important> <p>For more information about scheduling a CMK for deletion, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html\">Deleting Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1599,21 +1781,25 @@
       "documentation" : "<p>Updates an alias to map it to a different key.</p> <p>An alias is not a property of a key. Therefore, an alias can be mapped to and unmapped from an existing key without changing the properties of the key.</p> <p>An alias name can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). An alias must start with the word \"alias\" followed by a forward slash (alias/). An alias that begins with \"aws\" after the forward slash (alias/aws...) is reserved by Amazon Web Services (AWS).</p> <p>The alias and the key it is mapped to must be in the same AWS account and the same region.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1638,26 +1824,31 @@
       "documentation" : "<p>Updates the description of a key.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArnException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DependencyTimeoutException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSInvalidStateException"
@@ -1689,7 +1880,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1710,7 +1901,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1743,7 +1934,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1825,7 +2016,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "^[a-zA-Z0-9:/_-]+$",
       "payload" : null,
@@ -1881,7 +2072,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 20,
       "pattern" : null,
       "payload" : null,
@@ -1902,7 +2093,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1993,7 +2184,7 @@
       "key" : null,
       "max" : 6144,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2345,7 +2536,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2366,7 +2557,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2684,7 +2875,7 @@
       "key" : null,
       "max" : 8192,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3002,7 +3193,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3035,7 +3226,7 @@
       },
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3068,7 +3259,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3089,7 +3280,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3110,7 +3301,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3855,7 +4046,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3888,7 +4079,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4048,7 +4239,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "^[a-zA-Z0-9:/_-]+$",
       "payload" : null,
@@ -4069,7 +4260,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4102,7 +4293,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4135,7 +4326,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4156,7 +4347,7 @@
       "key" : null,
       "max" : 8192,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4670,7 +4861,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4703,7 +4894,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4950,7 +5141,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5006,7 +5197,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5062,7 +5253,7 @@
       "key" : null,
       "max" : 1000,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5641,7 +5832,7 @@
       "key" : null,
       "max" : 320,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\u0020-\\u00FF]*",
       "payload" : null,
@@ -5697,7 +5888,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5718,7 +5909,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5739,7 +5930,7 @@
       "key" : null,
       "max" : 365,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5760,7 +5951,7 @@
       "key" : null,
       "max" : 4096,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5793,7 +5984,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5814,7 +6005,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w]+",
       "payload" : null,
@@ -5835,7 +6026,7 @@
       "key" : null,
       "max" : 131072,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+",
       "payload" : null,
@@ -5856,7 +6047,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6435,7 +6626,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

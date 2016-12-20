@@ -45,6 +45,11 @@ public class ListResourceRecordSetsResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ResourceRecordSets", targetDepth)) {
+                    listResourceRecordSetsResult.withResourceRecordSets(new ArrayList<ResourceRecordSet>());
+                    continue;
+                }
+
                 if (context.testExpression("ResourceRecordSets/ResourceRecordSet", targetDepth)) {
                     listResourceRecordSetsResult.withResourceRecordSets(ResourceRecordSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

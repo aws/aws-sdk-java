@@ -304,15 +304,15 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getCloneFrom() != null)
-            sb.append("CloneFrom: " + getCloneFrom() + ",");
+            sb.append("CloneFrom: ").append(getCloneFrom()).append(",");
         if (getBinaryMediaTypes() != null)
-            sb.append("BinaryMediaTypes: " + getBinaryMediaTypes());
+            sb.append("BinaryMediaTypes: ").append(getBinaryMediaTypes());
         sb.append("}");
         return sb.toString();
     }

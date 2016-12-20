@@ -303,11 +303,11 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCiphertextBlob() != null)
-            sb.append("CiphertextBlob: " + getCiphertextBlob() + ",");
+            sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getEncryptionContext() != null)
-            sb.append("EncryptionContext: " + getEncryptionContext() + ",");
+            sb.append("EncryptionContext: ").append(getEncryptionContext()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
         return sb.toString();
     }

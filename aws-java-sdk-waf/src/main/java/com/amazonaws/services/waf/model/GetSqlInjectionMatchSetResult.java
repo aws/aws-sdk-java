@@ -217,7 +217,7 @@ public class GetSqlInjectionMatchSetResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlInjectionMatchSet() != null)
-            sb.append("SqlInjectionMatchSet: " + getSqlInjectionMatchSet());
+            sb.append("SqlInjectionMatchSet: ").append(getSqlInjectionMatchSet());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DeleteFlowLogsResultStaxUnmarshaller implements Unmarshaller<Delete
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("unsuccessful", targetDepth)) {
+                    deleteFlowLogsResult.withUnsuccessful(new ArrayList<UnsuccessfulItem>());
+                    continue;
+                }
+
                 if (context.testExpression("unsuccessful/item", targetDepth)) {
                     deleteFlowLogsResult.withUnsuccessful(UnsuccessfulItemStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

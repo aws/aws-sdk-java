@@ -124,9 +124,9 @@ public class GetDownloadUrlForLayerResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDownloadUrl() != null)
-            sb.append("DownloadUrl: " + getDownloadUrl() + ",");
+            sb.append("DownloadUrl: ").append(getDownloadUrl()).append(",");
         if (getLayerDigest() != null)
-            sb.append("LayerDigest: " + getLayerDigest());
+            sb.append("LayerDigest: ").append(getLayerDigest());
         sb.append("}");
         return sb.toString();
     }

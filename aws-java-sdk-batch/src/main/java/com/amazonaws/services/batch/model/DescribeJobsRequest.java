@@ -109,7 +109,7 @@ public class DescribeJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobs() != null)
-            sb.append("Jobs: " + getJobs());
+            sb.append("Jobs: ").append(getJobs());
         sb.append("}");
         return sb.toString();
     }

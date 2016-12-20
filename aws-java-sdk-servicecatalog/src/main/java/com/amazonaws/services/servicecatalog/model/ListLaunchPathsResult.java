@@ -161,9 +161,9 @@ public class ListLaunchPathsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchPathSummaries() != null)
-            sb.append("LaunchPathSummaries: " + getLaunchPathSummaries() + ",");
+            sb.append("LaunchPathSummaries: ").append(getLaunchPathSummaries()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

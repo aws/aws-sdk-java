@@ -261,13 +261,13 @@ public class AccessLog implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getS3BucketName() != null)
-            sb.append("S3BucketName: " + getS3BucketName() + ",");
+            sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
         if (getEmitInterval() != null)
-            sb.append("EmitInterval: " + getEmitInterval() + ",");
+            sb.append("EmitInterval: ").append(getEmitInterval()).append(",");
         if (getS3BucketPrefix() != null)
-            sb.append("S3BucketPrefix: " + getS3BucketPrefix());
+            sb.append("S3BucketPrefix: ").append(getS3BucketPrefix());
         sb.append("}");
         return sb.toString();
     }

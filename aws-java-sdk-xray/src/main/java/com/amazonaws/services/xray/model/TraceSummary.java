@@ -690,27 +690,27 @@ public class TraceSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getResponseTime() != null)
-            sb.append("ResponseTime: " + getResponseTime() + ",");
+            sb.append("ResponseTime: ").append(getResponseTime()).append(",");
         if (getHasFault() != null)
-            sb.append("HasFault: " + getHasFault() + ",");
+            sb.append("HasFault: ").append(getHasFault()).append(",");
         if (getHasError() != null)
-            sb.append("HasError: " + getHasError() + ",");
+            sb.append("HasError: ").append(getHasError()).append(",");
         if (getHasThrottle() != null)
-            sb.append("HasThrottle: " + getHasThrottle() + ",");
+            sb.append("HasThrottle: ").append(getHasThrottle()).append(",");
         if (getIsPartial() != null)
-            sb.append("IsPartial: " + getIsPartial() + ",");
+            sb.append("IsPartial: ").append(getIsPartial()).append(",");
         if (getHttp() != null)
-            sb.append("Http: " + getHttp() + ",");
+            sb.append("Http: ").append(getHttp()).append(",");
         if (getAnnotations() != null)
-            sb.append("Annotations: " + getAnnotations() + ",");
+            sb.append("Annotations: ").append(getAnnotations()).append(",");
         if (getUsers() != null)
-            sb.append("Users: " + getUsers() + ",");
+            sb.append("Users: ").append(getUsers()).append(",");
         if (getServiceIds() != null)
-            sb.append("ServiceIds: " + getServiceIds());
+            sb.append("ServiceIds: ").append(getServiceIds());
         sb.append("}");
         return sb.toString();
     }

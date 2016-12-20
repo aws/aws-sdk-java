@@ -126,9 +126,9 @@ public class EmailConfigurationType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceArn() != null)
-            sb.append("SourceArn: " + getSourceArn() + ",");
+            sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getReplyToEmailAddress() != null)
-            sb.append("ReplyToEmailAddress: " + getReplyToEmailAddress());
+            sb.append("ReplyToEmailAddress: ").append(getReplyToEmailAddress());
         sb.append("}");
         return sb.toString();
     }

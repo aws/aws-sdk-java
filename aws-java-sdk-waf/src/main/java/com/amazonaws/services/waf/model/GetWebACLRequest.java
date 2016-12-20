@@ -86,7 +86,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId());
+            sb.append("WebACLId: ").append(getWebACLId());
         sb.append("}");
         return sb.toString();
     }

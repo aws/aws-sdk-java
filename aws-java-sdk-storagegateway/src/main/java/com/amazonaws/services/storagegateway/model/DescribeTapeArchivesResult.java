@@ -192,9 +192,9 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeArchives() != null)
-            sb.append("TapeArchives: " + getTapeArchives() + ",");
+            sb.append("TapeArchives: ").append(getTapeArchives()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

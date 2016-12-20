@@ -345,13 +345,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getAWSAccountIds() != null)
-            sb.append("AWSAccountIds: " + getAWSAccountIds() + ",");
+            sb.append("AWSAccountIds: ").append(getAWSAccountIds()).append(",");
         if (getActionNames() != null)
-            sb.append("ActionNames: " + getActionNames());
+            sb.append("ActionNames: ").append(getActionNames());
         sb.append("}");
         return sb.toString();
     }

@@ -189,9 +189,9 @@ public class History extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

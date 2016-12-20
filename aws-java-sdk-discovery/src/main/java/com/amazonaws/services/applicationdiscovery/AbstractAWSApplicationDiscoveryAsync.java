@@ -25,6 +25,34 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateConfigurationItemsToApplicationResult> associateConfigurationItemsToApplicationAsync(
+            AssociateConfigurationItemsToApplicationRequest request) {
+
+        return associateConfigurationItemsToApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateConfigurationItemsToApplicationResult> associateConfigurationItemsToApplicationAsync(
+            AssociateConfigurationItemsToApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateConfigurationItemsToApplicationRequest, AssociateConfigurationItemsToApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
+
+        return createApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -33,6 +61,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationsResult> deleteApplicationsAsync(DeleteApplicationsRequest request) {
+
+        return deleteApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationsResult> deleteApplicationsAsync(DeleteApplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationsRequest, DeleteApplicationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +144,21 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateConfigurationItemsFromApplicationResult> disassociateConfigurationItemsFromApplicationAsync(
+            DisassociateConfigurationItemsFromApplicationRequest request) {
+
+        return disassociateConfigurationItemsFromApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateConfigurationItemsFromApplicationResult> disassociateConfigurationItemsFromApplicationAsync(
+            DisassociateConfigurationItemsFromApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateConfigurationItemsFromApplicationRequest, DisassociateConfigurationItemsFromApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportConfigurationsResult> exportConfigurationsAsync(ExportConfigurationsRequest request) {
 
         return exportConfigurationsAsync(request, null);
@@ -116,6 +172,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     }
 
     @Override
+    public java.util.concurrent.Future<GetDiscoverySummaryResult> getDiscoverySummaryAsync(GetDiscoverySummaryRequest request) {
+
+        return getDiscoverySummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDiscoverySummaryResult> getDiscoverySummaryAsync(GetDiscoverySummaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDiscoverySummaryRequest, GetDiscoverySummaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConfigurationsResult> listConfigurationsAsync(ListConfigurationsRequest request) {
 
         return listConfigurationsAsync(request, null);
@@ -124,6 +193,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     @Override
     public java.util.concurrent.Future<ListConfigurationsResult> listConfigurationsAsync(ListConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationsRequest, ListConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServerNeighborsResult> listServerNeighborsAsync(ListServerNeighborsRequest request) {
+
+        return listServerNeighborsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServerNeighborsResult> listServerNeighborsAsync(ListServerNeighborsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListServerNeighborsRequest, ListServerNeighborsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +232,19 @@ public class AbstractAWSApplicationDiscoveryAsync extends AbstractAWSApplication
     @Override
     public java.util.concurrent.Future<StopDataCollectionByAgentIdsResult> stopDataCollectionByAgentIdsAsync(StopDataCollectionByAgentIdsRequest request,
             com.amazonaws.handlers.AsyncHandler<StopDataCollectionByAgentIdsRequest, StopDataCollectionByAgentIdsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
+
+        return updateApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

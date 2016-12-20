@@ -239,13 +239,13 @@ public class ClusterSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getNormalizedInstanceHours() != null)
-            sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours());
+            sb.append("NormalizedInstanceHours: ").append(getNormalizedInstanceHours());
         sb.append("}");
         return sb.toString();
     }

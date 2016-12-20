@@ -156,9 +156,9 @@ public class TraceUser implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getServiceIds() != null)
-            sb.append("ServiceIds: " + getServiceIds());
+            sb.append("ServiceIds: ").append(getServiceIds());
         sb.append("}");
         return sb.toString();
     }

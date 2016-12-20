@@ -228,11 +228,11 @@ public class EventType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getService() != null)
-            sb.append("Service: " + getService() + ",");
+            sb.append("Service: ").append(getService()).append(",");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getCategory() != null)
-            sb.append("Category: " + getCategory());
+            sb.append("Category: ").append(getCategory());
         sb.append("}");
         return sb.toString();
     }

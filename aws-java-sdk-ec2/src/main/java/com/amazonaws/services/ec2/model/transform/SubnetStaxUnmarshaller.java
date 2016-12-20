@@ -65,6 +65,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("ipv6CidrBlockAssociationSet", targetDepth)) {
+                    subnet.withIpv6CidrBlockAssociationSet(new ArrayList<SubnetIpv6CidrBlockAssociation>());
+                    continue;
+                }
+
                 if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
                     subnet.withIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -92,6 +97,11 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
 
                 if (context.testExpression("mapPublicIpOnLaunch", targetDepth)) {
                     subnet.setMapPublicIpOnLaunch(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    subnet.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

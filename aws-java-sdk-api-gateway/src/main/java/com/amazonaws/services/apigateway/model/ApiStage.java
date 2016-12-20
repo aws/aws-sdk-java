@@ -126,9 +126,9 @@ public class ApiStage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApiId() != null)
-            sb.append("ApiId: " + getApiId() + ",");
+            sb.append("ApiId: ").append(getApiId()).append(",");
         if (getStage() != null)
-            sb.append("Stage: " + getStage());
+            sb.append("Stage: ").append(getStage());
         sb.append("}");
         return sb.toString();
     }

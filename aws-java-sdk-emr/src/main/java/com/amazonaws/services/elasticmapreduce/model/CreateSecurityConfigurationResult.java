@@ -124,9 +124,9 @@ public class CreateSecurityConfigurationResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: " + getCreationDateTime());
+            sb.append("CreationDateTime: ").append(getCreationDateTime());
         sb.append("}");
         return sb.toString();
     }

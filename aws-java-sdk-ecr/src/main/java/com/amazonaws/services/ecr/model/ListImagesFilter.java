@@ -124,7 +124,7 @@ public class ListImagesFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTagStatus() != null)
-            sb.append("TagStatus: " + getTagStatus());
+            sb.append("TagStatus: ").append(getTagStatus());
         sb.append("}");
         return sb.toString();
     }

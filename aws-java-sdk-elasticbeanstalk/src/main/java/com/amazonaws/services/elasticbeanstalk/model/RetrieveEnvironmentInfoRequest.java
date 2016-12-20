@@ -327,11 +327,11 @@ public class RetrieveEnvironmentInfoRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getInfoType() != null)
-            sb.append("InfoType: " + getInfoType());
+            sb.append("InfoType: ").append(getInfoType());
         sb.append("}");
         return sb.toString();
     }

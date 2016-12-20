@@ -81,7 +81,7 @@ public class CreateDhcpOptionsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDhcpOptions() != null)
-            sb.append("DhcpOptions: " + getDhcpOptions());
+            sb.append("DhcpOptions: ").append(getDhcpOptions());
         sb.append("}");
         return sb.toString();
     }

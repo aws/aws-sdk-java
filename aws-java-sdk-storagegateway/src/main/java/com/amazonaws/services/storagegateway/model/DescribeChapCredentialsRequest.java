@@ -88,7 +88,7 @@ public class DescribeChapCredentialsRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetARN() != null)
-            sb.append("TargetARN: " + getTargetARN());
+            sb.append("TargetARN: ").append(getTargetARN());
         sb.append("}");
         return sb.toString();
     }

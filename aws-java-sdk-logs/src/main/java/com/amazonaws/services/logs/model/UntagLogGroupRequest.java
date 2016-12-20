@@ -158,9 +158,9 @@ public class UntagLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

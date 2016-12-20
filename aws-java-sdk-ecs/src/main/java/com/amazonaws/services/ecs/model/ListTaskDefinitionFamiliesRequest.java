@@ -427,13 +427,13 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFamilyPrefix() != null)
-            sb.append("FamilyPrefix: " + getFamilyPrefix() + ",");
+            sb.append("FamilyPrefix: ").append(getFamilyPrefix()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

@@ -464,13 +464,13 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getDBParameterGroupFamily() != null)
-            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+            sb.append("DBParameterGroupFamily: ").append(getDBParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

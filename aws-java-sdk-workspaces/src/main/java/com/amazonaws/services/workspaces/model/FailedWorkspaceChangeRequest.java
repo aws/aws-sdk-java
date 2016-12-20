@@ -174,11 +174,11 @@ public class FailedWorkspaceChangeRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: " + getWorkspaceId() + ",");
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }

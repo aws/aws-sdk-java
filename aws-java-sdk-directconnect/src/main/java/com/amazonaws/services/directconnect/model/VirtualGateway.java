@@ -94,9 +94,9 @@ public class VirtualGateway implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualGatewayId() != null)
-            sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");
+            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId()).append(",");
         if (getVirtualGatewayState() != null)
-            sb.append("VirtualGatewayState: " + getVirtualGatewayState());
+            sb.append("VirtualGatewayState: ").append(getVirtualGatewayState());
         sb.append("}");
         return sb.toString();
     }

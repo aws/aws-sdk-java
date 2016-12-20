@@ -19,16 +19,19 @@
       "documentation" : "<p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -58,16 +61,19 @@
       "documentation" : "<p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -97,16 +103,19 @@
       "documentation" : "<p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href=\"https://console.aws.amazon.com/support/home#/\">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -136,16 +145,19 @@
       "documentation" : "<p>Creates an HSM client.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -175,16 +187,19 @@
       "documentation" : "<p>Deletes a high-availability partition group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -214,16 +229,19 @@
       "documentation" : "<p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -253,16 +271,19 @@
       "documentation" : "<p>Deletes a client.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -292,16 +313,19 @@
       "documentation" : "<p>Retrieves information about a high-availability partition group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -331,16 +355,19 @@
       "documentation" : "<p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -370,16 +397,19 @@
       "documentation" : "<p>Retrieves information about an HSM client.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -409,16 +439,19 @@
       "documentation" : "<p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -448,16 +481,19 @@
       "documentation" : "<p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -487,16 +523,19 @@
       "documentation" : "<p>Lists the high-availability partition groups for the account.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next set of items.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -526,16 +565,19 @@
       "documentation" : "<p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of items.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -565,16 +607,19 @@
       "documentation" : "<p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -604,16 +649,19 @@
       "documentation" : "<p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -643,16 +691,19 @@
       "documentation" : "<p>Modifies an existing high-availability partition group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -682,16 +733,19 @@
       "documentation" : "<p>Modifies an HSM.</p> <important> <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -721,6 +775,7 @@
       "documentation" : "<p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
@@ -750,16 +805,19 @@
       "documentation" : "<p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudHsmInternalException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
@@ -796,7 +854,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[a-zA-Z0-9\\-]*",
       "payload" : null,
@@ -829,7 +887,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -933,7 +991,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -954,7 +1012,7 @@
       "key" : null,
       "max" : 2400,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 600,
       "pattern" : "[\\w :+=./\\n-]*",
       "payload" : null,
@@ -975,7 +1033,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "([0-9a-fA-F][0-9a-fA-F]:){15}[0-9a-fA-F][0-9a-fA-F]",
       "payload" : null,
@@ -996,7 +1054,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\\-]*:[0-9]{12}:client-[0-9a-f]{8}",
       "payload" : null,
@@ -1017,7 +1075,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[a-zA-Z0-9_.-]{2,64}",
       "payload" : null,
@@ -1050,7 +1108,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1071,7 +1129,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[a-zA-Z0-9]{1,64}",
       "payload" : null,
@@ -1092,7 +1150,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1134,7 +1192,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2366,7 +2424,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "eni-[0-9a-f]{8}",
       "payload" : null,
@@ -2387,7 +2445,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[\\w :+=./-]*",
       "payload" : null,
@@ -2530,7 +2588,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\\-]*:[0-9]{12}:hapg-[0-9a-f]{8}",
       "payload" : null,
@@ -2563,7 +2621,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2584,7 +2642,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\\-]*:[0-9]{12}:hsm-[0-9a-f]{8}",
       "payload" : null,
@@ -2617,7 +2675,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2638,7 +2696,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "\\d{1,16}",
       "payload" : null,
@@ -2659,7 +2717,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2680,7 +2738,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws(-iso)?:iam::[0-9]{12}:role/[a-zA-Z0-9_\\+=,\\.\\-@]{1,64}",
       "payload" : null,
@@ -2722,7 +2780,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}",
       "payload" : null,
@@ -2743,7 +2801,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[a-zA-Z0-9_.-]{1,64}",
       "payload" : null,
@@ -3453,7 +3511,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[a-zA-Z0-9+/]*",
       "payload" : null,
@@ -3474,7 +3532,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws(-iso)?:cloudhsm:[a-zA-Z0-9\\-]*:[0-9]{12}:hsm-[0-9a-f]{8}/partition-[0-9]{6,12}",
       "payload" : null,
@@ -3507,7 +3565,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3528,7 +3586,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "\\d{6,12}",
       "payload" : null,
@@ -3561,7 +3619,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3665,7 +3723,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[a-zA-Z0-9+/= ._:\\\\@-]*",
       "payload" : null,
@@ -3686,7 +3744,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[\\w :+=./\\\\-]*",
       "payload" : null,
@@ -3707,7 +3765,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "subnet-[0-9a-f]{8}",
       "payload" : null,
@@ -3728,7 +3786,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3797,7 +3855,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3830,7 +3888,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3863,7 +3921,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3884,7 +3942,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3905,7 +3963,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "\\d*",
       "payload" : null,
@@ -3926,7 +3984,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "vpc-[0-9a-f]{8}",
       "payload" : null,

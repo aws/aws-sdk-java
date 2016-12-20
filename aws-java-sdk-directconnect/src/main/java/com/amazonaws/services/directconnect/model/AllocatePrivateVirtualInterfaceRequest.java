@@ -228,11 +228,11 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getOwnerAccount() != null)
-            sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getNewPrivateVirtualInterfaceAllocation() != null)
-            sb.append("NewPrivateVirtualInterfaceAllocation: " + getNewPrivateVirtualInterfaceAllocation());
+            sb.append("NewPrivateVirtualInterfaceAllocation: ").append(getNewPrivateVirtualInterfaceAllocation());
         sb.append("}");
         return sb.toString();
     }

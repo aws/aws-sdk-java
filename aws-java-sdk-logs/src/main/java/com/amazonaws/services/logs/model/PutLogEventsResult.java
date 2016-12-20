@@ -124,9 +124,9 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextSequenceToken() != null)
-            sb.append("NextSequenceToken: " + getNextSequenceToken() + ",");
+            sb.append("NextSequenceToken: ").append(getNextSequenceToken()).append(",");
         if (getRejectedLogEventsInfo() != null)
-            sb.append("RejectedLogEventsInfo: " + getRejectedLogEventsInfo());
+            sb.append("RejectedLogEventsInfo: ").append(getRejectedLogEventsInfo());
         sb.append("}");
         return sb.toString();
     }

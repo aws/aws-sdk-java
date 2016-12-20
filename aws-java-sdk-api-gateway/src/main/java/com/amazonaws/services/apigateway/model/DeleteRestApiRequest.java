@@ -81,7 +81,7 @@ public class DeleteRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId());
+            sb.append("RestApiId: ").append(getRestApiId());
         sb.append("}");
         return sb.toString();
     }

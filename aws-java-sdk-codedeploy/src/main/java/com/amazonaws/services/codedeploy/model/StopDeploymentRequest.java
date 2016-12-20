@@ -148,9 +148,9 @@ public class StopDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getAutoRollbackEnabled() != null)
-            sb.append("AutoRollbackEnabled: " + getAutoRollbackEnabled());
+            sb.append("AutoRollbackEnabled: ").append(getAutoRollbackEnabled());
         sb.append("}");
         return sb.toString();
     }

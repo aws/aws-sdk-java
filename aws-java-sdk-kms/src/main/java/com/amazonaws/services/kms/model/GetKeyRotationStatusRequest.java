@@ -167,7 +167,7 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId());
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }

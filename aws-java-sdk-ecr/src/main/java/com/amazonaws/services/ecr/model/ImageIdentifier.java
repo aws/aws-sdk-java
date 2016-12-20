@@ -126,9 +126,9 @@ public class ImageIdentifier implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageDigest() != null)
-            sb.append("ImageDigest: " + getImageDigest() + ",");
+            sb.append("ImageDigest: ").append(getImageDigest()).append(",");
         if (getImageTag() != null)
-            sb.append("ImageTag: " + getImageTag());
+            sb.append("ImageTag: ").append(getImageTag());
         sb.append("}");
         return sb.toString();
     }

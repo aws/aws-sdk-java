@@ -2440,11 +2440,11 @@ public class AliasTarget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName() + ",");
+            sb.append("DNSName: ").append(getDNSName()).append(",");
         if (getEvaluateTargetHealth() != null)
-            sb.append("EvaluateTargetHealth: " + getEvaluateTargetHealth());
+            sb.append("EvaluateTargetHealth: ").append(getEvaluateTargetHealth());
         sb.append("}");
         return sb.toString();
     }

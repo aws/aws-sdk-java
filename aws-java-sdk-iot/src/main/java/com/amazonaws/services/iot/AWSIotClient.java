@@ -324,8 +324,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public AcceptCertificateTransferResult acceptCertificateTransfer(AcceptCertificateTransferRequest acceptCertificateTransferRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(acceptCertificateTransferRequest.getCertificateId()), "CertificateId");
-
         ExecutionContext executionContext = createExecutionContext(acceptCertificateTransferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -382,8 +380,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public AttachPrincipalPolicyResult attachPrincipalPolicy(AttachPrincipalPolicyRequest attachPrincipalPolicyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(attachPrincipalPolicyRequest.getPolicyName()), "PolicyName");
-
         ExecutionContext executionContext = createExecutionContext(attachPrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -437,8 +433,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public AttachThingPrincipalResult attachThingPrincipal(AttachThingPrincipalRequest attachThingPrincipalRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(attachThingPrincipalRequest.getThingName()), "ThingName");
 
         ExecutionContext executionContext = createExecutionContext(attachThingPrincipalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -504,8 +498,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public CancelCertificateTransferResult cancelCertificateTransfer(CancelCertificateTransferRequest cancelCertificateTransferRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(cancelCertificateTransferRequest.getCertificateId()), "CertificateId");
 
         ExecutionContext executionContext = createExecutionContext(cancelCertificateTransferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -719,8 +711,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createPolicyRequest.getPolicyName()), "PolicyName");
-
         ExecutionContext executionContext = createExecutionContext(createPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -784,8 +774,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest createPolicyVersionRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createPolicyVersionRequest.getPolicyName()), "PolicyName");
-
         ExecutionContext executionContext = createExecutionContext(createPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -841,8 +829,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public CreateThingResult createThing(CreateThingRequest createThingRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createThingRequest.getThingName()), "ThingName");
-
         ExecutionContext executionContext = createExecutionContext(createThingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -896,8 +882,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public CreateThingTypeResult createThingType(CreateThingTypeRequest createThingTypeRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createThingTypeRequest.getThingTypeName()), "ThingTypeName");
-
         ExecutionContext executionContext = createExecutionContext(createThingTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -949,8 +933,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public CreateTopicRuleResult createTopicRule(CreateTopicRuleRequest createTopicRuleRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createTopicRuleRequest.getRuleName()), "RuleName");
 
         ExecutionContext executionContext = createExecutionContext(createTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1006,8 +988,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DeleteCACertificateResult deleteCACertificate(DeleteCACertificateRequest deleteCACertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteCACertificateRequest.getCertificateId()), "CertificateId");
 
         ExecutionContext executionContext = createExecutionContext(deleteCACertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1070,8 +1050,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteCertificateRequest.getCertificateId()), "CertificateId");
 
         ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1139,8 +1117,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deletePolicyRequest.getPolicyName()), "PolicyName");
-
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1197,9 +1173,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest deletePolicyVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deletePolicyVersionRequest.getPolicyName()), "PolicyName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deletePolicyVersionRequest.getPolicyVersionId()), "PolicyVersionId");
 
         ExecutionContext executionContext = createExecutionContext(deletePolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1309,8 +1282,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DeleteThingResult deleteThing(DeleteThingRequest deleteThingRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteThingRequest.getThingName()), "ThingName");
-
         ExecutionContext executionContext = createExecutionContext(deleteThingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1367,8 +1338,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DeleteThingTypeResult deleteThingType(DeleteThingTypeRequest deleteThingTypeRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteThingTypeRequest.getThingTypeName()), "ThingTypeName");
-
         ExecutionContext executionContext = createExecutionContext(deleteThingTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1417,8 +1386,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DeleteTopicRuleResult deleteTopicRule(DeleteTopicRuleRequest deleteTopicRuleRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteTopicRuleRequest.getRuleName()), "RuleName");
 
         ExecutionContext executionContext = createExecutionContext(deleteTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1473,8 +1440,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DeprecateThingTypeResult deprecateThingType(DeprecateThingTypeRequest deprecateThingTypeRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deprecateThingTypeRequest.getThingTypeName()), "ThingTypeName");
-
         ExecutionContext executionContext = createExecutionContext(deprecateThingTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1527,8 +1492,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DescribeCACertificateResult describeCACertificate(DescribeCACertificateRequest describeCACertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeCACertificateRequest.getCertificateId()), "CertificateId");
 
         ExecutionContext executionContext = createExecutionContext(describeCACertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1583,8 +1546,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeCertificateRequest.getCertificateId()), "CertificateId");
 
         ExecutionContext executionContext = createExecutionContext(describeCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1686,8 +1647,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DescribeThingResult describeThing(DescribeThingRequest describeThingRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeThingRequest.getThingName()), "ThingName");
-
         ExecutionContext executionContext = createExecutionContext(describeThingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1741,8 +1700,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DescribeThingTypeResult describeThingType(DescribeThingTypeRequest describeThingTypeRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeThingTypeRequest.getThingTypeName()), "ThingTypeName");
-
         ExecutionContext executionContext = createExecutionContext(describeThingTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1795,8 +1752,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public DetachPrincipalPolicyResult detachPrincipalPolicy(DetachPrincipalPolicyRequest detachPrincipalPolicyRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(detachPrincipalPolicyRequest.getPolicyName()), "PolicyName");
 
         ExecutionContext executionContext = createExecutionContext(detachPrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1852,8 +1807,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DetachThingPrincipalResult detachThingPrincipal(DetachThingPrincipalRequest detachThingPrincipalRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(detachThingPrincipalRequest.getThingName()), "ThingName");
-
         ExecutionContext executionContext = createExecutionContext(detachThingPrincipalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1903,8 +1856,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public DisableTopicRuleResult disableTopicRule(DisableTopicRuleRequest disableTopicRuleRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(disableTopicRuleRequest.getRuleName()), "RuleName");
-
         ExecutionContext executionContext = createExecutionContext(disableTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1953,8 +1904,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public EnableTopicRuleResult enableTopicRule(EnableTopicRuleRequest enableTopicRuleRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(enableTopicRuleRequest.getRuleName()), "RuleName");
 
         ExecutionContext executionContext = createExecutionContext(enableTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2056,8 +2005,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getPolicyRequest.getPolicyName()), "PolicyName");
-
         ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2110,9 +2057,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest getPolicyVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getPolicyVersionRequest.getPolicyName()), "PolicyName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getPolicyVersionRequest.getPolicyVersionId()), "PolicyVersionId");
 
         ExecutionContext executionContext = createExecutionContext(getPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2213,8 +2157,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public GetTopicRuleResult getTopicRule(GetTopicRuleRequest getTopicRuleRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getTopicRuleRequest.getRuleName()), "RuleName");
 
         ExecutionContext executionContext = createExecutionContext(getTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2376,8 +2318,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public ListCertificatesByCAResult listCertificatesByCA(ListCertificatesByCARequest listCertificatesByCARequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listCertificatesByCARequest.getCaCertificateId()), "CaCertificateId");
 
         ExecutionContext executionContext = createExecutionContext(listCertificatesByCARequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2588,8 +2528,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest listPolicyVersionsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listPolicyVersionsRequest.getPolicyName()), "PolicyName");
-
         ExecutionContext executionContext = createExecutionContext(listPolicyVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2752,8 +2690,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public ListThingPrincipalsResult listThingPrincipals(ListThingPrincipalsRequest listThingPrincipalsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listThingPrincipalsRequest.getThingName()), "ThingName");
 
         ExecutionContext executionContext = createExecutionContext(listThingPrincipalsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3095,8 +3031,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public RejectCertificateTransferResult rejectCertificateTransfer(RejectCertificateTransferRequest rejectCertificateTransferRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(rejectCertificateTransferRequest.getCertificateId()), "CertificateId");
-
         ExecutionContext executionContext = createExecutionContext(rejectCertificateTransferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3150,8 +3084,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public ReplaceTopicRuleResult replaceTopicRule(ReplaceTopicRuleRequest replaceTopicRuleRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(replaceTopicRuleRequest.getRuleName()), "RuleName");
 
         ExecutionContext executionContext = createExecutionContext(replaceTopicRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3207,9 +3139,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(setDefaultPolicyVersionRequest.getPolicyName()), "PolicyName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(setDefaultPolicyVersionRequest.getPolicyVersionId()), "PolicyVersionId");
 
         ExecutionContext executionContext = createExecutionContext(setDefaultPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3331,8 +3260,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public TransferCertificateResult transferCertificate(TransferCertificateRequest transferCertificateRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(transferCertificateRequest.getCertificateId()), "CertificateId");
-
         ExecutionContext executionContext = createExecutionContext(transferCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3385,8 +3312,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public UpdateCACertificateResult updateCACertificate(UpdateCACertificateRequest updateCACertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateCACertificateRequest.getCertificateId()), "CertificateId");
 
         ExecutionContext executionContext = createExecutionContext(updateCACertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3450,8 +3375,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     @Override
     public UpdateCertificateResult updateCertificate(UpdateCertificateRequest updateCertificateRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateCertificateRequest.getCertificateId()), "CertificateId");
-
         ExecutionContext executionContext = createExecutionContext(updateCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3507,8 +3430,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      */
     @Override
     public UpdateThingResult updateThing(UpdateThingRequest updateThingRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateThingRequest.getThingName()), "ThingName");
 
         ExecutionContext executionContext = createExecutionContext(updateThingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -218,13 +218,13 @@ public class MetricTransformation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getMetricNamespace() != null)
-            sb.append("MetricNamespace: " + getMetricNamespace() + ",");
+            sb.append("MetricNamespace: ").append(getMetricNamespace()).append(",");
         if (getMetricValue() != null)
-            sb.append("MetricValue: " + getMetricValue() + ",");
+            sb.append("MetricValue: ").append(getMetricValue()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue());
+            sb.append("DefaultValue: ").append(getDefaultValue());
         sb.append("}");
         return sb.toString();
     }

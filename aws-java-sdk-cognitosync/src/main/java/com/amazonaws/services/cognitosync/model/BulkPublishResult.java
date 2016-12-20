@@ -77,7 +77,7 @@ public class BulkPublishResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId());
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId());
         sb.append("}");
         return sb.toString();
     }

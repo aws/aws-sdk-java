@@ -679,21 +679,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: " + getServiceName() + ",");
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getLoadBalancers() != null)
-            sb.append("LoadBalancers: " + getLoadBalancers() + ",");
+            sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
         if (getDesiredCount() != null)
-            sb.append("DesiredCount: " + getDesiredCount() + ",");
+            sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getRole() != null)
-            sb.append("Role: " + getRole() + ",");
+            sb.append("Role: ").append(getRole()).append(",");
         if (getDeploymentConfiguration() != null)
-            sb.append("DeploymentConfiguration: " + getDeploymentConfiguration());
+            sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration());
         sb.append("}");
         return sb.toString();
     }

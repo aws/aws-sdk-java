@@ -104,9 +104,9 @@ public class QuietTime implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnd() != null)
-            sb.append("End: " + getEnd() + ",");
+            sb.append("End: ").append(getEnd()).append(",");
         if (getStart() != null)
-            sb.append("Start: " + getStart());
+            sb.append("Start: ").append(getStart());
         sb.append("}");
         return sb.toString();
     }

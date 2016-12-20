@@ -50,6 +50,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    dBCluster.withAvailabilityZones(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/AvailabilityZone", targetDepth)) {
                     dBCluster.withAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -140,6 +145,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("DBClusterOptionGroupMemberships", targetDepth)) {
+                    dBCluster.withDBClusterOptionGroupMemberships(new ArrayList<DBClusterOptionGroupStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("DBClusterOptionGroupMemberships/DBClusterOptionGroup", targetDepth)) {
                     dBCluster.withDBClusterOptionGroupMemberships(DBClusterOptionGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -160,13 +170,28 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("ReadReplicaIdentifiers", targetDepth)) {
+                    dBCluster.withReadReplicaIdentifiers(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ReadReplicaIdentifiers/ReadReplicaIdentifier", targetDepth)) {
                     dBCluster.withReadReplicaIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("DBClusterMembers", targetDepth)) {
+                    dBCluster.withDBClusterMembers(new ArrayList<DBClusterMember>());
+                    continue;
+                }
+
                 if (context.testExpression("DBClusterMembers/DBClusterMember", targetDepth)) {
                     dBCluster.withDBClusterMembers(DBClusterMemberStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("VpcSecurityGroups", targetDepth)) {
+                    dBCluster.withVpcSecurityGroups(new ArrayList<VpcSecurityGroupMembership>());
                     continue;
                 }
 
@@ -197,6 +222,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
 
                 if (context.testExpression("DBClusterArn", targetDepth)) {
                     dBCluster.setDBClusterArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedRoles", targetDepth)) {
+                    dBCluster.withAssociatedRoles(new ArrayList<DBClusterRole>());
                     continue;
                 }
 

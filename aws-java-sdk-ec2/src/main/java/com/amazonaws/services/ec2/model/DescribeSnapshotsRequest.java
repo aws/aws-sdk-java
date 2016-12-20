@@ -1171,17 +1171,17 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotIds() != null)
-            sb.append("SnapshotIds: " + getSnapshotIds() + ",");
+            sb.append("SnapshotIds: ").append(getSnapshotIds()).append(",");
         if (getOwnerIds() != null)
-            sb.append("OwnerIds: " + getOwnerIds() + ",");
+            sb.append("OwnerIds: ").append(getOwnerIds()).append(",");
         if (getRestorableByUserIds() != null)
-            sb.append("RestorableByUserIds: " + getRestorableByUserIds() + ",");
+            sb.append("RestorableByUserIds: ").append(getRestorableByUserIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

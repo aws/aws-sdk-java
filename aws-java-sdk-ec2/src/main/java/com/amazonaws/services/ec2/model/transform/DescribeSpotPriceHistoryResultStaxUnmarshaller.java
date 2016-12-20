@@ -45,6 +45,11 @@ public class DescribeSpotPriceHistoryResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("spotPriceHistorySet", targetDepth)) {
+                    describeSpotPriceHistoryResult.withSpotPriceHistory(new ArrayList<SpotPrice>());
+                    continue;
+                }
+
                 if (context.testExpression("spotPriceHistorySet/item", targetDepth)) {
                     describeSpotPriceHistoryResult.withSpotPriceHistory(SpotPriceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

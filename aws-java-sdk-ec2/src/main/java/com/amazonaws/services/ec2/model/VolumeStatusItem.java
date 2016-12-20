@@ -330,15 +330,15 @@ public class VolumeStatusItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVolumeStatus() != null)
-            sb.append("VolumeStatus: " + getVolumeStatus() + ",");
+            sb.append("VolumeStatus: ").append(getVolumeStatus()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions());
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }

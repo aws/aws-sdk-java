@@ -80,7 +80,7 @@ public class GetPipelineExecutionResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineExecution() != null)
-            sb.append("PipelineExecution: " + getPipelineExecution());
+            sb.append("PipelineExecution: ").append(getPipelineExecution());
         sb.append("}");
         return sb.toString();
     }

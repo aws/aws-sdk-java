@@ -116,6 +116,8 @@ public class CodeGenTemplatesConfig {
         merged.setModelMarshaller(TopLevelTemplate.merge(
                 config.getModelMarshaller(), override.getModelMarshaller()));
 
+        merged.setBaseExceptionClass(TopLevelTemplate.merge(
+                config.getBaseExceptionClass(), override.getBaseExceptionClass()));
         merged.setExceptionClass(TopLevelTemplate.merge(
                 config.getExceptionClass(), override.getExceptionClass()));
         merged.setExceptionUnmarshaller(TopLevelTemplate.merge(
@@ -324,8 +326,8 @@ public class CodeGenTemplatesConfig {
         return baseExceptionClass;
     }
 
-    public TopLevelTemplate setBaseExceptionClass(TopLevelTemplate baseExceptionClass) {
-        return baseExceptionClass;
+    public void setBaseExceptionClass(TopLevelTemplate baseExceptionClass) {
+        this.baseExceptionClass = baseExceptionClass;
     }
 
     public TopLevelTemplate getCucumberModuleInjector() {

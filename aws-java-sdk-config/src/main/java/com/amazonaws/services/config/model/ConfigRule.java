@@ -877,23 +877,23 @@ public class ConfigRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleName() != null)
-            sb.append("ConfigRuleName: " + getConfigRuleName() + ",");
+            sb.append("ConfigRuleName: ").append(getConfigRuleName()).append(",");
         if (getConfigRuleArn() != null)
-            sb.append("ConfigRuleArn: " + getConfigRuleArn() + ",");
+            sb.append("ConfigRuleArn: ").append(getConfigRuleArn()).append(",");
         if (getConfigRuleId() != null)
-            sb.append("ConfigRuleId: " + getConfigRuleId() + ",");
+            sb.append("ConfigRuleId: ").append(getConfigRuleId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getScope() != null)
-            sb.append("Scope: " + getScope() + ",");
+            sb.append("Scope: ").append(getScope()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getInputParameters() != null)
-            sb.append("InputParameters: " + getInputParameters() + ",");
+            sb.append("InputParameters: ").append(getInputParameters()).append(",");
         if (getMaximumExecutionFrequency() != null)
-            sb.append("MaximumExecutionFrequency: " + getMaximumExecutionFrequency() + ",");
+            sb.append("MaximumExecutionFrequency: ").append(getMaximumExecutionFrequency()).append(",");
         if (getConfigRuleState() != null)
-            sb.append("ConfigRuleState: " + getConfigRuleState());
+            sb.append("ConfigRuleState: ").append(getConfigRuleState());
         sb.append("}");
         return sb.toString();
     }

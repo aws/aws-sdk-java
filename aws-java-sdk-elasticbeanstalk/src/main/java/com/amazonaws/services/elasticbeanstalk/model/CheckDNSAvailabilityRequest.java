@@ -99,7 +99,7 @@ public class CheckDNSAvailabilityRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCNAMEPrefix() != null)
-            sb.append("CNAMEPrefix: " + getCNAMEPrefix());
+            sb.append("CNAMEPrefix: ").append(getCNAMEPrefix());
         sb.append("}");
         return sb.toString();
     }

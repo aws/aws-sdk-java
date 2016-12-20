@@ -80,7 +80,7 @@ public class GetDeploymentGroupResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentGroupInfo() != null)
-            sb.append("DeploymentGroupInfo: " + getDeploymentGroupInfo());
+            sb.append("DeploymentGroupInfo: ").append(getDeploymentGroupInfo());
         sb.append("}");
         return sb.toString();
     }

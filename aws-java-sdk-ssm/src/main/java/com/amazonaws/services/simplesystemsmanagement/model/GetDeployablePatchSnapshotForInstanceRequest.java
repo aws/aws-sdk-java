@@ -125,9 +125,9 @@ public class GetDeployablePatchSnapshotForInstanceRequest extends com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId());
+            sb.append("SnapshotId: ").append(getSnapshotId());
         sb.append("}");
         return sb.toString();
     }

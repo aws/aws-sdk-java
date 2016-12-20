@@ -240,9 +240,9 @@ public class DBSnapshotAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getAttributeValues() != null)
-            sb.append("AttributeValues: " + getAttributeValues());
+            sb.append("AttributeValues: ").append(getAttributeValues());
         sb.append("}");
         return sb.toString();
     }

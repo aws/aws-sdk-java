@@ -420,13 +420,13 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier() + ",");
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getValuesToAdd() != null)
-            sb.append("ValuesToAdd: " + getValuesToAdd() + ",");
+            sb.append("ValuesToAdd: ").append(getValuesToAdd()).append(",");
         if (getValuesToRemove() != null)
-            sb.append("ValuesToRemove: " + getValuesToRemove());
+            sb.append("ValuesToRemove: ").append(getValuesToRemove());
         sb.append("}");
         return sb.toString();
     }

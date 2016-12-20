@@ -45,6 +45,11 @@ public class DescribeLifecycleHooksResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("LifecycleHooks", targetDepth)) {
+                    describeLifecycleHooksResult.withLifecycleHooks(new ArrayList<LifecycleHook>());
+                    continue;
+                }
+
                 if (context.testExpression("LifecycleHooks/member", targetDepth)) {
                     describeLifecycleHooksResult.withLifecycleHooks(LifecycleHookStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

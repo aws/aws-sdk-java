@@ -154,9 +154,9 @@ public class GetActiveNamesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActiveNames() != null)
-            sb.append("ActiveNames: " + getActiveNames() + ",");
+            sb.append("ActiveNames: ").append(getActiveNames()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

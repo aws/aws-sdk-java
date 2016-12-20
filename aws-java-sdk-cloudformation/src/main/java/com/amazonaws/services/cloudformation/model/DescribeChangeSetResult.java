@@ -1097,35 +1097,35 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChangeSetName() != null)
-            sb.append("ChangeSetName: " + getChangeSetName() + ",");
+            sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getChangeSetId() != null)
-            sb.append("ChangeSetId: " + getChangeSetId() + ",");
+            sb.append("ChangeSetId: ").append(getChangeSetId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getExecutionStatus() != null)
-            sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
+            sb.append("ExecutionStatus: ").append(getExecutionStatus()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: " + getStatusReason() + ",");
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getNotificationARNs() != null)
-            sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+            sb.append("NotificationARNs: ").append(getNotificationARNs()).append(",");
         if (getCapabilities() != null)
-            sb.append("Capabilities: " + getCapabilities() + ",");
+            sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getChanges() != null)
-            sb.append("Changes: " + getChanges() + ",");
+            sb.append("Changes: ").append(getChanges()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

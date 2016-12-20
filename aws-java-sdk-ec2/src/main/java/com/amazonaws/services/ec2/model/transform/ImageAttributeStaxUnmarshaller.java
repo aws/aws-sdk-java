@@ -50,8 +50,18 @@ public class ImageAttributeStaxUnmarshaller implements Unmarshaller<ImageAttribu
                     continue;
                 }
 
+                if (context.testExpression("launchPermission", targetDepth)) {
+                    imageAttribute.withLaunchPermissions(new ArrayList<LaunchPermission>());
+                    continue;
+                }
+
                 if (context.testExpression("launchPermission/item", targetDepth)) {
                     imageAttribute.withLaunchPermissions(LaunchPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("productCodes", targetDepth)) {
+                    imageAttribute.withProductCodes(new ArrayList<ProductCode>());
                     continue;
                 }
 
@@ -77,6 +87,11 @@ public class ImageAttributeStaxUnmarshaller implements Unmarshaller<ImageAttribu
 
                 if (context.testExpression("sriovNetSupport/value", targetDepth)) {
                     imageAttribute.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("blockDeviceMapping", targetDepth)) {
+                    imageAttribute.withBlockDeviceMappings(new ArrayList<BlockDeviceMapping>());
                     continue;
                 }
 

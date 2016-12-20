@@ -45,6 +45,11 @@ public class DescribeIndexFieldsResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("IndexFields", targetDepth)) {
+                    describeIndexFieldsResult.withIndexFields(new ArrayList<IndexFieldStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("IndexFields/member", targetDepth)) {
                     describeIndexFieldsResult.withIndexFields(IndexFieldStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

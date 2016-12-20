@@ -148,9 +148,9 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getRuntimeConfiguration() != null)
-            sb.append("RuntimeConfiguration: " + getRuntimeConfiguration());
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration());
         sb.append("}");
         return sb.toString();
     }

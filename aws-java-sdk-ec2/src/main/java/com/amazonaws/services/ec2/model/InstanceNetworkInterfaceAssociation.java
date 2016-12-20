@@ -172,11 +172,11 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getPublicDnsName() != null)
-            sb.append("PublicDnsName: " + getPublicDnsName() + ",");
+            sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getIpOwnerId() != null)
-            sb.append("IpOwnerId: " + getIpOwnerId());
+            sb.append("IpOwnerId: ").append(getIpOwnerId());
         sb.append("}");
         return sb.toString();
     }

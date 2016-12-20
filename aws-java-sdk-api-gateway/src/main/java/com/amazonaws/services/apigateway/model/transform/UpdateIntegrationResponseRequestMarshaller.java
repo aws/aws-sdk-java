@@ -62,22 +62,14 @@ public class UpdateIntegrationResponseRequestMarshaller implements Marshaller<Re
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (updateIntegrationResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateIntegrationResponseRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (updateIntegrationResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateIntegrationResponseRequest.getResourceId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (updateIntegrationResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateIntegrationResponseRequest.getHttpMethod()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (updateIntegrationResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateIntegrationResponseRequest.getStatusCode()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
+                updateIntegrationResponseRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id",
+                updateIntegrationResponseRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method",
+                updateIntegrationResponseRequest.getHttpMethod());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code",
+                updateIntegrationResponseRequest.getStatusCode());
         request.setResourcePath(uriResourcePath);
 
         try {

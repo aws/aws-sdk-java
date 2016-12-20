@@ -61,10 +61,7 @@ public class DeleteFunctionRequestMarshaller implements Marshaller<Request<Delet
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (deleteFunctionRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteFunctionRequest.getFunctionName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", deleteFunctionRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         if (deleteFunctionRequest.getQualifier() != null) {

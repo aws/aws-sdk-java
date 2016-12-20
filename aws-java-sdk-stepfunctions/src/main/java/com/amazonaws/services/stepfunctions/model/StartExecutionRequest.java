@@ -171,11 +171,11 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn() + ",");
+            sb.append("StateMachineArn: ").append(getStateMachineArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput());
+            sb.append("Input: ").append(getInput());
         sb.append("}");
         return sb.toString();
     }

@@ -604,27 +604,27 @@ public class Blueprint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBlueprintId() != null)
-            sb.append("BlueprintId: " + getBlueprintId() + ",");
+            sb.append("BlueprintId: ").append(getBlueprintId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getGroup() != null)
-            sb.append("Group: " + getGroup() + ",");
+            sb.append("Group: ").append(getGroup()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getIsActive() != null)
-            sb.append("IsActive: " + getIsActive() + ",");
+            sb.append("IsActive: ").append(getIsActive()).append(",");
         if (getMinPower() != null)
-            sb.append("MinPower: " + getMinPower() + ",");
+            sb.append("MinPower: ").append(getMinPower()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getVersionCode() != null)
-            sb.append("VersionCode: " + getVersionCode() + ",");
+            sb.append("VersionCode: ").append(getVersionCode()).append(",");
         if (getProductUrl() != null)
-            sb.append("ProductUrl: " + getProductUrl() + ",");
+            sb.append("ProductUrl: ").append(getProductUrl()).append(",");
         if (getLicenseUrl() != null)
-            sb.append("LicenseUrl: " + getLicenseUrl());
+            sb.append("LicenseUrl: ").append(getLicenseUrl());
         sb.append("}");
         return sb.toString();
     }

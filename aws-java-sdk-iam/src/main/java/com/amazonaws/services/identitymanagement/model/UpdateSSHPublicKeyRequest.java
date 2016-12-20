@@ -272,11 +272,11 @@ public class UpdateSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSSHPublicKeyId() != null)
-            sb.append("SSHPublicKeyId: " + getSSHPublicKeyId() + ",");
+            sb.append("SSHPublicKeyId: ").append(getSSHPublicKeyId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -172,9 +172,9 @@ public class XssMatchSetSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSetId() != null)
-            sb.append("XssMatchSetId: " + getXssMatchSetId() + ",");
+            sb.append("XssMatchSetId: ").append(getXssMatchSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

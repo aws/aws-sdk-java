@@ -176,9 +176,9 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getStepIds() != null)
-            sb.append("StepIds: " + getStepIds());
+            sb.append("StepIds: ").append(getStepIds());
         sb.append("}");
         return sb.toString();
     }

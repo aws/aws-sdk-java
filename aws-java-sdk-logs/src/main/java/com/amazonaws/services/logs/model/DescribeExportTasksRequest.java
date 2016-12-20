@@ -255,13 +255,13 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

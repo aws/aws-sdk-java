@@ -80,7 +80,7 @@ public class GetDeploymentConfigResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigInfo() != null)
-            sb.append("DeploymentConfigInfo: " + getDeploymentConfigInfo());
+            sb.append("DeploymentConfigInfo: ").append(getDeploymentConfigInfo());
         sb.append("}");
         return sb.toString();
     }

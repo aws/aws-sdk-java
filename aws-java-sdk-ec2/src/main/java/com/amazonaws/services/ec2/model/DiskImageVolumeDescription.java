@@ -126,9 +126,9 @@ public class DiskImageVolumeDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

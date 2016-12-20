@@ -80,7 +80,7 @@ public class AdminGetDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice());
+            sb.append("Device: ").append(getDevice());
         sb.append("}");
         return sb.toString();
     }

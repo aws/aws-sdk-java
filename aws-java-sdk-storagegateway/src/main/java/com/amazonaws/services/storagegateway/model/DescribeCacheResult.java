@@ -256,19 +256,19 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDiskIds() != null)
-            sb.append("DiskIds: " + getDiskIds() + ",");
+            sb.append("DiskIds: ").append(getDiskIds()).append(",");
         if (getCacheAllocatedInBytes() != null)
-            sb.append("CacheAllocatedInBytes: " + getCacheAllocatedInBytes() + ",");
+            sb.append("CacheAllocatedInBytes: ").append(getCacheAllocatedInBytes()).append(",");
         if (getCacheUsedPercentage() != null)
-            sb.append("CacheUsedPercentage: " + getCacheUsedPercentage() + ",");
+            sb.append("CacheUsedPercentage: ").append(getCacheUsedPercentage()).append(",");
         if (getCacheDirtyPercentage() != null)
-            sb.append("CacheDirtyPercentage: " + getCacheDirtyPercentage() + ",");
+            sb.append("CacheDirtyPercentage: ").append(getCacheDirtyPercentage()).append(",");
         if (getCacheHitPercentage() != null)
-            sb.append("CacheHitPercentage: " + getCacheHitPercentage() + ",");
+            sb.append("CacheHitPercentage: ").append(getCacheHitPercentage()).append(",");
         if (getCacheMissPercentage() != null)
-            sb.append("CacheMissPercentage: " + getCacheMissPercentage());
+            sb.append("CacheMissPercentage: ").append(getCacheMissPercentage());
         sb.append("}");
         return sb.toString();
     }

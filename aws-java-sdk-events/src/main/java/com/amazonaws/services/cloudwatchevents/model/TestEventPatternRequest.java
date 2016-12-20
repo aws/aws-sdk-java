@@ -127,9 +127,9 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventPattern() != null)
-            sb.append("EventPattern: " + getEventPattern() + ",");
+            sb.append("EventPattern: ").append(getEventPattern()).append(",");
         if (getEvent() != null)
-            sb.append("Event: " + getEvent());
+            sb.append("Event: ").append(getEvent());
         sb.append("}");
         return sb.toString();
     }

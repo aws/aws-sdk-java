@@ -576,15 +576,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getServerCertificateName() != null)
-            sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+            sb.append("ServerCertificateName: ").append(getServerCertificateName()).append(",");
         if (getCertificateBody() != null)
-            sb.append("CertificateBody: " + getCertificateBody() + ",");
+            sb.append("CertificateBody: ").append(getCertificateBody()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: " + getPrivateKey() + ",");
+            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: " + getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");
         return sb.toString();
     }

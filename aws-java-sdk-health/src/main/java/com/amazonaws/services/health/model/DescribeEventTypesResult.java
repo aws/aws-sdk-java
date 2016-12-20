@@ -175,9 +175,9 @@ public class DescribeEventTypesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventTypes() != null)
-            sb.append("EventTypes: " + getEventTypes() + ",");
+            sb.append("EventTypes: ").append(getEventTypes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class TimeRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFromInclusive() != null)
-            sb.append("FromInclusive: " + getFromInclusive() + ",");
+            sb.append("FromInclusive: ").append(getFromInclusive()).append(",");
         if (getToExclusive() != null)
-            sb.append("ToExclusive: " + getToExclusive());
+            sb.append("ToExclusive: ").append(getToExclusive());
         sb.append("}");
         return sb.toString();
     }

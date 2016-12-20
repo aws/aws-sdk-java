@@ -45,6 +45,11 @@ public class ListChangeSetsResultStaxUnmarshaller implements Unmarshaller<ListCh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Summaries", targetDepth)) {
+                    listChangeSetsResult.withSummaries(new ArrayList<ChangeSetSummary>());
+                    continue;
+                }
+
                 if (context.testExpression("Summaries/member", targetDepth)) {
                     listChangeSetsResult.withSummaries(ChangeSetSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

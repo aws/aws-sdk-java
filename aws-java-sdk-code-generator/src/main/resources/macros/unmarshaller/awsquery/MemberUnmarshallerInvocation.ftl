@@ -15,6 +15,14 @@
     <#if memberModel.listModel.memberAdditionalUnmarshallingPath?has_content>
         <#local listMemberPath = listMemberPath + "/" + memberModel.listModel.memberAdditionalUnmarshallingPath />
     </#if>
+
+            <#if !memberModel.http.flattened>
+                if (context.testExpression("${unmarshallerLocationName}", targetDepth)) {
+                    ${shapeVarName}.with${memberModel.name}(new ArrayList<${memberModel.listModel.memberType}>());
+                    continue;
+                }
+            </#if>
+
                 if (context.testExpression("${listMemberPath}", targetDepth)) {
                     ${shapeVarName}.with${memberModel.name}(${memberModel.listModel.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -34,7 +42,7 @@
 
 <#else>
                 if (context.testExpression("${unmarshallerLocationName}", targetDepth)) {
-                    ${shapeVarName}.set${memberModel.name}(${memberModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
+                    ${shapeVarName}.${memberModel.setterMethodName}(${memberModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 </#if>

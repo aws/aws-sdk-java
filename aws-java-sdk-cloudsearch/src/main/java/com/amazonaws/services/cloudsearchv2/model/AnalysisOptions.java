@@ -441,15 +441,15 @@ public class AnalysisOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSynonyms() != null)
-            sb.append("Synonyms: " + getSynonyms() + ",");
+            sb.append("Synonyms: ").append(getSynonyms()).append(",");
         if (getStopwords() != null)
-            sb.append("Stopwords: " + getStopwords() + ",");
+            sb.append("Stopwords: ").append(getStopwords()).append(",");
         if (getStemmingDictionary() != null)
-            sb.append("StemmingDictionary: " + getStemmingDictionary() + ",");
+            sb.append("StemmingDictionary: ").append(getStemmingDictionary()).append(",");
         if (getJapaneseTokenizationDictionary() != null)
-            sb.append("JapaneseTokenizationDictionary: " + getJapaneseTokenizationDictionary() + ",");
+            sb.append("JapaneseTokenizationDictionary: ").append(getJapaneseTokenizationDictionary()).append(",");
         if (getAlgorithmicStemming() != null)
-            sb.append("AlgorithmicStemming: " + getAlgorithmicStemming());
+            sb.append("AlgorithmicStemming: ").append(getAlgorithmicStemming());
         sb.append("}");
         return sb.toString();
     }

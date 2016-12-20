@@ -16,25 +16,25 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Returns the QueueUrl element of the created queue.
+ * Returns the <code>QueueUrl</code> attribute of the created queue.
  * </p>
  */
 public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The URL for the created Amazon SQS queue.
+     * The URL of the created Amazon SQS queue.
      * </p>
      */
     private String queueUrl;
 
     /**
      * <p>
-     * The URL for the created Amazon SQS queue.
+     * The URL of the created Amazon SQS queue.
      * </p>
      * 
      * @param queueUrl
-     *        The URL for the created Amazon SQS queue.
+     *        The URL of the created Amazon SQS queue.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -43,10 +43,10 @@ public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The URL for the created Amazon SQS queue.
+     * The URL of the created Amazon SQS queue.
      * </p>
      * 
-     * @return The URL for the created Amazon SQS queue.
+     * @return The URL of the created Amazon SQS queue.
      */
 
     public String getQueueUrl() {
@@ -55,11 +55,11 @@ public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The URL for the created Amazon SQS queue.
+     * The URL of the created Amazon SQS queue.
      * </p>
      * 
      * @param queueUrl
-     *        The URL for the created Amazon SQS queue.
+     *        The URL of the created Amazon SQS queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +80,7 @@ public class CreateQueueResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl());
+            sb.append("QueueUrl: ").append(getQueueUrl());
         sb.append("}");
         return sb.toString();
     }

@@ -180,11 +180,11 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: " + getPaginationToken());
+            sb.append("PaginationToken: ").append(getPaginationToken());
         sb.append("}");
         return sb.toString();
     }

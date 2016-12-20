@@ -166,9 +166,9 @@ public class DescribeStackEventsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackEvents() != null)
-            sb.append("StackEvents: " + getStackEvents() + ",");
+            sb.append("StackEvents: ").append(getStackEvents()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

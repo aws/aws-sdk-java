@@ -113,7 +113,7 @@ public class BatchGetOnPremisesInstancesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceInfos() != null)
-            sb.append("InstanceInfos: " + getInstanceInfos());
+            sb.append("InstanceInfos: ").append(getInstanceInfos());
         sb.append("}");
         return sb.toString();
     }

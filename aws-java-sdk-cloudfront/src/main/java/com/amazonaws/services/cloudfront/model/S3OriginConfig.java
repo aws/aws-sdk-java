@@ -260,7 +260,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOriginAccessIdentity() != null)
-            sb.append("OriginAccessIdentity: " + getOriginAccessIdentity());
+            sb.append("OriginAccessIdentity: ").append(getOriginAccessIdentity());
         sb.append("}");
         return sb.toString();
     }

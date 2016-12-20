@@ -211,11 +211,11 @@ public class HsmStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmClientCertificateIdentifier() != null)
-            sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+            sb.append("HsmClientCertificateIdentifier: ").append(getHsmClientCertificateIdentifier()).append(",");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+            sb.append("HsmConfigurationIdentifier: ").append(getHsmConfigurationIdentifier()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

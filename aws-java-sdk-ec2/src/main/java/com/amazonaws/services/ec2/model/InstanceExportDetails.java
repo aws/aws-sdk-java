@@ -159,9 +159,9 @@ public class InstanceExportDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getTargetEnvironment() != null)
-            sb.append("TargetEnvironment: " + getTargetEnvironment());
+            sb.append("TargetEnvironment: ").append(getTargetEnvironment());
         sb.append("}");
         return sb.toString();
     }

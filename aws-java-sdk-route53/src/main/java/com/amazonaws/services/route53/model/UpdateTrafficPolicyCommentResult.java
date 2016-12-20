@@ -80,7 +80,7 @@ public class UpdateTrafficPolicyCommentResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicy() != null)
-            sb.append("TrafficPolicy: " + getTrafficPolicy());
+            sb.append("TrafficPolicy: ").append(getTrafficPolicy());
         sb.append("}");
         return sb.toString();
     }

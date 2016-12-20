@@ -61,16 +61,9 @@ public class DescribeVaultRequestMarshaller implements Marshaller<Request<Descri
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{accountId}",
-                        (describeVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeVaultRequest.getAccountId()),
-                                false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{vaultName}",
-                        (describeVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeVaultRequest.getVaultName()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                describeVaultRequest.getAccountId() == null ? "-" : describeVaultRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", describeVaultRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

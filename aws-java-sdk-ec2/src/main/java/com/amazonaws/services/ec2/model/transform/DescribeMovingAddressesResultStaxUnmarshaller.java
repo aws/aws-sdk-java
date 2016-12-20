@@ -45,6 +45,11 @@ public class DescribeMovingAddressesResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("movingAddressStatusSet", targetDepth)) {
+                    describeMovingAddressesResult.withMovingAddressStatuses(new ArrayList<MovingAddressStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("movingAddressStatusSet/item", targetDepth)) {
                     describeMovingAddressesResult.withMovingAddressStatuses(MovingAddressStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

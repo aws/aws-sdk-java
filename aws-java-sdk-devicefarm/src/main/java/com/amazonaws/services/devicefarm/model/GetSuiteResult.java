@@ -61,7 +61,7 @@ public class GetSuiteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuite() != null)
-            sb.append("Suite: " + getSuite());
+            sb.append("Suite: ").append(getSuite());
         sb.append("}");
         return sb.toString();
     }

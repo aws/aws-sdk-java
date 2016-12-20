@@ -207,9 +207,9 @@ public class DescribeTrustsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrusts() != null)
-            sb.append("Trusts: " + getTrusts() + ",");
+            sb.append("Trusts: ").append(getTrusts()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

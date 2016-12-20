@@ -536,13 +536,13 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListenerArn() != null)
-            sb.append("ListenerArn: " + getListenerArn() + ",");
+            sb.append("ListenerArn: ").append(getListenerArn()).append(",");
         if (getConditions() != null)
-            sb.append("Conditions: " + getConditions() + ",");
+            sb.append("Conditions: ").append(getConditions()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions());
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }

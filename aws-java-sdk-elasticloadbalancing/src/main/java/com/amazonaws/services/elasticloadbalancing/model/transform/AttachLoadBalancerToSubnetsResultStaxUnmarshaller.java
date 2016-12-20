@@ -45,6 +45,11 @@ public class AttachLoadBalancerToSubnetsResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Subnets", targetDepth)) {
+                    attachLoadBalancerToSubnetsResult.withSubnets(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Subnets/member", targetDepth)) {
                     attachLoadBalancerToSubnetsResult.withSubnets(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

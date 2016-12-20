@@ -133,9 +133,9 @@ public class TargetConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount());
         sb.append("}");
         return sb.toString();
     }

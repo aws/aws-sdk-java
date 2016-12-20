@@ -148,9 +148,9 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getPlayerId() != null)
-            sb.append("PlayerId: " + getPlayerId());
+            sb.append("PlayerId: ").append(getPlayerId());
         sb.append("}");
         return sb.toString();
     }

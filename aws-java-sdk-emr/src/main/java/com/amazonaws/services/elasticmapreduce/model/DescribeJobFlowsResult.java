@@ -113,7 +113,7 @@ public class DescribeJobFlowsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlows() != null)
-            sb.append("JobFlows: " + getJobFlows());
+            sb.append("JobFlows: ").append(getJobFlows());
         sb.append("}");
         return sb.toString();
     }

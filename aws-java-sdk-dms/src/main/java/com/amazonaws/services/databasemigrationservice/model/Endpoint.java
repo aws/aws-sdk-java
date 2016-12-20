@@ -788,31 +788,31 @@ public class Endpoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointIdentifier() != null)
-            sb.append("EndpointIdentifier: " + getEndpointIdentifier() + ",");
+            sb.append("EndpointIdentifier: ").append(getEndpointIdentifier()).append(",");
         if (getEndpointType() != null)
-            sb.append("EndpointType: " + getEndpointType() + ",");
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getEngineName() != null)
-            sb.append("EngineName: " + getEngineName() + ",");
+            sb.append("EngineName: ").append(getEngineName()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getDatabaseName() != null)
-            sb.append("DatabaseName: " + getDatabaseName() + ",");
+            sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getExtraConnectionAttributes() != null)
-            sb.append("ExtraConnectionAttributes: " + getExtraConnectionAttributes() + ",");
+            sb.append("ExtraConnectionAttributes: ").append(getExtraConnectionAttributes()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getSslMode() != null)
-            sb.append("SslMode: " + getSslMode());
+            sb.append("SslMode: ").append(getSslMode());
         sb.append("}");
         return sb.toString();
     }

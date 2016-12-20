@@ -218,11 +218,11 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityType() != null)
-            sb.append("IdentityType: " + getIdentityType() + ",");
+            sb.append("IdentityType: ").append(getIdentityType()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

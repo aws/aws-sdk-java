@@ -257,13 +257,13 @@ public class Record implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSequenceNumber() != null)
-            sb.append("SequenceNumber: " + getSequenceNumber() + ",");
+            sb.append("SequenceNumber: ").append(getSequenceNumber()).append(",");
         if (getApproximateArrivalTimestamp() != null)
-            sb.append("ApproximateArrivalTimestamp: " + getApproximateArrivalTimestamp() + ",");
+            sb.append("ApproximateArrivalTimestamp: ").append(getApproximateArrivalTimestamp()).append(",");
         if (getData() != null)
-            sb.append("Data: " + getData() + ",");
+            sb.append("Data: ").append(getData()).append(",");
         if (getPartitionKey() != null)
-            sb.append("PartitionKey: " + getPartitionKey());
+            sb.append("PartitionKey: ").append(getPartitionKey());
         sb.append("}");
         return sb.toString();
     }

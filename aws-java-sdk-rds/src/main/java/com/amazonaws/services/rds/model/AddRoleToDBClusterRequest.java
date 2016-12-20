@@ -132,9 +132,9 @@ public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

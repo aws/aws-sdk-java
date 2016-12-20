@@ -658,11 +658,11 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSortBy() != null)
-            sb.append("SortBy: " + getSortBy() + ",");
+            sb.append("SortBy: ").append(getSortBy()).append(",");
         if (getSortOrder() != null)
-            sb.append("SortOrder: " + getSortOrder() + ",");
+            sb.append("SortOrder: ").append(getSortOrder()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

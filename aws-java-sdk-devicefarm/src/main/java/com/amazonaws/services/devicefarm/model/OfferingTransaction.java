@@ -218,13 +218,13 @@ public class OfferingTransaction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingStatus() != null)
-            sb.append("OfferingStatus: " + getOfferingStatus() + ",");
+            sb.append("OfferingStatus: ").append(getOfferingStatus()).append(",");
         if (getTransactionId() != null)
-            sb.append("TransactionId: " + getTransactionId() + ",");
+            sb.append("TransactionId: ").append(getTransactionId()).append(",");
         if (getCreatedOn() != null)
-            sb.append("CreatedOn: " + getCreatedOn() + ",");
+            sb.append("CreatedOn: ").append(getCreatedOn()).append(",");
         if (getCost() != null)
-            sb.append("Cost: " + getCost());
+            sb.append("Cost: ").append(getCost());
         sb.append("}");
         return sb.toString();
     }

@@ -79,7 +79,7 @@ public class GetBatchPredictionRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBatchPredictionId() != null)
-            sb.append("BatchPredictionId: " + getBatchPredictionId());
+            sb.append("BatchPredictionId: ").append(getBatchPredictionId());
         sb.append("}");
         return sb.toString();
     }

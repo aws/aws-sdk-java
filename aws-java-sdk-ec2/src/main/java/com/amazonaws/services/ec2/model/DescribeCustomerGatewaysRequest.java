@@ -666,9 +666,9 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGatewayIds() != null)
-            sb.append("CustomerGatewayIds: " + getCustomerGatewayIds() + ",");
+            sb.append("CustomerGatewayIds: ").append(getCustomerGatewayIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

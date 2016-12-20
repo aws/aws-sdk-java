@@ -171,11 +171,11 @@ public class StopExecutionRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionArn() != null)
-            sb.append("ExecutionArn: " + getExecutionArn() + ",");
+            sb.append("ExecutionArn: ").append(getExecutionArn()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError() + ",");
+            sb.append("Error: ").append(getError()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause());
+            sb.append("Cause: ").append(getCause());
         sb.append("}");
         return sb.toString();
     }

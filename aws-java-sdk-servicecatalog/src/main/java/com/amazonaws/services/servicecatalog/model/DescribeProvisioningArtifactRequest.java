@@ -252,11 +252,11 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getProvisioningArtifactId() != null)
-            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId() + ",");
+            sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId());
+            sb.append("ProductId: ").append(getProductId());
         sb.append("}");
         return sb.toString();
     }

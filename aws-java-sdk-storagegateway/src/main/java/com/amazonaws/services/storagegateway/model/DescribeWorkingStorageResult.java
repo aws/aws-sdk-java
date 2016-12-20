@@ -264,13 +264,13 @@ public class DescribeWorkingStorageResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDiskIds() != null)
-            sb.append("DiskIds: " + getDiskIds() + ",");
+            sb.append("DiskIds: ").append(getDiskIds()).append(",");
         if (getWorkingStorageUsedInBytes() != null)
-            sb.append("WorkingStorageUsedInBytes: " + getWorkingStorageUsedInBytes() + ",");
+            sb.append("WorkingStorageUsedInBytes: ").append(getWorkingStorageUsedInBytes()).append(",");
         if (getWorkingStorageAllocatedInBytes() != null)
-            sb.append("WorkingStorageAllocatedInBytes: " + getWorkingStorageAllocatedInBytes());
+            sb.append("WorkingStorageAllocatedInBytes: ").append(getWorkingStorageAllocatedInBytes());
         sb.append("}");
         return sb.toString();
     }

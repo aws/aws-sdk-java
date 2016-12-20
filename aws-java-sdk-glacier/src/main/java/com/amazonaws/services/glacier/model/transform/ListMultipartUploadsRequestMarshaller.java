@@ -61,14 +61,9 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (listMultipartUploadsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listMultipartUploadsRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (listMultipartUploadsRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listMultipartUploadsRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                listMultipartUploadsRequest.getAccountId() == null ? "-" : listMultipartUploadsRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", listMultipartUploadsRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         if (listMultipartUploadsRequest.getLimit() != null) {

@@ -433,19 +433,19 @@ public class CACertificateDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: " + getCertificatePem() + ",");
+            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
         if (getOwnedBy() != null)
-            sb.append("OwnedBy: " + getOwnedBy() + ",");
+            sb.append("OwnedBy: ").append(getOwnedBy()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getAutoRegistrationStatus() != null)
-            sb.append("AutoRegistrationStatus: " + getAutoRegistrationStatus());
+            sb.append("AutoRegistrationStatus: ").append(getAutoRegistrationStatus());
         sb.append("}");
         return sb.toString();
     }

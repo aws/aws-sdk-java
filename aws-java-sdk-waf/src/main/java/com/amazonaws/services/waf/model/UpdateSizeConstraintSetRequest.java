@@ -382,11 +382,11 @@ public class UpdateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSizeConstraintSetId() != null)
-            sb.append("SizeConstraintSetId: " + getSizeConstraintSetId() + ",");
+            sb.append("SizeConstraintSetId: ").append(getSizeConstraintSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates());
+            sb.append("Updates: ").append(getUpdates());
         sb.append("}");
         return sb.toString();
     }

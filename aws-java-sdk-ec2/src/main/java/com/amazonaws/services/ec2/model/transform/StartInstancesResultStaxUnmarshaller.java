@@ -45,6 +45,11 @@ public class StartInstancesResultStaxUnmarshaller implements Unmarshaller<StartI
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instancesSet", targetDepth)) {
+                    startInstancesResult.withStartingInstances(new ArrayList<InstanceStateChange>());
+                    continue;
+                }
+
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     startInstancesResult.withStartingInstances(InstanceStateChangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

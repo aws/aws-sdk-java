@@ -199,11 +199,11 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAclId() != null)
-            sb.append("NetworkAclId: " + getNetworkAclId() + ",");
+            sb.append("NetworkAclId: ").append(getNetworkAclId()).append(",");
         if (getRuleNumber() != null)
-            sb.append("RuleNumber: " + getRuleNumber() + ",");
+            sb.append("RuleNumber: ").append(getRuleNumber()).append(",");
         if (getEgress() != null)
-            sb.append("Egress: " + getEgress());
+            sb.append("Egress: ").append(getEgress());
         sb.append("}");
         return sb.toString();
     }

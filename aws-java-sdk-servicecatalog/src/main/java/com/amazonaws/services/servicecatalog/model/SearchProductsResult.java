@@ -228,11 +228,11 @@ public class SearchProductsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductViewSummaries() != null)
-            sb.append("ProductViewSummaries: " + getProductViewSummaries() + ",");
+            sb.append("ProductViewSummaries: ").append(getProductViewSummaries()).append(",");
         if (getProductViewAggregations() != null)
-            sb.append("ProductViewAggregations: " + getProductViewAggregations() + ",");
+            sb.append("ProductViewAggregations: ").append(getProductViewAggregations()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

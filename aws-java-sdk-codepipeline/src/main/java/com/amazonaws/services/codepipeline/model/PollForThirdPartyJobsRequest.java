@@ -108,9 +108,9 @@ public class PollForThirdPartyJobsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionTypeId() != null)
-            sb.append("ActionTypeId: " + getActionTypeId() + ",");
+            sb.append("ActionTypeId: ").append(getActionTypeId()).append(",");
         if (getMaxBatchSize() != null)
-            sb.append("MaxBatchSize: " + getMaxBatchSize());
+            sb.append("MaxBatchSize: ").append(getMaxBatchSize());
         sb.append("}");
         return sb.toString();
     }

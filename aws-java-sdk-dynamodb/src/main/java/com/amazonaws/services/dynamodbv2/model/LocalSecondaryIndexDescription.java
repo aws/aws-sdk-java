@@ -557,17 +557,17 @@ public class LocalSecondaryIndexDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexName() != null)
-            sb.append("IndexName: " + getIndexName() + ",");
+            sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getKeySchema() != null)
-            sb.append("KeySchema: " + getKeySchema() + ",");
+            sb.append("KeySchema: ").append(getKeySchema()).append(",");
         if (getProjection() != null)
-            sb.append("Projection: " + getProjection() + ",");
+            sb.append("Projection: ").append(getProjection()).append(",");
         if (getIndexSizeBytes() != null)
-            sb.append("IndexSizeBytes: " + getIndexSizeBytes() + ",");
+            sb.append("IndexSizeBytes: ").append(getIndexSizeBytes()).append(",");
         if (getItemCount() != null)
-            sb.append("ItemCount: " + getItemCount() + ",");
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
         if (getIndexArn() != null)
-            sb.append("IndexArn: " + getIndexArn());
+            sb.append("IndexArn: ").append(getIndexArn());
         sb.append("}");
         return sb.toString();
     }

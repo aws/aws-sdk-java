@@ -13,7 +13,9 @@
 package com.amazonaws.services.cognitoidentity.model;
 
 /**
+ * <p>
  * Thrown when the service encounters an error during processing the request.
+ * </p>
  */
 public class InternalErrorException extends com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;

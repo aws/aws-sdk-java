@@ -387,11 +387,11 @@ public class EC2TagFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

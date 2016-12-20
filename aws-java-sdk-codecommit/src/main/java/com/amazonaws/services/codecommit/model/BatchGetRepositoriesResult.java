@@ -186,9 +186,9 @@ public class BatchGetRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositories() != null)
-            sb.append("Repositories: " + getRepositories() + ",");
+            sb.append("Repositories: ").append(getRepositories()).append(",");
         if (getRepositoriesNotFound() != null)
-            sb.append("RepositoriesNotFound: " + getRepositoriesNotFound());
+            sb.append("RepositoriesNotFound: ").append(getRepositoriesNotFound());
         sb.append("}");
         return sb.toString();
     }

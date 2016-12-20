@@ -132,9 +132,9 @@ public class ImportJobsResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItem() != null)
-            sb.append("Item: " + getItem() + ",");
+            sb.append("Item: ").append(getItem()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

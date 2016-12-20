@@ -222,11 +222,11 @@ public class SupportedEndpointType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngineName() != null)
-            sb.append("EngineName: " + getEngineName() + ",");
+            sb.append("EngineName: ").append(getEngineName()).append(",");
         if (getSupportsCDC() != null)
-            sb.append("SupportsCDC: " + getSupportsCDC() + ",");
+            sb.append("SupportsCDC: ").append(getSupportsCDC()).append(",");
         if (getEndpointType() != null)
-            sb.append("EndpointType: " + getEndpointType());
+            sb.append("EndpointType: ").append(getEndpointType());
         sb.append("}");
         return sb.toString();
     }

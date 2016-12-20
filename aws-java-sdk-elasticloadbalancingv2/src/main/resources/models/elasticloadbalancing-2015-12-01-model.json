@@ -19,21 +19,25 @@
       "documentation" : "<p>Adds the specified tags to the specified resource. You can tag your Application Load Balancers and your target groups.</p> <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, <code>AddTags</code> updates its value.</p> <p>To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags from your resources, use <a>RemoveTags</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateTagKeysException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTagsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
@@ -63,61 +67,73 @@
       "documentation" : "<p>Creates a listener for the specified Application Load Balancer.</p> <p>You can create up to 10 listeners per load balancer.</p> <p>To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html\">Listeners for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateListenerException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyListenersException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCertificatesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupAssociationLimitException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IncompatibleProtocolsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SSLPolicyNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CertificateNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedProtocolException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRegistrationsForTargetIdException"
@@ -147,46 +163,55 @@
       "documentation" : "<p>Creates an Application Load Balancer.</p> <p>To create listeners for your load balancer, use <a>CreateListener</a>. You can add security groups, subnets, and tags when you create your load balancer, or you can add them later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.</p> <p>To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p> <p>You can create up to 20 load balancers per region per account. You can request an increase for the number of load balancers for your account. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html\">Limits for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html\">Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateLoadBalancerNameException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyLoadBalancersException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubnetNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnetException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSecurityGroupException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSchemeException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTagsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateTagKeysException"
@@ -216,41 +241,49 @@
       "documentation" : "<p>Creates a rule for the specified listener.</p> <p>Each rule can have one action and one condition. Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule is met, the specified action is taken. If no conditions are met, the default action for the default rule is taken. For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules\">Listener Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>. To set the priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorityInUseException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTargetGroupsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRulesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupAssociationLimitException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRegistrationsForTargetIdException"
@@ -280,11 +313,13 @@
       "documentation" : "<p>Creates a target group.</p> <p>To register targets with the target group, use <a>RegisterTargets</a>. To update the health check settings for the target group, use <a>ModifyTargetGroup</a>. To monitor the health of targets in the target group, use <a>DescribeTargetHealth</a>.</p> <p>To route traffic to the targets in a target group, specify the target group in an action using <a>CreateListener</a> or <a>CreateRule</a>.</p> <p>To delete a target group, use <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html\">Target Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateTargetGroupNameException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTargetGroupsException"
@@ -314,6 +349,7 @@
       "documentation" : "<p>Deletes the specified listener.</p> <p>Alternatively, your listener is deleted when you delete the load balancer it is attached to using <a>DeleteLoadBalancer</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
@@ -343,11 +379,13 @@
       "documentation" : "<p>Deletes the specified Application Load Balancer and its attached listeners.</p> <p>You can't delete a load balancer if deletion protection is enabled. If the load balancer does not exist or has already been deleted, the call succeeds.</p> <p>Deleting a load balancer does not affect its registered targets. For example, your EC2 instances continue to run and are still registered to their target groups. If you no longer need these EC2 instances, you can stop or terminate them.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationNotPermittedException"
@@ -377,11 +415,13 @@
       "documentation" : "<p>Deletes the specified rule.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "RuleNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationNotPermittedException"
@@ -411,6 +451,7 @@
       "documentation" : "<p>Deletes the specified target group.</p> <p>You can delete a target group if it is not referenced by any actions. Deleting a target group also deletes any associated health checks.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceInUseException"
@@ -440,11 +481,13 @@
       "documentation" : "<p>Deregisters the specified targets from the specified target group. After the targets are deregistered, they no longer receive traffic from the load balancer.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTargetException"
@@ -474,11 +517,13 @@
       "documentation" : "<p>Describes the specified listeners or the listeners for the specified Application Load Balancer. You must specify either a load balancer or one or more listeners.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
@@ -508,6 +553,7 @@
       "documentation" : "<p>Describes the attributes for the specified Application Load Balancer.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
@@ -537,6 +583,7 @@
       "documentation" : "<p>Describes the specified Application Load Balancers or all of your Application Load Balancers.</p> <p>To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe the attributes for a load balancer, use <a>DescribeLoadBalancerAttributes</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
@@ -566,11 +613,13 @@
       "documentation" : "<p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or one or more rules.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "RuleNotFoundException"
@@ -600,6 +649,7 @@
       "documentation" : "<p>Describes the specified policies or all policies used for SSL negotiation.</p> <p>Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SSLPolicyNotFoundException"
@@ -629,21 +679,25 @@
       "documentation" : "<p>Describes the tags for the specified resources.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "RuleNotFoundException"
@@ -673,6 +727,7 @@
       "documentation" : "<p>Describes the attributes for the specified target group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
@@ -702,11 +757,13 @@
       "documentation" : "<p>Describes the specified target groups or all of your target groups. By default, all target groups are described. Alternatively, you can specify one of the following to filter the results: the ARN of the load balancer, the names of one or more target groups, or the ARNs of one or more target groups.</p> <p>To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe the attributes of a target group, use <a>DescribeTargetGroupAttributes</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
@@ -736,16 +793,19 @@
       "documentation" : "<p>Describes the health of the specified targets or all of your targets.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTargetException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HealthUnavailableException"
@@ -775,61 +835,73 @@
       "documentation" : "<p>Modifies the specified properties of the specified listener.</p> <p>Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS, you must add the security policy.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DuplicateListenerException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyListenersException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCertificatesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupAssociationLimitException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IncompatibleProtocolsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SSLPolicyNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CertificateNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "UnsupportedProtocolException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRegistrationsForTargetIdException"
@@ -859,11 +931,13 @@
       "documentation" : "<p>Modifies the specified attributes of the specified Application Load Balancer.</p> <p>If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that you do not modify retain their current values.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
@@ -893,21 +967,25 @@
       "documentation" : "<p>Modifies the specified rule.</p> <p>Any existing properties that you do not modify retain their current values.</p> <p>To modify the default action, use <a>ModifyListener</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupAssociationLimitException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "RuleNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationNotPermittedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRegistrationsForTargetIdException"
@@ -937,6 +1015,7 @@
       "documentation" : "<p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p> <p>To monitor the health of the targets, use <a>DescribeTargetHealth</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
@@ -966,6 +1045,7 @@
       "documentation" : "<p>Modifies the specified attributes of the specified target group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
@@ -995,21 +1075,25 @@
       "documentation" : "<p>Registers the specified targets with the specified target group.</p> <p>By default, the load balancer routes requests to registered targets using the protocol and port number for the target group. Alternatively, you can override the port for a target when you register it.</p> <p>The target must be in the virtual private cloud (VPC) that you specified for the target group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or <code>running</code> state when you register it.</p> <p>To remove a target from a target group, use <a>DeregisterTargets</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTargetsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTargetException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRegistrationsForTargetIdException"
@@ -1039,26 +1123,31 @@
       "documentation" : "<p>Removes the specified tags from the specified resource.</p> <p>To list the current tags for your resources, use <a>DescribeTags</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TargetGroupNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ListenerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "RuleNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTagsException"
@@ -1088,16 +1177,19 @@
       "documentation" : "<p>Sets the priorities of the specified rules.</p> <p>You can reorder the rules as long as there are no priority conflicts in the new order. Any existing rules that you do not specify retain their current priority.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "RuleNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorityInUseException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationNotPermittedException"
@@ -1127,16 +1219,19 @@
       "documentation" : "<p>Associates the specified security groups with the specified load balancer. The specified security groups override the previously associated security groups.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSecurityGroupException"
@@ -1166,21 +1261,25 @@
       "documentation" : "<p>Enables the Availability Zone for the specified subnets for the specified load balancer. The specified subnets replace the previously enabled subnets.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LoadBalancerNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidConfigurationRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubnetNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnetException"
@@ -1265,7 +1364,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1298,7 +1397,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1448,7 +1547,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1469,7 +1568,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1525,7 +1624,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1558,7 +1657,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1573,7 +1672,8 @@
       "documentation" : "<p>The specified certificate does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "CertificateNotFound"
+        "code" : "CertificateNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -1650,7 +1750,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1671,7 +1771,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1704,7 +1804,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1725,7 +1825,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2325,7 +2425,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2346,7 +2446,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3524,7 +3624,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3539,7 +3639,8 @@
       "documentation" : "<p>A listener with the specified port already exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DuplicateListener"
+        "code" : "DuplicateListener",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3562,7 +3663,8 @@
       "documentation" : "<p>A load balancer with the specified name already exists for this account.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DuplicateLoadBalancerName"
+        "code" : "DuplicateLoadBalancerName",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3585,7 +3687,8 @@
       "documentation" : "<p>A tag key was specified more than once.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DuplicateTagKeys"
+        "code" : "DuplicateTagKeys",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3608,7 +3711,8 @@
       "documentation" : "<p>A target group with the specified name already exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DuplicateTargetGroupName"
+        "code" : "DuplicateTargetGroupName",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3637,7 +3741,7 @@
       "key" : null,
       "max" : 300,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 5,
       "pattern" : null,
       "payload" : null,
@@ -3658,7 +3762,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3679,7 +3783,7 @@
       "key" : null,
       "max" : 10,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 2,
       "pattern" : null,
       "payload" : null,
@@ -3700,7 +3804,7 @@
       "key" : null,
       "max" : 60,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 2,
       "pattern" : null,
       "payload" : null,
@@ -3715,7 +3819,8 @@
       "documentation" : "<p>The health of the specified targets could not be retrieved due to an internal error.</p>",
       "enum" : null,
       "error" : {
-        "code" : "HealthUnavailable"
+        "code" : "HealthUnavailable",
+        "httpStatusCode" : 500
       },
       "exception" : true,
       "fault" : false,
@@ -3744,7 +3849,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3759,7 +3864,8 @@
       "documentation" : "<p>The specified configuration is not valid with this protocol.</p>",
       "enum" : null,
       "error" : {
-        "code" : "IncompatibleProtocols"
+        "code" : "IncompatibleProtocols",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3782,7 +3888,8 @@
       "documentation" : "<p>The requested configuration is not valid.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidConfigurationRequest"
+        "code" : "InvalidConfigurationRequest",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3805,7 +3912,8 @@
       "documentation" : "<p>The requested scheme is not valid.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidScheme"
+        "code" : "InvalidScheme",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3828,7 +3936,8 @@
       "documentation" : "<p>The specified security group does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidSecurityGroup"
+        "code" : "InvalidSecurityGroup",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3851,7 +3960,8 @@
       "documentation" : "<p>The specified subnet is out of available addresses.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidSubnet"
+        "code" : "InvalidSubnet",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3874,7 +3984,8 @@
       "documentation" : "<p>The specified target does not exist or is not in the same VPC as the target group.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidTarget"
+        "code" : "InvalidTarget",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3903,7 +4014,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3936,7 +4047,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4070,7 +4181,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4103,7 +4214,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4118,7 +4229,8 @@
       "documentation" : "<p>The specified listener does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ListenerNotFound"
+        "code" : "ListenerNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -4159,7 +4271,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4345,7 +4457,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4378,7 +4490,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4447,7 +4559,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "^[a-zA-Z0-9._]+$",
       "payload" : null,
@@ -4468,7 +4580,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4501,7 +4613,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4522,7 +4634,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4555,7 +4667,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4570,7 +4682,8 @@
       "documentation" : "<p>The specified load balancer does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "LoadBalancerNotFound"
+        "code" : "LoadBalancerNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -4599,7 +4712,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4668,7 +4781,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4689,7 +4802,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4722,7 +4835,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4743,7 +4856,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5364,7 +5477,8 @@
       "documentation" : "<p>This operation is not allowed.</p>",
       "enum" : null,
       "error" : {
-        "code" : "OperationNotPermitted"
+        "code" : "OperationNotPermitted",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5393,7 +5507,7 @@
       "key" : null,
       "max" : 400,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5414,7 +5528,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5435,7 +5549,7 @@
       "key" : null,
       "max" : 65535,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5450,7 +5564,8 @@
       "documentation" : "<p>The specified priority is in use.</p>",
       "enum" : null,
       "error" : {
-        "code" : "PriorityInUse"
+        "code" : "PriorityInUse",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5479,7 +5594,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5638,7 +5753,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5671,7 +5786,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5686,7 +5801,8 @@
       "documentation" : "<p>A specified resource is in use.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ResourceInUse"
+        "code" : "ResourceInUse",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5802,7 +5918,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5835,7 +5951,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5916,7 +6032,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5931,7 +6047,8 @@
       "documentation" : "<p>The specified rule does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "RuleNotFound"
+        "code" : "RuleNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5960,7 +6077,7 @@
       "key" : null,
       "max" : 99999,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5993,7 +6110,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6074,7 +6191,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6089,7 +6206,8 @@
       "documentation" : "<p>The specified SSL policy does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SSLPolicyNotFound"
+        "code" : "SSLPolicyNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6118,7 +6236,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6151,7 +6269,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6420,7 +6538,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6502,7 +6620,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6535,7 +6653,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6556,7 +6674,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6589,7 +6707,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6610,7 +6728,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6631,7 +6749,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6652,7 +6770,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6673,7 +6791,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6688,7 +6806,8 @@
       "documentation" : "<p>The specified subnet does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SubnetNotFound"
+        "code" : "SubnetNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6729,7 +6848,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6858,7 +6977,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6879,7 +6998,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
       "payload" : null,
@@ -6912,7 +7031,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6945,7 +7064,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6966,7 +7085,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
       "payload" : null,
@@ -7047,7 +7166,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7272,7 +7391,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7305,7 +7424,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7320,7 +7439,8 @@
       "documentation" : "<p>You've reached the limit on the number of load balancers per target group.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TargetGroupAssociationLimit"
+        "code" : "TargetGroupAssociationLimit",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7397,7 +7517,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "^[a-zA-Z0-9._]+$",
       "payload" : null,
@@ -7418,7 +7538,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7451,7 +7571,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7472,7 +7592,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7505,7 +7625,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7520,7 +7640,8 @@
       "documentation" : "<p>The specified target group does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TargetGroupNotFound"
+        "code" : "TargetGroupNotFound",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7561,7 +7682,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7716,7 +7837,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7737,7 +7858,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7758,7 +7879,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7779,7 +7900,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7794,7 +7915,8 @@
       "documentation" : "<p>You've reached the limit on the number of certificates per listener.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyCertificates"
+        "code" : "TooManyCertificates",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7817,7 +7939,8 @@
       "documentation" : "<p>You've reached the limit on the number of listeners per load balancer.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyListeners"
+        "code" : "TooManyListeners",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7840,7 +7963,8 @@
       "documentation" : "<p>You've reached the limit on the number of load balancers for your AWS account.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyLoadBalancers"
+        "code" : "TooManyLoadBalancers",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7863,7 +7987,8 @@
       "documentation" : "<p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyRegistrationsForTargetId"
+        "code" : "TooManyRegistrationsForTargetId",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7886,7 +8011,8 @@
       "documentation" : "<p>You've reached the limit on the number of rules per load balancer.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyRules"
+        "code" : "TooManyRules",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7909,7 +8035,8 @@
       "documentation" : "<p>You've reached the limit on the number of tags per load balancer.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyTags"
+        "code" : "TooManyTags",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7932,7 +8059,8 @@
       "documentation" : "<p>You've reached the limit on the number of target groups for your AWS account.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyTargetGroups"
+        "code" : "TooManyTargetGroups",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7955,7 +8083,8 @@
       "documentation" : "<p>You've reached the limit on the number of targets.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyTargets"
+        "code" : "TooManyTargets",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7978,7 +8107,8 @@
       "documentation" : "<p>The specified protocol is not supported.</p>",
       "enum" : null,
       "error" : {
-        "code" : "UnsupportedProtocol"
+        "code" : "UnsupportedProtocol",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -8007,7 +8137,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8028,7 +8158,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

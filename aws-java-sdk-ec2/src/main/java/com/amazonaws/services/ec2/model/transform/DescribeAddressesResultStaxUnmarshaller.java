@@ -45,6 +45,11 @@ public class DescribeAddressesResultStaxUnmarshaller implements Unmarshaller<Des
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("addressesSet", targetDepth)) {
+                    describeAddressesResult.withAddresses(new ArrayList<Address>());
+                    continue;
+                }
+
                 if (context.testExpression("addressesSet/item", targetDepth)) {
                     describeAddressesResult.withAddresses(AddressStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

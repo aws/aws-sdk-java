@@ -157,9 +157,9 @@ public class ListCommandInvocationsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandInvocations() != null)
-            sb.append("CommandInvocations: " + getCommandInvocations() + ",");
+            sb.append("CommandInvocations: ").append(getCommandInvocations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

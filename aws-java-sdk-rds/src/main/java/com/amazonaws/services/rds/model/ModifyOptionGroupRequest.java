@@ -341,13 +341,13 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getOptionsToInclude() != null)
-            sb.append("OptionsToInclude: " + getOptionsToInclude() + ",");
+            sb.append("OptionsToInclude: ").append(getOptionsToInclude()).append(",");
         if (getOptionsToRemove() != null)
-            sb.append("OptionsToRemove: " + getOptionsToRemove() + ",");
+            sb.append("OptionsToRemove: ").append(getOptionsToRemove()).append(",");
         if (getApplyImmediately() != null)
-            sb.append("ApplyImmediately: " + getApplyImmediately());
+            sb.append("ApplyImmediately: ").append(getApplyImmediately());
         sb.append("}");
         return sb.toString();
     }

@@ -68,7 +68,7 @@ public class SegmentBehaviors implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecency() != null)
-            sb.append("Recency: " + getRecency());
+            sb.append("Recency: ").append(getRecency());
         sb.append("}");
         return sb.toString();
     }

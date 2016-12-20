@@ -250,9 +250,9 @@ public class DescribeStackResourceRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getLogicalResourceId() != null)
-            sb.append("LogicalResourceId: " + getLogicalResourceId());
+            sb.append("LogicalResourceId: ").append(getLogicalResourceId());
         sb.append("}");
         return sb.toString();
     }

@@ -431,15 +431,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getOverrides() != null)
-            sb.append("Overrides: " + getOverrides() + ",");
+            sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: " + getStartedBy());
+            sb.append("StartedBy: ").append(getStartedBy());
         sb.append("}");
         return sb.toString();
     }

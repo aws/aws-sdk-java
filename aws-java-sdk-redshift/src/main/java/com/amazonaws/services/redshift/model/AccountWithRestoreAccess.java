@@ -80,7 +80,7 @@ public class AccountWithRestoreAccess implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId());
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }

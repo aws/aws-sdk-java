@@ -186,11 +186,11 @@ public class MarkerRecordedEventAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarkerName() != null)
-            sb.append("MarkerName: " + getMarkerName() + ",");
+            sb.append("MarkerName: ").append(getMarkerName()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails() + ",");
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

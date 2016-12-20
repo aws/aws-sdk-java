@@ -126,9 +126,9 @@ public class ScheduledInstancesIamInstanceProfile implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

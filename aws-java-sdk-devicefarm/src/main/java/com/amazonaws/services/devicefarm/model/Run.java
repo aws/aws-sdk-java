@@ -2871,35 +2871,35 @@ public class Run implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getStarted() != null)
-            sb.append("Started: " + getStarted() + ",");
+            sb.append("Started: ").append(getStarted()).append(",");
         if (getStopped() != null)
-            sb.append("Stopped: " + getStopped() + ",");
+            sb.append("Stopped: ").append(getStopped()).append(",");
         if (getCounters() != null)
-            sb.append("Counters: " + getCounters() + ",");
+            sb.append("Counters: ").append(getCounters()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getTotalJobs() != null)
-            sb.append("TotalJobs: " + getTotalJobs() + ",");
+            sb.append("TotalJobs: ").append(getTotalJobs()).append(",");
         if (getCompletedJobs() != null)
-            sb.append("CompletedJobs: " + getCompletedJobs() + ",");
+            sb.append("CompletedJobs: ").append(getCompletedJobs()).append(",");
         if (getBillingMethod() != null)
-            sb.append("BillingMethod: " + getBillingMethod() + ",");
+            sb.append("BillingMethod: ").append(getBillingMethod()).append(",");
         if (getDeviceMinutes() != null)
-            sb.append("DeviceMinutes: " + getDeviceMinutes());
+            sb.append("DeviceMinutes: ").append(getDeviceMinutes());
         sb.append("}");
         return sb.toString();
     }

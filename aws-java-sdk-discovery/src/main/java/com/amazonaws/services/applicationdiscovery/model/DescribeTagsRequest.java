@@ -25,11 +25,16 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
+     * <p>
+     * For a complete list of filter options and guidance about using them with this action, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
+     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     * </p>
      */
     private java.util.List<TagFilter> filters;
     /**
      * <p>
-     * The total number of items to return. The maximum value is 100.
+     * The total number of items to return in a single page of output. The maximum value is 100.
      * </p>
      */
     private Integer maxResults;
@@ -45,10 +50,19 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
+     * <p>
+     * For a complete list of filter options and guidance about using them with this action, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
+     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     * </p>
      * 
      * @return You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *         logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *         <code>configurationId</code>.
+     *         <code>configurationId</code>. </p>
+     *         <p>
+     *         For a complete list of filter options and guidance about using them with this action, see <a
+     *         href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
+     *         AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      */
 
     public java.util.List<TagFilter> getFilters() {
@@ -60,11 +74,20 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
+     * <p>
+     * For a complete list of filter options and guidance about using them with this action, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
+     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     * </p>
      * 
      * @param filters
      *        You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *        logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *        <code>configurationId</code>.
+     *        <code>configurationId</code>. </p>
+     *        <p>
+     *        For a complete list of filter options and guidance about using them with this action, see <a
+     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
+     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      */
 
     public void setFilters(java.util.Collection<TagFilter> filters) {
@@ -82,6 +105,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
      * <p>
+     * For a complete list of filter options and guidance about using them with this action, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
+     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
@@ -90,7 +118,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param filters
      *        You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *        logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *        <code>configurationId</code>.
+     *        <code>configurationId</code>. </p>
+     *        <p>
+     *        For a complete list of filter options and guidance about using them with this action, see <a
+     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
+     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +141,20 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
+     * <p>
+     * For a complete list of filter options and guidance about using them with this action, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
+     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     * </p>
      * 
      * @param filters
      *        You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *        logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *        <code>configurationId</code>.
+     *        <code>configurationId</code>. </p>
+     *        <p>
+     *        For a complete list of filter options and guidance about using them with this action, see <a
+     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
+     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +165,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The total number of items to return. The maximum value is 100.
+     * The total number of items to return in a single page of output. The maximum value is 100.
      * </p>
      * 
      * @param maxResults
-     *        The total number of items to return. The maximum value is 100.
+     *        The total number of items to return in a single page of output. The maximum value is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -137,10 +178,10 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The total number of items to return. The maximum value is 100.
+     * The total number of items to return in a single page of output. The maximum value is 100.
      * </p>
      * 
-     * @return The total number of items to return. The maximum value is 100.
+     * @return The total number of items to return in a single page of output. The maximum value is 100.
      */
 
     public Integer getMaxResults() {
@@ -149,11 +190,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The total number of items to return. The maximum value is 100.
+     * The total number of items to return in a single page of output. The maximum value is 100.
      * </p>
      * 
      * @param maxResults
-     *        The total number of items to return. The maximum value is 100.
+     *        The total number of items to return in a single page of output. The maximum value is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +255,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

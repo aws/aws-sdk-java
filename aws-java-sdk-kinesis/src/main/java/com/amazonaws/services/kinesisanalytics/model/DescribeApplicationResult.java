@@ -85,7 +85,7 @@ public class DescribeApplicationResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationDetail() != null)
-            sb.append("ApplicationDetail: " + getApplicationDetail());
+            sb.append("ApplicationDetail: ").append(getApplicationDetail());
         sb.append("}");
         return sb.toString();
     }

@@ -297,15 +297,15 @@ public class UpgradeTarget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getAutoUpgrade() != null)
-            sb.append("AutoUpgrade: " + getAutoUpgrade() + ",");
+            sb.append("AutoUpgrade: ").append(getAutoUpgrade()).append(",");
         if (getIsMajorVersionUpgrade() != null)
-            sb.append("IsMajorVersionUpgrade: " + getIsMajorVersionUpgrade());
+            sb.append("IsMajorVersionUpgrade: ").append(getIsMajorVersionUpgrade());
         sb.append("}");
         return sb.toString();
     }

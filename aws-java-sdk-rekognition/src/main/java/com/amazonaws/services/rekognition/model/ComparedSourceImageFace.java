@@ -109,9 +109,9 @@ public class ComparedSourceImageFace implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBoundingBox() != null)
-            sb.append("BoundingBox: " + getBoundingBox() + ",");
+            sb.append("BoundingBox: ").append(getBoundingBox()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence());
+            sb.append("Confidence: ").append(getConfidence());
         sb.append("}");
         return sb.toString();
     }

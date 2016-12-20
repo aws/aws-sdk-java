@@ -413,13 +413,13 @@ public class OperationSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperationId() != null)
-            sb.append("OperationId: " + getOperationId() + ",");
+            sb.append("OperationId: ").append(getOperationId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getSubmittedDate() != null)
-            sb.append("SubmittedDate: " + getSubmittedDate());
+            sb.append("SubmittedDate: ").append(getSubmittedDate());
         sb.append("}");
         return sb.toString();
     }

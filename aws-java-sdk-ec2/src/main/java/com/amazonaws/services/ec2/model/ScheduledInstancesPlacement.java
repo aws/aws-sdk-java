@@ -126,9 +126,9 @@ public class ScheduledInstancesPlacement implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }

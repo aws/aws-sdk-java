@@ -181,9 +181,9 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetIds() != null)
-            sb.append("FleetIds: " + getFleetIds() + ",");
+            sb.append("FleetIds: ").append(getFleetIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -55,6 +55,11 @@ public class ScheduledInstanceRecurrenceStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("occurrenceDaySet", targetDepth)) {
+                    scheduledInstanceRecurrence.withOccurrenceDaySet(new ArrayList<Integer>());
+                    continue;
+                }
+
                 if (context.testExpression("occurrenceDaySet/item", targetDepth)) {
                     scheduledInstanceRecurrence.withOccurrenceDaySet(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -360,17 +360,17 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getElasticsearchClusterConfig() != null)
-            sb.append("ElasticsearchClusterConfig: " + getElasticsearchClusterConfig() + ",");
+            sb.append("ElasticsearchClusterConfig: ").append(getElasticsearchClusterConfig()).append(",");
         if (getEBSOptions() != null)
-            sb.append("EBSOptions: " + getEBSOptions() + ",");
+            sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getSnapshotOptions() != null)
-            sb.append("SnapshotOptions: " + getSnapshotOptions() + ",");
+            sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getAdvancedOptions() != null)
-            sb.append("AdvancedOptions: " + getAdvancedOptions() + ",");
+            sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getAccessPolicies() != null)
-            sb.append("AccessPolicies: " + getAccessPolicies());
+            sb.append("AccessPolicies: ").append(getAccessPolicies());
         sb.append("}");
         return sb.toString();
     }

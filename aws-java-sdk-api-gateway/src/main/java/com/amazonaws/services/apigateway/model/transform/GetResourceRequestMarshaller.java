@@ -61,10 +61,8 @@ public class GetResourceRequestMarshaller implements Marshaller<Request<GetResou
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (getResourceRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getResourceRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{resource_id}",
-                (getResourceRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getResourceRequest.getResourceId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getResourceRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", getResourceRequest.getResourceId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

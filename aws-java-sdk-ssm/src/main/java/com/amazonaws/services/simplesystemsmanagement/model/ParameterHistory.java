@@ -389,19 +389,19 @@ public class ParameterHistory implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getLastModifiedUser() != null)
-            sb.append("LastModifiedUser: " + getLastModifiedUser() + ",");
+            sb.append("LastModifiedUser: ").append(getLastModifiedUser()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }

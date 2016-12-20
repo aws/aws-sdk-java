@@ -1856,39 +1856,39 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getReplicationGroupDescription() != null)
-            sb.append("ReplicationGroupDescription: " + getReplicationGroupDescription() + ",");
+            sb.append("ReplicationGroupDescription: ").append(getReplicationGroupDescription()).append(",");
         if (getPrimaryClusterId() != null)
-            sb.append("PrimaryClusterId: " + getPrimaryClusterId() + ",");
+            sb.append("PrimaryClusterId: ").append(getPrimaryClusterId()).append(",");
         if (getSnapshottingClusterId() != null)
-            sb.append("SnapshottingClusterId: " + getSnapshottingClusterId() + ",");
+            sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailoverEnabled() != null)
-            sb.append("AutomaticFailoverEnabled: " + getAutomaticFailoverEnabled() + ",");
+            sb.append("AutomaticFailoverEnabled: ").append(getAutomaticFailoverEnabled()).append(",");
         if (getCacheSecurityGroupNames() != null)
-            sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
+            sb.append("CacheSecurityGroupNames: ").append(getCacheSecurityGroupNames()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getNotificationTopicArn() != null)
-            sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");
+            sb.append("NotificationTopicArn: ").append(getNotificationTopicArn()).append(",");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getNotificationTopicStatus() != null)
-            sb.append("NotificationTopicStatus: " + getNotificationTopicStatus() + ",");
+            sb.append("NotificationTopicStatus: ").append(getNotificationTopicStatus()).append(",");
         if (getApplyImmediately() != null)
-            sb.append("ApplyImmediately: " + getApplyImmediately() + ",");
+            sb.append("ApplyImmediately: ").append(getApplyImmediately()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: " + getAutoMinorVersionUpgrade() + ",");
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getSnapshotRetentionLimit() != null)
-            sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+            sb.append("SnapshotRetentionLimit: ").append(getSnapshotRetentionLimit()).append(",");
         if (getSnapshotWindow() != null)
-            sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+            sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: " + getCacheNodeType());
+            sb.append("CacheNodeType: ").append(getCacheNodeType());
         sb.append("}");
         return sb.toString();
     }

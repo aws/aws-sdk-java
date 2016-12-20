@@ -16,23 +16,23 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Information about agents that were instructed to start collecting data. Information includes the agent ID, a
- * description of the operation, and whether or not the agent configuration was updated.
+ * Information about agents or Connectors that were instructed to start collecting data. Information includes the
+ * agent/Connector ID, a description of the operation, and whether or not the agent/Connector configuration was updated.
  * </p>
  */
 public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent ID.
+     * The agent/Connector ID.
      * </p>
      */
     private String agentId;
     /**
      * <p>
      * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     * operations. The system has recorded the data collection operation. The agent receives this command the next time
-     * it polls for a new command.
+     * operations. The system has recorded the data collection operation. The agent/Connector receives this command the
+     * next time it polls for a new command.
      * </p>
      */
     private Boolean operationSucceeded;
@@ -45,11 +45,11 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent ID.
+     * The agent/Connector ID.
      * </p>
      * 
      * @param agentId
-     *        The agent ID.
+     *        The agent/Connector ID.
      */
 
     public void setAgentId(String agentId) {
@@ -58,10 +58,10 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent ID.
+     * The agent/Connector ID.
      * </p>
      * 
-     * @return The agent ID.
+     * @return The agent/Connector ID.
      */
 
     public String getAgentId() {
@@ -70,11 +70,11 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The agent ID.
+     * The agent/Connector ID.
      * </p>
      * 
      * @param agentId
-     *        The agent ID.
+     *        The agent/Connector ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,14 +86,14 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
     /**
      * <p>
      * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     * operations. The system has recorded the data collection operation. The agent receives this command the next time
-     * it polls for a new command.
+     * operations. The system has recorded the data collection operation. The agent/Connector receives this command the
+     * next time it polls for a new command.
      * </p>
      * 
      * @param operationSucceeded
      *        Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     *        operations. The system has recorded the data collection operation. The agent receives this command the
-     *        next time it polls for a new command.
+     *        operations. The system has recorded the data collection operation. The agent/Connector receives this
+     *        command the next time it polls for a new command.
      */
 
     public void setOperationSucceeded(Boolean operationSucceeded) {
@@ -103,13 +103,13 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
     /**
      * <p>
      * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     * operations. The system has recorded the data collection operation. The agent receives this command the next time
-     * it polls for a new command.
+     * operations. The system has recorded the data collection operation. The agent/Connector receives this command the
+     * next time it polls for a new command.
      * </p>
      * 
      * @return Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     *         operations. The system has recorded the data collection operation. The agent receives this command the
-     *         next time it polls for a new command.
+     *         operations. The system has recorded the data collection operation. The agent/Connector receives this
+     *         command the next time it polls for a new command.
      */
 
     public Boolean getOperationSucceeded() {
@@ -119,14 +119,14 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
     /**
      * <p>
      * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     * operations. The system has recorded the data collection operation. The agent receives this command the next time
-     * it polls for a new command.
+     * operations. The system has recorded the data collection operation. The agent/Connector receives this command the
+     * next time it polls for a new command.
      * </p>
      * 
      * @param operationSucceeded
      *        Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     *        operations. The system has recorded the data collection operation. The agent receives this command the
-     *        next time it polls for a new command.
+     *        operations. The system has recorded the data collection operation. The agent/Connector receives this
+     *        command the next time it polls for a new command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,13 +138,13 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
     /**
      * <p>
      * Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     * operations. The system has recorded the data collection operation. The agent receives this command the next time
-     * it polls for a new command.
+     * operations. The system has recorded the data collection operation. The agent/Connector receives this command the
+     * next time it polls for a new command.
      * </p>
      * 
      * @return Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code>
-     *         operations. The system has recorded the data collection operation. The agent receives this command the
-     *         next time it polls for a new command.
+     *         operations. The system has recorded the data collection operation. The agent/Connector receives this
+     *         command the next time it polls for a new command.
      */
 
     public Boolean isOperationSucceeded() {
@@ -203,11 +203,11 @@ public class AgentConfigurationStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentId() != null)
-            sb.append("AgentId: " + getAgentId() + ",");
+            sb.append("AgentId: ").append(getAgentId()).append(",");
         if (getOperationSucceeded() != null)
-            sb.append("OperationSucceeded: " + getOperationSucceeded() + ",");
+            sb.append("OperationSucceeded: ").append(getOperationSucceeded()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

@@ -426,17 +426,17 @@ public class VolumeConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMountPoint() != null)
-            sb.append("MountPoint: " + getMountPoint() + ",");
+            sb.append("MountPoint: ").append(getMountPoint()).append(",");
         if (getRaidLevel() != null)
-            sb.append("RaidLevel: " + getRaidLevel() + ",");
+            sb.append("RaidLevel: ").append(getRaidLevel()).append(",");
         if (getNumberOfDisks() != null)
-            sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");
+            sb.append("NumberOfDisks: ").append(getNumberOfDisks()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops());
+            sb.append("Iops: ").append(getIops());
         sb.append("}");
         return sb.toString();
     }

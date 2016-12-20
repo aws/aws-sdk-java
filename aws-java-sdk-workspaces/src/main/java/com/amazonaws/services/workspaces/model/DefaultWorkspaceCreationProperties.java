@@ -300,15 +300,15 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnableWorkDocs() != null)
-            sb.append("EnableWorkDocs: " + getEnableWorkDocs() + ",");
+            sb.append("EnableWorkDocs: ").append(getEnableWorkDocs()).append(",");
         if (getEnableInternetAccess() != null)
-            sb.append("EnableInternetAccess: " + getEnableInternetAccess() + ",");
+            sb.append("EnableInternetAccess: ").append(getEnableInternetAccess()).append(",");
         if (getDefaultOu() != null)
-            sb.append("DefaultOu: " + getDefaultOu() + ",");
+            sb.append("DefaultOu: ").append(getDefaultOu()).append(",");
         if (getCustomSecurityGroupId() != null)
-            sb.append("CustomSecurityGroupId: " + getCustomSecurityGroupId() + ",");
+            sb.append("CustomSecurityGroupId: ").append(getCustomSecurityGroupId()).append(",");
         if (getUserEnabledAsLocalAdministrator() != null)
-            sb.append("UserEnabledAsLocalAdministrator: " + getUserEnabledAsLocalAdministrator());
+            sb.append("UserEnabledAsLocalAdministrator: ").append(getUserEnabledAsLocalAdministrator());
         sb.append("}");
         return sb.toString();
     }

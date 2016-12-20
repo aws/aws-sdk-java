@@ -219,11 +219,11 @@ public class LambdaFunctionTimedOutEventAttributes implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId() + ",");
+            sb.append("ScheduledEventId: ").append(getScheduledEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId() + ",");
+            sb.append("StartedEventId: ").append(getStartedEventId()).append(",");
         if (getTimeoutType() != null)
-            sb.append("TimeoutType: " + getTimeoutType());
+            sb.append("TimeoutType: ").append(getTimeoutType());
         sb.append("}");
         return sb.toString();
     }

@@ -90,7 +90,7 @@ public class UpdateBatchPredictionResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBatchPredictionId() != null)
-            sb.append("BatchPredictionId: " + getBatchPredictionId());
+            sb.append("BatchPredictionId: ").append(getBatchPredictionId());
         sb.append("}");
         return sb.toString();
     }

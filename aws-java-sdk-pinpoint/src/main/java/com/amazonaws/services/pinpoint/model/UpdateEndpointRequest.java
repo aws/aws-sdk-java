@@ -116,11 +116,11 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getEndpointId() != null)
-            sb.append("EndpointId: " + getEndpointId() + ",");
+            sb.append("EndpointId: ").append(getEndpointId()).append(",");
         if (getEndpointRequest() != null)
-            sb.append("EndpointRequest: " + getEndpointRequest());
+            sb.append("EndpointRequest: ").append(getEndpointRequest());
         sb.append("}");
         return sb.toString();
     }

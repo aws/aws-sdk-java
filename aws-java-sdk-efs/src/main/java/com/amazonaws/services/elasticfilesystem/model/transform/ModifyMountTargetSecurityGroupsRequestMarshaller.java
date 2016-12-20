@@ -63,10 +63,8 @@ public class ModifyMountTargetSecurityGroupsRequestMarshaller implements
 
         String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}/security-groups";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{MountTargetId}",
-                (modifyMountTargetSecurityGroupsRequest.getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(modifyMountTargetSecurityGroupsRequest.getMountTargetId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "MountTargetId",
+                modifyMountTargetSecurityGroupsRequest.getMountTargetId());
         request.setResourcePath(uriResourcePath);
 
         try {

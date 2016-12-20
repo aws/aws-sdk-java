@@ -107,7 +107,7 @@ public class GetIdentityMailFromDomainAttributesResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMailFromDomainAttributes() != null)
-            sb.append("MailFromDomainAttributes: " + getMailFromDomainAttributes());
+            sb.append("MailFromDomainAttributes: ").append(getMailFromDomainAttributes());
         sb.append("}");
         return sb.toString();
     }

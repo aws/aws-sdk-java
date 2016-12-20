@@ -378,21 +378,21 @@ public class JobData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionTypeId() != null)
-            sb.append("ActionTypeId: " + getActionTypeId() + ",");
+            sb.append("ActionTypeId: ").append(getActionTypeId()).append(",");
         if (getActionConfiguration() != null)
-            sb.append("ActionConfiguration: " + getActionConfiguration() + ",");
+            sb.append("ActionConfiguration: ").append(getActionConfiguration()).append(",");
         if (getPipelineContext() != null)
-            sb.append("PipelineContext: " + getPipelineContext() + ",");
+            sb.append("PipelineContext: ").append(getPipelineContext()).append(",");
         if (getInputArtifacts() != null)
-            sb.append("InputArtifacts: " + getInputArtifacts() + ",");
+            sb.append("InputArtifacts: ").append(getInputArtifacts()).append(",");
         if (getOutputArtifacts() != null)
-            sb.append("OutputArtifacts: " + getOutputArtifacts() + ",");
+            sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
         if (getArtifactCredentials() != null)
-            sb.append("ArtifactCredentials: " + getArtifactCredentials() + ",");
+            sb.append("ArtifactCredentials: ").append(getArtifactCredentials()).append(",");
         if (getContinuationToken() != null)
-            sb.append("ContinuationToken: " + getContinuationToken() + ",");
+            sb.append("ContinuationToken: ").append(getContinuationToken()).append(",");
         if (getEncryptionKey() != null)
-            sb.append("EncryptionKey: " + getEncryptionKey());
+            sb.append("EncryptionKey: ").append(getEncryptionKey());
         sb.append("}");
         return sb.toString();
     }

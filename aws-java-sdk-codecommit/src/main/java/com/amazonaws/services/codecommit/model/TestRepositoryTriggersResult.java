@@ -204,9 +204,9 @@ public class TestRepositoryTriggersResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccessfulExecutions() != null)
-            sb.append("SuccessfulExecutions: " + getSuccessfulExecutions() + ",");
+            sb.append("SuccessfulExecutions: ").append(getSuccessfulExecutions()).append(",");
         if (getFailedExecutions() != null)
-            sb.append("FailedExecutions: " + getFailedExecutions());
+            sb.append("FailedExecutions: ").append(getFailedExecutions());
         sb.append("}");
         return sb.toString();
     }

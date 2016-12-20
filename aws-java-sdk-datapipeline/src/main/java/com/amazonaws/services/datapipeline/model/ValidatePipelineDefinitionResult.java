@@ -250,11 +250,11 @@ public class ValidatePipelineDefinitionResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValidationErrors() != null)
-            sb.append("ValidationErrors: " + getValidationErrors() + ",");
+            sb.append("ValidationErrors: ").append(getValidationErrors()).append(",");
         if (getValidationWarnings() != null)
-            sb.append("ValidationWarnings: " + getValidationWarnings() + ",");
+            sb.append("ValidationWarnings: ").append(getValidationWarnings()).append(",");
         if (getErrored() != null)
-            sb.append("Errored: " + getErrored());
+            sb.append("Errored: ").append(getErrored());
         sb.append("}");
         return sb.toString();
     }

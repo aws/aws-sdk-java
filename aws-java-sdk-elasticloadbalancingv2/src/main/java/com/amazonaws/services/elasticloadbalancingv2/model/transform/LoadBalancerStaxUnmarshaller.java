@@ -90,8 +90,18 @@ public class LoadBalancerStaxUnmarshaller implements Unmarshaller<LoadBalancer, 
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    loadBalancer.withAvailabilityZones(new ArrayList<AvailabilityZone>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
                     loadBalancer.withAvailabilityZones(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SecurityGroups", targetDepth)) {
+                    loadBalancer.withSecurityGroups(new ArrayList<String>());
                     continue;
                 }
 

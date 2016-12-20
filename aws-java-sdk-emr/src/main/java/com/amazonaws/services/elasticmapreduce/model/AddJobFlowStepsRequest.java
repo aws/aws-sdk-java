@@ -201,9 +201,9 @@ public class AddJobFlowStepsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlowId() != null)
-            sb.append("JobFlowId: " + getJobFlowId() + ",");
+            sb.append("JobFlowId: ").append(getJobFlowId()).append(",");
         if (getSteps() != null)
-            sb.append("Steps: " + getSteps());
+            sb.append("Steps: ").append(getSteps());
         sb.append("}");
         return sb.toString();
     }

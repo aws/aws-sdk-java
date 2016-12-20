@@ -60,6 +60,11 @@ public class TestDNSAnswerResultStaxUnmarshaller implements Unmarshaller<TestDNS
                     continue;
                 }
 
+                if (context.testExpression("RecordData", targetDepth)) {
+                    testDNSAnswerResult.withRecordData(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("RecordData/RecordDataEntry", targetDepth)) {
                     testDNSAnswerResult.withRecordData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

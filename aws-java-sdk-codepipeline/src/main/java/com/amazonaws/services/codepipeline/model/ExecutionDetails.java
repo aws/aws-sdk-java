@@ -179,11 +179,11 @@ public class ExecutionDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSummary() != null)
-            sb.append("Summary: " + getSummary() + ",");
+            sb.append("Summary: ").append(getSummary()).append(",");
         if (getExternalExecutionId() != null)
-            sb.append("ExternalExecutionId: " + getExternalExecutionId() + ",");
+            sb.append("ExternalExecutionId: ").append(getExternalExecutionId()).append(",");
         if (getPercentComplete() != null)
-            sb.append("PercentComplete: " + getPercentComplete());
+            sb.append("PercentComplete: ").append(getPercentComplete());
         sb.append("}");
         return sb.toString();
     }

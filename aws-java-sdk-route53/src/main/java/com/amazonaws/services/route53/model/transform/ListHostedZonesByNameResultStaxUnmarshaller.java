@@ -45,6 +45,11 @@ public class ListHostedZonesByNameResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("HostedZones", targetDepth)) {
+                    listHostedZonesByNameResult.withHostedZones(new ArrayList<HostedZone>());
+                    continue;
+                }
+
                 if (context.testExpression("HostedZones/HostedZone", targetDepth)) {
                     listHostedZonesByNameResult.withHostedZones(HostedZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

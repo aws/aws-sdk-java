@@ -60,7 +60,7 @@ public class EnableDomainAutoRenewRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName());
+            sb.append("DomainName: ").append(getDomainName());
         sb.append("}");
         return sb.toString();
     }

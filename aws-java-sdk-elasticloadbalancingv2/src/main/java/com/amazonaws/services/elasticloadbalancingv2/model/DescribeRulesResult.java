@@ -110,7 +110,7 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRules() != null)
-            sb.append("Rules: " + getRules());
+            sb.append("Rules: ").append(getRules());
         sb.append("}");
         return sb.toString();
     }

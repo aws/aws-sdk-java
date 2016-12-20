@@ -2286,9 +2286,9 @@ public class Condition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeValueList() != null)
-            sb.append("AttributeValueList: " + getAttributeValueList() + ",");
+            sb.append("AttributeValueList: ").append(getAttributeValueList()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator());
+            sb.append("ComparisonOperator: ").append(getComparisonOperator());
         sb.append("}");
         return sb.toString();
     }

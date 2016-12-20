@@ -45,6 +45,11 @@ public class DescribeApplicationVersionsResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ApplicationVersions", targetDepth)) {
+                    describeApplicationVersionsResult.withApplicationVersions(new ArrayList<ApplicationVersionDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("ApplicationVersions/member", targetDepth)) {
                     describeApplicationVersionsResult.withApplicationVersions(ApplicationVersionDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

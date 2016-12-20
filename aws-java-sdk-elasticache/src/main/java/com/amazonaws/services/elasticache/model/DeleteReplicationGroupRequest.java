@@ -199,11 +199,11 @@ public class DeleteReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getRetainPrimaryCluster() != null)
-            sb.append("RetainPrimaryCluster: " + getRetainPrimaryCluster() + ",");
+            sb.append("RetainPrimaryCluster: ").append(getRetainPrimaryCluster()).append(",");
         if (getFinalSnapshotIdentifier() != null)
-            sb.append("FinalSnapshotIdentifier: " + getFinalSnapshotIdentifier());
+            sb.append("FinalSnapshotIdentifier: ").append(getFinalSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

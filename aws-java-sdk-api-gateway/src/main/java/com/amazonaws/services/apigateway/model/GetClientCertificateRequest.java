@@ -81,7 +81,7 @@ public class GetClientCertificateRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientCertificateId() != null)
-            sb.append("ClientCertificateId: " + getClientCertificateId());
+            sb.append("ClientCertificateId: ").append(getClientCertificateId());
         sb.append("}");
         return sb.toString();
     }

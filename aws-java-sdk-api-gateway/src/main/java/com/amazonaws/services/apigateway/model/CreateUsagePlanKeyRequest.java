@@ -180,11 +180,11 @@ public class CreateUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsagePlanId() != null)
-            sb.append("UsagePlanId: " + getUsagePlanId() + ",");
+            sb.append("UsagePlanId: ").append(getUsagePlanId()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getKeyType() != null)
-            sb.append("KeyType: " + getKeyType());
+            sb.append("KeyType: ").append(getKeyType());
         sb.append("}");
         return sb.toString();
     }

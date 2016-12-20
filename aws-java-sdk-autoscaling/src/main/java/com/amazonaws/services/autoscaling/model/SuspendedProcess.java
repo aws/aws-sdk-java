@@ -126,9 +126,9 @@ public class SuspendedProcess implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProcessName() != null)
-            sb.append("ProcessName: " + getProcessName() + ",");
+            sb.append("ProcessName: ").append(getProcessName()).append(",");
         if (getSuspensionReason() != null)
-            sb.append("SuspensionReason: " + getSuspensionReason());
+            sb.append("SuspensionReason: ").append(getSuspensionReason());
         sb.append("}");
         return sb.toString();
     }

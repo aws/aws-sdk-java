@@ -235,13 +235,13 @@ public class PublicKey implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getValidityStartTime() != null)
-            sb.append("ValidityStartTime: " + getValidityStartTime() + ",");
+            sb.append("ValidityStartTime: ").append(getValidityStartTime()).append(",");
         if (getValidityEndTime() != null)
-            sb.append("ValidityEndTime: " + getValidityEndTime() + ",");
+            sb.append("ValidityEndTime: ").append(getValidityEndTime()).append(",");
         if (getFingerprint() != null)
-            sb.append("Fingerprint: " + getFingerprint());
+            sb.append("Fingerprint: ").append(getFingerprint());
         sb.append("}");
         return sb.toString();
     }

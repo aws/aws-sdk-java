@@ -157,9 +157,9 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn() + ",");
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

@@ -206,9 +206,9 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: " + getPortfolioId());
+            sb.append("PortfolioId: ").append(getPortfolioId());
         sb.append("}");
         return sb.toString();
     }

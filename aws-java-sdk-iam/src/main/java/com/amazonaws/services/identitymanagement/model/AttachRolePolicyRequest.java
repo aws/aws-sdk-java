@@ -189,9 +189,9 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }

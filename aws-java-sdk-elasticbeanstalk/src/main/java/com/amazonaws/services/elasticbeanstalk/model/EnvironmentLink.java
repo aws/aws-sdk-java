@@ -129,9 +129,9 @@ public class EnvironmentLink implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLinkName() != null)
-            sb.append("LinkName: " + getLinkName() + ",");
+            sb.append("LinkName: ").append(getLinkName()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName());
+            sb.append("EnvironmentName: ").append(getEnvironmentName());
         sb.append("}");
         return sb.toString();
     }

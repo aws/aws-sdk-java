@@ -166,9 +166,9 @@ public class ListRunsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuns() != null)
-            sb.append("Runs: " + getRuns() + ",");
+            sb.append("Runs: ").append(getRuns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

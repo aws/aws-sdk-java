@@ -45,13 +45,28 @@ public class DestinationStaxUnmarshaller implements Unmarshaller<Destination, St
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ToAddresses", targetDepth)) {
+                    destination.withToAddresses(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ToAddresses/member", targetDepth)) {
                     destination.withToAddresses(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("CcAddresses", targetDepth)) {
+                    destination.withCcAddresses(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("CcAddresses/member", targetDepth)) {
                     destination.withCcAddresses(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("BccAddresses", targetDepth)) {
+                    destination.withBccAddresses(new ArrayList<String>());
                     continue;
                 }
 

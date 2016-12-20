@@ -85,7 +85,7 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatement() != null)
-            sb.append("Statement: " + getStatement());
+            sb.append("Statement: ").append(getStatement());
         sb.append("}");
         return sb.toString();
     }

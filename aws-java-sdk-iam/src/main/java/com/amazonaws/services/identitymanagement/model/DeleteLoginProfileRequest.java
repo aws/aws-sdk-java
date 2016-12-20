@@ -133,7 +133,7 @@ public class DeleteLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName());
+            sb.append("UserName: ").append(getUserName());
         sb.append("}");
         return sb.toString();
     }

@@ -156,9 +156,9 @@ public class ListUserImportJobsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserImportJobs() != null)
-            sb.append("UserImportJobs: " + getUserImportJobs() + ",");
+            sb.append("UserImportJobs: ").append(getUserImportJobs()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: " + getPaginationToken());
+            sb.append("PaginationToken: ").append(getPaginationToken());
         sb.append("}");
         return sb.toString();
     }

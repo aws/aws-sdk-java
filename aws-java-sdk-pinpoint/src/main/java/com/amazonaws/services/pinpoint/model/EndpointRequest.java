@@ -557,27 +557,27 @@ public class EndpointRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddress() != null)
-            sb.append("Address: " + getAddress() + ",");
+            sb.append("Address: ").append(getAddress()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getChannelType() != null)
-            sb.append("ChannelType: " + getChannelType() + ",");
+            sb.append("ChannelType: ").append(getChannelType()).append(",");
         if (getDemographic() != null)
-            sb.append("Demographic: " + getDemographic() + ",");
+            sb.append("Demographic: ").append(getDemographic()).append(",");
         if (getEffectiveDate() != null)
-            sb.append("EffectiveDate: " + getEffectiveDate() + ",");
+            sb.append("EffectiveDate: ").append(getEffectiveDate()).append(",");
         if (getEndpointStatus() != null)
-            sb.append("EndpointStatus: " + getEndpointStatus() + ",");
+            sb.append("EndpointStatus: ").append(getEndpointStatus()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getMetrics() != null)
-            sb.append("Metrics: " + getMetrics() + ",");
+            sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getOptOut() != null)
-            sb.append("OptOut: " + getOptOut() + ",");
+            sb.append("OptOut: ").append(getOptOut()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: " + getRequestId() + ",");
+            sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getUser() != null)
-            sb.append("User: " + getUser());
+            sb.append("User: ").append(getUser());
         sb.append("}");
         return sb.toString();
     }

@@ -88,9 +88,9 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getNewBudget() != null)
-            sb.append("NewBudget: " + getNewBudget());
+            sb.append("NewBudget: ").append(getNewBudget());
         sb.append("}");
         return sb.toString();
     }

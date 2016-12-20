@@ -45,6 +45,11 @@ public class DescribeInternetGatewaysResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("internetGatewaySet", targetDepth)) {
+                    describeInternetGatewaysResult.withInternetGateways(new ArrayList<InternetGateway>());
+                    continue;
+                }
+
                 if (context.testExpression("internetGatewaySet/item", targetDepth)) {
                     describeInternetGatewaysResult.withInternetGateways(InternetGatewayStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

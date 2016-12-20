@@ -22,7 +22,7 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queue URL of a dead letter queue.
+     * The URL of a dead letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -42,7 +42,7 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
      * (with...) methods to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The queue URL of a dead letter queue.</p>
+     *        The URL of a dead letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -52,14 +52,14 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queue URL of a dead letter queue.
+     * The URL of a dead letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The queue URL of a dead letter queue.</p>
+     *        The URL of a dead letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -70,13 +70,13 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queue URL of a dead letter queue.
+     * The URL of a dead letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The queue URL of a dead letter queue.</p>
+     * @return The URL of a dead letter queue.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -87,14 +87,14 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The queue URL of a dead letter queue.
+     * The URL of a dead letter queue.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The queue URL of a dead letter queue.</p>
+     *        The URL of a dead letter queue.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,7 +117,7 @@ public class ListDeadLetterSourceQueuesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl());
+            sb.append("QueueUrl: ").append(getQueueUrl());
         sb.append("}");
         return sb.toString();
     }

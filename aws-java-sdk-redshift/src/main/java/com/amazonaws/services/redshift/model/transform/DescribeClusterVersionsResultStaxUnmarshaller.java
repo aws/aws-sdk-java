@@ -50,6 +50,11 @@ public class DescribeClusterVersionsResultStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("ClusterVersions", targetDepth)) {
+                    describeClusterVersionsResult.withClusterVersions(new ArrayList<ClusterVersion>());
+                    continue;
+                }
+
                 if (context.testExpression("ClusterVersions/ClusterVersion", targetDepth)) {
                     describeClusterVersionsResult.withClusterVersions(ClusterVersionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -132,9 +132,9 @@ public class DescribeTrustedAdvisorCheckResultRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckId() != null)
-            sb.append("CheckId: " + getCheckId() + ",");
+            sb.append("CheckId: ").append(getCheckId()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage());
+            sb.append("Language: ").append(getLanguage());
         sb.append("}");
         return sb.toString();
     }

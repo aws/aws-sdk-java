@@ -201,11 +201,11 @@ public class CloudFrontOriginAccessIdentity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getS3CanonicalUserId() != null)
-            sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ",");
+            sb.append("S3CanonicalUserId: ").append(getS3CanonicalUserId()).append(",");
         if (getCloudFrontOriginAccessIdentityConfig() != null)
-            sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig());
+            sb.append("CloudFrontOriginAccessIdentityConfig: ").append(getCloudFrontOriginAccessIdentityConfig());
         sb.append("}");
         return sb.toString();
     }

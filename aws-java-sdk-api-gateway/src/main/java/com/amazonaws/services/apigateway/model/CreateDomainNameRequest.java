@@ -286,15 +286,15 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getCertificateName() != null)
-            sb.append("CertificateName: " + getCertificateName() + ",");
+            sb.append("CertificateName: ").append(getCertificateName()).append(",");
         if (getCertificateBody() != null)
-            sb.append("CertificateBody: " + getCertificateBody() + ",");
+            sb.append("CertificateBody: ").append(getCertificateBody()).append(",");
         if (getCertificatePrivateKey() != null)
-            sb.append("CertificatePrivateKey: " + getCertificatePrivateKey() + ",");
+            sb.append("CertificatePrivateKey: ").append(getCertificatePrivateKey()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: " + getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");
         return sb.toString();
     }

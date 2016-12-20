@@ -140,9 +140,9 @@ public class CreatePresetResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPreset() != null)
-            sb.append("Preset: " + getPreset() + ",");
+            sb.append("Preset: ").append(getPreset()).append(",");
         if (getWarning() != null)
-            sb.append("Warning: " + getWarning());
+            sb.append("Warning: ").append(getWarning());
         sb.append("}");
         return sb.toString();
     }

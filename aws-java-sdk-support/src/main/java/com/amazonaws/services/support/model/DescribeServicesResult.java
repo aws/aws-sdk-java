@@ -113,7 +113,7 @@ public class DescribeServicesResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServices() != null)
-            sb.append("Services: " + getServices());
+            sb.append("Services: ").append(getServices());
         sb.append("}");
         return sb.toString();
     }

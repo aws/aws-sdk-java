@@ -68,12 +68,12 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
         <#if shape.hasPayloadMember>
             <#list shape.members as member>
                 <#if (member.http.isStreaming)>
-                request.setContent(${shape.variable.variableName}.get${member.name}());
+                request.setContent(${shape.variable.variableName}.${member.getterMethodName}());
                 if (!request.getHeaders().containsKey("Content-Type")) {
                     request.addHeader("Content-Type", protocolFactory.getContentType());
                 }
                 <#elseif (member.http.isPayload) && member.variable.variableType = "java.nio.ByteBuffer">
-                request.setContent(BinaryUtils.toStream(${shape.variable.variableName}.get${member.name}()));
+                request.setContent(BinaryUtils.toStream(${shape.variable.variableName}.${member.getterMethodName}()));
                 if (!request.getHeaders().containsKey("Content-Type")) {
                     request.addHeader("Content-Type", protocolFactory.getContentType());
                 }
@@ -81,7 +81,7 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
                 try {
                     final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
 
-                    ${member.variable.variableType} ${member.variable.variableName} = ${shape.variable.variableName}.get${member.name}();
+                    ${member.variable.variableType} ${member.variable.variableName} = ${shape.variable.variableName}.${member.getterMethodName}();
                     if (${member.variable.variableName} != null) {
                         jsonGenerator.writeStartObject();
                         <@MemberMarshallerMacro.content customConfig member.c2jShape member.variable.variableName shapes/>

@@ -558,9 +558,9 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDhcpOptionsIds() != null)
-            sb.append("DhcpOptionsIds: " + getDhcpOptionsIds() + ",");
+            sb.append("DhcpOptionsIds: ").append(getDhcpOptionsIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

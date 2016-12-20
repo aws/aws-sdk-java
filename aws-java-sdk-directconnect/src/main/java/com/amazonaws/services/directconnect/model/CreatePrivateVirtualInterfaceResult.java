@@ -651,39 +651,39 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerAccount() != null)
-            sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getVirtualInterfaceId() != null)
-            sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");
+            sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getVirtualInterfaceType() != null)
-            sb.append("VirtualInterfaceType: " + getVirtualInterfaceType() + ",");
+            sb.append("VirtualInterfaceType: ").append(getVirtualInterfaceType()).append(",");
         if (getVirtualInterfaceName() != null)
-            sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");
+            sb.append("VirtualInterfaceName: ").append(getVirtualInterfaceName()).append(",");
         if (getVlan() != null)
-            sb.append("Vlan: " + getVlan() + ",");
+            sb.append("Vlan: ").append(getVlan()).append(",");
         if (getAsn() != null)
-            sb.append("Asn: " + getAsn() + ",");
+            sb.append("Asn: ").append(getAsn()).append(",");
         if (getAuthKey() != null)
-            sb.append("AuthKey: " + getAuthKey() + ",");
+            sb.append("AuthKey: ").append(getAuthKey()).append(",");
         if (getAmazonAddress() != null)
-            sb.append("AmazonAddress: " + getAmazonAddress() + ",");
+            sb.append("AmazonAddress: ").append(getAmazonAddress()).append(",");
         if (getCustomerAddress() != null)
-            sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+            sb.append("CustomerAddress: ").append(getCustomerAddress()).append(",");
         if (getAddressFamily() != null)
-            sb.append("AddressFamily: " + getAddressFamily() + ",");
+            sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getVirtualInterfaceState() != null)
-            sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ",");
+            sb.append("VirtualInterfaceState: ").append(getVirtualInterfaceState()).append(",");
         if (getCustomerRouterConfig() != null)
-            sb.append("CustomerRouterConfig: " + getCustomerRouterConfig() + ",");
+            sb.append("CustomerRouterConfig: ").append(getCustomerRouterConfig()).append(",");
         if (getVirtualGatewayId() != null)
-            sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");
+            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId()).append(",");
         if (getRouteFilterPrefixes() != null)
-            sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() + ",");
+            sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes()).append(",");
         if (getBgpPeers() != null)
-            sb.append("BgpPeers: " + getBgpPeers());
+            sb.append("BgpPeers: ").append(getBgpPeers());
         sb.append("}");
         return sb.toString();
     }

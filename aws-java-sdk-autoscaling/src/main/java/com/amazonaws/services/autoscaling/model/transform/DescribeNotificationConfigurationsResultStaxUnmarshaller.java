@@ -46,6 +46,11 @@ public class DescribeNotificationConfigurationsResultStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("NotificationConfigurations", targetDepth)) {
+                    describeNotificationConfigurationsResult.withNotificationConfigurations(new ArrayList<NotificationConfiguration>());
+                    continue;
+                }
+
                 if (context.testExpression("NotificationConfigurations/member", targetDepth)) {
                     describeNotificationConfigurationsResult.withNotificationConfigurations(NotificationConfigurationStaxUnmarshaller.getInstance().unmarshall(
                             context));

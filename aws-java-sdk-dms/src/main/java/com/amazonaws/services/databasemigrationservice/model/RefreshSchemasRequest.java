@@ -125,9 +125,9 @@ public class RefreshSchemasRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn());
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn());
         sb.append("}");
         return sb.toString();
     }

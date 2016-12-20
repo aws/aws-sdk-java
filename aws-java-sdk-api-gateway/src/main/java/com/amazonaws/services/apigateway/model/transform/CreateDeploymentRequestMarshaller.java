@@ -61,11 +61,7 @@ public class CreateDeploymentRequestMarshaller implements Marshaller<Request<Cre
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (createDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(createDeploymentRequest.getRestApiId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", createDeploymentRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         try {

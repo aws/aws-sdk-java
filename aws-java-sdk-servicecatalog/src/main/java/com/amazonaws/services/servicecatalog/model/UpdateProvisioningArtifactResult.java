@@ -224,11 +224,11 @@ public class UpdateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProvisioningArtifactDetail() != null)
-            sb.append("ProvisioningArtifactDetail: " + getProvisioningArtifactDetail() + ",");
+            sb.append("ProvisioningArtifactDetail: ").append(getProvisioningArtifactDetail()).append(",");
         if (getInfo() != null)
-            sb.append("Info: " + getInfo() + ",");
+            sb.append("Info: ").append(getInfo()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

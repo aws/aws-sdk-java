@@ -151,9 +151,9 @@ public class DescribeStackProvisioningParametersResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentInstallerUrl() != null)
-            sb.append("AgentInstallerUrl: " + getAgentInstallerUrl() + ",");
+            sb.append("AgentInstallerUrl: ").append(getAgentInstallerUrl()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

@@ -311,9 +311,9 @@ public class S3Origin implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getOriginAccessIdentity() != null)
-            sb.append("OriginAccessIdentity: " + getOriginAccessIdentity());
+            sb.append("OriginAccessIdentity: ").append(getOriginAccessIdentity());
         sb.append("}");
         return sb.toString();
     }

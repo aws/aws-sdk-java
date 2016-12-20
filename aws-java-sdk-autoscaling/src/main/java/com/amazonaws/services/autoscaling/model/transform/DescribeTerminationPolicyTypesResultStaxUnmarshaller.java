@@ -45,6 +45,11 @@ public class DescribeTerminationPolicyTypesResultStaxUnmarshaller implements Unm
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TerminationPolicyTypes", targetDepth)) {
+                    describeTerminationPolicyTypesResult.withTerminationPolicyTypes(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("TerminationPolicyTypes/member", targetDepth)) {
                     describeTerminationPolicyTypesResult.withTerminationPolicyTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

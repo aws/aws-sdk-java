@@ -866,29 +866,29 @@ public class ContainerInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerInstanceArn() != null)
-            sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
+            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getEc2InstanceId() != null)
-            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getVersionInfo() != null)
-            sb.append("VersionInfo: " + getVersionInfo() + ",");
+            sb.append("VersionInfo: ").append(getVersionInfo()).append(",");
         if (getRemainingResources() != null)
-            sb.append("RemainingResources: " + getRemainingResources() + ",");
+            sb.append("RemainingResources: ").append(getRemainingResources()).append(",");
         if (getRegisteredResources() != null)
-            sb.append("RegisteredResources: " + getRegisteredResources() + ",");
+            sb.append("RegisteredResources: ").append(getRegisteredResources()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getAgentConnected() != null)
-            sb.append("AgentConnected: " + getAgentConnected() + ",");
+            sb.append("AgentConnected: ").append(getAgentConnected()).append(",");
         if (getRunningTasksCount() != null)
-            sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
+            sb.append("RunningTasksCount: ").append(getRunningTasksCount()).append(",");
         if (getPendingTasksCount() != null)
-            sb.append("PendingTasksCount: " + getPendingTasksCount() + ",");
+            sb.append("PendingTasksCount: ").append(getPendingTasksCount()).append(",");
         if (getAgentUpdateStatus() != null)
-            sb.append("AgentUpdateStatus: " + getAgentUpdateStatus() + ",");
+            sb.append("AgentUpdateStatus: ").append(getAgentUpdateStatus()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

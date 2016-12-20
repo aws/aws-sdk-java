@@ -249,13 +249,13 @@ public class EC2SecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getEC2SecurityGroupName() != null)
-            sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");
+            sb.append("EC2SecurityGroupName: ").append(getEC2SecurityGroupName()).append(",");
         if (getEC2SecurityGroupId() != null)
-            sb.append("EC2SecurityGroupId: " + getEC2SecurityGroupId() + ",");
+            sb.append("EC2SecurityGroupId: ").append(getEC2SecurityGroupId()).append(",");
         if (getEC2SecurityGroupOwnerId() != null)
-            sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId());
+            sb.append("EC2SecurityGroupOwnerId: ").append(getEC2SecurityGroupOwnerId());
         sb.append("}");
         return sb.toString();
     }

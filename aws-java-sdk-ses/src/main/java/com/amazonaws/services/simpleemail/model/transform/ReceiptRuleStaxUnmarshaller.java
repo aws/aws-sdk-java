@@ -60,8 +60,18 @@ public class ReceiptRuleStaxUnmarshaller implements Unmarshaller<ReceiptRule, St
                     continue;
                 }
 
+                if (context.testExpression("Recipients", targetDepth)) {
+                    receiptRule.withRecipients(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Recipients/member", targetDepth)) {
                     receiptRule.withRecipients(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Actions", targetDepth)) {
+                    receiptRule.withActions(new ArrayList<ReceiptAction>());
                     continue;
                 }
 

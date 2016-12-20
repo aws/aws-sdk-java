@@ -360,17 +360,17 @@ public class InstanceStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getInstanceState() != null)
-            sb.append("InstanceState: " + getInstanceState() + ",");
+            sb.append("InstanceState: ").append(getInstanceState()).append(",");
         if (getSystemStatus() != null)
-            sb.append("SystemStatus: " + getSystemStatus() + ",");
+            sb.append("SystemStatus: ").append(getSystemStatus()).append(",");
         if (getInstanceStatus() != null)
-            sb.append("InstanceStatus: " + getInstanceStatus());
+            sb.append("InstanceStatus: ").append(getInstanceStatus());
         sb.append("}");
         return sb.toString();
     }

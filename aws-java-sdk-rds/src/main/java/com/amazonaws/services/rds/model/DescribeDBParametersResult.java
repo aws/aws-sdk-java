@@ -166,9 +166,9 @@ public class DescribeDBParametersResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

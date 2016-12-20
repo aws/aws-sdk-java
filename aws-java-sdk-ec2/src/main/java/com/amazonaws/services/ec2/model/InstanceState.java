@@ -380,9 +380,9 @@ public class InstanceState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

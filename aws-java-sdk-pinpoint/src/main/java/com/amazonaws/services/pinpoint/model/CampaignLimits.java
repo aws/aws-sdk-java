@@ -104,9 +104,9 @@ public class CampaignLimits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDaily() != null)
-            sb.append("Daily: " + getDaily() + ",");
+            sb.append("Daily: ").append(getDaily()).append(",");
         if (getTotal() != null)
-            sb.append("Total: " + getTotal());
+            sb.append("Total: ").append(getTotal());
         sb.append("}");
         return sb.toString();
     }

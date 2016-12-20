@@ -302,15 +302,15 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getAttributesToGet() != null)
-            sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+            sb.append("AttributesToGet: ").append(getAttributesToGet()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: " + getPaginationToken() + ",");
+            sb.append("PaginationToken: ").append(getPaginationToken()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter());
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }

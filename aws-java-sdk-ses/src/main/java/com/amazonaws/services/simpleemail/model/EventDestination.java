@@ -462,15 +462,15 @@ public class EventDestination implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getMatchingEventTypes() != null)
-            sb.append("MatchingEventTypes: " + getMatchingEventTypes() + ",");
+            sb.append("MatchingEventTypes: ").append(getMatchingEventTypes()).append(",");
         if (getKinesisFirehoseDestination() != null)
-            sb.append("KinesisFirehoseDestination: " + getKinesisFirehoseDestination() + ",");
+            sb.append("KinesisFirehoseDestination: ").append(getKinesisFirehoseDestination()).append(",");
         if (getCloudWatchDestination() != null)
-            sb.append("CloudWatchDestination: " + getCloudWatchDestination());
+            sb.append("CloudWatchDestination: ").append(getCloudWatchDestination());
         sb.append("}");
         return sb.toString();
     }

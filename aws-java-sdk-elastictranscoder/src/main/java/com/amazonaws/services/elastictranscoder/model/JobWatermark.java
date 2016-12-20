@@ -226,11 +226,11 @@ public class JobWatermark implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPresetWatermarkId() != null)
-            sb.append("PresetWatermarkId: " + getPresetWatermarkId() + ",");
+            sb.append("PresetWatermarkId: ").append(getPresetWatermarkId()).append(",");
         if (getInputKey() != null)
-            sb.append("InputKey: " + getInputKey() + ",");
+            sb.append("InputKey: ").append(getInputKey()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption());
+            sb.append("Encryption: ").append(getEncryption());
         sb.append("}");
         return sb.toString();
     }

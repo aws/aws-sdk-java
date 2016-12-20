@@ -536,19 +536,19 @@ public class ActionConfigurationProperty implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRequired() != null)
-            sb.append("Required: " + getRequired() + ",");
+            sb.append("Required: ").append(getRequired()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getSecret() != null)
-            sb.append("Secret: " + getSecret() + ",");
+            sb.append("Secret: ").append(getSecret()).append(",");
         if (getQueryable() != null)
-            sb.append("Queryable: " + getQueryable() + ",");
+            sb.append("Queryable: ").append(getQueryable()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

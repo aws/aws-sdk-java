@@ -462,23 +462,23 @@ public class ExportTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getTaskName() != null)
-            sb.append("TaskName: " + getTaskName() + ",");
+            sb.append("TaskName: ").append(getTaskName()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getFrom() != null)
-            sb.append("From: " + getFrom() + ",");
+            sb.append("From: ").append(getFrom()).append(",");
         if (getTo() != null)
-            sb.append("To: " + getTo() + ",");
+            sb.append("To: ").append(getTo()).append(",");
         if (getDestination() != null)
-            sb.append("Destination: " + getDestination() + ",");
+            sb.append("Destination: ").append(getDestination()).append(",");
         if (getDestinationPrefix() != null)
-            sb.append("DestinationPrefix: " + getDestinationPrefix() + ",");
+            sb.append("DestinationPrefix: ").append(getDestinationPrefix()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getExecutionInfo() != null)
-            sb.append("ExecutionInfo: " + getExecutionInfo());
+            sb.append("ExecutionInfo: ").append(getExecutionInfo());
         sb.append("}");
         return sb.toString();
     }

@@ -70,6 +70,11 @@ public class NatGatewayStaxUnmarshaller implements Unmarshaller<NatGateway, Stax
                     continue;
                 }
 
+                if (context.testExpression("natGatewayAddressSet", targetDepth)) {
+                    natGateway.withNatGatewayAddresses(new ArrayList<NatGatewayAddress>());
+                    continue;
+                }
+
                 if (context.testExpression("natGatewayAddressSet/item", targetDepth)) {
                     natGateway.withNatGatewayAddresses(NatGatewayAddressStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

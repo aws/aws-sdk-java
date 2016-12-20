@@ -553,21 +553,21 @@ public class Vpc implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getCidrBlock() != null)
-            sb.append("CidrBlock: " + getCidrBlock() + ",");
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getDhcpOptionsId() != null)
-            sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");
+            sb.append("DhcpOptionsId: ").append(getDhcpOptionsId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getIsDefault() != null)
-            sb.append("IsDefault: " + getIsDefault() + ",");
+            sb.append("IsDefault: ").append(getIsDefault()).append(",");
         if (getIpv6CidrBlockAssociationSet() != null)
-            sb.append("Ipv6CidrBlockAssociationSet: " + getIpv6CidrBlockAssociationSet());
+            sb.append("Ipv6CidrBlockAssociationSet: ").append(getIpv6CidrBlockAssociationSet());
         sb.append("}");
         return sb.toString();
     }

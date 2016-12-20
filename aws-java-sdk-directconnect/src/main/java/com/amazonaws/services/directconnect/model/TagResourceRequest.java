@@ -178,9 +178,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn() + ",");
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

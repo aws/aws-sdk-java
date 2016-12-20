@@ -61,8 +61,7 @@ public class ReadJobRequestMarshaller implements Marshaller<Request<ReadJobReque
 
         String uriResourcePath = "/2012-09-25/jobs/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (readJobRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(readJobRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", readJobRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

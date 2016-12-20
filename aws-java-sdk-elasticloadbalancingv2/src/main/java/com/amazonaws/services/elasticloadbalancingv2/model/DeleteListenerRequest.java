@@ -81,7 +81,7 @@ public class DeleteListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListenerArn() != null)
-            sb.append("ListenerArn: " + getListenerArn());
+            sb.append("ListenerArn: ").append(getListenerArn());
         sb.append("}");
         return sb.toString();
     }

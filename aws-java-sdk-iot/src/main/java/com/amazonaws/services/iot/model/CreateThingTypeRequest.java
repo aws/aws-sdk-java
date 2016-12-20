@@ -134,9 +134,9 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName() + ",");
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getThingTypeProperties() != null)
-            sb.append("ThingTypeProperties: " + getThingTypeProperties());
+            sb.append("ThingTypeProperties: ").append(getThingTypeProperties());
         sb.append("}");
         return sb.toString();
     }

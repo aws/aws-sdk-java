@@ -226,11 +226,11 @@ public class GetRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecords() != null)
-            sb.append("Records: " + getRecords() + ",");
+            sb.append("Records: ").append(getRecords()).append(",");
         if (getNextShardIterator() != null)
-            sb.append("NextShardIterator: " + getNextShardIterator() + ",");
+            sb.append("NextShardIterator: ").append(getNextShardIterator()).append(",");
         if (getMillisBehindLatest() != null)
-            sb.append("MillisBehindLatest: " + getMillisBehindLatest());
+            sb.append("MillisBehindLatest: ").append(getMillisBehindLatest());
         sb.append("}");
         return sb.toString();
     }

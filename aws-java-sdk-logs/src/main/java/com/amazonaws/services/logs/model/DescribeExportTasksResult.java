@@ -139,9 +139,9 @@ public class DescribeExportTasksResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportTasks() != null)
-            sb.append("ExportTasks: " + getExportTasks() + ",");
+            sb.append("ExportTasks: ").append(getExportTasks()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

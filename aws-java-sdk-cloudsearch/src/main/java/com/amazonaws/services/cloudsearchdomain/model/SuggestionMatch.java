@@ -172,11 +172,11 @@ public class SuggestionMatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuggestion() != null)
-            sb.append("Suggestion: " + getSuggestion() + ",");
+            sb.append("Suggestion: ").append(getSuggestion()).append(",");
         if (getScore() != null)
-            sb.append("Score: " + getScore() + ",");
+            sb.append("Score: ").append(getScore()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

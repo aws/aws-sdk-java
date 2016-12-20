@@ -762,31 +762,31 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMasterInstanceType() != null)
-            sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");
+            sb.append("MasterInstanceType: ").append(getMasterInstanceType()).append(",");
         if (getMasterPublicDnsName() != null)
-            sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
+            sb.append("MasterPublicDnsName: ").append(getMasterPublicDnsName()).append(",");
         if (getMasterInstanceId() != null)
-            sb.append("MasterInstanceId: " + getMasterInstanceId() + ",");
+            sb.append("MasterInstanceId: ").append(getMasterInstanceId()).append(",");
         if (getSlaveInstanceType() != null)
-            sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");
+            sb.append("SlaveInstanceType: ").append(getSlaveInstanceType()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getInstanceGroups() != null)
-            sb.append("InstanceGroups: " + getInstanceGroups() + ",");
+            sb.append("InstanceGroups: ").append(getInstanceGroups()).append(",");
         if (getNormalizedInstanceHours() != null)
-            sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
+            sb.append("NormalizedInstanceHours: ").append(getNormalizedInstanceHours()).append(",");
         if (getEc2KeyName() != null)
-            sb.append("Ec2KeyName: " + getEc2KeyName() + ",");
+            sb.append("Ec2KeyName: ").append(getEc2KeyName()).append(",");
         if (getEc2SubnetId() != null)
-            sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");
+            sb.append("Ec2SubnetId: ").append(getEc2SubnetId()).append(",");
         if (getPlacement() != null)
-            sb.append("Placement: " + getPlacement() + ",");
+            sb.append("Placement: ").append(getPlacement()).append(",");
         if (getKeepJobFlowAliveWhenNoSteps() != null)
-            sb.append("KeepJobFlowAliveWhenNoSteps: " + getKeepJobFlowAliveWhenNoSteps() + ",");
+            sb.append("KeepJobFlowAliveWhenNoSteps: ").append(getKeepJobFlowAliveWhenNoSteps()).append(",");
         if (getTerminationProtected() != null)
-            sb.append("TerminationProtected: " + getTerminationProtected() + ",");
+            sb.append("TerminationProtected: ").append(getTerminationProtected()).append(",");
         if (getHadoopVersion() != null)
-            sb.append("HadoopVersion: " + getHadoopVersion());
+            sb.append("HadoopVersion: ").append(getHadoopVersion());
         sb.append("}");
         return sb.toString();
     }

@@ -159,9 +159,9 @@ public class ListStateMachinesResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachines() != null)
-            sb.append("StateMachines: " + getStateMachines() + ",");
+            sb.append("StateMachines: ").append(getStateMachines()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

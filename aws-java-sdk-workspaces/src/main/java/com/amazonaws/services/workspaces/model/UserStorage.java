@@ -80,7 +80,7 @@ public class UserStorage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCapacity() != null)
-            sb.append("Capacity: " + getCapacity());
+            sb.append("Capacity: ").append(getCapacity());
         sb.append("}");
         return sb.toString();
     }

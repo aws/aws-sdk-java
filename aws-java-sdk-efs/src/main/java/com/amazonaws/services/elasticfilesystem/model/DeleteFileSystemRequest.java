@@ -79,7 +79,7 @@ public class DeleteFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId());
+            sb.append("FileSystemId: ").append(getFileSystemId());
         sb.append("}");
         return sb.toString();
     }

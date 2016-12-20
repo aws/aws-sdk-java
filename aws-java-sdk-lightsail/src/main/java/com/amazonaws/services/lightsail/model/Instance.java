@@ -927,41 +927,41 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSupportCode() != null)
-            sb.append("SupportCode: " + getSupportCode() + ",");
+            sb.append("SupportCode: ").append(getSupportCode()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getBlueprintId() != null)
-            sb.append("BlueprintId: " + getBlueprintId() + ",");
+            sb.append("BlueprintId: ").append(getBlueprintId()).append(",");
         if (getBlueprintName() != null)
-            sb.append("BlueprintName: " + getBlueprintName() + ",");
+            sb.append("BlueprintName: ").append(getBlueprintName()).append(",");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getIsStaticIp() != null)
-            sb.append("IsStaticIp: " + getIsStaticIp() + ",");
+            sb.append("IsStaticIp: ").append(getIsStaticIp()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPublicIpAddress() != null)
-            sb.append("PublicIpAddress: " + getPublicIpAddress() + ",");
+            sb.append("PublicIpAddress: ").append(getPublicIpAddress()).append(",");
         if (getIpv6Address() != null)
-            sb.append("Ipv6Address: " + getIpv6Address() + ",");
+            sb.append("Ipv6Address: ").append(getIpv6Address()).append(",");
         if (getHardware() != null)
-            sb.append("Hardware: " + getHardware() + ",");
+            sb.append("Hardware: ").append(getHardware()).append(",");
         if (getNetworking() != null)
-            sb.append("Networking: " + getNetworking() + ",");
+            sb.append("Networking: ").append(getNetworking()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getSshKeyName() != null)
-            sb.append("SshKeyName: " + getSshKeyName());
+            sb.append("SshKeyName: ").append(getSshKeyName());
         sb.append("}");
         return sb.toString();
     }

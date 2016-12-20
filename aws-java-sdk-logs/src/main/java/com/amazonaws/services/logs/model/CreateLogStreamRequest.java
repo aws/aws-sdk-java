@@ -146,9 +146,9 @@ public class CreateLogStreamRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName());
+            sb.append("LogStreamName: ").append(getLogStreamName());
         sb.append("}");
         return sb.toString();
     }

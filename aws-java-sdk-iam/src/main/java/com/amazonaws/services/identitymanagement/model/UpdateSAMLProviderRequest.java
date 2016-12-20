@@ -178,9 +178,9 @@ public class UpdateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLMetadataDocument() != null)
-            sb.append("SAMLMetadataDocument: " + getSAMLMetadataDocument() + ",");
+            sb.append("SAMLMetadataDocument: ").append(getSAMLMetadataDocument()).append(",");
         if (getSAMLProviderArn() != null)
-            sb.append("SAMLProviderArn: " + getSAMLProviderArn());
+            sb.append("SAMLProviderArn: ").append(getSAMLProviderArn());
         sb.append("}");
         return sb.toString();
     }

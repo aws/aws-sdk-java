@@ -161,9 +161,9 @@ public class ListRecordHistoryResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordDetails() != null)
-            sb.append("RecordDetails: " + getRecordDetails() + ",");
+            sb.append("RecordDetails: ").append(getRecordDetails()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

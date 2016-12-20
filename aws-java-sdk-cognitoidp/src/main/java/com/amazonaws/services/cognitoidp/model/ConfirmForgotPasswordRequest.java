@@ -272,15 +272,15 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getSecretHash() != null)
-            sb.append("SecretHash: " + getSecretHash() + ",");
+            sb.append("SecretHash: ").append(getSecretHash()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getConfirmationCode() != null)
-            sb.append("ConfirmationCode: " + getConfirmationCode() + ",");
+            sb.append("ConfirmationCode: ").append(getConfirmationCode()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword());
+            sb.append("Password: ").append(getPassword());
         sb.append("}");
         return sb.toString();
     }

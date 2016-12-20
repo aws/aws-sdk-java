@@ -80,7 +80,7 @@ public class EvaluateExpressionResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluatedExpression() != null)
-            sb.append("EvaluatedExpression: " + getEvaluatedExpression());
+            sb.append("EvaluatedExpression: ").append(getEvaluatedExpression());
         sb.append("}");
         return sb.toString();
     }

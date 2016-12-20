@@ -732,33 +732,33 @@ public class AssociationDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDate() != null)
-            sb.append("Date: " + getDate() + ",");
+            sb.append("Date: ").append(getDate()).append(",");
         if (getLastUpdateAssociationDate() != null)
-            sb.append("LastUpdateAssociationDate: " + getLastUpdateAssociationDate() + ",");
+            sb.append("LastUpdateAssociationDate: ").append(getLastUpdateAssociationDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getOverview() != null)
-            sb.append("Overview: " + getOverview() + ",");
+            sb.append("Overview: ").append(getOverview()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: " + getScheduleExpression() + ",");
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getOutputLocation() != null)
-            sb.append("OutputLocation: " + getOutputLocation() + ",");
+            sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
         if (getLastExecutionDate() != null)
-            sb.append("LastExecutionDate: " + getLastExecutionDate() + ",");
+            sb.append("LastExecutionDate: ").append(getLastExecutionDate()).append(",");
         if (getLastSuccessfulExecutionDate() != null)
-            sb.append("LastSuccessfulExecutionDate: " + getLastSuccessfulExecutionDate());
+            sb.append("LastSuccessfulExecutionDate: ").append(getLastSuccessfulExecutionDate());
         sb.append("}");
         return sb.toString();
     }

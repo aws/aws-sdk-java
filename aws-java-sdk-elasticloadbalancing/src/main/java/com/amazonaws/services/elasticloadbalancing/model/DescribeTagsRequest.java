@@ -114,7 +114,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerNames() != null)
-            sb.append("LoadBalancerNames: " + getLoadBalancerNames());
+            sb.append("LoadBalancerNames: ").append(getLoadBalancerNames());
         sb.append("}");
         return sb.toString();
     }

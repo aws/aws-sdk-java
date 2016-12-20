@@ -123,7 +123,7 @@ public class DescribePipelinesRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineIds() != null)
-            sb.append("PipelineIds: " + getPipelineIds());
+            sb.append("PipelineIds: ").append(getPipelineIds());
         sb.append("}");
         return sb.toString();
     }

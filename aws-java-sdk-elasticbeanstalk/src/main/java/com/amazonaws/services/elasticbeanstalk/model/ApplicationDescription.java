@@ -376,17 +376,17 @@ public class ApplicationDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDateCreated() != null)
-            sb.append("DateCreated: " + getDateCreated() + ",");
+            sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getDateUpdated() != null)
-            sb.append("DateUpdated: " + getDateUpdated() + ",");
+            sb.append("DateUpdated: ").append(getDateUpdated()).append(",");
         if (getVersions() != null)
-            sb.append("Versions: " + getVersions() + ",");
+            sb.append("Versions: ").append(getVersions()).append(",");
         if (getConfigurationTemplates() != null)
-            sb.append("ConfigurationTemplates: " + getConfigurationTemplates());
+            sb.append("ConfigurationTemplates: ").append(getConfigurationTemplates());
         sb.append("}");
         return sb.toString();
     }

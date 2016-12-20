@@ -167,9 +167,9 @@ public class DescribeLayersRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds());
+            sb.append("LayerIds: ").append(getLayerIds());
         sb.append("}");
         return sb.toString();
     }

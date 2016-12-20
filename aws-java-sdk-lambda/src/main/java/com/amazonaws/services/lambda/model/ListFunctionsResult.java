@@ -159,9 +159,9 @@ public class ListFunctionsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getFunctions() != null)
-            sb.append("Functions: " + getFunctions());
+            sb.append("Functions: ").append(getFunctions());
         sb.append("}");
         return sb.toString();
     }

@@ -220,9 +220,9 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName());
+            sb.append("PolicyName: ").append(getPolicyName());
         sb.append("}");
         return sb.toString();
     }

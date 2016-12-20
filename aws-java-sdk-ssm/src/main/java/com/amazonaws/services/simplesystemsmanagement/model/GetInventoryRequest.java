@@ -290,13 +290,13 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getResultAttributes() != null)
-            sb.append("ResultAttributes: " + getResultAttributes() + ",");
+            sb.append("ResultAttributes: ").append(getResultAttributes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

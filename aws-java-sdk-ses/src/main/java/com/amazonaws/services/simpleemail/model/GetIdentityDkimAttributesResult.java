@@ -106,7 +106,7 @@ public class GetIdentityDkimAttributesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDkimAttributes() != null)
-            sb.append("DkimAttributes: " + getDkimAttributes());
+            sb.append("DkimAttributes: ").append(getDkimAttributes());
         sb.append("}");
         return sb.toString();
     }

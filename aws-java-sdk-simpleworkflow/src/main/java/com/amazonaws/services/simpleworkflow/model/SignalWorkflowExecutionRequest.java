@@ -266,15 +266,15 @@ public class SignalWorkflowExecutionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId() + ",");
+            sb.append("RunId: ").append(getRunId()).append(",");
         if (getSignalName() != null)
-            sb.append("SignalName: " + getSignalName() + ",");
+            sb.append("SignalName: ").append(getSignalName()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput());
+            sb.append("Input: ").append(getInput());
         sb.append("}");
         return sb.toString();
     }

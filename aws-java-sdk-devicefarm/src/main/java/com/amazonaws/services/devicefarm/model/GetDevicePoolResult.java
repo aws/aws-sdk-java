@@ -61,7 +61,7 @@ public class GetDevicePoolResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevicePool() != null)
-            sb.append("DevicePool: " + getDevicePool());
+            sb.append("DevicePool: ").append(getDevicePool());
         sb.append("}");
         return sb.toString();
     }

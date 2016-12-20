@@ -161,9 +161,9 @@ public class DescribeConnectionsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getConnections() != null)
-            sb.append("Connections: " + getConnections());
+            sb.append("Connections: ").append(getConnections());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribeEnvironmentManagedActionsResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManagedActions() != null)
-            sb.append("ManagedActions: " + getManagedActions());
+            sb.append("ManagedActions: ").append(getManagedActions());
         sb.append("}");
         return sb.toString();
     }

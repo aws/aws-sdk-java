@@ -180,9 +180,9 @@ public class DescribeClustersResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getClusters() != null)
-            sb.append("Clusters: " + getClusters());
+            sb.append("Clusters: ").append(getClusters());
         sb.append("}");
         return sb.toString();
     }

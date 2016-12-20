@@ -316,17 +316,17 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getFleetName() != null)
-            sb.append("FleetName: " + getFleetName() + ",");
+            sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getValidity() != null)
-            sb.append("Validity: " + getValidity() + ",");
+            sb.append("Validity: ").append(getValidity()).append(",");
         if (getSessionContext() != null)
-            sb.append("SessionContext: " + getSessionContext());
+            sb.append("SessionContext: ").append(getSessionContext());
         sb.append("}");
         return sb.toString();
     }

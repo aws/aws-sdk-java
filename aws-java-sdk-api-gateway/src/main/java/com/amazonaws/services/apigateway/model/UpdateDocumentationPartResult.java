@@ -245,11 +245,11 @@ public class UpdateDocumentationPartResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: " + getProperties());
+            sb.append("Properties: ").append(getProperties());
         sb.append("}");
         return sb.toString();
     }

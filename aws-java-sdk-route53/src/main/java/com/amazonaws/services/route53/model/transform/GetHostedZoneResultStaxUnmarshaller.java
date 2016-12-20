@@ -55,6 +55,11 @@ public class GetHostedZoneResultStaxUnmarshaller implements Unmarshaller<GetHost
                     continue;
                 }
 
+                if (context.testExpression("VPCs", targetDepth)) {
+                    getHostedZoneResult.withVPCs(new ArrayList<VPC>());
+                    continue;
+                }
+
                 if (context.testExpression("VPCs/VPC", targetDepth)) {
                     getHostedZoneResult.withVPCs(VPCStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -159,9 +159,9 @@ public class DescribeCacheSubnetGroupsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCacheSubnetGroups() != null)
-            sb.append("CacheSubnetGroups: " + getCacheSubnetGroups());
+            sb.append("CacheSubnetGroups: ").append(getCacheSubnetGroups());
         sb.append("}");
         return sb.toString();
     }

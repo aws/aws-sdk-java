@@ -157,9 +157,9 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserAttributeNames() != null)
-            sb.append("UserAttributeNames: " + getUserAttributeNames() + ",");
+            sb.append("UserAttributeNames: ").append(getUserAttributeNames()).append(",");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken());
+            sb.append("AccessToken: ").append(getAccessToken());
         sb.append("}");
         return sb.toString();
     }

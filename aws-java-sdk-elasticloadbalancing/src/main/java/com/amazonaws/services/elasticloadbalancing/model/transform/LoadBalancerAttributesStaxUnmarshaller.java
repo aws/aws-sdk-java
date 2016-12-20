@@ -65,6 +65,11 @@ public class LoadBalancerAttributesStaxUnmarshaller implements Unmarshaller<Load
                     continue;
                 }
 
+                if (context.testExpression("AdditionalAttributes", targetDepth)) {
+                    loadBalancerAttributes.withAdditionalAttributes(new ArrayList<AdditionalAttribute>());
+                    continue;
+                }
+
                 if (context.testExpression("AdditionalAttributes/member", targetDepth)) {
                     loadBalancerAttributes.withAdditionalAttributes(AdditionalAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

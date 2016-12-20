@@ -646,17 +646,17 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultTaskStartToCloseTimeout() != null)
-            sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");
+            sb.append("DefaultTaskStartToCloseTimeout: ").append(getDefaultTaskStartToCloseTimeout()).append(",");
         if (getDefaultExecutionStartToCloseTimeout() != null)
-            sb.append("DefaultExecutionStartToCloseTimeout: " + getDefaultExecutionStartToCloseTimeout() + ",");
+            sb.append("DefaultExecutionStartToCloseTimeout: ").append(getDefaultExecutionStartToCloseTimeout()).append(",");
         if (getDefaultTaskList() != null)
-            sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
+            sb.append("DefaultTaskList: ").append(getDefaultTaskList()).append(",");
         if (getDefaultTaskPriority() != null)
-            sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
+            sb.append("DefaultTaskPriority: ").append(getDefaultTaskPriority()).append(",");
         if (getDefaultChildPolicy() != null)
-            sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() + ",");
+            sb.append("DefaultChildPolicy: ").append(getDefaultChildPolicy()).append(",");
         if (getDefaultLambdaRole() != null)
-            sb.append("DefaultLambdaRole: " + getDefaultLambdaRole());
+            sb.append("DefaultLambdaRole: ").append(getDefaultLambdaRole());
         sb.append("}");
         return sb.toString();
     }

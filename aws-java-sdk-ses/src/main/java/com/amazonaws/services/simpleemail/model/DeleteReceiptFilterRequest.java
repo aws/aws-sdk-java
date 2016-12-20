@@ -84,7 +84,7 @@ public class DeleteReceiptFilterRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilterName() != null)
-            sb.append("FilterName: " + getFilterName());
+            sb.append("FilterName: ").append(getFilterName());
         sb.append("}");
         return sb.toString();
     }

@@ -175,9 +175,9 @@ public class DescribeSourceRegionsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getSourceRegions() != null)
-            sb.append("SourceRegions: " + getSourceRegions());
+            sb.append("SourceRegions: ").append(getSourceRegions());
         sb.append("}");
         return sb.toString();
     }

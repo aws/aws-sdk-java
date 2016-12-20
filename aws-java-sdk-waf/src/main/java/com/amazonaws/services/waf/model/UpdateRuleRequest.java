@@ -366,11 +366,11 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleId() != null)
-            sb.append("RuleId: " + getRuleId() + ",");
+            sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates());
+            sb.append("Updates: ").append(getUpdates());
         sb.append("}");
         return sb.toString();
     }

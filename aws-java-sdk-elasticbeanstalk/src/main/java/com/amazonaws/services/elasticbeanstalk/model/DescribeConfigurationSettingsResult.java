@@ -114,7 +114,7 @@ public class DescribeConfigurationSettingsResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSettings() != null)
-            sb.append("ConfigurationSettings: " + getConfigurationSettings());
+            sb.append("ConfigurationSettings: ").append(getConfigurationSettings());
         sb.append("}");
         return sb.toString();
     }

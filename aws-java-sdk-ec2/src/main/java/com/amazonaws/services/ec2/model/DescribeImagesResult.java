@@ -114,7 +114,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImages() != null)
-            sb.append("Images: " + getImages());
+            sb.append("Images: ").append(getImages());
         sb.append("}");
         return sb.toString();
     }

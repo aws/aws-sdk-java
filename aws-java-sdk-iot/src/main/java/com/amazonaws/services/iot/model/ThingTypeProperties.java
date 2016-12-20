@@ -157,9 +157,9 @@ public class ThingTypeProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingTypeDescription() != null)
-            sb.append("ThingTypeDescription: " + getThingTypeDescription() + ",");
+            sb.append("ThingTypeDescription: ").append(getThingTypeDescription()).append(",");
         if (getSearchableAttributes() != null)
-            sb.append("SearchableAttributes: " + getSearchableAttributes());
+            sb.append("SearchableAttributes: ").append(getSearchableAttributes());
         sb.append("}");
         return sb.toString();
     }

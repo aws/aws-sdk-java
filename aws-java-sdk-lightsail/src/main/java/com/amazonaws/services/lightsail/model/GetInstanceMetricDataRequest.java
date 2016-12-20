@@ -479,19 +479,19 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: " + getPeriod() + ",");
+            sb.append("Period: ").append(getPeriod()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit() + ",");
+            sb.append("Unit: ").append(getUnit()).append(",");
         if (getStatistics() != null)
-            sb.append("Statistics: " + getStatistics());
+            sb.append("Statistics: ").append(getStatistics());
         sb.append("}");
         return sb.toString();
     }

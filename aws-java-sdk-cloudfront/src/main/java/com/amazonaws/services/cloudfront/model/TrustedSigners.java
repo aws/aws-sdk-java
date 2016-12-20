@@ -274,11 +274,11 @@ public class TrustedSigners implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity() + ",");
+            sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getItems() != null)
-            sb.append("Items: " + getItems());
+            sb.append("Items: ").append(getItems());
         sb.append("}");
         return sb.toString();
     }

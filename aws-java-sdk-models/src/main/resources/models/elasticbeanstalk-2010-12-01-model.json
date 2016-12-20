@@ -19,6 +19,7 @@
       "documentation" : "<p>Cancels in-progress environment configuration update or application version deployment.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -43,11 +44,13 @@
       "documentation" : "<p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ElasticBeanstalkServiceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ManagedActionInvalidStateException"
@@ -101,11 +104,13 @@
       "documentation" : "<p>Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html\">Compose Environments</a> for details.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyEnvironmentsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -135,6 +140,7 @@
       "documentation" : "<p> Creates an application that has one configuration template named <code>default</code> and no application versions. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyApplicationsException"
@@ -164,26 +170,31 @@
       "documentation" : "<p>Creates an application version for the specified application. You can create an application version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample application.</p> <note> <p>Once you create an application version with a specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyApplicationsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyApplicationVersionsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "S3LocationNotInServiceRegionException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CodeBuildNotInServiceRegionException"
@@ -213,16 +224,19 @@
       "documentation" : "<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> <li> <p> <a>DescribeConfigurationSettings</a> </p> </li> <li> <p> <a>ListAvailableSolutionStacks</a> </p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyConfigurationTemplatesException"
@@ -252,11 +266,13 @@
       "documentation" : "<p>Launches an environment for the specified application using the specified configuration.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyEnvironmentsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -286,16 +302,19 @@
       "documentation" : "<p>Creates the Amazon S3 storage location for the account.</p> <p>This location is used to store user log files.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "S3SubscriptionRequiredException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -320,6 +339,7 @@
       "documentation" : "<p>Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket.</p> <note> <p>You cannot delete an application that has a running environment.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationInProgressException"
@@ -344,21 +364,25 @@
       "documentation" : "<p>Deletes the specified version from the specified application.</p> <note> <p>You cannot delete an application version that is associated with a running environment.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SourceBundleDeletionException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationInProgressException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "S3LocationNotInServiceRegionException"
@@ -383,6 +407,7 @@
       "documentation" : "<p>Deletes the specified configuration template.</p> <note> <p>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OperationInProgressException"
@@ -474,6 +499,7 @@
       "documentation" : "<p>Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
@@ -503,6 +529,7 @@
       "documentation" : "<p>Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment.</p> <p>When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul> <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
@@ -532,11 +559,13 @@
       "documentation" : "<p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ElasticBeanstalkServiceException"
@@ -566,6 +595,7 @@
       "documentation" : "<p>Lists an environment's completed and failed managed actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ElasticBeanstalkServiceException"
@@ -595,6 +625,7 @@
       "documentation" : "<p>Lists an environment's upcoming and in-progress managed actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ElasticBeanstalkServiceException"
@@ -624,6 +655,7 @@
       "documentation" : "<p>Returns AWS resources for this environment.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -701,11 +733,13 @@
       "documentation" : "<p>Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation requires <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html\">enhanced health reporting</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequestException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ElasticBeanstalkServiceException"
@@ -754,6 +788,7 @@
       "documentation" : "<p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -859,6 +894,7 @@
       "documentation" : "<p>Terminates the specified environment.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
@@ -936,11 +972,13 @@
       "documentation" : "<p>Updates the specified configuration template to have the specified properties or configuration option values.</p> <note> <p>If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string.</p> </note> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
@@ -970,11 +1008,13 @@
       "documentation" : "<p>Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment.</p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
@@ -1004,11 +1044,13 @@
       "documentation" : "<p>Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid.</p> <p>This action returns a list of messages indicating any errors or warnings associated with the selection of option values.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientPrivilegesException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyBucketsException"
@@ -1093,7 +1135,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1114,7 +1156,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1135,7 +1177,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1156,7 +1198,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1289,7 +1331,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1454,7 +1496,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -1487,7 +1529,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1659,7 +1701,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1763,7 +1805,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1784,7 +1826,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1940,7 +1982,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2008,7 +2050,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2041,7 +2083,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2074,7 +2116,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2095,7 +2137,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2316,7 +2358,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2349,7 +2391,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2453,7 +2495,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2468,7 +2510,8 @@
       "documentation" : "<p>AWS CodeBuild is not available in the specified region.</p>",
       "enum" : null,
       "error" : {
-        "code" : "CodeBuildNotInServiceRegionException"
+        "code" : "CodeBuildNotInServiceRegionException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -2558,7 +2601,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2579,7 +2622,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2600,7 +2643,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2798,7 +2841,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2819,7 +2862,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2840,7 +2883,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2873,7 +2916,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2980,7 +3023,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3001,7 +3044,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3022,7 +3065,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3043,7 +3086,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3263,7 +3306,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3354,7 +3397,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3387,7 +3430,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3908,7 +3951,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3929,7 +3972,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3950,7 +3993,7 @@
       "key" : null,
       "max" : 63,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 4,
       "pattern" : null,
       "payload" : null,
@@ -4176,7 +4219,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4271,7 +4314,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5402,7 +5445,7 @@
       "key" : null,
       "max" : 200,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5423,7 +5466,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5479,7 +5522,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5768,7 +5811,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5824,7 +5867,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5845,7 +5888,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5878,7 +5921,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5899,7 +5942,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5920,7 +5963,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5953,7 +5996,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6060,7 +6103,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6081,7 +6124,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6162,7 +6205,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6183,7 +6226,7 @@
       "key" : null,
       "max" : 40,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 4,
       "pattern" : null,
       "payload" : null,
@@ -6216,7 +6259,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6420,7 +6463,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6502,7 +6545,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6661,7 +6704,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6730,7 +6773,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6751,7 +6794,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6772,7 +6815,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6793,7 +6836,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6814,7 +6857,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6835,7 +6878,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6856,7 +6899,7 @@
       "key" : null,
       "max" : 19,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6877,7 +6920,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6898,7 +6941,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6966,7 +7009,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7113,7 +7156,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -7146,7 +7189,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7167,7 +7210,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7200,7 +7243,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7215,7 +7258,8 @@
       "documentation" : "<p>The specified account does not have sufficient privileges for one of more AWS services.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InsufficientPrivilegesException"
+        "code" : "InsufficientPrivilegesException",
+        "httpStatusCode" : 403
       },
       "exception" : true,
       "fault" : false,
@@ -7244,7 +7288,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7259,7 +7303,8 @@
       "documentation" : "<p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidRequestException"
+        "code" : "InvalidRequestException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7461,7 +7506,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7482,7 +7527,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7611,7 +7656,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7632,7 +7677,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7761,7 +7806,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7794,7 +7839,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8040,7 +8085,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8055,7 +8100,8 @@
       "documentation" : "<p>Cannot modify the managed action in its current state.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ManagedActionInvalidStateException"
+        "code" : "ManagedActionInvalidStateException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -8096,7 +8142,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8117,7 +8163,7 @@
       "key" : null,
       "max" : 1000,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8138,7 +8184,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8159,7 +8205,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8180,7 +8226,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : ".*\\S.*",
       "payload" : null,
@@ -8201,7 +8247,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8222,7 +8268,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8243,7 +8289,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8258,7 +8304,8 @@
       "documentation" : "<p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>",
       "enum" : null,
       "error" : {
-        "code" : "OperationInProgressFailure"
+        "code" : "OperationInProgressFailure",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -8287,7 +8334,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8308,7 +8355,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8329,7 +8376,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8350,7 +8397,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8492,7 +8539,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8573,7 +8620,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8642,7 +8689,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8663,7 +8710,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8684,7 +8731,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8705,7 +8752,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8787,7 +8834,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8808,7 +8855,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8829,7 +8876,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8994,7 +9041,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9015,7 +9062,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9078,7 +9125,8 @@
       "documentation" : "<p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p> <ul> <li> <p>IAD/us-east-1</p> </li> <li> <p>PDX/us-west-2</p> </li> <li> <p>DUB/eu-west-1</p> </li> </ul>",
       "enum" : null,
       "error" : {
-        "code" : "S3LocationNotInServiceRegionException"
+        "code" : "S3LocationNotInServiceRegionException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -9101,7 +9149,8 @@
       "documentation" : "<p>The specified account does not have a subscription to Amazon S3.</p>",
       "enum" : null,
       "error" : {
-        "code" : "S3SubscriptionRequiredException"
+        "code" : "S3SubscriptionRequiredException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -9130,7 +9179,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9363,7 +9412,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9384,7 +9433,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9460,7 +9509,8 @@
       "documentation" : "<p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SourceBundleDeletionFailure"
+        "code" : "SourceBundleDeletionFailure",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -9537,7 +9587,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 3,
       "pattern" : ".+/.+",
       "payload" : null,
@@ -9558,7 +9608,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9579,7 +9629,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9674,7 +9724,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9865,7 +9915,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -9886,7 +9936,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -9919,7 +9969,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9940,7 +9990,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10035,7 +10085,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10056,7 +10106,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10077,7 +10127,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10098,7 +10148,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10119,7 +10169,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10155,7 +10205,8 @@
       "documentation" : "<p>The specified account has reached its limit of applications.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyApplicationsException"
+        "code" : "TooManyApplicationsException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10178,7 +10229,8 @@
       "documentation" : "<p>The specified account has reached its limit of Amazon S3 buckets.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyBucketsException"
+        "code" : "TooManyBucketsException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10201,7 +10253,8 @@
       "documentation" : "<p>The specified account has reached its limit of configuration templates.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyConfigurationTemplatesException"
+        "code" : "TooManyConfigurationTemplatesException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10224,7 +10277,8 @@
       "documentation" : "<p>The specified account has reached its limit of environments.</p>",
       "enum" : null,
       "error" : {
-        "code" : "TooManyEnvironmentsException"
+        "code" : "TooManyEnvironmentsException",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10300,7 +10354,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10517,7 +10571,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10703,7 +10757,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10872,7 +10926,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10905,7 +10959,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10926,7 +10980,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10947,7 +11001,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -10980,7 +11034,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11013,7 +11067,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

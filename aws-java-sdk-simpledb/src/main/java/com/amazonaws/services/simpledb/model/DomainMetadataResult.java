@@ -285,19 +285,19 @@ public class DomainMetadataResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItemCount() != null)
-            sb.append("ItemCount: " + getItemCount() + ",");
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
         if (getItemNamesSizeBytes() != null)
-            sb.append("ItemNamesSizeBytes: " + getItemNamesSizeBytes() + ",");
+            sb.append("ItemNamesSizeBytes: ").append(getItemNamesSizeBytes()).append(",");
         if (getAttributeNameCount() != null)
-            sb.append("AttributeNameCount: " + getAttributeNameCount() + ",");
+            sb.append("AttributeNameCount: ").append(getAttributeNameCount()).append(",");
         if (getAttributeNamesSizeBytes() != null)
-            sb.append("AttributeNamesSizeBytes: " + getAttributeNamesSizeBytes() + ",");
+            sb.append("AttributeNamesSizeBytes: ").append(getAttributeNamesSizeBytes()).append(",");
         if (getAttributeValueCount() != null)
-            sb.append("AttributeValueCount: " + getAttributeValueCount() + ",");
+            sb.append("AttributeValueCount: ").append(getAttributeValueCount()).append(",");
         if (getAttributeValuesSizeBytes() != null)
-            sb.append("AttributeValuesSizeBytes: " + getAttributeValuesSizeBytes() + ",");
+            sb.append("AttributeValuesSizeBytes: ").append(getAttributeValuesSizeBytes()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp());
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }

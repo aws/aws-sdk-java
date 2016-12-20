@@ -281,13 +281,13 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getCustomerGatewayId() != null)
-            sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");
+            sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
         if (getVpnGatewayId() != null)
-            sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
+            sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions());
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }

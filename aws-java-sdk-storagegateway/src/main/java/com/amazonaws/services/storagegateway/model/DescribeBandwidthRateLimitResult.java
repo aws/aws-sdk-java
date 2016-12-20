@@ -167,11 +167,11 @@ public class DescribeBandwidthRateLimitResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getAverageUploadRateLimitInBitsPerSec() != null)
-            sb.append("AverageUploadRateLimitInBitsPerSec: " + getAverageUploadRateLimitInBitsPerSec() + ",");
+            sb.append("AverageUploadRateLimitInBitsPerSec: ").append(getAverageUploadRateLimitInBitsPerSec()).append(",");
         if (getAverageDownloadRateLimitInBitsPerSec() != null)
-            sb.append("AverageDownloadRateLimitInBitsPerSec: " + getAverageDownloadRateLimitInBitsPerSec());
+            sb.append("AverageDownloadRateLimitInBitsPerSec: ").append(getAverageDownloadRateLimitInBitsPerSec());
         sb.append("}");
         return sb.toString();
     }

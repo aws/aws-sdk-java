@@ -221,11 +221,11 @@ public class GetOfferingStatusResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCurrent() != null)
-            sb.append("Current: " + getCurrent() + ",");
+            sb.append("Current: ").append(getCurrent()).append(",");
         if (getNextPeriod() != null)
-            sb.append("NextPeriod: " + getNextPeriod() + ",");
+            sb.append("NextPeriod: ").append(getNextPeriod()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

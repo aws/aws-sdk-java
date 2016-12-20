@@ -85,7 +85,7 @@ public class ActivityStartedEventDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkerName() != null)
-            sb.append("WorkerName: " + getWorkerName());
+            sb.append("WorkerName: ").append(getWorkerName());
         sb.append("}");
         return sb.toString();
     }

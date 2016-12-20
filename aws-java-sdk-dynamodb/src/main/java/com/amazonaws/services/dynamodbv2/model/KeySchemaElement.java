@@ -509,9 +509,9 @@ public class KeySchemaElement implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getKeyType() != null)
-            sb.append("KeyType: " + getKeyType());
+            sb.append("KeyType: ").append(getKeyType());
         sb.append("}");
         return sb.toString();
     }

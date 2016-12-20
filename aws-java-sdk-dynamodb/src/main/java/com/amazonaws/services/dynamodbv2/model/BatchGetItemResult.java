@@ -575,11 +575,11 @@ public class BatchGetItemResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResponses() != null)
-            sb.append("Responses: " + getResponses() + ",");
+            sb.append("Responses: ").append(getResponses()).append(",");
         if (getUnprocessedKeys() != null)
-            sb.append("UnprocessedKeys: " + getUnprocessedKeys() + ",");
+            sb.append("UnprocessedKeys: ").append(getUnprocessedKeys()).append(",");
         if (getConsumedCapacity() != null)
-            sb.append("ConsumedCapacity: " + getConsumedCapacity());
+            sb.append("ConsumedCapacity: ").append(getConsumedCapacity());
         sb.append("}");
         return sb.toString();
     }

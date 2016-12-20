@@ -65,8 +65,18 @@ public class VpnGatewayStaxUnmarshaller implements Unmarshaller<VpnGateway, Stax
                     continue;
                 }
 
+                if (context.testExpression("attachments", targetDepth)) {
+                    vpnGateway.withVpcAttachments(new ArrayList<VpcAttachment>());
+                    continue;
+                }
+
                 if (context.testExpression("attachments/item", targetDepth)) {
                     vpnGateway.withVpcAttachments(VpcAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpnGateway.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

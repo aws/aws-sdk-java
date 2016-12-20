@@ -192,9 +192,9 @@ public class DescribeActivationsFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilterKey() != null)
-            sb.append("FilterKey: " + getFilterKey() + ",");
+            sb.append("FilterKey: ").append(getFilterKey()).append(",");
         if (getFilterValues() != null)
-            sb.append("FilterValues: " + getFilterValues());
+            sb.append("FilterValues: ").append(getFilterValues());
         sb.append("}");
         return sb.toString();
     }

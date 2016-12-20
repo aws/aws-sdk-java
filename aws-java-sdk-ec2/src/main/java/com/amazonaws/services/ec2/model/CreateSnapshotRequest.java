@@ -161,9 +161,9 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

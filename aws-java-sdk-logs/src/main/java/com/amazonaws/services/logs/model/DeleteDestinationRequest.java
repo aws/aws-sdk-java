@@ -79,7 +79,7 @@ public class DeleteDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationName() != null)
-            sb.append("DestinationName: " + getDestinationName());
+            sb.append("DestinationName: ").append(getDestinationName());
         sb.append("}");
         return sb.toString();
     }

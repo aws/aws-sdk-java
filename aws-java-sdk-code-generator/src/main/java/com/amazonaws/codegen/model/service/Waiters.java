@@ -15,18 +15,22 @@
 
 package com.amazonaws.codegen.model.service;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Waiters {
 
+    public static final Waiters NONE = new Waiters(Collections.emptyMap());
+
     private final Map<String, WaiterDefinition> waiters;
 
-    public Waiters(){
-        waiters = new HashMap<String, WaiterDefinition>();
+    // Needed for JSON deserialization
+    private Waiters() {
+        this(new HashMap<>());
     }
 
-    public Waiters(Map<String, WaiterDefinition> waiters){
+    private Waiters(Map<String, WaiterDefinition> waiters){
         this.waiters = waiters;
     }
 

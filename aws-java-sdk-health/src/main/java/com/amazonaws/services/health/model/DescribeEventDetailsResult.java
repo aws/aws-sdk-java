@@ -184,9 +184,9 @@ public class DescribeEventDetailsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccessfulSet() != null)
-            sb.append("SuccessfulSet: " + getSuccessfulSet() + ",");
+            sb.append("SuccessfulSet: ").append(getSuccessfulSet()).append(",");
         if (getFailedSet() != null)
-            sb.append("FailedSet: " + getFailedSet());
+            sb.append("FailedSet: ").append(getFailedSet());
         sb.append("}");
         return sb.toString();
     }

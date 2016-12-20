@@ -187,9 +187,9 @@ public class GetMLModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getVerbose() != null)
-            sb.append("Verbose: " + getVerbose());
+            sb.append("Verbose: ").append(getVerbose());
         sb.append("}");
         return sb.toString();
     }

@@ -16,29 +16,33 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the details of a single Amazon SQS message along with a <code>Id</code>.
+ * Contains the details of a single Amazon SQS message along with an <code>Id</code>.
  * </p>
  */
 public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for the message in this batch. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for a message in this batch used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      */
     private String id;
     /**
      * <p>
-     * Body of the message.
+     * The body of the message.
      * </p>
      */
     private String messageBody;
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
+     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
+     * is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -50,7 +54,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     private Integer delaySeconds;
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
@@ -193,10 +198,12 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        An identifier for the message in this batch. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for a message in this batch used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      * @param messageBody
-     *        Body of the message.
+     *        The body of the message.
      */
     public SendMessageBatchRequestEntry(String id, String messageBody) {
         setId(id);
@@ -205,13 +212,19 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for the message in this batch. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for a message in this batch used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
      * @param id
-     *        An identifier for the message in this batch. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for a message in this batch used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      */
 
     public void setId(String id) {
@@ -220,12 +233,18 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for the message in this batch. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for a message in this batch used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
-     * @return An identifier for the message in this batch. This is used to communicate the result. Note that the
-     *         <code>Id</code>s of a batch request need to be unique within the request.
+     * @return An identifier for a message in this batch used to communicate the result.</p> <note>
+     *         <p>
+     *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         </p>
      */
 
     public String getId() {
@@ -234,13 +253,19 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for the message in this batch. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for a message in this batch used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
      * @param id
-     *        An identifier for the message in this batch. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for a message in this batch used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +276,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Body of the message.
+     * The body of the message.
      * </p>
      * 
      * @param messageBody
-     *        Body of the message.
+     *        The body of the message.
      */
 
     public void setMessageBody(String messageBody) {
@@ -264,10 +289,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Body of the message.
+     * The body of the message.
      * </p>
      * 
-     * @return Body of the message.
+     * @return The body of the message.
      */
 
     public String getMessageBody() {
@@ -276,11 +301,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Body of the message.
+     * The body of the message.
      * </p>
      * 
      * @param messageBody
-     *        Body of the message.
+     *        The body of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,9 +316,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
+     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
+     * is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -303,9 +328,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     *        <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you
-     *        don't specify a value, the default value for the queue applies. </p> <note>
+     *        The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     *        minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *        the delay period is finished. If you don't specify a value, the default value for the queue is applied.
+     *        </p> <note>
      *        <p>
      *        When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this
      *        parameter only on a queue level.
@@ -318,9 +344,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
+     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
+     * is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -329,9 +355,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     *         <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you
-     *         don't specify a value, the default value for the queue applies. </p> <note>
+     * @return The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     *         minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *         the delay period is finished. If you don't specify a value, the default value for the queue is applied.
+     *         </p> <note>
      *         <p>
      *         When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set
      *         this parameter only on a queue level.
@@ -344,9 +371,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
+     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
+     * is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -356,9 +383,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     *        <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you
-     *        don't specify a value, the default value for the queue applies. </p> <note>
+     *        The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     *        minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *        the delay period is finished. If you don't specify a value, the default value for the queue is applied.
+     *        </p> <note>
      *        <p>
      *        When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this
      *        parameter only on a queue level.
@@ -373,12 +401,14 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
-     * @return Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
+     *         more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      *         >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      */
@@ -392,13 +422,15 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      *        >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      */
@@ -409,13 +441,15 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      *        >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1209,17 +1243,17 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getMessageBody() != null)
-            sb.append("MessageBody: " + getMessageBody() + ",");
+            sb.append("MessageBody: ").append(getMessageBody()).append(",");
         if (getDelaySeconds() != null)
-            sb.append("DelaySeconds: " + getDelaySeconds() + ",");
+            sb.append("DelaySeconds: ").append(getDelaySeconds()).append(",");
         if (getMessageAttributes() != null)
-            sb.append("MessageAttributes: " + getMessageAttributes() + ",");
+            sb.append("MessageAttributes: ").append(getMessageAttributes()).append(",");
         if (getMessageDeduplicationId() != null)
-            sb.append("MessageDeduplicationId: " + getMessageDeduplicationId() + ",");
+            sb.append("MessageDeduplicationId: ").append(getMessageDeduplicationId()).append(",");
         if (getMessageGroupId() != null)
-            sb.append("MessageGroupId: " + getMessageGroupId());
+            sb.append("MessageGroupId: ").append(getMessageGroupId());
         sb.append("}");
         return sb.toString();
     }

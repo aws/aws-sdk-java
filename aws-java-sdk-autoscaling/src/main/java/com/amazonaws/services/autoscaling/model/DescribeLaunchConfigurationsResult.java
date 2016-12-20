@@ -166,9 +166,9 @@ public class DescribeLaunchConfigurationsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchConfigurations() != null)
-            sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ",");
+            sb.append("LaunchConfigurations: ").append(getLaunchConfigurations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -61,15 +61,9 @@ public class DeleteDeploymentRequestMarshaller implements Marshaller<Request<Del
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments/{deployment_id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (deleteDeploymentRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(deleteDeploymentRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{deployment_id}",
-                (deleteDeploymentRequest.getDeploymentId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDeploymentRequest.getDeploymentId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteDeploymentRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "deployment_id",
+                deleteDeploymentRequest.getDeploymentId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

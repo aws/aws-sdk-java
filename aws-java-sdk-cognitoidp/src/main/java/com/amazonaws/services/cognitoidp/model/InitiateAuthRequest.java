@@ -294,13 +294,13 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthFlow() != null)
-            sb.append("AuthFlow: " + getAuthFlow() + ",");
+            sb.append("AuthFlow: ").append(getAuthFlow()).append(",");
         if (getAuthParameters() != null)
-            sb.append("AuthParameters: " + getAuthParameters() + ",");
+            sb.append("AuthParameters: ").append(getAuthParameters()).append(",");
         if (getClientMetadata() != null)
-            sb.append("ClientMetadata: " + getClientMetadata() + ",");
+            sb.append("ClientMetadata: ").append(getClientMetadata()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId());
+            sb.append("ClientId: ").append(getClientId());
         sb.append("}");
         return sb.toString();
     }

@@ -298,13 +298,13 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getForce() != null)
-            sb.append("Force: " + getForce());
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class AddTagsToResourceResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN());
+            sb.append("ResourceARN: ").append(getResourceARN());
         sb.append("}");
         return sb.toString();
     }

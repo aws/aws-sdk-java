@@ -154,9 +154,9 @@ public class GetBundlesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundles() != null)
-            sb.append("Bundles: " + getBundles() + ",");
+            sb.append("Bundles: ").append(getBundles()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

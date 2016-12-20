@@ -126,9 +126,9 @@ public class OptionRestrictionRegex implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPattern() != null)
-            sb.append("Pattern: " + getPattern() + ",");
+            sb.append("Pattern: ").append(getPattern()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel());
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class GetDistributionConfigResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionConfig() != null)
-            sb.append("DistributionConfig: " + getDistributionConfig() + ",");
+            sb.append("DistributionConfig: ").append(getDistributionConfig()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

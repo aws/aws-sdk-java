@@ -50,6 +50,11 @@ public class DescribeDBSnapshotsResultStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
+                if (context.testExpression("DBSnapshots", targetDepth)) {
+                    describeDBSnapshotsResult.withDBSnapshots(new ArrayList<DBSnapshot>());
+                    continue;
+                }
+
                 if (context.testExpression("DBSnapshots/DBSnapshot", targetDepth)) {
                     describeDBSnapshotsResult.withDBSnapshots(DBSnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

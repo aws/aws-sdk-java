@@ -194,11 +194,11 @@ public class GetModelRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getModelName() != null)
-            sb.append("ModelName: " + getModelName() + ",");
+            sb.append("ModelName: ").append(getModelName()).append(",");
         if (getFlatten() != null)
-            sb.append("Flatten: " + getFlatten());
+            sb.append("Flatten: ").append(getFlatten());
         sb.append("}");
         return sb.toString();
     }

@@ -184,11 +184,11 @@ public class SnapshotLimits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManualSnapshotsLimit() != null)
-            sb.append("ManualSnapshotsLimit: " + getManualSnapshotsLimit() + ",");
+            sb.append("ManualSnapshotsLimit: ").append(getManualSnapshotsLimit()).append(",");
         if (getManualSnapshotsCurrentCount() != null)
-            sb.append("ManualSnapshotsCurrentCount: " + getManualSnapshotsCurrentCount() + ",");
+            sb.append("ManualSnapshotsCurrentCount: ").append(getManualSnapshotsCurrentCount()).append(",");
         if (getManualSnapshotsLimitReached() != null)
-            sb.append("ManualSnapshotsLimitReached: " + getManualSnapshotsLimitReached());
+            sb.append("ManualSnapshotsLimitReached: ").append(getManualSnapshotsLimitReached());
         sb.append("}");
         return sb.toString();
     }

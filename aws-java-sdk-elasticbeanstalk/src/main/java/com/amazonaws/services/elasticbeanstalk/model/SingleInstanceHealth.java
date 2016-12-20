@@ -562,25 +562,25 @@ public class SingleInstanceHealth implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: " + getHealthStatus() + ",");
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getColor() != null)
-            sb.append("Color: " + getColor() + ",");
+            sb.append("Color: ").append(getColor()).append(",");
         if (getCauses() != null)
-            sb.append("Causes: " + getCauses() + ",");
+            sb.append("Causes: ").append(getCauses()).append(",");
         if (getLaunchedAt() != null)
-            sb.append("LaunchedAt: " + getLaunchedAt() + ",");
+            sb.append("LaunchedAt: ").append(getLaunchedAt()).append(",");
         if (getApplicationMetrics() != null)
-            sb.append("ApplicationMetrics: " + getApplicationMetrics() + ",");
+            sb.append("ApplicationMetrics: ").append(getApplicationMetrics()).append(",");
         if (getSystem() != null)
-            sb.append("System: " + getSystem() + ",");
+            sb.append("System: ").append(getSystem()).append(",");
         if (getDeployment() != null)
-            sb.append("Deployment: " + getDeployment() + ",");
+            sb.append("Deployment: ").append(getDeployment()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }

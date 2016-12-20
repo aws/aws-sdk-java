@@ -80,7 +80,7 @@ public class DescribeAliasResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlias() != null)
-            sb.append("Alias: " + getAlias());
+            sb.append("Alias: ").append(getAlias());
         sb.append("}");
         return sb.toString();
     }

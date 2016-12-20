@@ -89,7 +89,7 @@ public class ListAllowedNodeTypeModificationsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScaleUpModifications() != null)
-            sb.append("ScaleUpModifications: " + getScaleUpModifications());
+            sb.append("ScaleUpModifications: ").append(getScaleUpModifications());
         sb.append("}");
         return sb.toString();
     }

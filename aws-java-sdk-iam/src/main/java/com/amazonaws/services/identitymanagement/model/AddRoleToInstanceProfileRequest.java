@@ -189,9 +189,9 @@ public class AddRoleToInstanceProfileRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceProfileName() != null)
-            sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
+            sb.append("InstanceProfileName: ").append(getInstanceProfileName()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
         return sb.toString();
     }

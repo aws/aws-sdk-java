@@ -55,6 +55,11 @@ public class MetricStaxUnmarshaller implements Unmarshaller<Metric, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("Dimensions", targetDepth)) {
+                    metric.withDimensions(new ArrayList<Dimension>());
+                    continue;
+                }
+
                 if (context.testExpression("Dimensions/member", targetDepth)) {
                     metric.withDimensions(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

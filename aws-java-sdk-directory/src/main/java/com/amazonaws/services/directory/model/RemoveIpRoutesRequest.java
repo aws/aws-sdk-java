@@ -158,9 +158,9 @@ public class RemoveIpRoutesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getCidrIps() != null)
-            sb.append("CidrIps: " + getCidrIps());
+            sb.append("CidrIps: ").append(getCidrIps());
         sb.append("}");
         return sb.toString();
     }

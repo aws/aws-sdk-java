@@ -116,9 +116,9 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGateways() != null)
-            sb.append("Gateways: " + getGateways() + ",");
+            sb.append("Gateways: ").append(getGateways()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

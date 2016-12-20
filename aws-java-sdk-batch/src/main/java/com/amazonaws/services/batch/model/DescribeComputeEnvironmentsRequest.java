@@ -306,11 +306,11 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputeEnvironments() != null)
-            sb.append("ComputeEnvironments: " + getComputeEnvironments() + ",");
+            sb.append("ComputeEnvironments: ").append(getComputeEnvironments()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

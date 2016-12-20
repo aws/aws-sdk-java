@@ -205,11 +205,11 @@ public class PrefixList implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrefixListId() != null)
-            sb.append("PrefixListId: " + getPrefixListId() + ",");
+            sb.append("PrefixListId: ").append(getPrefixListId()).append(",");
         if (getPrefixListName() != null)
-            sb.append("PrefixListName: " + getPrefixListName() + ",");
+            sb.append("PrefixListName: ").append(getPrefixListName()).append(",");
         if (getCidrs() != null)
-            sb.append("Cidrs: " + getCidrs());
+            sb.append("Cidrs: ").append(getCidrs());
         sb.append("}");
         return sb.toString();
     }

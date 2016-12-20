@@ -249,13 +249,13 @@ public class DescribeListenersRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn() + ",");
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getListenerArns() != null)
-            sb.append("ListenerArns: " + getListenerArns() + ",");
+            sb.append("ListenerArns: ").append(getListenerArns()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize());
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }

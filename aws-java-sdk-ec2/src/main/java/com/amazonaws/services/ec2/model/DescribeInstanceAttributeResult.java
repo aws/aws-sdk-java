@@ -79,7 +79,7 @@ public class DescribeInstanceAttributeResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceAttribute() != null)
-            sb.append("InstanceAttribute: " + getInstanceAttribute());
+            sb.append("InstanceAttribute: ").append(getInstanceAttribute());
         sb.append("}");
         return sb.toString();
     }

@@ -261,9 +261,9 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }

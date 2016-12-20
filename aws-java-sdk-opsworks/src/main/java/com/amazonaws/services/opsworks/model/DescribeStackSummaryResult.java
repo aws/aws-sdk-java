@@ -80,7 +80,7 @@ public class DescribeStackSummaryResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackSummary() != null)
-            sb.append("StackSummary: " + getStackSummary());
+            sb.append("StackSummary: ").append(getStackSummary());
         sb.append("}");
         return sb.toString();
     }

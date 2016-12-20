@@ -190,9 +190,9 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn() + ",");
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getTagKeyList() != null)
-            sb.append("TagKeyList: " + getTagKeyList());
+            sb.append("TagKeyList: ").append(getTagKeyList());
         sb.append("}");
         return sb.toString();
     }

@@ -138,9 +138,9 @@ public class EbsInstanceBlockDeviceSpecification implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
         sb.append("}");
         return sb.toString();
     }

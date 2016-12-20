@@ -80,13 +80,28 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    autoScalingGroup.withAvailabilityZones(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
                     autoScalingGroup.withAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("LoadBalancerNames", targetDepth)) {
+                    autoScalingGroup.withLoadBalancerNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancerNames/member", targetDepth)) {
                     autoScalingGroup.withLoadBalancerNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TargetGroupARNs", targetDepth)) {
+                    autoScalingGroup.withTargetGroupARNs(new ArrayList<String>());
                     continue;
                 }
 
@@ -105,6 +120,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     continue;
                 }
 
+                if (context.testExpression("Instances", targetDepth)) {
+                    autoScalingGroup.withInstances(new ArrayList<Instance>());
+                    continue;
+                }
+
                 if (context.testExpression("Instances/member", targetDepth)) {
                     autoScalingGroup.withInstances(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -112,6 +132,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
 
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     autoScalingGroup.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SuspendedProcesses", targetDepth)) {
+                    autoScalingGroup.withSuspendedProcesses(new ArrayList<SuspendedProcess>());
                     continue;
                 }
 
@@ -130,6 +155,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     continue;
                 }
 
+                if (context.testExpression("EnabledMetrics", targetDepth)) {
+                    autoScalingGroup.withEnabledMetrics(new ArrayList<EnabledMetric>());
+                    continue;
+                }
+
                 if (context.testExpression("EnabledMetrics/member", targetDepth)) {
                     autoScalingGroup.withEnabledMetrics(EnabledMetricStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -140,8 +170,18 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    autoScalingGroup.withTags(new ArrayList<TagDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/member", targetDepth)) {
                     autoScalingGroup.withTags(TagDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TerminationPolicies", targetDepth)) {
+                    autoScalingGroup.withTerminationPolicies(new ArrayList<String>());
                     continue;
                 }
 

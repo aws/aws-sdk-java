@@ -863,13 +863,13 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTarget() != null)
-            sb.append("Target: " + getTarget() + ",");
+            sb.append("Target: ").append(getTarget()).append(",");
         if (getEvaluation() != null)
-            sb.append("Evaluation: " + getEvaluation() + ",");
+            sb.append("Evaluation: ").append(getEvaluation()).append(",");
         if (getChangeSource() != null)
-            sb.append("ChangeSource: " + getChangeSource() + ",");
+            sb.append("ChangeSource: ").append(getChangeSource()).append(",");
         if (getCausingEntity() != null)
-            sb.append("CausingEntity: " + getCausingEntity());
+            sb.append("CausingEntity: ").append(getCausingEntity());
         sb.append("}");
         return sb.toString();
     }

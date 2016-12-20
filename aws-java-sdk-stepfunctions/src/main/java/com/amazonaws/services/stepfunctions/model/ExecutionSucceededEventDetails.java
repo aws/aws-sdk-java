@@ -78,7 +78,7 @@ public class ExecutionSucceededEventDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput());
+            sb.append("Output: ").append(getOutput());
         sb.append("}");
         return sb.toString();
     }

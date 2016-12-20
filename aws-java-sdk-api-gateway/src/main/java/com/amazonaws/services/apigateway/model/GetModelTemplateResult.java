@@ -90,7 +90,7 @@ public class GetModelTemplateResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }

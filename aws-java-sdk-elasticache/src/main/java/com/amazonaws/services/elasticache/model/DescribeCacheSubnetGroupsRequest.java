@@ -240,11 +240,11 @@ public class DescribeCacheSubnetGroupsRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+            sb.append("CacheSubnetGroupName: ").append(getCacheSubnetGroupName()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

@@ -79,7 +79,7 @@ public class DescribePatchGroupStateRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: " + getPatchGroup());
+            sb.append("PatchGroup: ").append(getPatchGroup());
         sb.append("}");
         return sb.toString();
     }

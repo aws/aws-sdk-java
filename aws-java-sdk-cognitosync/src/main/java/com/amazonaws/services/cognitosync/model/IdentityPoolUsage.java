@@ -185,13 +185,13 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getSyncSessionsCount() != null)
-            sb.append("SyncSessionsCount: " + getSyncSessionsCount() + ",");
+            sb.append("SyncSessionsCount: ").append(getSyncSessionsCount()).append(",");
         if (getDataStorage() != null)
-            sb.append("DataStorage: " + getDataStorage() + ",");
+            sb.append("DataStorage: ").append(getDataStorage()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate());
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate());
         sb.append("}");
         return sb.toString();
     }

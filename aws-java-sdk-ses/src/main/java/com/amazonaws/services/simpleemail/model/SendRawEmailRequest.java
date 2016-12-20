@@ -1229,21 +1229,21 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getDestinations() != null)
-            sb.append("Destinations: " + getDestinations() + ",");
+            sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getRawMessage() != null)
-            sb.append("RawMessage: " + getRawMessage() + ",");
+            sb.append("RawMessage: ").append(getRawMessage()).append(",");
         if (getFromArn() != null)
-            sb.append("FromArn: " + getFromArn() + ",");
+            sb.append("FromArn: ").append(getFromArn()).append(",");
         if (getSourceArn() != null)
-            sb.append("SourceArn: " + getSourceArn() + ",");
+            sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getReturnPathArn() != null)
-            sb.append("ReturnPathArn: " + getReturnPathArn() + ",");
+            sb.append("ReturnPathArn: ").append(getReturnPathArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: " + getConfigurationSetName());
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
         sb.append("}");
         return sb.toString();
     }

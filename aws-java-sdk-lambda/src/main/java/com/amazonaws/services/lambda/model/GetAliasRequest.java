@@ -132,9 +132,9 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

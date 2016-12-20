@@ -274,13 +274,13 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName() + ",");
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
         if (getLogEvents() != null)
-            sb.append("LogEvents: " + getLogEvents() + ",");
+            sb.append("LogEvents: ").append(getLogEvents()).append(",");
         if (getSequenceToken() != null)
-            sb.append("SequenceToken: " + getSequenceToken());
+            sb.append("SequenceToken: ").append(getSequenceToken());
         sb.append("}");
         return sb.toString();
     }

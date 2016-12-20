@@ -105,7 +105,7 @@ public class GetDataRetrievalPolicyRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId());
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }

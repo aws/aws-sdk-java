@@ -118,7 +118,7 @@ public class DescribeEntityAggregatesRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventArns() != null)
-            sb.append("EventArns: " + getEventArns());
+            sb.append("EventArns: ").append(getEventArns());
         sb.append("}");
         return sb.toString();
     }

@@ -137,9 +137,9 @@ public class GetPipelineDefinitionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }

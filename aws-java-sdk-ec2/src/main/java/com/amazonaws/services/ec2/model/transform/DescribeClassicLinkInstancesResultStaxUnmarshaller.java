@@ -45,6 +45,11 @@ public class DescribeClassicLinkInstancesResultStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instancesSet", targetDepth)) {
+                    describeClassicLinkInstancesResult.withInstances(new ArrayList<ClassicLinkInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     describeClassicLinkInstancesResult.withInstances(ClassicLinkInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

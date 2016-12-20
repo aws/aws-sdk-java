@@ -165,9 +165,9 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId() + ",");
+            sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

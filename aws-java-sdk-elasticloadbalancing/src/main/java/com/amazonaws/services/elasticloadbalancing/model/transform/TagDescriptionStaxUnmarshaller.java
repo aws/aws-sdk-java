@@ -50,6 +50,11 @@ public class TagDescriptionStaxUnmarshaller implements Unmarshaller<TagDescripti
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    tagDescription.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/member", targetDepth)) {
                     tagDescription.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

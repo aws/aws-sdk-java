@@ -159,9 +159,9 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVerificationStatus() != null)
-            sb.append("VerificationStatus: " + getVerificationStatus() + ",");
+            sb.append("VerificationStatus: ").append(getVerificationStatus()).append(",");
         if (getVerificationToken() != null)
-            sb.append("VerificationToken: " + getVerificationToken());
+            sb.append("VerificationToken: ").append(getVerificationToken());
         sb.append("}");
         return sb.toString();
     }

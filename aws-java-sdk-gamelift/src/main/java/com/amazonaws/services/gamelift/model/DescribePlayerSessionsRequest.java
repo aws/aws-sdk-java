@@ -539,17 +539,17 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getPlayerId() != null)
-            sb.append("PlayerId: " + getPlayerId() + ",");
+            sb.append("PlayerId: ").append(getPlayerId()).append(",");
         if (getPlayerSessionId() != null)
-            sb.append("PlayerSessionId: " + getPlayerSessionId() + ",");
+            sb.append("PlayerSessionId: ").append(getPlayerSessionId()).append(",");
         if (getPlayerSessionStatusFilter() != null)
-            sb.append("PlayerSessionStatusFilter: " + getPlayerSessionStatusFilter() + ",");
+            sb.append("PlayerSessionStatusFilter: ").append(getPlayerSessionStatusFilter()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -61,11 +61,7 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
 
         String uriResourcePath = "/2015-02-01/delete-tags/{FileSystemId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{FileSystemId}",
-                        (deleteTagsRequest.getFileSystemId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteTagsRequest.getFileSystemId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FileSystemId", deleteTagsRequest.getFileSystemId());
         request.setResourcePath(uriResourcePath);
 
         try {

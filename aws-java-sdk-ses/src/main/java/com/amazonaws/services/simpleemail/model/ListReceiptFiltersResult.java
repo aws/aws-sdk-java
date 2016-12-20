@@ -122,7 +122,7 @@ public class ListReceiptFiltersResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

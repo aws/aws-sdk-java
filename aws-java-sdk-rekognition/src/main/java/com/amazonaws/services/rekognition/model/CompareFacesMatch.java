@@ -127,9 +127,9 @@ public class CompareFacesMatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSimilarity() != null)
-            sb.append("Similarity: " + getSimilarity() + ",");
+            sb.append("Similarity: ").append(getSimilarity()).append(",");
         if (getFace() != null)
-            sb.append("Face: " + getFace());
+            sb.append("Face: ").append(getFace());
         sb.append("}");
         return sb.toString();
     }

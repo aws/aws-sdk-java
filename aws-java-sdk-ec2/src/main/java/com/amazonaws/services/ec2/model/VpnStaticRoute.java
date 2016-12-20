@@ -238,11 +238,11 @@ public class VpnStaticRoute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
+            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

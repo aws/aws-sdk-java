@@ -215,11 +215,11 @@ public class ReportTaskRunnerHeartbeatRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskrunnerId() != null)
-            sb.append("TaskrunnerId: " + getTaskrunnerId() + ",");
+            sb.append("TaskrunnerId: ").append(getTaskrunnerId()).append(",");
         if (getWorkerGroup() != null)
-            sb.append("WorkerGroup: " + getWorkerGroup() + ",");
+            sb.append("WorkerGroup: ").append(getWorkerGroup()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname());
+            sb.append("Hostname: ").append(getHostname());
         sb.append("}");
         return sb.toString();
     }

@@ -92,7 +92,7 @@ public class ResetCacheParameterGroupResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName());
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName());
         sb.append("}");
         return sb.toString();
     }

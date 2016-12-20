@@ -78,7 +78,7 @@ public class DescribeKeyResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyMetadata() != null)
-            sb.append("KeyMetadata: " + getKeyMetadata());
+            sb.append("KeyMetadata: ").append(getKeyMetadata());
         sb.append("}");
         return sb.toString();
     }

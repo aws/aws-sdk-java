@@ -172,11 +172,11 @@ public class GetUserPolicyResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument());
+            sb.append("PolicyDocument: ").append(getPolicyDocument());
         sb.append("}");
         return sb.toString();
     }

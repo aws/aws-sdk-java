@@ -19,16 +19,19 @@
       "documentation" : "<p>Returns information about a specified job and whether that job has been received by the job worker. Only used for custom actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidNonceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
@@ -58,21 +61,25 @@
       "documentation" : "<p>Confirms a job worker has received the specified job. Only used for partner actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidNonceException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidClientTokenException"
@@ -102,11 +109,13 @@
       "documentation" : "<p>Creates a new custom action that can be used in all pipelines associated with the AWS account. Only used for custom actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
@@ -136,36 +145,43 @@
       "documentation" : "<p>Creates a pipeline.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNameInUseException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidStageDeclarationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidActionDeclarationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidBlockerDeclarationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidStructureException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
@@ -195,6 +211,7 @@
       "documentation" : "<p>Marks a custom action as deleted. PollForJobs for the custom action will fail after the action is marked for deletion. Only used for custom actions.</p> <important> <p>You cannot recreate a custom action after it has been deleted unless you increase the version number of the action.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
@@ -219,6 +236,7 @@
       "documentation" : "<p>Deletes the specified pipeline.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
@@ -243,16 +261,19 @@
       "documentation" : "<p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StageNotFoundException"
@@ -277,16 +298,19 @@
       "documentation" : "<p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StageNotFoundException"
@@ -311,11 +335,13 @@
       "documentation" : "<p>Returns information about a job. Only used for custom actions.</p> <important> <p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
@@ -345,16 +371,19 @@
       "documentation" : "<p>Returns the metadata, structure, stages, and actions of a pipeline. Can be used to return the entire structure of a pipeline in JSON format, which can then be modified and used to update the pipeline structure with <a>UpdatePipeline</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineVersionNotFoundException"
@@ -384,16 +413,19 @@
       "documentation" : "<p>Returns information about an execution of a pipeline, including details about artifacts, the pipeline execution ID, and the name, version, and status of the pipeline.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineExecutionNotFoundException"
@@ -423,11 +455,13 @@
       "documentation" : "<p>Returns information about the state of a pipeline, including the stages and actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
@@ -457,21 +491,25 @@
       "documentation" : "<p>Requests the details of a job for a third party action. Only used for partner actions.</p> <important> <p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidClientTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidJobException"
@@ -501,11 +539,13 @@
       "documentation" : "<p>Gets a summary of all AWS CodePipeline action types associated with your account.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidNextTokenException"
@@ -535,6 +575,7 @@
       "documentation" : "<p>Gets a summary of all of the pipelines associated with your account.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidNextTokenException"
@@ -564,11 +605,13 @@
       "documentation" : "<p>Returns information about any jobs for AWS CodePipeline to act upon.</p> <important> <p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ActionTypeNotFoundException"
@@ -598,11 +641,13 @@
       "documentation" : "<p>Determines whether there are any third party jobs for a job worker to act on. Only used for partner actions.</p> <important> <p>When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ActionTypeNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
@@ -632,21 +677,25 @@
       "documentation" : "<p>Provides information to AWS CodePipeline about new revisions to a source.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StageNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ActionNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
@@ -676,31 +725,37 @@
       "documentation" : "<p>Provides the response to a manual approval request to AWS CodePipeline. Valid responses include Approved and Rejected.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidApprovalTokenException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ApprovalAlreadyCompletedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StageNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ActionNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
@@ -730,16 +785,19 @@
       "documentation" : "<p>Represents the failure of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidJobStateException"
@@ -764,16 +822,19 @@
       "documentation" : "<p>Represents the success of a job as returned to the pipeline by a job worker. Only used for custom actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidJobStateException"
@@ -798,21 +859,25 @@
       "documentation" : "<p>Represents the failure of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidJobStateException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidClientTokenException"
@@ -837,21 +902,25 @@
       "documentation" : "<p>Represents the success of a third party job as returned to the pipeline by a job worker. Only used for partner actions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "JobNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidJobStateException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidClientTokenException"
@@ -876,26 +945,31 @@
       "documentation" : "<p>Resumes the pipeline execution by retrying the last failed actions in a stage.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StageNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StageNotRetryableException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotLatestPipelineExecutionException"
@@ -925,11 +999,13 @@
       "documentation" : "<p>Starts the specified pipeline. Specifically, it begins processing the latest commit to the source location specified as part of the pipeline.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PipelineNotFoundException"
@@ -959,26 +1035,31 @@
       "documentation" : "<p>Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure in conjunction with UpdatePipeline to provide the full structure of the pipeline. Updating the pipeline increases the version number of the pipeline by 1.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ValidationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidStageDeclarationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidActionDeclarationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidBlockerDeclarationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidStructureException"
@@ -1076,7 +1157,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1097,7 +1178,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[0-9]{12}",
       "payload" : null,
@@ -1297,7 +1378,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1353,7 +1434,7 @@
       "key" : null,
       "max" : 50,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -1386,7 +1467,7 @@
       },
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1544,7 +1625,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1565,7 +1646,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1586,7 +1667,7 @@
       "key" : null,
       "max" : 20,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[a-zA-Z0-9_-]+",
       "payload" : null,
@@ -1607,7 +1688,7 @@
       "key" : null,
       "max" : 1000,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -1915,7 +1996,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1936,7 +2017,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1957,7 +2038,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[A-Za-z0-9.@\\-_]+",
       "payload" : null,
@@ -1999,7 +2080,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2020,7 +2101,7 @@
       "key" : null,
       "max" : 25,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[0-9A-Za-z_-]+",
       "payload" : null,
@@ -2102,7 +2183,7 @@
       "key" : null,
       "max" : 999,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2222,7 +2303,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2416,7 +2497,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2601,7 +2682,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2622,7 +2703,7 @@
       "key" : null,
       "max" : 512,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2643,7 +2724,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
       "payload" : null,
@@ -2785,7 +2866,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2854,7 +2935,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2875,7 +2956,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[a-zA-Z0-9_\\-]+",
       "payload" : null,
@@ -3008,7 +3089,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3090,7 +3171,7 @@
       "key" : null,
       "max" : 63,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 3,
       "pattern" : "[a-zA-Z0-9\\-\\.]+",
       "payload" : null,
@@ -3111,7 +3192,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3180,7 +3261,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3201,7 +3282,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3222,7 +3303,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3243,7 +3324,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
       "payload" : null,
@@ -3264,7 +3345,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3285,7 +3366,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3306,7 +3387,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3715,7 +3796,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3810,7 +3891,7 @@
       "key" : null,
       "max" : 300,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[a-zA-Z0-9!@ \\(\\)\\.\\*\\?\\-]+",
       "payload" : null,
@@ -3892,7 +3973,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3961,7 +4042,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3982,7 +4063,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4112,7 +4193,7 @@
       "key" : null,
       "max" : 1500,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4133,7 +4214,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4215,7 +4296,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4724,7 +4805,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5216,7 +5297,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
       "payload" : null,
@@ -5249,7 +5330,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5291,7 +5372,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5312,7 +5393,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5333,7 +5414,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5354,7 +5435,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5575,7 +5656,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5596,7 +5677,7 @@
       "key" : null,
       "max" : 5,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5617,7 +5698,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5638,7 +5719,7 @@
       "key" : null,
       "max" : 5,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5659,7 +5740,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5680,7 +5761,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5769,7 +5850,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5790,7 +5871,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6046,7 +6127,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
       "payload" : null,
@@ -6088,7 +6169,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6121,7 +6202,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6142,7 +6223,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[A-Za-z0-9.@\\-_]+",
       "payload" : null,
@@ -6217,7 +6298,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6312,7 +6393,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -7059,7 +7140,7 @@
       },
       "max" : 1,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7201,7 +7282,7 @@
       "key" : null,
       "max" : 1500,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -7222,7 +7303,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -7243,7 +7324,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -7264,7 +7345,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws(-[\\w]+)*:iam::[0-9]{12}:role/.*",
       "payload" : null,
@@ -7333,7 +7414,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7354,7 +7435,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7375,7 +7456,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7396,7 +7477,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7429,7 +7510,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7462,7 +7543,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7627,7 +7708,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7648,7 +7729,7 @@
       "key" : null,
       "max" : 100,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[A-Za-z0-9.@\\-_]+",
       "payload" : null,
@@ -7711,7 +7792,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7818,7 +7899,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7839,7 +7920,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8165,7 +8246,7 @@
       "key" : null,
       "max" : 512,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8198,7 +8279,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8219,7 +8300,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8240,7 +8321,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8405,7 +8486,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8426,7 +8507,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8468,7 +8549,7 @@
       "key" : null,
       "max" : 9,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[0-9A-Za-z_-]+",
       "payload" : null,

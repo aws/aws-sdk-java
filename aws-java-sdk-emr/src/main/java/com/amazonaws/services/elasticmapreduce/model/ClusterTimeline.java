@@ -172,11 +172,11 @@ public class ClusterTimeline implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getReadyDateTime() != null)
-            sb.append("ReadyDateTime: " + getReadyDateTime() + ",");
+            sb.append("ReadyDateTime: ").append(getReadyDateTime()).append(",");
         if (getEndDateTime() != null)
-            sb.append("EndDateTime: " + getEndDateTime());
+            sb.append("EndDateTime: ").append(getEndDateTime());
         sb.append("}");
         return sb.toString();
     }

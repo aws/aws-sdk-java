@@ -166,9 +166,9 @@ public class DescribeDBEngineVersionsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBEngineVersions() != null)
-            sb.append("DBEngineVersions: " + getDBEngineVersions());
+            sb.append("DBEngineVersions: ").append(getDBEngineVersions());
         sb.append("}");
         return sb.toString();
     }

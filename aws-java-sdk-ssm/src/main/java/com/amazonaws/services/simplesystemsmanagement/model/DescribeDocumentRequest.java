@@ -125,9 +125,9 @@ public class DescribeDocumentRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion());
+            sb.append("DocumentVersion: ").append(getDocumentVersion());
         sb.append("}");
         return sb.toString();
     }

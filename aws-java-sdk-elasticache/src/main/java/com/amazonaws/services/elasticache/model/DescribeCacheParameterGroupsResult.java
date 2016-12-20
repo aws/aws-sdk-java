@@ -168,9 +168,9 @@ public class DescribeCacheParameterGroupsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCacheParameterGroups() != null)
-            sb.append("CacheParameterGroups: " + getCacheParameterGroups());
+            sb.append("CacheParameterGroups: ").append(getCacheParameterGroups());
         sb.append("}");
         return sb.toString();
     }

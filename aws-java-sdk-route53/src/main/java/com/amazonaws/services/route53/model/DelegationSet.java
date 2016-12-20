@@ -247,11 +247,11 @@ public class DelegationSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getNameServers() != null)
-            sb.append("NameServers: " + getNameServers());
+            sb.append("NameServers: ").append(getNameServers());
         sb.append("}");
         return sb.toString();
     }

@@ -62,7 +62,7 @@ public class UpdateGatewaySoftwareNowRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN());
         sb.append("}");
         return sb.toString();
     }

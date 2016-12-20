@@ -87,7 +87,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataset() != null)
-            sb.append("Dataset: " + getDataset());
+            sb.append("Dataset: ").append(getDataset());
         sb.append("}");
         return sb.toString();
     }

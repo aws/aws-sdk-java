@@ -687,19 +687,19 @@ public class IpPermission implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpProtocol() != null)
-            sb.append("IpProtocol: " + getIpProtocol() + ",");
+            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
         if (getFromPort() != null)
-            sb.append("FromPort: " + getFromPort() + ",");
+            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: " + getToPort() + ",");
+            sb.append("ToPort: ").append(getToPort()).append(",");
         if (getUserIdGroupPairs() != null)
-            sb.append("UserIdGroupPairs: " + getUserIdGroupPairs() + ",");
+            sb.append("UserIdGroupPairs: ").append(getUserIdGroupPairs()).append(",");
         if (getIpv6Ranges() != null)
-            sb.append("Ipv6Ranges: " + getIpv6Ranges() + ",");
+            sb.append("Ipv6Ranges: ").append(getIpv6Ranges()).append(",");
         if (getPrefixListIds() != null)
-            sb.append("PrefixListIds: " + getPrefixListIds() + ",");
+            sb.append("PrefixListIds: ").append(getPrefixListIds()).append(",");
         if (getIpv4Ranges() != null)
-            sb.append("Ipv4Ranges: " + getIpv4Ranges());
+            sb.append("Ipv4Ranges: ").append(getIpv4Ranges());
         sb.append("}");
         return sb.toString();
     }

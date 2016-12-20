@@ -134,9 +134,9 @@ public class GetUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsagePlanId() != null)
-            sb.append("UsagePlanId: " + getUsagePlanId() + ",");
+            sb.append("UsagePlanId: ").append(getUsagePlanId()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId());
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }

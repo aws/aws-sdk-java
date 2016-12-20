@@ -295,8 +295,6 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
     @Override
     public DeleteLexiconResult deleteLexicon(DeleteLexiconRequest deleteLexiconRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteLexiconRequest.getName()), "Name");
-
         ExecutionContext executionContext = createExecutionContext(deleteLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -408,8 +406,6 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
     @Override
     public GetLexiconResult getLexicon(GetLexiconRequest getLexiconRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getLexiconRequest.getName()), "Name");
-
         ExecutionContext executionContext = createExecutionContext(getLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -517,8 +513,6 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      */
     @Override
     public PutLexiconResult putLexicon(PutLexiconRequest putLexiconRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putLexiconRequest.getName()), "Name");
 
         ExecutionContext executionContext = createExecutionContext(putLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

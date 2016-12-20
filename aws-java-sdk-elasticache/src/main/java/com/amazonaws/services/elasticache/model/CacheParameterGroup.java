@@ -197,11 +197,11 @@ public class CacheParameterGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getCacheParameterGroupFamily() != null)
-            sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
+            sb.append("CacheParameterGroupFamily: ").append(getCacheParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

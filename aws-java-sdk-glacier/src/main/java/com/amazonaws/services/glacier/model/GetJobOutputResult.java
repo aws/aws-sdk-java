@@ -552,19 +552,19 @@ public class GetJobOutputResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum() + ",");
+            sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getContentRange() != null)
-            sb.append("ContentRange: " + getContentRange() + ",");
+            sb.append("ContentRange: ").append(getContentRange()).append(",");
         if (getAcceptRanges() != null)
-            sb.append("AcceptRanges: " + getAcceptRanges() + ",");
+            sb.append("AcceptRanges: ").append(getAcceptRanges()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType() + ",");
+            sb.append("ContentType: ").append(getContentType()).append(",");
         if (getArchiveDescription() != null)
-            sb.append("ArchiveDescription: " + getArchiveDescription());
+            sb.append("ArchiveDescription: ").append(getArchiveDescription());
         sb.append("}");
         return sb.toString();
     }

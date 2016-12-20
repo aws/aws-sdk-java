@@ -152,9 +152,9 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getForceDelete() != null)
-            sb.append("ForceDelete: " + getForceDelete());
+            sb.append("ForceDelete: ").append(getForceDelete());
         sb.append("}");
         return sb.toString();
     }

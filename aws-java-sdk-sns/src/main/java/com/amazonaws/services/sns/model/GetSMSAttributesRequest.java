@@ -177,7 +177,7 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

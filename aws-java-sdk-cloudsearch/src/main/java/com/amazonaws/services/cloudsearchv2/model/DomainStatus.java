@@ -647,31 +647,31 @@ public class DomainStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainId() != null)
-            sb.append("DomainId: " + getDomainId() + ",");
+            sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getDeleted() != null)
-            sb.append("Deleted: " + getDeleted() + ",");
+            sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getDocService() != null)
-            sb.append("DocService: " + getDocService() + ",");
+            sb.append("DocService: ").append(getDocService()).append(",");
         if (getSearchService() != null)
-            sb.append("SearchService: " + getSearchService() + ",");
+            sb.append("SearchService: ").append(getSearchService()).append(",");
         if (getRequiresIndexDocuments() != null)
-            sb.append("RequiresIndexDocuments: " + getRequiresIndexDocuments() + ",");
+            sb.append("RequiresIndexDocuments: ").append(getRequiresIndexDocuments()).append(",");
         if (getProcessing() != null)
-            sb.append("Processing: " + getProcessing() + ",");
+            sb.append("Processing: ").append(getProcessing()).append(",");
         if (getSearchInstanceType() != null)
-            sb.append("SearchInstanceType: " + getSearchInstanceType() + ",");
+            sb.append("SearchInstanceType: ").append(getSearchInstanceType()).append(",");
         if (getSearchPartitionCount() != null)
-            sb.append("SearchPartitionCount: " + getSearchPartitionCount() + ",");
+            sb.append("SearchPartitionCount: ").append(getSearchPartitionCount()).append(",");
         if (getSearchInstanceCount() != null)
-            sb.append("SearchInstanceCount: " + getSearchInstanceCount() + ",");
+            sb.append("SearchInstanceCount: ").append(getSearchInstanceCount()).append(",");
         if (getLimits() != null)
-            sb.append("Limits: " + getLimits());
+            sb.append("Limits: ").append(getLimits());
         sb.append("}");
         return sb.toString();
     }

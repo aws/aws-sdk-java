@@ -70,6 +70,11 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                     continue;
                 }
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    describeChangeSetResult.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/member", targetDepth)) {
                     describeChangeSetResult.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -95,8 +100,18 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                     continue;
                 }
 
+                if (context.testExpression("NotificationARNs", targetDepth)) {
+                    describeChangeSetResult.withNotificationARNs(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("NotificationARNs/member", targetDepth)) {
                     describeChangeSetResult.withNotificationARNs(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Capabilities", targetDepth)) {
+                    describeChangeSetResult.withCapabilities(new ArrayList<String>());
                     continue;
                 }
 
@@ -105,8 +120,18 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    describeChangeSetResult.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/member", targetDepth)) {
                     describeChangeSetResult.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Changes", targetDepth)) {
+                    describeChangeSetResult.withChanges(new ArrayList<Change>());
                     continue;
                 }
 

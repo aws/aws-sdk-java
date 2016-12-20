@@ -80,7 +80,7 @@ public class InitiateVaultLockResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLockId() != null)
-            sb.append("LockId: " + getLockId());
+            sb.append("LockId: ").append(getLockId());
         sb.append("}");
         return sb.toString();
     }

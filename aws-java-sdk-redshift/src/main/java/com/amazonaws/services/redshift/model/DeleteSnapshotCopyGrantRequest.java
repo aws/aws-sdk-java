@@ -81,7 +81,7 @@ public class DeleteSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName());
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName());
         sb.append("}");
         return sb.toString();
     }

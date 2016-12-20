@@ -176,11 +176,11 @@ public class RecordColumn implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMapping() != null)
-            sb.append("Mapping: " + getMapping() + ",");
+            sb.append("Mapping: ").append(getMapping()).append(",");
         if (getSqlType() != null)
-            sb.append("SqlType: " + getSqlType());
+            sb.append("SqlType: ").append(getSqlType());
         sb.append("}");
         return sb.toString();
     }

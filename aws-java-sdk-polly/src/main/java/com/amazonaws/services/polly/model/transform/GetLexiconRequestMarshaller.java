@@ -61,8 +61,7 @@ public class GetLexiconRequestMarshaller implements Marshaller<Request<GetLexico
 
         String uriResourcePath = "/v1/lexicons/{LexiconName}";
 
-        uriResourcePath = uriResourcePath.replace("{LexiconName}",
-                (getLexiconRequest.getName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getLexiconRequest.getName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "LexiconName", getLexiconRequest.getName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

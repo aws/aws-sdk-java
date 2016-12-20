@@ -945,17 +945,17 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getAliasId() != null)
-            sb.append("AliasId: " + getAliasId() + ",");
+            sb.append("AliasId: ").append(getAliasId()).append(",");
         if (getFilterExpression() != null)
-            sb.append("FilterExpression: " + getFilterExpression() + ",");
+            sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
         if (getSortExpression() != null)
-            sb.append("SortExpression: " + getSortExpression() + ",");
+            sb.append("SortExpression: ").append(getSortExpression()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

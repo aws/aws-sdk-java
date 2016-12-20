@@ -132,9 +132,9 @@ public class AddClientIDToOpenIDConnectProviderRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenIDConnectProviderArn() != null)
-            sb.append("OpenIDConnectProviderArn: " + getOpenIDConnectProviderArn() + ",");
+            sb.append("OpenIDConnectProviderArn: ").append(getOpenIDConnectProviderArn()).append(",");
         if (getClientID() != null)
-            sb.append("ClientID: " + getClientID());
+            sb.append("ClientID: ").append(getClientID());
         sb.append("}");
         return sb.toString();
     }

@@ -234,13 +234,13 @@ public class UpdateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getTTL() != null)
-            sb.append("TTL: " + getTTL() + ",");
+            sb.append("TTL: ").append(getTTL()).append(",");
         if (getTrafficPolicyId() != null)
-            sb.append("TrafficPolicyId: " + getTrafficPolicyId() + ",");
+            sb.append("TrafficPolicyId: ").append(getTrafficPolicyId()).append(",");
         if (getTrafficPolicyVersion() != null)
-            sb.append("TrafficPolicyVersion: " + getTrafficPolicyVersion());
+            sb.append("TrafficPolicyVersion: ").append(getTrafficPolicyVersion());
         sb.append("}");
         return sb.toString();
     }

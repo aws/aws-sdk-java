@@ -157,9 +157,9 @@ public class DescribeComplianceByResourceResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComplianceByResources() != null)
-            sb.append("ComplianceByResources: " + getComplianceByResources() + ",");
+            sb.append("ComplianceByResources: ").append(getComplianceByResources()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

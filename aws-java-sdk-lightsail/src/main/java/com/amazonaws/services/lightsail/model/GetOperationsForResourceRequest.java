@@ -125,9 +125,9 @@ public class GetOperationsForResourceRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

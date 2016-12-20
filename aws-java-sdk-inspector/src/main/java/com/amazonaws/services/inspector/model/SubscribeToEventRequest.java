@@ -207,11 +207,11 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn() + ",");
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getEvent() != null)
-            sb.append("Event: " + getEvent() + ",");
+            sb.append("Event: ").append(getEvent()).append(",");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn());
+            sb.append("TopicArn: ").append(getTopicArn());
         sb.append("}");
         return sb.toString();
     }

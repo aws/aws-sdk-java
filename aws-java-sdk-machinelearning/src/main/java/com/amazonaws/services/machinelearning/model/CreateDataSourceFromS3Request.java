@@ -442,13 +442,13 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId() + ",");
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getDataSourceName() != null)
-            sb.append("DataSourceName: " + getDataSourceName() + ",");
+            sb.append("DataSourceName: ").append(getDataSourceName()).append(",");
         if (getDataSpec() != null)
-            sb.append("DataSpec: " + getDataSpec() + ",");
+            sb.append("DataSpec: ").append(getDataSpec()).append(",");
         if (getComputeStatistics() != null)
-            sb.append("ComputeStatistics: " + getComputeStatistics());
+            sb.append("ComputeStatistics: ").append(getComputeStatistics());
         sb.append("}");
         return sb.toString();
     }

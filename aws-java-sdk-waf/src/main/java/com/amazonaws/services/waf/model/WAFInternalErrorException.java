@@ -17,7 +17,7 @@ package com.amazonaws.services.waf.model;
  * The operation failed because of a system problem, even though the request was valid. Retry your request.
  * </p>
  */
-public class WAFInternalErrorException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
+public class WAFInternalErrorException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

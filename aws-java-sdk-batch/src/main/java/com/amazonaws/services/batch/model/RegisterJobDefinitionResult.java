@@ -170,11 +170,11 @@ public class RegisterJobDefinitionResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobDefinitionName() != null)
-            sb.append("JobDefinitionName: " + getJobDefinitionName() + ",");
+            sb.append("JobDefinitionName: ").append(getJobDefinitionName()).append(",");
         if (getJobDefinitionArn() != null)
-            sb.append("JobDefinitionArn: " + getJobDefinitionArn() + ",");
+            sb.append("JobDefinitionArn: ").append(getJobDefinitionArn()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision());
+            sb.append("Revision: ").append(getRevision());
         sb.append("}");
         return sb.toString();
     }

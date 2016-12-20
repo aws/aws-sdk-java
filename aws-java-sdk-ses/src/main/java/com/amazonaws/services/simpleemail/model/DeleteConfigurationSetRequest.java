@@ -84,7 +84,7 @@ public class DeleteConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: " + getConfigurationSetName());
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
         sb.append("}");
         return sb.toString();
     }

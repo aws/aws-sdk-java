@@ -161,9 +161,9 @@ public class AddWorkingStorageRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDiskIds() != null)
-            sb.append("DiskIds: " + getDiskIds());
+            sb.append("DiskIds: ").append(getDiskIds());
         sb.append("}");
         return sb.toString();
     }

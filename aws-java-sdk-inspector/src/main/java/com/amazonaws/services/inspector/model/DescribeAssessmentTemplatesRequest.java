@@ -20,19 +20,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DescribeAssessmentTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * <p>
-     * The ARN that specifiesthe assessment templates that you want to describe.
-     * </p>
-     */
     private java.util.List<String> assessmentTemplateArns;
 
     /**
-     * <p>
-     * The ARN that specifiesthe assessment templates that you want to describe.
-     * </p>
-     * 
-     * @return The ARN that specifiesthe assessment templates that you want to describe.
+     * @return
      */
 
     public java.util.List<String> getAssessmentTemplateArns() {
@@ -40,12 +31,7 @@ public class DescribeAssessmentTemplatesRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p>
-     * The ARN that specifiesthe assessment templates that you want to describe.
-     * </p>
-     * 
      * @param assessmentTemplateArns
-     *        The ARN that specifiesthe assessment templates that you want to describe.
      */
 
     public void setAssessmentTemplateArns(java.util.Collection<String> assessmentTemplateArns) {
@@ -59,16 +45,12 @@ public class DescribeAssessmentTemplatesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN that specifiesthe assessment templates that you want to describe.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssessmentTemplateArns(java.util.Collection)} or
      * {@link #withAssessmentTemplateArns(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param assessmentTemplateArns
-     *        The ARN that specifiesthe assessment templates that you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,12 +65,7 @@ public class DescribeAssessmentTemplatesRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * <p>
-     * The ARN that specifiesthe assessment templates that you want to describe.
-     * </p>
-     * 
      * @param assessmentTemplateArns
-     *        The ARN that specifiesthe assessment templates that you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +86,7 @@ public class DescribeAssessmentTemplatesRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTemplateArns() != null)
-            sb.append("AssessmentTemplateArns: " + getAssessmentTemplateArns());
+            sb.append("AssessmentTemplateArns: ").append(getAssessmentTemplateArns());
         sb.append("}");
         return sb.toString();
     }

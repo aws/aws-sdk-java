@@ -45,6 +45,11 @@ public class ListJobsResultStaxUnmarshaller implements Unmarshaller<ListJobsResu
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Jobs", targetDepth)) {
+                    listJobsResult.withJobs(new ArrayList<Job>());
+                    continue;
+                }
+
                 if (context.testExpression("Jobs/member", targetDepth)) {
                     listJobsResult.withJobs(JobStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

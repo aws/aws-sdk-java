@@ -45,6 +45,11 @@ public class DescribePlacementGroupsResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("placementGroupSet", targetDepth)) {
+                    describePlacementGroupsResult.withPlacementGroups(new ArrayList<PlacementGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("placementGroupSet/item", targetDepth)) {
                     describePlacementGroupsResult.withPlacementGroups(PlacementGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

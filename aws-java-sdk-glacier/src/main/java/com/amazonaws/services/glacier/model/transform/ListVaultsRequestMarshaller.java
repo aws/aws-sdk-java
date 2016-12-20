@@ -61,8 +61,8 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
 
         String uriResourcePath = "/{accountId}/vaults";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (listVaultsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listVaultsRequest.getAccountId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                listVaultsRequest.getAccountId() == null ? "-" : listVaultsRequest.getAccountId());
         request.setResourcePath(uriResourcePath);
 
         if (listVaultsRequest.getMarker() != null) {

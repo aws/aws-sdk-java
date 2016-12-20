@@ -145,9 +145,9 @@ public class GetDeploymentsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getItems() != null)
-            sb.append("Items: " + getItems());
+            sb.append("Items: ").append(getItems());
         sb.append("}");
         return sb.toString();
     }

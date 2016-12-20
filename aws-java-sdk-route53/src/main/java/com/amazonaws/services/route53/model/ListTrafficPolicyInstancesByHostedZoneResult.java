@@ -425,15 +425,15 @@ public class ListTrafficPolicyInstancesByHostedZoneResult extends com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicyInstances() != null)
-            sb.append("TrafficPolicyInstances: " + getTrafficPolicyInstances() + ",");
+            sb.append("TrafficPolicyInstances: ").append(getTrafficPolicyInstances()).append(",");
         if (getTrafficPolicyInstanceNameMarker() != null)
-            sb.append("TrafficPolicyInstanceNameMarker: " + getTrafficPolicyInstanceNameMarker() + ",");
+            sb.append("TrafficPolicyInstanceNameMarker: ").append(getTrafficPolicyInstanceNameMarker()).append(",");
         if (getTrafficPolicyInstanceTypeMarker() != null)
-            sb.append("TrafficPolicyInstanceTypeMarker: " + getTrafficPolicyInstanceTypeMarker() + ",");
+            sb.append("TrafficPolicyInstanceTypeMarker: ").append(getTrafficPolicyInstanceTypeMarker()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

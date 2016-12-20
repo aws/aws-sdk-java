@@ -557,17 +557,17 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskStartToCloseTimeout() != null)
-            sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
+            sb.append("TaskStartToCloseTimeout: ").append(getTaskStartToCloseTimeout()).append(",");
         if (getExecutionStartToCloseTimeout() != null)
-            sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+            sb.append("ExecutionStartToCloseTimeout: ").append(getExecutionStartToCloseTimeout()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getTaskPriority() != null)
-            sb.append("TaskPriority: " + getTaskPriority() + ",");
+            sb.append("TaskPriority: ").append(getTaskPriority()).append(",");
         if (getChildPolicy() != null)
-            sb.append("ChildPolicy: " + getChildPolicy() + ",");
+            sb.append("ChildPolicy: ").append(getChildPolicy()).append(",");
         if (getLambdaRole() != null)
-            sb.append("LambdaRole: " + getLambdaRole());
+            sb.append("LambdaRole: ").append(getLambdaRole());
         sb.append("}");
         return sb.toString();
     }

@@ -421,19 +421,19 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getGlobalFilters() != null)
-            sb.append("GlobalFilters: " + getGlobalFilters() + ",");
+            sb.append("GlobalFilters: ").append(getGlobalFilters()).append(",");
         if (getApprovalRules() != null)
-            sb.append("ApprovalRules: " + getApprovalRules() + ",");
+            sb.append("ApprovalRules: ").append(getApprovalRules()).append(",");
         if (getApprovedPatches() != null)
-            sb.append("ApprovedPatches: " + getApprovedPatches() + ",");
+            sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
         if (getRejectedPatches() != null)
-            sb.append("RejectedPatches: " + getRejectedPatches() + ",");
+            sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

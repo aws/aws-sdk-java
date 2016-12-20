@@ -296,11 +296,11 @@ public class EnableEnhancedMonitoringResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getCurrentShardLevelMetrics() != null)
-            sb.append("CurrentShardLevelMetrics: " + getCurrentShardLevelMetrics() + ",");
+            sb.append("CurrentShardLevelMetrics: ").append(getCurrentShardLevelMetrics()).append(",");
         if (getDesiredShardLevelMetrics() != null)
-            sb.append("DesiredShardLevelMetrics: " + getDesiredShardLevelMetrics());
+            sb.append("DesiredShardLevelMetrics: ").append(getDesiredShardLevelMetrics());
         sb.append("}");
         return sb.toString();
     }

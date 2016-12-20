@@ -151,9 +151,9 @@ public class ConfirmProductInstanceResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getReturn() != null)
-            sb.append("Return: " + getReturn());
+            sb.append("Return: ").append(getReturn());
         sb.append("}");
         return sb.toString();
     }

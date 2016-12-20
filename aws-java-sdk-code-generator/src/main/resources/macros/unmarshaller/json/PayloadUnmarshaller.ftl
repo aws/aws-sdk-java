@@ -13,7 +13,7 @@
         <#-- When the payload is explicitly set to a member the entire payload is the serialized
         content of that member-->
         <#if shape.hasPayloadMember>
-            ${shape.variable.variableName}.set${shape.payloadMember.name}(<@MemberUnmarshallerDeclarationMacro.content shape.payloadMember/>.unmarshall(context));
+            ${shape.variable.variableName}.${shape.payloadMember.setterMethodName}(<@MemberUnmarshallerDeclarationMacro.content shape.payloadMember/>.unmarshall(context));
         <#-- When the payload is not explicitly set then every member which doesn't appear in the
         Headers or the status code will be serialized in the payload response (wrapped in an
         artificial container object) -->

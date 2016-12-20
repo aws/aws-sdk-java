@@ -748,15 +748,15 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId() + ",");
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getDataSourceName() != null)
-            sb.append("DataSourceName: " + getDataSourceName() + ",");
+            sb.append("DataSourceName: ").append(getDataSourceName()).append(",");
         if (getDataSpec() != null)
-            sb.append("DataSpec: " + getDataSpec() + ",");
+            sb.append("DataSpec: ").append(getDataSpec()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getComputeStatistics() != null)
-            sb.append("ComputeStatistics: " + getComputeStatistics());
+            sb.append("ComputeStatistics: ").append(getComputeStatistics());
         sb.append("}");
         return sb.toString();
     }

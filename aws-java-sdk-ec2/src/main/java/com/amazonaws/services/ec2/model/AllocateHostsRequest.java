@@ -371,15 +371,15 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoPlacement() != null)
-            sb.append("AutoPlacement: " + getAutoPlacement() + ",");
+            sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity() + ",");
+            sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

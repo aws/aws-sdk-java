@@ -260,13 +260,13 @@ public class DBClusterMember implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getIsClusterWriter() != null)
-            sb.append("IsClusterWriter: " + getIsClusterWriter() + ",");
+            sb.append("IsClusterWriter: ").append(getIsClusterWriter()).append(",");
         if (getDBClusterParameterGroupStatus() != null)
-            sb.append("DBClusterParameterGroupStatus: " + getDBClusterParameterGroupStatus() + ",");
+            sb.append("DBClusterParameterGroupStatus: ").append(getDBClusterParameterGroupStatus()).append(",");
         if (getPromotionTier() != null)
-            sb.append("PromotionTier: " + getPromotionTier());
+            sb.append("PromotionTier: ").append(getPromotionTier());
         sb.append("}");
         return sb.toString();
     }

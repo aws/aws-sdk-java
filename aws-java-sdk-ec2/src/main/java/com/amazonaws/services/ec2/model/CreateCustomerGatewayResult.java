@@ -81,7 +81,7 @@ public class CreateCustomerGatewayResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGateway() != null)
-            sb.append("CustomerGateway: " + getCustomerGateway());
+            sb.append("CustomerGateway: ").append(getCustomerGateway());
         sb.append("}");
         return sb.toString();
     }

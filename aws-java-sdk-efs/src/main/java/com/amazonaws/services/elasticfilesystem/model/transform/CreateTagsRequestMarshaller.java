@@ -61,11 +61,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
 
         String uriResourcePath = "/2015-02-01/create-tags/{FileSystemId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{FileSystemId}",
-                        (createTagsRequest.getFileSystemId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createTagsRequest.getFileSystemId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FileSystemId", createTagsRequest.getFileSystemId());
         request.setResourcePath(uriResourcePath);
 
         try {

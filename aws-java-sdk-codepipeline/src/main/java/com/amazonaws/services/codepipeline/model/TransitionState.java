@@ -230,13 +230,13 @@ public class TransitionState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getLastChangedBy() != null)
-            sb.append("LastChangedBy: " + getLastChangedBy() + ",");
+            sb.append("LastChangedBy: ").append(getLastChangedBy()).append(",");
         if (getLastChangedAt() != null)
-            sb.append("LastChangedAt: " + getLastChangedAt() + ",");
+            sb.append("LastChangedAt: ").append(getLastChangedAt()).append(",");
         if (getDisabledReason() != null)
-            sb.append("DisabledReason: " + getDisabledReason());
+            sb.append("DisabledReason: ").append(getDisabledReason());
         sb.append("}");
         return sb.toString();
     }

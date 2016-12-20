@@ -87,9 +87,9 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getTargetARN() != null)
-            sb.append("TargetARN: " + getTargetARN());
+            sb.append("TargetARN: ").append(getTargetARN());
         sb.append("}");
         return sb.toString();
     }

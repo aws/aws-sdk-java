@@ -113,7 +113,7 @@ public class DescribeLoadBalancerPoliciesResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyDescriptions() != null)
-            sb.append("PolicyDescriptions: " + getPolicyDescriptions());
+            sb.append("PolicyDescriptions: ").append(getPolicyDescriptions());
         sb.append("}");
         return sb.toString();
     }

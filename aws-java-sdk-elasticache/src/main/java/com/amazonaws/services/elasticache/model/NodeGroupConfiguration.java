@@ -289,13 +289,13 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSlots() != null)
-            sb.append("Slots: " + getSlots() + ",");
+            sb.append("Slots: ").append(getSlots()).append(",");
         if (getReplicaCount() != null)
-            sb.append("ReplicaCount: " + getReplicaCount() + ",");
+            sb.append("ReplicaCount: ").append(getReplicaCount()).append(",");
         if (getPrimaryAvailabilityZone() != null)
-            sb.append("PrimaryAvailabilityZone: " + getPrimaryAvailabilityZone() + ",");
+            sb.append("PrimaryAvailabilityZone: ").append(getPrimaryAvailabilityZone()).append(",");
         if (getReplicaAvailabilityZones() != null)
-            sb.append("ReplicaAvailabilityZones: " + getReplicaAvailabilityZones());
+            sb.append("ReplicaAvailabilityZones: ").append(getReplicaAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }

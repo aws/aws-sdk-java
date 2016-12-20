@@ -171,11 +171,11 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: " + getContent() + ",");
+            sb.append("Content: ").append(getContent()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion());
+            sb.append("DocumentVersion: ").append(getDocumentVersion());
         sb.append("}");
         return sb.toString();
     }

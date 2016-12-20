@@ -383,17 +383,17 @@ public class ClusterSubnetGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetGroupStatus() != null)
-            sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
+            sb.append("SubnetGroupStatus: ").append(getSubnetGroupStatus()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

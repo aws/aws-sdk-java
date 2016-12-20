@@ -50,6 +50,11 @@ public class AllowedMethodsStaxUnmarshaller implements Unmarshaller<AllowedMetho
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    allowedMethods.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Method", targetDepth)) {
                     allowedMethods.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

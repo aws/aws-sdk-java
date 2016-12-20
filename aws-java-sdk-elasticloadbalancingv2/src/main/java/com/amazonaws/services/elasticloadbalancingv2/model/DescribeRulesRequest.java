@@ -157,9 +157,9 @@ public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListenerArn() != null)
-            sb.append("ListenerArn: " + getListenerArn() + ",");
+            sb.append("ListenerArn: ").append(getListenerArn()).append(",");
         if (getRuleArns() != null)
-            sb.append("RuleArns: " + getRuleArns());
+            sb.append("RuleArns: ").append(getRuleArns());
         sb.append("}");
         return sb.toString();
     }

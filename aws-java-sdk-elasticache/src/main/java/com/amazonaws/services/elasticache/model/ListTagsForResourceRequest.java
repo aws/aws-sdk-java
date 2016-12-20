@@ -127,7 +127,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName());
+            sb.append("ResourceName: ").append(getResourceName());
         sb.append("}");
         return sb.toString();
     }

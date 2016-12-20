@@ -345,17 +345,17 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getNameQuery() != null)
-            sb.append("NameQuery: " + getNameQuery() + ",");
+            sb.append("NameQuery: ").append(getNameQuery()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

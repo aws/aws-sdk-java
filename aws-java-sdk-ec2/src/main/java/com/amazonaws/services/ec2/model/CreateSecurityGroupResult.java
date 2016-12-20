@@ -81,7 +81,7 @@ public class CreateSecurityGroupResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId());
+            sb.append("GroupId: ").append(getGroupId());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class DeleteApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTerminateEnvByForce() != null)
-            sb.append("TerminateEnvByForce: " + getTerminateEnvByForce());
+            sb.append("TerminateEnvByForce: ").append(getTerminateEnvByForce());
         sb.append("}");
         return sb.toString();
     }

@@ -131,9 +131,9 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: " + getConfigurationSetName() + ",");
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
         if (getEventDestinationName() != null)
-            sb.append("EventDestinationName: " + getEventDestinationName());
+            sb.append("EventDestinationName: ").append(getEventDestinationName());
         sb.append("}");
         return sb.toString();
     }

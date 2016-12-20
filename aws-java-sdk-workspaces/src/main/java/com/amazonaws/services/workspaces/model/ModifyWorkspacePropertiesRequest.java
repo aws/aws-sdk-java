@@ -125,9 +125,9 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: " + getWorkspaceId() + ",");
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getWorkspaceProperties() != null)
-            sb.append("WorkspaceProperties: " + getWorkspaceProperties());
+            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties());
         sb.append("}");
         return sb.toString();
     }

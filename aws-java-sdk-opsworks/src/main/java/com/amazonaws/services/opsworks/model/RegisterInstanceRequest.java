@@ -358,19 +358,19 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getPrivateIp() != null)
-            sb.append("PrivateIp: " + getPrivateIp() + ",");
+            sb.append("PrivateIp: ").append(getPrivateIp()).append(",");
         if (getRsaPublicKey() != null)
-            sb.append("RsaPublicKey: " + getRsaPublicKey() + ",");
+            sb.append("RsaPublicKey: ").append(getRsaPublicKey()).append(",");
         if (getRsaPublicKeyFingerprint() != null)
-            sb.append("RsaPublicKeyFingerprint: " + getRsaPublicKeyFingerprint() + ",");
+            sb.append("RsaPublicKeyFingerprint: ").append(getRsaPublicKeyFingerprint()).append(",");
         if (getInstanceIdentity() != null)
-            sb.append("InstanceIdentity: " + getInstanceIdentity());
+            sb.append("InstanceIdentity: ").append(getInstanceIdentity());
         sb.append("}");
         return sb.toString();
     }

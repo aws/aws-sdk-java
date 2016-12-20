@@ -210,9 +210,9 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN() + ",");
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

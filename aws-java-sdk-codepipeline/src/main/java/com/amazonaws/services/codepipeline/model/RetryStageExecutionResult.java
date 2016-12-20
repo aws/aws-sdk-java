@@ -80,7 +80,7 @@ public class RetryStageExecutionResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: " + getPipelineExecutionId());
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId());
         sb.append("}");
         return sb.toString();
     }

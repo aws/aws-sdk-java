@@ -205,11 +205,11 @@ public class QuotaSettings implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getOffset() != null)
-            sb.append("Offset: " + getOffset() + ",");
+            sb.append("Offset: ").append(getOffset()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: " + getPeriod());
+            sb.append("Period: ").append(getPeriod());
         sb.append("}");
         return sb.toString();
     }

@@ -130,9 +130,9 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: " + getConfigurationSetName() + ",");
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
         if (getEventDestination() != null)
-            sb.append("EventDestination: " + getEventDestination());
+            sb.append("EventDestination: ").append(getEventDestination());
         sb.append("}");
         return sb.toString();
     }

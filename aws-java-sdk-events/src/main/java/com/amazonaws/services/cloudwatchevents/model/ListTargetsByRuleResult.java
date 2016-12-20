@@ -156,9 +156,9 @@ public class ListTargetsByRuleResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

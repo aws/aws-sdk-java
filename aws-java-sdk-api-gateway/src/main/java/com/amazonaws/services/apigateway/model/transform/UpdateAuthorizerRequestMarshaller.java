@@ -61,15 +61,9 @@ public class UpdateAuthorizerRequestMarshaller implements Marshaller<Request<Upd
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (updateAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(updateAuthorizerRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{authorizer_id}",
-                (updateAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateAuthorizerRequest.getAuthorizerId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", updateAuthorizerRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "authorizer_id",
+                updateAuthorizerRequest.getAuthorizerId());
         request.setResourcePath(uriResourcePath);
 
         try {

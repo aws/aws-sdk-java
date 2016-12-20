@@ -421,17 +421,17 @@ public class NetworkAcl implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAclId() != null)
-            sb.append("NetworkAclId: " + getNetworkAclId() + ",");
+            sb.append("NetworkAclId: ").append(getNetworkAclId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getIsDefault() != null)
-            sb.append("IsDefault: " + getIsDefault() + ",");
+            sb.append("IsDefault: ").append(getIsDefault()).append(",");
         if (getEntries() != null)
-            sb.append("Entries: " + getEntries() + ",");
+            sb.append("Entries: ").append(getEntries()).append(",");
         if (getAssociations() != null)
-            sb.append("Associations: " + getAssociations() + ",");
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

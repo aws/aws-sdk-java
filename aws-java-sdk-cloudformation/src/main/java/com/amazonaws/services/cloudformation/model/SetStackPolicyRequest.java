@@ -208,11 +208,11 @@ public class SetStackPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getStackPolicyBody() != null)
-            sb.append("StackPolicyBody: " + getStackPolicyBody() + ",");
+            sb.append("StackPolicyBody: ").append(getStackPolicyBody()).append(",");
         if (getStackPolicyURL() != null)
-            sb.append("StackPolicyURL: " + getStackPolicyURL());
+            sb.append("StackPolicyURL: ").append(getStackPolicyURL());
         sb.append("}");
         return sb.toString();
     }

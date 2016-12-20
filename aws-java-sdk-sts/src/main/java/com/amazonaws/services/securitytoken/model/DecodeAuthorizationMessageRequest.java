@@ -79,7 +79,7 @@ public class DecodeAuthorizationMessageRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEncodedMessage() != null)
-            sb.append("EncodedMessage: " + getEncodedMessage());
+            sb.append("EncodedMessage: ").append(getEncodedMessage());
         sb.append("}");
         return sb.toString();
     }

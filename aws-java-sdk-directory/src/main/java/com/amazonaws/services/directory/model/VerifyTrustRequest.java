@@ -82,7 +82,7 @@ public class VerifyTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId());
+            sb.append("TrustId: ").append(getTrustId());
         sb.append("}");
         return sb.toString();
     }

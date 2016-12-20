@@ -148,9 +148,9 @@ public class ConfigureHealthCheckRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getHealthCheck() != null)
-            sb.append("HealthCheck: " + getHealthCheck());
+            sb.append("HealthCheck: ").append(getHealthCheck());
         sb.append("}");
         return sb.toString();
     }

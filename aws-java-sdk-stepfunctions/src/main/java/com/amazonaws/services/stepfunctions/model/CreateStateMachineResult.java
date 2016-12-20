@@ -124,9 +124,9 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn() + ",");
+            sb.append("StateMachineArn: ").append(getStateMachineArn()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

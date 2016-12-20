@@ -125,9 +125,9 @@ public class DeregisterTaskFromMaintenanceWindowResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId() + ",");
+            sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getWindowTaskId() != null)
-            sb.append("WindowTaskId: " + getWindowTaskId());
+            sb.append("WindowTaskId: ").append(getWindowTaskId());
         sb.append("}");
         return sb.toString();
     }

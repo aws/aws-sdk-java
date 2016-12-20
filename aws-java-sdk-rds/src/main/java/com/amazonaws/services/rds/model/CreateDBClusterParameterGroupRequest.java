@@ -414,13 +414,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
         if (getDBParameterGroupFamily() != null)
-            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+            sb.append("DBParameterGroupFamily: ").append(getDBParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

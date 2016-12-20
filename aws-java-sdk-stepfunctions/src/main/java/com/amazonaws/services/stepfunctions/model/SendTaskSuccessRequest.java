@@ -132,9 +132,9 @@ public class SendTaskSuccessRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput());
+            sb.append("Output: ").append(getOutput());
         sb.append("}");
         return sb.toString();
     }

@@ -167,9 +167,9 @@ public class DescribeLoadBalancerTargetGroupsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerTargetGroups() != null)
-            sb.append("LoadBalancerTargetGroups: " + getLoadBalancerTargetGroups() + ",");
+            sb.append("LoadBalancerTargetGroups: ").append(getLoadBalancerTargetGroups()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

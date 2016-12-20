@@ -59,7 +59,7 @@ public class PredictResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrediction() != null)
-            sb.append("Prediction: " + getPrediction());
+            sb.append("Prediction: ").append(getPrediction());
         sb.append("}");
         return sb.toString();
     }

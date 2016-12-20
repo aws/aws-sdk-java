@@ -125,9 +125,9 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: " + getSecurityConfiguration());
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration());
         sb.append("}");
         return sb.toString();
     }

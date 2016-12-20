@@ -196,7 +196,7 @@ public class CheckIfPhoneNumberIsOptedOutResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIsOptedOut() != null)
-            sb.append("IsOptedOut: " + getIsOptedOut());
+            sb.append("IsOptedOut: ").append(getIsOptedOut());
         sb.append("}");
         return sb.toString();
     }

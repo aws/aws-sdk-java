@@ -126,9 +126,9 @@ public class RepublishAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTopic() != null)
-            sb.append("Topic: " + getTopic());
+            sb.append("Topic: ").append(getTopic());
         sb.append("}");
         return sb.toString();
     }

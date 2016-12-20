@@ -78,7 +78,7 @@ public class DescribeTaskDefinitionResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition());
+            sb.append("TaskDefinition: ").append(getTaskDefinition());
         sb.append("}");
         return sb.toString();
     }

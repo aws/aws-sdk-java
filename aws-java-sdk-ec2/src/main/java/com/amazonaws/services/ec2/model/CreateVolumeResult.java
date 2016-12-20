@@ -79,7 +79,7 @@ public class CreateVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolume() != null)
-            sb.append("Volume: " + getVolume());
+            sb.append("Volume: ").append(getVolume());
         sb.append("}");
         return sb.toString();
     }

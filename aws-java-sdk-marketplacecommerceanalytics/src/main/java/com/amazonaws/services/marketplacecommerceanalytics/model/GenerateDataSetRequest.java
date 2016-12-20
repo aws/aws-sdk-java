@@ -818,19 +818,19 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSetType() != null)
-            sb.append("DataSetType: " + getDataSetType() + ",");
+            sb.append("DataSetType: ").append(getDataSetType()).append(",");
         if (getDataSetPublicationDate() != null)
-            sb.append("DataSetPublicationDate: " + getDataSetPublicationDate() + ",");
+            sb.append("DataSetPublicationDate: ").append(getDataSetPublicationDate()).append(",");
         if (getRoleNameArn() != null)
-            sb.append("RoleNameArn: " + getRoleNameArn() + ",");
+            sb.append("RoleNameArn: ").append(getRoleNameArn()).append(",");
         if (getDestinationS3BucketName() != null)
-            sb.append("DestinationS3BucketName: " + getDestinationS3BucketName() + ",");
+            sb.append("DestinationS3BucketName: ").append(getDestinationS3BucketName()).append(",");
         if (getDestinationS3Prefix() != null)
-            sb.append("DestinationS3Prefix: " + getDestinationS3Prefix() + ",");
+            sb.append("DestinationS3Prefix: ").append(getDestinationS3Prefix()).append(",");
         if (getSnsTopicArn() != null)
-            sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getCustomerDefinedValues() != null)
-            sb.append("CustomerDefinedValues: " + getCustomerDefinedValues());
+            sb.append("CustomerDefinedValues: ").append(getCustomerDefinedValues());
         sb.append("}");
         return sb.toString();
     }

@@ -138,9 +138,9 @@ public class AddHeaderAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHeaderName() != null)
-            sb.append("HeaderName: " + getHeaderName() + ",");
+            sb.append("HeaderName: ").append(getHeaderName()).append(",");
         if (getHeaderValue() != null)
-            sb.append("HeaderValue: " + getHeaderValue());
+            sb.append("HeaderValue: ").append(getHeaderValue());
         sb.append("}");
         return sb.toString();
     }

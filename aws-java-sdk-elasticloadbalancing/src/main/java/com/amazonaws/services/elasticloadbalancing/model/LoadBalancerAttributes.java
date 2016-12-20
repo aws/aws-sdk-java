@@ -460,15 +460,15 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCrossZoneLoadBalancing() != null)
-            sb.append("CrossZoneLoadBalancing: " + getCrossZoneLoadBalancing() + ",");
+            sb.append("CrossZoneLoadBalancing: ").append(getCrossZoneLoadBalancing()).append(",");
         if (getAccessLog() != null)
-            sb.append("AccessLog: " + getAccessLog() + ",");
+            sb.append("AccessLog: ").append(getAccessLog()).append(",");
         if (getConnectionDraining() != null)
-            sb.append("ConnectionDraining: " + getConnectionDraining() + ",");
+            sb.append("ConnectionDraining: ").append(getConnectionDraining()).append(",");
         if (getConnectionSettings() != null)
-            sb.append("ConnectionSettings: " + getConnectionSettings() + ",");
+            sb.append("ConnectionSettings: ").append(getConnectionSettings()).append(",");
         if (getAdditionalAttributes() != null)
-            sb.append("AdditionalAttributes: " + getAdditionalAttributes());
+            sb.append("AdditionalAttributes: ").append(getAdditionalAttributes());
         sb.append("}");
         return sb.toString();
     }

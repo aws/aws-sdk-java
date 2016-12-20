@@ -136,7 +136,7 @@ public class GetInstancePortStatesResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPortStates() != null)
-            sb.append("PortStates: " + getPortStates());
+            sb.append("PortStates: ").append(getPortStates());
         sb.append("}");
         return sb.toString();
     }

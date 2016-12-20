@@ -100,6 +100,11 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    reservedInstances.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     reservedInstances.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -117,6 +122,11 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
 
                 if (context.testExpression("offeringType", targetDepth)) {
                     reservedInstances.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("recurringCharges", targetDepth)) {
+                    reservedInstances.withRecurringCharges(new ArrayList<RecurringCharge>());
                     continue;
                 }
 

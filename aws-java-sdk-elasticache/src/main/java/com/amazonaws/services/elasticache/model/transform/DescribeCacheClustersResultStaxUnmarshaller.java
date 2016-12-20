@@ -50,6 +50,11 @@ public class DescribeCacheClustersResultStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("CacheClusters", targetDepth)) {
+                    describeCacheClustersResult.withCacheClusters(new ArrayList<CacheCluster>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheClusters/CacheCluster", targetDepth)) {
                     describeCacheClustersResult.withCacheClusters(CacheClusterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -381,11 +381,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

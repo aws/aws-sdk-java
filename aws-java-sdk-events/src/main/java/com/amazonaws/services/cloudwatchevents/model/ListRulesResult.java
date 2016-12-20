@@ -156,9 +156,9 @@ public class ListRulesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRules() != null)
-            sb.append("Rules: " + getRules() + ",");
+            sb.append("Rules: ").append(getRules()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

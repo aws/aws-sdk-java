@@ -126,9 +126,9 @@ public class FaultStatistics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOtherCount() != null)
-            sb.append("OtherCount: " + getOtherCount() + ",");
+            sb.append("OtherCount: ").append(getOtherCount()).append(",");
         if (getTotalCount() != null)
-            sb.append("TotalCount: " + getTotalCount());
+            sb.append("TotalCount: ").append(getTotalCount());
         sb.append("}");
         return sb.toString();
     }

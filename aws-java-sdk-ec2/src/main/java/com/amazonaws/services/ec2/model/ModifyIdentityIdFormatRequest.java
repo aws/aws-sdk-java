@@ -213,11 +213,11 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResource() != null)
-            sb.append("Resource: " + getResource() + ",");
+            sb.append("Resource: ").append(getResource()).append(",");
         if (getUseLongIds() != null)
-            sb.append("UseLongIds: " + getUseLongIds() + ",");
+            sb.append("UseLongIds: ").append(getUseLongIds()).append(",");
         if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: " + getPrincipalArn());
+            sb.append("PrincipalArn: ").append(getPrincipalArn());
         sb.append("}");
         return sb.toString();
     }

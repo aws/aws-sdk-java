@@ -113,9 +113,9 @@ public class GetConnectorsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectorList() != null)
-            sb.append("ConnectorList: " + getConnectorList() + ",");
+            sb.append("ConnectorList: ").append(getConnectorList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -239,13 +239,13 @@ public class ApplicationMetrics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getRequestCount() != null)
-            sb.append("RequestCount: " + getRequestCount() + ",");
+            sb.append("RequestCount: ").append(getRequestCount()).append(",");
         if (getStatusCodes() != null)
-            sb.append("StatusCodes: " + getStatusCodes() + ",");
+            sb.append("StatusCodes: ").append(getStatusCodes()).append(",");
         if (getLatency() != null)
-            sb.append("Latency: " + getLatency());
+            sb.append("Latency: ").append(getLatency());
         sb.append("}");
         return sb.toString();
     }

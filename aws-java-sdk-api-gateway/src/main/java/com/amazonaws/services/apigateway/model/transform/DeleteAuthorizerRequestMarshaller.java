@@ -61,15 +61,9 @@ public class DeleteAuthorizerRequestMarshaller implements Marshaller<Request<Del
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (deleteAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(deleteAuthorizerRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{authorizer_id}",
-                (deleteAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteAuthorizerRequest.getAuthorizerId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteAuthorizerRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "authorizer_id",
+                deleteAuthorizerRequest.getAuthorizerId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

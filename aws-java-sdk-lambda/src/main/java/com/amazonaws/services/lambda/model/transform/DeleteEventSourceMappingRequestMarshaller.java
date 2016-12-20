@@ -61,10 +61,7 @@ public class DeleteEventSourceMappingRequestMarshaller implements Marshaller<Req
 
         String uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{UUID}",
-                (deleteEventSourceMappingRequest.getUUID() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteEventSourceMappingRequest.getUUID()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "UUID", deleteEventSourceMappingRequest.getUUID());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

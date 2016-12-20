@@ -467,15 +467,15 @@ public class HealthCheck implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTarget() != null)
-            sb.append("Target: " + getTarget() + ",");
+            sb.append("Target: ").append(getTarget()).append(",");
         if (getInterval() != null)
-            sb.append("Interval: " + getInterval() + ",");
+            sb.append("Interval: ").append(getInterval()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: " + getTimeout() + ",");
+            sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getUnhealthyThreshold() != null)
-            sb.append("UnhealthyThreshold: " + getUnhealthyThreshold() + ",");
+            sb.append("UnhealthyThreshold: ").append(getUnhealthyThreshold()).append(",");
         if (getHealthyThreshold() != null)
-            sb.append("HealthyThreshold: " + getHealthyThreshold());
+            sb.append("HealthyThreshold: ").append(getHealthyThreshold());
         sb.append("}");
         return sb.toString();
     }

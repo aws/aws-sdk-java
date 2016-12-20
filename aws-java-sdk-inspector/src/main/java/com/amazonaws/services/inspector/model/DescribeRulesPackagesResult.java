@@ -175,9 +175,9 @@ public class DescribeRulesPackagesResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRulesPackages() != null)
-            sb.append("RulesPackages: " + getRulesPackages() + ",");
+            sb.append("RulesPackages: ").append(getRulesPackages()).append(",");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

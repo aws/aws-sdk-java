@@ -163,9 +163,9 @@ public class ListBuildsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuilds() != null)
-            sb.append("Builds: " + getBuilds() + ",");
+            sb.append("Builds: ").append(getBuilds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

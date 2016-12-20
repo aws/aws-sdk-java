@@ -162,9 +162,9 @@ public class ListTapesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeInfos() != null)
-            sb.append("TapeInfos: " + getTapeInfos() + ",");
+            sb.append("TapeInfos: ").append(getTapeInfos()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

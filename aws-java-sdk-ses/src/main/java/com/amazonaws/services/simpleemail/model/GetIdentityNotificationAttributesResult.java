@@ -106,7 +106,7 @@ public class GetIdentityNotificationAttributesResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNotificationAttributes() != null)
-            sb.append("NotificationAttributes: " + getNotificationAttributes());
+            sb.append("NotificationAttributes: ").append(getNotificationAttributes());
         sb.append("}");
         return sb.toString();
     }

@@ -188,9 +188,9 @@ public class ActivityTypeInfos extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTypeInfos() != null)
-            sb.append("TypeInfos: " + getTypeInfos() + ",");
+            sb.append("TypeInfos: ").append(getTypeInfos()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

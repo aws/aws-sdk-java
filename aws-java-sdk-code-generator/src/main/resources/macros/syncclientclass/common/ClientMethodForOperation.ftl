@@ -8,10 +8,6 @@
     </#if>
     public ${operationModel.syncReturnType} ${operationModel.methodName}(${operationModel.input.variableType} ${operationModel.input.variableName}) {
 
-        <#if ClientMethodParametersValidation?has_content>
-            <@ClientMethodParametersValidation.content operationModel />
-        </#if>
-
         ExecutionContext executionContext = createExecutionContext(${operationModel.input.variableName});
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);

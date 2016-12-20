@@ -61,22 +61,14 @@ public class DeleteMethodResponseRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteMethodResponseRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteMethodResponseRequest.getResourceId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteMethodResponseRequest.getHttpMethod()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (deleteMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteMethodResponseRequest.getStatusCode()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "restapi_id", deleteMethodResponseRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id",
+                deleteMethodResponseRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method",
+                deleteMethodResponseRequest.getHttpMethod());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code",
+                deleteMethodResponseRequest.getStatusCode());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

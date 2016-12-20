@@ -94,7 +94,7 @@ public class GetInvalidationResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInvalidation() != null)
-            sb.append("Invalidation: " + getInvalidation());
+            sb.append("Invalidation: ").append(getInvalidation());
         sb.append("}");
         return sb.toString();
     }

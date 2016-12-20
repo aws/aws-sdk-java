@@ -81,7 +81,7 @@ public class EventDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLatestDescription() != null)
-            sb.append("LatestDescription: " + getLatestDescription());
+            sb.append("LatestDescription: ").append(getLatestDescription());
         sb.append("}");
         return sb.toString();
     }

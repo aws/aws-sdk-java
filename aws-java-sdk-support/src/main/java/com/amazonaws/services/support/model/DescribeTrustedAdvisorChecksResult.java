@@ -113,7 +113,7 @@ public class DescribeTrustedAdvisorChecksResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChecks() != null)
-            sb.append("Checks: " + getChecks());
+            sb.append("Checks: ").append(getChecks());
         sb.append("}");
         return sb.toString();
     }

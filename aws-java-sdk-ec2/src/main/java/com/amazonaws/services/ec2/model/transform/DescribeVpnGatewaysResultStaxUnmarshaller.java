@@ -45,6 +45,11 @@ public class DescribeVpnGatewaysResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpnGatewaySet", targetDepth)) {
+                    describeVpnGatewaysResult.withVpnGateways(new ArrayList<VpnGateway>());
+                    continue;
+                }
+
                 if (context.testExpression("vpnGatewaySet/item", targetDepth)) {
                     describeVpnGatewaysResult.withVpnGateways(VpnGatewayStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

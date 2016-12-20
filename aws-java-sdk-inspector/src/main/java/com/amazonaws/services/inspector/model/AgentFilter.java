@@ -254,9 +254,9 @@ public class AgentFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentHealths() != null)
-            sb.append("AgentHealths: " + getAgentHealths() + ",");
+            sb.append("AgentHealths: ").append(getAgentHealths()).append(",");
         if (getAgentHealthCodes() != null)
-            sb.append("AgentHealthCodes: " + getAgentHealthCodes());
+            sb.append("AgentHealthCodes: ").append(getAgentHealthCodes());
         sb.append("}");
         return sb.toString();
     }

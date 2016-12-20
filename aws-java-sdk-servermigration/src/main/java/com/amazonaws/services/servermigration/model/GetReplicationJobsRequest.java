@@ -116,11 +116,11 @@ public class GetReplicationJobsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJobId() != null)
-            sb.append("ReplicationJobId: " + getReplicationJobId() + ",");
+            sb.append("ReplicationJobId: ").append(getReplicationJobId()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

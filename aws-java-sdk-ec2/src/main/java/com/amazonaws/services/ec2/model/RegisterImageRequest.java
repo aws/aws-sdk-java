@@ -826,27 +826,27 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageLocation() != null)
-            sb.append("ImageLocation: " + getImageLocation() + ",");
+            sb.append("ImageLocation: ").append(getImageLocation()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getRootDeviceName() != null)
-            sb.append("RootDeviceName: " + getRootDeviceName() + ",");
+            sb.append("RootDeviceName: ").append(getRootDeviceName()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+            sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
         if (getEnaSupport() != null)
-            sb.append("EnaSupport: " + getEnaSupport());
+            sb.append("EnaSupport: ").append(getEnaSupport());
         sb.append("}");
         return sb.toString();
     }

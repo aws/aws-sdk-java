@@ -279,13 +279,13 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityIds() != null)
-            sb.append("ActivityIds: " + getActivityIds() + ",");
+            sb.append("ActivityIds: ").append(getActivityIds()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

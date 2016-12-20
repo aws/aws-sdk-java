@@ -311,15 +311,15 @@ public class ExportInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportId() != null)
-            sb.append("ExportId: " + getExportId() + ",");
+            sb.append("ExportId: ").append(getExportId()).append(",");
         if (getExportStatus() != null)
-            sb.append("ExportStatus: " + getExportStatus() + ",");
+            sb.append("ExportStatus: ").append(getExportStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getConfigurationsDownloadUrl() != null)
-            sb.append("ConfigurationsDownloadUrl: " + getConfigurationsDownloadUrl() + ",");
+            sb.append("ConfigurationsDownloadUrl: ").append(getConfigurationsDownloadUrl()).append(",");
         if (getExportRequestTime() != null)
-            sb.append("ExportRequestTime: " + getExportRequestTime());
+            sb.append("ExportRequestTime: ").append(getExportRequestTime());
         sb.append("}");
         return sb.toString();
     }

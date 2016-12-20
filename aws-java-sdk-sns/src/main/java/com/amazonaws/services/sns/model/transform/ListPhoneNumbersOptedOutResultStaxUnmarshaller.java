@@ -45,6 +45,11 @@ public class ListPhoneNumbersOptedOutResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("phoneNumbers", targetDepth)) {
+                    listPhoneNumbersOptedOutResult.withPhoneNumbers(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("phoneNumbers/member", targetDepth)) {
                     listPhoneNumbersOptedOutResult.withPhoneNumbers(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

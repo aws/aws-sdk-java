@@ -157,9 +157,9 @@ public class Volume implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getHost() != null)
-            sb.append("Host: " + getHost());
+            sb.append("Host: ").append(getHost());
         sb.append("}");
         return sb.toString();
     }

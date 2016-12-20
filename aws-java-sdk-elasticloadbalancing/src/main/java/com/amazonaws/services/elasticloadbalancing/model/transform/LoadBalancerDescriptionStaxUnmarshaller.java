@@ -65,6 +65,11 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
                     continue;
                 }
 
+                if (context.testExpression("ListenerDescriptions", targetDepth)) {
+                    loadBalancerDescription.withListenerDescriptions(new ArrayList<ListenerDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("ListenerDescriptions/member", targetDepth)) {
                     loadBalancerDescription.withListenerDescriptions(ListenerDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -75,13 +80,28 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
                     continue;
                 }
 
+                if (context.testExpression("BackendServerDescriptions", targetDepth)) {
+                    loadBalancerDescription.withBackendServerDescriptions(new ArrayList<BackendServerDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("BackendServerDescriptions/member", targetDepth)) {
                     loadBalancerDescription.withBackendServerDescriptions(BackendServerDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    loadBalancerDescription.withAvailabilityZones(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
                     loadBalancerDescription.withAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Subnets", targetDepth)) {
+                    loadBalancerDescription.withSubnets(new ArrayList<String>());
                     continue;
                 }
 
@@ -92,6 +112,11 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
 
                 if (context.testExpression("VPCId", targetDepth)) {
                     loadBalancerDescription.setVPCId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Instances", targetDepth)) {
+                    loadBalancerDescription.withInstances(new ArrayList<Instance>());
                     continue;
                 }
 
@@ -107,6 +132,11 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
 
                 if (context.testExpression("SourceSecurityGroup", targetDepth)) {
                     loadBalancerDescription.setSourceSecurityGroup(SourceSecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SecurityGroups", targetDepth)) {
+                    loadBalancerDescription.withSecurityGroups(new ArrayList<String>());
                     continue;
                 }
 

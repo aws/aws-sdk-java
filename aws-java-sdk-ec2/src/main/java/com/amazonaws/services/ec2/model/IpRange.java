@@ -87,7 +87,7 @@ public class IpRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrIp() != null)
-            sb.append("CidrIp: " + getCidrIp());
+            sb.append("CidrIp: ").append(getCidrIp());
         sb.append("}");
         return sb.toString();
     }

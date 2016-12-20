@@ -50,6 +50,11 @@ public class DescribeClusterParameterGroupsResultStaxUnmarshaller implements Unm
                     continue;
                 }
 
+                if (context.testExpression("ParameterGroups", targetDepth)) {
+                    describeClusterParameterGroupsResult.withParameterGroups(new ArrayList<ClusterParameterGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("ParameterGroups/ClusterParameterGroup", targetDepth)) {
                     describeClusterParameterGroupsResult.withParameterGroups(ClusterParameterGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

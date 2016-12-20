@@ -369,15 +369,15 @@ public class Input implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamePrefix() != null)
-            sb.append("NamePrefix: " + getNamePrefix() + ",");
+            sb.append("NamePrefix: ").append(getNamePrefix()).append(",");
         if (getKinesisStreamsInput() != null)
-            sb.append("KinesisStreamsInput: " + getKinesisStreamsInput() + ",");
+            sb.append("KinesisStreamsInput: ").append(getKinesisStreamsInput()).append(",");
         if (getKinesisFirehoseInput() != null)
-            sb.append("KinesisFirehoseInput: " + getKinesisFirehoseInput() + ",");
+            sb.append("KinesisFirehoseInput: ").append(getKinesisFirehoseInput()).append(",");
         if (getInputParallelism() != null)
-            sb.append("InputParallelism: " + getInputParallelism() + ",");
+            sb.append("InputParallelism: ").append(getInputParallelism()).append(",");
         if (getInputSchema() != null)
-            sb.append("InputSchema: " + getInputSchema());
+            sb.append("InputSchema: ").append(getInputSchema());
         sb.append("}");
         return sb.toString();
     }

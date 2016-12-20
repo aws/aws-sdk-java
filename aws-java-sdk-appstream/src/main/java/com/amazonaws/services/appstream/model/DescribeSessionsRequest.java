@@ -270,15 +270,15 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getFleetName() != null)
-            sb.append("FleetName: " + getFleetName() + ",");
+            sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

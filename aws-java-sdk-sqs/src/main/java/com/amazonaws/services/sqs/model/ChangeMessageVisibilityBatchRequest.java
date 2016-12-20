@@ -22,7 +22,7 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose messages' visibility is changed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -48,7 +48,7 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
      * (with...) methods to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param entries
@@ -61,14 +61,14 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose messages' visibility is changed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -79,13 +79,13 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose messages' visibility is changed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -96,14 +96,14 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose messages' visibility is changed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -199,9 +199,9 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getEntries() != null)
-            sb.append("Entries: " + getEntries());
+            sb.append("Entries: ").append(getEntries());
         sb.append("}");
         return sb.toString();
     }

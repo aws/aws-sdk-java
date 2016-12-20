@@ -635,31 +635,31 @@ public class Address implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddressId() != null)
-            sb.append("AddressId: " + getAddressId() + ",");
+            sb.append("AddressId: ").append(getAddressId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCompany() != null)
-            sb.append("Company: " + getCompany() + ",");
+            sb.append("Company: ").append(getCompany()).append(",");
         if (getStreet1() != null)
-            sb.append("Street1: " + getStreet1() + ",");
+            sb.append("Street1: ").append(getStreet1()).append(",");
         if (getStreet2() != null)
-            sb.append("Street2: " + getStreet2() + ",");
+            sb.append("Street2: ").append(getStreet2()).append(",");
         if (getStreet3() != null)
-            sb.append("Street3: " + getStreet3() + ",");
+            sb.append("Street3: ").append(getStreet3()).append(",");
         if (getCity() != null)
-            sb.append("City: " + getCity() + ",");
+            sb.append("City: ").append(getCity()).append(",");
         if (getStateOrProvince() != null)
-            sb.append("StateOrProvince: " + getStateOrProvince() + ",");
+            sb.append("StateOrProvince: ").append(getStateOrProvince()).append(",");
         if (getPrefectureOrDistrict() != null)
-            sb.append("PrefectureOrDistrict: " + getPrefectureOrDistrict() + ",");
+            sb.append("PrefectureOrDistrict: ").append(getPrefectureOrDistrict()).append(",");
         if (getLandmark() != null)
-            sb.append("Landmark: " + getLandmark() + ",");
+            sb.append("Landmark: ").append(getLandmark()).append(",");
         if (getCountry() != null)
-            sb.append("Country: " + getCountry() + ",");
+            sb.append("Country: ").append(getCountry()).append(",");
         if (getPostalCode() != null)
-            sb.append("PostalCode: " + getPostalCode() + ",");
+            sb.append("PostalCode: ").append(getPostalCode()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: " + getPhoneNumber());
+            sb.append("PhoneNumber: ").append(getPhoneNumber());
         sb.append("}");
         return sb.toString();
     }

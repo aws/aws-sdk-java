@@ -165,9 +165,9 @@ public class DescribeInstancePatchStatesForPatchGroupResult extends com.amazonaw
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstancePatchStates() != null)
-            sb.append("InstancePatchStates: " + getInstancePatchStates() + ",");
+            sb.append("InstancePatchStates: ").append(getInstancePatchStates()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

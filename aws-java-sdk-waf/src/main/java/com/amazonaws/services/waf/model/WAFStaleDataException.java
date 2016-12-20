@@ -18,7 +18,7 @@ package com.amazonaws.services.waf.model;
  * already been used.
  * </p>
  */
-public class WAFStaleDataException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
+public class WAFStaleDataException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

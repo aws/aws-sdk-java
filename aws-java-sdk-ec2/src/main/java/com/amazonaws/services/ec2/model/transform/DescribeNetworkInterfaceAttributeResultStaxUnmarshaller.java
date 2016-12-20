@@ -60,6 +60,11 @@ public class DescribeNetworkInterfaceAttributeResultStaxUnmarshaller implements 
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    describeNetworkInterfaceAttributeResult.withGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     describeNetworkInterfaceAttributeResult.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

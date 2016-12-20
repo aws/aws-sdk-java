@@ -101,7 +101,7 @@ public class DescribeIdFormatRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResource() != null)
-            sb.append("Resource: " + getResource());
+            sb.append("Resource: ").append(getResource());
         sb.append("}");
         return sb.toString();
     }

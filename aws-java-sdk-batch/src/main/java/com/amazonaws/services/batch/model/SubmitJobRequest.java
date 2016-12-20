@@ -416,17 +416,17 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobName() != null)
-            sb.append("JobName: " + getJobName() + ",");
+            sb.append("JobName: ").append(getJobName()).append(",");
         if (getJobQueue() != null)
-            sb.append("JobQueue: " + getJobQueue() + ",");
+            sb.append("JobQueue: ").append(getJobQueue()).append(",");
         if (getDependsOn() != null)
-            sb.append("DependsOn: " + getDependsOn() + ",");
+            sb.append("DependsOn: ").append(getDependsOn()).append(",");
         if (getJobDefinition() != null)
-            sb.append("JobDefinition: " + getJobDefinition() + ",");
+            sb.append("JobDefinition: ").append(getJobDefinition()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerOverrides() != null)
-            sb.append("ContainerOverrides: " + getContainerOverrides());
+            sb.append("ContainerOverrides: ").append(getContainerOverrides());
         sb.append("}");
         return sb.toString();
     }

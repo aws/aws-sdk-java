@@ -448,23 +448,23 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDiskImageSize() != null)
-            sb.append("DiskImageSize: " + getDiskImageSize() + ",");
+            sb.append("DiskImageSize: ").append(getDiskImageSize()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getUserBucket() != null)
-            sb.append("UserBucket: " + getUserBucket() + ",");
+            sb.append("UserBucket: ").append(getUserBucket()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: " + getProgress() + ",");
+            sb.append("Progress: ").append(getProgress()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

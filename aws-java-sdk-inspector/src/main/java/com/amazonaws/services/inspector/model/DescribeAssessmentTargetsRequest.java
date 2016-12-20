@@ -109,7 +109,7 @@ public class DescribeAssessmentTargetsRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetArns() != null)
-            sb.append("AssessmentTargetArns: " + getAssessmentTargetArns());
+            sb.append("AssessmentTargetArns: ").append(getAssessmentTargetArns());
         sb.append("}");
         return sb.toString();
     }

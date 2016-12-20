@@ -81,7 +81,7 @@ public class ImportInstanceResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTask() != null)
-            sb.append("ConversionTask: " + getConversionTask());
+            sb.append("ConversionTask: ").append(getConversionTask());
         sb.append("}");
         return sb.toString();
     }

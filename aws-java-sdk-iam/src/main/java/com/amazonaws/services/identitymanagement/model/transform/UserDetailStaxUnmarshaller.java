@@ -70,13 +70,28 @@ public class UserDetailStaxUnmarshaller implements Unmarshaller<UserDetail, Stax
                     continue;
                 }
 
+                if (context.testExpression("UserPolicyList", targetDepth)) {
+                    userDetail.withUserPolicyList(new ArrayList<PolicyDetail>());
+                    continue;
+                }
+
                 if (context.testExpression("UserPolicyList/member", targetDepth)) {
                     userDetail.withUserPolicyList(PolicyDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("GroupList", targetDepth)) {
+                    userDetail.withGroupList(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("GroupList/member", targetDepth)) {
                     userDetail.withGroupList(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AttachedManagedPolicies", targetDepth)) {
+                    userDetail.withAttachedManagedPolicies(new ArrayList<AttachedPolicy>());
                     continue;
                 }
 

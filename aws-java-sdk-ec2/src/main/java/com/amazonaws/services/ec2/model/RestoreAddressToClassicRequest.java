@@ -95,7 +95,7 @@ public class RestoreAddressToClassicRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }

@@ -539,25 +539,25 @@ public class ReservedDBInstancesOffering implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedDBInstancesOfferingId() != null)
-            sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");
+            sb.append("ReservedDBInstancesOfferingId: ").append(getReservedDBInstancesOfferingId()).append(",");
         if (getDBInstanceClass() != null)
-            sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+            sb.append("DBInstanceClass: ").append(getDBInstanceClass()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getFixedPrice() != null)
-            sb.append("FixedPrice: " + getFixedPrice() + ",");
+            sb.append("FixedPrice: ").append(getFixedPrice()).append(",");
         if (getUsagePrice() != null)
-            sb.append("UsagePrice: " + getUsagePrice() + ",");
+            sb.append("UsagePrice: ").append(getUsagePrice()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getProductDescription() != null)
-            sb.append("ProductDescription: " + getProductDescription() + ",");
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType() + ",");
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getMultiAZ() != null)
-            sb.append("MultiAZ: " + getMultiAZ() + ",");
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges());
+            sb.append("RecurringCharges: ").append(getRecurringCharges());
         sb.append("}");
         return sb.toString();
     }

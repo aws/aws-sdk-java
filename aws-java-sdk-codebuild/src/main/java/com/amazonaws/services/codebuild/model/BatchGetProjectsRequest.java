@@ -109,7 +109,7 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNames() != null)
-            sb.append("Names: " + getNames());
+            sb.append("Names: ").append(getNames());
         sb.append("}");
         return sb.toString();
     }

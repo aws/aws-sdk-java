@@ -62,14 +62,10 @@ public class DeleteDocumentationVersionRequestMarshaller implements Marshaller<R
 
         String uriResourcePath = "/restapis/{restapi_id}/documentation/versions/{doc_version}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteDocumentationVersionRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteDocumentationVersionRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{doc_version}",
-                (deleteDocumentationVersionRequest.getDocumentationVersion() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteDocumentationVersionRequest.getDocumentationVersion()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
+                deleteDocumentationVersionRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "doc_version",
+                deleteDocumentationVersionRequest.getDocumentationVersion());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

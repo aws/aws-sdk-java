@@ -355,17 +355,17 @@ public class LexiconAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlphabet() != null)
-            sb.append("Alphabet: " + getAlphabet() + ",");
+            sb.append("Alphabet: ").append(getAlphabet()).append(",");
         if (getLanguageCode() != null)
-            sb.append("LanguageCode: " + getLanguageCode() + ",");
+            sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getLastModified() != null)
-            sb.append("LastModified: " + getLastModified() + ",");
+            sb.append("LastModified: ").append(getLastModified()).append(",");
         if (getLexiconArn() != null)
-            sb.append("LexiconArn: " + getLexiconArn() + ",");
+            sb.append("LexiconArn: ").append(getLexiconArn()).append(",");
         if (getLexemesCount() != null)
-            sb.append("LexemesCount: " + getLexemesCount() + ",");
+            sb.append("LexemesCount: ").append(getLexemesCount()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize());
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }

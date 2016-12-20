@@ -79,7 +79,7 @@ public class DescribeDBClusterSnapshotAttributesRequest extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier());
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class BackendServerDescriptionStaxUnmarshaller implements Unmarshaller<Ba
                     continue;
                 }
 
+                if (context.testExpression("PolicyNames", targetDepth)) {
+                    backendServerDescription.withPolicyNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyNames/member", targetDepth)) {
                     backendServerDescription.withPolicyNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

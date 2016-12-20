@@ -521,21 +521,21 @@ public class UserDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getUserPolicyList() != null)
-            sb.append("UserPolicyList: " + getUserPolicyList() + ",");
+            sb.append("UserPolicyList: ").append(getUserPolicyList()).append(",");
         if (getGroupList() != null)
-            sb.append("GroupList: " + getGroupList() + ",");
+            sb.append("GroupList: ").append(getGroupList()).append(",");
         if (getAttachedManagedPolicies() != null)
-            sb.append("AttachedManagedPolicies: " + getAttachedManagedPolicies());
+            sb.append("AttachedManagedPolicies: ").append(getAttachedManagedPolicies());
         sb.append("}");
         return sb.toString();
     }

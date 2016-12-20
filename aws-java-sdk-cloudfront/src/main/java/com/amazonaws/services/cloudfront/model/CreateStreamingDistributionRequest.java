@@ -99,7 +99,7 @@ public class CreateStreamingDistributionRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionConfig() != null)
-            sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig());
+            sb.append("StreamingDistributionConfig: ").append(getStreamingDistributionConfig());
         sb.append("}");
         return sb.toString();
     }

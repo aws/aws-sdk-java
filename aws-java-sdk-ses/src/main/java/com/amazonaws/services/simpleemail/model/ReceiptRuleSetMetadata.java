@@ -251,9 +251,9 @@ public class ReceiptRuleSetMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreatedTimestamp() != null)
-            sb.append("CreatedTimestamp: " + getCreatedTimestamp());
+            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp());
         sb.append("}");
         return sb.toString();
     }

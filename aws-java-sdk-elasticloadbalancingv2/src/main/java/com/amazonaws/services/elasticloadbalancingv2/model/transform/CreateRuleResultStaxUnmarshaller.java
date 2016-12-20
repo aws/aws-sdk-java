@@ -45,6 +45,11 @@ public class CreateRuleResultStaxUnmarshaller implements Unmarshaller<CreateRule
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Rules", targetDepth)) {
+                    createRuleResult.withRules(new ArrayList<Rule>());
+                    continue;
+                }
+
                 if (context.testExpression("Rules/member", targetDepth)) {
                     createRuleResult.withRules(RuleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

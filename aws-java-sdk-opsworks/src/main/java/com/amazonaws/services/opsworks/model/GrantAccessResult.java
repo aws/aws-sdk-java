@@ -87,7 +87,7 @@ public class GrantAccessResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTemporaryCredential() != null)
-            sb.append("TemporaryCredential: " + getTemporaryCredential());
+            sb.append("TemporaryCredential: ").append(getTemporaryCredential());
         sb.append("}");
         return sb.toString();
     }

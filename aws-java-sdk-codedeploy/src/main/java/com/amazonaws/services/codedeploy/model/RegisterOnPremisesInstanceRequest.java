@@ -127,9 +127,9 @@ public class RegisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn());
+            sb.append("IamUserArn: ").append(getIamUserArn());
         sb.append("}");
         return sb.toString();
     }

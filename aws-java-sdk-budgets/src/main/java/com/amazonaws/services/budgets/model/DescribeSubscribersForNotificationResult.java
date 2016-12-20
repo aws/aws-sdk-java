@@ -114,9 +114,9 @@ public class DescribeSubscribersForNotificationResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscribers() != null)
-            sb.append("Subscribers: " + getSubscribers() + ",");
+            sb.append("Subscribers: ").append(getSubscribers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

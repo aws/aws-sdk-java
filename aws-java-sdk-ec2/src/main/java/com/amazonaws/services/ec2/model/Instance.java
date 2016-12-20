@@ -2337,81 +2337,81 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getPublicDnsName() != null)
-            sb.append("PublicDnsName: " + getPublicDnsName() + ",");
+            sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getStateTransitionReason() != null)
-            sb.append("StateTransitionReason: " + getStateTransitionReason() + ",");
+            sb.append("StateTransitionReason: ").append(getStateTransitionReason()).append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getAmiLaunchIndex() != null)
-            sb.append("AmiLaunchIndex: " + getAmiLaunchIndex() + ",");
+            sb.append("AmiLaunchIndex: ").append(getAmiLaunchIndex()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: " + getProductCodes() + ",");
+            sb.append("ProductCodes: ").append(getProductCodes()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getLaunchTime() != null)
-            sb.append("LaunchTime: " + getLaunchTime() + ",");
+            sb.append("LaunchTime: ").append(getLaunchTime()).append(",");
         if (getPlacement() != null)
-            sb.append("Placement: " + getPlacement() + ",");
+            sb.append("Placement: ").append(getPlacement()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getMonitoring() != null)
-            sb.append("Monitoring: " + getMonitoring() + ",");
+            sb.append("Monitoring: ").append(getMonitoring()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPublicIpAddress() != null)
-            sb.append("PublicIpAddress: " + getPublicIpAddress() + ",");
+            sb.append("PublicIpAddress: ").append(getPublicIpAddress()).append(",");
         if (getStateReason() != null)
-            sb.append("StateReason: " + getStateReason() + ",");
+            sb.append("StateReason: ").append(getStateReason()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getRootDeviceType() != null)
-            sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+            sb.append("RootDeviceType: ").append(getRootDeviceType()).append(",");
         if (getRootDeviceName() != null)
-            sb.append("RootDeviceName: " + getRootDeviceName() + ",");
+            sb.append("RootDeviceName: ").append(getRootDeviceName()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getInstanceLifecycle() != null)
-            sb.append("InstanceLifecycle: " + getInstanceLifecycle() + ",");
+            sb.append("InstanceLifecycle: ").append(getInstanceLifecycle()).append(",");
         if (getSpotInstanceRequestId() != null)
-            sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");
+            sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: " + getSourceDestCheck() + ",");
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
         if (getHypervisor() != null)
-            sb.append("Hypervisor: " + getHypervisor() + ",");
+            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
         if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+            sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
         if (getEnaSupport() != null)
-            sb.append("EnaSupport: " + getEnaSupport());
+            sb.append("EnaSupport: ").append(getEnaSupport());
         sb.append("}");
         return sb.toString();
     }

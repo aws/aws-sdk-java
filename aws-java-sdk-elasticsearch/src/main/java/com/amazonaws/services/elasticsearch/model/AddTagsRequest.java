@@ -158,9 +158,9 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList());
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }

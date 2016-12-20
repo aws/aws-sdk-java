@@ -45,6 +45,11 @@ public class GetHealthCheckLastFailureReasonResultStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("HealthCheckObservations", targetDepth)) {
+                    getHealthCheckLastFailureReasonResult.withHealthCheckObservations(new ArrayList<HealthCheckObservation>());
+                    continue;
+                }
+
                 if (context.testExpression("HealthCheckObservations/HealthCheckObservation", targetDepth)) {
                     getHealthCheckLastFailureReasonResult.withHealthCheckObservations(HealthCheckObservationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

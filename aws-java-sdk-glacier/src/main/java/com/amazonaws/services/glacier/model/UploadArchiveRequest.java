@@ -375,17 +375,17 @@ public class UploadArchiveRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getArchiveDescription() != null)
-            sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+            sb.append("ArchiveDescription: ").append(getArchiveDescription()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum() + ",");
+            sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getContentLength() != null)
-            sb.append("ContentLength: " + getContentLength());
+            sb.append("ContentLength: ").append(getContentLength());
         sb.append("}");
         return sb.toString();
     }

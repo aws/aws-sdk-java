@@ -114,7 +114,7 @@ public class DescribeVpcsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcs() != null)
-            sb.append("Vpcs: " + getVpcs());
+            sb.append("Vpcs: ").append(getVpcs());
         sb.append("}");
         return sb.toString();
     }

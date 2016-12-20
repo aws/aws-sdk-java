@@ -339,17 +339,17 @@ public class ChildWorkflowExecutionFailedEventAttributes implements Serializable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowExecution() != null)
-            sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+            sb.append("WorkflowExecution: ").append(getWorkflowExecution()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails() + ",");
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getInitiatedEventId() != null)
-            sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");
+            sb.append("InitiatedEventId: ").append(getInitiatedEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId());
+            sb.append("StartedEventId: ").append(getStartedEventId());
         sb.append("}");
         return sb.toString();
     }

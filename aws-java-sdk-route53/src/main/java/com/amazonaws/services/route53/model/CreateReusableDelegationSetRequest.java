@@ -152,9 +152,9 @@ public class CreateReusableDelegationSetRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId());
+            sb.append("HostedZoneId: ").append(getHostedZoneId());
         sb.append("}");
         return sb.toString();
     }

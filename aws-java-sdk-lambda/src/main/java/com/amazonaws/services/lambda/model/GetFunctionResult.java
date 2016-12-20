@@ -89,9 +89,9 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration() + ",");
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getCode() != null)
-            sb.append("Code: " + getCode());
+            sb.append("Code: ").append(getCode());
         sb.append("}");
         return sb.toString();
     }

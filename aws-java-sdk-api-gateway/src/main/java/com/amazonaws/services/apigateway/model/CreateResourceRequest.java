@@ -173,11 +173,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getParentId() != null)
-            sb.append("ParentId: " + getParentId() + ",");
+            sb.append("ParentId: ").append(getParentId()).append(",");
         if (getPathPart() != null)
-            sb.append("PathPart: " + getPathPart());
+            sb.append("PathPart: ").append(getPathPart());
         sb.append("}");
         return sb.toString();
     }

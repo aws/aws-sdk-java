@@ -114,7 +114,7 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceNames() != null)
-            sb.append("InstanceNames: " + getInstanceNames());
+            sb.append("InstanceNames: ").append(getInstanceNames());
         sb.append("}");
         return sb.toString();
     }

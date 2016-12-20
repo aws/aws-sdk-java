@@ -404,17 +404,17 @@ public class DocumentIdentifier implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getPlatformTypes() != null)
-            sb.append("PlatformTypes: " + getPlatformTypes() + ",");
+            sb.append("PlatformTypes: ").append(getPlatformTypes()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getDocumentType() != null)
-            sb.append("DocumentType: " + getDocumentType() + ",");
+            sb.append("DocumentType: ").append(getDocumentType()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion());
+            sb.append("SchemaVersion: ").append(getSchemaVersion());
         sb.append("}");
         return sb.toString();
     }

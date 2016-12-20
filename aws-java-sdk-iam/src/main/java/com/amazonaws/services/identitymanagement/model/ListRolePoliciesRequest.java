@@ -270,11 +270,11 @@ public class ListRolePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

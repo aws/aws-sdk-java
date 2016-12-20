@@ -80,7 +80,7 @@ public class DeleteIndexFieldResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexField() != null)
-            sb.append("IndexField: " + getIndexField());
+            sb.append("IndexField: ").append(getIndexField());
         sb.append("}");
         return sb.toString();
     }

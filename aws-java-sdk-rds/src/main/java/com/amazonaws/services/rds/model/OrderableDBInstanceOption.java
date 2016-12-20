@@ -694,29 +694,29 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getDBInstanceClass() != null)
-            sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+            sb.append("DBInstanceClass: ").append(getDBInstanceClass()).append(",");
         if (getLicenseModel() != null)
-            sb.append("LicenseModel: " + getLicenseModel() + ",");
+            sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getMultiAZCapable() != null)
-            sb.append("MultiAZCapable: " + getMultiAZCapable() + ",");
+            sb.append("MultiAZCapable: ").append(getMultiAZCapable()).append(",");
         if (getReadReplicaCapable() != null)
-            sb.append("ReadReplicaCapable: " + getReadReplicaCapable() + ",");
+            sb.append("ReadReplicaCapable: ").append(getReadReplicaCapable()).append(",");
         if (getVpc() != null)
-            sb.append("Vpc: " + getVpc() + ",");
+            sb.append("Vpc: ").append(getVpc()).append(",");
         if (getSupportsStorageEncryption() != null)
-            sb.append("SupportsStorageEncryption: " + getSupportsStorageEncryption() + ",");
+            sb.append("SupportsStorageEncryption: ").append(getSupportsStorageEncryption()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: " + getStorageType() + ",");
+            sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getSupportsIops() != null)
-            sb.append("SupportsIops: " + getSupportsIops() + ",");
+            sb.append("SupportsIops: ").append(getSupportsIops()).append(",");
         if (getSupportsEnhancedMonitoring() != null)
-            sb.append("SupportsEnhancedMonitoring: " + getSupportsEnhancedMonitoring());
+            sb.append("SupportsEnhancedMonitoring: ").append(getSupportsEnhancedMonitoring());
         sb.append("}");
         return sb.toString();
     }

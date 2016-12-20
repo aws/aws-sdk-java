@@ -231,11 +231,11 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSampledRequests() != null)
-            sb.append("SampledRequests: " + getSampledRequests() + ",");
+            sb.append("SampledRequests: ").append(getSampledRequests()).append(",");
         if (getPopulationSize() != null)
-            sb.append("PopulationSize: " + getPopulationSize() + ",");
+            sb.append("PopulationSize: ").append(getPopulationSize()).append(",");
         if (getTimeWindow() != null)
-            sb.append("TimeWindow: " + getTimeWindow());
+            sb.append("TimeWindow: ").append(getTimeWindow());
         sb.append("}");
         return sb.toString();
     }

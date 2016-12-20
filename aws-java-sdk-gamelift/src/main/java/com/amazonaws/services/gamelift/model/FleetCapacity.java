@@ -240,11 +240,11 @@ public class FleetCapacity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceCounts() != null)
-            sb.append("InstanceCounts: " + getInstanceCounts());
+            sb.append("InstanceCounts: ").append(getInstanceCounts());
         sb.append("}");
         return sb.toString();
     }

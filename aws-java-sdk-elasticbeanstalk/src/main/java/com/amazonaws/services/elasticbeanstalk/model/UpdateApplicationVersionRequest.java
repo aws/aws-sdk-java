@@ -249,11 +249,11 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

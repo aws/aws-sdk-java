@@ -85,7 +85,7 @@ public class CreateAddressResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddressId() != null)
-            sb.append("AddressId: " + getAddressId());
+            sb.append("AddressId: ").append(getAddressId());
         sb.append("}");
         return sb.toString();
     }

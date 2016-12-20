@@ -2171,45 +2171,45 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getBackupRetentionPeriod() != null)
-            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
         if (getCharacterSetName() != null)
-            sb.append("CharacterSetName: " + getCharacterSetName() + ",");
+            sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
         if (getDatabaseName() != null)
-            sb.append("DatabaseName: " + getDatabaseName() + ",");
+            sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
         if (getVpcSecurityGroupIds() != null)
-            sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+            sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName()).append(",");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getMasterUsername() != null)
-            sb.append("MasterUsername: " + getMasterUsername() + ",");
+            sb.append("MasterUsername: ").append(getMasterUsername()).append(",");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+            sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getReplicationSourceIdentifier() != null)
-            sb.append("ReplicationSourceIdentifier: " + getReplicationSourceIdentifier() + ",");
+            sb.append("ReplicationSourceIdentifier: ").append(getReplicationSourceIdentifier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getStorageEncrypted() != null)
-            sb.append("StorageEncrypted: " + getStorageEncrypted() + ",");
+            sb.append("StorageEncrypted: ").append(getStorageEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }

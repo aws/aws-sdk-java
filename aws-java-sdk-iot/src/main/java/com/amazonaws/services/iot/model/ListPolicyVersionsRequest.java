@@ -81,7 +81,7 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName());
+            sb.append("PolicyName: ").append(getPolicyName());
         sb.append("}");
         return sb.toString();
     }

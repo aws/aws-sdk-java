@@ -46,6 +46,11 @@ public class DescribeEgressOnlyInternetGatewaysResultStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("egressOnlyInternetGatewaySet", targetDepth)) {
+                    describeEgressOnlyInternetGatewaysResult.withEgressOnlyInternetGateways(new ArrayList<EgressOnlyInternetGateway>());
+                    continue;
+                }
+
                 if (context.testExpression("egressOnlyInternetGatewaySet/item", targetDepth)) {
                     describeEgressOnlyInternetGatewaysResult.withEgressOnlyInternetGateways(EgressOnlyInternetGatewayStaxUnmarshaller.getInstance().unmarshall(
                             context));

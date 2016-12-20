@@ -596,17 +596,17 @@ public class User implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getPasswordLastUsed() != null)
-            sb.append("PasswordLastUsed: " + getPasswordLastUsed());
+            sb.append("PasswordLastUsed: ").append(getPasswordLastUsed());
         sb.append("}");
         return sb.toString();
     }

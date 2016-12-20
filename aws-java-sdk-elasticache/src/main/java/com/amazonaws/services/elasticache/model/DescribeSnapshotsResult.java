@@ -173,9 +173,9 @@ public class DescribeSnapshotsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getSnapshots() != null)
-            sb.append("Snapshots: " + getSnapshots());
+            sb.append("Snapshots: ").append(getSnapshots());
         sb.append("}");
         return sb.toString();
     }

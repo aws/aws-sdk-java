@@ -175,9 +175,9 @@ public class ListIPSetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getIPSets() != null)
-            sb.append("IPSets: " + getIPSets());
+            sb.append("IPSets: ").append(getIPSets());
         sb.append("}");
         return sb.toString();
     }

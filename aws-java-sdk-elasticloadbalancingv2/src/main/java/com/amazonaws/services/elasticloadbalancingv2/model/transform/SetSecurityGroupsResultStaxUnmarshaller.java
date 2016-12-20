@@ -45,6 +45,11 @@ public class SetSecurityGroupsResultStaxUnmarshaller implements Unmarshaller<Set
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                    setSecurityGroupsResult.withSecurityGroupIds(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SecurityGroupIds/member", targetDepth)) {
                     setSecurityGroupsResult.withSecurityGroupIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

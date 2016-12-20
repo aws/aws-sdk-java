@@ -45,6 +45,11 @@ public class ListPolicyVersionsResultStaxUnmarshaller implements Unmarshaller<Li
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Versions", targetDepth)) {
+                    listPolicyVersionsResult.withVersions(new ArrayList<PolicyVersion>());
+                    continue;
+                }
+
                 if (context.testExpression("Versions/member", targetDepth)) {
                     listPolicyVersionsResult.withVersions(PolicyVersionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -337,11 +337,11 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdjustmentType() != null)
-            sb.append("AdjustmentType: " + getAdjustmentType() + ",");
+            sb.append("AdjustmentType: ").append(getAdjustmentType()).append(",");
         if (getScalingAdjustment() != null)
-            sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
+            sb.append("ScalingAdjustment: ").append(getScalingAdjustment()).append(",");
         if (getCoolDown() != null)
-            sb.append("CoolDown: " + getCoolDown());
+            sb.append("CoolDown: ").append(getCoolDown());
         sb.append("}");
         return sb.toString();
     }

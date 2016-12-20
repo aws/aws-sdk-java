@@ -865,11 +865,11 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint());
+            sb.append("Endpoint: ").append(getEndpoint());
         sb.append("}");
         return sb.toString();
     }

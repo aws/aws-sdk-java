@@ -45,6 +45,11 @@ public class CloudWatchDestinationStaxUnmarshaller implements Unmarshaller<Cloud
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("DimensionConfigurations", targetDepth)) {
+                    cloudWatchDestination.withDimensionConfigurations(new ArrayList<CloudWatchDimensionConfiguration>());
+                    continue;
+                }
+
                 if (context.testExpression("DimensionConfigurations/member", targetDepth)) {
                     cloudWatchDestination.withDimensionConfigurations(CloudWatchDimensionConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

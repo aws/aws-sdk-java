@@ -276,13 +276,13 @@ public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() + ",");
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName()).append(",");
         if (getCIDRIP() != null)
-            sb.append("CIDRIP: " + getCIDRIP() + ",");
+            sb.append("CIDRIP: ").append(getCIDRIP()).append(",");
         if (getEC2SecurityGroupName() != null)
-            sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");
+            sb.append("EC2SecurityGroupName: ").append(getEC2SecurityGroupName()).append(",");
         if (getEC2SecurityGroupOwnerId() != null)
-            sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId());
+            sb.append("EC2SecurityGroupOwnerId: ").append(getEC2SecurityGroupOwnerId());
         sb.append("}");
         return sb.toString();
     }

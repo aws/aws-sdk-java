@@ -87,7 +87,7 @@ public class DescribeStackResourceResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackResourceDetail() != null)
-            sb.append("StackResourceDetail: " + getStackResourceDetail());
+            sb.append("StackResourceDetail: ").append(getStackResourceDetail());
         sb.append("}");
         return sb.toString();
     }

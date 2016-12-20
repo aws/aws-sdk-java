@@ -133,9 +133,9 @@ public class PatchRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchFilterGroup() != null)
-            sb.append("PatchFilterGroup: " + getPatchFilterGroup() + ",");
+            sb.append("PatchFilterGroup: ").append(getPatchFilterGroup()).append(",");
         if (getApproveAfterDays() != null)
-            sb.append("ApproveAfterDays: " + getApproveAfterDays());
+            sb.append("ApproveAfterDays: ").append(getApproveAfterDays());
         sb.append("}");
         return sb.toString();
     }

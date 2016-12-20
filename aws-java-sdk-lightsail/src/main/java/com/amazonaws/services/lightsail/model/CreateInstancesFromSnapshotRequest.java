@@ -417,17 +417,17 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceNames() != null)
-            sb.append("InstanceNames: " + getInstanceNames() + ",");
+            sb.append("InstanceNames: ").append(getInstanceNames()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getInstanceSnapshotName() != null)
-            sb.append("InstanceSnapshotName: " + getInstanceSnapshotName() + ",");
+            sb.append("InstanceSnapshotName: ").append(getInstanceSnapshotName()).append(",");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getUserData() != null)
-            sb.append("UserData: " + getUserData() + ",");
+            sb.append("UserData: ").append(getUserData()).append(",");
         if (getKeyPairName() != null)
-            sb.append("KeyPairName: " + getKeyPairName());
+            sb.append("KeyPairName: ").append(getKeyPairName());
         sb.append("}");
         return sb.toString();
     }

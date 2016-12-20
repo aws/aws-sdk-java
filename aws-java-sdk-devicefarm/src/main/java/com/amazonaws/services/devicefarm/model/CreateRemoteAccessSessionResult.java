@@ -83,7 +83,7 @@ public class CreateRemoteAccessSessionResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRemoteAccessSession() != null)
-            sb.append("RemoteAccessSession: " + getRemoteAccessSession());
+            sb.append("RemoteAccessSession: ").append(getRemoteAccessSession());
         sb.append("}");
         return sb.toString();
     }

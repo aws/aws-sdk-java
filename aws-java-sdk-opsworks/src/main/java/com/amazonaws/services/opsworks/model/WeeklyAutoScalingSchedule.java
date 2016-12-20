@@ -549,19 +549,19 @@ public class WeeklyAutoScalingSchedule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMonday() != null)
-            sb.append("Monday: " + getMonday() + ",");
+            sb.append("Monday: ").append(getMonday()).append(",");
         if (getTuesday() != null)
-            sb.append("Tuesday: " + getTuesday() + ",");
+            sb.append("Tuesday: ").append(getTuesday()).append(",");
         if (getWednesday() != null)
-            sb.append("Wednesday: " + getWednesday() + ",");
+            sb.append("Wednesday: ").append(getWednesday()).append(",");
         if (getThursday() != null)
-            sb.append("Thursday: " + getThursday() + ",");
+            sb.append("Thursday: ").append(getThursday()).append(",");
         if (getFriday() != null)
-            sb.append("Friday: " + getFriday() + ",");
+            sb.append("Friday: ").append(getFriday()).append(",");
         if (getSaturday() != null)
-            sb.append("Saturday: " + getSaturday() + ",");
+            sb.append("Saturday: ").append(getSaturday()).append(",");
         if (getSunday() != null)
-            sb.append("Sunday: " + getSunday());
+            sb.append("Sunday: ").append(getSunday());
         sb.append("}");
         return sb.toString();
     }

@@ -169,9 +169,9 @@ public class BufferingHints implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSizeInMBs() != null)
-            sb.append("SizeInMBs: " + getSizeInMBs() + ",");
+            sb.append("SizeInMBs: ").append(getSizeInMBs()).append(",");
         if (getIntervalInSeconds() != null)
-            sb.append("IntervalInSeconds: " + getIntervalInSeconds());
+            sb.append("IntervalInSeconds: ").append(getIntervalInSeconds());
         sb.append("}");
         return sb.toString();
     }

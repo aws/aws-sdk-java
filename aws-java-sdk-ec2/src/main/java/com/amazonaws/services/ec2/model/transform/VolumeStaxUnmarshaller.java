@@ -75,8 +75,18 @@ public class VolumeStaxUnmarshaller implements Unmarshaller<Volume, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("attachmentSet", targetDepth)) {
+                    volume.withAttachments(new ArrayList<VolumeAttachment>());
+                    continue;
+                }
+
                 if (context.testExpression("attachmentSet/item", targetDepth)) {
                     volume.withAttachments(VolumeAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    volume.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

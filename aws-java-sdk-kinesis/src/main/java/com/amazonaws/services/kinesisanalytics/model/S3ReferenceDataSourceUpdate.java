@@ -180,11 +180,11 @@ public class S3ReferenceDataSourceUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucketARNUpdate() != null)
-            sb.append("BucketARNUpdate: " + getBucketARNUpdate() + ",");
+            sb.append("BucketARNUpdate: ").append(getBucketARNUpdate()).append(",");
         if (getFileKeyUpdate() != null)
-            sb.append("FileKeyUpdate: " + getFileKeyUpdate() + ",");
+            sb.append("FileKeyUpdate: ").append(getFileKeyUpdate()).append(",");
         if (getReferenceRoleARNUpdate() != null)
-            sb.append("ReferenceRoleARNUpdate: " + getReferenceRoleARNUpdate());
+            sb.append("ReferenceRoleARNUpdate: ").append(getReferenceRoleARNUpdate());
         sb.append("}");
         return sb.toString();
     }

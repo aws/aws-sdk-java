@@ -312,11 +312,11 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute() + ",");
+            sb.append("Attribute: ").append(getAttribute()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRequiresRecreation() != null)
-            sb.append("RequiresRecreation: " + getRequiresRecreation());
+            sb.append("RequiresRecreation: ").append(getRequiresRecreation());
         sb.append("}");
         return sb.toString();
     }

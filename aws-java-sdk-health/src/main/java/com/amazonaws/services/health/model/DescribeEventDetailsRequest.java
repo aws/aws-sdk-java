@@ -164,9 +164,9 @@ public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventArns() != null)
-            sb.append("EventArns: " + getEventArns() + ",");
+            sb.append("EventArns: ").append(getEventArns()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: " + getLocale());
+            sb.append("Locale: ").append(getLocale());
         sb.append("}");
         return sb.toString();
     }

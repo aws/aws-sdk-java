@@ -125,9 +125,9 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId() + ",");
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }

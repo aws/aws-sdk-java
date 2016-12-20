@@ -80,7 +80,7 @@ public class GetVaultNotificationsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVaultNotificationConfig() != null)
-            sb.append("VaultNotificationConfig: " + getVaultNotificationConfig());
+            sb.append("VaultNotificationConfig: ").append(getVaultNotificationConfig());
         sb.append("}");
         return sb.toString();
     }

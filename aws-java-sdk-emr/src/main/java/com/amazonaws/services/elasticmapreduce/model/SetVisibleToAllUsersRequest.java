@@ -199,9 +199,9 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlowIds() != null)
-            sb.append("JobFlowIds: " + getJobFlowIds() + ",");
+            sb.append("JobFlowIds: ").append(getJobFlowIds()).append(",");
         if (getVisibleToAllUsers() != null)
-            sb.append("VisibleToAllUsers: " + getVisibleToAllUsers());
+            sb.append("VisibleToAllUsers: ").append(getVisibleToAllUsers());
         sb.append("}");
         return sb.toString();
     }

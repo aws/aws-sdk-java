@@ -45,6 +45,11 @@ public class GetContextKeysForPrincipalPolicyResultStaxUnmarshaller implements U
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ContextKeyNames", targetDepth)) {
+                    getContextKeysForPrincipalPolicyResult.withContextKeyNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ContextKeyNames/member", targetDepth)) {
                     getContextKeysForPrincipalPolicyResult.withContextKeyNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -231,11 +231,11 @@ public class DescribeSchemasRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

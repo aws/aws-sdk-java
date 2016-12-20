@@ -112,7 +112,7 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

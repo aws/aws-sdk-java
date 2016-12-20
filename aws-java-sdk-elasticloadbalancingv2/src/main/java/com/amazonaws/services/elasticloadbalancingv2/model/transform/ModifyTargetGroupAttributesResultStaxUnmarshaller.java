@@ -45,6 +45,11 @@ public class ModifyTargetGroupAttributesResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Attributes", targetDepth)) {
+                    modifyTargetGroupAttributesResult.withAttributes(new ArrayList<TargetGroupAttribute>());
+                    continue;
+                }
+
                 if (context.testExpression("Attributes/member", targetDepth)) {
                     modifyTargetGroupAttributesResult.withAttributes(TargetGroupAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

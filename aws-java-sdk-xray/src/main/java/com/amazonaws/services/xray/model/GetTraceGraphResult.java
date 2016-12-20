@@ -154,9 +154,9 @@ public class GetTraceGraphResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServices() != null)
-            sb.append("Services: " + getServices() + ",");
+            sb.append("Services: ").append(getServices()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

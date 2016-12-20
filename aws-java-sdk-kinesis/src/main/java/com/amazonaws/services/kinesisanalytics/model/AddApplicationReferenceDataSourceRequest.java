@@ -209,11 +209,11 @@ public class AddApplicationReferenceDataSourceRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getCurrentApplicationVersionId() != null)
-            sb.append("CurrentApplicationVersionId: " + getCurrentApplicationVersionId() + ",");
+            sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getReferenceDataSource() != null)
-            sb.append("ReferenceDataSource: " + getReferenceDataSource());
+            sb.append("ReferenceDataSource: ").append(getReferenceDataSource());
         sb.append("}");
         return sb.toString();
     }

@@ -228,11 +228,11 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId() + ",");
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

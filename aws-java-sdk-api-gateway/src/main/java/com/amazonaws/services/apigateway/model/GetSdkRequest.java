@@ -275,13 +275,13 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getSdkType() != null)
-            sb.append("SdkType: " + getSdkType() + ",");
+            sb.append("SdkType: ").append(getSdkType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

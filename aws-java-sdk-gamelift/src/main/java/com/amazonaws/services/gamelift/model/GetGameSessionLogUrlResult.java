@@ -80,7 +80,7 @@ public class GetGameSessionLogUrlResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPreSignedUrl() != null)
-            sb.append("PreSignedUrl: " + getPreSignedUrl());
+            sb.append("PreSignedUrl: ").append(getPreSignedUrl());
         sb.append("}");
         return sb.toString();
     }

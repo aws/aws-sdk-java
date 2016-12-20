@@ -124,9 +124,9 @@ public class ExecutionStartedEventDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

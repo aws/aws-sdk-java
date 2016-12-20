@@ -869,37 +869,37 @@ public class FunctionConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getFunctionArn() != null)
-            sb.append("FunctionArn: " + getFunctionArn() + ",");
+            sb.append("FunctionArn: ").append(getFunctionArn()).append(",");
         if (getRuntime() != null)
-            sb.append("Runtime: " + getRuntime() + ",");
+            sb.append("Runtime: ").append(getRuntime()).append(",");
         if (getRole() != null)
-            sb.append("Role: " + getRole() + ",");
+            sb.append("Role: ").append(getRole()).append(",");
         if (getHandler() != null)
-            sb.append("Handler: " + getHandler() + ",");
+            sb.append("Handler: ").append(getHandler()).append(",");
         if (getCodeSize() != null)
-            sb.append("CodeSize: " + getCodeSize() + ",");
+            sb.append("CodeSize: ").append(getCodeSize()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: " + getTimeout() + ",");
+            sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getMemorySize() != null)
-            sb.append("MemorySize: " + getMemorySize() + ",");
+            sb.append("MemorySize: ").append(getMemorySize()).append(",");
         if (getLastModified() != null)
-            sb.append("LastModified: " + getLastModified() + ",");
+            sb.append("LastModified: ").append(getLastModified()).append(",");
         if (getCodeSha256() != null)
-            sb.append("CodeSha256: " + getCodeSha256() + ",");
+            sb.append("CodeSha256: ").append(getCodeSha256()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig() + ",");
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getDeadLetterConfig() != null)
-            sb.append("DeadLetterConfig: " + getDeadLetterConfig() + ",");
+            sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment() + ",");
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: " + getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
         sb.append("}");
         return sb.toString();
     }

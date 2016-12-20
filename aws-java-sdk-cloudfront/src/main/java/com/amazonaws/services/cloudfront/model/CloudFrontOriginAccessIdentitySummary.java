@@ -179,11 +179,11 @@ public class CloudFrontOriginAccessIdentitySummary implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getS3CanonicalUserId() != null)
-            sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ",");
+            sb.append("S3CanonicalUserId: ").append(getS3CanonicalUserId()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }

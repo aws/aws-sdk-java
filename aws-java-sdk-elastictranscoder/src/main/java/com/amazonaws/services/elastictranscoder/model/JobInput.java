@@ -1167,25 +1167,25 @@ public class JobInput implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getFrameRate() != null)
-            sb.append("FrameRate: " + getFrameRate() + ",");
+            sb.append("FrameRate: ").append(getFrameRate()).append(",");
         if (getResolution() != null)
-            sb.append("Resolution: " + getResolution() + ",");
+            sb.append("Resolution: ").append(getResolution()).append(",");
         if (getAspectRatio() != null)
-            sb.append("AspectRatio: " + getAspectRatio() + ",");
+            sb.append("AspectRatio: ").append(getAspectRatio()).append(",");
         if (getInterlaced() != null)
-            sb.append("Interlaced: " + getInterlaced() + ",");
+            sb.append("Interlaced: ").append(getInterlaced()).append(",");
         if (getContainer() != null)
-            sb.append("Container: " + getContainer() + ",");
+            sb.append("Container: ").append(getContainer()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption() + ",");
+            sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getTimeSpan() != null)
-            sb.append("TimeSpan: " + getTimeSpan() + ",");
+            sb.append("TimeSpan: ").append(getTimeSpan()).append(",");
         if (getInputCaptions() != null)
-            sb.append("InputCaptions: " + getInputCaptions() + ",");
+            sb.append("InputCaptions: ").append(getInputCaptions()).append(",");
         if (getDetectedProperties() != null)
-            sb.append("DetectedProperties: " + getDetectedProperties());
+            sb.append("DetectedProperties: ").append(getDetectedProperties());
         sb.append("}");
         return sb.toString();
     }

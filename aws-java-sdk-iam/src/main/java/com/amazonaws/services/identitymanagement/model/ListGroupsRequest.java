@@ -294,11 +294,11 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPathPrefix() != null)
-            sb.append("PathPrefix: " + getPathPrefix() + ",");
+            sb.append("PathPrefix: ").append(getPathPrefix()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

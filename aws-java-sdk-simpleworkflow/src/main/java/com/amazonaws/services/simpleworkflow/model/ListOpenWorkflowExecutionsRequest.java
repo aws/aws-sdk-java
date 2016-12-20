@@ -542,21 +542,21 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getStartTimeFilter() != null)
-            sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");
+            sb.append("StartTimeFilter: ").append(getStartTimeFilter()).append(",");
         if (getTypeFilter() != null)
-            sb.append("TypeFilter: " + getTypeFilter() + ",");
+            sb.append("TypeFilter: ").append(getTypeFilter()).append(",");
         if (getTagFilter() != null)
-            sb.append("TagFilter: " + getTagFilter() + ",");
+            sb.append("TagFilter: ").append(getTagFilter()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken() + ",");
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getMaximumPageSize() != null)
-            sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
+            sb.append("MaximumPageSize: ").append(getMaximumPageSize()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: " + getReverseOrder() + ",");
+            sb.append("ReverseOrder: ").append(getReverseOrder()).append(",");
         if (getExecutionFilter() != null)
-            sb.append("ExecutionFilter: " + getExecutionFilter());
+            sb.append("ExecutionFilter: ").append(getExecutionFilter());
         sb.append("}");
         return sb.toString();
     }

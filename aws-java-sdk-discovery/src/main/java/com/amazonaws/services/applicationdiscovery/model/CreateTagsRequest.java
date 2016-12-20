@@ -217,9 +217,9 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationIds() != null)
-            sb.append("ConfigurationIds: " + getConfigurationIds() + ",");
+            sb.append("ConfigurationIds: ").append(getConfigurationIds()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

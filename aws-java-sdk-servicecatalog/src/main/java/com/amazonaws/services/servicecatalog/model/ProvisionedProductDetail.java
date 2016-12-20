@@ -488,23 +488,23 @@ public class ProvisionedProductDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: " + getIdempotencyToken() + ",");
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getLastRecordId() != null)
-            sb.append("LastRecordId: " + getLastRecordId());
+            sb.append("LastRecordId: ").append(getLastRecordId());
         sb.append("}");
         return sb.toString();
     }

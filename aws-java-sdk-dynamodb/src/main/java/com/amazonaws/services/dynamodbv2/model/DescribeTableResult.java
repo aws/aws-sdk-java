@@ -61,7 +61,7 @@ public class DescribeTableResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTable() != null)
-            sb.append("Table: " + getTable());
+            sb.append("Table: ").append(getTable());
         sb.append("}");
         return sb.toString();
     }

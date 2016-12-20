@@ -295,15 +295,15 @@ public class RefreshSchemasStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn() + ",");
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastRefreshDate() != null)
-            sb.append("LastRefreshDate: " + getLastRefreshDate() + ",");
+            sb.append("LastRefreshDate: ").append(getLastRefreshDate()).append(",");
         if (getLastFailureMessage() != null)
-            sb.append("LastFailureMessage: " + getLastFailureMessage());
+            sb.append("LastFailureMessage: ").append(getLastFailureMessage());
         sb.append("}");
         return sb.toString();
     }

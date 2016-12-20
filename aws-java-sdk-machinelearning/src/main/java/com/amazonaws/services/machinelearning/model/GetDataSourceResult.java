@@ -1123,45 +1123,45 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId() + ",");
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getDataLocationS3() != null)
-            sb.append("DataLocationS3: " + getDataLocationS3() + ",");
+            sb.append("DataLocationS3: ").append(getDataLocationS3()).append(",");
         if (getDataRearrangement() != null)
-            sb.append("DataRearrangement: " + getDataRearrangement() + ",");
+            sb.append("DataRearrangement: ").append(getDataRearrangement()).append(",");
         if (getCreatedByIamUser() != null)
-            sb.append("CreatedByIamUser: " + getCreatedByIamUser() + ",");
+            sb.append("CreatedByIamUser: ").append(getCreatedByIamUser()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastUpdatedAt() != null)
-            sb.append("LastUpdatedAt: " + getLastUpdatedAt() + ",");
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getDataSizeInBytes() != null)
-            sb.append("DataSizeInBytes: " + getDataSizeInBytes() + ",");
+            sb.append("DataSizeInBytes: ").append(getDataSizeInBytes()).append(",");
         if (getNumberOfFiles() != null)
-            sb.append("NumberOfFiles: " + getNumberOfFiles() + ",");
+            sb.append("NumberOfFiles: ").append(getNumberOfFiles()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLogUri() != null)
-            sb.append("LogUri: " + getLogUri() + ",");
+            sb.append("LogUri: ").append(getLogUri()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getRedshiftMetadata() != null)
-            sb.append("RedshiftMetadata: " + getRedshiftMetadata() + ",");
+            sb.append("RedshiftMetadata: ").append(getRedshiftMetadata()).append(",");
         if (getRDSMetadata() != null)
-            sb.append("RDSMetadata: " + getRDSMetadata() + ",");
+            sb.append("RDSMetadata: ").append(getRDSMetadata()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getComputeStatistics() != null)
-            sb.append("ComputeStatistics: " + getComputeStatistics() + ",");
+            sb.append("ComputeStatistics: ").append(getComputeStatistics()).append(",");
         if (getComputeTime() != null)
-            sb.append("ComputeTime: " + getComputeTime() + ",");
+            sb.append("ComputeTime: ").append(getComputeTime()).append(",");
         if (getFinishedAt() != null)
-            sb.append("FinishedAt: " + getFinishedAt() + ",");
+            sb.append("FinishedAt: ").append(getFinishedAt()).append(",");
         if (getStartedAt() != null)
-            sb.append("StartedAt: " + getStartedAt() + ",");
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getDataSourceSchema() != null)
-            sb.append("DataSourceSchema: " + getDataSourceSchema());
+            sb.append("DataSourceSchema: ").append(getDataSourceSchema());
         sb.append("}");
         return sb.toString();
     }

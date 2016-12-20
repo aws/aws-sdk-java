@@ -209,9 +209,9 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenIDConnectProviderArn() != null)
-            sb.append("OpenIDConnectProviderArn: " + getOpenIDConnectProviderArn() + ",");
+            sb.append("OpenIDConnectProviderArn: ").append(getOpenIDConnectProviderArn()).append(",");
         if (getThumbprintList() != null)
-            sb.append("ThumbprintList: " + getThumbprintList());
+            sb.append("ThumbprintList: ").append(getThumbprintList());
         sb.append("}");
         return sb.toString();
     }

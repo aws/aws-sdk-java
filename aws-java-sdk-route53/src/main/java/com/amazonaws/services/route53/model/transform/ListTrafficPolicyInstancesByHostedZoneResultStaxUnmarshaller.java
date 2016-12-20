@@ -46,6 +46,11 @@ public class ListTrafficPolicyInstancesByHostedZoneResultStaxUnmarshaller implem
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TrafficPolicyInstances", targetDepth)) {
+                    listTrafficPolicyInstancesByHostedZoneResult.withTrafficPolicyInstances(new ArrayList<TrafficPolicyInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("TrafficPolicyInstances/TrafficPolicyInstance", targetDepth)) {
                     listTrafficPolicyInstancesByHostedZoneResult.withTrafficPolicyInstances(TrafficPolicyInstanceStaxUnmarshaller.getInstance().unmarshall(
                             context));

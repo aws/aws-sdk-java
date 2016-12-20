@@ -50,8 +50,18 @@ public class GetOpenIDConnectProviderResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("ClientIDList", targetDepth)) {
+                    getOpenIDConnectProviderResult.withClientIDList(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ClientIDList/member", targetDepth)) {
                     getOpenIDConnectProviderResult.withClientIDList(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ThumbprintList", targetDepth)) {
+                    getOpenIDConnectProviderResult.withThumbprintList(new ArrayList<String>());
                     continue;
                 }
 

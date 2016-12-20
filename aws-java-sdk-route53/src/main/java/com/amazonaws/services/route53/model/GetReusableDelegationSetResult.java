@@ -80,7 +80,7 @@ public class GetReusableDelegationSetResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDelegationSet() != null)
-            sb.append("DelegationSet: " + getDelegationSet());
+            sb.append("DelegationSet: ").append(getDelegationSet());
         sb.append("}");
         return sb.toString();
     }

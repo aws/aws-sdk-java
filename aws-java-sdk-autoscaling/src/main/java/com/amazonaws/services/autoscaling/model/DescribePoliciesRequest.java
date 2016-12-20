@@ -349,15 +349,15 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames() + ",");
+            sb.append("PolicyNames: ").append(getPolicyNames()).append(",");
         if (getPolicyTypes() != null)
-            sb.append("PolicyTypes: " + getPolicyTypes() + ",");
+            sb.append("PolicyTypes: ").append(getPolicyTypes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords());
+            sb.append("MaxRecords: ").append(getMaxRecords());
         sb.append("}");
         return sb.toString();
     }

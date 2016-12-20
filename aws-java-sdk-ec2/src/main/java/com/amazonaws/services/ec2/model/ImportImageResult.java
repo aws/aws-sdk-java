@@ -574,27 +574,27 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportTaskId() != null)
-            sb.append("ImportTaskId: " + getImportTaskId() + ",");
+            sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getLicenseType() != null)
-            sb.append("LicenseType: " + getLicenseType() + ",");
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getHypervisor() != null)
-            sb.append("Hypervisor: " + getHypervisor() + ",");
+            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSnapshotDetails() != null)
-            sb.append("SnapshotDetails: " + getSnapshotDetails() + ",");
+            sb.append("SnapshotDetails: ").append(getSnapshotDetails()).append(",");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: " + getProgress() + ",");
+            sb.append("Progress: ").append(getProgress()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

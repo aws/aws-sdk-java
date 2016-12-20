@@ -86,7 +86,7 @@ public class DeregisterJobDefinitionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobDefinition() != null)
-            sb.append("JobDefinition: " + getJobDefinition());
+            sb.append("JobDefinition: ").append(getJobDefinition());
         sb.append("}");
         return sb.toString();
     }

@@ -55,6 +55,11 @@ public class EngineDefaultsStaxUnmarshaller implements Unmarshaller<EngineDefaul
                     continue;
                 }
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    engineDefaults.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/Parameter", targetDepth)) {
                     engineDefaults.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

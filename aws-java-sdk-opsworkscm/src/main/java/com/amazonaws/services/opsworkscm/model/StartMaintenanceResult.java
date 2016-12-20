@@ -78,7 +78,7 @@ public class StartMaintenanceResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServer() != null)
-            sb.append("Server: " + getServer());
+            sb.append("Server: ").append(getServer());
         sb.append("}");
         return sb.toString();
     }

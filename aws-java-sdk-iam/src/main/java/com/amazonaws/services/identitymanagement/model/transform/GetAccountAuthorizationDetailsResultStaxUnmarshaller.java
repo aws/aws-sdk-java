@@ -45,8 +45,18 @@ public class GetAccountAuthorizationDetailsResultStaxUnmarshaller implements Unm
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("UserDetailList", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withUserDetailList(new ArrayList<UserDetail>());
+                    continue;
+                }
+
                 if (context.testExpression("UserDetailList/member", targetDepth)) {
                     getAccountAuthorizationDetailsResult.withUserDetailList(UserDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("GroupDetailList", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withGroupDetailList(new ArrayList<GroupDetail>());
                     continue;
                 }
 
@@ -55,8 +65,18 @@ public class GetAccountAuthorizationDetailsResultStaxUnmarshaller implements Unm
                     continue;
                 }
 
+                if (context.testExpression("RoleDetailList", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withRoleDetailList(new ArrayList<RoleDetail>());
+                    continue;
+                }
+
                 if (context.testExpression("RoleDetailList/member", targetDepth)) {
                     getAccountAuthorizationDetailsResult.withRoleDetailList(RoleDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Policies", targetDepth)) {
+                    getAccountAuthorizationDetailsResult.withPolicies(new ArrayList<ManagedPolicyDetail>());
                     continue;
                 }
 

@@ -315,13 +315,13 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken() + ",");
+            sb.append("PageToken: ").append(getPageToken()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize());
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }

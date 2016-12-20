@@ -156,9 +156,9 @@ public class CreateEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

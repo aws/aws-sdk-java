@@ -254,13 +254,13 @@ public class Target implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getInputPath() != null)
-            sb.append("InputPath: " + getInputPath());
+            sb.append("InputPath: ").append(getInputPath());
         sb.append("}");
         return sb.toString();
     }

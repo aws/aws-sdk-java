@@ -80,7 +80,7 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId());
+            sb.append("FleetId: ").append(getFleetId());
         sb.append("}");
         return sb.toString();
     }

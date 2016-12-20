@@ -110,7 +110,7 @@ public class CreatePlayerSessionsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlayerSessions() != null)
-            sb.append("PlayerSessions: " + getPlayerSessions());
+            sb.append("PlayerSessions: ").append(getPlayerSessions());
         sb.append("}");
         return sb.toString();
     }

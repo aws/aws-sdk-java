@@ -154,9 +154,9 @@ public class GetInstancesResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

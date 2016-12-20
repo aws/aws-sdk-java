@@ -81,7 +81,7 @@ public class AttachVpnGatewayResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcAttachment() != null)
-            sb.append("VpcAttachment: " + getVpcAttachment());
+            sb.append("VpcAttachment: ").append(getVpcAttachment());
         sb.append("}");
         return sb.toString();
     }

@@ -216,9 +216,9 @@ public class AddTagsToOnPremisesInstancesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getInstanceNames() != null)
-            sb.append("InstanceNames: " + getInstanceNames());
+            sb.append("InstanceNames: ").append(getInstanceNames());
         sb.append("}");
         return sb.toString();
     }

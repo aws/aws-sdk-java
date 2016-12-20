@@ -152,11 +152,11 @@ public class UpdateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccess() != null)
-            sb.append("Success: " + getSuccess() + ",");
+            sb.append("Success: ").append(getSuccess()).append(",");
         if (getWarningMessage() != null)
-            sb.append("WarningMessage: " + getWarningMessage() + ",");
+            sb.append("WarningMessage: ").append(getWarningMessage()).append(",");
         if (getArtifactList() != null)
-            sb.append("ArtifactList: " + getArtifactList());
+            sb.append("ArtifactList: ").append(getArtifactList());
         sb.append("}");
         return sb.toString();
     }

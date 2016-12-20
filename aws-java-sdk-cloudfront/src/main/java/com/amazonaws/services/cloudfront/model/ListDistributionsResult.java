@@ -80,7 +80,7 @@ public class ListDistributionsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionList() != null)
-            sb.append("DistributionList: " + getDistributionList());
+            sb.append("DistributionList: ").append(getDistributionList());
         sb.append("}");
         return sb.toString();
     }

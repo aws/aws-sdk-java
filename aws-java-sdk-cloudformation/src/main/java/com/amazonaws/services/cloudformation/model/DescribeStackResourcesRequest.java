@@ -415,11 +415,11 @@ public class DescribeStackResourcesRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getLogicalResourceId() != null)
-            sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");
+            sb.append("LogicalResourceId: ").append(getLogicalResourceId()).append(",");
         if (getPhysicalResourceId() != null)
-            sb.append("PhysicalResourceId: " + getPhysicalResourceId());
+            sb.append("PhysicalResourceId: ").append(getPhysicalResourceId());
         sb.append("}");
         return sb.toString();
     }

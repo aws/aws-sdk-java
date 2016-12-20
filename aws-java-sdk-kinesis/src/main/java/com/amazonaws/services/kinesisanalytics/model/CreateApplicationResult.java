@@ -90,7 +90,7 @@ public class CreateApplicationResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationSummary() != null)
-            sb.append("ApplicationSummary: " + getApplicationSummary());
+            sb.append("ApplicationSummary: ").append(getApplicationSummary());
         sb.append("}");
         return sb.toString();
     }

@@ -181,7 +181,7 @@ public class DeleteClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupName() != null)
-            sb.append("ParameterGroupName: " + getParameterGroupName());
+            sb.append("ParameterGroupName: ").append(getParameterGroupName());
         sb.append("}");
         return sb.toString();
     }

@@ -82,7 +82,7 @@ public class DescribeSpotDatafeedSubscriptionResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotDatafeedSubscription() != null)
-            sb.append("SpotDatafeedSubscription: " + getSpotDatafeedSubscription());
+            sb.append("SpotDatafeedSubscription: ").append(getSpotDatafeedSubscription());
         sb.append("}");
         return sb.toString();
     }

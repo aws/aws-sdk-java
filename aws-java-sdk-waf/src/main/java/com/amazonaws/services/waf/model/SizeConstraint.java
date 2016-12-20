@@ -2167,13 +2167,13 @@ public class SizeConstraint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFieldToMatch() != null)
-            sb.append("FieldToMatch: " + getFieldToMatch() + ",");
+            sb.append("FieldToMatch: ").append(getFieldToMatch()).append(",");
         if (getTextTransformation() != null)
-            sb.append("TextTransformation: " + getTextTransformation() + ",");
+            sb.append("TextTransformation: ").append(getTextTransformation()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator() + ",");
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize());
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }

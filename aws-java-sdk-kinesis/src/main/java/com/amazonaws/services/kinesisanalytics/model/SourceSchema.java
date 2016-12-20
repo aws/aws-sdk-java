@@ -203,11 +203,11 @@ public class SourceSchema implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordFormat() != null)
-            sb.append("RecordFormat: " + getRecordFormat() + ",");
+            sb.append("RecordFormat: ").append(getRecordFormat()).append(",");
         if (getRecordEncoding() != null)
-            sb.append("RecordEncoding: " + getRecordEncoding() + ",");
+            sb.append("RecordEncoding: ").append(getRecordEncoding()).append(",");
         if (getRecordColumns() != null)
-            sb.append("RecordColumns: " + getRecordColumns());
+            sb.append("RecordColumns: ").append(getRecordColumns());
         sb.append("}");
         return sb.toString();
     }

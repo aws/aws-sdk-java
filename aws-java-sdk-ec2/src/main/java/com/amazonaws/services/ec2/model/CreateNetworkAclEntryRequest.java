@@ -570,23 +570,23 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAclId() != null)
-            sb.append("NetworkAclId: " + getNetworkAclId() + ",");
+            sb.append("NetworkAclId: ").append(getNetworkAclId()).append(",");
         if (getRuleNumber() != null)
-            sb.append("RuleNumber: " + getRuleNumber() + ",");
+            sb.append("RuleNumber: ").append(getRuleNumber()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getRuleAction() != null)
-            sb.append("RuleAction: " + getRuleAction() + ",");
+            sb.append("RuleAction: ").append(getRuleAction()).append(",");
         if (getEgress() != null)
-            sb.append("Egress: " + getEgress() + ",");
+            sb.append("Egress: ").append(getEgress()).append(",");
         if (getCidrBlock() != null)
-            sb.append("CidrBlock: " + getCidrBlock() + ",");
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock() + ",");
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getIcmpTypeCode() != null)
-            sb.append("IcmpTypeCode: " + getIcmpTypeCode() + ",");
+            sb.append("IcmpTypeCode: ").append(getIcmpTypeCode()).append(",");
         if (getPortRange() != null)
-            sb.append("PortRange: " + getPortRange());
+            sb.append("PortRange: ").append(getPortRange());
         sb.append("}");
         return sb.toString();
     }

@@ -61,18 +61,10 @@ public class ListRecordsRequestMarshaller implements Marshaller<Request<ListReco
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (listRecordsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(listRecordsRequest.getIdentityPoolId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{IdentityId}",
-                (listRecordsRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listRecordsRequest.getIdentityId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{DatasetName}",
-                        (listRecordsRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listRecordsRequest.getDatasetName()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "IdentityPoolId", listRecordsRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", listRecordsRequest.getIdentityId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName", listRecordsRequest.getDatasetName());
         request.setResourcePath(uriResourcePath);
 
         if (listRecordsRequest.getLastSyncCount() != null) {

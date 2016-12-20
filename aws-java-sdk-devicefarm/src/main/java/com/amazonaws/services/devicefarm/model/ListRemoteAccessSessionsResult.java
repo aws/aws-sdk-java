@@ -168,9 +168,9 @@ public class ListRemoteAccessSessionsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRemoteAccessSessions() != null)
-            sb.append("RemoteAccessSessions: " + getRemoteAccessSessions() + ",");
+            sb.append("RemoteAccessSessions: ").append(getRemoteAccessSessions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

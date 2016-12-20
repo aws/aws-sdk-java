@@ -159,9 +159,9 @@ public class Principal implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrincipalARN() != null)
-            sb.append("PrincipalARN: " + getPrincipalARN() + ",");
+            sb.append("PrincipalARN: ").append(getPrincipalARN()).append(",");
         if (getPrincipalType() != null)
-            sb.append("PrincipalType: " + getPrincipalType());
+            sb.append("PrincipalType: ").append(getPrincipalType());
         sb.append("}");
         return sb.toString();
     }

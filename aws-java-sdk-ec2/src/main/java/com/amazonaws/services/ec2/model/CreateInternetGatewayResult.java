@@ -81,7 +81,7 @@ public class CreateInternetGatewayResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGateway() != null)
-            sb.append("InternetGateway: " + getInternetGateway());
+            sb.append("InternetGateway: ").append(getInternetGateway());
         sb.append("}");
         return sb.toString();
     }

@@ -228,15 +228,15 @@ public class ActionState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionName() != null)
-            sb.append("ActionName: " + getActionName() + ",");
+            sb.append("ActionName: ").append(getActionName()).append(",");
         if (getCurrentRevision() != null)
-            sb.append("CurrentRevision: " + getCurrentRevision() + ",");
+            sb.append("CurrentRevision: ").append(getCurrentRevision()).append(",");
         if (getLatestExecution() != null)
-            sb.append("LatestExecution: " + getLatestExecution() + ",");
+            sb.append("LatestExecution: ").append(getLatestExecution()).append(",");
         if (getEntityUrl() != null)
-            sb.append("EntityUrl: " + getEntityUrl() + ",");
+            sb.append("EntityUrl: ").append(getEntityUrl()).append(",");
         if (getRevisionUrl() != null)
-            sb.append("RevisionUrl: " + getRevisionUrl());
+            sb.append("RevisionUrl: ").append(getRevisionUrl());
         sb.append("}");
         return sb.toString();
     }

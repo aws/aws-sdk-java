@@ -162,9 +162,9 @@ public class DeleteIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName());
+            sb.append("PolicyName: ").append(getPolicyName());
         sb.append("}");
         return sb.toString();
     }

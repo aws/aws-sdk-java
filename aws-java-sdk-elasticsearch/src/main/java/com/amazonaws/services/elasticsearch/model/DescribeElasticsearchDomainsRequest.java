@@ -112,7 +112,7 @@ public class DescribeElasticsearchDomainsRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainNames() != null)
-            sb.append("DomainNames: " + getDomainNames());
+            sb.append("DomainNames: ").append(getDomainNames());
         sb.append("}");
         return sb.toString();
     }

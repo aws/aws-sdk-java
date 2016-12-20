@@ -172,11 +172,11 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock() + ",");
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getIpv6CidrBlockState() != null)
-            sb.append("Ipv6CidrBlockState: " + getIpv6CidrBlockState() + ",");
+            sb.append("Ipv6CidrBlockState: ").append(getIpv6CidrBlockState()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId());
         sb.append("}");
         return sb.toString();
     }

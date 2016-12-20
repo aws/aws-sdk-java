@@ -126,9 +126,9 @@ public class IcmpTypeCode implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getCode() != null)
-            sb.append("Code: " + getCode());
+            sb.append("Code: ").append(getCode());
         sb.append("}");
         return sb.toString();
     }

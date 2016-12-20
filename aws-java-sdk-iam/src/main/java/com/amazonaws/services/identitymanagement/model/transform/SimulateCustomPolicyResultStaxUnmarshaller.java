@@ -45,6 +45,11 @@ public class SimulateCustomPolicyResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("EvaluationResults", targetDepth)) {
+                    simulateCustomPolicyResult.withEvaluationResults(new ArrayList<EvaluationResult>());
+                    continue;
+                }
+
                 if (context.testExpression("EvaluationResults/member", targetDepth)) {
                     simulateCustomPolicyResult.withEvaluationResults(EvaluationResultStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

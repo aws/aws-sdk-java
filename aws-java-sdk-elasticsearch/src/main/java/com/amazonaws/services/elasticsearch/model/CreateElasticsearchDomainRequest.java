@@ -442,19 +442,19 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getElasticsearchVersion() != null)
-            sb.append("ElasticsearchVersion: " + getElasticsearchVersion() + ",");
+            sb.append("ElasticsearchVersion: ").append(getElasticsearchVersion()).append(",");
         if (getElasticsearchClusterConfig() != null)
-            sb.append("ElasticsearchClusterConfig: " + getElasticsearchClusterConfig() + ",");
+            sb.append("ElasticsearchClusterConfig: ").append(getElasticsearchClusterConfig()).append(",");
         if (getEBSOptions() != null)
-            sb.append("EBSOptions: " + getEBSOptions() + ",");
+            sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
-            sb.append("AccessPolicies: " + getAccessPolicies() + ",");
+            sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
         if (getSnapshotOptions() != null)
-            sb.append("SnapshotOptions: " + getSnapshotOptions() + ",");
+            sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getAdvancedOptions() != null)
-            sb.append("AdvancedOptions: " + getAdvancedOptions());
+            sb.append("AdvancedOptions: ").append(getAdvancedOptions());
         sb.append("}");
         return sb.toString();
     }

@@ -365,15 +365,15 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcEndpointId() != null)
-            sb.append("VpcEndpointId: " + getVpcEndpointId() + ",");
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
         if (getResetPolicy() != null)
-            sb.append("ResetPolicy: " + getResetPolicy() + ",");
+            sb.append("ResetPolicy: ").append(getResetPolicy()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument() + ",");
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getAddRouteTableIds() != null)
-            sb.append("AddRouteTableIds: " + getAddRouteTableIds() + ",");
+            sb.append("AddRouteTableIds: ").append(getAddRouteTableIds()).append(",");
         if (getRemoveRouteTableIds() != null)
-            sb.append("RemoveRouteTableIds: " + getRemoveRouteTableIds());
+            sb.append("RemoveRouteTableIds: ").append(getRemoveRouteTableIds());
         sb.append("}");
         return sb.toString();
     }

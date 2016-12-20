@@ -2438,33 +2438,33 @@ public class ContactDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFirstName() != null)
-            sb.append("FirstName: " + getFirstName() + ",");
+            sb.append("FirstName: ").append(getFirstName()).append(",");
         if (getLastName() != null)
-            sb.append("LastName: " + getLastName() + ",");
+            sb.append("LastName: ").append(getLastName()).append(",");
         if (getContactType() != null)
-            sb.append("ContactType: " + getContactType() + ",");
+            sb.append("ContactType: ").append(getContactType()).append(",");
         if (getOrganizationName() != null)
-            sb.append("OrganizationName: " + getOrganizationName() + ",");
+            sb.append("OrganizationName: ").append(getOrganizationName()).append(",");
         if (getAddressLine1() != null)
-            sb.append("AddressLine1: " + getAddressLine1() + ",");
+            sb.append("AddressLine1: ").append(getAddressLine1()).append(",");
         if (getAddressLine2() != null)
-            sb.append("AddressLine2: " + getAddressLine2() + ",");
+            sb.append("AddressLine2: ").append(getAddressLine2()).append(",");
         if (getCity() != null)
-            sb.append("City: " + getCity() + ",");
+            sb.append("City: ").append(getCity()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getCountryCode() != null)
-            sb.append("CountryCode: " + getCountryCode() + ",");
+            sb.append("CountryCode: ").append(getCountryCode()).append(",");
         if (getZipCode() != null)
-            sb.append("ZipCode: " + getZipCode() + ",");
+            sb.append("ZipCode: ").append(getZipCode()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: " + getPhoneNumber() + ",");
+            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
         if (getEmail() != null)
-            sb.append("Email: " + getEmail() + ",");
+            sb.append("Email: ").append(getEmail()).append(",");
         if (getFax() != null)
-            sb.append("Fax: " + getFax() + ",");
+            sb.append("Fax: ").append(getFax()).append(",");
         if (getExtraParams() != null)
-            sb.append("ExtraParams: " + getExtraParams());
+            sb.append("ExtraParams: ").append(getExtraParams());
         sb.append("}");
         return sb.toString();
     }

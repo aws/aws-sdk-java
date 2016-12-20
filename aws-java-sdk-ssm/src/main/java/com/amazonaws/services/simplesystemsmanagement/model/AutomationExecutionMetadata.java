@@ -502,23 +502,23 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecutionId() != null)
-            sb.append("AutomationExecutionId: " + getAutomationExecutionId() + ",");
+            sb.append("AutomationExecutionId: ").append(getAutomationExecutionId()).append(",");
         if (getDocumentName() != null)
-            sb.append("DocumentName: " + getDocumentName() + ",");
+            sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getAutomationExecutionStatus() != null)
-            sb.append("AutomationExecutionStatus: " + getAutomationExecutionStatus() + ",");
+            sb.append("AutomationExecutionStatus: ").append(getAutomationExecutionStatus()).append(",");
         if (getExecutionStartTime() != null)
-            sb.append("ExecutionStartTime: " + getExecutionStartTime() + ",");
+            sb.append("ExecutionStartTime: ").append(getExecutionStartTime()).append(",");
         if (getExecutionEndTime() != null)
-            sb.append("ExecutionEndTime: " + getExecutionEndTime() + ",");
+            sb.append("ExecutionEndTime: ").append(getExecutionEndTime()).append(",");
         if (getExecutedBy() != null)
-            sb.append("ExecutedBy: " + getExecutedBy() + ",");
+            sb.append("ExecutedBy: ").append(getExecutedBy()).append(",");
         if (getLogFile() != null)
-            sb.append("LogFile: " + getLogFile() + ",");
+            sb.append("LogFile: ").append(getLogFile()).append(",");
         if (getOutputs() != null)
-            sb.append("Outputs: " + getOutputs());
+            sb.append("Outputs: ").append(getOutputs());
         sb.append("}");
         return sb.toString();
     }

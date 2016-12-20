@@ -45,6 +45,11 @@ public class DetachInstancesResultStaxUnmarshaller implements Unmarshaller<Detac
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Activities", targetDepth)) {
+                    detachInstancesResult.withActivities(new ArrayList<Activity>());
+                    continue;
+                }
+
                 if (context.testExpression("Activities/member", targetDepth)) {
                     detachInstancesResult.withActivities(ActivityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -248,13 +248,13 @@ public class StageState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getInboundTransitionState() != null)
-            sb.append("InboundTransitionState: " + getInboundTransitionState() + ",");
+            sb.append("InboundTransitionState: ").append(getInboundTransitionState()).append(",");
         if (getActionStates() != null)
-            sb.append("ActionStates: " + getActionStates() + ",");
+            sb.append("ActionStates: ").append(getActionStates()).append(",");
         if (getLatestExecution() != null)
-            sb.append("LatestExecution: " + getLatestExecution());
+            sb.append("LatestExecution: ").append(getLatestExecution());
         sb.append("}");
         return sb.toString();
     }

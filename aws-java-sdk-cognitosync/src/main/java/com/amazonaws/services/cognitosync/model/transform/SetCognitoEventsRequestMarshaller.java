@@ -61,10 +61,8 @@ public class SetCognitoEventsRequestMarshaller implements Marshaller<Request<Set
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/events";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (setCognitoEventsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(setCognitoEventsRequest.getIdentityPoolId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                setCognitoEventsRequest.getIdentityPoolId());
         request.setResourcePath(uriResourcePath);
 
         try {

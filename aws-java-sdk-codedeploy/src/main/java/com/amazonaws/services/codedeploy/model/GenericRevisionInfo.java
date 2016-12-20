@@ -297,15 +297,15 @@ public class GenericRevisionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDeploymentGroups() != null)
-            sb.append("DeploymentGroups: " + getDeploymentGroups() + ",");
+            sb.append("DeploymentGroups: ").append(getDeploymentGroups()).append(",");
         if (getFirstUsedTime() != null)
-            sb.append("FirstUsedTime: " + getFirstUsedTime() + ",");
+            sb.append("FirstUsedTime: ").append(getFirstUsedTime()).append(",");
         if (getLastUsedTime() != null)
-            sb.append("LastUsedTime: " + getLastUsedTime() + ",");
+            sb.append("LastUsedTime: ").append(getLastUsedTime()).append(",");
         if (getRegisterTime() != null)
-            sb.append("RegisterTime: " + getRegisterTime());
+            sb.append("RegisterTime: ").append(getRegisterTime());
         sb.append("}");
         return sb.toString();
     }

@@ -169,9 +169,9 @@ public class DescribeConditionalForwardersRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getRemoteDomainNames() != null)
-            sb.append("RemoteDomainNames: " + getRemoteDomainNames());
+            sb.append("RemoteDomainNames: ").append(getRemoteDomainNames());
         sb.append("}");
         return sb.toString();
     }

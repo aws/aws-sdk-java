@@ -81,7 +81,7 @@ public class GlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken());
+            sb.append("AccessToken: ").append(getAccessToken());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetrics() != null)
-            sb.append("Metrics: " + getMetrics() + ",");
+            sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

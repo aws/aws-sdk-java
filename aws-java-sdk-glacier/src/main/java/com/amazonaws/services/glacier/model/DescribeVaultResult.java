@@ -339,17 +339,17 @@ public class DescribeVaultResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVaultARN() != null)
-            sb.append("VaultARN: " + getVaultARN() + ",");
+            sb.append("VaultARN: ").append(getVaultARN()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastInventoryDate() != null)
-            sb.append("LastInventoryDate: " + getLastInventoryDate() + ",");
+            sb.append("LastInventoryDate: ").append(getLastInventoryDate()).append(",");
         if (getNumberOfArchives() != null)
-            sb.append("NumberOfArchives: " + getNumberOfArchives() + ",");
+            sb.append("NumberOfArchives: ").append(getNumberOfArchives()).append(",");
         if (getSizeInBytes() != null)
-            sb.append("SizeInBytes: " + getSizeInBytes());
+            sb.append("SizeInBytes: ").append(getSizeInBytes());
         sb.append("}");
         return sb.toString();
     }

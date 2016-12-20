@@ -651,15 +651,15 @@ public class LifecycleEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleEventName() != null)
-            sb.append("LifecycleEventName: " + getLifecycleEventName() + ",");
+            sb.append("LifecycleEventName: ").append(getLifecycleEventName()).append(",");
         if (getDiagnostics() != null)
-            sb.append("Diagnostics: " + getDiagnostics() + ",");
+            sb.append("Diagnostics: ").append(getDiagnostics()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

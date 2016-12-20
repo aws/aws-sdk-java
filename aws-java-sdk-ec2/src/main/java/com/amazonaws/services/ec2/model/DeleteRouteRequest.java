@@ -186,11 +186,11 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest implements Seria
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId() + ",");
+            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
+            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getDestinationIpv6CidrBlock() != null)
-            sb.append("DestinationIpv6CidrBlock: " + getDestinationIpv6CidrBlock());
+            sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }

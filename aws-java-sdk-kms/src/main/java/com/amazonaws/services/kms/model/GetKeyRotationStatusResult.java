@@ -90,7 +90,7 @@ public class GetKeyRotationStatusResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyRotationEnabled() != null)
-            sb.append("KeyRotationEnabled: " + getKeyRotationEnabled());
+            sb.append("KeyRotationEnabled: ").append(getKeyRotationEnabled());
         sb.append("}");
         return sb.toString();
     }

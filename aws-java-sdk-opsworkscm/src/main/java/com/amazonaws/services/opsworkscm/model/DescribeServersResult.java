@@ -189,9 +189,9 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServers() != null)
-            sb.append("Servers: " + getServers() + ",");
+            sb.append("Servers: ").append(getServers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

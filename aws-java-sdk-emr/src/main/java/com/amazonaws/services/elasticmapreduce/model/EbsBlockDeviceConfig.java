@@ -141,9 +141,9 @@ public class EbsBlockDeviceConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeSpecification() != null)
-            sb.append("VolumeSpecification: " + getVolumeSpecification() + ",");
+            sb.append("VolumeSpecification: ").append(getVolumeSpecification()).append(",");
         if (getVolumesPerInstance() != null)
-            sb.append("VolumesPerInstance: " + getVolumesPerInstance());
+            sb.append("VolumesPerInstance: ").append(getVolumesPerInstance());
         sb.append("}");
         return sb.toString();
     }

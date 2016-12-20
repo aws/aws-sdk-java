@@ -81,7 +81,7 @@ public class DescribeTargetGroupAttributesRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetGroupArn() != null)
-            sb.append("TargetGroupArn: " + getTargetGroupArn());
+            sb.append("TargetGroupArn: ").append(getTargetGroupArn());
         sb.append("}");
         return sb.toString();
     }

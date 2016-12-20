@@ -81,7 +81,7 @@ public class ReplaceNetworkAclAssociationResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNewAssociationId() != null)
-            sb.append("NewAssociationId: " + getNewAssociationId());
+            sb.append("NewAssociationId: ").append(getNewAssociationId());
         sb.append("}");
         return sb.toString();
     }

@@ -1917,71 +1917,71 @@ public class DBCluster implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getBackupRetentionPeriod() != null)
-            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
         if (getCharacterSetName() != null)
-            sb.append("CharacterSetName: " + getCharacterSetName() + ",");
+            sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
         if (getDatabaseName() != null)
-            sb.append("DatabaseName: " + getDatabaseName() + ",");
+            sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getDBClusterParameterGroup() != null)
-            sb.append("DBClusterParameterGroup: " + getDBClusterParameterGroup() + ",");
+            sb.append("DBClusterParameterGroup: ").append(getDBClusterParameterGroup()).append(",");
         if (getDBSubnetGroup() != null)
-            sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ",");
+            sb.append("DBSubnetGroup: ").append(getDBSubnetGroup()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getPercentProgress() != null)
-            sb.append("PercentProgress: " + getPercentProgress() + ",");
+            sb.append("PercentProgress: ").append(getPercentProgress()).append(",");
         if (getEarliestRestorableTime() != null)
-            sb.append("EarliestRestorableTime: " + getEarliestRestorableTime() + ",");
+            sb.append("EarliestRestorableTime: ").append(getEarliestRestorableTime()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getReaderEndpoint() != null)
-            sb.append("ReaderEndpoint: " + getReaderEndpoint() + ",");
+            sb.append("ReaderEndpoint: ").append(getReaderEndpoint()).append(",");
         if (getMultiAZ() != null)
-            sb.append("MultiAZ: " + getMultiAZ() + ",");
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getLatestRestorableTime() != null)
-            sb.append("LatestRestorableTime: " + getLatestRestorableTime() + ",");
+            sb.append("LatestRestorableTime: ").append(getLatestRestorableTime()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getMasterUsername() != null)
-            sb.append("MasterUsername: " + getMasterUsername() + ",");
+            sb.append("MasterUsername: ").append(getMasterUsername()).append(",");
         if (getDBClusterOptionGroupMemberships() != null)
-            sb.append("DBClusterOptionGroupMemberships: " + getDBClusterOptionGroupMemberships() + ",");
+            sb.append("DBClusterOptionGroupMemberships: ").append(getDBClusterOptionGroupMemberships()).append(",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+            sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getReplicationSourceIdentifier() != null)
-            sb.append("ReplicationSourceIdentifier: " + getReplicationSourceIdentifier() + ",");
+            sb.append("ReplicationSourceIdentifier: ").append(getReplicationSourceIdentifier()).append(",");
         if (getReadReplicaIdentifiers() != null)
-            sb.append("ReadReplicaIdentifiers: " + getReadReplicaIdentifiers() + ",");
+            sb.append("ReadReplicaIdentifiers: ").append(getReadReplicaIdentifiers()).append(",");
         if (getDBClusterMembers() != null)
-            sb.append("DBClusterMembers: " + getDBClusterMembers() + ",");
+            sb.append("DBClusterMembers: ").append(getDBClusterMembers()).append(",");
         if (getVpcSecurityGroups() != null)
-            sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
+            sb.append("VpcSecurityGroups: ").append(getVpcSecurityGroups()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getStorageEncrypted() != null)
-            sb.append("StorageEncrypted: " + getStorageEncrypted() + ",");
+            sb.append("StorageEncrypted: ").append(getStorageEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDbClusterResourceId() != null)
-            sb.append("DbClusterResourceId: " + getDbClusterResourceId() + ",");
+            sb.append("DbClusterResourceId: ").append(getDbClusterResourceId()).append(",");
         if (getDBClusterArn() != null)
-            sb.append("DBClusterArn: " + getDBClusterArn() + ",");
+            sb.append("DBClusterArn: ").append(getDBClusterArn()).append(",");
         if (getAssociatedRoles() != null)
-            sb.append("AssociatedRoles: " + getAssociatedRoles() + ",");
+            sb.append("AssociatedRoles: ").append(getAssociatedRoles()).append(",");
         if (getClusterCreateTime() != null)
-            sb.append("ClusterCreateTime: " + getClusterCreateTime());
+            sb.append("ClusterCreateTime: ").append(getClusterCreateTime());
         sb.append("}");
         return sb.toString();
     }

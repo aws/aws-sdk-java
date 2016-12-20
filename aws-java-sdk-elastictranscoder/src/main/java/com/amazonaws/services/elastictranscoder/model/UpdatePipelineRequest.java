@@ -2121,21 +2121,21 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInputBucket() != null)
-            sb.append("InputBucket: " + getInputBucket() + ",");
+            sb.append("InputBucket: ").append(getInputBucket()).append(",");
         if (getRole() != null)
-            sb.append("Role: " + getRole() + ",");
+            sb.append("Role: ").append(getRole()).append(",");
         if (getAwsKmsKeyArn() != null)
-            sb.append("AwsKmsKeyArn: " + getAwsKmsKeyArn() + ",");
+            sb.append("AwsKmsKeyArn: ").append(getAwsKmsKeyArn()).append(",");
         if (getNotifications() != null)
-            sb.append("Notifications: " + getNotifications() + ",");
+            sb.append("Notifications: ").append(getNotifications()).append(",");
         if (getContentConfig() != null)
-            sb.append("ContentConfig: " + getContentConfig() + ",");
+            sb.append("ContentConfig: ").append(getContentConfig()).append(",");
         if (getThumbnailConfig() != null)
-            sb.append("ThumbnailConfig: " + getThumbnailConfig());
+            sb.append("ThumbnailConfig: ").append(getThumbnailConfig());
         sb.append("}");
         return sb.toString();
     }

@@ -621,21 +621,21 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getInputs() != null)
-            sb.append("Inputs: " + getInputs() + ",");
+            sb.append("Inputs: ").append(getInputs()).append(",");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput() + ",");
+            sb.append("Output: ").append(getOutput()).append(",");
         if (getOutputs() != null)
-            sb.append("Outputs: " + getOutputs() + ",");
+            sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getOutputKeyPrefix() != null)
-            sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");
+            sb.append("OutputKeyPrefix: ").append(getOutputKeyPrefix()).append(",");
         if (getPlaylists() != null)
-            sb.append("Playlists: " + getPlaylists() + ",");
+            sb.append("Playlists: ").append(getPlaylists()).append(",");
         if (getUserMetadata() != null)
-            sb.append("UserMetadata: " + getUserMetadata());
+            sb.append("UserMetadata: ").append(getUserMetadata());
         sb.append("}");
         return sb.toString();
     }

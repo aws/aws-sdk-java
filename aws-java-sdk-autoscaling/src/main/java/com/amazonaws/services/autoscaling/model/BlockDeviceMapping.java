@@ -262,13 +262,13 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualName() != null)
-            sb.append("VirtualName: " + getVirtualName() + ",");
+            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getDeviceName() != null)
-            sb.append("DeviceName: " + getDeviceName() + ",");
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getEbs() != null)
-            sb.append("Ebs: " + getEbs() + ",");
+            sb.append("Ebs: ").append(getEbs()).append(",");
         if (getNoDevice() != null)
-            sb.append("NoDevice: " + getNoDevice());
+            sb.append("NoDevice: ").append(getNoDevice());
         sb.append("}");
         return sb.toString();
     }

@@ -130,9 +130,9 @@ public class ComplianceSummaryByResourceType implements Serializable, Cloneable 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getComplianceSummary() != null)
-            sb.append("ComplianceSummary: " + getComplianceSummary());
+            sb.append("ComplianceSummary: ").append(getComplianceSummary());
         sb.append("}");
         return sb.toString();
     }

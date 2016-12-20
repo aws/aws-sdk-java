@@ -78,7 +78,7 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProject() != null)
-            sb.append("Project: " + getProject());
+            sb.append("Project: ").append(getProject());
         sb.append("}");
         return sb.toString();
     }

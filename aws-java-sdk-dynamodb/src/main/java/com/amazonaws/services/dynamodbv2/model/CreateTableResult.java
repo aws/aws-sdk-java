@@ -61,7 +61,7 @@ public class CreateTableResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableDescription() != null)
-            sb.append("TableDescription: " + getTableDescription());
+            sb.append("TableDescription: ").append(getTableDescription());
         sb.append("}");
         return sb.toString();
     }

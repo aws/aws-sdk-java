@@ -59,7 +59,7 @@ public class DisassociateNodeResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNodeAssociationStatusToken() != null)
-            sb.append("NodeAssociationStatusToken: " + getNodeAssociationStatusToken());
+            sb.append("NodeAssociationStatusToken: ").append(getNodeAssociationStatusToken());
         sb.append("}");
         return sb.toString();
     }

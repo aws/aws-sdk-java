@@ -653,17 +653,17 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getRoleSessionName() != null)
-            sb.append("RoleSessionName: " + getRoleSessionName() + ",");
+            sb.append("RoleSessionName: ").append(getRoleSessionName()).append(",");
         if (getWebIdentityToken() != null)
-            sb.append("WebIdentityToken: " + getWebIdentityToken() + ",");
+            sb.append("WebIdentityToken: ").append(getWebIdentityToken()).append(",");
         if (getProviderId() != null)
-            sb.append("ProviderId: " + getProviderId() + ",");
+            sb.append("ProviderId: ").append(getProviderId()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: " + getDurationSeconds());
+            sb.append("DurationSeconds: ").append(getDurationSeconds());
         sb.append("}");
         return sb.toString();
     }

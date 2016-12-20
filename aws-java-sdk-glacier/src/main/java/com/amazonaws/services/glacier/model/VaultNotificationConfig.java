@@ -182,9 +182,9 @@ public class VaultNotificationConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSNSTopic() != null)
-            sb.append("SNSTopic: " + getSNSTopic() + ",");
+            sb.append("SNSTopic: ").append(getSNSTopic()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents());
+            sb.append("Events: ").append(getEvents());
         sb.append("}");
         return sb.toString();
     }

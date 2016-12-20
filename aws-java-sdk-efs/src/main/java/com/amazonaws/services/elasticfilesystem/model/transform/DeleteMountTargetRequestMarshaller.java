@@ -61,10 +61,8 @@ public class DeleteMountTargetRequestMarshaller implements Marshaller<Request<De
 
         String uriResourcePath = "/2015-02-01/mount-targets/{MountTargetId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{MountTargetId}",
-                (deleteMountTargetRequest.getMountTargetId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteMountTargetRequest.getMountTargetId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "MountTargetId",
+                deleteMountTargetRequest.getMountTargetId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

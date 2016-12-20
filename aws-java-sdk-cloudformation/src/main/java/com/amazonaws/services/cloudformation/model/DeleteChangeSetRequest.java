@@ -134,9 +134,9 @@ public class DeleteChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChangeSetName() != null)
-            sb.append("ChangeSetName: " + getChangeSetName() + ",");
+            sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: ").append(getStackName());
         sb.append("}");
         return sb.toString();
     }

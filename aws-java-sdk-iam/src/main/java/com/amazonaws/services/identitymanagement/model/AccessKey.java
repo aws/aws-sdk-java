@@ -367,15 +367,15 @@ public class AccessKey implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getAccessKeyId() != null)
-            sb.append("AccessKeyId: " + getAccessKeyId() + ",");
+            sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSecretAccessKey() != null)
-            sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");
+            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate());
+            sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");
         return sb.toString();
     }

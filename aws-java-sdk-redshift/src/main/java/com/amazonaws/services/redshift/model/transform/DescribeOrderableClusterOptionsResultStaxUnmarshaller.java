@@ -45,6 +45,11 @@ public class DescribeOrderableClusterOptionsResultStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("OrderableClusterOptions", targetDepth)) {
+                    describeOrderableClusterOptionsResult.withOrderableClusterOptions(new ArrayList<OrderableClusterOption>());
+                    continue;
+                }
+
                 if (context.testExpression("OrderableClusterOptions/OrderableClusterOption", targetDepth)) {
                     describeOrderableClusterOptionsResult.withOrderableClusterOptions(OrderableClusterOptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

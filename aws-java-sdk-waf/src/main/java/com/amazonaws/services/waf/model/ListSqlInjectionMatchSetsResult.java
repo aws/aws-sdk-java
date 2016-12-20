@@ -184,9 +184,9 @@ public class ListSqlInjectionMatchSetsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getSqlInjectionMatchSets() != null)
-            sb.append("SqlInjectionMatchSets: " + getSqlInjectionMatchSets());
+            sb.append("SqlInjectionMatchSets: ").append(getSqlInjectionMatchSets());
         sb.append("}");
         return sb.toString();
     }

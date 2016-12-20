@@ -175,7 +175,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryFrequency() != null)
-            sb.append("DeliveryFrequency: " + getDeliveryFrequency());
+            sb.append("DeliveryFrequency: ").append(getDeliveryFrequency());
         sb.append("}");
         return sb.toString();
     }

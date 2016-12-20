@@ -241,9 +241,9 @@ public class ListTablesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableNames() != null)
-            sb.append("TableNames: " + getTableNames() + ",");
+            sb.append("TableNames: ").append(getTableNames()).append(",");
         if (getLastEvaluatedTableName() != null)
-            sb.append("LastEvaluatedTableName: " + getLastEvaluatedTableName());
+            sb.append("LastEvaluatedTableName: ").append(getLastEvaluatedTableName());
         sb.append("}");
         return sb.toString();
     }

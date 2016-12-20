@@ -113,7 +113,7 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBillingMethod() != null)
-            sb.append("BillingMethod: " + getBillingMethod());
+            sb.append("BillingMethod: ").append(getBillingMethod());
         sb.append("}");
         return sb.toString();
     }

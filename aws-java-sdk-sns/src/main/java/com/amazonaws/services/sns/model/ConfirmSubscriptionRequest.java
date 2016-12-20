@@ -227,11 +227,11 @@ public class ConfirmSubscriptionRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken() + ",");
+            sb.append("Token: ").append(getToken()).append(",");
         if (getAuthenticateOnUnsubscribe() != null)
-            sb.append("AuthenticateOnUnsubscribe: " + getAuthenticateOnUnsubscribe());
+            sb.append("AuthenticateOnUnsubscribe: ").append(getAuthenticateOnUnsubscribe());
         sb.append("}");
         return sb.toString();
     }

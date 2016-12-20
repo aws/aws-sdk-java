@@ -154,9 +154,9 @@ public class SearchFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSearchedFaceId() != null)
-            sb.append("SearchedFaceId: " + getSearchedFaceId() + ",");
+            sb.append("SearchedFaceId: ").append(getSearchedFaceId()).append(",");
         if (getFaceMatches() != null)
-            sb.append("FaceMatches: " + getFaceMatches());
+            sb.append("FaceMatches: ").append(getFaceMatches());
         sb.append("}");
         return sb.toString();
     }

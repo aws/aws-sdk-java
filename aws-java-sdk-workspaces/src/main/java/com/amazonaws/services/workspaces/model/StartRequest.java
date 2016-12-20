@@ -80,7 +80,7 @@ public class StartRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: " + getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId());
         sb.append("}");
         return sb.toString();
     }

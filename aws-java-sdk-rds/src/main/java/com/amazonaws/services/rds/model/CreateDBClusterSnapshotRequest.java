@@ -520,11 +520,11 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier() + ",");
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier()).append(",");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

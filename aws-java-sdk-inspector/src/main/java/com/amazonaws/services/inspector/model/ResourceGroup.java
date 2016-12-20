@@ -213,11 +213,11 @@ public class ResourceGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt());
         sb.append("}");
         return sb.toString();
     }

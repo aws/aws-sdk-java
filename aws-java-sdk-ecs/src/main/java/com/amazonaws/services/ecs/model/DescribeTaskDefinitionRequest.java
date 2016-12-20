@@ -93,7 +93,7 @@ public class DescribeTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition());
+            sb.append("TaskDefinition: ").append(getTaskDefinition());
         sb.append("}");
         return sb.toString();
     }

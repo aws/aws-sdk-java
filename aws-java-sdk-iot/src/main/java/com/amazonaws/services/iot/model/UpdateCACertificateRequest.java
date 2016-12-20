@@ -267,11 +267,11 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getNewStatus() != null)
-            sb.append("NewStatus: " + getNewStatus() + ",");
+            sb.append("NewStatus: ").append(getNewStatus()).append(",");
         if (getNewAutoRegistrationStatus() != null)
-            sb.append("NewAutoRegistrationStatus: " + getNewAutoRegistrationStatus());
+            sb.append("NewAutoRegistrationStatus: ").append(getNewAutoRegistrationStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -1277,19 +1277,19 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getAttributesToGet() != null)
-            sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+            sb.append("AttributesToGet: ").append(getAttributesToGet()).append(",");
         if (getConsistentRead() != null)
-            sb.append("ConsistentRead: " + getConsistentRead() + ",");
+            sb.append("ConsistentRead: ").append(getConsistentRead()).append(",");
         if (getReturnConsumedCapacity() != null)
-            sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
+            sb.append("ReturnConsumedCapacity: ").append(getReturnConsumedCapacity()).append(",");
         if (getProjectionExpression() != null)
-            sb.append("ProjectionExpression: " + getProjectionExpression() + ",");
+            sb.append("ProjectionExpression: ").append(getProjectionExpression()).append(",");
         if (getExpressionAttributeNames() != null)
-            sb.append("ExpressionAttributeNames: " + getExpressionAttributeNames());
+            sb.append("ExpressionAttributeNames: ").append(getExpressionAttributeNames());
         sb.append("}");
         return sb.toString();
     }

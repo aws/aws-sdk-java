@@ -154,9 +154,9 @@ public class GetKeyPairsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPairs() != null)
-            sb.append("KeyPairs: " + getKeyPairs() + ",");
+            sb.append("KeyPairs: ").append(getKeyPairs()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

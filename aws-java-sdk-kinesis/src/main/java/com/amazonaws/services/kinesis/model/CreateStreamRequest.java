@@ -169,9 +169,9 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getShardCount() != null)
-            sb.append("ShardCount: " + getShardCount());
+            sb.append("ShardCount: ").append(getShardCount());
         sb.append("}");
         return sb.toString();
     }

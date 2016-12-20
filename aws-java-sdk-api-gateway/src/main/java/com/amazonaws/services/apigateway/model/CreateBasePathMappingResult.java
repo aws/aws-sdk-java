@@ -176,11 +176,11 @@ public class CreateBasePathMappingResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBasePath() != null)
-            sb.append("BasePath: " + getBasePath() + ",");
+            sb.append("BasePath: ").append(getBasePath()).append(",");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getStage() != null)
-            sb.append("Stage: " + getStage());
+            sb.append("Stage: ").append(getStage());
         sb.append("}");
         return sb.toString();
     }

@@ -87,7 +87,7 @@ public class DeadLetterConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetArn() != null)
-            sb.append("TargetArn: " + getTargetArn());
+            sb.append("TargetArn: ").append(getTargetArn());
         sb.append("}");
         return sb.toString();
     }

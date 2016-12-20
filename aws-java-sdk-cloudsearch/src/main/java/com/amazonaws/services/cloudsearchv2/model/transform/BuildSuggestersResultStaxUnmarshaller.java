@@ -45,6 +45,11 @@ public class BuildSuggestersResultStaxUnmarshaller implements Unmarshaller<Build
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("FieldNames", targetDepth)) {
+                    buildSuggestersResult.withFieldNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("FieldNames/member", targetDepth)) {
                     buildSuggestersResult.withFieldNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

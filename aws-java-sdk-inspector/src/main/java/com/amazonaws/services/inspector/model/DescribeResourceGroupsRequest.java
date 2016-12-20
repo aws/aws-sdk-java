@@ -109,7 +109,7 @@ public class DescribeResourceGroupsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceGroupArns() != null)
-            sb.append("ResourceGroupArns: " + getResourceGroupArns());
+            sb.append("ResourceGroupArns: ").append(getResourceGroupArns());
         sb.append("}");
         return sb.toString();
     }

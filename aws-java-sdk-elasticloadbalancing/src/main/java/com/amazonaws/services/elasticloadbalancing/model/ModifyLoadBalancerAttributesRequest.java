@@ -127,9 +127,9 @@ public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getLoadBalancerAttributes() != null)
-            sb.append("LoadBalancerAttributes: " + getLoadBalancerAttributes());
+            sb.append("LoadBalancerAttributes: ").append(getLoadBalancerAttributes());
         sb.append("}");
         return sb.toString();
     }

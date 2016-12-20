@@ -61,8 +61,7 @@ public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPip
 
         String uriResourcePath = "/2012-09-25/pipelines/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (readPipelineRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(readPipelineRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", readPipelineRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

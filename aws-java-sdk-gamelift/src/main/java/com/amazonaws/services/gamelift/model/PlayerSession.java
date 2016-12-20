@@ -794,23 +794,23 @@ public class PlayerSession implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlayerSessionId() != null)
-            sb.append("PlayerSessionId: " + getPlayerSessionId() + ",");
+            sb.append("PlayerSessionId: ").append(getPlayerSessionId()).append(",");
         if (getPlayerId() != null)
-            sb.append("PlayerId: " + getPlayerId() + ",");
+            sb.append("PlayerId: ").append(getPlayerId()).append(",");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTerminationTime() != null)
-            sb.append("TerminationTime: " + getTerminationTime() + ",");
+            sb.append("TerminationTime: ").append(getTerminationTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort());
+            sb.append("Port: ").append(getPort());
         sb.append("}");
         return sb.toString();
     }

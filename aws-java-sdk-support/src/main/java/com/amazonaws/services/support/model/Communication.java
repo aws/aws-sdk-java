@@ -305,15 +305,15 @@ public class Communication implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId() + ",");
+            sb.append("CaseId: ").append(getCaseId()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getSubmittedBy() != null)
-            sb.append("SubmittedBy: " + getSubmittedBy() + ",");
+            sb.append("SubmittedBy: ").append(getSubmittedBy()).append(",");
         if (getTimeCreated() != null)
-            sb.append("TimeCreated: " + getTimeCreated() + ",");
+            sb.append("TimeCreated: ").append(getTimeCreated()).append(",");
         if (getAttachmentSet() != null)
-            sb.append("AttachmentSet: " + getAttachmentSet());
+            sb.append("AttachmentSet: ").append(getAttachmentSet());
         sb.append("}");
         return sb.toString();
     }

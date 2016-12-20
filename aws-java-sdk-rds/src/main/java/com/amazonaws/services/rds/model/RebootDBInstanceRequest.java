@@ -334,9 +334,9 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getForceFailover() != null)
-            sb.append("ForceFailover: " + getForceFailover());
+            sb.append("ForceFailover: ").append(getForceFailover());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,8 @@ public class DeleteApnsChannelRequestMarshaller implements Marshaller<Request<De
 
         String uriResourcePath = "/v1/apps/{application-id}/channels/apns";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (deleteApnsChannelRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteApnsChannelRequest.getApplicationId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                deleteApnsChannelRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

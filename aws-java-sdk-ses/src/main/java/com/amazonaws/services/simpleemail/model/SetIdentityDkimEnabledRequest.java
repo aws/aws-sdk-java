@@ -150,9 +150,9 @@ public class SetIdentityDkimEnabledRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getDkimEnabled() != null)
-            sb.append("DkimEnabled: " + getDkimEnabled());
+            sb.append("DkimEnabled: ").append(getDkimEnabled());
         sb.append("}");
         return sb.toString();
     }

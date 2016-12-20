@@ -93,7 +93,7 @@ public class DisassociateVpcCidrBlockRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId());
         sb.append("}");
         return sb.toString();
     }

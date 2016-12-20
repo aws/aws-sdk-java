@@ -846,33 +846,33 @@ public class ReplicationTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTaskIdentifier() != null)
-            sb.append("ReplicationTaskIdentifier: " + getReplicationTaskIdentifier() + ",");
+            sb.append("ReplicationTaskIdentifier: ").append(getReplicationTaskIdentifier()).append(",");
         if (getSourceEndpointArn() != null)
-            sb.append("SourceEndpointArn: " + getSourceEndpointArn() + ",");
+            sb.append("SourceEndpointArn: ").append(getSourceEndpointArn()).append(",");
         if (getTargetEndpointArn() != null)
-            sb.append("TargetEndpointArn: " + getTargetEndpointArn() + ",");
+            sb.append("TargetEndpointArn: ").append(getTargetEndpointArn()).append(",");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn() + ",");
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn()).append(",");
         if (getMigrationType() != null)
-            sb.append("MigrationType: " + getMigrationType() + ",");
+            sb.append("MigrationType: ").append(getMigrationType()).append(",");
         if (getTableMappings() != null)
-            sb.append("TableMappings: " + getTableMappings() + ",");
+            sb.append("TableMappings: ").append(getTableMappings()).append(",");
         if (getReplicationTaskSettings() != null)
-            sb.append("ReplicationTaskSettings: " + getReplicationTaskSettings() + ",");
+            sb.append("ReplicationTaskSettings: ").append(getReplicationTaskSettings()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastFailureMessage() != null)
-            sb.append("LastFailureMessage: " + getLastFailureMessage() + ",");
+            sb.append("LastFailureMessage: ").append(getLastFailureMessage()).append(",");
         if (getStopReason() != null)
-            sb.append("StopReason: " + getStopReason() + ",");
+            sb.append("StopReason: ").append(getStopReason()).append(",");
         if (getReplicationTaskCreationDate() != null)
-            sb.append("ReplicationTaskCreationDate: " + getReplicationTaskCreationDate() + ",");
+            sb.append("ReplicationTaskCreationDate: ").append(getReplicationTaskCreationDate()).append(",");
         if (getReplicationTaskStartDate() != null)
-            sb.append("ReplicationTaskStartDate: " + getReplicationTaskStartDate() + ",");
+            sb.append("ReplicationTaskStartDate: ").append(getReplicationTaskStartDate()).append(",");
         if (getReplicationTaskArn() != null)
-            sb.append("ReplicationTaskArn: " + getReplicationTaskArn() + ",");
+            sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getReplicationTaskStats() != null)
-            sb.append("ReplicationTaskStats: " + getReplicationTaskStats());
+            sb.append("ReplicationTaskStats: ").append(getReplicationTaskStats());
         sb.append("}");
         return sb.toString();
     }

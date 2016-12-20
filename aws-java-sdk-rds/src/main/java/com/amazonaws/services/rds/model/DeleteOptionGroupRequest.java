@@ -108,7 +108,7 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName());
+            sb.append("OptionGroupName: ").append(getOptionGroupName());
         sb.append("}");
         return sb.toString();
     }

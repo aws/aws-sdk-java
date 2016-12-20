@@ -237,11 +237,11 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn() + ",");
+            sb.append("ClientArn: ").append(getClientArn()).append(",");
         if (getClientVersion() != null)
-            sb.append("ClientVersion: " + getClientVersion() + ",");
+            sb.append("ClientVersion: ").append(getClientVersion()).append(",");
         if (getHapgList() != null)
-            sb.append("HapgList: " + getHapgList());
+            sb.append("HapgList: ").append(getHapgList());
         sb.append("}");
         return sb.toString();
     }

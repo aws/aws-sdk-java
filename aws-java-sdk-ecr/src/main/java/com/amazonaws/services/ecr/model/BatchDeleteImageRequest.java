@@ -220,11 +220,11 @@ public class BatchDeleteImageRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageIds() != null)
-            sb.append("ImageIds: " + getImageIds());
+            sb.append("ImageIds: ").append(getImageIds());
         sb.append("}");
         return sb.toString();
     }

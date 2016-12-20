@@ -164,9 +164,9 @@ public class ListDocumentsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocumentIdentifiers() != null)
-            sb.append("DocumentIdentifiers: " + getDocumentIdentifiers() + ",");
+            sb.append("DocumentIdentifiers: ").append(getDocumentIdentifiers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

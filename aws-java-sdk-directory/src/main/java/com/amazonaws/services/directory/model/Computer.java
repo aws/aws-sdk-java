@@ -205,11 +205,11 @@ public class Computer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputerId() != null)
-            sb.append("ComputerId: " + getComputerId() + ",");
+            sb.append("ComputerId: ").append(getComputerId()).append(",");
         if (getComputerName() != null)
-            sb.append("ComputerName: " + getComputerName() + ",");
+            sb.append("ComputerName: ").append(getComputerName()).append(",");
         if (getComputerAttributes() != null)
-            sb.append("ComputerAttributes: " + getComputerAttributes());
+            sb.append("ComputerAttributes: ").append(getComputerAttributes());
         sb.append("}");
         return sb.toString();
     }

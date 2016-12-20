@@ -80,7 +80,7 @@ public class DescribeUserPoolClientResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolClient() != null)
-            sb.append("UserPoolClient: " + getUserPoolClient());
+            sb.append("UserPoolClient: ").append(getUserPoolClient());
         sb.append("}");
         return sb.toString();
     }

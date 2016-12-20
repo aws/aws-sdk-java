@@ -80,7 +80,7 @@ public class DeleteAnalysisSchemeResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAnalysisScheme() != null)
-            sb.append("AnalysisScheme: " + getAnalysisScheme());
+            sb.append("AnalysisScheme: ").append(getAnalysisScheme());
         sb.append("}");
         return sb.toString();
     }

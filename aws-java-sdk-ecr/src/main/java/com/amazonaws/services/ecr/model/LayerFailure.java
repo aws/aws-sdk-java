@@ -205,11 +205,11 @@ public class LayerFailure implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayerDigest() != null)
-            sb.append("LayerDigest: " + getLayerDigest() + ",");
+            sb.append("LayerDigest: ").append(getLayerDigest()).append(",");
         if (getFailureCode() != null)
-            sb.append("FailureCode: " + getFailureCode() + ",");
+            sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: " + getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason());
         sb.append("}");
         return sb.toString();
     }

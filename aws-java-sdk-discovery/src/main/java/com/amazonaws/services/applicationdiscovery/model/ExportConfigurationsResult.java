@@ -78,7 +78,7 @@ public class ExportConfigurationsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportId() != null)
-            sb.append("ExportId: " + getExportId());
+            sb.append("ExportId: ").append(getExportId());
         sb.append("}");
         return sb.toString();
     }

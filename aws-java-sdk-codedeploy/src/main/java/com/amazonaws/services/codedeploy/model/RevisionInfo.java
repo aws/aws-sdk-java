@@ -89,9 +89,9 @@ public class RevisionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRevisionLocation() != null)
-            sb.append("RevisionLocation: " + getRevisionLocation() + ",");
+            sb.append("RevisionLocation: ").append(getRevisionLocation()).append(",");
         if (getGenericRevisionInfo() != null)
-            sb.append("GenericRevisionInfo: " + getGenericRevisionInfo());
+            sb.append("GenericRevisionInfo: ").append(getGenericRevisionInfo());
         sb.append("}");
         return sb.toString();
     }

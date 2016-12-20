@@ -126,9 +126,9 @@ public class RulePriorityPair implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn() + ",");
+            sb.append("RuleArn: ").append(getRuleArn()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority());
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }

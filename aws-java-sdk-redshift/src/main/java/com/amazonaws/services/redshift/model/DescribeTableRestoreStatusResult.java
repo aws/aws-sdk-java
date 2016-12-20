@@ -157,9 +157,9 @@ public class DescribeTableRestoreStatusResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableRestoreStatusDetails() != null)
-            sb.append("TableRestoreStatusDetails: " + getTableRestoreStatusDetails() + ",");
+            sb.append("TableRestoreStatusDetails: ").append(getTableRestoreStatusDetails()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

@@ -183,9 +183,9 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getMetricData() != null)
-            sb.append("MetricData: " + getMetricData());
+            sb.append("MetricData: ").append(getMetricData());
         sb.append("}");
         return sb.toString();
     }

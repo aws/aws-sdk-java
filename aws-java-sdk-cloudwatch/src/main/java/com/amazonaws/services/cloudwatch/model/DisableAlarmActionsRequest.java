@@ -112,7 +112,7 @@ public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmNames() != null)
-            sb.append("AlarmNames: " + getAlarmNames());
+            sb.append("AlarmNames: ").append(getAlarmNames());
         sb.append("}");
         return sb.toString();
     }

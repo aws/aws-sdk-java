@@ -127,9 +127,9 @@ public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername());
+            sb.append("Username: ").append(getUsername());
         sb.append("}");
         return sb.toString();
     }

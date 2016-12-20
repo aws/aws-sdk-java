@@ -329,21 +329,21 @@ public class EndpointDemographic implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppVersion() != null)
-            sb.append("AppVersion: " + getAppVersion() + ",");
+            sb.append("AppVersion: ").append(getAppVersion()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: " + getLocale() + ",");
+            sb.append("Locale: ").append(getLocale()).append(",");
         if (getMake() != null)
-            sb.append("Make: " + getMake() + ",");
+            sb.append("Make: ").append(getMake()).append(",");
         if (getModel() != null)
-            sb.append("Model: " + getModel() + ",");
+            sb.append("Model: ").append(getModel()).append(",");
         if (getModelVersion() != null)
-            sb.append("ModelVersion: " + getModelVersion() + ",");
+            sb.append("ModelVersion: ").append(getModelVersion()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getPlatformVersion() != null)
-            sb.append("PlatformVersion: " + getPlatformVersion() + ",");
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: " + getTimezone());
+            sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
         return sb.toString();
     }

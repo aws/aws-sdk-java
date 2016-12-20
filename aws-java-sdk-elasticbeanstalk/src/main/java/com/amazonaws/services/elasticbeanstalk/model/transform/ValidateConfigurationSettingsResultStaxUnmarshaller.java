@@ -45,6 +45,11 @@ public class ValidateConfigurationSettingsResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Messages", targetDepth)) {
+                    validateConfigurationSettingsResult.withMessages(new ArrayList<ValidationMessage>());
+                    continue;
+                }
+
                 if (context.testExpression("Messages/member", targetDepth)) {
                     validateConfigurationSettingsResult.withMessages(ValidationMessageStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -675,31 +675,31 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceClass() != null)
-            sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+            sb.append("DBInstanceClass: ").append(getDBInstanceClass()).append(",");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getBackupRetentionPeriod() != null)
-            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
         if (getMultiAZ() != null)
-            sb.append("MultiAZ: " + getMultiAZ() + ",");
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getLicenseModel() != null)
-            sb.append("LicenseModel: " + getLicenseModel() + ",");
+            sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops() + ",");
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: " + getStorageType() + ",");
+            sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getCACertificateIdentifier() != null)
-            sb.append("CACertificateIdentifier: " + getCACertificateIdentifier() + ",");
+            sb.append("CACertificateIdentifier: ").append(getCACertificateIdentifier()).append(",");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName());
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName());
         sb.append("}");
         return sb.toString();
     }

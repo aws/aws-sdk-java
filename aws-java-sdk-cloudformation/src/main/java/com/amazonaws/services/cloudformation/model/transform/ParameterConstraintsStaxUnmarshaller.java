@@ -45,6 +45,11 @@ public class ParameterConstraintsStaxUnmarshaller implements Unmarshaller<Parame
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AllowedValues", targetDepth)) {
+                    parameterConstraints.withAllowedValues(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AllowedValues/member", targetDepth)) {
                     parameterConstraints.withAllowedValues(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

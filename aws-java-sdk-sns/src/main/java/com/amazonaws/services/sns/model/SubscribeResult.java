@@ -87,7 +87,7 @@ public class SubscribeResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionArn() != null)
-            sb.append("SubscriptionArn: " + getSubscriptionArn());
+            sb.append("SubscriptionArn: ").append(getSubscriptionArn());
         sb.append("}");
         return sb.toString();
     }

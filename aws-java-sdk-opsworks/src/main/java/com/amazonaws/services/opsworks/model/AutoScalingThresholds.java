@@ -520,19 +520,19 @@ public class AutoScalingThresholds implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getThresholdsWaitTime() != null)
-            sb.append("ThresholdsWaitTime: " + getThresholdsWaitTime() + ",");
+            sb.append("ThresholdsWaitTime: ").append(getThresholdsWaitTime()).append(",");
         if (getIgnoreMetricsTime() != null)
-            sb.append("IgnoreMetricsTime: " + getIgnoreMetricsTime() + ",");
+            sb.append("IgnoreMetricsTime: ").append(getIgnoreMetricsTime()).append(",");
         if (getCpuThreshold() != null)
-            sb.append("CpuThreshold: " + getCpuThreshold() + ",");
+            sb.append("CpuThreshold: ").append(getCpuThreshold()).append(",");
         if (getMemoryThreshold() != null)
-            sb.append("MemoryThreshold: " + getMemoryThreshold() + ",");
+            sb.append("MemoryThreshold: ").append(getMemoryThreshold()).append(",");
         if (getLoadThreshold() != null)
-            sb.append("LoadThreshold: " + getLoadThreshold() + ",");
+            sb.append("LoadThreshold: ").append(getLoadThreshold()).append(",");
         if (getAlarms() != null)
-            sb.append("Alarms: " + getAlarms());
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }

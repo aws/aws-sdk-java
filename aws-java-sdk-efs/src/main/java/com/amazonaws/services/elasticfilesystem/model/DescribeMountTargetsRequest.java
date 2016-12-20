@@ -245,13 +245,13 @@ public class DescribeMountTargetsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId() + ",");
+            sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: " + getMountTargetId());
+            sb.append("MountTargetId: ").append(getMountTargetId());
         sb.append("}");
         return sb.toString();
     }

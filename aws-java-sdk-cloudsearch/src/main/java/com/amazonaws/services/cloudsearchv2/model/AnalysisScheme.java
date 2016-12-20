@@ -143,11 +143,11 @@ public class AnalysisScheme implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAnalysisSchemeName() != null)
-            sb.append("AnalysisSchemeName: " + getAnalysisSchemeName() + ",");
+            sb.append("AnalysisSchemeName: ").append(getAnalysisSchemeName()).append(",");
         if (getAnalysisSchemeLanguage() != null)
-            sb.append("AnalysisSchemeLanguage: " + getAnalysisSchemeLanguage() + ",");
+            sb.append("AnalysisSchemeLanguage: ").append(getAnalysisSchemeLanguage()).append(",");
         if (getAnalysisOptions() != null)
-            sb.append("AnalysisOptions: " + getAnalysisOptions());
+            sb.append("AnalysisOptions: ").append(getAnalysisOptions());
         sb.append("}");
         return sb.toString();
     }

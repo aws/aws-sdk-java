@@ -83,7 +83,7 @@ public class TrustedAdvisorCategorySpecificSummary implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCostOptimizing() != null)
-            sb.append("CostOptimizing: " + getCostOptimizing());
+            sb.append("CostOptimizing: ").append(getCostOptimizing());
         sb.append("}");
         return sb.toString();
     }

@@ -179,11 +179,11 @@ public class Artifact implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

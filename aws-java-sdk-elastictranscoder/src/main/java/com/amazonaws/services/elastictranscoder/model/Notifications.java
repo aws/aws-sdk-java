@@ -230,13 +230,13 @@ public class Notifications implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProgressing() != null)
-            sb.append("Progressing: " + getProgressing() + ",");
+            sb.append("Progressing: ").append(getProgressing()).append(",");
         if (getCompleted() != null)
-            sb.append("Completed: " + getCompleted() + ",");
+            sb.append("Completed: ").append(getCompleted()).append(",");
         if (getWarning() != null)
-            sb.append("Warning: " + getWarning() + ",");
+            sb.append("Warning: ").append(getWarning()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError());
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }

@@ -79,7 +79,7 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId());
+            sb.append("WebACLId: ").append(getWebACLId());
         sb.append("}");
         return sb.toString();
     }

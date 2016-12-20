@@ -206,11 +206,11 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

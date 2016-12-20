@@ -239,11 +239,11 @@ public class LookupDeveloperIdentityResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDeveloperUserIdentifierList() != null)
-            sb.append("DeveloperUserIdentifierList: " + getDeveloperUserIdentifierList() + ",");
+            sb.append("DeveloperUserIdentifierList: ").append(getDeveloperUserIdentifierList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

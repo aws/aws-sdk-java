@@ -128,9 +128,9 @@ public class UpdateEvaluationRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationId() != null)
-            sb.append("EvaluationId: " + getEvaluationId() + ",");
+            sb.append("EvaluationId: ").append(getEvaluationId()).append(",");
         if (getEvaluationName() != null)
-            sb.append("EvaluationName: " + getEvaluationName());
+            sb.append("EvaluationName: ").append(getEvaluationName());
         sb.append("}");
         return sb.toString();
     }

@@ -94,7 +94,7 @@ public class EnableVolumeIORequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId());
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }

@@ -55,6 +55,11 @@ public class InstanceStatusStaxUnmarshaller implements Unmarshaller<InstanceStat
                     continue;
                 }
 
+                if (context.testExpression("eventsSet", targetDepth)) {
+                    instanceStatus.withEvents(new ArrayList<InstanceStatusEvent>());
+                    continue;
+                }
+
                 if (context.testExpression("eventsSet/item", targetDepth)) {
                     instanceStatus.withEvents(InstanceStatusEventStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

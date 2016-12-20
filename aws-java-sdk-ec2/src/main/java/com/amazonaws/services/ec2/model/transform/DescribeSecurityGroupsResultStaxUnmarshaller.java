@@ -45,6 +45,11 @@ public class DescribeSecurityGroupsResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("securityGroupInfo", targetDepth)) {
+                    describeSecurityGroupsResult.withSecurityGroups(new ArrayList<SecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("securityGroupInfo/item", targetDepth)) {
                     describeSecurityGroupsResult.withSecurityGroups(SecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

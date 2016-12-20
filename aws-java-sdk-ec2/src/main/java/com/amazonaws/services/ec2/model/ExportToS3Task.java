@@ -302,13 +302,13 @@ public class ExportToS3Task implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDiskImageFormat() != null)
-            sb.append("DiskImageFormat: " + getDiskImageFormat() + ",");
+            sb.append("DiskImageFormat: ").append(getDiskImageFormat()).append(",");
         if (getContainerFormat() != null)
-            sb.append("ContainerFormat: " + getContainerFormat() + ",");
+            sb.append("ContainerFormat: ").append(getContainerFormat()).append(",");
         if (getS3Bucket() != null)
-            sb.append("S3Bucket: " + getS3Bucket() + ",");
+            sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Key() != null)
-            sb.append("S3Key: " + getS3Key());
+            sb.append("S3Key: ").append(getS3Key());
         sb.append("}");
         return sb.toString();
     }

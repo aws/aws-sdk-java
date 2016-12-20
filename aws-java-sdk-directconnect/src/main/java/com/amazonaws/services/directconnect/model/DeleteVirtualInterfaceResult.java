@@ -84,7 +84,7 @@ public class DeleteVirtualInterfaceResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceState() != null)
-            sb.append("VirtualInterfaceState: " + getVirtualInterfaceState());
+            sb.append("VirtualInterfaceState: ").append(getVirtualInterfaceState());
         sb.append("}");
         return sb.toString();
     }

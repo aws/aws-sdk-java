@@ -60,6 +60,11 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     continue;
                 }
 
+                if (context.testExpression("messageSet", targetDepth)) {
+                    availabilityZone.withMessages(new ArrayList<AvailabilityZoneMessage>());
+                    continue;
+                }
+
                 if (context.testExpression("messageSet/item", targetDepth)) {
                     availabilityZone.withMessages(AvailabilityZoneMessageStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

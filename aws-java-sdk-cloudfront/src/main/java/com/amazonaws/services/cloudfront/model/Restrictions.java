@@ -78,7 +78,7 @@ public class Restrictions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGeoRestriction() != null)
-            sb.append("GeoRestriction: " + getGeoRestriction());
+            sb.append("GeoRestriction: ").append(getGeoRestriction());
         sb.append("}");
         return sb.toString();
     }

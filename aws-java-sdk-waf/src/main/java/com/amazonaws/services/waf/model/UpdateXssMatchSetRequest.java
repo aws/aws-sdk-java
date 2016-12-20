@@ -368,11 +368,11 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSetId() != null)
-            sb.append("XssMatchSetId: " + getXssMatchSetId() + ",");
+            sb.append("XssMatchSetId: ").append(getXssMatchSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates());
+            sb.append("Updates: ").append(getUpdates());
         sb.append("}");
         return sb.toString();
     }

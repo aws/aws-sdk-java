@@ -285,11 +285,11 @@ public class Source implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getSourceIdentifier() != null)
-            sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");
+            sb.append("SourceIdentifier: ").append(getSourceIdentifier()).append(",");
         if (getSourceDetails() != null)
-            sb.append("SourceDetails: " + getSourceDetails());
+            sb.append("SourceDetails: ").append(getSourceDetails());
         sb.append("}");
         return sb.toString();
     }

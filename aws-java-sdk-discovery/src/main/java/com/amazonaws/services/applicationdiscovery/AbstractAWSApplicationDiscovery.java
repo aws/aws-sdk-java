@@ -35,7 +35,22 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    public AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTagsResult createTags(CreateTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,12 +80,28 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    public DisassociateConfigurationItemsFromApplicationResult disassociateConfigurationItemsFromApplication(
+            DisassociateConfigurationItemsFromApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListConfigurationsResult listConfigurations(ListConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,6 +112,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

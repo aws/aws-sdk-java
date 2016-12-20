@@ -197,9 +197,9 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getSizeConstraint() != null)
-            sb.append("SizeConstraint: " + getSizeConstraint());
+            sb.append("SizeConstraint: ").append(getSizeConstraint());
         sb.append("}");
         return sb.toString();
     }

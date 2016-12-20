@@ -1565,27 +1565,27 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getNewDBClusterIdentifier() != null)
-            sb.append("NewDBClusterIdentifier: " + getNewDBClusterIdentifier() + ",");
+            sb.append("NewDBClusterIdentifier: ").append(getNewDBClusterIdentifier()).append(",");
         if (getApplyImmediately() != null)
-            sb.append("ApplyImmediately: " + getApplyImmediately() + ",");
+            sb.append("ApplyImmediately: ").append(getApplyImmediately()).append(",");
         if (getBackupRetentionPeriod() != null)
-            sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
         if (getVpcSecurityGroupIds() != null)
-            sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+            sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+            sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow());
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow());
         sb.append("}");
         return sb.toString();
     }

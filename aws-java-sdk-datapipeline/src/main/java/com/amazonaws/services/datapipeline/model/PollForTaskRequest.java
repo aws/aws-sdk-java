@@ -230,11 +230,11 @@ public class PollForTaskRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkerGroup() != null)
-            sb.append("WorkerGroup: " + getWorkerGroup() + ",");
+            sb.append("WorkerGroup: ").append(getWorkerGroup()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getInstanceIdentity() != null)
-            sb.append("InstanceIdentity: " + getInstanceIdentity());
+            sb.append("InstanceIdentity: ").append(getInstanceIdentity());
         sb.append("}");
         return sb.toString();
     }

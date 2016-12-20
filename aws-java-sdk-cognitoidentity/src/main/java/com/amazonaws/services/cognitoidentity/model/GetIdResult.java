@@ -15,15 +15,23 @@ package com.amazonaws.services.cognitoidentity.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Returned in response to a GetId request.
+ * </p>
  */
 public class GetIdResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** A unique identifier in the format REGION:GUID. */
+    /**
+     * <p>
+     * A unique identifier in the format REGION:GUID.
+     * </p>
+     */
     private String identityId;
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID.
+     * </p>
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
@@ -34,7 +42,9 @@ public class GetIdResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID.
+     * </p>
      * 
      * @return A unique identifier in the format REGION:GUID.
      */
@@ -44,7 +54,9 @@ public class GetIdResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     }
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID.
+     * </p>
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID.
@@ -68,7 +80,7 @@ public class GetIdResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId());
+            sb.append("IdentityId: ").append(getIdentityId());
         sb.append("}");
         return sb.toString();
     }

@@ -593,25 +593,25 @@ public class Trust implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId() + ",");
+            sb.append("TrustId: ").append(getTrustId()).append(",");
         if (getRemoteDomainName() != null)
-            sb.append("RemoteDomainName: " + getRemoteDomainName() + ",");
+            sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getTrustType() != null)
-            sb.append("TrustType: " + getTrustType() + ",");
+            sb.append("TrustType: ").append(getTrustType()).append(",");
         if (getTrustDirection() != null)
-            sb.append("TrustDirection: " + getTrustDirection() + ",");
+            sb.append("TrustDirection: ").append(getTrustDirection()).append(",");
         if (getTrustState() != null)
-            sb.append("TrustState: " + getTrustState() + ",");
+            sb.append("TrustState: ").append(getTrustState()).append(",");
         if (getCreatedDateTime() != null)
-            sb.append("CreatedDateTime: " + getCreatedDateTime() + ",");
+            sb.append("CreatedDateTime: ").append(getCreatedDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: " + getLastUpdatedDateTime() + ",");
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getStateLastUpdatedDateTime() != null)
-            sb.append("StateLastUpdatedDateTime: " + getStateLastUpdatedDateTime() + ",");
+            sb.append("StateLastUpdatedDateTime: ").append(getStateLastUpdatedDateTime()).append(",");
         if (getTrustStateReason() != null)
-            sb.append("TrustStateReason: " + getTrustStateReason());
+            sb.append("TrustStateReason: ").append(getTrustStateReason());
         sb.append("}");
         return sb.toString();
     }

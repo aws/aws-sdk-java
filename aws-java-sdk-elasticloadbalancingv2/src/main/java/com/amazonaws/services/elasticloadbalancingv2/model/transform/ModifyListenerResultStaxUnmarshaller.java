@@ -45,6 +45,11 @@ public class ModifyListenerResultStaxUnmarshaller implements Unmarshaller<Modify
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Listeners", targetDepth)) {
+                    modifyListenerResult.withListeners(new ArrayList<Listener>());
+                    continue;
+                }
+
                 if (context.testExpression("Listeners/member", targetDepth)) {
                     modifyListenerResult.withListeners(ListenerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

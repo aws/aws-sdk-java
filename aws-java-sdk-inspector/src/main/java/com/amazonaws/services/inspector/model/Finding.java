@@ -983,41 +983,41 @@ public class Finding implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getService() != null)
-            sb.append("Service: " + getService() + ",");
+            sb.append("Service: ").append(getService()).append(",");
         if (getServiceAttributes() != null)
-            sb.append("ServiceAttributes: " + getServiceAttributes() + ",");
+            sb.append("ServiceAttributes: ").append(getServiceAttributes()).append(",");
         if (getAssetType() != null)
-            sb.append("AssetType: " + getAssetType() + ",");
+            sb.append("AssetType: ").append(getAssetType()).append(",");
         if (getAssetAttributes() != null)
-            sb.append("AssetAttributes: " + getAssetAttributes() + ",");
+            sb.append("AssetAttributes: ").append(getAssetAttributes()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getTitle() != null)
-            sb.append("Title: " + getTitle() + ",");
+            sb.append("Title: ").append(getTitle()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRecommendation() != null)
-            sb.append("Recommendation: " + getRecommendation() + ",");
+            sb.append("Recommendation: ").append(getRecommendation()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getNumericSeverity() != null)
-            sb.append("NumericSeverity: " + getNumericSeverity() + ",");
+            sb.append("NumericSeverity: ").append(getNumericSeverity()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence() + ",");
+            sb.append("Confidence: ").append(getConfidence()).append(",");
         if (getIndicatorOfCompromise() != null)
-            sb.append("IndicatorOfCompromise: " + getIndicatorOfCompromise() + ",");
+            sb.append("IndicatorOfCompromise: ").append(getIndicatorOfCompromise()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: " + getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
         return sb.toString();
     }

@@ -481,15 +481,15 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth() + ",");
+            sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: " + getConnectionName() + ",");
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
         if (getOwnerAccount() != null)
-            sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getInterconnectId() != null)
-            sb.append("InterconnectId: " + getInterconnectId() + ",");
+            sb.append("InterconnectId: ").append(getInterconnectId()).append(",");
         if (getVlan() != null)
-            sb.append("Vlan: " + getVlan());
+            sb.append("Vlan: ").append(getVlan());
         sb.append("}");
         return sb.toString();
     }

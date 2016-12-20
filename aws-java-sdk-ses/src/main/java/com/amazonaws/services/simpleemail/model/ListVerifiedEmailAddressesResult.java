@@ -113,7 +113,7 @@ public class ListVerifiedEmailAddressesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVerifiedEmailAddresses() != null)
-            sb.append("VerifiedEmailAddresses: " + getVerifiedEmailAddresses());
+            sb.append("VerifiedEmailAddresses: ").append(getVerifiedEmailAddresses());
         sb.append("}");
         return sb.toString();
     }

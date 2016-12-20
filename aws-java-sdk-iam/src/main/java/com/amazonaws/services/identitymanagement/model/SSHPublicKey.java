@@ -364,17 +364,17 @@ public class SSHPublicKey implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSSHPublicKeyId() != null)
-            sb.append("SSHPublicKeyId: " + getSSHPublicKeyId() + ",");
+            sb.append("SSHPublicKeyId: ").append(getSSHPublicKeyId()).append(",");
         if (getFingerprint() != null)
-            sb.append("Fingerprint: " + getFingerprint() + ",");
+            sb.append("Fingerprint: ").append(getFingerprint()).append(",");
         if (getSSHPublicKeyBody() != null)
-            sb.append("SSHPublicKeyBody: " + getSSHPublicKeyBody() + ",");
+            sb.append("SSHPublicKeyBody: ").append(getSSHPublicKeyBody()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getUploadDate() != null)
-            sb.append("UploadDate: " + getUploadDate());
+            sb.append("UploadDate: ").append(getUploadDate());
         sb.append("}");
         return sb.toString();
     }

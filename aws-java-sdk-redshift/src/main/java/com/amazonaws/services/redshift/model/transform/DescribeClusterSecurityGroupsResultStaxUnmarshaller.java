@@ -50,6 +50,11 @@ public class DescribeClusterSecurityGroupsResultStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("ClusterSecurityGroups", targetDepth)) {
+                    describeClusterSecurityGroupsResult.withClusterSecurityGroups(new ArrayList<ClusterSecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth)) {
                     describeClusterSecurityGroupsResult.withClusterSecurityGroups(ClusterSecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

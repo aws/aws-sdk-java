@@ -309,13 +309,13 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getClientIDList() != null)
-            sb.append("ClientIDList: " + getClientIDList() + ",");
+            sb.append("ClientIDList: ").append(getClientIDList()).append(",");
         if (getThumbprintList() != null)
-            sb.append("ThumbprintList: " + getThumbprintList() + ",");
+            sb.append("ThumbprintList: ").append(getThumbprintList()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate());
+            sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");
         return sb.toString();
     }

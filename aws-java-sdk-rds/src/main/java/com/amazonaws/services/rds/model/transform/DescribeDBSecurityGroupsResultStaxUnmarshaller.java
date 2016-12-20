@@ -50,6 +50,11 @@ public class DescribeDBSecurityGroupsResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("DBSecurityGroups", targetDepth)) {
+                    describeDBSecurityGroupsResult.withDBSecurityGroups(new ArrayList<DBSecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("DBSecurityGroups/DBSecurityGroup", targetDepth)) {
                     describeDBSecurityGroupsResult.withDBSecurityGroups(DBSecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

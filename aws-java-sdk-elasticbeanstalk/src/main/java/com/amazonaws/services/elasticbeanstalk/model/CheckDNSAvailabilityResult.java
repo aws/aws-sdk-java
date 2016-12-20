@@ -242,9 +242,9 @@ public class CheckDNSAvailabilityResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailable() != null)
-            sb.append("Available: " + getAvailable() + ",");
+            sb.append("Available: ").append(getAvailable()).append(",");
         if (getFullyQualifiedCNAME() != null)
-            sb.append("FullyQualifiedCNAME: " + getFullyQualifiedCNAME());
+            sb.append("FullyQualifiedCNAME: ").append(getFullyQualifiedCNAME());
         sb.append("}");
         return sb.toString();
     }

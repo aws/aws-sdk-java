@@ -125,6 +125,11 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    spotInstanceRequest.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     spotInstanceRequest.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

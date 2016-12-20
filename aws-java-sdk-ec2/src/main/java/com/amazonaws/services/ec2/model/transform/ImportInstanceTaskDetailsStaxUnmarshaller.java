@@ -45,6 +45,11 @@ public class ImportInstanceTaskDetailsStaxUnmarshaller implements Unmarshaller<I
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("volumes", targetDepth)) {
+                    importInstanceTaskDetails.withVolumes(new ArrayList<ImportInstanceVolumeDetailItem>());
+                    continue;
+                }
+
                 if (context.testExpression("volumes/item", targetDepth)) {
                     importInstanceTaskDetails.withVolumes(ImportInstanceVolumeDetailItemStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

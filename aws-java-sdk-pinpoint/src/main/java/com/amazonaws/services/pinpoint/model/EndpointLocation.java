@@ -248,17 +248,17 @@ public class EndpointLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCity() != null)
-            sb.append("City: " + getCity() + ",");
+            sb.append("City: ").append(getCity()).append(",");
         if (getCountry() != null)
-            sb.append("Country: " + getCountry() + ",");
+            sb.append("Country: ").append(getCountry()).append(",");
         if (getLatitude() != null)
-            sb.append("Latitude: " + getLatitude() + ",");
+            sb.append("Latitude: ").append(getLatitude()).append(",");
         if (getLongitude() != null)
-            sb.append("Longitude: " + getLongitude() + ",");
+            sb.append("Longitude: ").append(getLongitude()).append(",");
         if (getPostalCode() != null)
-            sb.append("PostalCode: " + getPostalCode() + ",");
+            sb.append("PostalCode: ").append(getPostalCode()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion());
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }

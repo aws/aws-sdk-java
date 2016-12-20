@@ -500,15 +500,15 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getImportToken() != null)
-            sb.append("ImportToken: " + getImportToken() + ",");
+            sb.append("ImportToken: ").append(getImportToken()).append(",");
         if (getEncryptedKeyMaterial() != null)
-            sb.append("EncryptedKeyMaterial: " + getEncryptedKeyMaterial() + ",");
+            sb.append("EncryptedKeyMaterial: ").append(getEncryptedKeyMaterial()).append(",");
         if (getValidTo() != null)
-            sb.append("ValidTo: " + getValidTo() + ",");
+            sb.append("ValidTo: ").append(getValidTo()).append(",");
         if (getExpirationModel() != null)
-            sb.append("ExpirationModel: " + getExpirationModel());
+            sb.append("ExpirationModel: ").append(getExpirationModel());
         sb.append("}");
         return sb.toString();
     }

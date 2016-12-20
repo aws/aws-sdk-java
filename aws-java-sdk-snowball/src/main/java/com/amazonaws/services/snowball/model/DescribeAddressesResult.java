@@ -164,9 +164,9 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddresses() != null)
-            sb.append("Addresses: " + getAddresses() + ",");
+            sb.append("Addresses: ").append(getAddresses()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

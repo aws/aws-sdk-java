@@ -243,13 +243,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getUserBucket() != null)
-            sb.append("UserBucket: " + getUserBucket());
+            sb.append("UserBucket: ").append(getUserBucket());
         sb.append("}");
         return sb.toString();
     }

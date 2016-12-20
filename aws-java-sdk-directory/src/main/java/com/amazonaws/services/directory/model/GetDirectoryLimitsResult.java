@@ -80,7 +80,7 @@ public class GetDirectoryLimitsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryLimits() != null)
-            sb.append("DirectoryLimits: " + getDirectoryLimits());
+            sb.append("DirectoryLimits: ").append(getDirectoryLimits());
         sb.append("}");
         return sb.toString();
     }

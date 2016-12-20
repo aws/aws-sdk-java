@@ -189,9 +189,9 @@ public class DetachGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class DeleteRepositoryResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryId() != null)
-            sb.append("RepositoryId: " + getRepositoryId());
+            sb.append("RepositoryId: ").append(getRepositoryId());
         sb.append("}");
         return sb.toString();
     }

@@ -230,15 +230,15 @@ public class IdentityUsage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getDatasetCount() != null)
-            sb.append("DatasetCount: " + getDatasetCount() + ",");
+            sb.append("DatasetCount: ").append(getDatasetCount()).append(",");
         if (getDataStorage() != null)
-            sb.append("DataStorage: " + getDataStorage());
+            sb.append("DataStorage: ").append(getDataStorage());
         sb.append("}");
         return sb.toString();
     }

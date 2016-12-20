@@ -156,9 +156,9 @@ public class PutTargetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedEntryCount() != null)
-            sb.append("FailedEntryCount: " + getFailedEntryCount() + ",");
+            sb.append("FailedEntryCount: ").append(getFailedEntryCount()).append(",");
         if (getFailedEntries() != null)
-            sb.append("FailedEntries: " + getFailedEntries());
+            sb.append("FailedEntries: ").append(getFailedEntries());
         sb.append("}");
         return sb.toString();
     }

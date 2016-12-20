@@ -316,15 +316,15 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBatchPredictionId() != null)
-            sb.append("BatchPredictionId: " + getBatchPredictionId() + ",");
+            sb.append("BatchPredictionId: ").append(getBatchPredictionId()).append(",");
         if (getBatchPredictionName() != null)
-            sb.append("BatchPredictionName: " + getBatchPredictionName() + ",");
+            sb.append("BatchPredictionName: ").append(getBatchPredictionName()).append(",");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getBatchPredictionDataSourceId() != null)
-            sb.append("BatchPredictionDataSourceId: " + getBatchPredictionDataSourceId() + ",");
+            sb.append("BatchPredictionDataSourceId: ").append(getBatchPredictionDataSourceId()).append(",");
         if (getOutputUri() != null)
-            sb.append("OutputUri: " + getOutputUri());
+            sb.append("OutputUri: ").append(getOutputUri());
         sb.append("}");
         return sb.toString();
     }

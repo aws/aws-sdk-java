@@ -293,13 +293,13 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunArns() != null)
-            sb.append("AssessmentRunArns: " + getAssessmentRunArns() + ",");
+            sb.append("AssessmentRunArns: ").append(getAssessmentRunArns()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

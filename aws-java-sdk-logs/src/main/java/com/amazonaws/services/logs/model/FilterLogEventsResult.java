@@ -236,11 +236,11 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getSearchedLogStreams() != null)
-            sb.append("SearchedLogStreams: " + getSearchedLogStreams() + ",");
+            sb.append("SearchedLogStreams: ").append(getSearchedLogStreams()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

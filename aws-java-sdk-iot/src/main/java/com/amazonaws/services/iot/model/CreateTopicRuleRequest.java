@@ -127,9 +127,9 @@ public class CreateTopicRuleRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName() + ",");
+            sb.append("RuleName: ").append(getRuleName()).append(",");
         if (getTopicRulePayload() != null)
-            sb.append("TopicRulePayload: " + getTopicRulePayload());
+            sb.append("TopicRulePayload: ").append(getTopicRulePayload());
         sb.append("}");
         return sb.toString();
     }

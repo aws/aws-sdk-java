@@ -253,13 +253,13 @@ public class TaskObject implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getAttemptId() != null)
-            sb.append("AttemptId: " + getAttemptId() + ",");
+            sb.append("AttemptId: ").append(getAttemptId()).append(",");
         if (getObjects() != null)
-            sb.append("Objects: " + getObjects());
+            sb.append("Objects: ").append(getObjects());
         sb.append("}");
         return sb.toString();
     }

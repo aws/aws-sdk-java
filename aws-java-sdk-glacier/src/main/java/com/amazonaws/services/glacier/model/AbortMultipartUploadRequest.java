@@ -242,11 +242,11 @@ public class AbortMultipartUploadRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId());
+            sb.append("UploadId: ").append(getUploadId());
         sb.append("}");
         return sb.toString();
     }

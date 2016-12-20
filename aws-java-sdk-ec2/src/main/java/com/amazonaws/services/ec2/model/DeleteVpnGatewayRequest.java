@@ -112,7 +112,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnGatewayId() != null)
-            sb.append("VpnGatewayId: " + getVpnGatewayId());
+            sb.append("VpnGatewayId: ").append(getVpnGatewayId());
         sb.append("}");
         return sb.toString();
     }

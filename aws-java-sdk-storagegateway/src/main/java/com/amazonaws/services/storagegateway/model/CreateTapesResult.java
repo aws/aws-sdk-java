@@ -113,7 +113,7 @@ public class CreateTapesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARNs() != null)
-            sb.append("TapeARNs: " + getTapeARNs());
+            sb.append("TapeARNs: ").append(getTapeARNs());
         sb.append("}");
         return sb.toString();
     }

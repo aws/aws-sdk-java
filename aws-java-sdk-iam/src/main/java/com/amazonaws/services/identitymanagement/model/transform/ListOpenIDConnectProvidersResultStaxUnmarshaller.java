@@ -45,6 +45,11 @@ public class ListOpenIDConnectProvidersResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("OpenIDConnectProviderList", targetDepth)) {
+                    listOpenIDConnectProvidersResult.withOpenIDConnectProviderList(new ArrayList<OpenIDConnectProviderListEntry>());
+                    continue;
+                }
+
                 if (context.testExpression("OpenIDConnectProviderList/member", targetDepth)) {
                     listOpenIDConnectProvidersResult.withOpenIDConnectProviderList(OpenIDConnectProviderListEntryStaxUnmarshaller.getInstance().unmarshall(
                             context));

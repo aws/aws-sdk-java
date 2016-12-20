@@ -130,6 +130,11 @@ public class TerminateEnvironmentResultStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentLinks", targetDepth)) {
+                    terminateEnvironmentResult.withEnvironmentLinks(new ArrayList<EnvironmentLink>());
+                    continue;
+                }
+
                 if (context.testExpression("EnvironmentLinks/member", targetDepth)) {
                     terminateEnvironmentResult.withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

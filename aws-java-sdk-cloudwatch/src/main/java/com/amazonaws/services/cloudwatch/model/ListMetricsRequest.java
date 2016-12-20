@@ -250,13 +250,13 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions() + ",");
+            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

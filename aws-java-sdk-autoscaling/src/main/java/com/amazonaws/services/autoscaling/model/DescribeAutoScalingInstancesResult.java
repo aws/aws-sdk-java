@@ -166,9 +166,9 @@ public class DescribeAutoScalingInstancesResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingInstances() != null)
-            sb.append("AutoScalingInstances: " + getAutoScalingInstances() + ",");
+            sb.append("AutoScalingInstances: ").append(getAutoScalingInstances()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

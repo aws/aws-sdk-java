@@ -344,17 +344,17 @@ public class InstanceInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getInstanceArn() != null)
-            sb.append("InstanceArn: " + getInstanceArn() + ",");
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getRegisterTime() != null)
-            sb.append("RegisterTime: " + getRegisterTime() + ",");
+            sb.append("RegisterTime: ").append(getRegisterTime()).append(",");
         if (getDeregisterTime() != null)
-            sb.append("DeregisterTime: " + getDeregisterTime() + ",");
+            sb.append("DeregisterTime: ").append(getDeregisterTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

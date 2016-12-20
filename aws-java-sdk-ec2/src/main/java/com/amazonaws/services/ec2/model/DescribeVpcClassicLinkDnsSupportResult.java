@@ -161,9 +161,9 @@ public class DescribeVpcClassicLinkDnsSupportResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcs() != null)
-            sb.append("Vpcs: " + getVpcs() + ",");
+            sb.append("Vpcs: ").append(getVpcs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

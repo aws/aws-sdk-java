@@ -185,11 +185,11 @@ public class ListCACertificatesRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getAscendingOrder() != null)
-            sb.append("AscendingOrder: " + getAscendingOrder());
+            sb.append("AscendingOrder: ").append(getAscendingOrder());
         sb.append("}");
         return sb.toString();
     }

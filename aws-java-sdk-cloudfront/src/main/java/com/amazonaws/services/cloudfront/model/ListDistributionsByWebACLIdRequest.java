@@ -211,11 +211,11 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId());
+            sb.append("WebACLId: ").append(getWebACLId());
         sb.append("}");
         return sb.toString();
     }

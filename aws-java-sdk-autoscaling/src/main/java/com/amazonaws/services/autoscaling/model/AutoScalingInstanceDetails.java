@@ -392,19 +392,19 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getLifecycleState() != null)
-            sb.append("LifecycleState: " + getLifecycleState() + ",");
+            sb.append("LifecycleState: ").append(getLifecycleState()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: " + getHealthStatus() + ",");
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");
+            sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
         if (getProtectedFromScaleIn() != null)
-            sb.append("ProtectedFromScaleIn: " + getProtectedFromScaleIn());
+            sb.append("ProtectedFromScaleIn: ").append(getProtectedFromScaleIn());
         sb.append("}");
         return sb.toString();
     }

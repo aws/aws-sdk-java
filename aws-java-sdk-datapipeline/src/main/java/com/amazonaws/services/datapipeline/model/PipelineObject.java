@@ -206,11 +206,11 @@ public class PipelineObject implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFields() != null)
-            sb.append("Fields: " + getFields());
+            sb.append("Fields: ").append(getFields());
         sb.append("}");
         return sb.toString();
     }

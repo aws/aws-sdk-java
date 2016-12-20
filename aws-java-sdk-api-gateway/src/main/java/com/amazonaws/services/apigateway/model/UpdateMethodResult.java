@@ -899,21 +899,21 @@ public class UpdateMethodResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getAuthorizationType() != null)
-            sb.append("AuthorizationType: " + getAuthorizationType() + ",");
+            sb.append("AuthorizationType: ").append(getAuthorizationType()).append(",");
         if (getAuthorizerId() != null)
-            sb.append("AuthorizerId: " + getAuthorizerId() + ",");
+            sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getApiKeyRequired() != null)
-            sb.append("ApiKeyRequired: " + getApiKeyRequired() + ",");
+            sb.append("ApiKeyRequired: ").append(getApiKeyRequired()).append(",");
         if (getRequestParameters() != null)
-            sb.append("RequestParameters: " + getRequestParameters() + ",");
+            sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestModels() != null)
-            sb.append("RequestModels: " + getRequestModels() + ",");
+            sb.append("RequestModels: ").append(getRequestModels()).append(",");
         if (getMethodResponses() != null)
-            sb.append("MethodResponses: " + getMethodResponses() + ",");
+            sb.append("MethodResponses: ").append(getMethodResponses()).append(",");
         if (getMethodIntegration() != null)
-            sb.append("MethodIntegration: " + getMethodIntegration());
+            sb.append("MethodIntegration: ").append(getMethodIntegration());
         sb.append("}");
         return sb.toString();
     }

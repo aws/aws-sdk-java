@@ -114,7 +114,7 @@ public class DescribeRouteTablesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTables() != null)
-            sb.append("RouteTables: " + getRouteTables());
+            sb.append("RouteTables: ").append(getRouteTables());
         sb.append("}");
         return sb.toString();
     }

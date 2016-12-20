@@ -172,11 +172,11 @@ public class AccountQuota implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountQuotaName() != null)
-            sb.append("AccountQuotaName: " + getAccountQuotaName() + ",");
+            sb.append("AccountQuotaName: ").append(getAccountQuotaName()).append(",");
         if (getUsed() != null)
-            sb.append("Used: " + getUsed() + ",");
+            sb.append("Used: ").append(getUsed()).append(",");
         if (getMax() != null)
-            sb.append("Max: " + getMax());
+            sb.append("Max: ").append(getMax());
         sb.append("}");
         return sb.toString();
     }

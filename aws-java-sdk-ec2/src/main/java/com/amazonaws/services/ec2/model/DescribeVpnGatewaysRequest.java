@@ -720,9 +720,9 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnGatewayIds() != null)
-            sb.append("VpnGatewayIds: " + getVpnGatewayIds() + ",");
+            sb.append("VpnGatewayIds: ").append(getVpnGatewayIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

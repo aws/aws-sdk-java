@@ -593,29 +593,29 @@ public class Action implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDynamoDB() != null)
-            sb.append("DynamoDB: " + getDynamoDB() + ",");
+            sb.append("DynamoDB: ").append(getDynamoDB()).append(",");
         if (getDynamoDBv2() != null)
-            sb.append("DynamoDBv2: " + getDynamoDBv2() + ",");
+            sb.append("DynamoDBv2: ").append(getDynamoDBv2()).append(",");
         if (getLambda() != null)
-            sb.append("Lambda: " + getLambda() + ",");
+            sb.append("Lambda: ").append(getLambda()).append(",");
         if (getSns() != null)
-            sb.append("Sns: " + getSns() + ",");
+            sb.append("Sns: ").append(getSns()).append(",");
         if (getSqs() != null)
-            sb.append("Sqs: " + getSqs() + ",");
+            sb.append("Sqs: ").append(getSqs()).append(",");
         if (getKinesis() != null)
-            sb.append("Kinesis: " + getKinesis() + ",");
+            sb.append("Kinesis: ").append(getKinesis()).append(",");
         if (getRepublish() != null)
-            sb.append("Republish: " + getRepublish() + ",");
+            sb.append("Republish: ").append(getRepublish()).append(",");
         if (getS3() != null)
-            sb.append("S3: " + getS3() + ",");
+            sb.append("S3: ").append(getS3()).append(",");
         if (getFirehose() != null)
-            sb.append("Firehose: " + getFirehose() + ",");
+            sb.append("Firehose: ").append(getFirehose()).append(",");
         if (getCloudwatchMetric() != null)
-            sb.append("CloudwatchMetric: " + getCloudwatchMetric() + ",");
+            sb.append("CloudwatchMetric: ").append(getCloudwatchMetric()).append(",");
         if (getCloudwatchAlarm() != null)
-            sb.append("CloudwatchAlarm: " + getCloudwatchAlarm() + ",");
+            sb.append("CloudwatchAlarm: ").append(getCloudwatchAlarm()).append(",");
         if (getElasticsearch() != null)
-            sb.append("Elasticsearch: " + getElasticsearch());
+            sb.append("Elasticsearch: ").append(getElasticsearch());
         sb.append("}");
         return sb.toString();
     }

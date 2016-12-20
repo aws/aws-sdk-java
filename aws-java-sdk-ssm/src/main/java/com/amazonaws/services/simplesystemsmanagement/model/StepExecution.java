@@ -594,25 +594,25 @@ public class StepExecution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStepName() != null)
-            sb.append("StepName: " + getStepName() + ",");
+            sb.append("StepName: ").append(getStepName()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getExecutionStartTime() != null)
-            sb.append("ExecutionStartTime: " + getExecutionStartTime() + ",");
+            sb.append("ExecutionStartTime: ").append(getExecutionStartTime()).append(",");
         if (getExecutionEndTime() != null)
-            sb.append("ExecutionEndTime: " + getExecutionEndTime() + ",");
+            sb.append("ExecutionEndTime: ").append(getExecutionEndTime()).append(",");
         if (getStepStatus() != null)
-            sb.append("StepStatus: " + getStepStatus() + ",");
+            sb.append("StepStatus: ").append(getStepStatus()).append(",");
         if (getResponseCode() != null)
-            sb.append("ResponseCode: " + getResponseCode() + ",");
+            sb.append("ResponseCode: ").append(getResponseCode()).append(",");
         if (getInputs() != null)
-            sb.append("Inputs: " + getInputs() + ",");
+            sb.append("Inputs: ").append(getInputs()).append(",");
         if (getOutputs() != null)
-            sb.append("Outputs: " + getOutputs() + ",");
+            sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getResponse() != null)
-            sb.append("Response: " + getResponse() + ",");
+            sb.append("Response: ").append(getResponse()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage());
         sb.append("}");
         return sb.toString();
     }

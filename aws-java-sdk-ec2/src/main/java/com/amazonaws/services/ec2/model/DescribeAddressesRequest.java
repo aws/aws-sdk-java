@@ -724,11 +724,11 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIps() != null)
-            sb.append("PublicIps: " + getPublicIps() + ",");
+            sb.append("PublicIps: ").append(getPublicIps()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getAllocationIds() != null)
-            sb.append("AllocationIds: " + getAllocationIds());
+            sb.append("AllocationIds: ").append(getAllocationIds());
         sb.append("}");
         return sb.toString();
     }

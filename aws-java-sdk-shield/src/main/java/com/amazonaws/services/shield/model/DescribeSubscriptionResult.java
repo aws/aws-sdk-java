@@ -78,7 +78,7 @@ public class DescribeSubscriptionResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscription() != null)
-            sb.append("Subscription: " + getSubscription());
+            sb.append("Subscription: ").append(getSubscription());
         sb.append("}");
         return sb.toString();
     }

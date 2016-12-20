@@ -129,7 +129,7 @@ public class CloudWatchDestination implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDimensionConfigurations() != null)
-            sb.append("DimensionConfigurations: " + getDimensionConfigurations());
+            sb.append("DimensionConfigurations: ").append(getDimensionConfigurations());
         sb.append("}");
         return sb.toString();
     }

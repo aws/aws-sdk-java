@@ -68,7 +68,7 @@ public class SegmentLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCountry() != null)
-            sb.append("Country: " + getCountry());
+            sb.append("Country: ").append(getCountry());
         sb.append("}");
         return sb.toString();
     }

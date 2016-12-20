@@ -310,15 +310,15 @@ public class ConsumedCapacity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getCapacityUnits() != null)
-            sb.append("CapacityUnits: " + getCapacityUnits() + ",");
+            sb.append("CapacityUnits: ").append(getCapacityUnits()).append(",");
         if (getTable() != null)
-            sb.append("Table: " + getTable() + ",");
+            sb.append("Table: ").append(getTable()).append(",");
         if (getLocalSecondaryIndexes() != null)
-            sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");
+            sb.append("LocalSecondaryIndexes: ").append(getLocalSecondaryIndexes()).append(",");
         if (getGlobalSecondaryIndexes() != null)
-            sb.append("GlobalSecondaryIndexes: " + getGlobalSecondaryIndexes());
+            sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes());
         sb.append("}");
         return sb.toString();
     }

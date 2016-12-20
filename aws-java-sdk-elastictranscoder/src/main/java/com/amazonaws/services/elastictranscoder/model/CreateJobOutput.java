@@ -1529,27 +1529,27 @@ public class CreateJobOutput implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getThumbnailPattern() != null)
-            sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");
+            sb.append("ThumbnailPattern: ").append(getThumbnailPattern()).append(",");
         if (getThumbnailEncryption() != null)
-            sb.append("ThumbnailEncryption: " + getThumbnailEncryption() + ",");
+            sb.append("ThumbnailEncryption: ").append(getThumbnailEncryption()).append(",");
         if (getRotate() != null)
-            sb.append("Rotate: " + getRotate() + ",");
+            sb.append("Rotate: ").append(getRotate()).append(",");
         if (getPresetId() != null)
-            sb.append("PresetId: " + getPresetId() + ",");
+            sb.append("PresetId: ").append(getPresetId()).append(",");
         if (getSegmentDuration() != null)
-            sb.append("SegmentDuration: " + getSegmentDuration() + ",");
+            sb.append("SegmentDuration: ").append(getSegmentDuration()).append(",");
         if (getWatermarks() != null)
-            sb.append("Watermarks: " + getWatermarks() + ",");
+            sb.append("Watermarks: ").append(getWatermarks()).append(",");
         if (getAlbumArt() != null)
-            sb.append("AlbumArt: " + getAlbumArt() + ",");
+            sb.append("AlbumArt: ").append(getAlbumArt()).append(",");
         if (getComposition() != null)
-            sb.append("Composition: " + getComposition() + ",");
+            sb.append("Composition: ").append(getComposition()).append(",");
         if (getCaptions() != null)
-            sb.append("Captions: " + getCaptions() + ",");
+            sb.append("Captions: ").append(getCaptions()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption());
+            sb.append("Encryption: ").append(getEncryption());
         sb.append("}");
         return sb.toString();
     }

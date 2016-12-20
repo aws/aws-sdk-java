@@ -402,21 +402,21 @@ public class LogStream implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName() + ",");
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getFirstEventTimestamp() != null)
-            sb.append("FirstEventTimestamp: " + getFirstEventTimestamp() + ",");
+            sb.append("FirstEventTimestamp: ").append(getFirstEventTimestamp()).append(",");
         if (getLastEventTimestamp() != null)
-            sb.append("LastEventTimestamp: " + getLastEventTimestamp() + ",");
+            sb.append("LastEventTimestamp: ").append(getLastEventTimestamp()).append(",");
         if (getLastIngestionTime() != null)
-            sb.append("LastIngestionTime: " + getLastIngestionTime() + ",");
+            sb.append("LastIngestionTime: ").append(getLastIngestionTime()).append(",");
         if (getUploadSequenceToken() != null)
-            sb.append("UploadSequenceToken: " + getUploadSequenceToken() + ",");
+            sb.append("UploadSequenceToken: ").append(getUploadSequenceToken()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStoredBytes() != null)
-            sb.append("StoredBytes: " + getStoredBytes());
+            sb.append("StoredBytes: ").append(getStoredBytes());
         sb.append("}");
         return sb.toString();
     }

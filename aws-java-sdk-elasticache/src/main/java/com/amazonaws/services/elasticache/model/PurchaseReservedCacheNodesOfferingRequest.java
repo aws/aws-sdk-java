@@ -266,11 +266,11 @@ public class PurchaseReservedCacheNodesOfferingRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedCacheNodesOfferingId() != null)
-            sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");
+            sb.append("ReservedCacheNodesOfferingId: ").append(getReservedCacheNodesOfferingId()).append(",");
         if (getReservedCacheNodeId() != null)
-            sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ",");
+            sb.append("ReservedCacheNodeId: ").append(getReservedCacheNodeId()).append(",");
         if (getCacheNodeCount() != null)
-            sb.append("CacheNodeCount: " + getCacheNodeCount());
+            sb.append("CacheNodeCount: ").append(getCacheNodeCount());
         sb.append("}");
         return sb.toString();
     }

@@ -193,11 +193,11 @@ public class MountPoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerPath() != null)
-            sb.append("ContainerPath: " + getContainerPath() + ",");
+            sb.append("ContainerPath: ").append(getContainerPath()).append(",");
         if (getReadOnly() != null)
-            sb.append("ReadOnly: " + getReadOnly() + ",");
+            sb.append("ReadOnly: ").append(getReadOnly()).append(",");
         if (getSourceVolume() != null)
-            sb.append("SourceVolume: " + getSourceVolume());
+            sb.append("SourceVolume: ").append(getSourceVolume());
         sb.append("}");
         return sb.toString();
     }

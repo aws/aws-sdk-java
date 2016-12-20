@@ -208,11 +208,11 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getLayerDigests() != null)
-            sb.append("LayerDigests: " + getLayerDigests());
+            sb.append("LayerDigests: ").append(getLayerDigests());
         sb.append("}");
         return sb.toString();
     }

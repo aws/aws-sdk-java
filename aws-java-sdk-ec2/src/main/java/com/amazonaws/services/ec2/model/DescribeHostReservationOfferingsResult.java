@@ -166,9 +166,9 @@ public class DescribeHostReservationOfferingsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingSet() != null)
-            sb.append("OfferingSet: " + getOfferingSet() + ",");
+            sb.append("OfferingSet: ").append(getOfferingSet()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

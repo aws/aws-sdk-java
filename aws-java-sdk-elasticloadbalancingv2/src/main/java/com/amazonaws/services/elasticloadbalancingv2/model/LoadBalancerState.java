@@ -181,9 +181,9 @@ public class LoadBalancerState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason());
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }

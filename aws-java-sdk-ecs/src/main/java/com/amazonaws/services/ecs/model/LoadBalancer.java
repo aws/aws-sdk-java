@@ -232,13 +232,13 @@ public class LoadBalancer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetGroupArn() != null)
-            sb.append("TargetGroupArn: " + getTargetGroupArn() + ",");
+            sb.append("TargetGroupArn: ").append(getTargetGroupArn()).append(",");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getContainerName() != null)
-            sb.append("ContainerName: " + getContainerName() + ",");
+            sb.append("ContainerName: ").append(getContainerName()).append(",");
         if (getContainerPort() != null)
-            sb.append("ContainerPort: " + getContainerPort());
+            sb.append("ContainerPort: ").append(getContainerPort());
         sb.append("}");
         return sb.toString();
     }

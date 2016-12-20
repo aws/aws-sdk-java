@@ -143,9 +143,9 @@ public class PurchaseReservedNodeOfferingRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedNodeOfferingId() != null)
-            sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId() + ",");
+            sb.append("ReservedNodeOfferingId: ").append(getReservedNodeOfferingId()).append(",");
         if (getNodeCount() != null)
-            sb.append("NodeCount: " + getNodeCount());
+            sb.append("NodeCount: ").append(getNodeCount());
         sb.append("}");
         return sb.toString();
     }

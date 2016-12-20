@@ -789,15 +789,15 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getStartRecordName() != null)
-            sb.append("StartRecordName: " + getStartRecordName() + ",");
+            sb.append("StartRecordName: ").append(getStartRecordName()).append(",");
         if (getStartRecordType() != null)
-            sb.append("StartRecordType: " + getStartRecordType() + ",");
+            sb.append("StartRecordType: ").append(getStartRecordType()).append(",");
         if (getStartRecordIdentifier() != null)
-            sb.append("StartRecordIdentifier: " + getStartRecordIdentifier() + ",");
+            sb.append("StartRecordIdentifier: ").append(getStartRecordIdentifier()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

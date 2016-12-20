@@ -348,15 +348,15 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

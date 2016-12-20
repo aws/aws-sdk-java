@@ -330,15 +330,15 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: " + getScheduleExpression() + ",");
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getOutputLocation() != null)
-            sb.append("OutputLocation: " + getOutputLocation());
+            sb.append("OutputLocation: ").append(getOutputLocation());
         sb.append("}");
         return sb.toString();
     }

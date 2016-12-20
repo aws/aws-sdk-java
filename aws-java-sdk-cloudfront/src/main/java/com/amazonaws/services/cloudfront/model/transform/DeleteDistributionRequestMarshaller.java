@@ -55,8 +55,7 @@ public class DeleteDistributionRequestMarshaller implements Marshaller<Request<D
 
         String uriResourcePath = "/2016-11-25/distribution/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (deleteDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDistributionRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

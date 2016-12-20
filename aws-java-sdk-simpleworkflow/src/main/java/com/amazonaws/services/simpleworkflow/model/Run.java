@@ -87,7 +87,7 @@ public class Run extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.Resp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId());
+            sb.append("RunId: ").append(getRunId());
         sb.append("}");
         return sb.toString();
     }

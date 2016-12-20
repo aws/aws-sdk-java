@@ -80,7 +80,7 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordId() != null)
-            sb.append("RecordId: " + getRecordId());
+            sb.append("RecordId: ").append(getRecordId());
         sb.append("}");
         return sb.toString();
     }

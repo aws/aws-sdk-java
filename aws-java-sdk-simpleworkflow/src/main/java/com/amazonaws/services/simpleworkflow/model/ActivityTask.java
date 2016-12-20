@@ -324,17 +324,17 @@ public class ActivityTask extends com.amazonaws.AmazonWebServiceResult<com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId() + ",");
+            sb.append("ActivityId: ").append(getActivityId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId() + ",");
+            sb.append("StartedEventId: ").append(getStartedEventId()).append(",");
         if (getWorkflowExecution() != null)
-            sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+            sb.append("WorkflowExecution: ").append(getWorkflowExecution()).append(",");
         if (getActivityType() != null)
-            sb.append("ActivityType: " + getActivityType() + ",");
+            sb.append("ActivityType: ").append(getActivityType()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput());
+            sb.append("Input: ").append(getInput());
         sb.append("}");
         return sb.toString();
     }

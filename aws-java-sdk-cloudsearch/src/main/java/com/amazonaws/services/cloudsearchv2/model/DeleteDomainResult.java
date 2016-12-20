@@ -62,7 +62,7 @@ public class DeleteDomainResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainStatus() != null)
-            sb.append("DomainStatus: " + getDomainStatus());
+            sb.append("DomainStatus: ").append(getDomainStatus());
         sb.append("}");
         return sb.toString();
     }

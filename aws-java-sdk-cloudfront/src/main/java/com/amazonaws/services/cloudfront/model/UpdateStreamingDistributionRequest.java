@@ -205,11 +205,11 @@ public class UpdateStreamingDistributionRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionConfig() != null)
-            sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ",");
+            sb.append("StreamingDistributionConfig: ").append(getStreamingDistributionConfig()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getIfMatch() != null)
-            sb.append("IfMatch: " + getIfMatch());
+            sb.append("IfMatch: ").append(getIfMatch());
         sb.append("}");
         return sb.toString();
     }

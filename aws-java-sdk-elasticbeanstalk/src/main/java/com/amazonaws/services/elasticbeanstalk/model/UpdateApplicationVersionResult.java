@@ -80,7 +80,7 @@ public class UpdateApplicationVersionResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationVersion() != null)
-            sb.append("ApplicationVersion: " + getApplicationVersion());
+            sb.append("ApplicationVersion: ").append(getApplicationVersion());
         sb.append("}");
         return sb.toString();
     }

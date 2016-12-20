@@ -389,19 +389,19 @@ public class SchemaExtensionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getSchemaExtensionId() != null)
-            sb.append("SchemaExtensionId: " + getSchemaExtensionId() + ",");
+            sb.append("SchemaExtensionId: ").append(getSchemaExtensionId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSchemaExtensionStatus() != null)
-            sb.append("SchemaExtensionStatus: " + getSchemaExtensionStatus() + ",");
+            sb.append("SchemaExtensionStatus: ").append(getSchemaExtensionStatus()).append(",");
         if (getSchemaExtensionStatusReason() != null)
-            sb.append("SchemaExtensionStatusReason: " + getSchemaExtensionStatusReason() + ",");
+            sb.append("SchemaExtensionStatusReason: ").append(getSchemaExtensionStatusReason()).append(",");
         if (getStartDateTime() != null)
-            sb.append("StartDateTime: " + getStartDateTime() + ",");
+            sb.append("StartDateTime: ").append(getStartDateTime()).append(",");
         if (getEndDateTime() != null)
-            sb.append("EndDateTime: " + getEndDateTime());
+            sb.append("EndDateTime: ").append(getEndDateTime());
         sb.append("}");
         return sb.toString();
     }

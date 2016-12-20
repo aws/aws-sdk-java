@@ -139,9 +139,9 @@ public class GrantAccessRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getValidForInMinutes() != null)
-            sb.append("ValidForInMinutes: " + getValidForInMinutes());
+            sb.append("ValidForInMinutes: ").append(getValidForInMinutes());
         sb.append("}");
         return sb.toString();
     }

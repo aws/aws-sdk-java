@@ -61,9 +61,7 @@ public class GetDomainNameRequestMarshaller implements Marshaller<Request<GetDom
 
         String uriResourcePath = "/domainnames/{domain_name}";
 
-        uriResourcePath = uriResourcePath.replace("{domain_name}",
-                (getDomainNameRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getDomainNameRequest.getDomainName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "domain_name", getDomainNameRequest.getDomainName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -901,31 +901,31 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getRuntime() != null)
-            sb.append("Runtime: " + getRuntime() + ",");
+            sb.append("Runtime: ").append(getRuntime()).append(",");
         if (getRole() != null)
-            sb.append("Role: " + getRole() + ",");
+            sb.append("Role: ").append(getRole()).append(",");
         if (getHandler() != null)
-            sb.append("Handler: " + getHandler() + ",");
+            sb.append("Handler: ").append(getHandler()).append(",");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: " + getTimeout() + ",");
+            sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getMemorySize() != null)
-            sb.append("MemorySize: " + getMemorySize() + ",");
+            sb.append("MemorySize: ").append(getMemorySize()).append(",");
         if (getPublish() != null)
-            sb.append("Publish: " + getPublish() + ",");
+            sb.append("Publish: ").append(getPublish()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig() + ",");
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getDeadLetterConfig() != null)
-            sb.append("DeadLetterConfig: " + getDeadLetterConfig() + ",");
+            sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment() + ",");
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: " + getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
         sb.append("}");
         return sb.toString();
     }

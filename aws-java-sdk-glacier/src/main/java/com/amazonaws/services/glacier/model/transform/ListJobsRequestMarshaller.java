@@ -61,10 +61,9 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (listJobsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listJobsRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (listJobsRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listJobsRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                listJobsRequest.getAccountId() == null ? "-" : listJobsRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", listJobsRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         if (listJobsRequest.getLimit() != null) {

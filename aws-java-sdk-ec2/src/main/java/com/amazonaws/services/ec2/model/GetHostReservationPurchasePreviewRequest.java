@@ -172,9 +172,9 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getHostIdSet() != null)
-            sb.append("HostIdSet: " + getHostIdSet());
+            sb.append("HostIdSet: ").append(getHostIdSet());
         sb.append("}");
         return sb.toString();
     }

@@ -336,15 +336,15 @@ public class Rule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn() + ",");
+            sb.append("RuleArn: ").append(getRuleArn()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getConditions() != null)
-            sb.append("Conditions: " + getConditions() + ",");
+            sb.append("Conditions: ").append(getConditions()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions() + ",");
+            sb.append("Actions: ").append(getActions()).append(",");
         if (getIsDefault() != null)
-            sb.append("IsDefault: " + getIsDefault());
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }

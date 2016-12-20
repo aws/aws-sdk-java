@@ -172,11 +172,11 @@ public class GetSAMLProviderResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLMetadataDocument() != null)
-            sb.append("SAMLMetadataDocument: " + getSAMLMetadataDocument() + ",");
+            sb.append("SAMLMetadataDocument: ").append(getSAMLMetadataDocument()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getValidUntil() != null)
-            sb.append("ValidUntil: " + getValidUntil());
+            sb.append("ValidUntil: ").append(getValidUntil());
         sb.append("}");
         return sb.toString();
     }

@@ -264,15 +264,15 @@ public class ElasticsearchAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getIndex() != null)
-            sb.append("Index: " + getIndex() + ",");
+            sb.append("Index: ").append(getIndex()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

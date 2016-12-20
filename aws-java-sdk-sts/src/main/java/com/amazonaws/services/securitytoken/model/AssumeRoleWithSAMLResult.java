@@ -557,21 +557,21 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials() + ",");
+            sb.append("Credentials: ").append(getCredentials()).append(",");
         if (getAssumedRoleUser() != null)
-            sb.append("AssumedRoleUser: " + getAssumedRoleUser() + ",");
+            sb.append("AssumedRoleUser: ").append(getAssumedRoleUser()).append(",");
         if (getPackedPolicySize() != null)
-            sb.append("PackedPolicySize: " + getPackedPolicySize() + ",");
+            sb.append("PackedPolicySize: ").append(getPackedPolicySize()).append(",");
         if (getSubject() != null)
-            sb.append("Subject: " + getSubject() + ",");
+            sb.append("Subject: ").append(getSubject()).append(",");
         if (getSubjectType() != null)
-            sb.append("SubjectType: " + getSubjectType() + ",");
+            sb.append("SubjectType: ").append(getSubjectType()).append(",");
         if (getIssuer() != null)
-            sb.append("Issuer: " + getIssuer() + ",");
+            sb.append("Issuer: ").append(getIssuer()).append(",");
         if (getAudience() != null)
-            sb.append("Audience: " + getAudience() + ",");
+            sb.append("Audience: ").append(getAudience()).append(",");
         if (getNameQualifier() != null)
-            sb.append("NameQualifier: " + getNameQualifier());
+            sb.append("NameQualifier: ").append(getNameQualifier());
         sb.append("}");
         return sb.toString();
     }

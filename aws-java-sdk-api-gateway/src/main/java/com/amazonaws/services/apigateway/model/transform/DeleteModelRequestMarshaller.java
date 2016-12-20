@@ -61,10 +61,8 @@ public class DeleteModelRequestMarshaller implements Marshaller<Request<DeleteMo
 
         String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (deleteModelRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteModelRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{model_name}",
-                (deleteModelRequest.getModelName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteModelRequest.getModelName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteModelRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "model_name", deleteModelRequest.getModelName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

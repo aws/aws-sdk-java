@@ -798,31 +798,31 @@ public class GameSession implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTerminationTime() != null)
-            sb.append("TerminationTime: " + getTerminationTime() + ",");
+            sb.append("TerminationTime: ").append(getTerminationTime()).append(",");
         if (getCurrentPlayerSessionCount() != null)
-            sb.append("CurrentPlayerSessionCount: " + getCurrentPlayerSessionCount() + ",");
+            sb.append("CurrentPlayerSessionCount: ").append(getCurrentPlayerSessionCount()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: " + getMaximumPlayerSessionCount() + ",");
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getGameProperties() != null)
-            sb.append("GameProperties: " + getGameProperties() + ",");
+            sb.append("GameProperties: ").append(getGameProperties()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getPlayerSessionCreationPolicy() != null)
-            sb.append("PlayerSessionCreationPolicy: " + getPlayerSessionCreationPolicy() + ",");
+            sb.append("PlayerSessionCreationPolicy: ").append(getPlayerSessionCreationPolicy()).append(",");
         if (getCreatorId() != null)
-            sb.append("CreatorId: " + getCreatorId());
+            sb.append("CreatorId: ").append(getCreatorId());
         sb.append("}");
         return sb.toString();
     }

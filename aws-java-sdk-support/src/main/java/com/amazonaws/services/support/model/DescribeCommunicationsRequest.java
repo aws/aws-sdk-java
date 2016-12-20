@@ -284,15 +284,15 @@ public class DescribeCommunicationsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId() + ",");
+            sb.append("CaseId: ").append(getCaseId()).append(",");
         if (getBeforeTime() != null)
-            sb.append("BeforeTime: " + getBeforeTime() + ",");
+            sb.append("BeforeTime: ").append(getBeforeTime()).append(",");
         if (getAfterTime() != null)
-            sb.append("AfterTime: " + getAfterTime() + ",");
+            sb.append("AfterTime: ").append(getAfterTime()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

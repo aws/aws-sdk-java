@@ -130,6 +130,11 @@ public class CreateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Cre
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentLinks", targetDepth)) {
+                    createEnvironmentResult.withEnvironmentLinks(new ArrayList<EnvironmentLink>());
+                    continue;
+                }
+
                 if (context.testExpression("EnvironmentLinks/member", targetDepth)) {
                     createEnvironmentResult.withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

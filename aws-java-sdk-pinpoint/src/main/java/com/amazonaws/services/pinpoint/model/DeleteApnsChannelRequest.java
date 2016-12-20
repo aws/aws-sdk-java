@@ -60,7 +60,7 @@ public class DeleteApnsChannelRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId());
+            sb.append("ApplicationId: ").append(getApplicationId());
         sb.append("}");
         return sb.toString();
     }

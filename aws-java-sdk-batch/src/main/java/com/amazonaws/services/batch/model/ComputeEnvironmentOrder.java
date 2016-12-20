@@ -128,9 +128,9 @@ public class ComputeEnvironmentOrder implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOrder() != null)
-            sb.append("Order: " + getOrder() + ",");
+            sb.append("Order: ").append(getOrder()).append(",");
         if (getComputeEnvironment() != null)
-            sb.append("ComputeEnvironment: " + getComputeEnvironment());
+            sb.append("ComputeEnvironment: ").append(getComputeEnvironment());
         sb.append("}");
         return sb.toString();
     }

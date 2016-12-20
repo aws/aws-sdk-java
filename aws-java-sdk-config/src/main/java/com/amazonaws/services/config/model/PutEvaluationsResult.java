@@ -111,7 +111,7 @@ public class PutEvaluationsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedEvaluations() != null)
-            sb.append("FailedEvaluations: " + getFailedEvaluations());
+            sb.append("FailedEvaluations: ").append(getFailedEvaluations());
         sb.append("}");
         return sb.toString();
     }

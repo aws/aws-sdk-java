@@ -125,7 +125,7 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueNamePrefix() != null)
-            sb.append("QueueNamePrefix: " + getQueueNamePrefix());
+            sb.append("QueueNamePrefix: ").append(getQueueNamePrefix());
         sb.append("}");
         return sb.toString();
     }

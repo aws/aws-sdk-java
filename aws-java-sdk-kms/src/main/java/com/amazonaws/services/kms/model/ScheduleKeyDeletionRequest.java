@@ -280,9 +280,9 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPendingWindowInDays() != null)
-            sb.append("PendingWindowInDays: " + getPendingWindowInDays());
+            sb.append("PendingWindowInDays: ").append(getPendingWindowInDays());
         sb.append("}");
         return sb.toString();
     }

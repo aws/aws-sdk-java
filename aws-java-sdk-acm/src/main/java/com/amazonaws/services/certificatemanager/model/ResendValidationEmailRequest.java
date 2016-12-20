@@ -439,11 +439,11 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getValidationDomain() != null)
-            sb.append("ValidationDomain: " + getValidationDomain());
+            sb.append("ValidationDomain: ").append(getValidationDomain());
         sb.append("}");
         return sb.toString();
     }

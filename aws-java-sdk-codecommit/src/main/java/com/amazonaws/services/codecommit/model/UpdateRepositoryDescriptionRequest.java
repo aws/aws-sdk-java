@@ -134,9 +134,9 @@ public class UpdateRepositoryDescriptionRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getRepositoryDescription() != null)
-            sb.append("RepositoryDescription: " + getRepositoryDescription());
+            sb.append("RepositoryDescription: ").append(getRepositoryDescription());
         sb.append("}");
         return sb.toString();
     }

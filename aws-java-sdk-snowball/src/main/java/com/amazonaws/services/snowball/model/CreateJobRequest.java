@@ -1090,27 +1090,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType() + ",");
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getAddressId() != null)
-            sb.append("AddressId: " + getAddressId() + ",");
+            sb.append("AddressId: ").append(getAddressId()).append(",");
         if (getKmsKeyARN() != null)
-            sb.append("KmsKeyARN: " + getKmsKeyARN() + ",");
+            sb.append("KmsKeyARN: ").append(getKmsKeyARN()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getSnowballCapacityPreference() != null)
-            sb.append("SnowballCapacityPreference: " + getSnowballCapacityPreference() + ",");
+            sb.append("SnowballCapacityPreference: ").append(getSnowballCapacityPreference()).append(",");
         if (getShippingOption() != null)
-            sb.append("ShippingOption: " + getShippingOption() + ",");
+            sb.append("ShippingOption: ").append(getShippingOption()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification() + ",");
+            sb.append("Notification: ").append(getNotification()).append(",");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getSnowballType() != null)
-            sb.append("SnowballType: " + getSnowballType());
+            sb.append("SnowballType: ").append(getSnowballType());
         sb.append("}");
         return sb.toString();
     }

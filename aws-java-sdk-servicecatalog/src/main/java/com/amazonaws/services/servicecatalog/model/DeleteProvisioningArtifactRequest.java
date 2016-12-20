@@ -252,11 +252,11 @@ public class DeleteProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getProvisioningArtifactId() != null)
-            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId());
+            sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId());
         sb.append("}");
         return sb.toString();
     }

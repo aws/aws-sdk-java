@@ -1134,11 +1134,11 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupNames() != null)
-            sb.append("GroupNames: " + getGroupNames() + ",");
+            sb.append("GroupNames: ").append(getGroupNames()).append(",");
         if (getGroupIds() != null)
-            sb.append("GroupIds: " + getGroupIds() + ",");
+            sb.append("GroupIds: ").append(getGroupIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

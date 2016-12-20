@@ -572,23 +572,23 @@ public class DBEngineVersion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getDBParameterGroupFamily() != null)
-            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+            sb.append("DBParameterGroupFamily: ").append(getDBParameterGroupFamily()).append(",");
         if (getDBEngineDescription() != null)
-            sb.append("DBEngineDescription: " + getDBEngineDescription() + ",");
+            sb.append("DBEngineDescription: ").append(getDBEngineDescription()).append(",");
         if (getDBEngineVersionDescription() != null)
-            sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ",");
+            sb.append("DBEngineVersionDescription: ").append(getDBEngineVersionDescription()).append(",");
         if (getDefaultCharacterSet() != null)
-            sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ",");
+            sb.append("DefaultCharacterSet: ").append(getDefaultCharacterSet()).append(",");
         if (getSupportedCharacterSets() != null)
-            sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() + ",");
+            sb.append("SupportedCharacterSets: ").append(getSupportedCharacterSets()).append(",");
         if (getValidUpgradeTarget() != null)
-            sb.append("ValidUpgradeTarget: " + getValidUpgradeTarget() + ",");
+            sb.append("ValidUpgradeTarget: ").append(getValidUpgradeTarget()).append(",");
         if (getSupportedTimezones() != null)
-            sb.append("SupportedTimezones: " + getSupportedTimezones());
+            sb.append("SupportedTimezones: ").append(getSupportedTimezones());
         sb.append("}");
         return sb.toString();
     }

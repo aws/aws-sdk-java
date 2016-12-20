@@ -114,7 +114,7 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstances() != null)
-            sb.append("ReservedInstances: " + getReservedInstances());
+            sb.append("ReservedInstances: ").append(getReservedInstances());
         sb.append("}");
         return sb.toString();
     }

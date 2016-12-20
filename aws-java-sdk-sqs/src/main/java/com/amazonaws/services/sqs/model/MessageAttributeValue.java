@@ -16,27 +16,27 @@ import java.io.Serializable;
 
 /**
  * <p>
- * The user-specified message attribute value. For string data types, the value attribute has the same restrictions on
- * the content as the message body. For more information, see <a>SendMessage</a>.
+ * The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same
+ * restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a> </code>.
  * </p>
  * <p>
- * Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts
- * of the message attribute, including name, type, and value, are included in the message size restriction, which is
- * currently 256 KB (262,144 bytes).
+ * <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of
+ * the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the
+ * message size restriction (256 KB or 262,144 bytes).
  * </p>
  */
 public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     * Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      */
     private String stringValue;
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     * Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      * </p>
      */
     private java.nio.ByteBuffer binaryValue;
@@ -54,8 +54,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValues;
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
-     * must use StringValue.
+     * Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -67,12 +67,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     * Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @param stringValue
-     *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     *        Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      */
 
@@ -82,11 +82,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     * Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
-     * @return Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     * @return Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      */
 
@@ -96,12 +96,12 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     * Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * </p>
      * 
      * @param stringValue
-     *        Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a
+     *        Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
      *        href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -113,7 +113,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     * Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      * </p>
      * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
@@ -127,7 +127,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * </p>
      * 
      * @param binaryValue
-     *        Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     *        Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      */
 
     public void setBinaryValue(java.nio.ByteBuffer binaryValue) {
@@ -136,7 +136,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     * Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -146,8 +146,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * {@code position}.
      * </p>
      * 
-     * @return Binary type attributes can store any binary data, for example, compressed data, encrypted data, or
-     *         images.
+     * @return Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      */
 
     public java.nio.ByteBuffer getBinaryValue() {
@@ -156,11 +155,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     * Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      * </p>
      * 
      * @param binaryValue
-     *        Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.
+     *        Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,8 +316,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
-     * must use StringValue.
+     * Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -327,8 +326,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * </p>
      * 
      * @param dataType
-     *        Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
-     *        type, you must use StringValue.</p>
+     *        Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     *        <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation"
@@ -341,8 +340,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
-     * must use StringValue.
+     * Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -350,8 +349,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * >Message Attribute Data Types and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
-     * @return Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
-     *         type, you must use StringValue.</p>
+     * @return Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     *         <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
      *         <p>
      *         You can also append custom labels. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation"
@@ -364,8 +363,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data type, you
-     * must use StringValue.
+     * Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
      * You can also append custom labels. For more information, see <a href=
@@ -374,8 +373,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * </p>
      * 
      * @param dataType
-     *        Amazon SQS supports the following logical data types: String, Number, and Binary. For the Number data
-     *        type, you must use StringValue.</p>
+     *        Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and
+     *        <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-data-types-validation"
@@ -400,15 +399,15 @@ public class MessageAttributeValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStringValue() != null)
-            sb.append("StringValue: " + getStringValue() + ",");
+            sb.append("StringValue: ").append(getStringValue()).append(",");
         if (getBinaryValue() != null)
-            sb.append("BinaryValue: " + getBinaryValue() + ",");
+            sb.append("BinaryValue: ").append(getBinaryValue()).append(",");
         if (getStringListValues() != null)
-            sb.append("StringListValues: " + getStringListValues() + ",");
+            sb.append("StringListValues: ").append(getStringListValues()).append(",");
         if (getBinaryListValues() != null)
-            sb.append("BinaryListValues: " + getBinaryListValues() + ",");
+            sb.append("BinaryListValues: ").append(getBinaryListValues()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType());
+            sb.append("DataType: ").append(getDataType());
         sb.append("}");
         return sb.toString();
     }

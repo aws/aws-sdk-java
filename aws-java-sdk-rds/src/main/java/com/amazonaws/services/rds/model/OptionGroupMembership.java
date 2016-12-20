@@ -143,9 +143,9 @@ public class OptionGroupMembership implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

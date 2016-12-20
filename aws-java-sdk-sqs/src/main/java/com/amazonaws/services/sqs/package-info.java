@@ -13,27 +13,60 @@
 
 /**
  * <p>
- * Welcome to the <i>Amazon Simple Queue Service API Reference</i>. This section describes who should read this guide,
- * how the guide is organized, and other resources related to the Amazon Simple Queue Service (Amazon SQS).
+ * Welcome to the <i>Amazon Simple Queue Service API Reference</i>.
  * </p>
  * <p>
- * Amazon SQS offers reliable and scalable hosted queues for storing messages as they travel between computers. By using
- * Amazon SQS, you can move data between distributed components of your applications that perform different tasks
- * without losing messages or requiring each component to be always available.
+ * Amazon Simple Queue Service (Amazon SQS) is a reliable, highly-scalable hosted queue for storing messages as they
+ * travel between applications or microservices. Amazon SQS moves data between distributed application components and
+ * helps you decouple these components.
  * </p>
+ * <note>
  * <p>
- * <b>Helpful Links</b>
+ * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html">Standard
+ * queues</a> are available in all regions. <a
+ * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO queues</a> are
+ * available in US West (Oregon) and US East (Ohio).
+ * </p>
+ * </note>
+ * <p>
+ * You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon SQS using your favorite
+ * programming language. The SDKs perform tasks such as the following automatically:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Cryptographically sign your service requests
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Retry requests
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Handle error responses
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Additional Information</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <i>Amazon SQS Developer Guide</i>
  * </p>
  * <ul>
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
  * API Requests</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a>
  * </p>
  * </li>
  * <li>
@@ -48,36 +81,21 @@
  * Amazon SQS Dead Letter Queues</a>
  * </p>
  * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <i>Amazon Web Services General Reference</i>
+ * </p>
+ * <ul>
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions and Endpoints</a>
  * </p>
  * </li>
  * </ul>
- * <p>
- * We also provide SDKs that enable you to access Amazon SQS from your preferred programming language. The SDKs contain
- * functionality that automatically takes care of tasks such as:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Cryptographically signing your service requests
- * </p>
- * </li>
- * <li>
- * <p>
- * Retrying requests
- * </p>
- * </li>
- * <li>
- * <p>
- * Handling error responses
- * </p>
  * </li>
  * </ul>
- * <p>
- * For a list of available SDKs, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
- * </p>
  */
 package com.amazonaws.services.sqs;
 

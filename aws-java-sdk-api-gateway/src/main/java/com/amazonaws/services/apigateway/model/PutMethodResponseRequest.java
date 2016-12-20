@@ -419,17 +419,17 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getResponseParameters() != null)
-            sb.append("ResponseParameters: " + getResponseParameters() + ",");
+            sb.append("ResponseParameters: ").append(getResponseParameters()).append(",");
         if (getResponseModels() != null)
-            sb.append("ResponseModels: " + getResponseModels());
+            sb.append("ResponseModels: ").append(getResponseModels());
         sb.append("}");
         return sb.toString();
     }

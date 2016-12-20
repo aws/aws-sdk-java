@@ -203,11 +203,11 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: " + getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions());
         sb.append("}");
         return sb.toString();
     }

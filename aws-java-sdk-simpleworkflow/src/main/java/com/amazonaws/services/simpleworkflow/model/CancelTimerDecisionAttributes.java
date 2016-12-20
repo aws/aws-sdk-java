@@ -98,7 +98,7 @@ public class CancelTimerDecisionAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimerId() != null)
-            sb.append("TimerId: " + getTimerId());
+            sb.append("TimerId: ").append(getTimerId());
         sb.append("}");
         return sb.toString();
     }

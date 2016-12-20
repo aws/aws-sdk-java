@@ -120,7 +120,7 @@ public class GetSessionTokenResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials());
+            sb.append("Credentials: ").append(getCredentials());
         sb.append("}");
         return sb.toString();
     }

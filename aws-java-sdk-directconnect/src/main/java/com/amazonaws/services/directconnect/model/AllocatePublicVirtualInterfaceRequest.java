@@ -227,11 +227,11 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getOwnerAccount() != null)
-            sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getNewPublicVirtualInterfaceAllocation() != null)
-            sb.append("NewPublicVirtualInterfaceAllocation: " + getNewPublicVirtualInterfaceAllocation());
+            sb.append("NewPublicVirtualInterfaceAllocation: ").append(getNewPublicVirtualInterfaceAllocation());
         sb.append("}");
         return sb.toString();
     }

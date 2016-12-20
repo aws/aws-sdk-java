@@ -166,9 +166,9 @@ public class ListTestsResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTests() != null)
-            sb.append("Tests: " + getTests() + ",");
+            sb.append("Tests: ").append(getTests()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

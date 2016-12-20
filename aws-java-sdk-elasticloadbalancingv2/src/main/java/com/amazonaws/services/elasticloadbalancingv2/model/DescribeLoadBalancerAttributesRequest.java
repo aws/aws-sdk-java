@@ -81,7 +81,7 @@ public class DescribeLoadBalancerAttributesRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn());
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn());
         sb.append("}");
         return sb.toString();
     }

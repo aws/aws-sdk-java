@@ -743,29 +743,29 @@ public class ScheduledInstancesNetworkInterface implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getDeviceIndex() != null)
-            sb.append("DeviceIndex: " + getDeviceIndex() + ",");
+            sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrivateIpAddressConfigs() != null)
-            sb.append("PrivateIpAddressConfigs: " + getPrivateIpAddressConfigs() + ",");
+            sb.append("PrivateIpAddressConfigs: ").append(getPrivateIpAddressConfigs()).append(",");
         if (getSecondaryPrivateIpAddressCount() != null)
-            sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ",");
+            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getAssociatePublicIpAddress() != null)
-            sb.append("AssociatePublicIpAddress: " + getAssociatePublicIpAddress() + ",");
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getGroups() != null)
-            sb.append("Groups: " + getGroups() + ",");
+            sb.append("Groups: ").append(getGroups()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination() + ",");
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
         if (getIpv6Addresses() != null)
-            sb.append("Ipv6Addresses: " + getIpv6Addresses() + ",");
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
         if (getIpv6AddressCount() != null)
-            sb.append("Ipv6AddressCount: " + getIpv6AddressCount());
+            sb.append("Ipv6AddressCount: ").append(getIpv6AddressCount());
         sb.append("}");
         return sb.toString();
     }

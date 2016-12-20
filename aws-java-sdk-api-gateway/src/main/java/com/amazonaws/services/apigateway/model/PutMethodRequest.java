@@ -506,21 +506,21 @@ public class PutMethodRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getAuthorizationType() != null)
-            sb.append("AuthorizationType: " + getAuthorizationType() + ",");
+            sb.append("AuthorizationType: ").append(getAuthorizationType()).append(",");
         if (getAuthorizerId() != null)
-            sb.append("AuthorizerId: " + getAuthorizerId() + ",");
+            sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getApiKeyRequired() != null)
-            sb.append("ApiKeyRequired: " + getApiKeyRequired() + ",");
+            sb.append("ApiKeyRequired: ").append(getApiKeyRequired()).append(",");
         if (getRequestParameters() != null)
-            sb.append("RequestParameters: " + getRequestParameters() + ",");
+            sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestModels() != null)
-            sb.append("RequestModels: " + getRequestModels());
+            sb.append("RequestModels: ").append(getRequestModels());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class CreateFlowLogsResultStaxUnmarshaller implements Unmarshaller<Create
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("flowLogIdSet", targetDepth)) {
+                    createFlowLogsResult.withFlowLogIds(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("flowLogIdSet/item", targetDepth)) {
                     createFlowLogsResult.withFlowLogIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -52,6 +57,11 @@ public class CreateFlowLogsResultStaxUnmarshaller implements Unmarshaller<Create
 
                 if (context.testExpression("clientToken", targetDepth)) {
                     createFlowLogsResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("unsuccessful", targetDepth)) {
+                    createFlowLogsResult.withUnsuccessful(new ArrayList<UnsuccessfulItem>());
                     continue;
                 }
 

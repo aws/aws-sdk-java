@@ -463,17 +463,17 @@ public class HTTPRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientIP() != null)
-            sb.append("ClientIP: " + getClientIP() + ",");
+            sb.append("ClientIP: ").append(getClientIP()).append(",");
         if (getCountry() != null)
-            sb.append("Country: " + getCountry() + ",");
+            sb.append("Country: ").append(getCountry()).append(",");
         if (getURI() != null)
-            sb.append("URI: " + getURI() + ",");
+            sb.append("URI: ").append(getURI()).append(",");
         if (getMethod() != null)
-            sb.append("Method: " + getMethod() + ",");
+            sb.append("Method: ").append(getMethod()).append(",");
         if (getHTTPVersion() != null)
-            sb.append("HTTPVersion: " + getHTTPVersion() + ",");
+            sb.append("HTTPVersion: ").append(getHTTPVersion()).append(",");
         if (getHeaders() != null)
-            sb.append("Headers: " + getHeaders());
+            sb.append("Headers: ").append(getHeaders());
         sb.append("}");
         return sb.toString();
     }

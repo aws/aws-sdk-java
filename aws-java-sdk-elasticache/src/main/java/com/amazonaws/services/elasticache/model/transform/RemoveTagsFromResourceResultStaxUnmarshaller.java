@@ -45,6 +45,11 @@ public class RemoveTagsFromResourceResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TagList", targetDepth)) {
+                    removeTagsFromResourceResult.withTagList(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("TagList/Tag", targetDepth)) {
                     removeTagsFromResourceResult.withTagList(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

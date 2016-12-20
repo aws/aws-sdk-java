@@ -50,6 +50,11 @@ public class DescribeDBClusterParameterGroupsResultStaxUnmarshaller implements U
                     continue;
                 }
 
+                if (context.testExpression("DBClusterParameterGroups", targetDepth)) {
+                    describeDBClusterParameterGroupsResult.withDBClusterParameterGroups(new ArrayList<DBClusterParameterGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("DBClusterParameterGroups/DBClusterParameterGroup", targetDepth)) {
                     describeDBClusterParameterGroupsResult.withDBClusterParameterGroups(DBClusterParameterGroupStaxUnmarshaller.getInstance().unmarshall(
                             context));

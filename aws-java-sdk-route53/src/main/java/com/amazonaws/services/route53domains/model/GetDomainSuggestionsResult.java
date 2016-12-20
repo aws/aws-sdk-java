@@ -88,7 +88,7 @@ public class GetDomainSuggestionsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuggestionsList() != null)
-            sb.append("SuggestionsList: " + getSuggestionsList());
+            sb.append("SuggestionsList: ").append(getSuggestionsList());
         sb.append("}");
         return sb.toString();
     }

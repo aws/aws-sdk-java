@@ -190,9 +190,9 @@ public class DescribeContainerInstancesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerInstances() != null)
-            sb.append("ContainerInstances: " + getContainerInstances() + ",");
+            sb.append("ContainerInstances: ").append(getContainerInstances()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures());
+            sb.append("Failures: ").append(getFailures());
         sb.append("}");
         return sb.toString();
     }

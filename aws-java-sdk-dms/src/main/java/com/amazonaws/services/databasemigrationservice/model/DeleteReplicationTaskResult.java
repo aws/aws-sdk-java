@@ -78,7 +78,7 @@ public class DeleteReplicationTaskResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTask() != null)
-            sb.append("ReplicationTask: " + getReplicationTask());
+            sb.append("ReplicationTask: ").append(getReplicationTask());
         sb.append("}");
         return sb.toString();
     }

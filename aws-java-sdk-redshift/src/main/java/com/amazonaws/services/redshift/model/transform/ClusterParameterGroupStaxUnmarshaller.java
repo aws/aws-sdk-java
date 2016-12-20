@@ -60,6 +60,11 @@ public class ClusterParameterGroupStaxUnmarshaller implements Unmarshaller<Clust
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    clusterParameterGroup.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     clusterParameterGroup.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

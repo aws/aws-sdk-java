@@ -172,11 +172,11 @@ public class SourceRegion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegionName() != null)
-            sb.append("RegionName: " + getRegionName() + ",");
+            sb.append("RegionName: ").append(getRegionName()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

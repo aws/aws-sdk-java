@@ -61,14 +61,9 @@ public class SetVaultAccessPolicyRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/access-policy";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (setVaultAccessPolicyRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(setVaultAccessPolicyRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (setVaultAccessPolicyRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(setVaultAccessPolicyRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                setVaultAccessPolicyRequest.getAccountId() == null ? "-" : setVaultAccessPolicyRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", setVaultAccessPolicyRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -311,13 +311,13 @@ public class ContainerOverrides implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVcpus() != null)
-            sb.append("Vcpus: " + getVcpus() + ",");
+            sb.append("Vcpus: ").append(getVcpus()).append(",");
         if (getMemory() != null)
-            sb.append("Memory: " + getMemory() + ",");
+            sb.append("Memory: ").append(getMemory()).append(",");
         if (getCommand() != null)
-            sb.append("Command: " + getCommand() + ",");
+            sb.append("Command: ").append(getCommand()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment());
+            sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
         return sb.toString();
     }

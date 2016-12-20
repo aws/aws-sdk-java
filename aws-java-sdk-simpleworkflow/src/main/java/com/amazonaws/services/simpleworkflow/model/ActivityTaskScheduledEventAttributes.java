@@ -639,27 +639,27 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityType() != null)
-            sb.append("ActivityType: " + getActivityType() + ",");
+            sb.append("ActivityType: ").append(getActivityType()).append(",");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId() + ",");
+            sb.append("ActivityId: ").append(getActivityId()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getControl() != null)
-            sb.append("Control: " + getControl() + ",");
+            sb.append("Control: ").append(getControl()).append(",");
         if (getScheduleToStartTimeout() != null)
-            sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ",");
+            sb.append("ScheduleToStartTimeout: ").append(getScheduleToStartTimeout()).append(",");
         if (getScheduleToCloseTimeout() != null)
-            sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ",");
+            sb.append("ScheduleToCloseTimeout: ").append(getScheduleToCloseTimeout()).append(",");
         if (getStartToCloseTimeout() != null)
-            sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ",");
+            sb.append("StartToCloseTimeout: ").append(getStartToCloseTimeout()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getTaskPriority() != null)
-            sb.append("TaskPriority: " + getTaskPriority() + ",");
+            sb.append("TaskPriority: ").append(getTaskPriority()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId()).append(",");
         if (getHeartbeatTimeout() != null)
-            sb.append("HeartbeatTimeout: " + getHeartbeatTimeout());
+            sb.append("HeartbeatTimeout: ").append(getHeartbeatTimeout());
         sb.append("}");
         return sb.toString();
     }

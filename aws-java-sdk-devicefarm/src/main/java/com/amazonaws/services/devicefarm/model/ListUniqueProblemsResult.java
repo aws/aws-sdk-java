@@ -434,9 +434,9 @@ public class ListUniqueProblemsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUniqueProblems() != null)
-            sb.append("UniqueProblems: " + getUniqueProblems() + ",");
+            sb.append("UniqueProblems: ").append(getUniqueProblems()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

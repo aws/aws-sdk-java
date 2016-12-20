@@ -80,7 +80,7 @@ public class GetRoleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRole() != null)
-            sb.append("Role: " + getRole());
+            sb.append("Role: ").append(getRole());
         sb.append("}");
         return sb.toString();
     }

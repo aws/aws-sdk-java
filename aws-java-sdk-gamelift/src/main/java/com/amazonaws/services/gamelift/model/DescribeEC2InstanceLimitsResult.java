@@ -110,7 +110,7 @@ public class DescribeEC2InstanceLimitsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEC2InstanceLimits() != null)
-            sb.append("EC2InstanceLimits: " + getEC2InstanceLimits());
+            sb.append("EC2InstanceLimits: ").append(getEC2InstanceLimits());
         sb.append("}");
         return sb.toString();
     }

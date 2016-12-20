@@ -45,6 +45,11 @@ public class DescribeEnvironmentManagedActionsResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ManagedActions", targetDepth)) {
+                    describeEnvironmentManagedActionsResult.withManagedActions(new ArrayList<ManagedAction>());
+                    continue;
+                }
+
                 if (context.testExpression("ManagedActions/member", targetDepth)) {
                     describeEnvironmentManagedActionsResult.withManagedActions(ManagedActionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

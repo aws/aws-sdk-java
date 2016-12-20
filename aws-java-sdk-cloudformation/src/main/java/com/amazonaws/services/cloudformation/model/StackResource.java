@@ -502,23 +502,23 @@ public class StackResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLogicalResourceId() != null)
-            sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");
+            sb.append("LogicalResourceId: ").append(getLogicalResourceId()).append(",");
         if (getPhysicalResourceId() != null)
-            sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ",");
+            sb.append("PhysicalResourceId: ").append(getPhysicalResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getResourceStatus() != null)
-            sb.append("ResourceStatus: " + getResourceStatus() + ",");
+            sb.append("ResourceStatus: ").append(getResourceStatus()).append(",");
         if (getResourceStatusReason() != null)
-            sb.append("ResourceStatusReason: " + getResourceStatusReason() + ",");
+            sb.append("ResourceStatusReason: ").append(getResourceStatusReason()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

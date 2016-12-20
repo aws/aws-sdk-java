@@ -319,17 +319,17 @@ public class TextOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getSourceField() != null)
-            sb.append("SourceField: " + getSourceField() + ",");
+            sb.append("SourceField: ").append(getSourceField()).append(",");
         if (getReturnEnabled() != null)
-            sb.append("ReturnEnabled: " + getReturnEnabled() + ",");
+            sb.append("ReturnEnabled: ").append(getReturnEnabled()).append(",");
         if (getSortEnabled() != null)
-            sb.append("SortEnabled: " + getSortEnabled() + ",");
+            sb.append("SortEnabled: ").append(getSortEnabled()).append(",");
         if (getHighlightEnabled() != null)
-            sb.append("HighlightEnabled: " + getHighlightEnabled() + ",");
+            sb.append("HighlightEnabled: ").append(getHighlightEnabled()).append(",");
         if (getAnalysisScheme() != null)
-            sb.append("AnalysisScheme: " + getAnalysisScheme());
+            sb.append("AnalysisScheme: ").append(getAnalysisScheme());
         sb.append("}");
         return sb.toString();
     }

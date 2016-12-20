@@ -69,14 +69,10 @@ public class InitiateMultipartUploadRequestMarshaller implements Marshaller<Requ
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (initiateMultipartUploadRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(initiateMultipartUploadRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (initiateMultipartUploadRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(initiateMultipartUploadRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                initiateMultipartUploadRequest.getAccountId() == null ? "-" : initiateMultipartUploadRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName",
+                initiateMultipartUploadRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -367,11 +367,11 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getAccessKeyId() != null)
-            sb.append("AccessKeyId: " + getAccessKeyId() + ",");
+            sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class Ipv6CidrBlock implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock());
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }

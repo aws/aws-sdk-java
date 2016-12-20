@@ -93,7 +93,7 @@ public class DeleteEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEgressOnlyInternetGatewayId() != null)
-            sb.append("EgressOnlyInternetGatewayId: " + getEgressOnlyInternetGatewayId());
+            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId());
         sb.append("}");
         return sb.toString();
     }

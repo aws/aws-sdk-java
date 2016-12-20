@@ -247,11 +247,11 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getMapPublicIpOnLaunch() != null)
-            sb.append("MapPublicIpOnLaunch: " + getMapPublicIpOnLaunch() + ",");
+            sb.append("MapPublicIpOnLaunch: ").append(getMapPublicIpOnLaunch()).append(",");
         if (getAssignIpv6AddressOnCreation() != null)
-            sb.append("AssignIpv6AddressOnCreation: " + getAssignIpv6AddressOnCreation());
+            sb.append("AssignIpv6AddressOnCreation: ").append(getAssignIpv6AddressOnCreation());
         sb.append("}");
         return sb.toString();
     }

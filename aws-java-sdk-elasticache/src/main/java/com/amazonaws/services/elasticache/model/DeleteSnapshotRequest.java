@@ -81,7 +81,7 @@ public class DeleteSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotName() != null)
-            sb.append("SnapshotName: " + getSnapshotName());
+            sb.append("SnapshotName: ").append(getSnapshotName());
         sb.append("}");
         return sb.toString();
     }

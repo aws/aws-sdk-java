@@ -61,8 +61,7 @@ public class DeletePresetRequestMarshaller implements Marshaller<Request<DeleteP
 
         String uriResourcePath = "/2012-09-25/presets/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (deletePresetRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deletePresetRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deletePresetRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

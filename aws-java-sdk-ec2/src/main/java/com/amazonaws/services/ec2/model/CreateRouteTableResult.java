@@ -81,7 +81,7 @@ public class CreateRouteTableResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTable() != null)
-            sb.append("RouteTable: " + getRouteTable());
+            sb.append("RouteTable: ").append(getRouteTable());
         sb.append("}");
         return sb.toString();
     }

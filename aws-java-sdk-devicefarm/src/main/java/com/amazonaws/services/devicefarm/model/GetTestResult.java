@@ -61,7 +61,7 @@ public class GetTestResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTest() != null)
-            sb.append("Test: " + getTest());
+            sb.append("Test: ").append(getTest());
         sb.append("}");
         return sb.toString();
     }

@@ -253,9 +253,9 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }

@@ -92,7 +92,7 @@ public class CreateDataSourceFromRedshiftResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId());
+            sb.append("DataSourceId: ").append(getDataSourceId());
         sb.append("}");
         return sb.toString();
     }

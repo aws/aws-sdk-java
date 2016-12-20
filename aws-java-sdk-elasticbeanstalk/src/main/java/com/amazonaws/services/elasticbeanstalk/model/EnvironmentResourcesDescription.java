@@ -80,7 +80,7 @@ public class EnvironmentResourcesDescription implements Serializable, Cloneable 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancer() != null)
-            sb.append("LoadBalancer: " + getLoadBalancer());
+            sb.append("LoadBalancer: ").append(getLoadBalancer());
         sb.append("}");
         return sb.toString();
     }

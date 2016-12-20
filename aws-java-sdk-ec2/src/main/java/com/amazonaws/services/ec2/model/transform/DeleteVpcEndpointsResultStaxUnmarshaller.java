@@ -45,6 +45,11 @@ public class DeleteVpcEndpointsResultStaxUnmarshaller implements Unmarshaller<De
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("unsuccessful", targetDepth)) {
+                    deleteVpcEndpointsResult.withUnsuccessful(new ArrayList<UnsuccessfulItem>());
+                    continue;
+                }
+
                 if (context.testExpression("unsuccessful/item", targetDepth)) {
                     deleteVpcEndpointsResult.withUnsuccessful(UnsuccessfulItemStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

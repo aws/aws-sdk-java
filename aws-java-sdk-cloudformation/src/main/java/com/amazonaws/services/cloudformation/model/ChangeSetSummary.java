@@ -566,23 +566,23 @@ public class ChangeSetSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getChangeSetId() != null)
-            sb.append("ChangeSetId: " + getChangeSetId() + ",");
+            sb.append("ChangeSetId: ").append(getChangeSetId()).append(",");
         if (getChangeSetName() != null)
-            sb.append("ChangeSetName: " + getChangeSetName() + ",");
+            sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getExecutionStatus() != null)
-            sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
+            sb.append("ExecutionStatus: ").append(getExecutionStatus()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: " + getStatusReason() + ",");
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

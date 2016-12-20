@@ -564,21 +564,21 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationPeriods() != null)
-            sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");
+            sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
         if (getThreshold() != null)
-            sb.append("Threshold: " + getThreshold() + ",");
+            sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator() + ",");
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: " + getPeriod() + ",");
+            sb.append("Period: ").append(getPeriod()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getStatistic() != null)
-            sb.append("Statistic: " + getStatistic() + ",");
+            sb.append("Statistic: ").append(getStatistic()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions());
+            sb.append("Dimensions: ").append(getDimensions());
         sb.append("}");
         return sb.toString();
     }

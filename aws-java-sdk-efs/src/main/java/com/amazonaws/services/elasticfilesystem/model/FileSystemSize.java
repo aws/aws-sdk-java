@@ -138,9 +138,9 @@ public class FileSystemSize implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp());
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }

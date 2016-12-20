@@ -140,9 +140,9 @@ public class IpRoute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrIp() != null)
-            sb.append("CidrIp: " + getCidrIp() + ",");
+            sb.append("CidrIp: ").append(getCidrIp()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

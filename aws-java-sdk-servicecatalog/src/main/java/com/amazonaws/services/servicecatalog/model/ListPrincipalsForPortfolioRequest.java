@@ -308,13 +308,13 @@ public class ListPrincipalsForPortfolioRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: " + getPortfolioId() + ",");
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

@@ -235,11 +235,11 @@ public class ListRetirableGrantsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGrants() != null)
-            sb.append("Grants: " + getGrants() + ",");
+            sb.append("Grants: ").append(getGrants()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getTruncated() != null)
-            sb.append("Truncated: " + getTruncated());
+            sb.append("Truncated: ").append(getTruncated());
         sb.append("}");
         return sb.toString();
     }

@@ -265,13 +265,13 @@ public class EBSOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEBSEnabled() != null)
-            sb.append("EBSEnabled: " + getEBSEnabled() + ",");
+            sb.append("EBSEnabled: ").append(getEBSEnabled()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getVolumeSize() != null)
-            sb.append("VolumeSize: " + getVolumeSize() + ",");
+            sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops());
+            sb.append("Iops: ").append(getIops());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribeExpressionsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExpressions() != null)
-            sb.append("Expressions: " + getExpressions());
+            sb.append("Expressions: ").append(getExpressions());
         sb.append("}");
         return sb.toString();
     }

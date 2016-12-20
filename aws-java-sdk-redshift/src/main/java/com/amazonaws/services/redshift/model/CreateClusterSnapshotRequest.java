@@ -404,11 +404,11 @@ public class CreateClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotIdentifier() != null)
-            sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+            sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

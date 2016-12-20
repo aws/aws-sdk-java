@@ -156,9 +156,9 @@ public class SummarizedAttackVector implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVectorType() != null)
-            sb.append("VectorType: " + getVectorType() + ",");
+            sb.append("VectorType: ").append(getVectorType()).append(",");
         if (getVectorCounters() != null)
-            sb.append("VectorCounters: " + getVectorCounters());
+            sb.append("VectorCounters: ").append(getVectorCounters());
         sb.append("}");
         return sb.toString();
     }

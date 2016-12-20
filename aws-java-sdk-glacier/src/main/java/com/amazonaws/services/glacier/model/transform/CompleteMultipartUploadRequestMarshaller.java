@@ -69,18 +69,12 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (completeMultipartUploadRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(completeMultipartUploadRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (completeMultipartUploadRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(completeMultipartUploadRequest.getVaultName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{uploadId}",
-                (completeMultipartUploadRequest.getUploadId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(completeMultipartUploadRequest.getUploadId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                completeMultipartUploadRequest.getAccountId() == null ? "-" : completeMultipartUploadRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName",
+                completeMultipartUploadRequest.getVaultName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "uploadId", completeMultipartUploadRequest.getUploadId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

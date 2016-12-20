@@ -436,19 +436,19 @@ public class Domain implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSupportCode() != null)
-            sb.append("SupportCode: " + getSupportCode() + ",");
+            sb.append("SupportCode: ").append(getSupportCode()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getDomainEntries() != null)
-            sb.append("DomainEntries: " + getDomainEntries());
+            sb.append("DomainEntries: ").append(getDomainEntries());
         sb.append("}");
         return sb.toString();
     }

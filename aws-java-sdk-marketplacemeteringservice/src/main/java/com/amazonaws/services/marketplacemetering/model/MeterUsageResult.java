@@ -59,7 +59,7 @@ public class MeterUsageResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMeteringRecordId() != null)
-            sb.append("MeteringRecordId: " + getMeteringRecordId());
+            sb.append("MeteringRecordId: ").append(getMeteringRecordId());
         sb.append("}");
         return sb.toString();
     }

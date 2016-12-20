@@ -45,6 +45,11 @@ public class ListIdentitiesResultStaxUnmarshaller implements Unmarshaller<ListId
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Identities", targetDepth)) {
+                    listIdentitiesResult.withIdentities(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Identities/member", targetDepth)) {
                     listIdentitiesResult.withIdentities(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

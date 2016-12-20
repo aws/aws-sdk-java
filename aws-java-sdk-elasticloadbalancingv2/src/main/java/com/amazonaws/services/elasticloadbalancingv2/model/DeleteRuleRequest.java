@@ -81,7 +81,7 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn());
+            sb.append("RuleArn: ").append(getRuleArn());
         sb.append("}");
         return sb.toString();
     }

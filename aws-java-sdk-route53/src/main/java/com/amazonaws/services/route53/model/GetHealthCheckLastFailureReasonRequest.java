@@ -98,7 +98,7 @@ public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHealthCheckId() != null)
-            sb.append("HealthCheckId: " + getHealthCheckId());
+            sb.append("HealthCheckId: ").append(getHealthCheckId());
         sb.append("}");
         return sb.toString();
     }

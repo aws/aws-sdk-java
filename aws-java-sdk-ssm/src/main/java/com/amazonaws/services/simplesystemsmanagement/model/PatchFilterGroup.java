@@ -113,7 +113,7 @@ public class PatchFilterGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchFilters() != null)
-            sb.append("PatchFilters: " + getPatchFilters());
+            sb.append("PatchFilters: ").append(getPatchFilters());
         sb.append("}");
         return sb.toString();
     }

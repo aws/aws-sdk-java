@@ -587,23 +587,23 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getSourceSecurityGroupName() != null)
-            sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ",");
+            sb.append("SourceSecurityGroupName: ").append(getSourceSecurityGroupName()).append(",");
         if (getSourceSecurityGroupOwnerId() != null)
-            sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ",");
+            sb.append("SourceSecurityGroupOwnerId: ").append(getSourceSecurityGroupOwnerId()).append(",");
         if (getIpProtocol() != null)
-            sb.append("IpProtocol: " + getIpProtocol() + ",");
+            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
         if (getFromPort() != null)
-            sb.append("FromPort: " + getFromPort() + ",");
+            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: " + getToPort() + ",");
+            sb.append("ToPort: ").append(getToPort()).append(",");
         if (getCidrIp() != null)
-            sb.append("CidrIp: " + getCidrIp() + ",");
+            sb.append("CidrIp: ").append(getCidrIp()).append(",");
         if (getIpPermissions() != null)
-            sb.append("IpPermissions: " + getIpPermissions());
+            sb.append("IpPermissions: ").append(getIpPermissions());
         sb.append("}");
         return sb.toString();
     }

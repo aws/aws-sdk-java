@@ -206,11 +206,11 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCategory() != null)
-            sb.append("Category: " + getCategory() + ",");
+            sb.append("Category: ").append(getCategory()).append(",");
         if (getProvider() != null)
-            sb.append("Provider: " + getProvider() + ",");
+            sb.append("Provider: ").append(getProvider()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }

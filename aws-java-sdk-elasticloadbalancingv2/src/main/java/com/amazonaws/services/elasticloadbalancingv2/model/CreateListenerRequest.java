@@ -411,17 +411,17 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn() + ",");
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getSslPolicy() != null)
-            sb.append("SslPolicy: " + getSslPolicy() + ",");
+            sb.append("SslPolicy: ").append(getSslPolicy()).append(",");
         if (getCertificates() != null)
-            sb.append("Certificates: " + getCertificates() + ",");
+            sb.append("Certificates: ").append(getCertificates()).append(",");
         if (getDefaultActions() != null)
-            sb.append("DefaultActions: " + getDefaultActions());
+            sb.append("DefaultActions: ").append(getDefaultActions());
         sb.append("}");
         return sb.toString();
     }

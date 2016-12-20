@@ -126,9 +126,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getHook() != null)
-            sb.append("Hook: " + getHook());
+            sb.append("Hook: ").append(getHook());
         sb.append("}");
         return sb.toString();
     }

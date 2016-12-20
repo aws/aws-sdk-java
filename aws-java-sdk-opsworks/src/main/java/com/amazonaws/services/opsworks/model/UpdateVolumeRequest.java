@@ -171,11 +171,11 @@ public class UpdateVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMountPoint() != null)
-            sb.append("MountPoint: " + getMountPoint());
+            sb.append("MountPoint: ").append(getMountPoint());
         sb.append("}");
         return sb.toString();
     }

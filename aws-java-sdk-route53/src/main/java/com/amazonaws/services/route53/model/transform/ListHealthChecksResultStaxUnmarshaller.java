@@ -45,6 +45,11 @@ public class ListHealthChecksResultStaxUnmarshaller implements Unmarshaller<List
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("HealthChecks", targetDepth)) {
+                    listHealthChecksResult.withHealthChecks(new ArrayList<HealthCheck>());
+                    continue;
+                }
+
                 if (context.testExpression("HealthChecks/HealthCheck", targetDepth)) {
                     listHealthChecksResult.withHealthChecks(HealthCheckStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

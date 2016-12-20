@@ -357,15 +357,15 @@ public class ScheduledInstanceRecurrenceRequest implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getInterval() != null)
-            sb.append("Interval: " + getInterval() + ",");
+            sb.append("Interval: ").append(getInterval()).append(",");
         if (getOccurrenceDays() != null)
-            sb.append("OccurrenceDays: " + getOccurrenceDays() + ",");
+            sb.append("OccurrenceDays: ").append(getOccurrenceDays()).append(",");
         if (getOccurrenceRelativeToEnd() != null)
-            sb.append("OccurrenceRelativeToEnd: " + getOccurrenceRelativeToEnd() + ",");
+            sb.append("OccurrenceRelativeToEnd: ").append(getOccurrenceRelativeToEnd()).append(",");
         if (getOccurrenceUnit() != null)
-            sb.append("OccurrenceUnit: " + getOccurrenceUnit());
+            sb.append("OccurrenceUnit: ").append(getOccurrenceUnit());
         sb.append("}");
         return sb.toString();
     }

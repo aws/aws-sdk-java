@@ -45,6 +45,11 @@ public class DescribeNetworkAclsResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("networkAclSet", targetDepth)) {
+                    describeNetworkAclsResult.withNetworkAcls(new ArrayList<NetworkAcl>());
+                    continue;
+                }
+
                 if (context.testExpression("networkAclSet/item", targetDepth)) {
                     describeNetworkAclsResult.withNetworkAcls(NetworkAclStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

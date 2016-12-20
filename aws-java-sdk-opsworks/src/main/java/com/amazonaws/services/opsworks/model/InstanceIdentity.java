@@ -127,9 +127,9 @@ public class InstanceIdentity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocument() != null)
-            sb.append("Document: " + getDocument() + ",");
+            sb.append("Document: ").append(getDocument()).append(",");
         if (getSignature() != null)
-            sb.append("Signature: " + getSignature());
+            sb.append("Signature: ").append(getSignature());
         sb.append("}");
         return sb.toString();
     }

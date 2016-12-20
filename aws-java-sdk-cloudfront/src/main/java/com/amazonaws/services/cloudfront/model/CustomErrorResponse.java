@@ -707,13 +707,13 @@ public class CustomErrorResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getResponsePagePath() != null)
-            sb.append("ResponsePagePath: " + getResponsePagePath() + ",");
+            sb.append("ResponsePagePath: ").append(getResponsePagePath()).append(",");
         if (getResponseCode() != null)
-            sb.append("ResponseCode: " + getResponseCode() + ",");
+            sb.append("ResponseCode: ").append(getResponseCode()).append(",");
         if (getErrorCachingMinTTL() != null)
-            sb.append("ErrorCachingMinTTL: " + getErrorCachingMinTTL());
+            sb.append("ErrorCachingMinTTL: ").append(getErrorCachingMinTTL());
         sb.append("}");
         return sb.toString();
     }

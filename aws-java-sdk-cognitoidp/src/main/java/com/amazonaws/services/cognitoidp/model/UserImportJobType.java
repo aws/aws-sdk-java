@@ -1140,31 +1140,31 @@ public class UserImportJobType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobName() != null)
-            sb.append("JobName: " + getJobName() + ",");
+            sb.append("JobName: ").append(getJobName()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getPreSignedUrl() != null)
-            sb.append("PreSignedUrl: " + getPreSignedUrl() + ",");
+            sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getCompletionDate() != null)
-            sb.append("CompletionDate: " + getCompletionDate() + ",");
+            sb.append("CompletionDate: ").append(getCompletionDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCloudWatchLogsRoleArn() != null)
-            sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn() + ",");
+            sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn()).append(",");
         if (getImportedUsers() != null)
-            sb.append("ImportedUsers: " + getImportedUsers() + ",");
+            sb.append("ImportedUsers: ").append(getImportedUsers()).append(",");
         if (getSkippedUsers() != null)
-            sb.append("SkippedUsers: " + getSkippedUsers() + ",");
+            sb.append("SkippedUsers: ").append(getSkippedUsers()).append(",");
         if (getFailedUsers() != null)
-            sb.append("FailedUsers: " + getFailedUsers() + ",");
+            sb.append("FailedUsers: ").append(getFailedUsers()).append(",");
         if (getCompletionMessage() != null)
-            sb.append("CompletionMessage: " + getCompletionMessage());
+            sb.append("CompletionMessage: ").append(getCompletionMessage());
         sb.append("}");
         return sb.toString();
     }

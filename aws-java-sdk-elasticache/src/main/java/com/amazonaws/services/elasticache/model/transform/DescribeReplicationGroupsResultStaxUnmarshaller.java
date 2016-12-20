@@ -50,6 +50,11 @@ public class DescribeReplicationGroupsResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("ReplicationGroups", targetDepth)) {
+                    describeReplicationGroupsResult.withReplicationGroups(new ArrayList<ReplicationGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("ReplicationGroups/ReplicationGroup", targetDepth)) {
                     describeReplicationGroupsResult.withReplicationGroups(ReplicationGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

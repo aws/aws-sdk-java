@@ -179,11 +179,11 @@ public class TrustedAdvisorCheckRefreshStatus implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckId() != null)
-            sb.append("CheckId: " + getCheckId() + ",");
+            sb.append("CheckId: ").append(getCheckId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getMillisUntilNextRefreshable() != null)
-            sb.append("MillisUntilNextRefreshable: " + getMillisUntilNextRefreshable());
+            sb.append("MillisUntilNextRefreshable: ").append(getMillisUntilNextRefreshable());
         sb.append("}");
         return sb.toString();
     }

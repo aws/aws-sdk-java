@@ -50,6 +50,11 @@ public class DescribeDBSubnetGroupsResultStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("DBSubnetGroups", targetDepth)) {
+                    describeDBSubnetGroupsResult.withDBSubnetGroups(new ArrayList<DBSubnetGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("DBSubnetGroups/DBSubnetGroup", targetDepth)) {
                     describeDBSubnetGroupsResult.withDBSubnetGroups(DBSubnetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

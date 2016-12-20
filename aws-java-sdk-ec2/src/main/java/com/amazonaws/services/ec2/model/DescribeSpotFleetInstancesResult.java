@@ -213,11 +213,11 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getActiveInstances() != null)
-            sb.append("ActiveInstances: " + getActiveInstances() + ",");
+            sb.append("ActiveInstances: ").append(getActiveInstances()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

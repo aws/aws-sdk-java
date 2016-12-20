@@ -111,7 +111,7 @@ public class GetRoleRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
         return sb.toString();
     }

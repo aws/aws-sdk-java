@@ -354,17 +354,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getOverwrite() != null)
-            sb.append("Overwrite: " + getOverwrite());
+            sb.append("Overwrite: ").append(getOverwrite());
         sb.append("}");
         return sb.toString();
     }

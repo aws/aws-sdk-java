@@ -260,11 +260,11 @@ public class SimulatePrincipalPolicyResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationResults() != null)
-            sb.append("EvaluationResults: " + getEvaluationResults() + ",");
+            sb.append("EvaluationResults: ").append(getEvaluationResults()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

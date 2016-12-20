@@ -61,22 +61,13 @@ public class UnsubscribeFromDatasetRequestMarshaller implements Marshaller<Reque
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (unsubscribeFromDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(unsubscribeFromDatasetRequest.getIdentityPoolId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (unsubscribeFromDatasetRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(unsubscribeFromDatasetRequest.getIdentityId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (unsubscribeFromDatasetRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(unsubscribeFromDatasetRequest.getDatasetName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{DeviceId}",
-                (unsubscribeFromDatasetRequest.getDeviceId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(unsubscribeFromDatasetRequest.getDeviceId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                unsubscribeFromDatasetRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId",
+                unsubscribeFromDatasetRequest.getIdentityId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName",
+                unsubscribeFromDatasetRequest.getDatasetName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DeviceId", unsubscribeFromDatasetRequest.getDeviceId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

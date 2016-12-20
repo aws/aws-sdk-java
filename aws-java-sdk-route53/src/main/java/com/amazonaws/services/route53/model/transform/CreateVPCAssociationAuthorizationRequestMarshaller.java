@@ -53,10 +53,8 @@ public class CreateVPCAssociationAuthorizationRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (createVPCAssociationAuthorizationRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(createVPCAssociationAuthorizationRequest.getHostedZoneId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
+                createVPCAssociationAuthorizationRequest.getHostedZoneId());
         request.setResourcePath(uriResourcePath);
 
         try {

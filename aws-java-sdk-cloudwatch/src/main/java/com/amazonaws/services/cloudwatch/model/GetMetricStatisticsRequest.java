@@ -993,23 +993,23 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions() + ",");
+            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: " + getPeriod() + ",");
+            sb.append("Period: ").append(getPeriod()).append(",");
         if (getStatistics() != null)
-            sb.append("Statistics: " + getStatistics() + ",");
+            sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getExtendedStatistics() != null)
-            sb.append("ExtendedStatistics: " + getExtendedStatistics() + ",");
+            sb.append("ExtendedStatistics: ").append(getExtendedStatistics()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: ").append(getUnit());
         sb.append("}");
         return sb.toString();
     }

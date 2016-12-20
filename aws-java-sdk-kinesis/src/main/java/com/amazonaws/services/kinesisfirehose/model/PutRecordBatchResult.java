@@ -165,9 +165,9 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedPutCount() != null)
-            sb.append("FailedPutCount: " + getFailedPutCount() + ",");
+            sb.append("FailedPutCount: ").append(getFailedPutCount()).append(",");
         if (getRequestResponses() != null)
-            sb.append("RequestResponses: " + getRequestResponses());
+            sb.append("RequestResponses: ").append(getRequestResponses());
         sb.append("}");
         return sb.toString();
     }

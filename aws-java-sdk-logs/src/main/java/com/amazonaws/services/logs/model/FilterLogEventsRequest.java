@@ -487,21 +487,21 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamNames() != null)
-            sb.append("LogStreamNames: " + getLogStreamNames() + ",");
+            sb.append("LogStreamNames: ").append(getLogStreamNames()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getFilterPattern() != null)
-            sb.append("FilterPattern: " + getFilterPattern() + ",");
+            sb.append("FilterPattern: ").append(getFilterPattern()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getInterleaved() != null)
-            sb.append("Interleaved: " + getInterleaved());
+            sb.append("Interleaved: ").append(getInterleaved());
         sb.append("}");
         return sb.toString();
     }

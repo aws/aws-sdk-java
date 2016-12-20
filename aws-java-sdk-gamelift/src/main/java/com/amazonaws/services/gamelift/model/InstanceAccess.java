@@ -298,15 +298,15 @@ public class InstanceAccess implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials());
+            sb.append("Credentials: ").append(getCredentials());
         sb.append("}");
         return sb.toString();
     }

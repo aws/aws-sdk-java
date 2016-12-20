@@ -209,11 +209,11 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getCurrentApplicationVersionId() != null)
-            sb.append("CurrentApplicationVersionId: " + getCurrentApplicationVersionId() + ",");
+            sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getOutputId() != null)
-            sb.append("OutputId: " + getOutputId());
+            sb.append("OutputId: ").append(getOutputId());
         sb.append("}");
         return sb.toString();
     }

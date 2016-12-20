@@ -45,6 +45,11 @@ public class DescribeAnalysisSchemesResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AnalysisSchemes", targetDepth)) {
+                    describeAnalysisSchemesResult.withAnalysisSchemes(new ArrayList<AnalysisSchemeStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("AnalysisSchemes/member", targetDepth)) {
                     describeAnalysisSchemesResult.withAnalysisSchemes(AnalysisSchemeStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

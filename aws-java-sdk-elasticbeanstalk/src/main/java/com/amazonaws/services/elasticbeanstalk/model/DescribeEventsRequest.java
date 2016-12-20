@@ -641,27 +641,27 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: " + getRequestId() + ",");
+            sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

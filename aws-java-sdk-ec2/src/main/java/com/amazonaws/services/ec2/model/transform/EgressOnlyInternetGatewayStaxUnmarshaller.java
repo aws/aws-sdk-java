@@ -50,6 +50,11 @@ public class EgressOnlyInternetGatewayStaxUnmarshaller implements Unmarshaller<E
                     continue;
                 }
 
+                if (context.testExpression("attachmentSet", targetDepth)) {
+                    egressOnlyInternetGateway.withAttachments(new ArrayList<InternetGatewayAttachment>());
+                    continue;
+                }
+
                 if (context.testExpression("attachmentSet/item", targetDepth)) {
                     egressOnlyInternetGateway.withAttachments(InternetGatewayAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

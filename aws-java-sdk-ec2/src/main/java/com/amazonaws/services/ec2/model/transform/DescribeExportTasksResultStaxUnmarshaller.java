@@ -45,6 +45,11 @@ public class DescribeExportTasksResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("exportTaskSet", targetDepth)) {
+                    describeExportTasksResult.withExportTasks(new ArrayList<ExportTask>());
+                    continue;
+                }
+
                 if (context.testExpression("exportTaskSet/item", targetDepth)) {
                     describeExportTasksResult.withExportTasks(ExportTaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

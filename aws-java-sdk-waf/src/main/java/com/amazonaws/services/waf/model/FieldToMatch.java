@@ -601,9 +601,9 @@ public class FieldToMatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getData() != null)
-            sb.append("Data: " + getData());
+            sb.append("Data: ").append(getData());
         sb.append("}");
         return sb.toString();
     }

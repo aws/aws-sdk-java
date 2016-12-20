@@ -65,10 +65,7 @@ public class AttachThingPrincipalRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/things/{thingName}/principals";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (attachThingPrincipalRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(attachThingPrincipalRequest.getThingName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", attachThingPrincipalRequest.getThingName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

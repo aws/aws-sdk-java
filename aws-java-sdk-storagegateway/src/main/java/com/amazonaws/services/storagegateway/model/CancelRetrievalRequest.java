@@ -108,9 +108,9 @@ public class CancelRetrievalRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN());
+            sb.append("TapeARN: ").append(getTapeARN());
         sb.append("}");
         return sb.toString();
     }

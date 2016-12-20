@@ -293,15 +293,15 @@ public class ChildWorkflowExecutionCompletedEventAttributes implements Serializa
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowExecution() != null)
-            sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+            sb.append("WorkflowExecution: ").append(getWorkflowExecution()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getInitiatedEventId() != null)
-            sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");
+            sb.append("InitiatedEventId: ").append(getInitiatedEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId());
+            sb.append("StartedEventId: ").append(getStartedEventId());
         sb.append("}");
         return sb.toString();
     }

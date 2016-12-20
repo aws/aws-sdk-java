@@ -157,9 +157,9 @@ public class DescribeAlarmHistoryResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmHistoryItems() != null)
-            sb.append("AlarmHistoryItems: " + getAlarmHistoryItems() + ",");
+            sb.append("AlarmHistoryItems: ").append(getAlarmHistoryItems()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

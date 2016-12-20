@@ -159,9 +159,9 @@ public class AvailableCapacity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailableInstanceCapacity() != null)
-            sb.append("AvailableInstanceCapacity: " + getAvailableInstanceCapacity() + ",");
+            sb.append("AvailableInstanceCapacity: ").append(getAvailableInstanceCapacity()).append(",");
         if (getAvailableVCpus() != null)
-            sb.append("AvailableVCpus: " + getAvailableVCpus());
+            sb.append("AvailableVCpus: ").append(getAvailableVCpus());
         sb.append("}");
         return sb.toString();
     }

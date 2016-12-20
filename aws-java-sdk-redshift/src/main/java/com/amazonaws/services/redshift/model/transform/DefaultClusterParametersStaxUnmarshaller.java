@@ -55,6 +55,11 @@ public class DefaultClusterParametersStaxUnmarshaller implements Unmarshaller<De
                     continue;
                 }
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    defaultClusterParameters.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/Parameter", targetDepth)) {
                     defaultClusterParameters.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

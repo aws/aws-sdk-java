@@ -589,11 +589,11 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLastUsedDate() != null)
-            sb.append("LastUsedDate: " + getLastUsedDate() + ",");
+            sb.append("LastUsedDate: ").append(getLastUsedDate()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: " + getServiceName() + ",");
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion());
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }

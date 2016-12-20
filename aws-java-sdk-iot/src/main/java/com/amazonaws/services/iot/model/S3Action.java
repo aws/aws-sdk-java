@@ -267,13 +267,13 @@ public class S3Action implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getBucketName() != null)
-            sb.append("BucketName: " + getBucketName() + ",");
+            sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getCannedAcl() != null)
-            sb.append("CannedAcl: " + getCannedAcl());
+            sb.append("CannedAcl: ").append(getCannedAcl());
         sb.append("}");
         return sb.toString();
     }

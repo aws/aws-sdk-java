@@ -164,9 +164,9 @@ public class GetInventorySchemaResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchemas() != null)
-            sb.append("Schemas: " + getSchemas() + ",");
+            sb.append("Schemas: ").append(getSchemas()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

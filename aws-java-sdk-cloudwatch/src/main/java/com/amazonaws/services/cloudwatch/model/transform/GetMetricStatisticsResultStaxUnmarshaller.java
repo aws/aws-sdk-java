@@ -50,6 +50,11 @@ public class GetMetricStatisticsResultStaxUnmarshaller implements Unmarshaller<G
                     continue;
                 }
 
+                if (context.testExpression("Datapoints", targetDepth)) {
+                    getMetricStatisticsResult.withDatapoints(new ArrayList<Datapoint>());
+                    continue;
+                }
+
                 if (context.testExpression("Datapoints/member", targetDepth)) {
                     getMetricStatisticsResult.withDatapoints(DatapointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

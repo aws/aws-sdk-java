@@ -3,7 +3,7 @@
 
 <#if shape.members??>
     <#list shape.members as member>
-        <#local getMember = getterFunctionPrefix + ".get" + member.name />
+        <#local getMember = getterFunctionPrefix + "." + member.getterMethodName />
         <#local marshallLocationName = member.http.marshallLocationName />
 
         <#if member.http.additionalMarshallingPath?has_content>

@@ -126,9 +126,9 @@ public class CreatePrivateVirtualInterfaceRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getNewPrivateVirtualInterface() != null)
-            sb.append("NewPrivateVirtualInterface: " + getNewPrivateVirtualInterface());
+            sb.append("NewPrivateVirtualInterface: ").append(getNewPrivateVirtualInterface());
         sb.append("}");
         return sb.toString();
     }

@@ -19,14 +19,15 @@ import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.internal.auth.SignerProviderContext;
 
 /**
- * Signer provider implementation that always returns the same signer.
+ * Implementation of {@link SignerProvider} that always returns the same signer regardless of
+ * context.
  */
 @SdkProtectedApi
 public class StaticSignerProvider extends SignerProvider {
 
-    private final AWS4Signer signer;
+    private final Signer signer;
 
-    public StaticSignerProvider(AWS4Signer signer) {
+    public StaticSignerProvider(Signer signer) {
         this.signer = signer;
     }
 

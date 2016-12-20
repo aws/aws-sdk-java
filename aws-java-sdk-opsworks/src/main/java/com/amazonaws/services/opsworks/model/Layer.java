@@ -1433,47 +1433,47 @@ public class Layer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId() + ",");
+            sb.append("LayerId: ").append(getLayerId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getShortname() != null)
-            sb.append("Shortname: " + getShortname() + ",");
+            sb.append("Shortname: ").append(getShortname()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getCustomInstanceProfileArn() != null)
-            sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");
+            sb.append("CustomInstanceProfileArn: ").append(getCustomInstanceProfileArn()).append(",");
         if (getCustomJson() != null)
-            sb.append("CustomJson: " + getCustomJson() + ",");
+            sb.append("CustomJson: ").append(getCustomJson()).append(",");
         if (getCustomSecurityGroupIds() != null)
-            sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");
+            sb.append("CustomSecurityGroupIds: ").append(getCustomSecurityGroupIds()).append(",");
         if (getDefaultSecurityGroupNames() != null)
-            sb.append("DefaultSecurityGroupNames: " + getDefaultSecurityGroupNames() + ",");
+            sb.append("DefaultSecurityGroupNames: ").append(getDefaultSecurityGroupNames()).append(",");
         if (getPackages() != null)
-            sb.append("Packages: " + getPackages() + ",");
+            sb.append("Packages: ").append(getPackages()).append(",");
         if (getVolumeConfigurations() != null)
-            sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");
+            sb.append("VolumeConfigurations: ").append(getVolumeConfigurations()).append(",");
         if (getEnableAutoHealing() != null)
-            sb.append("EnableAutoHealing: " + getEnableAutoHealing() + ",");
+            sb.append("EnableAutoHealing: ").append(getEnableAutoHealing()).append(",");
         if (getAutoAssignElasticIps() != null)
-            sb.append("AutoAssignElasticIps: " + getAutoAssignElasticIps() + ",");
+            sb.append("AutoAssignElasticIps: ").append(getAutoAssignElasticIps()).append(",");
         if (getAutoAssignPublicIps() != null)
-            sb.append("AutoAssignPublicIps: " + getAutoAssignPublicIps() + ",");
+            sb.append("AutoAssignPublicIps: ").append(getAutoAssignPublicIps()).append(",");
         if (getDefaultRecipes() != null)
-            sb.append("DefaultRecipes: " + getDefaultRecipes() + ",");
+            sb.append("DefaultRecipes: ").append(getDefaultRecipes()).append(",");
         if (getCustomRecipes() != null)
-            sb.append("CustomRecipes: " + getCustomRecipes() + ",");
+            sb.append("CustomRecipes: ").append(getCustomRecipes()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot() + ",");
+            sb.append("InstallUpdatesOnBoot: ").append(getInstallUpdatesOnBoot()).append(",");
         if (getUseEbsOptimizedInstances() != null)
-            sb.append("UseEbsOptimizedInstances: " + getUseEbsOptimizedInstances() + ",");
+            sb.append("UseEbsOptimizedInstances: ").append(getUseEbsOptimizedInstances()).append(",");
         if (getLifecycleEventConfiguration() != null)
-            sb.append("LifecycleEventConfiguration: " + getLifecycleEventConfiguration());
+            sb.append("LifecycleEventConfiguration: ").append(getLifecycleEventConfiguration());
         sb.append("}");
         return sb.toString();
     }

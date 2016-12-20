@@ -2915,13 +2915,13 @@ public class ByteMatchTuple implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFieldToMatch() != null)
-            sb.append("FieldToMatch: " + getFieldToMatch() + ",");
+            sb.append("FieldToMatch: ").append(getFieldToMatch()).append(",");
         if (getTargetString() != null)
-            sb.append("TargetString: " + getTargetString() + ",");
+            sb.append("TargetString: ").append(getTargetString()).append(",");
         if (getTextTransformation() != null)
-            sb.append("TextTransformation: " + getTextTransformation() + ",");
+            sb.append("TextTransformation: ").append(getTextTransformation()).append(",");
         if (getPositionalConstraint() != null)
-            sb.append("PositionalConstraint: " + getPositionalConstraint());
+            sb.append("PositionalConstraint: ").append(getPositionalConstraint());
         sb.append("}");
         return sb.toString();
     }

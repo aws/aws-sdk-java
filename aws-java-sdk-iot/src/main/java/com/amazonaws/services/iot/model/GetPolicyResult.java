@@ -218,13 +218,13 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn() + ",");
+            sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument() + ",");
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getDefaultVersionId() != null)
-            sb.append("DefaultVersionId: " + getDefaultVersionId());
+            sb.append("DefaultVersionId: ").append(getDefaultVersionId());
         sb.append("}");
         return sb.toString();
     }

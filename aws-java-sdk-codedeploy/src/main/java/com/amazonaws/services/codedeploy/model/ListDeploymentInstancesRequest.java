@@ -589,11 +589,11 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getInstanceStatusFilter() != null)
-            sb.append("InstanceStatusFilter: " + getInstanceStatusFilter());
+            sb.append("InstanceStatusFilter: ").append(getInstanceStatusFilter());
         sb.append("}");
         return sb.toString();
     }

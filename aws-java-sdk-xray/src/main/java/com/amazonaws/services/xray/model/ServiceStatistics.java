@@ -264,15 +264,15 @@ public class ServiceStatistics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOkCount() != null)
-            sb.append("OkCount: " + getOkCount() + ",");
+            sb.append("OkCount: ").append(getOkCount()).append(",");
         if (getErrorStatistics() != null)
-            sb.append("ErrorStatistics: " + getErrorStatistics() + ",");
+            sb.append("ErrorStatistics: ").append(getErrorStatistics()).append(",");
         if (getFaultStatistics() != null)
-            sb.append("FaultStatistics: " + getFaultStatistics() + ",");
+            sb.append("FaultStatistics: ").append(getFaultStatistics()).append(",");
         if (getTotalCount() != null)
-            sb.append("TotalCount: " + getTotalCount() + ",");
+            sb.append("TotalCount: ").append(getTotalCount()).append(",");
         if (getTotalResponseTime() != null)
-            sb.append("TotalResponseTime: " + getTotalResponseTime());
+            sb.append("TotalResponseTime: ").append(getTotalResponseTime());
         sb.append("}");
         return sb.toString();
     }

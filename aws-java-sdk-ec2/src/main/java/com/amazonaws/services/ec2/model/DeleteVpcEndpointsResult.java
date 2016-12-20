@@ -114,7 +114,7 @@ public class DeleteVpcEndpointsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnsuccessful() != null)
-            sb.append("Unsuccessful: " + getUnsuccessful());
+            sb.append("Unsuccessful: ").append(getUnsuccessful());
         sb.append("}");
         return sb.toString();
     }

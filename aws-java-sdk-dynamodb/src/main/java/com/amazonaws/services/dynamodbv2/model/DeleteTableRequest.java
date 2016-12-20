@@ -99,7 +99,7 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName());
+            sb.append("TableName: ").append(getTableName());
         sb.append("}");
         return sb.toString();
     }

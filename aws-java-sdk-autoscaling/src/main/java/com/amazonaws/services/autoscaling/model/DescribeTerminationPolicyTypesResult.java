@@ -132,7 +132,7 @@ public class DescribeTerminationPolicyTypesResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTerminationPolicyTypes() != null)
-            sb.append("TerminationPolicyTypes: " + getTerminationPolicyTypes());
+            sb.append("TerminationPolicyTypes: ").append(getTerminationPolicyTypes());
         sb.append("}");
         return sb.toString();
     }

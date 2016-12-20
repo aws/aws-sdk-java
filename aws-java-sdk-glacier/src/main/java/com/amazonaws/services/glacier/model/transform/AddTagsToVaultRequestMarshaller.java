@@ -63,12 +63,9 @@ public class AddTagsToVaultRequestMarshaller implements Marshaller<Request<AddTa
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (addTagsToVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(addTagsToVaultRequest.getAccountId()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (addTagsToVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(addTagsToVaultRequest.getVaultName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                addTagsToVaultRequest.getAccountId() == null ? "-" : addTagsToVaultRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", addTagsToVaultRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         try {

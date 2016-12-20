@@ -1656,9 +1656,9 @@ public class XssMatchTuple implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFieldToMatch() != null)
-            sb.append("FieldToMatch: " + getFieldToMatch() + ",");
+            sb.append("FieldToMatch: ").append(getFieldToMatch()).append(",");
         if (getTextTransformation() != null)
-            sb.append("TextTransformation: " + getTextTransformation());
+            sb.append("TextTransformation: ").append(getTextTransformation());
         sb.append("}");
         return sb.toString();
     }

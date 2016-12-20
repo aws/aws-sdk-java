@@ -172,11 +172,11 @@ public class PutEventsResultEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId() + ",");
+            sb.append("EventId: ").append(getEventId()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }

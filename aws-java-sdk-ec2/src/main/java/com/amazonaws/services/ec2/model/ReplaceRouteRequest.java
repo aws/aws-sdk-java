@@ -476,23 +476,23 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId() + ",");
+            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
+            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId() + ",");
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getDestinationIpv6CidrBlock() != null)
-            sb.append("DestinationIpv6CidrBlock: " + getDestinationIpv6CidrBlock() + ",");
+            sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
         if (getEgressOnlyInternetGatewayId() != null)
-            sb.append("EgressOnlyInternetGatewayId: " + getEgressOnlyInternetGatewayId() + ",");
+            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
         if (getNatGatewayId() != null)
-            sb.append("NatGatewayId: " + getNatGatewayId());
+            sb.append("NatGatewayId: ").append(getNatGatewayId());
         sb.append("}");
         return sb.toString();
     }

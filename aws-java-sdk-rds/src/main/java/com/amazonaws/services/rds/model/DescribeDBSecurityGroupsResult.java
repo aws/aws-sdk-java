@@ -166,9 +166,9 @@ public class DescribeDBSecurityGroupsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBSecurityGroups() != null)
-            sb.append("DBSecurityGroups: " + getDBSecurityGroups());
+            sb.append("DBSecurityGroups: ").append(getDBSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

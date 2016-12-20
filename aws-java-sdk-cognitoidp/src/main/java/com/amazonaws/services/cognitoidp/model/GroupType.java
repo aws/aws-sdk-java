@@ -450,19 +450,19 @@ public class GroupType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getPrecedence() != null)
-            sb.append("Precedence: " + getPrecedence() + ",");
+            sb.append("Precedence: ").append(getPrecedence()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

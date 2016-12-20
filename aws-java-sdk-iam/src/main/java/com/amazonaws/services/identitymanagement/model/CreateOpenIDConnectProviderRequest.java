@@ -527,11 +527,11 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getClientIDList() != null)
-            sb.append("ClientIDList: " + getClientIDList() + ",");
+            sb.append("ClientIDList: ").append(getClientIDList()).append(",");
         if (getThumbprintList() != null)
-            sb.append("ThumbprintList: " + getThumbprintList());
+            sb.append("ThumbprintList: ").append(getThumbprintList());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribeSubnetsResultStaxUnmarshaller implements Unmarshaller<Descr
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("subnetSet", targetDepth)) {
+                    describeSubnetsResult.withSubnets(new ArrayList<Subnet>());
+                    continue;
+                }
+
                 if (context.testExpression("subnetSet/item", targetDepth)) {
                     describeSubnetsResult.withSubnets(SubnetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

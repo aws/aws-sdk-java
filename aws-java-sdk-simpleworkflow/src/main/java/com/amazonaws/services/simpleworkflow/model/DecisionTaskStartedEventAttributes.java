@@ -147,9 +147,9 @@ public class DecisionTaskStartedEventAttributes implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId());
+            sb.append("ScheduledEventId: ").append(getScheduledEventId());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class GetRegistrationCodeResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistrationCode() != null)
-            sb.append("RegistrationCode: " + getRegistrationCode());
+            sb.append("RegistrationCode: ").append(getRegistrationCode());
         sb.append("}");
         return sb.toString();
     }

@@ -85,6 +85,11 @@ public class ConfigurationSettingsDescriptionStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("OptionSettings", targetDepth)) {
+                    configurationSettingsDescription.withOptionSettings(new ArrayList<ConfigurationOptionSetting>());
+                    continue;
+                }
+
                 if (context.testExpression("OptionSettings/member", targetDepth)) {
                     configurationSettingsDescription.withOptionSettings(ConfigurationOptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

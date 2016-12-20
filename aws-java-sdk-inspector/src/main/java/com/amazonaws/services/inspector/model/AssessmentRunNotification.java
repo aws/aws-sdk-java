@@ -370,17 +370,17 @@ public class AssessmentRunNotification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDate() != null)
-            sb.append("Date: " + getDate() + ",");
+            sb.append("Date: ").append(getDate()).append(",");
         if (getEvent() != null)
-            sb.append("Event: " + getEvent() + ",");
+            sb.append("Event: ").append(getEvent()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError() + ",");
+            sb.append("Error: ").append(getError()).append(",");
         if (getSnsTopicArn() != null)
-            sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getSnsPublishStatusCode() != null)
-            sb.append("SnsPublishStatusCode: " + getSnsPublishStatusCode());
+            sb.append("SnsPublishStatusCode: ").append(getSnsPublishStatusCode());
         sb.append("}");
         return sb.toString();
     }

@@ -612,27 +612,27 @@ public class ProductViewSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getShortDescription() != null)
-            sb.append("ShortDescription: " + getShortDescription() + ",");
+            sb.append("ShortDescription: ").append(getShortDescription()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDistributor() != null)
-            sb.append("Distributor: " + getDistributor() + ",");
+            sb.append("Distributor: ").append(getDistributor()).append(",");
         if (getHasDefaultPath() != null)
-            sb.append("HasDefaultPath: " + getHasDefaultPath() + ",");
+            sb.append("HasDefaultPath: ").append(getHasDefaultPath()).append(",");
         if (getSupportEmail() != null)
-            sb.append("SupportEmail: " + getSupportEmail() + ",");
+            sb.append("SupportEmail: ").append(getSupportEmail()).append(",");
         if (getSupportDescription() != null)
-            sb.append("SupportDescription: " + getSupportDescription() + ",");
+            sb.append("SupportDescription: ").append(getSupportDescription()).append(",");
         if (getSupportUrl() != null)
-            sb.append("SupportUrl: " + getSupportUrl());
+            sb.append("SupportUrl: ").append(getSupportUrl());
         sb.append("}");
         return sb.toString();
     }

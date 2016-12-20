@@ -231,11 +231,11 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimerId() != null)
-            sb.append("TimerId: " + getTimerId() + ",");
+            sb.append("TimerId: ").append(getTimerId()).append(",");
         if (getControl() != null)
-            sb.append("Control: " + getControl() + ",");
+            sb.append("Control: ").append(getControl()).append(",");
         if (getStartToFireTimeout() != null)
-            sb.append("StartToFireTimeout: " + getStartToFireTimeout());
+            sb.append("StartToFireTimeout: ").append(getStartToFireTimeout());
         sb.append("}");
         return sb.toString();
     }

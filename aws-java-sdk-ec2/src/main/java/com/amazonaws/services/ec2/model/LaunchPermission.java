@@ -159,9 +159,9 @@ public class LaunchPermission implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getGroup() != null)
-            sb.append("Group: " + getGroup());
+            sb.append("Group: ").append(getGroup());
         sb.append("}");
         return sb.toString();
     }

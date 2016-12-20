@@ -81,7 +81,7 @@ public class AssociateRouteTableResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId());
         sb.append("}");
         return sb.toString();
     }

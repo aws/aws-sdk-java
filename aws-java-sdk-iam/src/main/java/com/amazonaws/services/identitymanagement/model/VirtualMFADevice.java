@@ -315,15 +315,15 @@ public class VirtualMFADevice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber() + ",");
+            sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getBase32StringSeed() != null)
-            sb.append("Base32StringSeed: " + getBase32StringSeed() + ",");
+            sb.append("Base32StringSeed: ").append(getBase32StringSeed()).append(",");
         if (getQRCodePNG() != null)
-            sb.append("QRCodePNG: " + getQRCodePNG() + ",");
+            sb.append("QRCodePNG: ").append(getQRCodePNG()).append(",");
         if (getUser() != null)
-            sb.append("User: " + getUser() + ",");
+            sb.append("User: ").append(getUser()).append(",");
         if (getEnableDate() != null)
-            sb.append("EnableDate: " + getEnableDate());
+            sb.append("EnableDate: ").append(getEnableDate());
         sb.append("}");
         return sb.toString();
     }

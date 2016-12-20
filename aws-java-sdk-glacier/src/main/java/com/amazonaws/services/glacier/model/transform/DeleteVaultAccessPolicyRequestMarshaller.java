@@ -61,14 +61,10 @@ public class DeleteVaultAccessPolicyRequestMarshaller implements Marshaller<Requ
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/access-policy";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (deleteVaultAccessPolicyRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteVaultAccessPolicyRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (deleteVaultAccessPolicyRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteVaultAccessPolicyRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                deleteVaultAccessPolicyRequest.getAccountId() == null ? "-" : deleteVaultAccessPolicyRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName",
+                deleteVaultAccessPolicyRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

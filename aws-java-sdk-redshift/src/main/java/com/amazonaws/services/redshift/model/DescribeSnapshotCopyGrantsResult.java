@@ -206,9 +206,9 @@ public class DescribeSnapshotCopyGrantsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getSnapshotCopyGrants() != null)
-            sb.append("SnapshotCopyGrants: " + getSnapshotCopyGrants());
+            sb.append("SnapshotCopyGrants: ").append(getSnapshotCopyGrants());
         sb.append("}");
         return sb.toString();
     }

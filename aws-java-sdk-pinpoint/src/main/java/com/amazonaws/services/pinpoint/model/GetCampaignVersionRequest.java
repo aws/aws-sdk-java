@@ -116,11 +116,11 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCampaignId() != null)
-            sb.append("CampaignId: " + getCampaignId() + ",");
+            sb.append("CampaignId: ").append(getCampaignId()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }

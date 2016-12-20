@@ -264,15 +264,15 @@ public class ImportVolumeTaskDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBytesConverted() != null)
-            sb.append("BytesConverted: " + getBytesConverted() + ",");
+            sb.append("BytesConverted: ").append(getBytesConverted()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getVolume() != null)
-            sb.append("Volume: " + getVolume());
+            sb.append("Volume: ").append(getVolume());
         sb.append("}");
         return sb.toString();
     }

@@ -1371,49 +1371,49 @@ public class MetricAlarm implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getAlarmArn() != null)
-            sb.append("AlarmArn: " + getAlarmArn() + ",");
+            sb.append("AlarmArn: ").append(getAlarmArn()).append(",");
         if (getAlarmDescription() != null)
-            sb.append("AlarmDescription: " + getAlarmDescription() + ",");
+            sb.append("AlarmDescription: ").append(getAlarmDescription()).append(",");
         if (getAlarmConfigurationUpdatedTimestamp() != null)
-            sb.append("AlarmConfigurationUpdatedTimestamp: " + getAlarmConfigurationUpdatedTimestamp() + ",");
+            sb.append("AlarmConfigurationUpdatedTimestamp: ").append(getAlarmConfigurationUpdatedTimestamp()).append(",");
         if (getActionsEnabled() != null)
-            sb.append("ActionsEnabled: " + getActionsEnabled() + ",");
+            sb.append("ActionsEnabled: ").append(getActionsEnabled()).append(",");
         if (getOKActions() != null)
-            sb.append("OKActions: " + getOKActions() + ",");
+            sb.append("OKActions: ").append(getOKActions()).append(",");
         if (getAlarmActions() != null)
-            sb.append("AlarmActions: " + getAlarmActions() + ",");
+            sb.append("AlarmActions: ").append(getAlarmActions()).append(",");
         if (getInsufficientDataActions() != null)
-            sb.append("InsufficientDataActions: " + getInsufficientDataActions() + ",");
+            sb.append("InsufficientDataActions: ").append(getInsufficientDataActions()).append(",");
         if (getStateValue() != null)
-            sb.append("StateValue: " + getStateValue() + ",");
+            sb.append("StateValue: ").append(getStateValue()).append(",");
         if (getStateReason() != null)
-            sb.append("StateReason: " + getStateReason() + ",");
+            sb.append("StateReason: ").append(getStateReason()).append(",");
         if (getStateReasonData() != null)
-            sb.append("StateReasonData: " + getStateReasonData() + ",");
+            sb.append("StateReasonData: ").append(getStateReasonData()).append(",");
         if (getStateUpdatedTimestamp() != null)
-            sb.append("StateUpdatedTimestamp: " + getStateUpdatedTimestamp() + ",");
+            sb.append("StateUpdatedTimestamp: ").append(getStateUpdatedTimestamp()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getStatistic() != null)
-            sb.append("Statistic: " + getStatistic() + ",");
+            sb.append("Statistic: ").append(getStatistic()).append(",");
         if (getExtendedStatistic() != null)
-            sb.append("ExtendedStatistic: " + getExtendedStatistic() + ",");
+            sb.append("ExtendedStatistic: ").append(getExtendedStatistic()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions() + ",");
+            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: " + getPeriod() + ",");
+            sb.append("Period: ").append(getPeriod()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit() + ",");
+            sb.append("Unit: ").append(getUnit()).append(",");
         if (getEvaluationPeriods() != null)
-            sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");
+            sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
         if (getThreshold() != null)
-            sb.append("Threshold: " + getThreshold() + ",");
+            sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator());
+            sb.append("ComparisonOperator: ").append(getComparisonOperator());
         sb.append("}");
         return sb.toString();
     }

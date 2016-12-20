@@ -45,6 +45,11 @@ public class DescribeRegionsResultStaxUnmarshaller implements Unmarshaller<Descr
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("regionInfo", targetDepth)) {
+                    describeRegionsResult.withRegions(new ArrayList<Region>());
+                    continue;
+                }
+
                 if (context.testExpression("regionInfo/item", targetDepth)) {
                     describeRegionsResult.withRegions(RegionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

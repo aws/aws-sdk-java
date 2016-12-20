@@ -586,13 +586,13 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceOptionGroupIdentifier() != null)
-            sb.append("SourceOptionGroupIdentifier: " + getSourceOptionGroupIdentifier() + ",");
+            sb.append("SourceOptionGroupIdentifier: ").append(getSourceOptionGroupIdentifier()).append(",");
         if (getTargetOptionGroupIdentifier() != null)
-            sb.append("TargetOptionGroupIdentifier: " + getTargetOptionGroupIdentifier() + ",");
+            sb.append("TargetOptionGroupIdentifier: ").append(getTargetOptionGroupIdentifier()).append(",");
         if (getTargetOptionGroupDescription() != null)
-            sb.append("TargetOptionGroupDescription: " + getTargetOptionGroupDescription() + ",");
+            sb.append("TargetOptionGroupDescription: ").append(getTargetOptionGroupDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

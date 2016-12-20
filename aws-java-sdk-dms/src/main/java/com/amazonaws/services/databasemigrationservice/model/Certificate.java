@@ -511,25 +511,25 @@ public class Certificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateIdentifier() != null)
-            sb.append("CertificateIdentifier: " + getCertificateIdentifier() + ",");
+            sb.append("CertificateIdentifier: ").append(getCertificateIdentifier()).append(",");
         if (getCertificateCreationDate() != null)
-            sb.append("CertificateCreationDate: " + getCertificateCreationDate() + ",");
+            sb.append("CertificateCreationDate: ").append(getCertificateCreationDate()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: " + getCertificatePem() + ",");
+            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
         if (getCertificateWallet() != null)
-            sb.append("CertificateWallet: " + getCertificateWallet() + ",");
+            sb.append("CertificateWallet: ").append(getCertificateWallet()).append(",");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateOwner() != null)
-            sb.append("CertificateOwner: " + getCertificateOwner() + ",");
+            sb.append("CertificateOwner: ").append(getCertificateOwner()).append(",");
         if (getValidFromDate() != null)
-            sb.append("ValidFromDate: " + getValidFromDate() + ",");
+            sb.append("ValidFromDate: ").append(getValidFromDate()).append(",");
         if (getValidToDate() != null)
-            sb.append("ValidToDate: " + getValidToDate() + ",");
+            sb.append("ValidToDate: ").append(getValidToDate()).append(",");
         if (getSigningAlgorithm() != null)
-            sb.append("SigningAlgorithm: " + getSigningAlgorithm() + ",");
+            sb.append("SigningAlgorithm: ").append(getSigningAlgorithm()).append(",");
         if (getKeyLength() != null)
-            sb.append("KeyLength: " + getKeyLength());
+            sb.append("KeyLength: ").append(getKeyLength());
         sb.append("}");
         return sb.toString();
     }

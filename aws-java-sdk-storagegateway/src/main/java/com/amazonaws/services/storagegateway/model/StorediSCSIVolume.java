@@ -319,25 +319,25 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getVolumeStatus() != null)
-            sb.append("VolumeStatus: " + getVolumeStatus() + ",");
+            sb.append("VolumeStatus: ").append(getVolumeStatus()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
         if (getVolumeProgress() != null)
-            sb.append("VolumeProgress: " + getVolumeProgress() + ",");
+            sb.append("VolumeProgress: ").append(getVolumeProgress()).append(",");
         if (getVolumeDiskId() != null)
-            sb.append("VolumeDiskId: " + getVolumeDiskId() + ",");
+            sb.append("VolumeDiskId: ").append(getVolumeDiskId()).append(",");
         if (getSourceSnapshotId() != null)
-            sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
+            sb.append("SourceSnapshotId: ").append(getSourceSnapshotId()).append(",");
         if (getPreservedExistingData() != null)
-            sb.append("PreservedExistingData: " + getPreservedExistingData() + ",");
+            sb.append("PreservedExistingData: ").append(getPreservedExistingData()).append(",");
         if (getVolumeiSCSIAttributes() != null)
-            sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes());
+            sb.append("VolumeiSCSIAttributes: ").append(getVolumeiSCSIAttributes());
         sb.append("}");
         return sb.toString();
     }

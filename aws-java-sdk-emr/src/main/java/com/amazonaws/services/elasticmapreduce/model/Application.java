@@ -310,13 +310,13 @@ public class Application implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getArgs() != null)
-            sb.append("Args: " + getArgs() + ",");
+            sb.append("Args: ").append(getArgs()).append(",");
         if (getAdditionalInfo() != null)
-            sb.append("AdditionalInfo: " + getAdditionalInfo());
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo());
         sb.append("}");
         return sb.toString();
     }

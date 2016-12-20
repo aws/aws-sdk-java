@@ -88,7 +88,7 @@ public class GetXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSetId() != null)
-            sb.append("XssMatchSetId: " + getXssMatchSetId());
+            sb.append("XssMatchSetId: ").append(getXssMatchSetId());
         sb.append("}");
         return sb.toString();
     }

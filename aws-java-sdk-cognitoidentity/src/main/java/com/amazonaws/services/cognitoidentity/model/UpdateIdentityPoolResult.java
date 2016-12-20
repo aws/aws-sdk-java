@@ -15,11 +15,17 @@ package com.amazonaws.services.cognitoidentity.model;
 import java.io.Serializable;
 
 /**
- * An object representing a Cognito identity pool.
+ * <p>
+ * An object representing an Amazon Cognito identity pool.
+ * </p>
  */
 public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
     /**
      * <p>
@@ -27,7 +33,11 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String identityPoolName;
-    /** TRUE if the identity pool supports unauthenticated logins. */
+    /**
+     * <p>
+     * TRUE if the identity pool supports unauthenticated logins.
+     * </p>
+     */
     private Boolean allowUnauthenticatedIdentities;
     /**
      * <p>
@@ -61,7 +71,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.List<String> samlProviderARNs;
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -72,7 +84,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -82,7 +96,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -135,7 +151,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * TRUE if the identity pool supports unauthenticated logins.
+     * </p>
      * 
      * @param allowUnauthenticatedIdentities
      *        TRUE if the identity pool supports unauthenticated logins.
@@ -146,7 +164,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * TRUE if the identity pool supports unauthenticated logins.
+     * </p>
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
@@ -156,7 +176,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * TRUE if the identity pool supports unauthenticated logins.
+     * </p>
      * 
      * @param allowUnauthenticatedIdentities
      *        TRUE if the identity pool supports unauthenticated logins.
@@ -169,7 +191,9 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
      * TRUE if the identity pool supports unauthenticated logins.
+     * </p>
      * 
      * @return TRUE if the identity pool supports unauthenticated logins.
      */
@@ -501,21 +525,21 @@ public class UpdateIdentityPoolResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityPoolName() != null)
-            sb.append("IdentityPoolName: " + getIdentityPoolName() + ",");
+            sb.append("IdentityPoolName: ").append(getIdentityPoolName()).append(",");
         if (getAllowUnauthenticatedIdentities() != null)
-            sb.append("AllowUnauthenticatedIdentities: " + getAllowUnauthenticatedIdentities() + ",");
+            sb.append("AllowUnauthenticatedIdentities: ").append(getAllowUnauthenticatedIdentities()).append(",");
         if (getSupportedLoginProviders() != null)
-            sb.append("SupportedLoginProviders: " + getSupportedLoginProviders() + ",");
+            sb.append("SupportedLoginProviders: ").append(getSupportedLoginProviders()).append(",");
         if (getDeveloperProviderName() != null)
-            sb.append("DeveloperProviderName: " + getDeveloperProviderName() + ",");
+            sb.append("DeveloperProviderName: ").append(getDeveloperProviderName()).append(",");
         if (getOpenIdConnectProviderARNs() != null)
-            sb.append("OpenIdConnectProviderARNs: " + getOpenIdConnectProviderARNs() + ",");
+            sb.append("OpenIdConnectProviderARNs: ").append(getOpenIdConnectProviderARNs()).append(",");
         if (getCognitoIdentityProviders() != null)
-            sb.append("CognitoIdentityProviders: " + getCognitoIdentityProviders() + ",");
+            sb.append("CognitoIdentityProviders: ").append(getCognitoIdentityProviders()).append(",");
         if (getSamlProviderARNs() != null)
-            sb.append("SamlProviderARNs: " + getSamlProviderARNs());
+            sb.append("SamlProviderARNs: ").append(getSamlProviderARNs());
         sb.append("}");
         return sb.toString();
     }

@@ -354,11 +354,11 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMailFromDomain() != null)
-            sb.append("MailFromDomain: " + getMailFromDomain() + ",");
+            sb.append("MailFromDomain: ").append(getMailFromDomain()).append(",");
         if (getMailFromDomainStatus() != null)
-            sb.append("MailFromDomainStatus: " + getMailFromDomainStatus() + ",");
+            sb.append("MailFromDomainStatus: ").append(getMailFromDomainStatus()).append(",");
         if (getBehaviorOnMXFailure() != null)
-            sb.append("BehaviorOnMXFailure: " + getBehaviorOnMXFailure());
+            sb.append("BehaviorOnMXFailure: ").append(getBehaviorOnMXFailure());
         sb.append("}");
         return sb.toString();
     }

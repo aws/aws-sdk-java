@@ -400,8 +400,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     @Override
     public DeleteElasticsearchDomainResult deleteElasticsearchDomain(DeleteElasticsearchDomainRequest deleteElasticsearchDomainRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteElasticsearchDomainRequest.getDomainName()), "DomainName");
-
         ExecutionContext executionContext = createExecutionContext(deleteElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -453,8 +451,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public DescribeElasticsearchDomainResult describeElasticsearchDomain(DescribeElasticsearchDomainRequest describeElasticsearchDomainRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeElasticsearchDomainRequest.getDomainName()), "DomainName");
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -510,8 +506,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
     @Override
     public DescribeElasticsearchDomainConfigResult describeElasticsearchDomainConfig(
             DescribeElasticsearchDomainConfigRequest describeElasticsearchDomainConfigRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeElasticsearchDomainConfigRequest.getDomainName()), "DomainName");
 
         ExecutionContext executionContext = createExecutionContext(describeElasticsearchDomainConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -768,8 +762,6 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
      */
     @Override
     public UpdateElasticsearchDomainConfigResult updateElasticsearchDomainConfig(UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateElasticsearchDomainConfigRequest.getDomainName()), "DomainName");
 
         ExecutionContext executionContext = createExecutionContext(updateElasticsearchDomainConfigRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

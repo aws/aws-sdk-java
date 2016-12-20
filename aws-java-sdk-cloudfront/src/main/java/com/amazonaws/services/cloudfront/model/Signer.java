@@ -222,9 +222,9 @@ public class Signer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAwsAccountNumber() != null)
-            sb.append("AwsAccountNumber: " + getAwsAccountNumber() + ",");
+            sb.append("AwsAccountNumber: ").append(getAwsAccountNumber()).append(",");
         if (getKeyPairIds() != null)
-            sb.append("KeyPairIds: " + getKeyPairIds());
+            sb.append("KeyPairIds: ").append(getKeyPairIds());
         sb.append("}");
         return sb.toString();
     }

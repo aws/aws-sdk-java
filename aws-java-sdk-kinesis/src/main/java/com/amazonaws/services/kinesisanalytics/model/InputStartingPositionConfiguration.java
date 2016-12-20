@@ -311,7 +311,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputStartingPosition() != null)
-            sb.append("InputStartingPosition: " + getInputStartingPosition());
+            sb.append("InputStartingPosition: ").append(getInputStartingPosition());
         sb.append("}");
         return sb.toString();
     }

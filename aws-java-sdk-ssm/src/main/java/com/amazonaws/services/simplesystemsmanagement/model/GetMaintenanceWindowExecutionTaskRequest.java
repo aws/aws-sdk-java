@@ -125,9 +125,9 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId()).append(",");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId());
+            sb.append("TaskId: ").append(getTaskId());
         sb.append("}");
         return sb.toString();
     }

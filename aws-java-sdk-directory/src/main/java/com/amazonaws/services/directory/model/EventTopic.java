@@ -297,15 +297,15 @@ public class EventTopic implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getTopicName() != null)
-            sb.append("TopicName: " + getTopicName() + ",");
+            sb.append("TopicName: ").append(getTopicName()).append(",");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getCreatedDateTime() != null)
-            sb.append("CreatedDateTime: " + getCreatedDateTime() + ",");
+            sb.append("CreatedDateTime: ").append(getCreatedDateTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

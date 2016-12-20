@@ -237,13 +237,13 @@ public class DeviceiSCSIAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetARN() != null)
-            sb.append("TargetARN: " + getTargetARN() + ",");
+            sb.append("TargetARN: ").append(getTargetARN()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getNetworkInterfacePort() != null)
-            sb.append("NetworkInterfacePort: " + getNetworkInterfacePort() + ",");
+            sb.append("NetworkInterfacePort: ").append(getNetworkInterfacePort()).append(",");
         if (getChapEnabled() != null)
-            sb.append("ChapEnabled: " + getChapEnabled());
+            sb.append("ChapEnabled: ").append(getChapEnabled());
         sb.append("}");
         return sb.toString();
     }

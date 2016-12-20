@@ -527,17 +527,17 @@ public class EntityFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventArns() != null)
-            sb.append("EventArns: " + getEventArns() + ",");
+            sb.append("EventArns: ").append(getEventArns()).append(",");
         if (getEntityArns() != null)
-            sb.append("EntityArns: " + getEntityArns() + ",");
+            sb.append("EntityArns: ").append(getEntityArns()).append(",");
         if (getEntityValues() != null)
-            sb.append("EntityValues: " + getEntityValues() + ",");
+            sb.append("EntityValues: ").append(getEntityValues()).append(",");
         if (getLastUpdatedTimes() != null)
-            sb.append("LastUpdatedTimes: " + getLastUpdatedTimes() + ",");
+            sb.append("LastUpdatedTimes: ").append(getLastUpdatedTimes()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getStatusCodes() != null)
-            sb.append("StatusCodes: " + getStatusCodes());
+            sb.append("StatusCodes: ").append(getStatusCodes());
         sb.append("}");
         return sb.toString();
     }

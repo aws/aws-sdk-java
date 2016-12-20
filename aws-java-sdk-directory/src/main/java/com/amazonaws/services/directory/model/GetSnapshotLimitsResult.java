@@ -80,7 +80,7 @@ public class GetSnapshotLimitsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotLimits() != null)
-            sb.append("SnapshotLimits: " + getSnapshotLimits());
+            sb.append("SnapshotLimits: ").append(getSnapshotLimits());
         sb.append("}");
         return sb.toString();
     }

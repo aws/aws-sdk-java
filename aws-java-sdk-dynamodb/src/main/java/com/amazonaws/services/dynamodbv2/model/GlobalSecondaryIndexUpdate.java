@@ -382,11 +382,11 @@ public class GlobalSecondaryIndexUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUpdate() != null)
-            sb.append("Update: " + getUpdate() + ",");
+            sb.append("Update: ").append(getUpdate()).append(",");
         if (getCreate() != null)
-            sb.append("Create: " + getCreate() + ",");
+            sb.append("Create: ").append(getCreate()).append(",");
         if (getDelete() != null)
-            sb.append("Delete: " + getDelete());
+            sb.append("Delete: ").append(getDelete());
         sb.append("}");
         return sb.toString();
     }

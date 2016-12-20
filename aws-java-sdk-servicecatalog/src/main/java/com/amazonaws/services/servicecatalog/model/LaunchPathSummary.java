@@ -278,13 +278,13 @@ public class LaunchPathSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getConstraintSummaries() != null)
-            sb.append("ConstraintSummaries: " + getConstraintSummaries() + ",");
+            sb.append("ConstraintSummaries: ").append(getConstraintSummaries()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

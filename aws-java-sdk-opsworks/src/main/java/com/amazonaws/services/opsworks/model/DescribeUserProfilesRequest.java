@@ -112,7 +112,7 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIamUserArns() != null)
-            sb.append("IamUserArns: " + getIamUserArns());
+            sb.append("IamUserArns: ").append(getIamUserArns());
         sb.append("}");
         return sb.toString();
     }

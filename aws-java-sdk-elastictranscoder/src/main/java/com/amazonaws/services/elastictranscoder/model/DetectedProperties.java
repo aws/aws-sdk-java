@@ -264,15 +264,15 @@ public class DetectedProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWidth() != null)
-            sb.append("Width: " + getWidth() + ",");
+            sb.append("Width: ").append(getWidth()).append(",");
         if (getHeight() != null)
-            sb.append("Height: " + getHeight() + ",");
+            sb.append("Height: ").append(getHeight()).append(",");
         if (getFrameRate() != null)
-            sb.append("FrameRate: " + getFrameRate() + ",");
+            sb.append("FrameRate: ").append(getFrameRate()).append(",");
         if (getFileSize() != null)
-            sb.append("FileSize: " + getFileSize() + ",");
+            sb.append("FileSize: ").append(getFileSize()).append(",");
         if (getDurationMillis() != null)
-            sb.append("DurationMillis: " + getDurationMillis());
+            sb.append("DurationMillis: ").append(getDurationMillis());
         sb.append("}");
         return sb.toString();
     }

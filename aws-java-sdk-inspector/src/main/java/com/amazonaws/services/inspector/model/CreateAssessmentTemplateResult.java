@@ -78,7 +78,7 @@ public class CreateAssessmentTemplateResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTemplateArn() != null)
-            sb.append("AssessmentTemplateArn: " + getAssessmentTemplateArn());
+            sb.append("AssessmentTemplateArn: ").append(getAssessmentTemplateArn());
         sb.append("}");
         return sb.toString();
     }

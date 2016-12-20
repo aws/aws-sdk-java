@@ -95,7 +95,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlaintext() != null)
-            sb.append("Plaintext: " + getPlaintext());
+            sb.append("Plaintext: ").append(getPlaintext());
         sb.append("}");
         return sb.toString();
     }

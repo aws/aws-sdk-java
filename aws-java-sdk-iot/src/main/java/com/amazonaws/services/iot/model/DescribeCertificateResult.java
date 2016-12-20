@@ -80,7 +80,7 @@ public class DescribeCertificateResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateDescription() != null)
-            sb.append("CertificateDescription: " + getCertificateDescription());
+            sb.append("CertificateDescription: ").append(getCertificateDescription());
         sb.append("}");
         return sb.toString();
     }

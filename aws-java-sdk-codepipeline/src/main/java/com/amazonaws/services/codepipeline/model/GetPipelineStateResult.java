@@ -332,15 +332,15 @@ public class GetPipelineStateResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getPipelineVersion() != null)
-            sb.append("PipelineVersion: " + getPipelineVersion() + ",");
+            sb.append("PipelineVersion: ").append(getPipelineVersion()).append(",");
         if (getStageStates() != null)
-            sb.append("StageStates: " + getStageStates() + ",");
+            sb.append("StageStates: ").append(getStageStates()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getUpdated() != null)
-            sb.append("Updated: " + getUpdated());
+            sb.append("Updated: ").append(getUpdated());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class PricingDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrice() != null)
-            sb.append("Price: " + getPrice() + ",");
+            sb.append("Price: ").append(getPrice()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount());
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class AdminCreateUserResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUser() != null)
-            sb.append("User: " + getUser());
+            sb.append("User: ").append(getUser());
         sb.append("}");
         return sb.toString();
     }

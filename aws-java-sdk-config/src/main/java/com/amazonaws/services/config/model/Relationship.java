@@ -251,13 +251,13 @@ public class Relationship implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getRelationshipName() != null)
-            sb.append("RelationshipName: " + getRelationshipName());
+            sb.append("RelationshipName: ").append(getRelationshipName());
         sb.append("}");
         return sb.toString();
     }

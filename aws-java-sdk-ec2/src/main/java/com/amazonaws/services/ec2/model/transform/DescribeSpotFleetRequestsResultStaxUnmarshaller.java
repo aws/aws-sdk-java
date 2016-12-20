@@ -45,6 +45,11 @@ public class DescribeSpotFleetRequestsResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("spotFleetRequestConfigSet", targetDepth)) {
+                    describeSpotFleetRequestsResult.withSpotFleetRequestConfigs(new ArrayList<SpotFleetRequestConfig>());
+                    continue;
+                }
+
                 if (context.testExpression("spotFleetRequestConfigSet/item", targetDepth)) {
                     describeSpotFleetRequestsResult.withSpotFleetRequestConfigs(SpotFleetRequestConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

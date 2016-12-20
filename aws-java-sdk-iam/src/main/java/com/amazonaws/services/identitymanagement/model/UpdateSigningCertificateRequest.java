@@ -315,11 +315,11 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -172,11 +172,11 @@ public class DescribeDBLogFilesDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogFileName() != null)
-            sb.append("LogFileName: " + getLogFileName() + ",");
+            sb.append("LogFileName: ").append(getLogFileName()).append(",");
         if (getLastWritten() != null)
-            sb.append("LastWritten: " + getLastWritten() + ",");
+            sb.append("LastWritten: ").append(getLastWritten()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize());
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }

@@ -276,15 +276,15 @@ public class Tag implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getPropagateAtLaunch() != null)
-            sb.append("PropagateAtLaunch: " + getPropagateAtLaunch());
+            sb.append("PropagateAtLaunch: ").append(getPropagateAtLaunch());
         sb.append("}");
         return sb.toString();
     }

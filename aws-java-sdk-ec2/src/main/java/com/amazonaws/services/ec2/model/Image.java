@@ -1523,53 +1523,53 @@ public class Image implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getImageLocation() != null)
-            sb.append("ImageLocation: " + getImageLocation() + ",");
+            sb.append("ImageLocation: ").append(getImageLocation()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getPublic() != null)
-            sb.append("Public: " + getPublic() + ",");
+            sb.append("Public: ").append(getPublic()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: " + getProductCodes() + ",");
+            sb.append("ProductCodes: ").append(getProductCodes()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getImageType() != null)
-            sb.append("ImageType: " + getImageType() + ",");
+            sb.append("ImageType: ").append(getImageType()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+            sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
         if (getEnaSupport() != null)
-            sb.append("EnaSupport: " + getEnaSupport() + ",");
+            sb.append("EnaSupport: ").append(getEnaSupport()).append(",");
         if (getStateReason() != null)
-            sb.append("StateReason: " + getStateReason() + ",");
+            sb.append("StateReason: ").append(getStateReason()).append(",");
         if (getImageOwnerAlias() != null)
-            sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ",");
+            sb.append("ImageOwnerAlias: ").append(getImageOwnerAlias()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRootDeviceType() != null)
-            sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+            sb.append("RootDeviceType: ").append(getRootDeviceType()).append(",");
         if (getRootDeviceName() != null)
-            sb.append("RootDeviceName: " + getRootDeviceName() + ",");
+            sb.append("RootDeviceName: ").append(getRootDeviceName()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getHypervisor() != null)
-            sb.append("Hypervisor: " + getHypervisor());
+            sb.append("Hypervisor: ").append(getHypervisor());
         sb.append("}");
         return sb.toString();
     }

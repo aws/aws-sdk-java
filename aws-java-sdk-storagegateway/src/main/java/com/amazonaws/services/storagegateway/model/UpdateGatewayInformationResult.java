@@ -89,9 +89,9 @@ public class UpdateGatewayInformationResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: " + getGatewayName());
+            sb.append("GatewayName: ").append(getGatewayName());
         sb.append("}");
         return sb.toString();
     }

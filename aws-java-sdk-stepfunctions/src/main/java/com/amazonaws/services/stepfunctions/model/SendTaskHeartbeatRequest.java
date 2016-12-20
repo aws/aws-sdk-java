@@ -86,7 +86,7 @@ public class SendTaskHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken());
+            sb.append("TaskToken: ").append(getTaskToken());
         sb.append("}");
         return sb.toString();
     }

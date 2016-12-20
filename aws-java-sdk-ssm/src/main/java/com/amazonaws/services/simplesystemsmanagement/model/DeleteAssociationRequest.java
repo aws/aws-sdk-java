@@ -171,11 +171,11 @@ public class DeleteAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId());
         sb.append("}");
         return sb.toString();
     }

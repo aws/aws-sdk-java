@@ -166,9 +166,9 @@ public class ListSamplesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSamples() != null)
-            sb.append("Samples: " + getSamples() + ",");
+            sb.append("Samples: ").append(getSamples()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

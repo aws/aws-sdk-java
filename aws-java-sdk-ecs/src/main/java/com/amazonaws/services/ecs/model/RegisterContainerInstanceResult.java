@@ -78,7 +78,7 @@ public class RegisterContainerInstanceResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerInstance() != null)
-            sb.append("ContainerInstance: " + getContainerInstance());
+            sb.append("ContainerInstance: ").append(getContainerInstance());
         sb.append("}");
         return sb.toString();
     }

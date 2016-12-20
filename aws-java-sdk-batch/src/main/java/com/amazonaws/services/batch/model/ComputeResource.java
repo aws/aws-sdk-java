@@ -751,29 +751,29 @@ public class ComputeResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getMinvCpus() != null)
-            sb.append("MinvCpus: " + getMinvCpus() + ",");
+            sb.append("MinvCpus: ").append(getMinvCpus()).append(",");
         if (getMaxvCpus() != null)
-            sb.append("MaxvCpus: " + getMaxvCpus() + ",");
+            sb.append("MaxvCpus: ").append(getMaxvCpus()).append(",");
         if (getDesiredvCpus() != null)
-            sb.append("DesiredvCpus: " + getDesiredvCpus() + ",");
+            sb.append("DesiredvCpus: ").append(getDesiredvCpus()).append(",");
         if (getInstanceTypes() != null)
-            sb.append("InstanceTypes: " + getInstanceTypes() + ",");
+            sb.append("InstanceTypes: ").append(getInstanceTypes()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getEc2KeyPair() != null)
-            sb.append("Ec2KeyPair: " + getEc2KeyPair() + ",");
+            sb.append("Ec2KeyPair: ").append(getEc2KeyPair()).append(",");
         if (getInstanceRole() != null)
-            sb.append("InstanceRole: " + getInstanceRole() + ",");
+            sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getBidPercentage() != null)
-            sb.append("BidPercentage: " + getBidPercentage() + ",");
+            sb.append("BidPercentage: ").append(getBidPercentage()).append(",");
         if (getSpotIamFleetRole() != null)
-            sb.append("SpotIamFleetRole: " + getSpotIamFleetRole());
+            sb.append("SpotIamFleetRole: ").append(getSpotIamFleetRole());
         sb.append("}");
         return sb.toString();
     }

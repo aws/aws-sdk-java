@@ -336,17 +336,17 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getPartFirstByte() != null)
-            sb.append("PartFirstByte: " + getPartFirstByte() + ",");
+            sb.append("PartFirstByte: ").append(getPartFirstByte()).append(",");
         if (getPartLastByte() != null)
-            sb.append("PartLastByte: " + getPartLastByte() + ",");
+            sb.append("PartLastByte: ").append(getPartLastByte()).append(",");
         if (getLayerPartBlob() != null)
-            sb.append("LayerPartBlob: " + getLayerPartBlob());
+            sb.append("LayerPartBlob: ").append(getLayerPartBlob());
         sb.append("}");
         return sb.toString();
     }

@@ -51,6 +51,11 @@ public class DescribeReservedCacheNodesOfferingsResultStaxUnmarshaller implement
                     continue;
                 }
 
+                if (context.testExpression("ReservedCacheNodesOfferings", targetDepth)) {
+                    describeReservedCacheNodesOfferingsResult.withReservedCacheNodesOfferings(new ArrayList<ReservedCacheNodesOffering>());
+                    continue;
+                }
+
                 if (context.testExpression("ReservedCacheNodesOfferings/ReservedCacheNodesOffering", targetDepth)) {
                     describeReservedCacheNodesOfferingsResult.withReservedCacheNodesOfferings(ReservedCacheNodesOfferingStaxUnmarshaller.getInstance()
                             .unmarshall(context));

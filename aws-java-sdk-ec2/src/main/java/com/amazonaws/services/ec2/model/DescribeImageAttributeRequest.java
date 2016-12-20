@@ -267,9 +267,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute());
+            sb.append("Attribute: ").append(getAttribute());
         sb.append("}");
         return sb.toString();
     }

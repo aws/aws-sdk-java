@@ -167,9 +167,9 @@ public class DescribeNotificationConfigurationsResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNotificationConfigurations() != null)
-            sb.append("NotificationConfigurations: " + getNotificationConfigurations() + ",");
+            sb.append("NotificationConfigurations: ").append(getNotificationConfigurations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

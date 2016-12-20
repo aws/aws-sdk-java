@@ -518,15 +518,15 @@ public class S3Location implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucket() != null)
-            sb.append("Bucket: " + getBucket() + ",");
+            sb.append("Bucket: ").append(getBucket()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getBundleType() != null)
-            sb.append("BundleType: " + getBundleType() + ",");
+            sb.append("BundleType: ").append(getBundleType()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

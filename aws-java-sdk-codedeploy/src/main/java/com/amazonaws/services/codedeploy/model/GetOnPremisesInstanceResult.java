@@ -80,7 +80,7 @@ public class GetOnPremisesInstanceResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceInfo() != null)
-            sb.append("InstanceInfo: " + getInstanceInfo());
+            sb.append("InstanceInfo: ").append(getInstanceInfo());
         sb.append("}");
         return sb.toString();
     }

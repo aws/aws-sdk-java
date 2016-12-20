@@ -330,15 +330,15 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName() + ",");
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getAttributePayload() != null)
-            sb.append("AttributePayload: " + getAttributePayload() + ",");
+            sb.append("AttributePayload: ").append(getAttributePayload()).append(",");
         if (getExpectedVersion() != null)
-            sb.append("ExpectedVersion: " + getExpectedVersion() + ",");
+            sb.append("ExpectedVersion: ").append(getExpectedVersion()).append(",");
         if (getRemoveThingType() != null)
-            sb.append("RemoveThingType: " + getRemoveThingType());
+            sb.append("RemoveThingType: ").append(getRemoveThingType());
         sb.append("}");
         return sb.toString();
     }

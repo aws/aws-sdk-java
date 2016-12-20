@@ -1019,43 +1019,43 @@ public class InstanceInformation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPingStatus() != null)
-            sb.append("PingStatus: " + getPingStatus() + ",");
+            sb.append("PingStatus: ").append(getPingStatus()).append(",");
         if (getLastPingDateTime() != null)
-            sb.append("LastPingDateTime: " + getLastPingDateTime() + ",");
+            sb.append("LastPingDateTime: ").append(getLastPingDateTime()).append(",");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion() + ",");
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getIsLatestVersion() != null)
-            sb.append("IsLatestVersion: " + getIsLatestVersion() + ",");
+            sb.append("IsLatestVersion: ").append(getIsLatestVersion()).append(",");
         if (getPlatformType() != null)
-            sb.append("PlatformType: " + getPlatformType() + ",");
+            sb.append("PlatformType: ").append(getPlatformType()).append(",");
         if (getPlatformName() != null)
-            sb.append("PlatformName: " + getPlatformName() + ",");
+            sb.append("PlatformName: ").append(getPlatformName()).append(",");
         if (getPlatformVersion() != null)
-            sb.append("PlatformVersion: " + getPlatformVersion() + ",");
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
         if (getActivationId() != null)
-            sb.append("ActivationId: " + getActivationId() + ",");
+            sb.append("ActivationId: ").append(getActivationId()).append(",");
         if (getIamRole() != null)
-            sb.append("IamRole: " + getIamRole() + ",");
+            sb.append("IamRole: ").append(getIamRole()).append(",");
         if (getRegistrationDate() != null)
-            sb.append("RegistrationDate: " + getRegistrationDate() + ",");
+            sb.append("RegistrationDate: ").append(getRegistrationDate()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getIPAddress() != null)
-            sb.append("IPAddress: " + getIPAddress() + ",");
+            sb.append("IPAddress: ").append(getIPAddress()).append(",");
         if (getComputerName() != null)
-            sb.append("ComputerName: " + getComputerName() + ",");
+            sb.append("ComputerName: ").append(getComputerName()).append(",");
         if (getAssociationStatus() != null)
-            sb.append("AssociationStatus: " + getAssociationStatus() + ",");
+            sb.append("AssociationStatus: ").append(getAssociationStatus()).append(",");
         if (getLastAssociationExecutionDate() != null)
-            sb.append("LastAssociationExecutionDate: " + getLastAssociationExecutionDate() + ",");
+            sb.append("LastAssociationExecutionDate: ").append(getLastAssociationExecutionDate()).append(",");
         if (getLastSuccessfulAssociationExecutionDate() != null)
-            sb.append("LastSuccessfulAssociationExecutionDate: " + getLastSuccessfulAssociationExecutionDate() + ",");
+            sb.append("LastSuccessfulAssociationExecutionDate: ").append(getLastSuccessfulAssociationExecutionDate()).append(",");
         if (getAssociationOverview() != null)
-            sb.append("AssociationOverview: " + getAssociationOverview());
+            sb.append("AssociationOverview: ").append(getAssociationOverview());
         sb.append("}");
         return sb.toString();
     }

@@ -139,9 +139,9 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroups() != null)
-            sb.append("LogGroups: " + getLogGroups() + ",");
+            sb.append("LogGroups: ").append(getLogGroups()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

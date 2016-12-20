@@ -61,10 +61,8 @@ public class UpdateFunctionCodeRequestMarshaller implements Marshaller<Request<U
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/code";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (updateFunctionCodeRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateFunctionCodeRequest.getFunctionName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
+                updateFunctionCodeRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         try {

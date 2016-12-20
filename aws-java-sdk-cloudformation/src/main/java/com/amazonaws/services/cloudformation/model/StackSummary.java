@@ -442,21 +442,21 @@ public class StackSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getTemplateDescription() != null)
-            sb.append("TemplateDescription: " + getTemplateDescription() + ",");
+            sb.append("TemplateDescription: ").append(getTemplateDescription()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getDeletionTime() != null)
-            sb.append("DeletionTime: " + getDeletionTime() + ",");
+            sb.append("DeletionTime: ").append(getDeletionTime()).append(",");
         if (getStackStatus() != null)
-            sb.append("StackStatus: " + getStackStatus() + ",");
+            sb.append("StackStatus: ").append(getStackStatus()).append(",");
         if (getStackStatusReason() != null)
-            sb.append("StackStatusReason: " + getStackStatusReason());
+            sb.append("StackStatusReason: ").append(getStackStatusReason());
         sb.append("}");
         return sb.toString();
     }

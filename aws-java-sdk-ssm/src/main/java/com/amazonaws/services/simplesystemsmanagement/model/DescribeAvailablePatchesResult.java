@@ -164,9 +164,9 @@ public class DescribeAvailablePatchesResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatches() != null)
-            sb.append("Patches: " + getPatches() + ",");
+            sb.append("Patches: ").append(getPatches()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

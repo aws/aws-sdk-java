@@ -61,14 +61,10 @@ public class GetSegmentImportJobsRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/jobs/import";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getSegmentImportJobsRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getSegmentImportJobsRequest.getApplicationId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{segment-id}",
-                (getSegmentImportJobsRequest.getSegmentId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getSegmentImportJobsRequest.getSegmentId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getSegmentImportJobsRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "segment-id", getSegmentImportJobsRequest.getSegmentId());
         request.setResourcePath(uriResourcePath);
 
         if (getSegmentImportJobsRequest.getPageSize() != null) {

@@ -5261,35 +5261,35 @@ public class VideoParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCodec() != null)
-            sb.append("Codec: " + getCodec() + ",");
+            sb.append("Codec: ").append(getCodec()).append(",");
         if (getCodecOptions() != null)
-            sb.append("CodecOptions: " + getCodecOptions() + ",");
+            sb.append("CodecOptions: ").append(getCodecOptions()).append(",");
         if (getKeyframesMaxDist() != null)
-            sb.append("KeyframesMaxDist: " + getKeyframesMaxDist() + ",");
+            sb.append("KeyframesMaxDist: ").append(getKeyframesMaxDist()).append(",");
         if (getFixedGOP() != null)
-            sb.append("FixedGOP: " + getFixedGOP() + ",");
+            sb.append("FixedGOP: ").append(getFixedGOP()).append(",");
         if (getBitRate() != null)
-            sb.append("BitRate: " + getBitRate() + ",");
+            sb.append("BitRate: ").append(getBitRate()).append(",");
         if (getFrameRate() != null)
-            sb.append("FrameRate: " + getFrameRate() + ",");
+            sb.append("FrameRate: ").append(getFrameRate()).append(",");
         if (getMaxFrameRate() != null)
-            sb.append("MaxFrameRate: " + getMaxFrameRate() + ",");
+            sb.append("MaxFrameRate: ").append(getMaxFrameRate()).append(",");
         if (getResolution() != null)
-            sb.append("Resolution: " + getResolution() + ",");
+            sb.append("Resolution: ").append(getResolution()).append(",");
         if (getAspectRatio() != null)
-            sb.append("AspectRatio: " + getAspectRatio() + ",");
+            sb.append("AspectRatio: ").append(getAspectRatio()).append(",");
         if (getMaxWidth() != null)
-            sb.append("MaxWidth: " + getMaxWidth() + ",");
+            sb.append("MaxWidth: ").append(getMaxWidth()).append(",");
         if (getMaxHeight() != null)
-            sb.append("MaxHeight: " + getMaxHeight() + ",");
+            sb.append("MaxHeight: ").append(getMaxHeight()).append(",");
         if (getDisplayAspectRatio() != null)
-            sb.append("DisplayAspectRatio: " + getDisplayAspectRatio() + ",");
+            sb.append("DisplayAspectRatio: ").append(getDisplayAspectRatio()).append(",");
         if (getSizingPolicy() != null)
-            sb.append("SizingPolicy: " + getSizingPolicy() + ",");
+            sb.append("SizingPolicy: ").append(getSizingPolicy()).append(",");
         if (getPaddingPolicy() != null)
-            sb.append("PaddingPolicy: " + getPaddingPolicy() + ",");
+            sb.append("PaddingPolicy: ").append(getPaddingPolicy()).append(",");
         if (getWatermarks() != null)
-            sb.append("Watermarks: " + getWatermarks());
+            sb.append("Watermarks: ").append(getWatermarks());
         sb.append("}");
         return sb.toString();
     }

@@ -41,7 +41,8 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
 
     private static final int EXPECTED_RETRY_COUNT = 5;
     private static final Random random = new Random();
-    
+    private AmazonHttpClient testedClient;
+
     /** Reset the RetryPolicy and restart collecting context data */
     @Before
     public void resetContextData() {
@@ -53,6 +54,7 @@ public class AmazonHttpClientRetryPolicyTest extends RetryPolicyTestBase {
                                 backoffStrategy,
                                 EXPECTED_RETRY_COUNT, // max error retry
                                 false));              // ignore the maxErrorRetry in ClientConfiguration level
+        testedClient = new AmazonHttpClient(clientConfiguration);
     }
     
     /**

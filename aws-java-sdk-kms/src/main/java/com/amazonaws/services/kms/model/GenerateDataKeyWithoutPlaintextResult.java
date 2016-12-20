@@ -142,9 +142,9 @@ public class GenerateDataKeyWithoutPlaintextResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCiphertextBlob() != null)
-            sb.append("CiphertextBlob: " + getCiphertextBlob() + ",");
+            sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId());
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }

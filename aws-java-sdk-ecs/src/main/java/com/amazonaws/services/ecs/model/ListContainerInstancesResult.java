@@ -183,9 +183,9 @@ public class ListContainerInstancesResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerInstanceArns() != null)
-            sb.append("ContainerInstanceArns: " + getContainerInstanceArns() + ",");
+            sb.append("ContainerInstanceArns: ").append(getContainerInstanceArns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

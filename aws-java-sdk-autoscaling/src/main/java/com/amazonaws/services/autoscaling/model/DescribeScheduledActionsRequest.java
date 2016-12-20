@@ -391,17 +391,17 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getScheduledActionNames() != null)
-            sb.append("ScheduledActionNames: " + getScheduledActionNames() + ",");
+            sb.append("ScheduledActionNames: ").append(getScheduledActionNames()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords());
+            sb.append("MaxRecords: ").append(getMaxRecords());
         sb.append("}");
         return sb.toString();
     }

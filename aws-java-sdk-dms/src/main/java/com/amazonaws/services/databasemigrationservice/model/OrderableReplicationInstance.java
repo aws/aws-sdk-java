@@ -379,19 +379,19 @@ public class OrderableReplicationInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getReplicationInstanceClass() != null)
-            sb.append("ReplicationInstanceClass: " + getReplicationInstanceClass() + ",");
+            sb.append("ReplicationInstanceClass: ").append(getReplicationInstanceClass()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: " + getStorageType() + ",");
+            sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getMinAllocatedStorage() != null)
-            sb.append("MinAllocatedStorage: " + getMinAllocatedStorage() + ",");
+            sb.append("MinAllocatedStorage: ").append(getMinAllocatedStorage()).append(",");
         if (getMaxAllocatedStorage() != null)
-            sb.append("MaxAllocatedStorage: " + getMaxAllocatedStorage() + ",");
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
         if (getDefaultAllocatedStorage() != null)
-            sb.append("DefaultAllocatedStorage: " + getDefaultAllocatedStorage() + ",");
+            sb.append("DefaultAllocatedStorage: ").append(getDefaultAllocatedStorage()).append(",");
         if (getIncludedAllocatedStorage() != null)
-            sb.append("IncludedAllocatedStorage: " + getIncludedAllocatedStorage());
+            sb.append("IncludedAllocatedStorage: ").append(getIncludedAllocatedStorage());
         sb.append("}");
         return sb.toString();
     }

@@ -501,21 +501,21 @@ public class Distribution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getInProgressInvalidationBatches() != null)
-            sb.append("InProgressInvalidationBatches: " + getInProgressInvalidationBatches() + ",");
+            sb.append("InProgressInvalidationBatches: ").append(getInProgressInvalidationBatches()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getActiveTrustedSigners() != null)
-            sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ",");
+            sb.append("ActiveTrustedSigners: ").append(getActiveTrustedSigners()).append(",");
         if (getDistributionConfig() != null)
-            sb.append("DistributionConfig: " + getDistributionConfig());
+            sb.append("DistributionConfig: ").append(getDistributionConfig());
         sb.append("}");
         return sb.toString();
     }

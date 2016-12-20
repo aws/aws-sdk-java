@@ -16,15 +16,29 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Input to the ListIdentities action.
+ * </p>
  */
 public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
-    /** The maximum number of identities to return. */
+    /**
+     * <p>
+     * The maximum number of identities to return.
+     * </p>
+     */
     private Integer maxResults;
-    /** A pagination token. */
+    /**
+     * <p>
+     * A pagination token.
+     * </p>
+     */
     private String nextToken;
     /**
      * <p>
@@ -35,7 +49,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean hideDisabled;
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -46,7 +62,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -56,7 +74,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -69,7 +89,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The maximum number of identities to return.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of identities to return.
@@ -80,7 +102,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The maximum number of identities to return.
+     * </p>
      * 
      * @return The maximum number of identities to return.
      */
@@ -90,7 +114,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * The maximum number of identities to return.
+     * </p>
      * 
      * @param maxResults
      *        The maximum number of identities to return.
@@ -103,7 +129,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @param nextToken
      *        A pagination token.
@@ -114,7 +142,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @return A pagination token.
      */
@@ -124,7 +154,9 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @param nextToken
      *        A pagination token.
@@ -208,13 +240,13 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getHideDisabled() != null)
-            sb.append("HideDisabled: " + getHideDisabled());
+            sb.append("HideDisabled: ").append(getHideDisabled());
         sb.append("}");
         return sb.toString();
     }

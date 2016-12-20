@@ -82,7 +82,7 @@ public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionConfigWithTags() != null)
-            sb.append("StreamingDistributionConfigWithTags: " + getStreamingDistributionConfigWithTags());
+            sb.append("StreamingDistributionConfigWithTags: ").append(getStreamingDistributionConfigWithTags());
         sb.append("}");
         return sb.toString();
     }

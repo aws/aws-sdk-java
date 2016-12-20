@@ -853,15 +853,15 @@ public class CreateJobPlaylist implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getOutputKeys() != null)
-            sb.append("OutputKeys: " + getOutputKeys() + ",");
+            sb.append("OutputKeys: ").append(getOutputKeys()).append(",");
         if (getHlsContentProtection() != null)
-            sb.append("HlsContentProtection: " + getHlsContentProtection() + ",");
+            sb.append("HlsContentProtection: ").append(getHlsContentProtection()).append(",");
         if (getPlayReadyDrm() != null)
-            sb.append("PlayReadyDrm: " + getPlayReadyDrm());
+            sb.append("PlayReadyDrm: ").append(getPlayReadyDrm());
         sb.append("}");
         return sb.toString();
     }

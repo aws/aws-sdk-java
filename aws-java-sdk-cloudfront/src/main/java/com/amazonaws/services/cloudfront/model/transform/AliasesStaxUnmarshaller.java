@@ -50,6 +50,11 @@ public class AliasesStaxUnmarshaller implements Unmarshaller<Aliases, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    aliases.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/CNAME", targetDepth)) {
                     aliases.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

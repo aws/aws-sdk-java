@@ -1140,21 +1140,21 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getScalingAdjustment() != null)
-            sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
+            sb.append("ScalingAdjustment: ").append(getScalingAdjustment()).append(",");
         if (getScalingAdjustmentType() != null)
-            sb.append("ScalingAdjustmentType: " + getScalingAdjustmentType() + ",");
+            sb.append("ScalingAdjustmentType: ").append(getScalingAdjustmentType()).append(",");
         if (getThreshold() != null)
-            sb.append("Threshold: " + getThreshold() + ",");
+            sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator() + ",");
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
         if (getEvaluationPeriods() != null)
-            sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");
+            sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName());
+            sb.append("MetricName: ").append(getMetricName());
         sb.append("}");
         return sb.toString();
     }

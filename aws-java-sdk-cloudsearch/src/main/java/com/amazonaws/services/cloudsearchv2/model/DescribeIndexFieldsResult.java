@@ -114,7 +114,7 @@ public class DescribeIndexFieldsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexFields() != null)
-            sb.append("IndexFields: " + getIndexFields());
+            sb.append("IndexFields: ").append(getIndexFields());
         sb.append("}");
         return sb.toString();
     }

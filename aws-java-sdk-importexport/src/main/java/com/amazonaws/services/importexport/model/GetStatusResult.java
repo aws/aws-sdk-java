@@ -531,37 +531,37 @@ public class GetStatusResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType() + ",");
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getLocationCode() != null)
-            sb.append("LocationCode: " + getLocationCode() + ",");
+            sb.append("LocationCode: ").append(getLocationCode()).append(",");
         if (getLocationMessage() != null)
-            sb.append("LocationMessage: " + getLocationMessage() + ",");
+            sb.append("LocationMessage: ").append(getLocationMessage()).append(",");
         if (getProgressCode() != null)
-            sb.append("ProgressCode: " + getProgressCode() + ",");
+            sb.append("ProgressCode: ").append(getProgressCode()).append(",");
         if (getProgressMessage() != null)
-            sb.append("ProgressMessage: " + getProgressMessage() + ",");
+            sb.append("ProgressMessage: ").append(getProgressMessage()).append(",");
         if (getCarrier() != null)
-            sb.append("Carrier: " + getCarrier() + ",");
+            sb.append("Carrier: ").append(getCarrier()).append(",");
         if (getTrackingNumber() != null)
-            sb.append("TrackingNumber: " + getTrackingNumber() + ",");
+            sb.append("TrackingNumber: ").append(getTrackingNumber()).append(",");
         if (getLogBucket() != null)
-            sb.append("LogBucket: " + getLogBucket() + ",");
+            sb.append("LogBucket: ").append(getLogBucket()).append(",");
         if (getLogKey() != null)
-            sb.append("LogKey: " + getLogKey() + ",");
+            sb.append("LogKey: ").append(getLogKey()).append(",");
         if (getErrorCount() != null)
-            sb.append("ErrorCount: " + getErrorCount() + ",");
+            sb.append("ErrorCount: ").append(getErrorCount()).append(",");
         if (getSignature() != null)
-            sb.append("Signature: " + getSignature() + ",");
+            sb.append("Signature: ").append(getSignature()).append(",");
         if (getSignatureFileContents() != null)
-            sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
+            sb.append("SignatureFileContents: ").append(getSignatureFileContents()).append(",");
         if (getCurrentManifest() != null)
-            sb.append("CurrentManifest: " + getCurrentManifest() + ",");
+            sb.append("CurrentManifest: ").append(getCurrentManifest()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getArtifactList() != null)
-            sb.append("ArtifactList: " + getArtifactList());
+            sb.append("ArtifactList: ").append(getArtifactList());
         sb.append("}");
         return sb.toString();
     }

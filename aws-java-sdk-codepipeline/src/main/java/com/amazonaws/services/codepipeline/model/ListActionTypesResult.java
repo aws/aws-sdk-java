@@ -163,9 +163,9 @@ public class ListActionTypesResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionTypes() != null)
-            sb.append("ActionTypes: " + getActionTypes() + ",");
+            sb.append("ActionTypes: ").append(getActionTypes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

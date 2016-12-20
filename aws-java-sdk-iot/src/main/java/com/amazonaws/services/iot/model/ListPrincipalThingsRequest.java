@@ -173,11 +173,11 @@ public class ListPrincipalThingsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getPrincipal() != null)
-            sb.append("Principal: " + getPrincipal());
+            sb.append("Principal: ").append(getPrincipal());
         sb.append("}");
         return sb.toString();
     }

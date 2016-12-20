@@ -218,13 +218,13 @@ public class ClientData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploadStart() != null)
-            sb.append("UploadStart: " + getUploadStart() + ",");
+            sb.append("UploadStart: ").append(getUploadStart()).append(",");
         if (getUploadEnd() != null)
-            sb.append("UploadEnd: " + getUploadEnd() + ",");
+            sb.append("UploadEnd: ").append(getUploadEnd()).append(",");
         if (getUploadSize() != null)
-            sb.append("UploadSize: " + getUploadSize() + ",");
+            sb.append("UploadSize: ").append(getUploadSize()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }

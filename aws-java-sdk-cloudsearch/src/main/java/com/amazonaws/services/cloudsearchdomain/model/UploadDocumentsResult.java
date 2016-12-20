@@ -251,13 +251,13 @@ public class UploadDocumentsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getAdds() != null)
-            sb.append("Adds: " + getAdds() + ",");
+            sb.append("Adds: ").append(getAdds()).append(",");
         if (getDeletes() != null)
-            sb.append("Deletes: " + getDeletes() + ",");
+            sb.append("Deletes: ").append(getDeletes()).append(",");
         if (getWarnings() != null)
-            sb.append("Warnings: " + getWarnings());
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }

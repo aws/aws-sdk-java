@@ -355,17 +355,17 @@ public class VolumeAttachment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getAttachTime() != null)
-            sb.append("AttachTime: " + getAttachTime() + ",");
+            sb.append("AttachTime: ").append(getAttachTime()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
         sb.append("}");
         return sb.toString();
     }

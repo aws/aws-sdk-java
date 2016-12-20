@@ -127,7 +127,7 @@ public class DeleteFlowLogsRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFlowLogIds() != null)
-            sb.append("FlowLogIds: " + getFlowLogIds());
+            sb.append("FlowLogIds: ").append(getFlowLogIds());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class RegisterElasticIpResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp());
+            sb.append("ElasticIp: ").append(getElasticIp());
         sb.append("}");
         return sb.toString();
     }

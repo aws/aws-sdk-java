@@ -45,6 +45,11 @@ public class RegisterInstancesWithLoadBalancerResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Instances", targetDepth)) {
+                    registerInstancesWithLoadBalancerResult.withInstances(new ArrayList<Instance>());
+                    continue;
+                }
+
                 if (context.testExpression("Instances/member", targetDepth)) {
                     registerInstancesWithLoadBalancerResult.withInstances(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

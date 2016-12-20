@@ -45,6 +45,11 @@ public class ValidateTemplateResultStaxUnmarshaller implements Unmarshaller<Vali
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    validateTemplateResult.withParameters(new ArrayList<TemplateParameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/member", targetDepth)) {
                     validateTemplateResult.withParameters(TemplateParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,6 +60,11 @@ public class ValidateTemplateResultStaxUnmarshaller implements Unmarshaller<Vali
                     continue;
                 }
 
+                if (context.testExpression("Capabilities", targetDepth)) {
+                    validateTemplateResult.withCapabilities(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Capabilities/member", targetDepth)) {
                     validateTemplateResult.withCapabilities(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -62,6 +72,11 @@ public class ValidateTemplateResultStaxUnmarshaller implements Unmarshaller<Vali
 
                 if (context.testExpression("CapabilitiesReason", targetDepth)) {
                     validateTemplateResult.setCapabilitiesReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeclaredTransforms", targetDepth)) {
+                    validateTemplateResult.withDeclaredTransforms(new ArrayList<String>());
                     continue;
                 }
 

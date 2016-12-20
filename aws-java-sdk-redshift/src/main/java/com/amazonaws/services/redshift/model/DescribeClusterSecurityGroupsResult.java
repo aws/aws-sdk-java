@@ -179,9 +179,9 @@ public class DescribeClusterSecurityGroupsResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getClusterSecurityGroups() != null)
-            sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups());
+            sb.append("ClusterSecurityGroups: ").append(getClusterSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

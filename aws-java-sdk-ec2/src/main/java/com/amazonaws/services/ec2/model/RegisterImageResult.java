@@ -81,7 +81,7 @@ public class RegisterImageResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId());
+            sb.append("ImageId: ").append(getImageId());
         sb.append("}");
         return sb.toString();
     }

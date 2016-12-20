@@ -991,35 +991,35 @@ public class DocumentDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSha1() != null)
-            sb.append("Sha1: " + getSha1() + ",");
+            sb.append("Sha1: ").append(getSha1()).append(",");
         if (getHash() != null)
-            sb.append("Hash: " + getHash() + ",");
+            sb.append("Hash: ").append(getHash()).append(",");
         if (getHashType() != null)
-            sb.append("HashType: " + getHashType() + ",");
+            sb.append("HashType: ").append(getHashType()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getPlatformTypes() != null)
-            sb.append("PlatformTypes: " + getPlatformTypes() + ",");
+            sb.append("PlatformTypes: ").append(getPlatformTypes()).append(",");
         if (getDocumentType() != null)
-            sb.append("DocumentType: " + getDocumentType() + ",");
+            sb.append("DocumentType: ").append(getDocumentType()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getLatestVersion() != null)
-            sb.append("LatestVersion: " + getLatestVersion() + ",");
+            sb.append("LatestVersion: ").append(getLatestVersion()).append(",");
         if (getDefaultVersion() != null)
-            sb.append("DefaultVersion: " + getDefaultVersion());
+            sb.append("DefaultVersion: ").append(getDefaultVersion());
         sb.append("}");
         return sb.toString();
     }

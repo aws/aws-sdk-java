@@ -271,9 +271,9 @@ public class ClusterIamRole implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIamRoleArn() != null)
-            sb.append("IamRoleArn: " + getIamRoleArn() + ",");
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getApplyStatus() != null)
-            sb.append("ApplyStatus: " + getApplyStatus());
+            sb.append("ApplyStatus: ").append(getApplyStatus());
         sb.append("}");
         return sb.toString();
     }

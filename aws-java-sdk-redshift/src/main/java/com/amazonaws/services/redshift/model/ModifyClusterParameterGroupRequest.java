@@ -227,9 +227,9 @@ public class ModifyClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupName() != null)
-            sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
+            sb.append("ParameterGroupName: ").append(getParameterGroupName()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

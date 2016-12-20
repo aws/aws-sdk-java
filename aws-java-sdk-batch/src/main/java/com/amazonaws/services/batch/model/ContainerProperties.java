@@ -1410,29 +1410,29 @@ public class ContainerProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getVcpus() != null)
-            sb.append("Vcpus: " + getVcpus() + ",");
+            sb.append("Vcpus: ").append(getVcpus()).append(",");
         if (getMemory() != null)
-            sb.append("Memory: " + getMemory() + ",");
+            sb.append("Memory: ").append(getMemory()).append(",");
         if (getCommand() != null)
-            sb.append("Command: " + getCommand() + ",");
+            sb.append("Command: ").append(getCommand()).append(",");
         if (getJobRoleArn() != null)
-            sb.append("JobRoleArn: " + getJobRoleArn() + ",");
+            sb.append("JobRoleArn: ").append(getJobRoleArn()).append(",");
         if (getVolumes() != null)
-            sb.append("Volumes: " + getVolumes() + ",");
+            sb.append("Volumes: ").append(getVolumes()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment() + ",");
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getMountPoints() != null)
-            sb.append("MountPoints: " + getMountPoints() + ",");
+            sb.append("MountPoints: ").append(getMountPoints()).append(",");
         if (getReadonlyRootFilesystem() != null)
-            sb.append("ReadonlyRootFilesystem: " + getReadonlyRootFilesystem() + ",");
+            sb.append("ReadonlyRootFilesystem: ").append(getReadonlyRootFilesystem()).append(",");
         if (getPrivileged() != null)
-            sb.append("Privileged: " + getPrivileged() + ",");
+            sb.append("Privileged: ").append(getPrivileged()).append(",");
         if (getUlimits() != null)
-            sb.append("Ulimits: " + getUlimits() + ",");
+            sb.append("Ulimits: ").append(getUlimits()).append(",");
         if (getUser() != null)
-            sb.append("User: " + getUser());
+            sb.append("User: ").append(getUser());
         sb.append("}");
         return sb.toString();
     }

@@ -448,21 +448,21 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getClusterJDBCURL() != null)
-            sb.append("ClusterJDBCURL: " + getClusterJDBCURL() + ",");
+            sb.append("ClusterJDBCURL: ").append(getClusterJDBCURL()).append(",");
         if (getCopyCommand() != null)
-            sb.append("CopyCommand: " + getCopyCommand() + ",");
+            sb.append("CopyCommand: ").append(getCopyCommand()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getRetryOptions() != null)
-            sb.append("RetryOptions: " + getRetryOptions() + ",");
+            sb.append("RetryOptions: ").append(getRetryOptions()).append(",");
         if (getS3Configuration() != null)
-            sb.append("S3Configuration: " + getS3Configuration() + ",");
+            sb.append("S3Configuration: ").append(getS3Configuration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: " + getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }

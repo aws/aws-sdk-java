@@ -128,9 +128,9 @@ public class GetCloudFrontOriginAccessIdentityResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontOriginAccessIdentity() != null)
-            sb.append("CloudFrontOriginAccessIdentity: " + getCloudFrontOriginAccessIdentity() + ",");
+            sb.append("CloudFrontOriginAccessIdentity: ").append(getCloudFrontOriginAccessIdentity()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

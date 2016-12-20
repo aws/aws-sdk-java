@@ -79,7 +79,7 @@ public class DeleteActivationRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivationId() != null)
-            sb.append("ActivationId: " + getActivationId());
+            sb.append("ActivationId: ").append(getActivationId());
         sb.append("}");
         return sb.toString();
     }

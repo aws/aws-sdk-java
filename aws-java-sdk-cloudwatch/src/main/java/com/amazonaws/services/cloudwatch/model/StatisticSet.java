@@ -218,13 +218,13 @@ public class StatisticSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSampleCount() != null)
-            sb.append("SampleCount: " + getSampleCount() + ",");
+            sb.append("SampleCount: ").append(getSampleCount()).append(",");
         if (getSum() != null)
-            sb.append("Sum: " + getSum() + ",");
+            sb.append("Sum: ").append(getSum()).append(",");
         if (getMinimum() != null)
-            sb.append("Minimum: " + getMinimum() + ",");
+            sb.append("Minimum: ").append(getMinimum()).append(",");
         if (getMaximum() != null)
-            sb.append("Maximum: " + getMaximum());
+            sb.append("Maximum: ").append(getMaximum());
         sb.append("}");
         return sb.toString();
     }

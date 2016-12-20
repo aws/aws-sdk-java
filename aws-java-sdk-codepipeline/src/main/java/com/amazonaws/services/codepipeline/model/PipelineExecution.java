@@ -575,15 +575,15 @@ public class PipelineExecution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getPipelineVersion() != null)
-            sb.append("PipelineVersion: " + getPipelineVersion() + ",");
+            sb.append("PipelineVersion: ").append(getPipelineVersion()).append(",");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: " + getPipelineExecutionId() + ",");
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getArtifactRevisions() != null)
-            sb.append("ArtifactRevisions: " + getArtifactRevisions());
+            sb.append("ArtifactRevisions: ").append(getArtifactRevisions());
         sb.append("}");
         return sb.toString();
     }

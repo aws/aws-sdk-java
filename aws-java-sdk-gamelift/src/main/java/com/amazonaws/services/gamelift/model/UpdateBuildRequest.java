@@ -173,11 +173,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuildId() != null)
-            sb.append("BuildId: " + getBuildId() + ",");
+            sb.append("BuildId: ").append(getBuildId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }

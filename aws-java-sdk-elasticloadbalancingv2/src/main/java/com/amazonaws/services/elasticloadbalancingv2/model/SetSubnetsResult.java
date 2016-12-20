@@ -110,7 +110,7 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones());
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }

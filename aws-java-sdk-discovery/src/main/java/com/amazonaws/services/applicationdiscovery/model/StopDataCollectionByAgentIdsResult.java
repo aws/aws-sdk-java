@@ -21,20 +21,23 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about agents that were instructed to stop collecting data. Information includes the agent ID, a
-     * description of the operation performed, and whether or not the agent configuration was updated.
+     * Information about agents or the Connector that were instructed to stop collecting data. Information includes the
+     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
+     * configuration was updated.
      * </p>
      */
     private java.util.List<AgentConfigurationStatus> agentsConfigurationStatus;
 
     /**
      * <p>
-     * Information about agents that were instructed to stop collecting data. Information includes the agent ID, a
-     * description of the operation performed, and whether or not the agent configuration was updated.
+     * Information about agents or the Connector that were instructed to stop collecting data. Information includes the
+     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
+     * configuration was updated.
      * </p>
      * 
-     * @return Information about agents that were instructed to stop collecting data. Information includes the agent ID,
-     *         a description of the operation performed, and whether or not the agent configuration was updated.
+     * @return Information about agents or the Connector that were instructed to stop collecting data. Information
+     *         includes the agent/Connector ID, a description of the operation performed, and whether or not the
+     *         agent/Connector configuration was updated.
      */
 
     public java.util.List<AgentConfigurationStatus> getAgentsConfigurationStatus() {
@@ -43,13 +46,15 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about agents that were instructed to stop collecting data. Information includes the agent ID, a
-     * description of the operation performed, and whether or not the agent configuration was updated.
+     * Information about agents or the Connector that were instructed to stop collecting data. Information includes the
+     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
+     * configuration was updated.
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about agents that were instructed to stop collecting data. Information includes the agent ID,
-     *        a description of the operation performed, and whether or not the agent configuration was updated.
+     *        Information about agents or the Connector that were instructed to stop collecting data. Information
+     *        includes the agent/Connector ID, a description of the operation performed, and whether or not the
+     *        agent/Connector configuration was updated.
      */
 
     public void setAgentsConfigurationStatus(java.util.Collection<AgentConfigurationStatus> agentsConfigurationStatus) {
@@ -63,8 +68,9 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about agents that were instructed to stop collecting data. Information includes the agent ID, a
-     * description of the operation performed, and whether or not the agent configuration was updated.
+     * Information about agents or the Connector that were instructed to stop collecting data. Information includes the
+     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
+     * configuration was updated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,8 +79,9 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about agents that were instructed to stop collecting data. Information includes the agent ID,
-     *        a description of the operation performed, and whether or not the agent configuration was updated.
+     *        Information about agents or the Connector that were instructed to stop collecting data. Information
+     *        includes the agent/Connector ID, a description of the operation performed, and whether or not the
+     *        agent/Connector configuration was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,13 +97,15 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about agents that were instructed to stop collecting data. Information includes the agent ID, a
-     * description of the operation performed, and whether or not the agent configuration was updated.
+     * Information about agents or the Connector that were instructed to stop collecting data. Information includes the
+     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
+     * configuration was updated.
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about agents that were instructed to stop collecting data. Information includes the agent ID,
-     *        a description of the operation performed, and whether or not the agent configuration was updated.
+     *        Information about agents or the Connector that were instructed to stop collecting data. Information
+     *        includes the agent/Connector ID, a description of the operation performed, and whether or not the
+     *        agent/Connector configuration was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +126,7 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentsConfigurationStatus() != null)
-            sb.append("AgentsConfigurationStatus: " + getAgentsConfigurationStatus());
+            sb.append("AgentsConfigurationStatus: ").append(getAgentsConfigurationStatus());
         sb.append("}");
         return sb.toString();
     }

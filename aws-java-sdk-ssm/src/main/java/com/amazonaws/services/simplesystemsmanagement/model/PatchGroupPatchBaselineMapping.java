@@ -126,9 +126,9 @@ public class PatchGroupPatchBaselineMapping implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: " + getPatchGroup() + ",");
+            sb.append("PatchGroup: ").append(getPatchGroup()).append(",");
         if (getBaselineIdentity() != null)
-            sb.append("BaselineIdentity: " + getBaselineIdentity());
+            sb.append("BaselineIdentity: ").append(getBaselineIdentity());
         sb.append("}");
         return sb.toString();
     }

@@ -291,13 +291,13 @@ public class DescribeObjectsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getObjectIds() != null)
-            sb.append("ObjectIds: " + getObjectIds() + ",");
+            sb.append("ObjectIds: ").append(getObjectIds()).append(",");
         if (getEvaluateExpressions() != null)
-            sb.append("EvaluateExpressions: " + getEvaluateExpressions() + ",");
+            sb.append("EvaluateExpressions: ").append(getEvaluateExpressions()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

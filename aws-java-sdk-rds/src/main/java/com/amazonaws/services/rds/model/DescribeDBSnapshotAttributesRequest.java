@@ -79,7 +79,7 @@ public class DescribeDBSnapshotAttributesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSnapshotIdentifier() != null)
-            sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier());
+            sb.append("DBSnapshotIdentifier: ").append(getDBSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

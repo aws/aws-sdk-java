@@ -345,15 +345,15 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: " + getServiceName() + ",");
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument() + ",");
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getRouteTableIds() != null)
-            sb.append("RouteTableIds: " + getRouteTableIds() + ",");
+            sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

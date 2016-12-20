@@ -273,17 +273,17 @@ public class TelemetryRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getSegmentsReceivedCount() != null)
-            sb.append("SegmentsReceivedCount: " + getSegmentsReceivedCount() + ",");
+            sb.append("SegmentsReceivedCount: ").append(getSegmentsReceivedCount()).append(",");
         if (getSegmentsSentCount() != null)
-            sb.append("SegmentsSentCount: " + getSegmentsSentCount() + ",");
+            sb.append("SegmentsSentCount: ").append(getSegmentsSentCount()).append(",");
         if (getSegmentsSpilloverCount() != null)
-            sb.append("SegmentsSpilloverCount: " + getSegmentsSpilloverCount() + ",");
+            sb.append("SegmentsSpilloverCount: ").append(getSegmentsSpilloverCount()).append(",");
         if (getSegmentsRejectedCount() != null)
-            sb.append("SegmentsRejectedCount: " + getSegmentsRejectedCount() + ",");
+            sb.append("SegmentsRejectedCount: ").append(getSegmentsRejectedCount()).append(",");
         if (getBackendConnectionErrors() != null)
-            sb.append("BackendConnectionErrors: " + getBackendConnectionErrors());
+            sb.append("BackendConnectionErrors: ").append(getBackendConnectionErrors());
         sb.append("}");
         return sb.toString();
     }

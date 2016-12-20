@@ -138,9 +138,9 @@ public class SearchedLogStream implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName() + ",");
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
         if (getSearchedCompletely() != null)
-            sb.append("SearchedCompletely: " + getSearchedCompletely());
+            sb.append("SearchedCompletely: ").append(getSearchedCompletely());
         sb.append("}");
         return sb.toString();
     }

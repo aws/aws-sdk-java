@@ -50,6 +50,11 @@ public class DescribeReservedDBInstancesResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("ReservedDBInstances", targetDepth)) {
+                    describeReservedDBInstancesResult.withReservedDBInstances(new ArrayList<ReservedDBInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("ReservedDBInstances/ReservedDBInstance", targetDepth)) {
                     describeReservedDBInstancesResult.withReservedDBInstances(ReservedDBInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

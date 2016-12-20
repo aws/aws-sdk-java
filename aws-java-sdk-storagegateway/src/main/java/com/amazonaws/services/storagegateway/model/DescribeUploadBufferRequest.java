@@ -60,7 +60,7 @@ public class DescribeUploadBufferRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN());
         sb.append("}");
         return sb.toString();
     }

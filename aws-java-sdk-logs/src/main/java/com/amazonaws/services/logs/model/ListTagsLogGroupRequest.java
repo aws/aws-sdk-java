@@ -79,7 +79,7 @@ public class ListTagsLogGroupRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName());
+            sb.append("LogGroupName: ").append(getLogGroupName());
         sb.append("}");
         return sb.toString();
     }

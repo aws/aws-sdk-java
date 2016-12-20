@@ -132,9 +132,9 @@ public class DeleteByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getByteMatchSetId() != null)
-            sb.append("ByteMatchSetId: " + getByteMatchSetId() + ",");
+            sb.append("ByteMatchSetId: ").append(getByteMatchSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

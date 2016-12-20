@@ -529,19 +529,19 @@ public class ListHostedZonesByNameResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZones() != null)
-            sb.append("HostedZones: " + getHostedZones() + ",");
+            sb.append("HostedZones: ").append(getHostedZones()).append(",");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName() + ",");
+            sb.append("DNSName: ").append(getDNSName()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getNextDNSName() != null)
-            sb.append("NextDNSName: " + getNextDNSName() + ",");
+            sb.append("NextDNSName: ").append(getNextDNSName()).append(",");
         if (getNextHostedZoneId() != null)
-            sb.append("NextHostedZoneId: " + getNextHostedZoneId() + ",");
+            sb.append("NextHostedZoneId: ").append(getNextHostedZoneId()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

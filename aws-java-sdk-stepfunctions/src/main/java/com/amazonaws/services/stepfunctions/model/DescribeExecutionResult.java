@@ -433,21 +433,21 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionArn() != null)
-            sb.append("ExecutionArn: " + getExecutionArn() + ",");
+            sb.append("ExecutionArn: ").append(getExecutionArn()).append(",");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn() + ",");
+            sb.append("StateMachineArn: ").append(getStateMachineArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getStopDate() != null)
-            sb.append("StopDate: " + getStopDate() + ",");
+            sb.append("StopDate: ").append(getStopDate()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput());
+            sb.append("Output: ").append(getOutput());
         sb.append("}");
         return sb.toString();
     }

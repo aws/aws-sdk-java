@@ -84,7 +84,7 @@ public class SetActiveReceiptRuleSetRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName());
+            sb.append("RuleSetName: ").append(getRuleSetName());
         sb.append("}");
         return sb.toString();
     }

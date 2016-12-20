@@ -50,8 +50,18 @@ public class DescribeSnapshotAttributeResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("createVolumePermission", targetDepth)) {
+                    describeSnapshotAttributeResult.withCreateVolumePermissions(new ArrayList<CreateVolumePermission>());
+                    continue;
+                }
+
                 if (context.testExpression("createVolumePermission/item", targetDepth)) {
                     describeSnapshotAttributeResult.withCreateVolumePermissions(CreateVolumePermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("productCodes", targetDepth)) {
+                    describeSnapshotAttributeResult.withProductCodes(new ArrayList<ProductCode>());
                     continue;
                 }
 

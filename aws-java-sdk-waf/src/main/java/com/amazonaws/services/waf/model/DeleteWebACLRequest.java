@@ -132,9 +132,9 @@ public class DeleteWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId() + ",");
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

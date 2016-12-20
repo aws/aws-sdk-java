@@ -486,17 +486,17 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperationId() != null)
-            sb.append("OperationId: " + getOperationId() + ",");
+            sb.append("OperationId: ").append(getOperationId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getSubmittedDate() != null)
-            sb.append("SubmittedDate: " + getSubmittedDate());
+            sb.append("SubmittedDate: ").append(getSubmittedDate());
         sb.append("}");
         return sb.toString();
     }

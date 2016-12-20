@@ -23,17 +23,17 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1000 entries.
+     * A list of queue URLs, up to 1,000 entries.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> queueUrls;
 
     /**
      * <p>
-     * A list of queue URLs, up to 1000 entries.
+     * A list of queue URLs, up to 1,000 entries.
      * </p>
      * 
-     * @return A list of queue URLs, up to 1000 entries.
+     * @return A list of queue URLs, up to 1,000 entries.
      */
 
     public java.util.List<String> getQueueUrls() {
@@ -45,11 +45,11 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1000 entries.
+     * A list of queue URLs, up to 1,000 entries.
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1000 entries.
+     *        A list of queue URLs, up to 1,000 entries.
      */
 
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
@@ -63,7 +63,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1000 entries.
+     * A list of queue URLs, up to 1,000 entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +72,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1000 entries.
+     *        A list of queue URLs, up to 1,000 entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1000 entries.
+     * A list of queue URLs, up to 1,000 entries.
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1000 entries.
+     *        A list of queue URLs, up to 1,000 entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +113,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrls() != null)
-            sb.append("QueueUrls: " + getQueueUrls());
+            sb.append("QueueUrls: ").append(getQueueUrls());
         sb.append("}");
         return sb.toString();
     }

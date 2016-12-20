@@ -50,6 +50,11 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                     continue;
                 }
 
+                if (context.testExpression("hostIdSet", targetDepth)) {
+                    hostReservation.withHostIdSet(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("hostIdSet/item", targetDepth)) {
                     hostReservation.withHostIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

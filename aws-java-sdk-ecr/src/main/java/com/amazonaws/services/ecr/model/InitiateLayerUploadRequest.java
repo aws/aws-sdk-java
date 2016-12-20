@@ -132,9 +132,9 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName());
+            sb.append("RepositoryName: ").append(getRepositoryName());
         sb.append("}");
         return sb.toString();
     }

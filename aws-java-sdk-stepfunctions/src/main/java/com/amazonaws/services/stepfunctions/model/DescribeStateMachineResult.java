@@ -341,17 +341,17 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn() + ",");
+            sb.append("StateMachineArn: ").append(getStateMachineArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: " + getDefinition() + ",");
+            sb.append("Definition: ").append(getDefinition()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

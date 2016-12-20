@@ -1359,29 +1359,29 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds() + ",");
+            sb.append("LayerIds: ").append(getLayerIds()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAutoScalingType() != null)
-            sb.append("AutoScalingType: " + getAutoScalingType() + ",");
+            sb.append("AutoScalingType: ").append(getAutoScalingType()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getOs() != null)
-            sb.append("Os: " + getOs() + ",");
+            sb.append("Os: ").append(getOs()).append(",");
         if (getAmiId() != null)
-            sb.append("AmiId: " + getAmiId() + ",");
+            sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getSshKeyName() != null)
-            sb.append("SshKeyName: " + getSshKeyName() + ",");
+            sb.append("SshKeyName: ").append(getSshKeyName()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot() + ",");
+            sb.append("InstallUpdatesOnBoot: ").append(getInstallUpdatesOnBoot()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion());
+            sb.append("AgentVersion: ").append(getAgentVersion());
         sb.append("}");
         return sb.toString();
     }

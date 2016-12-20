@@ -125,9 +125,9 @@ public class RegisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

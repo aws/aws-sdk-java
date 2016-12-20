@@ -158,9 +158,9 @@ public class GetInstanceSnapshotsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceSnapshots() != null)
-            sb.append("InstanceSnapshots: " + getInstanceSnapshots() + ",");
+            sb.append("InstanceSnapshots: ").append(getInstanceSnapshots()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

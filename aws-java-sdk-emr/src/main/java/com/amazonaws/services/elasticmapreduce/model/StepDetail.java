@@ -147,9 +147,9 @@ public class StepDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStepConfig() != null)
-            sb.append("StepConfig: " + getStepConfig() + ",");
+            sb.append("StepConfig: ").append(getStepConfig()).append(",");
         if (getExecutionStatusDetail() != null)
-            sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail());
+            sb.append("ExecutionStatusDetail: ").append(getExecutionStatusDetail());
         sb.append("}");
         return sb.toString();
     }

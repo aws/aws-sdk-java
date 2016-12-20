@@ -911,23 +911,23 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getDestination() != null)
-            sb.append("Destination: " + getDestination() + ",");
+            sb.append("Destination: ").append(getDestination()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getReplyToAddresses() != null)
-            sb.append("ReplyToAddresses: " + getReplyToAddresses() + ",");
+            sb.append("ReplyToAddresses: ").append(getReplyToAddresses()).append(",");
         if (getReturnPath() != null)
-            sb.append("ReturnPath: " + getReturnPath() + ",");
+            sb.append("ReturnPath: ").append(getReturnPath()).append(",");
         if (getSourceArn() != null)
-            sb.append("SourceArn: " + getSourceArn() + ",");
+            sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getReturnPathArn() != null)
-            sb.append("ReturnPathArn: " + getReturnPathArn() + ",");
+            sb.append("ReturnPathArn: ").append(getReturnPathArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: " + getConfigurationSetName());
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
         sb.append("}");
         return sb.toString();
     }

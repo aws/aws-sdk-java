@@ -80,7 +80,7 @@ public class LifecycleEventConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShutdown() != null)
-            sb.append("Shutdown: " + getShutdown());
+            sb.append("Shutdown: ").append(getShutdown());
         sb.append("}");
         return sb.toString();
     }

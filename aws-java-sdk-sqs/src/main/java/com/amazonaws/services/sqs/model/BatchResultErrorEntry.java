@@ -24,13 +24,13 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of an entry in a batch request.
+     * The <code>Id</code> of an entry in a batch request.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * Whether the error happened due to the sender's fault.
+     * Specifies whether the error happened due to the sender's fault.
      * </p>
      */
     private Boolean senderFault;
@@ -49,11 +49,11 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of an entry in a batch request.
+     * The <code>Id</code> of an entry in a batch request.
      * </p>
      * 
      * @param id
-     *        The id of an entry in a batch request.
+     *        The <code>Id</code> of an entry in a batch request.
      */
 
     public void setId(String id) {
@@ -62,10 +62,10 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of an entry in a batch request.
+     * The <code>Id</code> of an entry in a batch request.
      * </p>
      * 
-     * @return The id of an entry in a batch request.
+     * @return The <code>Id</code> of an entry in a batch request.
      */
 
     public String getId() {
@@ -74,11 +74,11 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The id of an entry in a batch request.
+     * The <code>Id</code> of an entry in a batch request.
      * </p>
      * 
      * @param id
-     *        The id of an entry in a batch request.
+     *        The <code>Id</code> of an entry in a batch request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the error happened due to the sender's fault.
+     * Specifies whether the error happened due to the sender's fault.
      * </p>
      * 
      * @param senderFault
-     *        Whether the error happened due to the sender's fault.
+     *        Specifies whether the error happened due to the sender's fault.
      */
 
     public void setSenderFault(Boolean senderFault) {
@@ -102,10 +102,10 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the error happened due to the sender's fault.
+     * Specifies whether the error happened due to the sender's fault.
      * </p>
      * 
-     * @return Whether the error happened due to the sender's fault.
+     * @return Specifies whether the error happened due to the sender's fault.
      */
 
     public Boolean getSenderFault() {
@@ -114,11 +114,11 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the error happened due to the sender's fault.
+     * Specifies whether the error happened due to the sender's fault.
      * </p>
      * 
      * @param senderFault
-     *        Whether the error happened due to the sender's fault.
+     *        Specifies whether the error happened due to the sender's fault.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +129,10 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the error happened due to the sender's fault.
+     * Specifies whether the error happened due to the sender's fault.
      * </p>
      * 
-     * @return Whether the error happened due to the sender's fault.
+     * @return Specifies whether the error happened due to the sender's fault.
      */
 
     public Boolean isSenderFault() {
@@ -231,13 +231,13 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getSenderFault() != null)
-            sb.append("SenderFault: " + getSenderFault() + ",");
+            sb.append("SenderFault: ").append(getSenderFault()).append(",");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

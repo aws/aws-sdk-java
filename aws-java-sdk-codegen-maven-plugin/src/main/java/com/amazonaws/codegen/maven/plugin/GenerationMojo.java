@@ -68,7 +68,7 @@ public class GenerationMojo extends AbstractMojo {
                              .customizationConfig(loadCustomizationConfig())
                              .serviceModel(loadServiceModel())
                              // Maven plugin doesn't support Waiters
-                             .waitersModel(new Waiters())
+                             .waitersModel(Waiters.NONE)
                              .examplesModel(loadExamplesModel())
                              .build());
         project.addCompileSourceRoot(outputDirectory);
@@ -83,7 +83,7 @@ public class GenerationMojo extends AbstractMojo {
     }
 
     private CustomizationConfig loadCustomizationConfig() {
-        return loadOptionalModel(CustomizationConfig.class, customizationConfigLocation).orElse(new CustomizationConfig());
+        return loadOptionalModel(CustomizationConfig.class, customizationConfigLocation).orElse(CustomizationConfig.DEFAULT);
     }
 
     private ServiceModel loadServiceModel() throws MojoExecutionException {
@@ -91,7 +91,7 @@ public class GenerationMojo extends AbstractMojo {
     }
 
     private ServiceExamples loadExamplesModel() {
-        return loadOptionalModel(ServiceExamples.class, serviceExamplesLocation).orElse(new ServiceExamples());
+        return loadOptionalModel(ServiceExamples.class, serviceExamplesLocation).orElse(ServiceExamples.NONE);
     }
 
     /**

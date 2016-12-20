@@ -323,11 +323,11 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundleIds() != null)
-            sb.append("BundleIds: " + getBundleIds() + ",");
+            sb.append("BundleIds: ").append(getBundleIds()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribeCustomerGatewaysResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGateways() != null)
-            sb.append("CustomerGateways: " + getCustomerGateways());
+            sb.append("CustomerGateways: ").append(getCustomerGateways());
         sb.append("}");
         return sb.toString();
     }

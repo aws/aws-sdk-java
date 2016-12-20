@@ -134,9 +134,9 @@ public class GetAccessKeyLastUsedResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getAccessKeyLastUsed() != null)
-            sb.append("AccessKeyLastUsed: " + getAccessKeyLastUsed());
+            sb.append("AccessKeyLastUsed: ").append(getAccessKeyLastUsed());
         sb.append("}");
         return sb.toString();
     }

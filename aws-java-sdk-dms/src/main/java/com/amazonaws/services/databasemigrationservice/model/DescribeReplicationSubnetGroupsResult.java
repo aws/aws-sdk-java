@@ -162,9 +162,9 @@ public class DescribeReplicationSubnetGroupsResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getReplicationSubnetGroups() != null)
-            sb.append("ReplicationSubnetGroups: " + getReplicationSubnetGroups());
+            sb.append("ReplicationSubnetGroups: ").append(getReplicationSubnetGroups());
         sb.append("}");
         return sb.toString();
     }

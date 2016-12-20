@@ -342,13 +342,13 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken() + ",");
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getRegistrationStatus() != null)
-            sb.append("RegistrationStatus: " + getRegistrationStatus() + ",");
+            sb.append("RegistrationStatus: ").append(getRegistrationStatus()).append(",");
         if (getMaximumPageSize() != null)
-            sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
+            sb.append("MaximumPageSize: ").append(getMaximumPageSize()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: " + getReverseOrder());
+            sb.append("ReverseOrder: ").append(getReverseOrder());
         sb.append("}");
         return sb.toString();
     }

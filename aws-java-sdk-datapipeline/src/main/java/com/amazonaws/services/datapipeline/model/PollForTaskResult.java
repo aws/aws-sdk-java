@@ -97,7 +97,7 @@ public class PollForTaskResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskObject() != null)
-            sb.append("TaskObject: " + getTaskObject());
+            sb.append("TaskObject: ").append(getTaskObject());
         sb.append("}");
         return sb.toString();
     }

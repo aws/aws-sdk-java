@@ -245,13 +245,13 @@ public class Prediction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPredictedLabel() != null)
-            sb.append("PredictedLabel: " + getPredictedLabel() + ",");
+            sb.append("PredictedLabel: ").append(getPredictedLabel()).append(",");
         if (getPredictedValue() != null)
-            sb.append("PredictedValue: " + getPredictedValue() + ",");
+            sb.append("PredictedValue: ").append(getPredictedValue()).append(",");
         if (getPredictedScores() != null)
-            sb.append("PredictedScores: " + getPredictedScores() + ",");
+            sb.append("PredictedScores: ").append(getPredictedScores()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails());
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }

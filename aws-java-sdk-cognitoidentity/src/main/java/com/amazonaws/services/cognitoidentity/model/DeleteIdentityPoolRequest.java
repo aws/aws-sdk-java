@@ -22,11 +22,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DeleteIdentityPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -37,7 +43,9 @@ public class DeleteIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -47,7 +55,9 @@ public class DeleteIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -71,7 +81,7 @@ public class DeleteIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId());
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId());
         sb.append("}");
         return sb.toString();
     }

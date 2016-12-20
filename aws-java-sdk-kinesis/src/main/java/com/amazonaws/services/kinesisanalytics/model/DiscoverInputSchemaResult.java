@@ -246,11 +246,11 @@ public class DiscoverInputSchemaResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputSchema() != null)
-            sb.append("InputSchema: " + getInputSchema() + ",");
+            sb.append("InputSchema: ").append(getInputSchema()).append(",");
         if (getParsedInputRecords() != null)
-            sb.append("ParsedInputRecords: " + getParsedInputRecords() + ",");
+            sb.append("ParsedInputRecords: ").append(getParsedInputRecords()).append(",");
         if (getRawInputRecords() != null)
-            sb.append("RawInputRecords: " + getRawInputRecords());
+            sb.append("RawInputRecords: ").append(getRawInputRecords());
         sb.append("}");
         return sb.toString();
     }

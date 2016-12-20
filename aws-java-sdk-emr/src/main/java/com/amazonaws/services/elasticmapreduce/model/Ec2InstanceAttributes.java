@@ -575,23 +575,23 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEc2KeyName() != null)
-            sb.append("Ec2KeyName: " + getEc2KeyName() + ",");
+            sb.append("Ec2KeyName: ").append(getEc2KeyName()).append(",");
         if (getEc2SubnetId() != null)
-            sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");
+            sb.append("Ec2SubnetId: ").append(getEc2SubnetId()).append(",");
         if (getEc2AvailabilityZone() != null)
-            sb.append("Ec2AvailabilityZone: " + getEc2AvailabilityZone() + ",");
+            sb.append("Ec2AvailabilityZone: ").append(getEc2AvailabilityZone()).append(",");
         if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEmrManagedMasterSecurityGroup() != null)
-            sb.append("EmrManagedMasterSecurityGroup: " + getEmrManagedMasterSecurityGroup() + ",");
+            sb.append("EmrManagedMasterSecurityGroup: ").append(getEmrManagedMasterSecurityGroup()).append(",");
         if (getEmrManagedSlaveSecurityGroup() != null)
-            sb.append("EmrManagedSlaveSecurityGroup: " + getEmrManagedSlaveSecurityGroup() + ",");
+            sb.append("EmrManagedSlaveSecurityGroup: ").append(getEmrManagedSlaveSecurityGroup()).append(",");
         if (getServiceAccessSecurityGroup() != null)
-            sb.append("ServiceAccessSecurityGroup: " + getServiceAccessSecurityGroup() + ",");
+            sb.append("ServiceAccessSecurityGroup: ").append(getServiceAccessSecurityGroup()).append(",");
         if (getAdditionalMasterSecurityGroups() != null)
-            sb.append("AdditionalMasterSecurityGroups: " + getAdditionalMasterSecurityGroups() + ",");
+            sb.append("AdditionalMasterSecurityGroups: ").append(getAdditionalMasterSecurityGroups()).append(",");
         if (getAdditionalSlaveSecurityGroups() != null)
-            sb.append("AdditionalSlaveSecurityGroups: " + getAdditionalSlaveSecurityGroups());
+            sb.append("AdditionalSlaveSecurityGroups: ").append(getAdditionalSlaveSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

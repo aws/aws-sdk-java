@@ -62,7 +62,7 @@ public class DeleteInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInterconnectId() != null)
-            sb.append("InterconnectId: " + getInterconnectId());
+            sb.append("InterconnectId: ").append(getInterconnectId());
         sb.append("}");
         return sb.toString();
     }

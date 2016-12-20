@@ -157,9 +157,9 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: " + getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions());
         sb.append("}");
         return sb.toString();
     }

@@ -233,11 +233,11 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getInboundPermissionAuthorizations() != null)
-            sb.append("InboundPermissionAuthorizations: " + getInboundPermissionAuthorizations() + ",");
+            sb.append("InboundPermissionAuthorizations: ").append(getInboundPermissionAuthorizations()).append(",");
         if (getInboundPermissionRevocations() != null)
-            sb.append("InboundPermissionRevocations: " + getInboundPermissionRevocations());
+            sb.append("InboundPermissionRevocations: ").append(getInboundPermissionRevocations());
         sb.append("}");
         return sb.toString();
     }

@@ -284,13 +284,13 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getLogicalResourceId() != null)
-            sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");
+            sb.append("LogicalResourceId: ").append(getLogicalResourceId()).append(",");
         if (getUniqueId() != null)
-            sb.append("UniqueId: " + getUniqueId() + ",");
+            sb.append("UniqueId: ").append(getUniqueId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

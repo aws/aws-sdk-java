@@ -45,6 +45,11 @@ public class DescribeEventsResultStaxUnmarshaller implements Unmarshaller<Descri
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Events", targetDepth)) {
+                    describeEventsResult.withEvents(new ArrayList<EventDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Events/member", targetDepth)) {
                     describeEventsResult.withEvents(EventDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

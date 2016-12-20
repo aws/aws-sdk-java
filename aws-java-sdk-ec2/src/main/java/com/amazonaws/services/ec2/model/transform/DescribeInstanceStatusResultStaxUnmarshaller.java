@@ -45,6 +45,11 @@ public class DescribeInstanceStatusResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instanceStatusSet", targetDepth)) {
+                    describeInstanceStatusResult.withInstanceStatuses(new ArrayList<InstanceStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("instanceStatusSet/item", targetDepth)) {
                     describeInstanceStatusResult.withInstanceStatuses(InstanceStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

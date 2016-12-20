@@ -59,7 +59,7 @@ public class GetSegmentsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSegmentsResponse() != null)
-            sb.append("SegmentsResponse: " + getSegmentsResponse());
+            sb.append("SegmentsResponse: ").append(getSegmentsResponse());
         sb.append("}");
         return sb.toString();
     }

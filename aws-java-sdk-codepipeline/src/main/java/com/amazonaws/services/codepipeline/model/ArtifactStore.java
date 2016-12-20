@@ -214,11 +214,11 @@ public class ArtifactStore implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getEncryptionKey() != null)
-            sb.append("EncryptionKey: " + getEncryptionKey());
+            sb.append("EncryptionKey: ").append(getEncryptionKey());
         sb.append("}");
         return sb.toString();
     }

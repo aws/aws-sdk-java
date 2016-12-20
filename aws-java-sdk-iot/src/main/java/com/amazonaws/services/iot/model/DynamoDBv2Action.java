@@ -168,9 +168,9 @@ public class DynamoDBv2Action implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getPutItem() != null)
-            sb.append("PutItem: " + getPutItem());
+            sb.append("PutItem: ").append(getPutItem());
         sb.append("}");
         return sb.toString();
     }

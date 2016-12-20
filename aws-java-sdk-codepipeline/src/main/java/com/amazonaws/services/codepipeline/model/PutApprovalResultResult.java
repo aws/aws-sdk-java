@@ -80,7 +80,7 @@ public class PutApprovalResultResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApprovedAt() != null)
-            sb.append("ApprovedAt: " + getApprovedAt());
+            sb.append("ApprovedAt: ").append(getApprovedAt());
         sb.append("}");
         return sb.toString();
     }

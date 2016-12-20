@@ -45,6 +45,11 @@ public class ModifyTargetGroupResultStaxUnmarshaller implements Unmarshaller<Mod
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TargetGroups", targetDepth)) {
+                    modifyTargetGroupResult.withTargetGroups(new ArrayList<TargetGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("TargetGroups/member", targetDepth)) {
                     modifyTargetGroupResult.withTargetGroups(TargetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

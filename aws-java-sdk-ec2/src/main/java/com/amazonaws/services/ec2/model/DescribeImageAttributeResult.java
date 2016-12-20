@@ -79,7 +79,7 @@ public class DescribeImageAttributeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageAttribute() != null)
-            sb.append("ImageAttribute: " + getImageAttribute());
+            sb.append("ImageAttribute: ").append(getImageAttribute());
         sb.append("}");
         return sb.toString();
     }

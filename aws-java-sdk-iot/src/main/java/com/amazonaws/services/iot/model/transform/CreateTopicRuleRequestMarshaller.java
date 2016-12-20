@@ -61,9 +61,7 @@ public class CreateTopicRuleRequestMarshaller implements Marshaller<Request<Crea
 
         String uriResourcePath = "/rules/{ruleName}";
 
-        uriResourcePath = uriResourcePath.replace("{ruleName}",
-                (createTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createTopicRuleRequest.getRuleName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", createTopicRuleRequest.getRuleName());
         request.setResourcePath(uriResourcePath);
 
         try {

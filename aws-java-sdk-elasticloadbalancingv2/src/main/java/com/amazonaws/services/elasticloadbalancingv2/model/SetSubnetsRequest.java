@@ -161,9 +161,9 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn() + ",");
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
         return sb.toString();
     }

@@ -208,11 +208,11 @@ public class LoginProfile implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getPasswordResetRequired() != null)
-            sb.append("PasswordResetRequired: " + getPasswordResetRequired());
+            sb.append("PasswordResetRequired: ").append(getPasswordResetRequired());
         sb.append("}");
         return sb.toString();
     }

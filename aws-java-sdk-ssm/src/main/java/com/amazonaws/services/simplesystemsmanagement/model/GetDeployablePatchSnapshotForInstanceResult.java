@@ -171,11 +171,11 @@ public class GetDeployablePatchSnapshotForInstanceResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getSnapshotDownloadUrl() != null)
-            sb.append("SnapshotDownloadUrl: " + getSnapshotDownloadUrl());
+            sb.append("SnapshotDownloadUrl: ").append(getSnapshotDownloadUrl());
         sb.append("}");
         return sb.toString();
     }

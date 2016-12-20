@@ -159,9 +159,9 @@ public class AddInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlowId() != null)
-            sb.append("JobFlowId: " + getJobFlowId() + ",");
+            sb.append("JobFlowId: ").append(getJobFlowId()).append(",");
         if (getInstanceGroupIds() != null)
-            sb.append("InstanceGroupIds: " + getInstanceGroupIds());
+            sb.append("InstanceGroupIds: ").append(getInstanceGroupIds());
         sb.append("}");
         return sb.toString();
     }

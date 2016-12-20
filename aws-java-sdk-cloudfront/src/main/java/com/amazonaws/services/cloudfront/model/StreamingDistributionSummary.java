@@ -651,27 +651,27 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getS3Origin() != null)
-            sb.append("S3Origin: " + getS3Origin() + ",");
+            sb.append("S3Origin: ").append(getS3Origin()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: " + getAliases() + ",");
+            sb.append("Aliases: ").append(getAliases()).append(",");
         if (getTrustedSigners() != null)
-            sb.append("TrustedSigners: " + getTrustedSigners() + ",");
+            sb.append("TrustedSigners: ").append(getTrustedSigners()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getPriceClass() != null)
-            sb.append("PriceClass: " + getPriceClass() + ",");
+            sb.append("PriceClass: ").append(getPriceClass()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }

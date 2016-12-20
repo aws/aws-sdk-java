@@ -80,7 +80,7 @@ public class MergeDeveloperIdentitiesResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId());
+            sb.append("IdentityId: ").append(getIdentityId());
         sb.append("}");
         return sb.toString();
     }

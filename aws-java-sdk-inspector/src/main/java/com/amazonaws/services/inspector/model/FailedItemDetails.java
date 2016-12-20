@@ -171,9 +171,9 @@ public class FailedItemDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailureCode() != null)
-            sb.append("FailureCode: " + getFailureCode() + ",");
+            sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getRetryable() != null)
-            sb.append("Retryable: " + getRetryable());
+            sb.append("Retryable: ").append(getRetryable());
         sb.append("}");
         return sb.toString();
     }

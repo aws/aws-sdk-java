@@ -163,9 +163,9 @@ public class ListUserPoolsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPools() != null)
-            sb.append("UserPools: " + getUserPools() + ",");
+            sb.append("UserPools: ").append(getUserPools()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

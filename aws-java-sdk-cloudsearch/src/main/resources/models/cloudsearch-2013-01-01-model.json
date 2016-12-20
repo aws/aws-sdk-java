@@ -19,16 +19,25 @@
       "documentation" : "<p>Indexes the search suggestions. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters\">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -58,16 +67,25 @@
       "documentation" : "<p>Creates a new search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html\" target=\"_blank\">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
@@ -97,26 +115,43 @@
       "documentation" : "<p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -146,26 +181,43 @@
       "documentation" : "<p>Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -195,26 +247,43 @@
       "documentation" : "<p>Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -244,26 +313,43 @@
       "documentation" : "<p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -293,21 +379,34 @@
       "documentation" : "<p>Deletes an analysis scheme. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -337,11 +436,16 @@
       "documentation" : "<p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html\" target=\"_blank\">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
@@ -371,21 +475,34 @@
       "documentation" : "<p>Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -415,21 +532,34 @@
       "documentation" : "<p>Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html\" target=\"_blank\">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -459,21 +589,34 @@
       "documentation" : "<p>Deletes a suggester. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -503,16 +646,25 @@
       "documentation" : "<p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html\" target=\"_blank\">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -542,31 +694,52 @@
       "documentation" : "<p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted an operation which is not enabled.</p>",
+        "error" : {
+          "code" : "DisabledAction",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "DisabledOperationException"
@@ -596,11 +769,16 @@
       "documentation" : "<p>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a <code>matchall</code> request to your domain's search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
@@ -630,16 +808,25 @@
       "documentation" : "<p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html\" target=\"_blank\">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -669,16 +856,25 @@
       "documentation" : "<p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html\" target=\"_blank\">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -708,16 +904,25 @@
       "documentation" : "<p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -747,16 +952,25 @@
       "documentation" : "<p>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -786,16 +1000,25 @@
       "documentation" : "<p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html\" target=\"_blank\">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -825,16 +1048,25 @@
       "documentation" : "<p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
@@ -864,6 +1096,7 @@
       "documentation" : "<p>Lists all search domains owned by an account.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
@@ -888,31 +1121,52 @@
       "documentation" : "<p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\" target=\"_blank\">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted an operation which is not enabled.</p>",
+        "error" : {
+          "code" : "DisabledAction",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "DisabledOperationException"
@@ -942,26 +1196,43 @@
       "documentation" : "<p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html\" target=\"_blank\">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
@@ -991,26 +1262,43 @@
       "documentation" : "<p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html\" target=\"_blank\"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>",
       "errors" : [ {
         "documentation" : "<p>An error occurred while processing the request.</p>",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BaseException"
       }, {
         "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
+        "error" : {
+          "code" : "InternalException",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InternalException"
       }, {
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
+        "error" : {
+          "code" : "InvalidType",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidTypeException"
@@ -1047,7 +1335,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1068,7 +1356,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1137,7 +1425,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1306,7 +1594,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1387,7 +1675,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1504,7 +1792,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3270,7 +3558,8 @@
       "documentation" : "<p>The request was rejected because it attempted an operation which is not enabled.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DisabledAction"
+        "code" : "DisabledAction",
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -3360,7 +3649,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3381,7 +3670,7 @@
       "key" : null,
       "max" : 28,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 3,
       "pattern" : "[a-z][a-z0-9\\-]+",
       "payload" : null,
@@ -3414,7 +3703,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3447,7 +3736,7 @@
       },
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3683,7 +3972,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3704,7 +3993,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3912,7 +4201,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "([a-z][a-z0-9_]*\\*?|\\*[a-z0-9_]*)",
       "payload" : null,
@@ -3945,7 +4234,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3966,7 +4255,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3987,7 +4276,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4116,7 +4405,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4137,7 +4426,7 @@
       "key" : null,
       "max" : 10240,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4158,7 +4447,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[a-z][a-z0-9_]*",
       "payload" : null,
@@ -4179,7 +4468,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "\\s*[a-z*][a-z0-9_]*\\*?\\s*(,\\s*[a-z*][a-z0-9_]*\\*?\\s*)*",
       "payload" : null,
@@ -4212,7 +4501,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4233,7 +4522,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4575,7 +4864,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4596,7 +4885,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4617,7 +4906,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4819,7 +5108,8 @@
       "documentation" : "<p>An internal error occurred while processing the request. If this problem persists, report an issue from the <a href=\"http://status.aws.amazon.com/\" target=\"_blank\">Service Health Dashboard</a>.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InternalException"
+        "code" : "InternalException",
+        "httpStatusCode" : 500
       },
       "exception" : true,
       "fault" : false,
@@ -4842,7 +5132,8 @@
       "documentation" : "<p>The request was rejected because it specified an invalid type definition.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidType"
+        "code" : "InvalidType",
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -4965,7 +5256,8 @@
       "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
       "enum" : null,
       "error" : {
-        "code" : "LimitExceeded"
+        "code" : "LimitExceeded",
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -5264,7 +5556,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5285,7 +5577,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5306,7 +5598,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5327,7 +5619,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5348,7 +5640,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5456,7 +5748,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5477,7 +5769,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5498,7 +5790,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5513,7 +5805,8 @@
       "documentation" : "<p>The request was rejected because it attempted to reference a resource that does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ResourceNotFound"
+        "code" : "ResourceNotFound",
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -5651,7 +5944,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5707,7 +6000,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5728,7 +6021,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[a-z][a-z0-9_]*",
       "payload" : null,
@@ -5761,7 +6054,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5782,7 +6075,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5851,7 +6144,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5932,7 +6225,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6140,7 +6433,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6410,7 +6703,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6431,7 +6724,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "[\\S]+",
       "payload" : null,

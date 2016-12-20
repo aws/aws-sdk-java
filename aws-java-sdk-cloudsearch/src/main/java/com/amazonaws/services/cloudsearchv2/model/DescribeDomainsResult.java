@@ -91,7 +91,7 @@ public class DescribeDomainsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainStatusList() != null)
-            sb.append("DomainStatusList: " + getDomainStatusList());
+            sb.append("DomainStatusList: ").append(getDomainStatusList());
         sb.append("}");
         return sb.toString();
     }

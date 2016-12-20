@@ -341,11 +341,11 @@ public class ListHostedZonesByNameRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName() + ",");
+            sb.append("DNSName: ").append(getDNSName()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

@@ -87,7 +87,7 @@ public class DescribeReceiptRuleResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRule() != null)
-            sb.append("Rule: " + getRule());
+            sb.append("Rule: ").append(getRule());
         sb.append("}");
         return sb.toString();
     }

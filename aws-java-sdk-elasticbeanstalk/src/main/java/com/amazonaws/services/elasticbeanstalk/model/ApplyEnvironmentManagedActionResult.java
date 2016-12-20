@@ -252,13 +252,13 @@ public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionId() != null)
-            sb.append("ActionId: " + getActionId() + ",");
+            sb.append("ActionId: ").append(getActionId()).append(",");
         if (getActionDescription() != null)
-            sb.append("ActionDescription: " + getActionDescription() + ",");
+            sb.append("ActionDescription: ").append(getActionDescription()).append(",");
         if (getActionType() != null)
-            sb.append("ActionType: " + getActionType() + ",");
+            sb.append("ActionType: ").append(getActionType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

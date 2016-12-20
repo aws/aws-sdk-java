@@ -361,17 +361,17 @@ public class Commit implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTreeId() != null)
-            sb.append("TreeId: " + getTreeId() + ",");
+            sb.append("TreeId: ").append(getTreeId()).append(",");
         if (getParents() != null)
-            sb.append("Parents: " + getParents() + ",");
+            sb.append("Parents: ").append(getParents()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getAuthor() != null)
-            sb.append("Author: " + getAuthor() + ",");
+            sb.append("Author: ").append(getAuthor()).append(",");
         if (getCommitter() != null)
-            sb.append("Committer: " + getCommitter() + ",");
+            sb.append("Committer: ").append(getCommitter()).append(",");
         if (getAdditionalData() != null)
-            sb.append("AdditionalData: " + getAdditionalData());
+            sb.append("AdditionalData: ").append(getAdditionalData());
         sb.append("}");
         return sb.toString();
     }

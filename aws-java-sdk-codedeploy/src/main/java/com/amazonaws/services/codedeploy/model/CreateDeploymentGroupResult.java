@@ -80,7 +80,7 @@ public class CreateDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentGroupId() != null)
-            sb.append("DeploymentGroupId: " + getDeploymentGroupId());
+            sb.append("DeploymentGroupId: ").append(getDeploymentGroupId());
         sb.append("}");
         return sb.toString();
     }

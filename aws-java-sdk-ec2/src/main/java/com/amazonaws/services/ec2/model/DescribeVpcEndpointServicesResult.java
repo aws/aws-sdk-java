@@ -167,9 +167,9 @@ public class DescribeVpcEndpointServicesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServiceNames() != null)
-            sb.append("ServiceNames: " + getServiceNames() + ",");
+            sb.append("ServiceNames: ").append(getServiceNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -94,7 +94,7 @@ public class DescribeStreamResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamDescription() != null)
-            sb.append("StreamDescription: " + getStreamDescription());
+            sb.append("StreamDescription: ").append(getStreamDescription());
         sb.append("}");
         return sb.toString();
     }

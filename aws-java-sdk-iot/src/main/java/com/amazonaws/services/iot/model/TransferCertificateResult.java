@@ -80,7 +80,7 @@ public class TransferCertificateResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTransferredCertificateArn() != null)
-            sb.append("TransferredCertificateArn: " + getTransferredCertificateArn());
+            sb.append("TransferredCertificateArn: ").append(getTransferredCertificateArn());
         sb.append("}");
         return sb.toString();
     }

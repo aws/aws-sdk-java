@@ -81,7 +81,7 @@ public class DeleteCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId());
         sb.append("}");
         return sb.toString();
     }

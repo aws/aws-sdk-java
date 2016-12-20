@@ -126,9 +126,9 @@ public class PhaseContext implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

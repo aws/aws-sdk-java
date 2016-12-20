@@ -51,10 +51,8 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
 
         String uriResourcePath = "/2016-11-25/distribution/{DistributionId}/invalidation";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DistributionId}",
-                (createInvalidationRequest.getDistributionId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(createInvalidationRequest.getDistributionId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
+                createInvalidationRequest.getDistributionId());
         request.setResourcePath(uriResourcePath);
 
         try {

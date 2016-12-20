@@ -165,9 +165,9 @@ public class DescribeRdsDbInstancesRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getRdsDbInstanceArns() != null)
-            sb.append("RdsDbInstanceArns: " + getRdsDbInstanceArns());
+            sb.append("RdsDbInstanceArns: ").append(getRdsDbInstanceArns());
         sb.append("}");
         return sb.toString();
     }

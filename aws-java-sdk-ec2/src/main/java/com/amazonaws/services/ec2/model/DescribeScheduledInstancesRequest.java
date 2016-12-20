@@ -549,15 +549,15 @@ public class DescribeScheduledInstancesRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledInstanceIds() != null)
-            sb.append("ScheduledInstanceIds: " + getScheduledInstanceIds() + ",");
+            sb.append("ScheduledInstanceIds: ").append(getScheduledInstanceIds()).append(",");
         if (getSlotStartTimeRange() != null)
-            sb.append("SlotStartTimeRange: " + getSlotStartTimeRange() + ",");
+            sb.append("SlotStartTimeRange: ").append(getSlotStartTimeRange()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

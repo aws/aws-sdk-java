@@ -111,7 +111,7 @@ public class DeleteRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
         return sb.toString();
     }

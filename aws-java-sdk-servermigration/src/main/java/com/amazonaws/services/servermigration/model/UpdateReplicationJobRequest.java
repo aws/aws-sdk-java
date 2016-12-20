@@ -223,17 +223,17 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJobId() != null)
-            sb.append("ReplicationJobId: " + getReplicationJobId() + ",");
+            sb.append("ReplicationJobId: ").append(getReplicationJobId()).append(",");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getNextReplicationRunStartTime() != null)
-            sb.append("NextReplicationRunStartTime: " + getNextReplicationRunStartTime() + ",");
+            sb.append("NextReplicationRunStartTime: ").append(getNextReplicationRunStartTime()).append(",");
         if (getLicenseType() != null)
-            sb.append("LicenseType: " + getLicenseType() + ",");
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

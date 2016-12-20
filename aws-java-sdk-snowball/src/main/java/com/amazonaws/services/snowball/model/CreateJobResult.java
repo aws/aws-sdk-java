@@ -81,7 +81,7 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }

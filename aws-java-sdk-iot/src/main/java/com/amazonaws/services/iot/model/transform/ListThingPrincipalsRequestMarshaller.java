@@ -61,10 +61,7 @@ public class ListThingPrincipalsRequestMarshaller implements Marshaller<Request<
 
         String uriResourcePath = "/things/{thingName}/principals";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (listThingPrincipalsRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listThingPrincipalsRequest.getThingName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", listThingPrincipalsRequest.getThingName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

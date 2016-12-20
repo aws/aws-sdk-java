@@ -152,7 +152,7 @@ public class DescribeEC2InstanceLimitsRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEC2InstanceType() != null)
-            sb.append("EC2InstanceType: " + getEC2InstanceType());
+            sb.append("EC2InstanceType: ").append(getEC2InstanceType());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,8 @@ public class DeleteFileSystemRequestMarshaller implements Marshaller<Request<Del
 
         String uriResourcePath = "/2015-02-01/file-systems/{FileSystemId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FileSystemId}",
-                (deleteFileSystemRequest.getFileSystemId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteFileSystemRequest.getFileSystemId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FileSystemId",
+                deleteFileSystemRequest.getFileSystemId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

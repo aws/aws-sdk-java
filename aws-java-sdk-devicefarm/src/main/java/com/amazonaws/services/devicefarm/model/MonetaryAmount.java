@@ -159,9 +159,9 @@ public class MonetaryAmount implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAmount() != null)
-            sb.append("Amount: " + getAmount() + ",");
+            sb.append("Amount: ").append(getAmount()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode());
+            sb.append("CurrencyCode: ").append(getCurrencyCode());
         sb.append("}");
         return sb.toString();
     }

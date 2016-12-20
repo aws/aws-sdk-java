@@ -342,17 +342,17 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getHistoryItemType() != null)
-            sb.append("HistoryItemType: " + getHistoryItemType() + ",");
+            sb.append("HistoryItemType: ").append(getHistoryItemType()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getEndDate() != null)
-            sb.append("EndDate: " + getEndDate() + ",");
+            sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

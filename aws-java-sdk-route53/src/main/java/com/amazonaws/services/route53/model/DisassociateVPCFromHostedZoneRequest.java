@@ -177,11 +177,11 @@ public class DisassociateVPCFromHostedZoneRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getVPC() != null)
-            sb.append("VPC: " + getVPC() + ",");
+            sb.append("VPC: ").append(getVPC()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }

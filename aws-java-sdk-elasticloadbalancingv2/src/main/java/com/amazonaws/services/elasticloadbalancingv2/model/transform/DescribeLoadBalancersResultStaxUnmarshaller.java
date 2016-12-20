@@ -45,6 +45,11 @@ public class DescribeLoadBalancersResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("LoadBalancers", targetDepth)) {
+                    describeLoadBalancersResult.withLoadBalancers(new ArrayList<LoadBalancer>());
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancers/member", targetDepth)) {
                     describeLoadBalancersResult.withLoadBalancers(LoadBalancerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

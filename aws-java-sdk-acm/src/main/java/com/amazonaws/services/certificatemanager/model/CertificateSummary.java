@@ -179,9 +179,9 @@ public class CertificateSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName());
+            sb.append("DomainName: ").append(getDomainName());
         sb.append("}");
         return sb.toString();
     }

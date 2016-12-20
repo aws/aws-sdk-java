@@ -165,11 +165,11 @@ public class GetIdentityPoolConfigurationResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getPushSync() != null)
-            sb.append("PushSync: " + getPushSync() + ",");
+            sb.append("PushSync: ").append(getPushSync()).append(",");
         if (getCognitoStreams() != null)
-            sb.append("CognitoStreams: " + getCognitoStreams());
+            sb.append("CognitoStreams: ").append(getCognitoStreams());
         sb.append("}");
         return sb.toString();
     }

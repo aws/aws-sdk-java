@@ -113,7 +113,7 @@ public class GetCheckerIpRangesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckerIpRanges() != null)
-            sb.append("CheckerIpRanges: " + getCheckerIpRanges());
+            sb.append("CheckerIpRanges: ").append(getCheckerIpRanges());
         sb.append("}");
         return sb.toString();
     }

@@ -229,11 +229,11 @@ public class EnableStageTransitionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getTransitionType() != null)
-            sb.append("TransitionType: " + getTransitionType());
+            sb.append("TransitionType: ").append(getTransitionType());
         sb.append("}");
         return sb.toString();
     }

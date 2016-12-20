@@ -486,13 +486,13 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getAddTags() != null)
-            sb.append("AddTags: " + getAddTags() + ",");
+            sb.append("AddTags: ").append(getAddTags()).append(",");
         if (getRemoveTagKeys() != null)
-            sb.append("RemoveTagKeys: " + getRemoveTagKeys());
+            sb.append("RemoveTagKeys: ").append(getRemoveTagKeys());
         sb.append("}");
         return sb.toString();
     }

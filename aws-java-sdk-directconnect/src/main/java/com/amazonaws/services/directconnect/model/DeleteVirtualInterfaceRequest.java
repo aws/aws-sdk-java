@@ -62,7 +62,7 @@ public class DeleteVirtualInterfaceRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceId() != null)
-            sb.append("VirtualInterfaceId: " + getVirtualInterfaceId());
+            sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId());
         sb.append("}");
         return sb.toString();
     }

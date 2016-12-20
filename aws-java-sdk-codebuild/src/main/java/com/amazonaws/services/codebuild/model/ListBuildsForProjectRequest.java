@@ -355,11 +355,11 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectName() != null)
-            sb.append("ProjectName: " + getProjectName() + ",");
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getSortOrder() != null)
-            sb.append("SortOrder: " + getSortOrder() + ",");
+            sb.append("SortOrder: ").append(getSortOrder()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

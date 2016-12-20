@@ -176,11 +176,11 @@ public class SetReceiptRulePositionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName() + ",");
+            sb.append("RuleSetName: ").append(getRuleSetName()).append(",");
         if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName() + ",");
+            sb.append("RuleName: ").append(getRuleName()).append(",");
         if (getAfter() != null)
-            sb.append("After: " + getAfter());
+            sb.append("After: ").append(getAfter());
         sb.append("}");
         return sb.toString();
     }

@@ -335,13 +335,13 @@ public class PatchOperation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOp() != null)
-            sb.append("Op: " + getOp() + ",");
+            sb.append("Op: ").append(getOp()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getFrom() != null)
-            sb.append("From: " + getFrom());
+            sb.append("From: ").append(getFrom());
         sb.append("}");
         return sb.toString();
     }

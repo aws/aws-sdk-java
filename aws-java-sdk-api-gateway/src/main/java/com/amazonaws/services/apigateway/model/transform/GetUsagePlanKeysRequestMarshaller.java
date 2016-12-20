@@ -61,10 +61,7 @@ public class GetUsagePlanKeysRequestMarshaller implements Marshaller<Request<Get
 
         String uriResourcePath = "/usageplans/{usageplanId}/keys";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{usageplanId}",
-                (getUsagePlanKeysRequest.getUsagePlanId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getUsagePlanKeysRequest.getUsagePlanId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId", getUsagePlanKeysRequest.getUsagePlanId());
         request.setResourcePath(uriResourcePath);
 
         if (getUsagePlanKeysRequest.getPosition() != null) {

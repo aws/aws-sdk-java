@@ -369,15 +369,15 @@ public class WebACL implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId() + ",");
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getDefaultAction() != null)
-            sb.append("DefaultAction: " + getDefaultAction() + ",");
+            sb.append("DefaultAction: ").append(getDefaultAction()).append(",");
         if (getRules() != null)
-            sb.append("Rules: " + getRules());
+            sb.append("Rules: ").append(getRules());
         sb.append("}");
         return sb.toString();
     }

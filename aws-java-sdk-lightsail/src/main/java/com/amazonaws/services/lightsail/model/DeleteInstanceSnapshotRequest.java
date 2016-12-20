@@ -79,7 +79,7 @@ public class DeleteInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceSnapshotName() != null)
-            sb.append("InstanceSnapshotName: " + getInstanceSnapshotName());
+            sb.append("InstanceSnapshotName: ").append(getInstanceSnapshotName());
         sb.append("}");
         return sb.toString();
     }

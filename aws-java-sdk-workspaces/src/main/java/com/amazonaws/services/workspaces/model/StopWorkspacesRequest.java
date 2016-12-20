@@ -112,7 +112,7 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStopWorkspaceRequests() != null)
-            sb.append("StopWorkspaceRequests: " + getStopWorkspaceRequests());
+            sb.append("StopWorkspaceRequests: ").append(getStopWorkspaceRequests());
         sb.append("}");
         return sb.toString();
     }

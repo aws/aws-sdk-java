@@ -45,6 +45,11 @@ public class ListUserPoliciesResultStaxUnmarshaller implements Unmarshaller<List
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("PolicyNames", targetDepth)) {
+                    listUserPoliciesResult.withPolicyNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyNames/member", targetDepth)) {
                     listUserPoliciesResult.withPolicyNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

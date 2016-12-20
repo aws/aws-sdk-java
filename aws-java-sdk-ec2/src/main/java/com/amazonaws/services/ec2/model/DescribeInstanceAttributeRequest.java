@@ -241,9 +241,9 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute());
+            sb.append("Attribute: ").append(getAttribute());
         sb.append("}");
         return sb.toString();
     }

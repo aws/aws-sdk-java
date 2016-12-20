@@ -404,17 +404,17 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListenerArn() != null)
-            sb.append("ListenerArn: " + getListenerArn() + ",");
+            sb.append("ListenerArn: ").append(getListenerArn()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getSslPolicy() != null)
-            sb.append("SslPolicy: " + getSslPolicy() + ",");
+            sb.append("SslPolicy: ").append(getSslPolicy()).append(",");
         if (getCertificates() != null)
-            sb.append("Certificates: " + getCertificates() + ",");
+            sb.append("Certificates: ").append(getCertificates()).append(",");
         if (getDefaultActions() != null)
-            sb.append("DefaultActions: " + getDefaultActions());
+            sb.append("DefaultActions: ").append(getDefaultActions());
         sb.append("}");
         return sb.toString();
     }

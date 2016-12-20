@@ -22,7 +22,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attributes are set.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -41,19 +41,20 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
-     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     * Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
+     * KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
-     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid values:
+     * An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -65,8 +66,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
-     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0 to 20
+     * (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
@@ -84,8 +86,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
+     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
@@ -159,10 +161,40 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>,
-     * <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-     * <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessages</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreatedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModifiedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueArn</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
 
@@ -178,7 +210,7 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * methods to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attributes are set.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param attributes
@@ -192,20 +224,21 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
-     *        delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     *        delayed. Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
-     *        KiB).
+     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default
+     *        is 262,144 (256 KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
-     *        integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid
+     *        values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600
+     *        (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -217,8 +250,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
-     *        action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     *        <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0
+     *        to 20 (seconds). The default is 0.
      *        </p>
      *        </li>
      *        <li>
@@ -236,8 +270,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *        hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
+     *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
@@ -312,10 +346,39 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters that are specified (such as
-     *        <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>,
-     *        <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>,
-     *        <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     *        Any other valid special request parameters (such as the following) are ignored:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessages</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessagesDelayed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedTimestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastModifiedTimestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QueueArn</code>
+     *        </p>
+     *        </li>
      */
     public SetQueueAttributesRequest(String queueUrl, java.util.Map<String, String> attributes) {
         setQueueUrl(queueUrl);
@@ -324,14 +387,14 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attributes are set.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attributes are set.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -342,13 +405,13 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attributes are set.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue whose attributes are set.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -359,14 +422,14 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attributes are set.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attributes are set.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -389,19 +452,20 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
-     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     * Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
+     * KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
-     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid values:
+     * An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -413,8 +477,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
-     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0 to 20
+     * (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
@@ -432,8 +497,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
+     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
@@ -507,10 +572,40 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>,
-     * <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-     * <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessages</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreatedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModifiedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueArn</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A map of attributes to set.</p>
      *         <p>
@@ -521,20 +616,21 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
-     *         delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     *         delayed. Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *         rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144
-     *         (256 KiB).
+     *         rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default
+     *         is 262,144 (256 KiB).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
-     *         integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     *         <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid
+     *         values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is
+     *         345,600 (4 days).
      *         </p>
      *         </li>
      *         <li>
@@ -546,8 +642,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
-     *         action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     *         <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     *         <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from
+     *         0 to 20 (seconds). The default is 0.
      *         </p>
      *         </li>
      *         <li>
@@ -565,8 +662,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </note></li>
      *         <li>
      *         <p>
-     *         <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *         hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *         <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
+     *         43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *         >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
@@ -642,10 +739,39 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         </ul>
      *         <p>
-     *         Any other valid special request parameters that are specified (such as
-     *         <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>,
-     *         <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>,
-     *         <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     *         Any other valid special request parameters (such as the following) are ignored:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ApproximateNumberOfMessages</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ApproximateNumberOfMessagesDelayed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ApproximateNumberOfMessagesNotVisible</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CreatedTimestamp</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LastModifiedTimestamp</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>QueueArn</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -667,19 +793,20 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
-     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     * Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
+     * KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
-     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid values:
+     * An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -691,8 +818,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
-     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0 to 20
+     * (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
@@ -710,8 +838,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
+     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
@@ -785,10 +913,40 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>,
-     * <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-     * <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessages</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreatedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModifiedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueArn</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes to set.</p>
@@ -800,20 +958,21 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
-     *        delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     *        delayed. Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
-     *        KiB).
+     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default
+     *        is 262,144 (256 KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
-     *        integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid
+     *        values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600
+     *        (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -825,8 +984,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
-     *        action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     *        <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0
+     *        to 20 (seconds). The default is 0.
      *        </p>
      *        </li>
      *        <li>
@@ -844,8 +1004,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *        hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
+     *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
@@ -920,10 +1080,39 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters that are specified (such as
-     *        <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>,
-     *        <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>,
-     *        <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     *        Any other valid special request parameters (such as the following) are ignored:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessages</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessagesDelayed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedTimestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastModifiedTimestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QueueArn</code>
+     *        </p>
+     *        </li>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -942,19 +1131,20 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed.
-     * An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     * Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it.
-     * An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).
+     * Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
+     * KiB).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer
-     * representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     * <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid values:
+     * An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600 (4 days).
      * </p>
      * </li>
      * <li>
@@ -966,8 +1156,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will
-     * wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     * <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0 to 20
+     * (seconds). The default is 0.
      * </p>
      * </li>
      * <li>
@@ -985,8 +1176,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </note></li>
      * <li>
      * <p>
-     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The
-     * default is 30. For more information about the visibility timeout, see <a
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to 43,200
+     * (12 hours). The default is 30. For more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      * >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
@@ -1060,10 +1251,40 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>,
-     * <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-     * <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessages</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreatedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModifiedTimestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QueueArn</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes to set.</p>
@@ -1075,20 +1296,21 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is
-     *        delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
+     *        delayed. Valid values: An integer from 0 to 900 (15 minutes). The default is 0 (zero).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS
-     *        rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256
-     *        KiB).
+     *        rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default
+     *        is 262,144 (256 KiB).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An
-     *        integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).
+     *        <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. Valid
+     *        values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). The default is 345,600
+     *        (4 days).
      *        </p>
      *        </li>
      *        <li>
@@ -1100,8 +1322,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
-     *        action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a
+     *        <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: an integer from 0
+     *        to 20 (seconds). The default is 0.
      *        </p>
      *        </li>
      *        <li>
@@ -1119,8 +1342,8 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </note></li>
      *        <li>
      *        <p>
-     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12
-     *        hours). The default is 30. For more information about the visibility timeout, see <a href=
+     *        <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values: an integer from 0 to
+     *        43,200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
      *        >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
@@ -1195,10 +1418,39 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters that are specified (such as
-     *        <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>,
-     *        <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>,
-     *        <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.
+     *        Any other valid special request parameters (such as the following) are ignored:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessages</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessagesDelayed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ApproximateNumberOfMessagesNotVisible</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedTimestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LastModifiedTimestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QueueArn</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1240,9 +1492,9 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

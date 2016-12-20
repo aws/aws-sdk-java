@@ -61,18 +61,9 @@ public class DeleteMethodRequestMarshaller implements Marshaller<Request<DeleteM
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (deleteMethodRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteMethodRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{resource_id}",
-                        (deleteMethodRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteMethodRequest.getResourceId()),
-                                false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{http_method}",
-                        (deleteMethodRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteMethodRequest.getHttpMethod()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteMethodRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", deleteMethodRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", deleteMethodRequest.getHttpMethod());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

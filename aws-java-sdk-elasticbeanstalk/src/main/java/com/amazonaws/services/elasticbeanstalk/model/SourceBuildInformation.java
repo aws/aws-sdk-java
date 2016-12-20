@@ -590,11 +590,11 @@ public class SourceBuildInformation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType() + ",");
+            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getSourceRepository() != null)
-            sb.append("SourceRepository: " + getSourceRepository() + ",");
+            sb.append("SourceRepository: ").append(getSourceRepository()).append(",");
         if (getSourceLocation() != null)
-            sb.append("SourceLocation: " + getSourceLocation());
+            sb.append("SourceLocation: ").append(getSourceLocation());
         sb.append("}");
         return sb.toString();
     }

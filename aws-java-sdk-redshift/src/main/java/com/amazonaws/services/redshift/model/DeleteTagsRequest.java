@@ -167,9 +167,9 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: " + getTagKeys());
+            sb.append("TagKeys: ").append(getTagKeys());
         sb.append("}");
         return sb.toString();
     }

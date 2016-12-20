@@ -195,7 +195,7 @@ public class ResourceRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }

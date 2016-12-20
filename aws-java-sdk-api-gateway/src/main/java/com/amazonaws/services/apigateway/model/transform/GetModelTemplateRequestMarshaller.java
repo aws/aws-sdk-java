@@ -61,16 +61,8 @@ public class GetModelTemplateRequestMarshaller implements Marshaller<Request<Get
 
         String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}/default_template";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (getModelTemplateRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(getModelTemplateRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{model_name}",
-                        (getModelTemplateRequest.getModelName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(getModelTemplateRequest.getModelName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getModelTemplateRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "model_name", getModelTemplateRequest.getModelName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

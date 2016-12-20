@@ -127,9 +127,9 @@ public class DescribeUserImportJobRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }

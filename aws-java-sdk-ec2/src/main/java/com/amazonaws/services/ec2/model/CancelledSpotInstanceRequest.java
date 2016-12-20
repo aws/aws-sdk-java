@@ -159,9 +159,9 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotInstanceRequestId() != null)
-            sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");
+            sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

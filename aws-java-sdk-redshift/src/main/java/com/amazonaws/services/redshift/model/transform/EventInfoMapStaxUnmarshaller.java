@@ -50,6 +50,11 @@ public class EventInfoMapStaxUnmarshaller implements Unmarshaller<EventInfoMap, 
                     continue;
                 }
 
+                if (context.testExpression("EventCategories", targetDepth)) {
+                    eventInfoMap.withEventCategories(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("EventCategories/EventCategory", targetDepth)) {
                     eventInfoMap.withEventCategories(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

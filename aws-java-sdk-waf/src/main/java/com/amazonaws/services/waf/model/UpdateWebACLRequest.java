@@ -446,13 +446,13 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId() + ",");
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates() + ",");
+            sb.append("Updates: ").append(getUpdates()).append(",");
         if (getDefaultAction() != null)
-            sb.append("DefaultAction: " + getDefaultAction());
+            sb.append("DefaultAction: ").append(getDefaultAction());
         sb.append("}");
         return sb.toString();
     }

@@ -61,8 +61,7 @@ public class UpdatePipelineRequestMarshaller implements Marshaller<Request<Updat
 
         String uriResourcePath = "/2012-09-25/pipelines/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (updatePipelineRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updatePipelineRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updatePipelineRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {

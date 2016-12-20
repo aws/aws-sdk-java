@@ -78,7 +78,7 @@ public class CreateDomainEntryResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation());
+            sb.append("Operation: ").append(getOperation());
         sb.append("}");
         return sb.toString();
     }

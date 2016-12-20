@@ -79,7 +79,7 @@ public class GetInstanceRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName());
         sb.append("}");
         return sb.toString();
     }

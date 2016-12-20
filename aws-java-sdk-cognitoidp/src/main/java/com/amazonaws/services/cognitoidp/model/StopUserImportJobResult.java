@@ -80,7 +80,7 @@ public class StopUserImportJobResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserImportJob() != null)
-            sb.append("UserImportJob: " + getUserImportJob());
+            sb.append("UserImportJob: ").append(getUserImportJob());
         sb.append("}");
         return sb.toString();
     }

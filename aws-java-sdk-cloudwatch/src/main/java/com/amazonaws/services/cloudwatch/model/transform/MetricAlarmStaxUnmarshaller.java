@@ -70,13 +70,28 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
                     continue;
                 }
 
+                if (context.testExpression("OKActions", targetDepth)) {
+                    metricAlarm.withOKActions(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("OKActions/member", targetDepth)) {
                     metricAlarm.withOKActions(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("AlarmActions", targetDepth)) {
+                    metricAlarm.withAlarmActions(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AlarmActions/member", targetDepth)) {
                     metricAlarm.withAlarmActions(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("InsufficientDataActions", targetDepth)) {
+                    metricAlarm.withInsufficientDataActions(new ArrayList<String>());
                     continue;
                 }
 
@@ -122,6 +137,11 @@ public class MetricAlarmStaxUnmarshaller implements Unmarshaller<MetricAlarm, St
 
                 if (context.testExpression("ExtendedStatistic", targetDepth)) {
                     metricAlarm.setExtendedStatistic(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Dimensions", targetDepth)) {
+                    metricAlarm.withDimensions(new ArrayList<Dimension>());
                     continue;
                 }
 

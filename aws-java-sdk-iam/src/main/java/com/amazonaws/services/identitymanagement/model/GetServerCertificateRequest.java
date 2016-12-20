@@ -133,7 +133,7 @@ public class GetServerCertificateRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificateName() != null)
-            sb.append("ServerCertificateName: " + getServerCertificateName());
+            sb.append("ServerCertificateName: ").append(getServerCertificateName());
         sb.append("}");
         return sb.toString();
     }

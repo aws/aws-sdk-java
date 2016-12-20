@@ -511,11 +511,11 @@ public class ShippingDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShippingOption() != null)
-            sb.append("ShippingOption: " + getShippingOption() + ",");
+            sb.append("ShippingOption: ").append(getShippingOption()).append(",");
         if (getInboundShipment() != null)
-            sb.append("InboundShipment: " + getInboundShipment() + ",");
+            sb.append("InboundShipment: ").append(getInboundShipment()).append(",");
         if (getOutboundShipment() != null)
-            sb.append("OutboundShipment: " + getOutboundShipment());
+            sb.append("OutboundShipment: ").append(getOutboundShipment());
         sb.append("}");
         return sb.toString();
     }

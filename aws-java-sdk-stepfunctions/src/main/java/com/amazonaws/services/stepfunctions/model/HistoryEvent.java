@@ -781,51 +781,51 @@ public class HistoryEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getPreviousEventId() != null)
-            sb.append("PreviousEventId: " + getPreviousEventId() + ",");
+            sb.append("PreviousEventId: ").append(getPreviousEventId()).append(",");
         if (getActivityFailedEventDetails() != null)
-            sb.append("ActivityFailedEventDetails: " + getActivityFailedEventDetails() + ",");
+            sb.append("ActivityFailedEventDetails: ").append(getActivityFailedEventDetails()).append(",");
         if (getActivityScheduleFailedEventDetails() != null)
-            sb.append("ActivityScheduleFailedEventDetails: " + getActivityScheduleFailedEventDetails() + ",");
+            sb.append("ActivityScheduleFailedEventDetails: ").append(getActivityScheduleFailedEventDetails()).append(",");
         if (getActivityScheduledEventDetails() != null)
-            sb.append("ActivityScheduledEventDetails: " + getActivityScheduledEventDetails() + ",");
+            sb.append("ActivityScheduledEventDetails: ").append(getActivityScheduledEventDetails()).append(",");
         if (getActivityStartedEventDetails() != null)
-            sb.append("ActivityStartedEventDetails: " + getActivityStartedEventDetails() + ",");
+            sb.append("ActivityStartedEventDetails: ").append(getActivityStartedEventDetails()).append(",");
         if (getActivitySucceededEventDetails() != null)
-            sb.append("ActivitySucceededEventDetails: " + getActivitySucceededEventDetails() + ",");
+            sb.append("ActivitySucceededEventDetails: ").append(getActivitySucceededEventDetails()).append(",");
         if (getActivityTimedOutEventDetails() != null)
-            sb.append("ActivityTimedOutEventDetails: " + getActivityTimedOutEventDetails() + ",");
+            sb.append("ActivityTimedOutEventDetails: ").append(getActivityTimedOutEventDetails()).append(",");
         if (getExecutionFailedEventDetails() != null)
-            sb.append("ExecutionFailedEventDetails: " + getExecutionFailedEventDetails() + ",");
+            sb.append("ExecutionFailedEventDetails: ").append(getExecutionFailedEventDetails()).append(",");
         if (getExecutionStartedEventDetails() != null)
-            sb.append("ExecutionStartedEventDetails: " + getExecutionStartedEventDetails() + ",");
+            sb.append("ExecutionStartedEventDetails: ").append(getExecutionStartedEventDetails()).append(",");
         if (getExecutionSucceededEventDetails() != null)
-            sb.append("ExecutionSucceededEventDetails: " + getExecutionSucceededEventDetails() + ",");
+            sb.append("ExecutionSucceededEventDetails: ").append(getExecutionSucceededEventDetails()).append(",");
         if (getExecutionAbortedEventDetails() != null)
-            sb.append("ExecutionAbortedEventDetails: " + getExecutionAbortedEventDetails() + ",");
+            sb.append("ExecutionAbortedEventDetails: ").append(getExecutionAbortedEventDetails()).append(",");
         if (getExecutionTimedOutEventDetails() != null)
-            sb.append("ExecutionTimedOutEventDetails: " + getExecutionTimedOutEventDetails() + ",");
+            sb.append("ExecutionTimedOutEventDetails: ").append(getExecutionTimedOutEventDetails()).append(",");
         if (getLambdaFunctionFailedEventDetails() != null)
-            sb.append("LambdaFunctionFailedEventDetails: " + getLambdaFunctionFailedEventDetails() + ",");
+            sb.append("LambdaFunctionFailedEventDetails: ").append(getLambdaFunctionFailedEventDetails()).append(",");
         if (getLambdaFunctionScheduleFailedEventDetails() != null)
-            sb.append("LambdaFunctionScheduleFailedEventDetails: " + getLambdaFunctionScheduleFailedEventDetails() + ",");
+            sb.append("LambdaFunctionScheduleFailedEventDetails: ").append(getLambdaFunctionScheduleFailedEventDetails()).append(",");
         if (getLambdaFunctionScheduledEventDetails() != null)
-            sb.append("LambdaFunctionScheduledEventDetails: " + getLambdaFunctionScheduledEventDetails() + ",");
+            sb.append("LambdaFunctionScheduledEventDetails: ").append(getLambdaFunctionScheduledEventDetails()).append(",");
         if (getLambdaFunctionStartFailedEventDetails() != null)
-            sb.append("LambdaFunctionStartFailedEventDetails: " + getLambdaFunctionStartFailedEventDetails() + ",");
+            sb.append("LambdaFunctionStartFailedEventDetails: ").append(getLambdaFunctionStartFailedEventDetails()).append(",");
         if (getLambdaFunctionSucceededEventDetails() != null)
-            sb.append("LambdaFunctionSucceededEventDetails: " + getLambdaFunctionSucceededEventDetails() + ",");
+            sb.append("LambdaFunctionSucceededEventDetails: ").append(getLambdaFunctionSucceededEventDetails()).append(",");
         if (getLambdaFunctionTimedOutEventDetails() != null)
-            sb.append("LambdaFunctionTimedOutEventDetails: " + getLambdaFunctionTimedOutEventDetails() + ",");
+            sb.append("LambdaFunctionTimedOutEventDetails: ").append(getLambdaFunctionTimedOutEventDetails()).append(",");
         if (getStateEnteredEventDetails() != null)
-            sb.append("StateEnteredEventDetails: " + getStateEnteredEventDetails() + ",");
+            sb.append("StateEnteredEventDetails: ").append(getStateEnteredEventDetails()).append(",");
         if (getStateExitedEventDetails() != null)
-            sb.append("StateExitedEventDetails: " + getStateExitedEventDetails());
+            sb.append("StateExitedEventDetails: ").append(getStateExitedEventDetails());
         sb.append("}");
         return sb.toString();
     }

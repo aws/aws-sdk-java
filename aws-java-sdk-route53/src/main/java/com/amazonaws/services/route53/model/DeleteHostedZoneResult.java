@@ -80,7 +80,7 @@ public class DeleteHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChangeInfo() != null)
-            sb.append("ChangeInfo: " + getChangeInfo());
+            sb.append("ChangeInfo: ").append(getChangeInfo());
         sb.append("}");
         return sb.toString();
     }

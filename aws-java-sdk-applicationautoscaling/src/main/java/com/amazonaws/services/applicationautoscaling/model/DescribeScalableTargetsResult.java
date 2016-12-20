@@ -161,9 +161,9 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScalableTargets() != null)
-            sb.append("ScalableTargets: " + getScalableTargets() + ",");
+            sb.append("ScalableTargets: ").append(getScalableTargets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

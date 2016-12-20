@@ -423,11 +423,11 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
         if (getReservedInstancesListingId() != null)
-            sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");
+            sb.append("ReservedInstancesListingId: ").append(getReservedInstancesListingId()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

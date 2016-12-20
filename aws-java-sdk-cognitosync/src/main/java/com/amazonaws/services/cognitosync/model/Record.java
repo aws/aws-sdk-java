@@ -248,17 +248,17 @@ public class Record implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getSyncCount() != null)
-            sb.append("SyncCount: " + getSyncCount() + ",");
+            sb.append("SyncCount: ").append(getSyncCount()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getLastModifiedBy() != null)
-            sb.append("LastModifiedBy: " + getLastModifiedBy() + ",");
+            sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getDeviceLastModifiedDate() != null)
-            sb.append("DeviceLastModifiedDate: " + getDeviceLastModifiedDate());
+            sb.append("DeviceLastModifiedDate: ").append(getDeviceLastModifiedDate());
         sb.append("}");
         return sb.toString();
     }

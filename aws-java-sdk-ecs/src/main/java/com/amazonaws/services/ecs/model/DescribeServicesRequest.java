@@ -165,9 +165,9 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getServices() != null)
-            sb.append("Services: " + getServices());
+            sb.append("Services: ").append(getServices());
         sb.append("}");
         return sb.toString();
     }

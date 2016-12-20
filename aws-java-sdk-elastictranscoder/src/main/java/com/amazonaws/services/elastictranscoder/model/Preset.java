@@ -472,23 +472,23 @@ public class Preset implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getContainer() != null)
-            sb.append("Container: " + getContainer() + ",");
+            sb.append("Container: ").append(getContainer()).append(",");
         if (getAudio() != null)
-            sb.append("Audio: " + getAudio() + ",");
+            sb.append("Audio: ").append(getAudio()).append(",");
         if (getVideo() != null)
-            sb.append("Video: " + getVideo() + ",");
+            sb.append("Video: ").append(getVideo()).append(",");
         if (getThumbnails() != null)
-            sb.append("Thumbnails: " + getThumbnails() + ",");
+            sb.append("Thumbnails: ").append(getThumbnails()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

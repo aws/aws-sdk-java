@@ -463,17 +463,17 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceIds() != null)
-            sb.append("ResourceIds: " + getResourceIds() + ",");
+            sb.append("ResourceIds: ").append(getResourceIds()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getTrafficType() != null)
-            sb.append("TrafficType: " + getTrafficType() + ",");
+            sb.append("TrafficType: ").append(getTrafficType()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getDeliverLogsPermissionArn() != null)
-            sb.append("DeliverLogsPermissionArn: " + getDeliverLogsPermissionArn() + ",");
+            sb.append("DeliverLogsPermissionArn: ").append(getDeliverLogsPermissionArn()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

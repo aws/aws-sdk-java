@@ -233,11 +233,11 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials() + ",");
+            sb.append("Credentials: ").append(getCredentials()).append(",");
         if (getFederatedUser() != null)
-            sb.append("FederatedUser: " + getFederatedUser() + ",");
+            sb.append("FederatedUser: ").append(getFederatedUser()).append(",");
         if (getPackedPolicySize() != null)
-            sb.append("PackedPolicySize: " + getPackedPolicySize());
+            sb.append("PackedPolicySize: ").append(getPackedPolicySize());
         sb.append("}");
         return sb.toString();
     }

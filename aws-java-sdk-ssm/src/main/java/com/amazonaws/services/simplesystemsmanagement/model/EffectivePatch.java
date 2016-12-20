@@ -149,9 +149,9 @@ public class EffectivePatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatch() != null)
-            sb.append("Patch: " + getPatch() + ",");
+            sb.append("Patch: ").append(getPatch()).append(",");
         if (getPatchStatus() != null)
-            sb.append("PatchStatus: " + getPatchStatus());
+            sb.append("PatchStatus: ").append(getPatchStatus());
         sb.append("}");
         return sb.toString();
     }

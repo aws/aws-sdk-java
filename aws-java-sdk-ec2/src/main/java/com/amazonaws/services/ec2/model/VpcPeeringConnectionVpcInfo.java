@@ -297,15 +297,15 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrBlock() != null)
-            sb.append("CidrBlock: " + getCidrBlock() + ",");
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getIpv6CidrBlockSet() != null)
-            sb.append("Ipv6CidrBlockSet: " + getIpv6CidrBlockSet() + ",");
+            sb.append("Ipv6CidrBlockSet: ").append(getIpv6CidrBlockSet()).append(",");
         if (getPeeringOptions() != null)
-            sb.append("PeeringOptions: " + getPeeringOptions());
+            sb.append("PeeringOptions: ").append(getPeeringOptions());
         sb.append("}");
         return sb.toString();
     }

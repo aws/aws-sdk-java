@@ -415,21 +415,21 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getSnapshotIdentifier() != null)
-            sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+            sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
         if (getSourceDatabaseName() != null)
-            sb.append("SourceDatabaseName: " + getSourceDatabaseName() + ",");
+            sb.append("SourceDatabaseName: ").append(getSourceDatabaseName()).append(",");
         if (getSourceSchemaName() != null)
-            sb.append("SourceSchemaName: " + getSourceSchemaName() + ",");
+            sb.append("SourceSchemaName: ").append(getSourceSchemaName()).append(",");
         if (getSourceTableName() != null)
-            sb.append("SourceTableName: " + getSourceTableName() + ",");
+            sb.append("SourceTableName: ").append(getSourceTableName()).append(",");
         if (getTargetDatabaseName() != null)
-            sb.append("TargetDatabaseName: " + getTargetDatabaseName() + ",");
+            sb.append("TargetDatabaseName: ").append(getTargetDatabaseName()).append(",");
         if (getTargetSchemaName() != null)
-            sb.append("TargetSchemaName: " + getTargetSchemaName() + ",");
+            sb.append("TargetSchemaName: ").append(getTargetSchemaName()).append(",");
         if (getNewTableName() != null)
-            sb.append("NewTableName: " + getNewTableName());
+            sb.append("NewTableName: ").append(getNewTableName());
         sb.append("}");
         return sb.toString();
     }

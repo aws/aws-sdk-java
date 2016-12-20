@@ -640,8 +640,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
     @Override
     public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createTagsRequest.getFileSystemId()), "FileSystemId");
-
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -706,8 +704,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      */
     @Override
     public DeleteFileSystemResult deleteFileSystem(DeleteFileSystemRequest deleteFileSystemRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteFileSystemRequest.getFileSystemId()), "FileSystemId");
 
         ExecutionContext executionContext = createExecutionContext(deleteFileSystemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -794,8 +790,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
     @Override
     public DeleteMountTargetResult deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMountTargetRequest.getMountTargetId()), "MountTargetId");
-
         ExecutionContext executionContext = createExecutionContext(deleteMountTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -848,8 +842,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      */
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteTagsRequest.getFileSystemId()), "FileSystemId");
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -995,8 +987,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
     public DescribeMountTargetSecurityGroupsResult describeMountTargetSecurityGroups(
             DescribeMountTargetSecurityGroupsRequest describeMountTargetSecurityGroupsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeMountTargetSecurityGroupsRequest.getMountTargetId()), "MountTargetId");
-
         ExecutionContext executionContext = createExecutionContext(describeMountTargetSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1106,8 +1096,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
     @Override
     public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeTagsRequest.getFileSystemId()), "FileSystemId");
-
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1182,8 +1170,6 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      */
     @Override
     public ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(modifyMountTargetSecurityGroupsRequest.getMountTargetId()), "MountTargetId");
 
         ExecutionContext executionContext = createExecutionContext(modifyMountTargetSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -60,6 +60,11 @@ public class OrderableClusterOptionStaxUnmarshaller implements Unmarshaller<Orde
                     continue;
                 }
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    orderableClusterOption.withAvailabilityZones(new ArrayList<AvailabilityZone>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/AvailabilityZone", targetDepth)) {
                     orderableClusterOption.withAvailabilityZones(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

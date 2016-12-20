@@ -113,7 +113,7 @@ public class DescribeAppsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApps() != null)
-            sb.append("Apps: " + getApps());
+            sb.append("Apps: ").append(getApps());
         sb.append("}");
         return sb.toString();
     }

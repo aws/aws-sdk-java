@@ -1116,31 +1116,31 @@ public class EventFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventArns() != null)
-            sb.append("EventArns: " + getEventArns() + ",");
+            sb.append("EventArns: ").append(getEventArns()).append(",");
         if (getEventTypeCodes() != null)
-            sb.append("EventTypeCodes: " + getEventTypeCodes() + ",");
+            sb.append("EventTypeCodes: ").append(getEventTypeCodes()).append(",");
         if (getServices() != null)
-            sb.append("Services: " + getServices() + ",");
+            sb.append("Services: ").append(getServices()).append(",");
         if (getRegions() != null)
-            sb.append("Regions: " + getRegions() + ",");
+            sb.append("Regions: ").append(getRegions()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getStartTimes() != null)
-            sb.append("StartTimes: " + getStartTimes() + ",");
+            sb.append("StartTimes: ").append(getStartTimes()).append(",");
         if (getEndTimes() != null)
-            sb.append("EndTimes: " + getEndTimes() + ",");
+            sb.append("EndTimes: ").append(getEndTimes()).append(",");
         if (getLastUpdatedTimes() != null)
-            sb.append("LastUpdatedTimes: " + getLastUpdatedTimes() + ",");
+            sb.append("LastUpdatedTimes: ").append(getLastUpdatedTimes()).append(",");
         if (getEntityArns() != null)
-            sb.append("EntityArns: " + getEntityArns() + ",");
+            sb.append("EntityArns: ").append(getEntityArns()).append(",");
         if (getEntityValues() != null)
-            sb.append("EntityValues: " + getEntityValues() + ",");
+            sb.append("EntityValues: ").append(getEntityValues()).append(",");
         if (getEventTypeCategories() != null)
-            sb.append("EventTypeCategories: " + getEventTypeCategories() + ",");
+            sb.append("EventTypeCategories: ").append(getEventTypeCategories()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getEventStatusCodes() != null)
-            sb.append("EventStatusCodes: " + getEventStatusCodes());
+            sb.append("EventStatusCodes: ").append(getEventStatusCodes());
         sb.append("}");
         return sb.toString();
     }

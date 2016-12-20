@@ -162,9 +162,9 @@ public class TimeWindow implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime());
+            sb.append("EndTime: ").append(getEndTime());
         sb.append("}");
         return sb.toString();
     }

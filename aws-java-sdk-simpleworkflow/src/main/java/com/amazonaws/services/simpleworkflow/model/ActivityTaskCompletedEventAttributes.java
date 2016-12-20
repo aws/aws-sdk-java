@@ -196,11 +196,11 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId() + ",");
+            sb.append("ScheduledEventId: ").append(getScheduledEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId());
+            sb.append("StartedEventId: ").append(getStartedEventId());
         sb.append("}");
         return sb.toString();
     }

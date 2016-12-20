@@ -100,7 +100,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontOriginAccessIdentityConfig() != null)
-            sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig());
+            sb.append("CloudFrontOriginAccessIdentityConfig: ").append(getCloudFrontOriginAccessIdentityConfig());
         sb.append("}");
         return sb.toString();
     }

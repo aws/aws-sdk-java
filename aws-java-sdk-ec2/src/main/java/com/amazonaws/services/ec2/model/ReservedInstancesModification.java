@@ -535,23 +535,23 @@ public class ReservedInstancesModification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesModificationId() != null)
-            sb.append("ReservedInstancesModificationId: " + getReservedInstancesModificationId() + ",");
+            sb.append("ReservedInstancesModificationId: ").append(getReservedInstancesModificationId()).append(",");
         if (getReservedInstancesIds() != null)
-            sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ",");
+            sb.append("ReservedInstancesIds: ").append(getReservedInstancesIds()).append(",");
         if (getModificationResults() != null)
-            sb.append("ModificationResults: " + getModificationResults() + ",");
+            sb.append("ModificationResults: ").append(getModificationResults()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getUpdateDate() != null)
-            sb.append("UpdateDate: " + getUpdateDate() + ",");
+            sb.append("UpdateDate: ").append(getUpdateDate()).append(",");
         if (getEffectiveDate() != null)
-            sb.append("EffectiveDate: " + getEffectiveDate() + ",");
+            sb.append("EffectiveDate: ").append(getEffectiveDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

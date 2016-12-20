@@ -126,9 +126,9 @@ public class CreateEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEgressOnlyInternetGateway() != null)
-            sb.append("EgressOnlyInternetGateway: " + getEgressOnlyInternetGateway() + ",");
+            sb.append("EgressOnlyInternetGateway: ").append(getEgressOnlyInternetGateway()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

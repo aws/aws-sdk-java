@@ -113,7 +113,7 @@ public class DescribeElasticIpsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIps() != null)
-            sb.append("ElasticIps: " + getElasticIps());
+            sb.append("ElasticIps: ").append(getElasticIps());
         sb.append("}");
         return sb.toString();
     }

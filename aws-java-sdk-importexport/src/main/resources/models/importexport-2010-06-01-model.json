@@ -19,31 +19,37 @@
       "documentation" : "This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.",
       "errors" : [ {
         "documentation" : "The JOBID was missing, not found, or not associated with the AWS account.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidJobIdException"
       }, {
         "documentation" : "Indicates that the specified job has expired out of the system.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "ExpiredJobIdException"
       }, {
         "documentation" : "The specified job ID has been canceled and is no longer valid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "CanceledJobIdException"
       }, {
         "documentation" : "AWS Import/Export cannot cancel the job",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "UnableToCancelJobIdException"
       }, {
         "documentation" : "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAccessKeyIdException"
       }, {
         "documentation" : "The client tool version is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidVersionException"
@@ -73,81 +79,97 @@
       "documentation" : "This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature that you use to identify your storage device, and the address where you should ship your storage device.",
       "errors" : [ {
         "documentation" : "One or more required parameters was missing from the request.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MissingParameterException"
       }, {
         "documentation" : "One or more parameters had an invalid value.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAccessKeyIdException"
       }, {
         "documentation" : "The address specified in the manifest is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAddressException"
       }, {
         "documentation" : "One or more manifest fields was invalid. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidManifestFieldException"
       }, {
         "documentation" : "One or more required fields were missing from the manifest file. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MissingManifestFieldException"
       }, {
         "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "NoSuchBucketException"
       }, {
         "documentation" : "One or more required customs parameters was missing from the manifest.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MissingCustomsException"
       }, {
         "documentation" : "One or more customs parameters was invalid. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidCustomsException"
       }, {
         "documentation" : "File system specified in export manifest is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidFileSystemException"
       }, {
         "documentation" : "Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MultipleRegionsException"
       }, {
         "documentation" : "The account specified does not have the appropriate bucket permissions.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BucketPermissionException"
       }, {
         "documentation" : "Your manifest is not well-formed.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MalformedManifestException"
       }, {
         "documentation" : "Each account can create only a certain number of jobs per day. If you need to create more than this, please contact awsimportexport@amazon.com to explain your particular use case.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "CreateJobQuotaExceededException"
       }, {
         "documentation" : "The JOBID was missing, not found, or not associated with the AWS account.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidJobIdException"
       }, {
         "documentation" : "The client tool version is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidVersionException"
@@ -177,36 +199,43 @@
       "documentation" : "This operation generates a pre-paid UPS shipping label that you will use to ship your device to AWS for processing.",
       "errors" : [ {
         "documentation" : "The JOBID was missing, not found, or not associated with the AWS account.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidJobIdException"
       }, {
         "documentation" : "Indicates that the specified job has expired out of the system.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "ExpiredJobIdException"
       }, {
         "documentation" : "The specified job ID has been canceled and is no longer valid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "CanceledJobIdException"
       }, {
         "documentation" : "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAccessKeyIdException"
       }, {
         "documentation" : "The address specified in the manifest is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAddressException"
       }, {
         "documentation" : "The client tool version is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidVersionException"
       }, {
         "documentation" : "One or more parameters had an invalid value.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
@@ -236,26 +265,31 @@
       "documentation" : "This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job. You can only return information about jobs you own.",
       "errors" : [ {
         "documentation" : "The JOBID was missing, not found, or not associated with the AWS account.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidJobIdException"
       }, {
         "documentation" : "Indicates that the specified job has expired out of the system.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "ExpiredJobIdException"
       }, {
         "documentation" : "The specified job ID has been canceled and is no longer valid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "CanceledJobIdException"
       }, {
         "documentation" : "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAccessKeyIdException"
       }, {
         "documentation" : "The client tool version is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidVersionException"
@@ -285,16 +319,19 @@
       "documentation" : "This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return Test2 followed by Test1.",
       "errors" : [ {
         "documentation" : "One or more parameters had an invalid value.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAccessKeyIdException"
       }, {
         "documentation" : "The client tool version is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidVersionException"
@@ -324,91 +361,109 @@
       "documentation" : "You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and you can only use it on jobs you own.",
       "errors" : [ {
         "documentation" : "One or more required parameters was missing from the request.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MissingParameterException"
       }, {
         "documentation" : "One or more parameters had an invalid value.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use the same AWS Access Key ID.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAccessKeyIdException"
       }, {
         "documentation" : "The address specified in the manifest is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidAddressException"
       }, {
         "documentation" : "One or more manifest fields was invalid. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidManifestFieldException"
       }, {
         "documentation" : "The JOBID was missing, not found, or not associated with the AWS account.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidJobIdException"
       }, {
         "documentation" : "One or more required fields were missing from the manifest file. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MissingManifestFieldException"
       }, {
         "documentation" : "The specified bucket does not exist. Create the specified bucket or change the manifest's bucket, exportBucket, or logBucket field to a bucket that the account, as specified by the manifest's Access Key ID, has write permissions to.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "NoSuchBucketException"
       }, {
         "documentation" : "Indicates that the specified job has expired out of the system.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "ExpiredJobIdException"
       }, {
         "documentation" : "The specified job ID has been canceled and is no longer valid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "CanceledJobIdException"
       }, {
         "documentation" : "One or more required customs parameters was missing from the manifest.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MissingCustomsException"
       }, {
         "documentation" : "One or more customs parameters was invalid. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidCustomsException"
       }, {
         "documentation" : "File system specified in export manifest is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidFileSystemException"
       }, {
         "documentation" : "Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MultipleRegionsException"
       }, {
         "documentation" : "The account specified does not have the appropriate bucket permissions.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "BucketPermissionException"
       }, {
         "documentation" : "Your manifest is not well-formed.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "MalformedManifestException"
       }, {
         "documentation" : "AWS Import/Export cannot update the job",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "UnableToUpdateJobIdException"
       }, {
         "documentation" : "The client tool version is invalid.",
+        "error" : null,
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidVersionException"
@@ -445,7 +500,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -526,7 +581,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -700,7 +755,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -943,7 +998,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -964,7 +1019,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -985,7 +1040,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1006,7 +1061,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1027,7 +1082,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1083,7 +1138,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1888,7 +1943,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1909,7 +1964,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2004,7 +2059,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2037,7 +2092,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2058,7 +2113,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2091,7 +2146,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2221,7 +2276,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2242,7 +2297,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2263,7 +2318,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2284,7 +2339,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2340,7 +2395,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2361,7 +2416,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2382,7 +2437,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2403,7 +2458,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2599,7 +2654,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2620,7 +2675,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2641,7 +2696,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2662,7 +2717,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2683,7 +2738,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2704,7 +2759,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2725,7 +2780,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2964,7 +3019,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2985,7 +3040,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3006,7 +3061,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3027,7 +3082,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3048,7 +3103,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3069,7 +3124,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3090,7 +3145,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3111,7 +3166,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3132,7 +3187,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3153,7 +3208,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3174,7 +3229,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3195,7 +3250,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

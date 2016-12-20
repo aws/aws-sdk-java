@@ -172,11 +172,11 @@ public class KeyPair implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getKeyFingerprint() != null)
-            sb.append("KeyFingerprint: " + getKeyFingerprint() + ",");
+            sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
         if (getKeyMaterial() != null)
-            sb.append("KeyMaterial: " + getKeyMaterial());
+            sb.append("KeyMaterial: ").append(getKeyMaterial());
         sb.append("}");
         return sb.toString();
     }

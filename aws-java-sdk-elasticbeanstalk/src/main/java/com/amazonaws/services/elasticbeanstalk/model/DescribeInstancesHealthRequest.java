@@ -291,13 +291,13 @@ public class DescribeInstancesHealthRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getAttributeNames() != null)
-            sb.append("AttributeNames: " + getAttributeNames() + ",");
+            sb.append("AttributeNames: ").append(getAttributeNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -251,13 +251,13 @@ public class AssociationStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDate() != null)
-            sb.append("Date: " + getDate() + ",");
+            sb.append("Date: ").append(getDate()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getAdditionalInfo() != null)
-            sb.append("AdditionalInfo: " + getAdditionalInfo());
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo());
         sb.append("}");
         return sb.toString();
     }

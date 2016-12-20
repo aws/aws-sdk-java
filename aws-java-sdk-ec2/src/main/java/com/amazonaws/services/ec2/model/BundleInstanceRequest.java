@@ -241,9 +241,9 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getStorage() != null)
-            sb.append("Storage: " + getStorage());
+            sb.append("Storage: ").append(getStorage());
         sb.append("}");
         return sb.toString();
     }

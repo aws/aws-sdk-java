@@ -59,7 +59,7 @@ public class GetApplicationSettingsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationSettingsResource() != null)
-            sb.append("ApplicationSettingsResource: " + getApplicationSettingsResource());
+            sb.append("ApplicationSettingsResource: ").append(getApplicationSettingsResource());
         sb.append("}");
         return sb.toString();
     }

@@ -291,15 +291,15 @@ public class DateArrayOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getSourceFields() != null)
-            sb.append("SourceFields: " + getSourceFields() + ",");
+            sb.append("SourceFields: ").append(getSourceFields()).append(",");
         if (getFacetEnabled() != null)
-            sb.append("FacetEnabled: " + getFacetEnabled() + ",");
+            sb.append("FacetEnabled: ").append(getFacetEnabled()).append(",");
         if (getSearchEnabled() != null)
-            sb.append("SearchEnabled: " + getSearchEnabled() + ",");
+            sb.append("SearchEnabled: ").append(getSearchEnabled()).append(",");
         if (getReturnEnabled() != null)
-            sb.append("ReturnEnabled: " + getReturnEnabled());
+            sb.append("ReturnEnabled: ").append(getReturnEnabled());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribeConfigurationRecordersResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationRecorders() != null)
-            sb.append("ConfigurationRecorders: " + getConfigurationRecorders());
+            sb.append("ConfigurationRecorders: ").append(getConfigurationRecorders());
         sb.append("}");
         return sb.toString();
     }

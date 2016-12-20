@@ -50,6 +50,11 @@ public class ContextEntryStaxUnmarshaller implements Unmarshaller<ContextEntry, 
                     continue;
                 }
 
+                if (context.testExpression("ContextKeyValues", targetDepth)) {
+                    contextEntry.withContextKeyValues(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ContextKeyValues/member", targetDepth)) {
                     contextEntry.withContextKeyValues(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

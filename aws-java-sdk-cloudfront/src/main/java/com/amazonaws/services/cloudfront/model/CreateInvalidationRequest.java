@@ -148,9 +148,9 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionId() != null)
-            sb.append("DistributionId: " + getDistributionId() + ",");
+            sb.append("DistributionId: ").append(getDistributionId()).append(",");
         if (getInvalidationBatch() != null)
-            sb.append("InvalidationBatch: " + getInvalidationBatch());
+            sb.append("InvalidationBatch: ").append(getInvalidationBatch());
         sb.append("}");
         return sb.toString();
     }

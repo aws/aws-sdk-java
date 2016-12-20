@@ -75,6 +75,11 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
                     continue;
                 }
 
+                if (context.testExpression("snapshotDetailSet", targetDepth)) {
+                    importImageResult.withSnapshotDetails(new ArrayList<SnapshotDetail>());
+                    continue;
+                }
+
                 if (context.testExpression("snapshotDetailSet/item", targetDepth)) {
                     importImageResult.withSnapshotDetails(SnapshotDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

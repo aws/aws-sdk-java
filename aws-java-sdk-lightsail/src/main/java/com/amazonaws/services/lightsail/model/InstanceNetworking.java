@@ -156,9 +156,9 @@ public class InstanceNetworking implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMonthlyTransfer() != null)
-            sb.append("MonthlyTransfer: " + getMonthlyTransfer() + ",");
+            sb.append("MonthlyTransfer: ").append(getMonthlyTransfer()).append(",");
         if (getPorts() != null)
-            sb.append("Ports: " + getPorts());
+            sb.append("Ports: ").append(getPorts());
         sb.append("}");
         return sb.toString();
     }

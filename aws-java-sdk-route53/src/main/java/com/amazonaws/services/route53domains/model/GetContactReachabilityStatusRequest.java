@@ -146,7 +146,7 @@ public class GetContactReachabilityStatusRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName());
+            sb.append("DomainName: ").append(getDomainName());
         sb.append("}");
         return sb.toString();
     }

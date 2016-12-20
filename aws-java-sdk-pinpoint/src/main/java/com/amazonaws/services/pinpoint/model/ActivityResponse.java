@@ -460,27 +460,27 @@ public class ActivityResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCampaignId() != null)
-            sb.append("CampaignId: " + getCampaignId() + ",");
+            sb.append("CampaignId: ").append(getCampaignId()).append(",");
         if (getEnd() != null)
-            sb.append("End: " + getEnd() + ",");
+            sb.append("End: ").append(getEnd()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getScheduledStart() != null)
-            sb.append("ScheduledStart: " + getScheduledStart() + ",");
+            sb.append("ScheduledStart: ").append(getScheduledStart()).append(",");
         if (getStart() != null)
-            sb.append("Start: " + getStart() + ",");
+            sb.append("Start: ").append(getStart()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getSuccessfulEndpointCount() != null)
-            sb.append("SuccessfulEndpointCount: " + getSuccessfulEndpointCount() + ",");
+            sb.append("SuccessfulEndpointCount: ").append(getSuccessfulEndpointCount()).append(",");
         if (getTotalEndpointCount() != null)
-            sb.append("TotalEndpointCount: " + getTotalEndpointCount() + ",");
+            sb.append("TotalEndpointCount: ").append(getTotalEndpointCount()).append(",");
         if (getTreatmentId() != null)
-            sb.append("TreatmentId: " + getTreatmentId());
+            sb.append("TreatmentId: ").append(getTreatmentId());
         sb.append("}");
         return sb.toString();
     }

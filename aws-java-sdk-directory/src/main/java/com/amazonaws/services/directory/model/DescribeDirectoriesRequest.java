@@ -252,11 +252,11 @@ public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryIds() != null)
-            sb.append("DirectoryIds: " + getDirectoryIds() + ",");
+            sb.append("DirectoryIds: ").append(getDirectoryIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

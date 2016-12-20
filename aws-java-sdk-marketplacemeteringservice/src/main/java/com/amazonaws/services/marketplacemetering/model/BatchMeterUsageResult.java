@@ -213,9 +213,9 @@ public class BatchMeterUsageResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResults() != null)
-            sb.append("Results: " + getResults() + ",");
+            sb.append("Results: ").append(getResults()).append(",");
         if (getUnprocessedRecords() != null)
-            sb.append("UnprocessedRecords: " + getUnprocessedRecords());
+            sb.append("UnprocessedRecords: ").append(getUnprocessedRecords());
         sb.append("}");
         return sb.toString();
     }

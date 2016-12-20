@@ -632,31 +632,31 @@ public class Patch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getReleaseDate() != null)
-            sb.append("ReleaseDate: " + getReleaseDate() + ",");
+            sb.append("ReleaseDate: ").append(getReleaseDate()).append(",");
         if (getTitle() != null)
-            sb.append("Title: " + getTitle() + ",");
+            sb.append("Title: ").append(getTitle()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getContentUrl() != null)
-            sb.append("ContentUrl: " + getContentUrl() + ",");
+            sb.append("ContentUrl: ").append(getContentUrl()).append(",");
         if (getVendor() != null)
-            sb.append("Vendor: " + getVendor() + ",");
+            sb.append("Vendor: ").append(getVendor()).append(",");
         if (getProductFamily() != null)
-            sb.append("ProductFamily: " + getProductFamily() + ",");
+            sb.append("ProductFamily: ").append(getProductFamily()).append(",");
         if (getProduct() != null)
-            sb.append("Product: " + getProduct() + ",");
+            sb.append("Product: ").append(getProduct()).append(",");
         if (getClassification() != null)
-            sb.append("Classification: " + getClassification() + ",");
+            sb.append("Classification: ").append(getClassification()).append(",");
         if (getMsrcSeverity() != null)
-            sb.append("MsrcSeverity: " + getMsrcSeverity() + ",");
+            sb.append("MsrcSeverity: ").append(getMsrcSeverity()).append(",");
         if (getKbNumber() != null)
-            sb.append("KbNumber: " + getKbNumber() + ",");
+            sb.append("KbNumber: ").append(getKbNumber()).append(",");
         if (getMsrcNumber() != null)
-            sb.append("MsrcNumber: " + getMsrcNumber() + ",");
+            sb.append("MsrcNumber: ").append(getMsrcNumber()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage());
+            sb.append("Language: ").append(getLanguage());
         sb.append("}");
         return sb.toString();
     }

@@ -61,11 +61,8 @@ public class BulkPublishRequestMarshaller implements Marshaller<Request<BulkPubl
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/bulkpublish";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityPoolId}",
-                        (bulkPublishRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(bulkPublishRequest.getIdentityPoolId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "IdentityPoolId", bulkPublishRequest.getIdentityPoolId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -113,7 +113,7 @@ public class DescribeLifecycleHookTypesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHookTypes() != null)
-            sb.append("LifecycleHookTypes: " + getLifecycleHookTypes());
+            sb.append("LifecycleHookTypes: ").append(getLifecycleHookTypes());
         sb.append("}");
         return sb.toString();
     }

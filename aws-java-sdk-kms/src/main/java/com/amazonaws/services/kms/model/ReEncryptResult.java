@@ -190,11 +190,11 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCiphertextBlob() != null)
-            sb.append("CiphertextBlob: " + getCiphertextBlob() + ",");
+            sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getSourceKeyId() != null)
-            sb.append("SourceKeyId: " + getSourceKeyId() + ",");
+            sb.append("SourceKeyId: ").append(getSourceKeyId()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId());
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }

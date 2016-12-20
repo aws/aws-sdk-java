@@ -184,9 +184,9 @@ public class DescribeTapesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapes() != null)
-            sb.append("Tapes: " + getTapes() + ",");
+            sb.append("Tapes: ").append(getTapes()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

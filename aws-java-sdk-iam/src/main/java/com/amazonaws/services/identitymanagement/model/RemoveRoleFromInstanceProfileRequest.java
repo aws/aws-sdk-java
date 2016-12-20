@@ -189,9 +189,9 @@ public class RemoveRoleFromInstanceProfileRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceProfileName() != null)
-            sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
+            sb.append("InstanceProfileName: ").append(getInstanceProfileName()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
         return sb.toString();
     }

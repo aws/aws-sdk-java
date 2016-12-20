@@ -461,19 +461,19 @@ public class JobQueueDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobQueueName() != null)
-            sb.append("JobQueueName: " + getJobQueueName() + ",");
+            sb.append("JobQueueName: ").append(getJobQueueName()).append(",");
         if (getJobQueueArn() != null)
-            sb.append("JobQueueArn: " + getJobQueueArn() + ",");
+            sb.append("JobQueueArn: ").append(getJobQueueArn()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: " + getStatusReason() + ",");
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getComputeEnvironmentOrder() != null)
-            sb.append("ComputeEnvironmentOrder: " + getComputeEnvironmentOrder());
+            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder());
         sb.append("}");
         return sb.toString();
     }

@@ -295,11 +295,11 @@ public class Destination implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getToAddresses() != null)
-            sb.append("ToAddresses: " + getToAddresses() + ",");
+            sb.append("ToAddresses: ").append(getToAddresses()).append(",");
         if (getCcAddresses() != null)
-            sb.append("CcAddresses: " + getCcAddresses() + ",");
+            sb.append("CcAddresses: ").append(getCcAddresses()).append(",");
         if (getBccAddresses() != null)
-            sb.append("BccAddresses: " + getBccAddresses());
+            sb.append("BccAddresses: ").append(getBccAddresses());
         sb.append("}");
         return sb.toString();
     }

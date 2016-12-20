@@ -79,7 +79,7 @@ public class GetMaintenanceWindowRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId());
+            sb.append("WindowId: ").append(getWindowId());
         sb.append("}");
         return sb.toString();
     }

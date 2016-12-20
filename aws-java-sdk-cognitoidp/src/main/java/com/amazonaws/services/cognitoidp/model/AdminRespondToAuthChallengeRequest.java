@@ -319,15 +319,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getChallengeName() != null)
-            sb.append("ChallengeName: " + getChallengeName() + ",");
+            sb.append("ChallengeName: ").append(getChallengeName()).append(",");
         if (getChallengeResponses() != null)
-            sb.append("ChallengeResponses: " + getChallengeResponses() + ",");
+            sb.append("ChallengeResponses: ").append(getChallengeResponses()).append(",");
         if (getSession() != null)
-            sb.append("Session: " + getSession());
+            sb.append("Session: ").append(getSession());
         sb.append("}");
         return sb.toString();
     }

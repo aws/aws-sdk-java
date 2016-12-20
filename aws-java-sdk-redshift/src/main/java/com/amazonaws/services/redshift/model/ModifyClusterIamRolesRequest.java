@@ -255,11 +255,11 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getAddIamRoles() != null)
-            sb.append("AddIamRoles: " + getAddIamRoles() + ",");
+            sb.append("AddIamRoles: ").append(getAddIamRoles()).append(",");
         if (getRemoveIamRoles() != null)
-            sb.append("RemoveIamRoles: " + getRemoveIamRoles());
+            sb.append("RemoveIamRoles: ").append(getRemoveIamRoles());
         sb.append("}");
         return sb.toString();
     }

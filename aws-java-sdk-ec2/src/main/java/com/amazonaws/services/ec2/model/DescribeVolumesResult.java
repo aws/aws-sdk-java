@@ -177,9 +177,9 @@ public class DescribeVolumesResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumes() != null)
-            sb.append("Volumes: " + getVolumes() + ",");
+            sb.append("Volumes: ").append(getVolumes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -185,9 +185,9 @@ public class DescribeOrderableClusterOptionsResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOrderableClusterOptions() != null)
-            sb.append("OrderableClusterOptions: " + getOrderableClusterOptions() + ",");
+            sb.append("OrderableClusterOptions: ").append(getOrderableClusterOptions()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

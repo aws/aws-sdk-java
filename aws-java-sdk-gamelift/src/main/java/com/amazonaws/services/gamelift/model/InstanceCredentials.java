@@ -127,9 +127,9 @@ public class InstanceCredentials implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSecret() != null)
-            sb.append("Secret: " + getSecret());
+            sb.append("Secret: ").append(getSecret());
         sb.append("}");
         return sb.toString();
     }

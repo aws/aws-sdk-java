@@ -493,21 +493,21 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: " + getHealthStatus() + ",");
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getColor() != null)
-            sb.append("Color: " + getColor() + ",");
+            sb.append("Color: ").append(getColor()).append(",");
         if (getCauses() != null)
-            sb.append("Causes: " + getCauses() + ",");
+            sb.append("Causes: ").append(getCauses()).append(",");
         if (getApplicationMetrics() != null)
-            sb.append("ApplicationMetrics: " + getApplicationMetrics() + ",");
+            sb.append("ApplicationMetrics: ").append(getApplicationMetrics()).append(",");
         if (getInstancesHealth() != null)
-            sb.append("InstancesHealth: " + getInstancesHealth() + ",");
+            sb.append("InstancesHealth: ").append(getInstancesHealth()).append(",");
         if (getRefreshedAt() != null)
-            sb.append("RefreshedAt: " + getRefreshedAt());
+            sb.append("RefreshedAt: ").append(getRefreshedAt());
         sb.append("}");
         return sb.toString();
     }

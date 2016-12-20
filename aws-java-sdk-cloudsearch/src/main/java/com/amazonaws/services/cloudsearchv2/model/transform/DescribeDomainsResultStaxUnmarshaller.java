@@ -45,6 +45,11 @@ public class DescribeDomainsResultStaxUnmarshaller implements Unmarshaller<Descr
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("DomainStatusList", targetDepth)) {
+                    describeDomainsResult.withDomainStatusList(new ArrayList<DomainStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("DomainStatusList/member", targetDepth)) {
                     describeDomainsResult.withDomainStatusList(DomainStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

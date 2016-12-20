@@ -170,11 +170,11 @@ public class UpdateShardCountResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getCurrentShardCount() != null)
-            sb.append("CurrentShardCount: " + getCurrentShardCount() + ",");
+            sb.append("CurrentShardCount: ").append(getCurrentShardCount()).append(",");
         if (getTargetShardCount() != null)
-            sb.append("TargetShardCount: " + getTargetShardCount());
+            sb.append("TargetShardCount: ").append(getTargetShardCount());
         sb.append("}");
         return sb.toString();
     }

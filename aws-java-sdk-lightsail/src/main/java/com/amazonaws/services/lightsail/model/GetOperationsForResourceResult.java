@@ -158,9 +158,9 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperations() != null)
-            sb.append("Operations: " + getOperations() + ",");
+            sb.append("Operations: ").append(getOperations()).append(",");
         if (getNextPageCount() != null)
-            sb.append("NextPageCount: " + getNextPageCount());
+            sb.append("NextPageCount: ").append(getNextPageCount());
         sb.append("}");
         return sb.toString();
     }

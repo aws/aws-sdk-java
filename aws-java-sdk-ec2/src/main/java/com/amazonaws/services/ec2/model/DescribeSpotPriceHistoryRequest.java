@@ -857,21 +857,21 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getInstanceTypes() != null)
-            sb.append("InstanceTypes: " + getInstanceTypes() + ",");
+            sb.append("InstanceTypes: ").append(getInstanceTypes()).append(",");
         if (getProductDescriptions() != null)
-            sb.append("ProductDescriptions: " + getProductDescriptions() + ",");
+            sb.append("ProductDescriptions: ").append(getProductDescriptions()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

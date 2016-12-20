@@ -1067,37 +1067,37 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName() + ",");
+            sb.append("DNSName: ").append(getDNSName()).append(",");
         if (getCanonicalHostedZoneName() != null)
-            sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ",");
+            sb.append("CanonicalHostedZoneName: ").append(getCanonicalHostedZoneName()).append(",");
         if (getCanonicalHostedZoneNameID() != null)
-            sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ",");
+            sb.append("CanonicalHostedZoneNameID: ").append(getCanonicalHostedZoneNameID()).append(",");
         if (getListenerDescriptions() != null)
-            sb.append("ListenerDescriptions: " + getListenerDescriptions() + ",");
+            sb.append("ListenerDescriptions: ").append(getListenerDescriptions()).append(",");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies() + ",");
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getBackendServerDescriptions() != null)
-            sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ",");
+            sb.append("BackendServerDescriptions: ").append(getBackendServerDescriptions()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getVPCId() != null)
-            sb.append("VPCId: " + getVPCId() + ",");
+            sb.append("VPCId: ").append(getVPCId()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getHealthCheck() != null)
-            sb.append("HealthCheck: " + getHealthCheck() + ",");
+            sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
         if (getSourceSecurityGroup() != null)
-            sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ",");
+            sb.append("SourceSecurityGroup: ").append(getSourceSecurityGroup()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getScheme() != null)
-            sb.append("Scheme: " + getScheme());
+            sb.append("Scheme: ").append(getScheme());
         sb.append("}");
         return sb.toString();
     }

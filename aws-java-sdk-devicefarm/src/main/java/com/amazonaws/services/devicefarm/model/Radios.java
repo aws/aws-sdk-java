@@ -266,13 +266,13 @@ public class Radios implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWifi() != null)
-            sb.append("Wifi: " + getWifi() + ",");
+            sb.append("Wifi: ").append(getWifi()).append(",");
         if (getBluetooth() != null)
-            sb.append("Bluetooth: " + getBluetooth() + ",");
+            sb.append("Bluetooth: ").append(getBluetooth()).append(",");
         if (getNfc() != null)
-            sb.append("Nfc: " + getNfc() + ",");
+            sb.append("Nfc: ").append(getNfc()).append(",");
         if (getGps() != null)
-            sb.append("Gps: " + getGps());
+            sb.append("Gps: ").append(getGps());
         sb.append("}");
         return sb.toString();
     }

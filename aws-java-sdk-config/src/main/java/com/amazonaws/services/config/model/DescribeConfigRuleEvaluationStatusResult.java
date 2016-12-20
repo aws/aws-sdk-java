@@ -158,9 +158,9 @@ public class DescribeConfigRuleEvaluationStatusResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRulesEvaluationStatus() != null)
-            sb.append("ConfigRulesEvaluationStatus: " + getConfigRulesEvaluationStatus() + ",");
+            sb.append("ConfigRulesEvaluationStatus: ").append(getConfigRulesEvaluationStatus()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

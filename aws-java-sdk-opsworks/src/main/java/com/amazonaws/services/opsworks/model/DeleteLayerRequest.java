@@ -79,7 +79,7 @@ public class DeleteLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId());
+            sb.append("LayerId: ").append(getLayerId());
         sb.append("}");
         return sb.toString();
     }

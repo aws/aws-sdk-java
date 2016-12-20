@@ -45,6 +45,11 @@ public class DescribeSecurityGroupReferencesResultStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("securityGroupReferenceSet", targetDepth)) {
+                    describeSecurityGroupReferencesResult.withSecurityGroupReferenceSet(new ArrayList<SecurityGroupReference>());
+                    continue;
+                }
+
                 if (context.testExpression("securityGroupReferenceSet/item", targetDepth)) {
                     describeSecurityGroupReferencesResult.withSecurityGroupReferenceSet(SecurityGroupReferenceStaxUnmarshaller.getInstance()
                             .unmarshall(context));

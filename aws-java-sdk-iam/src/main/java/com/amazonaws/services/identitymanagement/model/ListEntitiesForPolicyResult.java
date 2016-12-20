@@ -418,15 +418,15 @@ public class ListEntitiesForPolicyResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyGroups() != null)
-            sb.append("PolicyGroups: " + getPolicyGroups() + ",");
+            sb.append("PolicyGroups: ").append(getPolicyGroups()).append(",");
         if (getPolicyUsers() != null)
-            sb.append("PolicyUsers: " + getPolicyUsers() + ",");
+            sb.append("PolicyUsers: ").append(getPolicyUsers()).append(",");
         if (getPolicyRoles() != null)
-            sb.append("PolicyRoles: " + getPolicyRoles() + ",");
+            sb.append("PolicyRoles: ").append(getPolicyRoles()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

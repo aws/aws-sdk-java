@@ -184,11 +184,11 @@ public class DownloadDBLogFilePortionResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogFileData() != null)
-            sb.append("LogFileData: " + getLogFileData() + ",");
+            sb.append("LogFileData: ").append(getLogFileData()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getAdditionalDataPending() != null)
-            sb.append("AdditionalDataPending: " + getAdditionalDataPending());
+            sb.append("AdditionalDataPending: ").append(getAdditionalDataPending());
         sb.append("}");
         return sb.toString();
     }

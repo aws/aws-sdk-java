@@ -91,7 +91,7 @@ public class DeleteDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataset() != null)
-            sb.append("Dataset: " + getDataset());
+            sb.append("Dataset: ").append(getDataset());
         sb.append("}");
         return sb.toString();
     }

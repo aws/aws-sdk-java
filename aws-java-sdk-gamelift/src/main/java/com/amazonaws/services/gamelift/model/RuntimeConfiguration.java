@@ -128,7 +128,7 @@ public class RuntimeConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerProcesses() != null)
-            sb.append("ServerProcesses: " + getServerProcesses());
+            sb.append("ServerProcesses: ").append(getServerProcesses());
         sb.append("}");
         return sb.toString();
     }

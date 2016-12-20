@@ -189,9 +189,9 @@ public class DetachUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }

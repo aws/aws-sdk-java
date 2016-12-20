@@ -566,21 +566,21 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSourceBuildInformation() != null)
-            sb.append("SourceBuildInformation: " + getSourceBuildInformation() + ",");
+            sb.append("SourceBuildInformation: ").append(getSourceBuildInformation()).append(",");
         if (getSourceBundle() != null)
-            sb.append("SourceBundle: " + getSourceBundle() + ",");
+            sb.append("SourceBundle: ").append(getSourceBundle()).append(",");
         if (getBuildConfiguration() != null)
-            sb.append("BuildConfiguration: " + getBuildConfiguration() + ",");
+            sb.append("BuildConfiguration: ").append(getBuildConfiguration()).append(",");
         if (getAutoCreateApplication() != null)
-            sb.append("AutoCreateApplication: " + getAutoCreateApplication() + ",");
+            sb.append("AutoCreateApplication: ").append(getAutoCreateApplication()).append(",");
         if (getProcess() != null)
-            sb.append("Process: " + getProcess());
+            sb.append("Process: ").append(getProcess());
         sb.append("}");
         return sb.toString();
     }

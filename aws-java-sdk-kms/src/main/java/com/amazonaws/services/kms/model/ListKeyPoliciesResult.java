@@ -235,11 +235,11 @@ public class ListKeyPoliciesResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames() + ",");
+            sb.append("PolicyNames: ").append(getPolicyNames()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getTruncated() != null)
-            sb.append("Truncated: " + getTruncated());
+            sb.append("Truncated: ").append(getTruncated());
         sb.append("}");
         return sb.toString();
     }

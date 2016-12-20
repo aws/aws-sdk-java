@@ -126,9 +126,9 @@ public class AvailabilityZone implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getZoneName() != null)
-            sb.append("ZoneName: " + getZoneName() + ",");
+            sb.append("ZoneName: ").append(getZoneName()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

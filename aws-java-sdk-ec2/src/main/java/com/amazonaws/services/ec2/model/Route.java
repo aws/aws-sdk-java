@@ -850,29 +850,29 @@ public class Route implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
+            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getDestinationPrefixListId() != null)
-            sb.append("DestinationPrefixListId: " + getDestinationPrefixListId() + ",");
+            sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId() + ",");
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceOwnerId() != null)
-            sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");
+            sb.append("InstanceOwnerId: ").append(getInstanceOwnerId()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
         if (getNatGatewayId() != null)
-            sb.append("NatGatewayId: " + getNatGatewayId() + ",");
+            sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getOrigin() != null)
-            sb.append("Origin: " + getOrigin() + ",");
+            sb.append("Origin: ").append(getOrigin()).append(",");
         if (getDestinationIpv6CidrBlock() != null)
-            sb.append("DestinationIpv6CidrBlock: " + getDestinationIpv6CidrBlock() + ",");
+            sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
         if (getEgressOnlyInternetGatewayId() != null)
-            sb.append("EgressOnlyInternetGatewayId: " + getEgressOnlyInternetGatewayId());
+            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId());
         sb.append("}");
         return sb.toString();
     }

@@ -141,9 +141,9 @@ public class CancelConversionTaskRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTaskId() != null)
-            sb.append("ConversionTaskId: " + getConversionTaskId() + ",");
+            sb.append("ConversionTaskId: ").append(getConversionTaskId()).append(",");
         if (getReasonMessage() != null)
-            sb.append("ReasonMessage: " + getReasonMessage());
+            sb.append("ReasonMessage: ").append(getReasonMessage());
         sb.append("}");
         return sb.toString();
     }

@@ -324,17 +324,17 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId() + ",");
+            sb.append("RunId: ").append(getRunId()).append(",");
         if (getSignalName() != null)
-            sb.append("SignalName: " + getSignalName() + ",");
+            sb.append("SignalName: ").append(getSignalName()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId()).append(",");
         if (getControl() != null)
-            sb.append("Control: " + getControl());
+            sb.append("Control: ").append(getControl());
         sb.append("}");
         return sb.toString();
     }

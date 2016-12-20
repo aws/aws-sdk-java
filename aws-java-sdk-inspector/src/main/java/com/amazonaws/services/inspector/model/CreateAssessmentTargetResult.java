@@ -78,7 +78,7 @@ public class CreateAssessmentTargetResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetArn() != null)
-            sb.append("AssessmentTargetArn: " + getAssessmentTargetArn());
+            sb.append("AssessmentTargetArn: ").append(getAssessmentTargetArn());
         sb.append("}");
         return sb.toString();
     }

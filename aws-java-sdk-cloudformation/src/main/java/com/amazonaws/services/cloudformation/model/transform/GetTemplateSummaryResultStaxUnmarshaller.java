@@ -45,6 +45,11 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    getTemplateSummaryResult.withParameters(new ArrayList<ParameterDeclaration>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/member", targetDepth)) {
                     getTemplateSummaryResult.withParameters(ParameterDeclarationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,6 +60,11 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
                     continue;
                 }
 
+                if (context.testExpression("Capabilities", targetDepth)) {
+                    getTemplateSummaryResult.withCapabilities(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Capabilities/member", targetDepth)) {
                     getTemplateSummaryResult.withCapabilities(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -62,6 +72,11 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
 
                 if (context.testExpression("CapabilitiesReason", targetDepth)) {
                     getTemplateSummaryResult.setCapabilitiesReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ResourceTypes", targetDepth)) {
+                    getTemplateSummaryResult.withResourceTypes(new ArrayList<String>());
                     continue;
                 }
 
@@ -77,6 +92,11 @@ public class GetTemplateSummaryResultStaxUnmarshaller implements Unmarshaller<Ge
 
                 if (context.testExpression("Metadata", targetDepth)) {
                     getTemplateSummaryResult.setMetadata(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeclaredTransforms", targetDepth)) {
+                    getTemplateSummaryResult.withDeclaredTransforms(new ArrayList<String>());
                     continue;
                 }
 

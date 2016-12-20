@@ -133,9 +133,9 @@ public class ThrottleSettings implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBurstLimit() != null)
-            sb.append("BurstLimit: " + getBurstLimit() + ",");
+            sb.append("BurstLimit: ").append(getBurstLimit()).append(",");
         if (getRateLimit() != null)
-            sb.append("RateLimit: " + getRateLimit());
+            sb.append("RateLimit: ").append(getRateLimit());
         sb.append("}");
         return sb.toString();
     }

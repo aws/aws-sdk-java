@@ -219,9 +219,9 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTemplateBody() != null)
-            sb.append("TemplateBody: " + getTemplateBody() + ",");
+            sb.append("TemplateBody: ").append(getTemplateBody()).append(",");
         if (getTemplateURL() != null)
-            sb.append("TemplateURL: " + getTemplateURL());
+            sb.append("TemplateURL: ").append(getTemplateURL());
         sb.append("}");
         return sb.toString();
     }

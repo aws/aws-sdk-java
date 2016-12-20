@@ -126,9 +126,9 @@ public class SlotStartTimeRangeRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEarliestTime() != null)
-            sb.append("EarliestTime: " + getEarliestTime() + ",");
+            sb.append("EarliestTime: ").append(getEarliestTime()).append(",");
         if (getLatestTime() != null)
-            sb.append("LatestTime: " + getLatestTime());
+            sb.append("LatestTime: ").append(getLatestTime());
         sb.append("}");
         return sb.toString();
     }

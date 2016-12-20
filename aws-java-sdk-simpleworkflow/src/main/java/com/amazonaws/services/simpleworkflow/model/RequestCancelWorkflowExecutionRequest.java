@@ -171,11 +171,11 @@ public class RequestCancelWorkflowExecutionRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId());
+            sb.append("RunId: ").append(getRunId());
         sb.append("}");
         return sb.toString();
     }

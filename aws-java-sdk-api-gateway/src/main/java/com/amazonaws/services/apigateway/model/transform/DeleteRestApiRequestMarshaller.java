@@ -61,11 +61,7 @@ public class DeleteRestApiRequestMarshaller implements Marshaller<Request<Delete
 
         String uriResourcePath = "/restapis/{restapi_id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (deleteRestApiRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteRestApiRequest.getRestApiId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteRestApiRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

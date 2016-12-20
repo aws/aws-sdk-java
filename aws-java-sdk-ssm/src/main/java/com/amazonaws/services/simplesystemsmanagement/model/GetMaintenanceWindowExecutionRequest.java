@@ -79,7 +79,7 @@ public class GetMaintenanceWindowExecutionRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId());
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId());
         sb.append("}");
         return sb.toString();
     }

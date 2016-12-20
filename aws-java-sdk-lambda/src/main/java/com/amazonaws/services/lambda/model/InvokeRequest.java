@@ -655,17 +655,17 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getInvocationType() != null)
-            sb.append("InvocationType: " + getInvocationType() + ",");
+            sb.append("InvocationType: ").append(getInvocationType()).append(",");
         if (getLogType() != null)
-            sb.append("LogType: " + getLogType() + ",");
+            sb.append("LogType: ").append(getLogType()).append(",");
         if (getClientContext() != null)
-            sb.append("ClientContext: " + getClientContext() + ",");
+            sb.append("ClientContext: ").append(getClientContext()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: " + getPayload() + ",");
+            sb.append("Payload: ").append(getPayload()).append(",");
         if (getQualifier() != null)
-            sb.append("Qualifier: " + getQualifier());
+            sb.append("Qualifier: ").append(getQualifier());
         sb.append("}");
         return sb.toString();
     }

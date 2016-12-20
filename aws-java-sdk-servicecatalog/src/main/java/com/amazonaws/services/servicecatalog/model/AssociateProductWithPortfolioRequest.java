@@ -298,13 +298,13 @@ public class AssociateProductWithPortfolioRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: " + getPortfolioId() + ",");
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getSourcePortfolioId() != null)
-            sb.append("SourcePortfolioId: " + getSourcePortfolioId());
+            sb.append("SourcePortfolioId: ").append(getSourcePortfolioId());
         sb.append("}");
         return sb.toString();
     }

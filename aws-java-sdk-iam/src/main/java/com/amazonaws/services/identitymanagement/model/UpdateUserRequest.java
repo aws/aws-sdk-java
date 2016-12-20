@@ -296,11 +296,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getNewPath() != null)
-            sb.append("NewPath: " + getNewPath() + ",");
+            sb.append("NewPath: ").append(getNewPath()).append(",");
         if (getNewUserName() != null)
-            sb.append("NewUserName: " + getNewUserName());
+            sb.append("NewUserName: ").append(getNewUserName());
         sb.append("}");
         return sb.toString();
     }

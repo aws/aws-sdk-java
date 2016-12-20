@@ -173,11 +173,11 @@ public class MergeShardsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getShardToMerge() != null)
-            sb.append("ShardToMerge: " + getShardToMerge() + ",");
+            sb.append("ShardToMerge: ").append(getShardToMerge()).append(",");
         if (getAdjacentShardToMerge() != null)
-            sb.append("AdjacentShardToMerge: " + getAdjacentShardToMerge());
+            sb.append("AdjacentShardToMerge: ").append(getAdjacentShardToMerge());
         sb.append("}");
         return sb.toString();
     }

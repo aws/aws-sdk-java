@@ -140,11 +140,11 @@ public class MessageConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAPNSMessage() != null)
-            sb.append("APNSMessage: " + getAPNSMessage() + ",");
+            sb.append("APNSMessage: ").append(getAPNSMessage()).append(",");
         if (getDefaultMessage() != null)
-            sb.append("DefaultMessage: " + getDefaultMessage() + ",");
+            sb.append("DefaultMessage: ").append(getDefaultMessage()).append(",");
         if (getGCMMessage() != null)
-            sb.append("GCMMessage: " + getGCMMessage());
+            sb.append("GCMMessage: ").append(getGCMMessage());
         sb.append("}");
         return sb.toString();
     }

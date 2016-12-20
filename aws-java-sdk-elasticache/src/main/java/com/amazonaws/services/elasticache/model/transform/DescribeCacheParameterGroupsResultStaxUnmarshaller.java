@@ -50,6 +50,11 @@ public class DescribeCacheParameterGroupsResultStaxUnmarshaller implements Unmar
                     continue;
                 }
 
+                if (context.testExpression("CacheParameterGroups", targetDepth)) {
+                    describeCacheParameterGroupsResult.withCacheParameterGroups(new ArrayList<CacheParameterGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheParameterGroups/CacheParameterGroup", targetDepth)) {
                     describeCacheParameterGroupsResult.withCacheParameterGroups(CacheParameterGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

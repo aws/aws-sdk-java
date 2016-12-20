@@ -180,9 +180,9 @@ public class DescribeClusterSubnetGroupsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getClusterSubnetGroups() != null)
-            sb.append("ClusterSubnetGroups: " + getClusterSubnetGroups());
+            sb.append("ClusterSubnetGroups: ").append(getClusterSubnetGroups());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class GetDeploymentInstanceResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceSummary() != null)
-            sb.append("InstanceSummary: " + getInstanceSummary());
+            sb.append("InstanceSummary: ").append(getInstanceSummary());
         sb.append("}");
         return sb.toString();
     }

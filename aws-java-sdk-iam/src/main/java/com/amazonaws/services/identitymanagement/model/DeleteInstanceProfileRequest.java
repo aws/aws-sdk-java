@@ -111,7 +111,7 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceProfileName() != null)
-            sb.append("InstanceProfileName: " + getInstanceProfileName());
+            sb.append("InstanceProfileName: ").append(getInstanceProfileName());
         sb.append("}");
         return sb.toString();
     }

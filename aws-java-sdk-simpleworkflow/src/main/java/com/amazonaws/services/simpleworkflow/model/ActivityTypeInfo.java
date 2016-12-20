@@ -297,15 +297,15 @@ public class ActivityTypeInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityType() != null)
-            sb.append("ActivityType: " + getActivityType() + ",");
+            sb.append("ActivityType: ").append(getActivityType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDeprecationDate() != null)
-            sb.append("DeprecationDate: " + getDeprecationDate());
+            sb.append("DeprecationDate: ").append(getDeprecationDate());
         sb.append("}");
         return sb.toString();
     }

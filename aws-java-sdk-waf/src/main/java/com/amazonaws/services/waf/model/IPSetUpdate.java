@@ -166,9 +166,9 @@ public class IPSetUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getIPSetDescriptor() != null)
-            sb.append("IPSetDescriptor: " + getIPSetDescriptor());
+            sb.append("IPSetDescriptor: ").append(getIPSetDescriptor());
         sb.append("}");
         return sb.toString();
     }

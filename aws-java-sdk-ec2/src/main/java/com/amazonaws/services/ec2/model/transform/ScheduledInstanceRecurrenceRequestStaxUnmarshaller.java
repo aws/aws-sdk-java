@@ -55,6 +55,11 @@ public class ScheduledInstanceRecurrenceRequestStaxUnmarshaller implements Unmar
                     continue;
                 }
 
+                if (context.testExpression("OccurrenceDay", targetDepth)) {
+                    scheduledInstanceRecurrenceRequest.withOccurrenceDays(new ArrayList<Integer>());
+                    continue;
+                }
+
                 if (context.testExpression("OccurrenceDay/OccurenceDay", targetDepth)) {
                     scheduledInstanceRecurrenceRequest.withOccurrenceDays(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

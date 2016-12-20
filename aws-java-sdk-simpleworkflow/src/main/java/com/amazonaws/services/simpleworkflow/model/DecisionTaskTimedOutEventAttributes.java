@@ -229,11 +229,11 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimeoutType() != null)
-            sb.append("TimeoutType: " + getTimeoutType() + ",");
+            sb.append("TimeoutType: ").append(getTimeoutType()).append(",");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId() + ",");
+            sb.append("ScheduledEventId: ").append(getScheduledEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId());
+            sb.append("StartedEventId: ").append(getStartedEventId());
         sb.append("}");
         return sb.toString();
     }

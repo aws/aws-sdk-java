@@ -147,9 +147,9 @@ public class Message implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubject() != null)
-            sb.append("Subject: " + getSubject() + ",");
+            sb.append("Subject: ").append(getSubject()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody());
+            sb.append("Body: ").append(getBody());
         sb.append("}");
         return sb.toString();
     }

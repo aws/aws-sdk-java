@@ -166,9 +166,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationSummaries() != null)
-            sb.append("ApplicationSummaries: " + getApplicationSummaries() + ",");
+            sb.append("ApplicationSummaries: ").append(getApplicationSummaries()).append(",");
         if (getHasMoreApplications() != null)
-            sb.append("HasMoreApplications: " + getHasMoreApplications());
+            sb.append("HasMoreApplications: ").append(getHasMoreApplications());
         sb.append("}");
         return sb.toString();
     }

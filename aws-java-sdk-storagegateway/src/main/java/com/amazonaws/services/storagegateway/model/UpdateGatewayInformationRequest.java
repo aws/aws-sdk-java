@@ -116,11 +116,11 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: " + getGatewayName() + ",");
+            sb.append("GatewayName: ").append(getGatewayName()).append(",");
         if (getGatewayTimezone() != null)
-            sb.append("GatewayTimezone: " + getGatewayTimezone());
+            sb.append("GatewayTimezone: ").append(getGatewayTimezone());
         sb.append("}");
         return sb.toString();
     }

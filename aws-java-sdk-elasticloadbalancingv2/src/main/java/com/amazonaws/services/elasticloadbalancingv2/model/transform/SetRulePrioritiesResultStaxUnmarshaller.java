@@ -45,6 +45,11 @@ public class SetRulePrioritiesResultStaxUnmarshaller implements Unmarshaller<Set
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Rules", targetDepth)) {
+                    setRulePrioritiesResult.withRules(new ArrayList<Rule>());
+                    continue;
+                }
+
                 if (context.testExpression("Rules/member", targetDepth)) {
                     setRulePrioritiesResult.withRules(RuleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

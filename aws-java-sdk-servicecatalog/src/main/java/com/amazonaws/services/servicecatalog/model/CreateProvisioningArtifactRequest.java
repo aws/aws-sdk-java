@@ -305,13 +305,13 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: " + getIdempotencyToken());
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken());
         sb.append("}");
         return sb.toString();
     }

@@ -192,9 +192,9 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceIdList() != null)
-            sb.append("ResourceIdList: " + getResourceIdList() + ",");
+            sb.append("ResourceIdList: ").append(getResourceIdList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

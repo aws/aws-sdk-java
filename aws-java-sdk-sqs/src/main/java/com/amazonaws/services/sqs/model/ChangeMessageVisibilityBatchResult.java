@@ -16,31 +16,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For each message in the batch, the response contains a <a>ChangeMessageVisibilityBatchResultEntry</a> tag if the
- * message succeeds or a <a>BatchResultErrorEntry</a> tag if the message fails.
+ * For each message in the batch, the response contains a <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code>
+ * tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
  * </p>
  */
 public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     * A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchResultEntry> successful;
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry> failed;
 
     /**
      * <p>
-     * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     * A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * </p>
      * 
-     * @return A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     * @return A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      */
 
     public java.util.List<ChangeMessageVisibilityBatchResultEntry> getSuccessful() {
@@ -52,11 +52,11 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     * A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * </p>
      * 
      * @param successful
-     *        A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     *        A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      */
 
     public void setSuccessful(java.util.Collection<ChangeMessageVisibilityBatchResultEntry> successful) {
@@ -70,7 +70,7 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     * A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param successful
-     *        A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     *        A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     * A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * </p>
      * 
      * @param successful
-     *        A list of <a>ChangeMessageVisibilityBatchResultEntry</a> items.
+     *        A list of <code> <a>ChangeMessageVisibilityBatchResultEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +110,10 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * </p>
      * 
-     * @return A list of <a>BatchResultErrorEntry</a> items.
+     * @return A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      */
 
     public java.util.List<BatchResultErrorEntry> getFailed() {
@@ -125,11 +125,11 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * </p>
      * 
      * @param failed
-     *        A list of <a>BatchResultErrorEntry</a> items.
+     *        A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      */
 
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
@@ -143,7 +143,7 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +152,7 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param failed
-     *        A list of <a>BatchResultErrorEntry</a> items.
+     *        A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * </p>
      * 
      * @param failed
-     *        A list of <a>BatchResultErrorEntry</a> items.
+     *        A list of <code> <a>BatchResultErrorEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,9 +193,9 @@ public class ChangeMessageVisibilityBatchResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccessful() != null)
-            sb.append("Successful: " + getSuccessful() + ",");
+            sb.append("Successful: ").append(getSuccessful()).append(",");
         if (getFailed() != null)
-            sb.append("Failed: " + getFailed());
+            sb.append("Failed: ").append(getFailed());
         sb.append("}");
         return sb.toString();
     }

@@ -194,11 +194,11 @@ public class EventDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvent() != null)
-            sb.append("Event: " + getEvent() + ",");
+            sb.append("Event: ").append(getEvent()).append(",");
         if (getEventDescription() != null)
-            sb.append("EventDescription: " + getEventDescription() + ",");
+            sb.append("EventDescription: ").append(getEventDescription()).append(",");
         if (getEventMetadata() != null)
-            sb.append("EventMetadata: " + getEventMetadata());
+            sb.append("EventMetadata: ").append(getEventMetadata());
         sb.append("}");
         return sb.toString();
     }

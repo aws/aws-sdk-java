@@ -81,7 +81,7 @@ public class CreateHapgRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel());
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }

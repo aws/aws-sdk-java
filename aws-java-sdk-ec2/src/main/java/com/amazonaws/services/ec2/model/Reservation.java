@@ -416,17 +416,17 @@ public class Reservation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservationId() != null)
-            sb.append("ReservationId: " + getReservationId() + ",");
+            sb.append("ReservationId: ").append(getReservationId()).append(",");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getRequesterId() != null)
-            sb.append("RequesterId: " + getRequesterId() + ",");
+            sb.append("RequesterId: ").append(getRequesterId()).append(",");
         if (getGroups() != null)
-            sb.append("Groups: " + getGroups() + ",");
+            sb.append("Groups: ").append(getGroups()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getGroupNames() != null)
-            sb.append("GroupNames: " + getGroupNames());
+            sb.append("GroupNames: ").append(getGroupNames());
         sb.append("}");
         return sb.toString();
     }

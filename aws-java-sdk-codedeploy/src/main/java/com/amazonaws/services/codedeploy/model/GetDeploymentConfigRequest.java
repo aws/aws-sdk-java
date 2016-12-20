@@ -81,7 +81,7 @@ public class GetDeploymentConfigRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName());
+            sb.append("DeploymentConfigName: ").append(getDeploymentConfigName());
         sb.append("}");
         return sb.toString();
     }

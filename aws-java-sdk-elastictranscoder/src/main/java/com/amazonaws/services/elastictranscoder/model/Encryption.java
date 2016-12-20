@@ -717,13 +717,13 @@ public class Encryption implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMode() != null)
-            sb.append("Mode: " + getMode() + ",");
+            sb.append("Mode: ").append(getMode()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getKeyMd5() != null)
-            sb.append("KeyMd5: " + getKeyMd5() + ",");
+            sb.append("KeyMd5: ").append(getKeyMd5()).append(",");
         if (getInitializationVector() != null)
-            sb.append("InitializationVector: " + getInitializationVector());
+            sb.append("InitializationVector: ").append(getInitializationVector());
         sb.append("}");
         return sb.toString();
     }

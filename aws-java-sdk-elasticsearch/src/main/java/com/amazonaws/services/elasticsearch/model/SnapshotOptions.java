@@ -88,7 +88,7 @@ public class SnapshotOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomatedSnapshotStartHour() != null)
-            sb.append("AutomatedSnapshotStartHour: " + getAutomatedSnapshotStartHour());
+            sb.append("AutomatedSnapshotStartHour: ").append(getAutomatedSnapshotStartHour());
         sb.append("}");
         return sb.toString();
     }

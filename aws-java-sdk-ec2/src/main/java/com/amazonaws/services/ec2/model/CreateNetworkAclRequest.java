@@ -94,7 +94,7 @@ public class CreateNetworkAclRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId());
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }

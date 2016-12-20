@@ -80,7 +80,7 @@ public class MonthlyTransfer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGbPerMonthAllocated() != null)
-            sb.append("GbPerMonthAllocated: " + getGbPerMonthAllocated());
+            sb.append("GbPerMonthAllocated: ").append(getGbPerMonthAllocated());
         sb.append("}");
         return sb.toString();
     }

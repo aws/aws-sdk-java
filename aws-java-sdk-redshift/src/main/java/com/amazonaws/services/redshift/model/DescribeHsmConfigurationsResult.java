@@ -178,9 +178,9 @@ public class DescribeHsmConfigurationsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getHsmConfigurations() != null)
-            sb.append("HsmConfigurations: " + getHsmConfigurations());
+            sb.append("HsmConfigurations: ").append(getHsmConfigurations());
         sb.append("}");
         return sb.toString();
     }

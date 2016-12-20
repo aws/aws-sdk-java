@@ -197,9 +197,9 @@ public class ModifyHostsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccessful() != null)
-            sb.append("Successful: " + getSuccessful() + ",");
+            sb.append("Successful: ").append(getSuccessful()).append(",");
         if (getUnsuccessful() != null)
-            sb.append("Unsuccessful: " + getUnsuccessful());
+            sb.append("Unsuccessful: ").append(getUnsuccessful());
         sb.append("}");
         return sb.toString();
     }

@@ -253,15 +253,15 @@ public class OutputUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutputId() != null)
-            sb.append("OutputId: " + getOutputId() + ",");
+            sb.append("OutputId: ").append(getOutputId()).append(",");
         if (getNameUpdate() != null)
-            sb.append("NameUpdate: " + getNameUpdate() + ",");
+            sb.append("NameUpdate: ").append(getNameUpdate()).append(",");
         if (getKinesisStreamsOutputUpdate() != null)
-            sb.append("KinesisStreamsOutputUpdate: " + getKinesisStreamsOutputUpdate() + ",");
+            sb.append("KinesisStreamsOutputUpdate: ").append(getKinesisStreamsOutputUpdate()).append(",");
         if (getKinesisFirehoseOutputUpdate() != null)
-            sb.append("KinesisFirehoseOutputUpdate: " + getKinesisFirehoseOutputUpdate() + ",");
+            sb.append("KinesisFirehoseOutputUpdate: ").append(getKinesisFirehoseOutputUpdate()).append(",");
         if (getDestinationSchemaUpdate() != null)
-            sb.append("DestinationSchemaUpdate: " + getDestinationSchemaUpdate());
+            sb.append("DestinationSchemaUpdate: ").append(getDestinationSchemaUpdate());
         sb.append("}");
         return sb.toString();
     }

@@ -140,9 +140,9 @@ public class ListenerDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListener() != null)
-            sb.append("Listener: " + getListener() + ",");
+            sb.append("Listener: ").append(getListener()).append(",");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames());
+            sb.append("PolicyNames: ").append(getPolicyNames());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRule() != null)
-            sb.append("Rule: " + getRule() + ",");
+            sb.append("Rule: ").append(getRule()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets());
+            sb.append("Targets: ").append(getTargets());
         sb.append("}");
         return sb.toString();
     }

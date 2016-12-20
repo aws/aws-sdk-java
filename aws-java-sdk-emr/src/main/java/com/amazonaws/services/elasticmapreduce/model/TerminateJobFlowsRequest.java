@@ -132,7 +132,7 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlowIds() != null)
-            sb.append("JobFlowIds: " + getJobFlowIds());
+            sb.append("JobFlowIds: ").append(getJobFlowIds());
         sb.append("}");
         return sb.toString();
     }

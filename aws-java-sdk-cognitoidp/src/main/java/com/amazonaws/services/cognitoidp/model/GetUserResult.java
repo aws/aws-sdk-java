@@ -232,11 +232,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: " + getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions());
         sb.append("}");
         return sb.toString();
     }

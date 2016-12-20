@@ -61,7 +61,7 @@ public class UpdateHostedZoneCommentResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZone() != null)
-            sb.append("HostedZone: " + getHostedZone());
+            sb.append("HostedZone: ").append(getHostedZone());
         sb.append("}");
         return sb.toString();
     }

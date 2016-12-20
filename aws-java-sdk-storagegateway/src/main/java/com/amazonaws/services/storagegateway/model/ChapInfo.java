@@ -251,13 +251,13 @@ public class ChapInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetARN() != null)
-            sb.append("TargetARN: " + getTargetARN() + ",");
+            sb.append("TargetARN: ").append(getTargetARN()).append(",");
         if (getSecretToAuthenticateInitiator() != null)
-            sb.append("SecretToAuthenticateInitiator: " + getSecretToAuthenticateInitiator() + ",");
+            sb.append("SecretToAuthenticateInitiator: ").append(getSecretToAuthenticateInitiator()).append(",");
         if (getInitiatorName() != null)
-            sb.append("InitiatorName: " + getInitiatorName() + ",");
+            sb.append("InitiatorName: ").append(getInitiatorName()).append(",");
         if (getSecretToAuthenticateTarget() != null)
-            sb.append("SecretToAuthenticateTarget: " + getSecretToAuthenticateTarget());
+            sb.append("SecretToAuthenticateTarget: ").append(getSecretToAuthenticateTarget());
         sb.append("}");
         return sb.toString();
     }

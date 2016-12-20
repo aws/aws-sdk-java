@@ -108,7 +108,7 @@ public class GetRegionsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegions() != null)
-            sb.append("Regions: " + getRegions());
+            sb.append("Regions: ").append(getRegions());
         sb.append("}");
         return sb.toString();
     }

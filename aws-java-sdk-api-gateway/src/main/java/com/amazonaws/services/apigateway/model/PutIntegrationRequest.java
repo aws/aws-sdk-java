@@ -1201,31 +1201,31 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getIntegrationHttpMethod() != null)
-            sb.append("IntegrationHttpMethod: " + getIntegrationHttpMethod() + ",");
+            sb.append("IntegrationHttpMethod: ").append(getIntegrationHttpMethod()).append(",");
         if (getUri() != null)
-            sb.append("Uri: " + getUri() + ",");
+            sb.append("Uri: ").append(getUri()).append(",");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials() + ",");
+            sb.append("Credentials: ").append(getCredentials()).append(",");
         if (getRequestParameters() != null)
-            sb.append("RequestParameters: " + getRequestParameters() + ",");
+            sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestTemplates() != null)
-            sb.append("RequestTemplates: " + getRequestTemplates() + ",");
+            sb.append("RequestTemplates: ").append(getRequestTemplates()).append(",");
         if (getPassthroughBehavior() != null)
-            sb.append("PassthroughBehavior: " + getPassthroughBehavior() + ",");
+            sb.append("PassthroughBehavior: ").append(getPassthroughBehavior()).append(",");
         if (getCacheNamespace() != null)
-            sb.append("CacheNamespace: " + getCacheNamespace() + ",");
+            sb.append("CacheNamespace: ").append(getCacheNamespace()).append(",");
         if (getCacheKeyParameters() != null)
-            sb.append("CacheKeyParameters: " + getCacheKeyParameters() + ",");
+            sb.append("CacheKeyParameters: ").append(getCacheKeyParameters()).append(",");
         if (getContentHandling() != null)
-            sb.append("ContentHandling: " + getContentHandling());
+            sb.append("ContentHandling: ").append(getContentHandling());
         sb.append("}");
         return sb.toString();
     }

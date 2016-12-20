@@ -81,7 +81,7 @@ public class DeleteBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuildId() != null)
-            sb.append("BuildId: " + getBuildId());
+            sb.append("BuildId: ").append(getBuildId());
         sb.append("}");
         return sb.toString();
     }

@@ -75,6 +75,11 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("productCodes", targetDepth)) {
+                    image.withProductCodes(new ArrayList<ProductCode>());
+                    continue;
+                }
+
                 if (context.testExpression("productCodes/item", targetDepth)) {
                     image.withProductCodes(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -145,6 +150,11 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("blockDeviceMapping", targetDepth)) {
+                    image.withBlockDeviceMappings(new ArrayList<BlockDeviceMapping>());
+                    continue;
+                }
+
                 if (context.testExpression("blockDeviceMapping/item", targetDepth)) {
                     image.withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -152,6 +162,11 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
 
                 if (context.testExpression("virtualizationType", targetDepth)) {
                     image.setVirtualizationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    image.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

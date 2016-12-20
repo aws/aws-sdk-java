@@ -187,11 +187,11 @@ public class DescribeConnectionLoaRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getProviderName() != null)
-            sb.append("ProviderName: " + getProviderName() + ",");
+            sb.append("ProviderName: ").append(getProviderName()).append(",");
         if (getLoaContentType() != null)
-            sb.append("LoaContentType: " + getLoaContentType());
+            sb.append("LoaContentType: ").append(getLoaContentType());
         sb.append("}");
         return sb.toString();
     }

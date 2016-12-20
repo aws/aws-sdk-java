@@ -139,9 +139,9 @@ public class HostedZoneConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getPrivateZone() != null)
-            sb.append("PrivateZone: " + getPrivateZone());
+            sb.append("PrivateZone: ").append(getPrivateZone());
         sb.append("}");
         return sb.toString();
     }

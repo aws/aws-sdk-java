@@ -113,9 +113,9 @@ public class GetReplicationJobsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJobList() != null)
-            sb.append("ReplicationJobList: " + getReplicationJobList() + ",");
+            sb.append("ReplicationJobList: ").append(getReplicationJobList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

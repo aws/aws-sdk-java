@@ -61,10 +61,8 @@ public class CreateCampaignRequestMarshaller implements Marshaller<Request<Creat
 
         String uriResourcePath = "/v1/apps/{application-id}/campaigns";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (createCampaignRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createCampaignRequest.getApplicationId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                createCampaignRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         try {

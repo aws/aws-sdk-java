@@ -109,9 +109,9 @@ public class DefineIndexFieldRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getIndexField() != null)
-            sb.append("IndexField: " + getIndexField());
+            sb.append("IndexField: ").append(getIndexField());
         sb.append("}");
         return sb.toString();
     }

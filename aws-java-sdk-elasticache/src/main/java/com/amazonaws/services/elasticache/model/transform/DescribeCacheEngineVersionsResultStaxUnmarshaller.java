@@ -50,6 +50,11 @@ public class DescribeCacheEngineVersionsResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("CacheEngineVersions", targetDepth)) {
+                    describeCacheEngineVersionsResult.withCacheEngineVersions(new ArrayList<CacheEngineVersion>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheEngineVersions/CacheEngineVersion", targetDepth)) {
                     describeCacheEngineVersionsResult.withCacheEngineVersions(CacheEngineVersionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

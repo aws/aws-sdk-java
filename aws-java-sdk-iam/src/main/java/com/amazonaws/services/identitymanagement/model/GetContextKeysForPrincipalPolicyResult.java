@@ -115,7 +115,7 @@ public class GetContextKeysForPrincipalPolicyResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContextKeyNames() != null)
-            sb.append("ContextKeyNames: " + getContextKeyNames());
+            sb.append("ContextKeyNames: ").append(getContextKeyNames());
         sb.append("}");
         return sb.toString();
     }

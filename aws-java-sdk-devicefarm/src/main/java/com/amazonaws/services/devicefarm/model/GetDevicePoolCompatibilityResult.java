@@ -186,9 +186,9 @@ public class GetDevicePoolCompatibilityResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCompatibleDevices() != null)
-            sb.append("CompatibleDevices: " + getCompatibleDevices() + ",");
+            sb.append("CompatibleDevices: ").append(getCompatibleDevices()).append(",");
         if (getIncompatibleDevices() != null)
-            sb.append("IncompatibleDevices: " + getIncompatibleDevices());
+            sb.append("IncompatibleDevices: ").append(getIncompatibleDevices());
         sb.append("}");
         return sb.toString();
     }

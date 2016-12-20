@@ -55,6 +55,11 @@ public class ActiveTrustedSignersStaxUnmarshaller implements Unmarshaller<Active
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    activeTrustedSigners.withItems(new ArrayList<Signer>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Signer", targetDepth)) {
                     activeTrustedSigners.withItems(SignerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

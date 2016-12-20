@@ -61,10 +61,8 @@ public class GetImportJobsRequestMarshaller implements Marshaller<Request<GetImp
 
         String uriResourcePath = "/v1/apps/{application-id}/jobs/import";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getImportJobsRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getImportJobsRequest.getApplicationId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getImportJobsRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         if (getImportJobsRequest.getPageSize() != null) {

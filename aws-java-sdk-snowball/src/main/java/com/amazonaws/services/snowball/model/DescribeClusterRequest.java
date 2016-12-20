@@ -79,7 +79,7 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId());
+            sb.append("ClusterId: ").append(getClusterId());
         sb.append("}");
         return sb.toString();
     }

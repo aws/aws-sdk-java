@@ -78,7 +78,7 @@ public class PutImageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImage() != null)
-            sb.append("Image: " + getImage());
+            sb.append("Image: ").append(getImage());
         sb.append("}");
         return sb.toString();
     }

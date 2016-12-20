@@ -46,6 +46,11 @@ public class ListTrafficPolicyInstancesByPolicyResultStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TrafficPolicyInstances", targetDepth)) {
+                    listTrafficPolicyInstancesByPolicyResult.withTrafficPolicyInstances(new ArrayList<TrafficPolicyInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("TrafficPolicyInstances/TrafficPolicyInstance", targetDepth)) {
                     listTrafficPolicyInstancesByPolicyResult
                             .withTrafficPolicyInstances(TrafficPolicyInstanceStaxUnmarshaller.getInstance().unmarshall(context));

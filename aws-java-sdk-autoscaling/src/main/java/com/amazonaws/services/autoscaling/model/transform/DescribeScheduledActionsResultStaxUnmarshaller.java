@@ -45,6 +45,11 @@ public class DescribeScheduledActionsResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ScheduledUpdateGroupActions", targetDepth)) {
+                    describeScheduledActionsResult.withScheduledUpdateGroupActions(new ArrayList<ScheduledUpdateGroupAction>());
+                    continue;
+                }
+
                 if (context.testExpression("ScheduledUpdateGroupActions/member", targetDepth)) {
                     describeScheduledActionsResult
                             .withScheduledUpdateGroupActions(ScheduledUpdateGroupActionStaxUnmarshaller.getInstance().unmarshall(context));

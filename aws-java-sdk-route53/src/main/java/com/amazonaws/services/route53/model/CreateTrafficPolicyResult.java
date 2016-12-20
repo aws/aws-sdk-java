@@ -126,9 +126,9 @@ public class CreateTrafficPolicyResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicy() != null)
-            sb.append("TrafficPolicy: " + getTrafficPolicy() + ",");
+            sb.append("TrafficPolicy: ").append(getTrafficPolicy()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

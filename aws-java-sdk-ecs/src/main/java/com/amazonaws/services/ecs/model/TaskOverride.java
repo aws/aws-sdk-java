@@ -166,9 +166,9 @@ public class TaskOverride implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerOverrides() != null)
-            sb.append("ContainerOverrides: " + getContainerOverrides() + ",");
+            sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
         if (getTaskRoleArn() != null)
-            sb.append("TaskRoleArn: " + getTaskRoleArn());
+            sb.append("TaskRoleArn: ").append(getTaskRoleArn());
         sb.append("}");
         return sb.toString();
     }

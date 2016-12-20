@@ -424,17 +424,17 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId() + ",");
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getAllowReassociation() != null)
-            sb.append("AllowReassociation: " + getAllowReassociation());
+            sb.append("AllowReassociation: ").append(getAllowReassociation());
         sb.append("}");
         return sb.toString();
     }

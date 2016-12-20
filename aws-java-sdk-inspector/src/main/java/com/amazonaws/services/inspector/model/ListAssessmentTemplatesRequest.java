@@ -293,13 +293,13 @@ public class ListAssessmentTemplatesRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetArns() != null)
-            sb.append("AssessmentTargetArns: " + getAssessmentTargetArns() + ",");
+            sb.append("AssessmentTargetArns: ").append(getAssessmentTargetArns()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

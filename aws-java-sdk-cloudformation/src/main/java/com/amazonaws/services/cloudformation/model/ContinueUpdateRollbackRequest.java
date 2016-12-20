@@ -544,11 +544,11 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getResourcesToSkip() != null)
-            sb.append("ResourcesToSkip: " + getResourcesToSkip());
+            sb.append("ResourcesToSkip: ").append(getResourcesToSkip());
         sb.append("}");
         return sb.toString();
     }

@@ -789,31 +789,31 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId()).append(",");
         if (getTaskExecutionId() != null)
-            sb.append("TaskExecutionId: " + getTaskExecutionId() + ",");
+            sb.append("TaskExecutionId: ").append(getTaskExecutionId()).append(",");
         if (getTaskArn() != null)
-            sb.append("TaskArn: " + getTaskArn() + ",");
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: " + getTaskParameters() + ",");
+            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getMaxConcurrency() != null)
-            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getMaxErrors() != null)
-            sb.append("MaxErrors: " + getMaxErrors() + ",");
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime());
+            sb.append("EndTime: ").append(getEndTime());
         sb.append("}");
         return sb.toString();
     }

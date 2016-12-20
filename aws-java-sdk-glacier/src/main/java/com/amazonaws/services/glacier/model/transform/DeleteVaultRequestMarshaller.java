@@ -61,10 +61,9 @@ public class DeleteVaultRequestMarshaller implements Marshaller<Request<DeleteVa
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (deleteVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteVaultRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (deleteVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteVaultRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                deleteVaultRequest.getAccountId() == null ? "-" : deleteVaultRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", deleteVaultRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

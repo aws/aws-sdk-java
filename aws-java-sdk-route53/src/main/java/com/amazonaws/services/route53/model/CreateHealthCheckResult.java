@@ -126,9 +126,9 @@ public class CreateHealthCheckResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHealthCheck() != null)
-            sb.append("HealthCheck: " + getHealthCheck() + ",");
+            sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

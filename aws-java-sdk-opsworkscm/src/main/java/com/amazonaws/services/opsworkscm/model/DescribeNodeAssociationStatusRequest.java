@@ -88,9 +88,9 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNodeAssociationStatusToken() != null)
-            sb.append("NodeAssociationStatusToken: " + getNodeAssociationStatusToken() + ",");
+            sb.append("NodeAssociationStatusToken: ").append(getNodeAssociationStatusToken()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName());
+            sb.append("ServerName: ").append(getServerName());
         sb.append("}");
         return sb.toString();
     }

@@ -172,11 +172,11 @@ public class NetworkAclAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAclAssociationId() != null)
-            sb.append("NetworkAclAssociationId: " + getNetworkAclAssociationId() + ",");
+            sb.append("NetworkAclAssociationId: ").append(getNetworkAclAssociationId()).append(",");
         if (getNetworkAclId() != null)
-            sb.append("NetworkAclId: " + getNetworkAclId() + ",");
+            sb.append("NetworkAclId: ").append(getNetworkAclId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }

@@ -97,7 +97,7 @@ public class DeleteThingShadowResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPayload() != null)
-            sb.append("Payload: " + getPayload());
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }

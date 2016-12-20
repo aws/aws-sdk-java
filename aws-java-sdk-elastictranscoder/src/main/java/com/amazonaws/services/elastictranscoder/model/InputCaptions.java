@@ -348,9 +348,9 @@ public class InputCaptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMergePolicy() != null)
-            sb.append("MergePolicy: " + getMergePolicy() + ",");
+            sb.append("MergePolicy: ").append(getMergePolicy()).append(",");
         if (getCaptionSources() != null)
-            sb.append("CaptionSources: " + getCaptionSources());
+            sb.append("CaptionSources: ").append(getCaptionSources());
         sb.append("}");
         return sb.toString();
     }

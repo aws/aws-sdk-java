@@ -63,10 +63,8 @@ public class DescribeElasticsearchDomainRequestMarshaller implements
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DomainName}",
-                (describeElasticsearchDomainRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(describeElasticsearchDomainRequest.getDomainName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DomainName",
+                describeElasticsearchDomainRequest.getDomainName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

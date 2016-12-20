@@ -216,13 +216,13 @@ public class ReferenceDataSourceUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReferenceId() != null)
-            sb.append("ReferenceId: " + getReferenceId() + ",");
+            sb.append("ReferenceId: ").append(getReferenceId()).append(",");
         if (getTableNameUpdate() != null)
-            sb.append("TableNameUpdate: " + getTableNameUpdate() + ",");
+            sb.append("TableNameUpdate: ").append(getTableNameUpdate()).append(",");
         if (getS3ReferenceDataSourceUpdate() != null)
-            sb.append("S3ReferenceDataSourceUpdate: " + getS3ReferenceDataSourceUpdate() + ",");
+            sb.append("S3ReferenceDataSourceUpdate: ").append(getS3ReferenceDataSourceUpdate()).append(",");
         if (getReferenceSchemaUpdate() != null)
-            sb.append("ReferenceSchemaUpdate: " + getReferenceSchemaUpdate());
+            sb.append("ReferenceSchemaUpdate: ").append(getReferenceSchemaUpdate());
         sb.append("}");
         return sb.toString();
     }

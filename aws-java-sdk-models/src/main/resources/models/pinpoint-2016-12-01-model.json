@@ -19,31 +19,37 @@
       "documentation" : "Creates or updates a campaign.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -73,31 +79,37 @@
       "documentation" : "Creates or updates an import job.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -127,31 +139,37 @@
       "documentation" : "Used to create or update a segment.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -181,31 +199,37 @@
       "documentation" : "Deletes the APNs channel for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -235,31 +259,37 @@
       "documentation" : "Deletes a campaign.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -289,31 +319,37 @@
       "documentation" : "Deletes the GCM channel for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -343,31 +379,37 @@
       "documentation" : "Deletes a segment.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -397,31 +439,37 @@
       "documentation" : "Returns information about the APNs channel for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -451,31 +499,37 @@
       "documentation" : "Used to request the settings for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -505,31 +559,37 @@
       "documentation" : "Returns information about a campaign.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -559,31 +619,37 @@
       "documentation" : "Returns information about the activity performed by a campaign.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -613,31 +679,37 @@
       "documentation" : "Returns information about your campaign versions.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -667,31 +739,37 @@
       "documentation" : "Returns information about your campaign versions.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -721,31 +799,37 @@
       "documentation" : "Returns information about your campaigns.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -775,31 +859,37 @@
       "documentation" : "Returns information about an endpoint.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -829,31 +919,37 @@
       "documentation" : "Returns information about the GCM channel for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -883,31 +979,37 @@
       "documentation" : "Returns information about an import job.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -937,31 +1039,37 @@
       "documentation" : "Returns information about your import jobs.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -991,31 +1099,37 @@
       "documentation" : "Returns information about a segment.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1045,31 +1159,37 @@
       "documentation" : "Returns a list of import jobs for a specific segment.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1099,31 +1219,37 @@
       "documentation" : "Returns information about a segment version.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1153,31 +1279,37 @@
       "documentation" : "Returns information about your segment versions.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1207,31 +1339,37 @@
       "documentation" : "Used to get information about your segments.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1261,31 +1399,37 @@
       "documentation" : "Use to update the APNs channel for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1315,31 +1459,37 @@
       "documentation" : "Used to update the settings for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1369,31 +1519,37 @@
       "documentation" : "Use to update a campaign.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1423,31 +1579,37 @@
       "documentation" : "Use to update an endpoint.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1477,31 +1639,37 @@
       "documentation" : "Use to update your endpoints.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1531,31 +1699,37 @@
       "documentation" : "Use to update the GCM channel for an app.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1585,31 +1759,37 @@
       "documentation" : "Use to update a segment.",
       "errors" : [ {
         "documentation" : "400 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
         "documentation" : "500 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
         "documentation" : "403 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
         "documentation" : "404 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
         "documentation" : "405 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
         "documentation" : "429 response",
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -1820,7 +2000,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2163,7 +2343,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2178,7 +2358,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -2573,7 +2754,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2642,7 +2823,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3218,7 +3399,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3239,7 +3420,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4136,7 +4317,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 403
       },
       "exception" : true,
       "fault" : false,
@@ -4179,7 +4361,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4200,7 +4382,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6338,7 +6520,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 500
       },
       "exception" : true,
       "fault" : false,
@@ -6381,7 +6564,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6414,7 +6597,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6447,7 +6630,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6480,7 +6663,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6513,7 +6696,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6546,7 +6729,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6579,7 +6762,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6612,7 +6795,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6645,7 +6828,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6678,7 +6861,7 @@
       },
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6723,7 +6906,7 @@
       },
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6768,7 +6951,7 @@
       },
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7043,7 +7226,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 405
       },
       "exception" : true,
       "fault" : false,
@@ -7080,7 +7264,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -7219,7 +7404,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7797,7 +7982,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7908,7 +8093,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 429
       },
       "exception" : true,
       "fault" : false,
@@ -9045,7 +9231,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9066,7 +9252,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9087,7 +9273,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9108,7 +9294,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

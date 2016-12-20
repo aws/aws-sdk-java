@@ -245,11 +245,11 @@ public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+            sb.append("CacheSubnetGroupName: ").append(getCacheSubnetGroupName()).append(",");
         if (getCacheSubnetGroupDescription() != null)
-            sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");
+            sb.append("CacheSubnetGroupDescription: ").append(getCacheSubnetGroupDescription()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds());
         sb.append("}");
         return sb.toString();
     }

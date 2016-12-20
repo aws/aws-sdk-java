@@ -196,9 +196,9 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSSHPublicKeyBody() != null)
-            sb.append("SSHPublicKeyBody: " + getSSHPublicKeyBody());
+            sb.append("SSHPublicKeyBody: ").append(getSSHPublicKeyBody());
         sb.append("}");
         return sb.toString();
     }

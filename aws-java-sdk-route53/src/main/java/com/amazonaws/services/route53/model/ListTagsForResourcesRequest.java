@@ -324,9 +324,9 @@ public class ListTagsForResourcesRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceIds() != null)
-            sb.append("ResourceIds: " + getResourceIds());
+            sb.append("ResourceIds: ").append(getResourceIds());
         sb.append("}");
         return sb.toString();
     }

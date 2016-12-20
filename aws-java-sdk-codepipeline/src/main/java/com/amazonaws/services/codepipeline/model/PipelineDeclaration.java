@@ -290,15 +290,15 @@ public class PipelineDeclaration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getArtifactStore() != null)
-            sb.append("ArtifactStore: " + getArtifactStore() + ",");
+            sb.append("ArtifactStore: ").append(getArtifactStore()).append(",");
         if (getStages() != null)
-            sb.append("Stages: " + getStages() + ",");
+            sb.append("Stages: ").append(getStages()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }

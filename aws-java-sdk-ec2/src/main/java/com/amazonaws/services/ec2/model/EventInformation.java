@@ -873,11 +873,11 @@ public class EventInformation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getEventSubType() != null)
-            sb.append("EventSubType: " + getEventSubType() + ",");
+            sb.append("EventSubType: ").append(getEventSubType()).append(",");
         if (getEventDescription() != null)
-            sb.append("EventDescription: " + getEventDescription());
+            sb.append("EventDescription: ").append(getEventDescription());
         sb.append("}");
         return sb.toString();
     }

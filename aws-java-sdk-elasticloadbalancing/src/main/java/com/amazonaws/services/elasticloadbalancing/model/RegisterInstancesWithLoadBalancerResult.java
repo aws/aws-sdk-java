@@ -114,7 +114,7 @@ public class RegisterInstancesWithLoadBalancerResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances());
+            sb.append("Instances: ").append(getInstances());
         sb.append("}");
         return sb.toString();
     }

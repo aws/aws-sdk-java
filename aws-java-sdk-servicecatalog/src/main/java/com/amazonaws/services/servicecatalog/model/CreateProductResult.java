@@ -200,11 +200,11 @@ public class CreateProductResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductViewDetail() != null)
-            sb.append("ProductViewDetail: " + getProductViewDetail() + ",");
+            sb.append("ProductViewDetail: ").append(getProductViewDetail()).append(",");
         if (getProvisioningArtifactDetail() != null)
-            sb.append("ProvisioningArtifactDetail: " + getProvisioningArtifactDetail() + ",");
+            sb.append("ProvisioningArtifactDetail: ").append(getProvisioningArtifactDetail()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

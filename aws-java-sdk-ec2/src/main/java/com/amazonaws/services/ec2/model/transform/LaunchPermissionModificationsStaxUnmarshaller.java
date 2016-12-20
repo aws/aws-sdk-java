@@ -45,8 +45,18 @@ public class LaunchPermissionModificationsStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Add", targetDepth)) {
+                    launchPermissionModifications.withAdd(new ArrayList<LaunchPermission>());
+                    continue;
+                }
+
                 if (context.testExpression("Add/item", targetDepth)) {
                     launchPermissionModifications.withAdd(LaunchPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Remove", targetDepth)) {
+                    launchPermissionModifications.withRemove(new ArrayList<LaunchPermission>());
                     continue;
                 }
 

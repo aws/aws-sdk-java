@@ -17,7 +17,7 @@ package com.amazonaws.services.waf.model;
  * The operation failed because the referenced object doesn't exist.
  * </p>
  */
-public class WAFNonexistentItemException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
+public class WAFNonexistentItemException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

@@ -61,10 +61,8 @@ public class UpdateGcmChannelRequestMarshaller implements Marshaller<Request<Upd
 
         String uriResourcePath = "/v1/apps/{application-id}/channels/gcm";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (updateGcmChannelRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateGcmChannelRequest.getApplicationId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                updateGcmChannelRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         try {

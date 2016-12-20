@@ -170,11 +170,11 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResource() != null)
-            sb.append("Resource: " + getResource() + ",");
+            sb.append("Resource: ").append(getResource()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getTimeoutInSeconds() != null)
-            sb.append("TimeoutInSeconds: " + getTimeoutInSeconds());
+            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds());
         sb.append("}");
         return sb.toString();
     }

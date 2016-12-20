@@ -86,7 +86,7 @@ public class RefreshTrustedAdvisorCheckRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckId() != null)
-            sb.append("CheckId: " + getCheckId());
+            sb.append("CheckId: ").append(getCheckId());
         sb.append("}");
         return sb.toString();
     }

@@ -124,11 +124,11 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSuggestionCount() != null)
-            sb.append("SuggestionCount: " + getSuggestionCount() + ",");
+            sb.append("SuggestionCount: ").append(getSuggestionCount()).append(",");
         if (getOnlyAvailable() != null)
-            sb.append("OnlyAvailable: " + getOnlyAvailable());
+            sb.append("OnlyAvailable: ").append(getOnlyAvailable());
         sb.append("}");
         return sb.toString();
     }

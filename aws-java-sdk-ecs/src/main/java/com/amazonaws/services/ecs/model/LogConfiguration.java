@@ -361,9 +361,9 @@ public class LogConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogDriver() != null)
-            sb.append("LogDriver: " + getLogDriver() + ",");
+            sb.append("LogDriver: ").append(getLogDriver()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions());
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }

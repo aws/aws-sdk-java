@@ -175,9 +175,9 @@ public class ListChangeSetsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSummaries() != null)
-            sb.append("Summaries: " + getSummaries() + ",");
+            sb.append("Summaries: ").append(getSummaries()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

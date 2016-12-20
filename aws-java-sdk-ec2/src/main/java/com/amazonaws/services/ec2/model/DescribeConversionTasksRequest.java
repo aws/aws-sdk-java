@@ -128,7 +128,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTaskIds() != null)
-            sb.append("ConversionTaskIds: " + getConversionTaskIds());
+            sb.append("ConversionTaskIds: ").append(getConversionTaskIds());
         sb.append("}");
         return sb.toString();
     }

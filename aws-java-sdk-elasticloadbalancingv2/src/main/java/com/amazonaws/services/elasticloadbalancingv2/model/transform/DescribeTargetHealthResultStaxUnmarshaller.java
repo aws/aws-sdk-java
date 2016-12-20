@@ -45,6 +45,11 @@ public class DescribeTargetHealthResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TargetHealthDescriptions", targetDepth)) {
+                    describeTargetHealthResult.withTargetHealthDescriptions(new ArrayList<TargetHealthDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("TargetHealthDescriptions/member", targetDepth)) {
                     describeTargetHealthResult.withTargetHealthDescriptions(TargetHealthDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

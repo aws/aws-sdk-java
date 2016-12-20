@@ -88,9 +88,9 @@ public class GetStatusRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getAPIVersion() != null)
-            sb.append("APIVersion: " + getAPIVersion());
+            sb.append("APIVersion: ").append(getAPIVersion());
         sb.append("}");
         return sb.toString();
     }

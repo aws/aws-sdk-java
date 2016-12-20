@@ -127,9 +127,9 @@ public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getFailureDetails() != null)
-            sb.append("FailureDetails: " + getFailureDetails());
+            sb.append("FailureDetails: ").append(getFailureDetails());
         sb.append("}");
         return sb.toString();
     }

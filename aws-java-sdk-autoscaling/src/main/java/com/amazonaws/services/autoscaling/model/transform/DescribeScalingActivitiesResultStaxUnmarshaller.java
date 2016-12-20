@@ -45,6 +45,11 @@ public class DescribeScalingActivitiesResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Activities", targetDepth)) {
+                    describeScalingActivitiesResult.withActivities(new ArrayList<Activity>());
+                    continue;
+                }
+
                 if (context.testExpression("Activities/member", targetDepth)) {
                     describeScalingActivitiesResult.withActivities(ActivityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

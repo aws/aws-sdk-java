@@ -192,9 +192,9 @@ public class ListAvailableSolutionStacksResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSolutionStacks() != null)
-            sb.append("SolutionStacks: " + getSolutionStacks() + ",");
+            sb.append("SolutionStacks: ").append(getSolutionStacks()).append(",");
         if (getSolutionStackDetails() != null)
-            sb.append("SolutionStackDetails: " + getSolutionStackDetails());
+            sb.append("SolutionStackDetails: ").append(getSolutionStackDetails());
         sb.append("}");
         return sb.toString();
     }

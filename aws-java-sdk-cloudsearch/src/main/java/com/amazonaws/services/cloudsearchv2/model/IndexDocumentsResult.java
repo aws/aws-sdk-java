@@ -114,7 +114,7 @@ public class IndexDocumentsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFieldNames() != null)
-            sb.append("FieldNames: " + getFieldNames());
+            sb.append("FieldNames: ").append(getFieldNames());
         sb.append("}");
         return sb.toString();
     }

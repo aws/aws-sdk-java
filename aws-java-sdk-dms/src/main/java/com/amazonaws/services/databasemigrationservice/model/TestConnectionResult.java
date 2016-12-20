@@ -78,7 +78,7 @@ public class TestConnectionResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnection() != null)
-            sb.append("Connection: " + getConnection());
+            sb.append("Connection: ").append(getConnection());
         sb.append("}");
         return sb.toString();
     }

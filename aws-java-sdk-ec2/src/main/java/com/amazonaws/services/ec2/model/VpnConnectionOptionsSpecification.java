@@ -101,7 +101,7 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStaticRoutesOnly() != null)
-            sb.append("StaticRoutesOnly: " + getStaticRoutesOnly());
+            sb.append("StaticRoutesOnly: ").append(getStaticRoutesOnly());
         sb.append("}");
         return sb.toString();
     }

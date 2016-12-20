@@ -436,17 +436,17 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getDedicatedMasterEnabled() != null)
-            sb.append("DedicatedMasterEnabled: " + getDedicatedMasterEnabled() + ",");
+            sb.append("DedicatedMasterEnabled: ").append(getDedicatedMasterEnabled()).append(",");
         if (getZoneAwarenessEnabled() != null)
-            sb.append("ZoneAwarenessEnabled: " + getZoneAwarenessEnabled() + ",");
+            sb.append("ZoneAwarenessEnabled: ").append(getZoneAwarenessEnabled()).append(",");
         if (getDedicatedMasterType() != null)
-            sb.append("DedicatedMasterType: " + getDedicatedMasterType() + ",");
+            sb.append("DedicatedMasterType: ").append(getDedicatedMasterType()).append(",");
         if (getDedicatedMasterCount() != null)
-            sb.append("DedicatedMasterCount: " + getDedicatedMasterCount());
+            sb.append("DedicatedMasterCount: ").append(getDedicatedMasterCount());
         sb.append("}");
         return sb.toString();
     }

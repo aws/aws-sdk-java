@@ -51,10 +51,8 @@ public class GetHealthCheckStatusRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}/status";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (getHealthCheckStatusRequest.getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getHealthCheckStatusRequest.getHealthCheckId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "HealthCheckId",
+                getHealthCheckStatusRequest.getHealthCheckId());
         request.setResourcePath(uriResourcePath);
 
         return request;

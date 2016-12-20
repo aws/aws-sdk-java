@@ -205,11 +205,11 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestination() != null)
-            sb.append("Destination: " + getDestination() + ",");
+            sb.append("Destination: ").append(getDestination()).append(",");
         if (getDeliveryMedium() != null)
-            sb.append("DeliveryMedium: " + getDeliveryMedium() + ",");
+            sb.append("DeliveryMedium: ").append(getDeliveryMedium()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName());
+            sb.append("AttributeName: ").append(getAttributeName());
         sb.append("}");
         return sb.toString();
     }

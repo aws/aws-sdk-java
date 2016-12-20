@@ -80,7 +80,7 @@ public class UpdateVTLDeviceTypeResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVTLDeviceARN() != null)
-            sb.append("VTLDeviceARN: " + getVTLDeviceARN());
+            sb.append("VTLDeviceARN: ").append(getVTLDeviceARN());
         sb.append("}");
         return sb.toString();
     }

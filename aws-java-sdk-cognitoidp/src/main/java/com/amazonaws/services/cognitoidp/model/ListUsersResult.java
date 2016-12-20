@@ -163,9 +163,9 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsers() != null)
-            sb.append("Users: " + getUsers() + ",");
+            sb.append("Users: ").append(getUsers()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: " + getPaginationToken());
+            sb.append("PaginationToken: ").append(getPaginationToken());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class WorkflowExecutionFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId());
+            sb.append("WorkflowId: ").append(getWorkflowId());
         sb.append("}");
         return sb.toString();
     }

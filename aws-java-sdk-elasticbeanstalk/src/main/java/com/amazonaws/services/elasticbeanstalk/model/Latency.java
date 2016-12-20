@@ -402,21 +402,21 @@ public class Latency implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getP999() != null)
-            sb.append("P999: " + getP999() + ",");
+            sb.append("P999: ").append(getP999()).append(",");
         if (getP99() != null)
-            sb.append("P99: " + getP99() + ",");
+            sb.append("P99: ").append(getP99()).append(",");
         if (getP95() != null)
-            sb.append("P95: " + getP95() + ",");
+            sb.append("P95: ").append(getP95()).append(",");
         if (getP90() != null)
-            sb.append("P90: " + getP90() + ",");
+            sb.append("P90: ").append(getP90()).append(",");
         if (getP85() != null)
-            sb.append("P85: " + getP85() + ",");
+            sb.append("P85: ").append(getP85()).append(",");
         if (getP75() != null)
-            sb.append("P75: " + getP75() + ",");
+            sb.append("P75: ").append(getP75()).append(",");
         if (getP50() != null)
-            sb.append("P50: " + getP50() + ",");
+            sb.append("P50: ").append(getP50()).append(",");
         if (getP10() != null)
-            sb.append("P10: " + getP10());
+            sb.append("P10: ").append(getP10());
         sb.append("}");
         return sb.toString();
     }

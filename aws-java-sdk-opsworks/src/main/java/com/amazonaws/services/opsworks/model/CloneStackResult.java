@@ -80,7 +80,7 @@ public class CloneStackResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

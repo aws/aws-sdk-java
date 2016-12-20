@@ -79,7 +79,7 @@ public class GetInstancePortStatesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName());
         sb.append("}");
         return sb.toString();
     }

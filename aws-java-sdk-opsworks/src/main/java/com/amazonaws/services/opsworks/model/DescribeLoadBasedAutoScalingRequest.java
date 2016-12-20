@@ -112,7 +112,7 @@ public class DescribeLoadBasedAutoScalingRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds());
+            sb.append("LayerIds: ").append(getLayerIds());
         sb.append("}");
         return sb.toString();
     }

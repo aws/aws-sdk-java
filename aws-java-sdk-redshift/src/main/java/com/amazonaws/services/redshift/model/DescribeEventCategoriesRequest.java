@@ -97,7 +97,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType());
+            sb.append("SourceType: ").append(getSourceType());
         sb.append("}");
         return sb.toString();
     }

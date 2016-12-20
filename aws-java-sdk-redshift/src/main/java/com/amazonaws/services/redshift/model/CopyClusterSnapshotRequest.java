@@ -522,11 +522,11 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceSnapshotIdentifier() != null)
-            sb.append("SourceSnapshotIdentifier: " + getSourceSnapshotIdentifier() + ",");
+            sb.append("SourceSnapshotIdentifier: ").append(getSourceSnapshotIdentifier()).append(",");
         if (getSourceSnapshotClusterIdentifier() != null)
-            sb.append("SourceSnapshotClusterIdentifier: " + getSourceSnapshotClusterIdentifier() + ",");
+            sb.append("SourceSnapshotClusterIdentifier: ").append(getSourceSnapshotClusterIdentifier()).append(",");
         if (getTargetSnapshotIdentifier() != null)
-            sb.append("TargetSnapshotIdentifier: " + getTargetSnapshotIdentifier());
+            sb.append("TargetSnapshotIdentifier: ").append(getTargetSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

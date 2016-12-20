@@ -283,15 +283,15 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId() + ",");
+            sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getCutoff() != null)
-            sb.append("Cutoff: " + getCutoff());
+            sb.append("Cutoff: ").append(getCutoff());
         sb.append("}");
         return sb.toString();
     }

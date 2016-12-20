@@ -50,8 +50,18 @@ public class InternetGatewayStaxUnmarshaller implements Unmarshaller<InternetGat
                     continue;
                 }
 
+                if (context.testExpression("attachmentSet", targetDepth)) {
+                    internetGateway.withAttachments(new ArrayList<InternetGatewayAttachment>());
+                    continue;
+                }
+
                 if (context.testExpression("attachmentSet/item", targetDepth)) {
                     internetGateway.withAttachments(InternetGatewayAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    internetGateway.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

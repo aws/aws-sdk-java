@@ -152,9 +152,9 @@ public class DeleteCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getFinalSnapshotIdentifier() != null)
-            sb.append("FinalSnapshotIdentifier: " + getFinalSnapshotIdentifier());
+            sb.append("FinalSnapshotIdentifier: ").append(getFinalSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

@@ -116,11 +116,11 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getSegmentId() != null)
-            sb.append("SegmentId: " + getSegmentId() + ",");
+            sb.append("SegmentId: ").append(getSegmentId()).append(",");
         if (getWriteSegmentRequest() != null)
-            sb.append("WriteSegmentRequest: " + getWriteSegmentRequest());
+            sb.append("WriteSegmentRequest: ").append(getWriteSegmentRequest());
         sb.append("}");
         return sb.toString();
     }

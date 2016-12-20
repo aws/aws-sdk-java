@@ -204,11 +204,11 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: " + getContent() + ",");
+            sb.append("Content: ").append(getContent()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentType() != null)
-            sb.append("DocumentType: " + getDocumentType());
+            sb.append("DocumentType: ").append(getDocumentType());
         sb.append("}");
         return sb.toString();
     }

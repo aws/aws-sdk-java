@@ -239,11 +239,11 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getCreateVolumePermissions() != null)
-            sb.append("CreateVolumePermissions: " + getCreateVolumePermissions() + ",");
+            sb.append("CreateVolumePermissions: ").append(getCreateVolumePermissions()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: " + getProductCodes());
+            sb.append("ProductCodes: ").append(getProductCodes());
         sb.append("}");
         return sb.toString();
     }

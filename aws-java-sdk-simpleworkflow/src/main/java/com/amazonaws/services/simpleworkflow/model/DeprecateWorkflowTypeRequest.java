@@ -125,9 +125,9 @@ public class DeprecateWorkflowTypeRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType());
+            sb.append("WorkflowType: ").append(getWorkflowType());
         sb.append("}");
         return sb.toString();
     }

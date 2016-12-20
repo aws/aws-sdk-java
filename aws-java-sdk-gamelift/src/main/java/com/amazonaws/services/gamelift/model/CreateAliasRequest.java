@@ -173,11 +173,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRoutingStrategy() != null)
-            sb.append("RoutingStrategy: " + getRoutingStrategy());
+            sb.append("RoutingStrategy: ").append(getRoutingStrategy());
         sb.append("}");
         return sb.toString();
     }

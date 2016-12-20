@@ -190,11 +190,11 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopic() != null)
-            sb.append("Topic: " + getTopic() + ",");
+            sb.append("Topic: ").append(getTopic()).append(",");
         if (getQos() != null)
-            sb.append("Qos: " + getQos() + ",");
+            sb.append("Qos: ").append(getQos()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: " + getPayload());
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }

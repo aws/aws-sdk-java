@@ -45,6 +45,11 @@ public class ListAttachedGroupPoliciesResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AttachedPolicies", targetDepth)) {
+                    listAttachedGroupPoliciesResult.withAttachedPolicies(new ArrayList<AttachedPolicy>());
+                    continue;
+                }
+
                 if (context.testExpression("AttachedPolicies/member", targetDepth)) {
                     listAttachedGroupPoliciesResult.withAttachedPolicies(AttachedPolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

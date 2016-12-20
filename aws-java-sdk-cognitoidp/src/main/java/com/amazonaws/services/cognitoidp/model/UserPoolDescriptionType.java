@@ -343,17 +343,17 @@ public class UserPoolDescriptionType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getLambdaConfig() != null)
-            sb.append("LambdaConfig: " + getLambdaConfig() + ",");
+            sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

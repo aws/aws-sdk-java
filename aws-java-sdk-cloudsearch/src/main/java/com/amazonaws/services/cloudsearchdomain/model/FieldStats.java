@@ -540,21 +540,21 @@ public class FieldStats implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMin() != null)
-            sb.append("Min: " + getMin() + ",");
+            sb.append("Min: ").append(getMin()).append(",");
         if (getMax() != null)
-            sb.append("Max: " + getMax() + ",");
+            sb.append("Max: ").append(getMax()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getMissing() != null)
-            sb.append("Missing: " + getMissing() + ",");
+            sb.append("Missing: ").append(getMissing()).append(",");
         if (getSum() != null)
-            sb.append("Sum: " + getSum() + ",");
+            sb.append("Sum: ").append(getSum()).append(",");
         if (getSumOfSquares() != null)
-            sb.append("SumOfSquares: " + getSumOfSquares() + ",");
+            sb.append("SumOfSquares: ").append(getSumOfSquares()).append(",");
         if (getMean() != null)
-            sb.append("Mean: " + getMean() + ",");
+            sb.append("Mean: ").append(getMean()).append(",");
         if (getStddev() != null)
-            sb.append("Stddev: " + getStddev());
+            sb.append("Stddev: ").append(getStddev());
         sb.append("}");
         return sb.toString();
     }

@@ -134,9 +134,9 @@ public class CreateNatGatewayResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNatGateway() != null)
-            sb.append("NatGateway: " + getNatGateway() + ",");
+            sb.append("NatGateway: ").append(getNatGateway()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

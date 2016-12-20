@@ -267,15 +267,15 @@ public class FleetUtilization implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getActiveServerProcessCount() != null)
-            sb.append("ActiveServerProcessCount: " + getActiveServerProcessCount() + ",");
+            sb.append("ActiveServerProcessCount: ").append(getActiveServerProcessCount()).append(",");
         if (getActiveGameSessionCount() != null)
-            sb.append("ActiveGameSessionCount: " + getActiveGameSessionCount() + ",");
+            sb.append("ActiveGameSessionCount: ").append(getActiveGameSessionCount()).append(",");
         if (getCurrentPlayerSessionCount() != null)
-            sb.append("CurrentPlayerSessionCount: " + getCurrentPlayerSessionCount() + ",");
+            sb.append("CurrentPlayerSessionCount: ").append(getCurrentPlayerSessionCount()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: " + getMaximumPlayerSessionCount());
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount());
         sb.append("}");
         return sb.toString();
     }

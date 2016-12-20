@@ -126,9 +126,9 @@ public class VpcSecurityGroupMembership implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcSecurityGroupId() != null)
-            sb.append("VpcSecurityGroupId: " + getVpcSecurityGroupId() + ",");
+            sb.append("VpcSecurityGroupId: ").append(getVpcSecurityGroupId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

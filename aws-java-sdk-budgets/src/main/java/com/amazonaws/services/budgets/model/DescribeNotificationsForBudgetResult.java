@@ -114,9 +114,9 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNotifications() != null)
-            sb.append("Notifications: " + getNotifications() + ",");
+            sb.append("Notifications: ").append(getNotifications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

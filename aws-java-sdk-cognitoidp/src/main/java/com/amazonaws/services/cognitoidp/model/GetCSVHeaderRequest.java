@@ -81,7 +81,7 @@ public class GetCSVHeaderRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId());
+            sb.append("UserPoolId: ").append(getUserPoolId());
         sb.append("}");
         return sb.toString();
     }

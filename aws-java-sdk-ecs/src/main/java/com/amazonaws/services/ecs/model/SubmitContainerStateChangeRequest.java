@@ -388,19 +388,19 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getTask() != null)
-            sb.append("Task: " + getTask() + ",");
+            sb.append("Task: ").append(getTask()).append(",");
         if (getContainerName() != null)
-            sb.append("ContainerName: " + getContainerName() + ",");
+            sb.append("ContainerName: ").append(getContainerName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getExitCode() != null)
-            sb.append("ExitCode: " + getExitCode() + ",");
+            sb.append("ExitCode: ").append(getExitCode()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getNetworkBindings() != null)
-            sb.append("NetworkBindings: " + getNetworkBindings());
+            sb.append("NetworkBindings: ").append(getNetworkBindings());
         sb.append("}");
         return sb.toString();
     }

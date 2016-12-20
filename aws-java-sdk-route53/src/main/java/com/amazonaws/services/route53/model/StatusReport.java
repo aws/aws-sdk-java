@@ -151,9 +151,9 @@ public class StatusReport implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCheckedTime() != null)
-            sb.append("CheckedTime: " + getCheckedTime());
+            sb.append("CheckedTime: ").append(getCheckedTime());
         sb.append("}");
         return sb.toString();
     }

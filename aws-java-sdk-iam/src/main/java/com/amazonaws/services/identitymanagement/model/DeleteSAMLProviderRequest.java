@@ -79,7 +79,7 @@ public class DeleteSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLProviderArn() != null)
-            sb.append("SAMLProviderArn: " + getSAMLProviderArn());
+            sb.append("SAMLProviderArn: ").append(getSAMLProviderArn());
         sb.append("}");
         return sb.toString();
     }

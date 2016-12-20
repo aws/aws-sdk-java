@@ -713,11 +713,11 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getSkipFinalSnapshot() != null)
-            sb.append("SkipFinalSnapshot: " + getSkipFinalSnapshot() + ",");
+            sb.append("SkipFinalSnapshot: ").append(getSkipFinalSnapshot()).append(",");
         if (getFinalDBSnapshotIdentifier() != null)
-            sb.append("FinalDBSnapshotIdentifier: " + getFinalDBSnapshotIdentifier());
+            sb.append("FinalDBSnapshotIdentifier: ").append(getFinalDBSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

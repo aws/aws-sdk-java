@@ -45,6 +45,11 @@ public class AddTagsToResourceResultStaxUnmarshaller implements Unmarshaller<Add
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TagList", targetDepth)) {
+                    addTagsToResourceResult.withTagList(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("TagList/Tag", targetDepth)) {
                     addTagsToResourceResult.withTagList(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -146,7 +146,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotInstanceRequestIds() != null)
-            sb.append("SpotInstanceRequestIds: " + getSpotInstanceRequestIds());
+            sb.append("SpotInstanceRequestIds: ").append(getSpotInstanceRequestIds());
         sb.append("}");
         return sb.toString();
     }

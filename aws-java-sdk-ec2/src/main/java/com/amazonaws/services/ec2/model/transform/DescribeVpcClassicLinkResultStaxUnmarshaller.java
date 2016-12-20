@@ -45,6 +45,11 @@ public class DescribeVpcClassicLinkResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpcSet", targetDepth)) {
+                    describeVpcClassicLinkResult.withVpcs(new ArrayList<VpcClassicLink>());
+                    continue;
+                }
+
                 if (context.testExpression("vpcSet/item", targetDepth)) {
                     describeVpcClassicLinkResult.withVpcs(VpcClassicLinkStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

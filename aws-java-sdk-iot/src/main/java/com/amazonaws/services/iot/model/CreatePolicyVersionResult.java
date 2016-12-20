@@ -230,13 +230,13 @@ public class CreatePolicyVersionResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn() + ",");
+            sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument() + ",");
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getPolicyVersionId() != null)
-            sb.append("PolicyVersionId: " + getPolicyVersionId() + ",");
+            sb.append("PolicyVersionId: ").append(getPolicyVersionId()).append(",");
         if (getIsDefaultVersion() != null)
-            sb.append("IsDefaultVersion: " + getIsDefaultVersion());
+            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion());
         sb.append("}");
         return sb.toString();
     }

@@ -16,34 +16,40 @@
     "CreateIdentityPool" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li> <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li> <li>Digits: <code>www.digits.com</code></li> </ul> You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. The keys for <code>SupportedLoginProviders</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
@@ -70,19 +76,22 @@
     "DeleteIdentities" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -109,29 +118,34 @@
     "DeleteIdentityPool" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -153,29 +167,34 @@
     "DescribeIdentity" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -202,29 +221,34 @@
     "DescribeIdentityPool" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -251,44 +275,52 @@
     "GetCredentialsForIdentity" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p><p>This is a public API. You do not need any credentials to call this API.</p>",
+      "documentation" : "<p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIdentityPoolConfigurationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ExternalServiceException"
@@ -315,44 +347,52 @@
     "GetId" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p><p>This is a public API. You do not need any credentials to call this API.</p>",
+      "documentation" : "<p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ExternalServiceException"
@@ -379,34 +419,40 @@
     "GetIdentityPoolRoles" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Gets the roles for an identity pool.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -433,39 +479,46 @@
     "GetOpenIdToken" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 15 minutes.</p><p>This is a public API. You do not need any credentials to call this API.</p>",
+      "documentation" : "<p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 15 minutes.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ExternalServiceException"
@@ -492,39 +545,46 @@
     "GetOpenIdTokenForDeveloperIdentity" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the \"domain\" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the \"domain\" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DeveloperUserAlreadyRegisteredException"
@@ -551,29 +611,34 @@
     "ListIdentities" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Lists the identities in a pool.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Lists the identities in a pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -600,24 +665,28 @@
     "ListIdentityPools" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Lists all of the Cognito identity pools registered for your account.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Lists all of the Cognito identity pools registered for your account.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -644,34 +713,40 @@
     "LookupDeveloperIdentity" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -698,34 +773,40 @@
     "MergeDeveloperIdentities" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -752,39 +833,46 @@
     "SetIdentityPoolRoles" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a> action.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModificationException"
@@ -806,34 +894,40 @@
     "UnlinkDeveloperIdentity" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
@@ -855,39 +949,46 @@
     "UnlinkIdentity" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p><p>This is a public API. You do not need any credentials to call this API.</p>",
+      "documentation" : "<p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ExternalServiceException"
@@ -909,44 +1010,52 @@
     "UpdateIdentityPool" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Updates a user pool.</p><p>You must use AWS Developer credentials to call this API.</p>",
+      "documentation" : "<p>Updates a user pool.</p> <p>You must use AWS Developer credentials to call this API.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModificationException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitExceededException"
@@ -983,7 +1092,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 20,
       "pattern" : null,
       "payload" : null,
@@ -1004,7 +1113,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1025,9 +1134,72 @@
       "key" : null,
       "max" : 15,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "\\d+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AmbiguousRoleResolutionType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "AuthenticatedRole", "Deny" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ClaimName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 64,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ClaimValue" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -1094,7 +1266,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w_]+",
       "payload" : null,
@@ -1127,7 +1299,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1148,7 +1320,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w._:/-]+",
       "payload" : null,
@@ -1220,7 +1392,7 @@
         },
         "CognitoIdentityProviders" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of Amazon Cognito Identity user pools.</p>",
+          "documentation" : "<p>An array of Amazon Cognito Identity user pools and their client IDs.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1391,7 +1563,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1485,7 +1657,7 @@
       "members" : {
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1543,7 +1715,7 @@
     },
     "DescribeIdentityPoolInput" : {
       "deprecated" : false,
-      "documentation" : "Input to the DescribeIdentityPool action.",
+      "documentation" : "<p>Input to the DescribeIdentityPool action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1555,7 +1727,7 @@
       "members" : {
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1587,7 +1759,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w._-]+",
       "payload" : null,
@@ -1643,9 +1815,9 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
-      "pattern" : "[\\w.@_-]+",
+      "pattern" : null,
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -1676,7 +1848,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1697,7 +1869,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1853,7 +2025,7 @@
     },
     "GetIdInput" : {
       "deprecated" : false,
-      "documentation" : "Input to the GetId action.",
+      "documentation" : "<p>Input to the GetId action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1865,7 +2037,7 @@
       "members" : {
         "AccountId" : {
           "deprecated" : false,
-          "documentation" : "A standard AWS account ID (9+ digits).",
+          "documentation" : "<p>A standard AWS account ID (9+ digits).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1878,7 +2050,7 @@
         },
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1891,7 +2063,7 @@
         },
         "Logins" : {
           "deprecated" : false,
-          "documentation" : "<p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li> <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li> <li>Digits: <code>www.digits.com</code></li> </ul> </p>",
+          "documentation" : "<p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -1914,7 +2086,7 @@
     },
     "GetIdResponse" : {
       "deprecated" : false,
-      "documentation" : "Returned in response to a GetId request.",
+      "documentation" : "<p>Returned in response to a GetId request.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1926,7 +2098,7 @@
       "members" : {
         "IdentityId" : {
           "deprecated" : false,
-          "documentation" : "A unique identifier in the format REGION:GUID.",
+          "documentation" : "<p>A unique identifier in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2004,6 +2176,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "IdentityPoolId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleMappings" : {
+          "deprecated" : false,
+          "documentation" : "<p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RoleMappingMap",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -2154,7 +2339,7 @@
     },
     "GetOpenIdTokenInput" : {
       "deprecated" : false,
-      "documentation" : "Input to the GetOpenIdToken action.",
+      "documentation" : "<p>Input to the GetOpenIdToken action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2166,7 +2351,7 @@
       "members" : {
         "IdentityId" : {
           "deprecated" : false,
-          "documentation" : "A unique identifier in the format REGION:GUID.",
+          "documentation" : "<p>A unique identifier in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2179,7 +2364,7 @@
         },
         "Logins" : {
           "deprecated" : false,
-          "documentation" : "A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com or any other OpenId Connect provider, always include the id_token.",
+          "documentation" : "<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2202,7 +2387,7 @@
     },
     "GetOpenIdTokenResponse" : {
       "deprecated" : false,
-      "documentation" : "Returned in response to a successful GetOpenIdToken request.",
+      "documentation" : "<p>Returned in response to a successful GetOpenIdToken request.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2214,7 +2399,7 @@
       "members" : {
         "IdentityId" : {
           "deprecated" : false,
-          "documentation" : "A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.",
+          "documentation" : "<p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2227,7 +2412,7 @@
         },
         "Token" : {
           "deprecated" : false,
-          "documentation" : "An OpenID token, valid for 15 minutes.",
+          "documentation" : "<p>An OpenID token, valid for 15 minutes.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2259,7 +2444,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2292,7 +2477,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2304,7 +2489,7 @@
     },
     "IdentityDescription" : {
       "deprecated" : false,
-      "documentation" : "A description of the identity.",
+      "documentation" : "<p>A description of the identity.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2329,7 +2514,7 @@
         },
         "IdentityId" : {
           "deprecated" : false,
-          "documentation" : "A unique identifier in the format REGION:GUID.",
+          "documentation" : "<p>A unique identifier in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2355,7 +2540,7 @@
         },
         "Logins" : {
           "deprecated" : false,
-          "documentation" : "A set of optional name-value pairs that map provider names to provider tokens.",
+          "documentation" : "<p>A set of optional name-value pairs that map provider names to provider tokens.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2387,7 +2572,7 @@
       "key" : null,
       "max" : 55,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w-]+:[0-9a-f-]+",
       "payload" : null,
@@ -2420,7 +2605,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2432,7 +2617,7 @@
     },
     "IdentityPool" : {
       "deprecated" : false,
-      "documentation" : "An object representing a Cognito identity pool.",
+      "documentation" : "<p>An object representing an Amazon Cognito identity pool.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2444,7 +2629,7 @@
       "members" : {
         "AllowUnauthenticatedIdentities" : {
           "deprecated" : false,
-          "documentation" : "TRUE if the identity pool supports unauthenticated logins.",
+          "documentation" : "<p>TRUE if the identity pool supports unauthenticated logins.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2483,7 +2668,7 @@
         },
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2567,7 +2752,7 @@
       "key" : null,
       "max" : 55,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w-]+:[0-9a-f-]+",
       "payload" : null,
@@ -2588,7 +2773,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w ]+",
       "payload" : null,
@@ -2600,7 +2785,7 @@
     },
     "IdentityPoolShortDescription" : {
       "deprecated" : false,
-      "documentation" : "A description of the identity pool.",
+      "documentation" : "<p>A description of the identity pool.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2612,7 +2797,7 @@
       "members" : {
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2625,7 +2810,7 @@
         },
         "IdentityPoolName" : {
           "deprecated" : false,
-          "documentation" : "A string that you provide.",
+          "documentation" : "<p>A string that you provide.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2657,7 +2842,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2690,7 +2875,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2711,7 +2896,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w.;_/-]+",
       "payload" : null,
@@ -2732,7 +2917,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2753,7 +2938,7 @@
       "key" : null,
       "max" : 50000,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2786,7 +2971,7 @@
       },
       "max" : 10,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2810,7 +2995,7 @@
     },
     "InternalErrorException" : {
       "deprecated" : false,
-      "documentation" : "Thrown when the service encounters an error during processing the request.",
+      "documentation" : "<p>Thrown when the service encounters an error during processing the request.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -2822,7 +3007,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "The message returned by an InternalErrorException.",
+          "documentation" : "<p>The message returned by an InternalErrorException.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2857,7 +3042,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "<p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>",
+          "documentation" : "<p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2880,7 +3065,7 @@
     },
     "InvalidParameterException" : {
       "deprecated" : false,
-      "documentation" : "Thrown for missing or bad input parameter(s).",
+      "documentation" : "<p>Thrown for missing or bad input parameter(s).</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -2892,7 +3077,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "The message returned by an InvalidParameterException.",
+          "documentation" : "<p>The message returned by an InvalidParameterException.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2915,7 +3100,7 @@
     },
     "LimitExceededException" : {
       "deprecated" : false,
-      "documentation" : "Thrown when the total number of user pools has exceeded a preset limit.",
+      "documentation" : "<p>Thrown when the total number of user pools has exceeded a preset limit.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -2927,7 +3112,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "The message returned by a LimitExceededException.",
+          "documentation" : "<p>The message returned by a LimitExceededException.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2950,7 +3135,7 @@
     },
     "ListIdentitiesInput" : {
       "deprecated" : false,
-      "documentation" : "Input to the ListIdentities action.",
+      "documentation" : "<p>Input to the ListIdentities action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2975,7 +3160,7 @@
         },
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2988,7 +3173,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "The maximum number of identities to return.",
+          "documentation" : "<p>The maximum number of identities to return.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3001,7 +3186,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "A pagination token.",
+          "documentation" : "<p>A pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3024,7 +3209,7 @@
     },
     "ListIdentitiesResponse" : {
       "deprecated" : false,
-      "documentation" : "The response to a ListIdentities request.",
+      "documentation" : "<p>The response to a ListIdentities request.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3036,7 +3221,7 @@
       "members" : {
         "Identities" : {
           "deprecated" : false,
-          "documentation" : "An object containing a set of identities and associated mappings.",
+          "documentation" : "<p>An object containing a set of identities and associated mappings.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3049,7 +3234,7 @@
         },
         "IdentityPoolId" : {
           "deprecated" : false,
-          "documentation" : "An identity pool ID in the format REGION:GUID.",
+          "documentation" : "<p>An identity pool ID in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3062,7 +3247,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "A pagination token.",
+          "documentation" : "<p>A pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3085,7 +3270,7 @@
     },
     "ListIdentityPoolsInput" : {
       "deprecated" : false,
-      "documentation" : "Input to the ListIdentityPools action.",
+      "documentation" : "<p>Input to the ListIdentityPools action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3097,7 +3282,7 @@
       "members" : {
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "The maximum number of identities to return.",
+          "documentation" : "<p>The maximum number of identities to return.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3110,7 +3295,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "A pagination token.",
+          "documentation" : "<p>A pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3133,7 +3318,7 @@
     },
     "ListIdentityPoolsResponse" : {
       "deprecated" : false,
-      "documentation" : "The result of a successful ListIdentityPools action.",
+      "documentation" : "<p>The result of a successful ListIdentityPools action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3145,7 +3330,7 @@
       "members" : {
         "IdentityPools" : {
           "deprecated" : false,
-          "documentation" : "The identity pools returned by the ListIdentityPools action.",
+          "documentation" : "<p>The identity pools returned by the ListIdentityPools action.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3158,7 +3343,7 @@
         },
         "NextToken" : {
           "deprecated" : false,
-          "documentation" : "A pagination token.",
+          "documentation" : "<p>A pagination token.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3202,7 +3387,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3235,7 +3420,7 @@
       },
       "max" : 10,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3405,6 +3590,134 @@
       "value" : null,
       "wrapper" : false
     },
+    "MappingRule" : {
+      "deprecated" : false,
+      "documentation" : "<p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Claim" : {
+          "deprecated" : false,
+          "documentation" : "<p>The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ClaimName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MatchType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MappingRuleMatchType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The role ARN.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ARNString",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Value" : {
+          "deprecated" : false,
+          "documentation" : "<p>A brief string that the claim must match, for example, \"paid\" or \"yes\".</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ClaimValue",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Claim", "MatchType", "Value", "RoleARN" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MappingRuleMatchType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "Equals", "Contains", "StartsWith", "NotEqual" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MappingRulesList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 25,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "MappingRule",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "MergeDeveloperIdentitiesInput" : {
       "deprecated" : false,
       "documentation" : "<p>Input to the <code>MergeDeveloperIdentities</code> action.</p>",
@@ -3516,7 +3829,7 @@
     },
     "NotAuthorizedException" : {
       "deprecated" : false,
-      "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+      "documentation" : "<p>Thrown when a user is not authorized to access the requested resource.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -3528,7 +3841,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "The message returned by a NotAuthorizedException",
+          "documentation" : "<p>The message returned by a NotAuthorizedException</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3572,7 +3885,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3593,7 +3906,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3614,7 +3927,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\S]+",
       "payload" : null,
@@ -3635,7 +3948,7 @@
       "key" : null,
       "max" : 60,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3647,7 +3960,7 @@
     },
     "ResourceConflictException" : {
       "deprecated" : false,
-      "documentation" : "Thrown when a user tries to use a login which is already linked to another account.",
+      "documentation" : "<p>Thrown when a user tries to use a login which is already linked to another account.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -3659,7 +3972,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "The message returned by a ResourceConflictException.",
+          "documentation" : "<p>The message returned by a ResourceConflictException.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3682,7 +3995,7 @@
     },
     "ResourceNotFoundException" : {
       "deprecated" : false,
-      "documentation" : "Thrown when the requested resource (for example, a dataset or record) does not exist.",
+      "documentation" : "<p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -3694,7 +4007,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "The message returned by a ResourceNotFoundException.",
+          "documentation" : "<p>The message returned by a ResourceNotFoundException.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3715,6 +4028,133 @@
       "value" : null,
       "wrapper" : false
     },
+    "RoleMapping" : {
+      "deprecated" : false,
+      "documentation" : "<p>A role mapping.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AmbiguousRoleResolution" : {
+          "deprecated" : false,
+          "documentation" : "<p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AmbiguousRoleResolutionType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RulesConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "<p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RulesConfigurationType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RoleMappingType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Type" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RoleMappingMap" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "IdentityProviderName",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 10,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RoleMapping",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "RoleMappingType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "Token", "Rules" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "RoleType" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3726,7 +4166,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "(un)?authenticated",
       "payload" : null,
@@ -3759,7 +4199,7 @@
       },
       "max" : 2,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3779,6 +4219,41 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
+      "wrapper" : false
+    },
+    "RulesConfigurationType" : {
+      "deprecated" : false,
+      "documentation" : "<p>A container for rules.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Rules" : {
+          "deprecated" : false,
+          "documentation" : "<p>An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MappingRulesList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Rules" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
       "wrapper" : false
     },
     "SAMLProviderList" : {
@@ -3804,7 +4279,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3825,7 +4300,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3846,7 +4321,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3878,6 +4353,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "IdentityPoolId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleMappings" : {
+          "deprecated" : false,
+          "documentation" : "<p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RoleMappingMap",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -3915,7 +4403,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3936,7 +4424,7 @@
       "key" : null,
       "max" : 86400,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3948,7 +4436,7 @@
     },
     "TooManyRequestsException" : {
       "deprecated" : false,
-      "documentation" : "Thrown when a request is throttled.",
+      "documentation" : "<p>Thrown when a request is throttled.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -3960,7 +4448,7 @@
       "members" : {
         "message" : {
           "deprecated" : false,
-          "documentation" : "Message returned by a TooManyRequestsException",
+          "documentation" : "<p>Message returned by a TooManyRequestsException</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4008,7 +4496,7 @@
         },
         "DeveloperUserIdentifier" : {
           "deprecated" : false,
-          "documentation" : "A unique ID used by your backend authentication process to identify a user.",
+          "documentation" : "<p>A unique ID used by your backend authentication process to identify a user.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4057,7 +4545,7 @@
     },
     "UnlinkIdentityInput" : {
       "deprecated" : false,
-      "documentation" : "Input to the UnlinkIdentity action.",
+      "documentation" : "<p>Input to the UnlinkIdentity action.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4069,7 +4557,7 @@
       "members" : {
         "IdentityId" : {
           "deprecated" : false,
-          "documentation" : "A unique identifier in the format REGION:GUID.",
+          "documentation" : "<p>A unique identifier in the format REGION:GUID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4082,7 +4570,7 @@
         },
         "Logins" : {
           "deprecated" : false,
-          "documentation" : "A set of optional name-value pairs that map provider names to provider tokens.",
+          "documentation" : "<p>A set of optional name-value pairs that map provider names to provider tokens.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4095,7 +4583,7 @@
         },
         "LoginsToRemove" : {
           "deprecated" : false,
-          "documentation" : "Provider names to unlink from this identity.",
+          "documentation" : "<p>Provider names to unlink from this identity.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4187,7 +4675,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

@@ -215,11 +215,11 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getDeleteSourceBundle() != null)
-            sb.append("DeleteSourceBundle: " + getDeleteSourceBundle());
+            sb.append("DeleteSourceBundle: ").append(getDeleteSourceBundle());
         sb.append("}");
         return sb.toString();
     }

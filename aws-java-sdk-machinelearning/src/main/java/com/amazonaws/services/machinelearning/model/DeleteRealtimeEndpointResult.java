@@ -136,9 +136,9 @@ public class DeleteRealtimeEndpointResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getRealtimeEndpointInfo() != null)
-            sb.append("RealtimeEndpointInfo: " + getRealtimeEndpointInfo());
+            sb.append("RealtimeEndpointInfo: ").append(getRealtimeEndpointInfo());
         sb.append("}");
         return sb.toString();
     }

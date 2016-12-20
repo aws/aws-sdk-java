@@ -90,9 +90,9 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getVirtualInterfaceId() != null)
-            sb.append("VirtualInterfaceId: " + getVirtualInterfaceId());
+            sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId());
         sb.append("}");
         return sb.toString();
     }

@@ -192,9 +192,9 @@ public class DescribeConfigurationSetRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: " + getConfigurationSetName() + ",");
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
         if (getConfigurationSetAttributeNames() != null)
-            sb.append("ConfigurationSetAttributeNames: " + getConfigurationSetAttributeNames());
+            sb.append("ConfigurationSetAttributeNames: ").append(getConfigurationSetAttributeNames());
         sb.append("}");
         return sb.toString();
     }

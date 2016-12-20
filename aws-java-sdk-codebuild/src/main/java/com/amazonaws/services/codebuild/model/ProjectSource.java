@@ -770,13 +770,13 @@ public class ProjectSource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getBuildspec() != null)
-            sb.append("Buildspec: " + getBuildspec() + ",");
+            sb.append("Buildspec: ").append(getBuildspec()).append(",");
         if (getAuth() != null)
-            sb.append("Auth: " + getAuth());
+            sb.append("Auth: ").append(getAuth());
         sb.append("}");
         return sb.toString();
     }

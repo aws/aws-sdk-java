@@ -114,7 +114,7 @@ public class DescribeInternetGatewaysResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGateways() != null)
-            sb.append("InternetGateways: " + getInternetGateways());
+            sb.append("InternetGateways: ").append(getInternetGateways());
         sb.append("}");
         return sb.toString();
     }

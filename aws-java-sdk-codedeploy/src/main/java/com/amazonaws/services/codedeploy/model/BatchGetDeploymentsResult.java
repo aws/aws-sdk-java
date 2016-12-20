@@ -113,7 +113,7 @@ public class BatchGetDeploymentsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentsInfo() != null)
-            sb.append("DeploymentsInfo: " + getDeploymentsInfo());
+            sb.append("DeploymentsInfo: ").append(getDeploymentsInfo());
         sb.append("}");
         return sb.toString();
     }

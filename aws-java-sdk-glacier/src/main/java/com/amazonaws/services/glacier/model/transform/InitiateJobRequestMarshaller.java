@@ -61,10 +61,9 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (initiateJobRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(initiateJobRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (initiateJobRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(initiateJobRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                initiateJobRequest.getAccountId() == null ? "-" : initiateJobRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", initiateJobRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         try {

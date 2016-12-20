@@ -127,9 +127,9 @@ public class InputLogEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

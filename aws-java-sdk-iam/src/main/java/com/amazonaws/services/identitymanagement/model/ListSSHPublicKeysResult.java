@@ -260,11 +260,11 @@ public class ListSSHPublicKeysResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSSHPublicKeys() != null)
-            sb.append("SSHPublicKeys: " + getSSHPublicKeys() + ",");
+            sb.append("SSHPublicKeys: ").append(getSSHPublicKeys()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

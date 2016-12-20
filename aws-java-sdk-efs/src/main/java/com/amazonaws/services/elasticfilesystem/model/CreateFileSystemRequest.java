@@ -191,9 +191,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationToken() != null)
-            sb.append("CreationToken: " + getCreationToken() + ",");
+            sb.append("CreationToken: ").append(getCreationToken()).append(",");
         if (getPerformanceMode() != null)
-            sb.append("PerformanceMode: " + getPerformanceMode());
+            sb.append("PerformanceMode: ").append(getPerformanceMode());
         sb.append("}");
         return sb.toString();
     }

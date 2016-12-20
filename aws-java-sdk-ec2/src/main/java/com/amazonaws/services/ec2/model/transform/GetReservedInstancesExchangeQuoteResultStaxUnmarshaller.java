@@ -45,6 +45,11 @@ public class GetReservedInstancesExchangeQuoteResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("reservedInstanceValueSet", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.withReservedInstanceValueSet(new ArrayList<ReservedInstanceReservationValue>());
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstanceValueSet/item", targetDepth)) {
                     getReservedInstancesExchangeQuoteResult.withReservedInstanceValueSet(ReservedInstanceReservationValueStaxUnmarshaller.getInstance()
                             .unmarshall(context));
@@ -53,6 +58,11 @@ public class GetReservedInstancesExchangeQuoteResultStaxUnmarshaller implements 
 
                 if (context.testExpression("reservedInstanceValueRollup", targetDepth)) {
                     getReservedInstancesExchangeQuoteResult.setReservedInstanceValueRollup(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("targetConfigurationValueSet", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.withTargetConfigurationValueSet(new ArrayList<TargetReservationValue>());
                     continue;
                 }
 

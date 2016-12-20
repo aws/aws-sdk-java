@@ -45,6 +45,11 @@ public class ListReceiptRuleSetsResultStaxUnmarshaller implements Unmarshaller<L
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("RuleSets", targetDepth)) {
+                    listReceiptRuleSetsResult.withRuleSets(new ArrayList<ReceiptRuleSetMetadata>());
+                    continue;
+                }
+
                 if (context.testExpression("RuleSets/member", targetDepth)) {
                     listReceiptRuleSetsResult.withRuleSets(ReceiptRuleSetMetadataStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

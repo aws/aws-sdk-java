@@ -82,7 +82,7 @@ public class DeleteVerifiedEmailAddressRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: " + getEmailAddress());
+            sb.append("EmailAddress: ").append(getEmailAddress());
         sb.append("}");
         return sb.toString();
     }

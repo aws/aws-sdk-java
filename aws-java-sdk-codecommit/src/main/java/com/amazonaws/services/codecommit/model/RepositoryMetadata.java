@@ -494,25 +494,25 @@ public class RepositoryMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getRepositoryId() != null)
-            sb.append("RepositoryId: " + getRepositoryId() + ",");
+            sb.append("RepositoryId: ").append(getRepositoryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getRepositoryDescription() != null)
-            sb.append("RepositoryDescription: " + getRepositoryDescription() + ",");
+            sb.append("RepositoryDescription: ").append(getRepositoryDescription()).append(",");
         if (getDefaultBranch() != null)
-            sb.append("DefaultBranch: " + getDefaultBranch() + ",");
+            sb.append("DefaultBranch: ").append(getDefaultBranch()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCloneUrlHttp() != null)
-            sb.append("CloneUrlHttp: " + getCloneUrlHttp() + ",");
+            sb.append("CloneUrlHttp: ").append(getCloneUrlHttp()).append(",");
         if (getCloneUrlSsh() != null)
-            sb.append("CloneUrlSsh: " + getCloneUrlSsh() + ",");
+            sb.append("CloneUrlSsh: ").append(getCloneUrlSsh()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn());
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }

@@ -159,9 +159,9 @@ public class ModifyIdFormatRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResource() != null)
-            sb.append("Resource: " + getResource() + ",");
+            sb.append("Resource: ").append(getResource()).append(",");
         if (getUseLongIds() != null)
-            sb.append("UseLongIds: " + getUseLongIds());
+            sb.append("UseLongIds: ").append(getUseLongIds());
         sb.append("}");
         return sb.toString();
     }

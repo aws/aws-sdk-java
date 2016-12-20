@@ -660,31 +660,31 @@ public class Volume implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getEc2VolumeId() != null)
-            sb.append("Ec2VolumeId: " + getEc2VolumeId() + ",");
+            sb.append("Ec2VolumeId: ").append(getEc2VolumeId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRaidArrayId() != null)
-            sb.append("RaidArrayId: " + getRaidArrayId() + ",");
+            sb.append("RaidArrayId: ").append(getRaidArrayId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getMountPoint() != null)
-            sb.append("MountPoint: " + getMountPoint() + ",");
+            sb.append("MountPoint: ").append(getMountPoint()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops());
+            sb.append("Iops: ").append(getIops());
         sb.append("}");
         return sb.toString();
     }

@@ -227,19 +227,19 @@ public class Disk implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDiskId() != null)
-            sb.append("DiskId: " + getDiskId() + ",");
+            sb.append("DiskId: ").append(getDiskId()).append(",");
         if (getDiskPath() != null)
-            sb.append("DiskPath: " + getDiskPath() + ",");
+            sb.append("DiskPath: ").append(getDiskPath()).append(",");
         if (getDiskNode() != null)
-            sb.append("DiskNode: " + getDiskNode() + ",");
+            sb.append("DiskNode: ").append(getDiskNode()).append(",");
         if (getDiskStatus() != null)
-            sb.append("DiskStatus: " + getDiskStatus() + ",");
+            sb.append("DiskStatus: ").append(getDiskStatus()).append(",");
         if (getDiskSizeInBytes() != null)
-            sb.append("DiskSizeInBytes: " + getDiskSizeInBytes() + ",");
+            sb.append("DiskSizeInBytes: ").append(getDiskSizeInBytes()).append(",");
         if (getDiskAllocationType() != null)
-            sb.append("DiskAllocationType: " + getDiskAllocationType() + ",");
+            sb.append("DiskAllocationType: ").append(getDiskAllocationType()).append(",");
         if (getDiskAllocationResource() != null)
-            sb.append("DiskAllocationResource: " + getDiskAllocationResource());
+            sb.append("DiskAllocationResource: ").append(getDiskAllocationResource());
         sb.append("}");
         return sb.toString();
     }

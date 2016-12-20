@@ -311,17 +311,17 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectArn() != null)
-            sb.append("ProjectArn: " + getProjectArn() + ",");
+            sb.append("ProjectArn: ").append(getProjectArn()).append(",");
         if (getAppArn() != null)
-            sb.append("AppArn: " + getAppArn() + ",");
+            sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getDevicePoolArn() != null)
-            sb.append("DevicePoolArn: " + getDevicePoolArn() + ",");
+            sb.append("DevicePoolArn: ").append(getDevicePoolArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getTest() != null)
-            sb.append("Test: " + getTest() + ",");
+            sb.append("Test: ").append(getTest()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }

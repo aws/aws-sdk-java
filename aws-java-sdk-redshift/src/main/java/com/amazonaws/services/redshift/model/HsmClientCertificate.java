@@ -213,11 +213,11 @@ public class HsmClientCertificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmClientCertificateIdentifier() != null)
-            sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+            sb.append("HsmClientCertificateIdentifier: ").append(getHsmClientCertificateIdentifier()).append(",");
         if (getHsmClientCertificatePublicKey() != null)
-            sb.append("HsmClientCertificatePublicKey: " + getHsmClientCertificatePublicKey() + ",");
+            sb.append("HsmClientCertificatePublicKey: ").append(getHsmClientCertificatePublicKey()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

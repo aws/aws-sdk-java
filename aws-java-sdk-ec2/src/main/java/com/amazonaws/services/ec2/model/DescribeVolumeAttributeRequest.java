@@ -174,9 +174,9 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute());
+            sb.append("Attribute: ").append(getAttribute());
         sb.append("}");
         return sb.toString();
     }

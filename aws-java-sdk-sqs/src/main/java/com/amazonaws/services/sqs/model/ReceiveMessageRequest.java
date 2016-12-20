@@ -22,7 +22,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are received.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -42,7 +42,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the queue
-     * (epoch time in milliseconds).
+     * (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -70,7 +70,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in milliseconds).
+     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -93,7 +94,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters (such as the following) that are specified are ignored:
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
      * <ul>
      * <li>
@@ -124,6 +125,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>DelaySeconds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code>
      * </p>
      * </li>
      * <li>
@@ -163,11 +169,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>FifoQueue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>VisibilityTimeout</code>
      * </p>
      * </li>
@@ -176,26 +177,49 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
     /**
      * <p>
-     * The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     * following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start or end
-     * with a period, and it should not have successive periods. The name is case sensitive and must be unique among all
-     * attribute names for the message. The name can be up to 256 characters long. The name can't start with "AWS." or
-     * "Amazon." (or any variations in casing), because these prefixes are reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and
+     * period (<code>.</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name is case-sensitive and must be unique among all attribute names for the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (
+     * <code>..</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name can be up to 256 characters long.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all
-     * of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to return all message
-     * attributes starting with the "bar" prefix.
+     * of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message
+     * attributes starting with a prefix, for example <code>bar.*</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> messageAttributeNames;
     /**
      * <p>
-     * The maximum number of messages to return. Amazon SQS never returns more messages than this value but might return
-     * fewer. Values can be from 1 to 10. Default is 1.
-     * </p>
-     * <p>
-     * All of the messages are not necessarily returned.
+     * The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer
+     * messages might be returned). Valid values are 1 to 10. Default is 1.
      * </p>
      */
     private Integer maxNumberOfMessages;
@@ -208,8 +232,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer visibilityTimeout;
     /**
      * <p>
-     * The duration (in seconds) for which the call will wait for a message to arrive in the queue before returning. If
-     * a message is available, the call will return sooner than WaitTimeSeconds.
+     * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      * </p>
      */
     private Integer waitTimeSeconds;
@@ -276,9 +300,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries will
-     * work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
-     * will remain in a strict order.
+     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work
+     * until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
+     * remain in a strict order.
      * </p>
      * </li>
      * </ul>
@@ -308,7 +332,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which messages are received.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -318,14 +342,14 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are received.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which messages are received.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -336,13 +360,13 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are received.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue from which messages are received.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -353,14 +377,14 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are received.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which messages are received.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -384,7 +408,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the queue
-     * (epoch time in milliseconds).
+     * (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -412,7 +436,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in milliseconds).
+     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -435,7 +460,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters (such as the following) that are specified are ignored:
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
      * <ul>
      * <li>
@@ -466,6 +491,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>DelaySeconds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code>
      * </p>
      * </li>
      * <li>
@@ -505,11 +535,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>FifoQueue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>VisibilityTimeout</code>
      * </p>
      * </li>
@@ -525,7 +550,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the
-     *         queue (epoch time in milliseconds).
+     *         queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *         </p>
      *         </li>
      *         <li>
@@ -553,8 +578,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in
-     *         milliseconds).
+     *         <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *         </p>
      *         </li>
      *         <li>
@@ -577,7 +602,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         Any other valid special request parameters (such as the following) that are specified are ignored:
+     *         Any other valid special request parameters (such as the following) are ignored:
      *         </p>
      *         <ul>
      *         <li>
@@ -608,6 +633,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>DelaySeconds</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FifoQueue</code>
      *         </p>
      *         </li>
      *         <li>
@@ -647,11 +677,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>FifoQueue</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>VisibilityTimeout</code>
      *         </p>
      *         </li>
@@ -678,7 +703,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the queue
-     * (epoch time in milliseconds).
+     * (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -706,7 +731,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in milliseconds).
+     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -729,7 +755,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters (such as the following) that are specified are ignored:
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
      * <ul>
      * <li>
@@ -760,6 +786,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>DelaySeconds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code>
      * </p>
      * </li>
      * <li>
@@ -799,11 +830,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>FifoQueue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>VisibilityTimeout</code>
      * </p>
      * </li>
@@ -820,7 +846,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the
-     *        queue (epoch time in milliseconds).
+     *        queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -848,8 +874,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in
-     *        milliseconds).
+     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -872,7 +898,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters (such as the following) that are specified are ignored:
+     *        Any other valid special request parameters (such as the following) are ignored:
      *        </p>
      *        <ul>
      *        <li>
@@ -903,6 +929,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -938,11 +969,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -975,7 +1001,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the queue
-     * (epoch time in milliseconds).
+     * (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -1003,7 +1029,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in milliseconds).
+     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -1026,7 +1053,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters (such as the following) that are specified are ignored:
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
      * <ul>
      * <li>
@@ -1057,6 +1084,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>DelaySeconds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code>
      * </p>
      * </li>
      * <li>
@@ -1096,11 +1128,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>FifoQueue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>VisibilityTimeout</code>
      * </p>
      * </li>
@@ -1122,7 +1149,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the
-     *        queue (epoch time in milliseconds).
+     *        queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -1150,8 +1177,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in
-     *        milliseconds).
+     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -1174,7 +1201,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters (such as the following) that are specified are ignored:
+     *        Any other valid special request parameters (such as the following) are ignored:
      *        </p>
      *        <ul>
      *        <li>
@@ -1205,6 +1232,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1240,11 +1272,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1279,7 +1306,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the queue
-     * (epoch time in milliseconds).
+     * (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -1307,7 +1334,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in milliseconds).
+     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -1330,7 +1358,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters (such as the following) that are specified are ignored:
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
      * <ul>
      * <li>
@@ -1361,6 +1389,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>DelaySeconds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code>
      * </p>
      * </li>
      * <li>
@@ -1400,11 +1433,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>FifoQueue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>VisibilityTimeout</code>
      * </p>
      * </li>
@@ -1421,7 +1449,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the
-     *        queue (epoch time in milliseconds).
+     *        queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -1449,8 +1477,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in
-     *        milliseconds).
+     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -1473,7 +1501,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters (such as the following) that are specified are ignored:
+     *        Any other valid special request parameters (such as the following) are ignored:
      *        </p>
      *        <ul>
      *        <li>
@@ -1504,6 +1532,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1539,11 +1572,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>RedrivePolicy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1573,7 +1601,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the queue
-     * (epoch time in milliseconds).
+     * (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -1601,7 +1629,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in milliseconds).
+     * <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      * </p>
      * </li>
      * <li>
@@ -1624,7 +1653,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * Any other valid special request parameters (such as the following) that are specified are ignored:
+     * Any other valid special request parameters (such as the following) are ignored:
      * </p>
      * <ul>
      * <li>
@@ -1655,6 +1684,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>DelaySeconds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FifoQueue</code>
      * </p>
      * </li>
      * <li>
@@ -1694,11 +1728,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>FifoQueue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>VisibilityTimeout</code>
      * </p>
      * </li>
@@ -1715,7 +1744,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>ApproximateFirstReceiveTimestamp</code> - Returns the time the message was first received from the
-     *        queue (epoch time in milliseconds).
+     *        queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -1743,8 +1772,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (epoch time in
-     *        milliseconds).
+     *        <code>SentTimestamp</code> - Returns the time the message was sent to the queue (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).
      *        </p>
      *        </li>
      *        <li>
@@ -1767,7 +1796,7 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        Any other valid special request parameters (such as the following) that are specified are ignored:
+     *        Any other valid special request parameters (such as the following) are ignored:
      *        </p>
      *        <ul>
      *        <li>
@@ -1798,6 +1827,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>DelaySeconds</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FifoQueue</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1837,11 +1871,6 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>FifoQueue</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>VisibilityTimeout</code>
      *        </p>
      *        </li>
@@ -1864,28 +1893,79 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     * following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start or end
-     * with a period, and it should not have successive periods. The name is case sensitive and must be unique among all
-     * attribute names for the message. The name can be up to 256 characters long. The name can't start with "AWS." or
-     * "Amazon." (or any variations in casing), because these prefixes are reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and
+     * period (<code>.</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name is case-sensitive and must be unique among all attribute names for the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (
+     * <code>..</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name can be up to 256 characters long.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all
-     * of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to return all message
-     * attributes starting with the "bar" prefix.
+     * of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message
+     * attributes starting with a prefix, for example <code>bar.*</code>.
      * </p>
      * 
-     * @return The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain
-     *         the following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not
-     *         start or end with a period, and it should not have successive periods. The name is case sensitive and
-     *         must be unique among all attribute names for the message. The name can be up to 256 characters long. The
-     *         name can't start with "AWS." or "Amazon." (or any variations in casing), because these prefixes are
-     *         reserved for use by Amazon Web Services.</p>
+     * @return The name of the message attribute, where <i>N</i> is the index.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>
+     *         ), and period (<code>.</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The name is case-sensitive and must be unique among all attribute names for the message.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or
+     *         any casing variants).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The name must not start or end with a period (<code>.</code>), and it should not have periods in
+     *         succession (<code>..</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The name can be up to 256 characters long.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can
-     *         return all of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to
-     *         return all message attributes starting with the "bar" prefix.
+     *         return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can
+     *         also use all message attributes starting with a prefix, for example <code>bar.*</code>.
      */
 
     public java.util.List<String> getMessageAttributeNames() {
@@ -1897,29 +1977,80 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     * following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start or end
-     * with a period, and it should not have successive periods. The name is case sensitive and must be unique among all
-     * attribute names for the message. The name can be up to 256 characters long. The name can't start with "AWS." or
-     * "Amazon." (or any variations in casing), because these prefixes are reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and
+     * period (<code>.</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name is case-sensitive and must be unique among all attribute names for the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (
+     * <code>..</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name can be up to 256 characters long.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all
-     * of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to return all message
-     * attributes starting with the "bar" prefix.
+     * of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message
+     * attributes starting with a prefix, for example <code>bar.*</code>.
      * </p>
      * 
      * @param messageAttributeNames
-     *        The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     *        following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start
-     *        or end with a period, and it should not have successive periods. The name is case sensitive and must be
-     *        unique among all attribute names for the message. The name can be up to 256 characters long. The name
-     *        can't start with "AWS." or "Amazon." (or any variations in casing), because these prefixes are reserved
-     *        for use by Amazon Web Services.</p>
+     *        The name of the message attribute, where <i>N</i> is the index.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>),
+     *        and period (<code>.</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name is case-sensitive and must be unique among all attribute names for the message.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or
+     *        any casing variants).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name must not start or end with a period (<code>.</code>), and it should not have periods in
+     *        succession (<code>..</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name can be up to 256 characters long.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can
-     *        return all of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to
-     *        return all message attributes starting with the "bar" prefix.
+     *        return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can
+     *        also use all message attributes starting with a prefix, for example <code>bar.*</code>.
      */
 
     public void setMessageAttributeNames(java.util.Collection<String> messageAttributeNames) {
@@ -1933,16 +2064,42 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     * following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start or end
-     * with a period, and it should not have successive periods. The name is case sensitive and must be unique among all
-     * attribute names for the message. The name can be up to 256 characters long. The name can't start with "AWS." or
-     * "Amazon." (or any variations in casing), because these prefixes are reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and
+     * period (<code>.</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name is case-sensitive and must be unique among all attribute names for the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (
+     * <code>..</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name can be up to 256 characters long.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all
-     * of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to return all message
-     * attributes starting with the "bar" prefix.
+     * of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message
+     * attributes starting with a prefix, for example <code>bar.*</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1951,16 +2108,41 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param messageAttributeNames
-     *        The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     *        following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start
-     *        or end with a period, and it should not have successive periods. The name is case sensitive and must be
-     *        unique among all attribute names for the message. The name can be up to 256 characters long. The name
-     *        can't start with "AWS." or "Amazon." (or any variations in casing), because these prefixes are reserved
-     *        for use by Amazon Web Services.</p>
+     *        The name of the message attribute, where <i>N</i> is the index.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>),
+     *        and period (<code>.</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name is case-sensitive and must be unique among all attribute names for the message.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or
+     *        any casing variants).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name must not start or end with a period (<code>.</code>), and it should not have periods in
+     *        succession (<code>..</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name can be up to 256 characters long.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can
-     *        return all of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to
-     *        return all message attributes starting with the "bar" prefix.
+     *        return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can
+     *        also use all message attributes starting with a prefix, for example <code>bar.*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1976,29 +2158,80 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     * following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start or end
-     * with a period, and it should not have successive periods. The name is case sensitive and must be unique among all
-     * attribute names for the message. The name can be up to 256 characters long. The name can't start with "AWS." or
-     * "Amazon." (or any variations in casing), because these prefixes are reserved for use by Amazon Web Services.
+     * The name of the message attribute, where <i>N</i> is the index.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and
+     * period (<code>.</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name is case-sensitive and must be unique among all attribute names for the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any
+     * casing variants).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (
+     * <code>..</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The name can be up to 256 characters long.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all
-     * of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to return all message
-     * attributes starting with the "bar" prefix.
+     * of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message
+     * attributes starting with a prefix, for example <code>bar.*</code>.
      * </p>
      * 
      * @param messageAttributeNames
-     *        The name of the message attribute, where <i>N</i> is the index. The message attribute name can contain the
-     *        following characters: A-Z, a-z, 0-9, underscore (_), hyphen (-), and period (.). The name must not start
-     *        or end with a period, and it should not have successive periods. The name is case sensitive and must be
-     *        unique among all attribute names for the message. The name can be up to 256 characters long. The name
-     *        can't start with "AWS." or "Amazon." (or any variations in casing), because these prefixes are reserved
-     *        for use by Amazon Web Services.</p>
+     *        The name of the message attribute, where <i>N</i> is the index.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>),
+     *        and period (<code>.</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name is case-sensitive and must be unique among all attribute names for the message.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or
+     *        any casing variants).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name must not start or end with a period (<code>.</code>), and it should not have periods in
+     *        succession (<code>..</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The name can be up to 256 characters long.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can
-     *        return all of the attributes by specifying "All" or ".*" in your request. You can also use "bar.*" to
-     *        return all message attributes starting with the "bar" prefix.
+     *        return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can
+     *        also use all message attributes starting with a prefix, for example <code>bar.*</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2009,18 +2242,13 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of messages to return. Amazon SQS never returns more messages than this value but might return
-     * fewer. Values can be from 1 to 10. Default is 1.
-     * </p>
-     * <p>
-     * All of the messages are not necessarily returned.
+     * The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer
+     * messages might be returned). Valid values are 1 to 10. Default is 1.
      * </p>
      * 
      * @param maxNumberOfMessages
-     *        The maximum number of messages to return. Amazon SQS never returns more messages than this value but might
-     *        return fewer. Values can be from 1 to 10. Default is 1.</p>
-     *        <p>
-     *        All of the messages are not necessarily returned.
+     *        The maximum number of messages to return. Amazon SQS never returns more messages than this value (however,
+     *        fewer messages might be returned). Valid values are 1 to 10. Default is 1.
      */
 
     public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
@@ -2029,17 +2257,12 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of messages to return. Amazon SQS never returns more messages than this value but might return
-     * fewer. Values can be from 1 to 10. Default is 1.
-     * </p>
-     * <p>
-     * All of the messages are not necessarily returned.
+     * The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer
+     * messages might be returned). Valid values are 1 to 10. Default is 1.
      * </p>
      * 
-     * @return The maximum number of messages to return. Amazon SQS never returns more messages than this value but
-     *         might return fewer. Values can be from 1 to 10. Default is 1.</p>
-     *         <p>
-     *         All of the messages are not necessarily returned.
+     * @return The maximum number of messages to return. Amazon SQS never returns more messages than this value
+     *         (however, fewer messages might be returned). Valid values are 1 to 10. Default is 1.
      */
 
     public Integer getMaxNumberOfMessages() {
@@ -2048,18 +2271,13 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of messages to return. Amazon SQS never returns more messages than this value but might return
-     * fewer. Values can be from 1 to 10. Default is 1.
-     * </p>
-     * <p>
-     * All of the messages are not necessarily returned.
+     * The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer
+     * messages might be returned). Valid values are 1 to 10. Default is 1.
      * </p>
      * 
      * @param maxNumberOfMessages
-     *        The maximum number of messages to return. Amazon SQS never returns more messages than this value but might
-     *        return fewer. Values can be from 1 to 10. Default is 1.</p>
-     *        <p>
-     *        All of the messages are not necessarily returned.
+     *        The maximum number of messages to return. Amazon SQS never returns more messages than this value (however,
+     *        fewer messages might be returned). Valid values are 1 to 10. Default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2116,13 +2334,13 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The duration (in seconds) for which the call will wait for a message to arrive in the queue before returning. If
-     * a message is available, the call will return sooner than WaitTimeSeconds.
+     * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      * </p>
      * 
      * @param waitTimeSeconds
-     *        The duration (in seconds) for which the call will wait for a message to arrive in the queue before
-     *        returning. If a message is available, the call will return sooner than WaitTimeSeconds.
+     *        The duration (in seconds) for which the call waits for a message to arrive in the queue before returning.
+     *        If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      */
 
     public void setWaitTimeSeconds(Integer waitTimeSeconds) {
@@ -2131,12 +2349,12 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The duration (in seconds) for which the call will wait for a message to arrive in the queue before returning. If
-     * a message is available, the call will return sooner than WaitTimeSeconds.
+     * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      * </p>
      * 
-     * @return The duration (in seconds) for which the call will wait for a message to arrive in the queue before
-     *         returning. If a message is available, the call will return sooner than WaitTimeSeconds.
+     * @return The duration (in seconds) for which the call waits for a message to arrive in the queue before returning.
+     *         If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      */
 
     public Integer getWaitTimeSeconds() {
@@ -2145,13 +2363,13 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The duration (in seconds) for which the call will wait for a message to arrive in the queue before returning. If
-     * a message is available, the call will return sooner than WaitTimeSeconds.
+     * The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a
+     * message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      * </p>
      * 
      * @param waitTimeSeconds
-     *        The duration (in seconds) for which the call will wait for a message to arrive in the queue before
-     *        returning. If a message is available, the call will return sooner than WaitTimeSeconds.
+     *        The duration (in seconds) for which the call waits for a message to arrive in the queue before returning.
+     *        If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2223,9 +2441,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries will
-     * work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
-     * will remain in a strict order.
+     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work
+     * until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
+     * remain in a strict order.
      * </p>
      * </li>
      * </ul>
@@ -2304,8 +2522,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no
-     *        retries will work until the original visibility timeout expires. As a result, delays might occur but the
-     *        messages in the queue will remain in a strict order.
+     *        retries work until the original visibility timeout expires. As a result, delays might occur but the
+     *        messages in the queue remain in a strict order.
      *        </p>
      *        </li>
      *        </ul>
@@ -2388,9 +2606,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries will
-     * work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
-     * will remain in a strict order.
+     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work
+     * until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
+     * remain in a strict order.
      * </p>
      * </li>
      * </ul>
@@ -2468,8 +2686,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no
-     *         retries will work until the original visibility timeout expires. As a result, delays might occur but the
-     *         messages in the queue will remain in a strict order.
+     *         retries work until the original visibility timeout expires. As a result, delays might occur but the
+     *         messages in the queue remain in a strict order.
      *         </p>
      *         </li>
      *         </ul>
@@ -2553,9 +2771,9 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries will
-     * work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
-     * will remain in a strict order.
+     * If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work
+     * until the original visibility timeout expires. As a result, delays might occur but the messages in the queue
+     * remain in a strict order.
      * </p>
      * </li>
      * </ul>
@@ -2634,8 +2852,8 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no
-     *        retries will work until the original visibility timeout expires. As a result, delays might occur but the
-     *        messages in the queue will remain in a strict order.
+     *        retries work until the original visibility timeout expires. As a result, delays might occur but the
+     *        messages in the queue remain in a strict order.
      *        </p>
      *        </li>
      *        </ul>
@@ -2669,19 +2887,19 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getAttributeNames() != null)
-            sb.append("AttributeNames: " + getAttributeNames() + ",");
+            sb.append("AttributeNames: ").append(getAttributeNames()).append(",");
         if (getMessageAttributeNames() != null)
-            sb.append("MessageAttributeNames: " + getMessageAttributeNames() + ",");
+            sb.append("MessageAttributeNames: ").append(getMessageAttributeNames()).append(",");
         if (getMaxNumberOfMessages() != null)
-            sb.append("MaxNumberOfMessages: " + getMaxNumberOfMessages() + ",");
+            sb.append("MaxNumberOfMessages: ").append(getMaxNumberOfMessages()).append(",");
         if (getVisibilityTimeout() != null)
-            sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ",");
+            sb.append("VisibilityTimeout: ").append(getVisibilityTimeout()).append(",");
         if (getWaitTimeSeconds() != null)
-            sb.append("WaitTimeSeconds: " + getWaitTimeSeconds() + ",");
+            sb.append("WaitTimeSeconds: ").append(getWaitTimeSeconds()).append(",");
         if (getReceiveRequestAttemptId() != null)
-            sb.append("ReceiveRequestAttemptId: " + getReceiveRequestAttemptId());
+            sb.append("ReceiveRequestAttemptId: ").append(getReceiveRequestAttemptId());
         sb.append("}");
         return sb.toString();
     }

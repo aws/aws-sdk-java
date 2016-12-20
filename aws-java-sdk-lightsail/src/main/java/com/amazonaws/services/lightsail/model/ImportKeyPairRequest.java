@@ -125,9 +125,9 @@ public class ImportKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPairName() != null)
-            sb.append("KeyPairName: " + getKeyPairName() + ",");
+            sb.append("KeyPairName: ").append(getKeyPairName()).append(",");
         if (getPublicKeyBase64() != null)
-            sb.append("PublicKeyBase64: " + getPublicKeyBase64());
+            sb.append("PublicKeyBase64: ").append(getPublicKeyBase64());
         sb.append("}");
         return sb.toString();
     }

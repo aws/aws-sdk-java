@@ -418,17 +418,17 @@ public class CloudFrontOriginAccessIdentityList implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity() + ",");
+            sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getItems() != null)
-            sb.append("Items: " + getItems());
+            sb.append("Items: ").append(getItems());
         sb.append("}");
         return sb.toString();
     }

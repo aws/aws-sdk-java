@@ -131,9 +131,9 @@ public class DateTimeRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFrom() != null)
-            sb.append("From: " + getFrom() + ",");
+            sb.append("From: ").append(getFrom()).append(",");
         if (getTo() != null)
-            sb.append("To: " + getTo());
+            sb.append("To: ").append(getTo());
         sb.append("}");
         return sb.toString();
     }

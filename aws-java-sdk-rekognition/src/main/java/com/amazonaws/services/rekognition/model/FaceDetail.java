@@ -747,33 +747,33 @@ public class FaceDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBoundingBox() != null)
-            sb.append("BoundingBox: " + getBoundingBox() + ",");
+            sb.append("BoundingBox: ").append(getBoundingBox()).append(",");
         if (getSmile() != null)
-            sb.append("Smile: " + getSmile() + ",");
+            sb.append("Smile: ").append(getSmile()).append(",");
         if (getEyeglasses() != null)
-            sb.append("Eyeglasses: " + getEyeglasses() + ",");
+            sb.append("Eyeglasses: ").append(getEyeglasses()).append(",");
         if (getSunglasses() != null)
-            sb.append("Sunglasses: " + getSunglasses() + ",");
+            sb.append("Sunglasses: ").append(getSunglasses()).append(",");
         if (getGender() != null)
-            sb.append("Gender: " + getGender() + ",");
+            sb.append("Gender: ").append(getGender()).append(",");
         if (getBeard() != null)
-            sb.append("Beard: " + getBeard() + ",");
+            sb.append("Beard: ").append(getBeard()).append(",");
         if (getMustache() != null)
-            sb.append("Mustache: " + getMustache() + ",");
+            sb.append("Mustache: ").append(getMustache()).append(",");
         if (getEyesOpen() != null)
-            sb.append("EyesOpen: " + getEyesOpen() + ",");
+            sb.append("EyesOpen: ").append(getEyesOpen()).append(",");
         if (getMouthOpen() != null)
-            sb.append("MouthOpen: " + getMouthOpen() + ",");
+            sb.append("MouthOpen: ").append(getMouthOpen()).append(",");
         if (getEmotions() != null)
-            sb.append("Emotions: " + getEmotions() + ",");
+            sb.append("Emotions: ").append(getEmotions()).append(",");
         if (getLandmarks() != null)
-            sb.append("Landmarks: " + getLandmarks() + ",");
+            sb.append("Landmarks: ").append(getLandmarks()).append(",");
         if (getPose() != null)
-            sb.append("Pose: " + getPose() + ",");
+            sb.append("Pose: ").append(getPose()).append(",");
         if (getQuality() != null)
-            sb.append("Quality: " + getQuality() + ",");
+            sb.append("Quality: ").append(getQuality()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence());
+            sb.append("Confidence: ").append(getConfidence());
         sb.append("}");
         return sb.toString();
     }

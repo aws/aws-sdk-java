@@ -55,6 +55,11 @@ public class CacheParameterGroupStatusStaxUnmarshaller implements Unmarshaller<C
                     continue;
                 }
 
+                if (context.testExpression("CacheNodeIdsToReboot", targetDepth)) {
+                    cacheParameterGroupStatus.withCacheNodeIdsToReboot(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheNodeIdsToReboot/CacheNodeId", targetDepth)) {
                     cacheParameterGroupStatus.withCacheNodeIdsToReboot(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -302,13 +302,13 @@ public class PurchaseReservedDBInstancesOfferingRequest extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedDBInstancesOfferingId() != null)
-            sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");
+            sb.append("ReservedDBInstancesOfferingId: ").append(getReservedDBInstancesOfferingId()).append(",");
         if (getReservedDBInstanceId() != null)
-            sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");
+            sb.append("ReservedDBInstanceId: ").append(getReservedDBInstanceId()).append(",");
         if (getDBInstanceCount() != null)
-            sb.append("DBInstanceCount: " + getDBInstanceCount() + ",");
+            sb.append("DBInstanceCount: ").append(getDBInstanceCount()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

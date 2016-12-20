@@ -123,9 +123,9 @@ public class DescribeIdentityUsageRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId());
+            sb.append("IdentityId: ").append(getIdentityId());
         sb.append("}");
         return sb.toString();
     }

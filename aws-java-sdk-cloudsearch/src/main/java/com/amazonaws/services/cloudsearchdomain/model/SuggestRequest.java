@@ -173,11 +173,11 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQuery() != null)
-            sb.append("Query: " + getQuery() + ",");
+            sb.append("Query: ").append(getQuery()).append(",");
         if (getSuggester() != null)
-            sb.append("Suggester: " + getSuggester() + ",");
+            sb.append("Suggester: ").append(getSuggester()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize());
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }

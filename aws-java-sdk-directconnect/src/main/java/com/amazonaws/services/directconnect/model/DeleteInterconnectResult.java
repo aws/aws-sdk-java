@@ -84,7 +84,7 @@ public class DeleteInterconnectResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInterconnectState() != null)
-            sb.append("InterconnectState: " + getInterconnectState());
+            sb.append("InterconnectState: ").append(getInterconnectState());
         sb.append("}");
         return sb.toString();
     }

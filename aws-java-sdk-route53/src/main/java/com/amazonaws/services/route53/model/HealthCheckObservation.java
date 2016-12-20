@@ -219,11 +219,11 @@ public class HealthCheckObservation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getIPAddress() != null)
-            sb.append("IPAddress: " + getIPAddress() + ",");
+            sb.append("IPAddress: ").append(getIPAddress()).append(",");
         if (getStatusReport() != null)
-            sb.append("StatusReport: " + getStatusReport());
+            sb.append("StatusReport: ").append(getStatusReport());
         sb.append("}");
         return sb.toString();
     }

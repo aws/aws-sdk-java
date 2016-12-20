@@ -45,381 +45,71 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * Client for accessing AWS Application Discovery Service. All service calls made using this client are blocking, and
  * will not return until the service call completes.
  * <p>
+ * <fullname>AWS Application Discovery Service</fullname>
  * <p>
- * The AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration
- * projects by automatically identifying applications running in on-premises data centers, their associated
- * dependencies, and their performance profile.
+ * AWS Application Discovery Service helps you plan application migration projects by automatically identifying servers,
+ * virtual machines (VMs), software, and software dependencies running in your on-premises data centers. Application
+ * Discovery Service also collects application performance data, which can help you assess the outcome of your
+ * migration. The data collected by Application Discovery Service is securely retained in an Amazon-hosted and managed
+ * database in the cloud. You can export the data as a CSV or XML file into your preferred visualization tool or
+ * cloud-migration solution to plan your migration. For more information, see the Application Discovery Service <a
+ * href="http://aws.amazon.com/application-discovery/faqs/">FAQ</a>.
  * </p>
  * <p>
- * Planning data center migrations can involve thousands of workloads that are often deeply interdependent. Application
- * discovery and dependency mapping are important early first steps in the migration process, but difficult to perform
- * at scale due to the lack of automated tools.
+ * Application Discovery Service offers two modes of operation.
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * The AWS Application Discovery Service automatically collects configuration and usage data from servers to develop a
- * list of applications, how they perform, and how they are interdependent. This information is securely retained in an
- * AWS Application Discovery Service database which you can export as a CSV file into your preferred visualization tool
- * or cloud migration solution to help reduce the complexity and time in planning your cloud migration.
+ * <b>Agentless discovery</b> mode is recommended for environments that use VMware vCenter Server. This mode doesn't
+ * require you to install an agent on each host. Agentless discovery gathers server information regardless of the
+ * operating systems, which minimizes the time required for initial on-premises infrastructure assessment. Agentless
+ * discovery doesn't collect information about software and software dependencies. It also doesn't work in non-VMware
+ * environments. We recommend that you use agent-based discovery for non-VMware environments and if you want to collect
+ * information about software and software dependencies. You can also run agent-based and agentless discovery
+ * simultaneously. Use agentless discovery to quickly complete the initial infrastructure assessment and then install
+ * agents on select hosts to gather information about software and software dependencies.
  * </p>
+ * </li>
+ * <li>
  * <p>
- * The Application Discovery Service is currently available for preview. Only customers who are engaged with <a
- * href="https://aws.amazon.com/professional-services/">AWS Professional Services</a> or a certified AWS partner can use
- * the service. To see the list of certified partners and request access to the Application Discovery Service, complete
- * the following <a href="http://aws.amazon.com/application-discovery/preview/">preview form</a>.
+ * <b>Agent-based discovery</b> mode collects a richer set of data than agentless discovery by using Amazon software,
+ * the AWS Application Discovery Agent, which you install on one or more hosts in your data center. The agent captures
+ * infrastructure and application information, including an inventory of installed software applications, system and
+ * process performance, resource utilization, and network dependencies between workloads. The information collected by
+ * agents is secured at rest and in transit to the Application Discovery Service database in the cloud.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN)
+ * partners. Third-party application discovery tools can query the Application Discovery Service and write to the
+ * Application Discovery Service database using a public API. You can then import the data into either a visualization
+ * tool or cloud-migration solution.
+ * </p>
+ * <important>
+ * <p>
+ * Application Discovery Service doesn't gather sensitive information. All data is handled according to the <a
+ * href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can operate Application Discovery Service using
+ * offline mode to inspect collected data before it is shared with the service.
+ * </p>
+ * </important>
+ * <p>
+ * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
+ * is true for AWS partners and customers alike. To request access, sign up for the AWS Application Discovery Service <a
+ * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We will send you information about how to get
+ * started.
  * </p>
  * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the
- * Discovery Service. The topic for each action shows the API request parameters and the response. Alternatively, you
- * can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're
- * using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+ * Application Discovery Service. The topic for each action shows the API request parameters and the response.
+ * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
+ * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
  * </p>
  * <p>
- * This guide is intended for use with the <a
- * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery.html"> <i>AWS Discovery
- * Service User Guide</i> </a>.
+ * This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
+ * <i>AWS Application Discovery Service User Guide</i> </a>.
  * </p>
- * <p>
- * The following are short descriptions of each API action, organized by function.
- * </p>
- * <p>
- * <b>Managing AWS Agents Using the Application Discovery Service</b>
- * </p>
- * <p>
- * An AWS agent is software that you install on on-premises servers and virtual machines that are targeted for discovery
- * and migration. Agents run on Linux and Windows Server and collect server configuration and activity information about
- * your applications and infrastructure. Specifically, agents collect the following information and send it to the
- * Application Discovery Service using Secure Sockets Layer (SSL) encryption:
- * </p>
- * <ul>
- * <li>
- * <p>
- * User information (user name, home directory)
- * </p>
- * </li>
- * <li>
- * <p>
- * Group information (name)
- * </p>
- * </li>
- * <li>
- * <p>
- * List of installed packages
- * </p>
- * </li>
- * <li>
- * <p>
- * List of kernel modules
- * </p>
- * </li>
- * <li>
- * <p>
- * All create and stop process events
- * </p>
- * </li>
- * <li>
- * <p>
- * DNS queries
- * </p>
- * </li>
- * <li>
- * <p>
- * NIC information
- * </p>
- * </li>
- * <li>
- * <p>
- * TCP/UDP process listening ports
- * </p>
- * </li>
- * <li>
- * <p>
- * TCPV4/V6 connections
- * </p>
- * </li>
- * <li>
- * <p>
- * Operating system information
- * </p>
- * </li>
- * <li>
- * <p>
- * System performance
- * </p>
- * </li>
- * <li>
- * <p>
- * Process performance
- * </p>
- * </li>
- * </ul>
- * <p>
- * The Application Discovery Service API includes the following actions to manage AWS agents:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>StartDataCollectionByAgentIds</i>: Instructs the specified agents to start collecting data. The Application
- * Discovery Service takes several minutes to receive and process data after you initiate data collection.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>StopDataCollectionByAgentIds</i>: Instructs the specified agents to stop collecting data.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>DescribeAgents</i>: Lists AWS agents by ID or lists all agents associated with your user account if you did not
- * specify an agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health,
- * host name where the agent resides, and the version number of each agent.
- * </p>
- * </li>
- * </ul>
- * <p>
- * <b>Querying Configuration Items</b>
- * </p>
- * <p>
- * A <i>configuration item</i> is an IT asset that was discovered in your data center by an AWS agent. When you use the
- * Application Discovery Service, you can specify filters and query specific configuration items. The service supports
- * Server, Process, and Connection configuration items. This means you can specify a value for the following keys and
- * query your IT assets:
- * </p>
- * <p class="title">
- * <b>Server</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * server.HostName
- * </p>
- * </li>
- * <li>
- * <p>
- * server.osName
- * </p>
- * </li>
- * <li>
- * <p>
- * server.osVersion
- * </p>
- * </li>
- * <li>
- * <p>
- * server.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * server.agentId
- * </p>
- * </li>
- * </ul>
- * <p class="title">
- * <b>Process</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * process.name
- * </p>
- * </li>
- * <li>
- * <p>
- * process.CommandLine
- * </p>
- * </li>
- * <li>
- * <p>
- * process.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * server.hostName
- * </p>
- * </li>
- * <li>
- * <p>
- * server.osName
- * </p>
- * </li>
- * <li>
- * <p>
- * server.osVersion
- * </p>
- * </li>
- * <li>
- * <p>
- * server.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * server.agentId
- * </p>
- * </li>
- * </ul>
- * <p class="title">
- * <b>Connection</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * connection.sourceIp
- * </p>
- * </li>
- * <li>
- * <p>
- * connection.sourcePort
- * </p>
- * </li>
- * <li>
- * <p>
- * connection.destinationIp
- * </p>
- * </li>
- * <li>
- * <p>
- * connection.destinationPort
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceProcess.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceProcess.commandLine
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceProcess.name
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationProcessId.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationProcess.commandLine
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationProcess.name
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceServer.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceServer.hostName
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceServer.osName
- * </p>
- * </li>
- * <li>
- * <p>
- * sourceServer.osVersion
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationServer.configurationId
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationServer.hostName
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationServer.osName
- * </p>
- * </li>
- * <li>
- * <p>
- * destinationServer.osVersion
- * </p>
- * </li>
- * </ul>
- * <p>
- * The Application Discovery Service includes the following actions for querying configuration items.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>DescribeConfigurations</i>: Retrieves a list of attributes for a specific configuration ID. For example, the
- * output for a <i>server</i> configuration item includes a list of attributes about the server, including host name,
- * operating system, number of network cards, etc.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>ListConfigurations</i>: Retrieves a list of configuration items according to the criteria you specify in a filter.
- * The filter criteria identify relationship requirements. For example, you can specify filter criteria of process.name
- * with values of <i>nginx</i> and <i>apache</i>.
- * </p>
- * </li>
- * </ul>
- * <p>
- * <b>Tagging Discovered Configuration Items</b>
- * </p>
- * <p>
- * You can tag discovered configuration items. Tags are metadata that help you categorize IT assets in your data center.
- * Tags use a <i>key</i>-<i>value</i> format. For example, <code>{"key": "serverType", "value": "webServer"}</code>.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>CreateTags</i>: Creates one or more tags for a configuration items.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>DescribeTags</i>: Retrieves a list of configuration items that are tagged with a specific tag. <i>Or</i>,
- * retrieves a list of all tags assigned to a specific configuration item.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>DeleteTags</i>: Deletes the association between a configuration item and one or more tags.
- * </p>
- * </li>
- * </ul>
- * <p>
- * <b>Exporting Data</b>
- * </p>
- * <p>
- * You can export data as a CSV file to an Amazon S3 bucket or into your preferred visualization tool or cloud migration
- * solution to help reduce the complexity and time in planning your cloud migration.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <i>ExportConfigurations</i>: Exports all discovered configuration data to an Amazon S3 bucket. Data includes tags and
- * tag associations, processes, connections, servers, and system performance. This API returns an export ID which you
- * can query using the GetExportStatus API.
- * </p>
- * </li>
- * <li>
- * <p>
- * <i>DescribeExportConfigurations</i>: Gets the status of the data export. When the export is complete, the service
- * returns an Amazon S3 URL where you can download CSV files that include the data.
- * </p>
- * </li>
- * </ul>
  */
 @ThreadSafe
 public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implements AWSApplicationDiscovery {
@@ -621,6 +311,109 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Associates one or more configuration items with an application.
+     * </p>
+     * 
+     * @param associateConfigurationItemsToApplicationRequest
+     * @return Result of the AssociateConfigurationItemsToApplication operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.AssociateConfigurationItemsToApplication
+     */
+    @Override
+    public AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(
+            AssociateConfigurationItemsToApplicationRequest associateConfigurationItemsToApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateConfigurationItemsToApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateConfigurationItemsToApplicationRequest> request = null;
+        Response<AssociateConfigurationItemsToApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateConfigurationItemsToApplicationRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateConfigurationItemsToApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateConfigurationItemsToApplicationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AssociateConfigurationItemsToApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an application with the given name and description.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.CreateApplication
+     */
+    @Override
+    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationRequest> request = null;
+        Response<CreateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API
      * accepts a list of multiple configuration items.
      * </p>
@@ -662,6 +455,56 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a list of applications and their associations with configuration items.
+     * </p>
+     * 
+     * @param deleteApplicationsRequest
+     * @return Result of the DeleteApplications operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.DeleteApplications
+     */
+    @Override
+    public DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest deleteApplicationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationsRequest> request = null;
+        Response<DeleteApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteApplicationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -727,7 +570,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID.
+     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
+     * not specify an ID.
      * </p>
      * 
      * @param describeAgentsRequest
@@ -777,9 +621,15 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Retrieves a list of attributes for a specific configuration ID. For example, the output for a <i>server</i>
-     * configuration item includes a list of attributes about the server, including host name, operating system, number
-     * of network cards, etc.
+     * Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset
+     * type (server, application, process, or connection). Output fields are specific to the asset type selected. For
+     * example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such
+     * as host name, operating system, and number of network cards.
+     * </p>
+     * <p>
+     * For a complete list of outputs for each asset type, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations"
+     * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
      * @param describeConfigurationsRequest
@@ -937,10 +787,63 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Disassociates one or more configuration items from an application.
+     * </p>
+     * 
+     * @param disassociateConfigurationItemsFromApplicationRequest
+     * @return Result of the DisassociateConfigurationItemsFromApplication operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.DisassociateConfigurationItemsFromApplication
+     */
+    @Override
+    public DisassociateConfigurationItemsFromApplicationResult disassociateConfigurationItemsFromApplication(
+            DisassociateConfigurationItemsFromApplicationRequest disassociateConfigurationItemsFromApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateConfigurationItemsFromApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateConfigurationItemsFromApplicationRequest> request = null;
+        Response<DisassociateConfigurationItemsFromApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateConfigurationItemsFromApplicationRequestMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateConfigurationItemsFromApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateConfigurationItemsFromApplicationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateConfigurationItemsFromApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and
      * evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system
-     * performance. This API returns an export ID which you can query using the <i>GetExportStatus</i> API. The system
-     * imposes a limit of two configuration exports in six hours.
+     * performance. This API returns an export ID which you can query using the <i>DescribeExportConfigurations</i> API.
+     * The system imposes a limit of two configuration exports in six hours.
      * </p>
      * 
      * @param exportConfigurationsRequest
@@ -992,7 +895,57 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Retrieves a list of configurations items according to the criteria you specify in a filter. The filter criteria
+     * Retrieves a short summary of discovered assets.
+     * </p>
+     * 
+     * @param getDiscoverySummaryRequest
+     * @return Result of the GetDiscoverySummary operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.GetDiscoverySummary
+     */
+    @Override
+    public GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest getDiscoverySummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDiscoverySummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDiscoverySummaryRequest> request = null;
+        Response<GetDiscoverySummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDiscoverySummaryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiscoverySummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDiscoverySummaryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDiscoverySummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria
      * identify relationship requirements.
      * </p>
      * 
@@ -1045,8 +998,57 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Instructs the specified agents to start collecting data. Agents can reside on host servers or virtual machines in
-     * your data center.
+     * Retrieves a list of servers which are one network hop away from a specified server.
+     * </p>
+     * 
+     * @param listServerNeighborsRequest
+     * @return Result of the ListServerNeighbors operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.ListServerNeighbors
+     */
+    @Override
+    public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listServerNeighborsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListServerNeighborsRequest> request = null;
+        Response<ListServerNeighborsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListServerNeighborsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServerNeighborsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListServerNeighborsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListServerNeighborsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Instructs the specified agents or Connectors to start collecting data.
      * </p>
      * 
      * @param startDataCollectionByAgentIdsRequest
@@ -1098,7 +1100,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Instructs the specified agents to stop collecting data.
+     * Instructs the specified agents or Connectors to stop collecting data.
      * </p>
      * 
      * @param stopDataCollectionByAgentIdsRequest
@@ -1138,6 +1140,56 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
             HttpResponseHandler<AmazonWebServiceResponse<StopDataCollectionByAgentIdsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StopDataCollectionByAgentIdsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates metadata about an application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.UpdateApplication
+     */
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationRequest> request = null;
+        Response<UpdateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApplicationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

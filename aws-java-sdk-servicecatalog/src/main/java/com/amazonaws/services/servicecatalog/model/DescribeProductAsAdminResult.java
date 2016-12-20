@@ -154,9 +154,9 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductViewDetail() != null)
-            sb.append("ProductViewDetail: " + getProductViewDetail() + ",");
+            sb.append("ProductViewDetail: ").append(getProductViewDetail()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

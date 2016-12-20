@@ -161,9 +161,9 @@ public class SearchProductsAsAdminResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductViewDetails() != null)
-            sb.append("ProductViewDetails: " + getProductViewDetails() + ",");
+            sb.append("ProductViewDetails: ").append(getProductViewDetails()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

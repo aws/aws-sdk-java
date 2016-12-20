@@ -172,11 +172,11 @@ public class Output implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutputKey() != null)
-            sb.append("OutputKey: " + getOutputKey() + ",");
+            sb.append("OutputKey: ").append(getOutputKey()).append(",");
         if (getOutputValue() != null)
-            sb.append("OutputValue: " + getOutputValue() + ",");
+            sb.append("OutputValue: ").append(getOutputValue()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

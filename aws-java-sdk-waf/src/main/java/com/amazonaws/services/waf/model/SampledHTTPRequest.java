@@ -241,13 +241,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRequest() != null)
-            sb.append("Request: " + getRequest() + ",");
+            sb.append("Request: ").append(getRequest()).append(",");
         if (getWeight() != null)
-            sb.append("Weight: " + getWeight() + ",");
+            sb.append("Weight: ").append(getWeight()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction());
+            sb.append("Action: ").append(getAction());
         sb.append("}");
         return sb.toString();
     }

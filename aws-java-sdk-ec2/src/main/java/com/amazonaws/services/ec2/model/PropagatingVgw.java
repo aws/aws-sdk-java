@@ -80,7 +80,7 @@ public class PropagatingVgw implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId());
+            sb.append("GatewayId: ").append(getGatewayId());
         sb.append("}");
         return sb.toString();
     }

@@ -172,9 +172,9 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getIpv6Addresses() != null)
-            sb.append("Ipv6Addresses: " + getIpv6Addresses());
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses());
         sb.append("}");
         return sb.toString();
     }

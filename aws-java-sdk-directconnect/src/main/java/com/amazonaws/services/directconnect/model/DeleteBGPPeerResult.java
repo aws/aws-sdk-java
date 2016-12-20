@@ -61,7 +61,7 @@ public class DeleteBGPPeerResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterface() != null)
-            sb.append("VirtualInterface: " + getVirtualInterface());
+            sb.append("VirtualInterface: ").append(getVirtualInterface());
         sb.append("}");
         return sb.toString();
     }

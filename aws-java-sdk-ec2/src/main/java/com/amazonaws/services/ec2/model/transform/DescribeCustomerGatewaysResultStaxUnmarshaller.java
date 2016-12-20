@@ -45,6 +45,11 @@ public class DescribeCustomerGatewaysResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("customerGatewaySet", targetDepth)) {
+                    describeCustomerGatewaysResult.withCustomerGateways(new ArrayList<CustomerGateway>());
+                    continue;
+                }
+
                 if (context.testExpression("customerGatewaySet/item", targetDepth)) {
                     describeCustomerGatewaysResult.withCustomerGateways(CustomerGatewayStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

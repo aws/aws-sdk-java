@@ -45,6 +45,11 @@ public class GetHealthCheckStatusResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("HealthCheckObservations", targetDepth)) {
+                    getHealthCheckStatusResult.withHealthCheckObservations(new ArrayList<HealthCheckObservation>());
+                    continue;
+                }
+
                 if (context.testExpression("HealthCheckObservations/HealthCheckObservation", targetDepth)) {
                     getHealthCheckStatusResult.withHealthCheckObservations(HealthCheckObservationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

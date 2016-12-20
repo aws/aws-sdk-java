@@ -129,9 +129,9 @@ public class KeyRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBeginMarker() != null)
-            sb.append("BeginMarker: " + getBeginMarker() + ",");
+            sb.append("BeginMarker: ").append(getBeginMarker()).append(",");
         if (getEndMarker() != null)
-            sb.append("EndMarker: " + getEndMarker());
+            sb.append("EndMarker: ").append(getEndMarker());
         sb.append("}");
         return sb.toString();
     }

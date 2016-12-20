@@ -438,11 +438,11 @@ public class Captions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMergePolicy() != null)
-            sb.append("MergePolicy: " + getMergePolicy() + ",");
+            sb.append("MergePolicy: ").append(getMergePolicy()).append(",");
         if (getCaptionSources() != null)
-            sb.append("CaptionSources: " + getCaptionSources() + ",");
+            sb.append("CaptionSources: ").append(getCaptionSources()).append(",");
         if (getCaptionFormats() != null)
-            sb.append("CaptionFormats: " + getCaptionFormats());
+            sb.append("CaptionFormats: ").append(getCaptionFormats());
         sb.append("}");
         return sb.toString();
     }

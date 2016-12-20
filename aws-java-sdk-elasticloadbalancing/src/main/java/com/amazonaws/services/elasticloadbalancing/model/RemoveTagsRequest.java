@@ -193,9 +193,9 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerNames() != null)
-            sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
+            sb.append("LoadBalancerNames: ").append(getLoadBalancerNames()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

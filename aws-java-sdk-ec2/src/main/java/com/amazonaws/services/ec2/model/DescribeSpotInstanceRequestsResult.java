@@ -114,7 +114,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotInstanceRequests() != null)
-            sb.append("SpotInstanceRequests: " + getSpotInstanceRequests());
+            sb.append("SpotInstanceRequests: ").append(getSpotInstanceRequests());
         sb.append("}");
         return sb.toString();
     }

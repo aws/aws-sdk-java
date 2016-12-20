@@ -166,9 +166,9 @@ public class ScalingAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarket() != null)
-            sb.append("Market: " + getMarket() + ",");
+            sb.append("Market: ").append(getMarket()).append(",");
         if (getSimpleScalingPolicyConfiguration() != null)
-            sb.append("SimpleScalingPolicyConfiguration: " + getSimpleScalingPolicyConfiguration());
+            sb.append("SimpleScalingPolicyConfiguration: ").append(getSimpleScalingPolicyConfiguration());
         sb.append("}");
         return sb.toString();
     }

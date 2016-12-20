@@ -127,9 +127,9 @@ public class DeleteLifecycleHookRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHookName() != null)
-            sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
+            sb.append("LifecycleHookName: ").append(getLifecycleHookName()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName());
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName());
         sb.append("}");
         return sb.toString();
     }

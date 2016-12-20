@@ -296,15 +296,15 @@ public class UpdateUsageResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsagePlanId() != null)
-            sb.append("UsagePlanId: " + getUsagePlanId() + ",");
+            sb.append("UsagePlanId: ").append(getUsagePlanId()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getEndDate() != null)
-            sb.append("EndDate: " + getEndDate() + ",");
+            sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getItems() != null)
-            sb.append("Items: " + getItems());
+            sb.append("Items: ").append(getItems());
         sb.append("}");
         return sb.toString();
     }

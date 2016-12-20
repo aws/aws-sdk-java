@@ -282,11 +282,11 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getNotificationType() != null)
-            sb.append("NotificationType: " + getNotificationType() + ",");
+            sb.append("NotificationType: ").append(getNotificationType()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }

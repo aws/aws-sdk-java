@@ -78,7 +78,7 @@ public class DomainInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName());
+            sb.append("DomainName: ").append(getDomainName());
         sb.append("}");
         return sb.toString();
     }

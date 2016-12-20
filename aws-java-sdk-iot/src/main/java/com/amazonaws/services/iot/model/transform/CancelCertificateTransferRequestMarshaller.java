@@ -61,10 +61,8 @@ public class CancelCertificateTransferRequestMarshaller implements Marshaller<Re
 
         String uriResourcePath = "/cancel-certificate-transfer/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (cancelCertificateTransferRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(cancelCertificateTransferRequest.getCertificateId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
+                cancelCertificateTransferRequest.getCertificateId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

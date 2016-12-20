@@ -496,19 +496,19 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getProviderName() != null)
-            sb.append("ProviderName: " + getProviderName() + ",");
+            sb.append("ProviderName: ").append(getProviderName()).append(",");
         if (getAddTags() != null)
-            sb.append("AddTags: " + getAddTags() + ",");
+            sb.append("AddTags: ").append(getAddTags()).append(",");
         if (getRemoveTags() != null)
-            sb.append("RemoveTags: " + getRemoveTags());
+            sb.append("RemoveTags: ").append(getRemoveTags());
         sb.append("}");
         return sb.toString();
     }

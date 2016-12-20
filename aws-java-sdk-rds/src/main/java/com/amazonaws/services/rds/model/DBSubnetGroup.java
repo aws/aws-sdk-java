@@ -368,17 +368,17 @@ public class DBSubnetGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName()).append(",");
         if (getDBSubnetGroupDescription() != null)
-            sb.append("DBSubnetGroupDescription: " + getDBSubnetGroupDescription() + ",");
+            sb.append("DBSubnetGroupDescription: ").append(getDBSubnetGroupDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetGroupStatus() != null)
-            sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
+            sb.append("SubnetGroupStatus: ").append(getSubnetGroupStatus()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getDBSubnetGroupArn() != null)
-            sb.append("DBSubnetGroupArn: " + getDBSubnetGroupArn());
+            sb.append("DBSubnetGroupArn: ").append(getDBSubnetGroupArn());
         sb.append("}");
         return sb.toString();
     }

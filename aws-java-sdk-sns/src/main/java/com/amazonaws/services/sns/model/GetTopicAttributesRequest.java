@@ -99,7 +99,7 @@ public class GetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn());
+            sb.append("TopicArn: ").append(getTopicArn());
         sb.append("}");
         return sb.toString();
     }

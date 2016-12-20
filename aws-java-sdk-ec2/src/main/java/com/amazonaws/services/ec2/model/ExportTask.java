@@ -343,17 +343,17 @@ public class ExportTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportTaskId() != null)
-            sb.append("ExportTaskId: " + getExportTaskId() + ",");
+            sb.append("ExportTaskId: ").append(getExportTaskId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getInstanceExportDetails() != null)
-            sb.append("InstanceExportDetails: " + getInstanceExportDetails() + ",");
+            sb.append("InstanceExportDetails: ").append(getInstanceExportDetails()).append(",");
         if (getExportToS3Task() != null)
-            sb.append("ExportToS3Task: " + getExportToS3Task());
+            sb.append("ExportToS3Task: ").append(getExportToS3Task());
         sb.append("}");
         return sb.toString();
     }

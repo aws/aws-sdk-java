@@ -108,7 +108,7 @@ public class GetTelemetryMetadataResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTelemetryMetadata() != null)
-            sb.append("TelemetryMetadata: " + getTelemetryMetadata());
+            sb.append("TelemetryMetadata: ").append(getTelemetryMetadata());
         sb.append("}");
         return sb.toString();
     }

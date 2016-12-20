@@ -567,17 +567,17 @@ public class ActivityTypeConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultTaskStartToCloseTimeout() != null)
-            sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");
+            sb.append("DefaultTaskStartToCloseTimeout: ").append(getDefaultTaskStartToCloseTimeout()).append(",");
         if (getDefaultTaskHeartbeatTimeout() != null)
-            sb.append("DefaultTaskHeartbeatTimeout: " + getDefaultTaskHeartbeatTimeout() + ",");
+            sb.append("DefaultTaskHeartbeatTimeout: ").append(getDefaultTaskHeartbeatTimeout()).append(",");
         if (getDefaultTaskList() != null)
-            sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
+            sb.append("DefaultTaskList: ").append(getDefaultTaskList()).append(",");
         if (getDefaultTaskPriority() != null)
-            sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
+            sb.append("DefaultTaskPriority: ").append(getDefaultTaskPriority()).append(",");
         if (getDefaultTaskScheduleToStartTimeout() != null)
-            sb.append("DefaultTaskScheduleToStartTimeout: " + getDefaultTaskScheduleToStartTimeout() + ",");
+            sb.append("DefaultTaskScheduleToStartTimeout: ").append(getDefaultTaskScheduleToStartTimeout()).append(",");
         if (getDefaultTaskScheduleToCloseTimeout() != null)
-            sb.append("DefaultTaskScheduleToCloseTimeout: " + getDefaultTaskScheduleToCloseTimeout());
+            sb.append("DefaultTaskScheduleToCloseTimeout: ").append(getDefaultTaskScheduleToCloseTimeout());
         sb.append("}");
         return sb.toString();
     }

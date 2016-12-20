@@ -126,9 +126,9 @@ public class IamInstanceProfile implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

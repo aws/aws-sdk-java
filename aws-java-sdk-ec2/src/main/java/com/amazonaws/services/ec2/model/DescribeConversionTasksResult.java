@@ -114,7 +114,7 @@ public class DescribeConversionTasksResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTasks() != null)
-            sb.append("ConversionTasks: " + getConversionTasks());
+            sb.append("ConversionTasks: ").append(getConversionTasks());
         sb.append("}");
         return sb.toString();
     }

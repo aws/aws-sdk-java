@@ -115,7 +115,7 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

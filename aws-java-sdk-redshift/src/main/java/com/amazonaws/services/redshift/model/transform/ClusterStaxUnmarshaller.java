@@ -90,13 +90,28 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("ClusterSecurityGroups", targetDepth)) {
+                    cluster.withClusterSecurityGroups(new ArrayList<ClusterSecurityGroupMembership>());
+                    continue;
+                }
+
                 if (context.testExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth)) {
                     cluster.withClusterSecurityGroups(ClusterSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("VpcSecurityGroups", targetDepth)) {
+                    cluster.withVpcSecurityGroups(new ArrayList<VpcSecurityGroupMembership>());
+                    continue;
+                }
+
                 if (context.testExpression("VpcSecurityGroups/VpcSecurityGroup", targetDepth)) {
                     cluster.withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ClusterParameterGroups", targetDepth)) {
+                    cluster.withClusterParameterGroups(new ArrayList<ClusterParameterGroupStatus>());
                     continue;
                 }
 
@@ -175,6 +190,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("ClusterNodes", targetDepth)) {
+                    cluster.withClusterNodes(new ArrayList<ClusterNode>());
+                    continue;
+                }
+
                 if (context.testExpression("ClusterNodes/member", targetDepth)) {
                     cluster.withClusterNodes(ClusterNodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -190,6 +210,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    cluster.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     cluster.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -202,6 +227,11 @@ public class ClusterStaxUnmarshaller implements Unmarshaller<Cluster, StaxUnmars
 
                 if (context.testExpression("EnhancedVpcRouting", targetDepth)) {
                     cluster.setEnhancedVpcRouting(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IamRoles", targetDepth)) {
+                    cluster.withIamRoles(new ArrayList<ClusterIamRole>());
                     continue;
                 }
 

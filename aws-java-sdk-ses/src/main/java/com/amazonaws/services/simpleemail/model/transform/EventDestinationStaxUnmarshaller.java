@@ -55,6 +55,11 @@ public class EventDestinationStaxUnmarshaller implements Unmarshaller<EventDesti
                     continue;
                 }
 
+                if (context.testExpression("MatchingEventTypes", targetDepth)) {
+                    eventDestination.withMatchingEventTypes(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("MatchingEventTypes/member", targetDepth)) {
                     eventDestination.withMatchingEventTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -79,7 +79,7 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName());
+            sb.append("ServerName: ").append(getServerName());
         sb.append("}");
         return sb.toString();
     }

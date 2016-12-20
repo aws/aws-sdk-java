@@ -444,21 +444,21 @@ public class InputDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputId() != null)
-            sb.append("InputId: " + getInputId() + ",");
+            sb.append("InputId: ").append(getInputId()).append(",");
         if (getNamePrefix() != null)
-            sb.append("NamePrefix: " + getNamePrefix() + ",");
+            sb.append("NamePrefix: ").append(getNamePrefix()).append(",");
         if (getInAppStreamNames() != null)
-            sb.append("InAppStreamNames: " + getInAppStreamNames() + ",");
+            sb.append("InAppStreamNames: ").append(getInAppStreamNames()).append(",");
         if (getKinesisStreamsInputDescription() != null)
-            sb.append("KinesisStreamsInputDescription: " + getKinesisStreamsInputDescription() + ",");
+            sb.append("KinesisStreamsInputDescription: ").append(getKinesisStreamsInputDescription()).append(",");
         if (getKinesisFirehoseInputDescription() != null)
-            sb.append("KinesisFirehoseInputDescription: " + getKinesisFirehoseInputDescription() + ",");
+            sb.append("KinesisFirehoseInputDescription: ").append(getKinesisFirehoseInputDescription()).append(",");
         if (getInputSchema() != null)
-            sb.append("InputSchema: " + getInputSchema() + ",");
+            sb.append("InputSchema: ").append(getInputSchema()).append(",");
         if (getInputParallelism() != null)
-            sb.append("InputParallelism: " + getInputParallelism() + ",");
+            sb.append("InputParallelism: ").append(getInputParallelism()).append(",");
         if (getInputStartingPositionConfiguration() != null)
-            sb.append("InputStartingPositionConfiguration: " + getInputStartingPositionConfiguration());
+            sb.append("InputStartingPositionConfiguration: ").append(getInputStartingPositionConfiguration());
         sb.append("}");
         return sb.toString();
     }

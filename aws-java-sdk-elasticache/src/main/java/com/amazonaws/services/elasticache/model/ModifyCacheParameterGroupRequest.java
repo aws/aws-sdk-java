@@ -192,9 +192,9 @@ public class ModifyCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getParameterNameValues() != null)
-            sb.append("ParameterNameValues: " + getParameterNameValues());
+            sb.append("ParameterNameValues: ").append(getParameterNameValues());
         sb.append("}");
         return sb.toString();
     }

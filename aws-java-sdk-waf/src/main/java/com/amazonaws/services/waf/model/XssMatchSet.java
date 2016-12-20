@@ -251,11 +251,11 @@ public class XssMatchSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSetId() != null)
-            sb.append("XssMatchSetId: " + getXssMatchSetId() + ",");
+            sb.append("XssMatchSetId: ").append(getXssMatchSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getXssMatchTuples() != null)
-            sb.append("XssMatchTuples: " + getXssMatchTuples());
+            sb.append("XssMatchTuples: ").append(getXssMatchTuples());
         sb.append("}");
         return sb.toString();
     }

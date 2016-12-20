@@ -172,11 +172,11 @@ public class GetGroupPolicyResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument());
+            sb.append("PolicyDocument: ").append(getPolicyDocument());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribePoliciesResultStaxUnmarshaller implements Unmarshaller<Desc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ScalingPolicies", targetDepth)) {
+                    describePoliciesResult.withScalingPolicies(new ArrayList<ScalingPolicy>());
+                    continue;
+                }
+
                 if (context.testExpression("ScalingPolicies/member", targetDepth)) {
                     describePoliciesResult.withScalingPolicies(ScalingPolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

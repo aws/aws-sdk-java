@@ -171,11 +171,11 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: " + getDefinition() + ",");
+            sb.append("Definition: ").append(getDefinition()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

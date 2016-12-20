@@ -192,9 +192,9 @@ public class LaunchPermissionModifications implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdd() != null)
-            sb.append("Add: " + getAdd() + ",");
+            sb.append("Add: ").append(getAdd()).append(",");
         if (getRemove() != null)
-            sb.append("Remove: " + getRemove());
+            sb.append("Remove: ").append(getRemove());
         sb.append("}");
         return sb.toString();
     }

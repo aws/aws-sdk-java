@@ -206,13 +206,13 @@ public class Output implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getKinesisStreamsOutput() != null)
-            sb.append("KinesisStreamsOutput: " + getKinesisStreamsOutput() + ",");
+            sb.append("KinesisStreamsOutput: ").append(getKinesisStreamsOutput()).append(",");
         if (getKinesisFirehoseOutput() != null)
-            sb.append("KinesisFirehoseOutput: " + getKinesisFirehoseOutput() + ",");
+            sb.append("KinesisFirehoseOutput: ").append(getKinesisFirehoseOutput()).append(",");
         if (getDestinationSchema() != null)
-            sb.append("DestinationSchema: " + getDestinationSchema());
+            sb.append("DestinationSchema: ").append(getDestinationSchema());
         sb.append("}");
         return sb.toString();
     }

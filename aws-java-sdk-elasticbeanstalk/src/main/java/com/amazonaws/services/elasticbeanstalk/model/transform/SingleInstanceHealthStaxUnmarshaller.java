@@ -60,6 +60,11 @@ public class SingleInstanceHealthStaxUnmarshaller implements Unmarshaller<Single
                     continue;
                 }
 
+                if (context.testExpression("Causes", targetDepth)) {
+                    singleInstanceHealth.withCauses(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Causes/member", targetDepth)) {
                     singleInstanceHealth.withCauses(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

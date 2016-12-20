@@ -285,13 +285,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNumCacheNodes() != null)
-            sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
+            sb.append("NumCacheNodes: ").append(getNumCacheNodes()).append(",");
         if (getCacheNodeIdsToRemove() != null)
-            sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ",");
+            sb.append("CacheNodeIdsToRemove: ").append(getCacheNodeIdsToRemove()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: " + getCacheNodeType());
+            sb.append("CacheNodeType: ").append(getCacheNodeType());
         sb.append("}");
         return sb.toString();
     }

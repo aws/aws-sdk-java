@@ -172,11 +172,11 @@ public class SAMLProviderListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getValidUntil() != null)
-            sb.append("ValidUntil: " + getValidUntil() + ",");
+            sb.append("ValidUntil: ").append(getValidUntil()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate());
+            sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");
         return sb.toString();
     }

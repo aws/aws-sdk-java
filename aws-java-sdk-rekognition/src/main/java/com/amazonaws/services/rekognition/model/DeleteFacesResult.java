@@ -108,7 +108,7 @@ public class DeleteFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeletedFaces() != null)
-            sb.append("DeletedFaces: " + getDeletedFaces());
+            sb.append("DeletedFaces: ").append(getDeletedFaces());
         sb.append("}");
         return sb.toString();
     }

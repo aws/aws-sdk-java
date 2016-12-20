@@ -299,13 +299,13 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getTenancy() != null)
-            sb.append("Tenancy: " + getTenancy() + ",");
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getAffinity() != null)
-            sb.append("Affinity: " + getAffinity() + ",");
+            sb.append("Affinity: ").append(getAffinity()).append(",");
         if (getHostId() != null)
-            sb.append("HostId: " + getHostId());
+            sb.append("HostId: ").append(getHostId());
         sb.append("}");
         return sb.toString();
     }

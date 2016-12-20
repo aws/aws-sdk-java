@@ -236,11 +236,11 @@ public class ListPipelinesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineIdList() != null)
-            sb.append("PipelineIdList: " + getPipelineIdList() + ",");
+            sb.append("PipelineIdList: ").append(getPipelineIdList()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getHasMoreResults() != null)
-            sb.append("HasMoreResults: " + getHasMoreResults());
+            sb.append("HasMoreResults: ").append(getHasMoreResults());
         sb.append("}");
         return sb.toString();
     }

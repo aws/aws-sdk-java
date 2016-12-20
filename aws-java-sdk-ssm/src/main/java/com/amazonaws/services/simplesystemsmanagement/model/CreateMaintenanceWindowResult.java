@@ -78,7 +78,7 @@ public class CreateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId());
+            sb.append("WindowId: ").append(getWindowId());
         sb.append("}");
         return sb.toString();
     }

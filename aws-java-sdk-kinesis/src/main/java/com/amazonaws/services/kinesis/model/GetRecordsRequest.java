@@ -141,9 +141,9 @@ public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShardIterator() != null)
-            sb.append("ShardIterator: " + getShardIterator() + ",");
+            sb.append("ShardIterator: ").append(getShardIterator()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

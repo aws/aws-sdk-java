@@ -87,7 +87,7 @@ public class Ipv6Range implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrIpv6() != null)
-            sb.append("CidrIpv6: " + getCidrIpv6());
+            sb.append("CidrIpv6: ").append(getCidrIpv6());
         sb.append("}");
         return sb.toString();
     }

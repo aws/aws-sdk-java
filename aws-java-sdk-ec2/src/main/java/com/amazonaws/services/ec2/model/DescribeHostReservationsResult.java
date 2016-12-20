@@ -165,9 +165,9 @@ public class DescribeHostReservationsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostReservationSet() != null)
-            sb.append("HostReservationSet: " + getHostReservationSet() + ",");
+            sb.append("HostReservationSet: ").append(getHostReservationSet()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

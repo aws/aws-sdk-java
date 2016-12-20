@@ -79,7 +79,7 @@ public class RegisterDefaultPatchBaselineRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId());
+            sb.append("BaselineId: ").append(getBaselineId());
         sb.append("}");
         return sb.toString();
     }

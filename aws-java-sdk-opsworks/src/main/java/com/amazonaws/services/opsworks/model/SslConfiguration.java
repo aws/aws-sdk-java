@@ -172,11 +172,11 @@ public class SslConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate() + ",");
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: " + getPrivateKey() + ",");
+            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
         if (getChain() != null)
-            sb.append("Chain: " + getChain());
+            sb.append("Chain: ").append(getChain());
         sb.append("}");
         return sb.toString();
     }

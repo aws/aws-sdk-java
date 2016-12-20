@@ -173,11 +173,11 @@ public class CancelImportTaskResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportTaskId() != null)
-            sb.append("ImportTaskId: " + getImportTaskId() + ",");
+            sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getPreviousState() != null)
-            sb.append("PreviousState: " + getPreviousState());
+            sb.append("PreviousState: ").append(getPreviousState());
         sb.append("}");
         return sb.toString();
     }

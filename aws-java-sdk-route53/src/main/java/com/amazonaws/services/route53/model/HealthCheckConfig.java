@@ -3208,37 +3208,37 @@ public class HealthCheckConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPAddress() != null)
-            sb.append("IPAddress: " + getIPAddress() + ",");
+            sb.append("IPAddress: ").append(getIPAddress()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getResourcePath() != null)
-            sb.append("ResourcePath: " + getResourcePath() + ",");
+            sb.append("ResourcePath: ").append(getResourcePath()).append(",");
         if (getFullyQualifiedDomainName() != null)
-            sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() + ",");
+            sb.append("FullyQualifiedDomainName: ").append(getFullyQualifiedDomainName()).append(",");
         if (getSearchString() != null)
-            sb.append("SearchString: " + getSearchString() + ",");
+            sb.append("SearchString: ").append(getSearchString()).append(",");
         if (getRequestInterval() != null)
-            sb.append("RequestInterval: " + getRequestInterval() + ",");
+            sb.append("RequestInterval: ").append(getRequestInterval()).append(",");
         if (getFailureThreshold() != null)
-            sb.append("FailureThreshold: " + getFailureThreshold() + ",");
+            sb.append("FailureThreshold: ").append(getFailureThreshold()).append(",");
         if (getMeasureLatency() != null)
-            sb.append("MeasureLatency: " + getMeasureLatency() + ",");
+            sb.append("MeasureLatency: ").append(getMeasureLatency()).append(",");
         if (getInverted() != null)
-            sb.append("Inverted: " + getInverted() + ",");
+            sb.append("Inverted: ").append(getInverted()).append(",");
         if (getHealthThreshold() != null)
-            sb.append("HealthThreshold: " + getHealthThreshold() + ",");
+            sb.append("HealthThreshold: ").append(getHealthThreshold()).append(",");
         if (getChildHealthChecks() != null)
-            sb.append("ChildHealthChecks: " + getChildHealthChecks() + ",");
+            sb.append("ChildHealthChecks: ").append(getChildHealthChecks()).append(",");
         if (getEnableSNI() != null)
-            sb.append("EnableSNI: " + getEnableSNI() + ",");
+            sb.append("EnableSNI: ").append(getEnableSNI()).append(",");
         if (getRegions() != null)
-            sb.append("Regions: " + getRegions() + ",");
+            sb.append("Regions: ").append(getRegions()).append(",");
         if (getAlarmIdentifier() != null)
-            sb.append("AlarmIdentifier: " + getAlarmIdentifier() + ",");
+            sb.append("AlarmIdentifier: ").append(getAlarmIdentifier()).append(",");
         if (getInsufficientDataHealthStatus() != null)
-            sb.append("InsufficientDataHealthStatus: " + getInsufficientDataHealthStatus());
+            sb.append("InsufficientDataHealthStatus: ").append(getInsufficientDataHealthStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -494,21 +494,21 @@ public class DeliveryStreamDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getDeliveryStreamARN() != null)
-            sb.append("DeliveryStreamARN: " + getDeliveryStreamARN() + ",");
+            sb.append("DeliveryStreamARN: ").append(getDeliveryStreamARN()).append(",");
         if (getDeliveryStreamStatus() != null)
-            sb.append("DeliveryStreamStatus: " + getDeliveryStreamStatus() + ",");
+            sb.append("DeliveryStreamStatus: ").append(getDeliveryStreamStatus()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: " + getVersionId() + ",");
+            sb.append("VersionId: ").append(getVersionId()).append(",");
         if (getCreateTimestamp() != null)
-            sb.append("CreateTimestamp: " + getCreateTimestamp() + ",");
+            sb.append("CreateTimestamp: ").append(getCreateTimestamp()).append(",");
         if (getLastUpdateTimestamp() != null)
-            sb.append("LastUpdateTimestamp: " + getLastUpdateTimestamp() + ",");
+            sb.append("LastUpdateTimestamp: ").append(getLastUpdateTimestamp()).append(",");
         if (getDestinations() != null)
-            sb.append("Destinations: " + getDestinations() + ",");
+            sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getHasMoreDestinations() != null)
-            sb.append("HasMoreDestinations: " + getHasMoreDestinations());
+            sb.append("HasMoreDestinations: ").append(getHasMoreDestinations());
         sb.append("}");
         return sb.toString();
     }

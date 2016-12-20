@@ -78,6 +78,21 @@ public class SetIdentityPoolRolesRequestMarshaller implements Marshaller<Request
                 jsonGenerator.writeEndObject();
             }
 
+            java.util.Map<String, RoleMapping> roleMappingsMap = setIdentityPoolRolesRequest.getRoleMappings();
+            if (roleMappingsMap != null) {
+                jsonGenerator.writeFieldName("RoleMappings");
+                jsonGenerator.writeStartObject();
+
+                for (Map.Entry<String, RoleMapping> roleMappingsMapValue : roleMappingsMap.entrySet()) {
+                    if (roleMappingsMapValue.getValue() != null) {
+                        jsonGenerator.writeFieldName(roleMappingsMapValue.getKey());
+
+                        RoleMappingJsonMarshaller.getInstance().marshall(roleMappingsMapValue.getValue(), jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndObject();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

@@ -1617,27 +1617,27 @@ public class RDSDataSpec implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatabaseInformation() != null)
-            sb.append("DatabaseInformation: " + getDatabaseInformation() + ",");
+            sb.append("DatabaseInformation: ").append(getDatabaseInformation()).append(",");
         if (getSelectSqlQuery() != null)
-            sb.append("SelectSqlQuery: " + getSelectSqlQuery() + ",");
+            sb.append("SelectSqlQuery: ").append(getSelectSqlQuery()).append(",");
         if (getDatabaseCredentials() != null)
-            sb.append("DatabaseCredentials: " + getDatabaseCredentials() + ",");
+            sb.append("DatabaseCredentials: ").append(getDatabaseCredentials()).append(",");
         if (getS3StagingLocation() != null)
-            sb.append("S3StagingLocation: " + getS3StagingLocation() + ",");
+            sb.append("S3StagingLocation: ").append(getS3StagingLocation()).append(",");
         if (getDataRearrangement() != null)
-            sb.append("DataRearrangement: " + getDataRearrangement() + ",");
+            sb.append("DataRearrangement: ").append(getDataRearrangement()).append(",");
         if (getDataSchema() != null)
-            sb.append("DataSchema: " + getDataSchema() + ",");
+            sb.append("DataSchema: ").append(getDataSchema()).append(",");
         if (getDataSchemaUri() != null)
-            sb.append("DataSchemaUri: " + getDataSchemaUri() + ",");
+            sb.append("DataSchemaUri: ").append(getDataSchemaUri()).append(",");
         if (getResourceRole() != null)
-            sb.append("ResourceRole: " + getResourceRole() + ",");
+            sb.append("ResourceRole: ").append(getResourceRole()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds());
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
         sb.append("}");
         return sb.toString();
     }

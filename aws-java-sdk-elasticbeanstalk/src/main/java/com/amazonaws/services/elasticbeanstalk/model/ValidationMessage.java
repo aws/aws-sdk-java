@@ -378,13 +378,13 @@ public class ValidationMessage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getOptionName() != null)
-            sb.append("OptionName: " + getOptionName());
+            sb.append("OptionName: ").append(getOptionName());
         sb.append("}");
         return sb.toString();
     }

@@ -162,9 +162,9 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductCode() != null)
-            sb.append("ProductCode: " + getProductCode() + ",");
+            sb.append("ProductCode: ").append(getProductCode()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

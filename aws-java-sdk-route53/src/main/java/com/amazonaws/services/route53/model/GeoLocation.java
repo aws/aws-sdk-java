@@ -225,11 +225,11 @@ public class GeoLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContinentCode() != null)
-            sb.append("ContinentCode: " + getContinentCode() + ",");
+            sb.append("ContinentCode: ").append(getContinentCode()).append(",");
         if (getCountryCode() != null)
-            sb.append("CountryCode: " + getCountryCode() + ",");
+            sb.append("CountryCode: ").append(getCountryCode()).append(",");
         if (getSubdivisionCode() != null)
-            sb.append("SubdivisionCode: " + getSubdivisionCode());
+            sb.append("SubdivisionCode: ").append(getSubdivisionCode());
         sb.append("}");
         return sb.toString();
     }

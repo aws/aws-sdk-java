@@ -133,9 +133,9 @@ public class SuggestResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSuggest() != null)
-            sb.append("Suggest: " + getSuggest());
+            sb.append("Suggest: ").append(getSuggest());
         sb.append("}");
         return sb.toString();
     }

@@ -268,13 +268,13 @@ public class CacheSecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getCacheSecurityGroupName() != null)
-            sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+            sb.append("CacheSecurityGroupName: ").append(getCacheSecurityGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEC2SecurityGroups() != null)
-            sb.append("EC2SecurityGroups: " + getEC2SecurityGroups());
+            sb.append("EC2SecurityGroups: ").append(getEC2SecurityGroups());
         sb.append("}");
         return sb.toString();
     }

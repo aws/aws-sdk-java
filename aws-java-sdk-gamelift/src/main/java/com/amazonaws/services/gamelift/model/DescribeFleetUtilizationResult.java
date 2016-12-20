@@ -163,9 +163,9 @@ public class DescribeFleetUtilizationResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetUtilization() != null)
-            sb.append("FleetUtilization: " + getFleetUtilization() + ",");
+            sb.append("FleetUtilization: ").append(getFleetUtilization()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

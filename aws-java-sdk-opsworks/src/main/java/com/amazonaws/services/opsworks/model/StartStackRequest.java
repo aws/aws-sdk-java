@@ -79,7 +79,7 @@ public class StartStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

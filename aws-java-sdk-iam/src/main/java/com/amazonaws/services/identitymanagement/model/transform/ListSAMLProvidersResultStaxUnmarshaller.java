@@ -45,6 +45,11 @@ public class ListSAMLProvidersResultStaxUnmarshaller implements Unmarshaller<Lis
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SAMLProviderList", targetDepth)) {
+                    listSAMLProvidersResult.withSAMLProviderList(new ArrayList<SAMLProviderListEntry>());
+                    continue;
+                }
+
                 if (context.testExpression("SAMLProviderList/member", targetDepth)) {
                     listSAMLProvidersResult.withSAMLProviderList(SAMLProviderListEntryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

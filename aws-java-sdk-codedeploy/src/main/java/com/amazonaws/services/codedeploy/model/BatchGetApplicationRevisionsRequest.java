@@ -160,9 +160,9 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getRevisions() != null)
-            sb.append("Revisions: " + getRevisions());
+            sb.append("Revisions: ").append(getRevisions());
         sb.append("}");
         return sb.toString();
     }

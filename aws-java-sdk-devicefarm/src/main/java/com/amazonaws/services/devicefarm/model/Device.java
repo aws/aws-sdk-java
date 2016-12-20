@@ -1196,39 +1196,39 @@ public class Device implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getManufacturer() != null)
-            sb.append("Manufacturer: " + getManufacturer() + ",");
+            sb.append("Manufacturer: ").append(getManufacturer()).append(",");
         if (getModel() != null)
-            sb.append("Model: " + getModel() + ",");
+            sb.append("Model: ").append(getModel()).append(",");
         if (getFormFactor() != null)
-            sb.append("FormFactor: " + getFormFactor() + ",");
+            sb.append("FormFactor: ").append(getFormFactor()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getOs() != null)
-            sb.append("Os: " + getOs() + ",");
+            sb.append("Os: ").append(getOs()).append(",");
         if (getCpu() != null)
-            sb.append("Cpu: " + getCpu() + ",");
+            sb.append("Cpu: ").append(getCpu()).append(",");
         if (getResolution() != null)
-            sb.append("Resolution: " + getResolution() + ",");
+            sb.append("Resolution: ").append(getResolution()).append(",");
         if (getHeapSize() != null)
-            sb.append("HeapSize: " + getHeapSize() + ",");
+            sb.append("HeapSize: ").append(getHeapSize()).append(",");
         if (getMemory() != null)
-            sb.append("Memory: " + getMemory() + ",");
+            sb.append("Memory: ").append(getMemory()).append(",");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getCarrier() != null)
-            sb.append("Carrier: " + getCarrier() + ",");
+            sb.append("Carrier: ").append(getCarrier()).append(",");
         if (getRadio() != null)
-            sb.append("Radio: " + getRadio() + ",");
+            sb.append("Radio: ").append(getRadio()).append(",");
         if (getRemoteAccessEnabled() != null)
-            sb.append("RemoteAccessEnabled: " + getRemoteAccessEnabled() + ",");
+            sb.append("RemoteAccessEnabled: ").append(getRemoteAccessEnabled()).append(",");
         if (getFleetType() != null)
-            sb.append("FleetType: " + getFleetType() + ",");
+            sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getFleetName() != null)
-            sb.append("FleetName: " + getFleetName());
+            sb.append("FleetName: ").append(getFleetName());
         sb.append("}");
         return sb.toString();
     }

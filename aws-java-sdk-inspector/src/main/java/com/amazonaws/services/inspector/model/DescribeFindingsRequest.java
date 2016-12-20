@@ -199,9 +199,9 @@ public class DescribeFindingsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFindingArns() != null)
-            sb.append("FindingArns: " + getFindingArns() + ",");
+            sb.append("FindingArns: ").append(getFindingArns()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: " + getLocale());
+            sb.append("Locale: ").append(getLocale());
         sb.append("}");
         return sb.toString();
     }

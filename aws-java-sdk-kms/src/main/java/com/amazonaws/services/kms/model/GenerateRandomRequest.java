@@ -79,7 +79,7 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNumberOfBytes() != null)
-            sb.append("NumberOfBytes: " + getNumberOfBytes());
+            sb.append("NumberOfBytes: ").append(getNumberOfBytes());
         sb.append("}");
         return sb.toString();
     }

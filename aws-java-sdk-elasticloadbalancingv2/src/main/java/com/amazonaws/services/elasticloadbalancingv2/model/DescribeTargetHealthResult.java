@@ -110,7 +110,7 @@ public class DescribeTargetHealthResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetHealthDescriptions() != null)
-            sb.append("TargetHealthDescriptions: " + getTargetHealthDescriptions());
+            sb.append("TargetHealthDescriptions: ").append(getTargetHealthDescriptions());
         sb.append("}");
         return sb.toString();
     }

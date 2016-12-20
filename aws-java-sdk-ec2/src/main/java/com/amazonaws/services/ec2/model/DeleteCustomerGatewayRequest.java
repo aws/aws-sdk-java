@@ -113,7 +113,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGatewayId() != null)
-            sb.append("CustomerGatewayId: " + getCustomerGatewayId());
+            sb.append("CustomerGatewayId: ").append(getCustomerGatewayId());
         sb.append("}");
         return sb.toString();
     }

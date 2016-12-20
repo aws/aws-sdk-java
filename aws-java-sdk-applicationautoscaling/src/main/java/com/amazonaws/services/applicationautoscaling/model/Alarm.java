@@ -126,9 +126,9 @@ public class Alarm implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getAlarmARN() != null)
-            sb.append("AlarmARN: " + getAlarmARN());
+            sb.append("AlarmARN: ").append(getAlarmARN());
         sb.append("}");
         return sb.toString();
     }

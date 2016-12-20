@@ -910,19 +910,19 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getMLModelName() != null)
-            sb.append("MLModelName: " + getMLModelName() + ",");
+            sb.append("MLModelName: ").append(getMLModelName()).append(",");
         if (getMLModelType() != null)
-            sb.append("MLModelType: " + getMLModelType() + ",");
+            sb.append("MLModelType: ").append(getMLModelType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getTrainingDataSourceId() != null)
-            sb.append("TrainingDataSourceId: " + getTrainingDataSourceId() + ",");
+            sb.append("TrainingDataSourceId: ").append(getTrainingDataSourceId()).append(",");
         if (getRecipe() != null)
-            sb.append("Recipe: " + getRecipe() + ",");
+            sb.append("Recipe: ").append(getRecipe()).append(",");
         if (getRecipeUri() != null)
-            sb.append("RecipeUri: " + getRecipeUri());
+            sb.append("RecipeUri: ").append(getRecipeUri());
         sb.append("}");
         return sb.toString();
     }

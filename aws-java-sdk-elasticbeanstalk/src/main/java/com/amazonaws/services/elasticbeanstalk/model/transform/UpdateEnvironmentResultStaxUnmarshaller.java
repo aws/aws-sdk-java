@@ -130,6 +130,11 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentLinks", targetDepth)) {
+                    updateEnvironmentResult.withEnvironmentLinks(new ArrayList<EnvironmentLink>());
+                    continue;
+                }
+
                 if (context.testExpression("EnvironmentLinks/member", targetDepth)) {
                     updateEnvironmentResult.withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

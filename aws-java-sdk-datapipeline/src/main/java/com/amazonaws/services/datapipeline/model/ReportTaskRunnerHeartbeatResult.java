@@ -92,7 +92,7 @@ public class ReportTaskRunnerHeartbeatResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTerminate() != null)
-            sb.append("Terminate: " + getTerminate());
+            sb.append("Terminate: ").append(getTerminate());
         sb.append("}");
         return sb.toString();
     }

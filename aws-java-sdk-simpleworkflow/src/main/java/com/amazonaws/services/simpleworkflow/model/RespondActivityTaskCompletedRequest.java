@@ -146,9 +146,9 @@ public class RespondActivityTaskCompletedRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getResult() != null)
-            sb.append("Result: " + getResult());
+            sb.append("Result: ").append(getResult());
         sb.append("}");
         return sb.toString();
     }

@@ -78,7 +78,7 @@ public class DescribeDocumentResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocument() != null)
-            sb.append("Document: " + getDocument());
+            sb.append("Document: ").append(getDocument());
         sb.append("}");
         return sb.toString();
     }

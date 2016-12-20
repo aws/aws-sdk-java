@@ -279,13 +279,13 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplicationArn() != null)
-            sb.append("PlatformApplicationArn: " + getPlatformApplicationArn() + ",");
+            sb.append("PlatformApplicationArn: ").append(getPlatformApplicationArn()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken() + ",");
+            sb.append("Token: ").append(getToken()).append(",");
         if (getCustomUserData() != null)
-            sb.append("CustomUserData: " + getCustomUserData() + ",");
+            sb.append("CustomUserData: ").append(getCustomUserData()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

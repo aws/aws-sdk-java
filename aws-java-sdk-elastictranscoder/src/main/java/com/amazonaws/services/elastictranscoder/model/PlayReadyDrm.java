@@ -458,17 +458,17 @@ public class PlayReadyDrm implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getKeyMd5() != null)
-            sb.append("KeyMd5: " + getKeyMd5() + ",");
+            sb.append("KeyMd5: ").append(getKeyMd5()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getInitializationVector() != null)
-            sb.append("InitializationVector: " + getInitializationVector() + ",");
+            sb.append("InitializationVector: ").append(getInitializationVector()).append(",");
         if (getLicenseAcquisitionUrl() != null)
-            sb.append("LicenseAcquisitionUrl: " + getLicenseAcquisitionUrl());
+            sb.append("LicenseAcquisitionUrl: ").append(getLicenseAcquisitionUrl());
         sb.append("}");
         return sb.toString();
     }

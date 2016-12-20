@@ -59,7 +59,7 @@ public class CreateImportJobResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportJobResponse() != null)
-            sb.append("ImportJobResponse: " + getImportJobResponse());
+            sb.append("ImportJobResponse: ").append(getImportJobResponse());
         sb.append("}");
         return sb.toString();
     }

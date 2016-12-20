@@ -247,15 +247,15 @@ public class Face implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFaceId() != null)
-            sb.append("FaceId: " + getFaceId() + ",");
+            sb.append("FaceId: ").append(getFaceId()).append(",");
         if (getBoundingBox() != null)
-            sb.append("BoundingBox: " + getBoundingBox() + ",");
+            sb.append("BoundingBox: ").append(getBoundingBox()).append(",");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getExternalImageId() != null)
-            sb.append("ExternalImageId: " + getExternalImageId() + ",");
+            sb.append("ExternalImageId: ").append(getExternalImageId()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence());
+            sb.append("Confidence: ").append(getConfidence());
         sb.append("}");
         return sb.toString();
     }

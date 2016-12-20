@@ -413,17 +413,17 @@ public class InstanceProfile implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getInstanceProfileName() != null)
-            sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
+            sb.append("InstanceProfileName: ").append(getInstanceProfileName()).append(",");
         if (getInstanceProfileId() != null)
-            sb.append("InstanceProfileId: " + getInstanceProfileId() + ",");
+            sb.append("InstanceProfileId: ").append(getInstanceProfileId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getRoles() != null)
-            sb.append("Roles: " + getRoles());
+            sb.append("Roles: ").append(getRoles());
         sb.append("}");
         return sb.toString();
     }

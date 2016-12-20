@@ -112,7 +112,7 @@ public class DescribeTimeBasedAutoScalingRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds());
+            sb.append("InstanceIds: ").append(getInstanceIds());
         sb.append("}");
         return sb.toString();
     }

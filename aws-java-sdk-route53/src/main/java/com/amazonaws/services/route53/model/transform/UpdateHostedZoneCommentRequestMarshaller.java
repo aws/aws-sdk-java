@@ -51,11 +51,7 @@ public class UpdateHostedZoneCommentRequestMarshaller implements Marshaller<Requ
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Id}",
-                        (updateHostedZoneCommentRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(updateHostedZoneCommentRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateHostedZoneCommentRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -210,9 +210,9 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getRetentionPeriod() != null)
-            sb.append("RetentionPeriod: " + getRetentionPeriod());
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }

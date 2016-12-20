@@ -339,17 +339,17 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getCurrentDeliveryStreamVersionId() != null)
-            sb.append("CurrentDeliveryStreamVersionId: " + getCurrentDeliveryStreamVersionId() + ",");
+            sb.append("CurrentDeliveryStreamVersionId: ").append(getCurrentDeliveryStreamVersionId()).append(",");
         if (getDestinationId() != null)
-            sb.append("DestinationId: " + getDestinationId() + ",");
+            sb.append("DestinationId: ").append(getDestinationId()).append(",");
         if (getS3DestinationUpdate() != null)
-            sb.append("S3DestinationUpdate: " + getS3DestinationUpdate() + ",");
+            sb.append("S3DestinationUpdate: ").append(getS3DestinationUpdate()).append(",");
         if (getRedshiftDestinationUpdate() != null)
-            sb.append("RedshiftDestinationUpdate: " + getRedshiftDestinationUpdate() + ",");
+            sb.append("RedshiftDestinationUpdate: ").append(getRedshiftDestinationUpdate()).append(",");
         if (getElasticsearchDestinationUpdate() != null)
-            sb.append("ElasticsearchDestinationUpdate: " + getElasticsearchDestinationUpdate());
+            sb.append("ElasticsearchDestinationUpdate: ").append(getElasticsearchDestinationUpdate());
         sb.append("}");
         return sb.toString();
     }

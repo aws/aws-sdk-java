@@ -127,9 +127,9 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartDeliveryStreamName() != null)
-            sb.append("ExclusiveStartDeliveryStreamName: " + getExclusiveStartDeliveryStreamName());
+            sb.append("ExclusiveStartDeliveryStreamName: ").append(getExclusiveStartDeliveryStreamName());
         sb.append("}");
         return sb.toString();
     }

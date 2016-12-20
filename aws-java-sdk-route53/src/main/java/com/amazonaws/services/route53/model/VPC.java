@@ -152,9 +152,9 @@ public class VPC implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVPCRegion() != null)
-            sb.append("VPCRegion: " + getVPCRegion() + ",");
+            sb.append("VPCRegion: ").append(getVPCRegion()).append(",");
         if (getVPCId() != null)
-            sb.append("VPCId: " + getVPCId());
+            sb.append("VPCId: ").append(getVPCId());
         sb.append("}");
         return sb.toString();
     }

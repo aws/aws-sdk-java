@@ -141,9 +141,9 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getHealthCheckConfig() != null)
-            sb.append("HealthCheckConfig: " + getHealthCheckConfig());
+            sb.append("HealthCheckConfig: ").append(getHealthCheckConfig());
         sb.append("}");
         return sb.toString();
     }

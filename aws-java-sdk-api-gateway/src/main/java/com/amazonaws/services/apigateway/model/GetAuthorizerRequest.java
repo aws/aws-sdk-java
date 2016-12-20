@@ -127,9 +127,9 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getAuthorizerId() != null)
-            sb.append("AuthorizerId: " + getAuthorizerId());
+            sb.append("AuthorizerId: ").append(getAuthorizerId());
         sb.append("}");
         return sb.toString();
     }

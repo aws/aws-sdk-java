@@ -1721,23 +1721,23 @@ public class Upload implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata() + ",");
+            sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType() + ",");
+            sb.append("ContentType: ").append(getContentType()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

@@ -218,13 +218,13 @@ public class VolumeStatusAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType() + ",");
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId());
+            sb.append("EventId: ").append(getEventId());
         sb.append("}");
         return sb.toString();
     }

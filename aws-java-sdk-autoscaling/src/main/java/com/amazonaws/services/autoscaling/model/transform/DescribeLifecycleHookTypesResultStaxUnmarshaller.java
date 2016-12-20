@@ -45,6 +45,11 @@ public class DescribeLifecycleHookTypesResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("LifecycleHookTypes", targetDepth)) {
+                    describeLifecycleHookTypesResult.withLifecycleHookTypes(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("LifecycleHookTypes/member", targetDepth)) {
                     describeLifecycleHookTypesResult.withLifecycleHookTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

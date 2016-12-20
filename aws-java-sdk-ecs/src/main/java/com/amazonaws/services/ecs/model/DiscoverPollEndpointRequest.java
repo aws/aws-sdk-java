@@ -156,9 +156,9 @@ public class DiscoverPollEndpointRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerInstance() != null)
-            sb.append("ContainerInstance: " + getContainerInstance() + ",");
+            sb.append("ContainerInstance: ").append(getContainerInstance()).append(",");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster());
+            sb.append("Cluster: ").append(getCluster());
         sb.append("}");
         return sb.toString();
     }

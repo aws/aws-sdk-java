@@ -81,7 +81,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId());
+            sb.append("ResourceId: ").append(getResourceId());
         sb.append("}");
         return sb.toString();
     }

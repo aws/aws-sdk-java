@@ -125,9 +125,9 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

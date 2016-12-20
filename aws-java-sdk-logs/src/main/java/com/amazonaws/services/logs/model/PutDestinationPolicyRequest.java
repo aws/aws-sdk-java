@@ -132,9 +132,9 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationName() != null)
-            sb.append("DestinationName: " + getDestinationName() + ",");
+            sb.append("DestinationName: ").append(getDestinationName()).append(",");
         if (getAccessPolicy() != null)
-            sb.append("AccessPolicy: " + getAccessPolicy());
+            sb.append("AccessPolicy: ").append(getAccessPolicy());
         sb.append("}");
         return sb.toString();
     }

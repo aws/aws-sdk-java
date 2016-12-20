@@ -113,7 +113,7 @@ public class DescribeCachediSCSIVolumesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCachediSCSIVolumes() != null)
-            sb.append("CachediSCSIVolumes: " + getCachediSCSIVolumes());
+            sb.append("CachediSCSIVolumes: ").append(getCachediSCSIVolumes());
         sb.append("}");
         return sb.toString();
     }

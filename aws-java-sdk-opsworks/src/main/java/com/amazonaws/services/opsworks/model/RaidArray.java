@@ -639,31 +639,31 @@ public class RaidArray implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRaidArrayId() != null)
-            sb.append("RaidArrayId: " + getRaidArrayId() + ",");
+            sb.append("RaidArrayId: ").append(getRaidArrayId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRaidLevel() != null)
-            sb.append("RaidLevel: " + getRaidLevel() + ",");
+            sb.append("RaidLevel: ").append(getRaidLevel()).append(",");
         if (getNumberOfDisks() != null)
-            sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");
+            sb.append("NumberOfDisks: ").append(getNumberOfDisks()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getMountPoint() != null)
-            sb.append("MountPoint: " + getMountPoint() + ",");
+            sb.append("MountPoint: ").append(getMountPoint()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops());
+            sb.append("Iops: ").append(getIops());
         sb.append("}");
         return sb.toString();
     }

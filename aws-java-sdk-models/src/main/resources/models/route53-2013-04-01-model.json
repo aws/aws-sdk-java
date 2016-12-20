@@ -19,36 +19,43 @@
       "documentation" : "<p>Associates an Amazon VPC with a private hosted zone. </p> <important> <p>To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public hosted zone into a private hosted zone.</p> </important> <p>Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource. The request body must include a document with an <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a <code>ChangeInfo</code> data type that you can use to track the progress of the request. </p> <note> <p>If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was created by using a different account, the AWS account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code> request.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PublicZoneVPCAssociation"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConflictingDomainExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitsExceeded"
@@ -80,26 +87,31 @@
       "documentation" : "<p>Create, change, update, or delete authoritative DNS information on all Amazon Route 53 servers. Send a <code>POST</code> request to: </p> <p> <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code> resource. </p> <p>The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code> element. The request body contains a list of change items, known as a change batch. Change batches are considered transactional changes. When using the Amazon Route 53 API to change resource record sets, Amazon Route 53 either makes all or none of the changes in a change batch request. This ensures that Amazon Route 53 never partially implements the intended changes to the resource record sets in a hosted zone. </p> <p>For example, a change batch request that deletes the <code>CNAME</code> record for www.example.com and creates an alias resource record set for www.example.com. Amazon Route 53 deletes the first resource record set and creates the second resource record set in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code> action fails, then both changes (plus any other changes in the batch) fail, and the original <code>CNAME</code> record continues to exist.</p> <important> <p>Due to the nature of transactional changes, you can't delete the same resource record set more than once in a single change batch. If you attempt to delete the same change batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.</p> </important> <note> <p>To create resource record sets for complex routing configurations, use either the traffic flow visual editor in the Amazon Route 53 console or the API actions for traffic policies and traffic policy instances. Save the configuration as a traffic policy, then associate the traffic policy with one or more domain names (such as example.com) or subdomain names (such as www.example.com), in the same hosted zone or in multiple hosted zones. You can roll back the updates if the new configuration isn't performing as expected. For more information, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html\">Using Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </note> <p>Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes an existing resource record set that has the specified values.</p> </li> <li> <p> <code>UPSERT</code>: If a resource record set does not already exist, AWS creates it. If a resource set does exist, Amazon Route 53 updates it with the values in the request. </p> </li> </ul> <p>The values that you need to include in the request depend on the type of resource record set that you're creating, deleting, or updating:</p> <p> <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> </ul> <p> <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>TTL</code> </p> </li> <li> <p> <code>SetIdentifier</code> </p> </li> </ul> <p> <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias resource record sets)</b> </p> <ul> <li> <p> <code>Name</code> </p> </li> <li> <p> <code>Type</code> </p> </li> <li> <p> <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and <code>HostedZoneId</code>)</p> </li> <li> <p> <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)</p> </li> </ul> <p>When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your changes to all of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a> </p> <p>For information about the limits on a <code>ChangeResourceRecordSets</code> request, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html\">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidChangeBatch"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
@@ -131,26 +143,31 @@
       "documentation" : "<p>Adds, edits, or deletes tags for a health check or a hosted zone.</p> <p>For information about using tags for cost allocation, see <a href=\"http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html\">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ThrottlingException"
@@ -182,16 +199,19 @@
       "documentation" : "<p>Creates a new health check.</p> <p>To create a new health check, send a <code>POST</code> request to the <code>/2013-04-01/healthcheck</code> resource. The request body must include a document with a <code>CreateHealthCheckRequest</code> element. The response returns the <code>CreateHealthCheckResponse</code> element, containing the health check ID specified when adding health check to a resource record set. For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>. </p> <p>If you are registering EC2 instances with an Elastic Load Balancing (ELB) load balancer, do not create Amazon Route 53 health checks for the EC2 instances. When you register an EC2 instance with a load balancer, you configure settings for an ELB health check, which performs a similar function to an Amazon Route 53 health check.</p> <p>You can associate health checks with failover resource record sets in a private hosted zone. Note the following:</p> <ul> <li> <p>Amazon Route 53 health checkers are outside the VPC. To check the health of an endpoint within a VPC by IP address, you must assign a public IP address to the instance in the VPC.</p> </li> <li> <p>You can configure a health checker to check the health of an external resource that the instance relies on, such as a database server.</p> </li> <li> <p>You can create a CloudWatch metric, associate an alarm with the metric, and then create a health check that is based on the state of the alarm. For example, you might create a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code> metric, add an alarm to the metric, and then create a health check that is based on the state of the alarm. For information about creating CloudWatch metrics and alarms by using the CloudWatch console, see the <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html\">Amazon CloudWatch User Guide</a>.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyHealthChecks"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HealthCheckAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -223,46 +243,55 @@
       "documentation" : "<p>Creates a new public hosted zone, used to specify how the Domain Name System (DNS) routes traffic on the Internet for a domain, such as example.com, and its subdomains. </p> <important> <p>Public hosted zones can't be converted to a private hosted zone or vice versa. Instead, create a new hosted zone with the same name and create new resource record sets.</p> </important> <p>Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource. The request body must include a document with a <code>CreateHostedZoneRequest</code> element. The response returns the <code>CreateHostedZoneResponse</code> element containing metadata about the hosted zone.</p> <p>Fore more information about charges for hosted zones, see <a href=\"http://aws.amazon.com/route53/pricing/\">Amazon Route 53 Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a hosted zone for a top-level domain (TLD).</p> </li> <li> <p>Amazon Route 53 automatically creates a default SOA record and four NS records for the zone. For more information about SOA and NS records, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html\">NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> <li> <p>If your domain is registered with a registrar other than Amazon Route 53, you must update the name servers with your registrar to make Amazon Route 53 your DNS service. For more information, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html\">Configuring Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer's Guide</i>.</p> </li> </ul> <p>After creating a zone, its initial status is <code>PENDING</code>. This means that it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code> when the NS and SOA records are available on all Amazon Route 53 DNS servers. </p> <p>When trying to create a hosted zone using a reusable delegation set, specify an optional DelegationSetId, and Amazon Route 53 would assign those 4 NS records for the zone, instead of allotting a new one.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDomainName"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HostedZoneAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyHostedZones"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetNotAvailable"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConflictingDomainExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDelegationSet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetNotReusable"
@@ -294,36 +323,43 @@
       "documentation" : "<p>Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code> marks the delegation set associated with that zone as reusable</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/delegationset</code> resource. The request body must include a document with a <code>CreateReusableDelegationSetRequest</code> element.</p> <note> <p>A reusable delegation set can't be associated with a private hosted zone/</p> </note> <p>For more information, including a procedure on how to create and configure a reusable delegation set (also known as white label name servers), see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html\">Configuring White Label Name Servers</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetAlreadyCreated"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LimitsExceeded"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HostedZoneNotFound"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetNotAvailable"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetAlreadyReusable"
@@ -355,21 +391,25 @@
       "documentation" : "<p>Creates a traffic policy, which you use to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com).</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy</code> resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code> element. The response includes the <code>CreateTrafficPolicyResponse</code> element, which contains information about the new traffic policy.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrafficPolicies"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrafficPolicyAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTrafficPolicyDocument"
@@ -401,26 +441,31 @@
       "documentation" : "<p>Creates resource record sets in a specified hosted zone based on the settings in a specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code> created.</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance</code> resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code> element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code> element, which contains information about the traffic policy instance.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrafficPolicyInstances"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrafficPolicyInstanceAlreadyExists"
@@ -452,21 +497,25 @@
       "documentation" : "<p>Creates a new version of an existing traffic policy. When you create a new version of a traffic policy, you specify the ID of the traffic policy that you want to update and a JSON-formatted document that describes the new version. You use traffic policies to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com). You can create a maximum of 1000 versions of a traffic policy. If you reach the limit and need to create another version, you'll need to start a new traffic policy.</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource. The request body includes a document with a <code>CreateTrafficPolicyVersionRequest</code> element. The response returns the <code>CreateTrafficPolicyVersionResponse</code> element, which contains information about the new version of the traffic policy.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModification"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTrafficPolicyDocument"
@@ -498,21 +547,25 @@
       "documentation" : "<p>Authorizes the AWS account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a specified hosted zone that was created by a different account. To submit a <code>CreateVPCAssociationAuthorization</code> request, you must use the account that created the hosted zone. After you authorize the association, use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code> request.</p> <note> <p>If you want to associate multiple VPCs that you created by using one account with a hosted zone that you created by using a different account, you must submit one authorization request for each VPC.</p> </note> <p>Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation</code> resource. The request body must include a document with a <code>CreateVPCAssociationAuthorizationRequest</code> element. The response contains information about the authorization.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyVPCAssociationAuthorizations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -544,16 +597,19 @@
       "documentation" : "<p>Deletes a health check. Send a <code>DELETE</code> request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.</p> <important> <p>Amazon Route 53 does not prevent you from deleting a health check even if the health check is associated with one or more resource record sets. If you delete a health check and you don't update the associated resource record sets, the future status of the health check can't be predicted and may change. This will affect the routing of DNS queries for your DNS failover configuration. For more information, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html\">Replacing and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HealthCheckInUse"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -583,26 +639,31 @@
       "documentation" : "<p>Deletes a hosted zone. Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource.</p> <important> <p>Delete a hosted zone only if there are no resource record sets other than the default SOA record and NS resource record sets. If the hosted zone contains other resource record sets, delete them before deleting the hosted zone. If you try to delete a hosted zone that contains other resource record sets, Amazon Route 53 denies your request with a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see <a>ChangeResourceRecordSets</a>.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HostedZoneNotEmpty"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDomainName"
@@ -632,21 +693,25 @@
       "documentation" : "<p>Deletes a reusable delegation set. Send a <code>DELETE</code> request to the <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.</p> <important> <p> You can delete a reusable delegation set only if there are no associated hosted zones.</p> </important> <p>To verify that the reusable delegation set is not associated with any hosted zones, run the <a>GetReusableDelegationSet</a> action and specify the ID of the reusable delegation set that you want to delete.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDelegationSet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetInUse"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetNotReusable"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -676,21 +741,25 @@
       "documentation" : "<p>Deletes a traffic policy.</p> <p>Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrafficPolicyInUse"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModification"
@@ -720,16 +789,19 @@
       "documentation" : "<p>Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you created the instance.</p> <p>Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i> </code> resource.</p> <note> <p>In the Amazon Route 53 console, traffic policy instances are known as policy records.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicyInstance"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
@@ -759,21 +831,25 @@
       "documentation" : "<p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code> request to associate a specified VPC with a hosted zone that was created by a different account. You must use the account that created the hosted zone to submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important> <p>Sending this request only prevents the AWS account that created the VPC from associating the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't disassociate the VPC from the hosted zone. If you want to delete an existing association, use <code>DisassociateVPCFromHostedZone</code>.</p> </important> <p>Send a <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/deauthorizevpcassociation</code> resource. The request body must include a document with a <code>DeleteVPCAssociationAuthorizationRequest</code> element.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "VPCAssociationAuthorizationNotFound"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -805,26 +881,31 @@
       "documentation" : "<p>Disassociates a VPC from a Amazon Route 53 private hosted zone. </p> <note> <p>You can't disassociate the last VPC from a private hosted zone.</p> </note> <p>Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code> resource. The request body must include a document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes a <code>DisassociateVPCFromHostedZoneResponse</code> element.</p> <important> <p>You can't disassociate a VPC from a private hosted zone when only one VPC is associated with the hosted zone. You also can't convert a private hosted zone into a public hosted zone.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "VPCAssociationNotFound"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "LastVPCAssociation"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -856,11 +937,13 @@
       "documentation" : "<p>Returns the current status of a change batch request. The status is one of the following values:</p> <ul> <li> <p> <code>PENDING</code> indicates that the changes in this request have not replicated to all Amazon Route 53 DNS servers. This is the initial status of all change batch requests.</p> </li> <li> <p> <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route 53 DNS servers. </p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchChange"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -914,11 +997,13 @@
       "documentation" : "<p>Retrieves a single geo location. Send a <code>GET</code> request to the <code>/2013-04-01/geolocation</code> resource with one of these options: continentcode | countrycode | countrycode and subdivisioncode.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchGeoLocation"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -948,16 +1033,19 @@
       "documentation" : "<p>Gets information about a specified health check. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. For more information about using the console to perform this operation, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html\">Amazon Route 53 Health Checks and DNS Failover</a> in the Amazon Route 53 Developer Guide.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IncompatibleVersion"
@@ -1011,11 +1099,13 @@
       "documentation" : "<p>If you want to learn why a health check is currently failing or why it failed most recently (if at all), you can get the failure reason for the most recent failure. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1045,11 +1135,13 @@
       "documentation" : "<p>Gets status of a specified health check. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck/<i>health check ID</i>/status</code> resource. You can use this call to get a health check's current status. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1079,11 +1171,13 @@
       "documentation" : "<p>Retrieves the delegation set for a hosted zone, including the four name servers assigned to the hosted zone. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1113,6 +1207,7 @@
       "documentation" : "<p>Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the <code>/2013-04-01/hostedzonecount</code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1142,16 +1237,19 @@
       "documentation" : "<p>Retrieves the reusable delegation set. Send a <code>GET</code> request to the <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDelegationSet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetNotReusable"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1181,11 +1279,13 @@
       "documentation" : "<p>Gets information about a specific traffic policy version.</p> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1215,11 +1315,13 @@
       "documentation" : "<p>Gets information about a specified traffic policy instance.</p> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code> resource.</p> <note> <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <note> <p>In the Amazon Route 53 console, traffic policy instances are known as policy records.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicyInstance"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1273,6 +1375,7 @@
       "documentation" : "<p>Retrieves a list of supported geo locations. Send a <code>GET</code> request to the <code>/2013-04-01/geolocations</code> resource. The response to this request includes a <code>GeoLocationDetailsList</code> element for each location that Amazon Route 53 supports.</p> <p>Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a country (for example, states or provinces), the subdivisions for that country are listed in alphabetical order immediately after the corresponding country. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1302,11 +1405,13 @@
       "documentation" : "<p>Retrieve a list of your health checks. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck</code> resource. The response to this request includes a <code>HealthChecks</code> element with zero or more <code>HealthCheck</code> child elements. By default, the list of health checks is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the health check that the list begins with.</p> <p>For information about listing health checks using the Amazon Route 53 console, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html\">Amazon Route 53 Health Checks and DNS Failover</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IncompatibleVersion"
@@ -1336,16 +1441,19 @@
       "documentation" : "<p>To retrieve a list of your public and private hosted zones, send a <code>GET</code> request to the <code>/2013-04-01/hostedzone</code> resource. The response to this request includes a <code>HostedZones</code> child element for each hosted zone created by the current AWS account.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups of up to 100. The response includes four values that help navigate from one group of <code>maxitems</code> hosted zones to the next:</p> <ul> <li> <p> <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter in the request that produced the current response.</p> </li> <li> <p>If the value of <code>IsTruncated</code> in the response is true, there are more hosted zones associated with the current AWS account. </p> </li> <li> <p> <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated with the current AWS account. If you want to list more hosted zones, make another call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code> element in the marker parameter. </p> <p>If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted from the response.</p> </li> <li> <p>If you're making the second or subsequent call to <code>ListHostedZones</code>, the <code>Marker</code> element matches the value that you specified in the <code>marker</code> parameter in the previous request.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDelegationSet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DelegationSetNotReusable"
@@ -1375,11 +1483,13 @@
       "documentation" : "<p>Retrieves a list of your hosted zones in lexicographic order. Send a <code>GET</code> request to the <code>/2013-04-01/hostedzonesbyname</code> resource. The response includes a <code>HostedZones</code> child element for each hosted zone created by the current AWS account. </p> <p> <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed. For example:</p> <ul> <li> <p> <code>com.example.www.</code> </p> </li> </ul> <p>Note the trailing dot, which can change the sort order in some circumstances.</p> <p>If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes the domain name using the escaped or Punycoded value, which is the format that Amazon Route 53 saves in its database. For example, to create a hosted zone for example.com, specify ex\\344mple.com for the domain name. <code>ListHostedZonesByName</code> alphabetizes it as:</p> <ul> <li> <p> <code>com.ex\\344mple.</code> </p> </li> </ul> <p>The labels are reversed and alphabetized using the escaped value. For more information about valid domain name formats, including internationalized domain names, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html\">DNS Domain Name Format</a> in the Amazon Route 53 Developer Guide.</p> <p>Amazon Route 53 returns up to 100 items in each response. If you have a lot of hosted zones, use the <code>MaxItems</code> parameter to list them in groups of up to 100. The response includes values that help navigate from one group of <code>MaxItems</code> hosted zones to the next:</p> <ul> <li> <p>The <code>DNSName</code> and <code>HostedZoneId</code> elements in the response contain the values, if any, specified for the <code>dnsname</code> and <code>hostedzoneid</code> parameters in the request that produced the current response.</p> </li> <li> <p>The <code>MaxItems</code> element in the response contains the value, if any, that you specified for the <code>maxitems</code> parameter in the request that produced the current response.</p> </li> <li> <p>If the value of <code>IsTruncated</code> in the response is true, there are more hosted zones associated with the current AWS account. </p> <p>If <code>IsTruncated</code> is false, this response includes the last hosted zone that is associated with the current account. The <code>NextDNSName</code> element and <code>NextHostedZoneId</code> elements are omitted from the response.</p> </li> <li> <p>The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response contain the domain name and the hosted zone ID of the next hosted zone that is associated with the current AWS account. If you want to list more hosted zones, make another call to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDomainName"
@@ -1409,11 +1519,13 @@
       "documentation" : "<p>Lists the resource record sets in a specified hosted zone.</p> <p> <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code> elements. The action sorts results first by DNS name with the labels reversed, for example:</p> <p> <code>com.example.www.</code> </p> <p>Note the trailing dot, which can change the sort order in some circumstances.</p> <p>When multiple records have the same DNS name, the action sorts results by the record type.</p> <p>You can use the name and type elements to adjust the beginning position of the list of resource record sets returned:</p> <dl> <dt>If you do not specify Name or Type</dt> <dd> <p>The results begin with the first resource record set that the hosted zone contains.</p> </dd> <dt>If you specify Name but not Type</dt> <dd> <p>The results begin with the first resource record set in the list whose name is greater than or equal to <code>Name</code>.</p> </dd> <dt>If you specify Type but not Name</dt> <dd> <p>Amazon Route 53 returns the <code>InvalidInput</code> error.</p> </dd> <dt>If you specify both Name and Type</dt> <dd> <p>The results begin with the first resource record set in the list whose name is greater than or equal to <code>Name</code>, and whose type is greater than or equal to <code>Type</code>.</p> </dd> </dl> <p>This action returns the most current version of the records. This includes records that are <code>PENDING</code>, and that are not yet available on all Amazon Route 53 DNS servers.</p> <p>To ensure that you get an accurate listing of the resource record sets for a hosted zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request while you're paging through the results of a <code>ListResourceRecordSets</code> request. If you do, some pages may display results without the latest changes while other pages display results with the latest changes.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1443,6 +1555,7 @@
       "documentation" : "<p>To retrieve a list of your reusable delegation sets, send a <code>GET</code> request to the <code>/2013-04-01/delegationset</code> resource. The response to this request includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code> child elements. By default, the list of delegation sets is displayed on a single page. You can control the length of the page that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the delegation set that the list begins with. </p> <note> <p> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1472,26 +1585,31 @@
       "documentation" : "<p>Lists tags for one health check or hosted zone. </p> <p>For information about using tags for cost allocation, see <a href=\"http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html\">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ThrottlingException"
@@ -1521,26 +1639,31 @@
       "documentation" : "<p>Lists tags for up to 10 health checks or hosted zones.</p> <p>For information about using tags for cost allocation, see <a href=\"http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html\">Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ThrottlingException"
@@ -1572,6 +1695,7 @@
       "documentation" : "<p>Gets information about the latest version for every traffic policy that is associated with the current AWS account. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policies, you can use the <code>maxitems</code> parameter to list them in groups of up to 100.</p> <p>The response includes three values that help you navigate from one group of <code>maxitems</code> traffic policies to the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policies associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy that is associated with the current account.</p> </li> <li> <p> <b>TrafficPolicyIdMarker</b> </p> <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies. If you want to list more traffic policies, make another call to <code>ListTrafficPolicies</code>, and specify the value of the <code>TrafficPolicyIdMarker</code> element from the response in the <code>TrafficPolicyIdMarker</code> request parameter.</p> <p>If <code>IsTruncated</code> is <code>false</code>, the <code>TrafficPolicyIdMarker</code> element is omitted from the response.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1601,11 +1725,13 @@
       "documentation" : "<p>Gets information about the traffic policy instances that you created by using the current AWS account.</p> <note> <p>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code> resource.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The response includes five values that help you navigate from one group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy instances associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </li> <li> <p> <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is <code>true</code>, these three values in the response represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstances</code>, and specify these values in the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicyInstance"
@@ -1635,16 +1761,19 @@
       "documentation" : "<p>Gets information about the traffic policy instances that you created in a specified hosted zone.</p> <note> <p>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code> resource and include the ID of the hosted zone.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The response includes four values that help you navigate from one group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code/>IsTruncated in the response is <code>true</code>, there are more traffic policy instances associated with the current AWS account.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that is associated with the current account.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </li> <li> <p> <b>TrafficPolicyInstanceNameMarker</b> and <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is <code>true</code>, these two values in the response represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicyInstance"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
@@ -1674,16 +1803,19 @@
       "documentation" : "<p>Gets information about the traffic policy instances that you created by using a specify traffic policy version.</p> <note> <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> </note> <p>Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource and include the ID and version of the traffic policy.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p> <p>The response includes five values that help you navigate from one group of <code>MaxItems</code> traffic policy instances to the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy instances associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that is associated with the specified traffic policy.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </li> <li> <p> <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b> </p> <p>If <code>IsTruncated</code> is <code>true</code>, these values in the response represent the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstancesByPolicy</code>, and specify these values in the corresponding request parameters.</p> <p>If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicyInstance"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
@@ -1713,11 +1845,13 @@
       "documentation" : "<p>Gets information about all of the versions for a specified traffic policy.</p> <p>Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource and specify the ID of the traffic policy for which you want to list versions.</p> <p>Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policies, you can use the <code>maxitems</code> parameter to list them in groups of up to 100.</p> <p>The response includes three values that help you navigate from one group of <code>maxitems</code> traffic policies to the next:</p> <ul> <li> <p> <b>IsTruncated</b> </p> <p>If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy versions associated with the specified traffic policy.</p> <p>If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy version that is associated with the specified traffic policy.</p> </li> <li> <p> <b>TrafficPolicyVersionMarker</b> </p> <p>The ID of the next traffic policy version that is associated with the current AWS account. If you want to list more traffic policies, make another call to <code>ListTrafficPolicyVersions</code>, and specify the value of the <code>TrafficPolicyVersionMarker</code> element in the <code>TrafficPolicyVersionMarker</code> request parameter.</p> <p>If <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the <code>TrafficPolicyVersionMarker</code> element from the response.</p> </li> <li> <p> <b>MaxItems</b> </p> <p>The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current response.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
@@ -1747,16 +1881,19 @@
       "documentation" : "<p>Gets a list of the VPCs that were created by other accounts and that can be associated with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code> requests. </p> <p>Send a <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation</code> resource. The response to this request includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that can be associated with the hosted zone.</p> <p>Amazon Route 53 returns up to 50 VPCs per page. To return fewer VPCs per page, include the <code>MaxResults</code> parameter: </p> <p> <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code> </p> <p>If the response includes a <code>NextToken</code> element, there are more VPCs to list. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>NextToken</code> request parameter:</p> <p> <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidPaginationToken"
@@ -1786,11 +1923,13 @@
       "documentation" : "<p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1820,16 +1959,19 @@
       "documentation" : "<p>Updates an existing health check.</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. The request body must include a document with an <code>UpdateHealthCheckRequest</code> element. For more information about updating health checks, see <a href=\"http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html\">Creating, Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHealthCheck"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "HealthCheckVersionMismatch"
@@ -1861,11 +2003,13 @@
       "documentation" : "<p>Updates the hosted zone comment. Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i> </code> resource. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchHostedZone"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
@@ -1897,16 +2041,19 @@
       "documentation" : "<p>Updates the comment for a specified traffic policy version.</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource.</p> <p>The request body must include a document with an <code>UpdateTrafficPolicyCommentRequest</code> element.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModification"
@@ -1938,26 +2085,31 @@
       "documentation" : "<p>Updates the resource record sets in a specified hosted zone that were created based on the settings in a specified traffic policy version.</p> <p>Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance/<i>traffic policy ID</i> </code> resource. The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code> element.</p> <p>When you update a traffic policy instance, Amazon Route 53 continues to respond to DNS queries for the root resource record set name (such as example.com) while it replaces one group of resource record sets with another. Amazon Route 53 performs the following operations:</p> <ol> <li> <p>Amazon Route 53 creates a new group of resource record sets based on the specified traffic policy. This is true regardless of how substantial the differences are between the existing resource record sets and the new resource record sets. </p> </li> <li> <p>When all of the new resource record sets have been created, Amazon Route 53 starts to respond to DNS queries for the root resource record set name (such as example.com) by using the new resource record sets.</p> </li> <li> <p>Amazon Route 53 deletes the old group of resource record sets that are associated with the root resource record set name.</p> </li> </ol>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInput"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicy"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchTrafficPolicyInstance"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PriorRequestNotComplete"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ConflictingTypes"
@@ -2044,7 +2196,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2065,7 +2217,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2147,7 +2299,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2312,7 +2464,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2538,7 +2690,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2666,7 +2818,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2699,7 +2851,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2732,7 +2884,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2879,7 +3031,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -2900,7 +3052,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2915,7 +3067,8 @@
       "documentation" : "<p>Another user submitted a request to update the object at the same time that you did. Retry the request. </p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -2987,7 +3140,8 @@
       "documentation" : "<p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request. </p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3845,7 +3999,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3866,7 +4020,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4065,7 +4219,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4168,7 +4322,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4613,7 +4767,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4646,7 +4800,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4667,7 +4821,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4784,7 +4938,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4805,7 +4959,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4838,7 +4992,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4859,7 +5013,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4880,7 +5034,7 @@
       "key" : null,
       "max" : 10,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4901,7 +5055,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4983,7 +5137,7 @@
       "key" : null,
       "max" : 2,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 2,
       "pattern" : null,
       "payload" : null,
@@ -5004,7 +5158,7 @@
       "key" : null,
       "max" : 32,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5025,7 +5179,7 @@
       "key" : null,
       "max" : 2,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5046,7 +5200,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5179,7 +5333,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5200,7 +5354,7 @@
       "key" : null,
       "max" : 3,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -5221,7 +5375,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6242,7 +6396,8 @@
       "documentation" : "<p> The health check you're attempting to create already exists.</p> <p>Amazon Route 53 returns this error when a health check has already been created with the specified value for <code>CallerReference</code>.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -6515,7 +6670,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6536,7 +6691,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6551,7 +6706,8 @@
       "documentation" : "<p>The health check ID for this health check is referenced in the <code>HealthCheckId</code> element in one of the resource record sets in one of the hosted zones that are owned by the current AWS account.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6594,7 +6750,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6688,7 +6844,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6709,7 +6865,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6742,7 +6898,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6763,7 +6919,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6784,7 +6940,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -6799,7 +6955,8 @@
       "documentation" : "<p>The value of <code>HealthCheckVersion</code> in the request doesn't match the value of <code>HealthCheckVersion</code> in the health check.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -6854,7 +7011,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6875,7 +7032,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -6977,7 +7134,8 @@
       "documentation" : "<p>The hosted zone you are trying to create already exists. Amazon Route 53 returns this error when a hosted zone has already been created with the specified <code>CallerReference</code>.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -7068,7 +7226,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7083,7 +7241,8 @@
       "documentation" : "<p>The hosted zone contains resource records that are not SOA or NS records.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7161,7 +7320,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7194,7 +7353,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7215,7 +7374,7 @@
       "key" : null,
       "max" : 45,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "(^((([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))$|^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$)",
       "payload" : null,
@@ -7236,7 +7395,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7251,7 +7410,8 @@
       "documentation" : "<p>The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer endpoint or a tool that does so.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7294,7 +7454,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7379,7 +7539,8 @@
       "documentation" : "<p>The specified domain name is not valid.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7416,7 +7577,8 @@
       "documentation" : "<p>The input is not valid.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7453,7 +7615,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7490,7 +7653,8 @@
       "documentation" : "<p>The format of the traffic policy document that you specified in the <code>Document</code> element is invalid.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7527,7 +7691,8 @@
       "documentation" : "<p>The VPC ID that you specified either isn't a valid ID or the current account is not authorized to access this VPC.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7570,7 +7735,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7591,7 +7756,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7606,7 +7771,8 @@
       "documentation" : "<p>The VPC that you're trying to disassociate from the private hosted zone is the last VPC that is associated with the hosted zone. Amazon Route 53 doesn't support disassociating the last VPC from a hosted zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -9717,7 +9883,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9738,7 +9904,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9759,7 +9925,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9780,7 +9946,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -9801,7 +9967,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9822,7 +9988,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -9837,7 +10003,8 @@
       "documentation" : "<p>A change with the specified change ID does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -9909,7 +10076,8 @@
       "documentation" : "<p>Amazon Route 53 doesn't support the specified geolocation.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -9946,7 +10114,8 @@
       "documentation" : "<p>No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -9983,7 +10152,8 @@
       "documentation" : "<p>No hosted zone exists with the ID that you specified.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10020,7 +10190,8 @@
       "documentation" : "<p>No traffic policy exists with the specified ID.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10057,7 +10228,8 @@
       "documentation" : "<p>No traffic policy instance exists with the specified ID.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10100,7 +10272,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -10115,7 +10287,8 @@
       "documentation" : "<p>Associating the specified VPC with the specified hosted zone has not been authorized.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 401
       },
       "exception" : true,
       "fault" : false,
@@ -10158,7 +10331,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10179,7 +10352,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10200,7 +10373,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10221,7 +10394,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10242,7 +10415,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 60,
       "pattern" : null,
       "payload" : null,
@@ -10263,7 +10436,7 @@
       "key" : null,
       "max" : 65535,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -10278,7 +10451,8 @@
       "documentation" : "<p>If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in intervals of increasing duration, before you try the request again.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10315,7 +10489,8 @@
       "documentation" : "<p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a public hosted zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10358,7 +10533,7 @@
       "key" : null,
       "max" : 4000,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10379,7 +10554,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10412,7 +10587,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10433,7 +10608,7 @@
       "key" : null,
       "max" : 512,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10454,7 +10629,7 @@
       "key" : null,
       "max" : 30,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 10,
       "pattern" : null,
       "payload" : null,
@@ -10475,7 +10650,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10496,7 +10671,7 @@
       "key" : null,
       "max" : 32,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10517,7 +10692,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10751,7 +10926,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10772,7 +10947,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -10793,7 +10968,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -10814,7 +10989,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10847,7 +11022,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10880,7 +11055,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -10974,7 +11149,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10995,7 +11170,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11016,7 +11191,7 @@
       "key" : null,
       "max" : 255,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11037,7 +11212,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11058,7 +11233,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11127,7 +11302,7 @@
       "key" : null,
       "max" : 2,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11148,7 +11323,7 @@
       "key" : null,
       "max" : 2147483647,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11217,7 +11392,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11250,7 +11425,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -11283,7 +11458,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -11304,7 +11479,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11337,7 +11512,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -11358,7 +11533,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11379,7 +11554,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11600,7 +11775,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11615,7 +11790,8 @@
       "documentation" : "<p></p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11658,7 +11834,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11708,7 +11884,8 @@
       "documentation" : "<p>This hosted zone can't be created because the hosted zone limit is exceeded. To request a limit increase, go to the Amazon Route 53 <a href=\"http://aws.amazon.com/route53-request/\">Contact Us</a> page.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11745,7 +11922,8 @@
       "documentation" : "<p>You've created the maximum number of traffic policies that can be created for the current AWS account. You can request an increase to the limit on the <a href=\"http://aws.amazon.com/route53-request/\">Contact Us</a> page.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11782,7 +11960,8 @@
       "documentation" : "<p>You've created the maximum number of traffic policy instances that can be created for the current AWS account. You can request an increase to the limit on the <a href=\"http://aws.amazon.com/route53-request/\">Contact Us</a> page.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11819,7 +11998,8 @@
       "documentation" : "<p>You've created the maximum number of authorizations that can be created for the specified hosted zone. To authorize another VPC to be associated with the hosted zone, submit a <code>DeleteVPCAssociationAuthorization</code> request to remove an existing authorization. To get a list of existing authorizations, submit a <code>ListVPCAssociationAuthorizations</code> request.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11874,7 +12054,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11989,7 +12169,8 @@
       "documentation" : "<p>A traffic policy that has the same value for <code>Name</code> already exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -12032,7 +12213,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12053,7 +12234,7 @@
       "key" : null,
       "max" : 102400,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12074,7 +12255,7 @@
       "key" : null,
       "max" : 36,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12089,7 +12270,8 @@
       "documentation" : "<p>One or more traffic policy instances were created by using the specified traffic policy.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -12265,7 +12447,8 @@
       "documentation" : "<p>Traffic policy instance with given Id already exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -12308,7 +12491,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12329,7 +12512,7 @@
       "key" : null,
       "max" : 36,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12350,7 +12533,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12383,7 +12566,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12404,7 +12587,7 @@
       "key" : null,
       "max" : 512,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12437,7 +12620,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12545,7 +12728,7 @@
       "key" : null,
       "max" : 1000,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -12566,7 +12749,7 @@
       "key" : null,
       "max" : 4,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -12587,7 +12770,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -13190,7 +13373,8 @@
       "documentation" : "<p>The VPC that you specified is not authorized to be associated with the hosted zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -13227,7 +13411,8 @@
       "documentation" : "<p>The specified VPC and hosted zone are not currently associated.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -13270,7 +13455,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -13291,7 +13476,7 @@
       "key" : null,
       "max" : 64,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -13324,7 +13509,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,

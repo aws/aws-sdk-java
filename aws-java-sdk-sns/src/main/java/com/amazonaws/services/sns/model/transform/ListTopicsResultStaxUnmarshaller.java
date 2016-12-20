@@ -45,6 +45,11 @@ public class ListTopicsResultStaxUnmarshaller implements Unmarshaller<ListTopics
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Topics", targetDepth)) {
+                    listTopicsResult.withTopics(new ArrayList<Topic>());
+                    continue;
+                }
+
                 if (context.testExpression("Topics/member", targetDepth)) {
                     listTopicsResult.withTopics(TopicStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

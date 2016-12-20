@@ -291,13 +291,13 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecipient() != null)
-            sb.append("Recipient: " + getRecipient() + ",");
+            sb.append("Recipient: ").append(getRecipient()).append(",");
         if (getRecipientArn() != null)
-            sb.append("RecipientArn: " + getRecipientArn() + ",");
+            sb.append("RecipientArn: ").append(getRecipientArn()).append(",");
         if (getBounceType() != null)
-            sb.append("BounceType: " + getBounceType() + ",");
+            sb.append("BounceType: ").append(getBounceType()).append(",");
         if (getRecipientDsnFields() != null)
-            sb.append("RecipientDsnFields: " + getRecipientDsnFields());
+            sb.append("RecipientDsnFields: ").append(getRecipientDsnFields());
         sb.append("}");
         return sb.toString();
     }

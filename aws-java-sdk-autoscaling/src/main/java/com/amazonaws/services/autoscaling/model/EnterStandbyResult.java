@@ -113,7 +113,7 @@ public class EnterStandbyResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivities() != null)
-            sb.append("Activities: " + getActivities());
+            sb.append("Activities: ").append(getActivities());
         sb.append("}");
         return sb.toString();
     }

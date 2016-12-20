@@ -256,13 +256,13 @@ public class UsageRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getCustomerIdentifier() != null)
-            sb.append("CustomerIdentifier: " + getCustomerIdentifier() + ",");
+            sb.append("CustomerIdentifier: ").append(getCustomerIdentifier()).append(",");
         if (getDimension() != null)
-            sb.append("Dimension: " + getDimension() + ",");
+            sb.append("Dimension: ").append(getDimension()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity());
+            sb.append("Quantity: ").append(getQuantity());
         sb.append("}");
         return sb.toString();
     }

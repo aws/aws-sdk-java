@@ -246,15 +246,15 @@ public class SegmentImportResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExternalId() != null)
-            sb.append("ExternalId: " + getExternalId() + ",");
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getS3Url() != null)
-            sb.append("S3Url: " + getS3Url() + ",");
+            sb.append("S3Url: ").append(getS3Url()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize());
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }

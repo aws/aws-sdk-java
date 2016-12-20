@@ -136,9 +136,9 @@ public class CreateXssMatchSetResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSet() != null)
-            sb.append("XssMatchSet: " + getXssMatchSet() + ",");
+            sb.append("XssMatchSet: ").append(getXssMatchSet()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

@@ -196,9 +196,9 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument());
+            sb.append("PolicyDocument: ").append(getPolicyDocument());
         sb.append("}");
         return sb.toString();
     }

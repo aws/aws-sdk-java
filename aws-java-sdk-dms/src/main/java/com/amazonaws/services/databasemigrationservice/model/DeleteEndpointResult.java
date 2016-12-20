@@ -78,7 +78,7 @@ public class DeleteEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint());
+            sb.append("Endpoint: ").append(getEndpoint());
         sb.append("}");
         return sb.toString();
     }

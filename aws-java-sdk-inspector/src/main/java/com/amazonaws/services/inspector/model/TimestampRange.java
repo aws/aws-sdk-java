@@ -126,9 +126,9 @@ public class TimestampRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBeginDate() != null)
-            sb.append("BeginDate: " + getBeginDate() + ",");
+            sb.append("BeginDate: ").append(getBeginDate()).append(",");
         if (getEndDate() != null)
-            sb.append("EndDate: " + getEndDate());
+            sb.append("EndDate: ").append(getEndDate());
         sb.append("}");
         return sb.toString();
     }

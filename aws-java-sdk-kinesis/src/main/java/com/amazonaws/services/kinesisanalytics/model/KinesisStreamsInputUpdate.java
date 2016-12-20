@@ -134,9 +134,9 @@ public class KinesisStreamsInputUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARNUpdate() != null)
-            sb.append("ResourceARNUpdate: " + getResourceARNUpdate() + ",");
+            sb.append("ResourceARNUpdate: ").append(getResourceARNUpdate()).append(",");
         if (getRoleARNUpdate() != null)
-            sb.append("RoleARNUpdate: " + getRoleARNUpdate());
+            sb.append("RoleARNUpdate: ").append(getRoleARNUpdate());
         sb.append("}");
         return sb.toString();
     }

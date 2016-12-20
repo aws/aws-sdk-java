@@ -189,9 +189,9 @@ public class GetRolePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName());
+            sb.append("PolicyName: ").append(getPolicyName());
         sb.append("}");
         return sb.toString();
     }

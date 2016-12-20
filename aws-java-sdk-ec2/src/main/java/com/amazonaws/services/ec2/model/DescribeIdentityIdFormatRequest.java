@@ -148,9 +148,9 @@ public class DescribeIdentityIdFormatRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResource() != null)
-            sb.append("Resource: " + getResource() + ",");
+            sb.append("Resource: ").append(getResource()).append(",");
         if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: " + getPrincipalArn());
+            sb.append("PrincipalArn: ").append(getPrincipalArn());
         sb.append("}");
         return sb.toString();
     }

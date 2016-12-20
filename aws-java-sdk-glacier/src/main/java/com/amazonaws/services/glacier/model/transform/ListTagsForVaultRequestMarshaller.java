@@ -61,16 +61,9 @@ public class ListTagsForVaultRequestMarshaller implements Marshaller<Request<Lis
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/tags";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{accountId}",
-                        (listTagsForVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(listTagsForVaultRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{vaultName}",
-                        (listTagsForVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(listTagsForVaultRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                listTagsForVaultRequest.getAccountId() == null ? "-" : listTagsForVaultRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", listTagsForVaultRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

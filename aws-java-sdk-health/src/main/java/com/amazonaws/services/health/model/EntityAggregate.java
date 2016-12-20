@@ -141,9 +141,9 @@ public class EntityAggregate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventArn() != null)
-            sb.append("EventArn: " + getEventArn() + ",");
+            sb.append("EventArn: ").append(getEventArn()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount());
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }

@@ -98,7 +98,7 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

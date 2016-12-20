@@ -794,21 +794,21 @@ public class StreamDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getStreamARN() != null)
-            sb.append("StreamARN: " + getStreamARN() + ",");
+            sb.append("StreamARN: ").append(getStreamARN()).append(",");
         if (getStreamStatus() != null)
-            sb.append("StreamStatus: " + getStreamStatus() + ",");
+            sb.append("StreamStatus: ").append(getStreamStatus()).append(",");
         if (getShards() != null)
-            sb.append("Shards: " + getShards() + ",");
+            sb.append("Shards: ").append(getShards()).append(",");
         if (getHasMoreShards() != null)
-            sb.append("HasMoreShards: " + getHasMoreShards() + ",");
+            sb.append("HasMoreShards: ").append(getHasMoreShards()).append(",");
         if (getRetentionPeriodHours() != null)
-            sb.append("RetentionPeriodHours: " + getRetentionPeriodHours() + ",");
+            sb.append("RetentionPeriodHours: ").append(getRetentionPeriodHours()).append(",");
         if (getStreamCreationTimestamp() != null)
-            sb.append("StreamCreationTimestamp: " + getStreamCreationTimestamp() + ",");
+            sb.append("StreamCreationTimestamp: ").append(getStreamCreationTimestamp()).append(",");
         if (getEnhancedMonitoring() != null)
-            sb.append("EnhancedMonitoring: " + getEnhancedMonitoring());
+            sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring());
         sb.append("}");
         return sb.toString();
     }

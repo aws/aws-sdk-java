@@ -238,11 +238,11 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getCurrentSpotFleetRequestState() != null)
-            sb.append("CurrentSpotFleetRequestState: " + getCurrentSpotFleetRequestState() + ",");
+            sb.append("CurrentSpotFleetRequestState: ").append(getCurrentSpotFleetRequestState()).append(",");
         if (getPreviousSpotFleetRequestState() != null)
-            sb.append("PreviousSpotFleetRequestState: " + getPreviousSpotFleetRequestState());
+            sb.append("PreviousSpotFleetRequestState: ").append(getPreviousSpotFleetRequestState());
         sb.append("}");
         return sb.toString();
     }

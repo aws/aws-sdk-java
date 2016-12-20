@@ -339,17 +339,17 @@ public class InputUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputId() != null)
-            sb.append("InputId: " + getInputId() + ",");
+            sb.append("InputId: ").append(getInputId()).append(",");
         if (getNamePrefixUpdate() != null)
-            sb.append("NamePrefixUpdate: " + getNamePrefixUpdate() + ",");
+            sb.append("NamePrefixUpdate: ").append(getNamePrefixUpdate()).append(",");
         if (getKinesisStreamsInputUpdate() != null)
-            sb.append("KinesisStreamsInputUpdate: " + getKinesisStreamsInputUpdate() + ",");
+            sb.append("KinesisStreamsInputUpdate: ").append(getKinesisStreamsInputUpdate()).append(",");
         if (getKinesisFirehoseInputUpdate() != null)
-            sb.append("KinesisFirehoseInputUpdate: " + getKinesisFirehoseInputUpdate() + ",");
+            sb.append("KinesisFirehoseInputUpdate: ").append(getKinesisFirehoseInputUpdate()).append(",");
         if (getInputSchemaUpdate() != null)
-            sb.append("InputSchemaUpdate: " + getInputSchemaUpdate() + ",");
+            sb.append("InputSchemaUpdate: ").append(getInputSchemaUpdate()).append(",");
         if (getInputParallelismUpdate() != null)
-            sb.append("InputParallelismUpdate: " + getInputParallelismUpdate());
+            sb.append("InputParallelismUpdate: ").append(getInputParallelismUpdate());
         sb.append("}");
         return sb.toString();
     }

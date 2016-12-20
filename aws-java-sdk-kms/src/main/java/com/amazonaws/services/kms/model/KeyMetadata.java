@@ -889,29 +889,29 @@ public class KeyMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAWSAccountId() != null)
-            sb.append("AWSAccountId: " + getAWSAccountId() + ",");
+            sb.append("AWSAccountId: ").append(getAWSAccountId()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getKeyUsage() != null)
-            sb.append("KeyUsage: " + getKeyUsage() + ",");
+            sb.append("KeyUsage: ").append(getKeyUsage()).append(",");
         if (getKeyState() != null)
-            sb.append("KeyState: " + getKeyState() + ",");
+            sb.append("KeyState: ").append(getKeyState()).append(",");
         if (getDeletionDate() != null)
-            sb.append("DeletionDate: " + getDeletionDate() + ",");
+            sb.append("DeletionDate: ").append(getDeletionDate()).append(",");
         if (getValidTo() != null)
-            sb.append("ValidTo: " + getValidTo() + ",");
+            sb.append("ValidTo: ").append(getValidTo()).append(",");
         if (getOrigin() != null)
-            sb.append("Origin: " + getOrigin() + ",");
+            sb.append("Origin: ").append(getOrigin()).append(",");
         if (getExpirationModel() != null)
-            sb.append("ExpirationModel: " + getExpirationModel());
+            sb.append("ExpirationModel: ").append(getExpirationModel());
         sb.append("}");
         return sb.toString();
     }

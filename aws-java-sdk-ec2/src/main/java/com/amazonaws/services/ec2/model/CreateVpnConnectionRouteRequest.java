@@ -141,9 +141,9 @@ public class CreateVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnConnectionId() != null)
-            sb.append("VpnConnectionId: " + getVpnConnectionId() + ",");
+            sb.append("VpnConnectionId: ").append(getVpnConnectionId()).append(",");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: " + getDestinationCidrBlock());
+            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,8 @@ public class ListVersionsByFunctionRequestMarshaller implements Marshaller<Reque
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (listVersionsByFunctionRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listVersionsByFunctionRequest.getFunctionName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
+                listVersionsByFunctionRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         if (listVersionsByFunctionRequest.getMarker() != null) {

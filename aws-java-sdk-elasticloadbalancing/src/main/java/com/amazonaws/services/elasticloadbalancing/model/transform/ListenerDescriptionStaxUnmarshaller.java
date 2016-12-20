@@ -50,6 +50,11 @@ public class ListenerDescriptionStaxUnmarshaller implements Unmarshaller<Listene
                     continue;
                 }
 
+                if (context.testExpression("PolicyNames", targetDepth)) {
+                    listenerDescription.withPolicyNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyNames/member", targetDepth)) {
                     listenerDescription.withPolicyNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -134,9 +134,9 @@ public class DeleteConditionalForwarderRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getRemoteDomainName() != null)
-            sb.append("RemoteDomainName: " + getRemoteDomainName());
+            sb.append("RemoteDomainName: ").append(getRemoteDomainName());
         sb.append("}");
         return sb.toString();
     }

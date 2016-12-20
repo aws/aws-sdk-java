@@ -185,9 +185,9 @@ public class DescribeOrderableReplicationInstancesRequest extends com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

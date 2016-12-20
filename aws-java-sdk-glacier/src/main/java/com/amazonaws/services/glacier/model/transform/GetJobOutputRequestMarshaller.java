@@ -65,12 +65,10 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs/{jobId}/output";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (getJobOutputRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getJobOutputRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (getJobOutputRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getJobOutputRequest.getVaultName()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{jobId}",
-                (getJobOutputRequest.getJobId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getJobOutputRequest.getJobId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                getJobOutputRequest.getAccountId() == null ? "-" : getJobOutputRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", getJobOutputRequest.getVaultName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "jobId", getJobOutputRequest.getJobId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

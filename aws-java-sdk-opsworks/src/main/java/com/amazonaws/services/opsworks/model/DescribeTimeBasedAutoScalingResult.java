@@ -126,7 +126,7 @@ public class DescribeTimeBasedAutoScalingResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimeBasedAutoScalingConfigurations() != null)
-            sb.append("TimeBasedAutoScalingConfigurations: " + getTimeBasedAutoScalingConfigurations());
+            sb.append("TimeBasedAutoScalingConfigurations: ").append(getTimeBasedAutoScalingConfigurations());
         sb.append("}");
         return sb.toString();
     }

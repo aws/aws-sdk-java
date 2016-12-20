@@ -50,6 +50,11 @@ public class DescribeDBClusterSnapshotsResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("DBClusterSnapshots", targetDepth)) {
+                    describeDBClusterSnapshotsResult.withDBClusterSnapshots(new ArrayList<DBClusterSnapshot>());
+                    continue;
+                }
+
                 if (context.testExpression("DBClusterSnapshots/DBClusterSnapshot", targetDepth)) {
                     describeDBClusterSnapshotsResult.withDBClusterSnapshots(DBClusterSnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

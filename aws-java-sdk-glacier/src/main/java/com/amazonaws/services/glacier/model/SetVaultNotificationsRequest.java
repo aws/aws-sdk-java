@@ -235,11 +235,11 @@ public class SetVaultNotificationsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getVaultNotificationConfig() != null)
-            sb.append("VaultNotificationConfig: " + getVaultNotificationConfig());
+            sb.append("VaultNotificationConfig: ").append(getVaultNotificationConfig());
         sb.append("}");
         return sb.toString();
     }

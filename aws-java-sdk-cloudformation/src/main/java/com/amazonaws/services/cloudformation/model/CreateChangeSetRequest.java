@@ -1694,33 +1694,33 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getTemplateBody() != null)
-            sb.append("TemplateBody: " + getTemplateBody() + ",");
+            sb.append("TemplateBody: ").append(getTemplateBody()).append(",");
         if (getTemplateURL() != null)
-            sb.append("TemplateURL: " + getTemplateURL() + ",");
+            sb.append("TemplateURL: ").append(getTemplateURL()).append(",");
         if (getUsePreviousTemplate() != null)
-            sb.append("UsePreviousTemplate: " + getUsePreviousTemplate() + ",");
+            sb.append("UsePreviousTemplate: ").append(getUsePreviousTemplate()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getCapabilities() != null)
-            sb.append("Capabilities: " + getCapabilities() + ",");
+            sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getResourceTypes() != null)
-            sb.append("ResourceTypes: " + getResourceTypes() + ",");
+            sb.append("ResourceTypes: ").append(getResourceTypes()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getNotificationARNs() != null)
-            sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+            sb.append("NotificationARNs: ").append(getNotificationARNs()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getChangeSetName() != null)
-            sb.append("ChangeSetName: " + getChangeSetName() + ",");
+            sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getChangeSetType() != null)
-            sb.append("ChangeSetType: " + getChangeSetType());
+            sb.append("ChangeSetType: ").append(getChangeSetType());
         sb.append("}");
         return sb.toString();
     }

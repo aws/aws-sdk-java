@@ -429,19 +429,19 @@ public class ConversionTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTaskId() != null)
-            sb.append("ConversionTaskId: " + getConversionTaskId() + ",");
+            sb.append("ConversionTaskId: ").append(getConversionTaskId()).append(",");
         if (getExpirationTime() != null)
-            sb.append("ExpirationTime: " + getExpirationTime() + ",");
+            sb.append("ExpirationTime: ").append(getExpirationTime()).append(",");
         if (getImportInstance() != null)
-            sb.append("ImportInstance: " + getImportInstance() + ",");
+            sb.append("ImportInstance: ").append(getImportInstance()).append(",");
         if (getImportVolume() != null)
-            sb.append("ImportVolume: " + getImportVolume() + ",");
+            sb.append("ImportVolume: ").append(getImportVolume()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

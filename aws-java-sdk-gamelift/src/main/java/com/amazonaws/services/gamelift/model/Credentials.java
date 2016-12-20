@@ -174,11 +174,11 @@ public class Credentials implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessKeyId() != null)
-            sb.append("AccessKeyId: " + getAccessKeyId() + ",");
+            sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
         if (getSecretAccessKey() != null)
-            sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");
+            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
         if (getSessionToken() != null)
-            sb.append("SessionToken: " + getSessionToken());
+            sb.append("SessionToken: ").append(getSessionToken());
         sb.append("}");
         return sb.toString();
     }

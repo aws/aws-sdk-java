@@ -63,10 +63,8 @@ public class UpdateFunctionConfigurationRequestMarshaller implements
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/configuration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (updateFunctionConfigurationRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateFunctionConfigurationRequest.getFunctionName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
+                updateFunctionConfigurationRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         try {

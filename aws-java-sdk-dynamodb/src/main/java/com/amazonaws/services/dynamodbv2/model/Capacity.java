@@ -80,7 +80,7 @@ public class Capacity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCapacityUnits() != null)
-            sb.append("CapacityUnits: " + getCapacityUnits());
+            sb.append("CapacityUnits: ").append(getCapacityUnits());
         sb.append("}");
         return sb.toString();
     }

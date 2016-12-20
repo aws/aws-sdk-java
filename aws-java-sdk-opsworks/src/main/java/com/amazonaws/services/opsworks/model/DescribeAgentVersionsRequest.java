@@ -125,9 +125,9 @@ public class DescribeAgentVersionsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getConfigurationManager() != null)
-            sb.append("ConfigurationManager: " + getConfigurationManager());
+            sb.append("ConfigurationManager: ").append(getConfigurationManager());
         sb.append("}");
         return sb.toString();
     }

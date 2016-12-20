@@ -125,9 +125,9 @@ public class UpdateBatchPredictionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBatchPredictionId() != null)
-            sb.append("BatchPredictionId: " + getBatchPredictionId() + ",");
+            sb.append("BatchPredictionId: ").append(getBatchPredictionId()).append(",");
         if (getBatchPredictionName() != null)
-            sb.append("BatchPredictionName: " + getBatchPredictionName());
+            sb.append("BatchPredictionName: ").append(getBatchPredictionName());
         sb.append("}");
         return sb.toString();
     }

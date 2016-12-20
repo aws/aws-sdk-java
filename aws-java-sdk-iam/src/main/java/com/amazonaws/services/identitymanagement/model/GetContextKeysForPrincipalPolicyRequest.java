@@ -275,9 +275,9 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicySourceArn() != null)
-            sb.append("PolicySourceArn: " + getPolicySourceArn() + ",");
+            sb.append("PolicySourceArn: ").append(getPolicySourceArn()).append(",");
         if (getPolicyInputList() != null)
-            sb.append("PolicyInputList: " + getPolicyInputList());
+            sb.append("PolicyInputList: ").append(getPolicyInputList());
         sb.append("}");
         return sb.toString();
     }

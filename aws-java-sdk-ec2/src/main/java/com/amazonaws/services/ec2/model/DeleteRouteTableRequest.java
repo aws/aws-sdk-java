@@ -94,7 +94,7 @@ public class DeleteRouteTableRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId());
+            sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
         return sb.toString();
     }

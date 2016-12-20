@@ -89,7 +89,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterName() != null)
-            sb.append("ClusterName: " + getClusterName());
+            sb.append("ClusterName: ").append(getClusterName());
         sb.append("}");
         return sb.toString();
     }

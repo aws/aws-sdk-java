@@ -516,23 +516,23 @@ public class GrantListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getGrantId() != null)
-            sb.append("GrantId: " + getGrantId() + ",");
+            sb.append("GrantId: ").append(getGrantId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getGranteePrincipal() != null)
-            sb.append("GranteePrincipal: " + getGranteePrincipal() + ",");
+            sb.append("GranteePrincipal: ").append(getGranteePrincipal()).append(",");
         if (getRetiringPrincipal() != null)
-            sb.append("RetiringPrincipal: " + getRetiringPrincipal() + ",");
+            sb.append("RetiringPrincipal: ").append(getRetiringPrincipal()).append(",");
         if (getIssuingAccount() != null)
-            sb.append("IssuingAccount: " + getIssuingAccount() + ",");
+            sb.append("IssuingAccount: ").append(getIssuingAccount()).append(",");
         if (getOperations() != null)
-            sb.append("Operations: " + getOperations() + ",");
+            sb.append("Operations: ").append(getOperations()).append(",");
         if (getConstraints() != null)
-            sb.append("Constraints: " + getConstraints());
+            sb.append("Constraints: ").append(getConstraints());
         sb.append("}");
         return sb.toString();
     }

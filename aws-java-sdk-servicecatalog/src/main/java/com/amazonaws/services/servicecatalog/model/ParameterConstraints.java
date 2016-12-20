@@ -110,7 +110,7 @@ public class ParameterConstraints implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllowedValues() != null)
-            sb.append("AllowedValues: " + getAllowedValues());
+            sb.append("AllowedValues: ").append(getAllowedValues());
         sb.append("}");
         return sb.toString();
     }

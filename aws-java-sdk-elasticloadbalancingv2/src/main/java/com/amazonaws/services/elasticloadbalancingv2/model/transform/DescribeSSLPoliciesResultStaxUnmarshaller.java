@@ -45,6 +45,11 @@ public class DescribeSSLPoliciesResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SslPolicies", targetDepth)) {
+                    describeSSLPoliciesResult.withSslPolicies(new ArrayList<SslPolicy>());
+                    continue;
+                }
+
                 if (context.testExpression("SslPolicies/member", targetDepth)) {
                     describeSSLPoliciesResult.withSslPolicies(SslPolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

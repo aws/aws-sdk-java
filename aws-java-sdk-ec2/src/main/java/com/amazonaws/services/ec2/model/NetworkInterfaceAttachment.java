@@ -401,19 +401,19 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentId() != null)
-            sb.append("AttachmentId: " + getAttachmentId() + ",");
+            sb.append("AttachmentId: ").append(getAttachmentId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceOwnerId() != null)
-            sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");
+            sb.append("InstanceOwnerId: ").append(getInstanceOwnerId()).append(",");
         if (getDeviceIndex() != null)
-            sb.append("DeviceIndex: " + getDeviceIndex() + ",");
+            sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getAttachTime() != null)
-            sb.append("AttachTime: " + getAttachTime() + ",");
+            sb.append("AttachTime: ").append(getAttachTime()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
         sb.append("}");
         return sb.toString();
     }

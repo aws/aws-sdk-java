@@ -206,13 +206,13 @@ public class Attribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAlternateNameEncoding() != null)
-            sb.append("AlternateNameEncoding: " + getAlternateNameEncoding() + ",");
+            sb.append("AlternateNameEncoding: ").append(getAlternateNameEncoding()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getAlternateValueEncoding() != null)
-            sb.append("AlternateValueEncoding: " + getAlternateValueEncoding());
+            sb.append("AlternateValueEncoding: ").append(getAlternateValueEncoding());
         sb.append("}");
         return sb.toString();
     }

@@ -366,17 +366,17 @@ public class DoubleOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getSourceField() != null)
-            sb.append("SourceField: " + getSourceField() + ",");
+            sb.append("SourceField: ").append(getSourceField()).append(",");
         if (getFacetEnabled() != null)
-            sb.append("FacetEnabled: " + getFacetEnabled() + ",");
+            sb.append("FacetEnabled: ").append(getFacetEnabled()).append(",");
         if (getSearchEnabled() != null)
-            sb.append("SearchEnabled: " + getSearchEnabled() + ",");
+            sb.append("SearchEnabled: ").append(getSearchEnabled()).append(",");
         if (getReturnEnabled() != null)
-            sb.append("ReturnEnabled: " + getReturnEnabled() + ",");
+            sb.append("ReturnEnabled: ").append(getReturnEnabled()).append(",");
         if (getSortEnabled() != null)
-            sb.append("SortEnabled: " + getSortEnabled());
+            sb.append("SortEnabled: ").append(getSortEnabled());
         sb.append("}");
         return sb.toString();
     }

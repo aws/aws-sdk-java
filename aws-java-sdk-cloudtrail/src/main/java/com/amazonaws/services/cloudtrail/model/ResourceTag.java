@@ -137,9 +137,9 @@ public class ResourceTag implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getTagsList() != null)
-            sb.append("TagsList: " + getTagsList());
+            sb.append("TagsList: ").append(getTagsList());
         sb.append("}");
         return sb.toString();
     }

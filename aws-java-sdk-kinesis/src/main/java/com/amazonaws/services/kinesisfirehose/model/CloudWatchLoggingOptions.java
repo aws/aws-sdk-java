@@ -184,11 +184,11 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName());
+            sb.append("LogStreamName: ").append(getLogStreamName());
         sb.append("}");
         return sb.toString();
     }

@@ -15,17 +15,29 @@ package com.amazonaws.services.cognitoidentity.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The result of a successful ListIdentityPools action.
+ * </p>
  */
 public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The identity pools returned by the ListIdentityPools action. */
+    /**
+     * <p>
+     * The identity pools returned by the ListIdentityPools action.
+     * </p>
+     */
     private java.util.List<IdentityPoolShortDescription> identityPools;
-    /** A pagination token. */
+    /**
+     * <p>
+     * A pagination token.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
      * The identity pools returned by the ListIdentityPools action.
+     * </p>
      * 
      * @return The identity pools returned by the ListIdentityPools action.
      */
@@ -35,7 +47,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * The identity pools returned by the ListIdentityPools action.
+     * </p>
      * 
      * @param identityPools
      *        The identity pools returned by the ListIdentityPools action.
@@ -51,7 +65,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * The identity pools returned by the ListIdentityPools action.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIdentityPools(java.util.Collection)} or {@link #withIdentityPools(java.util.Collection)} if you want
@@ -74,7 +90,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * The identity pools returned by the ListIdentityPools action.
+     * </p>
      * 
      * @param identityPools
      *        The identity pools returned by the ListIdentityPools action.
@@ -87,7 +105,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @param nextToken
      *        A pagination token.
@@ -98,7 +118,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @return A pagination token.
      */
@@ -108,7 +130,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @param nextToken
      *        A pagination token.
@@ -132,9 +156,9 @@ public class ListIdentityPoolsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPools() != null)
-            sb.append("IdentityPools: " + getIdentityPools() + ",");
+            sb.append("IdentityPools: ").append(getIdentityPools()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

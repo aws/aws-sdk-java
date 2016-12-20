@@ -81,7 +81,7 @@ public class CreateDistributionWithTagsRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionConfigWithTags() != null)
-            sb.append("DistributionConfigWithTags: " + getDistributionConfigWithTags());
+            sb.append("DistributionConfigWithTags: ").append(getDistributionConfigWithTags());
         sb.append("}");
         return sb.toString();
     }

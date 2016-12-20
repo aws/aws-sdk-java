@@ -50,6 +50,11 @@ public class DescribeSnapshotCopyGrantsResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("SnapshotCopyGrants", targetDepth)) {
+                    describeSnapshotCopyGrantsResult.withSnapshotCopyGrants(new ArrayList<SnapshotCopyGrant>());
+                    continue;
+                }
+
                 if (context.testExpression("SnapshotCopyGrants/SnapshotCopyGrant", targetDepth)) {
                     describeSnapshotCopyGrantsResult.withSnapshotCopyGrants(SnapshotCopyGrantStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

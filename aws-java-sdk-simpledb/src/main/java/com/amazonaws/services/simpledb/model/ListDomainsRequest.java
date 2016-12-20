@@ -105,9 +105,9 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxNumberOfDomains() != null)
-            sb.append("MaxNumberOfDomains: " + getMaxNumberOfDomains() + ",");
+            sb.append("MaxNumberOfDomains: ").append(getMaxNumberOfDomains()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

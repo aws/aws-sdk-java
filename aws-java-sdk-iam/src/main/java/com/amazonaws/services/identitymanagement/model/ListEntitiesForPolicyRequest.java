@@ -496,15 +496,15 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn() + ",");
+            sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
         if (getEntityFilter() != null)
-            sb.append("EntityFilter: " + getEntityFilter() + ",");
+            sb.append("EntityFilter: ").append(getEntityFilter()).append(",");
         if (getPathPrefix() != null)
-            sb.append("PathPrefix: " + getPathPrefix() + ",");
+            sb.append("PathPrefix: ").append(getPathPrefix()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

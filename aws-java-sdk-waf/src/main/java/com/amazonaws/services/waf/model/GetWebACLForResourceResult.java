@@ -85,7 +85,7 @@ public class GetWebACLForResourceResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACLSummary() != null)
-            sb.append("WebACLSummary: " + getWebACLSummary());
+            sb.append("WebACLSummary: ").append(getWebACLSummary());
         sb.append("}");
         return sb.toString();
     }

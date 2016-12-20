@@ -167,9 +167,9 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservations() != null)
-            sb.append("Reservations: " + getReservations() + ",");
+            sb.append("Reservations: ").append(getReservations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

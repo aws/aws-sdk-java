@@ -79,7 +79,7 @@ public class DeleteReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn());
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn());
         sb.append("}");
         return sb.toString();
     }

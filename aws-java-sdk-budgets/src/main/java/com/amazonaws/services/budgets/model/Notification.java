@@ -161,11 +161,11 @@ public class Notification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNotificationType() != null)
-            sb.append("NotificationType: " + getNotificationType() + ",");
+            sb.append("NotificationType: ").append(getNotificationType()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator() + ",");
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
         if (getThreshold() != null)
-            sb.append("Threshold: " + getThreshold());
+            sb.append("Threshold: ").append(getThreshold());
         sb.append("}");
         return sb.toString();
     }

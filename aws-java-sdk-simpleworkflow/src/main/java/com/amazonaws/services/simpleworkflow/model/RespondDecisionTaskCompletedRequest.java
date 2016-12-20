@@ -231,11 +231,11 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getDecisions() != null)
-            sb.append("Decisions: " + getDecisions() + ",");
+            sb.append("Decisions: ").append(getDecisions()).append(",");
         if (getExecutionContext() != null)
-            sb.append("ExecutionContext: " + getExecutionContext());
+            sb.append("ExecutionContext: ").append(getExecutionContext());
         sb.append("}");
         return sb.toString();
     }

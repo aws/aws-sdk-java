@@ -172,15 +172,15 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBudgetName() != null)
-            sb.append("BudgetName: " + getBudgetName() + ",");
+            sb.append("BudgetName: ").append(getBudgetName()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification() + ",");
+            sb.append("Notification: ").append(getNotification()).append(",");
         if (getOldSubscriber() != null)
-            sb.append("OldSubscriber: " + getOldSubscriber() + ",");
+            sb.append("OldSubscriber: ").append(getOldSubscriber()).append(",");
         if (getNewSubscriber() != null)
-            sb.append("NewSubscriber: " + getNewSubscriber());
+            sb.append("NewSubscriber: ").append(getNewSubscriber());
         sb.append("}");
         return sb.toString();
     }

@@ -218,13 +218,13 @@ public class ConstraintDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConstraintId() != null)
-            sb.append("ConstraintId: " + getConstraintId() + ",");
+            sb.append("ConstraintId: ").append(getConstraintId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner());
+            sb.append("Owner: ").append(getOwner());
         sb.append("}");
         return sb.toString();
     }

@@ -180,9 +180,9 @@ public class DescribeClusterVersionsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getClusterVersions() != null)
-            sb.append("ClusterVersions: " + getClusterVersions());
+            sb.append("ClusterVersions: ").append(getClusterVersions());
         sb.append("}");
         return sb.toString();
     }

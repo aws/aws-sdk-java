@@ -249,13 +249,13 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getContent() != null)
-            sb.append("Content: " + getContent() + ",");
+            sb.append("Content: ").append(getContent()).append(",");
         if (getDocumentType() != null)
-            sb.append("DocumentType: " + getDocumentType());
+            sb.append("DocumentType: ").append(getDocumentType());
         sb.append("}");
         return sb.toString();
     }

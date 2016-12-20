@@ -448,19 +448,19 @@ public class DecisionTask extends com.amazonaws.AmazonWebServiceResult<com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId() + ",");
+            sb.append("StartedEventId: ").append(getStartedEventId()).append(",");
         if (getWorkflowExecution() != null)
-            sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+            sb.append("WorkflowExecution: ").append(getWorkflowExecution()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken() + ",");
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getPreviousStartedEventId() != null)
-            sb.append("PreviousStartedEventId: " + getPreviousStartedEventId());
+            sb.append("PreviousStartedEventId: ").append(getPreviousStartedEventId());
         sb.append("}");
         return sb.toString();
     }

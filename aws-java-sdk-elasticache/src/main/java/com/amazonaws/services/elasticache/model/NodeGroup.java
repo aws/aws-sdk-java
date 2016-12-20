@@ -312,15 +312,15 @@ public class NodeGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNodeGroupId() != null)
-            sb.append("NodeGroupId: " + getNodeGroupId() + ",");
+            sb.append("NodeGroupId: ").append(getNodeGroupId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getPrimaryEndpoint() != null)
-            sb.append("PrimaryEndpoint: " + getPrimaryEndpoint() + ",");
+            sb.append("PrimaryEndpoint: ").append(getPrimaryEndpoint()).append(",");
         if (getSlots() != null)
-            sb.append("Slots: " + getSlots() + ",");
+            sb.append("Slots: ").append(getSlots()).append(",");
         if (getNodeGroupMembers() != null)
-            sb.append("NodeGroupMembers: " + getNodeGroupMembers());
+            sb.append("NodeGroupMembers: ").append(getNodeGroupMembers());
         sb.append("}");
         return sb.toString();
     }

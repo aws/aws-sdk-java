@@ -200,9 +200,9 @@ public class CreatePipelineResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipeline() != null)
-            sb.append("Pipeline: " + getPipeline() + ",");
+            sb.append("Pipeline: ").append(getPipeline()).append(",");
         if (getWarnings() != null)
-            sb.append("Warnings: " + getWarnings());
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }

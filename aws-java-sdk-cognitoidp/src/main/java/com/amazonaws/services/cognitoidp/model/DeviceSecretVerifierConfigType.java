@@ -126,9 +126,9 @@ public class DeviceSecretVerifierConfigType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPasswordVerifier() != null)
-            sb.append("PasswordVerifier: " + getPasswordVerifier() + ",");
+            sb.append("PasswordVerifier: ").append(getPasswordVerifier()).append(",");
         if (getSalt() != null)
-            sb.append("Salt: " + getSalt());
+            sb.append("Salt: ").append(getSalt());
         sb.append("}");
         return sb.toString();
     }

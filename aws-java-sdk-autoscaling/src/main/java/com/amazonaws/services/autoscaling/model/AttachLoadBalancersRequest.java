@@ -160,9 +160,9 @@ public class AttachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLoadBalancerNames() != null)
-            sb.append("LoadBalancerNames: " + getLoadBalancerNames());
+            sb.append("LoadBalancerNames: ").append(getLoadBalancerNames());
         sb.append("}");
         return sb.toString();
     }

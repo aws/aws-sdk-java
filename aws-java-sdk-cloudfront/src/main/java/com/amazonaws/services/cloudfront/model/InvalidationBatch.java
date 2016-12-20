@@ -312,9 +312,9 @@ public class InvalidationBatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPaths() != null)
-            sb.append("Paths: " + getPaths() + ",");
+            sb.append("Paths: ").append(getPaths()).append(",");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference());
+            sb.append("CallerReference: ").append(getCallerReference());
         sb.append("}");
         return sb.toString();
     }

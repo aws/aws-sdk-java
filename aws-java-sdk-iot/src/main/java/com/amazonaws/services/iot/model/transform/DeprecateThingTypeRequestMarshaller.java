@@ -61,10 +61,8 @@ public class DeprecateThingTypeRequestMarshaller implements Marshaller<Request<D
 
         String uriResourcePath = "/thing-types/{thingTypeName}/deprecate";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingTypeName}",
-                (deprecateThingTypeRequest.getThingTypeName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deprecateThingTypeRequest.getThingTypeName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingTypeName",
+                deprecateThingTypeRequest.getThingTypeName());
         request.setResourcePath(uriResourcePath);
 
         try {

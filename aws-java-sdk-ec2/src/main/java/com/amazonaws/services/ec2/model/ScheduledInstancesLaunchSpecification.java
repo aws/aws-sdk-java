@@ -838,33 +838,33 @@ public class ScheduledInstancesLaunchSpecification implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getUserData() != null)
-            sb.append("UserData: " + getUserData() + ",");
+            sb.append("UserData: ").append(getUserData()).append(",");
         if (getPlacement() != null)
-            sb.append("Placement: " + getPlacement() + ",");
+            sb.append("Placement: ").append(getPlacement()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getMonitoring() != null)
-            sb.append("Monitoring: " + getMonitoring() + ",");
+            sb.append("Monitoring: ").append(getMonitoring()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized());
+            sb.append("EbsOptimized: ").append(getEbsOptimized());
         sb.append("}");
         return sb.toString();
     }

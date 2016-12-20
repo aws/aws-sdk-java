@@ -209,11 +209,11 @@ public class Trace implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getSegments() != null)
-            sb.append("Segments: " + getSegments());
+            sb.append("Segments: ").append(getSegments());
         sb.append("}");
         return sb.toString();
     }

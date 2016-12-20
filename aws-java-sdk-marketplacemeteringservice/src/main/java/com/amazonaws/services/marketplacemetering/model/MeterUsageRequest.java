@@ -294,15 +294,15 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductCode() != null)
-            sb.append("ProductCode: " + getProductCode() + ",");
+            sb.append("ProductCode: ").append(getProductCode()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getUsageDimension() != null)
-            sb.append("UsageDimension: " + getUsageDimension() + ",");
+            sb.append("UsageDimension: ").append(getUsageDimension()).append(",");
         if (getUsageQuantity() != null)
-            sb.append("UsageQuantity: " + getUsageQuantity() + ",");
+            sb.append("UsageQuantity: ").append(getUsageQuantity()).append(",");
         if (getDryRun() != null)
-            sb.append("DryRun: " + getDryRun());
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }

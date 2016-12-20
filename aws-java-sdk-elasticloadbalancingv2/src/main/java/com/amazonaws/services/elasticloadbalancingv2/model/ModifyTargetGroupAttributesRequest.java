@@ -157,9 +157,9 @@ public class ModifyTargetGroupAttributesRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetGroupArn() != null)
-            sb.append("TargetGroupArn: " + getTargetGroupArn() + ",");
+            sb.append("TargetGroupArn: ").append(getTargetGroupArn()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

@@ -61,18 +61,9 @@ public class DeleteIntegrationRequestMarshaller implements Marshaller<Request<De
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (deleteIntegrationRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteIntegrationRequest.getRestApiId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (deleteIntegrationRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteIntegrationRequest.getResourceId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (deleteIntegrationRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteIntegrationRequest.getHttpMethod()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", deleteIntegrationRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", deleteIntegrationRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", deleteIntegrationRequest.getHttpMethod());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

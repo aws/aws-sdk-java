@@ -159,9 +159,9 @@ public class ApprovalResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSummary() != null)
-            sb.append("Summary: " + getSummary() + ",");
+            sb.append("Summary: ").append(getSummary()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

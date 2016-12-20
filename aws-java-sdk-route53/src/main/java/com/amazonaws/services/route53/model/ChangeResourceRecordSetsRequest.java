@@ -148,9 +148,9 @@ public class ChangeResourceRecordSetsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getChangeBatch() != null)
-            sb.append("ChangeBatch: " + getChangeBatch());
+            sb.append("ChangeBatch: ").append(getChangeBatch());
         sb.append("}");
         return sb.toString();
     }

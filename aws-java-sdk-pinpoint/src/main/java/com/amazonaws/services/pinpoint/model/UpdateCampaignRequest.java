@@ -116,11 +116,11 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCampaignId() != null)
-            sb.append("CampaignId: " + getCampaignId() + ",");
+            sb.append("CampaignId: ").append(getCampaignId()).append(",");
         if (getWriteCampaignRequest() != null)
-            sb.append("WriteCampaignRequest: " + getWriteCampaignRequest());
+            sb.append("WriteCampaignRequest: ").append(getWriteCampaignRequest());
         sb.append("}");
         return sb.toString();
     }

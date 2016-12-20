@@ -61,22 +61,10 @@ public class PutMethodResponseRequestMarshaller implements Marshaller<Request<Pu
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (putMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodResponseRequest.getRestApiId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (putMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodResponseRequest.getResourceId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (putMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodResponseRequest.getHttpMethod()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (putMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodResponseRequest.getStatusCode()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", putMethodResponseRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", putMethodResponseRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", putMethodResponseRequest.getHttpMethod());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code", putMethodResponseRequest.getStatusCode());
         request.setResourcePath(uriResourcePath);
 
         try {

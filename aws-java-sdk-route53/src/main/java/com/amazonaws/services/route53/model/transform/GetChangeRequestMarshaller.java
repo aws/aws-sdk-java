@@ -51,8 +51,7 @@ public class GetChangeRequestMarshaller implements Marshaller<Request<GetChangeR
 
         String uriResourcePath = "/2013-04-01/change/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (getChangeRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getChangeRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getChangeRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

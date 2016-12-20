@@ -518,33 +518,33 @@ public class ReplicationJob implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJobId() != null)
-            sb.append("ReplicationJobId: " + getReplicationJobId() + ",");
+            sb.append("ReplicationJobId: ").append(getReplicationJobId()).append(",");
         if (getServerId() != null)
-            sb.append("ServerId: " + getServerId() + ",");
+            sb.append("ServerId: ").append(getServerId()).append(",");
         if (getServerType() != null)
-            sb.append("ServerType: " + getServerType() + ",");
+            sb.append("ServerType: ").append(getServerType()).append(",");
         if (getVmServer() != null)
-            sb.append("VmServer: " + getVmServer() + ",");
+            sb.append("VmServer: ").append(getVmServer()).append(",");
         if (getSeedReplicationTime() != null)
-            sb.append("SeedReplicationTime: " + getSeedReplicationTime() + ",");
+            sb.append("SeedReplicationTime: ").append(getSeedReplicationTime()).append(",");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getNextReplicationRunStartTime() != null)
-            sb.append("NextReplicationRunStartTime: " + getNextReplicationRunStartTime() + ",");
+            sb.append("NextReplicationRunStartTime: ").append(getNextReplicationRunStartTime()).append(",");
         if (getLicenseType() != null)
-            sb.append("LicenseType: " + getLicenseType() + ",");
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getLatestAmiId() != null)
-            sb.append("LatestAmiId: " + getLatestAmiId() + ",");
+            sb.append("LatestAmiId: ").append(getLatestAmiId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getReplicationRunList() != null)
-            sb.append("ReplicationRunList: " + getReplicationRunList());
+            sb.append("ReplicationRunList: ").append(getReplicationRunList());
         sb.append("}");
         return sb.toString();
     }

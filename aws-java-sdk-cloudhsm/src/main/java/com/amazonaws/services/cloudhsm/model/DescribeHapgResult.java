@@ -547,23 +547,23 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHapgArn() != null)
-            sb.append("HapgArn: " + getHapgArn() + ",");
+            sb.append("HapgArn: ").append(getHapgArn()).append(",");
         if (getHapgSerial() != null)
-            sb.append("HapgSerial: " + getHapgSerial() + ",");
+            sb.append("HapgSerial: ").append(getHapgSerial()).append(",");
         if (getHsmsLastActionFailed() != null)
-            sb.append("HsmsLastActionFailed: " + getHsmsLastActionFailed() + ",");
+            sb.append("HsmsLastActionFailed: ").append(getHsmsLastActionFailed()).append(",");
         if (getHsmsPendingDeletion() != null)
-            sb.append("HsmsPendingDeletion: " + getHsmsPendingDeletion() + ",");
+            sb.append("HsmsPendingDeletion: ").append(getHsmsPendingDeletion()).append(",");
         if (getHsmsPendingRegistration() != null)
-            sb.append("HsmsPendingRegistration: " + getHsmsPendingRegistration() + ",");
+            sb.append("HsmsPendingRegistration: ").append(getHsmsPendingRegistration()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getLastModifiedTimestamp() != null)
-            sb.append("LastModifiedTimestamp: " + getLastModifiedTimestamp() + ",");
+            sb.append("LastModifiedTimestamp: ").append(getLastModifiedTimestamp()).append(",");
         if (getPartitionSerialList() != null)
-            sb.append("PartitionSerialList: " + getPartitionSerialList() + ",");
+            sb.append("PartitionSerialList: ").append(getPartitionSerialList()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

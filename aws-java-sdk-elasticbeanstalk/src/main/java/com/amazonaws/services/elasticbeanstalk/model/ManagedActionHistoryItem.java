@@ -501,21 +501,21 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionId() != null)
-            sb.append("ActionId: " + getActionId() + ",");
+            sb.append("ActionId: ").append(getActionId()).append(",");
         if (getActionType() != null)
-            sb.append("ActionType: " + getActionType() + ",");
+            sb.append("ActionType: ").append(getActionType()).append(",");
         if (getActionDescription() != null)
-            sb.append("ActionDescription: " + getActionDescription() + ",");
+            sb.append("ActionDescription: ").append(getActionDescription()).append(",");
         if (getFailureType() != null)
-            sb.append("FailureType: " + getFailureType() + ",");
+            sb.append("FailureType: ").append(getFailureType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getFailureDescription() != null)
-            sb.append("FailureDescription: " + getFailureDescription() + ",");
+            sb.append("FailureDescription: ").append(getFailureDescription()).append(",");
         if (getExecutedTime() != null)
-            sb.append("ExecutedTime: " + getExecutedTime() + ",");
+            sb.append("ExecutedTime: ").append(getExecutedTime()).append(",");
         if (getFinishedTime() != null)
-            sb.append("FinishedTime: " + getFinishedTime());
+            sb.append("FinishedTime: ").append(getFinishedTime());
         sb.append("}");
         return sb.toString();
     }

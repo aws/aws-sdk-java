@@ -113,7 +113,7 @@ public class PatchRuleGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchRules() != null)
-            sb.append("PatchRules: " + getPatchRules());
+            sb.append("PatchRules: ").append(getPatchRules());
         sb.append("}");
         return sb.toString();
     }

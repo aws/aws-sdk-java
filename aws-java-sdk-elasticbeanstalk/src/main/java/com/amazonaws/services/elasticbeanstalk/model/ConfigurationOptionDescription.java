@@ -1174,27 +1174,27 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getChangeSeverity() != null)
-            sb.append("ChangeSeverity: " + getChangeSeverity() + ",");
+            sb.append("ChangeSeverity: ").append(getChangeSeverity()).append(",");
         if (getUserDefined() != null)
-            sb.append("UserDefined: " + getUserDefined() + ",");
+            sb.append("UserDefined: ").append(getUserDefined()).append(",");
         if (getValueType() != null)
-            sb.append("ValueType: " + getValueType() + ",");
+            sb.append("ValueType: ").append(getValueType()).append(",");
         if (getValueOptions() != null)
-            sb.append("ValueOptions: " + getValueOptions() + ",");
+            sb.append("ValueOptions: ").append(getValueOptions()).append(",");
         if (getMinValue() != null)
-            sb.append("MinValue: " + getMinValue() + ",");
+            sb.append("MinValue: ").append(getMinValue()).append(",");
         if (getMaxValue() != null)
-            sb.append("MaxValue: " + getMaxValue() + ",");
+            sb.append("MaxValue: ").append(getMaxValue()).append(",");
         if (getMaxLength() != null)
-            sb.append("MaxLength: " + getMaxLength() + ",");
+            sb.append("MaxLength: ").append(getMaxLength()).append(",");
         if (getRegex() != null)
-            sb.append("Regex: " + getRegex());
+            sb.append("Regex: ").append(getRegex());
         sb.append("}");
         return sb.toString();
     }

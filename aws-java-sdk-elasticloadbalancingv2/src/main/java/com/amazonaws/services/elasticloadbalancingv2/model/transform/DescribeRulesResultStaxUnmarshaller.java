@@ -45,6 +45,11 @@ public class DescribeRulesResultStaxUnmarshaller implements Unmarshaller<Describ
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Rules", targetDepth)) {
+                    describeRulesResult.withRules(new ArrayList<Rule>());
+                    continue;
+                }
+
                 if (context.testExpression("Rules/member", targetDepth)) {
                     describeRulesResult.withRules(RuleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -273,13 +273,13 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBackupId() != null)
-            sb.append("BackupId: " + getBackupId() + ",");
+            sb.append("BackupId: ").append(getBackupId()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

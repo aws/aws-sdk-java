@@ -161,9 +161,9 @@ public class DBParameterGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getParameterApplyStatus() != null)
-            sb.append("ParameterApplyStatus: " + getParameterApplyStatus());
+            sb.append("ParameterApplyStatus: ").append(getParameterApplyStatus());
         sb.append("}");
         return sb.toString();
     }

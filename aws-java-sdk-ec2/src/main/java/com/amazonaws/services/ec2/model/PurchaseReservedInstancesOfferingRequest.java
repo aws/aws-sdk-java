@@ -215,11 +215,11 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesOfferingId() != null)
-            sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");
+            sb.append("ReservedInstancesOfferingId: ").append(getReservedInstancesOfferingId()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getLimitPrice() != null)
-            sb.append("LimitPrice: " + getLimitPrice());
+            sb.append("LimitPrice: ").append(getLimitPrice());
         sb.append("}");
         return sb.toString();
     }

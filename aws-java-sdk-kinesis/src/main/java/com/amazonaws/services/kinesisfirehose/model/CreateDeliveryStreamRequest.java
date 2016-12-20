@@ -241,13 +241,13 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getS3DestinationConfiguration() != null)
-            sb.append("S3DestinationConfiguration: " + getS3DestinationConfiguration() + ",");
+            sb.append("S3DestinationConfiguration: ").append(getS3DestinationConfiguration()).append(",");
         if (getRedshiftDestinationConfiguration() != null)
-            sb.append("RedshiftDestinationConfiguration: " + getRedshiftDestinationConfiguration() + ",");
+            sb.append("RedshiftDestinationConfiguration: ").append(getRedshiftDestinationConfiguration()).append(",");
         if (getElasticsearchDestinationConfiguration() != null)
-            sb.append("ElasticsearchDestinationConfiguration: " + getElasticsearchDestinationConfiguration());
+            sb.append("ElasticsearchDestinationConfiguration: ").append(getElasticsearchDestinationConfiguration());
         sb.append("}");
         return sb.toString();
     }

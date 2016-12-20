@@ -196,9 +196,9 @@ public class ListPublicKeysResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicKeyList() != null)
-            sb.append("PublicKeyList: " + getPublicKeyList() + ",");
+            sb.append("PublicKeyList: ").append(getPublicKeyList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

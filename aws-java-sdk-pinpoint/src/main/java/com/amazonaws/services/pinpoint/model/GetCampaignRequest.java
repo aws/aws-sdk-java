@@ -88,9 +88,9 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCampaignId() != null)
-            sb.append("CampaignId: " + getCampaignId());
+            sb.append("CampaignId: ").append(getCampaignId());
         sb.append("}");
         return sb.toString();
     }

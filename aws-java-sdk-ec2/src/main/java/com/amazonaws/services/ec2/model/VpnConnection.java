@@ -680,25 +680,25 @@ public class VpnConnection implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnConnectionId() != null)
-            sb.append("VpnConnectionId: " + getVpnConnectionId() + ",");
+            sb.append("VpnConnectionId: ").append(getVpnConnectionId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getCustomerGatewayConfiguration() != null)
-            sb.append("CustomerGatewayConfiguration: " + getCustomerGatewayConfiguration() + ",");
+            sb.append("CustomerGatewayConfiguration: ").append(getCustomerGatewayConfiguration()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getCustomerGatewayId() != null)
-            sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");
+            sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
         if (getVpnGatewayId() != null)
-            sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
+            sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVgwTelemetry() != null)
-            sb.append("VgwTelemetry: " + getVgwTelemetry() + ",");
+            sb.append("VgwTelemetry: ").append(getVgwTelemetry()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions() + ",");
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getRoutes() != null)
-            sb.append("Routes: " + getRoutes());
+            sb.append("Routes: ").append(getRoutes());
         sb.append("}");
         return sb.toString();
     }

@@ -294,15 +294,15 @@ public class DeviceType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey() + ",");
+            sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getDeviceAttributes() != null)
-            sb.append("DeviceAttributes: " + getDeviceAttributes() + ",");
+            sb.append("DeviceAttributes: ").append(getDeviceAttributes()).append(",");
         if (getDeviceCreateDate() != null)
-            sb.append("DeviceCreateDate: " + getDeviceCreateDate() + ",");
+            sb.append("DeviceCreateDate: ").append(getDeviceCreateDate()).append(",");
         if (getDeviceLastModifiedDate() != null)
-            sb.append("DeviceLastModifiedDate: " + getDeviceLastModifiedDate() + ",");
+            sb.append("DeviceLastModifiedDate: ").append(getDeviceLastModifiedDate()).append(",");
         if (getDeviceLastAuthenticatedDate() != null)
-            sb.append("DeviceLastAuthenticatedDate: " + getDeviceLastAuthenticatedDate());
+            sb.append("DeviceLastAuthenticatedDate: ").append(getDeviceLastAuthenticatedDate());
         sb.append("}");
         return sb.toString();
     }

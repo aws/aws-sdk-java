@@ -264,15 +264,15 @@ public class Stack implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime());
         sb.append("}");
         return sb.toString();
     }

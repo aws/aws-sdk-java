@@ -104,7 +104,7 @@ public class GetAccountSummaryResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSummaryMap() != null)
-            sb.append("SummaryMap: " + getSummaryMap());
+            sb.append("SummaryMap: ").append(getSummaryMap());
         sb.append("}");
         return sb.toString();
     }

@@ -173,9 +173,9 @@ public class ListClustersResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterListEntries() != null)
-            sb.append("ClusterListEntries: " + getClusterListEntries() + ",");
+            sb.append("ClusterListEntries: ").append(getClusterListEntries()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

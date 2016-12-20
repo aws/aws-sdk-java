@@ -227,9 +227,9 @@ public class DeactivateMFADeviceRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber());
+            sb.append("SerialNumber: ").append(getSerialNumber());
         sb.append("}");
         return sb.toString();
     }

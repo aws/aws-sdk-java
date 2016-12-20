@@ -349,9 +349,9 @@ public class Compliance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: " + getComplianceType() + ",");
+            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
         if (getComplianceContributorCount() != null)
-            sb.append("ComplianceContributorCount: " + getComplianceContributorCount());
+            sb.append("ComplianceContributorCount: ").append(getComplianceContributorCount());
         sb.append("}");
         return sb.toString();
     }

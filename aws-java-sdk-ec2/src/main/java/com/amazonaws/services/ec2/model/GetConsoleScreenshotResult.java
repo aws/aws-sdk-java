@@ -127,9 +127,9 @@ public class GetConsoleScreenshotResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getImageData() != null)
-            sb.append("ImageData: " + getImageData());
+            sb.append("ImageData: ").append(getImageData());
         sb.append("}");
         return sb.toString();
     }

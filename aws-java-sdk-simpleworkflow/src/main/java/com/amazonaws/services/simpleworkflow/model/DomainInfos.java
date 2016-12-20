@@ -188,9 +188,9 @@ public class DomainInfos extends com.amazonaws.AmazonWebServiceResult<com.amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainInfos() != null)
-            sb.append("DomainInfos: " + getDomainInfos() + ",");
+            sb.append("DomainInfos: ").append(getDomainInfos()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

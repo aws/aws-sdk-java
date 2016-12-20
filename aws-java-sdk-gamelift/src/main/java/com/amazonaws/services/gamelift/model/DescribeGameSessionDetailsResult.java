@@ -172,9 +172,9 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionDetails() != null)
-            sb.append("GameSessionDetails: " + getGameSessionDetails() + ",");
+            sb.append("GameSessionDetails: ").append(getGameSessionDetails()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

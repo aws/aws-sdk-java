@@ -59,7 +59,7 @@ public class UpdateGcmChannelResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGCMChannelResponse() != null)
-            sb.append("GCMChannelResponse: " + getGCMChannelResponse());
+            sb.append("GCMChannelResponse: ").append(getGCMChannelResponse());
         sb.append("}");
         return sb.toString();
     }

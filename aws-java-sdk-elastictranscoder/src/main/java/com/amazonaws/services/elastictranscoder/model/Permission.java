@@ -608,11 +608,11 @@ public class Permission implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGranteeType() != null)
-            sb.append("GranteeType: " + getGranteeType() + ",");
+            sb.append("GranteeType: ").append(getGranteeType()).append(",");
         if (getGrantee() != null)
-            sb.append("Grantee: " + getGrantee() + ",");
+            sb.append("Grantee: ").append(getGrantee()).append(",");
         if (getAccess() != null)
-            sb.append("Access: " + getAccess());
+            sb.append("Access: ").append(getAccess());
         sb.append("}");
         return sb.toString();
     }

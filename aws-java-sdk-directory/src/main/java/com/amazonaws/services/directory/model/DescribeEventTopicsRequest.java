@@ -199,9 +199,9 @@ public class DescribeEventTopicsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getTopicNames() != null)
-            sb.append("TopicNames: " + getTopicNames());
+            sb.append("TopicNames: ").append(getTopicNames());
         sb.append("}");
         return sb.toString();
     }

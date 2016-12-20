@@ -251,7 +251,7 @@ public class ModifyDBClusterParameterGroupResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName());
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName());
         sb.append("}");
         return sb.toString();
     }

@@ -100,6 +100,11 @@ public class ReservedCacheNodeStaxUnmarshaller implements Unmarshaller<ReservedC
                     continue;
                 }
 
+                if (context.testExpression("RecurringCharges", targetDepth)) {
+                    reservedCacheNode.withRecurringCharges(new ArrayList<RecurringCharge>());
+                    continue;
+                }
+
                 if (context.testExpression("RecurringCharges/RecurringCharge", targetDepth)) {
                     reservedCacheNode.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

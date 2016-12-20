@@ -217,7 +217,7 @@ public class GetXssMatchSetResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSet() != null)
-            sb.append("XssMatchSet: " + getXssMatchSet());
+            sb.append("XssMatchSet: ").append(getXssMatchSet());
         sb.append("}");
         return sb.toString();
     }

@@ -507,17 +507,17 @@ public class TerminateWorkflowExecutionRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId() + ",");
+            sb.append("RunId: ").append(getRunId()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails() + ",");
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getChildPolicy() != null)
-            sb.append("ChildPolicy: " + getChildPolicy());
+            sb.append("ChildPolicy: ").append(getChildPolicy());
         sb.append("}");
         return sb.toString();
     }

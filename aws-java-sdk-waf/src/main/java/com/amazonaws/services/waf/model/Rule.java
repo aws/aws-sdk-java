@@ -341,13 +341,13 @@ public class Rule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleId() != null)
-            sb.append("RuleId: " + getRuleId() + ",");
+            sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getPredicates() != null)
-            sb.append("Predicates: " + getPredicates());
+            sb.append("Predicates: ").append(getPredicates());
         sb.append("}");
         return sb.toString();
     }

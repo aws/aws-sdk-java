@@ -164,9 +164,9 @@ public class ListDocumentVersionsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocumentVersions() != null)
-            sb.append("DocumentVersions: " + getDocumentVersions() + ",");
+            sb.append("DocumentVersions: ").append(getDocumentVersions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

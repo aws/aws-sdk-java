@@ -61,8 +61,7 @@ public class UpdateApiKeyRequestMarshaller implements Marshaller<Request<UpdateA
 
         String uriResourcePath = "/apikeys/{api_Key}";
 
-        uriResourcePath = uriResourcePath.replace("{api_Key}",
-                (updateApiKeyRequest.getApiKey() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateApiKeyRequest.getApiKey()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "api_Key", updateApiKeyRequest.getApiKey());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -157,9 +157,9 @@ public class DescribeActivationsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivationList() != null)
-            sb.append("ActivationList: " + getActivationList() + ",");
+            sb.append("ActivationList: ").append(getActivationList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -389,19 +389,19 @@ public class UpdateMaintenanceWindowResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId() + ",");
+            sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSchedule() != null)
-            sb.append("Schedule: " + getSchedule() + ",");
+            sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getCutoff() != null)
-            sb.append("Cutoff: " + getCutoff() + ",");
+            sb.append("Cutoff: ").append(getCutoff()).append(",");
         if (getAllowUnassociatedTargets() != null)
-            sb.append("AllowUnassociatedTargets: " + getAllowUnassociatedTargets() + ",");
+            sb.append("AllowUnassociatedTargets: ").append(getAllowUnassociatedTargets()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }

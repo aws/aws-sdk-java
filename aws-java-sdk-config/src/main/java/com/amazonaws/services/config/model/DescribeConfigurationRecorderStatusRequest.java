@@ -123,7 +123,7 @@ public class DescribeConfigurationRecorderStatusRequest extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationRecorderNames() != null)
-            sb.append("ConfigurationRecorderNames: " + getConfigurationRecorderNames());
+            sb.append("ConfigurationRecorderNames: ").append(getConfigurationRecorderNames());
         sb.append("}");
         return sb.toString();
     }

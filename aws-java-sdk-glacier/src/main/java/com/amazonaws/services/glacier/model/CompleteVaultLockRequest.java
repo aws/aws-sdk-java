@@ -197,11 +197,11 @@ public class CompleteVaultLockRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getLockId() != null)
-            sb.append("LockId: " + getLockId());
+            sb.append("LockId: ").append(getLockId());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribeLoadBalancerPolicyTypesResultStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("PolicyTypeDescriptions", targetDepth)) {
+                    describeLoadBalancerPolicyTypesResult.withPolicyTypeDescriptions(new ArrayList<PolicyTypeDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyTypeDescriptions/member", targetDepth)) {
                     describeLoadBalancerPolicyTypesResult.withPolicyTypeDescriptions(PolicyTypeDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

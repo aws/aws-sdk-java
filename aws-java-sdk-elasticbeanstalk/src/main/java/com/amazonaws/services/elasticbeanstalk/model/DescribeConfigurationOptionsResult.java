@@ -159,9 +159,9 @@ public class DescribeConfigurationOptionsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions());
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }

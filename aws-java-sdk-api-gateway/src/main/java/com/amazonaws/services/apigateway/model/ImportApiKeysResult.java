@@ -186,9 +186,9 @@ public class ImportApiKeysResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIds() != null)
-            sb.append("Ids: " + getIds() + ",");
+            sb.append("Ids: ").append(getIds()).append(",");
         if (getWarnings() != null)
-            sb.append("Warnings: " + getWarnings());
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }

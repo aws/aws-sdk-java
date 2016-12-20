@@ -296,15 +296,15 @@ public class CreateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getApiStages() != null)
-            sb.append("ApiStages: " + getApiStages() + ",");
+            sb.append("ApiStages: ").append(getApiStages()).append(",");
         if (getThrottle() != null)
-            sb.append("Throttle: " + getThrottle() + ",");
+            sb.append("Throttle: ").append(getThrottle()).append(",");
         if (getQuota() != null)
-            sb.append("Quota: " + getQuota());
+            sb.append("Quota: ").append(getQuota());
         sb.append("}");
         return sb.toString();
     }

@@ -61,13 +61,8 @@ public class UpdateUsageRequestMarshaller implements Marshaller<Request<UpdateUs
 
         String uriResourcePath = "/usageplans/{usageplanId}/keys/{keyId}/usage";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{usageplanId}",
-                        (updateUsageRequest.getUsagePlanId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateUsageRequest.getUsagePlanId()),
-                                false) : "");
-        uriResourcePath = uriResourcePath.replace("{keyId}",
-                (updateUsageRequest.getKeyId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateUsageRequest.getKeyId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId", updateUsageRequest.getUsagePlanId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "keyId", updateUsageRequest.getKeyId());
         request.setResourcePath(uriResourcePath);
 
         try {

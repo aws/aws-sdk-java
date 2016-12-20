@@ -509,23 +509,23 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getScheduledActionName() != null)
-            sb.append("ScheduledActionName: " + getScheduledActionName() + ",");
+            sb.append("ScheduledActionName: ").append(getScheduledActionName()).append(",");
         if (getTime() != null)
-            sb.append("Time: " + getTime() + ",");
+            sb.append("Time: ").append(getTime()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getRecurrence() != null)
-            sb.append("Recurrence: " + getRecurrence() + ",");
+            sb.append("Recurrence: ").append(getRecurrence()).append(",");
         if (getMinSize() != null)
-            sb.append("MinSize: " + getMinSize() + ",");
+            sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
-            sb.append("MaxSize: " + getMaxSize() + ",");
+            sb.append("MaxSize: ").append(getMaxSize()).append(",");
         if (getDesiredCapacity() != null)
-            sb.append("DesiredCapacity: " + getDesiredCapacity());
+            sb.append("DesiredCapacity: ").append(getDesiredCapacity());
         sb.append("}");
         return sb.toString();
     }

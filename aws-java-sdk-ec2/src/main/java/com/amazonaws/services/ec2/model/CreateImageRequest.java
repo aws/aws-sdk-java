@@ -390,15 +390,15 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getNoReboot() != null)
-            sb.append("NoReboot: " + getNoReboot() + ",");
+            sb.append("NoReboot: ").append(getNoReboot()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings());
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings());
         sb.append("}");
         return sb.toString();
     }

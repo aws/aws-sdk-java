@@ -173,11 +173,11 @@ public class TransferCertificateRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getTargetAwsAccount() != null)
-            sb.append("TargetAwsAccount: " + getTargetAwsAccount() + ",");
+            sb.append("TargetAwsAccount: ").append(getTargetAwsAccount()).append(",");
         if (getTransferMessage() != null)
-            sb.append("TransferMessage: " + getTransferMessage());
+            sb.append("TransferMessage: ").append(getTransferMessage());
         sb.append("}");
         return sb.toString();
     }

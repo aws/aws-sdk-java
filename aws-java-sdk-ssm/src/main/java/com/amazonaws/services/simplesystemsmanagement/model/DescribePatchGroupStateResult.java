@@ -308,17 +308,17 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getInstancesWithInstalledPatches() != null)
-            sb.append("InstancesWithInstalledPatches: " + getInstancesWithInstalledPatches() + ",");
+            sb.append("InstancesWithInstalledPatches: ").append(getInstancesWithInstalledPatches()).append(",");
         if (getInstancesWithInstalledOtherPatches() != null)
-            sb.append("InstancesWithInstalledOtherPatches: " + getInstancesWithInstalledOtherPatches() + ",");
+            sb.append("InstancesWithInstalledOtherPatches: ").append(getInstancesWithInstalledOtherPatches()).append(",");
         if (getInstancesWithMissingPatches() != null)
-            sb.append("InstancesWithMissingPatches: " + getInstancesWithMissingPatches() + ",");
+            sb.append("InstancesWithMissingPatches: ").append(getInstancesWithMissingPatches()).append(",");
         if (getInstancesWithFailedPatches() != null)
-            sb.append("InstancesWithFailedPatches: " + getInstancesWithFailedPatches() + ",");
+            sb.append("InstancesWithFailedPatches: ").append(getInstancesWithFailedPatches()).append(",");
         if (getInstancesWithNotApplicablePatches() != null)
-            sb.append("InstancesWithNotApplicablePatches: " + getInstancesWithNotApplicablePatches());
+            sb.append("InstancesWithNotApplicablePatches: ").append(getInstancesWithNotApplicablePatches());
         sb.append("}");
         return sb.toString();
     }

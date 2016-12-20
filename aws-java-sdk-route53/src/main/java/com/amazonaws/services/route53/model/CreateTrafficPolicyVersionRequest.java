@@ -187,11 +187,11 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDocument() != null)
-            sb.append("Document: " + getDocument() + ",");
+            sb.append("Document: ").append(getDocument()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment());
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }

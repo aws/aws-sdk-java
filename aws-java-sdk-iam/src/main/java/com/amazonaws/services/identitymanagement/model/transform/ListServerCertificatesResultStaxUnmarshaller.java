@@ -45,6 +45,11 @@ public class ListServerCertificatesResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ServerCertificateMetadataList", targetDepth)) {
+                    listServerCertificatesResult.withServerCertificateMetadataList(new ArrayList<ServerCertificateMetadata>());
+                    continue;
+                }
+
                 if (context.testExpression("ServerCertificateMetadataList/member", targetDepth)) {
                     listServerCertificatesResult.withServerCertificateMetadataList(ServerCertificateMetadataStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

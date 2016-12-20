@@ -172,11 +172,11 @@ public class ClusterNode implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNodeRole() != null)
-            sb.append("NodeRole: " + getNodeRole() + ",");
+            sb.append("NodeRole: ").append(getNodeRole()).append(",");
         if (getPrivateIPAddress() != null)
-            sb.append("PrivateIPAddress: " + getPrivateIPAddress() + ",");
+            sb.append("PrivateIPAddress: ").append(getPrivateIPAddress()).append(",");
         if (getPublicIPAddress() != null)
-            sb.append("PublicIPAddress: " + getPublicIPAddress());
+            sb.append("PublicIPAddress: ").append(getPublicIPAddress());
         sb.append("}");
         return sb.toString();
     }

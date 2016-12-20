@@ -188,11 +188,11 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateIdentifier() != null)
-            sb.append("CertificateIdentifier: " + getCertificateIdentifier() + ",");
+            sb.append("CertificateIdentifier: ").append(getCertificateIdentifier()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: " + getCertificatePem() + ",");
+            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
         if (getCertificateWallet() != null)
-            sb.append("CertificateWallet: " + getCertificateWallet());
+            sb.append("CertificateWallet: ").append(getCertificateWallet());
         sb.append("}");
         return sb.toString();
     }

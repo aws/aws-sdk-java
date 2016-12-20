@@ -1072,35 +1072,35 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesOfferingId() != null)
-            sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");
+            sb.append("ReservedInstancesOfferingId: ").append(getReservedInstancesOfferingId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getUsagePrice() != null)
-            sb.append("UsagePrice: " + getUsagePrice() + ",");
+            sb.append("UsagePrice: ").append(getUsagePrice()).append(",");
         if (getFixedPrice() != null)
-            sb.append("FixedPrice: " + getFixedPrice() + ",");
+            sb.append("FixedPrice: ").append(getFixedPrice()).append(",");
         if (getProductDescription() != null)
-            sb.append("ProductDescription: " + getProductDescription() + ",");
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType() + ",");
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges() + ",");
+            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
         if (getMarketplace() != null)
-            sb.append("Marketplace: " + getMarketplace() + ",");
+            sb.append("Marketplace: ").append(getMarketplace()).append(",");
         if (getPricingDetails() != null)
-            sb.append("PricingDetails: " + getPricingDetails() + ",");
+            sb.append("PricingDetails: ").append(getPricingDetails()).append(",");
         if (getOfferingClass() != null)
-            sb.append("OfferingClass: " + getOfferingClass() + ",");
+            sb.append("OfferingClass: ").append(getOfferingClass()).append(",");
         if (getScope() != null)
-            sb.append("Scope: " + getScope());
+            sb.append("Scope: ").append(getScope());
         sb.append("}");
         return sb.toString();
     }

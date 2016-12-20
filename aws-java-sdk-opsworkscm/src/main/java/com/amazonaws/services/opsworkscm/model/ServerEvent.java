@@ -218,13 +218,13 @@ public class ServerEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getLogUrl() != null)
-            sb.append("LogUrl: " + getLogUrl());
+            sb.append("LogUrl: ").append(getLogUrl());
         sb.append("}");
         return sb.toString();
     }

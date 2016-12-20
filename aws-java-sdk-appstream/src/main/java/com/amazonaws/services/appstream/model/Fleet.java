@@ -705,31 +705,31 @@ public class Fleet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getImageName() != null)
-            sb.append("ImageName: " + getImageName() + ",");
+            sb.append("ImageName: ").append(getImageName()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getComputeCapacityStatus() != null)
-            sb.append("ComputeCapacityStatus: " + getComputeCapacityStatus() + ",");
+            sb.append("ComputeCapacityStatus: ").append(getComputeCapacityStatus()).append(",");
         if (getMaxUserDurationInSeconds() != null)
-            sb.append("MaxUserDurationInSeconds: " + getMaxUserDurationInSeconds() + ",");
+            sb.append("MaxUserDurationInSeconds: ").append(getMaxUserDurationInSeconds()).append(",");
         if (getDisconnectTimeoutInSeconds() != null)
-            sb.append("DisconnectTimeoutInSeconds: " + getDisconnectTimeoutInSeconds() + ",");
+            sb.append("DisconnectTimeoutInSeconds: ").append(getDisconnectTimeoutInSeconds()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig() + ",");
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getFleetErrors() != null)
-            sb.append("FleetErrors: " + getFleetErrors());
+            sb.append("FleetErrors: ").append(getFleetErrors());
         sb.append("}");
         return sb.toString();
     }

@@ -124,9 +124,9 @@ public class ScheduleKeyDeletionResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getDeletionDate() != null)
-            sb.append("DeletionDate: " + getDeletionDate());
+            sb.append("DeletionDate: ").append(getDeletionDate());
         sb.append("}");
         return sb.toString();
     }

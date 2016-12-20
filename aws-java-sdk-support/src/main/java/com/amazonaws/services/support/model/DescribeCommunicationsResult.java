@@ -159,9 +159,9 @@ public class DescribeCommunicationsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommunications() != null)
-            sb.append("Communications: " + getCommunications() + ",");
+            sb.append("Communications: ").append(getCommunications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

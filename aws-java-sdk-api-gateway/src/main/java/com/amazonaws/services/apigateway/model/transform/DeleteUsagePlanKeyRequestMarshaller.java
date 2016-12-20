@@ -61,13 +61,9 @@ public class DeleteUsagePlanKeyRequestMarshaller implements Marshaller<Request<D
 
         String uriResourcePath = "/usageplans/{usageplanId}/keys/{keyId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{usageplanId}",
-                (deleteUsagePlanKeyRequest.getUsagePlanId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteUsagePlanKeyRequest.getUsagePlanId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{keyId}",
-                (deleteUsagePlanKeyRequest.getKeyId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteUsagePlanKeyRequest.getKeyId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId",
+                deleteUsagePlanKeyRequest.getUsagePlanId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "keyId", deleteUsagePlanKeyRequest.getKeyId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

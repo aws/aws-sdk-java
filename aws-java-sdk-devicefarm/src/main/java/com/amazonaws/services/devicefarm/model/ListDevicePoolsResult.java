@@ -166,9 +166,9 @@ public class ListDevicePoolsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevicePools() != null)
-            sb.append("DevicePools: " + getDevicePools() + ",");
+            sb.append("DevicePools: ").append(getDevicePools()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

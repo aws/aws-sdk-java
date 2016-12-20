@@ -45,6 +45,11 @@ public class CreateTargetGroupResultStaxUnmarshaller implements Unmarshaller<Cre
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TargetGroups", targetDepth)) {
+                    createTargetGroupResult.withTargetGroups(new ArrayList<TargetGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("TargetGroups/member", targetDepth)) {
                     createTargetGroupResult.withTargetGroups(TargetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

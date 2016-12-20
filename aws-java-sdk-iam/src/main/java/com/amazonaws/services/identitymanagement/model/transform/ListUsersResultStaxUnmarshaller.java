@@ -45,6 +45,11 @@ public class ListUsersResultStaxUnmarshaller implements Unmarshaller<ListUsersRe
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Users", targetDepth)) {
+                    listUsersResult.withUsers(new ArrayList<User>());
+                    continue;
+                }
+
                 if (context.testExpression("Users/member", targetDepth)) {
                     listUsersResult.withUsers(UserStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

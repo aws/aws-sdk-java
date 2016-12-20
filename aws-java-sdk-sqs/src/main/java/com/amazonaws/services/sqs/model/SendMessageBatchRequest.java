@@ -22,7 +22,7 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which batched messages are sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -31,7 +31,7 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
     private String queueUrl;
     /**
      * <p>
-     * A list of <a>SendMessageBatchRequestEntry</a> items.
+     * A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SendMessageBatchRequestEntry> entries;
@@ -48,7 +48,7 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
      * to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which batched messages are sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -61,11 +61,11 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
      * to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which batched messages are sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param entries
-     *        A list of <a>SendMessageBatchRequestEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      */
     public SendMessageBatchRequest(String queueUrl, java.util.List<SendMessageBatchRequestEntry> entries) {
         setQueueUrl(queueUrl);
@@ -74,14 +74,14 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which batched messages are sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which batched messages are sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -92,13 +92,13 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which batched messages are sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue to which batched messages are sent.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -109,14 +109,14 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which batched messages are sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which batched messages are sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -129,10 +129,10 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchRequestEntry</a> items.
+     * A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * </p>
      * 
-     * @return A list of <a>SendMessageBatchRequestEntry</a> items.
+     * @return A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      */
 
     public java.util.List<SendMessageBatchRequestEntry> getEntries() {
@@ -144,11 +144,11 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchRequestEntry</a> items.
+     * A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * </p>
      * 
      * @param entries
-     *        A list of <a>SendMessageBatchRequestEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      */
 
     public void setEntries(java.util.Collection<SendMessageBatchRequestEntry> entries) {
@@ -162,7 +162,7 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchRequestEntry</a> items.
+     * A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +171,7 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param entries
-     *        A list of <a>SendMessageBatchRequestEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchRequestEntry</a> items.
+     * A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * </p>
      * 
      * @param entries
-     *        A list of <a>SendMessageBatchRequestEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,9 +212,9 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getEntries() != null)
-            sb.append("Entries: " + getEntries());
+            sb.append("Entries: ").append(getEntries());
         sb.append("}");
         return sb.toString();
     }

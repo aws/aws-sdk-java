@@ -1160,9 +1160,9 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAclIds() != null)
-            sb.append("NetworkAclIds: " + getNetworkAclIds() + ",");
+            sb.append("NetworkAclIds: ").append(getNetworkAclIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

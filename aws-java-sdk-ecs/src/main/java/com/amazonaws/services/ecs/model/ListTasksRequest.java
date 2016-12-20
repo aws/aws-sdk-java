@@ -679,21 +679,21 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getContainerInstance() != null)
-            sb.append("ContainerInstance: " + getContainerInstance() + ",");
+            sb.append("ContainerInstance: ").append(getContainerInstance()).append(",");
         if (getFamily() != null)
-            sb.append("Family: " + getFamily() + ",");
+            sb.append("Family: ").append(getFamily()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: " + getStartedBy() + ",");
+            sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: " + getServiceName() + ",");
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getDesiredStatus() != null)
-            sb.append("DesiredStatus: " + getDesiredStatus());
+            sb.append("DesiredStatus: ").append(getDesiredStatus());
         sb.append("}");
         return sb.toString();
     }

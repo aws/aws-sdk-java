@@ -298,11 +298,11 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTemplateBody() != null)
-            sb.append("TemplateBody: " + getTemplateBody() + ",");
+            sb.append("TemplateBody: ").append(getTemplateBody()).append(",");
         if (getTemplateURL() != null)
-            sb.append("TemplateURL: " + getTemplateURL() + ",");
+            sb.append("TemplateURL: ").append(getTemplateURL()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

@@ -113,7 +113,7 @@ public class DescribeDeliveryChannelsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryChannels() != null)
-            sb.append("DeliveryChannels: " + getDeliveryChannels());
+            sb.append("DeliveryChannels: ").append(getDeliveryChannels());
         sb.append("}");
         return sb.toString();
     }

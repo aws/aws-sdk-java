@@ -125,9 +125,9 @@ public class AbortEnvironmentUpdateRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName());
+            sb.append("EnvironmentName: ").append(getEnvironmentName());
         sb.append("}");
         return sb.toString();
     }

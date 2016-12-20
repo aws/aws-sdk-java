@@ -127,7 +127,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportTaskIds() != null)
-            sb.append("ExportTaskIds: " + getExportTaskIds());
+            sb.append("ExportTaskIds: ").append(getExportTaskIds());
         sb.append("}");
         return sb.toString();
     }

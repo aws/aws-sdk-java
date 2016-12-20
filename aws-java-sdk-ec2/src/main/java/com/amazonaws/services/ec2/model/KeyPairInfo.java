@@ -140,9 +140,9 @@ public class KeyPairInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getKeyFingerprint() != null)
-            sb.append("KeyFingerprint: " + getKeyFingerprint());
+            sb.append("KeyFingerprint: ").append(getKeyFingerprint());
         sb.append("}");
         return sb.toString();
     }

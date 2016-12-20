@@ -317,13 +317,13 @@ public class DescribeDBSubnetGroupsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

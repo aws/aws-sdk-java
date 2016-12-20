@@ -45,8 +45,18 @@ public class CreateVolumePermissionModificationsStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Add", targetDepth)) {
+                    createVolumePermissionModifications.withAdd(new ArrayList<CreateVolumePermission>());
+                    continue;
+                }
+
                 if (context.testExpression("Add/item", targetDepth)) {
                     createVolumePermissionModifications.withAdd(CreateVolumePermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Remove", targetDepth)) {
+                    createVolumePermissionModifications.withRemove(new ArrayList<CreateVolumePermission>());
                     continue;
                 }
 

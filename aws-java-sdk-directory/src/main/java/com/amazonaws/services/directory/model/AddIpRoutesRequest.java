@@ -1170,11 +1170,11 @@ public class AddIpRoutesRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getIpRoutes() != null)
-            sb.append("IpRoutes: " + getIpRoutes() + ",");
+            sb.append("IpRoutes: ").append(getIpRoutes()).append(",");
         if (getUpdateSecurityGroupForDirectoryControllers() != null)
-            sb.append("UpdateSecurityGroupForDirectoryControllers: " + getUpdateSecurityGroupForDirectoryControllers());
+            sb.append("UpdateSecurityGroupForDirectoryControllers: ").append(getUpdateSecurityGroupForDirectoryControllers());
         sb.append("}");
         return sb.toString();
     }

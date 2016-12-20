@@ -144,13 +144,13 @@ public class DeleteSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBudgetName() != null)
-            sb.append("BudgetName: " + getBudgetName() + ",");
+            sb.append("BudgetName: ").append(getBudgetName()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification() + ",");
+            sb.append("Notification: ").append(getNotification()).append(",");
         if (getSubscriber() != null)
-            sb.append("Subscriber: " + getSubscriber());
+            sb.append("Subscriber: ").append(getSubscriber());
         sb.append("}");
         return sb.toString();
     }

@@ -2620,71 +2620,71 @@ public class Cluster implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getNodeType() != null)
-            sb.append("NodeType: " + getNodeType() + ",");
+            sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getClusterStatus() != null)
-            sb.append("ClusterStatus: " + getClusterStatus() + ",");
+            sb.append("ClusterStatus: ").append(getClusterStatus()).append(",");
         if (getModifyStatus() != null)
-            sb.append("ModifyStatus: " + getModifyStatus() + ",");
+            sb.append("ModifyStatus: ").append(getModifyStatus()).append(",");
         if (getMasterUsername() != null)
-            sb.append("MasterUsername: " + getMasterUsername() + ",");
+            sb.append("MasterUsername: ").append(getMasterUsername()).append(",");
         if (getDBName() != null)
-            sb.append("DBName: " + getDBName() + ",");
+            sb.append("DBName: ").append(getDBName()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getClusterCreateTime() != null)
-            sb.append("ClusterCreateTime: " + getClusterCreateTime() + ",");
+            sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
-            sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+            sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
         if (getClusterSecurityGroups() != null)
-            sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");
+            sb.append("ClusterSecurityGroups: ").append(getClusterSecurityGroups()).append(",");
         if (getVpcSecurityGroups() != null)
-            sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
+            sb.append("VpcSecurityGroups: ").append(getVpcSecurityGroups()).append(",");
         if (getClusterParameterGroups() != null)
-            sb.append("ClusterParameterGroups: " + getClusterParameterGroups() + ",");
+            sb.append("ClusterParameterGroups: ").append(getClusterParameterGroups()).append(",");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getPendingModifiedValues() != null)
-            sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
+            sb.append("PendingModifiedValues: ").append(getPendingModifiedValues()).append(",");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getAllowVersionUpgrade() != null)
-            sb.append("AllowVersionUpgrade: " + getAllowVersionUpgrade() + ",");
+            sb.append("AllowVersionUpgrade: ").append(getAllowVersionUpgrade()).append(",");
         if (getNumberOfNodes() != null)
-            sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
+            sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
+            sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: " + getEncrypted() + ",");
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getRestoreStatus() != null)
-            sb.append("RestoreStatus: " + getRestoreStatus() + ",");
+            sb.append("RestoreStatus: ").append(getRestoreStatus()).append(",");
         if (getHsmStatus() != null)
-            sb.append("HsmStatus: " + getHsmStatus() + ",");
+            sb.append("HsmStatus: ").append(getHsmStatus()).append(",");
         if (getClusterSnapshotCopyStatus() != null)
-            sb.append("ClusterSnapshotCopyStatus: " + getClusterSnapshotCopyStatus() + ",");
+            sb.append("ClusterSnapshotCopyStatus: ").append(getClusterSnapshotCopyStatus()).append(",");
         if (getClusterPublicKey() != null)
-            sb.append("ClusterPublicKey: " + getClusterPublicKey() + ",");
+            sb.append("ClusterPublicKey: ").append(getClusterPublicKey()).append(",");
         if (getClusterNodes() != null)
-            sb.append("ClusterNodes: " + getClusterNodes() + ",");
+            sb.append("ClusterNodes: ").append(getClusterNodes()).append(",");
         if (getElasticIpStatus() != null)
-            sb.append("ElasticIpStatus: " + getElasticIpStatus() + ",");
+            sb.append("ElasticIpStatus: ").append(getElasticIpStatus()).append(",");
         if (getClusterRevisionNumber() != null)
-            sb.append("ClusterRevisionNumber: " + getClusterRevisionNumber() + ",");
+            sb.append("ClusterRevisionNumber: ").append(getClusterRevisionNumber()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting() + ",");
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getIamRoles() != null)
-            sb.append("IamRoles: " + getIamRoles());
+            sb.append("IamRoles: ").append(getIamRoles());
         sb.append("}");
         return sb.toString();
     }

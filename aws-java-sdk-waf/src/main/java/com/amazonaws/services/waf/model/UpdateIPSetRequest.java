@@ -321,11 +321,11 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSetId() != null)
-            sb.append("IPSetId: " + getIPSetId() + ",");
+            sb.append("IPSetId: ").append(getIPSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates());
+            sb.append("Updates: ").append(getUpdates());
         sb.append("}");
         return sb.toString();
     }

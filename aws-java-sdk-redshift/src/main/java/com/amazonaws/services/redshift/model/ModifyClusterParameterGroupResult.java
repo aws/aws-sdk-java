@@ -131,9 +131,9 @@ public class ModifyClusterParameterGroupResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupName() != null)
-            sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
+            sb.append("ParameterGroupName: ").append(getParameterGroupName()).append(",");
         if (getParameterGroupStatus() != null)
-            sb.append("ParameterGroupStatus: " + getParameterGroupStatus());
+            sb.append("ParameterGroupStatus: ").append(getParameterGroupStatus());
         sb.append("}");
         return sb.toString();
     }

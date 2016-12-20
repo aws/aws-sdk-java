@@ -87,7 +87,7 @@ public class ResultAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTypeName() != null)
-            sb.append("TypeName: " + getTypeName());
+            sb.append("TypeName: ").append(getTypeName());
         sb.append("}");
         return sb.toString();
     }

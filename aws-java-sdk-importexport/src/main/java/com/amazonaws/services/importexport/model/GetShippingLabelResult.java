@@ -87,9 +87,9 @@ public class GetShippingLabelResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShippingLabelURL() != null)
-            sb.append("ShippingLabelURL: " + getShippingLabelURL() + ",");
+            sb.append("ShippingLabelURL: ").append(getShippingLabelURL()).append(",");
         if (getWarning() != null)
-            sb.append("Warning: " + getWarning());
+            sb.append("Warning: ").append(getWarning());
         sb.append("}");
         return sb.toString();
     }

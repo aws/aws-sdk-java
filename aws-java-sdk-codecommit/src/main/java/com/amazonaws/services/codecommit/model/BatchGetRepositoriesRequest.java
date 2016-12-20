@@ -111,7 +111,7 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryNames() != null)
-            sb.append("RepositoryNames: " + getRepositoryNames());
+            sb.append("RepositoryNames: ").append(getRepositoryNames());
         sb.append("}");
         return sb.toString();
     }

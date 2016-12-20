@@ -161,9 +161,9 @@ public class DescribeEndpointTypesResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getSupportedEndpointTypes() != null)
-            sb.append("SupportedEndpointTypes: " + getSupportedEndpointTypes());
+            sb.append("SupportedEndpointTypes: ").append(getSupportedEndpointTypes());
         sb.append("}");
         return sb.toString();
     }

@@ -258,11 +258,11 @@ public class DiskImageDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getBytes() != null)
-            sb.append("Bytes: " + getBytes() + ",");
+            sb.append("Bytes: ").append(getBytes()).append(",");
         if (getImportManifestUrl() != null)
-            sb.append("ImportManifestUrl: " + getImportManifestUrl());
+            sb.append("ImportManifestUrl: ").append(getImportManifestUrl());
         sb.append("}");
         return sb.toString();
     }

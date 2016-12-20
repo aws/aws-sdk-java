@@ -110,7 +110,7 @@ public class ModifyListenerResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListeners() != null)
-            sb.append("Listeners: " + getListeners());
+            sb.append("Listeners: ").append(getListeners());
         sb.append("}");
         return sb.toString();
     }

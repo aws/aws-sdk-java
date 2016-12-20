@@ -80,7 +80,7 @@ public class GetTrafficPolicyResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicy() != null)
-            sb.append("TrafficPolicy: " + getTrafficPolicy());
+            sb.append("TrafficPolicy: ").append(getTrafficPolicy());
         sb.append("}");
         return sb.toString();
     }

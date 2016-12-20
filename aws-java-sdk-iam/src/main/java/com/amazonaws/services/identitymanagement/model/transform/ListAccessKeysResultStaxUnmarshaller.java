@@ -45,6 +45,11 @@ public class ListAccessKeysResultStaxUnmarshaller implements Unmarshaller<ListAc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AccessKeyMetadata", targetDepth)) {
+                    listAccessKeysResult.withAccessKeyMetadata(new ArrayList<AccessKeyMetadata>());
+                    continue;
+                }
+
                 if (context.testExpression("AccessKeyMetadata/member", targetDepth)) {
                     listAccessKeysResult.withAccessKeyMetadata(AccessKeyMetadataStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

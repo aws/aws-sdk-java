@@ -45,6 +45,11 @@ public class ListTrafficPolicyInstancesResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TrafficPolicyInstances", targetDepth)) {
+                    listTrafficPolicyInstancesResult.withTrafficPolicyInstances(new ArrayList<TrafficPolicyInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("TrafficPolicyInstances/TrafficPolicyInstance", targetDepth)) {
                     listTrafficPolicyInstancesResult.withTrafficPolicyInstances(TrafficPolicyInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

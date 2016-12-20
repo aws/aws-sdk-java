@@ -174,9 +174,9 @@ public class DescribeAutomationExecutionsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecutionMetadataList() != null)
-            sb.append("AutomationExecutionMetadataList: " + getAutomationExecutionMetadataList() + ",");
+            sb.append("AutomationExecutionMetadataList: ").append(getAutomationExecutionMetadataList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

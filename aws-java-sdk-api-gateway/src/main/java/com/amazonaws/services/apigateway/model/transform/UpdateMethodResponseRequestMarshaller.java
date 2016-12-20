@@ -61,22 +61,14 @@ public class UpdateMethodResponseRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (updateMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateMethodResponseRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (updateMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateMethodResponseRequest.getResourceId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (updateMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateMethodResponseRequest.getHttpMethod()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (updateMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateMethodResponseRequest.getStatusCode()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "restapi_id", updateMethodResponseRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id",
+                updateMethodResponseRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method",
+                updateMethodResponseRequest.getHttpMethod());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code",
+                updateMethodResponseRequest.getStatusCode());
         request.setResourcePath(uriResourcePath);
 
         try {

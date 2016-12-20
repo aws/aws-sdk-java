@@ -1020,33 +1020,33 @@ public class JobFlowDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlowId() != null)
-            sb.append("JobFlowId: " + getJobFlowId() + ",");
+            sb.append("JobFlowId: ").append(getJobFlowId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getLogUri() != null)
-            sb.append("LogUri: " + getLogUri() + ",");
+            sb.append("LogUri: ").append(getLogUri()).append(",");
         if (getAmiVersion() != null)
-            sb.append("AmiVersion: " + getAmiVersion() + ",");
+            sb.append("AmiVersion: ").append(getAmiVersion()).append(",");
         if (getExecutionStatusDetail() != null)
-            sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ",");
+            sb.append("ExecutionStatusDetail: ").append(getExecutionStatusDetail()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getSteps() != null)
-            sb.append("Steps: " + getSteps() + ",");
+            sb.append("Steps: ").append(getSteps()).append(",");
         if (getBootstrapActions() != null)
-            sb.append("BootstrapActions: " + getBootstrapActions() + ",");
+            sb.append("BootstrapActions: ").append(getBootstrapActions()).append(",");
         if (getSupportedProducts() != null)
-            sb.append("SupportedProducts: " + getSupportedProducts() + ",");
+            sb.append("SupportedProducts: ").append(getSupportedProducts()).append(",");
         if (getVisibleToAllUsers() != null)
-            sb.append("VisibleToAllUsers: " + getVisibleToAllUsers() + ",");
+            sb.append("VisibleToAllUsers: ").append(getVisibleToAllUsers()).append(",");
         if (getJobFlowRole() != null)
-            sb.append("JobFlowRole: " + getJobFlowRole() + ",");
+            sb.append("JobFlowRole: ").append(getJobFlowRole()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getAutoScalingRole() != null)
-            sb.append("AutoScalingRole: " + getAutoScalingRole() + ",");
+            sb.append("AutoScalingRole: ").append(getAutoScalingRole()).append(",");
         if (getScaleDownBehavior() != null)
-            sb.append("ScaleDownBehavior: " + getScaleDownBehavior());
+            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior());
         sb.append("}");
         return sb.toString();
     }

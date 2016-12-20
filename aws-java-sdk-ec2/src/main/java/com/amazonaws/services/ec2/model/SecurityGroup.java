@@ -501,21 +501,21 @@ public class SecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getIpPermissions() != null)
-            sb.append("IpPermissions: " + getIpPermissions() + ",");
+            sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
         if (getIpPermissionsEgress() != null)
-            sb.append("IpPermissionsEgress: " + getIpPermissionsEgress() + ",");
+            sb.append("IpPermissionsEgress: ").append(getIpPermissionsEgress()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

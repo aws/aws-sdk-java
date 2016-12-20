@@ -45,6 +45,11 @@ public class VerifyDomainDkimResultStaxUnmarshaller implements Unmarshaller<Veri
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("DkimTokens", targetDepth)) {
+                    verifyDomainDkimResult.withDkimTokens(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("DkimTokens/member", targetDepth)) {
                     verifyDomainDkimResult.withDkimTokens(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

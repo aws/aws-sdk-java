@@ -135,9 +135,9 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason());
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }

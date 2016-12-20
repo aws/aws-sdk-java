@@ -450,17 +450,17 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamNamePrefix() != null)
-            sb.append("LogStreamNamePrefix: " + getLogStreamNamePrefix() + ",");
+            sb.append("LogStreamNamePrefix: ").append(getLogStreamNamePrefix()).append(",");
         if (getOrderBy() != null)
-            sb.append("OrderBy: " + getOrderBy() + ",");
+            sb.append("OrderBy: ").append(getOrderBy()).append(",");
         if (getDescending() != null)
-            sb.append("Descending: " + getDescending() + ",");
+            sb.append("Descending: ").append(getDescending()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

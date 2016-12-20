@@ -188,9 +188,9 @@ public class WorkflowExecutionInfos extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionInfos() != null)
-            sb.append("ExecutionInfos: " + getExecutionInfos() + ",");
+            sb.append("ExecutionInfos: ").append(getExecutionInfos()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

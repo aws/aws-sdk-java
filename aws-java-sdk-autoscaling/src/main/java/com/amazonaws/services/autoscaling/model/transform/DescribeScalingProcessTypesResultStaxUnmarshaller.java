@@ -45,6 +45,11 @@ public class DescribeScalingProcessTypesResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Processes", targetDepth)) {
+                    describeScalingProcessTypesResult.withProcesses(new ArrayList<ProcessType>());
+                    continue;
+                }
+
                 if (context.testExpression("Processes/member", targetDepth)) {
                     describeScalingProcessTypesResult.withProcesses(ProcessTypeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -204,11 +204,11 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHapgArn() != null)
-            sb.append("HapgArn: " + getHapgArn() + ",");
+            sb.append("HapgArn: ").append(getHapgArn()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getPartitionSerialList() != null)
-            sb.append("PartitionSerialList: " + getPartitionSerialList());
+            sb.append("PartitionSerialList: ").append(getPartitionSerialList());
         sb.append("}");
         return sb.toString();
     }

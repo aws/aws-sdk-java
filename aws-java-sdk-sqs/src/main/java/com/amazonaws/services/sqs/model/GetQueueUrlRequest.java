@@ -22,8 +22,8 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
-     * underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters,
+     * hyphens (<code>-</code>), and underscores (<code>_</code>).
      * </p>
      * <p>
      * Queue names are case-sensitive.
@@ -49,8 +49,8 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param queueName
-     *        The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
-     *        (-), and underscores (_) are allowed.</p>
+     *        The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric
+     *        characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
      *        <p>
      *        Queue names are case-sensitive.
      */
@@ -60,16 +60,16 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
-     * underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters,
+     * hyphens (<code>-</code>), and underscores (<code>_</code>).
      * </p>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
      * @param queueName
-     *        The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
-     *        (-), and underscores (_) are allowed.</p>
+     *        The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric
+     *        characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
      *        <p>
      *        Queue names are case-sensitive.
      */
@@ -80,15 +80,15 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
-     * underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters,
+     * hyphens (<code>-</code>), and underscores (<code>_</code>).
      * </p>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
-     * @return The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
-     *         (-), and underscores (_) are allowed.</p>
+     * @return The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric
+     *         characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
      *         <p>
      *         Queue names are case-sensitive.
      */
@@ -99,16 +99,16 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens (-), and
-     * underscores (_) are allowed.
+     * The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters,
+     * hyphens (<code>-</code>), and underscores (<code>_</code>).
      * </p>
      * <p>
      * Queue names are case-sensitive.
      * </p>
      * 
      * @param queueName
-     *        The name of the queue whose URL must be fetched. Maximum 80 characters; alphanumeric characters, hyphens
-     *        (-), and underscores (_) are allowed.</p>
+     *        The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric
+     *        characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
      *        <p>
      *        Queue names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -171,9 +171,9 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueName() != null)
-            sb.append("QueueName: " + getQueueName() + ",");
+            sb.append("QueueName: ").append(getQueueName()).append(",");
         if (getQueueOwnerAWSAccountId() != null)
-            sb.append("QueueOwnerAWSAccountId: " + getQueueOwnerAWSAccountId());
+            sb.append("QueueOwnerAWSAccountId: ").append(getQueueOwnerAWSAccountId());
         sb.append("}");
         return sb.toString();
     }

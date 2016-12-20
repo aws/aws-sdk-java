@@ -80,7 +80,7 @@ public class SendBounceResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageId() != null)
-            sb.append("MessageId: " + getMessageId());
+            sb.append("MessageId: ").append(getMessageId());
         sb.append("}");
         return sb.toString();
     }

@@ -365,9 +365,9 @@ public class DeleteTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getTagsToDelete() != null)
-            sb.append("TagsToDelete: " + getTagsToDelete());
+            sb.append("TagsToDelete: ").append(getTagsToDelete());
         sb.append("}");
         return sb.toString();
     }

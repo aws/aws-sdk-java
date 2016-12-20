@@ -79,7 +79,7 @@ public class StopStackRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

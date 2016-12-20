@@ -1037,11 +1037,11 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevicePoolArn() != null)
-            sb.append("DevicePoolArn: " + getDevicePoolArn() + ",");
+            sb.append("DevicePoolArn: ").append(getDevicePoolArn()).append(",");
         if (getAppArn() != null)
-            sb.append("AppArn: " + getAppArn() + ",");
+            sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getTestType() != null)
-            sb.append("TestType: " + getTestType());
+            sb.append("TestType: ").append(getTestType());
         sb.append("}");
         return sb.toString();
     }

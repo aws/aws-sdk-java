@@ -302,11 +302,11 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getContainerInstance() != null)
-            sb.append("ContainerInstance: " + getContainerInstance() + ",");
+            sb.append("ContainerInstance: ").append(getContainerInstance()).append(",");
         if (getForce() != null)
-            sb.append("Force: " + getForce());
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }

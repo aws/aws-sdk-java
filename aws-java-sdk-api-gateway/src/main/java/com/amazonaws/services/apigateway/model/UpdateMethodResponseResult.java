@@ -311,11 +311,11 @@ public class UpdateMethodResponseResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getResponseParameters() != null)
-            sb.append("ResponseParameters: " + getResponseParameters() + ",");
+            sb.append("ResponseParameters: ").append(getResponseParameters()).append(",");
         if (getResponseModels() != null)
-            sb.append("ResponseModels: " + getResponseModels());
+            sb.append("ResponseModels: ").append(getResponseModels());
         sb.append("}");
         return sb.toString();
     }

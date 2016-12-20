@@ -51,10 +51,8 @@ public class DeleteHealthCheckRequestMarshaller implements Marshaller<Request<De
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (deleteHealthCheckRequest.getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteHealthCheckRequest.getHealthCheckId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "HealthCheckId",
+                deleteHealthCheckRequest.getHealthCheckId());
         request.setResourcePath(uriResourcePath);
 
         return request;

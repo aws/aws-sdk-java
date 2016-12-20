@@ -167,9 +167,9 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestConfigs() != null)
-            sb.append("SpotFleetRequestConfigs: " + getSpotFleetRequestConfigs() + ",");
+            sb.append("SpotFleetRequestConfigs: ").append(getSpotFleetRequestConfigs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

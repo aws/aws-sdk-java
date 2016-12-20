@@ -45,6 +45,11 @@ public class GetCheckerIpRangesResultStaxUnmarshaller implements Unmarshaller<Ge
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("CheckerIpRanges", targetDepth)) {
+                    getCheckerIpRangesResult.withCheckerIpRanges(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("CheckerIpRanges/member", targetDepth)) {
                     getCheckerIpRangesResult.withCheckerIpRanges(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

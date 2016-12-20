@@ -3640,51 +3640,51 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getAZMode() != null)
-            sb.append("AZMode: " + getAZMode() + ",");
+            sb.append("AZMode: ").append(getAZMode()).append(",");
         if (getPreferredAvailabilityZone() != null)
-            sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
+            sb.append("PreferredAvailabilityZone: ").append(getPreferredAvailabilityZone()).append(",");
         if (getPreferredAvailabilityZones() != null)
-            sb.append("PreferredAvailabilityZones: " + getPreferredAvailabilityZones() + ",");
+            sb.append("PreferredAvailabilityZones: ").append(getPreferredAvailabilityZones()).append(",");
         if (getNumCacheNodes() != null)
-            sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");
+            sb.append("NumCacheNodes: ").append(getNumCacheNodes()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: " + getCacheNodeType() + ",");
+            sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+            sb.append("CacheSubnetGroupName: ").append(getCacheSubnetGroupName()).append(",");
         if (getCacheSecurityGroupNames() != null)
-            sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ",");
+            sb.append("CacheSecurityGroupNames: ").append(getCacheSecurityGroupNames()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getSnapshotArns() != null)
-            sb.append("SnapshotArns: " + getSnapshotArns() + ",");
+            sb.append("SnapshotArns: ").append(getSnapshotArns()).append(",");
         if (getSnapshotName() != null)
-            sb.append("SnapshotName: " + getSnapshotName() + ",");
+            sb.append("SnapshotName: ").append(getSnapshotName()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getNotificationTopicArn() != null)
-            sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ",");
+            sb.append("NotificationTopicArn: ").append(getNotificationTopicArn()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: " + getAutoMinorVersionUpgrade() + ",");
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getSnapshotRetentionLimit() != null)
-            sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+            sb.append("SnapshotRetentionLimit: ").append(getSnapshotRetentionLimit()).append(",");
         if (getSnapshotWindow() != null)
-            sb.append("SnapshotWindow: " + getSnapshotWindow() + ",");
+            sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getAuthToken() != null)
-            sb.append("AuthToken: " + getAuthToken());
+            sb.append("AuthToken: ").append(getAuthToken());
         sb.append("}");
         return sb.toString();
     }

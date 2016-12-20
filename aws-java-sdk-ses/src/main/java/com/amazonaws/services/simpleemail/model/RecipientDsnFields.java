@@ -542,19 +542,19 @@ public class RecipientDsnFields implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFinalRecipient() != null)
-            sb.append("FinalRecipient: " + getFinalRecipient() + ",");
+            sb.append("FinalRecipient: ").append(getFinalRecipient()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getRemoteMta() != null)
-            sb.append("RemoteMta: " + getRemoteMta() + ",");
+            sb.append("RemoteMta: ").append(getRemoteMta()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDiagnosticCode() != null)
-            sb.append("DiagnosticCode: " + getDiagnosticCode() + ",");
+            sb.append("DiagnosticCode: ").append(getDiagnosticCode()).append(",");
         if (getLastAttemptDate() != null)
-            sb.append("LastAttemptDate: " + getLastAttemptDate() + ",");
+            sb.append("LastAttemptDate: ").append(getLastAttemptDate()).append(",");
         if (getExtensionFields() != null)
-            sb.append("ExtensionFields: " + getExtensionFields());
+            sb.append("ExtensionFields: ").append(getExtensionFields());
         sb.append("}");
         return sb.toString();
     }

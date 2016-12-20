@@ -126,9 +126,9 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getCompletionTime() != null)
-            sb.append("CompletionTime: " + getCompletionTime());
+            sb.append("CompletionTime: ").append(getCompletionTime());
         sb.append("}");
         return sb.toString();
     }

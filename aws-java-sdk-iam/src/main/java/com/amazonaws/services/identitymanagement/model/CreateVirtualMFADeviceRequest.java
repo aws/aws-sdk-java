@@ -231,9 +231,9 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getVirtualMFADeviceName() != null)
-            sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName());
+            sb.append("VirtualMFADeviceName: ").append(getVirtualMFADeviceName());
         sb.append("}");
         return sb.toString();
     }

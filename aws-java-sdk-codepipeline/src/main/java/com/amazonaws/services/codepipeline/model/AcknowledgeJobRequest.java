@@ -137,9 +137,9 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getNonce() != null)
-            sb.append("Nonce: " + getNonce());
+            sb.append("Nonce: ").append(getNonce());
         sb.append("}");
         return sb.toString();
     }

@@ -729,27 +729,27 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId()).append(",");
         if (getNewExecutionRunId() != null)
-            sb.append("NewExecutionRunId: " + getNewExecutionRunId() + ",");
+            sb.append("NewExecutionRunId: ").append(getNewExecutionRunId()).append(",");
         if (getExecutionStartToCloseTimeout() != null)
-            sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+            sb.append("ExecutionStartToCloseTimeout: ").append(getExecutionStartToCloseTimeout()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getTaskPriority() != null)
-            sb.append("TaskPriority: " + getTaskPriority() + ",");
+            sb.append("TaskPriority: ").append(getTaskPriority()).append(",");
         if (getTaskStartToCloseTimeout() != null)
-            sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
+            sb.append("TaskStartToCloseTimeout: ").append(getTaskStartToCloseTimeout()).append(",");
         if (getChildPolicy() != null)
-            sb.append("ChildPolicy: " + getChildPolicy() + ",");
+            sb.append("ChildPolicy: ").append(getChildPolicy()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList() + ",");
+            sb.append("TagList: ").append(getTagList()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getLambdaRole() != null)
-            sb.append("LambdaRole: " + getLambdaRole());
+            sb.append("LambdaRole: ").append(getLambdaRole());
         sb.append("}");
         return sb.toString();
     }

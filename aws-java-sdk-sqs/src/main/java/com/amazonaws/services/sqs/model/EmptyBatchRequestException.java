@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Batch request doesn't contain an entry.
+ * The batch request doesn't contain any entries.
  * </p>
  */
 public class EmptyBatchRequestException extends com.amazonaws.services.sqs.model.AmazonSQSException {

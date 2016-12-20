@@ -218,13 +218,13 @@ public class HostProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSockets() != null)
-            sb.append("Sockets: " + getSockets() + ",");
+            sb.append("Sockets: ").append(getSockets()).append(",");
         if (getCores() != null)
-            sb.append("Cores: " + getCores() + ",");
+            sb.append("Cores: ").append(getCores()).append(",");
         if (getTotalVCpus() != null)
-            sb.append("TotalVCpus: " + getTotalVCpus() + ",");
+            sb.append("TotalVCpus: ").append(getTotalVCpus()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }

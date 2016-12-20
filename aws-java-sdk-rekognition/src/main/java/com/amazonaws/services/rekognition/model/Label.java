@@ -126,9 +126,9 @@ public class Label implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence());
+            sb.append("Confidence: ").append(getConfidence());
         sb.append("}");
         return sb.toString();
     }

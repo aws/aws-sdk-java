@@ -61,8 +61,7 @@ public class UpdateThingRequestMarshaller implements Marshaller<Request<UpdateTh
 
         String uriResourcePath = "/things/{thingName}";
 
-        uriResourcePath = uriResourcePath.replace("{thingName}",
-                (updateThingRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateThingRequest.getThingName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", updateThingRequest.getThingName());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -87,7 +87,7 @@ public class CreateCaseResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId());
+            sb.append("CaseId: ").append(getCaseId());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class CreateLoadBalancerResultStaxUnmarshaller implements Unmarshaller<Cr
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("LoadBalancers", targetDepth)) {
+                    createLoadBalancerResult.withLoadBalancers(new ArrayList<LoadBalancer>());
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancers/member", targetDepth)) {
                     createLoadBalancerResult.withLoadBalancers(LoadBalancerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

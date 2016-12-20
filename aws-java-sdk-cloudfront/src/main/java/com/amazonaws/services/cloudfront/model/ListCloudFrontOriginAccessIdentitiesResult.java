@@ -82,7 +82,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontOriginAccessIdentityList() != null)
-            sb.append("CloudFrontOriginAccessIdentityList: " + getCloudFrontOriginAccessIdentityList());
+            sb.append("CloudFrontOriginAccessIdentityList: ").append(getCloudFrontOriginAccessIdentityList());
         sb.append("}");
         return sb.toString();
     }

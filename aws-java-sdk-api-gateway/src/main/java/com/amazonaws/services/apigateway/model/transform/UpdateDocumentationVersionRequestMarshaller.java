@@ -62,14 +62,10 @@ public class UpdateDocumentationVersionRequestMarshaller implements Marshaller<R
 
         String uriResourcePath = "/restapis/{restapi_id}/documentation/versions/{doc_version}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (updateDocumentationVersionRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateDocumentationVersionRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{doc_version}",
-                (updateDocumentationVersionRequest.getDocumentationVersion() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateDocumentationVersionRequest.getDocumentationVersion()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
+                updateDocumentationVersionRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "doc_version",
+                updateDocumentationVersionRequest.getDocumentationVersion());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -80,7 +80,7 @@ public class SendRawEmailResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageId() != null)
-            sb.append("MessageId: " + getMessageId());
+            sb.append("MessageId: ").append(getMessageId());
         sb.append("}");
         return sb.toString();
     }

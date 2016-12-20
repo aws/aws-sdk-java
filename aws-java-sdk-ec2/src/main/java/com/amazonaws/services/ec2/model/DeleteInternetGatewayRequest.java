@@ -95,7 +95,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGatewayId() != null)
-            sb.append("InternetGatewayId: " + getInternetGatewayId());
+            sb.append("InternetGatewayId: ").append(getInternetGatewayId());
         sb.append("}");
         return sb.toString();
     }

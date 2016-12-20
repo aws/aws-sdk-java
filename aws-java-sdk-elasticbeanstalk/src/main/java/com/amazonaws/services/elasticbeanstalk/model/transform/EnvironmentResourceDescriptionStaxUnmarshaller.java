@@ -50,8 +50,18 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("AutoScalingGroups", targetDepth)) {
+                    environmentResourceDescription.withAutoScalingGroups(new ArrayList<AutoScalingGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("AutoScalingGroups/member", targetDepth)) {
                     environmentResourceDescription.withAutoScalingGroups(AutoScalingGroupStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Instances", targetDepth)) {
+                    environmentResourceDescription.withInstances(new ArrayList<Instance>());
                     continue;
                 }
 
@@ -60,8 +70,18 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("LaunchConfigurations", targetDepth)) {
+                    environmentResourceDescription.withLaunchConfigurations(new ArrayList<LaunchConfiguration>());
+                    continue;
+                }
+
                 if (context.testExpression("LaunchConfigurations/member", targetDepth)) {
                     environmentResourceDescription.withLaunchConfigurations(LaunchConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LoadBalancers", targetDepth)) {
+                    environmentResourceDescription.withLoadBalancers(new ArrayList<LoadBalancer>());
                     continue;
                 }
 
@@ -70,8 +90,18 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("Triggers", targetDepth)) {
+                    environmentResourceDescription.withTriggers(new ArrayList<Trigger>());
+                    continue;
+                }
+
                 if (context.testExpression("Triggers/member", targetDepth)) {
                     environmentResourceDescription.withTriggers(TriggerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Queues", targetDepth)) {
+                    environmentResourceDescription.withQueues(new ArrayList<Queue>());
                     continue;
                 }
 

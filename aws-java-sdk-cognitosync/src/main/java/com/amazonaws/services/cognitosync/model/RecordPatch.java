@@ -241,15 +241,15 @@ public class RecordPatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOp() != null)
-            sb.append("Op: " + getOp() + ",");
+            sb.append("Op: ").append(getOp()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getSyncCount() != null)
-            sb.append("SyncCount: " + getSyncCount() + ",");
+            sb.append("SyncCount: ").append(getSyncCount()).append(",");
         if (getDeviceLastModifiedDate() != null)
-            sb.append("DeviceLastModifiedDate: " + getDeviceLastModifiedDate());
+            sb.append("DeviceLastModifiedDate: ").append(getDeviceLastModifiedDate());
         sb.append("}");
         return sb.toString();
     }

@@ -176,9 +176,9 @@ public class DescribeImportSnapshotTasksResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportSnapshotTasks() != null)
-            sb.append("ImportSnapshotTasks: " + getImportSnapshotTasks() + ",");
+            sb.append("ImportSnapshotTasks: ").append(getImportSnapshotTasks()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

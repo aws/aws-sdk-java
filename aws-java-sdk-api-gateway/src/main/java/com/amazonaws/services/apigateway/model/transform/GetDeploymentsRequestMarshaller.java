@@ -61,9 +61,7 @@ public class GetDeploymentsRequestMarshaller implements Marshaller<Request<GetDe
 
         String uriResourcePath = "/restapis/{restapi_id}/deployments";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (getDeploymentsRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getDeploymentsRequest.getRestApiId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getDeploymentsRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         if (getDeploymentsRequest.getPosition() != null) {

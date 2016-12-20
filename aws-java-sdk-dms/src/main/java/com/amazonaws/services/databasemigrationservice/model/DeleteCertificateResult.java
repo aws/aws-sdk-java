@@ -78,7 +78,7 @@ public class DeleteCertificateResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate());
+            sb.append("Certificate: ").append(getCertificate());
         sb.append("}");
         return sb.toString();
     }

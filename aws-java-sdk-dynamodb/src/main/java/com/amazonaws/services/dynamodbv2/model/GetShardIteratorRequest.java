@@ -538,13 +538,13 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamArn() != null)
-            sb.append("StreamArn: " + getStreamArn() + ",");
+            sb.append("StreamArn: ").append(getStreamArn()).append(",");
         if (getShardId() != null)
-            sb.append("ShardId: " + getShardId() + ",");
+            sb.append("ShardId: ").append(getShardId()).append(",");
         if (getShardIteratorType() != null)
-            sb.append("ShardIteratorType: " + getShardIteratorType() + ",");
+            sb.append("ShardIteratorType: ").append(getShardIteratorType()).append(",");
         if (getSequenceNumber() != null)
-            sb.append("SequenceNumber: " + getSequenceNumber());
+            sb.append("SequenceNumber: ").append(getSequenceNumber());
         sb.append("}");
         return sb.toString();
     }

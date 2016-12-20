@@ -54,9 +54,11 @@ import static com.amazonaws.codegen.internal.Utils.isScalar;
 abstract class AddShapes {
 
     private final IntermediateModelBuilder builder;
+    private final NamingStrategy namingStrategy;
 
     AddShapes(IntermediateModelBuilder builder) {
         this.builder = builder;
+        this.namingStrategy = builder.getNamingStrategy();
     }
 
     protected final TypeUtils getTypeUtils() {
@@ -64,7 +66,7 @@ abstract class AddShapes {
     }
 
     protected final NamingStrategy getNamingStrategy() {
-        return this.builder.getNamingStrategy();
+        return namingStrategy;
     }
 
     protected final ServiceModel getServiceModel() {
@@ -92,7 +94,6 @@ abstract class AddShapes {
         boolean hasStatusCodeMember = false;
         boolean hasPayloadMember = false;
         boolean hasStreamingMember = false;
-        boolean hasUriMember = false;
 
         final Map<String, Member> members = shape.getMembers();
 
@@ -118,8 +119,6 @@ abstract class AddShapes {
                     if (memberModel.getHttp().getIsStreaming()) {
                         hasStreamingMember = true;
                     }
-                } else if (memberModel.getHttp().getLocation() == Location.URI) {
-                    hasUriMember = true;
                 }
 
                 shapeModel.addMember(memberModel);
@@ -128,8 +127,7 @@ abstract class AddShapes {
             shapeModel.withHasHeaderMember(hasHeaderMember)
                     .withHasStatusCodeMember(hasStatusCodeMember)
                     .withHasPayloadMember(hasPayloadMember)
-                    .withHasStreamingMember(hasStreamingMember)
-                    .withHasUriMember(hasUriMember);
+                    .withHasStreamingMember(hasStreamingMember);
         }
 
         final List<String> enumValues = shape.getEnumValues();
@@ -175,6 +173,10 @@ abstract class AddShapes {
                 new ReturnTypeModel(variableType).withDocumentation(generateGetterDocumentation()));
         memberModel.setDocumentation(c2jMemberDefinition.getDocumentation());
         memberModel.setDeprecated(c2jMemberDefinition.isDeprecated());
+        memberModel
+                .withGetterMethodName(namingStrategy.getGetterMethodName(c2jMemberName))
+                .withSetterMethodName(namingStrategy.getSetterMethodName(c2jMemberName))
+                .withFluentSetterMethodName(namingStrategy.getFluentSetterMethodName(c2jMemberName));
 
         memberModel.setIdempotencyToken(c2jMemberDefinition.isIdempotencyToken());
 
@@ -187,7 +189,8 @@ abstract class AddShapes {
         fillContainerTypeMemberMetadata(allC2jShapes, c2jMemberDefinition.getShape(), memberModel,
                                         protocol);
 
-        final ParameterHttpMapping httpMapping = generateParameterHttpMapping(c2jMemberName,
+        final ParameterHttpMapping httpMapping = generateParameterHttpMapping(parentShape,
+                                                                              c2jMemberName,
                                                                               c2jMemberDefinition,
                                                                               protocol,
                                                                               allC2jShapes);
@@ -201,7 +204,9 @@ abstract class AddShapes {
         return memberModel;
     }
 
-    private ParameterHttpMapping generateParameterHttpMapping(String memberName, Member member,
+    private ParameterHttpMapping generateParameterHttpMapping(Shape parentShape,
+                                                              String memberName,
+                                                              Member member,
                                                               String protocol,
                                                               Map<String, Shape> allC2jShapes) {
 
@@ -214,9 +219,43 @@ abstract class AddShapes {
                 .withFlattened(member.isFlattened() || memberShape.isFlattened())
                 .withUnmarshallLocationName(deriveUnmarshallerLocationName(memberName, member))
                 .withMarshallLocationName(
-                        deriveMarshallerLocationName(memberName, member, protocol));
+                        deriveMarshallerLocationName(memberName, member, protocol))
+                .withIsGreedy(isGreedy(parentShape, allC2jShapes, mapping));
 
         return mapping;
+    }
+
+    /**
+     * @param parentShape  Shape containing the member in question.
+     * @param allC2jShapes All shapes in the service model.
+     * @param mapping      Mapping being built.
+     * @return True if the member is bound to a greedy label, false otherwise.
+     */
+    private boolean isGreedy(Shape parentShape, Map<String, Shape> allC2jShapes, ParameterHttpMapping mapping) {
+        if (mapping.getLocation() == Location.URI) {
+            // If the location is URI we can assume the parent shape is an input shape.
+            final String requestUri = findRequestUri(parentShape, allC2jShapes);
+            if (requestUri.contains(String.format("{%s+}", mapping.getMarshallLocationName()))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Given an input shape, finds the Request URI for the operation that input is referenced from.
+     *
+     * @param parentShape  Input shape to find operation's request URI for.
+     * @param allC2jShapes All shapes in the service model.
+     * @return Request URI for operation.
+     * @throws RuntimeException If operation can't be found.
+     */
+    private String findRequestUri(Shape parentShape, Map<String, Shape> allC2jShapes) {
+        return builder.getService().getOperations().values().stream()
+                .filter(o -> o.getInput() != null)
+                .filter(o -> allC2jShapes.get(o.getInput().getShape()).equals(parentShape))
+                .map(o -> o.getHttp().getRequestUri())
+                .findFirst().orElseThrow(() -> new RuntimeException("Could not find request URI for input shape"));
     }
 
     private String deriveUnmarshallerLocationName(String memberName, Member member) {

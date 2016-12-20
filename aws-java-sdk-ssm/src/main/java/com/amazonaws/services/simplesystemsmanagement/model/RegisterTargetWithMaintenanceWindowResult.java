@@ -79,7 +79,7 @@ public class RegisterTargetWithMaintenanceWindowResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowTargetId() != null)
-            sb.append("WindowTargetId: " + getWindowTargetId());
+            sb.append("WindowTargetId: ").append(getWindowTargetId());
         sb.append("}");
         return sb.toString();
     }

@@ -542,17 +542,17 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getFilterName() != null)
-            sb.append("FilterName: " + getFilterName() + ",");
+            sb.append("FilterName: ").append(getFilterName()).append(",");
         if (getFilterPattern() != null)
-            sb.append("FilterPattern: " + getFilterPattern() + ",");
+            sb.append("FilterPattern: ").append(getFilterPattern()).append(",");
         if (getDestinationArn() != null)
-            sb.append("DestinationArn: " + getDestinationArn() + ",");
+            sb.append("DestinationArn: ").append(getDestinationArn()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getDistribution() != null)
-            sb.append("Distribution: " + getDistribution());
+            sb.append("Distribution: ").append(getDistribution());
         sb.append("}");
         return sb.toString();
     }

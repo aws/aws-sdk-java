@@ -308,15 +308,15 @@ public class Step implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getConfig() != null)
-            sb.append("Config: " + getConfig() + ",");
+            sb.append("Config: ").append(getConfig()).append(",");
         if (getActionOnFailure() != null)
-            sb.append("ActionOnFailure: " + getActionOnFailure() + ",");
+            sb.append("ActionOnFailure: ").append(getActionOnFailure()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -166,9 +166,9 @@ public class DescribeInstanceAssociationsStatusResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceAssociationStatusInfos() != null)
-            sb.append("InstanceAssociationStatusInfos: " + getInstanceAssociationStatusInfos() + ",");
+            sb.append("InstanceAssociationStatusInfos: ").append(getInstanceAssociationStatusInfos()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

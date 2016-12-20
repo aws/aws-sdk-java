@@ -91,9 +91,9 @@ public class DefineSuggesterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSuggester() != null)
-            sb.append("Suggester: " + getSuggester());
+            sb.append("Suggester: ").append(getSuggester());
         sb.append("}");
         return sb.toString();
     }

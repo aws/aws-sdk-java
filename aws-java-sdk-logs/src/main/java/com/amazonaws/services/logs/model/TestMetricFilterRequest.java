@@ -139,9 +139,9 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilterPattern() != null)
-            sb.append("FilterPattern: " + getFilterPattern() + ",");
+            sb.append("FilterPattern: ").append(getFilterPattern()).append(",");
         if (getLogEventMessages() != null)
-            sb.append("LogEventMessages: " + getLogEventMessages());
+            sb.append("LogEventMessages: ").append(getLogEventMessages());
         sb.append("}");
         return sb.toString();
     }

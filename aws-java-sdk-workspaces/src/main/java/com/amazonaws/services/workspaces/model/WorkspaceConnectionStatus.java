@@ -251,13 +251,13 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: " + getWorkspaceId() + ",");
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getConnectionState() != null)
-            sb.append("ConnectionState: " + getConnectionState() + ",");
+            sb.append("ConnectionState: ").append(getConnectionState()).append(",");
         if (getConnectionStateCheckTimestamp() != null)
-            sb.append("ConnectionStateCheckTimestamp: " + getConnectionStateCheckTimestamp() + ",");
+            sb.append("ConnectionStateCheckTimestamp: ").append(getConnectionStateCheckTimestamp()).append(",");
         if (getLastKnownUserConnectionTimestamp() != null)
-            sb.append("LastKnownUserConnectionTimestamp: " + getLastKnownUserConnectionTimestamp());
+            sb.append("LastKnownUserConnectionTimestamp: ").append(getLastKnownUserConnectionTimestamp());
         sb.append("}");
         return sb.toString();
     }

@@ -221,13 +221,13 @@ public class DescribeAccountLimitsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxNumberOfAutoScalingGroups() != null)
-            sb.append("MaxNumberOfAutoScalingGroups: " + getMaxNumberOfAutoScalingGroups() + ",");
+            sb.append("MaxNumberOfAutoScalingGroups: ").append(getMaxNumberOfAutoScalingGroups()).append(",");
         if (getMaxNumberOfLaunchConfigurations() != null)
-            sb.append("MaxNumberOfLaunchConfigurations: " + getMaxNumberOfLaunchConfigurations() + ",");
+            sb.append("MaxNumberOfLaunchConfigurations: ").append(getMaxNumberOfLaunchConfigurations()).append(",");
         if (getNumberOfAutoScalingGroups() != null)
-            sb.append("NumberOfAutoScalingGroups: " + getNumberOfAutoScalingGroups() + ",");
+            sb.append("NumberOfAutoScalingGroups: ").append(getNumberOfAutoScalingGroups()).append(",");
         if (getNumberOfLaunchConfigurations() != null)
-            sb.append("NumberOfLaunchConfigurations: " + getNumberOfLaunchConfigurations());
+            sb.append("NumberOfLaunchConfigurations: ").append(getNumberOfLaunchConfigurations());
         sb.append("}");
         return sb.toString();
     }

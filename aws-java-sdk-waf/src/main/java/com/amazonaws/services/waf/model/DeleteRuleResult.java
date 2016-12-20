@@ -85,7 +85,7 @@ public class DeleteRuleResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

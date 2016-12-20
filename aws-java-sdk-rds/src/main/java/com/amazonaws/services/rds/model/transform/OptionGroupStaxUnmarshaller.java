@@ -65,6 +65,11 @@ public class OptionGroupStaxUnmarshaller implements Unmarshaller<OptionGroup, St
                     continue;
                 }
 
+                if (context.testExpression("Options", targetDepth)) {
+                    optionGroup.withOptions(new ArrayList<Option>());
+                    continue;
+                }
+
                 if (context.testExpression("Options/Option", targetDepth)) {
                     optionGroup.withOptions(OptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

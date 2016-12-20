@@ -1006,25 +1006,25 @@ public class Command implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getAcknowledgedAt() != null)
-            sb.append("AcknowledgedAt: " + getAcknowledgedAt() + ",");
+            sb.append("AcknowledgedAt: ").append(getAcknowledgedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: " + getCompletedAt() + ",");
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getExitCode() != null)
-            sb.append("ExitCode: " + getExitCode() + ",");
+            sb.append("ExitCode: ").append(getExitCode()).append(",");
         if (getLogUrl() != null)
-            sb.append("LogUrl: " + getLogUrl() + ",");
+            sb.append("LogUrl: ").append(getLogUrl()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

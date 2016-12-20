@@ -457,17 +457,17 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceRecordSets() != null)
-            sb.append("ResourceRecordSets: " + getResourceRecordSets() + ",");
+            sb.append("ResourceRecordSets: ").append(getResourceRecordSets()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getNextRecordName() != null)
-            sb.append("NextRecordName: " + getNextRecordName() + ",");
+            sb.append("NextRecordName: ").append(getNextRecordName()).append(",");
         if (getNextRecordType() != null)
-            sb.append("NextRecordType: " + getNextRecordType() + ",");
+            sb.append("NextRecordType: ").append(getNextRecordType()).append(",");
         if (getNextRecordIdentifier() != null)
-            sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ",");
+            sb.append("NextRecordIdentifier: ").append(getNextRecordIdentifier()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

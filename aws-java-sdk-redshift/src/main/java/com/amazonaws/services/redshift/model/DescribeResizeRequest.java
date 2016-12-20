@@ -100,7 +100,7 @@ public class DescribeResizeRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier());
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier());
         sb.append("}");
         return sb.toString();
     }

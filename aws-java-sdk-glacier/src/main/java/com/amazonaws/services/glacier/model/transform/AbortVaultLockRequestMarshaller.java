@@ -61,12 +61,9 @@ public class AbortVaultLockRequestMarshaller implements Marshaller<Request<Abort
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (abortVaultLockRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(abortVaultLockRequest.getAccountId()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (abortVaultLockRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(abortVaultLockRequest.getVaultName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                abortVaultLockRequest.getAccountId() == null ? "-" : abortVaultLockRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", abortVaultLockRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

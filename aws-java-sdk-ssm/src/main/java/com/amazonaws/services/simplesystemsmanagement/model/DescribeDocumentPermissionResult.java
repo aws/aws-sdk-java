@@ -115,7 +115,7 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountIds() != null)
-            sb.append("AccountIds: " + getAccountIds());
+            sb.append("AccountIds: ").append(getAccountIds());
         sb.append("}");
         return sb.toString();
     }

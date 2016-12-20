@@ -45,6 +45,11 @@ public class DescribeVpcEndpointsResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpcEndpointSet", targetDepth)) {
+                    describeVpcEndpointsResult.withVpcEndpoints(new ArrayList<VpcEndpoint>());
+                    continue;
+                }
+
                 if (context.testExpression("vpcEndpointSet/item", targetDepth)) {
                     describeVpcEndpointsResult.withVpcEndpoints(VpcEndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

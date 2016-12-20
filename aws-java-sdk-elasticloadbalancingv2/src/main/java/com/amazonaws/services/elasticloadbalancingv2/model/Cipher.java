@@ -126,9 +126,9 @@ public class Cipher implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority());
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }

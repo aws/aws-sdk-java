@@ -231,13 +231,13 @@ public class DeliveryChannelStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getConfigSnapshotDeliveryInfo() != null)
-            sb.append("ConfigSnapshotDeliveryInfo: " + getConfigSnapshotDeliveryInfo() + ",");
+            sb.append("ConfigSnapshotDeliveryInfo: ").append(getConfigSnapshotDeliveryInfo()).append(",");
         if (getConfigHistoryDeliveryInfo() != null)
-            sb.append("ConfigHistoryDeliveryInfo: " + getConfigHistoryDeliveryInfo() + ",");
+            sb.append("ConfigHistoryDeliveryInfo: ").append(getConfigHistoryDeliveryInfo()).append(",");
         if (getConfigStreamDeliveryInfo() != null)
-            sb.append("ConfigStreamDeliveryInfo: " + getConfigStreamDeliveryInfo());
+            sb.append("ConfigStreamDeliveryInfo: ").append(getConfigStreamDeliveryInfo());
         sb.append("}");
         return sb.toString();
     }

@@ -159,9 +159,9 @@ public class SubnetCidrBlockState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }

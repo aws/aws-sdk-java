@@ -180,7 +180,7 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRule() != null)
-            sb.append("Rule: " + getRule());
+            sb.append("Rule: ").append(getRule());
         sb.append("}");
         return sb.toString();
     }

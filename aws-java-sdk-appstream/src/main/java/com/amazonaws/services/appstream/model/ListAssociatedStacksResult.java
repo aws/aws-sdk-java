@@ -163,9 +163,9 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNames() != null)
-            sb.append("Names: " + getNames() + ",");
+            sb.append("Names: ").append(getNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

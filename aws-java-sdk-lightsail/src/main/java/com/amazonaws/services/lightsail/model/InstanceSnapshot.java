@@ -732,31 +732,31 @@ public class InstanceSnapshot implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSupportCode() != null)
-            sb.append("SupportCode: " + getSupportCode() + ",");
+            sb.append("SupportCode: ").append(getSupportCode()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: " + getProgress() + ",");
+            sb.append("Progress: ").append(getProgress()).append(",");
         if (getFromInstanceName() != null)
-            sb.append("FromInstanceName: " + getFromInstanceName() + ",");
+            sb.append("FromInstanceName: ").append(getFromInstanceName()).append(",");
         if (getFromInstanceArn() != null)
-            sb.append("FromInstanceArn: " + getFromInstanceArn() + ",");
+            sb.append("FromInstanceArn: ").append(getFromInstanceArn()).append(",");
         if (getFromBlueprintId() != null)
-            sb.append("FromBlueprintId: " + getFromBlueprintId() + ",");
+            sb.append("FromBlueprintId: ").append(getFromBlueprintId()).append(",");
         if (getFromBundleId() != null)
-            sb.append("FromBundleId: " + getFromBundleId() + ",");
+            sb.append("FromBundleId: ").append(getFromBundleId()).append(",");
         if (getSizeInGb() != null)
-            sb.append("SizeInGb: " + getSizeInGb());
+            sb.append("SizeInGb: ").append(getSizeInGb());
         sb.append("}");
         return sb.toString();
     }

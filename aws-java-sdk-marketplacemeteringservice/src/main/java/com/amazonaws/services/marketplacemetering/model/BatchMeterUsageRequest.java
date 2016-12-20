@@ -164,9 +164,9 @@ public class BatchMeterUsageRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsageRecords() != null)
-            sb.append("UsageRecords: " + getUsageRecords() + ",");
+            sb.append("UsageRecords: ").append(getUsageRecords()).append(",");
         if (getProductCode() != null)
-            sb.append("ProductCode: " + getProductCode());
+            sb.append("ProductCode: ").append(getProductCode());
         sb.append("}");
         return sb.toString();
     }

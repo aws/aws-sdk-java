@@ -55,6 +55,11 @@ public class ListVPCAssociationAuthorizationsResultStaxUnmarshaller implements U
                     continue;
                 }
 
+                if (context.testExpression("VPCs", targetDepth)) {
+                    listVPCAssociationAuthorizationsResult.withVPCs(new ArrayList<VPC>());
+                    continue;
+                }
+
                 if (context.testExpression("VPCs/VPC", targetDepth)) {
                     listVPCAssociationAuthorizationsResult.withVPCs(VPCStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

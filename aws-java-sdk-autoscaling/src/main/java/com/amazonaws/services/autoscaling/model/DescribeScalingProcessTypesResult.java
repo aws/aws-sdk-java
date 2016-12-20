@@ -113,7 +113,7 @@ public class DescribeScalingProcessTypesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProcesses() != null)
-            sb.append("Processes: " + getProcesses());
+            sb.append("Processes: ").append(getProcesses());
         sb.append("}");
         return sb.toString();
     }

@@ -305,15 +305,15 @@ public class Event implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId() + ",");
+            sb.append("EventId: ").append(getEventId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getEventCode() != null)
-            sb.append("EventCode: " + getEventCode() + ",");
+            sb.append("EventCode: ").append(getEventCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getEventTime() != null)
-            sb.append("EventTime: " + getEventTime());
+            sb.append("EventTime: ").append(getEventTime());
         sb.append("}");
         return sb.toString();
     }

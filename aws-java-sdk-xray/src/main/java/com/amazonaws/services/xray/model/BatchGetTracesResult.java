@@ -230,11 +230,11 @@ public class BatchGetTracesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTraces() != null)
-            sb.append("Traces: " + getTraces() + ",");
+            sb.append("Traces: ").append(getTraces()).append(",");
         if (getUnprocessedTraceIds() != null)
-            sb.append("UnprocessedTraceIds: " + getUnprocessedTraceIds() + ",");
+            sb.append("UnprocessedTraceIds: ").append(getUnprocessedTraceIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

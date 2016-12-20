@@ -202,9 +202,9 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

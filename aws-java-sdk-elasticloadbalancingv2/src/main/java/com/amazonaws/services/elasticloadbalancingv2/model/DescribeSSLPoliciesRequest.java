@@ -203,11 +203,11 @@ public class DescribeSSLPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNames() != null)
-            sb.append("Names: " + getNames() + ",");
+            sb.append("Names: ").append(getNames()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize());
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }

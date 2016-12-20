@@ -100,7 +100,7 @@ public class ListProvisionedCapacityRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId());
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }

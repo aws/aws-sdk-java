@@ -375,17 +375,17 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId()).append(",");
         if (getTaskIds() != null)
-            sb.append("TaskIds: " + getTaskIds() + ",");
+            sb.append("TaskIds: ").append(getTaskIds()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime());
+            sb.append("EndTime: ").append(getEndTime());
         sb.append("}");
         return sb.toString();
     }

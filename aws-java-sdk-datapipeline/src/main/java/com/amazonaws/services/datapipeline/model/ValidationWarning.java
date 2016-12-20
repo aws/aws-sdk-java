@@ -160,9 +160,9 @@ public class ValidationWarning implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getWarnings() != null)
-            sb.append("Warnings: " + getWarnings());
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }

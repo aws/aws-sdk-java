@@ -175,11 +175,11 @@ public class ReservationValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRemainingTotalValue() != null)
-            sb.append("RemainingTotalValue: " + getRemainingTotalValue() + ",");
+            sb.append("RemainingTotalValue: ").append(getRemainingTotalValue()).append(",");
         if (getRemainingUpfrontValue() != null)
-            sb.append("RemainingUpfrontValue: " + getRemainingUpfrontValue() + ",");
+            sb.append("RemainingUpfrontValue: ").append(getRemainingUpfrontValue()).append(",");
         if (getHourlyPrice() != null)
-            sb.append("HourlyPrice: " + getHourlyPrice());
+            sb.append("HourlyPrice: ").append(getHourlyPrice());
         sb.append("}");
         return sb.toString();
     }

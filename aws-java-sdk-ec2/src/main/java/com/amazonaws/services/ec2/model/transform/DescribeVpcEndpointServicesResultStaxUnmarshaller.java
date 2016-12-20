@@ -45,6 +45,11 @@ public class DescribeVpcEndpointServicesResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("serviceNameSet", targetDepth)) {
+                    describeVpcEndpointServicesResult.withServiceNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("serviceNameSet/item", targetDepth)) {
                     describeVpcEndpointServicesResult.withServiceNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

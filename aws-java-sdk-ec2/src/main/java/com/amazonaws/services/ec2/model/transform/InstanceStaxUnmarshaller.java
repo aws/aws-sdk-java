@@ -85,6 +85,11 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("productCodes", targetDepth)) {
+                    instance.withProductCodes(new ArrayList<ProductCode>());
+                    continue;
+                }
+
                 if (context.testExpression("productCodes/item", targetDepth)) {
                     instance.withProductCodes(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -165,6 +170,11 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("blockDeviceMapping", targetDepth)) {
+                    instance.withBlockDeviceMappings(new ArrayList<InstanceBlockDeviceMapping>());
+                    continue;
+                }
+
                 if (context.testExpression("blockDeviceMapping/item", targetDepth)) {
                     instance.withBlockDeviceMappings(InstanceBlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -190,8 +200,18 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    instance.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     instance.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groupSet", targetDepth)) {
+                    instance.withSecurityGroups(new ArrayList<GroupIdentifier>());
                     continue;
                 }
 
@@ -207,6 +227,11 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
 
                 if (context.testExpression("hypervisor", targetDepth)) {
                     instance.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkInterfaceSet", targetDepth)) {
+                    instance.withNetworkInterfaces(new ArrayList<InstanceNetworkInterface>());
                     continue;
                 }
 

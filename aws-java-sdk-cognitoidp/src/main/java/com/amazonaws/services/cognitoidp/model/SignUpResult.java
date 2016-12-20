@@ -138,9 +138,9 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserConfirmed() != null)
-            sb.append("UserConfirmed: " + getUserConfirmed() + ",");
+            sb.append("UserConfirmed: ").append(getUserConfirmed()).append(",");
         if (getCodeDeliveryDetails() != null)
-            sb.append("CodeDeliveryDetails: " + getCodeDeliveryDetails());
+            sb.append("CodeDeliveryDetails: ").append(getCodeDeliveryDetails());
         sb.append("}");
         return sb.toString();
     }

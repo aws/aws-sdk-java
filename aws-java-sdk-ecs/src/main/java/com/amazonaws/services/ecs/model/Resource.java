@@ -371,17 +371,17 @@ public class Resource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDoubleValue() != null)
-            sb.append("DoubleValue: " + getDoubleValue() + ",");
+            sb.append("DoubleValue: ").append(getDoubleValue()).append(",");
         if (getLongValue() != null)
-            sb.append("LongValue: " + getLongValue() + ",");
+            sb.append("LongValue: ").append(getLongValue()).append(",");
         if (getIntegerValue() != null)
-            sb.append("IntegerValue: " + getIntegerValue() + ",");
+            sb.append("IntegerValue: ").append(getIntegerValue()).append(",");
         if (getStringSetValue() != null)
-            sb.append("StringSetValue: " + getStringSetValue());
+            sb.append("StringSetValue: ").append(getStringSetValue());
         sb.append("}");
         return sb.toString();
     }

@@ -596,25 +596,25 @@ public class Event implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getService() != null)
-            sb.append("Service: " + getService() + ",");
+            sb.append("Service: ").append(getService()).append(",");
         if (getEventTypeCode() != null)
-            sb.append("EventTypeCode: " + getEventTypeCode() + ",");
+            sb.append("EventTypeCode: ").append(getEventTypeCode()).append(",");
         if (getEventTypeCategory() != null)
-            sb.append("EventTypeCategory: " + getEventTypeCategory() + ",");
+            sb.append("EventTypeCategory: ").append(getEventTypeCategory()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode());
+            sb.append("StatusCode: ").append(getStatusCode());
         sb.append("}");
         return sb.toString();
     }

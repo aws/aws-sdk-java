@@ -80,7 +80,7 @@ public class InstanceAssociationOutputUrl implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3OutputUrl() != null)
-            sb.append("S3OutputUrl: " + getS3OutputUrl());
+            sb.append("S3OutputUrl: ").append(getS3OutputUrl());
         sb.append("}");
         return sb.toString();
     }

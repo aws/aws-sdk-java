@@ -113,7 +113,7 @@ public class DescribeVirtualInterfacesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaces() != null)
-            sb.append("VirtualInterfaces: " + getVirtualInterfaces());
+            sb.append("VirtualInterfaces: ").append(getVirtualInterfaces());
         sb.append("}");
         return sb.toString();
     }

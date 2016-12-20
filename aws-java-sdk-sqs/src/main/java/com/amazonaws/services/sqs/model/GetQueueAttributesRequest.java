@@ -22,7 +22,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attribute information is retrieved.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -35,8 +35,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that
-     * you structure your code so that it can handle new attributes gracefully.
+     * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
+     * structure your code so that it can handle new attributes gracefully.
      * </p>
      * </note>
      * <p>
@@ -65,14 +65,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a href=
+     * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -82,7 +83,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time).
+     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -108,8 +110,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will
-     * wait for a message to arrive.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
      * <li>
@@ -166,7 +168,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * methods to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -179,7 +181,7 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * methods to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param attributeNames
@@ -187,8 +189,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        <note>
      *        <p>
-     *        Going forward, new attributes might be added. If you are writing code that calls this action, we recommend
-     *        that you structure your code so that it can handle new attributes gracefully.
+     *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
+     *        you structure your code so that it can handle new attributes gracefully.
      *        </p>
      *        </note>
      *        <p>
@@ -217,14 +219,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a href=
+     *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -234,8 +237,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch
-     *        time).
+     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -262,8 +265,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call
-     *        will wait for a message to arrive.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
      *        <li>
@@ -312,14 +315,14 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attribute information is retrieved.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -330,13 +333,13 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attribute information is retrieved.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -347,14 +350,14 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue whose attribute information is retrieved.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -371,8 +374,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that
-     * you structure your code so that it can handle new attributes gracefully.
+     * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
+     * structure your code so that it can handle new attributes gracefully.
      * </p>
      * </note>
      * <p>
@@ -401,14 +404,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a href=
+     * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -418,7 +422,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time).
+     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -444,8 +449,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will
-     * wait for a message to arrive.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
      * <li>
@@ -490,8 +495,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return A list of attributes for which to retrieve information.</p> <note>
      *         <p>
-     *         Going forward, new attributes might be added. If you are writing code that calls this action, we
-     *         recommend that you structure your code so that it can handle new attributes gracefully.
+     *         In the future, new attributes might be added. If you write code that calls this action, we recommend that
+     *         you structure your code so that it can handle new attributes gracefully.
      *         </p>
      *         </note>
      *         <p>
@@ -520,14 +525,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *         not timed-out and are not deleted. For more information, see <a href=
+     *         not timed-out and aren't deleted. For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *         >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     *         <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *         </p>
      *         </li>
      *         <li>
@@ -537,8 +543,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch
-     *         time).
+     *         <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     *         href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *         </p>
      *         </li>
      *         <li>
@@ -565,8 +571,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call
-     *         will wait for a message to arrive.
+     *         <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *         <code>ReceiveMessage</code> action waits for a message to arrive.
      *         </p>
      *         </li>
      *         <li>
@@ -623,8 +629,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that
-     * you structure your code so that it can handle new attributes gracefully.
+     * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
+     * structure your code so that it can handle new attributes gracefully.
      * </p>
      * </note>
      * <p>
@@ -653,14 +659,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a href=
+     * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -670,7 +677,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time).
+     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -696,8 +704,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will
-     * wait for a message to arrive.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
      * <li>
@@ -743,8 +751,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * @param attributeNames
      *        A list of attributes for which to retrieve information.</p> <note>
      *        <p>
-     *        Going forward, new attributes might be added. If you are writing code that calls this action, we recommend
-     *        that you structure your code so that it can handle new attributes gracefully.
+     *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
+     *        you structure your code so that it can handle new attributes gracefully.
      *        </p>
      *        </note>
      *        <p>
@@ -773,14 +781,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a href=
+     *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -790,8 +799,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch
-     *        time).
+     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -818,8 +827,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call
-     *        will wait for a message to arrive.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
      *        <li>
@@ -878,8 +887,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that
-     * you structure your code so that it can handle new attributes gracefully.
+     * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
+     * structure your code so that it can handle new attributes gracefully.
      * </p>
      * </note>
      * <p>
@@ -908,14 +917,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a href=
+     * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -925,7 +935,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time).
+     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -951,8 +962,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will
-     * wait for a message to arrive.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
      * <li>
@@ -1003,8 +1014,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * @param attributeNames
      *        A list of attributes for which to retrieve information.</p> <note>
      *        <p>
-     *        Going forward, new attributes might be added. If you are writing code that calls this action, we recommend
-     *        that you structure your code so that it can handle new attributes gracefully.
+     *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
+     *        you structure your code so that it can handle new attributes gracefully.
      *        </p>
      *        </note>
      *        <p>
@@ -1033,14 +1044,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a href=
+     *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1050,8 +1062,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch
-     *        time).
+     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1078,8 +1090,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call
-     *        will wait for a message to arrive.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
      *        <li>
@@ -1140,8 +1152,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that
-     * you structure your code so that it can handle new attributes gracefully.
+     * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
+     * structure your code so that it can handle new attributes gracefully.
      * </p>
      * </note>
      * <p>
@@ -1170,14 +1182,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a href=
+     * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -1187,7 +1200,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time).
+     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -1213,8 +1227,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will
-     * wait for a message to arrive.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
      * <li>
@@ -1260,8 +1274,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * @param attributeNames
      *        A list of attributes for which to retrieve information.</p> <note>
      *        <p>
-     *        Going forward, new attributes might be added. If you are writing code that calls this action, we recommend
-     *        that you structure your code so that it can handle new attributes gracefully.
+     *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
+     *        you structure your code so that it can handle new attributes gracefully.
      *        </p>
      *        </note>
      *        <p>
@@ -1290,14 +1304,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a href=
+     *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1307,8 +1322,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch
-     *        time).
+     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1335,8 +1350,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call
-     *        will wait for a message to arrive.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
      *        <li>
@@ -1392,8 +1407,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that
-     * you structure your code so that it can handle new attributes gracefully.
+     * In the future, new attributes might be added. If you write code that calls this action, we recommend that you
+     * structure your code so that it can handle new attributes gracefully.
      * </p>
      * </note>
      * <p>
@@ -1422,14 +1437,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not
-     * timed-out and are not deleted. For more information, see <a href=
+     * timed-out and aren't deleted. For more information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      * >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -1439,7 +1455,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time).
+     * <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      * </p>
      * </li>
      * <li>
@@ -1465,8 +1482,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will
-     * wait for a message to arrive.
+     * <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     * <code>ReceiveMessage</code> action waits for a message to arrive.
      * </p>
      * </li>
      * <li>
@@ -1512,8 +1529,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * @param attributeNames
      *        A list of attributes for which to retrieve information.</p> <note>
      *        <p>
-     *        Going forward, new attributes might be added. If you are writing code that calls this action, we recommend
-     *        that you structure your code so that it can handle new attributes gracefully.
+     *        In the future, new attributes might be added. If you write code that calls this action, we recommend that
+     *        you structure your code so that it can handle new attributes gracefully.
      *        </p>
      *        </note>
      *        <p>
@@ -1542,14 +1559,15 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have
-     *        not timed-out and are not deleted. For more information, see <a href=
+     *        not timed-out and aren't deleted. For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html"
      *        >Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time).
+     *        <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1559,8 +1577,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch
-     *        time).
+     *        <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (<a
+     *        href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).
      *        </p>
      *        </li>
      *        <li>
@@ -1587,8 +1605,8 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call
-     *        will wait for a message to arrive.
+     *        <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which the
+     *        <code>ReceiveMessage</code> action waits for a message to arrive.
      *        </p>
      *        </li>
      *        <li>
@@ -1658,9 +1676,9 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getAttributeNames() != null)
-            sb.append("AttributeNames: " + getAttributeNames());
+            sb.append("AttributeNames: ").append(getAttributeNames());
         sb.append("}");
         return sb.toString();
     }

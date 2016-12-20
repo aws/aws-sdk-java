@@ -487,19 +487,19 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getClientName() != null)
-            sb.append("ClientName: " + getClientName() + ",");
+            sb.append("ClientName: ").append(getClientName()).append(",");
         if (getGenerateSecret() != null)
-            sb.append("GenerateSecret: " + getGenerateSecret() + ",");
+            sb.append("GenerateSecret: ").append(getGenerateSecret()).append(",");
         if (getRefreshTokenValidity() != null)
-            sb.append("RefreshTokenValidity: " + getRefreshTokenValidity() + ",");
+            sb.append("RefreshTokenValidity: ").append(getRefreshTokenValidity()).append(",");
         if (getReadAttributes() != null)
-            sb.append("ReadAttributes: " + getReadAttributes() + ",");
+            sb.append("ReadAttributes: ").append(getReadAttributes()).append(",");
         if (getWriteAttributes() != null)
-            sb.append("WriteAttributes: " + getWriteAttributes() + ",");
+            sb.append("WriteAttributes: ").append(getWriteAttributes()).append(",");
         if (getExplicitAuthFlows() != null)
-            sb.append("ExplicitAuthFlows: " + getExplicitAuthFlows());
+            sb.append("ExplicitAuthFlows: ").append(getExplicitAuthFlows());
         sb.append("}");
         return sb.toString();
     }

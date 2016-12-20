@@ -79,7 +79,7 @@ public class DeleteEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUUID() != null)
-            sb.append("UUID: " + getUUID());
+            sb.append("UUID: ").append(getUUID());
         sb.append("}");
         return sb.toString();
     }

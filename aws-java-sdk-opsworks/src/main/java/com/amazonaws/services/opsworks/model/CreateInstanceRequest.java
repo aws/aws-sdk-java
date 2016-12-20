@@ -1855,41 +1855,41 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds() + ",");
+            sb.append("LayerIds: ").append(getLayerIds()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAutoScalingType() != null)
-            sb.append("AutoScalingType: " + getAutoScalingType() + ",");
+            sb.append("AutoScalingType: ").append(getAutoScalingType()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getOs() != null)
-            sb.append("Os: " + getOs() + ",");
+            sb.append("Os: ").append(getOs()).append(",");
         if (getAmiId() != null)
-            sb.append("AmiId: " + getAmiId() + ",");
+            sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getSshKeyName() != null)
-            sb.append("SshKeyName: " + getSshKeyName() + ",");
+            sb.append("SshKeyName: ").append(getSshKeyName()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getRootDeviceType() != null)
-            sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+            sb.append("RootDeviceType: ").append(getRootDeviceType()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot() + ",");
+            sb.append("InstallUpdatesOnBoot: ").append(getInstallUpdatesOnBoot()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion() + ",");
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getTenancy() != null)
-            sb.append("Tenancy: " + getTenancy());
+            sb.append("Tenancy: ").append(getTenancy());
         sb.append("}");
         return sb.toString();
     }

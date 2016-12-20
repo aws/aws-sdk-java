@@ -178,9 +178,9 @@ public class ListTaskDefinitionFamiliesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFamilies() != null)
-            sb.append("Families: " + getFamilies() + ",");
+            sb.append("Families: ").append(getFamilies()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

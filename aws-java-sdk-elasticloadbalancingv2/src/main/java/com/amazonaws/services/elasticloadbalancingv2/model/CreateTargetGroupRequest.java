@@ -699,29 +699,29 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getHealthCheckProtocol() != null)
-            sb.append("HealthCheckProtocol: " + getHealthCheckProtocol() + ",");
+            sb.append("HealthCheckProtocol: ").append(getHealthCheckProtocol()).append(",");
         if (getHealthCheckPort() != null)
-            sb.append("HealthCheckPort: " + getHealthCheckPort() + ",");
+            sb.append("HealthCheckPort: ").append(getHealthCheckPort()).append(",");
         if (getHealthCheckPath() != null)
-            sb.append("HealthCheckPath: " + getHealthCheckPath() + ",");
+            sb.append("HealthCheckPath: ").append(getHealthCheckPath()).append(",");
         if (getHealthCheckIntervalSeconds() != null)
-            sb.append("HealthCheckIntervalSeconds: " + getHealthCheckIntervalSeconds() + ",");
+            sb.append("HealthCheckIntervalSeconds: ").append(getHealthCheckIntervalSeconds()).append(",");
         if (getHealthCheckTimeoutSeconds() != null)
-            sb.append("HealthCheckTimeoutSeconds: " + getHealthCheckTimeoutSeconds() + ",");
+            sb.append("HealthCheckTimeoutSeconds: ").append(getHealthCheckTimeoutSeconds()).append(",");
         if (getHealthyThresholdCount() != null)
-            sb.append("HealthyThresholdCount: " + getHealthyThresholdCount() + ",");
+            sb.append("HealthyThresholdCount: ").append(getHealthyThresholdCount()).append(",");
         if (getUnhealthyThresholdCount() != null)
-            sb.append("UnhealthyThresholdCount: " + getUnhealthyThresholdCount() + ",");
+            sb.append("UnhealthyThresholdCount: ").append(getUnhealthyThresholdCount()).append(",");
         if (getMatcher() != null)
-            sb.append("Matcher: " + getMatcher());
+            sb.append("Matcher: ").append(getMatcher());
         sb.append("}");
         return sb.toString();
     }

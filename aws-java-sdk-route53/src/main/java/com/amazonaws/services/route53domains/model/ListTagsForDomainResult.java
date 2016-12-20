@@ -379,7 +379,7 @@ public class ListTagsForDomainResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList());
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }

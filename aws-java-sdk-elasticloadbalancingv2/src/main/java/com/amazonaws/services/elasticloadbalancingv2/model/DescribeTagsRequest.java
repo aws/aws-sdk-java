@@ -111,7 +111,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArns() != null)
-            sb.append("ResourceArns: " + getResourceArns());
+            sb.append("ResourceArns: ").append(getResourceArns());
         sb.append("}");
         return sb.toString();
     }

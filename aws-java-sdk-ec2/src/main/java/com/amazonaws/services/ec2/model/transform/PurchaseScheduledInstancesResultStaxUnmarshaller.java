@@ -45,6 +45,11 @@ public class PurchaseScheduledInstancesResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("scheduledInstanceSet", targetDepth)) {
+                    purchaseScheduledInstancesResult.withScheduledInstanceSet(new ArrayList<ScheduledInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("scheduledInstanceSet/item", targetDepth)) {
                     purchaseScheduledInstancesResult.withScheduledInstanceSet(ScheduledInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

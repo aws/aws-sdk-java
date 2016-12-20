@@ -1727,41 +1727,41 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEndpointURL() != null)
-            sb.append("EndpointURL: " + getEndpointURL() + ",");
+            sb.append("EndpointURL: ").append(getEndpointURL()).append(",");
         if (getCNAME() != null)
-            sb.append("CNAME: " + getCNAME() + ",");
+            sb.append("CNAME: ").append(getCNAME()).append(",");
         if (getDateCreated() != null)
-            sb.append("DateCreated: " + getDateCreated() + ",");
+            sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getDateUpdated() != null)
-            sb.append("DateUpdated: " + getDateUpdated() + ",");
+            sb.append("DateUpdated: ").append(getDateUpdated()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getAbortableOperationInProgress() != null)
-            sb.append("AbortableOperationInProgress: " + getAbortableOperationInProgress() + ",");
+            sb.append("AbortableOperationInProgress: ").append(getAbortableOperationInProgress()).append(",");
         if (getHealth() != null)
-            sb.append("Health: " + getHealth() + ",");
+            sb.append("Health: ").append(getHealth()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: " + getHealthStatus() + ",");
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getTier() != null)
-            sb.append("Tier: " + getTier() + ",");
+            sb.append("Tier: ").append(getTier()).append(",");
         if (getEnvironmentLinks() != null)
-            sb.append("EnvironmentLinks: " + getEnvironmentLinks());
+            sb.append("EnvironmentLinks: ").append(getEnvironmentLinks());
         sb.append("}");
         return sb.toString();
     }

@@ -474,15 +474,15 @@ public class DocumentationPartLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getMethod() != null)
-            sb.append("Method: " + getMethod() + ",");
+            sb.append("Method: ").append(getMethod()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

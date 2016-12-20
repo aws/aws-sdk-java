@@ -158,9 +158,9 @@ public class PutInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getItems() != null)
-            sb.append("Items: " + getItems());
+            sb.append("Items: ").append(getItems());
         sb.append("}");
         return sb.toString();
     }

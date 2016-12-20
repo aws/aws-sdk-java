@@ -45,6 +45,11 @@ public class ModifyRuleResultStaxUnmarshaller implements Unmarshaller<ModifyRule
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Rules", targetDepth)) {
+                    modifyRuleResult.withRules(new ArrayList<Rule>());
+                    continue;
+                }
+
                 if (context.testExpression("Rules/member", targetDepth)) {
                     modifyRuleResult.withRules(RuleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

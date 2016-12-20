@@ -265,11 +265,11 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy());
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }

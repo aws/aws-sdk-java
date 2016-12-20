@@ -590,11 +590,11 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getSkipFinalClusterSnapshot() != null)
-            sb.append("SkipFinalClusterSnapshot: " + getSkipFinalClusterSnapshot() + ",");
+            sb.append("SkipFinalClusterSnapshot: ").append(getSkipFinalClusterSnapshot()).append(",");
         if (getFinalClusterSnapshotIdentifier() != null)
-            sb.append("FinalClusterSnapshotIdentifier: " + getFinalClusterSnapshotIdentifier());
+            sb.append("FinalClusterSnapshotIdentifier: ").append(getFinalClusterSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

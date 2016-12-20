@@ -99,7 +99,7 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionConfig() != null)
-            sb.append("DistributionConfig: " + getDistributionConfig());
+            sb.append("DistributionConfig: ").append(getDistributionConfig());
         sb.append("}");
         return sb.toString();
     }

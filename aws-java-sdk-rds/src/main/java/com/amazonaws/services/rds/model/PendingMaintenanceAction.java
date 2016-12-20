@@ -366,17 +366,17 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getAutoAppliedAfterDate() != null)
-            sb.append("AutoAppliedAfterDate: " + getAutoAppliedAfterDate() + ",");
+            sb.append("AutoAppliedAfterDate: ").append(getAutoAppliedAfterDate()).append(",");
         if (getForcedApplyDate() != null)
-            sb.append("ForcedApplyDate: " + getForcedApplyDate() + ",");
+            sb.append("ForcedApplyDate: ").append(getForcedApplyDate()).append(",");
         if (getOptInStatus() != null)
-            sb.append("OptInStatus: " + getOptInStatus() + ",");
+            sb.append("OptInStatus: ").append(getOptInStatus()).append(",");
         if (getCurrentApplyDate() != null)
-            sb.append("CurrentApplyDate: " + getCurrentApplyDate() + ",");
+            sb.append("CurrentApplyDate: ").append(getCurrentApplyDate()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

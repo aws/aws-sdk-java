@@ -125,9 +125,9 @@ public class RegisterElasticIpRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

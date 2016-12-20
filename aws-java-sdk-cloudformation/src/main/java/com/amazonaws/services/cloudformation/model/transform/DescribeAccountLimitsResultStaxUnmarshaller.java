@@ -45,6 +45,11 @@ public class DescribeAccountLimitsResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AccountLimits", targetDepth)) {
+                    describeAccountLimitsResult.withAccountLimits(new ArrayList<AccountLimit>());
+                    continue;
+                }
+
                 if (context.testExpression("AccountLimits/member", targetDepth)) {
                     describeAccountLimitsResult.withAccountLimits(AccountLimitStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

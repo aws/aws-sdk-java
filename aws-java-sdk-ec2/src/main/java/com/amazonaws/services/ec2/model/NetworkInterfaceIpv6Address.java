@@ -80,7 +80,7 @@ public class NetworkInterfaceIpv6Address implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpv6Address() != null)
-            sb.append("Ipv6Address: " + getIpv6Address());
+            sb.append("Ipv6Address: ").append(getIpv6Address());
         sb.append("}");
         return sb.toString();
     }

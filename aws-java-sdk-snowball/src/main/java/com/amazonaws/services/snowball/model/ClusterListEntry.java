@@ -269,13 +269,13 @@ public class ClusterListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getClusterState() != null)
-            sb.append("ClusterState: " + getClusterState() + ",");
+            sb.append("ClusterState: ").append(getClusterState()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

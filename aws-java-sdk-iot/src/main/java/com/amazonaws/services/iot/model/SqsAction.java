@@ -184,11 +184,11 @@ public class SqsAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getUseBase64() != null)
-            sb.append("UseBase64: " + getUseBase64());
+            sb.append("UseBase64: ").append(getUseBase64());
         sb.append("}");
         return sb.toString();
     }

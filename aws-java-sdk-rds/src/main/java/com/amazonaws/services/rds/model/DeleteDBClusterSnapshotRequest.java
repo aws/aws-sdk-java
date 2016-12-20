@@ -97,7 +97,7 @@ public class DeleteDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier());
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

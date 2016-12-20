@@ -717,33 +717,33 @@ public class Workspace implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: " + getWorkspaceId() + ",");
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage() + ",");
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getComputerName() != null)
-            sb.append("ComputerName: " + getComputerName() + ",");
+            sb.append("ComputerName: ").append(getComputerName()).append(",");
         if (getVolumeEncryptionKey() != null)
-            sb.append("VolumeEncryptionKey: " + getVolumeEncryptionKey() + ",");
+            sb.append("VolumeEncryptionKey: ").append(getVolumeEncryptionKey()).append(",");
         if (getUserVolumeEncryptionEnabled() != null)
-            sb.append("UserVolumeEncryptionEnabled: " + getUserVolumeEncryptionEnabled() + ",");
+            sb.append("UserVolumeEncryptionEnabled: ").append(getUserVolumeEncryptionEnabled()).append(",");
         if (getRootVolumeEncryptionEnabled() != null)
-            sb.append("RootVolumeEncryptionEnabled: " + getRootVolumeEncryptionEnabled() + ",");
+            sb.append("RootVolumeEncryptionEnabled: ").append(getRootVolumeEncryptionEnabled()).append(",");
         if (getWorkspaceProperties() != null)
-            sb.append("WorkspaceProperties: " + getWorkspaceProperties());
+            sb.append("WorkspaceProperties: ").append(getWorkspaceProperties());
         sb.append("}");
         return sb.toString();
     }

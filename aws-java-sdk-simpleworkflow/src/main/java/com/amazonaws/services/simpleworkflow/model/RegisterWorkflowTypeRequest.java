@@ -925,25 +925,25 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDefaultTaskStartToCloseTimeout() != null)
-            sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ",");
+            sb.append("DefaultTaskStartToCloseTimeout: ").append(getDefaultTaskStartToCloseTimeout()).append(",");
         if (getDefaultExecutionStartToCloseTimeout() != null)
-            sb.append("DefaultExecutionStartToCloseTimeout: " + getDefaultExecutionStartToCloseTimeout() + ",");
+            sb.append("DefaultExecutionStartToCloseTimeout: ").append(getDefaultExecutionStartToCloseTimeout()).append(",");
         if (getDefaultTaskList() != null)
-            sb.append("DefaultTaskList: " + getDefaultTaskList() + ",");
+            sb.append("DefaultTaskList: ").append(getDefaultTaskList()).append(",");
         if (getDefaultTaskPriority() != null)
-            sb.append("DefaultTaskPriority: " + getDefaultTaskPriority() + ",");
+            sb.append("DefaultTaskPriority: ").append(getDefaultTaskPriority()).append(",");
         if (getDefaultChildPolicy() != null)
-            sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() + ",");
+            sb.append("DefaultChildPolicy: ").append(getDefaultChildPolicy()).append(",");
         if (getDefaultLambdaRole() != null)
-            sb.append("DefaultLambdaRole: " + getDefaultLambdaRole());
+            sb.append("DefaultLambdaRole: ").append(getDefaultLambdaRole());
         sb.append("}");
         return sb.toString();
     }

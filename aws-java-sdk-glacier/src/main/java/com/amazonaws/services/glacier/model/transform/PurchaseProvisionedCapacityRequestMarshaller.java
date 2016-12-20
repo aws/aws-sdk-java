@@ -63,10 +63,8 @@ public class PurchaseProvisionedCapacityRequestMarshaller implements
 
         String uriResourcePath = "/{accountId}/provisioned-capacity";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (purchaseProvisionedCapacityRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(purchaseProvisionedCapacityRequest.getAccountId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                purchaseProvisionedCapacityRequest.getAccountId() == null ? "-" : purchaseProvisionedCapacityRequest.getAccountId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

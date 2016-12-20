@@ -180,11 +180,11 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: " + getProperties());
+            sb.append("Properties: ").append(getProperties());
         sb.append("}");
         return sb.toString();
     }

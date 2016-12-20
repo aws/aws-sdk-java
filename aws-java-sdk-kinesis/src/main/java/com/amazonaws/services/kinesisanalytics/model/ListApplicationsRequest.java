@@ -139,9 +139,9 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartApplicationName() != null)
-            sb.append("ExclusiveStartApplicationName: " + getExclusiveStartApplicationName());
+            sb.append("ExclusiveStartApplicationName: ").append(getExclusiveStartApplicationName());
         sb.append("}");
         return sb.toString();
     }

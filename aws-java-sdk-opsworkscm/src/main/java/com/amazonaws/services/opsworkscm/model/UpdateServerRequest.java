@@ -248,15 +248,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDisableAutomatedBackup() != null)
-            sb.append("DisableAutomatedBackup: " + getDisableAutomatedBackup() + ",");
+            sb.append("DisableAutomatedBackup: ").append(getDisableAutomatedBackup()).append(",");
         if (getBackupRetentionCount() != null)
-            sb.append("BackupRetentionCount: " + getBackupRetentionCount() + ",");
+            sb.append("BackupRetentionCount: ").append(getBackupRetentionCount()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow());
+            sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow());
         sb.append("}");
         return sb.toString();
     }

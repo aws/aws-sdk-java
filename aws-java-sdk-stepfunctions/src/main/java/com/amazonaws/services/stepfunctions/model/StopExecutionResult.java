@@ -78,7 +78,7 @@ public class StopExecutionResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStopDate() != null)
-            sb.append("StopDate: " + getStopDate());
+            sb.append("StopDate: ").append(getStopDate());
         sb.append("}");
         return sb.toString();
     }

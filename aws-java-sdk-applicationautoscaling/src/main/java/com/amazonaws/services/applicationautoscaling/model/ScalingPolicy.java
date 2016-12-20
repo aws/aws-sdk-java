@@ -931,23 +931,23 @@ public class ScalingPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyARN() != null)
-            sb.append("PolicyARN: " + getPolicyARN() + ",");
+            sb.append("PolicyARN: ").append(getPolicyARN()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getServiceNamespace() != null)
-            sb.append("ServiceNamespace: " + getServiceNamespace() + ",");
+            sb.append("ServiceNamespace: ").append(getServiceNamespace()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getScalableDimension() != null)
-            sb.append("ScalableDimension: " + getScalableDimension() + ",");
+            sb.append("ScalableDimension: ").append(getScalableDimension()).append(",");
         if (getPolicyType() != null)
-            sb.append("PolicyType: " + getPolicyType() + ",");
+            sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getStepScalingPolicyConfiguration() != null)
-            sb.append("StepScalingPolicyConfiguration: " + getStepScalingPolicyConfiguration() + ",");
+            sb.append("StepScalingPolicyConfiguration: ").append(getStepScalingPolicyConfiguration()).append(",");
         if (getAlarms() != null)
-            sb.append("Alarms: " + getAlarms() + ",");
+            sb.append("Alarms: ").append(getAlarms()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }

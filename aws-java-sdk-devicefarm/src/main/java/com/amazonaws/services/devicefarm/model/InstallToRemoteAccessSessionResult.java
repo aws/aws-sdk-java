@@ -61,7 +61,7 @@ public class InstallToRemoteAccessSessionResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppUpload() != null)
-            sb.append("AppUpload: " + getAppUpload());
+            sb.append("AppUpload: ").append(getAppUpload());
         sb.append("}");
         return sb.toString();
     }

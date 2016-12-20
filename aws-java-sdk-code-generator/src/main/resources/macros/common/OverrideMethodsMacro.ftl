@@ -14,7 +14,7 @@
         <#if shape.members?has_content>
         <#list shape.members as member>
         <#local memberName = member.name>
-        if (get${memberName}() != null) sb.append("${memberName}: " + get${memberName}() <#if member_has_next> + ","</#if>);
+        if (${member.getterMethodName}() != null) sb.append("${memberName}: ").append(${member.getterMethodName}())<#if member_has_next>.append(",")</#if>;
         </#list>
         </#if>
         sb.append("}");
@@ -31,8 +31,8 @@
         <#if shape.members?has_content>
         <#list  shape.members as member>
         <#local memberName = member.name>
-        if (other.get${memberName}() == null ^ this.get${memberName}() == null) return false;
-        if (other.get${memberName}() != null && other.get${memberName}().equals(this.get${memberName}()) == false) return false;
+        if (other.${member.getterMethodName}() == null ^ this.${member.getterMethodName}() == null) return false;
+        if (other.${member.getterMethodName}() != null && other.${member.getterMethodName}().equals(this.${member.getterMethodName}()) == false) return false;
         </#list>
         </#if>
         return true;
@@ -46,7 +46,7 @@
         <#if shape.members?has_content>
         <#list  shape.members as member>
         <#local memberName = member.name>
-        hashCode = prime * hashCode + ((get${memberName}() == null) ? 0 : get${memberName}().hashCode());
+        hashCode = prime * hashCode + ((${member.getterMethodName}() == null) ? 0 : ${member.getterMethodName}().hashCode());
         </#list>
         </#if>
         return hashCode;

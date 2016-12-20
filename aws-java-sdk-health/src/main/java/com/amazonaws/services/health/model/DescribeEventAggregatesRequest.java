@@ -271,13 +271,13 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getAggregateField() != null)
-            sb.append("AggregateField: " + getAggregateField() + ",");
+            sb.append("AggregateField: ").append(getAggregateField()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

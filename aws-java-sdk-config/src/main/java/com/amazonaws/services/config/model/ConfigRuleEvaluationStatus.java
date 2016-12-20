@@ -660,27 +660,27 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleName() != null)
-            sb.append("ConfigRuleName: " + getConfigRuleName() + ",");
+            sb.append("ConfigRuleName: ").append(getConfigRuleName()).append(",");
         if (getConfigRuleArn() != null)
-            sb.append("ConfigRuleArn: " + getConfigRuleArn() + ",");
+            sb.append("ConfigRuleArn: ").append(getConfigRuleArn()).append(",");
         if (getConfigRuleId() != null)
-            sb.append("ConfigRuleId: " + getConfigRuleId() + ",");
+            sb.append("ConfigRuleId: ").append(getConfigRuleId()).append(",");
         if (getLastSuccessfulInvocationTime() != null)
-            sb.append("LastSuccessfulInvocationTime: " + getLastSuccessfulInvocationTime() + ",");
+            sb.append("LastSuccessfulInvocationTime: ").append(getLastSuccessfulInvocationTime()).append(",");
         if (getLastFailedInvocationTime() != null)
-            sb.append("LastFailedInvocationTime: " + getLastFailedInvocationTime() + ",");
+            sb.append("LastFailedInvocationTime: ").append(getLastFailedInvocationTime()).append(",");
         if (getLastSuccessfulEvaluationTime() != null)
-            sb.append("LastSuccessfulEvaluationTime: " + getLastSuccessfulEvaluationTime() + ",");
+            sb.append("LastSuccessfulEvaluationTime: ").append(getLastSuccessfulEvaluationTime()).append(",");
         if (getLastFailedEvaluationTime() != null)
-            sb.append("LastFailedEvaluationTime: " + getLastFailedEvaluationTime() + ",");
+            sb.append("LastFailedEvaluationTime: ").append(getLastFailedEvaluationTime()).append(",");
         if (getFirstActivatedTime() != null)
-            sb.append("FirstActivatedTime: " + getFirstActivatedTime() + ",");
+            sb.append("FirstActivatedTime: ").append(getFirstActivatedTime()).append(",");
         if (getLastErrorCode() != null)
-            sb.append("LastErrorCode: " + getLastErrorCode() + ",");
+            sb.append("LastErrorCode: ").append(getLastErrorCode()).append(",");
         if (getLastErrorMessage() != null)
-            sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
+            sb.append("LastErrorMessage: ").append(getLastErrorMessage()).append(",");
         if (getFirstEvaluationStarted() != null)
-            sb.append("FirstEvaluationStarted: " + getFirstEvaluationStarted());
+            sb.append("FirstEvaluationStarted: ").append(getFirstEvaluationStarted());
         sb.append("}");
         return sb.toString();
     }

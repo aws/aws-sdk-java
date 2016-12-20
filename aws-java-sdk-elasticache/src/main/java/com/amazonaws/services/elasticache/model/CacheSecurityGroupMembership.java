@@ -133,9 +133,9 @@ public class CacheSecurityGroupMembership implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSecurityGroupName() != null)
-            sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+            sb.append("CacheSecurityGroupName: ").append(getCacheSecurityGroupName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

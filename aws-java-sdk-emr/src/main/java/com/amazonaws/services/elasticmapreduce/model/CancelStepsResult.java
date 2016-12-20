@@ -122,7 +122,7 @@ public class CancelStepsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCancelStepsInfoList() != null)
-            sb.append("CancelStepsInfoList: " + getCancelStepsInfoList());
+            sb.append("CancelStepsInfoList: ").append(getCancelStepsInfoList());
         sb.append("}");
         return sb.toString();
     }

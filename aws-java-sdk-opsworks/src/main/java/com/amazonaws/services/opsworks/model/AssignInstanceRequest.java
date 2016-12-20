@@ -167,9 +167,9 @@ public class AssignInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds());
+            sb.append("LayerIds: ").append(getLayerIds());
         sb.append("}");
         return sb.toString();
     }

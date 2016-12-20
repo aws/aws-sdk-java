@@ -168,9 +168,9 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExclusiveStartTableName() != null)
-            sb.append("ExclusiveStartTableName: " + getExclusiveStartTableName() + ",");
+            sb.append("ExclusiveStartTableName: ").append(getExclusiveStartTableName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

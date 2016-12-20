@@ -59,7 +59,7 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationRunId() != null)
-            sb.append("ReplicationRunId: " + getReplicationRunId());
+            sb.append("ReplicationRunId: ").append(getReplicationRunId());
         sb.append("}");
         return sb.toString();
     }

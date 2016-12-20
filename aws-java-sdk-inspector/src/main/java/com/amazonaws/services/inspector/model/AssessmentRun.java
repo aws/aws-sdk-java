@@ -867,33 +867,33 @@ public class AssessmentRun implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAssessmentTemplateArn() != null)
-            sb.append("AssessmentTemplateArn: " + getAssessmentTemplateArn() + ",");
+            sb.append("AssessmentTemplateArn: ").append(getAssessmentTemplateArn()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getDurationInSeconds() != null)
-            sb.append("DurationInSeconds: " + getDurationInSeconds() + ",");
+            sb.append("DurationInSeconds: ").append(getDurationInSeconds()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getUserAttributesForFindings() != null)
-            sb.append("UserAttributesForFindings: " + getUserAttributesForFindings() + ",");
+            sb.append("UserAttributesForFindings: ").append(getUserAttributesForFindings()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStartedAt() != null)
-            sb.append("StartedAt: " + getStartedAt() + ",");
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: " + getCompletedAt() + ",");
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getStateChangedAt() != null)
-            sb.append("StateChangedAt: " + getStateChangedAt() + ",");
+            sb.append("StateChangedAt: ").append(getStateChangedAt()).append(",");
         if (getDataCollected() != null)
-            sb.append("DataCollected: " + getDataCollected() + ",");
+            sb.append("DataCollected: ").append(getDataCollected()).append(",");
         if (getStateChanges() != null)
-            sb.append("StateChanges: " + getStateChanges() + ",");
+            sb.append("StateChanges: ").append(getStateChanges()).append(",");
         if (getNotifications() != null)
-            sb.append("Notifications: " + getNotifications());
+            sb.append("Notifications: ").append(getNotifications());
         sb.append("}");
         return sb.toString();
     }

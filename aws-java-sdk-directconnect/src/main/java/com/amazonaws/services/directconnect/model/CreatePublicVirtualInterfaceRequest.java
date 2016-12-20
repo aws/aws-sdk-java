@@ -126,9 +126,9 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getNewPublicVirtualInterface() != null)
-            sb.append("NewPublicVirtualInterface: " + getNewPublicVirtualInterface());
+            sb.append("NewPublicVirtualInterface: ").append(getNewPublicVirtualInterface());
         sb.append("}");
         return sb.toString();
     }

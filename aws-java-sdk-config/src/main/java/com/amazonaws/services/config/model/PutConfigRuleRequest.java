@@ -60,7 +60,7 @@ public class PutConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRule() != null)
-            sb.append("ConfigRule: " + getConfigRule());
+            sb.append("ConfigRule: ").append(getConfigRule());
         sb.append("}");
         return sb.toString();
     }

@@ -199,9 +199,9 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTasks() != null)
-            sb.append("Tasks: " + getTasks() + ",");
+            sb.append("Tasks: ").append(getTasks()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures());
+            sb.append("Failures: ").append(getFailures());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribeNetworkInterfacesResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("networkInterfaceSet", targetDepth)) {
+                    describeNetworkInterfacesResult.withNetworkInterfaces(new ArrayList<NetworkInterface>());
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceSet/item", targetDepth)) {
                     describeNetworkInterfacesResult.withNetworkInterfaces(NetworkInterfaceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

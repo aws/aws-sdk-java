@@ -245,11 +245,11 @@ public class ListVPCAssociationAuthorizationsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getVPCs() != null)
-            sb.append("VPCs: " + getVPCs());
+            sb.append("VPCs: ").append(getVPCs());
         sb.append("}");
         return sb.toString();
     }

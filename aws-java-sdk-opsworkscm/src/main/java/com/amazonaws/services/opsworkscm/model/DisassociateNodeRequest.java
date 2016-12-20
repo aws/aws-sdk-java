@@ -142,11 +142,11 @@ public class DisassociateNodeRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getNodeName() != null)
-            sb.append("NodeName: " + getNodeName() + ",");
+            sb.append("NodeName: ").append(getNodeName()).append(",");
         if (getEngineAttributes() != null)
-            sb.append("EngineAttributes: " + getEngineAttributes());
+            sb.append("EngineAttributes: ").append(getEngineAttributes());
         sb.append("}");
         return sb.toString();
     }

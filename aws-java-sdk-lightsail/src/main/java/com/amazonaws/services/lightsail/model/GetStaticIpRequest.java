@@ -79,7 +79,7 @@ public class GetStaticIpRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStaticIpName() != null)
-            sb.append("StaticIpName: " + getStaticIpName());
+            sb.append("StaticIpName: ").append(getStaticIpName());
         sb.append("}");
         return sb.toString();
     }

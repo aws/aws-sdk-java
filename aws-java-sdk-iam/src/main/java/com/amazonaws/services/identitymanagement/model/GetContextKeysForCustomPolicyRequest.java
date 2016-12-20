@@ -171,7 +171,7 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyInputList() != null)
-            sb.append("PolicyInputList: " + getPolicyInputList());
+            sb.append("PolicyInputList: ").append(getPolicyInputList());
         sb.append("}");
         return sb.toString();
     }

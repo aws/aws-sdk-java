@@ -50,6 +50,11 @@ public class GetGroupResultStaxUnmarshaller implements Unmarshaller<GetGroupResu
                     continue;
                 }
 
+                if (context.testExpression("Users", targetDepth)) {
+                    getGroupResult.withUsers(new ArrayList<User>());
+                    continue;
+                }
+
                 if (context.testExpression("Users/member", targetDepth)) {
                     getGroupResult.withUsers(UserStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

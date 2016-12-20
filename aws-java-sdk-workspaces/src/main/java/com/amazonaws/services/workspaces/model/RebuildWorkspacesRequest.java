@@ -114,7 +114,7 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRebuildWorkspaceRequests() != null)
-            sb.append("RebuildWorkspaceRequests: " + getRebuildWorkspaceRequests());
+            sb.append("RebuildWorkspaceRequests: ").append(getRebuildWorkspaceRequests());
         sb.append("}");
         return sb.toString();
     }

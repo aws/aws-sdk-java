@@ -277,13 +277,13 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getFilterName() != null)
-            sb.append("FilterName: " + getFilterName() + ",");
+            sb.append("FilterName: ").append(getFilterName()).append(",");
         if (getFilterPattern() != null)
-            sb.append("FilterPattern: " + getFilterPattern() + ",");
+            sb.append("FilterPattern: ").append(getFilterPattern()).append(",");
         if (getMetricTransformations() != null)
-            sb.append("MetricTransformations: " + getMetricTransformations());
+            sb.append("MetricTransformations: ").append(getMetricTransformations());
         sb.append("}");
         return sb.toString();
     }

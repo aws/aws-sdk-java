@@ -113,7 +113,7 @@ public class DescribeSuggestersResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuggesters() != null)
-            sb.append("Suggesters: " + getSuggesters());
+            sb.append("Suggesters: ").append(getSuggesters());
         sb.append("}");
         return sb.toString();
     }

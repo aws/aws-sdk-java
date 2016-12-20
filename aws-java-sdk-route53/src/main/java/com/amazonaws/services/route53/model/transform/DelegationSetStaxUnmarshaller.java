@@ -55,6 +55,11 @@ public class DelegationSetStaxUnmarshaller implements Unmarshaller<DelegationSet
                     continue;
                 }
 
+                if (context.testExpression("NameServers", targetDepth)) {
+                    delegationSet.withNameServers(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("NameServers/NameServer", targetDepth)) {
                     delegationSet.withNameServers(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

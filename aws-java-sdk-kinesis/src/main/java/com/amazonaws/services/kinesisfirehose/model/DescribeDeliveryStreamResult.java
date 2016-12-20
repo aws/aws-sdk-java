@@ -80,7 +80,7 @@ public class DescribeDeliveryStreamResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamDescription() != null)
-            sb.append("DeliveryStreamDescription: " + getDeliveryStreamDescription());
+            sb.append("DeliveryStreamDescription: ").append(getDeliveryStreamDescription());
         sb.append("}");
         return sb.toString();
     }

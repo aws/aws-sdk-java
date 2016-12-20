@@ -80,7 +80,7 @@ public class CreateComputerResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputer() != null)
-            sb.append("Computer: " + getComputer());
+            sb.append("Computer: ").append(getComputer());
         sb.append("}");
         return sb.toString();
     }

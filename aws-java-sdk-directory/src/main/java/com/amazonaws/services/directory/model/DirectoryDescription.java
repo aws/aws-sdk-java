@@ -1113,41 +1113,41 @@ public class DirectoryDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getShortName() != null)
-            sb.append("ShortName: " + getShortName() + ",");
+            sb.append("ShortName: ").append(getShortName()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getAlias() != null)
-            sb.append("Alias: " + getAlias() + ",");
+            sb.append("Alias: ").append(getAlias()).append(",");
         if (getAccessUrl() != null)
-            sb.append("AccessUrl: " + getAccessUrl() + ",");
+            sb.append("AccessUrl: ").append(getAccessUrl()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDnsIpAddrs() != null)
-            sb.append("DnsIpAddrs: " + getDnsIpAddrs() + ",");
+            sb.append("DnsIpAddrs: ").append(getDnsIpAddrs()).append(",");
         if (getStage() != null)
-            sb.append("Stage: " + getStage() + ",");
+            sb.append("Stage: ").append(getStage()).append(",");
         if (getLaunchTime() != null)
-            sb.append("LaunchTime: " + getLaunchTime() + ",");
+            sb.append("LaunchTime: ").append(getLaunchTime()).append(",");
         if (getStageLastUpdatedDateTime() != null)
-            sb.append("StageLastUpdatedDateTime: " + getStageLastUpdatedDateTime() + ",");
+            sb.append("StageLastUpdatedDateTime: ").append(getStageLastUpdatedDateTime()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getVpcSettings() != null)
-            sb.append("VpcSettings: " + getVpcSettings() + ",");
+            sb.append("VpcSettings: ").append(getVpcSettings()).append(",");
         if (getConnectSettings() != null)
-            sb.append("ConnectSettings: " + getConnectSettings() + ",");
+            sb.append("ConnectSettings: ").append(getConnectSettings()).append(",");
         if (getRadiusSettings() != null)
-            sb.append("RadiusSettings: " + getRadiusSettings() + ",");
+            sb.append("RadiusSettings: ").append(getRadiusSettings()).append(",");
         if (getRadiusStatus() != null)
-            sb.append("RadiusStatus: " + getRadiusStatus() + ",");
+            sb.append("RadiusStatus: ").append(getRadiusStatus()).append(",");
         if (getStageReason() != null)
-            sb.append("StageReason: " + getStageReason() + ",");
+            sb.append("StageReason: ").append(getStageReason()).append(",");
         if (getSsoEnabled() != null)
-            sb.append("SsoEnabled: " + getSsoEnabled());
+            sb.append("SsoEnabled: ").append(getSsoEnabled());
         sb.append("}");
         return sb.toString();
     }

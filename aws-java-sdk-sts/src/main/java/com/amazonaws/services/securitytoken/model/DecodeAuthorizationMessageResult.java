@@ -81,7 +81,7 @@ public class DecodeAuthorizationMessageResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDecodedMessage() != null)
-            sb.append("DecodedMessage: " + getDecodedMessage());
+            sb.append("DecodedMessage: ").append(getDecodedMessage());
         sb.append("}");
         return sb.toString();
     }

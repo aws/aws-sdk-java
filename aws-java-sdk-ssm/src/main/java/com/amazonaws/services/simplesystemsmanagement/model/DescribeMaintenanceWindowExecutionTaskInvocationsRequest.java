@@ -313,15 +313,15 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId()).append(",");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

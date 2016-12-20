@@ -251,13 +251,13 @@ public class ProductViewDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductViewSummary() != null)
-            sb.append("ProductViewSummary: " + getProductViewSummary() + ",");
+            sb.append("ProductViewSummary: ").append(getProductViewSummary()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getProductARN() != null)
-            sb.append("ProductARN: " + getProductARN() + ",");
+            sb.append("ProductARN: ").append(getProductARN()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime());
         sb.append("}");
         return sb.toString();
     }

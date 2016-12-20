@@ -65,16 +65,10 @@ public class UpdateRecordsRequestMarshaller implements Marshaller<Request<Update
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (updateRecordsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateRecordsRequest.getIdentityPoolId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{IdentityId}",
-                (updateRecordsRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateRecordsRequest.getIdentityId()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{DatasetName}",
-                (updateRecordsRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateRecordsRequest.getDatasetName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                updateRecordsRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", updateRecordsRequest.getIdentityId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName", updateRecordsRequest.getDatasetName());
         request.setResourcePath(uriResourcePath);
 
         try {

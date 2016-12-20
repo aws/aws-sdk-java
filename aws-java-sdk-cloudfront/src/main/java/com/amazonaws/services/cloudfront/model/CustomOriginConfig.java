@@ -251,13 +251,13 @@ public class CustomOriginConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHTTPPort() != null)
-            sb.append("HTTPPort: " + getHTTPPort() + ",");
+            sb.append("HTTPPort: ").append(getHTTPPort()).append(",");
         if (getHTTPSPort() != null)
-            sb.append("HTTPSPort: " + getHTTPSPort() + ",");
+            sb.append("HTTPSPort: ").append(getHTTPSPort()).append(",");
         if (getOriginProtocolPolicy() != null)
-            sb.append("OriginProtocolPolicy: " + getOriginProtocolPolicy() + ",");
+            sb.append("OriginProtocolPolicy: ").append(getOriginProtocolPolicy()).append(",");
         if (getOriginSslProtocols() != null)
-            sb.append("OriginSslProtocols: " + getOriginSslProtocols());
+            sb.append("OriginSslProtocols: ").append(getOriginSslProtocols());
         sb.append("}");
         return sb.toString();
     }

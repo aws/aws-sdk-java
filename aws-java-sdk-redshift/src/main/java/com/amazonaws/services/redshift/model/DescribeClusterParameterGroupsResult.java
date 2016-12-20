@@ -181,9 +181,9 @@ public class DescribeClusterParameterGroupsResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getParameterGroups() != null)
-            sb.append("ParameterGroups: " + getParameterGroups());
+            sb.append("ParameterGroups: ").append(getParameterGroups());
         sb.append("}");
         return sb.toString();
     }

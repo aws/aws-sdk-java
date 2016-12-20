@@ -161,9 +161,9 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceId() != null)
-            sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");
+            sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId()).append(",");
         if (getVirtualGatewayId() != null)
-            sb.append("VirtualGatewayId: " + getVirtualGatewayId());
+            sb.append("VirtualGatewayId: ").append(getVirtualGatewayId());
         sb.append("}");
         return sb.toString();
     }

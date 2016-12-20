@@ -50,6 +50,11 @@ public class DescribeConfigurationSetResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("EventDestinations", targetDepth)) {
+                    describeConfigurationSetResult.withEventDestinations(new ArrayList<EventDestination>());
+                    continue;
+                }
+
                 if (context.testExpression("EventDestinations/member", targetDepth)) {
                     describeConfigurationSetResult.withEventDestinations(EventDestinationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -167,9 +167,9 @@ public class DescribeVpcEndpointsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcEndpoints() != null)
-            sb.append("VpcEndpoints: " + getVpcEndpoints() + ",");
+            sb.append("VpcEndpoints: ").append(getVpcEndpoints()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

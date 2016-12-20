@@ -185,9 +185,9 @@ public class AttributeDimension implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeType() != null)
-            sb.append("AttributeType: " + getAttributeType() + ",");
+            sb.append("AttributeType: ").append(getAttributeType()).append(",");
         if (getValues() != null)
-            sb.append("Values: " + getValues());
+            sb.append("Values: ").append(getValues());
         sb.append("}");
         return sb.toString();
     }

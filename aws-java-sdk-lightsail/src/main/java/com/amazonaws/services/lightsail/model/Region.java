@@ -334,15 +334,15 @@ public class Region implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContinentCode() != null)
-            sb.append("ContinentCode: " + getContinentCode() + ",");
+            sb.append("ContinentCode: ").append(getContinentCode()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones());
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }

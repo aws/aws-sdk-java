@@ -205,11 +205,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN() + ",");
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

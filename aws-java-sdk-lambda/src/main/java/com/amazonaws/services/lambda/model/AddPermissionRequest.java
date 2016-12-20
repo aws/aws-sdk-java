@@ -715,21 +715,21 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getStatementId() != null)
-            sb.append("StatementId: " + getStatementId() + ",");
+            sb.append("StatementId: ").append(getStatementId()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getPrincipal() != null)
-            sb.append("Principal: " + getPrincipal() + ",");
+            sb.append("Principal: ").append(getPrincipal()).append(",");
         if (getSourceArn() != null)
-            sb.append("SourceArn: " + getSourceArn() + ",");
+            sb.append("SourceArn: ").append(getSourceArn()).append(",");
         if (getSourceAccount() != null)
-            sb.append("SourceAccount: " + getSourceAccount() + ",");
+            sb.append("SourceAccount: ").append(getSourceAccount()).append(",");
         if (getEventSourceToken() != null)
-            sb.append("EventSourceToken: " + getEventSourceToken() + ",");
+            sb.append("EventSourceToken: ").append(getEventSourceToken()).append(",");
         if (getQualifier() != null)
-            sb.append("Qualifier: " + getQualifier());
+            sb.append("Qualifier: ").append(getQualifier());
         sb.append("}");
         return sb.toString();
     }

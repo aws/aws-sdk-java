@@ -905,11 +905,11 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesModificationIds() != null)
-            sb.append("ReservedInstancesModificationIds: " + getReservedInstancesModificationIds() + ",");
+            sb.append("ReservedInstancesModificationIds: ").append(getReservedInstancesModificationIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

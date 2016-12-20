@@ -133,9 +133,9 @@ public class Location implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLocationCode() != null)
-            sb.append("LocationCode: " + getLocationCode() + ",");
+            sb.append("LocationCode: ").append(getLocationCode()).append(",");
         if (getLocationName() != null)
-            sb.append("LocationName: " + getLocationName());
+            sb.append("LocationName: ").append(getLocationName());
         sb.append("}");
         return sb.toString();
     }

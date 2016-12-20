@@ -173,11 +173,11 @@ public class ApplyEnvironmentManagedActionRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getActionId() != null)
-            sb.append("ActionId: " + getActionId());
+            sb.append("ActionId: ").append(getActionId());
         sb.append("}");
         return sb.toString();
     }

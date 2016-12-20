@@ -86,7 +86,7 @@ public class DeregisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition());
+            sb.append("TaskDefinition: ").append(getTaskDefinition());
         sb.append("}");
         return sb.toString();
     }

@@ -97,7 +97,7 @@ public class DeleteTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn());
+            sb.append("TopicArn: ").append(getTopicArn());
         sb.append("}");
         return sb.toString();
     }

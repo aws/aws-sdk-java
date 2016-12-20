@@ -124,9 +124,9 @@ public class CreateStreamingURLResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingURL() != null)
-            sb.append("StreamingURL: " + getStreamingURL() + ",");
+            sb.append("StreamingURL: ").append(getStreamingURL()).append(",");
         if (getExpires() != null)
-            sb.append("Expires: " + getExpires());
+            sb.append("Expires: ").append(getExpires());
         sb.append("}");
         return sb.toString();
     }

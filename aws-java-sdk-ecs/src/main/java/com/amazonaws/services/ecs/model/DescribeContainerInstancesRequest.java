@@ -165,9 +165,9 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getContainerInstances() != null)
-            sb.append("ContainerInstances: " + getContainerInstances());
+            sb.append("ContainerInstances: ").append(getContainerInstances());
         sb.append("}");
         return sb.toString();
     }

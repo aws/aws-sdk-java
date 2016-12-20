@@ -227,11 +227,11 @@ public class DescribeServiceErrorsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getServiceErrorIds() != null)
-            sb.append("ServiceErrorIds: " + getServiceErrorIds());
+            sb.append("ServiceErrorIds: ").append(getServiceErrorIds());
         sb.append("}");
         return sb.toString();
     }

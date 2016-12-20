@@ -59,7 +59,7 @@ public class DeleteSnapshotScheduleResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN());
+            sb.append("VolumeARN: ").append(getVolumeARN());
         sb.append("}");
         return sb.toString();
     }

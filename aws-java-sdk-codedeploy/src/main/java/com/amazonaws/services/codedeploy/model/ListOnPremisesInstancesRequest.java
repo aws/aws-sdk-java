@@ -382,11 +382,11 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistrationStatus() != null)
-            sb.append("RegistrationStatus: " + getRegistrationStatus() + ",");
+            sb.append("RegistrationStatus: ").append(getRegistrationStatus()).append(",");
         if (getTagFilters() != null)
-            sb.append("TagFilters: " + getTagFilters() + ",");
+            sb.append("TagFilters: ").append(getTagFilters()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

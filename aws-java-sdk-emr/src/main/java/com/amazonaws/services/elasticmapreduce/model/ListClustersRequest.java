@@ -280,13 +280,13 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreatedAfter() != null)
-            sb.append("CreatedAfter: " + getCreatedAfter() + ",");
+            sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
         if (getCreatedBefore() != null)
-            sb.append("CreatedBefore: " + getCreatedBefore() + ",");
+            sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
         if (getClusterStates() != null)
-            sb.append("ClusterStates: " + getClusterStates() + ",");
+            sb.append("ClusterStates: ").append(getClusterStates()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

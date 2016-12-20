@@ -308,15 +308,15 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions());
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }

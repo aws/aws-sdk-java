@@ -366,17 +366,17 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getAliasId() != null)
-            sb.append("AliasId: " + getAliasId() + ",");
+            sb.append("AliasId: ").append(getAliasId()).append(",");
         if (getStatusFilter() != null)
-            sb.append("StatusFilter: " + getStatusFilter() + ",");
+            sb.append("StatusFilter: ").append(getStatusFilter()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

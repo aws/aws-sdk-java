@@ -432,15 +432,15 @@ public class CreateOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getEngineName() != null)
-            sb.append("EngineName: " + getEngineName() + ",");
+            sb.append("EngineName: ").append(getEngineName()).append(",");
         if (getMajorEngineVersion() != null)
-            sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
+            sb.append("MajorEngineVersion: ").append(getMajorEngineVersion()).append(",");
         if (getOptionGroupDescription() != null)
-            sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ",");
+            sb.append("OptionGroupDescription: ").append(getOptionGroupDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

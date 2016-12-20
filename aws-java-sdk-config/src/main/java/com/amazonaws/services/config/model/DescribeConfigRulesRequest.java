@@ -174,9 +174,9 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleNames() != null)
-            sb.append("ConfigRuleNames: " + getConfigRuleNames() + ",");
+            sb.append("ConfigRuleNames: ").append(getConfigRuleNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

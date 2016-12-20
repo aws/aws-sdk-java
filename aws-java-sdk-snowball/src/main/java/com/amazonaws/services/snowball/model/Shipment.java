@@ -158,9 +158,9 @@ public class Shipment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTrackingNumber() != null)
-            sb.append("TrackingNumber: " + getTrackingNumber());
+            sb.append("TrackingNumber: ").append(getTrackingNumber());
         sb.append("}");
         return sb.toString();
     }

@@ -455,9 +455,9 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcIds() != null)
-            sb.append("VpcIds: " + getVpcIds() + ",");
+            sb.append("VpcIds: ").append(getVpcIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

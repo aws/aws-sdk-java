@@ -136,9 +136,9 @@ public class CreateSqlInjectionMatchSetResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlInjectionMatchSet() != null)
-            sb.append("SqlInjectionMatchSet: " + getSqlInjectionMatchSet() + ",");
+            sb.append("SqlInjectionMatchSet: ").append(getSqlInjectionMatchSet()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

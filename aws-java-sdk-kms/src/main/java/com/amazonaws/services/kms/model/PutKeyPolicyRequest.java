@@ -696,13 +696,13 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getBypassPolicyLockoutSafetyCheck() != null)
-            sb.append("BypassPolicyLockoutSafetyCheck: " + getBypassPolicyLockoutSafetyCheck());
+            sb.append("BypassPolicyLockoutSafetyCheck: ").append(getBypassPolicyLockoutSafetyCheck());
         sb.append("}");
         return sb.toString();
     }

@@ -553,23 +553,23 @@ public class RoleDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getRoleId() != null)
-            sb.append("RoleId: " + getRoleId() + ",");
+            sb.append("RoleId: ").append(getRoleId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getAssumeRolePolicyDocument() != null)
-            sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() + ",");
+            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
         if (getInstanceProfileList() != null)
-            sb.append("InstanceProfileList: " + getInstanceProfileList() + ",");
+            sb.append("InstanceProfileList: ").append(getInstanceProfileList()).append(",");
         if (getRolePolicyList() != null)
-            sb.append("RolePolicyList: " + getRolePolicyList() + ",");
+            sb.append("RolePolicyList: ").append(getRolePolicyList()).append(",");
         if (getAttachedManagedPolicies() != null)
-            sb.append("AttachedManagedPolicies: " + getAttachedManagedPolicies());
+            sb.append("AttachedManagedPolicies: ").append(getAttachedManagedPolicies());
         sb.append("}");
         return sb.toString();
     }

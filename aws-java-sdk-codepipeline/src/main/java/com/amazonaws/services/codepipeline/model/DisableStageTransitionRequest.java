@@ -281,13 +281,13 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getTransitionType() != null)
-            sb.append("TransitionType: " + getTransitionType() + ",");
+            sb.append("TransitionType: ").append(getTransitionType()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason());
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }

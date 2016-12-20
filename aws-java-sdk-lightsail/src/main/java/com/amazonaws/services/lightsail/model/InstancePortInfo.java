@@ -455,19 +455,19 @@ public class InstancePortInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFromPort() != null)
-            sb.append("FromPort: " + getFromPort() + ",");
+            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: " + getToPort() + ",");
+            sb.append("ToPort: ").append(getToPort()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getAccessFrom() != null)
-            sb.append("AccessFrom: " + getAccessFrom() + ",");
+            sb.append("AccessFrom: ").append(getAccessFrom()).append(",");
         if (getAccessType() != null)
-            sb.append("AccessType: " + getAccessType() + ",");
+            sb.append("AccessType: ").append(getAccessType()).append(",");
         if (getCommonName() != null)
-            sb.append("CommonName: " + getCommonName() + ",");
+            sb.append("CommonName: ").append(getCommonName()).append(",");
         if (getAccessDirection() != null)
-            sb.append("AccessDirection: " + getAccessDirection());
+            sb.append("AccessDirection: ").append(getAccessDirection());
         sb.append("}");
         return sb.toString();
     }

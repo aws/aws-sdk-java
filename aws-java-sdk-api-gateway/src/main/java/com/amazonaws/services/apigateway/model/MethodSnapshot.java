@@ -138,9 +138,9 @@ public class MethodSnapshot implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthorizationType() != null)
-            sb.append("AuthorizationType: " + getAuthorizationType() + ",");
+            sb.append("AuthorizationType: ").append(getAuthorizationType()).append(",");
         if (getApiKeyRequired() != null)
-            sb.append("ApiKeyRequired: " + getApiKeyRequired());
+            sb.append("ApiKeyRequired: ").append(getApiKeyRequired());
         sb.append("}");
         return sb.toString();
     }

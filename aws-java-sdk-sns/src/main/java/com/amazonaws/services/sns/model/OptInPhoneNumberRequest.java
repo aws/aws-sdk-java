@@ -81,7 +81,7 @@ public class OptInPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: " + getPhoneNumber());
+            sb.append("PhoneNumber: ").append(getPhoneNumber());
         sb.append("}");
         return sb.toString();
     }

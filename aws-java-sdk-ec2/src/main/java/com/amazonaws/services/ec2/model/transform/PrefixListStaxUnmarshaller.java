@@ -55,6 +55,11 @@ public class PrefixListStaxUnmarshaller implements Unmarshaller<PrefixList, Stax
                     continue;
                 }
 
+                if (context.testExpression("cidrSet", targetDepth)) {
+                    prefixList.withCidrs(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("cidrSet/item", targetDepth)) {
                     prefixList.withCidrs(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

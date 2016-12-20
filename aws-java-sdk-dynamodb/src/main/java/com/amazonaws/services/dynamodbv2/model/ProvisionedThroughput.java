@@ -201,9 +201,9 @@ public class ProvisionedThroughput implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReadCapacityUnits() != null)
-            sb.append("ReadCapacityUnits: " + getReadCapacityUnits() + ",");
+            sb.append("ReadCapacityUnits: ").append(getReadCapacityUnits()).append(",");
         if (getWriteCapacityUnits() != null)
-            sb.append("WriteCapacityUnits: " + getWriteCapacityUnits());
+            sb.append("WriteCapacityUnits: ").append(getWriteCapacityUnits());
         sb.append("}");
         return sb.toString();
     }

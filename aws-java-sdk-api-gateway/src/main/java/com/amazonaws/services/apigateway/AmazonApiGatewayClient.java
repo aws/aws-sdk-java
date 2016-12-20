@@ -322,8 +322,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public CreateAuthorizerResult createAuthorizer(CreateAuthorizerRequest createAuthorizerRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createAuthorizerRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(createAuthorizerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -369,8 +367,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateBasePathMappingResult createBasePathMapping(CreateBasePathMappingRequest createBasePathMappingRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createBasePathMappingRequest.getDomainName()), "DomainName");
 
         ExecutionContext executionContext = createExecutionContext(createBasePathMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -421,8 +417,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createDeploymentRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -465,8 +459,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDocumentationPartResult createDocumentationPart(CreateDocumentationPartRequest createDocumentationPartRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createDocumentationPartRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(createDocumentationPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -511,8 +503,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateDocumentationVersionResult createDocumentationVersion(CreateDocumentationVersionRequest createDocumentationVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createDocumentationVersionRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(createDocumentationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -607,8 +597,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public CreateModelResult createModel(CreateModelRequest createModelRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createModelRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(createModelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -655,9 +643,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateResourceResult createResource(CreateResourceRequest createResourceRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createResourceRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createResourceRequest.getParentId()), "ParentId");
 
         ExecutionContext executionContext = createExecutionContext(createResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -750,8 +735,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public CreateStageResult createStage(CreateStageRequest createStageRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createStageRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(createStageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -848,8 +831,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public CreateUsagePlanKeyResult createUsagePlanKey(CreateUsagePlanKeyRequest createUsagePlanKeyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createUsagePlanKeyRequest.getUsagePlanId()), "UsagePlanId");
-
         ExecutionContext executionContext = createExecutionContext(createUsagePlanKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -893,8 +874,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteApiKeyResult deleteApiKey(DeleteApiKeyRequest deleteApiKeyRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteApiKeyRequest.getApiKey()), "ApiKey");
 
         ExecutionContext executionContext = createExecutionContext(deleteApiKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -944,9 +923,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteAuthorizerResult deleteAuthorizer(DeleteAuthorizerRequest deleteAuthorizerRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteAuthorizerRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteAuthorizerRequest.getAuthorizerId()), "AuthorizerId");
-
         ExecutionContext executionContext = createExecutionContext(deleteAuthorizerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -990,9 +966,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteBasePathMappingResult deleteBasePathMapping(DeleteBasePathMappingRequest deleteBasePathMappingRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteBasePathMappingRequest.getDomainName()), "DomainName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteBasePathMappingRequest.getBasePath()), "BasePath");
 
         ExecutionContext executionContext = createExecutionContext(deleteBasePathMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1039,8 +1012,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteClientCertificateResult deleteClientCertificate(DeleteClientCertificateRequest deleteClientCertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteClientCertificateRequest.getClientCertificateId()), "ClientCertificateId");
 
         ExecutionContext executionContext = createExecutionContext(deleteClientCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1089,9 +1060,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteDeploymentResult deleteDeployment(DeleteDeploymentRequest deleteDeploymentRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDeploymentRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDeploymentRequest.getDeploymentId()), "DeploymentId");
-
         ExecutionContext executionContext = createExecutionContext(deleteDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1133,9 +1101,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteDocumentationPartResult deleteDocumentationPart(DeleteDocumentationPartRequest deleteDocumentationPartRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDocumentationPartRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDocumentationPartRequest.getDocumentationPartId()), "DocumentationPartId");
 
         ExecutionContext executionContext = createExecutionContext(deleteDocumentationPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1179,9 +1144,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteDocumentationVersionResult deleteDocumentationVersion(DeleteDocumentationVersionRequest deleteDocumentationVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDocumentationVersionRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDocumentationVersionRequest.getDocumentationVersion()), "DocumentationVersion");
 
         ExecutionContext executionContext = createExecutionContext(deleteDocumentationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1228,8 +1190,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteDomainNameResult deleteDomainName(DeleteDomainNameRequest deleteDomainNameRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDomainNameRequest.getDomainName()), "DomainName");
-
         ExecutionContext executionContext = createExecutionContext(deleteDomainNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1274,10 +1234,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteIntegrationResult deleteIntegration(DeleteIntegrationRequest deleteIntegrationRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationRequest.getHttpMethod()), "HttpMethod");
 
         ExecutionContext executionContext = createExecutionContext(deleteIntegrationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1325,11 +1281,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteIntegrationResponseResult deleteIntegrationResponse(DeleteIntegrationResponseRequest deleteIntegrationResponseRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteIntegrationResponseRequest.getStatusCode()), "StatusCode");
-
         ExecutionContext executionContext = createExecutionContext(deleteIntegrationResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1375,10 +1326,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteMethodResult deleteMethod(DeleteMethodRequest deleteMethodRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodRequest.getHttpMethod()), "HttpMethod");
 
         ExecutionContext executionContext = createExecutionContext(deleteMethodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1426,11 +1373,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteMethodResponseResult deleteMethodResponse(DeleteMethodResponseRequest deleteMethodResponseRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteMethodResponseRequest.getStatusCode()), "StatusCode");
-
         ExecutionContext executionContext = createExecutionContext(deleteMethodResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1476,9 +1418,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteModelResult deleteModel(DeleteModelRequest deleteModelRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteModelRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteModelRequest.getModelName()), "ModelName");
 
         ExecutionContext executionContext = createExecutionContext(deleteModelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1526,9 +1465,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteResourceResult deleteResource(DeleteResourceRequest deleteResourceRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteResourceRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteResourceRequest.getResourceId()), "ResourceId");
-
         ExecutionContext executionContext = createExecutionContext(deleteResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1573,8 +1509,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteRestApiResult deleteRestApi(DeleteRestApiRequest deleteRestApiRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteRestApiRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(deleteRestApiRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1621,9 +1555,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteStageResult deleteStage(DeleteStageRequest deleteStageRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteStageRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteStageRequest.getStageName()), "StageName");
-
         ExecutionContext executionContext = createExecutionContext(deleteStageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1668,8 +1599,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public DeleteUsagePlanResult deleteUsagePlan(DeleteUsagePlanRequest deleteUsagePlanRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteUsagePlanRequest.getUsagePlanId()), "UsagePlanId");
 
         ExecutionContext executionContext = createExecutionContext(deleteUsagePlanRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1718,9 +1647,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public DeleteUsagePlanKeyResult deleteUsagePlanKey(DeleteUsagePlanKeyRequest deleteUsagePlanKeyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteUsagePlanKeyRequest.getUsagePlanId()), "UsagePlanId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteUsagePlanKeyRequest.getKeyId()), "KeyId");
-
         ExecutionContext executionContext = createExecutionContext(deleteUsagePlanKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1765,9 +1691,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public FlushStageAuthorizersCacheResult flushStageAuthorizersCache(FlushStageAuthorizersCacheRequest flushStageAuthorizersCacheRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(flushStageAuthorizersCacheRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(flushStageAuthorizersCacheRequest.getStageName()), "StageName");
 
         ExecutionContext executionContext = createExecutionContext(flushStageAuthorizersCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1814,9 +1737,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public FlushStageCacheResult flushStageCache(FlushStageCacheRequest flushStageCacheRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(flushStageCacheRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(flushStageCacheRequest.getStageName()), "StageName");
 
         ExecutionContext executionContext = createExecutionContext(flushStageCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1951,8 +1871,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetApiKeyResult getApiKey(GetApiKeyRequest getApiKeyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getApiKeyRequest.getApiKey()), "ApiKey");
-
         ExecutionContext executionContext = createExecutionContext(getApiKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2043,9 +1961,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetAuthorizerResult getAuthorizer(GetAuthorizerRequest getAuthorizerRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getAuthorizerRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getAuthorizerRequest.getAuthorizerId()), "AuthorizerId");
-
         ExecutionContext executionContext = createExecutionContext(getAuthorizerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2093,8 +2008,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetAuthorizersResult getAuthorizers(GetAuthorizersRequest getAuthorizersRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getAuthorizersRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(getAuthorizersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2138,9 +2051,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetBasePathMappingResult getBasePathMapping(GetBasePathMappingRequest getBasePathMappingRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getBasePathMappingRequest.getDomainName()), "DomainName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getBasePathMappingRequest.getBasePath()), "BasePath");
 
         ExecutionContext executionContext = createExecutionContext(getBasePathMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2186,8 +2096,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetBasePathMappingsResult getBasePathMappings(GetBasePathMappingsRequest getBasePathMappingsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getBasePathMappingsRequest.getDomainName()), "DomainName");
-
         ExecutionContext executionContext = createExecutionContext(getBasePathMappingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2231,8 +2139,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetClientCertificateResult getClientCertificate(GetClientCertificateRequest getClientCertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getClientCertificateRequest.getClientCertificateId()), "ClientCertificateId");
 
         ExecutionContext executionContext = createExecutionContext(getClientCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2324,9 +2230,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetDeploymentResult getDeployment(GetDeploymentRequest getDeploymentRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDeploymentRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDeploymentRequest.getDeploymentId()), "DeploymentId");
-
         ExecutionContext executionContext = createExecutionContext(getDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2372,8 +2275,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetDeploymentsResult getDeployments(GetDeploymentsRequest getDeploymentsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDeploymentsRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(getDeploymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2413,9 +2314,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDocumentationPartResult getDocumentationPart(GetDocumentationPartRequest getDocumentationPartRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDocumentationPartRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDocumentationPartRequest.getDocumentationPartId()), "DocumentationPartId");
 
         ExecutionContext executionContext = createExecutionContext(getDocumentationPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2459,8 +2357,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetDocumentationPartsResult getDocumentationParts(GetDocumentationPartsRequest getDocumentationPartsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDocumentationPartsRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(getDocumentationPartsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2501,9 +2397,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDocumentationVersionResult getDocumentationVersion(GetDocumentationVersionRequest getDocumentationVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDocumentationVersionRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDocumentationVersionRequest.getDocumentationVersion()), "DocumentationVersion");
 
         ExecutionContext executionContext = createExecutionContext(getDocumentationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2546,8 +2439,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDocumentationVersionsResult getDocumentationVersions(GetDocumentationVersionsRequest getDocumentationVersionsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDocumentationVersionsRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(getDocumentationVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2594,8 +2485,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetDomainNameResult getDomainName(GetDomainNameRequest getDomainNameRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getDomainNameRequest.getDomainName()), "DomainName");
 
         ExecutionContext executionContext = createExecutionContext(getDomainNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2686,10 +2575,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetExportResult getExport(GetExportRequest getExportRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getExportRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getExportRequest.getStageName()), "StageName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getExportRequest.getExportType()), "ExportType");
-
         ExecutionContext executionContext = createExecutionContext(getExportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2734,10 +2619,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetIntegrationResult getIntegration(GetIntegrationRequest getIntegrationRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationRequest.getHttpMethod()), "HttpMethod");
-
         ExecutionContext executionContext = createExecutionContext(getIntegrationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2781,11 +2662,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetIntegrationResponseResult getIntegrationResponse(GetIntegrationResponseRequest getIntegrationResponseRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIntegrationResponseRequest.getStatusCode()), "StatusCode");
 
         ExecutionContext executionContext = createExecutionContext(getIntegrationResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2832,10 +2708,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetMethodResult getMethod(GetMethodRequest getMethodRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodRequest.getHttpMethod()), "HttpMethod");
-
         ExecutionContext executionContext = createExecutionContext(getMethodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2880,11 +2752,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetMethodResponseResult getMethodResponse(GetMethodResponseRequest getMethodResponseRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getMethodResponseRequest.getStatusCode()), "StatusCode");
-
         ExecutionContext executionContext = createExecutionContext(getMethodResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -2928,9 +2795,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetModelResult getModel(GetModelRequest getModelRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getModelRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getModelRequest.getModelName()), "ModelName");
 
         ExecutionContext executionContext = createExecutionContext(getModelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2977,9 +2841,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetModelTemplateResult getModelTemplate(GetModelTemplateRequest getModelTemplateRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getModelTemplateRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getModelTemplateRequest.getModelName()), "ModelName");
-
         ExecutionContext executionContext = createExecutionContext(getModelTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3025,8 +2886,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetModelsResult getModels(GetModelsRequest getModelsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getModelsRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(getModelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3070,9 +2929,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetResourceResult getResource(GetResourceRequest getResourceRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getResourceRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getResourceRequest.getResourceId()), "ResourceId");
 
         ExecutionContext executionContext = createExecutionContext(getResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3119,8 +2975,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetResourcesResult getResources(GetResourcesRequest getResourcesRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getResourcesRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(getResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3164,8 +3018,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetRestApiResult getRestApi(GetRestApiRequest getRestApiRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getRestApiRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(getRestApiRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3256,10 +3108,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetSdkResult getSdk(GetSdkRequest getSdkRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSdkRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSdkRequest.getStageName()), "StageName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getSdkRequest.getSdkType()), "SdkType");
-
         ExecutionContext executionContext = createExecutionContext(getSdkRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3304,9 +3152,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetStageResult getStage(GetStageRequest getStageRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getStageRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getStageRequest.getStageName()), "StageName");
-
         ExecutionContext executionContext = createExecutionContext(getStageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3350,8 +3195,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetStagesResult getStages(GetStagesRequest getStagesRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getStagesRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(getStagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3398,8 +3241,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetUsageResult getUsage(GetUsageRequest getUsageRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getUsageRequest.getUsagePlanId()), "UsagePlanId");
-
         ExecutionContext executionContext = createExecutionContext(getUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3444,8 +3285,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetUsagePlanResult getUsagePlan(GetUsagePlanRequest getUsagePlanRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getUsagePlanRequest.getUsagePlanId()), "UsagePlanId");
 
         ExecutionContext executionContext = createExecutionContext(getUsagePlanRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3492,9 +3331,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public GetUsagePlanKeyResult getUsagePlanKey(GetUsagePlanKeyRequest getUsagePlanKeyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getUsagePlanKeyRequest.getUsagePlanId()), "UsagePlanId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getUsagePlanKeyRequest.getKeyId()), "KeyId");
-
         ExecutionContext executionContext = createExecutionContext(getUsagePlanKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3539,8 +3375,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public GetUsagePlanKeysResult getUsagePlanKeys(GetUsagePlanKeysRequest getUsagePlanKeysRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getUsagePlanKeysRequest.getUsagePlanId()), "UsagePlanId");
 
         ExecutionContext executionContext = createExecutionContext(getUsagePlanKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3677,8 +3511,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public ImportDocumentationPartsResult importDocumentationParts(ImportDocumentationPartsRequest importDocumentationPartsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(importDocumentationPartsRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(importDocumentationPartsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3772,10 +3604,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public PutIntegrationResult putIntegration(PutIntegrationRequest putIntegrationRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationRequest.getHttpMethod()), "HttpMethod");
-
         ExecutionContext executionContext = createExecutionContext(putIntegrationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3822,11 +3650,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public PutIntegrationResponseResult putIntegrationResponse(PutIntegrationResponseRequest putIntegrationResponseRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putIntegrationResponseRequest.getStatusCode()), "StatusCode");
 
         ExecutionContext executionContext = createExecutionContext(putIntegrationResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3876,10 +3699,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public PutMethodResult putMethod(PutMethodRequest putMethodRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodRequest.getHttpMethod()), "HttpMethod");
-
         ExecutionContext executionContext = createExecutionContext(putMethodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -3926,11 +3745,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public PutMethodResponseResult putMethodResponse(PutMethodResponseRequest putMethodResponseRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putMethodResponseRequest.getStatusCode()), "StatusCode");
 
         ExecutionContext executionContext = createExecutionContext(putMethodResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3981,8 +3795,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public PutRestApiResult putRestApi(PutRestApiRequest putRestApiRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(putRestApiRequest.getRestApiId()), "RestApiId");
-
         ExecutionContext executionContext = createExecutionContext(putRestApiRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4032,9 +3844,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public TestInvokeAuthorizerResult testInvokeAuthorizer(TestInvokeAuthorizerRequest testInvokeAuthorizerRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(testInvokeAuthorizerRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(testInvokeAuthorizerRequest.getAuthorizerId()), "AuthorizerId");
-
         ExecutionContext executionContext = createExecutionContext(testInvokeAuthorizerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4080,10 +3889,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public TestInvokeMethodResult testInvokeMethod(TestInvokeMethodRequest testInvokeMethodRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(testInvokeMethodRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(testInvokeMethodRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(testInvokeMethodRequest.getHttpMethod()), "HttpMethod");
 
         ExecutionContext executionContext = createExecutionContext(testInvokeMethodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4176,8 +3981,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest updateApiKeyRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateApiKeyRequest.getApiKey()), "ApiKey");
-
         ExecutionContext executionContext = createExecutionContext(updateApiKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4225,9 +4028,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateAuthorizerResult updateAuthorizer(UpdateAuthorizerRequest updateAuthorizerRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateAuthorizerRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateAuthorizerRequest.getAuthorizerId()), "AuthorizerId");
-
         ExecutionContext executionContext = createExecutionContext(updateAuthorizerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4274,9 +4074,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateBasePathMappingResult updateBasePathMapping(UpdateBasePathMappingRequest updateBasePathMappingRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateBasePathMappingRequest.getDomainName()), "DomainName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateBasePathMappingRequest.getBasePath()), "BasePath");
-
         ExecutionContext executionContext = createExecutionContext(updateBasePathMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4322,8 +4119,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateClientCertificateResult updateClientCertificate(UpdateClientCertificateRequest updateClientCertificateRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateClientCertificateRequest.getClientCertificateId()), "ClientCertificateId");
 
         ExecutionContext executionContext = createExecutionContext(updateClientCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4372,9 +4167,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateDeploymentResult updateDeployment(UpdateDeploymentRequest updateDeploymentRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDeploymentRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDeploymentRequest.getDeploymentId()), "DeploymentId");
-
         ExecutionContext executionContext = createExecutionContext(updateDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4418,9 +4210,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateDocumentationPartResult updateDocumentationPart(UpdateDocumentationPartRequest updateDocumentationPartRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDocumentationPartRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDocumentationPartRequest.getDocumentationPartId()), "DocumentationPartId");
-
         ExecutionContext executionContext = createExecutionContext(updateDocumentationPartRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4463,9 +4252,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateDocumentationVersionResult updateDocumentationVersion(UpdateDocumentationVersionRequest updateDocumentationVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDocumentationVersionRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDocumentationVersionRequest.getDocumentationVersion()), "DocumentationVersion");
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentationVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4514,8 +4300,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateDomainNameResult updateDomainName(UpdateDomainNameRequest updateDomainNameRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateDomainNameRequest.getDomainName()), "DomainName");
-
         ExecutionContext executionContext = createExecutionContext(updateDomainNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4562,10 +4346,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateIntegrationResult updateIntegration(UpdateIntegrationRequest updateIntegrationRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationRequest.getHttpMethod()), "HttpMethod");
-
         ExecutionContext executionContext = createExecutionContext(updateIntegrationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4611,11 +4391,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateIntegrationResponseResult updateIntegrationResponse(UpdateIntegrationResponseRequest updateIntegrationResponseRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateIntegrationResponseRequest.getStatusCode()), "StatusCode");
 
         ExecutionContext executionContext = createExecutionContext(updateIntegrationResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4664,10 +4439,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateMethodResult updateMethod(UpdateMethodRequest updateMethodRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodRequest.getHttpMethod()), "HttpMethod");
-
         ExecutionContext executionContext = createExecutionContext(updateMethodRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4715,11 +4486,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateMethodResponseResult updateMethodResponse(UpdateMethodResponseRequest updateMethodResponseRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodResponseRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodResponseRequest.getResourceId()), "ResourceId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodResponseRequest.getHttpMethod()), "HttpMethod");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateMethodResponseRequest.getStatusCode()), "StatusCode");
-
         ExecutionContext executionContext = createExecutionContext(updateMethodResponseRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4765,9 +4531,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateModelResult updateModel(UpdateModelRequest updateModelRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateModelRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateModelRequest.getModelName()), "ModelName");
 
         ExecutionContext executionContext = createExecutionContext(updateModelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4815,9 +4578,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateResourceResult updateResource(UpdateResourceRequest updateResourceRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateResourceRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateResourceRequest.getResourceId()), "ResourceId");
-
         ExecutionContext executionContext = createExecutionContext(updateResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4863,8 +4623,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateRestApiResult updateRestApi(UpdateRestApiRequest updateRestApiRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateRestApiRequest.getRestApiId()), "RestApiId");
 
         ExecutionContext executionContext = createExecutionContext(updateRestApiRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4912,9 +4670,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateStageResult updateStage(UpdateStageRequest updateStageRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateStageRequest.getRestApiId()), "RestApiId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateStageRequest.getStageName()), "StageName");
-
         ExecutionContext executionContext = createExecutionContext(updateStageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -4961,9 +4716,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     @Override
     public UpdateUsageResult updateUsage(UpdateUsageRequest updateUsageRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateUsageRequest.getUsagePlanId()), "UsagePlanId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateUsageRequest.getKeyId()), "KeyId");
-
         ExecutionContext executionContext = createExecutionContext(updateUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -5009,8 +4761,6 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      */
     @Override
     public UpdateUsagePlanResult updateUsagePlan(UpdateUsagePlanRequest updateUsagePlanRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateUsagePlanRequest.getUsagePlanId()), "UsagePlanId");
 
         ExecutionContext executionContext = createExecutionContext(updateUsagePlanRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

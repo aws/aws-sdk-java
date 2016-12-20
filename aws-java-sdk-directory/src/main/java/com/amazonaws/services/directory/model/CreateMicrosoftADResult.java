@@ -80,7 +80,7 @@ public class CreateMicrosoftADResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId());
+            sb.append("DirectoryId: ").append(getDirectoryId());
         sb.append("}");
         return sb.toString();
     }

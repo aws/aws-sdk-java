@@ -45,6 +45,11 @@ public class DescribeVolumesResultStaxUnmarshaller implements Unmarshaller<Descr
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("volumeSet", targetDepth)) {
+                    describeVolumesResult.withVolumes(new ArrayList<Volume>());
+                    continue;
+                }
+
                 if (context.testExpression("volumeSet/item", targetDepth)) {
                     describeVolumesResult.withVolumes(VolumeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

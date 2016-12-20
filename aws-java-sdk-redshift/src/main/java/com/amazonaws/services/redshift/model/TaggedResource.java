@@ -540,11 +540,11 @@ public class TaggedResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTag() != null)
-            sb.append("Tag: " + getTag() + ",");
+            sb.append("Tag: ").append(getTag()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType());
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }

@@ -81,7 +81,7 @@ public class CreateVpcResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpc() != null)
-            sb.append("Vpc: " + getVpc());
+            sb.append("Vpc: ").append(getVpc());
         sb.append("}");
         return sb.toString();
     }

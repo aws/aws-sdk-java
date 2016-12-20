@@ -172,11 +172,11 @@ public class ActiveInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getSpotInstanceRequestId() != null)
-            sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId());
+            sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId());
         sb.append("}");
         return sb.toString();
     }

@@ -381,15 +381,15 @@ public class Voice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGender() != null)
-            sb.append("Gender: " + getGender() + ",");
+            sb.append("Gender: ").append(getGender()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getLanguageCode() != null)
-            sb.append("LanguageCode: " + getLanguageCode() + ",");
+            sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getLanguageName() != null)
-            sb.append("LanguageName: " + getLanguageName() + ",");
+            sb.append("LanguageName: ").append(getLanguageName()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

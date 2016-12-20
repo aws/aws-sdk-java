@@ -1179,39 +1179,39 @@ public class DeploymentInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupName() != null)
-            sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
+            sb.append("DeploymentGroupName: ").append(getDeploymentGroupName()).append(",");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
+            sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getErrorInformation() != null)
-            sb.append("ErrorInformation: " + getErrorInformation() + ",");
+            sb.append("ErrorInformation: ").append(getErrorInformation()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime() + ",");
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getCompleteTime() != null)
-            sb.append("CompleteTime: " + getCompleteTime() + ",");
+            sb.append("CompleteTime: ").append(getCompleteTime()).append(",");
         if (getDeploymentOverview() != null)
-            sb.append("DeploymentOverview: " + getDeploymentOverview() + ",");
+            sb.append("DeploymentOverview: ").append(getDeploymentOverview()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreator() != null)
-            sb.append("Creator: " + getCreator() + ",");
+            sb.append("Creator: ").append(getCreator()).append(",");
         if (getIgnoreApplicationStopFailures() != null)
-            sb.append("IgnoreApplicationStopFailures: " + getIgnoreApplicationStopFailures() + ",");
+            sb.append("IgnoreApplicationStopFailures: ").append(getIgnoreApplicationStopFailures()).append(",");
         if (getAutoRollbackConfiguration() != null)
-            sb.append("AutoRollbackConfiguration: " + getAutoRollbackConfiguration() + ",");
+            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
         if (getUpdateOutdatedInstancesOnly() != null)
-            sb.append("UpdateOutdatedInstancesOnly: " + getUpdateOutdatedInstancesOnly() + ",");
+            sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly()).append(",");
         if (getRollbackInfo() != null)
-            sb.append("RollbackInfo: " + getRollbackInfo());
+            sb.append("RollbackInfo: ").append(getRollbackInfo());
         sb.append("}");
         return sb.toString();
     }

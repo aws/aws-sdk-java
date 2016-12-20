@@ -347,13 +347,13 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceEnvironmentId() != null)
-            sb.append("SourceEnvironmentId: " + getSourceEnvironmentId() + ",");
+            sb.append("SourceEnvironmentId: ").append(getSourceEnvironmentId()).append(",");
         if (getSourceEnvironmentName() != null)
-            sb.append("SourceEnvironmentName: " + getSourceEnvironmentName() + ",");
+            sb.append("SourceEnvironmentName: ").append(getSourceEnvironmentName()).append(",");
         if (getDestinationEnvironmentId() != null)
-            sb.append("DestinationEnvironmentId: " + getDestinationEnvironmentId() + ",");
+            sb.append("DestinationEnvironmentId: ").append(getDestinationEnvironmentId()).append(",");
         if (getDestinationEnvironmentName() != null)
-            sb.append("DestinationEnvironmentName: " + getDestinationEnvironmentName());
+            sb.append("DestinationEnvironmentName: ").append(getDestinationEnvironmentName());
         sb.append("}");
         return sb.toString();
     }

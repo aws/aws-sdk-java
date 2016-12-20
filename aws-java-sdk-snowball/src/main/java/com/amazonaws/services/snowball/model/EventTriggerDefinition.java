@@ -87,7 +87,7 @@ public class EventTriggerDefinition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventResourceARN() != null)
-            sb.append("EventResourceARN: " + getEventResourceARN());
+            sb.append("EventResourceARN: ").append(getEventResourceARN());
         sb.append("}");
         return sb.toString();
     }

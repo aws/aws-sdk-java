@@ -170,9 +170,9 @@ public class DescribeScheduledInstanceAvailabilityResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getScheduledInstanceAvailabilitySet() != null)
-            sb.append("ScheduledInstanceAvailabilitySet: " + getScheduledInstanceAvailabilitySet());
+            sb.append("ScheduledInstanceAvailabilitySet: ").append(getScheduledInstanceAvailabilitySet());
         sb.append("}");
         return sb.toString();
     }

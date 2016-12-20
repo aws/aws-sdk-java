@@ -146,9 +146,9 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getFilterName() != null)
-            sb.append("FilterName: " + getFilterName());
+            sb.append("FilterName: ").append(getFilterName());
         sb.append("}");
         return sb.toString();
     }

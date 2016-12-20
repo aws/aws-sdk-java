@@ -260,11 +260,11 @@ public class ContextEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContextKeyName() != null)
-            sb.append("ContextKeyName: " + getContextKeyName() + ",");
+            sb.append("ContextKeyName: ").append(getContextKeyName()).append(",");
         if (getContextKeyValues() != null)
-            sb.append("ContextKeyValues: " + getContextKeyValues() + ",");
+            sb.append("ContextKeyValues: ").append(getContextKeyValues()).append(",");
         if (getContextKeyType() != null)
-            sb.append("ContextKeyType: " + getContextKeyType());
+            sb.append("ContextKeyType: ").append(getContextKeyType());
         sb.append("}");
         return sb.toString();
     }

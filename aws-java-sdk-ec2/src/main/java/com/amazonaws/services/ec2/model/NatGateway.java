@@ -1158,25 +1158,25 @@ public class NatGateway implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getNatGatewayId() != null)
-            sb.append("NatGatewayId: " + getNatGatewayId() + ",");
+            sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime() + ",");
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDeleteTime() != null)
-            sb.append("DeleteTime: " + getDeleteTime() + ",");
+            sb.append("DeleteTime: ").append(getDeleteTime()).append(",");
         if (getNatGatewayAddresses() != null)
-            sb.append("NatGatewayAddresses: " + getNatGatewayAddresses() + ",");
+            sb.append("NatGatewayAddresses: ").append(getNatGatewayAddresses()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getFailureCode() != null)
-            sb.append("FailureCode: " + getFailureCode() + ",");
+            sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage() + ",");
+            sb.append("FailureMessage: ").append(getFailureMessage()).append(",");
         if (getProvisionedBandwidth() != null)
-            sb.append("ProvisionedBandwidth: " + getProvisionedBandwidth());
+            sb.append("ProvisionedBandwidth: ").append(getProvisionedBandwidth());
         sb.append("}");
         return sb.toString();
     }

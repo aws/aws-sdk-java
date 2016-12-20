@@ -14,11 +14,11 @@
  */
 package com.amazonaws.retry;
 
-import org.apache.http.annotation.Immutable;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
+
+import org.apache.http.annotation.Immutable;
 
 /**
  * Retry policy that can be configured on a specific service client using
@@ -138,14 +138,14 @@ public final class RetryPolicy {
      * The hook for providing custom condition on whether a failed request
      * should be retried.
      */
-    public static interface RetryCondition {
-        public static final RetryCondition NO_RETRY_CONDITION = new RetryCondition() {
+    public interface RetryCondition {
+        RetryCondition NO_RETRY_CONDITION = new RetryCondition() {
             @Override
             public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
-                    AmazonClientException exception, int retriesAttempted) {
+                                       AmazonClientException exception,
+                                       int retriesAttempted) {
                 return false;
             }
-            
         };
 
         /**
@@ -182,7 +182,7 @@ public final class RetryPolicy {
          * 
          * @return True if the failed request should be retried.
          */
-        public boolean shouldRetry(AmazonWebServiceRequest originalRequest,
+        boolean shouldRetry(AmazonWebServiceRequest originalRequest,
                                    AmazonClientException exception,
                                    int retriesAttempted);
         
@@ -192,15 +192,16 @@ public final class RetryPolicy {
      * The hook for providing custom back-off strategy to control the sleep time
      * between retries.
      */
-    public static interface BackoffStrategy {
-        public static final BackoffStrategy NO_DELAY = new BackoffStrategy() {
+    public interface BackoffStrategy {
+        RetryPolicy.BackoffStrategy NO_DELAY = new BackoffStrategy() {
             @Override
             public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                    AmazonClientException exception, int retriesAttempted) {
+                                             AmazonClientException exception,
+                                             int retriesAttempted) {
                 return 0;
             }
         };
-        
+
         /**
          * Returns the delay (in milliseconds) before next retry attempt.
          * 
@@ -228,7 +229,7 @@ public final class RetryPolicy {
          * 
          * @return The delay (in milliseconds) before next retry attempt.
          */
-        public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
+        long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
                                          AmazonClientException exception,
                                          int retriesAttempted);
     }

@@ -187,9 +187,9 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName());
+            sb.append("VaultName: ").append(getVaultName());
         sb.append("}");
         return sb.toString();
     }

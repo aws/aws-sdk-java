@@ -87,7 +87,7 @@ public class UploadServerCertificateResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificateMetadata() != null)
-            sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata());
+            sb.append("ServerCertificateMetadata: ").append(getServerCertificateMetadata());
         sb.append("}");
         return sb.toString();
     }

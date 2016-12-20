@@ -161,9 +161,9 @@ public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

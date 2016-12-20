@@ -689,19 +689,19 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops() + ",");
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: " + getEncrypted() + ",");
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }

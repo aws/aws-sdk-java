@@ -210,11 +210,11 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getMaxLabels() != null)
-            sb.append("MaxLabels: " + getMaxLabels() + ",");
+            sb.append("MaxLabels: ").append(getMaxLabels()).append(",");
         if (getMinConfidence() != null)
-            sb.append("MinConfidence: " + getMinConfidence());
+            sb.append("MinConfidence: ").append(getMinConfidence());
         sb.append("}");
         return sb.toString();
     }

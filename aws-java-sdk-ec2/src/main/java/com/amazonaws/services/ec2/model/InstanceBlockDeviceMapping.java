@@ -126,9 +126,9 @@ public class InstanceBlockDeviceMapping implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceName() != null)
-            sb.append("DeviceName: " + getDeviceName() + ",");
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getEbs() != null)
-            sb.append("Ebs: " + getEbs());
+            sb.append("Ebs: ").append(getEbs());
         sb.append("}");
         return sb.toString();
     }

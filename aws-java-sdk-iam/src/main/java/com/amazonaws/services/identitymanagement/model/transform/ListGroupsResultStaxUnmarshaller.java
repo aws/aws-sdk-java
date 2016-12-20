@@ -45,6 +45,11 @@ public class ListGroupsResultStaxUnmarshaller implements Unmarshaller<ListGroups
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Groups", targetDepth)) {
+                    listGroupsResult.withGroups(new ArrayList<Group>());
+                    continue;
+                }
+
                 if (context.testExpression("Groups/member", targetDepth)) {
                     listGroupsResult.withGroups(GroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

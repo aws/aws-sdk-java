@@ -549,17 +549,17 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute() + ",");
+            sb.append("Attribute: ").append(getAttribute()).append(",");
         if (getOperationType() != null)
-            sb.append("OperationType: " + getOperationType() + ",");
+            sb.append("OperationType: ").append(getOperationType()).append(",");
         if (getUserIds() != null)
-            sb.append("UserIds: " + getUserIds() + ",");
+            sb.append("UserIds: ").append(getUserIds()).append(",");
         if (getGroupNames() != null)
-            sb.append("GroupNames: " + getGroupNames() + ",");
+            sb.append("GroupNames: ").append(getGroupNames()).append(",");
         if (getCreateVolumePermission() != null)
-            sb.append("CreateVolumePermission: " + getCreateVolumePermission());
+            sb.append("CreateVolumePermission: ").append(getCreateVolumePermission());
         sb.append("}");
         return sb.toString();
     }

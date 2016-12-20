@@ -2117,37 +2117,37 @@ public class DistributionConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: " + getAliases() + ",");
+            sb.append("Aliases: ").append(getAliases()).append(",");
         if (getDefaultRootObject() != null)
-            sb.append("DefaultRootObject: " + getDefaultRootObject() + ",");
+            sb.append("DefaultRootObject: ").append(getDefaultRootObject()).append(",");
         if (getOrigins() != null)
-            sb.append("Origins: " + getOrigins() + ",");
+            sb.append("Origins: ").append(getOrigins()).append(",");
         if (getDefaultCacheBehavior() != null)
-            sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");
+            sb.append("DefaultCacheBehavior: ").append(getDefaultCacheBehavior()).append(",");
         if (getCacheBehaviors() != null)
-            sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");
+            sb.append("CacheBehaviors: ").append(getCacheBehaviors()).append(",");
         if (getCustomErrorResponses() != null)
-            sb.append("CustomErrorResponses: " + getCustomErrorResponses() + ",");
+            sb.append("CustomErrorResponses: ").append(getCustomErrorResponses()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getLogging() != null)
-            sb.append("Logging: " + getLogging() + ",");
+            sb.append("Logging: ").append(getLogging()).append(",");
         if (getPriceClass() != null)
-            sb.append("PriceClass: " + getPriceClass() + ",");
+            sb.append("PriceClass: ").append(getPriceClass()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getViewerCertificate() != null)
-            sb.append("ViewerCertificate: " + getViewerCertificate() + ",");
+            sb.append("ViewerCertificate: ").append(getViewerCertificate()).append(",");
         if (getRestrictions() != null)
-            sb.append("Restrictions: " + getRestrictions() + ",");
+            sb.append("Restrictions: ").append(getRestrictions()).append(",");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId() + ",");
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
         if (getHttpVersion() != null)
-            sb.append("HttpVersion: " + getHttpVersion() + ",");
+            sb.append("HttpVersion: ").append(getHttpVersion()).append(",");
         if (getIsIPV6Enabled() != null)
-            sb.append("IsIPV6Enabled: " + getIsIPV6Enabled());
+            sb.append("IsIPV6Enabled: ").append(getIsIPV6Enabled());
         sb.append("}");
         return sb.toString();
     }

@@ -546,23 +546,23 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getArtifacts() != null)
-            sb.append("Artifacts: " + getArtifacts() + ",");
+            sb.append("Artifacts: ").append(getArtifacts()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment() + ",");
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getTimeoutInMinutes() != null)
-            sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
+            sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes()).append(",");
         if (getEncryptionKey() != null)
-            sb.append("EncryptionKey: " + getEncryptionKey() + ",");
+            sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

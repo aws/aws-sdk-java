@@ -232,13 +232,13 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId() + ",");
+            sb.append("ScheduledEventId: ").append(getScheduledEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId() + ",");
+            sb.append("StartedEventId: ").append(getStartedEventId()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails());
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }

@@ -170,9 +170,9 @@ public class MovingAddressStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getMoveStatus() != null)
-            sb.append("MoveStatus: " + getMoveStatus());
+            sb.append("MoveStatus: ").append(getMoveStatus());
         sb.append("}");
         return sb.toString();
     }

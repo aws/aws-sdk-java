@@ -171,11 +171,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceImage() != null)
-            sb.append("SourceImage: " + getSourceImage() + ",");
+            sb.append("SourceImage: ").append(getSourceImage()).append(",");
         if (getTargetImage() != null)
-            sb.append("TargetImage: " + getTargetImage() + ",");
+            sb.append("TargetImage: ").append(getTargetImage()).append(",");
         if (getSimilarityThreshold() != null)
-            sb.append("SimilarityThreshold: " + getSimilarityThreshold());
+            sb.append("SimilarityThreshold: ").append(getSimilarityThreshold());
         sb.append("}");
         return sb.toString();
     }

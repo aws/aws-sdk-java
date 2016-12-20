@@ -172,9 +172,9 @@ public class LambdaResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLambdaArn() != null)
-            sb.append("LambdaArn: " + getLambdaArn() + ",");
+            sb.append("LambdaArn: ").append(getLambdaArn()).append(",");
         if (getEventTriggers() != null)
-            sb.append("EventTriggers: " + getEventTriggers());
+            sb.append("EventTriggers: ").append(getEventTriggers());
         sb.append("}");
         return sb.toString();
     }

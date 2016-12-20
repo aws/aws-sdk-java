@@ -122,7 +122,7 @@ public class DescribeSeverityLevelsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSeverityLevels() != null)
-            sb.append("SeverityLevels: " + getSeverityLevels());
+            sb.append("SeverityLevels: ").append(getSeverityLevels());
         sb.append("}");
         return sb.toString();
     }

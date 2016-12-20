@@ -736,29 +736,29 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDistributor() != null)
-            sb.append("Distributor: " + getDistributor() + ",");
+            sb.append("Distributor: ").append(getDistributor()).append(",");
         if (getSupportDescription() != null)
-            sb.append("SupportDescription: " + getSupportDescription() + ",");
+            sb.append("SupportDescription: ").append(getSupportDescription()).append(",");
         if (getSupportEmail() != null)
-            sb.append("SupportEmail: " + getSupportEmail() + ",");
+            sb.append("SupportEmail: ").append(getSupportEmail()).append(",");
         if (getSupportUrl() != null)
-            sb.append("SupportUrl: " + getSupportUrl() + ",");
+            sb.append("SupportUrl: ").append(getSupportUrl()).append(",");
         if (getProductType() != null)
-            sb.append("ProductType: " + getProductType() + ",");
+            sb.append("ProductType: ").append(getProductType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getProvisioningArtifactParameters() != null)
-            sb.append("ProvisioningArtifactParameters: " + getProvisioningArtifactParameters() + ",");
+            sb.append("ProvisioningArtifactParameters: ").append(getProvisioningArtifactParameters()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: " + getIdempotencyToken());
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken());
         sb.append("}");
         return sb.toString();
     }

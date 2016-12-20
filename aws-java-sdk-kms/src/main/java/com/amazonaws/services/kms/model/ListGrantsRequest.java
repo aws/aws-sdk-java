@@ -304,11 +304,11 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId());
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }

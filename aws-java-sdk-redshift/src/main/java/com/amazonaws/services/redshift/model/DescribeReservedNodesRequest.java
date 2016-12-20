@@ -251,11 +251,11 @@ public class DescribeReservedNodesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedNodeId() != null)
-            sb.append("ReservedNodeId: " + getReservedNodeId() + ",");
+            sb.append("ReservedNodeId: ").append(getReservedNodeId()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

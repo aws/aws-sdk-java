@@ -80,7 +80,7 @@ public class CreatePlatformApplicationResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplicationArn() != null)
-            sb.append("PlatformApplicationArn: " + getPlatformApplicationArn());
+            sb.append("PlatformApplicationArn: ").append(getPlatformApplicationArn());
         sb.append("}");
         return sb.toString();
     }

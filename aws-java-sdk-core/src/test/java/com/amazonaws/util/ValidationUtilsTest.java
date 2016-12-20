@@ -17,8 +17,10 @@ package com.amazonaws.util;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 public class ValidationUtilsTest {
@@ -65,31 +67,53 @@ public class ValidationUtilsTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void assertNotEmpty_NullCollection(){
-        ValidationUtils.assertNotEmpty(null, "someCollection");
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void assertNotEmpty_EmptyCollection(){
-        List<String> testList = new ArrayList<String>();
-        ValidationUtils.assertNotEmpty(testList, "testList");
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void assertStringNotEmpty_NullString() {
+    public void assertStringNotEmpty_NullString_ThrowsException() {
         ValidationUtils.assertStringNotEmpty(null, "someString");
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void assertStringNotEmpty_EmptyString() {
+    public void assertStringNotEmpty_EmptyString_ThrowsException() {
         ValidationUtils.assertStringNotEmpty("", "someString");
     }
 
     @Test
-    public void assertNotEmpty_NonNullCollection_ReturnsSameObject(){
+    public void assertStringNotEmpty_NonEmptyString_ReturnsSameString() {
+        final String string = "foo";
+        assertEquals(string, ValidationUtils.assertStringNotEmpty(string, "someString"));
+    }
+
+    @Test
+    public void assertNotEmpty_NonNullCollection_ReturnsSameObject() {
         List<String> testList = new ArrayList<String>();
         testList.add("sample");
         assertEquals(testList, ValidationUtils.assertNotEmpty(testList, "testList"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertNotEmpty_NullCollection_ThrowsException() {
+        ValidationUtils.assertNotEmpty((Collection<String>) null, "someCollection");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertNotEmpty_EmptyCollection_ThrowsException() {
+        List<String> testList = new ArrayList<String>();
+        ValidationUtils.assertNotEmpty(testList, "testList");
+    }
+
+    @Test
+    public void assertNotEmpty_NonNullArray_ReturnsSameObject() {
+        String[] array = new String[]{"foo", "bar"};
+        assertArrayEquals(array, ValidationUtils.assertNotEmpty(array, "array"));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertNotEmpty_NullArray_ThrowsException() {
+        ValidationUtils.assertNotEmpty((String[]) null, "array");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void assertNotEmpty_EmptyArray_ThrowsException() {
+        ValidationUtils.assertNotEmpty(new String[0], "array");
     }
 
 }

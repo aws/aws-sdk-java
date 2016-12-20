@@ -428,17 +428,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getZipFile() != null)
-            sb.append("ZipFile: " + getZipFile() + ",");
+            sb.append("ZipFile: ").append(getZipFile()).append(",");
         if (getS3Bucket() != null)
-            sb.append("S3Bucket: " + getS3Bucket() + ",");
+            sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Key() != null)
-            sb.append("S3Key: " + getS3Key() + ",");
+            sb.append("S3Key: ").append(getS3Key()).append(",");
         if (getS3ObjectVersion() != null)
-            sb.append("S3ObjectVersion: " + getS3ObjectVersion() + ",");
+            sb.append("S3ObjectVersion: ").append(getS3ObjectVersion()).append(",");
         if (getPublish() != null)
-            sb.append("Publish: " + getPublish());
+            sb.append("Publish: ").append(getPublish());
         sb.append("}");
         return sb.toString();
     }

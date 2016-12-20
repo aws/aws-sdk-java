@@ -399,11 +399,11 @@ public class HistoryRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType() + ",");
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getEventInformation() != null)
-            sb.append("EventInformation: " + getEventInformation());
+            sb.append("EventInformation: ").append(getEventInformation());
         sb.append("}");
         return sb.toString();
     }

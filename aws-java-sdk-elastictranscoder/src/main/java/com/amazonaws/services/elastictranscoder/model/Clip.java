@@ -81,7 +81,7 @@ public class Clip implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimeSpan() != null)
-            sb.append("TimeSpan: " + getTimeSpan());
+            sb.append("TimeSpan: ").append(getTimeSpan());
         sb.append("}");
         return sb.toString();
     }

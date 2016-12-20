@@ -99,7 +99,7 @@ public class DeleteCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName());
+            sb.append("CacheSubnetGroupName: ").append(getCacheSubnetGroupName());
         sb.append("}");
         return sb.toString();
     }

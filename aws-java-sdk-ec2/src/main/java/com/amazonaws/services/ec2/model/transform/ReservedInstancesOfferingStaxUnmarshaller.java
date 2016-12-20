@@ -95,6 +95,11 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     continue;
                 }
 
+                if (context.testExpression("recurringCharges", targetDepth)) {
+                    reservedInstancesOffering.withRecurringCharges(new ArrayList<RecurringCharge>());
+                    continue;
+                }
+
                 if (context.testExpression("recurringCharges/item", targetDepth)) {
                     reservedInstancesOffering.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -102,6 +107,11 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
 
                 if (context.testExpression("marketplace", targetDepth)) {
                     reservedInstancesOffering.setMarketplace(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("pricingDetailsSet", targetDepth)) {
+                    reservedInstancesOffering.withPricingDetails(new ArrayList<PricingDetail>());
                     continue;
                 }
 

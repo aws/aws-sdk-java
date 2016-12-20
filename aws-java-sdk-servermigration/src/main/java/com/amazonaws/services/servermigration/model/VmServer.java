@@ -194,15 +194,15 @@ public class VmServer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVmServerAddress() != null)
-            sb.append("VmServerAddress: " + getVmServerAddress() + ",");
+            sb.append("VmServerAddress: ").append(getVmServerAddress()).append(",");
         if (getVmName() != null)
-            sb.append("VmName: " + getVmName() + ",");
+            sb.append("VmName: ").append(getVmName()).append(",");
         if (getVmManagerName() != null)
-            sb.append("VmManagerName: " + getVmManagerName() + ",");
+            sb.append("VmManagerName: ").append(getVmManagerName()).append(",");
         if (getVmManagerType() != null)
-            sb.append("VmManagerType: " + getVmManagerType() + ",");
+            sb.append("VmManagerType: ").append(getVmManagerType()).append(",");
         if (getVmPath() != null)
-            sb.append("VmPath: " + getVmPath());
+            sb.append("VmPath: ").append(getVmPath());
         sb.append("}");
         return sb.toString();
     }

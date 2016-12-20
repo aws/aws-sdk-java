@@ -118,7 +118,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenIDConnectProviderArn() != null)
-            sb.append("OpenIDConnectProviderArn: " + getOpenIDConnectProviderArn());
+            sb.append("OpenIDConnectProviderArn: ").append(getOpenIDConnectProviderArn());
         sb.append("}");
         return sb.toString();
     }

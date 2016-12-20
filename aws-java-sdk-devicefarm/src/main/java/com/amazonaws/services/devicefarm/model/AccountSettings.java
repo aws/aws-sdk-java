@@ -214,11 +214,11 @@ public class AccountSettings implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAwsAccountNumber() != null)
-            sb.append("AwsAccountNumber: " + getAwsAccountNumber() + ",");
+            sb.append("AwsAccountNumber: ").append(getAwsAccountNumber()).append(",");
         if (getUnmeteredDevices() != null)
-            sb.append("UnmeteredDevices: " + getUnmeteredDevices() + ",");
+            sb.append("UnmeteredDevices: ").append(getUnmeteredDevices()).append(",");
         if (getUnmeteredRemoteAccessDevices() != null)
-            sb.append("UnmeteredRemoteAccessDevices: " + getUnmeteredRemoteAccessDevices());
+            sb.append("UnmeteredRemoteAccessDevices: ").append(getUnmeteredRemoteAccessDevices());
         sb.append("}");
         return sb.toString();
     }

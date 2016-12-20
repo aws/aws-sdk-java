@@ -246,11 +246,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType());
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }

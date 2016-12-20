@@ -219,13 +219,13 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey() + ",");
+            sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getDeviceSecretVerifierConfig() != null)
-            sb.append("DeviceSecretVerifierConfig: " + getDeviceSecretVerifierConfig() + ",");
+            sb.append("DeviceSecretVerifierConfig: ").append(getDeviceSecretVerifierConfig()).append(",");
         if (getDeviceName() != null)
-            sb.append("DeviceName: " + getDeviceName());
+            sb.append("DeviceName: ").append(getDeviceName());
         sb.append("}");
         return sb.toString();
     }

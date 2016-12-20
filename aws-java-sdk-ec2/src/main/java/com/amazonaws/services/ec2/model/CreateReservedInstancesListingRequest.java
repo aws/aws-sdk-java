@@ -310,13 +310,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getPriceSchedules() != null)
-            sb.append("PriceSchedules: " + getPriceSchedules() + ",");
+            sb.append("PriceSchedules: ").append(getPriceSchedules()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

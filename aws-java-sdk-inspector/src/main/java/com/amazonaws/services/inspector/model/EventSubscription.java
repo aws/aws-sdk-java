@@ -159,9 +159,9 @@ public class EventSubscription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvent() != null)
-            sb.append("Event: " + getEvent() + ",");
+            sb.append("Event: ").append(getEvent()).append(",");
         if (getSubscribedAt() != null)
-            sb.append("SubscribedAt: " + getSubscribedAt());
+            sb.append("SubscribedAt: ").append(getSubscribedAt());
         sb.append("}");
         return sb.toString();
     }

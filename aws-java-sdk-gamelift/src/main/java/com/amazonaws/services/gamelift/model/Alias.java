@@ -306,17 +306,17 @@ public class Alias implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasId() != null)
-            sb.append("AliasId: " + getAliasId() + ",");
+            sb.append("AliasId: ").append(getAliasId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRoutingStrategy() != null)
-            sb.append("RoutingStrategy: " + getRoutingStrategy() + ",");
+            sb.append("RoutingStrategy: ").append(getRoutingStrategy()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: " + getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
         sb.append("}");
         return sb.toString();
     }

@@ -711,9 +711,9 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundleIds() != null)
-            sb.append("BundleIds: " + getBundleIds() + ",");
+            sb.append("BundleIds: ").append(getBundleIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

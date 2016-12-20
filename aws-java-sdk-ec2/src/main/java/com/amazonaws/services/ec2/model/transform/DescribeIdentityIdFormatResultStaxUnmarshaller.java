@@ -45,6 +45,11 @@ public class DescribeIdentityIdFormatResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("statusSet", targetDepth)) {
+                    describeIdentityIdFormatResult.withStatuses(new ArrayList<IdFormat>());
+                    continue;
+                }
+
                 if (context.testExpression("statusSet/item", targetDepth)) {
                     describeIdentityIdFormatResult.withStatuses(IdFormatStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

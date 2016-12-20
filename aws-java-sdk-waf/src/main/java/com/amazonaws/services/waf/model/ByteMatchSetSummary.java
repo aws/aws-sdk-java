@@ -169,9 +169,9 @@ public class ByteMatchSetSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getByteMatchSetId() != null)
-            sb.append("ByteMatchSetId: " + getByteMatchSetId() + ",");
+            sb.append("ByteMatchSetId: ").append(getByteMatchSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

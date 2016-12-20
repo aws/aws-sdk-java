@@ -310,17 +310,17 @@ public class PortfolioDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getProviderName() != null)
-            sb.append("ProviderName: " + getProviderName());
+            sb.append("ProviderName: ").append(getProviderName());
         sb.append("}");
         return sb.toString();
     }

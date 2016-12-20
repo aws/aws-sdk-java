@@ -163,9 +163,9 @@ public class DescribeOrderableReplicationInstancesResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOrderableReplicationInstances() != null)
-            sb.append("OrderableReplicationInstances: " + getOrderableReplicationInstances() + ",");
+            sb.append("OrderableReplicationInstances: ").append(getOrderableReplicationInstances()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

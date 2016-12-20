@@ -579,15 +579,15 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeDefinitions() != null)
-            sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");
+            sb.append("AttributeDefinitions: ").append(getAttributeDefinitions()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getProvisionedThroughput() != null)
-            sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getGlobalSecondaryIndexUpdates() != null)
-            sb.append("GlobalSecondaryIndexUpdates: " + getGlobalSecondaryIndexUpdates() + ",");
+            sb.append("GlobalSecondaryIndexUpdates: ").append(getGlobalSecondaryIndexUpdates()).append(",");
         if (getStreamSpecification() != null)
-            sb.append("StreamSpecification: " + getStreamSpecification());
+            sb.append("StreamSpecification: ").append(getStreamSpecification());
         sb.append("}");
         return sb.toString();
     }

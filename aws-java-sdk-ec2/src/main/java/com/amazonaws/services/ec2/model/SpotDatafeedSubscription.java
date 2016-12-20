@@ -297,15 +297,15 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getBucket() != null)
-            sb.append("Bucket: " + getBucket() + ",");
+            sb.append("Bucket: ").append(getBucket()).append(",");
         if (getPrefix() != null)
-            sb.append("Prefix: " + getPrefix() + ",");
+            sb.append("Prefix: ").append(getPrefix()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getFault() != null)
-            sb.append("Fault: " + getFault());
+            sb.append("Fault: ").append(getFault());
         sb.append("}");
         return sb.toString();
     }

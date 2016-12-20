@@ -157,9 +157,9 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetGroupArn() != null)
-            sb.append("TargetGroupArn: " + getTargetGroupArn() + ",");
+            sb.append("TargetGroupArn: ").append(getTargetGroupArn()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets());
+            sb.append("Targets: ").append(getTargets());
         sb.append("}");
         return sb.toString();
     }

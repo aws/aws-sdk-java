@@ -205,9 +205,9 @@ public class DescribeWorkspacesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaces() != null)
-            sb.append("Workspaces: " + getWorkspaces() + ",");
+            sb.append("Workspaces: ").append(getWorkspaces()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

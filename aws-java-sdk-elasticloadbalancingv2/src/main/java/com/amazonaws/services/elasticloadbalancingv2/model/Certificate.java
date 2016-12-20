@@ -80,7 +80,7 @@ public class Certificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn());
+            sb.append("CertificateArn: ").append(getCertificateArn());
         sb.append("}");
         return sb.toString();
     }

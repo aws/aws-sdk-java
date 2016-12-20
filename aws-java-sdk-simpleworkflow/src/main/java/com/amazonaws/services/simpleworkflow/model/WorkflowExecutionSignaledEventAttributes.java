@@ -267,13 +267,13 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSignalName() != null)
-            sb.append("SignalName: " + getSignalName() + ",");
+            sb.append("SignalName: ").append(getSignalName()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getExternalWorkflowExecution() != null)
-            sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ",");
+            sb.append("ExternalWorkflowExecution: ").append(getExternalWorkflowExecution()).append(",");
         if (getExternalInitiatedEventId() != null)
-            sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId());
+            sb.append("ExternalInitiatedEventId: ").append(getExternalInitiatedEventId());
         sb.append("}");
         return sb.toString();
     }

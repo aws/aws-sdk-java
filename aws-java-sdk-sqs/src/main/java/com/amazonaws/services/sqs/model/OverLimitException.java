@@ -14,9 +14,9 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The action that you requested would violate a limit. For example, ReceiveMessage returns this error if the maximum
- * number of messages inflight has already been reached. <a>AddPermission</a> returns this error if the maximum number
- * of permissions for the queue has already been reached.
+ * The action that you requested would violate a limit. For example, <code>ReceiveMessage</code> returns this error if
+ * the maximum number of inflight messages is reached. <code> <a>AddPermission</a> </code> returns this error if the
+ * maximum number of permissions for the queue is reached.
  * </p>
  */
 public class OverLimitException extends com.amazonaws.services.sqs.model.AmazonSQSException {

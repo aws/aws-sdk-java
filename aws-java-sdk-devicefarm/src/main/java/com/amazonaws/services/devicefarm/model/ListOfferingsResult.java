@@ -163,9 +163,9 @@ public class ListOfferingsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferings() != null)
-            sb.append("Offerings: " + getOfferings() + ",");
+            sb.append("Offerings: ").append(getOfferings()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

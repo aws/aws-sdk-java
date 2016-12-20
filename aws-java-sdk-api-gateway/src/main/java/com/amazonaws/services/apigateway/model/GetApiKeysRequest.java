@@ -281,15 +281,15 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNameQuery() != null)
-            sb.append("NameQuery: " + getNameQuery() + ",");
+            sb.append("NameQuery: ").append(getNameQuery()).append(",");
         if (getCustomerId() != null)
-            sb.append("CustomerId: " + getCustomerId() + ",");
+            sb.append("CustomerId: ").append(getCustomerId()).append(",");
         if (getIncludeValues() != null)
-            sb.append("IncludeValues: " + getIncludeValues());
+            sb.append("IncludeValues: ").append(getIncludeValues());
         sb.append("}");
         return sb.toString();
     }

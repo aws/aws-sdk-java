@@ -88,9 +88,9 @@ public class UpdateApnsChannelRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAPNSChannelRequest() != null)
-            sb.append("APNSChannelRequest: " + getAPNSChannelRequest() + ",");
+            sb.append("APNSChannelRequest: ").append(getAPNSChannelRequest()).append(",");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId());
+            sb.append("ApplicationId: ").append(getApplicationId());
         sb.append("}");
         return sb.toString();
     }

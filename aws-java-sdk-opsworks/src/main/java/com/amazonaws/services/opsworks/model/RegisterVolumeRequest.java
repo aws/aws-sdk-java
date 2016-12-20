@@ -125,9 +125,9 @@ public class RegisterVolumeRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEc2VolumeId() != null)
-            sb.append("Ec2VolumeId: " + getEc2VolumeId() + ",");
+            sb.append("Ec2VolumeId: ").append(getEc2VolumeId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

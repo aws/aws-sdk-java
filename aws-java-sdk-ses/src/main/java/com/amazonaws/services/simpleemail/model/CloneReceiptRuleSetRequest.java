@@ -246,9 +246,9 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName() + ",");
+            sb.append("RuleSetName: ").append(getRuleSetName()).append(",");
         if (getOriginalRuleSetName() != null)
-            sb.append("OriginalRuleSetName: " + getOriginalRuleSetName());
+            sb.append("OriginalRuleSetName: ").append(getOriginalRuleSetName());
         sb.append("}");
         return sb.toString();
     }

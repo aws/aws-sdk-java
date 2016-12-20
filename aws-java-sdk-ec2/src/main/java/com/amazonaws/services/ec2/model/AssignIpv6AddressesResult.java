@@ -158,9 +158,9 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getAssignedIpv6Addresses() != null)
-            sb.append("AssignedIpv6Addresses: " + getAssignedIpv6Addresses());
+            sb.append("AssignedIpv6Addresses: ").append(getAssignedIpv6Addresses());
         sb.append("}");
         return sb.toString();
     }

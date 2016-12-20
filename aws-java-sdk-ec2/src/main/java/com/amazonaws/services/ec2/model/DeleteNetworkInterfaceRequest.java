@@ -95,7 +95,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }

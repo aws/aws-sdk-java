@@ -78,7 +78,7 @@ public class CreateExportTaskResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId());
+            sb.append("TaskId: ").append(getTaskId());
         sb.append("}");
         return sb.toString();
     }

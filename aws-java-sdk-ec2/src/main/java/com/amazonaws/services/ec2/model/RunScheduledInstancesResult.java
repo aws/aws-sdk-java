@@ -114,7 +114,7 @@ public class RunScheduledInstancesResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIdSet() != null)
-            sb.append("InstanceIdSet: " + getInstanceIdSet());
+            sb.append("InstanceIdSet: ").append(getInstanceIdSet());
         sb.append("}");
         return sb.toString();
     }

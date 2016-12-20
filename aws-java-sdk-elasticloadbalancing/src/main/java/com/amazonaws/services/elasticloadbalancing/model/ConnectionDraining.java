@@ -138,9 +138,9 @@ public class ConnectionDraining implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: " + getTimeout());
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }

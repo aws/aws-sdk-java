@@ -281,13 +281,13 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getEC2InstanceIdsToTerminate() != null)
-            sb.append("EC2InstanceIdsToTerminate: " + getEC2InstanceIdsToTerminate() + ",");
+            sb.append("EC2InstanceIdsToTerminate: ").append(getEC2InstanceIdsToTerminate()).append(",");
         if (getShrinkPolicy() != null)
-            sb.append("ShrinkPolicy: " + getShrinkPolicy());
+            sb.append("ShrinkPolicy: ").append(getShrinkPolicy());
         sb.append("}");
         return sb.toString();
     }

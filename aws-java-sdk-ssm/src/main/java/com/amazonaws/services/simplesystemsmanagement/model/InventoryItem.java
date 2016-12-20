@@ -332,15 +332,15 @@ public class InventoryItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTypeName() != null)
-            sb.append("TypeName: " + getTypeName() + ",");
+            sb.append("TypeName: ").append(getTypeName()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getCaptureTime() != null)
-            sb.append("CaptureTime: " + getCaptureTime() + ",");
+            sb.append("CaptureTime: ").append(getCaptureTime()).append(",");
         if (getContentHash() != null)
-            sb.append("ContentHash: " + getContentHash() + ",");
+            sb.append("ContentHash: ").append(getContentHash()).append(",");
         if (getContent() != null)
-            sb.append("Content: " + getContent());
+            sb.append("Content: ").append(getContent());
         sb.append("}");
         return sb.toString();
     }

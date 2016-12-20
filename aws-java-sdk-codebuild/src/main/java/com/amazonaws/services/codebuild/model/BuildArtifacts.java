@@ -292,11 +292,11 @@ public class BuildArtifacts implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getSha256sum() != null)
-            sb.append("Sha256sum: " + getSha256sum() + ",");
+            sb.append("Sha256sum: ").append(getSha256sum()).append(",");
         if (getMd5sum() != null)
-            sb.append("Md5sum: " + getMd5sum());
+            sb.append("Md5sum: ").append(getMd5sum());
         sb.append("}");
         return sb.toString();
     }

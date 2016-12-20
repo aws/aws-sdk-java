@@ -196,11 +196,11 @@ public class DecisionTaskCompletedEventAttributes implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionContext() != null)
-            sb.append("ExecutionContext: " + getExecutionContext() + ",");
+            sb.append("ExecutionContext: ").append(getExecutionContext()).append(",");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId() + ",");
+            sb.append("ScheduledEventId: ").append(getScheduledEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId());
+            sb.append("StartedEventId: ").append(getStartedEventId());
         sb.append("}");
         return sb.toString();
     }

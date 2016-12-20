@@ -50,6 +50,11 @@ public class KeyPairIdsStaxUnmarshaller implements Unmarshaller<KeyPairIds, Stax
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    keyPairIds.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/KeyPairId", targetDepth)) {
                     keyPairIds.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

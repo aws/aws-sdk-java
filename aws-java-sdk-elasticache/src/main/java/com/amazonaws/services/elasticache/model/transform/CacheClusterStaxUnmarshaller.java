@@ -110,6 +110,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     continue;
                 }
 
+                if (context.testExpression("CacheSecurityGroups", targetDepth)) {
+                    cacheCluster.withCacheSecurityGroups(new ArrayList<CacheSecurityGroupMembership>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth)) {
                     cacheCluster.withCacheSecurityGroups(CacheSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -125,6 +130,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     continue;
                 }
 
+                if (context.testExpression("CacheNodes", targetDepth)) {
+                    cacheCluster.withCacheNodes(new ArrayList<CacheNode>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheNodes/CacheNode", targetDepth)) {
                     cacheCluster.withCacheNodes(CacheNodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -132,6 +142,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
 
                 if (context.testExpression("AutoMinorVersionUpgrade", targetDepth)) {
                     cacheCluster.setAutoMinorVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SecurityGroups", targetDepth)) {
+                    cacheCluster.withSecurityGroups(new ArrayList<SecurityGroupMembership>());
                     continue;
                 }
 

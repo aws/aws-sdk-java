@@ -70,8 +70,18 @@ public class ResourceChangeStaxUnmarshaller implements Unmarshaller<ResourceChan
                     continue;
                 }
 
+                if (context.testExpression("Scope", targetDepth)) {
+                    resourceChange.withScope(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Scope/member", targetDepth)) {
                     resourceChange.withScope(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Details", targetDepth)) {
+                    resourceChange.withDetails(new ArrayList<ResourceChangeDetail>());
                     continue;
                 }
 

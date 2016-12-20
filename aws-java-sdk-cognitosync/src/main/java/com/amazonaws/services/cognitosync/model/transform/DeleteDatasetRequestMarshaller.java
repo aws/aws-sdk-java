@@ -61,16 +61,10 @@ public class DeleteDatasetRequestMarshaller implements Marshaller<Request<Delete
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (deleteDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDatasetRequest.getIdentityPoolId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{IdentityId}",
-                (deleteDatasetRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDatasetRequest.getIdentityId()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{DatasetName}",
-                (deleteDatasetRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDatasetRequest.getDatasetName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                deleteDatasetRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", deleteDatasetRequest.getIdentityId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName", deleteDatasetRequest.getDatasetName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

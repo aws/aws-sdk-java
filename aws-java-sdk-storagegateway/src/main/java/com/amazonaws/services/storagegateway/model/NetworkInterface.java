@@ -201,11 +201,11 @@ public class NetworkInterface implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpv4Address() != null)
-            sb.append("Ipv4Address: " + getIpv4Address() + ",");
+            sb.append("Ipv4Address: ").append(getIpv4Address()).append(",");
         if (getMacAddress() != null)
-            sb.append("MacAddress: " + getMacAddress() + ",");
+            sb.append("MacAddress: ").append(getMacAddress()).append(",");
         if (getIpv6Address() != null)
-            sb.append("Ipv6Address: " + getIpv6Address());
+            sb.append("Ipv6Address: ").append(getIpv6Address());
         sb.append("}");
         return sb.toString();
     }

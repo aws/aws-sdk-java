@@ -87,7 +87,7 @@ public class GetGeoLocationResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGeoLocationDetails() != null)
-            sb.append("GeoLocationDetails: " + getGeoLocationDetails());
+            sb.append("GeoLocationDetails: ").append(getGeoLocationDetails());
         sb.append("}");
         return sb.toString();
     }

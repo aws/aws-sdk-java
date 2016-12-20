@@ -387,15 +387,15 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
         if (getInstanceGroupTypes() != null)
-            sb.append("InstanceGroupTypes: " + getInstanceGroupTypes() + ",");
+            sb.append("InstanceGroupTypes: ").append(getInstanceGroupTypes()).append(",");
         if (getInstanceStates() != null)
-            sb.append("InstanceStates: " + getInstanceStates() + ",");
+            sb.append("InstanceStates: ").append(getInstanceStates()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

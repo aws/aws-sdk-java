@@ -51,10 +51,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrset/";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (changeResourceRecordSetsRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(changeResourceRecordSetsRequest.getHostedZoneId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", changeResourceRecordSetsRequest.getHostedZoneId());
         request.setResourcePath(uriResourcePath);
 
         try {

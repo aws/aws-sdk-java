@@ -45,6 +45,11 @@ public class DescribeVpcsResultStaxUnmarshaller implements Unmarshaller<Describe
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpcSet", targetDepth)) {
+                    describeVpcsResult.withVpcs(new ArrayList<Vpc>());
+                    continue;
+                }
+
                 if (context.testExpression("vpcSet/item", targetDepth)) {
                     describeVpcsResult.withVpcs(VpcStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

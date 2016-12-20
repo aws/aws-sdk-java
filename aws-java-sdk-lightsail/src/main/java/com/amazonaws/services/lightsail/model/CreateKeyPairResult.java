@@ -216,13 +216,13 @@ public class CreateKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPair() != null)
-            sb.append("KeyPair: " + getKeyPair() + ",");
+            sb.append("KeyPair: ").append(getKeyPair()).append(",");
         if (getPublicKeyBase64() != null)
-            sb.append("PublicKeyBase64: " + getPublicKeyBase64() + ",");
+            sb.append("PublicKeyBase64: ").append(getPublicKeyBase64()).append(",");
         if (getPrivateKeyBase64() != null)
-            sb.append("PrivateKeyBase64: " + getPrivateKeyBase64() + ",");
+            sb.append("PrivateKeyBase64: ").append(getPrivateKeyBase64()).append(",");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation());
+            sb.append("Operation: ").append(getOperation());
         sb.append("}");
         return sb.toString();
     }

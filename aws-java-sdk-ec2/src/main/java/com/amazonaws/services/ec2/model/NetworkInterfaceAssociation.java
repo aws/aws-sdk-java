@@ -264,15 +264,15 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getPublicDnsName() != null)
-            sb.append("PublicDnsName: " + getPublicDnsName() + ",");
+            sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getIpOwnerId() != null)
-            sb.append("IpOwnerId: " + getIpOwnerId() + ",");
+            sb.append("IpOwnerId: ").append(getIpOwnerId()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId() + ",");
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId());
         sb.append("}");
         return sb.toString();
     }

@@ -202,15 +202,15 @@ public class Server implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerId() != null)
-            sb.append("ServerId: " + getServerId() + ",");
+            sb.append("ServerId: ").append(getServerId()).append(",");
         if (getServerType() != null)
-            sb.append("ServerType: " + getServerType() + ",");
+            sb.append("ServerType: ").append(getServerType()).append(",");
         if (getVmServer() != null)
-            sb.append("VmServer: " + getVmServer() + ",");
+            sb.append("VmServer: ").append(getVmServer()).append(",");
         if (getReplicationJobId() != null)
-            sb.append("ReplicationJobId: " + getReplicationJobId() + ",");
+            sb.append("ReplicationJobId: ").append(getReplicationJobId()).append(",");
         if (getReplicationJobTerminated() != null)
-            sb.append("ReplicationJobTerminated: " + getReplicationJobTerminated());
+            sb.append("ReplicationJobTerminated: ").append(getReplicationJobTerminated());
         sb.append("}");
         return sb.toString();
     }

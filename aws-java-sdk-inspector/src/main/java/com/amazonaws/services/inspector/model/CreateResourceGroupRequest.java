@@ -141,7 +141,7 @@ public class CreateResourceGroupRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceGroupTags() != null)
-            sb.append("ResourceGroupTags: " + getResourceGroupTags());
+            sb.append("ResourceGroupTags: ").append(getResourceGroupTags());
         sb.append("}");
         return sb.toString();
     }

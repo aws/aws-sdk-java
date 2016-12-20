@@ -55,6 +55,11 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
                     continue;
                 }
 
+                if (context.testExpression("Listeners", targetDepth)) {
+                    loadBalancerDescription.withListeners(new ArrayList<Listener>());
+                    continue;
+                }
+
                 if (context.testExpression("Listeners/member", targetDepth)) {
                     loadBalancerDescription.withListeners(ListenerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

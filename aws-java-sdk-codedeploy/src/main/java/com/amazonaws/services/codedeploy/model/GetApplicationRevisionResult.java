@@ -172,11 +172,11 @@ public class GetApplicationRevisionResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getRevisionInfo() != null)
-            sb.append("RevisionInfo: " + getRevisionInfo());
+            sb.append("RevisionInfo: ").append(getRevisionInfo());
         sb.append("}");
         return sb.toString();
     }

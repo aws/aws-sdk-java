@@ -161,9 +161,9 @@ public class DescribeEndpointsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getEndpoints() != null)
-            sb.append("Endpoints: " + getEndpoints());
+            sb.append("Endpoints: ").append(getEndpoints());
         sb.append("}");
         return sb.toString();
     }

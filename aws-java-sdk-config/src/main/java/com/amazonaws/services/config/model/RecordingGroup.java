@@ -631,11 +631,11 @@ public class RecordingGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllSupported() != null)
-            sb.append("AllSupported: " + getAllSupported() + ",");
+            sb.append("AllSupported: ").append(getAllSupported()).append(",");
         if (getIncludeGlobalResourceTypes() != null)
-            sb.append("IncludeGlobalResourceTypes: " + getIncludeGlobalResourceTypes() + ",");
+            sb.append("IncludeGlobalResourceTypes: ").append(getIncludeGlobalResourceTypes()).append(",");
         if (getResourceTypes() != null)
-            sb.append("ResourceTypes: " + getResourceTypes());
+            sb.append("ResourceTypes: ").append(getResourceTypes());
         sb.append("}");
         return sb.toString();
     }

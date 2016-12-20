@@ -409,17 +409,17 @@ public class OptionConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionName() != null)
-            sb.append("OptionName: " + getOptionName() + ",");
+            sb.append("OptionName: ").append(getOptionName()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getOptionVersion() != null)
-            sb.append("OptionVersion: " + getOptionVersion() + ",");
+            sb.append("OptionVersion: ").append(getOptionVersion()).append(",");
         if (getDBSecurityGroupMemberships() != null)
-            sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");
+            sb.append("DBSecurityGroupMemberships: ").append(getDBSecurityGroupMemberships()).append(",");
         if (getVpcSecurityGroupMemberships() != null)
-            sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ",");
+            sb.append("VpcSecurityGroupMemberships: ").append(getVpcSecurityGroupMemberships()).append(",");
         if (getOptionSettings() != null)
-            sb.append("OptionSettings: " + getOptionSettings());
+            sb.append("OptionSettings: ").append(getOptionSettings());
         sb.append("}");
         return sb.toString();
     }

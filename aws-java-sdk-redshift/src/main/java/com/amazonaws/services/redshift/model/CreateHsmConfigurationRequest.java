@@ -395,19 +395,19 @@ public class CreateHsmConfigurationRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+            sb.append("HsmConfigurationIdentifier: ").append(getHsmConfigurationIdentifier()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getHsmIpAddress() != null)
-            sb.append("HsmIpAddress: " + getHsmIpAddress() + ",");
+            sb.append("HsmIpAddress: ").append(getHsmIpAddress()).append(",");
         if (getHsmPartitionName() != null)
-            sb.append("HsmPartitionName: " + getHsmPartitionName() + ",");
+            sb.append("HsmPartitionName: ").append(getHsmPartitionName()).append(",");
         if (getHsmPartitionPassword() != null)
-            sb.append("HsmPartitionPassword: " + getHsmPartitionPassword() + ",");
+            sb.append("HsmPartitionPassword: ").append(getHsmPartitionPassword()).append(",");
         if (getHsmServerPublicCertificate() != null)
-            sb.append("HsmServerPublicCertificate: " + getHsmServerPublicCertificate() + ",");
+            sb.append("HsmServerPublicCertificate: ").append(getHsmServerPublicCertificate()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

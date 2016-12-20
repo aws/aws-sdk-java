@@ -131,7 +131,7 @@ public class DeleteCacheSecurityGroupRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSecurityGroupName() != null)
-            sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName());
+            sb.append("CacheSecurityGroupName: ").append(getCacheSecurityGroupName());
         sb.append("}");
         return sb.toString();
     }

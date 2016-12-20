@@ -45,6 +45,11 @@ public class DescribeSuggestersResultStaxUnmarshaller implements Unmarshaller<De
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Suggesters", targetDepth)) {
+                    describeSuggestersResult.withSuggesters(new ArrayList<SuggesterStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("Suggesters/member", targetDepth)) {
                     describeSuggestersResult.withSuggesters(SuggesterStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

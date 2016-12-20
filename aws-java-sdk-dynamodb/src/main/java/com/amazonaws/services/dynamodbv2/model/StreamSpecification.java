@@ -556,9 +556,9 @@ public class StreamSpecification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamEnabled() != null)
-            sb.append("StreamEnabled: " + getStreamEnabled() + ",");
+            sb.append("StreamEnabled: ").append(getStreamEnabled()).append(",");
         if (getStreamViewType() != null)
-            sb.append("StreamViewType: " + getStreamViewType());
+            sb.append("StreamViewType: ").append(getStreamViewType());
         sb.append("}");
         return sb.toString();
     }

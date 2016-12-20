@@ -127,9 +127,9 @@ public class GetStreamingDistributionConfigResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionConfig() != null)
-            sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ",");
+            sb.append("StreamingDistributionConfig: ").append(getStreamingDistributionConfig()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

@@ -231,13 +231,13 @@ public class ListTopicRulesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopic() != null)
-            sb.append("Topic: " + getTopic() + ",");
+            sb.append("Topic: ").append(getTopic()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getRuleDisabled() != null)
-            sb.append("RuleDisabled: " + getRuleDisabled());
+            sb.append("RuleDisabled: ").append(getRuleDisabled());
         sb.append("}");
         return sb.toString();
     }

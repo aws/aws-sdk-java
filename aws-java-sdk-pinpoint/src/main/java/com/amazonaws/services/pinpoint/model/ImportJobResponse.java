@@ -601,31 +601,31 @@ public class ImportJobResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCompletedPieces() != null)
-            sb.append("CompletedPieces: " + getCompletedPieces() + ",");
+            sb.append("CompletedPieces: ").append(getCompletedPieces()).append(",");
         if (getCompletionDate() != null)
-            sb.append("CompletionDate: " + getCompletionDate() + ",");
+            sb.append("CompletionDate: ").append(getCompletionDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: " + getDefinition() + ",");
+            sb.append("Definition: ").append(getDefinition()).append(",");
         if (getFailedPieces() != null)
-            sb.append("FailedPieces: " + getFailedPieces() + ",");
+            sb.append("FailedPieces: ").append(getFailedPieces()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures() + ",");
+            sb.append("Failures: ").append(getFailures()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getJobStatus() != null)
-            sb.append("JobStatus: " + getJobStatus() + ",");
+            sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getTotalFailures() != null)
-            sb.append("TotalFailures: " + getTotalFailures() + ",");
+            sb.append("TotalFailures: ").append(getTotalFailures()).append(",");
         if (getTotalPieces() != null)
-            sb.append("TotalPieces: " + getTotalPieces() + ",");
+            sb.append("TotalPieces: ").append(getTotalPieces()).append(",");
         if (getTotalProcessed() != null)
-            sb.append("TotalProcessed: " + getTotalProcessed() + ",");
+            sb.append("TotalProcessed: ").append(getTotalProcessed()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

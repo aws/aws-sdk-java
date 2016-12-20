@@ -502,23 +502,23 @@ public class ActionExecution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSummary() != null)
-            sb.append("Summary: " + getSummary() + ",");
+            sb.append("Summary: ").append(getSummary()).append(",");
         if (getLastStatusChange() != null)
-            sb.append("LastStatusChange: " + getLastStatusChange() + ",");
+            sb.append("LastStatusChange: ").append(getLastStatusChange()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken() + ",");
+            sb.append("Token: ").append(getToken()).append(",");
         if (getLastUpdatedBy() != null)
-            sb.append("LastUpdatedBy: " + getLastUpdatedBy() + ",");
+            sb.append("LastUpdatedBy: ").append(getLastUpdatedBy()).append(",");
         if (getExternalExecutionId() != null)
-            sb.append("ExternalExecutionId: " + getExternalExecutionId() + ",");
+            sb.append("ExternalExecutionId: ").append(getExternalExecutionId()).append(",");
         if (getExternalExecutionUrl() != null)
-            sb.append("ExternalExecutionUrl: " + getExternalExecutionUrl() + ",");
+            sb.append("ExternalExecutionUrl: ").append(getExternalExecutionUrl()).append(",");
         if (getPercentComplete() != null)
-            sb.append("PercentComplete: " + getPercentComplete() + ",");
+            sb.append("PercentComplete: ").append(getPercentComplete()).append(",");
         if (getErrorDetails() != null)
-            sb.append("ErrorDetails: " + getErrorDetails());
+            sb.append("ErrorDetails: ").append(getErrorDetails());
         sb.append("}");
         return sb.toString();
     }

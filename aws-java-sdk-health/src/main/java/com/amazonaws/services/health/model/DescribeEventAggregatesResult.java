@@ -175,9 +175,9 @@ public class DescribeEventAggregatesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventAggregates() != null)
-            sb.append("EventAggregates: " + getEventAggregates() + ",");
+            sb.append("EventAggregates: ").append(getEventAggregates()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

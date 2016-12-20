@@ -384,11 +384,11 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getWrappingAlgorithm() != null)
-            sb.append("WrappingAlgorithm: " + getWrappingAlgorithm() + ",");
+            sb.append("WrappingAlgorithm: ").append(getWrappingAlgorithm()).append(",");
         if (getWrappingKeySpec() != null)
-            sb.append("WrappingKeySpec: " + getWrappingKeySpec());
+            sb.append("WrappingKeySpec: ").append(getWrappingKeySpec());
         sb.append("}");
         return sb.toString();
     }

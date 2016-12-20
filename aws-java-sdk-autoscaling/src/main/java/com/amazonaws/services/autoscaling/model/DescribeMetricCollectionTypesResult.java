@@ -193,9 +193,9 @@ public class DescribeMetricCollectionTypesResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetrics() != null)
-            sb.append("Metrics: " + getMetrics() + ",");
+            sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getGranularities() != null)
-            sb.append("Granularities: " + getGranularities());
+            sb.append("Granularities: ").append(getGranularities());
         sb.append("}");
         return sb.toString();
     }

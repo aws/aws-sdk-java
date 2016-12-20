@@ -84,7 +84,7 @@ public class ResendConfirmationCodeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCodeDeliveryDetails() != null)
-            sb.append("CodeDeliveryDetails: " + getCodeDeliveryDetails());
+            sb.append("CodeDeliveryDetails: ").append(getCodeDeliveryDetails());
         sb.append("}");
         return sb.toString();
     }

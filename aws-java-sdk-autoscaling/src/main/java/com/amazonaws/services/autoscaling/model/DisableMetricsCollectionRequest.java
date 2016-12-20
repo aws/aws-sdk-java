@@ -534,9 +534,9 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getMetrics() != null)
-            sb.append("Metrics: " + getMetrics());
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }

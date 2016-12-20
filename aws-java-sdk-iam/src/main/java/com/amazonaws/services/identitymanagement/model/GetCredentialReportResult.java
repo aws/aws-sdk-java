@@ -229,11 +229,11 @@ public class GetCredentialReportResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: " + getContent() + ",");
+            sb.append("Content: ").append(getContent()).append(",");
         if (getReportFormat() != null)
-            sb.append("ReportFormat: " + getReportFormat() + ",");
+            sb.append("ReportFormat: ").append(getReportFormat()).append(",");
         if (getGeneratedTime() != null)
-            sb.append("GeneratedTime: " + getGeneratedTime());
+            sb.append("GeneratedTime: ").append(getGeneratedTime());
         sb.append("}");
         return sb.toString();
     }

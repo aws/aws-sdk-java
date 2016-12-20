@@ -175,9 +175,9 @@ public class DescribeAssessmentTemplatesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTemplates() != null)
-            sb.append("AssessmentTemplates: " + getAssessmentTemplates() + ",");
+            sb.append("AssessmentTemplates: ").append(getAssessmentTemplates()).append(",");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

@@ -87,9 +87,9 @@ public class Limits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaximumReplicationCount() != null)
-            sb.append("MaximumReplicationCount: " + getMaximumReplicationCount() + ",");
+            sb.append("MaximumReplicationCount: ").append(getMaximumReplicationCount()).append(",");
         if (getMaximumPartitionCount() != null)
-            sb.append("MaximumPartitionCount: " + getMaximumPartitionCount());
+            sb.append("MaximumPartitionCount: ").append(getMaximumPartitionCount());
         sb.append("}");
         return sb.toString();
     }

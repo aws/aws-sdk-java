@@ -61,14 +61,9 @@ public class UpdateBasePathMappingRequestMarshaller implements Marshaller<Reques
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (updateBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateBasePathMappingRequest.getDomainName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{base_path}",
-                (updateBasePathMappingRequest.getBasePath() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateBasePathMappingRequest.getBasePath()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "domain_name",
+                updateBasePathMappingRequest.getDomainName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "base_path", updateBasePathMappingRequest.getBasePath());
         request.setResourcePath(uriResourcePath);
 
         try {

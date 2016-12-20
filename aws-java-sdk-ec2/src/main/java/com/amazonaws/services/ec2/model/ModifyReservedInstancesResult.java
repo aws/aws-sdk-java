@@ -81,7 +81,7 @@ public class ModifyReservedInstancesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesModificationId() != null)
-            sb.append("ReservedInstancesModificationId: " + getReservedInstancesModificationId());
+            sb.append("ReservedInstancesModificationId: ").append(getReservedInstancesModificationId());
         sb.append("}");
         return sb.toString();
     }

@@ -108,7 +108,7 @@ public class PutTraceSegmentsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnprocessedTraceSegments() != null)
-            sb.append("UnprocessedTraceSegments: " + getUnprocessedTraceSegments());
+            sb.append("UnprocessedTraceSegments: ").append(getUnprocessedTraceSegments());
         sb.append("}");
         return sb.toString();
     }

@@ -310,17 +310,17 @@ public class AuthenticationResultType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getExpiresIn() != null)
-            sb.append("ExpiresIn: " + getExpiresIn() + ",");
+            sb.append("ExpiresIn: ").append(getExpiresIn()).append(",");
         if (getTokenType() != null)
-            sb.append("TokenType: " + getTokenType() + ",");
+            sb.append("TokenType: ").append(getTokenType()).append(",");
         if (getRefreshToken() != null)
-            sb.append("RefreshToken: " + getRefreshToken() + ",");
+            sb.append("RefreshToken: ").append(getRefreshToken()).append(",");
         if (getIdToken() != null)
-            sb.append("IdToken: " + getIdToken() + ",");
+            sb.append("IdToken: ").append(getIdToken()).append(",");
         if (getNewDeviceMetadata() != null)
-            sb.append("NewDeviceMetadata: " + getNewDeviceMetadata());
+            sb.append("NewDeviceMetadata: ").append(getNewDeviceMetadata());
         sb.append("}");
         return sb.toString();
     }

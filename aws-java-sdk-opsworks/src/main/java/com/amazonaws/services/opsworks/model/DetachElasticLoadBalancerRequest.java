@@ -125,9 +125,9 @@ public class DetachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticLoadBalancerName() != null)
-            sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");
+            sb.append("ElasticLoadBalancerName: ").append(getElasticLoadBalancerName()).append(",");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId());
+            sb.append("LayerId: ").append(getLayerId());
         sb.append("}");
         return sb.toString();
     }

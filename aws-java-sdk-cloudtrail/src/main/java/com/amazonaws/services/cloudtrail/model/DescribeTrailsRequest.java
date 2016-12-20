@@ -424,9 +424,9 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailNameList() != null)
-            sb.append("TrailNameList: " + getTrailNameList() + ",");
+            sb.append("TrailNameList: ").append(getTrailNameList()).append(",");
         if (getIncludeShadowTrails() != null)
-            sb.append("IncludeShadowTrails: " + getIncludeShadowTrails());
+            sb.append("IncludeShadowTrails: ").append(getIncludeShadowTrails());
         sb.append("}");
         return sb.toString();
     }

@@ -468,21 +468,21 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId()).append(",");
         if (getTaskExecutionId() != null)
-            sb.append("TaskExecutionId: " + getTaskExecutionId() + ",");
+            sb.append("TaskExecutionId: ").append(getTaskExecutionId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getTaskArn() != null)
-            sb.append("TaskArn: " + getTaskArn() + ",");
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getTaskType() != null)
-            sb.append("TaskType: " + getTaskType());
+            sb.append("TaskType: ").append(getTaskType());
         sb.append("}");
         return sb.toString();
     }

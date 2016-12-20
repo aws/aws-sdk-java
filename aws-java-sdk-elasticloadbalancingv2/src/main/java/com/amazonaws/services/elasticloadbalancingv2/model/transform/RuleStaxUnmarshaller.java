@@ -55,8 +55,18 @@ public class RuleStaxUnmarshaller implements Unmarshaller<Rule, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("Conditions", targetDepth)) {
+                    rule.withConditions(new ArrayList<RuleCondition>());
+                    continue;
+                }
+
                 if (context.testExpression("Conditions/member", targetDepth)) {
                     rule.withConditions(RuleConditionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Actions", targetDepth)) {
+                    rule.withActions(new ArrayList<Action>());
                     continue;
                 }
 

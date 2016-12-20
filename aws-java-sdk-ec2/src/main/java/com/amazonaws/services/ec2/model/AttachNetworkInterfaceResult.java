@@ -81,7 +81,7 @@ public class AttachNetworkInterfaceResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentId() != null)
-            sb.append("AttachmentId: " + getAttachmentId());
+            sb.append("AttachmentId: ").append(getAttachmentId());
         sb.append("}");
         return sb.toString();
     }

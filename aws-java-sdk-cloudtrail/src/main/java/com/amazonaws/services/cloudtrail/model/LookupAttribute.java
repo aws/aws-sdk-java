@@ -159,9 +159,9 @@ public class LookupAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeKey() != null)
-            sb.append("AttributeKey: " + getAttributeKey() + ",");
+            sb.append("AttributeKey: ").append(getAttributeKey()).append(",");
         if (getAttributeValue() != null)
-            sb.append("AttributeValue: " + getAttributeValue());
+            sb.append("AttributeValue: ").append(getAttributeValue());
         sb.append("}");
         return sb.toString();
     }

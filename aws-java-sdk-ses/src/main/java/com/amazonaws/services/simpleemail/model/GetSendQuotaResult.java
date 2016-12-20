@@ -209,11 +209,11 @@ public class GetSendQuotaResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMax24HourSend() != null)
-            sb.append("Max24HourSend: " + getMax24HourSend() + ",");
+            sb.append("Max24HourSend: ").append(getMax24HourSend()).append(",");
         if (getMaxSendRate() != null)
-            sb.append("MaxSendRate: " + getMaxSendRate() + ",");
+            sb.append("MaxSendRate: ").append(getMaxSendRate()).append(",");
         if (getSentLast24Hours() != null)
-            sb.append("SentLast24Hours: " + getSentLast24Hours());
+            sb.append("SentLast24Hours: ").append(getSentLast24Hours());
         sb.append("}");
         return sb.toString();
     }

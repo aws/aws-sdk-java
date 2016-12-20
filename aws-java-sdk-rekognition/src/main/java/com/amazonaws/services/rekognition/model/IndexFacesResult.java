@@ -213,9 +213,9 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFaceRecords() != null)
-            sb.append("FaceRecords: " + getFaceRecords() + ",");
+            sb.append("FaceRecords: ").append(getFaceRecords()).append(",");
         if (getOrientationCorrection() != null)
-            sb.append("OrientationCorrection: " + getOrientationCorrection());
+            sb.append("OrientationCorrection: ").append(getOrientationCorrection());
         sb.append("}");
         return sb.toString();
     }

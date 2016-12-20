@@ -80,7 +80,7 @@ public class GetSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSSHPublicKey() != null)
-            sb.append("SSHPublicKey: " + getSSHPublicKey());
+            sb.append("SSHPublicKey: ").append(getSSHPublicKey());
         sb.append("}");
         return sb.toString();
     }

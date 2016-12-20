@@ -70,6 +70,11 @@ public class CloudFrontOriginAccessIdentityListStaxUnmarshaller implements Unmar
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    cloudFrontOriginAccessIdentityList.withItems(new ArrayList<CloudFrontOriginAccessIdentitySummary>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/CloudFrontOriginAccessIdentitySummary", targetDepth)) {
                     cloudFrontOriginAccessIdentityList.withItems(CloudFrontOriginAccessIdentitySummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

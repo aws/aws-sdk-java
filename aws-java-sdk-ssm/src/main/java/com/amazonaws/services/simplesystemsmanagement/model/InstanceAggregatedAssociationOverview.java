@@ -148,9 +148,9 @@ public class InstanceAggregatedAssociationOverview implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDetailedStatus() != null)
-            sb.append("DetailedStatus: " + getDetailedStatus() + ",");
+            sb.append("DetailedStatus: ").append(getDetailedStatus()).append(",");
         if (getInstanceAssociationStatusAggregatedCount() != null)
-            sb.append("InstanceAssociationStatusAggregatedCount: " + getInstanceAssociationStatusAggregatedCount());
+            sb.append("InstanceAssociationStatusAggregatedCount: ").append(getInstanceAssociationStatusAggregatedCount());
         sb.append("}");
         return sb.toString();
     }

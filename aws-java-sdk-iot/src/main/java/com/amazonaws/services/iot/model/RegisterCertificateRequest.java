@@ -237,13 +237,13 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: " + getCertificatePem() + ",");
+            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
         if (getCaCertificatePem() != null)
-            sb.append("CaCertificatePem: " + getCaCertificatePem() + ",");
+            sb.append("CaCertificatePem: ").append(getCaCertificatePem()).append(",");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive() + ",");
+            sb.append("SetAsActive: ").append(getSetAsActive()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

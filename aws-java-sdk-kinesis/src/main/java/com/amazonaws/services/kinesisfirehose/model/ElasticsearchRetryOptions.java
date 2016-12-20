@@ -95,7 +95,7 @@ public class ElasticsearchRetryOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDurationInSeconds() != null)
-            sb.append("DurationInSeconds: " + getDurationInSeconds());
+            sb.append("DurationInSeconds: ").append(getDurationInSeconds());
         sb.append("}");
         return sb.toString();
     }

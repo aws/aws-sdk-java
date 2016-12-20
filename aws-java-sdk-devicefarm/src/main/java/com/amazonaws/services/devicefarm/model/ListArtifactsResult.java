@@ -166,9 +166,9 @@ public class ListArtifactsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArtifacts() != null)
-            sb.append("Artifacts: " + getArtifacts() + ",");
+            sb.append("Artifacts: ").append(getArtifacts()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

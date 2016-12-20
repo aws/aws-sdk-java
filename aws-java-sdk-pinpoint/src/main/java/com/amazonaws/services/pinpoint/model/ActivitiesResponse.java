@@ -96,7 +96,7 @@ public class ActivitiesResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItem() != null)
-            sb.append("Item: " + getItem());
+            sb.append("Item: ").append(getItem());
         sb.append("}");
         return sb.toString();
     }

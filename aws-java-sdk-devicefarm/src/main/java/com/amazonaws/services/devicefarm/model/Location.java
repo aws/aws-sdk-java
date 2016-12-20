@@ -130,9 +130,9 @@ public class Location implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLatitude() != null)
-            sb.append("Latitude: " + getLatitude() + ",");
+            sb.append("Latitude: ").append(getLatitude()).append(",");
         if (getLongitude() != null)
-            sb.append("Longitude: " + getLongitude());
+            sb.append("Longitude: ").append(getLongitude());
         sb.append("}");
         return sb.toString();
     }

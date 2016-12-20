@@ -1742,47 +1742,47 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getNameservers() != null)
-            sb.append("Nameservers: " + getNameservers() + ",");
+            sb.append("Nameservers: ").append(getNameservers()).append(",");
         if (getAutoRenew() != null)
-            sb.append("AutoRenew: " + getAutoRenew() + ",");
+            sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getAdminContact() != null)
-            sb.append("AdminContact: " + getAdminContact() + ",");
+            sb.append("AdminContact: ").append(getAdminContact()).append(",");
         if (getRegistrantContact() != null)
-            sb.append("RegistrantContact: " + getRegistrantContact() + ",");
+            sb.append("RegistrantContact: ").append(getRegistrantContact()).append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: " + getTechContact() + ",");
+            sb.append("TechContact: ").append(getTechContact()).append(",");
         if (getAdminPrivacy() != null)
-            sb.append("AdminPrivacy: " + getAdminPrivacy() + ",");
+            sb.append("AdminPrivacy: ").append(getAdminPrivacy()).append(",");
         if (getRegistrantPrivacy() != null)
-            sb.append("RegistrantPrivacy: " + getRegistrantPrivacy() + ",");
+            sb.append("RegistrantPrivacy: ").append(getRegistrantPrivacy()).append(",");
         if (getTechPrivacy() != null)
-            sb.append("TechPrivacy: " + getTechPrivacy() + ",");
+            sb.append("TechPrivacy: ").append(getTechPrivacy()).append(",");
         if (getRegistrarName() != null)
-            sb.append("RegistrarName: " + getRegistrarName() + ",");
+            sb.append("RegistrarName: ").append(getRegistrarName()).append(",");
         if (getWhoIsServer() != null)
-            sb.append("WhoIsServer: " + getWhoIsServer() + ",");
+            sb.append("WhoIsServer: ").append(getWhoIsServer()).append(",");
         if (getRegistrarUrl() != null)
-            sb.append("RegistrarUrl: " + getRegistrarUrl() + ",");
+            sb.append("RegistrarUrl: ").append(getRegistrarUrl()).append(",");
         if (getAbuseContactEmail() != null)
-            sb.append("AbuseContactEmail: " + getAbuseContactEmail() + ",");
+            sb.append("AbuseContactEmail: ").append(getAbuseContactEmail()).append(",");
         if (getAbuseContactPhone() != null)
-            sb.append("AbuseContactPhone: " + getAbuseContactPhone() + ",");
+            sb.append("AbuseContactPhone: ").append(getAbuseContactPhone()).append(",");
         if (getRegistryDomainId() != null)
-            sb.append("RegistryDomainId: " + getRegistryDomainId() + ",");
+            sb.append("RegistryDomainId: ").append(getRegistryDomainId()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getUpdatedDate() != null)
-            sb.append("UpdatedDate: " + getUpdatedDate() + ",");
+            sb.append("UpdatedDate: ").append(getUpdatedDate()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: " + getExpirationDate() + ",");
+            sb.append("ExpirationDate: ").append(getExpirationDate()).append(",");
         if (getReseller() != null)
-            sb.append("Reseller: " + getReseller() + ",");
+            sb.append("Reseller: ").append(getReseller()).append(",");
         if (getDnsSec() != null)
-            sb.append("DnsSec: " + getDnsSec() + ",");
+            sb.append("DnsSec: ").append(getDnsSec()).append(",");
         if (getStatusList() != null)
-            sb.append("StatusList: " + getStatusList());
+            sb.append("StatusList: ").append(getStatusList());
         sb.append("}");
         return sb.toString();
     }

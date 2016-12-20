@@ -186,9 +186,9 @@ public class StopAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScope() != null)
-            sb.append("Scope: " + getScope() + ",");
+            sb.append("Scope: ").append(getScope()).append(",");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn());
+            sb.append("TopicArn: ").append(getTopicArn());
         sb.append("}");
         return sb.toString();
     }

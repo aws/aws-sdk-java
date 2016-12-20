@@ -78,7 +78,7 @@ public class UpdateServerEngineAttributesResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServer() != null)
-            sb.append("Server: " + getServer());
+            sb.append("Server: ").append(getServer());
         sb.append("}");
         return sb.toString();
     }

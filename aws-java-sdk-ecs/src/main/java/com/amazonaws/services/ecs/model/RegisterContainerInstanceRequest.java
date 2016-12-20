@@ -459,19 +459,19 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getInstanceIdentityDocument() != null)
-            sb.append("InstanceIdentityDocument: " + getInstanceIdentityDocument() + ",");
+            sb.append("InstanceIdentityDocument: ").append(getInstanceIdentityDocument()).append(",");
         if (getInstanceIdentityDocumentSignature() != null)
-            sb.append("InstanceIdentityDocumentSignature: " + getInstanceIdentityDocumentSignature() + ",");
+            sb.append("InstanceIdentityDocumentSignature: ").append(getInstanceIdentityDocumentSignature()).append(",");
         if (getTotalResources() != null)
-            sb.append("TotalResources: " + getTotalResources() + ",");
+            sb.append("TotalResources: ").append(getTotalResources()).append(",");
         if (getVersionInfo() != null)
-            sb.append("VersionInfo: " + getVersionInfo() + ",");
+            sb.append("VersionInfo: ").append(getVersionInfo()).append(",");
         if (getContainerInstanceArn() != null)
-            sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
+            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

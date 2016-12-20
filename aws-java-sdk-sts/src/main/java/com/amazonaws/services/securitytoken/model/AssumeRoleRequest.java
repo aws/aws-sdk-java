@@ -831,19 +831,19 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getRoleSessionName() != null)
-            sb.append("RoleSessionName: " + getRoleSessionName() + ",");
+            sb.append("RoleSessionName: ").append(getRoleSessionName()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: " + getDurationSeconds() + ",");
+            sb.append("DurationSeconds: ").append(getDurationSeconds()).append(",");
         if (getExternalId() != null)
-            sb.append("ExternalId: " + getExternalId() + ",");
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber() + ",");
+            sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getTokenCode() != null)
-            sb.append("TokenCode: " + getTokenCode());
+            sb.append("TokenCode: ").append(getTokenCode());
         sb.append("}");
         return sb.toString();
     }

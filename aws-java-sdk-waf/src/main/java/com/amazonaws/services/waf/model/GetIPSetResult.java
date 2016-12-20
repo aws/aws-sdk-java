@@ -173,7 +173,7 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSet() != null)
-            sb.append("IPSet: " + getIPSet());
+            sb.append("IPSet: ").append(getIPSet());
         sb.append("}");
         return sb.toString();
     }

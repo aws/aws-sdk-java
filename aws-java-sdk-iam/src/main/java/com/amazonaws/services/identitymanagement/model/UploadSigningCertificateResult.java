@@ -80,7 +80,7 @@ public class UploadSigningCertificateResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate());
+            sb.append("Certificate: ").append(getCertificate());
         sb.append("}");
         return sb.toString();
     }

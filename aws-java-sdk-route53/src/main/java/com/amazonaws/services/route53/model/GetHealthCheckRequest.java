@@ -104,7 +104,7 @@ public class GetHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHealthCheckId() != null)
-            sb.append("HealthCheckId: " + getHealthCheckId());
+            sb.append("HealthCheckId: ").append(getHealthCheckId());
         sb.append("}");
         return sb.toString();
     }

@@ -225,13 +225,13 @@ public class CreateKeysAndCertificateResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: " + getCertificatePem() + ",");
+            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
         if (getKeyPair() != null)
-            sb.append("KeyPair: " + getKeyPair());
+            sb.append("KeyPair: ").append(getKeyPair());
         sb.append("}");
         return sb.toString();
     }

@@ -158,9 +158,9 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId());
+            sb.append("AllocationId: ").append(getAllocationId());
         sb.append("}");
         return sb.toString();
     }

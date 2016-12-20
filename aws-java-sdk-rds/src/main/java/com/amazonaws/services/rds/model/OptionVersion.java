@@ -138,9 +138,9 @@ public class OptionVersion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getIsDefault() != null)
-            sb.append("IsDefault: " + getIsDefault());
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }

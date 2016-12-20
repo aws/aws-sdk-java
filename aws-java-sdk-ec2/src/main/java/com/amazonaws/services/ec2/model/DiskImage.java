@@ -172,11 +172,11 @@ public class DiskImage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVolume() != null)
-            sb.append("Volume: " + getVolume());
+            sb.append("Volume: ").append(getVolume());
         sb.append("}");
         return sb.toString();
     }

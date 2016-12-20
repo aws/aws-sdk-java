@@ -284,13 +284,13 @@ public class Scope implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComplianceResourceTypes() != null)
-            sb.append("ComplianceResourceTypes: " + getComplianceResourceTypes() + ",");
+            sb.append("ComplianceResourceTypes: ").append(getComplianceResourceTypes()).append(",");
         if (getTagKey() != null)
-            sb.append("TagKey: " + getTagKey() + ",");
+            sb.append("TagKey: ").append(getTagKey()).append(",");
         if (getTagValue() != null)
-            sb.append("TagValue: " + getTagValue() + ",");
+            sb.append("TagValue: ").append(getTagValue()).append(",");
         if (getComplianceResourceId() != null)
-            sb.append("ComplianceResourceId: " + getComplianceResourceId());
+            sb.append("ComplianceResourceId: ").append(getComplianceResourceId());
         sb.append("}");
         return sb.toString();
     }

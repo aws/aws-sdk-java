@@ -598,17 +598,17 @@ public class Source implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl() + ",");
+            sb.append("Url: ").append(getUrl()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getSshKey() != null)
-            sb.append("SshKey: " + getSshKey() + ",");
+            sb.append("SshKey: ").append(getSshKey()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision());
+            sb.append("Revision: ").append(getRevision());
         sb.append("}");
         return sb.toString();
     }

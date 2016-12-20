@@ -612,25 +612,25 @@ public class UserPoolClientType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getClientName() != null)
-            sb.append("ClientName: " + getClientName() + ",");
+            sb.append("ClientName: ").append(getClientName()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getClientSecret() != null)
-            sb.append("ClientSecret: " + getClientSecret() + ",");
+            sb.append("ClientSecret: ").append(getClientSecret()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getRefreshTokenValidity() != null)
-            sb.append("RefreshTokenValidity: " + getRefreshTokenValidity() + ",");
+            sb.append("RefreshTokenValidity: ").append(getRefreshTokenValidity()).append(",");
         if (getReadAttributes() != null)
-            sb.append("ReadAttributes: " + getReadAttributes() + ",");
+            sb.append("ReadAttributes: ").append(getReadAttributes()).append(",");
         if (getWriteAttributes() != null)
-            sb.append("WriteAttributes: " + getWriteAttributes() + ",");
+            sb.append("WriteAttributes: ").append(getWriteAttributes()).append(",");
         if (getExplicitAuthFlows() != null)
-            sb.append("ExplicitAuthFlows: " + getExplicitAuthFlows());
+            sb.append("ExplicitAuthFlows: ").append(getExplicitAuthFlows());
         sb.append("}");
         return sb.toString();
     }

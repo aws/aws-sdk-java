@@ -256,11 +256,11 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateStatuses() != null)
-            sb.append("CertificateStatuses: " + getCertificateStatuses() + ",");
+            sb.append("CertificateStatuses: ").append(getCertificateStatuses()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

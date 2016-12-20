@@ -45,6 +45,11 @@ public class ListSubscriptionsResultStaxUnmarshaller implements Unmarshaller<Lis
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Subscriptions", targetDepth)) {
+                    listSubscriptionsResult.withSubscriptions(new ArrayList<Subscription>());
+                    continue;
+                }
+
                 if (context.testExpression("Subscriptions/member", targetDepth)) {
                     listSubscriptionsResult.withSubscriptions(SubscriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

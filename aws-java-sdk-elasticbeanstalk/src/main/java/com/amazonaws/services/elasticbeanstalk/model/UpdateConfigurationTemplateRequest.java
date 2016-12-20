@@ -432,15 +432,15 @@ public class UpdateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getOptionSettings() != null)
-            sb.append("OptionSettings: " + getOptionSettings() + ",");
+            sb.append("OptionSettings: ").append(getOptionSettings()).append(",");
         if (getOptionsToRemove() != null)
-            sb.append("OptionsToRemove: " + getOptionsToRemove());
+            sb.append("OptionsToRemove: ").append(getOptionsToRemove());
         sb.append("}");
         return sb.toString();
     }

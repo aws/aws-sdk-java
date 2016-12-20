@@ -85,7 +85,7 @@ public class GetJobUnlockCodeResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnlockCode() != null)
-            sb.append("UnlockCode: " + getUnlockCode());
+            sb.append("UnlockCode: ").append(getUnlockCode());
         sb.append("}");
         return sb.toString();
     }

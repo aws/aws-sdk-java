@@ -574,17 +574,17 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventSourceArn() != null)
-            sb.append("EventSourceArn: " + getEventSourceArn() + ",");
+            sb.append("EventSourceArn: ").append(getEventSourceArn()).append(",");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getBatchSize() != null)
-            sb.append("BatchSize: " + getBatchSize() + ",");
+            sb.append("BatchSize: ").append(getBatchSize()).append(",");
         if (getStartingPosition() != null)
-            sb.append("StartingPosition: " + getStartingPosition() + ",");
+            sb.append("StartingPosition: ").append(getStartingPosition()).append(",");
         if (getStartingPositionTimestamp() != null)
-            sb.append("StartingPositionTimestamp: " + getStartingPositionTimestamp());
+            sb.append("StartingPositionTimestamp: ").append(getStartingPositionTimestamp());
         sb.append("}");
         return sb.toString();
     }

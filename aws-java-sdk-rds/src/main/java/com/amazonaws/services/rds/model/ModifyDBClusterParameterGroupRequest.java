@@ -158,9 +158,9 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

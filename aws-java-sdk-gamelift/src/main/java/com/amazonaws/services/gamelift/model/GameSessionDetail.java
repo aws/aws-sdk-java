@@ -278,9 +278,9 @@ public class GameSessionDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSession() != null)
-            sb.append("GameSession: " + getGameSession() + ",");
+            sb.append("GameSession: ").append(getGameSession()).append(",");
         if (getProtectionPolicy() != null)
-            sb.append("ProtectionPolicy: " + getProtectionPolicy());
+            sb.append("ProtectionPolicy: ").append(getProtectionPolicy());
         sb.append("}");
         return sb.toString();
     }

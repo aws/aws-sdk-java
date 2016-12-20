@@ -784,23 +784,23 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getDeploymentStatus() != null)
-            sb.append("DeploymentStatus: " + getDeploymentStatus() + ",");
+            sb.append("DeploymentStatus: ").append(getDeploymentStatus()).append(",");
         if (getDateCreated() != null)
-            sb.append("DateCreated: " + getDateCreated() + ",");
+            sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getDateUpdated() != null)
-            sb.append("DateUpdated: " + getDateUpdated() + ",");
+            sb.append("DateUpdated: ").append(getDateUpdated()).append(",");
         if (getOptionSettings() != null)
-            sb.append("OptionSettings: " + getOptionSettings());
+            sb.append("OptionSettings: ").append(getOptionSettings());
         sb.append("}");
         return sb.toString();
     }

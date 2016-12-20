@@ -113,7 +113,7 @@ public class DescribeApplicationsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplications() != null)
-            sb.append("Applications: " + getApplications());
+            sb.append("Applications: ").append(getApplications());
         sb.append("}");
         return sb.toString();
     }

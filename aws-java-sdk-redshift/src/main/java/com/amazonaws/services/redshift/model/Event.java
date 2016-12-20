@@ -463,19 +463,19 @@ public class Event implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceIdentifier() != null)
-            sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");
+            sb.append("SourceIdentifier: ").append(getSourceIdentifier()).append(",");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType() + ",");
+            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getEventCategories() != null)
-            sb.append("EventCategories: " + getEventCategories() + ",");
+            sb.append("EventCategories: ").append(getEventCategories()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getDate() != null)
-            sb.append("Date: " + getDate() + ",");
+            sb.append("Date: ").append(getDate()).append(",");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId());
+            sb.append("EventId: ").append(getEventId());
         sb.append("}");
         return sb.toString();
     }

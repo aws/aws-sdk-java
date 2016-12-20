@@ -172,9 +172,9 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryIds() != null)
-            sb.append("DirectoryIds: " + getDirectoryIds() + ",");
+            sb.append("DirectoryIds: ").append(getDirectoryIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName());
+            sb.append("PolicyName: ").append(getPolicyName());
         sb.append("}");
         return sb.toString();
     }

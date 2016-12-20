@@ -114,7 +114,7 @@ public class DescribeAutoScalingNotificationTypesResult extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingNotificationTypes() != null)
-            sb.append("AutoScalingNotificationTypes: " + getAutoScalingNotificationTypes());
+            sb.append("AutoScalingNotificationTypes: ").append(getAutoScalingNotificationTypes());
         sb.append("}");
         return sb.toString();
     }

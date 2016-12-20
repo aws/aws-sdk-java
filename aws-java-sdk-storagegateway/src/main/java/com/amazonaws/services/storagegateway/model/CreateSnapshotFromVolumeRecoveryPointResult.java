@@ -116,11 +116,11 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getVolumeRecoveryPointTime() != null)
-            sb.append("VolumeRecoveryPointTime: " + getVolumeRecoveryPointTime());
+            sb.append("VolumeRecoveryPointTime: ").append(getVolumeRecoveryPointTime());
         sb.append("}");
         return sb.toString();
     }

@@ -738,19 +738,19 @@ public class Artwork implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputKey() != null)
-            sb.append("InputKey: " + getInputKey() + ",");
+            sb.append("InputKey: ").append(getInputKey()).append(",");
         if (getMaxWidth() != null)
-            sb.append("MaxWidth: " + getMaxWidth() + ",");
+            sb.append("MaxWidth: ").append(getMaxWidth()).append(",");
         if (getMaxHeight() != null)
-            sb.append("MaxHeight: " + getMaxHeight() + ",");
+            sb.append("MaxHeight: ").append(getMaxHeight()).append(",");
         if (getSizingPolicy() != null)
-            sb.append("SizingPolicy: " + getSizingPolicy() + ",");
+            sb.append("SizingPolicy: ").append(getSizingPolicy()).append(",");
         if (getPaddingPolicy() != null)
-            sb.append("PaddingPolicy: " + getPaddingPolicy() + ",");
+            sb.append("PaddingPolicy: ").append(getPaddingPolicy()).append(",");
         if (getAlbumArtFormat() != null)
-            sb.append("AlbumArtFormat: " + getAlbumArtFormat() + ",");
+            sb.append("AlbumArtFormat: ").append(getAlbumArtFormat()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption());
+            sb.append("Encryption: ").append(getEncryption());
         sb.append("}");
         return sb.toString();
     }

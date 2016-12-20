@@ -50,6 +50,11 @@ public class DescribeReservedNodeOfferingsResultStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("ReservedNodeOfferings", targetDepth)) {
+                    describeReservedNodeOfferingsResult.withReservedNodeOfferings(new ArrayList<ReservedNodeOffering>());
+                    continue;
+                }
+
                 if (context.testExpression("ReservedNodeOfferings/ReservedNodeOffering", targetDepth)) {
                     describeReservedNodeOfferingsResult.withReservedNodeOfferings(ReservedNodeOfferingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

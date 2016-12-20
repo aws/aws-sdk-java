@@ -485,9 +485,9 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

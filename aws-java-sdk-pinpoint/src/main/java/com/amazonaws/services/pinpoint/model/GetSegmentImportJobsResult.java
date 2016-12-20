@@ -59,7 +59,7 @@ public class GetSegmentImportJobsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportJobsResponse() != null)
-            sb.append("ImportJobsResponse: " + getImportJobsResponse());
+            sb.append("ImportJobsResponse: ").append(getImportJobsResponse());
         sb.append("}");
         return sb.toString();
     }

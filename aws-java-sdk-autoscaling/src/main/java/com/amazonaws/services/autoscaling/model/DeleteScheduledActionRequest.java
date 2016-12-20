@@ -127,9 +127,9 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getScheduledActionName() != null)
-            sb.append("ScheduledActionName: " + getScheduledActionName());
+            sb.append("ScheduledActionName: ").append(getScheduledActionName());
         sb.append("}");
         return sb.toString();
     }

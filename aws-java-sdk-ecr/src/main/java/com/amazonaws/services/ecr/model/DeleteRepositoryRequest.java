@@ -190,11 +190,11 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getForce() != null)
-            sb.append("Force: " + getForce());
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }

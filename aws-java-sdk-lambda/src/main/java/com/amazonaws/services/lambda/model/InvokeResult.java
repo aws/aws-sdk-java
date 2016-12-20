@@ -330,13 +330,13 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getFunctionError() != null)
-            sb.append("FunctionError: " + getFunctionError() + ",");
+            sb.append("FunctionError: ").append(getFunctionError()).append(",");
         if (getLogResult() != null)
-            sb.append("LogResult: " + getLogResult() + ",");
+            sb.append("LogResult: ").append(getLogResult()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: " + getPayload());
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }

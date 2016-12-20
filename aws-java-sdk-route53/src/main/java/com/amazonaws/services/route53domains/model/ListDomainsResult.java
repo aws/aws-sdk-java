@@ -255,9 +255,9 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomains() != null)
-            sb.append("Domains: " + getDomains() + ",");
+            sb.append("Domains: ").append(getDomains()).append(",");
         if (getNextPageMarker() != null)
-            sb.append("NextPageMarker: " + getNextPageMarker());
+            sb.append("NextPageMarker: ").append(getNextPageMarker());
         sb.append("}");
         return sb.toString();
     }

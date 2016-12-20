@@ -156,9 +156,9 @@ public class ValueWithServiceIds implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAnnotationValue() != null)
-            sb.append("AnnotationValue: " + getAnnotationValue() + ",");
+            sb.append("AnnotationValue: ").append(getAnnotationValue()).append(",");
         if (getServiceIds() != null)
-            sb.append("ServiceIds: " + getServiceIds());
+            sb.append("ServiceIds: ").append(getServiceIds());
         sb.append("}");
         return sb.toString();
     }

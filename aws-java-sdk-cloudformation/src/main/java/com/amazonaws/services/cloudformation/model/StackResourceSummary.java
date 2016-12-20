@@ -357,17 +357,17 @@ public class StackResourceSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogicalResourceId() != null)
-            sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");
+            sb.append("LogicalResourceId: ").append(getLogicalResourceId()).append(",");
         if (getPhysicalResourceId() != null)
-            sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ",");
+            sb.append("PhysicalResourceId: ").append(getPhysicalResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getLastUpdatedTimestamp() != null)
-            sb.append("LastUpdatedTimestamp: " + getLastUpdatedTimestamp() + ",");
+            sb.append("LastUpdatedTimestamp: ").append(getLastUpdatedTimestamp()).append(",");
         if (getResourceStatus() != null)
-            sb.append("ResourceStatus: " + getResourceStatus() + ",");
+            sb.append("ResourceStatus: ").append(getResourceStatus()).append(",");
         if (getResourceStatusReason() != null)
-            sb.append("ResourceStatusReason: " + getResourceStatusReason());
+            sb.append("ResourceStatusReason: ").append(getResourceStatusReason());
         sb.append("}");
         return sb.toString();
     }

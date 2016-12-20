@@ -481,15 +481,15 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getOverrides() != null)
-            sb.append("Overrides: " + getOverrides() + ",");
+            sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getContainerInstances() != null)
-            sb.append("ContainerInstances: " + getContainerInstances() + ",");
+            sb.append("ContainerInstances: ").append(getContainerInstances()).append(",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: " + getStartedBy());
+            sb.append("StartedBy: ").append(getStartedBy());
         sb.append("}");
         return sb.toString();
     }

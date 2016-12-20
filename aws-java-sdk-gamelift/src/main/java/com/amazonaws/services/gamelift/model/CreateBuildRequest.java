@@ -259,13 +259,13 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getStorageLocation() != null)
-            sb.append("StorageLocation: " + getStorageLocation() + ",");
+            sb.append("StorageLocation: ").append(getStorageLocation()).append(",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem());
+            sb.append("OperatingSystem: ").append(getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }

@@ -534,9 +534,9 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getScalingProcesses() != null)
-            sb.append("ScalingProcesses: " + getScalingProcesses());
+            sb.append("ScalingProcesses: ").append(getScalingProcesses());
         sb.append("}");
         return sb.toString();
     }

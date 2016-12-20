@@ -61,9 +61,7 @@ public class GetSegmentsRequestMarshaller implements Marshaller<Request<GetSegme
 
         String uriResourcePath = "/v1/apps/{application-id}/segments";
 
-        uriResourcePath = uriResourcePath.replace("{application-id}",
-                (getSegmentsRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSegmentsRequest.getApplicationId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id", getSegmentsRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         if (getSegmentsRequest.getPageSize() != null) {

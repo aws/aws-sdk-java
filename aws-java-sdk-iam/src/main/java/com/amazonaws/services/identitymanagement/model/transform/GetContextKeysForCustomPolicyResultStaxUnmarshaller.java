@@ -45,6 +45,11 @@ public class GetContextKeysForCustomPolicyResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ContextKeyNames", targetDepth)) {
+                    getContextKeysForCustomPolicyResult.withContextKeyNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ContextKeyNames/member", targetDepth)) {
                     getContextKeysForCustomPolicyResult.withContextKeyNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

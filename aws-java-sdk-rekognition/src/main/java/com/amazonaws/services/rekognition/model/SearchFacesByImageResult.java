@@ -200,11 +200,11 @@ public class SearchFacesByImageResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSearchedFaceBoundingBox() != null)
-            sb.append("SearchedFaceBoundingBox: " + getSearchedFaceBoundingBox() + ",");
+            sb.append("SearchedFaceBoundingBox: ").append(getSearchedFaceBoundingBox()).append(",");
         if (getSearchedFaceConfidence() != null)
-            sb.append("SearchedFaceConfidence: " + getSearchedFaceConfidence() + ",");
+            sb.append("SearchedFaceConfidence: ").append(getSearchedFaceConfidence()).append(",");
         if (getFaceMatches() != null)
-            sb.append("FaceMatches: " + getFaceMatches());
+            sb.append("FaceMatches: ").append(getFaceMatches());
         sb.append("}");
         return sb.toString();
     }

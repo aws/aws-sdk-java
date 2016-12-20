@@ -46,6 +46,11 @@ public class DescribeOrderableDBInstanceOptionsResultStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("OrderableDBInstanceOptions", targetDepth)) {
+                    describeOrderableDBInstanceOptionsResult.withOrderableDBInstanceOptions(new ArrayList<OrderableDBInstanceOption>());
+                    continue;
+                }
+
                 if (context.testExpression("OrderableDBInstanceOptions/OrderableDBInstanceOption", targetDepth)) {
                     describeOrderableDBInstanceOptionsResult.withOrderableDBInstanceOptions(OrderableDBInstanceOptionStaxUnmarshaller.getInstance().unmarshall(
                             context));

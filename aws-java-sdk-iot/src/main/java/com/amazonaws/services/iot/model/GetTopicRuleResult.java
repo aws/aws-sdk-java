@@ -126,9 +126,9 @@ public class GetTopicRuleResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn() + ",");
+            sb.append("RuleArn: ").append(getRuleArn()).append(",");
         if (getRule() != null)
-            sb.append("Rule: " + getRule());
+            sb.append("Rule: ").append(getRule());
         sb.append("}");
         return sb.toString();
     }

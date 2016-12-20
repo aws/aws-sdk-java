@@ -206,9 +206,9 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostIds() != null)
-            sb.append("HostIds: " + getHostIds() + ",");
+            sb.append("HostIds: ").append(getHostIds()).append(",");
         if (getAutoPlacement() != null)
-            sb.append("AutoPlacement: " + getAutoPlacement());
+            sb.append("AutoPlacement: ").append(getAutoPlacement());
         sb.append("}");
         return sb.toString();
     }

@@ -159,9 +159,9 @@ public class ResourcePendingMaintenanceActions implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceIdentifier() != null)
-            sb.append("ResourceIdentifier: " + getResourceIdentifier() + ",");
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier()).append(",");
         if (getPendingMaintenanceActionDetails() != null)
-            sb.append("PendingMaintenanceActionDetails: " + getPendingMaintenanceActionDetails());
+            sb.append("PendingMaintenanceActionDetails: ").append(getPendingMaintenanceActionDetails());
         sb.append("}");
         return sb.toString();
     }

@@ -1000,37 +1000,37 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPoolName() != null)
-            sb.append("PoolName: " + getPoolName() + ",");
+            sb.append("PoolName: ").append(getPoolName()).append(",");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies() + ",");
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getLambdaConfig() != null)
-            sb.append("LambdaConfig: " + getLambdaConfig() + ",");
+            sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getAutoVerifiedAttributes() != null)
-            sb.append("AutoVerifiedAttributes: " + getAutoVerifiedAttributes() + ",");
+            sb.append("AutoVerifiedAttributes: ").append(getAutoVerifiedAttributes()).append(",");
         if (getAliasAttributes() != null)
-            sb.append("AliasAttributes: " + getAliasAttributes() + ",");
+            sb.append("AliasAttributes: ").append(getAliasAttributes()).append(",");
         if (getSmsVerificationMessage() != null)
-            sb.append("SmsVerificationMessage: " + getSmsVerificationMessage() + ",");
+            sb.append("SmsVerificationMessage: ").append(getSmsVerificationMessage()).append(",");
         if (getEmailVerificationMessage() != null)
-            sb.append("EmailVerificationMessage: " + getEmailVerificationMessage() + ",");
+            sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
-            sb.append("EmailVerificationSubject: " + getEmailVerificationSubject() + ",");
+            sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
         if (getSmsAuthenticationMessage() != null)
-            sb.append("SmsAuthenticationMessage: " + getSmsAuthenticationMessage() + ",");
+            sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
-            sb.append("MfaConfiguration: " + getMfaConfiguration() + ",");
+            sb.append("MfaConfiguration: ").append(getMfaConfiguration()).append(",");
         if (getDeviceConfiguration() != null)
-            sb.append("DeviceConfiguration: " + getDeviceConfiguration() + ",");
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
         if (getEmailConfiguration() != null)
-            sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
+            sb.append("EmailConfiguration: ").append(getEmailConfiguration()).append(",");
         if (getSmsConfiguration() != null)
-            sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
+            sb.append("SmsConfiguration: ").append(getSmsConfiguration()).append(",");
         if (getUserPoolTags() != null)
-            sb.append("UserPoolTags: " + getUserPoolTags() + ",");
+            sb.append("UserPoolTags: ").append(getUserPoolTags()).append(",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig() + ",");
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
         if (getSchema() != null)
-            sb.append("Schema: " + getSchema());
+            sb.append("Schema: ").append(getSchema());
         sb.append("}");
         return sb.toString();
     }

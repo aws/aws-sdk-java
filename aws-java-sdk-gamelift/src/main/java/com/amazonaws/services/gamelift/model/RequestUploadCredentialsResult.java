@@ -133,9 +133,9 @@ public class RequestUploadCredentialsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploadCredentials() != null)
-            sb.append("UploadCredentials: " + getUploadCredentials() + ",");
+            sb.append("UploadCredentials: ").append(getUploadCredentials()).append(",");
         if (getStorageLocation() != null)
-            sb.append("StorageLocation: " + getStorageLocation());
+            sb.append("StorageLocation: ").append(getStorageLocation());
         sb.append("}");
         return sb.toString();
     }

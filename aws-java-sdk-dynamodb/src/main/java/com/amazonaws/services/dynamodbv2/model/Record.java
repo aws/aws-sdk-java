@@ -567,17 +567,17 @@ public class Record implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventID() != null)
-            sb.append("EventID: " + getEventID() + ",");
+            sb.append("EventID: ").append(getEventID()).append(",");
         if (getEventName() != null)
-            sb.append("EventName: " + getEventName() + ",");
+            sb.append("EventName: ").append(getEventName()).append(",");
         if (getEventVersion() != null)
-            sb.append("EventVersion: " + getEventVersion() + ",");
+            sb.append("EventVersion: ").append(getEventVersion()).append(",");
         if (getEventSource() != null)
-            sb.append("EventSource: " + getEventSource() + ",");
+            sb.append("EventSource: ").append(getEventSource()).append(",");
         if (getAwsRegion() != null)
-            sb.append("AwsRegion: " + getAwsRegion() + ",");
+            sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getDynamodb() != null)
-            sb.append("Dynamodb: " + getDynamodb());
+            sb.append("Dynamodb: ").append(getDynamodb());
         sb.append("}");
         return sb.toString();
     }

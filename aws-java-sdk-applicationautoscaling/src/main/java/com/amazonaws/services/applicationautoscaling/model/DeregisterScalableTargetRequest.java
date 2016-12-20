@@ -597,11 +597,11 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServiceNamespace() != null)
-            sb.append("ServiceNamespace: " + getServiceNamespace() + ",");
+            sb.append("ServiceNamespace: ").append(getServiceNamespace()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getScalableDimension() != null)
-            sb.append("ScalableDimension: " + getScalableDimension());
+            sb.append("ScalableDimension: ").append(getScalableDimension());
         sb.append("}");
         return sb.toString();
     }

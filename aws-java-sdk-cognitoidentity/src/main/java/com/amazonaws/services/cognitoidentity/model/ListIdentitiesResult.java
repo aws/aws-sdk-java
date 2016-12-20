@@ -15,19 +15,35 @@ package com.amazonaws.services.cognitoidentity.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * The response to a ListIdentities request.
+ * </p>
  */
 public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
-    /** An object containing a set of identities and associated mappings. */
+    /**
+     * <p>
+     * An object containing a set of identities and associated mappings.
+     * </p>
+     */
     private java.util.List<IdentityDescription> identities;
-    /** A pagination token. */
+    /**
+     * <p>
+     * A pagination token.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -38,7 +54,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -48,7 +66,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -61,7 +81,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An object containing a set of identities and associated mappings.
+     * </p>
      * 
      * @return An object containing a set of identities and associated mappings.
      */
@@ -71,7 +93,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An object containing a set of identities and associated mappings.
+     * </p>
      * 
      * @param identities
      *        An object containing a set of identities and associated mappings.
@@ -87,7 +111,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An object containing a set of identities and associated mappings.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIdentities(java.util.Collection)} or {@link #withIdentities(java.util.Collection)} if you want to
@@ -110,7 +136,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An object containing a set of identities and associated mappings.
+     * </p>
      * 
      * @param identities
      *        An object containing a set of identities and associated mappings.
@@ -123,7 +151,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @param nextToken
      *        A pagination token.
@@ -134,7 +164,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @return A pagination token.
      */
@@ -144,7 +176,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * A pagination token.
+     * </p>
      * 
      * @param nextToken
      *        A pagination token.
@@ -168,11 +202,11 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentities() != null)
-            sb.append("Identities: " + getIdentities() + ",");
+            sb.append("Identities: ").append(getIdentities()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

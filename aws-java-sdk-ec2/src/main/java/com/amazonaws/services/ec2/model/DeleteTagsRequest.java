@@ -242,9 +242,9 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

@@ -245,11 +245,11 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getImpairedSince() != null)
-            sb.append("ImpairedSince: " + getImpairedSince());
+            sb.append("ImpairedSince: ").append(getImpairedSince());
         sb.append("}");
         return sb.toString();
     }

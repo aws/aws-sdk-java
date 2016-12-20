@@ -126,9 +126,9 @@ public class RegisterCertificateResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class ListAccountAliasesResultStaxUnmarshaller implements Unmarshaller<Li
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AccountAliases", targetDepth)) {
+                    listAccountAliasesResult.withAccountAliases(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AccountAliases/member", targetDepth)) {
                     listAccountAliasesResult.withAccountAliases(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -50,6 +50,11 @@ public class DescribeEventsResultStaxUnmarshaller implements Unmarshaller<Descri
                     continue;
                 }
 
+                if (context.testExpression("Events", targetDepth)) {
+                    describeEventsResult.withEvents(new ArrayList<Event>());
+                    continue;
+                }
+
                 if (context.testExpression("Events/Event", targetDepth)) {
                     describeEventsResult.withEvents(EventStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

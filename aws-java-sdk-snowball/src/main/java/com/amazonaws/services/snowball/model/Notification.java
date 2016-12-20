@@ -298,11 +298,11 @@ public class Notification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnsTopicARN() != null)
-            sb.append("SnsTopicARN: " + getSnsTopicARN() + ",");
+            sb.append("SnsTopicARN: ").append(getSnsTopicARN()).append(",");
         if (getJobStatesToNotify() != null)
-            sb.append("JobStatesToNotify: " + getJobStatesToNotify() + ",");
+            sb.append("JobStatesToNotify: ").append(getJobStatesToNotify()).append(",");
         if (getNotifyAll() != null)
-            sb.append("NotifyAll: " + getNotifyAll());
+            sb.append("NotifyAll: ").append(getNotifyAll());
         sb.append("}");
         return sb.toString();
     }

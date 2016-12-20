@@ -205,11 +205,11 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceHealthList() != null)
-            sb.append("InstanceHealthList: " + getInstanceHealthList() + ",");
+            sb.append("InstanceHealthList: ").append(getInstanceHealthList()).append(",");
         if (getRefreshedAt() != null)
-            sb.append("RefreshedAt: " + getRefreshedAt() + ",");
+            sb.append("RefreshedAt: ").append(getRefreshedAt()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

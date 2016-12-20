@@ -102,7 +102,7 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId());
+            sb.append("GameSessionId: ").append(getGameSessionId());
         sb.append("}");
         return sb.toString();
     }

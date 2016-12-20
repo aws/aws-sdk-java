@@ -553,19 +553,19 @@ public class DescribeDBLogFilesRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getFilenameContains() != null)
-            sb.append("FilenameContains: " + getFilenameContains() + ",");
+            sb.append("FilenameContains: ").append(getFilenameContains()).append(",");
         if (getFileLastWritten() != null)
-            sb.append("FileLastWritten: " + getFileLastWritten() + ",");
+            sb.append("FileLastWritten: ").append(getFileLastWritten()).append(",");
         if (getFileSize() != null)
-            sb.append("FileSize: " + getFileSize() + ",");
+            sb.append("FileSize: ").append(getFileSize()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

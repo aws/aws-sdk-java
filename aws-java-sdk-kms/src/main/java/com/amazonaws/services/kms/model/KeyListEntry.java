@@ -126,9 +126,9 @@ public class KeyListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getKeyArn() != null)
-            sb.append("KeyArn: " + getKeyArn());
+            sb.append("KeyArn: ").append(getKeyArn());
         sb.append("}");
         return sb.toString();
     }

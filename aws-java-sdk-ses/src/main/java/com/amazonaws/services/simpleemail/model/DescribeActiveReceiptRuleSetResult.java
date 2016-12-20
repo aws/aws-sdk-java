@@ -166,9 +166,9 @@ public class DescribeActiveReceiptRuleSetResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata() + ",");
+            sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getRules() != null)
-            sb.append("Rules: " + getRules());
+            sb.append("Rules: ").append(getRules());
         sb.append("}");
         return sb.toString();
     }

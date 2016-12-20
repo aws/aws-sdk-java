@@ -78,7 +78,7 @@ public class UnpeerVpcResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation());
+            sb.append("Operation: ").append(getOperation());
         sb.append("}");
         return sb.toString();
     }

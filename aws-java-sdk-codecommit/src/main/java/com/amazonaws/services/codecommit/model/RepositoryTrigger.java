@@ -397,15 +397,15 @@ public class RepositoryTrigger implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDestinationArn() != null)
-            sb.append("DestinationArn: " + getDestinationArn() + ",");
+            sb.append("DestinationArn: ").append(getDestinationArn()).append(",");
         if (getCustomData() != null)
-            sb.append("CustomData: " + getCustomData() + ",");
+            sb.append("CustomData: ").append(getCustomData()).append(",");
         if (getBranches() != null)
-            sb.append("Branches: " + getBranches() + ",");
+            sb.append("Branches: ").append(getBranches()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents());
+            sb.append("Events: ").append(getEvents());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class DescribeClustersResultStaxUnmarshaller implements Unmarshaller<Desc
                     continue;
                 }
 
+                if (context.testExpression("Clusters", targetDepth)) {
+                    describeClustersResult.withClusters(new ArrayList<Cluster>());
+                    continue;
+                }
+
                 if (context.testExpression("Clusters/Cluster", targetDepth)) {
                     describeClustersResult.withClusters(ClusterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

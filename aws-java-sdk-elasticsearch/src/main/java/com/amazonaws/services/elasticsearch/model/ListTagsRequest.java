@@ -85,7 +85,7 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getARN() != null)
-            sb.append("ARN: " + getARN());
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }

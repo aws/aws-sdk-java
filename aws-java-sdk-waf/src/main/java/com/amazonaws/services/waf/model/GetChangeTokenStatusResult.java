@@ -111,7 +111,7 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChangeTokenStatus() != null)
-            sb.append("ChangeTokenStatus: " + getChangeTokenStatus());
+            sb.append("ChangeTokenStatus: ").append(getChangeTokenStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -166,9 +166,9 @@ public class DescribeDBSubnetGroupsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBSubnetGroups() != null)
-            sb.append("DBSubnetGroups: " + getDBSubnetGroups());
+            sb.append("DBSubnetGroups: ").append(getDBSubnetGroups());
         sb.append("}");
         return sb.toString();
     }

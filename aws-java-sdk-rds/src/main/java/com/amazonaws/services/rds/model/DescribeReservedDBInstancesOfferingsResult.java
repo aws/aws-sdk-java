@@ -168,9 +168,9 @@ public class DescribeReservedDBInstancesOfferingsResult extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getReservedDBInstancesOfferings() != null)
-            sb.append("ReservedDBInstancesOfferings: " + getReservedDBInstancesOfferings());
+            sb.append("ReservedDBInstancesOfferings: ").append(getReservedDBInstancesOfferings());
         sb.append("}");
         return sb.toString();
     }

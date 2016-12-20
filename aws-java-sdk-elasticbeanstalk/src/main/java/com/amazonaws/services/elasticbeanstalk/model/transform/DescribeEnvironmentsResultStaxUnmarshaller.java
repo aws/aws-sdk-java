@@ -45,6 +45,11 @@ public class DescribeEnvironmentsResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Environments", targetDepth)) {
+                    describeEnvironmentsResult.withEnvironments(new ArrayList<EnvironmentDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Environments/member", targetDepth)) {
                     describeEnvironmentsResult.withEnvironments(EnvironmentDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

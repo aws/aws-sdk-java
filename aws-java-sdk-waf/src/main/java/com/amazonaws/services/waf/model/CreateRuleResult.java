@@ -131,9 +131,9 @@ public class CreateRuleResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRule() != null)
-            sb.append("Rule: " + getRule() + ",");
+            sb.append("Rule: ").append(getRule()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

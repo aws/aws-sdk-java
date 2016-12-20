@@ -348,17 +348,17 @@ public class RDSMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatabase() != null)
-            sb.append("Database: " + getDatabase() + ",");
+            sb.append("Database: ").append(getDatabase()).append(",");
         if (getDatabaseUserName() != null)
-            sb.append("DatabaseUserName: " + getDatabaseUserName() + ",");
+            sb.append("DatabaseUserName: ").append(getDatabaseUserName()).append(",");
         if (getSelectSqlQuery() != null)
-            sb.append("SelectSqlQuery: " + getSelectSqlQuery() + ",");
+            sb.append("SelectSqlQuery: ").append(getSelectSqlQuery()).append(",");
         if (getResourceRole() != null)
-            sb.append("ResourceRole: " + getResourceRole() + ",");
+            sb.append("ResourceRole: ").append(getResourceRole()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getDataPipelineId() != null)
-            sb.append("DataPipelineId: " + getDataPipelineId());
+            sb.append("DataPipelineId: ").append(getDataPipelineId());
         sb.append("}");
         return sb.toString();
     }

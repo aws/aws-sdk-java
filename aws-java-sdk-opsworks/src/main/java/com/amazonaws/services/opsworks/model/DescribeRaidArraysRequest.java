@@ -220,11 +220,11 @@ public class DescribeRaidArraysRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getRaidArrayIds() != null)
-            sb.append("RaidArrayIds: " + getRaidArrayIds());
+            sb.append("RaidArrayIds: ").append(getRaidArrayIds());
         sb.append("}");
         return sb.toString();
     }

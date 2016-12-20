@@ -185,9 +185,9 @@ public class SetDimension implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDimensionType() != null)
-            sb.append("DimensionType: " + getDimensionType() + ",");
+            sb.append("DimensionType: ").append(getDimensionType()).append(",");
         if (getValues() != null)
-            sb.append("Values: " + getValues());
+            sb.append("Values: ").append(getValues());
         sb.append("}");
         return sb.toString();
     }

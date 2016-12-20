@@ -45,6 +45,11 @@ public class DescribePendingMaintenanceActionsResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("PendingMaintenanceActions", targetDepth)) {
+                    describePendingMaintenanceActionsResult.withPendingMaintenanceActions(new ArrayList<ResourcePendingMaintenanceActions>());
+                    continue;
+                }
+
                 if (context.testExpression("PendingMaintenanceActions/ResourcePendingMaintenanceActions", targetDepth)) {
                     describePendingMaintenanceActionsResult.withPendingMaintenanceActions(ResourcePendingMaintenanceActionsStaxUnmarshaller.getInstance()
                             .unmarshall(context));

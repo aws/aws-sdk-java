@@ -190,9 +190,9 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobFlowIds() != null)
-            sb.append("JobFlowIds: " + getJobFlowIds() + ",");
+            sb.append("JobFlowIds: ").append(getJobFlowIds()).append(",");
         if (getTerminationProtected() != null)
-            sb.append("TerminationProtected: " + getTerminationProtected());
+            sb.append("TerminationProtected: ").append(getTerminationProtected());
         sb.append("}");
         return sb.toString();
     }

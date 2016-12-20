@@ -1679,29 +1679,29 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getIdnLangCode() != null)
-            sb.append("IdnLangCode: " + getIdnLangCode() + ",");
+            sb.append("IdnLangCode: ").append(getIdnLangCode()).append(",");
         if (getDurationInYears() != null)
-            sb.append("DurationInYears: " + getDurationInYears() + ",");
+            sb.append("DurationInYears: ").append(getDurationInYears()).append(",");
         if (getNameservers() != null)
-            sb.append("Nameservers: " + getNameservers() + ",");
+            sb.append("Nameservers: ").append(getNameservers()).append(",");
         if (getAuthCode() != null)
-            sb.append("AuthCode: " + getAuthCode() + ",");
+            sb.append("AuthCode: ").append(getAuthCode()).append(",");
         if (getAutoRenew() != null)
-            sb.append("AutoRenew: " + getAutoRenew() + ",");
+            sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getAdminContact() != null)
-            sb.append("AdminContact: " + getAdminContact() + ",");
+            sb.append("AdminContact: ").append(getAdminContact()).append(",");
         if (getRegistrantContact() != null)
-            sb.append("RegistrantContact: " + getRegistrantContact() + ",");
+            sb.append("RegistrantContact: ").append(getRegistrantContact()).append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: " + getTechContact() + ",");
+            sb.append("TechContact: ").append(getTechContact()).append(",");
         if (getPrivacyProtectAdminContact() != null)
-            sb.append("PrivacyProtectAdminContact: " + getPrivacyProtectAdminContact() + ",");
+            sb.append("PrivacyProtectAdminContact: ").append(getPrivacyProtectAdminContact()).append(",");
         if (getPrivacyProtectRegistrantContact() != null)
-            sb.append("PrivacyProtectRegistrantContact: " + getPrivacyProtectRegistrantContact() + ",");
+            sb.append("PrivacyProtectRegistrantContact: ").append(getPrivacyProtectRegistrantContact()).append(",");
         if (getPrivacyProtectTechContact() != null)
-            sb.append("PrivacyProtectTechContact: " + getPrivacyProtectTechContact());
+            sb.append("PrivacyProtectTechContact: ").append(getPrivacyProtectTechContact());
         sb.append("}");
         return sb.toString();
     }

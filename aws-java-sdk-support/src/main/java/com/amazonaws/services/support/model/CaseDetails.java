@@ -713,29 +713,29 @@ public class CaseDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId() + ",");
+            sb.append("CaseId: ").append(getCaseId()).append(",");
         if (getDisplayId() != null)
-            sb.append("DisplayId: " + getDisplayId() + ",");
+            sb.append("DisplayId: ").append(getDisplayId()).append(",");
         if (getSubject() != null)
-            sb.append("Subject: " + getSubject() + ",");
+            sb.append("Subject: ").append(getSubject()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getServiceCode() != null)
-            sb.append("ServiceCode: " + getServiceCode() + ",");
+            sb.append("ServiceCode: ").append(getServiceCode()).append(",");
         if (getCategoryCode() != null)
-            sb.append("CategoryCode: " + getCategoryCode() + ",");
+            sb.append("CategoryCode: ").append(getCategoryCode()).append(",");
         if (getSeverityCode() != null)
-            sb.append("SeverityCode: " + getSeverityCode() + ",");
+            sb.append("SeverityCode: ").append(getSeverityCode()).append(",");
         if (getSubmittedBy() != null)
-            sb.append("SubmittedBy: " + getSubmittedBy() + ",");
+            sb.append("SubmittedBy: ").append(getSubmittedBy()).append(",");
         if (getTimeCreated() != null)
-            sb.append("TimeCreated: " + getTimeCreated() + ",");
+            sb.append("TimeCreated: ").append(getTimeCreated()).append(",");
         if (getRecentCommunications() != null)
-            sb.append("RecentCommunications: " + getRecentCommunications() + ",");
+            sb.append("RecentCommunications: ").append(getRecentCommunications()).append(",");
         if (getCcEmailAddresses() != null)
-            sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
+            sb.append("CcEmailAddresses: ").append(getCcEmailAddresses()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage());
+            sb.append("Language: ").append(getLanguage());
         sb.append("}");
         return sb.toString();
     }

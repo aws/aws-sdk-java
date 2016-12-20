@@ -670,11 +670,11 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getResetAllParameters() != null)
-            sb.append("ResetAllParameters: " + getResetAllParameters() + ",");
+            sb.append("ResetAllParameters: ").append(getResetAllParameters()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

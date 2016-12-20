@@ -1100,21 +1100,21 @@ public class DescribeReservedCacheNodesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedCacheNodeId() != null)
-            sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ",");
+            sb.append("ReservedCacheNodeId: ").append(getReservedCacheNodeId()).append(",");
         if (getReservedCacheNodesOfferingId() != null)
-            sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");
+            sb.append("ReservedCacheNodesOfferingId: ").append(getReservedCacheNodesOfferingId()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: " + getCacheNodeType() + ",");
+            sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getProductDescription() != null)
-            sb.append("ProductDescription: " + getProductDescription() + ",");
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType() + ",");
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

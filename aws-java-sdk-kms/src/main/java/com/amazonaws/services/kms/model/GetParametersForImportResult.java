@@ -271,13 +271,13 @@ public class GetParametersForImportResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getImportToken() != null)
-            sb.append("ImportToken: " + getImportToken() + ",");
+            sb.append("ImportToken: ").append(getImportToken()).append(",");
         if (getPublicKey() != null)
-            sb.append("PublicKey: " + getPublicKey() + ",");
+            sb.append("PublicKey: ").append(getPublicKey()).append(",");
         if (getParametersValidTo() != null)
-            sb.append("ParametersValidTo: " + getParametersValidTo());
+            sb.append("ParametersValidTo: ").append(getParametersValidTo());
         sb.append("}");
         return sb.toString();
     }

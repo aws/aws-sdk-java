@@ -127,9 +127,9 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getBranchName() != null)
-            sb.append("BranchName: " + getBranchName());
+            sb.append("BranchName: ").append(getBranchName());
         sb.append("}");
         return sb.toString();
     }

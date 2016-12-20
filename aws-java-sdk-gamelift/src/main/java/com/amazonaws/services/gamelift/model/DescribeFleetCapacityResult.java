@@ -172,9 +172,9 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetCapacity() != null)
-            sb.append("FleetCapacity: " + getFleetCapacity() + ",");
+            sb.append("FleetCapacity: ").append(getFleetCapacity()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

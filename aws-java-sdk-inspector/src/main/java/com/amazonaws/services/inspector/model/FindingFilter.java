@@ -705,21 +705,21 @@ public class FindingFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentIds() != null)
-            sb.append("AgentIds: " + getAgentIds() + ",");
+            sb.append("AgentIds: ").append(getAgentIds()).append(",");
         if (getAutoScalingGroups() != null)
-            sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
+            sb.append("AutoScalingGroups: ").append(getAutoScalingGroups()).append(",");
         if (getRuleNames() != null)
-            sb.append("RuleNames: " + getRuleNames() + ",");
+            sb.append("RuleNames: ").append(getRuleNames()).append(",");
         if (getSeverities() != null)
-            sb.append("Severities: " + getSeverities() + ",");
+            sb.append("Severities: ").append(getSeverities()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getCreationTimeRange() != null)
-            sb.append("CreationTimeRange: " + getCreationTimeRange());
+            sb.append("CreationTimeRange: ").append(getCreationTimeRange());
         sb.append("}");
         return sb.toString();
     }

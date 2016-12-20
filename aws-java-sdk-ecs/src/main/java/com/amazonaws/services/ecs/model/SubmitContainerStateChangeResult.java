@@ -78,7 +78,7 @@ public class SubmitContainerStateChangeResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcknowledgment() != null)
-            sb.append("Acknowledgment: " + getAcknowledgment());
+            sb.append("Acknowledgment: ").append(getAcknowledgment());
         sb.append("}");
         return sb.toString();
     }

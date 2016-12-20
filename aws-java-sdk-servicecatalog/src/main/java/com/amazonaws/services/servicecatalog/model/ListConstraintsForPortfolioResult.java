@@ -161,9 +161,9 @@ public class ListConstraintsForPortfolioResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConstraintDetails() != null)
-            sb.append("ConstraintDetails: " + getConstraintDetails() + ",");
+            sb.append("ConstraintDetails: ").append(getConstraintDetails()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

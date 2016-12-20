@@ -127,9 +127,9 @@ public class CreateLunaClientRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate());
+            sb.append("Certificate: ").append(getCertificate());
         sb.append("}");
         return sb.toString();
     }

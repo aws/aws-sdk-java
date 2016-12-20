@@ -207,11 +207,11 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getDesiredCapacity() != null)
-            sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");
+            sb.append("DesiredCapacity: ").append(getDesiredCapacity()).append(",");
         if (getHonorCooldown() != null)
-            sb.append("HonorCooldown: " + getHonorCooldown());
+            sb.append("HonorCooldown: ").append(getHonorCooldown());
         sb.append("}");
         return sb.toString();
     }

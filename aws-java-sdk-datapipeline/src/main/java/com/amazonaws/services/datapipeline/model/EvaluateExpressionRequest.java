@@ -173,11 +173,11 @@ public class EvaluateExpressionRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getObjectId() != null)
-            sb.append("ObjectId: " + getObjectId() + ",");
+            sb.append("ObjectId: ").append(getObjectId()).append(",");
         if (getExpression() != null)
-            sb.append("Expression: " + getExpression());
+            sb.append("Expression: ").append(getExpression());
         sb.append("}");
         return sb.toString();
     }

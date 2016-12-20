@@ -205,11 +205,11 @@ public class SuggestModel implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQuery() != null)
-            sb.append("Query: " + getQuery() + ",");
+            sb.append("Query: ").append(getQuery()).append(",");
         if (getFound() != null)
-            sb.append("Found: " + getFound() + ",");
+            sb.append("Found: ").append(getFound()).append(",");
         if (getSuggestions() != null)
-            sb.append("Suggestions: " + getSuggestions());
+            sb.append("Suggestions: ").append(getSuggestions());
         sb.append("}");
         return sb.toString();
     }

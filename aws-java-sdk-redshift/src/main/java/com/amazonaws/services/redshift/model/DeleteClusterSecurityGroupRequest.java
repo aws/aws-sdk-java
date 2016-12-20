@@ -79,7 +79,7 @@ public class DeleteClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName());
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName());
         sb.append("}");
         return sb.toString();
     }

@@ -351,15 +351,15 @@ public class Placement implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getTenancy() != null)
-            sb.append("Tenancy: " + getTenancy() + ",");
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getHostId() != null)
-            sb.append("HostId: " + getHostId() + ",");
+            sb.append("HostId: ").append(getHostId()).append(",");
         if (getAffinity() != null)
-            sb.append("Affinity: " + getAffinity());
+            sb.append("Affinity: ").append(getAffinity());
         sb.append("}");
         return sb.toString();
     }

@@ -81,7 +81,7 @@ public class CreateNetworkAclResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAcl() != null)
-            sb.append("NetworkAcl: " + getNetworkAcl());
+            sb.append("NetworkAcl: ").append(getNetworkAcl());
         sb.append("}");
         return sb.toString();
     }

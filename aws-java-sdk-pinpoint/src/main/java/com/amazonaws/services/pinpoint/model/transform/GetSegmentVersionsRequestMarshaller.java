@@ -61,14 +61,9 @@ public class GetSegmentVersionsRequestMarshaller implements Marshaller<Request<G
 
         String uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getSegmentVersionsRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getSegmentVersionsRequest.getApplicationId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{segment-id}",
-                (getSegmentVersionsRequest.getSegmentId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSegmentVersionsRequest.getSegmentId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getSegmentVersionsRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "segment-id", getSegmentVersionsRequest.getSegmentId());
         request.setResourcePath(uriResourcePath);
 
         if (getSegmentVersionsRequest.getPageSize() != null) {

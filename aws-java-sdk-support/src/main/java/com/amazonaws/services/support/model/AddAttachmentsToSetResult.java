@@ -140,9 +140,9 @@ public class AddAttachmentsToSetResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentSetId() != null)
-            sb.append("AttachmentSetId: " + getAttachmentSetId() + ",");
+            sb.append("AttachmentSetId: ").append(getAttachmentSetId()).append(",");
         if (getExpiryTime() != null)
-            sb.append("ExpiryTime: " + getExpiryTime());
+            sb.append("ExpiryTime: ").append(getExpiryTime());
         sb.append("}");
         return sb.toString();
     }

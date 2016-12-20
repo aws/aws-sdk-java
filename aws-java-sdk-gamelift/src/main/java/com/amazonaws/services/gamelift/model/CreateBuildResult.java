@@ -186,11 +186,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuild() != null)
-            sb.append("Build: " + getBuild() + ",");
+            sb.append("Build: ").append(getBuild()).append(",");
         if (getUploadCredentials() != null)
-            sb.append("UploadCredentials: " + getUploadCredentials() + ",");
+            sb.append("UploadCredentials: ").append(getUploadCredentials()).append(",");
         if (getStorageLocation() != null)
-            sb.append("StorageLocation: " + getStorageLocation());
+            sb.append("StorageLocation: ").append(getStorageLocation());
         sb.append("}");
         return sb.toString();
     }

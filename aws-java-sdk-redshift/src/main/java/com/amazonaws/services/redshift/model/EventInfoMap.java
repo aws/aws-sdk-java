@@ -269,13 +269,13 @@ public class EventInfoMap implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId() + ",");
+            sb.append("EventId: ").append(getEventId()).append(",");
         if (getEventCategories() != null)
-            sb.append("EventCategories: " + getEventCategories() + ",");
+            sb.append("EventCategories: ").append(getEventCategories()).append(",");
         if (getEventDescription() != null)
-            sb.append("EventDescription: " + getEventDescription() + ",");
+            sb.append("EventDescription: ").append(getEventDescription()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity());
+            sb.append("Severity: ").append(getSeverity());
         sb.append("}");
         return sb.toString();
     }

@@ -337,15 +337,15 @@ public class SpotPrice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getProductDescription() != null)
-            sb.append("ProductDescription: " + getProductDescription() + ",");
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getSpotPrice() != null)
-            sb.append("SpotPrice: " + getSpotPrice() + ",");
+            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

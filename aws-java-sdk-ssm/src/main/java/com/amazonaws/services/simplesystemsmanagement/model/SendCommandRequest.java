@@ -1072,35 +1072,35 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getDocumentName() != null)
-            sb.append("DocumentName: " + getDocumentName() + ",");
+            sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getDocumentHash() != null)
-            sb.append("DocumentHash: " + getDocumentHash() + ",");
+            sb.append("DocumentHash: ").append(getDocumentHash()).append(",");
         if (getDocumentHashType() != null)
-            sb.append("DocumentHashType: " + getDocumentHashType() + ",");
+            sb.append("DocumentHashType: ").append(getDocumentHashType()).append(",");
         if (getTimeoutSeconds() != null)
-            sb.append("TimeoutSeconds: " + getTimeoutSeconds() + ",");
+            sb.append("TimeoutSeconds: ").append(getTimeoutSeconds()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getOutputS3Region() != null)
-            sb.append("OutputS3Region: " + getOutputS3Region() + ",");
+            sb.append("OutputS3Region: ").append(getOutputS3Region()).append(",");
         if (getOutputS3BucketName() != null)
-            sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
+            sb.append("OutputS3BucketName: ").append(getOutputS3BucketName()).append(",");
         if (getOutputS3KeyPrefix() != null)
-            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix() + ",");
+            sb.append("OutputS3KeyPrefix: ").append(getOutputS3KeyPrefix()).append(",");
         if (getMaxConcurrency() != null)
-            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getMaxErrors() != null)
-            sb.append("MaxErrors: " + getMaxErrors() + ",");
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+            sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getNotificationConfig() != null)
-            sb.append("NotificationConfig: " + getNotificationConfig());
+            sb.append("NotificationConfig: ").append(getNotificationConfig());
         sb.append("}");
         return sb.toString();
     }

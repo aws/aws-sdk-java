@@ -162,9 +162,9 @@ public class ListHsmsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmList() != null)
-            sb.append("HsmList: " + getHsmList() + ",");
+            sb.append("HsmList: ").append(getHsmList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

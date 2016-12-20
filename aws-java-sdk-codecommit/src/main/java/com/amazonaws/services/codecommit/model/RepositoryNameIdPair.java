@@ -126,9 +126,9 @@ public class RepositoryNameIdPair implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getRepositoryId() != null)
-            sb.append("RepositoryId: " + getRepositoryId());
+            sb.append("RepositoryId: ").append(getRepositoryId());
         sb.append("}");
         return sb.toString();
     }

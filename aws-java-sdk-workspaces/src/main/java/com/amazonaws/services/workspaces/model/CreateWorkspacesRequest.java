@@ -114,7 +114,7 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspaces() != null)
-            sb.append("Workspaces: " + getWorkspaces());
+            sb.append("Workspaces: ").append(getWorkspaces());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class DomainConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowExecutionRetentionPeriodInDays() != null)
-            sb.append("WorkflowExecutionRetentionPeriodInDays: " + getWorkflowExecutionRetentionPeriodInDays());
+            sb.append("WorkflowExecutionRetentionPeriodInDays: ").append(getWorkflowExecutionRetentionPeriodInDays());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class SuggestStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimems() != null)
-            sb.append("Timems: " + getTimems() + ",");
+            sb.append("Timems: ").append(getTimems()).append(",");
         if (getRid() != null)
-            sb.append("Rid: " + getRid());
+            sb.append("Rid: ").append(getRid());
         sb.append("}");
         return sb.toString();
     }

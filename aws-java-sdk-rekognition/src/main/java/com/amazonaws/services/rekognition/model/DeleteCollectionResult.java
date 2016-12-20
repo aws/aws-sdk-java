@@ -78,7 +78,7 @@ public class DeleteCollectionResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode());
+            sb.append("StatusCode: ").append(getStatusCode());
         sb.append("}");
         return sb.toString();
     }

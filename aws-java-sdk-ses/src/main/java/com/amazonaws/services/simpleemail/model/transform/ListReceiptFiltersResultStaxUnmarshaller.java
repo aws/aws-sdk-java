@@ -45,6 +45,11 @@ public class ListReceiptFiltersResultStaxUnmarshaller implements Unmarshaller<Li
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Filters", targetDepth)) {
+                    listReceiptFiltersResult.withFilters(new ArrayList<ReceiptFilter>());
+                    continue;
+                }
+
                 if (context.testExpression("Filters/member", targetDepth)) {
                     listReceiptFiltersResult.withFilters(ReceiptFilterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

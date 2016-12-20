@@ -931,21 +931,21 @@ public class Thumbnails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getInterval() != null)
-            sb.append("Interval: " + getInterval() + ",");
+            sb.append("Interval: ").append(getInterval()).append(",");
         if (getResolution() != null)
-            sb.append("Resolution: " + getResolution() + ",");
+            sb.append("Resolution: ").append(getResolution()).append(",");
         if (getAspectRatio() != null)
-            sb.append("AspectRatio: " + getAspectRatio() + ",");
+            sb.append("AspectRatio: ").append(getAspectRatio()).append(",");
         if (getMaxWidth() != null)
-            sb.append("MaxWidth: " + getMaxWidth() + ",");
+            sb.append("MaxWidth: ").append(getMaxWidth()).append(",");
         if (getMaxHeight() != null)
-            sb.append("MaxHeight: " + getMaxHeight() + ",");
+            sb.append("MaxHeight: ").append(getMaxHeight()).append(",");
         if (getSizingPolicy() != null)
-            sb.append("SizingPolicy: " + getSizingPolicy() + ",");
+            sb.append("SizingPolicy: ").append(getSizingPolicy()).append(",");
         if (getPaddingPolicy() != null)
-            sb.append("PaddingPolicy: " + getPaddingPolicy());
+            sb.append("PaddingPolicy: ").append(getPaddingPolicy());
         sb.append("}");
         return sb.toString();
     }

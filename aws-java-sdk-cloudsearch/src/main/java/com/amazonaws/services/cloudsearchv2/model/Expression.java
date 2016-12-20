@@ -90,9 +90,9 @@ public class Expression implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExpressionName() != null)
-            sb.append("ExpressionName: " + getExpressionName() + ",");
+            sb.append("ExpressionName: ").append(getExpressionName()).append(",");
         if (getExpressionValue() != null)
-            sb.append("ExpressionValue: " + getExpressionValue());
+            sb.append("ExpressionValue: ").append(getExpressionValue());
         sb.append("}");
         return sb.toString();
     }

@@ -172,9 +172,9 @@ public class DescribeDBClusterParameterGroupsResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBClusterParameterGroups() != null)
-            sb.append("DBClusterParameterGroups: " + getDBClusterParameterGroups());
+            sb.append("DBClusterParameterGroups: ").append(getDBClusterParameterGroups());
         sb.append("}");
         return sb.toString();
     }

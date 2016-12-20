@@ -88,9 +88,9 @@ public class CreateImportJobRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getImportJobRequest() != null)
-            sb.append("ImportJobRequest: " + getImportJobRequest());
+            sb.append("ImportJobRequest: ").append(getImportJobRequest());
         sb.append("}");
         return sb.toString();
     }

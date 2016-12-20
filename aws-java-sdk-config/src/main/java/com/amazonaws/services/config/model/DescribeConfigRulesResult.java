@@ -157,9 +157,9 @@ public class DescribeConfigRulesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRules() != null)
-            sb.append("ConfigRules: " + getConfigRules() + ",");
+            sb.append("ConfigRules: ").append(getConfigRules()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

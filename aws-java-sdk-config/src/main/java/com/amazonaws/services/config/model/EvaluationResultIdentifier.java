@@ -147,9 +147,9 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationResultQualifier() != null)
-            sb.append("EvaluationResultQualifier: " + getEvaluationResultQualifier() + ",");
+            sb.append("EvaluationResultQualifier: ").append(getEvaluationResultQualifier()).append(",");
         if (getOrderingTimestamp() != null)
-            sb.append("OrderingTimestamp: " + getOrderingTimestamp());
+            sb.append("OrderingTimestamp: ").append(getOrderingTimestamp());
         sb.append("}");
         return sb.toString();
     }

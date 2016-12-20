@@ -231,9 +231,9 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceProfileName() != null)
-            sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
+            sb.append("InstanceProfileName: ").append(getInstanceProfileName()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath());
+            sb.append("Path: ").append(getPath());
         sb.append("}");
         return sb.toString();
     }

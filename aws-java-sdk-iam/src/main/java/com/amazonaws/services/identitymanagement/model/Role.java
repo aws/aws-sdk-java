@@ -379,17 +379,17 @@ public class Role implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getRoleId() != null)
-            sb.append("RoleId: " + getRoleId() + ",");
+            sb.append("RoleId: ").append(getRoleId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getAssumeRolePolicyDocument() != null)
-            sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument());
+            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument());
         sb.append("}");
         return sb.toString();
     }

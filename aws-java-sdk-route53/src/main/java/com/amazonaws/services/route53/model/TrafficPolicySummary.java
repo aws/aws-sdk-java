@@ -309,15 +309,15 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getLatestVersion() != null)
-            sb.append("LatestVersion: " + getLatestVersion() + ",");
+            sb.append("LatestVersion: ").append(getLatestVersion()).append(",");
         if (getTrafficPolicyCount() != null)
-            sb.append("TrafficPolicyCount: " + getTrafficPolicyCount());
+            sb.append("TrafficPolicyCount: ").append(getTrafficPolicyCount());
         sb.append("}");
         return sb.toString();
     }

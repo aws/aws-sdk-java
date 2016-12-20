@@ -176,11 +176,11 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceId() != null)
-            sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");
+            sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId()).append(",");
         if (getAsn() != null)
-            sb.append("Asn: " + getAsn() + ",");
+            sb.append("Asn: ").append(getAsn()).append(",");
         if (getCustomerAddress() != null)
-            sb.append("CustomerAddress: " + getCustomerAddress());
+            sb.append("CustomerAddress: ").append(getCustomerAddress());
         sb.append("}");
         return sb.toString();
     }

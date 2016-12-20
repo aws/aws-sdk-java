@@ -113,7 +113,7 @@ public class AttachLoadBalancerToSubnetsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
         return sb.toString();
     }

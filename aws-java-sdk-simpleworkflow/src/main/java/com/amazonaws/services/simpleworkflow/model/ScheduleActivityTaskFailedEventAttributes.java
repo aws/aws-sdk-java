@@ -309,13 +309,13 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityType() != null)
-            sb.append("ActivityType: " + getActivityType() + ",");
+            sb.append("ActivityType: ").append(getActivityType()).append(",");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId() + ",");
+            sb.append("ActivityId: ").append(getActivityId()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause() + ",");
+            sb.append("Cause: ").append(getCause()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

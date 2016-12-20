@@ -168,9 +168,9 @@ public class ListImagesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageIds() != null)
-            sb.append("ImageIds: " + getImageIds() + ",");
+            sb.append("ImageIds: ").append(getImageIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

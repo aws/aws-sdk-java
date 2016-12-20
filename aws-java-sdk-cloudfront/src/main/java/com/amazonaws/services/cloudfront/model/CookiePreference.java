@@ -296,9 +296,9 @@ public class CookiePreference implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getForward() != null)
-            sb.append("Forward: " + getForward() + ",");
+            sb.append("Forward: ").append(getForward()).append(",");
         if (getWhitelistedNames() != null)
-            sb.append("WhitelistedNames: " + getWhitelistedNames());
+            sb.append("WhitelistedNames: ").append(getWhitelistedNames());
         sb.append("}");
         return sb.toString();
     }

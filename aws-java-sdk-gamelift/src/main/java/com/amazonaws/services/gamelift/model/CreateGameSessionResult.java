@@ -80,7 +80,7 @@ public class CreateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSession() != null)
-            sb.append("GameSession: " + getGameSession());
+            sb.append("GameSession: ").append(getGameSession());
         sb.append("}");
         return sb.toString();
     }

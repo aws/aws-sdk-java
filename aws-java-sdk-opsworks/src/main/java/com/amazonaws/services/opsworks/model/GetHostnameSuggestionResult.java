@@ -126,9 +126,9 @@ public class GetHostnameSuggestionResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId() + ",");
+            sb.append("LayerId: ").append(getLayerId()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname());
+            sb.append("Hostname: ").append(getHostname());
         sb.append("}");
         return sb.toString();
     }

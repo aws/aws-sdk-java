@@ -230,13 +230,13 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableAssociationId() != null)
-            sb.append("RouteTableAssociationId: " + getRouteTableAssociationId() + ",");
+            sb.append("RouteTableAssociationId: ").append(getRouteTableAssociationId()).append(",");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId() + ",");
+            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getMain() != null)
-            sb.append("Main: " + getMain());
+            sb.append("Main: ").append(getMain());
         sb.append("}");
         return sb.toString();
     }

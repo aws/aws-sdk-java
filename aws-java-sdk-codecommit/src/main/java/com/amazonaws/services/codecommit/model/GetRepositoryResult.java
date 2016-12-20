@@ -80,7 +80,7 @@ public class GetRepositoryResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryMetadata() != null)
-            sb.append("RepositoryMetadata: " + getRepositoryMetadata());
+            sb.append("RepositoryMetadata: ").append(getRepositoryMetadata());
         sb.append("}");
         return sb.toString();
     }

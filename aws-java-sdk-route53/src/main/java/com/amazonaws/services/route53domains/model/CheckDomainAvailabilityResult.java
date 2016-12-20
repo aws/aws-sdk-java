@@ -356,7 +356,7 @@ public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailability() != null)
-            sb.append("Availability: " + getAvailability());
+            sb.append("Availability: ").append(getAvailability());
         sb.append("}");
         return sb.toString();
     }

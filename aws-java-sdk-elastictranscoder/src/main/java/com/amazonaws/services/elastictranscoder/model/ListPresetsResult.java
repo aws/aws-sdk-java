@@ -173,9 +173,9 @@ public class ListPresetsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPresets() != null)
-            sb.append("Presets: " + getPresets() + ",");
+            sb.append("Presets: ").append(getPresets()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

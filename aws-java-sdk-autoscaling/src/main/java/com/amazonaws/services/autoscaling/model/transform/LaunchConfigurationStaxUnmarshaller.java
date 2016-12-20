@@ -65,6 +65,11 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     continue;
                 }
 
+                if (context.testExpression("SecurityGroups", targetDepth)) {
+                    launchConfiguration.withSecurityGroups(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SecurityGroups/member", targetDepth)) {
                     launchConfiguration.withSecurityGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -72,6 +77,11 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
 
                 if (context.testExpression("ClassicLinkVPCId", targetDepth)) {
                     launchConfiguration.setClassicLinkVPCId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ClassicLinkVPCSecurityGroups", targetDepth)) {
+                    launchConfiguration.withClassicLinkVPCSecurityGroups(new ArrayList<String>());
                     continue;
                 }
 
@@ -97,6 +107,11 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
 
                 if (context.testExpression("RamdiskId", targetDepth)) {
                     launchConfiguration.setRamdiskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("BlockDeviceMappings", targetDepth)) {
+                    launchConfiguration.withBlockDeviceMappings(new ArrayList<BlockDeviceMapping>());
                     continue;
                 }
 

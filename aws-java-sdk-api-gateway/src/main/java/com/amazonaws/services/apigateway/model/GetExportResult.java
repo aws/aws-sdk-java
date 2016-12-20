@@ -192,11 +192,11 @@ public class GetExportResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType() + ",");
+            sb.append("ContentType: ").append(getContentType()).append(",");
         if (getContentDisposition() != null)
-            sb.append("ContentDisposition: " + getContentDisposition() + ",");
+            sb.append("ContentDisposition: ").append(getContentDisposition()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody());
+            sb.append("Body: ").append(getBody());
         sb.append("}");
         return sb.toString();
     }

@@ -45,8 +45,18 @@ public class ReleaseHostsResultStaxUnmarshaller implements Unmarshaller<ReleaseH
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("successful", targetDepth)) {
+                    releaseHostsResult.withSuccessful(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("successful/item", targetDepth)) {
                     releaseHostsResult.withSuccessful(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("unsuccessful", targetDepth)) {
+                    releaseHostsResult.withUnsuccessful(new ArrayList<UnsuccessfulItem>());
                     continue;
                 }
 

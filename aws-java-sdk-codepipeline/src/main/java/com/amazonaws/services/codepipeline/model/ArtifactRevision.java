@@ -345,17 +345,17 @@ public class ArtifactRevision implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getRevisionId() != null)
-            sb.append("RevisionId: " + getRevisionId() + ",");
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
         if (getRevisionChangeIdentifier() != null)
-            sb.append("RevisionChangeIdentifier: " + getRevisionChangeIdentifier() + ",");
+            sb.append("RevisionChangeIdentifier: ").append(getRevisionChangeIdentifier()).append(",");
         if (getRevisionSummary() != null)
-            sb.append("RevisionSummary: " + getRevisionSummary() + ",");
+            sb.append("RevisionSummary: ").append(getRevisionSummary()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getRevisionUrl() != null)
-            sb.append("RevisionUrl: " + getRevisionUrl());
+            sb.append("RevisionUrl: ").append(getRevisionUrl());
         sb.append("}");
         return sb.toString();
     }

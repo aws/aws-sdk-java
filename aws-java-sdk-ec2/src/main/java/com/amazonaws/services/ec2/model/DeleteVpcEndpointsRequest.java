@@ -127,7 +127,7 @@ public class DeleteVpcEndpointsRequest extends AmazonWebServiceRequest implement
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcEndpointIds() != null)
-            sb.append("VpcEndpointIds: " + getVpcEndpointIds());
+            sb.append("VpcEndpointIds: ").append(getVpcEndpointIds());
         sb.append("}");
         return sb.toString();
     }

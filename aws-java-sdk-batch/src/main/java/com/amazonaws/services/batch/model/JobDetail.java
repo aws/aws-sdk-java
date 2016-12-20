@@ -691,29 +691,29 @@ public class JobDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobName() != null)
-            sb.append("JobName: " + getJobName() + ",");
+            sb.append("JobName: ").append(getJobName()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobQueue() != null)
-            sb.append("JobQueue: " + getJobQueue() + ",");
+            sb.append("JobQueue: ").append(getJobQueue()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: " + getStatusReason() + ",");
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStartedAt() != null)
-            sb.append("StartedAt: " + getStartedAt() + ",");
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getStoppedAt() != null)
-            sb.append("StoppedAt: " + getStoppedAt() + ",");
+            sb.append("StoppedAt: ").append(getStoppedAt()).append(",");
         if (getDependsOn() != null)
-            sb.append("DependsOn: " + getDependsOn() + ",");
+            sb.append("DependsOn: ").append(getDependsOn()).append(",");
         if (getJobDefinition() != null)
-            sb.append("JobDefinition: " + getJobDefinition() + ",");
+            sb.append("JobDefinition: ").append(getJobDefinition()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainer() != null)
-            sb.append("Container: " + getContainer());
+            sb.append("Container: ").append(getContainer());
         sb.append("}");
         return sb.toString();
     }

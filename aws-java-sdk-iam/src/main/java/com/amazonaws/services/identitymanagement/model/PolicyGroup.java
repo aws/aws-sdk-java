@@ -148,9 +148,9 @@ public class PolicyGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId());
+            sb.append("GroupId: ").append(getGroupId());
         sb.append("}");
         return sb.toString();
     }

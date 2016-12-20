@@ -112,7 +112,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnConnectionId() != null)
-            sb.append("VpnConnectionId: " + getVpnConnectionId());
+            sb.append("VpnConnectionId: ").append(getVpnConnectionId());
         sb.append("}");
         return sb.toString();
     }

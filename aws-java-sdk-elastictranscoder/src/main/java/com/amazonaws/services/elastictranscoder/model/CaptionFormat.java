@@ -750,11 +750,11 @@ public class CaptionFormat implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getPattern() != null)
-            sb.append("Pattern: " + getPattern() + ",");
+            sb.append("Pattern: ").append(getPattern()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption());
+            sb.append("Encryption: ").append(getEncryption());
         sb.append("}");
         return sb.toString();
     }

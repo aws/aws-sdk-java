@@ -125,9 +125,9 @@ public class DescribeWorkflowExecutionRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getExecution() != null)
-            sb.append("Execution: " + getExecution());
+            sb.append("Execution: ").append(getExecution());
         sb.append("}");
         return sb.toString();
     }

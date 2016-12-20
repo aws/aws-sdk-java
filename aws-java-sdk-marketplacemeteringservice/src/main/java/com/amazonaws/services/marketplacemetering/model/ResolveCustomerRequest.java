@@ -88,7 +88,7 @@ public class ResolveCustomerRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistrationToken() != null)
-            sb.append("RegistrationToken: " + getRegistrationToken());
+            sb.append("RegistrationToken: ").append(getRegistrationToken());
         sb.append("}");
         return sb.toString();
     }

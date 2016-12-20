@@ -78,7 +78,7 @@ public class CreateResourceGroupResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceGroupArn() != null)
-            sb.append("ResourceGroupArn: " + getResourceGroupArn());
+            sb.append("ResourceGroupArn: ").append(getResourceGroupArn());
         sb.append("}");
         return sb.toString();
     }

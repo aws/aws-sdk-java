@@ -376,13 +376,13 @@ public class DomainSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAutoRenew() != null)
-            sb.append("AutoRenew: " + getAutoRenew() + ",");
+            sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getTransferLock() != null)
-            sb.append("TransferLock: " + getTransferLock() + ",");
+            sb.append("TransferLock: ").append(getTransferLock()).append(",");
         if (getExpiry() != null)
-            sb.append("Expiry: " + getExpiry());
+            sb.append("Expiry: ").append(getExpiry());
         sb.append("}");
         return sb.toString();
     }

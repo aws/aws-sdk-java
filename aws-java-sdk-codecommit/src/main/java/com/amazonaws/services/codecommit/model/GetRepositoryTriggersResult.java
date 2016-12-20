@@ -156,9 +156,9 @@ public class GetRepositoryTriggersResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationId() != null)
-            sb.append("ConfigurationId: " + getConfigurationId() + ",");
+            sb.append("ConfigurationId: ").append(getConfigurationId()).append(",");
         if (getTriggers() != null)
-            sb.append("Triggers: " + getTriggers());
+            sb.append("Triggers: ").append(getTriggers());
         sb.append("}");
         return sb.toString();
     }

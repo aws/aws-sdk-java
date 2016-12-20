@@ -379,11 +379,11 @@ public class IPSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSetId() != null)
-            sb.append("IPSetId: " + getIPSetId() + ",");
+            sb.append("IPSetId: ").append(getIPSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getIPSetDescriptors() != null)
-            sb.append("IPSetDescriptors: " + getIPSetDescriptors());
+            sb.append("IPSetDescriptors: ").append(getIPSetDescriptors());
         sb.append("}");
         return sb.toString();
     }

@@ -147,9 +147,9 @@ public class PendingTaskCount extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getTruncated() != null)
-            sb.append("Truncated: " + getTruncated());
+            sb.append("Truncated: ").append(getTruncated());
         sb.append("}");
         return sb.toString();
     }

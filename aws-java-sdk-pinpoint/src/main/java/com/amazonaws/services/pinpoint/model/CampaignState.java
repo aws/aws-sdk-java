@@ -121,7 +121,7 @@ public class CampaignState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCampaignStatus() != null)
-            sb.append("CampaignStatus: " + getCampaignStatus());
+            sb.append("CampaignStatus: ").append(getCampaignStatus());
         sb.append("}");
         return sb.toString();
     }

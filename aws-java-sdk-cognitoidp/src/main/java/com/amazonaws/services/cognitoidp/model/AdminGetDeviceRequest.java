@@ -173,11 +173,11 @@ public class AdminGetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey() + ",");
+            sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername());
+            sb.append("Username: ").append(getUsername());
         sb.append("}");
         return sb.toString();
     }

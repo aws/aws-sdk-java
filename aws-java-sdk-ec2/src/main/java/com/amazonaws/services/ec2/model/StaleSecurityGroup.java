@@ -376,17 +376,17 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getStaleIpPermissions() != null)
-            sb.append("StaleIpPermissions: " + getStaleIpPermissions() + ",");
+            sb.append("StaleIpPermissions: ").append(getStaleIpPermissions()).append(",");
         if (getStaleIpPermissionsEgress() != null)
-            sb.append("StaleIpPermissionsEgress: " + getStaleIpPermissionsEgress());
+            sb.append("StaleIpPermissionsEgress: ").append(getStaleIpPermissionsEgress());
         sb.append("}");
         return sb.toString();
     }

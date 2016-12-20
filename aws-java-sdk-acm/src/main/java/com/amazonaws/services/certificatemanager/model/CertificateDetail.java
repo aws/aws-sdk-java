@@ -1407,45 +1407,45 @@ public class CertificateDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSubjectAlternativeNames() != null)
-            sb.append("SubjectAlternativeNames: " + getSubjectAlternativeNames() + ",");
+            sb.append("SubjectAlternativeNames: ").append(getSubjectAlternativeNames()).append(",");
         if (getDomainValidationOptions() != null)
-            sb.append("DomainValidationOptions: " + getDomainValidationOptions() + ",");
+            sb.append("DomainValidationOptions: ").append(getDomainValidationOptions()).append(",");
         if (getSerial() != null)
-            sb.append("Serial: " + getSerial() + ",");
+            sb.append("Serial: ").append(getSerial()).append(",");
         if (getSubject() != null)
-            sb.append("Subject: " + getSubject() + ",");
+            sb.append("Subject: ").append(getSubject()).append(",");
         if (getIssuer() != null)
-            sb.append("Issuer: " + getIssuer() + ",");
+            sb.append("Issuer: ").append(getIssuer()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getIssuedAt() != null)
-            sb.append("IssuedAt: " + getIssuedAt() + ",");
+            sb.append("IssuedAt: ").append(getIssuedAt()).append(",");
         if (getImportedAt() != null)
-            sb.append("ImportedAt: " + getImportedAt() + ",");
+            sb.append("ImportedAt: ").append(getImportedAt()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getRevokedAt() != null)
-            sb.append("RevokedAt: " + getRevokedAt() + ",");
+            sb.append("RevokedAt: ").append(getRevokedAt()).append(",");
         if (getRevocationReason() != null)
-            sb.append("RevocationReason: " + getRevocationReason() + ",");
+            sb.append("RevocationReason: ").append(getRevocationReason()).append(",");
         if (getNotBefore() != null)
-            sb.append("NotBefore: " + getNotBefore() + ",");
+            sb.append("NotBefore: ").append(getNotBefore()).append(",");
         if (getNotAfter() != null)
-            sb.append("NotAfter: " + getNotAfter() + ",");
+            sb.append("NotAfter: ").append(getNotAfter()).append(",");
         if (getKeyAlgorithm() != null)
-            sb.append("KeyAlgorithm: " + getKeyAlgorithm() + ",");
+            sb.append("KeyAlgorithm: ").append(getKeyAlgorithm()).append(",");
         if (getSignatureAlgorithm() != null)
-            sb.append("SignatureAlgorithm: " + getSignatureAlgorithm() + ",");
+            sb.append("SignatureAlgorithm: ").append(getSignatureAlgorithm()).append(",");
         if (getInUseBy() != null)
-            sb.append("InUseBy: " + getInUseBy() + ",");
+            sb.append("InUseBy: ").append(getInUseBy()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: " + getFailureReason() + ",");
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

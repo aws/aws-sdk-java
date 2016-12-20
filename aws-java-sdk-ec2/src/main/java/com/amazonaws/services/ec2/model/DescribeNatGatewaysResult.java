@@ -167,9 +167,9 @@ public class DescribeNatGatewaysResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNatGateways() != null)
-            sb.append("NatGateways: " + getNatGateways() + ",");
+            sb.append("NatGateways: ").append(getNatGateways()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

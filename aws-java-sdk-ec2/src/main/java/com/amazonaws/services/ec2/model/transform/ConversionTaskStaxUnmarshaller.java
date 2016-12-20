@@ -75,6 +75,11 @@ public class ConversionTaskStaxUnmarshaller implements Unmarshaller<ConversionTa
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    conversionTask.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     conversionTask.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

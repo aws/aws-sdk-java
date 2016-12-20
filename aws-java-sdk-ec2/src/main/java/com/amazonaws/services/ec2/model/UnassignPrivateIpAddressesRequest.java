@@ -183,9 +183,9 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIpAddresses() != null)
-            sb.append("PrivateIpAddresses: " + getPrivateIpAddresses());
+            sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses());
         sb.append("}");
         return sb.toString();
     }

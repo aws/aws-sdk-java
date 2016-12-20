@@ -295,9 +295,9 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
+            sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getMinimumHealthyHosts() != null)
-            sb.append("MinimumHealthyHosts: " + getMinimumHealthyHosts());
+            sb.append("MinimumHealthyHosts: ").append(getMinimumHealthyHosts());
         sb.append("}");
         return sb.toString();
     }

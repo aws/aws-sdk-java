@@ -113,7 +113,7 @@ public class BatchGetApplicationsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationsInfo() != null)
-            sb.append("ApplicationsInfo: " + getApplicationsInfo());
+            sb.append("ApplicationsInfo: ").append(getApplicationsInfo());
         sb.append("}");
         return sb.toString();
     }

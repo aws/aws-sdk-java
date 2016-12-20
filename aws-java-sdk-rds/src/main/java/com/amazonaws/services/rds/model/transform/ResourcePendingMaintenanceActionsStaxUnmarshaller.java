@@ -50,6 +50,11 @@ public class ResourcePendingMaintenanceActionsStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("PendingMaintenanceActionDetails", targetDepth)) {
+                    resourcePendingMaintenanceActions.withPendingMaintenanceActionDetails(new ArrayList<PendingMaintenanceAction>());
+                    continue;
+                }
+
                 if (context.testExpression("PendingMaintenanceActionDetails/PendingMaintenanceAction", targetDepth)) {
                     resourcePendingMaintenanceActions.withPendingMaintenanceActionDetails(PendingMaintenanceActionStaxUnmarshaller.getInstance().unmarshall(
                             context));

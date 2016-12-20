@@ -51,6 +51,11 @@ public class DescribeScheduledInstanceAvailabilityResultStaxUnmarshaller impleme
                     continue;
                 }
 
+                if (context.testExpression("scheduledInstanceAvailabilitySet", targetDepth)) {
+                    describeScheduledInstanceAvailabilityResult.withScheduledInstanceAvailabilitySet(new ArrayList<ScheduledInstanceAvailability>());
+                    continue;
+                }
+
                 if (context.testExpression("scheduledInstanceAvailabilitySet/item", targetDepth)) {
                     describeScheduledInstanceAvailabilityResult.withScheduledInstanceAvailabilitySet(ScheduledInstanceAvailabilityStaxUnmarshaller
                             .getInstance().unmarshall(context));

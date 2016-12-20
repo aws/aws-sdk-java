@@ -415,17 +415,17 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getEngineName() != null)
-            sb.append("EngineName: " + getEngineName() + ",");
+            sb.append("EngineName: ").append(getEngineName()).append(",");
         if (getMajorEngineVersion() != null)
-            sb.append("MajorEngineVersion: " + getMajorEngineVersion());
+            sb.append("MajorEngineVersion: ").append(getMajorEngineVersion());
         sb.append("}");
         return sb.toString();
     }

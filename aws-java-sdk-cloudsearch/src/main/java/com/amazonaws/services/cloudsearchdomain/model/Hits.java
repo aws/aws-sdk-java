@@ -258,13 +258,13 @@ public class Hits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFound() != null)
-            sb.append("Found: " + getFound() + ",");
+            sb.append("Found: ").append(getFound()).append(",");
         if (getStart() != null)
-            sb.append("Start: " + getStart() + ",");
+            sb.append("Start: ").append(getStart()).append(",");
         if (getCursor() != null)
-            sb.append("Cursor: " + getCursor() + ",");
+            sb.append("Cursor: ").append(getCursor()).append(",");
         if (getHit() != null)
-            sb.append("Hit: " + getHit());
+            sb.append("Hit: ").append(getHit());
         sb.append("}");
         return sb.toString();
     }

@@ -189,11 +189,11 @@ public class JobLogs implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobCompletionReportURI() != null)
-            sb.append("JobCompletionReportURI: " + getJobCompletionReportURI() + ",");
+            sb.append("JobCompletionReportURI: ").append(getJobCompletionReportURI()).append(",");
         if (getJobSuccessLogURI() != null)
-            sb.append("JobSuccessLogURI: " + getJobSuccessLogURI() + ",");
+            sb.append("JobSuccessLogURI: ").append(getJobSuccessLogURI()).append(",");
         if (getJobFailureLogURI() != null)
-            sb.append("JobFailureLogURI: " + getJobFailureLogURI());
+            sb.append("JobFailureLogURI: ").append(getJobFailureLogURI());
         sb.append("}");
         return sb.toString();
     }

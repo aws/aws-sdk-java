@@ -159,9 +159,9 @@ public class ProductCode implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductCodeId() != null)
-            sb.append("ProductCodeId: " + getProductCodeId() + ",");
+            sb.append("ProductCodeId: ").append(getProductCodeId()).append(",");
         if (getProductCodeType() != null)
-            sb.append("ProductCodeType: " + getProductCodeType());
+            sb.append("ProductCodeType: ").append(getProductCodeType());
         sb.append("}");
         return sb.toString();
     }

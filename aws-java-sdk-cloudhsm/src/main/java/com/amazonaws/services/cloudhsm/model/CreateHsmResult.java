@@ -80,7 +80,7 @@ public class CreateHsmResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmArn() != null)
-            sb.append("HsmArn: " + getHsmArn());
+            sb.append("HsmArn: ").append(getHsmArn());
         sb.append("}");
         return sb.toString();
     }

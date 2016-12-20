@@ -205,11 +205,11 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getPeerVpcId() != null)
-            sb.append("PeerVpcId: " + getPeerVpcId() + ",");
+            sb.append("PeerVpcId: ").append(getPeerVpcId()).append(",");
         if (getPeerOwnerId() != null)
-            sb.append("PeerOwnerId: " + getPeerOwnerId());
+            sb.append("PeerOwnerId: ").append(getPeerOwnerId());
         sb.append("}");
         return sb.toString();
     }

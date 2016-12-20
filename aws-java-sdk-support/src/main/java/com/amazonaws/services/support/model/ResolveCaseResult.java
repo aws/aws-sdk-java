@@ -126,9 +126,9 @@ public class ResolveCaseResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInitialCaseStatus() != null)
-            sb.append("InitialCaseStatus: " + getInitialCaseStatus() + ",");
+            sb.append("InitialCaseStatus: ").append(getInitialCaseStatus()).append(",");
         if (getFinalCaseStatus() != null)
-            sb.append("FinalCaseStatus: " + getFinalCaseStatus());
+            sb.append("FinalCaseStatus: ").append(getFinalCaseStatus());
         sb.append("}");
         return sb.toString();
     }

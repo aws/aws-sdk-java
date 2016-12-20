@@ -159,9 +159,9 @@ public class Emotion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: " + getConfidence());
+            sb.append("Confidence: ").append(getConfidence());
         sb.append("}");
         return sb.toString();
     }

@@ -119,7 +119,7 @@ public class ListIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity());
+            sb.append("Identity: ").append(getIdentity());
         sb.append("}");
         return sb.toString();
     }

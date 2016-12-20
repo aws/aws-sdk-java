@@ -98,7 +98,7 @@ public class RequestCancelActivityTaskDecisionAttributes implements Serializable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId());
+            sb.append("ActivityId: ").append(getActivityId());
         sb.append("}");
         return sb.toString();
     }

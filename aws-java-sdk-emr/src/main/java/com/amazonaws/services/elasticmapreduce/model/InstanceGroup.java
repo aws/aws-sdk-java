@@ -907,33 +907,33 @@ public class InstanceGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMarket() != null)
-            sb.append("Market: " + getMarket() + ",");
+            sb.append("Market: ").append(getMarket()).append(",");
         if (getInstanceGroupType() != null)
-            sb.append("InstanceGroupType: " + getInstanceGroupType() + ",");
+            sb.append("InstanceGroupType: ").append(getInstanceGroupType()).append(",");
         if (getBidPrice() != null)
-            sb.append("BidPrice: " + getBidPrice() + ",");
+            sb.append("BidPrice: ").append(getBidPrice()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getRequestedInstanceCount() != null)
-            sb.append("RequestedInstanceCount: " + getRequestedInstanceCount() + ",");
+            sb.append("RequestedInstanceCount: ").append(getRequestedInstanceCount()).append(",");
         if (getRunningInstanceCount() != null)
-            sb.append("RunningInstanceCount: " + getRunningInstanceCount() + ",");
+            sb.append("RunningInstanceCount: ").append(getRunningInstanceCount()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations() + ",");
+            sb.append("Configurations: ").append(getConfigurations()).append(",");
         if (getEbsBlockDevices() != null)
-            sb.append("EbsBlockDevices: " + getEbsBlockDevices() + ",");
+            sb.append("EbsBlockDevices: ").append(getEbsBlockDevices()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getShrinkPolicy() != null)
-            sb.append("ShrinkPolicy: " + getShrinkPolicy() + ",");
+            sb.append("ShrinkPolicy: ").append(getShrinkPolicy()).append(",");
         if (getAutoScalingPolicy() != null)
-            sb.append("AutoScalingPolicy: " + getAutoScalingPolicy());
+            sb.append("AutoScalingPolicy: ").append(getAutoScalingPolicy());
         sb.append("}");
         return sb.toString();
     }

@@ -78,7 +78,7 @@ public class DescribeAddressResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddress() != null)
-            sb.append("Address: " + getAddress());
+            sb.append("Address: ").append(getAddress());
         sb.append("}");
         return sb.toString();
     }

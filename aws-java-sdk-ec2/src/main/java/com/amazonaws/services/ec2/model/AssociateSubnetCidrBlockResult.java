@@ -125,9 +125,9 @@ public class AssociateSubnetCidrBlockResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getIpv6CidrBlockAssociation() != null)
-            sb.append("Ipv6CidrBlockAssociation: " + getIpv6CidrBlockAssociation());
+            sb.append("Ipv6CidrBlockAssociation: ").append(getIpv6CidrBlockAssociation());
         sb.append("}");
         return sb.toString();
     }

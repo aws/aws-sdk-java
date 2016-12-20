@@ -61,8 +61,7 @@ public class ReadPresetRequestMarshaller implements Marshaller<Request<ReadPrese
 
         String uriResourcePath = "/2012-09-25/presets/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (readPresetRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(readPresetRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", readPresetRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

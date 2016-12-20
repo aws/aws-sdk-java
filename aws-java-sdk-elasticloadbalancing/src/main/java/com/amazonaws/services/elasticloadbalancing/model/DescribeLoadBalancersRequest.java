@@ -224,11 +224,11 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerNames() != null)
-            sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
+            sb.append("LoadBalancerNames: ").append(getLoadBalancerNames()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize());
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }

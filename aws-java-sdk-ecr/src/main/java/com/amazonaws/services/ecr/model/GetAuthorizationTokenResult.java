@@ -112,7 +112,7 @@ public class GetAuthorizationTokenResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthorizationData() != null)
-            sb.append("AuthorizationData: " + getAuthorizationData());
+            sb.append("AuthorizationData: ").append(getAuthorizationData());
         sb.append("}");
         return sb.toString();
     }

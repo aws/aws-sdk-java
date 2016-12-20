@@ -1124,25 +1124,25 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getS3BucketName() != null)
-            sb.append("S3BucketName: " + getS3BucketName() + ",");
+            sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
         if (getS3KeyPrefix() != null)
-            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+            sb.append("S3KeyPrefix: ").append(getS3KeyPrefix()).append(",");
         if (getSnsTopicName() != null)
-            sb.append("SnsTopicName: " + getSnsTopicName() + ",");
+            sb.append("SnsTopicName: ").append(getSnsTopicName()).append(",");
         if (getIncludeGlobalServiceEvents() != null)
-            sb.append("IncludeGlobalServiceEvents: " + getIncludeGlobalServiceEvents() + ",");
+            sb.append("IncludeGlobalServiceEvents: ").append(getIncludeGlobalServiceEvents()).append(",");
         if (getIsMultiRegionTrail() != null)
-            sb.append("IsMultiRegionTrail: " + getIsMultiRegionTrail() + ",");
+            sb.append("IsMultiRegionTrail: ").append(getIsMultiRegionTrail()).append(",");
         if (getEnableLogFileValidation() != null)
-            sb.append("EnableLogFileValidation: " + getEnableLogFileValidation() + ",");
+            sb.append("EnableLogFileValidation: ").append(getEnableLogFileValidation()).append(",");
         if (getCloudWatchLogsLogGroupArn() != null)
-            sb.append("CloudWatchLogsLogGroupArn: " + getCloudWatchLogsLogGroupArn() + ",");
+            sb.append("CloudWatchLogsLogGroupArn: ").append(getCloudWatchLogsLogGroupArn()).append(",");
         if (getCloudWatchLogsRoleArn() != null)
-            sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn() + ",");
+            sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }

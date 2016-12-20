@@ -156,9 +156,9 @@ public class ListDevicesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevices() != null)
-            sb.append("Devices: " + getDevices() + ",");
+            sb.append("Devices: ").append(getDevices()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: " + getPaginationToken());
+            sb.append("PaginationToken: ").append(getPaginationToken());
         sb.append("}");
         return sb.toString();
     }

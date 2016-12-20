@@ -217,11 +217,11 @@ public class VpcClassicLink implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getClassicLinkEnabled() != null)
-            sb.append("ClassicLinkEnabled: " + getClassicLinkEnabled() + ",");
+            sb.append("ClassicLinkEnabled: ").append(getClassicLinkEnabled()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

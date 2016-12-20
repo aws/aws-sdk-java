@@ -114,7 +114,7 @@ public class StopInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStoppingInstances() != null)
-            sb.append("StoppingInstances: " + getStoppingInstances());
+            sb.append("StoppingInstances: ").append(getStoppingInstances());
         sb.append("}");
         return sb.toString();
     }

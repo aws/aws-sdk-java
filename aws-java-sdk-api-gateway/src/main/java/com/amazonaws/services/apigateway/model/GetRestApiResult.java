@@ -434,19 +434,19 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getWarnings() != null)
-            sb.append("Warnings: " + getWarnings() + ",");
+            sb.append("Warnings: ").append(getWarnings()).append(",");
         if (getBinaryMediaTypes() != null)
-            sb.append("BinaryMediaTypes: " + getBinaryMediaTypes());
+            sb.append("BinaryMediaTypes: ").append(getBinaryMediaTypes());
         sb.append("}");
         return sb.toString();
     }

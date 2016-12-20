@@ -330,9 +330,9 @@ public class JobAlbumArt implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMergePolicy() != null)
-            sb.append("MergePolicy: " + getMergePolicy() + ",");
+            sb.append("MergePolicy: ").append(getMergePolicy()).append(",");
         if (getArtwork() != null)
-            sb.append("Artwork: " + getArtwork());
+            sb.append("Artwork: ").append(getArtwork());
         sb.append("}");
         return sb.toString();
     }

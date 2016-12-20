@@ -301,21 +301,21 @@ public class ReplicationRun implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationRunId() != null)
-            sb.append("ReplicationRunId: " + getReplicationRunId() + ",");
+            sb.append("ReplicationRunId: ").append(getReplicationRunId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getAmiId() != null)
-            sb.append("AmiId: " + getAmiId() + ",");
+            sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getScheduledStartTime() != null)
-            sb.append("ScheduledStartTime: " + getScheduledStartTime() + ",");
+            sb.append("ScheduledStartTime: ").append(getScheduledStartTime()).append(",");
         if (getCompletedTime() != null)
-            sb.append("CompletedTime: " + getCompletedTime() + ",");
+            sb.append("CompletedTime: ").append(getCompletedTime()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

@@ -77,7 +77,7 @@ public class StartSupportDataExportResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSetRequestId() != null)
-            sb.append("DataSetRequestId: " + getDataSetRequestId());
+            sb.append("DataSetRequestId: ").append(getDataSetRequestId());
         sb.append("}");
         return sb.toString();
     }

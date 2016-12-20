@@ -222,11 +222,11 @@ public class EnableSsoRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword());
+            sb.append("Password: ").append(getPassword());
         sb.append("}");
         return sb.toString();
     }

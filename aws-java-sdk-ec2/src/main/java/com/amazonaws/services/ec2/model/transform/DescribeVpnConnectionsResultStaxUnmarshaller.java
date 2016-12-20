@@ -45,6 +45,11 @@ public class DescribeVpnConnectionsResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpnConnectionSet", targetDepth)) {
+                    describeVpnConnectionsResult.withVpnConnections(new ArrayList<VpnConnection>());
+                    continue;
+                }
+
                 if (context.testExpression("vpnConnectionSet/item", targetDepth)) {
                     describeVpnConnectionsResult.withVpnConnections(VpnConnectionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

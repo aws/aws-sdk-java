@@ -61,13 +61,9 @@ public class UpdateCampaignRequestMarshaller implements Marshaller<Request<Updat
 
         String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (updateCampaignRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateCampaignRequest.getApplicationId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{campaign-id}",
-                (updateCampaignRequest.getCampaignId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateCampaignRequest.getCampaignId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                updateCampaignRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id", updateCampaignRequest.getCampaignId());
         request.setResourcePath(uriResourcePath);
 
         try {

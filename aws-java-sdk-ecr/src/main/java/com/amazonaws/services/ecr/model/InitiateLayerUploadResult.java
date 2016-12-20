@@ -131,9 +131,9 @@ public class InitiateLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getPartSize() != null)
-            sb.append("PartSize: " + getPartSize());
+            sb.append("PartSize: ").append(getPartSize());
         sb.append("}");
         return sb.toString();
     }

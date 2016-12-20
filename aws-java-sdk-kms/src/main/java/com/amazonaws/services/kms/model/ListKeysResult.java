@@ -235,11 +235,11 @@ public class ListKeysResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeys() != null)
-            sb.append("Keys: " + getKeys() + ",");
+            sb.append("Keys: ").append(getKeys()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getTruncated() != null)
-            sb.append("Truncated: " + getTruncated());
+            sb.append("Truncated: ").append(getTruncated());
         sb.append("}");
         return sb.toString();
     }

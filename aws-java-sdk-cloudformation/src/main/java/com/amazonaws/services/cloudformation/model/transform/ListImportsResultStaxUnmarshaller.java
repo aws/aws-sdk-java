@@ -45,6 +45,11 @@ public class ListImportsResultStaxUnmarshaller implements Unmarshaller<ListImpor
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Imports", targetDepth)) {
+                    listImportsResult.withImports(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Imports/member", targetDepth)) {
                     listImportsResult.withImports(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -112,7 +112,7 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartWorkspaceRequests() != null)
-            sb.append("StartWorkspaceRequests: " + getStartWorkspaceRequests());
+            sb.append("StartWorkspaceRequests: ").append(getStartWorkspaceRequests());
         sb.append("}");
         return sb.toString();
     }

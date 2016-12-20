@@ -269,11 +269,11 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceField() != null)
-            sb.append("SourceField: " + getSourceField() + ",");
+            sb.append("SourceField: ").append(getSourceField()).append(",");
         if (getFuzzyMatching() != null)
-            sb.append("FuzzyMatching: " + getFuzzyMatching() + ",");
+            sb.append("FuzzyMatching: ").append(getFuzzyMatching()).append(",");
         if (getSortExpression() != null)
-            sb.append("SortExpression: " + getSortExpression());
+            sb.append("SortExpression: ").append(getSortExpression());
         sb.append("}");
         return sb.toString();
     }

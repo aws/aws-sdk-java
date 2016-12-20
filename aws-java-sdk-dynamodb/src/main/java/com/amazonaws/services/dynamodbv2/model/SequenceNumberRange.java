@@ -126,9 +126,9 @@ public class SequenceNumberRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartingSequenceNumber() != null)
-            sb.append("StartingSequenceNumber: " + getStartingSequenceNumber() + ",");
+            sb.append("StartingSequenceNumber: ").append(getStartingSequenceNumber()).append(",");
         if (getEndingSequenceNumber() != null)
-            sb.append("EndingSequenceNumber: " + getEndingSequenceNumber());
+            sb.append("EndingSequenceNumber: ").append(getEndingSequenceNumber());
         sb.append("}");
         return sb.toString();
     }

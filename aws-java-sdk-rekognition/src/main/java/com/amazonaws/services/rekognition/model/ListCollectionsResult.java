@@ -161,9 +161,9 @@ public class ListCollectionsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCollectionIds() != null)
-            sb.append("CollectionIds: " + getCollectionIds() + ",");
+            sb.append("CollectionIds: ").append(getCollectionIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

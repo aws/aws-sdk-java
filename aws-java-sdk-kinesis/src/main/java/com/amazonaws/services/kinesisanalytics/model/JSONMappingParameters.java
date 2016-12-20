@@ -126,7 +126,7 @@ public class JSONMappingParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordRowPath() != null)
-            sb.append("RecordRowPath: " + getRecordRowPath());
+            sb.append("RecordRowPath: ").append(getRecordRowPath());
         sb.append("}");
         return sb.toString();
     }

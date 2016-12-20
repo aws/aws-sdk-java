@@ -310,17 +310,17 @@ public class ServiceError implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServiceErrorId() != null)
-            sb.append("ServiceErrorId: " + getServiceErrorId() + ",");
+            sb.append("ServiceErrorId: ").append(getServiceErrorId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt());
         sb.append("}");
         return sb.toString();
     }

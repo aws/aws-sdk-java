@@ -317,17 +317,17 @@ public class WorkspaceBundle implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getUserStorage() != null)
-            sb.append("UserStorage: " + getUserStorage() + ",");
+            sb.append("UserStorage: ").append(getUserStorage()).append(",");
         if (getComputeType() != null)
-            sb.append("ComputeType: " + getComputeType());
+            sb.append("ComputeType: ").append(getComputeType());
         sb.append("}");
         return sb.toString();
     }

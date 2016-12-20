@@ -406,21 +406,21 @@ public class ImportJobResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefineSegment() != null)
-            sb.append("DefineSegment: " + getDefineSegment() + ",");
+            sb.append("DefineSegment: ").append(getDefineSegment()).append(",");
         if (getExternalId() != null)
-            sb.append("ExternalId: " + getExternalId() + ",");
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getRegisterEndpoints() != null)
-            sb.append("RegisterEndpoints: " + getRegisterEndpoints() + ",");
+            sb.append("RegisterEndpoints: ").append(getRegisterEndpoints()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getS3Url() != null)
-            sb.append("S3Url: " + getS3Url() + ",");
+            sb.append("S3Url: ").append(getS3Url()).append(",");
         if (getSegmentId() != null)
-            sb.append("SegmentId: " + getSegmentId() + ",");
+            sb.append("SegmentId: ").append(getSegmentId()).append(",");
         if (getSegmentName() != null)
-            sb.append("SegmentName: " + getSegmentName());
+            sb.append("SegmentName: ").append(getSegmentName());
         sb.append("}");
         return sb.toString();
     }

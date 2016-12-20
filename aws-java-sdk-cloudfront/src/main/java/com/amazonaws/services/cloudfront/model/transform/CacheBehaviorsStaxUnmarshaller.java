@@ -50,6 +50,11 @@ public class CacheBehaviorsStaxUnmarshaller implements Unmarshaller<CacheBehavio
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    cacheBehaviors.withItems(new ArrayList<CacheBehavior>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/CacheBehavior", targetDepth)) {
                     cacheBehaviors.withItems(CacheBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

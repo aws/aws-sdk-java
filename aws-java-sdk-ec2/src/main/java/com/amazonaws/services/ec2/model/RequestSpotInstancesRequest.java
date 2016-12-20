@@ -872,25 +872,25 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotPrice() != null)
-            sb.append("SpotPrice: " + getSpotPrice() + ",");
+            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getValidFrom() != null)
-            sb.append("ValidFrom: " + getValidFrom() + ",");
+            sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidUntil() != null)
-            sb.append("ValidUntil: " + getValidUntil() + ",");
+            sb.append("ValidUntil: ").append(getValidUntil()).append(",");
         if (getLaunchGroup() != null)
-            sb.append("LaunchGroup: " + getLaunchGroup() + ",");
+            sb.append("LaunchGroup: ").append(getLaunchGroup()).append(",");
         if (getAvailabilityZoneGroup() != null)
-            sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ",");
+            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
         if (getBlockDurationMinutes() != null)
-            sb.append("BlockDurationMinutes: " + getBlockDurationMinutes() + ",");
+            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
         if (getLaunchSpecification() != null)
-            sb.append("LaunchSpecification: " + getLaunchSpecification());
+            sb.append("LaunchSpecification: ").append(getLaunchSpecification());
         sb.append("}");
         return sb.toString();
     }

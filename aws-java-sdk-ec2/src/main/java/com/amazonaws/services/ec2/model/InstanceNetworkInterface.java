@@ -868,35 +868,35 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getMacAddress() != null)
-            sb.append("MacAddress: " + getMacAddress() + ",");
+            sb.append("MacAddress: ").append(getMacAddress()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: " + getSourceDestCheck() + ",");
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
         if (getGroups() != null)
-            sb.append("Groups: " + getGroups() + ",");
+            sb.append("Groups: ").append(getGroups()).append(",");
         if (getAttachment() != null)
-            sb.append("Attachment: " + getAttachment() + ",");
+            sb.append("Attachment: ").append(getAttachment()).append(",");
         if (getAssociation() != null)
-            sb.append("Association: " + getAssociation() + ",");
+            sb.append("Association: ").append(getAssociation()).append(",");
         if (getPrivateIpAddresses() != null)
-            sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
+            sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
         if (getIpv6Addresses() != null)
-            sb.append("Ipv6Addresses: " + getIpv6Addresses());
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses());
         sb.append("}");
         return sb.toString();
     }

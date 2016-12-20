@@ -62,10 +62,8 @@ public class DeleteElasticsearchDomainRequestMarshaller implements Marshaller<Re
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DomainName}",
-                (deleteElasticsearchDomainRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteElasticsearchDomainRequest.getDomainName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DomainName",
+                deleteElasticsearchDomainRequest.getDomainName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

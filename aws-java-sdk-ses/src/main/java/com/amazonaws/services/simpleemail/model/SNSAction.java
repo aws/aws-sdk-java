@@ -217,9 +217,9 @@ public class SNSAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getEncoding() != null)
-            sb.append("Encoding: " + getEncoding());
+            sb.append("Encoding: ").append(getEncoding());
         sb.append("}");
         return sb.toString();
     }

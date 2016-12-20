@@ -384,13 +384,13 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartContinentCode() != null)
-            sb.append("StartContinentCode: " + getStartContinentCode() + ",");
+            sb.append("StartContinentCode: ").append(getStartContinentCode()).append(",");
         if (getStartCountryCode() != null)
-            sb.append("StartCountryCode: " + getStartCountryCode() + ",");
+            sb.append("StartCountryCode: ").append(getStartCountryCode()).append(",");
         if (getStartSubdivisionCode() != null)
-            sb.append("StartSubdivisionCode: " + getStartSubdivisionCode() + ",");
+            sb.append("StartSubdivisionCode: ").append(getStartSubdivisionCode()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

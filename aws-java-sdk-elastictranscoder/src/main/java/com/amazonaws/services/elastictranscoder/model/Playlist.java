@@ -943,19 +943,19 @@ public class Playlist implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getOutputKeys() != null)
-            sb.append("OutputKeys: " + getOutputKeys() + ",");
+            sb.append("OutputKeys: ").append(getOutputKeys()).append(",");
         if (getHlsContentProtection() != null)
-            sb.append("HlsContentProtection: " + getHlsContentProtection() + ",");
+            sb.append("HlsContentProtection: ").append(getHlsContentProtection()).append(",");
         if (getPlayReadyDrm() != null)
-            sb.append("PlayReadyDrm: " + getPlayReadyDrm() + ",");
+            sb.append("PlayReadyDrm: ").append(getPlayReadyDrm()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetail() != null)
-            sb.append("StatusDetail: " + getStatusDetail());
+            sb.append("StatusDetail: ").append(getStatusDetail());
         sb.append("}");
         return sb.toString();
     }

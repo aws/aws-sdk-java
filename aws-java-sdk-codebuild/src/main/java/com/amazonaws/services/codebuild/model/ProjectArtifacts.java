@@ -1846,17 +1846,17 @@ public class ProjectArtifacts implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getNamespaceType() != null)
-            sb.append("NamespaceType: " + getNamespaceType() + ",");
+            sb.append("NamespaceType: ").append(getNamespaceType()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPackaging() != null)
-            sb.append("Packaging: " + getPackaging());
+            sb.append("Packaging: ").append(getPackaging());
         sb.append("}");
         return sb.toString();
     }

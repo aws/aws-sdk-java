@@ -201,13 +201,13 @@ public class PutActionRevisionRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getActionName() != null)
-            sb.append("ActionName: " + getActionName() + ",");
+            sb.append("ActionName: ").append(getActionName()).append(",");
         if (getActionRevision() != null)
-            sb.append("ActionRevision: " + getActionRevision());
+            sb.append("ActionRevision: ").append(getActionRevision());
         sb.append("}");
         return sb.toString();
     }

@@ -443,19 +443,19 @@ public class StreamingDistribution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getActiveTrustedSigners() != null)
-            sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ",");
+            sb.append("ActiveTrustedSigners: ").append(getActiveTrustedSigners()).append(",");
         if (getStreamingDistributionConfig() != null)
-            sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig());
+            sb.append("StreamingDistributionConfig: ").append(getStreamingDistributionConfig());
         sb.append("}");
         return sb.toString();
     }

@@ -123,7 +123,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyTypeNames() != null)
-            sb.append("PolicyTypeNames: " + getPolicyTypeNames());
+            sb.append("PolicyTypeNames: ").append(getPolicyTypeNames());
         sb.append("}");
         return sb.toString();
     }

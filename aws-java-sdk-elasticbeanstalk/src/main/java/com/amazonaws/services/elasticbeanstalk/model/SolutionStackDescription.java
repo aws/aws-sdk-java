@@ -159,9 +159,9 @@ public class SolutionStackDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getPermittedFileTypes() != null)
-            sb.append("PermittedFileTypes: " + getPermittedFileTypes());
+            sb.append("PermittedFileTypes: ").append(getPermittedFileTypes());
         sb.append("}");
         return sb.toString();
     }

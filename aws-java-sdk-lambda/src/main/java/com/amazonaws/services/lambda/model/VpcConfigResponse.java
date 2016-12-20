@@ -238,11 +238,11 @@ public class VpcConfigResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId());
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }

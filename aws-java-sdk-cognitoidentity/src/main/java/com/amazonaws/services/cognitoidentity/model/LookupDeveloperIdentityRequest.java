@@ -300,15 +300,15 @@ public class LookupDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDeveloperUserIdentifier() != null)
-            sb.append("DeveloperUserIdentifier: " + getDeveloperUserIdentifier() + ",");
+            sb.append("DeveloperUserIdentifier: ").append(getDeveloperUserIdentifier()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

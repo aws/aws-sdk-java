@@ -164,9 +164,9 @@ public class ListSecurityConfigurationsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityConfigurations() != null)
-            sb.append("SecurityConfigurations: " + getSecurityConfigurations() + ",");
+            sb.append("SecurityConfigurations: ").append(getSecurityConfigurations()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

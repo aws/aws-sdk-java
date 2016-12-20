@@ -244,9 +244,9 @@ public class StopInstancesRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getForce() != null)
-            sb.append("Force: " + getForce());
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }

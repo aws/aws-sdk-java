@@ -114,7 +114,7 @@ public class DescribeNetworkInterfacesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: " + getNetworkInterfaces());
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
         sb.append("}");
         return sb.toString();
     }

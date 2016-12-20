@@ -286,9 +286,9 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }

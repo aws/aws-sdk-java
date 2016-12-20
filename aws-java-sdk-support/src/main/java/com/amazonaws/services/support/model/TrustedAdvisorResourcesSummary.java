@@ -220,13 +220,13 @@ public class TrustedAdvisorResourcesSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourcesProcessed() != null)
-            sb.append("ResourcesProcessed: " + getResourcesProcessed() + ",");
+            sb.append("ResourcesProcessed: ").append(getResourcesProcessed()).append(",");
         if (getResourcesFlagged() != null)
-            sb.append("ResourcesFlagged: " + getResourcesFlagged() + ",");
+            sb.append("ResourcesFlagged: ").append(getResourcesFlagged()).append(",");
         if (getResourcesIgnored() != null)
-            sb.append("ResourcesIgnored: " + getResourcesIgnored() + ",");
+            sb.append("ResourcesIgnored: ").append(getResourcesIgnored()).append(",");
         if (getResourcesSuppressed() != null)
-            sb.append("ResourcesSuppressed: " + getResourcesSuppressed());
+            sb.append("ResourcesSuppressed: ").append(getResourcesSuppressed());
         sb.append("}");
         return sb.toString();
     }

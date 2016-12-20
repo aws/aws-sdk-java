@@ -358,11 +358,11 @@ public class PutItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getConsumedCapacity() != null)
-            sb.append("ConsumedCapacity: " + getConsumedCapacity() + ",");
+            sb.append("ConsumedCapacity: ").append(getConsumedCapacity()).append(",");
         if (getItemCollectionMetrics() != null)
-            sb.append("ItemCollectionMetrics: " + getItemCollectionMetrics());
+            sb.append("ItemCollectionMetrics: ").append(getItemCollectionMetrics());
         sb.append("}");
         return sb.toString();
     }

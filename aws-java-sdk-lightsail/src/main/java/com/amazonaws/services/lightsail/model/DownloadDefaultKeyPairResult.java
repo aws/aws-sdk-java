@@ -124,9 +124,9 @@ public class DownloadDefaultKeyPairResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicKeyBase64() != null)
-            sb.append("PublicKeyBase64: " + getPublicKeyBase64() + ",");
+            sb.append("PublicKeyBase64: ").append(getPublicKeyBase64()).append(",");
         if (getPrivateKeyBase64() != null)
-            sb.append("PrivateKeyBase64: " + getPrivateKeyBase64());
+            sb.append("PrivateKeyBase64: ").append(getPrivateKeyBase64());
         sb.append("}");
         return sb.toString();
     }

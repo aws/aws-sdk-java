@@ -173,11 +173,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN() + ",");
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

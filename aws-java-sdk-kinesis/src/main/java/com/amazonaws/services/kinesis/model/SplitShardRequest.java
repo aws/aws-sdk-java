@@ -204,11 +204,11 @@ public class SplitShardRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getShardToSplit() != null)
-            sb.append("ShardToSplit: " + getShardToSplit() + ",");
+            sb.append("ShardToSplit: ").append(getShardToSplit()).append(",");
         if (getNewStartingHashKey() != null)
-            sb.append("NewStartingHashKey: " + getNewStartingHashKey());
+            sb.append("NewStartingHashKey: ").append(getNewStartingHashKey());
         sb.append("}");
         return sb.toString();
     }

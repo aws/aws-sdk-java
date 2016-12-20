@@ -51,10 +51,8 @@ public class ListInvalidationsRequestMarshaller implements Marshaller<Request<Li
 
         String uriResourcePath = "/2016-11-25/distribution/{DistributionId}/invalidation";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DistributionId}",
-                (listInvalidationsRequest.getDistributionId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listInvalidationsRequest.getDistributionId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
+                listInvalidationsRequest.getDistributionId());
         request.setResourcePath(uriResourcePath);
 
         if (listInvalidationsRequest.getMarker() != null) {

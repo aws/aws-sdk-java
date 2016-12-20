@@ -50,6 +50,11 @@ public class PathsStaxUnmarshaller implements Unmarshaller<Paths, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    paths.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Path", targetDepth)) {
                     paths.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

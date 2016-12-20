@@ -356,19 +356,19 @@ public class CPUUtilization implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUser() != null)
-            sb.append("User: " + getUser() + ",");
+            sb.append("User: ").append(getUser()).append(",");
         if (getNice() != null)
-            sb.append("Nice: " + getNice() + ",");
+            sb.append("Nice: ").append(getNice()).append(",");
         if (getSystem() != null)
-            sb.append("System: " + getSystem() + ",");
+            sb.append("System: ").append(getSystem()).append(",");
         if (getIdle() != null)
-            sb.append("Idle: " + getIdle() + ",");
+            sb.append("Idle: ").append(getIdle()).append(",");
         if (getIOWait() != null)
-            sb.append("IOWait: " + getIOWait() + ",");
+            sb.append("IOWait: ").append(getIOWait()).append(",");
         if (getIRQ() != null)
-            sb.append("IRQ: " + getIRQ() + ",");
+            sb.append("IRQ: ").append(getIRQ()).append(",");
         if (getSoftIRQ() != null)
-            sb.append("SoftIRQ: " + getSoftIRQ());
+            sb.append("SoftIRQ: ").append(getSoftIRQ());
         sb.append("}");
         return sb.toString();
     }

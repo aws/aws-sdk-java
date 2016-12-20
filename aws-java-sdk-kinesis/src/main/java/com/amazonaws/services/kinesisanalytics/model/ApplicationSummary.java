@@ -205,11 +205,11 @@ public class ApplicationSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getApplicationARN() != null)
-            sb.append("ApplicationARN: " + getApplicationARN() + ",");
+            sb.append("ApplicationARN: ").append(getApplicationARN()).append(",");
         if (getApplicationStatus() != null)
-            sb.append("ApplicationStatus: " + getApplicationStatus());
+            sb.append("ApplicationStatus: ").append(getApplicationStatus());
         sb.append("}");
         return sb.toString();
     }

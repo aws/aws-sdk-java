@@ -124,9 +124,9 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobs() != null)
-            sb.append("Jobs: " + getJobs() + ",");
+            sb.append("Jobs: ").append(getJobs()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated());
+            sb.append("IsTruncated: ").append(getIsTruncated());
         sb.append("}");
         return sb.toString();
     }

@@ -161,9 +161,9 @@ public class DescribeFleetsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleets() != null)
-            sb.append("Fleets: " + getFleets() + ",");
+            sb.append("Fleets: ").append(getFleets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -163,9 +163,9 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionTimeout() != null)
-            sb.append("ExecutionTimeout: " + getExecutionTimeout() + ",");
+            sb.append("ExecutionTimeout: ").append(getExecutionTimeout()).append(",");
         if (getDelayUntilElbConnectionsDrained() != null)
-            sb.append("DelayUntilElbConnectionsDrained: " + getDelayUntilElbConnectionsDrained());
+            sb.append("DelayUntilElbConnectionsDrained: ").append(getDelayUntilElbConnectionsDrained());
         sb.append("}");
         return sb.toString();
     }

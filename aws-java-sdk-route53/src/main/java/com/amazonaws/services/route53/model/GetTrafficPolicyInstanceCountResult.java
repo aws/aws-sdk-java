@@ -82,7 +82,7 @@ public class GetTrafficPolicyInstanceCountResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicyInstanceCount() != null)
-            sb.append("TrafficPolicyInstanceCount: " + getTrafficPolicyInstanceCount());
+            sb.append("TrafficPolicyInstanceCount: ").append(getTrafficPolicyInstanceCount());
         sb.append("}");
         return sb.toString();
     }

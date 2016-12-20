@@ -409,17 +409,17 @@ public class DirectoryConnectSettingsDescription implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getCustomerUserName() != null)
-            sb.append("CustomerUserName: " + getCustomerUserName() + ",");
+            sb.append("CustomerUserName: ").append(getCustomerUserName()).append(",");
         if (getSecurityGroupId() != null)
-            sb.append("SecurityGroupId: " + getSecurityGroupId() + ",");
+            sb.append("SecurityGroupId: ").append(getSecurityGroupId()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getConnectIps() != null)
-            sb.append("ConnectIps: " + getConnectIps());
+            sb.append("ConnectIps: ").append(getConnectIps());
         sb.append("}");
         return sb.toString();
     }

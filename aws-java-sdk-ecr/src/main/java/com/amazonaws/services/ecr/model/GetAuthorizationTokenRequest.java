@@ -118,7 +118,7 @@ public class GetAuthorizationTokenRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryIds() != null)
-            sb.append("RegistryIds: " + getRegistryIds());
+            sb.append("RegistryIds: ").append(getRegistryIds());
         sb.append("}");
         return sb.toString();
     }

@@ -259,11 +259,11 @@ public class ConditionalForwarder implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRemoteDomainName() != null)
-            sb.append("RemoteDomainName: " + getRemoteDomainName() + ",");
+            sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getDnsIpAddrs() != null)
-            sb.append("DnsIpAddrs: " + getDnsIpAddrs() + ",");
+            sb.append("DnsIpAddrs: ").append(getDnsIpAddrs()).append(",");
         if (getReplicationScope() != null)
-            sb.append("ReplicationScope: " + getReplicationScope());
+            sb.append("ReplicationScope: ").append(getReplicationScope());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId());
+            sb.append("ResourceId: ").append(getResourceId());
         sb.append("}");
         return sb.toString();
     }

@@ -951,41 +951,41 @@ public class DistributionSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: " + getAliases() + ",");
+            sb.append("Aliases: ").append(getAliases()).append(",");
         if (getOrigins() != null)
-            sb.append("Origins: " + getOrigins() + ",");
+            sb.append("Origins: ").append(getOrigins()).append(",");
         if (getDefaultCacheBehavior() != null)
-            sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");
+            sb.append("DefaultCacheBehavior: ").append(getDefaultCacheBehavior()).append(",");
         if (getCacheBehaviors() != null)
-            sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");
+            sb.append("CacheBehaviors: ").append(getCacheBehaviors()).append(",");
         if (getCustomErrorResponses() != null)
-            sb.append("CustomErrorResponses: " + getCustomErrorResponses() + ",");
+            sb.append("CustomErrorResponses: ").append(getCustomErrorResponses()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getPriceClass() != null)
-            sb.append("PriceClass: " + getPriceClass() + ",");
+            sb.append("PriceClass: ").append(getPriceClass()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getViewerCertificate() != null)
-            sb.append("ViewerCertificate: " + getViewerCertificate() + ",");
+            sb.append("ViewerCertificate: ").append(getViewerCertificate()).append(",");
         if (getRestrictions() != null)
-            sb.append("Restrictions: " + getRestrictions() + ",");
+            sb.append("Restrictions: ").append(getRestrictions()).append(",");
         if (getWebACLId() != null)
-            sb.append("WebACLId: " + getWebACLId() + ",");
+            sb.append("WebACLId: ").append(getWebACLId()).append(",");
         if (getHttpVersion() != null)
-            sb.append("HttpVersion: " + getHttpVersion() + ",");
+            sb.append("HttpVersion: ").append(getHttpVersion()).append(",");
         if (getIsIPV6Enabled() != null)
-            sb.append("IsIPV6Enabled: " + getIsIPV6Enabled());
+            sb.append("IsIPV6Enabled: ").append(getIsIPV6Enabled());
         sb.append("}");
         return sb.toString();
     }

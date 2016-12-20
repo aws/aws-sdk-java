@@ -164,9 +164,9 @@ public class ListSchemaExtensionsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchemaExtensionsInfo() != null)
-            sb.append("SchemaExtensionsInfo: " + getSchemaExtensionsInfo() + ",");
+            sb.append("SchemaExtensionsInfo: ").append(getSchemaExtensionsInfo()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

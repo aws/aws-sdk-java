@@ -389,19 +389,19 @@ public class Application implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getIconURL() != null)
-            sb.append("IconURL: " + getIconURL() + ",");
+            sb.append("IconURL: ").append(getIconURL()).append(",");
         if (getLaunchPath() != null)
-            sb.append("LaunchPath: " + getLaunchPath() + ",");
+            sb.append("LaunchPath: ").append(getLaunchPath()).append(",");
         if (getLaunchParameters() != null)
-            sb.append("LaunchParameters: " + getLaunchParameters() + ",");
+            sb.append("LaunchParameters: ").append(getLaunchParameters()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata());
+            sb.append("Metadata: ").append(getMetadata());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,7 @@ public class UpdateDomainNameRequestMarshaller implements Marshaller<Request<Upd
 
         String uriResourcePath = "/domainnames/{domain_name}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (updateDomainNameRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateDomainNameRequest.getDomainName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "domain_name", updateDomainNameRequest.getDomainName());
         request.setResourcePath(uriResourcePath);
 
         try {

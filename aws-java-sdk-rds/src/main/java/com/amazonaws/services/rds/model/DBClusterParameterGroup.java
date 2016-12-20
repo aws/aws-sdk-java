@@ -226,13 +226,13 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName() + ",");
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName()).append(",");
         if (getDBParameterGroupFamily() != null)
-            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+            sb.append("DBParameterGroupFamily: ").append(getDBParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDBClusterParameterGroupArn() != null)
-            sb.append("DBClusterParameterGroupArn: " + getDBClusterParameterGroupArn());
+            sb.append("DBClusterParameterGroupArn: ").append(getDBClusterParameterGroupArn());
         sb.append("}");
         return sb.toString();
     }

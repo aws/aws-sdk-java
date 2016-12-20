@@ -1221,41 +1221,41 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobDescription() != null)
-            sb.append("JobDescription: " + getJobDescription() + ",");
+            sb.append("JobDescription: ").append(getJobDescription()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getArchiveId() != null)
-            sb.append("ArchiveId: " + getArchiveId() + ",");
+            sb.append("ArchiveId: ").append(getArchiveId()).append(",");
         if (getVaultARN() != null)
-            sb.append("VaultARN: " + getVaultARN() + ",");
+            sb.append("VaultARN: ").append(getVaultARN()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCompleted() != null)
-            sb.append("Completed: " + getCompleted() + ",");
+            sb.append("Completed: ").append(getCompleted()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getArchiveSizeInBytes() != null)
-            sb.append("ArchiveSizeInBytes: " + getArchiveSizeInBytes() + ",");
+            sb.append("ArchiveSizeInBytes: ").append(getArchiveSizeInBytes()).append(",");
         if (getInventorySizeInBytes() != null)
-            sb.append("InventorySizeInBytes: " + getInventorySizeInBytes() + ",");
+            sb.append("InventorySizeInBytes: ").append(getInventorySizeInBytes()).append(",");
         if (getSNSTopic() != null)
-            sb.append("SNSTopic: " + getSNSTopic() + ",");
+            sb.append("SNSTopic: ").append(getSNSTopic()).append(",");
         if (getCompletionDate() != null)
-            sb.append("CompletionDate: " + getCompletionDate() + ",");
+            sb.append("CompletionDate: ").append(getCompletionDate()).append(",");
         if (getSHA256TreeHash() != null)
-            sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ",");
+            sb.append("SHA256TreeHash: ").append(getSHA256TreeHash()).append(",");
         if (getArchiveSHA256TreeHash() != null)
-            sb.append("ArchiveSHA256TreeHash: " + getArchiveSHA256TreeHash() + ",");
+            sb.append("ArchiveSHA256TreeHash: ").append(getArchiveSHA256TreeHash()).append(",");
         if (getRetrievalByteRange() != null)
-            sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ",");
+            sb.append("RetrievalByteRange: ").append(getRetrievalByteRange()).append(",");
         if (getTier() != null)
-            sb.append("Tier: " + getTier() + ",");
+            sb.append("Tier: ").append(getTier()).append(",");
         if (getInventoryRetrievalParameters() != null)
-            sb.append("InventoryRetrievalParameters: " + getInventoryRetrievalParameters());
+            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters());
         sb.append("}");
         return sb.toString();
     }

@@ -329,7 +329,7 @@ public class DeleteDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSecurityGroupName() != null)
-            sb.append("DBSecurityGroupName: " + getDBSecurityGroupName());
+            sb.append("DBSecurityGroupName: ").append(getDBSecurityGroupName());
         sb.append("}");
         return sb.toString();
     }

@@ -251,13 +251,13 @@ public class ClusterParameterGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupName() != null)
-            sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
+            sb.append("ParameterGroupName: ").append(getParameterGroupName()).append(",");
         if (getParameterGroupFamily() != null)
-            sb.append("ParameterGroupFamily: " + getParameterGroupFamily() + ",");
+            sb.append("ParameterGroupFamily: ").append(getParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

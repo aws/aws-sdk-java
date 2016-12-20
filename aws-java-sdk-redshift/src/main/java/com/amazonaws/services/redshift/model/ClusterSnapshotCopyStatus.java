@@ -182,11 +182,11 @@ public class ClusterSnapshotCopyStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationRegion() != null)
-            sb.append("DestinationRegion: " + getDestinationRegion() + ",");
+            sb.append("DestinationRegion: ").append(getDestinationRegion()).append(",");
         if (getRetentionPeriod() != null)
-            sb.append("RetentionPeriod: " + getRetentionPeriod() + ",");
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName());
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName());
         sb.append("}");
         return sb.toString();
     }

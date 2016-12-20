@@ -696,19 +696,19 @@ public class StreamRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApproximateCreationDateTime() != null)
-            sb.append("ApproximateCreationDateTime: " + getApproximateCreationDateTime() + ",");
+            sb.append("ApproximateCreationDateTime: ").append(getApproximateCreationDateTime()).append(",");
         if (getKeys() != null)
-            sb.append("Keys: " + getKeys() + ",");
+            sb.append("Keys: ").append(getKeys()).append(",");
         if (getNewImage() != null)
-            sb.append("NewImage: " + getNewImage() + ",");
+            sb.append("NewImage: ").append(getNewImage()).append(",");
         if (getOldImage() != null)
-            sb.append("OldImage: " + getOldImage() + ",");
+            sb.append("OldImage: ").append(getOldImage()).append(",");
         if (getSequenceNumber() != null)
-            sb.append("SequenceNumber: " + getSequenceNumber() + ",");
+            sb.append("SequenceNumber: ").append(getSequenceNumber()).append(",");
         if (getSizeBytes() != null)
-            sb.append("SizeBytes: " + getSizeBytes() + ",");
+            sb.append("SizeBytes: ").append(getSizeBytes()).append(",");
         if (getStreamViewType() != null)
-            sb.append("StreamViewType: " + getStreamViewType());
+            sb.append("StreamViewType: ").append(getStreamViewType());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class CreateUploadResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUpload() != null)
-            sb.append("Upload: " + getUpload());
+            sb.append("Upload: ").append(getUpload());
         sb.append("}");
         return sb.toString();
     }

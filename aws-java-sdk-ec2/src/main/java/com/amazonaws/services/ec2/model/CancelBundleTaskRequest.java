@@ -112,7 +112,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId());
+            sb.append("BundleId: ").append(getBundleId());
         sb.append("}");
         return sb.toString();
     }

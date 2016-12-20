@@ -50,6 +50,11 @@ public class DescribeHsmClientCertificatesResultStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("HsmClientCertificates", targetDepth)) {
+                    describeHsmClientCertificatesResult.withHsmClientCertificates(new ArrayList<HsmClientCertificate>());
+                    continue;
+                }
+
                 if (context.testExpression("HsmClientCertificates/HsmClientCertificate", targetDepth)) {
                     describeHsmClientCertificatesResult.withHsmClientCertificates(HsmClientCertificateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

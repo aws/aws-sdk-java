@@ -341,17 +341,17 @@ public class Schedule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getIsLocalTime() != null)
-            sb.append("IsLocalTime: " + getIsLocalTime() + ",");
+            sb.append("IsLocalTime: ").append(getIsLocalTime()).append(",");
         if (getQuietTime() != null)
-            sb.append("QuietTime: " + getQuietTime() + ",");
+            sb.append("QuietTime: ").append(getQuietTime()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: " + getTimezone());
+            sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
         return sb.toString();
     }

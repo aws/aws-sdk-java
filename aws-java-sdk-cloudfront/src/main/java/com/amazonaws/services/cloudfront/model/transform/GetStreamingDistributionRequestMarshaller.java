@@ -52,10 +52,7 @@ public class GetStreamingDistributionRequestMarshaller implements Marshaller<Req
 
         String uriResourcePath = "/2016-11-25/streaming-distribution/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (getStreamingDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getStreamingDistributionRequest.getId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getStreamingDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

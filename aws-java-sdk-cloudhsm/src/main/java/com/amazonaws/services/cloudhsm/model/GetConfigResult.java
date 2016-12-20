@@ -170,11 +170,11 @@ public class GetConfigResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigType() != null)
-            sb.append("ConfigType: " + getConfigType() + ",");
+            sb.append("ConfigType: ").append(getConfigType()).append(",");
         if (getConfigFile() != null)
-            sb.append("ConfigFile: " + getConfigFile() + ",");
+            sb.append("ConfigFile: ").append(getConfigFile()).append(",");
         if (getConfigCred() != null)
-            sb.append("ConfigCred: " + getConfigCred());
+            sb.append("ConfigCred: ").append(getConfigCred());
         sb.append("}");
         return sb.toString();
     }

@@ -15,17 +15,29 @@ package com.amazonaws.services.cognitoidentity.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * A description of the identity pool.
+ * </p>
  */
 public class IdentityPoolShortDescription implements Serializable, Cloneable {
 
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
-    /** A string that you provide. */
+    /**
+     * <p>
+     * A string that you provide.
+     * </p>
+     */
     private String identityPoolName;
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -36,7 +48,9 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -46,7 +60,9 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -59,7 +75,9 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A string that you provide.
+     * </p>
      * 
      * @param identityPoolName
      *        A string that you provide.
@@ -70,7 +88,9 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A string that you provide.
+     * </p>
      * 
      * @return A string that you provide.
      */
@@ -80,7 +100,9 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
      * A string that you provide.
+     * </p>
      * 
      * @param identityPoolName
      *        A string that you provide.
@@ -104,9 +126,9 @@ public class IdentityPoolShortDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityPoolName() != null)
-            sb.append("IdentityPoolName: " + getIdentityPoolName());
+            sb.append("IdentityPoolName: ").append(getIdentityPoolName());
         sb.append("}");
         return sb.toString();
     }

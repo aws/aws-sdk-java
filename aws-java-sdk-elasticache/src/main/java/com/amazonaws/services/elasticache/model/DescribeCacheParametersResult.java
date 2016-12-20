@@ -249,11 +249,11 @@ public class DescribeCacheParametersResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getCacheNodeTypeSpecificParameters() != null)
-            sb.append("CacheNodeTypeSpecificParameters: " + getCacheNodeTypeSpecificParameters());
+            sb.append("CacheNodeTypeSpecificParameters: ").append(getCacheNodeTypeSpecificParameters());
         sb.append("}");
         return sb.toString();
     }

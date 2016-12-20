@@ -132,9 +132,9 @@ public class ListAssociatedStacksRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetName() != null)
-            sb.append("FleetName: " + getFleetName() + ",");
+            sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

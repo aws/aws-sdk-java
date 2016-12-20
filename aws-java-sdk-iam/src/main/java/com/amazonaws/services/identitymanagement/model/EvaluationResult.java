@@ -613,19 +613,19 @@ public class EvaluationResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvalActionName() != null)
-            sb.append("EvalActionName: " + getEvalActionName() + ",");
+            sb.append("EvalActionName: ").append(getEvalActionName()).append(",");
         if (getEvalResourceName() != null)
-            sb.append("EvalResourceName: " + getEvalResourceName() + ",");
+            sb.append("EvalResourceName: ").append(getEvalResourceName()).append(",");
         if (getEvalDecision() != null)
-            sb.append("EvalDecision: " + getEvalDecision() + ",");
+            sb.append("EvalDecision: ").append(getEvalDecision()).append(",");
         if (getMatchedStatements() != null)
-            sb.append("MatchedStatements: " + getMatchedStatements() + ",");
+            sb.append("MatchedStatements: ").append(getMatchedStatements()).append(",");
         if (getMissingContextValues() != null)
-            sb.append("MissingContextValues: " + getMissingContextValues() + ",");
+            sb.append("MissingContextValues: ").append(getMissingContextValues()).append(",");
         if (getEvalDecisionDetails() != null)
-            sb.append("EvalDecisionDetails: " + getEvalDecisionDetails() + ",");
+            sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails()).append(",");
         if (getResourceSpecificResults() != null)
-            sb.append("ResourceSpecificResults: " + getResourceSpecificResults());
+            sb.append("ResourceSpecificResults: ").append(getResourceSpecificResults());
         sb.append("}");
         return sb.toString();
     }

@@ -17,7 +17,7 @@
 
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.BigDecimalJsonUnmarshaller;
@@ -46,14 +46,14 @@ import java.util.Map;
 /**
  * Creates generators and protocol handlers for plain text JSON wire format.
  */
-@SdkInternalApi
+@SdkProtectedApi
 public class SdkStructuredPlainJsonFactory {
 
     /**
      * Recommended to share JsonFactory instances per http://wiki.fasterxml
      * .com/JacksonBestPracticesPerformance
      */
-    private static final JsonFactory JSON_FACTORY = new JsonFactory();
+    public static final JsonFactory JSON_FACTORY = new JsonFactory();
 
     @SdkTestInternalApi
     public static final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> JSON_SCALAR_UNMARSHALLERS = new ImmutableMapParameter.Builder<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>>()

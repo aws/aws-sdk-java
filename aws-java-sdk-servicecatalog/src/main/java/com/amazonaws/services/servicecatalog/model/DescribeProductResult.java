@@ -163,9 +163,9 @@ public class DescribeProductResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProductViewSummary() != null)
-            sb.append("ProductViewSummary: " + getProductViewSummary() + ",");
+            sb.append("ProductViewSummary: ").append(getProductViewSummary()).append(",");
         if (getProvisioningArtifacts() != null)
-            sb.append("ProvisioningArtifacts: " + getProvisioningArtifacts());
+            sb.append("ProvisioningArtifacts: ").append(getProvisioningArtifacts());
         sb.append("}");
         return sb.toString();
     }

@@ -343,11 +343,11 @@ public class CopyCommand implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataTableName() != null)
-            sb.append("DataTableName: " + getDataTableName() + ",");
+            sb.append("DataTableName: ").append(getDataTableName()).append(",");
         if (getDataTableColumns() != null)
-            sb.append("DataTableColumns: " + getDataTableColumns() + ",");
+            sb.append("DataTableColumns: ").append(getDataTableColumns()).append(",");
         if (getCopyOptions() != null)
-            sb.append("CopyOptions: " + getCopyOptions());
+            sb.append("CopyOptions: ").append(getCopyOptions());
         sb.append("}");
         return sb.toString();
     }

@@ -467,13 +467,13 @@ public class ForwardedValues implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueryString() != null)
-            sb.append("QueryString: " + getQueryString() + ",");
+            sb.append("QueryString: ").append(getQueryString()).append(",");
         if (getCookies() != null)
-            sb.append("Cookies: " + getCookies() + ",");
+            sb.append("Cookies: ").append(getCookies()).append(",");
         if (getHeaders() != null)
-            sb.append("Headers: " + getHeaders() + ",");
+            sb.append("Headers: ").append(getHeaders()).append(",");
         if (getQueryStringCacheKeys() != null)
-            sb.append("QueryStringCacheKeys: " + getQueryStringCacheKeys());
+            sb.append("QueryStringCacheKeys: ").append(getQueryStringCacheKeys());
         sb.append("}");
         return sb.toString();
     }

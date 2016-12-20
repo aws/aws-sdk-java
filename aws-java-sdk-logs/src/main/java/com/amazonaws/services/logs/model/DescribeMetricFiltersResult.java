@@ -139,9 +139,9 @@ public class DescribeMetricFiltersResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricFilters() != null)
-            sb.append("MetricFilters: " + getMetricFilters() + ",");
+            sb.append("MetricFilters: ").append(getMetricFilters()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

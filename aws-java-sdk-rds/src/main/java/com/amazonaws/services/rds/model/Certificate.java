@@ -310,17 +310,17 @@ public class Certificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateIdentifier() != null)
-            sb.append("CertificateIdentifier: " + getCertificateIdentifier() + ",");
+            sb.append("CertificateIdentifier: ").append(getCertificateIdentifier()).append(",");
         if (getCertificateType() != null)
-            sb.append("CertificateType: " + getCertificateType() + ",");
+            sb.append("CertificateType: ").append(getCertificateType()).append(",");
         if (getThumbprint() != null)
-            sb.append("Thumbprint: " + getThumbprint() + ",");
+            sb.append("Thumbprint: ").append(getThumbprint()).append(",");
         if (getValidFrom() != null)
-            sb.append("ValidFrom: " + getValidFrom() + ",");
+            sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidTill() != null)
-            sb.append("ValidTill: " + getValidTill() + ",");
+            sb.append("ValidTill: ").append(getValidTill()).append(",");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn());
+            sb.append("CertificateArn: ").append(getCertificateArn());
         sb.append("}");
         return sb.toString();
     }

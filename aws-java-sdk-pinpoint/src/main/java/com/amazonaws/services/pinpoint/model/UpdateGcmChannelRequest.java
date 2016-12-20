@@ -88,9 +88,9 @@ public class UpdateGcmChannelRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getGCMChannelRequest() != null)
-            sb.append("GCMChannelRequest: " + getGCMChannelRequest());
+            sb.append("GCMChannelRequest: ").append(getGCMChannelRequest());
         sb.append("}");
         return sb.toString();
     }

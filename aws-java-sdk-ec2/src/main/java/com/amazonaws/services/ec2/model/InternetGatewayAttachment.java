@@ -159,9 +159,9 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

@@ -101,7 +101,7 @@ public class ActionConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }

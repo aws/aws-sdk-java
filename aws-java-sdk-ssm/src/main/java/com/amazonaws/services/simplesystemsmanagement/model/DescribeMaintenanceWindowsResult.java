@@ -164,9 +164,9 @@ public class DescribeMaintenanceWindowsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowIdentities() != null)
-            sb.append("WindowIdentities: " + getWindowIdentities() + ",");
+            sb.append("WindowIdentities: ").append(getWindowIdentities()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

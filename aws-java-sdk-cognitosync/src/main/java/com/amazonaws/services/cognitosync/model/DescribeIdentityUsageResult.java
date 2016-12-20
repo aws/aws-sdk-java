@@ -68,7 +68,7 @@ public class DescribeIdentityUsageResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityUsage() != null)
-            sb.append("IdentityUsage: " + getIdentityUsage());
+            sb.append("IdentityUsage: ").append(getIdentityUsage());
         sb.append("}");
         return sb.toString();
     }

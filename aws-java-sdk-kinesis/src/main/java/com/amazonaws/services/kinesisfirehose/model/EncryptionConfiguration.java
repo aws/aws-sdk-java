@@ -159,9 +159,9 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNoEncryptionConfig() != null)
-            sb.append("NoEncryptionConfig: " + getNoEncryptionConfig() + ",");
+            sb.append("NoEncryptionConfig: ").append(getNoEncryptionConfig()).append(",");
         if (getKMSEncryptionConfig() != null)
-            sb.append("KMSEncryptionConfig: " + getKMSEncryptionConfig());
+            sb.append("KMSEncryptionConfig: ").append(getKMSEncryptionConfig());
         sb.append("}");
         return sb.toString();
     }

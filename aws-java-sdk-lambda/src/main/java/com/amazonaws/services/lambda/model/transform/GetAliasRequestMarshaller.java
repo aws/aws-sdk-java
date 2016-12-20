@@ -61,10 +61,8 @@ public class GetAliasRequestMarshaller implements Marshaller<Request<GetAliasReq
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases/{Name}";
 
-        uriResourcePath = uriResourcePath.replace("{FunctionName}",
-                (getAliasRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getAliasRequest.getFunctionName()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{Name}",
-                (getAliasRequest.getName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getAliasRequest.getName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", getAliasRequest.getFunctionName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Name", getAliasRequest.getName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -203,11 +203,11 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getNextForwardToken() != null)
-            sb.append("NextForwardToken: " + getNextForwardToken() + ",");
+            sb.append("NextForwardToken: ").append(getNextForwardToken()).append(",");
         if (getNextBackwardToken() != null)
-            sb.append("NextBackwardToken: " + getNextBackwardToken());
+            sb.append("NextBackwardToken: ").append(getNextBackwardToken());
         sb.append("}");
         return sb.toString();
     }

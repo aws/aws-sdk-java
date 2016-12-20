@@ -238,13 +238,13 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBackupId() != null)
-            sb.append("BackupId: " + getBackupId() + ",");
+            sb.append("BackupId: ").append(getBackupId()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getKeyPair() != null)
-            sb.append("KeyPair: " + getKeyPair());
+            sb.append("KeyPair: ").append(getKeyPair());
         sb.append("}");
         return sb.toString();
     }

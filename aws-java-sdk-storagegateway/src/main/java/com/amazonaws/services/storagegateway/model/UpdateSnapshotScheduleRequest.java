@@ -255,13 +255,13 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getStartAt() != null)
-            sb.append("StartAt: " + getStartAt() + ",");
+            sb.append("StartAt: ").append(getStartAt()).append(",");
         if (getRecurrenceInHours() != null)
-            sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ",");
+            sb.append("RecurrenceInHours: ").append(getRecurrenceInHours()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

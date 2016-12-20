@@ -45,6 +45,11 @@ public class GetSendStatisticsResultStaxUnmarshaller implements Unmarshaller<Get
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SendDataPoints", targetDepth)) {
+                    getSendStatisticsResult.withSendDataPoints(new ArrayList<SendDataPoint>());
+                    continue;
+                }
+
                 if (context.testExpression("SendDataPoints/member", targetDepth)) {
                     getSendStatisticsResult.withSendDataPoints(SendDataPointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

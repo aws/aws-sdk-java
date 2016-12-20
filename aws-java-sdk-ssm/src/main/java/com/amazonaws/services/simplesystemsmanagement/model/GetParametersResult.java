@@ -190,9 +190,9 @@ public class GetParametersResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getInvalidParameters() != null)
-            sb.append("InvalidParameters: " + getInvalidParameters());
+            sb.append("InvalidParameters: ").append(getInvalidParameters());
         sb.append("}");
         return sb.toString();
     }

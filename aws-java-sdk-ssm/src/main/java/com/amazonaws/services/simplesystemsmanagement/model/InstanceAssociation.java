@@ -172,11 +172,11 @@ public class InstanceAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getContent() != null)
-            sb.append("Content: " + getContent());
+            sb.append("Content: ").append(getContent());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRequesterPeeringConnectionOptions() != null)
-            sb.append("RequesterPeeringConnectionOptions: " + getRequesterPeeringConnectionOptions() + ",");
+            sb.append("RequesterPeeringConnectionOptions: ").append(getRequesterPeeringConnectionOptions()).append(",");
         if (getAccepterPeeringConnectionOptions() != null)
-            sb.append("AccepterPeeringConnectionOptions: " + getAccepterPeeringConnectionOptions());
+            sb.append("AccepterPeeringConnectionOptions: ").append(getAccepterPeeringConnectionOptions());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class DescribeCacheSecurityGroupsResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("CacheSecurityGroups", targetDepth)) {
+                    describeCacheSecurityGroupsResult.withCacheSecurityGroups(new ArrayList<CacheSecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth)) {
                     describeCacheSecurityGroupsResult.withCacheSecurityGroups(CacheSecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

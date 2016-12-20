@@ -82,7 +82,7 @@ public class UpdateElasticsearchDomainConfigResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainConfig() != null)
-            sb.append("DomainConfig: " + getDomainConfig());
+            sb.append("DomainConfig: ").append(getDomainConfig());
         sb.append("}");
         return sb.toString();
     }

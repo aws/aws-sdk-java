@@ -175,9 +175,9 @@ public class DescribePendingMaintenanceActionsResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPendingMaintenanceActions() != null)
-            sb.append("PendingMaintenanceActions: " + getPendingMaintenanceActions() + ",");
+            sb.append("PendingMaintenanceActions: ").append(getPendingMaintenanceActions()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

@@ -158,9 +158,9 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPermissionType() != null)
-            sb.append("PermissionType: " + getPermissionType());
+            sb.append("PermissionType: ").append(getPermissionType());
         sb.append("}");
         return sb.toString();
     }

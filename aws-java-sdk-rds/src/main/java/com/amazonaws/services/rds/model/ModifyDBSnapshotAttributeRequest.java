@@ -413,13 +413,13 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSnapshotIdentifier() != null)
-            sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
+            sb.append("DBSnapshotIdentifier: ").append(getDBSnapshotIdentifier()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getValuesToAdd() != null)
-            sb.append("ValuesToAdd: " + getValuesToAdd() + ",");
+            sb.append("ValuesToAdd: ").append(getValuesToAdd()).append(",");
         if (getValuesToRemove() != null)
-            sb.append("ValuesToRemove: " + getValuesToRemove());
+            sb.append("ValuesToRemove: ").append(getValuesToRemove());
         sb.append("}");
         return sb.toString();
     }

@@ -78,7 +78,7 @@ public class DescribeProtectionResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProtection() != null)
-            sb.append("Protection: " + getProtection());
+            sb.append("Protection: ").append(getProtection());
         sb.append("}");
         return sb.toString();
     }

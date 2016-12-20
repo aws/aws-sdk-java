@@ -238,13 +238,13 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: " + getLocale());
+            sb.append("Locale: ").append(getLocale());
         sb.append("}");
         return sb.toString();
     }

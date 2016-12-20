@@ -423,17 +423,17 @@ public class AssumeRoleWithWebIdentityResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials() + ",");
+            sb.append("Credentials: ").append(getCredentials()).append(",");
         if (getSubjectFromWebIdentityToken() != null)
-            sb.append("SubjectFromWebIdentityToken: " + getSubjectFromWebIdentityToken() + ",");
+            sb.append("SubjectFromWebIdentityToken: ").append(getSubjectFromWebIdentityToken()).append(",");
         if (getAssumedRoleUser() != null)
-            sb.append("AssumedRoleUser: " + getAssumedRoleUser() + ",");
+            sb.append("AssumedRoleUser: ").append(getAssumedRoleUser()).append(",");
         if (getPackedPolicySize() != null)
-            sb.append("PackedPolicySize: " + getPackedPolicySize() + ",");
+            sb.append("PackedPolicySize: ").append(getPackedPolicySize()).append(",");
         if (getProvider() != null)
-            sb.append("Provider: " + getProvider() + ",");
+            sb.append("Provider: ").append(getProvider()).append(",");
         if (getAudience() != null)
-            sb.append("Audience: " + getAudience());
+            sb.append("Audience: ").append(getAudience());
         sb.append("}");
         return sb.toString();
     }

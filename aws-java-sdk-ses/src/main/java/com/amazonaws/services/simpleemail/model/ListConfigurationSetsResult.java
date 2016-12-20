@@ -169,9 +169,9 @@ public class ListConfigurationSetsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSets() != null)
-            sb.append("ConfigurationSets: " + getConfigurationSets() + ",");
+            sb.append("ConfigurationSets: ").append(getConfigurationSets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -90,9 +90,9 @@ public class FaceRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFace() != null)
-            sb.append("Face: " + getFace() + ",");
+            sb.append("Face: ").append(getFace()).append(",");
         if (getFaceDetail() != null)
-            sb.append("FaceDetail: " + getFaceDetail());
+            sb.append("FaceDetail: ").append(getFaceDetail());
         sb.append("}");
         return sb.toString();
     }

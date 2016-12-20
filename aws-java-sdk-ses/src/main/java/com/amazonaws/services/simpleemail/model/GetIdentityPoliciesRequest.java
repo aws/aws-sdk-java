@@ -213,9 +213,9 @@ public class GetIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames());
+            sb.append("PolicyNames: ").append(getPolicyNames());
         sb.append("}");
         return sb.toString();
     }

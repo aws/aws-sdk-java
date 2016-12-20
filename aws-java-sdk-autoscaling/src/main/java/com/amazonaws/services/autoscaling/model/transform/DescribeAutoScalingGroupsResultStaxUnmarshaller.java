@@ -45,6 +45,11 @@ public class DescribeAutoScalingGroupsResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AutoScalingGroups", targetDepth)) {
+                    describeAutoScalingGroupsResult.withAutoScalingGroups(new ArrayList<AutoScalingGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("AutoScalingGroups/member", targetDepth)) {
                     describeAutoScalingGroupsResult.withAutoScalingGroups(AutoScalingGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

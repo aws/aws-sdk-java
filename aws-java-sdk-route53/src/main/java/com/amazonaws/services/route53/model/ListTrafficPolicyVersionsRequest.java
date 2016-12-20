@@ -278,11 +278,11 @@ public class ListTrafficPolicyVersionsRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getTrafficPolicyVersionMarker() != null)
-            sb.append("TrafficPolicyVersionMarker: " + getTrafficPolicyVersionMarker() + ",");
+            sb.append("TrafficPolicyVersionMarker: ").append(getTrafficPolicyVersionMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

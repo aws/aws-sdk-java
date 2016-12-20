@@ -170,11 +170,11 @@ public class StateMachineListItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn() + ",");
+            sb.append("StateMachineArn: ").append(getStateMachineArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

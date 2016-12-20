@@ -81,7 +81,7 @@ public class CreateNetworkInterfaceResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterface() != null)
-            sb.append("NetworkInterface: " + getNetworkInterface());
+            sb.append("NetworkInterface: ").append(getNetworkInterface());
         sb.append("}");
         return sb.toString();
     }

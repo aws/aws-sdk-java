@@ -55,13 +55,28 @@ public class ClusterSecurityGroupStaxUnmarshaller implements Unmarshaller<Cluste
                     continue;
                 }
 
+                if (context.testExpression("EC2SecurityGroups", targetDepth)) {
+                    clusterSecurityGroup.withEC2SecurityGroups(new ArrayList<EC2SecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth)) {
                     clusterSecurityGroup.withEC2SecurityGroups(EC2SecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("IPRanges", targetDepth)) {
+                    clusterSecurityGroup.withIPRanges(new ArrayList<IPRange>());
+                    continue;
+                }
+
                 if (context.testExpression("IPRanges/IPRange", targetDepth)) {
                     clusterSecurityGroup.withIPRanges(IPRangeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    clusterSecurityGroup.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

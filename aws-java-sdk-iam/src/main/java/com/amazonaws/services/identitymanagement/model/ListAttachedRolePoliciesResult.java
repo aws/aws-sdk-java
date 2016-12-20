@@ -260,11 +260,11 @@ public class ListAttachedRolePoliciesResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachedPolicies() != null)
-            sb.append("AttachedPolicies: " + getAttachedPolicies() + ",");
+            sb.append("AttachedPolicies: ").append(getAttachedPolicies()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

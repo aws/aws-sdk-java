@@ -53,12 +53,13 @@ public class UnmarshallerGeneratorTasks extends BaseGeneratorTasks {
     private GeneratorTask createTask(String javaShapeName, ShapeModel shapeModel) throws Exception {
         final Template template = freemarker.getModelUnmarshallerTemplate();
         final ShapeType shapeType = shapeModel.getShapeType();
-        Map<String, Object> dataModel = ImmutableMapParameter.of(
-                "fileHeader", model.getFileHeader(),
-                "shape", shapeModel,
-                "metadata", metadata,
-                "transformPackage", model.getTransformPackage(),
-                "exceptionUnmarshallerImpl", model.getExceptionUnmarshallerImpl());
+        Map<String, Object> dataModel = ImmutableMapParameter.<String, Object>builder()
+                .put("fileHeader", model.getFileHeader())
+                .put("shape", shapeModel)
+                .put("metadata", metadata)
+                .put("transformPackage", model.getTransformPackage())
+                .put("exceptionUnmarshallerImpl", model.getExceptionUnmarshallerImpl())
+                .build();
 
         switch (shapeType) {
             case Response:

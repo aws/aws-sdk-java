@@ -839,29 +839,29 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetNodeType() != null)
-            sb.append("TargetNodeType: " + getTargetNodeType() + ",");
+            sb.append("TargetNodeType: ").append(getTargetNodeType()).append(",");
         if (getTargetNumberOfNodes() != null)
-            sb.append("TargetNumberOfNodes: " + getTargetNumberOfNodes() + ",");
+            sb.append("TargetNumberOfNodes: ").append(getTargetNumberOfNodes()).append(",");
         if (getTargetClusterType() != null)
-            sb.append("TargetClusterType: " + getTargetClusterType() + ",");
+            sb.append("TargetClusterType: ").append(getTargetClusterType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getImportTablesCompleted() != null)
-            sb.append("ImportTablesCompleted: " + getImportTablesCompleted() + ",");
+            sb.append("ImportTablesCompleted: ").append(getImportTablesCompleted()).append(",");
         if (getImportTablesInProgress() != null)
-            sb.append("ImportTablesInProgress: " + getImportTablesInProgress() + ",");
+            sb.append("ImportTablesInProgress: ").append(getImportTablesInProgress()).append(",");
         if (getImportTablesNotStarted() != null)
-            sb.append("ImportTablesNotStarted: " + getImportTablesNotStarted() + ",");
+            sb.append("ImportTablesNotStarted: ").append(getImportTablesNotStarted()).append(",");
         if (getAvgResizeRateInMegaBytesPerSecond() != null)
-            sb.append("AvgResizeRateInMegaBytesPerSecond: " + getAvgResizeRateInMegaBytesPerSecond() + ",");
+            sb.append("AvgResizeRateInMegaBytesPerSecond: ").append(getAvgResizeRateInMegaBytesPerSecond()).append(",");
         if (getTotalResizeDataInMegaBytes() != null)
-            sb.append("TotalResizeDataInMegaBytes: " + getTotalResizeDataInMegaBytes() + ",");
+            sb.append("TotalResizeDataInMegaBytes: ").append(getTotalResizeDataInMegaBytes()).append(",");
         if (getProgressInMegaBytes() != null)
-            sb.append("ProgressInMegaBytes: " + getProgressInMegaBytes() + ",");
+            sb.append("ProgressInMegaBytes: ").append(getProgressInMegaBytes()).append(",");
         if (getElapsedTimeInSeconds() != null)
-            sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds() + ",");
+            sb.append("ElapsedTimeInSeconds: ").append(getElapsedTimeInSeconds()).append(",");
         if (getEstimatedTimeToCompletionInSeconds() != null)
-            sb.append("EstimatedTimeToCompletionInSeconds: " + getEstimatedTimeToCompletionInSeconds());
+            sb.append("EstimatedTimeToCompletionInSeconds: ").append(getEstimatedTimeToCompletionInSeconds());
         sb.append("}");
         return sb.toString();
     }

@@ -129,9 +129,9 @@ public class Position implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLine() != null)
-            sb.append("Line: " + getLine() + ",");
+            sb.append("Line: ").append(getLine()).append(",");
         if (getColumn() != null)
-            sb.append("Column: " + getColumn());
+            sb.append("Column: ").append(getColumn());
         sb.append("}");
         return sb.toString();
     }

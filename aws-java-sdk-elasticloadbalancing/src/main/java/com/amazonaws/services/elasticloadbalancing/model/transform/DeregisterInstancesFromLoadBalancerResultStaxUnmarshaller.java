@@ -46,6 +46,11 @@ public class DeregisterInstancesFromLoadBalancerResultStaxUnmarshaller implement
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Instances", targetDepth)) {
+                    deregisterInstancesFromLoadBalancerResult.withInstances(new ArrayList<Instance>());
+                    continue;
+                }
+
                 if (context.testExpression("Instances/member", targetDepth)) {
                     deregisterInstancesFromLoadBalancerResult.withInstances(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

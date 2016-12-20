@@ -114,7 +114,7 @@ public class DescribeDeliveryChannelStatusResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryChannelsStatus() != null)
-            sb.append("DeliveryChannelsStatus: " + getDeliveryChannelsStatus());
+            sb.append("DeliveryChannelsStatus: ").append(getDeliveryChannelsStatus());
         sb.append("}");
         return sb.toString();
     }

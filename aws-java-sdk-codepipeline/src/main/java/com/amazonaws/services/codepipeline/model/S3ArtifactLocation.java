@@ -126,9 +126,9 @@ public class S3ArtifactLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucketName() != null)
-            sb.append("BucketName: " + getBucketName() + ",");
+            sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getObjectKey() != null)
-            sb.append("ObjectKey: " + getObjectKey());
+            sb.append("ObjectKey: ").append(getObjectKey());
         sb.append("}");
         return sb.toString();
     }

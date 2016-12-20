@@ -238,13 +238,13 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getCertificateName() != null)
-            sb.append("CertificateName: " + getCertificateName() + ",");
+            sb.append("CertificateName: ").append(getCertificateName()).append(",");
         if (getCertificateUploadDate() != null)
-            sb.append("CertificateUploadDate: " + getCertificateUploadDate() + ",");
+            sb.append("CertificateUploadDate: ").append(getCertificateUploadDate()).append(",");
         if (getDistributionDomainName() != null)
-            sb.append("DistributionDomainName: " + getDistributionDomainName());
+            sb.append("DistributionDomainName: ").append(getDistributionDomainName());
         sb.append("}");
         return sb.toString();
     }

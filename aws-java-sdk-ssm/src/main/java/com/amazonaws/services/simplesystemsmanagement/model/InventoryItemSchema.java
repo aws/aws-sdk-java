@@ -226,11 +226,11 @@ public class InventoryItemSchema implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTypeName() != null)
-            sb.append("TypeName: " + getTypeName() + ",");
+            sb.append("TypeName: ").append(getTypeName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

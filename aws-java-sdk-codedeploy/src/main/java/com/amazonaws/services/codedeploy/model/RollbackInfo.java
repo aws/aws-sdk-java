@@ -186,11 +186,11 @@ public class RollbackInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRollbackDeploymentId() != null)
-            sb.append("RollbackDeploymentId: " + getRollbackDeploymentId() + ",");
+            sb.append("RollbackDeploymentId: ").append(getRollbackDeploymentId()).append(",");
         if (getRollbackTriggeringDeploymentId() != null)
-            sb.append("RollbackTriggeringDeploymentId: " + getRollbackTriggeringDeploymentId() + ",");
+            sb.append("RollbackTriggeringDeploymentId: ").append(getRollbackTriggeringDeploymentId()).append(",");
         if (getRollbackMessage() != null)
-            sb.append("RollbackMessage: " + getRollbackMessage());
+            sb.append("RollbackMessage: ").append(getRollbackMessage());
         sb.append("}");
         return sb.toString();
     }

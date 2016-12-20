@@ -141,11 +141,11 @@ public class GetReplicationRunsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJob() != null)
-            sb.append("ReplicationJob: " + getReplicationJob() + ",");
+            sb.append("ReplicationJob: ").append(getReplicationJob()).append(",");
         if (getReplicationRunList() != null)
-            sb.append("ReplicationRunList: " + getReplicationRunList() + ",");
+            sb.append("ReplicationRunList: ").append(getReplicationRunList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

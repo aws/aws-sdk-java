@@ -113,7 +113,7 @@ public class AddJobFlowStepsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStepIds() != null)
-            sb.append("StepIds: " + getStepIds());
+            sb.append("StepIds: ").append(getStepIds());
         sb.append("}");
         return sb.toString();
     }

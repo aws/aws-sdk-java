@@ -45,6 +45,11 @@ public class DescribeTableRestoreStatusResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TableRestoreStatusDetails", targetDepth)) {
+                    describeTableRestoreStatusResult.withTableRestoreStatusDetails(new ArrayList<TableRestoreStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("TableRestoreStatusDetails/TableRestoreStatus", targetDepth)) {
                     describeTableRestoreStatusResult.withTableRestoreStatusDetails(TableRestoreStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

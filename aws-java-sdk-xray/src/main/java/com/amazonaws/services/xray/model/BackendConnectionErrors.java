@@ -273,17 +273,17 @@ public class BackendConnectionErrors implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimeoutCount() != null)
-            sb.append("TimeoutCount: " + getTimeoutCount() + ",");
+            sb.append("TimeoutCount: ").append(getTimeoutCount()).append(",");
         if (getConnectionRefusedCount() != null)
-            sb.append("ConnectionRefusedCount: " + getConnectionRefusedCount() + ",");
+            sb.append("ConnectionRefusedCount: ").append(getConnectionRefusedCount()).append(",");
         if (getHTTPCode4XXCount() != null)
-            sb.append("HTTPCode4XXCount: " + getHTTPCode4XXCount() + ",");
+            sb.append("HTTPCode4XXCount: ").append(getHTTPCode4XXCount()).append(",");
         if (getHTTPCode5XXCount() != null)
-            sb.append("HTTPCode5XXCount: " + getHTTPCode5XXCount() + ",");
+            sb.append("HTTPCode5XXCount: ").append(getHTTPCode5XXCount()).append(",");
         if (getUnknownHostCount() != null)
-            sb.append("UnknownHostCount: " + getUnknownHostCount() + ",");
+            sb.append("UnknownHostCount: ").append(getUnknownHostCount()).append(",");
         if (getOtherCount() != null)
-            sb.append("OtherCount: " + getOtherCount());
+            sb.append("OtherCount: ").append(getOtherCount());
         sb.append("}");
         return sb.toString();
     }

@@ -568,15 +568,15 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCiphertextBlob() != null)
-            sb.append("CiphertextBlob: " + getCiphertextBlob() + ",");
+            sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getSourceEncryptionContext() != null)
-            sb.append("SourceEncryptionContext: " + getSourceEncryptionContext() + ",");
+            sb.append("SourceEncryptionContext: ").append(getSourceEncryptionContext()).append(",");
         if (getDestinationKeyId() != null)
-            sb.append("DestinationKeyId: " + getDestinationKeyId() + ",");
+            sb.append("DestinationKeyId: ").append(getDestinationKeyId()).append(",");
         if (getDestinationEncryptionContext() != null)
-            sb.append("DestinationEncryptionContext: " + getDestinationEncryptionContext() + ",");
+            sb.append("DestinationEncryptionContext: ").append(getDestinationEncryptionContext()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
         return sb.toString();
     }

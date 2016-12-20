@@ -186,11 +186,11 @@ public class WorkflowExecutionFailedEventAttributes implements Serializable, Clo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails() + ",");
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

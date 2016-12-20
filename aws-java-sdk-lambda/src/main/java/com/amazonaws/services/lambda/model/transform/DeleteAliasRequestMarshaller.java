@@ -61,11 +61,8 @@ public class DeleteAliasRequestMarshaller implements Marshaller<Request<DeleteAl
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases/{Name}";
 
-        uriResourcePath = uriResourcePath.replace("{FunctionName}",
-                (deleteAliasRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteAliasRequest.getFunctionName()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{Name}",
-                (deleteAliasRequest.getName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteAliasRequest.getName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", deleteAliasRequest.getFunctionName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Name", deleteAliasRequest.getName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

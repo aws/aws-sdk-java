@@ -45,6 +45,11 @@ public class DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller implements U
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpcs", targetDepth)) {
+                    describeVpcClassicLinkDnsSupportResult.withVpcs(new ArrayList<ClassicLinkDnsSupport>());
+                    continue;
+                }
+
                 if (context.testExpression("vpcs/item", targetDepth)) {
                     describeVpcClassicLinkDnsSupportResult.withVpcs(ClassicLinkDnsSupportStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

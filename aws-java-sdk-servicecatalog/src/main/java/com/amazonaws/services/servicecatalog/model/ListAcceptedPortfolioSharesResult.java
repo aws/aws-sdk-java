@@ -161,9 +161,9 @@ public class ListAcceptedPortfolioSharesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPortfolioDetails() != null)
-            sb.append("PortfolioDetails: " + getPortfolioDetails() + ",");
+            sb.append("PortfolioDetails: ").append(getPortfolioDetails()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

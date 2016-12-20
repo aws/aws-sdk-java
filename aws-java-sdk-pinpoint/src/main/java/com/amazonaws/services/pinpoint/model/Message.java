@@ -493,23 +493,23 @@ public class Message implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getImageIconUrl() != null)
-            sb.append("ImageIconUrl: " + getImageIconUrl() + ",");
+            sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
         if (getImageUrl() != null)
-            sb.append("ImageUrl: " + getImageUrl() + ",");
+            sb.append("ImageUrl: ").append(getImageUrl()).append(",");
         if (getJsonBody() != null)
-            sb.append("JsonBody: " + getJsonBody() + ",");
+            sb.append("JsonBody: ").append(getJsonBody()).append(",");
         if (getMediaUrl() != null)
-            sb.append("MediaUrl: " + getMediaUrl() + ",");
+            sb.append("MediaUrl: ").append(getMediaUrl()).append(",");
         if (getSilentPush() != null)
-            sb.append("SilentPush: " + getSilentPush() + ",");
+            sb.append("SilentPush: ").append(getSilentPush()).append(",");
         if (getTitle() != null)
-            sb.append("Title: " + getTitle() + ",");
+            sb.append("Title: ").append(getTitle()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl());
+            sb.append("Url: ").append(getUrl());
         sb.append("}");
         return sb.toString();
     }

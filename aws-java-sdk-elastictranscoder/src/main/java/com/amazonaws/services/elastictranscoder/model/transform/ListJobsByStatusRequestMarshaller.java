@@ -61,11 +61,7 @@ public class ListJobsByStatusRequestMarshaller implements Marshaller<Request<Lis
 
         String uriResourcePath = "/2012-09-25/jobsByStatus/{Status}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{Status}",
-                        (listJobsByStatusRequest.getStatus() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listJobsByStatusRequest.getStatus()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Status", listJobsByStatusRequest.getStatus());
         request.setResourcePath(uriResourcePath);
 
         if (listJobsByStatusRequest.getAscending() != null) {

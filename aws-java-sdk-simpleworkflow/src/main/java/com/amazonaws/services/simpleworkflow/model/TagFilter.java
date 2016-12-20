@@ -80,7 +80,7 @@ public class TagFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTag() != null)
-            sb.append("Tag: " + getTag());
+            sb.append("Tag: ").append(getTag());
         sb.append("}");
         return sb.toString();
     }

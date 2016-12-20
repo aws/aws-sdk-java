@@ -305,15 +305,15 @@ public class CreateComputerRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getComputerName() != null)
-            sb.append("ComputerName: " + getComputerName() + ",");
+            sb.append("ComputerName: ").append(getComputerName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getOrganizationalUnitDistinguishedName() != null)
-            sb.append("OrganizationalUnitDistinguishedName: " + getOrganizationalUnitDistinguishedName() + ",");
+            sb.append("OrganizationalUnitDistinguishedName: ").append(getOrganizationalUnitDistinguishedName()).append(",");
         if (getComputerAttributes() != null)
-            sb.append("ComputerAttributes: " + getComputerAttributes());
+            sb.append("ComputerAttributes: ").append(getComputerAttributes());
         sb.append("}");
         return sb.toString();
     }

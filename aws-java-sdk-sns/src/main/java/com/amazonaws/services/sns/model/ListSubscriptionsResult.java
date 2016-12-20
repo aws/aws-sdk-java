@@ -166,9 +166,9 @@ public class ListSubscriptionsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptions() != null)
-            sb.append("Subscriptions: " + getSubscriptions() + ",");
+            sb.append("Subscriptions: ").append(getSubscriptions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

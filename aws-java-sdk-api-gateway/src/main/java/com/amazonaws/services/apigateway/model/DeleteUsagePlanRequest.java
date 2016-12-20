@@ -81,7 +81,7 @@ public class DeleteUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsagePlanId() != null)
-            sb.append("UsagePlanId: " + getUsagePlanId());
+            sb.append("UsagePlanId: ").append(getUsagePlanId());
         sb.append("}");
         return sb.toString();
     }

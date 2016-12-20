@@ -309,9 +309,9 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSortOrder() != null)
-            sb.append("SortOrder: " + getSortOrder() + ",");
+            sb.append("SortOrder: ").append(getSortOrder()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

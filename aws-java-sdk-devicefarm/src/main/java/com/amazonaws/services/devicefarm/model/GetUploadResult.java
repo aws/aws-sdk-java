@@ -61,7 +61,7 @@ public class GetUploadResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUpload() != null)
-            sb.append("Upload: " + getUpload());
+            sb.append("Upload: ").append(getUpload());
         sb.append("}");
         return sb.toString();
     }

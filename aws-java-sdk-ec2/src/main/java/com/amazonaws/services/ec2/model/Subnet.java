@@ -691,27 +691,27 @@ public class Subnet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getCidrBlock() != null)
-            sb.append("CidrBlock: " + getCidrBlock() + ",");
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getIpv6CidrBlockAssociationSet() != null)
-            sb.append("Ipv6CidrBlockAssociationSet: " + getIpv6CidrBlockAssociationSet() + ",");
+            sb.append("Ipv6CidrBlockAssociationSet: ").append(getIpv6CidrBlockAssociationSet()).append(",");
         if (getAssignIpv6AddressOnCreation() != null)
-            sb.append("AssignIpv6AddressOnCreation: " + getAssignIpv6AddressOnCreation() + ",");
+            sb.append("AssignIpv6AddressOnCreation: ").append(getAssignIpv6AddressOnCreation()).append(",");
         if (getAvailableIpAddressCount() != null)
-            sb.append("AvailableIpAddressCount: " + getAvailableIpAddressCount() + ",");
+            sb.append("AvailableIpAddressCount: ").append(getAvailableIpAddressCount()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getDefaultForAz() != null)
-            sb.append("DefaultForAz: " + getDefaultForAz() + ",");
+            sb.append("DefaultForAz: ").append(getDefaultForAz()).append(",");
         if (getMapPublicIpOnLaunch() != null)
-            sb.append("MapPublicIpOnLaunch: " + getMapPublicIpOnLaunch() + ",");
+            sb.append("MapPublicIpOnLaunch: ").append(getMapPublicIpOnLaunch()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

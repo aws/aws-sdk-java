@@ -173,11 +173,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetArn() != null)
-            sb.append("TargetArn: " + getTargetArn() + ",");
+            sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

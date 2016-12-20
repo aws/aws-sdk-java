@@ -269,11 +269,11 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getFailOnWarnings() != null)
-            sb.append("FailOnWarnings: " + getFailOnWarnings());
+            sb.append("FailOnWarnings: ").append(getFailOnWarnings());
         sb.append("}");
         return sb.toString();
     }

@@ -56,6 +56,11 @@ public class GetIdentityPoolRolesResultJsonUnmarshaller implements Unmarshaller<
                     getIdentityPoolRolesResult.setRoles(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("RoleMappings", targetDepth)) {
+                    context.nextToken();
+                    getIdentityPoolRolesResult.setRoleMappings(new MapUnmarshaller<String, RoleMapping>(context.getUnmarshaller(String.class),
+                            RoleMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

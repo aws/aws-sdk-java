@@ -112,7 +112,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName());
+            sb.append("KeyName: ").append(getKeyName());
         sb.append("}");
         return sb.toString();
     }

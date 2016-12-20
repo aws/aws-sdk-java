@@ -439,17 +439,17 @@ public class StaleIpPermission implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFromPort() != null)
-            sb.append("FromPort: " + getFromPort() + ",");
+            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getIpProtocol() != null)
-            sb.append("IpProtocol: " + getIpProtocol() + ",");
+            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
         if (getIpRanges() != null)
-            sb.append("IpRanges: " + getIpRanges() + ",");
+            sb.append("IpRanges: ").append(getIpRanges()).append(",");
         if (getPrefixListIds() != null)
-            sb.append("PrefixListIds: " + getPrefixListIds() + ",");
+            sb.append("PrefixListIds: ").append(getPrefixListIds()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: " + getToPort() + ",");
+            sb.append("ToPort: ").append(getToPort()).append(",");
         if (getUserIdGroupPairs() != null)
-            sb.append("UserIdGroupPairs: " + getUserIdGroupPairs());
+            sb.append("UserIdGroupPairs: ").append(getUserIdGroupPairs());
         sb.append("}");
         return sb.toString();
     }

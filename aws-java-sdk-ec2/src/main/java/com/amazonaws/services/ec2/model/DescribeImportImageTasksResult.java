@@ -176,9 +176,9 @@ public class DescribeImportImageTasksResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportImageTasks() != null)
-            sb.append("ImportImageTasks: " + getImportImageTasks() + ",");
+            sb.append("ImportImageTasks: ").append(getImportImageTasks()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

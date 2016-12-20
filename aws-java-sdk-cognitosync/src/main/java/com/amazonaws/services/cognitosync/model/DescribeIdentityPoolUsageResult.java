@@ -68,7 +68,7 @@ public class DescribeIdentityPoolUsageResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolUsage() != null)
-            sb.append("IdentityPoolUsage: " + getIdentityPoolUsage());
+            sb.append("IdentityPoolUsage: ").append(getIdentityPoolUsage());
         sb.append("}");
         return sb.toString();
     }

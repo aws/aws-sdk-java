@@ -682,23 +682,23 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecution() != null)
-            sb.append("Execution: " + getExecution() + ",");
+            sb.append("Execution: ").append(getExecution()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getStartTimestamp() != null)
-            sb.append("StartTimestamp: " + getStartTimestamp() + ",");
+            sb.append("StartTimestamp: ").append(getStartTimestamp()).append(",");
         if (getCloseTimestamp() != null)
-            sb.append("CloseTimestamp: " + getCloseTimestamp() + ",");
+            sb.append("CloseTimestamp: ").append(getCloseTimestamp()).append(",");
         if (getExecutionStatus() != null)
-            sb.append("ExecutionStatus: " + getExecutionStatus() + ",");
+            sb.append("ExecutionStatus: ").append(getExecutionStatus()).append(",");
         if (getCloseStatus() != null)
-            sb.append("CloseStatus: " + getCloseStatus() + ",");
+            sb.append("CloseStatus: ").append(getCloseStatus()).append(",");
         if (getParent() != null)
-            sb.append("Parent: " + getParent() + ",");
+            sb.append("Parent: ").append(getParent()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList() + ",");
+            sb.append("TagList: ").append(getTagList()).append(",");
         if (getCancelRequested() != null)
-            sb.append("CancelRequested: " + getCancelRequested());
+            sb.append("CancelRequested: ").append(getCancelRequested());
         sb.append("}");
         return sb.toString();
     }

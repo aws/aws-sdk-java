@@ -449,21 +449,21 @@ public class InstanceAccessDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertKey() != null)
-            sb.append("CertKey: " + getCertKey() + ",");
+            sb.append("CertKey: ").append(getCertKey()).append(",");
         if (getExpiresAt() != null)
-            sb.append("ExpiresAt: " + getExpiresAt() + ",");
+            sb.append("ExpiresAt: ").append(getExpiresAt()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: " + getPrivateKey() + ",");
+            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername());
+            sb.append("Username: ").append(getUsername());
         sb.append("}");
         return sb.toString();
     }

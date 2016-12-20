@@ -65,8 +65,18 @@ public class ApplicationDescriptionStaxUnmarshaller implements Unmarshaller<Appl
                     continue;
                 }
 
+                if (context.testExpression("Versions", targetDepth)) {
+                    applicationDescription.withVersions(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Versions/member", targetDepth)) {
                     applicationDescription.withVersions(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ConfigurationTemplates", targetDepth)) {
+                    applicationDescription.withConfigurationTemplates(new ArrayList<String>());
                     continue;
                 }
 

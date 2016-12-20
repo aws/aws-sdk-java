@@ -161,9 +161,9 @@ public class ListFacesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFaces() != null)
-            sb.append("Faces: " + getFaces() + ",");
+            sb.append("Faces: ").append(getFaces()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

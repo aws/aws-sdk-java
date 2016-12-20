@@ -78,7 +78,7 @@ public class PeerVpcResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation());
+            sb.append("Operation: ").append(getOperation());
         sb.append("}");
         return sb.toString();
     }

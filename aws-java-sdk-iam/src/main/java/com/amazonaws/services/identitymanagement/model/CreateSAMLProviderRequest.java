@@ -210,9 +210,9 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLMetadataDocument() != null)
-            sb.append("SAMLMetadataDocument: " + getSAMLMetadataDocument() + ",");
+            sb.append("SAMLMetadataDocument: ").append(getSAMLMetadataDocument()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

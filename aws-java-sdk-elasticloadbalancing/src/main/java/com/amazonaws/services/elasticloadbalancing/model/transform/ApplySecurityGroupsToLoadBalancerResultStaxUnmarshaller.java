@@ -45,6 +45,11 @@ public class ApplySecurityGroupsToLoadBalancerResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SecurityGroups", targetDepth)) {
+                    applySecurityGroupsToLoadBalancerResult.withSecurityGroups(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SecurityGroups/member", targetDepth)) {
                     applySecurityGroupsToLoadBalancerResult.withSecurityGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

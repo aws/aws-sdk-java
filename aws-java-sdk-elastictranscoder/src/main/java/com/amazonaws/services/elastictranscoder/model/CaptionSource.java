@@ -415,15 +415,15 @@ public class CaptionSource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage() + ",");
+            sb.append("Language: ").append(getLanguage()).append(",");
         if (getTimeOffset() != null)
-            sb.append("TimeOffset: " + getTimeOffset() + ",");
+            sb.append("TimeOffset: ").append(getTimeOffset()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption());
+            sb.append("Encryption: ").append(getEncryption());
         sb.append("}");
         return sb.toString();
     }

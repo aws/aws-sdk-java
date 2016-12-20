@@ -142,11 +142,11 @@ public class RedshiftMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRedshiftDatabase() != null)
-            sb.append("RedshiftDatabase: " + getRedshiftDatabase() + ",");
+            sb.append("RedshiftDatabase: ").append(getRedshiftDatabase()).append(",");
         if (getDatabaseUserName() != null)
-            sb.append("DatabaseUserName: " + getDatabaseUserName() + ",");
+            sb.append("DatabaseUserName: ").append(getDatabaseUserName()).append(",");
         if (getSelectSqlQuery() != null)
-            sb.append("SelectSqlQuery: " + getSelectSqlQuery());
+            sb.append("SelectSqlQuery: ").append(getSelectSqlQuery());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class StartInstancesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartingInstances() != null)
-            sb.append("StartingInstances: " + getStartingInstances());
+            sb.append("StartingInstances: ").append(getStartingInstances());
         sb.append("}");
         return sb.toString();
     }

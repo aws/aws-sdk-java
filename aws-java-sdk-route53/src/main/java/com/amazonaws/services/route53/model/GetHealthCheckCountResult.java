@@ -80,7 +80,7 @@ public class GetHealthCheckCountResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHealthCheckCount() != null)
-            sb.append("HealthCheckCount: " + getHealthCheckCount());
+            sb.append("HealthCheckCount: ").append(getHealthCheckCount());
         sb.append("}");
         return sb.toString();
     }

@@ -61,14 +61,10 @@ public class GetCampaignVersionsRequestMarshaller implements Marshaller<Request<
 
         String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getCampaignVersionsRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getCampaignVersionsRequest.getApplicationId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{campaign-id}",
-                (getCampaignVersionsRequest.getCampaignId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getCampaignVersionsRequest.getCampaignId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getCampaignVersionsRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id",
+                getCampaignVersionsRequest.getCampaignId());
         request.setResourcePath(uriResourcePath);
 
         if (getCampaignVersionsRequest.getPageSize() != null) {

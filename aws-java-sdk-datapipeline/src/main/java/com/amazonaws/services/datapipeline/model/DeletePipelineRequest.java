@@ -81,7 +81,7 @@ public class DeletePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId());
+            sb.append("PipelineId: ").append(getPipelineId());
         sb.append("}");
         return sb.toString();
     }

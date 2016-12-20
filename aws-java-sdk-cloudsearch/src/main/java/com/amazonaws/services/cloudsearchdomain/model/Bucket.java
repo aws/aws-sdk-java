@@ -126,9 +126,9 @@ public class Bucket implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount());
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }

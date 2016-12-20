@@ -112,7 +112,7 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmNames() != null)
-            sb.append("AlarmNames: " + getAlarmNames());
+            sb.append("AlarmNames: ").append(getAlarmNames());
         sb.append("}");
         return sb.toString();
     }

@@ -124,9 +124,9 @@ public class UpdateJobQueueResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobQueueName() != null)
-            sb.append("JobQueueName: " + getJobQueueName() + ",");
+            sb.append("JobQueueName: ").append(getJobQueueName()).append(",");
         if (getJobQueueArn() != null)
-            sb.append("JobQueueArn: " + getJobQueueArn());
+            sb.append("JobQueueArn: ").append(getJobQueueArn());
         sb.append("}");
         return sb.toString();
     }

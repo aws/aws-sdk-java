@@ -217,13 +217,13 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getTask() != null)
-            sb.append("Task: " + getTask() + ",");
+            sb.append("Task: ").append(getTask()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason());
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }

@@ -93,7 +93,7 @@ public class GetSizeConstraintSetRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSizeConstraintSetId() != null)
-            sb.append("SizeConstraintSetId: " + getSizeConstraintSetId());
+            sb.append("SizeConstraintSetId: ").append(getSizeConstraintSetId());
         sb.append("}");
         return sb.toString();
     }

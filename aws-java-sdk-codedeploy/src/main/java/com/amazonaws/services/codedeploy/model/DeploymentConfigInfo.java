@@ -218,13 +218,13 @@ public class DeploymentConfigInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigId() != null)
-            sb.append("DeploymentConfigId: " + getDeploymentConfigId() + ",");
+            sb.append("DeploymentConfigId: ").append(getDeploymentConfigId()).append(",");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
+            sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getMinimumHealthyHosts() != null)
-            sb.append("MinimumHealthyHosts: " + getMinimumHealthyHosts() + ",");
+            sb.append("MinimumHealthyHosts: ").append(getMinimumHealthyHosts()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime());
+            sb.append("CreateTime: ").append(getCreateTime());
         sb.append("}");
         return sb.toString();
     }

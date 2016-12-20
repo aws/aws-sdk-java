@@ -179,9 +179,9 @@ public class DescribeReservedNodeOfferingsResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getReservedNodeOfferings() != null)
-            sb.append("ReservedNodeOfferings: " + getReservedNodeOfferings());
+            sb.append("ReservedNodeOfferings: ").append(getReservedNodeOfferings());
         sb.append("}");
         return sb.toString();
     }

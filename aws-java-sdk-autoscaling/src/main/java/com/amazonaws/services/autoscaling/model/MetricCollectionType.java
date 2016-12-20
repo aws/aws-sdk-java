@@ -371,7 +371,7 @@ public class MetricCollectionType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetric() != null)
-            sb.append("Metric: " + getMetric());
+            sb.append("Metric: ").append(getMetric());
         sb.append("}");
         return sb.toString();
     }

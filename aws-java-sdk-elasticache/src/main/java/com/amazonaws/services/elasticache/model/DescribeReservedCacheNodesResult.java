@@ -159,9 +159,9 @@ public class DescribeReservedCacheNodesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getReservedCacheNodes() != null)
-            sb.append("ReservedCacheNodes: " + getReservedCacheNodes());
+            sb.append("ReservedCacheNodes: ").append(getReservedCacheNodes());
         sb.append("}");
         return sb.toString();
     }

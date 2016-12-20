@@ -45,6 +45,11 @@ public class DescribeVpcPeeringConnectionsResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("vpcPeeringConnectionSet", targetDepth)) {
+                    describeVpcPeeringConnectionsResult.withVpcPeeringConnections(new ArrayList<VpcPeeringConnection>());
+                    continue;
+                }
+
                 if (context.testExpression("vpcPeeringConnectionSet/item", targetDepth)) {
                     describeVpcPeeringConnectionsResult.withVpcPeeringConnections(VpcPeeringConnectionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -475,21 +475,21 @@ public class OptionGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getOptionGroupDescription() != null)
-            sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ",");
+            sb.append("OptionGroupDescription: ").append(getOptionGroupDescription()).append(",");
         if (getEngineName() != null)
-            sb.append("EngineName: " + getEngineName() + ",");
+            sb.append("EngineName: ").append(getEngineName()).append(",");
         if (getMajorEngineVersion() != null)
-            sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
+            sb.append("MajorEngineVersion: ").append(getMajorEngineVersion()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions() + ",");
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getAllowsVpcAndNonVpcInstanceMemberships() != null)
-            sb.append("AllowsVpcAndNonVpcInstanceMemberships: " + getAllowsVpcAndNonVpcInstanceMemberships() + ",");
+            sb.append("AllowsVpcAndNonVpcInstanceMemberships: ").append(getAllowsVpcAndNonVpcInstanceMemberships()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getOptionGroupArn() != null)
-            sb.append("OptionGroupArn: " + getOptionGroupArn());
+            sb.append("OptionGroupArn: ").append(getOptionGroupArn());
         sb.append("}");
         return sb.toString();
     }

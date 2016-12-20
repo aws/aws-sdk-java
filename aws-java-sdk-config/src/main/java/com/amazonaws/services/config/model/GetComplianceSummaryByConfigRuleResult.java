@@ -86,7 +86,7 @@ public class GetComplianceSummaryByConfigRuleResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComplianceSummary() != null)
-            sb.append("ComplianceSummary: " + getComplianceSummary());
+            sb.append("ComplianceSummary: ").append(getComplianceSummary());
         sb.append("}");
         return sb.toString();
     }

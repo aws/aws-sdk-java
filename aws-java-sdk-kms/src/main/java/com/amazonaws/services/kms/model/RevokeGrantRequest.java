@@ -213,9 +213,9 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getGrantId() != null)
-            sb.append("GrantId: " + getGrantId());
+            sb.append("GrantId: ").append(getGrantId());
         sb.append("}");
         return sb.toString();
     }

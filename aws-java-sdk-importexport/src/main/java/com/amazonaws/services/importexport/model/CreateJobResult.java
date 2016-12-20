@@ -251,17 +251,17 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType() + ",");
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getSignature() != null)
-            sb.append("Signature: " + getSignature() + ",");
+            sb.append("Signature: ").append(getSignature()).append(",");
         if (getSignatureFileContents() != null)
-            sb.append("SignatureFileContents: " + getSignatureFileContents() + ",");
+            sb.append("SignatureFileContents: ").append(getSignatureFileContents()).append(",");
         if (getWarningMessage() != null)
-            sb.append("WarningMessage: " + getWarningMessage() + ",");
+            sb.append("WarningMessage: ").append(getWarningMessage()).append(",");
         if (getArtifactList() != null)
-            sb.append("ArtifactList: " + getArtifactList());
+            sb.append("ArtifactList: ").append(getArtifactList());
         sb.append("}");
         return sb.toString();
     }

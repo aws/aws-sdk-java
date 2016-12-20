@@ -114,7 +114,7 @@ public class GetSendStatisticsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSendDataPoints() != null)
-            sb.append("SendDataPoints: " + getSendDataPoints());
+            sb.append("SendDataPoints: ").append(getSendDataPoints());
         sb.append("}");
         return sb.toString();
     }

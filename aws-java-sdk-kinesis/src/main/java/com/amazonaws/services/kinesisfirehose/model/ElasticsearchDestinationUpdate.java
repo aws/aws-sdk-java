@@ -534,23 +534,23 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getDomainARN() != null)
-            sb.append("DomainARN: " + getDomainARN() + ",");
+            sb.append("DomainARN: ").append(getDomainARN()).append(",");
         if (getIndexName() != null)
-            sb.append("IndexName: " + getIndexName() + ",");
+            sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getTypeName() != null)
-            sb.append("TypeName: " + getTypeName() + ",");
+            sb.append("TypeName: ").append(getTypeName()).append(",");
         if (getIndexRotationPeriod() != null)
-            sb.append("IndexRotationPeriod: " + getIndexRotationPeriod() + ",");
+            sb.append("IndexRotationPeriod: ").append(getIndexRotationPeriod()).append(",");
         if (getBufferingHints() != null)
-            sb.append("BufferingHints: " + getBufferingHints() + ",");
+            sb.append("BufferingHints: ").append(getBufferingHints()).append(",");
         if (getRetryOptions() != null)
-            sb.append("RetryOptions: " + getRetryOptions() + ",");
+            sb.append("RetryOptions: ").append(getRetryOptions()).append(",");
         if (getS3Update() != null)
-            sb.append("S3Update: " + getS3Update() + ",");
+            sb.append("S3Update: ").append(getS3Update()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: " + getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }

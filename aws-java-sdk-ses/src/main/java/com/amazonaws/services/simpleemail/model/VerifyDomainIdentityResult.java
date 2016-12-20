@@ -84,7 +84,7 @@ public class VerifyDomainIdentityResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVerificationToken() != null)
-            sb.append("VerificationToken: " + getVerificationToken());
+            sb.append("VerificationToken: ").append(getVerificationToken());
         sb.append("}");
         return sb.toString();
     }

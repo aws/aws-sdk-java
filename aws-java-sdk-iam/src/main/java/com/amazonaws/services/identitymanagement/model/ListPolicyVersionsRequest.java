@@ -270,11 +270,11 @@ public class ListPolicyVersionsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn() + ",");
+            sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

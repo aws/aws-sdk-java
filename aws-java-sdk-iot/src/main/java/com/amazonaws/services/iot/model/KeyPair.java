@@ -126,9 +126,9 @@ public class KeyPair implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicKey() != null)
-            sb.append("PublicKey: " + getPublicKey() + ",");
+            sb.append("PublicKey: ").append(getPublicKey()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: " + getPrivateKey());
+            sb.append("PrivateKey: ").append(getPrivateKey());
         sb.append("}");
         return sb.toString();
     }

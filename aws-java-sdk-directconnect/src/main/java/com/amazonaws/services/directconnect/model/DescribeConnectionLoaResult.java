@@ -61,7 +61,7 @@ public class DescribeConnectionLoaResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoa() != null)
-            sb.append("Loa: " + getLoa());
+            sb.append("Loa: ").append(getLoa());
         sb.append("}");
         return sb.toString();
     }

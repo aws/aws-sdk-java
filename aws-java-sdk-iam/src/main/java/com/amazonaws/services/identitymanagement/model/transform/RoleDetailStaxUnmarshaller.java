@@ -75,13 +75,28 @@ public class RoleDetailStaxUnmarshaller implements Unmarshaller<RoleDetail, Stax
                     continue;
                 }
 
+                if (context.testExpression("InstanceProfileList", targetDepth)) {
+                    roleDetail.withInstanceProfileList(new ArrayList<InstanceProfile>());
+                    continue;
+                }
+
                 if (context.testExpression("InstanceProfileList/member", targetDepth)) {
                     roleDetail.withInstanceProfileList(InstanceProfileStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("RolePolicyList", targetDepth)) {
+                    roleDetail.withRolePolicyList(new ArrayList<PolicyDetail>());
+                    continue;
+                }
+
                 if (context.testExpression("RolePolicyList/member", targetDepth)) {
                     roleDetail.withRolePolicyList(PolicyDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AttachedManagedPolicies", targetDepth)) {
+                    roleDetail.withAttachedManagedPolicies(new ArrayList<AttachedPolicy>());
                     continue;
                 }
 

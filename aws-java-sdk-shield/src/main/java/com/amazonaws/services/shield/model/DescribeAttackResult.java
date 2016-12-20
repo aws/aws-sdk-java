@@ -78,7 +78,7 @@ public class DescribeAttackResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttack() != null)
-            sb.append("Attack: " + getAttack());
+            sb.append("Attack: ").append(getAttack());
         sb.append("}");
         return sb.toString();
     }

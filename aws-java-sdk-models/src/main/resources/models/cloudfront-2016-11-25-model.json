@@ -19,26 +19,31 @@
       "documentation" : "<p>Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information about how to use origin access identities, see <a href=\"http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html\">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudFrontOriginAccessIdentityAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCloudFrontOriginAccessIdentities"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
@@ -68,191 +73,229 @@
       "documentation" : "<p>Creates a new web distribution. Send a <code>GET</code> request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CNAMEAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DistributionAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrustedSigners"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrustedSignerDoesNotExist"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidViewerCertificate"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMinimumProtocolVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributionCNAMEs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributions"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDefaultRootObject"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRelativePath"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidErrorCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidResponseCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequiredProtocol"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyOrigins"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCacheBehaviors"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCookieNamesInWhiteList"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidForwardCookies"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyHeadersInForwardedValues"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidHeadersForS3Origin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCertificates"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLocationCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGeoRestrictionParameter"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidProtocolSettings"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTTLOrder"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidWebACLId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyOriginCustomHeaders"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyQueryStringParameters"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidQueryStringParameters"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributionsWithLambdaAssociations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyLambdaFunctionAssociations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionAssociation"
@@ -282,196 +325,235 @@
       "documentation" : "<p>Create a new distribution with tags.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CNAMEAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DistributionAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrustedSigners"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrustedSignerDoesNotExist"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidViewerCertificate"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMinimumProtocolVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributionCNAMEs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributions"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDefaultRootObject"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRelativePath"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidErrorCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidResponseCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequiredProtocol"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyOrigins"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCacheBehaviors"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCookieNamesInWhiteList"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidForwardCookies"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyHeadersInForwardedValues"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidHeadersForS3Origin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCertificates"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLocationCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGeoRestrictionParameter"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidProtocolSettings"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTTLOrder"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidWebACLId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyOriginCustomHeaders"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTagging"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyQueryStringParameters"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidQueryStringParameters"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributionsWithLambdaAssociations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyLambdaFunctionAssociations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionAssociation"
@@ -501,36 +583,43 @@
       "documentation" : "<p>Create a new invalidation. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BatchTooLarge"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyInvalidationsInProgress"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
@@ -560,61 +649,73 @@
       "documentation" : "<p>Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP. </p> <p>To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront API version</i>/distribution resource. The request body must include a document with a <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code> element and returns other information about the RTMP distribution.</p> <p>To get the status of your request, use the <i>GET StreamingDistribution</i> API action. When the value of <code>Enabled</code> is <code>true</code> and the value of <code>Status</code> is <code>Deployed</code>, your distribution is ready. A distribution usually deploys in less than 15 minutes.</p> <p>For more information about web distributions, see <a href=\"http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html\">Working with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> <important> <p>Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML document that you include in the request body when you create or update a web distribution or an RTMP distribution, and when you invalidate objects. With previous versions of the API, we discovered that it was too easy to accidentally delete one or more values for an element that accepts multiple values, for example, CNAMEs and trusted signers. Our changes for the 2012-05-05 release are intended to prevent these accidental deletions and to notify you when there's a mismatch between the number of values you say you're specifying in the <code>Quantity</code> element and the number of values specified.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CNAMEAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StreamingDistributionAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrustedSigners"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrustedSignerDoesNotExist"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyStreamingDistributionCNAMEs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyStreamingDistributions"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
@@ -644,66 +745,79 @@
       "documentation" : "<p>Create a new streaming distribution with tags.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CNAMEAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StreamingDistributionAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrustedSigners"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrustedSignerDoesNotExist"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyStreamingDistributionCNAMEs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyStreamingDistributions"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTagging"
@@ -733,26 +847,31 @@
       "documentation" : "<p>Delete an origin access identity. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIfMatchVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchCloudFrontOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PreconditionFailed"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CloudFrontOriginAccessIdentityInUse"
@@ -777,26 +896,31 @@
       "documentation" : "<p>Delete a distribution. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DistributionNotDisabled"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIfMatchVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PreconditionFailed"
@@ -821,26 +945,31 @@
       "documentation" : "<p>Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following steps.</p> <p> <b>To delete an RTMP distribution using the CloudFront API</b>:</p> <ol> <li> <p>Disable the RTMP distribution.</p> </li> <li> <p>Submit a <code>GET Streaming Distribution Config</code> request to get the current configuration and the <code>Etag</code> header for the distribution. </p> </li> <li> <p>Update the XML document that was returned in the response to your <code>GET Streaming Distribution Config</code> request to change the value of <code>Enabled</code> to <code>false</code>.</p> </li> <li> <p>Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration for your distribution. In the request body, include the XML document that you updated in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code> request in Step 2.</p> </li> <li> <p>Review the response to the <code>PUT Streaming Distribution Config</code> request to confirm that the distribution was successfully disabled.</p> </li> <li> <p>Submit a <code>GET Streaming Distribution Config</code> request to confirm that your changes have propagated. When propagation is complete, the value of <code>Status</code> is <code>Deployed</code>.</p> </li> <li> <p>Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code> request in Step 2.</p> </li> <li> <p>Review the response to your <code>DELETE Streaming Distribution</code> request to confirm that the distribution was successfully deleted.</p> </li> </ol> <p>For information about deleting a distribution using the CloudFront console, see <a href=\"http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html\">Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StreamingDistributionNotDisabled"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIfMatchVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchStreamingDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PreconditionFailed"
@@ -865,11 +994,13 @@
       "documentation" : "<p>Get the information about an origin access identity. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchCloudFrontOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -899,11 +1030,13 @@
       "documentation" : "<p>Get the configuration information about an origin access identity. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchCloudFrontOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -933,11 +1066,13 @@
       "documentation" : "<p>Get the information about a distribution. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -967,11 +1102,13 @@
       "documentation" : "<p>Get the configuration information about a distribution. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -1001,16 +1138,19 @@
       "documentation" : "<p>Get the information about an invalidation. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchInvalidation"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -1040,11 +1180,13 @@
       "documentation" : "<p>Gets information about a specified RTMP distribution, including the distribution configuration.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchStreamingDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -1074,11 +1216,13 @@
       "documentation" : "<p>Get the configuration information about a streaming distribution. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchStreamingDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -1108,6 +1252,7 @@
       "documentation" : "<p>Lists origin access identities.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
@@ -1137,6 +1282,7 @@
       "documentation" : "<p>List distributions. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
@@ -1166,11 +1312,13 @@
       "documentation" : "<p>List the distributions that are associated with a specified AWS WAF web ACL. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidWebACLId"
@@ -1200,16 +1348,19 @@
       "documentation" : "<p>Lists invalidation batches. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
@@ -1239,6 +1390,7 @@
       "documentation" : "<p>List streaming distributions. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
@@ -1268,21 +1420,25 @@
       "documentation" : "<p>List tags for a CloudFront resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTagging"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchResource"
@@ -1312,21 +1468,25 @@
       "documentation" : "<p>Add tags to a CloudFront resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTagging"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchResource"
@@ -1351,21 +1511,25 @@
       "documentation" : "<p>Remove tags from a CloudFront resource.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTagging"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchResource"
@@ -1390,41 +1554,49 @@
       "documentation" : "<p>Update an origin access identity. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IllegalUpdate"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIfMatchVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchCloudFrontOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PreconditionFailed"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
@@ -1454,191 +1626,229 @@
       "documentation" : "<p>Update a distribution. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CNAMEAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IllegalUpdate"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIfMatchVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PreconditionFailed"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributionCNAMEs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDefaultRootObject"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRelativePath"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidErrorCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidResponseCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrustedSigners"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrustedSignerDoesNotExist"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidViewerCertificate"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidMinimumProtocolVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRequiredProtocol"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchOrigin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyOrigins"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCacheBehaviors"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCookieNamesInWhiteList"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidForwardCookies"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyHeadersInForwardedValues"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidHeadersForS3Origin"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyCertificates"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLocationCode"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidGeoRestrictionParameter"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidTTLOrder"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidWebACLId"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyOriginCustomHeaders"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyQueryStringParameters"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidQueryStringParameters"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyDistributionsWithLambdaAssociations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyLambdaFunctionAssociations"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionAssociation"
@@ -1668,66 +1878,79 @@
       "documentation" : "<p>Update a streaming distribution. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AccessDenied"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CNAMEAlreadyExists"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "IllegalUpdate"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidIfMatchVersion"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MissingBody"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NoSuchStreamingDistribution"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PreconditionFailed"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyStreamingDistributionCNAMEs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidArgument"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOriginAccessIdentity"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyTrustedSigners"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "TrustedSignerDoesNotExist"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InconsistentQuantities"
@@ -1758,7 +1981,8 @@
       "documentation" : "<p>Access denied.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 403
       },
       "exception" : true,
       "fault" : false,
@@ -1874,7 +2098,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2016,7 +2240,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2031,7 +2255,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 413
       },
       "exception" : true,
       "fault" : false,
@@ -2068,7 +2293,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -2301,7 +2527,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2418,7 +2644,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2494,7 +2720,8 @@
       "documentation" : "<p>If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -2579,7 +2806,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -2795,7 +3023,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2828,7 +3056,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3619,7 +3847,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4239,7 +4467,8 @@
       "documentation" : "<p>The caller reference you attempted to create the distribution with is associated with another distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -4654,7 +4883,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -4965,7 +5195,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4986,7 +5216,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5142,7 +5372,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5756,7 +5986,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5825,7 +6055,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -5840,7 +6070,8 @@
       "documentation" : "<p>Origin and <code>CallerReference</code> cannot be updated. </p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5877,7 +6108,8 @@
       "documentation" : "<p>The value of <code>Quantity</code> and the size of <code>Items</code> do not match.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5914,7 +6146,8 @@
       "documentation" : "<p>The argument is invalid.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5951,7 +6184,8 @@
       "documentation" : "<p>The default root object file name is too big or contains an invalid character.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -5988,7 +6222,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6025,7 +6260,8 @@
       "documentation" : "<p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6062,7 +6298,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6099,7 +6336,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6136,7 +6374,8 @@
       "documentation" : "<p>The <code>If-Match</code> version is missing or not valid for the distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6173,7 +6412,8 @@
       "documentation" : "<p>The specified Lambda function association is invalid.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6210,7 +6450,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6247,7 +6488,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6284,7 +6526,8 @@
       "documentation" : "<p>The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6321,7 +6564,8 @@
       "documentation" : "<p>The origin access identity is not valid or doesn't exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6358,7 +6602,8 @@
       "documentation" : "<p>You cannot specify SSLv3 as the minimum protocol version if you only want to support only clients that support Server Name Indication (SNI).</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6395,7 +6640,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6432,7 +6678,8 @@
       "documentation" : "<p>The relative path is too big, is not URL-encoded, or does not begin with a slash (/).</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6469,7 +6716,8 @@
       "documentation" : "<p>This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the <code>RequiredProtocols</code> element from your distribution configuration.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6506,7 +6754,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6543,7 +6792,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6580,7 +6830,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6617,7 +6868,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6654,7 +6906,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -6992,7 +7245,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7013,7 +7266,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7046,7 +7299,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7175,7 +7428,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7767,7 +8020,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7862,7 +8115,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7895,7 +8148,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7916,7 +8169,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7931,7 +8184,8 @@
       "documentation" : "<p>This operation requires a body. Ensure that the body is present and the Content-Type header is set.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7968,7 +8222,8 @@
       "documentation" : "<p>The specified origin access identity does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8005,7 +8260,8 @@
       "documentation" : "<p>The specified distribution does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8042,7 +8298,8 @@
       "documentation" : "<p>The specified invalidation does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8079,7 +8336,8 @@
       "documentation" : "<p>No origin exists with the specified <code>Origin Id</code>. </p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8116,7 +8374,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8153,7 +8412,8 @@
       "documentation" : "<p>The specified streaming distribution does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8356,7 +8616,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8389,7 +8649,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -8410,7 +8670,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8539,7 +8799,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8602,7 +8862,8 @@
       "documentation" : "<p>The precondition given in one or more of the request-header fields evaluated to <code>false</code>. </p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 412
       },
       "exception" : true,
       "fault" : false,
@@ -8645,7 +8906,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8726,7 +8987,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8747,7 +9008,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws:cloudfront::[0-9]+:.*",
       "payload" : null,
@@ -8886,7 +9147,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8967,7 +9228,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8988,7 +9249,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9021,7 +9282,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9149,7 +9410,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -9460,7 +9722,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -9680,7 +9943,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9810,7 +10073,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
       "payload" : null,
@@ -9843,7 +10106,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9911,7 +10174,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9982,7 +10245,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
       "payload" : null,
@@ -10032,7 +10295,8 @@
       "documentation" : "<p>You cannot create more cache behaviors for the distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10069,7 +10333,8 @@
       "documentation" : "<p>You cannot create anymore custom SSL/TLS certificates.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10106,7 +10371,8 @@
       "documentation" : "<p>Processing your request would cause you to exceed the maximum number of origin access identities allowed.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10143,7 +10409,8 @@
       "documentation" : "<p>Your request contains more cookie names in the whitelist than are allowed per cache behavior.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10180,7 +10447,8 @@
       "documentation" : "<p>Your request contains more CNAMEs than are allowed per distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10217,7 +10485,8 @@
       "documentation" : "<p>Processing your request would cause you to exceed the maximum number of distributions allowed.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10254,7 +10523,8 @@
       "documentation" : "<p>Processing your request would cause the maximum number of distributions with Lambda function associations per owner to be exceeded.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10291,7 +10561,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10328,7 +10599,8 @@
       "documentation" : "<p>You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10365,7 +10637,8 @@
       "documentation" : "<p>Your request contains more Lambda function associations than are allowed per distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10402,7 +10675,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10439,7 +10713,8 @@
       "documentation" : "<p>You cannot create more origins for the distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10476,7 +10751,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10513,7 +10789,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10550,7 +10827,8 @@
       "documentation" : "<p>Processing your request would cause you to exceed the maximum number of streaming distributions allowed.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10587,7 +10865,8 @@
       "documentation" : "<p>Your request contains more trusted signers than are allowed per distribution.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10624,7 +10903,8 @@
       "documentation" : "<p>One or more of your trusted signers do not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : null
+        "code" : null,
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11224,7 +11504,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11245,7 +11525,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11266,7 +11546,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11287,7 +11567,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11308,7 +11588,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11329,7 +11609,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

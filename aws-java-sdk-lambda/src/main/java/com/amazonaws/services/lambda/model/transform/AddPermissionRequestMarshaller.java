@@ -61,11 +61,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{FunctionName}",
-                        (addPermissionRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(addPermissionRequest.getFunctionName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", addPermissionRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         if (addPermissionRequest.getQualifier() != null) {

@@ -80,7 +80,7 @@ public class ListStreamingDistributionsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionList() != null)
-            sb.append("StreamingDistributionList: " + getStreamingDistributionList());
+            sb.append("StreamingDistributionList: ").append(getStreamingDistributionList());
         sb.append("}");
         return sb.toString();
     }

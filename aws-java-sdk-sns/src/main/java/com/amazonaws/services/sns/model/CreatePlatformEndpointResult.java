@@ -80,7 +80,7 @@ public class CreatePlatformEndpointResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn());
+            sb.append("EndpointArn: ").append(getEndpointArn());
         sb.append("}");
         return sb.toString();
     }

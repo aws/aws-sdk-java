@@ -63,10 +63,8 @@ public class UpdateElasticsearchDomainConfigRequestMarshaller implements
 
         String uriResourcePath = "/2015-01-01/es/domain/{DomainName}/config";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{DomainName}",
-                (updateElasticsearchDomainConfigRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateElasticsearchDomainConfigRequest.getDomainName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DomainName",
+                updateElasticsearchDomainConfigRequest.getDomainName());
         request.setResourcePath(uriResourcePath);
 
         try {

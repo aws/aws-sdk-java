@@ -192,9 +192,9 @@ public class CreateCacheSecurityGroupRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSecurityGroupName() != null)
-            sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+            sb.append("CacheSecurityGroupName: ").append(getCacheSecurityGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

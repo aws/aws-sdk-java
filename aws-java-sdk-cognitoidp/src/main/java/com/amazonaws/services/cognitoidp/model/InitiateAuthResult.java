@@ -272,13 +272,13 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChallengeName() != null)
-            sb.append("ChallengeName: " + getChallengeName() + ",");
+            sb.append("ChallengeName: ").append(getChallengeName()).append(",");
         if (getSession() != null)
-            sb.append("Session: " + getSession() + ",");
+            sb.append("Session: ").append(getSession()).append(",");
         if (getChallengeParameters() != null)
-            sb.append("ChallengeParameters: " + getChallengeParameters() + ",");
+            sb.append("ChallengeParameters: ").append(getChallengeParameters()).append(",");
         if (getAuthenticationResult() != null)
-            sb.append("AuthenticationResult: " + getAuthenticationResult());
+            sb.append("AuthenticationResult: ").append(getAuthenticationResult());
         sb.append("}");
         return sb.toString();
     }

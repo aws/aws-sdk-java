@@ -232,11 +232,11 @@ public class SslPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSslProtocols() != null)
-            sb.append("SslProtocols: " + getSslProtocols() + ",");
+            sb.append("SslProtocols: ").append(getSslProtocols()).append(",");
         if (getCiphers() != null)
-            sb.append("Ciphers: " + getCiphers() + ",");
+            sb.append("Ciphers: ").append(getCiphers()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

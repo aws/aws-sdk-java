@@ -289,15 +289,15 @@ public class CacheEngineVersion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getCacheParameterGroupFamily() != null)
-            sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
+            sb.append("CacheParameterGroupFamily: ").append(getCacheParameterGroupFamily()).append(",");
         if (getCacheEngineDescription() != null)
-            sb.append("CacheEngineDescription: " + getCacheEngineDescription() + ",");
+            sb.append("CacheEngineDescription: ").append(getCacheEngineDescription()).append(",");
         if (getCacheEngineVersionDescription() != null)
-            sb.append("CacheEngineVersionDescription: " + getCacheEngineVersionDescription());
+            sb.append("CacheEngineVersionDescription: ").append(getCacheEngineVersionDescription());
         sb.append("}");
         return sb.toString();
     }

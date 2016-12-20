@@ -179,11 +179,11 @@ public class DataSource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getDatabaseName() != null)
-            sb.append("DatabaseName: " + getDatabaseName());
+            sb.append("DatabaseName: ").append(getDatabaseName());
         sb.append("}");
         return sb.toString();
     }

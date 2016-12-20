@@ -513,29 +513,29 @@ public class WriteCampaignRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdditionalTreatments() != null)
-            sb.append("AdditionalTreatments: " + getAdditionalTreatments() + ",");
+            sb.append("AdditionalTreatments: ").append(getAdditionalTreatments()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getHoldoutPercent() != null)
-            sb.append("HoldoutPercent: " + getHoldoutPercent() + ",");
+            sb.append("HoldoutPercent: ").append(getHoldoutPercent()).append(",");
         if (getIsPaused() != null)
-            sb.append("IsPaused: " + getIsPaused() + ",");
+            sb.append("IsPaused: ").append(getIsPaused()).append(",");
         if (getLimits() != null)
-            sb.append("Limits: " + getLimits() + ",");
+            sb.append("Limits: ").append(getLimits()).append(",");
         if (getMessageConfiguration() != null)
-            sb.append("MessageConfiguration: " + getMessageConfiguration() + ",");
+            sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSchedule() != null)
-            sb.append("Schedule: " + getSchedule() + ",");
+            sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getSegmentId() != null)
-            sb.append("SegmentId: " + getSegmentId() + ",");
+            sb.append("SegmentId: ").append(getSegmentId()).append(",");
         if (getSegmentVersion() != null)
-            sb.append("SegmentVersion: " + getSegmentVersion() + ",");
+            sb.append("SegmentVersion: ").append(getSegmentVersion()).append(",");
         if (getTreatmentDescription() != null)
-            sb.append("TreatmentDescription: " + getTreatmentDescription() + ",");
+            sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
-            sb.append("TreatmentName: " + getTreatmentName());
+            sb.append("TreatmentName: ").append(getTreatmentName());
         sb.append("}");
         return sb.toString();
     }

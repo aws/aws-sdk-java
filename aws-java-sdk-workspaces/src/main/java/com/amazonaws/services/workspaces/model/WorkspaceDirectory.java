@@ -732,29 +732,29 @@ public class WorkspaceDirectory implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getAlias() != null)
-            sb.append("Alias: " + getAlias() + ",");
+            sb.append("Alias: ").append(getAlias()).append(",");
         if (getDirectoryName() != null)
-            sb.append("DirectoryName: " + getDirectoryName() + ",");
+            sb.append("DirectoryName: ").append(getDirectoryName()).append(",");
         if (getRegistrationCode() != null)
-            sb.append("RegistrationCode: " + getRegistrationCode() + ",");
+            sb.append("RegistrationCode: ").append(getRegistrationCode()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getDnsIpAddresses() != null)
-            sb.append("DnsIpAddresses: " + getDnsIpAddresses() + ",");
+            sb.append("DnsIpAddresses: ").append(getDnsIpAddresses()).append(",");
         if (getCustomerUserName() != null)
-            sb.append("CustomerUserName: " + getCustomerUserName() + ",");
+            sb.append("CustomerUserName: ").append(getCustomerUserName()).append(",");
         if (getIamRoleId() != null)
-            sb.append("IamRoleId: " + getIamRoleId() + ",");
+            sb.append("IamRoleId: ").append(getIamRoleId()).append(",");
         if (getDirectoryType() != null)
-            sb.append("DirectoryType: " + getDirectoryType() + ",");
+            sb.append("DirectoryType: ").append(getDirectoryType()).append(",");
         if (getWorkspaceSecurityGroupId() != null)
-            sb.append("WorkspaceSecurityGroupId: " + getWorkspaceSecurityGroupId() + ",");
+            sb.append("WorkspaceSecurityGroupId: ").append(getWorkspaceSecurityGroupId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getWorkspaceCreationProperties() != null)
-            sb.append("WorkspaceCreationProperties: " + getWorkspaceCreationProperties());
+            sb.append("WorkspaceCreationProperties: ").append(getWorkspaceCreationProperties());
         sb.append("}");
         return sb.toString();
     }

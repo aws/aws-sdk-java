@@ -267,15 +267,15 @@ public class Shard implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShardId() != null)
-            sb.append("ShardId: " + getShardId() + ",");
+            sb.append("ShardId: ").append(getShardId()).append(",");
         if (getParentShardId() != null)
-            sb.append("ParentShardId: " + getParentShardId() + ",");
+            sb.append("ParentShardId: ").append(getParentShardId()).append(",");
         if (getAdjacentParentShardId() != null)
-            sb.append("AdjacentParentShardId: " + getAdjacentParentShardId() + ",");
+            sb.append("AdjacentParentShardId: ").append(getAdjacentParentShardId()).append(",");
         if (getHashKeyRange() != null)
-            sb.append("HashKeyRange: " + getHashKeyRange() + ",");
+            sb.append("HashKeyRange: ").append(getHashKeyRange()).append(",");
         if (getSequenceNumberRange() != null)
-            sb.append("SequenceNumberRange: " + getSequenceNumberRange());
+            sb.append("SequenceNumberRange: ").append(getSequenceNumberRange());
         sb.append("}");
         return sb.toString();
     }

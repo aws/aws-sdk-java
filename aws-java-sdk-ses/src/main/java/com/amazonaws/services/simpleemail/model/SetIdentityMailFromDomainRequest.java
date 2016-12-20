@@ -315,11 +315,11 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getMailFromDomain() != null)
-            sb.append("MailFromDomain: " + getMailFromDomain() + ",");
+            sb.append("MailFromDomain: ").append(getMailFromDomain()).append(",");
         if (getBehaviorOnMXFailure() != null)
-            sb.append("BehaviorOnMXFailure: " + getBehaviorOnMXFailure());
+            sb.append("BehaviorOnMXFailure: ").append(getBehaviorOnMXFailure());
         sb.append("}");
         return sb.toString();
     }

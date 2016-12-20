@@ -45,6 +45,11 @@ public class ListReusableDelegationSetsResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("DelegationSets", targetDepth)) {
+                    listReusableDelegationSetsResult.withDelegationSets(new ArrayList<DelegationSet>());
+                    continue;
+                }
+
                 if (context.testExpression("DelegationSets/DelegationSet", targetDepth)) {
                     listReusableDelegationSetsResult.withDelegationSets(DelegationSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

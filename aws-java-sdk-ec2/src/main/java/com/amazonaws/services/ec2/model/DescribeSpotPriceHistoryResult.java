@@ -167,9 +167,9 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotPriceHistory() != null)
-            sb.append("SpotPriceHistory: " + getSpotPriceHistory() + ",");
+            sb.append("SpotPriceHistory: ").append(getSpotPriceHistory()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

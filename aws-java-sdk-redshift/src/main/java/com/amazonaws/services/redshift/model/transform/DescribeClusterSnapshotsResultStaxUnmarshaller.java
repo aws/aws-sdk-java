@@ -50,6 +50,11 @@ public class DescribeClusterSnapshotsResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("Snapshots", targetDepth)) {
+                    describeClusterSnapshotsResult.withSnapshots(new ArrayList<Snapshot>());
+                    continue;
+                }
+
                 if (context.testExpression("Snapshots/Snapshot", targetDepth)) {
                     describeClusterSnapshotsResult.withSnapshots(SnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -86,7 +86,7 @@ public class RegisterCrossAccountAccessRoleRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

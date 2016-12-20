@@ -156,9 +156,9 @@ public class ListPoliciesResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies() + ",");
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker());
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }

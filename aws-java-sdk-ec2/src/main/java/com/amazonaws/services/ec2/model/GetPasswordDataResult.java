@@ -173,11 +173,11 @@ public class GetPasswordDataResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getPasswordData() != null)
-            sb.append("PasswordData: " + getPasswordData());
+            sb.append("PasswordData: ").append(getPasswordData());
         sb.append("}");
         return sb.toString();
     }

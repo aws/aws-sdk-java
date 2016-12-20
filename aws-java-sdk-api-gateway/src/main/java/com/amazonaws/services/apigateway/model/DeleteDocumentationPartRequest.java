@@ -127,9 +127,9 @@ public class DeleteDocumentationPartRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDocumentationPartId() != null)
-            sb.append("DocumentationPartId: " + getDocumentationPartId());
+            sb.append("DocumentationPartId: ").append(getDocumentationPartId());
         sb.append("}");
         return sb.toString();
     }

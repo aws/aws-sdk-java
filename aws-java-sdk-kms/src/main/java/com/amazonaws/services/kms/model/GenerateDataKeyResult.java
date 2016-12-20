@@ -211,11 +211,11 @@ public class GenerateDataKeyResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCiphertextBlob() != null)
-            sb.append("CiphertextBlob: " + getCiphertextBlob() + ",");
+            sb.append("CiphertextBlob: ").append(getCiphertextBlob()).append(",");
         if (getPlaintext() != null)
-            sb.append("Plaintext: " + getPlaintext() + ",");
+            sb.append("Plaintext: ").append(getPlaintext()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId());
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }

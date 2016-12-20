@@ -168,9 +168,9 @@ public class AutoScalingPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConstraints() != null)
-            sb.append("Constraints: " + getConstraints() + ",");
+            sb.append("Constraints: ").append(getConstraints()).append(",");
         if (getRules() != null)
-            sb.append("Rules: " + getRules());
+            sb.append("Rules: ").append(getRules());
         sb.append("}");
         return sb.toString();
     }

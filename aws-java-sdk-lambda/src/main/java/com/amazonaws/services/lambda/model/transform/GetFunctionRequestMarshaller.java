@@ -61,9 +61,7 @@ public class GetFunctionRequestMarshaller implements Marshaller<Request<GetFunct
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}";
 
-        uriResourcePath = uriResourcePath.replace("{FunctionName}",
-                (getFunctionRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getFunctionRequest.getFunctionName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", getFunctionRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         if (getFunctionRequest.getQualifier() != null) {

@@ -81,7 +81,7 @@ public class DescribeIdentityRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId());
+            sb.append("IdentityId: ").append(getIdentityId());
         sb.append("}");
         return sb.toString();
     }

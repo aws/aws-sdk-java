@@ -15,21 +15,31 @@ package com.amazonaws.services.cognitoidentity.model;
 import java.io.Serializable;
 
 /**
+ * <p>
  * Returned in response to a successful GetOpenIdToken request.
+ * </p>
  */
 public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on
      * input.
+     * </p>
      */
     private String identityId;
-    /** An OpenID token, valid for 15 minutes. */
+    /**
+     * <p>
+     * An OpenID token, valid for 15 minutes.
+     * </p>
+     */
     private String token;
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on
      * input.
+     * </p>
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one
@@ -41,8 +51,10 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on
      * input.
+     * </p>
      * 
      * @return A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one
      *         passed on input.
@@ -53,8 +65,10 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on
      * input.
+     * </p>
      * 
      * @param identityId
      *        A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one
@@ -68,7 +82,9 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An OpenID token, valid for 15 minutes.
+     * </p>
      * 
      * @param token
      *        An OpenID token, valid for 15 minutes.
@@ -79,7 +95,9 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An OpenID token, valid for 15 minutes.
+     * </p>
      * 
      * @return An OpenID token, valid for 15 minutes.
      */
@@ -89,7 +107,9 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
      * An OpenID token, valid for 15 minutes.
+     * </p>
      * 
      * @param token
      *        An OpenID token, valid for 15 minutes.
@@ -113,9 +133,9 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken());
+            sb.append("Token: ").append(getToken());
         sb.append("}");
         return sb.toString();
     }

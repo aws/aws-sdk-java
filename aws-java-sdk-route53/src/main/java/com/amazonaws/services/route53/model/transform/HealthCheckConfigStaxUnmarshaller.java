@@ -100,6 +100,11 @@ public class HealthCheckConfigStaxUnmarshaller implements Unmarshaller<HealthChe
                     continue;
                 }
 
+                if (context.testExpression("ChildHealthChecks", targetDepth)) {
+                    healthCheckConfig.withChildHealthChecks(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ChildHealthChecks/ChildHealthCheck", targetDepth)) {
                     healthCheckConfig.withChildHealthChecks(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -107,6 +112,11 @@ public class HealthCheckConfigStaxUnmarshaller implements Unmarshaller<HealthChe
 
                 if (context.testExpression("EnableSNI", targetDepth)) {
                     healthCheckConfig.setEnableSNI(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Regions", targetDepth)) {
+                    healthCheckConfig.withRegions(new ArrayList<String>());
                     continue;
                 }
 

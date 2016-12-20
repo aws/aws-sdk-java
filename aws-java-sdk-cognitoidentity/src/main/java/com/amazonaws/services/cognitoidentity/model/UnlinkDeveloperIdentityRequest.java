@@ -40,7 +40,11 @@ public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String developerProviderName;
-    /** A unique ID used by your backend authentication process to identify a user. */
+    /**
+     * <p>
+     * A unique ID used by your backend authentication process to identify a user.
+     * </p>
+     */
     private String developerUserIdentifier;
 
     /**
@@ -164,7 +168,9 @@ public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      * 
      * @param developerUserIdentifier
      *        A unique ID used by your backend authentication process to identify a user.
@@ -175,7 +181,9 @@ public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      * 
      * @return A unique ID used by your backend authentication process to identify a user.
      */
@@ -185,7 +193,9 @@ public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * A unique ID used by your backend authentication process to identify a user.
+     * </p>
      * 
      * @param developerUserIdentifier
      *        A unique ID used by your backend authentication process to identify a user.
@@ -209,13 +219,13 @@ public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getDeveloperProviderName() != null)
-            sb.append("DeveloperProviderName: " + getDeveloperProviderName() + ",");
+            sb.append("DeveloperProviderName: ").append(getDeveloperProviderName()).append(",");
         if (getDeveloperUserIdentifier() != null)
-            sb.append("DeveloperUserIdentifier: " + getDeveloperUserIdentifier());
+            sb.append("DeveloperUserIdentifier: ").append(getDeveloperUserIdentifier());
         sb.append("}");
         return sb.toString();
     }

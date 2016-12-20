@@ -78,7 +78,7 @@ public class GetAutomationExecutionResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecution() != null)
-            sb.append("AutomationExecution: " + getAutomationExecution());
+            sb.append("AutomationExecution: ").append(getAutomationExecution());
         sb.append("}");
         return sb.toString();
     }

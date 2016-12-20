@@ -173,11 +173,11 @@ public class DeviceMinutes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTotal() != null)
-            sb.append("Total: " + getTotal() + ",");
+            sb.append("Total: ").append(getTotal()).append(",");
         if (getMetered() != null)
-            sb.append("Metered: " + getMetered() + ",");
+            sb.append("Metered: ").append(getMetered()).append(",");
         if (getUnmetered() != null)
-            sb.append("Unmetered: " + getUnmetered());
+            sb.append("Unmetered: ").append(getUnmetered());
         sb.append("}");
         return sb.toString();
     }

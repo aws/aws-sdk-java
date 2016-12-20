@@ -109,9 +109,9 @@ public class DeleteAnalysisSchemeRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAnalysisSchemeName() != null)
-            sb.append("AnalysisSchemeName: " + getAnalysisSchemeName());
+            sb.append("AnalysisSchemeName: ").append(getAnalysisSchemeName());
         sb.append("}");
         return sb.toString();
     }

@@ -141,9 +141,9 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId());
+            sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
         return sb.toString();
     }

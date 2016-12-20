@@ -161,9 +161,9 @@ public class DescribeVoicesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVoices() != null)
-            sb.append("Voices: " + getVoices() + ",");
+            sb.append("Voices: ").append(getVoices()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -221,13 +221,13 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN() + ",");
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getTapeRecoveryPointTime() != null)
-            sb.append("TapeRecoveryPointTime: " + getTapeRecoveryPointTime() + ",");
+            sb.append("TapeRecoveryPointTime: ").append(getTapeRecoveryPointTime()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: " + getTapeStatus());
+            sb.append("TapeStatus: ").append(getTapeStatus());
         sb.append("}");
         return sb.toString();
     }

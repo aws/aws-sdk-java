@@ -436,15 +436,15 @@ public class PolicyAttributeTypeDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getAttributeType() != null)
-            sb.append("AttributeType: " + getAttributeType() + ",");
+            sb.append("AttributeType: ").append(getAttributeType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getCardinality() != null)
-            sb.append("Cardinality: " + getCardinality());
+            sb.append("Cardinality: ").append(getCardinality());
         sb.append("}");
         return sb.toString();
     }

@@ -63,10 +63,8 @@ public class SetIdentityPoolConfigurationRequestMarshaller implements
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/configuration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (setIdentityPoolConfigurationRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(setIdentityPoolConfigurationRequest.getIdentityPoolId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                setIdentityPoolConfigurationRequest.getIdentityPoolId());
         request.setResourcePath(uriResourcePath);
 
         try {

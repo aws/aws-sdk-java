@@ -343,17 +343,17 @@ public class CustomerGateway implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerGatewayId() != null)
-            sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");
+            sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getBgpAsn() != null)
-            sb.append("BgpAsn: " + getBgpAsn() + ",");
+            sb.append("BgpAsn: ").append(getBgpAsn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

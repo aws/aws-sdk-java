@@ -526,19 +526,19 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivationKey() != null)
-            sb.append("ActivationKey: " + getActivationKey() + ",");
+            sb.append("ActivationKey: ").append(getActivationKey()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: " + getGatewayName() + ",");
+            sb.append("GatewayName: ").append(getGatewayName()).append(",");
         if (getGatewayTimezone() != null)
-            sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");
+            sb.append("GatewayTimezone: ").append(getGatewayTimezone()).append(",");
         if (getGatewayRegion() != null)
-            sb.append("GatewayRegion: " + getGatewayRegion() + ",");
+            sb.append("GatewayRegion: ").append(getGatewayRegion()).append(",");
         if (getGatewayType() != null)
-            sb.append("GatewayType: " + getGatewayType() + ",");
+            sb.append("GatewayType: ").append(getGatewayType()).append(",");
         if (getTapeDriveType() != null)
-            sb.append("TapeDriveType: " + getTapeDriveType() + ",");
+            sb.append("TapeDriveType: ").append(getTapeDriveType()).append(",");
         if (getMediumChangerType() != null)
-            sb.append("MediumChangerType: " + getMediumChangerType());
+            sb.append("MediumChangerType: ").append(getMediumChangerType());
         sb.append("}");
         return sb.toString();
     }

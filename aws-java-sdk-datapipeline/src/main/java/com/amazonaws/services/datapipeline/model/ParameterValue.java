@@ -126,9 +126,9 @@ public class ParameterValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getStringValue() != null)
-            sb.append("StringValue: " + getStringValue());
+            sb.append("StringValue: ").append(getStringValue());
         sb.append("}");
         return sb.toString();
     }

@@ -361,15 +361,15 @@ public class SigningCertificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getCertificateBody() != null)
-            sb.append("CertificateBody: " + getCertificateBody() + ",");
+            sb.append("CertificateBody: ").append(getCertificateBody()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getUploadDate() != null)
-            sb.append("UploadDate: " + getUploadDate());
+            sb.append("UploadDate: ").append(getUploadDate());
         sb.append("}");
         return sb.toString();
     }

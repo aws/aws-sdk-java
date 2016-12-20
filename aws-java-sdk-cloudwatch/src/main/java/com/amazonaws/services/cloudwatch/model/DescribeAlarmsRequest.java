@@ -375,17 +375,17 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmNames() != null)
-            sb.append("AlarmNames: " + getAlarmNames() + ",");
+            sb.append("AlarmNames: ").append(getAlarmNames()).append(",");
         if (getAlarmNamePrefix() != null)
-            sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");
+            sb.append("AlarmNamePrefix: ").append(getAlarmNamePrefix()).append(",");
         if (getStateValue() != null)
-            sb.append("StateValue: " + getStateValue() + ",");
+            sb.append("StateValue: ").append(getStateValue()).append(",");
         if (getActionPrefix() != null)
-            sb.append("ActionPrefix: " + getActionPrefix() + ",");
+            sb.append("ActionPrefix: ").append(getActionPrefix()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

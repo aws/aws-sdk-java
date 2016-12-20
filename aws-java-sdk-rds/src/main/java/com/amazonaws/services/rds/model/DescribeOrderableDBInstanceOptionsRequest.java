@@ -534,21 +534,21 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getDBInstanceClass() != null)
-            sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+            sb.append("DBInstanceClass: ").append(getDBInstanceClass()).append(",");
         if (getLicenseModel() != null)
-            sb.append("LicenseModel: " + getLicenseModel() + ",");
+            sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getVpc() != null)
-            sb.append("Vpc: " + getVpc() + ",");
+            sb.append("Vpc: ").append(getVpc()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

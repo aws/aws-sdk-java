@@ -178,11 +178,11 @@ public class PutAutoScalingPolicyRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
         if (getAutoScalingPolicy() != null)
-            sb.append("AutoScalingPolicy: " + getAutoScalingPolicy());
+            sb.append("AutoScalingPolicy: ").append(getAutoScalingPolicy());
         sb.append("}");
         return sb.toString();
     }

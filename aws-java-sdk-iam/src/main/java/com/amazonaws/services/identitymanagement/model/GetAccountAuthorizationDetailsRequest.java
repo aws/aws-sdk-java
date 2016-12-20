@@ -354,11 +354,11 @@ public class GetAccountAuthorizationDetailsRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

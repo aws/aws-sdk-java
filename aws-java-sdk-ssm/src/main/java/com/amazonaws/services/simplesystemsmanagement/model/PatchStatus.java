@@ -159,9 +159,9 @@ public class PatchStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentStatus() != null)
-            sb.append("DeploymentStatus: " + getDeploymentStatus() + ",");
+            sb.append("DeploymentStatus: ").append(getDeploymentStatus()).append(",");
         if (getApprovalDate() != null)
-            sb.append("ApprovalDate: " + getApprovalDate());
+            sb.append("ApprovalDate: ").append(getApprovalDate());
         sb.append("}");
         return sb.toString();
     }

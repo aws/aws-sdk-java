@@ -138,9 +138,9 @@ public class ScheduledInstancesPrivateIpAddressConfig implements Serializable, C
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrimary() != null)
-            sb.append("Primary: " + getPrimary());
+            sb.append("Primary: ").append(getPrimary());
         sb.append("}");
         return sb.toString();
     }

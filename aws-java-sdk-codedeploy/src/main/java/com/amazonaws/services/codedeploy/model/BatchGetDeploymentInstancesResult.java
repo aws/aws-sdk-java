@@ -159,9 +159,9 @@ public class BatchGetDeploymentInstancesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstancesSummary() != null)
-            sb.append("InstancesSummary: " + getInstancesSummary() + ",");
+            sb.append("InstancesSummary: ").append(getInstancesSummary()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }

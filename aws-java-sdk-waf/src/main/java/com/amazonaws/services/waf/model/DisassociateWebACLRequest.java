@@ -79,7 +79,7 @@ public class DisassociateWebACLRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }

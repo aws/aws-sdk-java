@@ -81,7 +81,7 @@ public class DescribeElasticsearchDomainResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainStatus() != null)
-            sb.append("DomainStatus: " + getDomainStatus());
+            sb.append("DomainStatus: ").append(getDomainStatus());
         sb.append("}");
         return sb.toString();
     }

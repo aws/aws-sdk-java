@@ -86,7 +86,7 @@ public class GetEvaluationRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationId() != null)
-            sb.append("EvaluationId: " + getEvaluationId());
+            sb.append("EvaluationId: ").append(getEvaluationId());
         sb.append("}");
         return sb.toString();
     }

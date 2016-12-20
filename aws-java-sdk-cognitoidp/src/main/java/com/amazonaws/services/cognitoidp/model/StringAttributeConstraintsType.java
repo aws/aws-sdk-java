@@ -126,9 +126,9 @@ public class StringAttributeConstraintsType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinLength() != null)
-            sb.append("MinLength: " + getMinLength() + ",");
+            sb.append("MinLength: ").append(getMinLength()).append(",");
         if (getMaxLength() != null)
-            sb.append("MaxLength: " + getMaxLength());
+            sb.append("MaxLength: ").append(getMaxLength());
         sb.append("}");
         return sb.toString();
     }

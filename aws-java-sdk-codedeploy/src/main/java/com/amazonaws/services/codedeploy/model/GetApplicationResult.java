@@ -80,7 +80,7 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplication() != null)
-            sb.append("Application: " + getApplication());
+            sb.append("Application: ").append(getApplication());
         sb.append("}");
         return sb.toString();
     }

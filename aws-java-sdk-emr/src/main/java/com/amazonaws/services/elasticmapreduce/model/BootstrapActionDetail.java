@@ -98,7 +98,7 @@ public class BootstrapActionDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBootstrapActionConfig() != null)
-            sb.append("BootstrapActionConfig: " + getBootstrapActionConfig());
+            sb.append("BootstrapActionConfig: ").append(getBootstrapActionConfig());
         sb.append("}");
         return sb.toString();
     }

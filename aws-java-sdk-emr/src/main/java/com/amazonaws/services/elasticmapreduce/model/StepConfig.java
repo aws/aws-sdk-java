@@ -226,11 +226,11 @@ public class StepConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getActionOnFailure() != null)
-            sb.append("ActionOnFailure: " + getActionOnFailure() + ",");
+            sb.append("ActionOnFailure: ").append(getActionOnFailure()).append(",");
         if (getHadoopJarStep() != null)
-            sb.append("HadoopJarStep: " + getHadoopJarStep());
+            sb.append("HadoopJarStep: ").append(getHadoopJarStep());
         sb.append("}");
         return sb.toString();
     }

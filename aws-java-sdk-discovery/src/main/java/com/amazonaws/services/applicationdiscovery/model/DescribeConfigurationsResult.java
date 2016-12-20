@@ -108,7 +108,7 @@ public class DescribeConfigurationsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations());
+            sb.append("Configurations: ").append(getConfigurations());
         sb.append("}");
         return sb.toString();
     }

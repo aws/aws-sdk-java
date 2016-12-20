@@ -186,9 +186,9 @@ public class PutRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedRecordCount() != null)
-            sb.append("FailedRecordCount: " + getFailedRecordCount() + ",");
+            sb.append("FailedRecordCount: ").append(getFailedRecordCount()).append(",");
         if (getRecords() != null)
-            sb.append("Records: " + getRecords());
+            sb.append("Records: ").append(getRecords());
         sb.append("}");
         return sb.toString();
     }

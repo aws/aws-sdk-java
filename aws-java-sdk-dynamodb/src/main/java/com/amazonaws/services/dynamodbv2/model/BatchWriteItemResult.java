@@ -851,11 +851,11 @@ public class BatchWriteItemResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnprocessedItems() != null)
-            sb.append("UnprocessedItems: " + getUnprocessedItems() + ",");
+            sb.append("UnprocessedItems: ").append(getUnprocessedItems()).append(",");
         if (getItemCollectionMetrics() != null)
-            sb.append("ItemCollectionMetrics: " + getItemCollectionMetrics() + ",");
+            sb.append("ItemCollectionMetrics: ").append(getItemCollectionMetrics()).append(",");
         if (getConsumedCapacity() != null)
-            sb.append("ConsumedCapacity: " + getConsumedCapacity());
+            sb.append("ConsumedCapacity: ").append(getConsumedCapacity());
         sb.append("}");
         return sb.toString();
     }

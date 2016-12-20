@@ -55,8 +55,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
         String uriResourcePath = "/2016-11-25/distribution/{Id}/config";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (updateDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateDistributionRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {

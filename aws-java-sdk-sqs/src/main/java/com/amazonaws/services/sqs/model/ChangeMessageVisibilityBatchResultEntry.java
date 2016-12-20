@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.
+ * Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a> </code>.
  * </p>
  */
 public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cloneable {
@@ -80,7 +80,7 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

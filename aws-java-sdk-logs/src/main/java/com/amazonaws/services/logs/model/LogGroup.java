@@ -292,17 +292,17 @@ public class LogGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getRetentionInDays() != null)
-            sb.append("RetentionInDays: " + getRetentionInDays() + ",");
+            sb.append("RetentionInDays: ").append(getRetentionInDays()).append(",");
         if (getMetricFilterCount() != null)
-            sb.append("MetricFilterCount: " + getMetricFilterCount() + ",");
+            sb.append("MetricFilterCount: ").append(getMetricFilterCount()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStoredBytes() != null)
-            sb.append("StoredBytes: " + getStoredBytes());
+            sb.append("StoredBytes: ").append(getStoredBytes());
         sb.append("}");
         return sb.toString();
     }

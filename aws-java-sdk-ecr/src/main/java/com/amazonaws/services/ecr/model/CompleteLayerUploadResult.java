@@ -216,13 +216,13 @@ public class CompleteLayerUploadResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getLayerDigest() != null)
-            sb.append("LayerDigest: " + getLayerDigest());
+            sb.append("LayerDigest: ").append(getLayerDigest());
         sb.append("}");
         return sb.toString();
     }

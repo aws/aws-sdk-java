@@ -329,15 +329,15 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType() + ",");
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }

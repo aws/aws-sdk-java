@@ -1041,27 +1041,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getBuildId() != null)
-            sb.append("BuildId: " + getBuildId() + ",");
+            sb.append("BuildId: ").append(getBuildId()).append(",");
         if (getServerLaunchPath() != null)
-            sb.append("ServerLaunchPath: " + getServerLaunchPath() + ",");
+            sb.append("ServerLaunchPath: ").append(getServerLaunchPath()).append(",");
         if (getServerLaunchParameters() != null)
-            sb.append("ServerLaunchParameters: " + getServerLaunchParameters() + ",");
+            sb.append("ServerLaunchParameters: ").append(getServerLaunchParameters()).append(",");
         if (getLogPaths() != null)
-            sb.append("LogPaths: " + getLogPaths() + ",");
+            sb.append("LogPaths: ").append(getLogPaths()).append(",");
         if (getEC2InstanceType() != null)
-            sb.append("EC2InstanceType: " + getEC2InstanceType() + ",");
+            sb.append("EC2InstanceType: ").append(getEC2InstanceType()).append(",");
         if (getEC2InboundPermissions() != null)
-            sb.append("EC2InboundPermissions: " + getEC2InboundPermissions() + ",");
+            sb.append("EC2InboundPermissions: ").append(getEC2InboundPermissions()).append(",");
         if (getNewGameSessionProtectionPolicy() != null)
-            sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy() + ",");
+            sb.append("NewGameSessionProtectionPolicy: ").append(getNewGameSessionProtectionPolicy()).append(",");
         if (getRuntimeConfiguration() != null)
-            sb.append("RuntimeConfiguration: " + getRuntimeConfiguration() + ",");
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration()).append(",");
         if (getResourceCreationLimitPolicy() != null)
-            sb.append("ResourceCreationLimitPolicy: " + getResourceCreationLimitPolicy());
+            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy());
         sb.append("}");
         return sb.toString();
     }

@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The message referred to is not in flight.
+ * The message referred to isn't in flight.
  * </p>
  */
 public class MessageNotInflightException extends com.amazonaws.services.sqs.model.AmazonSQSException {

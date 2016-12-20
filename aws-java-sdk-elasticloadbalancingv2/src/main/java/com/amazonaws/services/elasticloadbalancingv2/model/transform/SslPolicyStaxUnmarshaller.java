@@ -45,8 +45,18 @@ public class SslPolicyStaxUnmarshaller implements Unmarshaller<SslPolicy, StaxUn
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SslProtocols", targetDepth)) {
+                    sslPolicy.withSslProtocols(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SslProtocols/member", targetDepth)) {
                     sslPolicy.withSslProtocols(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ciphers", targetDepth)) {
+                    sslPolicy.withCiphers(new ArrayList<Cipher>());
                     continue;
                 }
 

@@ -70,6 +70,11 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
+                if (context.testExpression("SecurityGroupId", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withGroups(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SecurityGroupId/SecurityGroupId", targetDepth)) {
                     instanceNetworkInterfaceSpecification.withGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -77,6 +82,11 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
 
                 if (context.testExpression("deleteOnTermination", targetDepth)) {
                     instanceNetworkInterfaceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddressesSet", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withPrivateIpAddresses(new ArrayList<PrivateIpAddressSpecification>());
                     continue;
                 }
 
@@ -93,6 +103,11 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
 
                 if (context.testExpression("associatePublicIpAddress", targetDepth)) {
                     instanceNetworkInterfaceSpecification.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6AddressesSet", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.withIpv6Addresses(new ArrayList<InstanceIpv6Address>());
                     continue;
                 }
 

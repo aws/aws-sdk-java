@@ -86,7 +86,7 @@ public class DeleteBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBackupId() != null)
-            sb.append("BackupId: " + getBackupId());
+            sb.append("BackupId: ").append(getBackupId());
         sb.append("}");
         return sb.toString();
     }

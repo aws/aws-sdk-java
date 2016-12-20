@@ -109,9 +109,9 @@ public class DeleteExpressionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getExpressionName() != null)
-            sb.append("ExpressionName: " + getExpressionName());
+            sb.append("ExpressionName: ").append(getExpressionName());
         sb.append("}");
         return sb.toString();
     }

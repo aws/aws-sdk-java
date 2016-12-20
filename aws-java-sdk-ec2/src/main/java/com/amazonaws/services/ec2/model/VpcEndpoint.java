@@ -422,19 +422,19 @@ public class VpcEndpoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcEndpointId() != null)
-            sb.append("VpcEndpointId: " + getVpcEndpointId() + ",");
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: " + getServiceName() + ",");
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument() + ",");
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getRouteTableIds() != null)
-            sb.append("RouteTableIds: " + getRouteTableIds() + ",");
+            sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
         if (getCreationTimestamp() != null)
-            sb.append("CreationTimestamp: " + getCreationTimestamp());
+            sb.append("CreationTimestamp: ").append(getCreationTimestamp());
         sb.append("}");
         return sb.toString();
     }

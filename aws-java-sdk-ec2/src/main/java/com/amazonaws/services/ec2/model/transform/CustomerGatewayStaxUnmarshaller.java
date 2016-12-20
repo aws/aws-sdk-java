@@ -70,6 +70,11 @@ public class CustomerGatewayStaxUnmarshaller implements Unmarshaller<CustomerGat
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    customerGateway.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     customerGateway.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

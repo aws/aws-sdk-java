@@ -172,11 +172,11 @@ public class Pose implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoll() != null)
-            sb.append("Roll: " + getRoll() + ",");
+            sb.append("Roll: ").append(getRoll()).append(",");
         if (getYaw() != null)
-            sb.append("Yaw: " + getYaw() + ",");
+            sb.append("Yaw: ").append(getYaw()).append(",");
         if (getPitch() != null)
-            sb.append("Pitch: " + getPitch());
+            sb.append("Pitch: ").append(getPitch());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class NotificationConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getTopicStatus() != null)
-            sb.append("TopicStatus: " + getTopicStatus());
+            sb.append("TopicStatus: ").append(getTopicStatus());
         sb.append("}");
         return sb.toString();
     }

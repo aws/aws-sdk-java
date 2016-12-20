@@ -387,15 +387,15 @@ public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getBulkPublishStartTime() != null)
-            sb.append("BulkPublishStartTime: " + getBulkPublishStartTime() + ",");
+            sb.append("BulkPublishStartTime: ").append(getBulkPublishStartTime()).append(",");
         if (getBulkPublishCompleteTime() != null)
-            sb.append("BulkPublishCompleteTime: " + getBulkPublishCompleteTime() + ",");
+            sb.append("BulkPublishCompleteTime: ").append(getBulkPublishCompleteTime()).append(",");
         if (getBulkPublishStatus() != null)
-            sb.append("BulkPublishStatus: " + getBulkPublishStatus() + ",");
+            sb.append("BulkPublishStatus: ").append(getBulkPublishStatus()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage());
         sb.append("}");
         return sb.toString();
     }

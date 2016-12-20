@@ -45,6 +45,11 @@ public class DescribeAlarmsResultStaxUnmarshaller implements Unmarshaller<Descri
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("MetricAlarms", targetDepth)) {
+                    describeAlarmsResult.withMetricAlarms(new ArrayList<MetricAlarm>());
+                    continue;
+                }
+
                 if (context.testExpression("MetricAlarms/member", targetDepth)) {
                     describeAlarmsResult.withMetricAlarms(MetricAlarmStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

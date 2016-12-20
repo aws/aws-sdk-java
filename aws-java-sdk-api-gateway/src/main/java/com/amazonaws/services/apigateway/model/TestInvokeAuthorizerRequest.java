@@ -434,19 +434,19 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getAuthorizerId() != null)
-            sb.append("AuthorizerId: " + getAuthorizerId() + ",");
+            sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getHeaders() != null)
-            sb.append("Headers: " + getHeaders() + ",");
+            sb.append("Headers: ").append(getHeaders()).append(",");
         if (getPathWithQueryString() != null)
-            sb.append("PathWithQueryString: " + getPathWithQueryString() + ",");
+            sb.append("PathWithQueryString: ").append(getPathWithQueryString()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getStageVariables() != null)
-            sb.append("StageVariables: " + getStageVariables() + ",");
+            sb.append("StageVariables: ").append(getStageVariables()).append(",");
         if (getAdditionalContext() != null)
-            sb.append("AdditionalContext: " + getAdditionalContext());
+            sb.append("AdditionalContext: ").append(getAdditionalContext());
         sb.append("}");
         return sb.toString();
     }

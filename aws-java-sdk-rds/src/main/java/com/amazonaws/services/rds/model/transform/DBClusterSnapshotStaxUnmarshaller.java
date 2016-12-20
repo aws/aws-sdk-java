@@ -45,6 +45,11 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    dBClusterSnapshot.withAvailabilityZones(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/AvailabilityZone", targetDepth)) {
                     dBClusterSnapshot.withAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

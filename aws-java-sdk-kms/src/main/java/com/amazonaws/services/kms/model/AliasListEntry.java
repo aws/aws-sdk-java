@@ -172,11 +172,11 @@ public class AliasListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasName() != null)
-            sb.append("AliasName: " + getAliasName() + ",");
+            sb.append("AliasName: ").append(getAliasName()).append(",");
         if (getAliasArn() != null)
-            sb.append("AliasArn: " + getAliasArn() + ",");
+            sb.append("AliasArn: ").append(getAliasArn()).append(",");
         if (getTargetKeyId() != null)
-            sb.append("TargetKeyId: " + getTargetKeyId());
+            sb.append("TargetKeyId: ").append(getTargetKeyId());
         sb.append("}");
         return sb.toString();
     }

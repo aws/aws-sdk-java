@@ -292,15 +292,15 @@ public class HealthCheck implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getHealthCheckConfig() != null)
-            sb.append("HealthCheckConfig: " + getHealthCheckConfig() + ",");
+            sb.append("HealthCheckConfig: ").append(getHealthCheckConfig()).append(",");
         if (getHealthCheckVersion() != null)
-            sb.append("HealthCheckVersion: " + getHealthCheckVersion() + ",");
+            sb.append("HealthCheckVersion: ").append(getHealthCheckVersion()).append(",");
         if (getCloudWatchAlarmConfiguration() != null)
-            sb.append("CloudWatchAlarmConfiguration: " + getCloudWatchAlarmConfiguration());
+            sb.append("CloudWatchAlarmConfiguration: ").append(getCloudWatchAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }

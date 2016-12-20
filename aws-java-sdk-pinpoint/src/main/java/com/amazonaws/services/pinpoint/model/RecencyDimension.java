@@ -199,9 +199,9 @@ public class RecencyDimension implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getRecencyType() != null)
-            sb.append("RecencyType: " + getRecencyType());
+            sb.append("RecencyType: ").append(getRecencyType());
         sb.append("}");
         return sb.toString();
     }

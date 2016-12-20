@@ -128,9 +128,9 @@ public class InstallToRemoteAccessSessionRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRemoteAccessSessionArn() != null)
-            sb.append("RemoteAccessSessionArn: " + getRemoteAccessSessionArn() + ",");
+            sb.append("RemoteAccessSessionArn: ").append(getRemoteAccessSessionArn()).append(",");
         if (getAppArn() != null)
-            sb.append("AppArn: " + getAppArn());
+            sb.append("AppArn: ").append(getAppArn());
         sb.append("}");
         return sb.toString();
     }

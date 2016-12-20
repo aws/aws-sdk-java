@@ -1643,45 +1643,45 @@ public class Command implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getDocumentName() != null)
-            sb.append("DocumentName: " + getDocumentName() + ",");
+            sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getExpiresAfter() != null)
-            sb.append("ExpiresAfter: " + getExpiresAfter() + ",");
+            sb.append("ExpiresAfter: ").append(getExpiresAfter()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getRequestedDateTime() != null)
-            sb.append("RequestedDateTime: " + getRequestedDateTime() + ",");
+            sb.append("RequestedDateTime: ").append(getRequestedDateTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getOutputS3Region() != null)
-            sb.append("OutputS3Region: " + getOutputS3Region() + ",");
+            sb.append("OutputS3Region: ").append(getOutputS3Region()).append(",");
         if (getOutputS3BucketName() != null)
-            sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
+            sb.append("OutputS3BucketName: ").append(getOutputS3BucketName()).append(",");
         if (getOutputS3KeyPrefix() != null)
-            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix() + ",");
+            sb.append("OutputS3KeyPrefix: ").append(getOutputS3KeyPrefix()).append(",");
         if (getMaxConcurrency() != null)
-            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getMaxErrors() != null)
-            sb.append("MaxErrors: " + getMaxErrors() + ",");
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getTargetCount() != null)
-            sb.append("TargetCount: " + getTargetCount() + ",");
+            sb.append("TargetCount: ").append(getTargetCount()).append(",");
         if (getCompletedCount() != null)
-            sb.append("CompletedCount: " + getCompletedCount() + ",");
+            sb.append("CompletedCount: ").append(getCompletedCount()).append(",");
         if (getErrorCount() != null)
-            sb.append("ErrorCount: " + getErrorCount() + ",");
+            sb.append("ErrorCount: ").append(getErrorCount()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getNotificationConfig() != null)
-            sb.append("NotificationConfig: " + getNotificationConfig());
+            sb.append("NotificationConfig: ").append(getNotificationConfig());
         sb.append("}");
         return sb.toString();
     }

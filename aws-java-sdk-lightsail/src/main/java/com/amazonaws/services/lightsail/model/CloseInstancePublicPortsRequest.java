@@ -125,9 +125,9 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPortInfo() != null)
-            sb.append("PortInfo: " + getPortInfo() + ",");
+            sb.append("PortInfo: ").append(getPortInfo()).append(",");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName());
         sb.append("}");
         return sb.toString();
     }

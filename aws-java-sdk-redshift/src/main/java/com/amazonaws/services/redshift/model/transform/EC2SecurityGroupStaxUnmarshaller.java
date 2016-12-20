@@ -60,6 +60,11 @@ public class EC2SecurityGroupStaxUnmarshaller implements Unmarshaller<EC2Securit
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    eC2SecurityGroup.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     eC2SecurityGroup.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

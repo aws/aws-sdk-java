@@ -314,9 +314,9 @@ public class Nameserver implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getGlueIps() != null)
-            sb.append("GlueIps: " + getGlueIps());
+            sb.append("GlueIps: ").append(getGlueIps());
         sb.append("}");
         return sb.toString();
     }

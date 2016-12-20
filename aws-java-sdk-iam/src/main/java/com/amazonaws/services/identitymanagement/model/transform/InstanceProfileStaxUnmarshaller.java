@@ -70,6 +70,11 @@ public class InstanceProfileStaxUnmarshaller implements Unmarshaller<InstancePro
                     continue;
                 }
 
+                if (context.testExpression("Roles", targetDepth)) {
+                    instanceProfile.withRoles(new ArrayList<Role>());
+                    continue;
+                }
+
                 if (context.testExpression("Roles/member", targetDepth)) {
                     instanceProfile.withRoles(RoleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

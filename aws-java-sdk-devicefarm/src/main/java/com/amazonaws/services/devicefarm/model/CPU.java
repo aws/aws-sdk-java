@@ -182,11 +182,11 @@ public class CPU implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getClock() != null)
-            sb.append("Clock: " + getClock());
+            sb.append("Clock: ").append(getClock());
         sb.append("}");
         return sb.toString();
     }

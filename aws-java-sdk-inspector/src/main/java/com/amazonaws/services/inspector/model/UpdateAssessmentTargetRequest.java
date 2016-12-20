@@ -178,11 +178,11 @@ public class UpdateAssessmentTargetRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetArn() != null)
-            sb.append("AssessmentTargetArn: " + getAssessmentTargetArn() + ",");
+            sb.append("AssessmentTargetArn: ").append(getAssessmentTargetArn()).append(",");
         if (getAssessmentTargetName() != null)
-            sb.append("AssessmentTargetName: " + getAssessmentTargetName() + ",");
+            sb.append("AssessmentTargetName: ").append(getAssessmentTargetName()).append(",");
         if (getResourceGroupArn() != null)
-            sb.append("ResourceGroupArn: " + getResourceGroupArn());
+            sb.append("ResourceGroupArn: ").append(getResourceGroupArn());
         sb.append("}");
         return sb.toString();
     }

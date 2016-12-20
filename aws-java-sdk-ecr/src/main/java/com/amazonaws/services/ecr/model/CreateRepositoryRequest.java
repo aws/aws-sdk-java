@@ -93,7 +93,7 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName());
+            sb.append("RepositoryName: ").append(getRepositoryName());
         sb.append("}");
         return sb.toString();
     }

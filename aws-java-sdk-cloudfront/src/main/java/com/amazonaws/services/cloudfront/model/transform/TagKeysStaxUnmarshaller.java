@@ -45,6 +45,11 @@ public class TagKeysStaxUnmarshaller implements Unmarshaller<TagKeys, StaxUnmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Items", targetDepth)) {
+                    tagKeys.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Key", targetDepth)) {
                     tagKeys.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

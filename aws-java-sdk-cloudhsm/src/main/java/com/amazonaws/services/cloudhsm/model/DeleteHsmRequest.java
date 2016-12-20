@@ -81,7 +81,7 @@ public class DeleteHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmArn() != null)
-            sb.append("HsmArn: " + getHsmArn());
+            sb.append("HsmArn: ").append(getHsmArn());
         sb.append("}");
         return sb.toString();
     }

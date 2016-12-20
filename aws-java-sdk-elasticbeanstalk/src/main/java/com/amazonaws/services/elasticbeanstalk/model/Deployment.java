@@ -359,13 +359,13 @@ public class Deployment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDeploymentTime() != null)
-            sb.append("DeploymentTime: " + getDeploymentTime());
+            sb.append("DeploymentTime: ").append(getDeploymentTime());
         sb.append("}");
         return sb.toString();
     }

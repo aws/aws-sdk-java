@@ -320,17 +320,17 @@ public class Destination implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationName() != null)
-            sb.append("DestinationName: " + getDestinationName() + ",");
+            sb.append("DestinationName: ").append(getDestinationName()).append(",");
         if (getTargetArn() != null)
-            sb.append("TargetArn: " + getTargetArn() + ",");
+            sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getAccessPolicy() != null)
-            sb.append("AccessPolicy: " + getAccessPolicy() + ",");
+            sb.append("AccessPolicy: ").append(getAccessPolicy()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }

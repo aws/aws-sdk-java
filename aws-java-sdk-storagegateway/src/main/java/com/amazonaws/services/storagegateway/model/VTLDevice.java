@@ -210,15 +210,15 @@ public class VTLDevice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVTLDeviceARN() != null)
-            sb.append("VTLDeviceARN: " + getVTLDeviceARN() + ",");
+            sb.append("VTLDeviceARN: ").append(getVTLDeviceARN()).append(",");
         if (getVTLDeviceType() != null)
-            sb.append("VTLDeviceType: " + getVTLDeviceType() + ",");
+            sb.append("VTLDeviceType: ").append(getVTLDeviceType()).append(",");
         if (getVTLDeviceVendor() != null)
-            sb.append("VTLDeviceVendor: " + getVTLDeviceVendor() + ",");
+            sb.append("VTLDeviceVendor: ").append(getVTLDeviceVendor()).append(",");
         if (getVTLDeviceProductIdentifier() != null)
-            sb.append("VTLDeviceProductIdentifier: " + getVTLDeviceProductIdentifier() + ",");
+            sb.append("VTLDeviceProductIdentifier: ").append(getVTLDeviceProductIdentifier()).append(",");
         if (getDeviceiSCSIAttributes() != null)
-            sb.append("DeviceiSCSIAttributes: " + getDeviceiSCSIAttributes());
+            sb.append("DeviceiSCSIAttributes: ").append(getDeviceiSCSIAttributes());
         sb.append("}");
         return sb.toString();
     }

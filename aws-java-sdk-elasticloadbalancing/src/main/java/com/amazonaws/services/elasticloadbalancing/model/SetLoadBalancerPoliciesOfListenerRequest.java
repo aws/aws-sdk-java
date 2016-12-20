@@ -240,11 +240,11 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getLoadBalancerPort() != null)
-            sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");
+            sb.append("LoadBalancerPort: ").append(getLoadBalancerPort()).append(",");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames());
+            sb.append("PolicyNames: ").append(getPolicyNames());
         sb.append("}");
         return sb.toString();
     }

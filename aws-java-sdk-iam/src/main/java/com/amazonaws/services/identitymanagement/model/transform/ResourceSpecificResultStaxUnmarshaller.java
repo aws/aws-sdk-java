@@ -95,8 +95,18 @@ public class ResourceSpecificResultStaxUnmarshaller implements Unmarshaller<Reso
                     continue;
                 }
 
+                if (context.testExpression("MatchedStatements", targetDepth)) {
+                    resourceSpecificResult.withMatchedStatements(new ArrayList<Statement>());
+                    continue;
+                }
+
                 if (context.testExpression("MatchedStatements/member", targetDepth)) {
                     resourceSpecificResult.withMatchedStatements(StatementStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MissingContextValues", targetDepth)) {
+                    resourceSpecificResult.withMissingContextValues(new ArrayList<String>());
                     continue;
                 }
 

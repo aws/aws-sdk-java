@@ -14,8 +14,8 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds,
- * the time it can take to delete the messages in the queue.
+ * Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last 60 seconds
+ * (the time it can take to delete the messages in the queue).
  * </p>
  */
 public class PurgeQueueInProgressException extends com.amazonaws.services.sqs.model.AmazonSQSException {

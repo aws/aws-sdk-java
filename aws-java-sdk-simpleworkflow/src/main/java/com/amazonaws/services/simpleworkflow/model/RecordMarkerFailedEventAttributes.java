@@ -263,11 +263,11 @@ public class RecordMarkerFailedEventAttributes implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarkerName() != null)
-            sb.append("MarkerName: " + getMarkerName() + ",");
+            sb.append("MarkerName: ").append(getMarkerName()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause() + ",");
+            sb.append("Cause: ").append(getCause()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

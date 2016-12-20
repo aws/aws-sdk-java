@@ -179,9 +179,9 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNames() != null)
-            sb.append("Names: " + getNames() + ",");
+            sb.append("Names: ").append(getNames()).append(",");
         if (getWithDecryption() != null)
-            sb.append("WithDecryption: " + getWithDecryption());
+            sb.append("WithDecryption: ").append(getWithDecryption());
         sb.append("}");
         return sb.toString();
     }

@@ -231,11 +231,11 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getTargetCapacity() != null)
-            sb.append("TargetCapacity: " + getTargetCapacity() + ",");
+            sb.append("TargetCapacity: ").append(getTargetCapacity()).append(",");
         if (getExcessCapacityTerminationPolicy() != null)
-            sb.append("ExcessCapacityTerminationPolicy: " + getExcessCapacityTerminationPolicy());
+            sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy());
         sb.append("}");
         return sb.toString();
     }

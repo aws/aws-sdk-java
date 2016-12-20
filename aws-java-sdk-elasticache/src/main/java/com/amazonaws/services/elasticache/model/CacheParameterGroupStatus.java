@@ -214,11 +214,11 @@ public class CacheParameterGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getParameterApplyStatus() != null)
-            sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ",");
+            sb.append("ParameterApplyStatus: ").append(getParameterApplyStatus()).append(",");
         if (getCacheNodeIdsToReboot() != null)
-            sb.append("CacheNodeIdsToReboot: " + getCacheNodeIdsToReboot());
+            sb.append("CacheNodeIdsToReboot: ").append(getCacheNodeIdsToReboot());
         sb.append("}");
         return sb.toString();
     }

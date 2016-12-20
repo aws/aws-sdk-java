@@ -113,7 +113,7 @@ public class MaintenanceWindowTaskParameterValueExpression implements Serializab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValues() != null)
-            sb.append("Values: " + getValues());
+            sb.append("Values: ").append(getValues());
         sb.append("}");
         return sb.toString();
     }

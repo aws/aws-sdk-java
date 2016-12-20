@@ -84,7 +84,7 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSet() != null)
-            sb.append("ConfigurationSet: " + getConfigurationSet());
+            sb.append("ConfigurationSet: ").append(getConfigurationSet());
         sb.append("}");
         return sb.toString();
     }

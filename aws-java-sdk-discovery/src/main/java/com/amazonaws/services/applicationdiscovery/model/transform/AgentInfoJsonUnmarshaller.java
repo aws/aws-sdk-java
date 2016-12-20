@@ -72,6 +72,22 @@ public class AgentInfoJsonUnmarshaller implements Unmarshaller<AgentInfo, JsonUn
                     context.nextToken();
                     agentInfo.setHealth(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastHealthPingTime", targetDepth)) {
+                    context.nextToken();
+                    agentInfo.setLastHealthPingTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("collectionStatus", targetDepth)) {
+                    context.nextToken();
+                    agentInfo.setCollectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("agentType", targetDepth)) {
+                    context.nextToken();
+                    agentInfo.setAgentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("registeredTime", targetDepth)) {
+                    context.nextToken();
+                    agentInfo.setRegisteredTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

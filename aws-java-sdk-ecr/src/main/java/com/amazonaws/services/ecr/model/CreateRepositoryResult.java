@@ -78,7 +78,7 @@ public class CreateRepositoryResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepository() != null)
-            sb.append("Repository: " + getRepository());
+            sb.append("Repository: ").append(getRepository());
         sb.append("}");
         return sb.toString();
     }

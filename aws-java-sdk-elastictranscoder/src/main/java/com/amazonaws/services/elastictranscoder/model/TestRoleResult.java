@@ -172,9 +172,9 @@ public class TestRoleResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccess() != null)
-            sb.append("Success: " + getSuccess() + ",");
+            sb.append("Success: ").append(getSuccess()).append(",");
         if (getMessages() != null)
-            sb.append("Messages: " + getMessages());
+            sb.append("Messages: ").append(getMessages());
         sb.append("}");
         return sb.toString();
     }

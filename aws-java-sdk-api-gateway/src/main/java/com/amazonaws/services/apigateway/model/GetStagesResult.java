@@ -112,7 +112,7 @@ public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItem() != null)
-            sb.append("Item: " + getItem());
+            sb.append("Item: ").append(getItem());
         sb.append("}");
         return sb.toString();
     }

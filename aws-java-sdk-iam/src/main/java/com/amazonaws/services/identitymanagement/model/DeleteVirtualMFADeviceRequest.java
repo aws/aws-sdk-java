@@ -118,7 +118,7 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber());
+            sb.append("SerialNumber: ").append(getSerialNumber());
         sb.append("}");
         return sb.toString();
     }

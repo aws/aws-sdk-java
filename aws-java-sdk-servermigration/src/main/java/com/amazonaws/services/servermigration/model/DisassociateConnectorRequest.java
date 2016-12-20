@@ -60,7 +60,7 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectorId() != null)
-            sb.append("ConnectorId: " + getConnectorId());
+            sb.append("ConnectorId: ").append(getConnectorId());
         sb.append("}");
         return sb.toString();
     }

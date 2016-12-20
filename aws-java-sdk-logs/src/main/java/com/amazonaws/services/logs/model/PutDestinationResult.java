@@ -78,7 +78,7 @@ public class PutDestinationResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestination() != null)
-            sb.append("Destination: " + getDestination());
+            sb.append("Destination: ").append(getDestination());
         sb.append("}");
         return sb.toString();
     }

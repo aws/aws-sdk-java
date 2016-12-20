@@ -680,27 +680,27 @@ public class Image implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getBaseImageArn() != null)
-            sb.append("BaseImageArn: " + getBaseImageArn() + ",");
+            sb.append("BaseImageArn: ").append(getBaseImageArn()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName() + ",");
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getVisibility() != null)
-            sb.append("Visibility: " + getVisibility() + ",");
+            sb.append("Visibility: ").append(getVisibility()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getStateChangeReason() != null)
-            sb.append("StateChangeReason: " + getStateChangeReason() + ",");
+            sb.append("StateChangeReason: ").append(getStateChangeReason()).append(",");
         if (getApplications() != null)
-            sb.append("Applications: " + getApplications() + ",");
+            sb.append("Applications: ").append(getApplications()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime());
         sb.append("}");
         return sb.toString();
     }

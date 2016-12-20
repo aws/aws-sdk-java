@@ -331,15 +331,15 @@ public class TrustedAdvisorCheckDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCategory() != null)
-            sb.append("Category: " + getCategory() + ",");
+            sb.append("Category: ").append(getCategory()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata());
+            sb.append("Metadata: ").append(getMetadata());
         sb.append("}");
         return sb.toString();
     }

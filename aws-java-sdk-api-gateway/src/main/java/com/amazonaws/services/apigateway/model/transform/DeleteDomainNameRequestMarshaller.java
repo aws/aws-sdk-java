@@ -61,10 +61,7 @@ public class DeleteDomainNameRequestMarshaller implements Marshaller<Request<Del
 
         String uriResourcePath = "/domainnames/{domain_name}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (deleteDomainNameRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteDomainNameRequest.getDomainName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "domain_name", deleteDomainNameRequest.getDomainName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

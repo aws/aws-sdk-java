@@ -81,7 +81,7 @@ public class Timezone implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimezoneName() != null)
-            sb.append("TimezoneName: " + getTimezoneName());
+            sb.append("TimezoneName: ").append(getTimezoneName());
         sb.append("}");
         return sb.toString();
     }

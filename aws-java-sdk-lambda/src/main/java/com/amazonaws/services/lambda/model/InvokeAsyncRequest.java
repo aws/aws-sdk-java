@@ -151,9 +151,9 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getInvokeArgs() != null)
-            sb.append("InvokeArgs: " + getInvokeArgs());
+            sb.append("InvokeArgs: ").append(getInvokeArgs());
         sb.append("}");
         return sb.toString();
     }

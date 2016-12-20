@@ -348,13 +348,13 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebAclId() != null)
-            sb.append("WebAclId: " + getWebAclId() + ",");
+            sb.append("WebAclId: ").append(getWebAclId()).append(",");
         if (getRuleId() != null)
-            sb.append("RuleId: " + getRuleId() + ",");
+            sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getTimeWindow() != null)
-            sb.append("TimeWindow: " + getTimeWindow() + ",");
+            sb.append("TimeWindow: ").append(getTimeWindow()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

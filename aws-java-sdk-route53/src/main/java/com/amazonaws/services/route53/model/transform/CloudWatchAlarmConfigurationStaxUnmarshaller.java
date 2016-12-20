@@ -80,6 +80,11 @@ public class CloudWatchAlarmConfigurationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("Dimensions", targetDepth)) {
+                    cloudWatchAlarmConfiguration.withDimensions(new ArrayList<Dimension>());
+                    continue;
+                }
+
                 if (context.testExpression("Dimensions/Dimension", targetDepth)) {
                     cloudWatchAlarmConfiguration.withDimensions(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

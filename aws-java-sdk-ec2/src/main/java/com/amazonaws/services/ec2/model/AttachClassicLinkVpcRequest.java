@@ -224,11 +224,11 @@ public class AttachClassicLinkVpcRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getGroups() != null)
-            sb.append("Groups: " + getGroups());
+            sb.append("Groups: ").append(getGroups());
         sb.append("}");
         return sb.toString();
     }

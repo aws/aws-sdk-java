@@ -172,11 +172,11 @@ public class ClusterVersion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getClusterParameterGroupFamily() != null)
-            sb.append("ClusterParameterGroupFamily: " + getClusterParameterGroupFamily() + ",");
+            sb.append("ClusterParameterGroupFamily: ").append(getClusterParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

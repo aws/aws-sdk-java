@@ -273,13 +273,13 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getChallengeName() != null)
-            sb.append("ChallengeName: " + getChallengeName() + ",");
+            sb.append("ChallengeName: ").append(getChallengeName()).append(",");
         if (getSession() != null)
-            sb.append("Session: " + getSession() + ",");
+            sb.append("Session: ").append(getSession()).append(",");
         if (getChallengeResponses() != null)
-            sb.append("ChallengeResponses: " + getChallengeResponses());
+            sb.append("ChallengeResponses: ").append(getChallengeResponses());
         sb.append("}");
         return sb.toString();
     }

@@ -1397,31 +1397,31 @@ public class FleetAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTerminationTime() != null)
-            sb.append("TerminationTime: " + getTerminationTime() + ",");
+            sb.append("TerminationTime: ").append(getTerminationTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getBuildId() != null)
-            sb.append("BuildId: " + getBuildId() + ",");
+            sb.append("BuildId: ").append(getBuildId()).append(",");
         if (getServerLaunchPath() != null)
-            sb.append("ServerLaunchPath: " + getServerLaunchPath() + ",");
+            sb.append("ServerLaunchPath: ").append(getServerLaunchPath()).append(",");
         if (getServerLaunchParameters() != null)
-            sb.append("ServerLaunchParameters: " + getServerLaunchParameters() + ",");
+            sb.append("ServerLaunchParameters: ").append(getServerLaunchParameters()).append(",");
         if (getLogPaths() != null)
-            sb.append("LogPaths: " + getLogPaths() + ",");
+            sb.append("LogPaths: ").append(getLogPaths()).append(",");
         if (getNewGameSessionProtectionPolicy() != null)
-            sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy() + ",");
+            sb.append("NewGameSessionProtectionPolicy: ").append(getNewGameSessionProtectionPolicy()).append(",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getResourceCreationLimitPolicy() != null)
-            sb.append("ResourceCreationLimitPolicy: " + getResourceCreationLimitPolicy());
+            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy());
         sb.append("}");
         return sb.toString();
     }

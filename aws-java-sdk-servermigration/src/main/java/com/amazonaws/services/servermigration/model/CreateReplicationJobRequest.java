@@ -223,17 +223,17 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerId() != null)
-            sb.append("ServerId: " + getServerId() + ",");
+            sb.append("ServerId: ").append(getServerId()).append(",");
         if (getSeedReplicationTime() != null)
-            sb.append("SeedReplicationTime: " + getSeedReplicationTime() + ",");
+            sb.append("SeedReplicationTime: ").append(getSeedReplicationTime()).append(",");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getLicenseType() != null)
-            sb.append("LicenseType: " + getLicenseType() + ",");
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

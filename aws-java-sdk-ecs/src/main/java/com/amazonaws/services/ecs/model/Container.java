@@ -396,19 +396,19 @@ public class Container implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContainerArn() != null)
-            sb.append("ContainerArn: " + getContainerArn() + ",");
+            sb.append("ContainerArn: ").append(getContainerArn()).append(",");
         if (getTaskArn() != null)
-            sb.append("TaskArn: " + getTaskArn() + ",");
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getLastStatus() != null)
-            sb.append("LastStatus: " + getLastStatus() + ",");
+            sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getExitCode() != null)
-            sb.append("ExitCode: " + getExitCode() + ",");
+            sb.append("ExitCode: ").append(getExitCode()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getNetworkBindings() != null)
-            sb.append("NetworkBindings: " + getNetworkBindings());
+            sb.append("NetworkBindings: ").append(getNetworkBindings());
         sb.append("}");
         return sb.toString();
     }

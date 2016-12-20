@@ -205,11 +205,11 @@ public class FailedCreateAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEntry() != null)
-            sb.append("Entry: " + getEntry() + ",");
+            sb.append("Entry: ").append(getEntry()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getFault() != null)
-            sb.append("Fault: " + getFault());
+            sb.append("Fault: ").append(getFault());
         sb.append("}");
         return sb.toString();
     }

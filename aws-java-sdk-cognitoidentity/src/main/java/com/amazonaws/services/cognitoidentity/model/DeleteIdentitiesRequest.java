@@ -111,7 +111,7 @@ public class DeleteIdentitiesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityIdsToDelete() != null)
-            sb.append("IdentityIdsToDelete: " + getIdentityIdsToDelete());
+            sb.append("IdentityIdsToDelete: ").append(getIdentityIdsToDelete());
         sb.append("}");
         return sb.toString();
     }

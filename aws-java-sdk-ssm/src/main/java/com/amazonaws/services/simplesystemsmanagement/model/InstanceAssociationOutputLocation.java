@@ -80,7 +80,7 @@ public class InstanceAssociationOutputLocation implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3Location() != null)
-            sb.append("S3Location: " + getS3Location());
+            sb.append("S3Location: ").append(getS3Location());
         sb.append("}");
         return sb.toString();
     }

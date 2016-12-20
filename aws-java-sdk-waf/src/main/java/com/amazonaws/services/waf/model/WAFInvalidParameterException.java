@@ -65,7 +65,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
-public class WAFInvalidParameterException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
+public class WAFInvalidParameterException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     private String field;

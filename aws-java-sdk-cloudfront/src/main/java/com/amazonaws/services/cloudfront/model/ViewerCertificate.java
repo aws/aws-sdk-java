@@ -2148,19 +2148,19 @@ public class ViewerCertificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontDefaultCertificate() != null)
-            sb.append("CloudFrontDefaultCertificate: " + getCloudFrontDefaultCertificate() + ",");
+            sb.append("CloudFrontDefaultCertificate: ").append(getCloudFrontDefaultCertificate()).append(",");
         if (getIAMCertificateId() != null)
-            sb.append("IAMCertificateId: " + getIAMCertificateId() + ",");
+            sb.append("IAMCertificateId: ").append(getIAMCertificateId()).append(",");
         if (getACMCertificateArn() != null)
-            sb.append("ACMCertificateArn: " + getACMCertificateArn() + ",");
+            sb.append("ACMCertificateArn: ").append(getACMCertificateArn()).append(",");
         if (getSSLSupportMethod() != null)
-            sb.append("SSLSupportMethod: " + getSSLSupportMethod() + ",");
+            sb.append("SSLSupportMethod: ").append(getSSLSupportMethod()).append(",");
         if (getMinimumProtocolVersion() != null)
-            sb.append("MinimumProtocolVersion: " + getMinimumProtocolVersion() + ",");
+            sb.append("MinimumProtocolVersion: ").append(getMinimumProtocolVersion()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate() + ",");
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getCertificateSource() != null)
-            sb.append("CertificateSource: " + getCertificateSource());
+            sb.append("CertificateSource: ").append(getCertificateSource());
         sb.append("}");
         return sb.toString();
     }

@@ -579,23 +579,23 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputeEnvironmentName() != null)
-            sb.append("ComputeEnvironmentName: " + getComputeEnvironmentName() + ",");
+            sb.append("ComputeEnvironmentName: ").append(getComputeEnvironmentName()).append(",");
         if (getComputeEnvironmentArn() != null)
-            sb.append("ComputeEnvironmentArn: " + getComputeEnvironmentArn() + ",");
+            sb.append("ComputeEnvironmentArn: ").append(getComputeEnvironmentArn()).append(",");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: " + getStatusReason() + ",");
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getComputeResources() != null)
-            sb.append("ComputeResources: " + getComputeResources() + ",");
+            sb.append("ComputeResources: ").append(getComputeResources()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole());
+            sb.append("ServiceRole: ").append(getServiceRole());
         sb.append("}");
         return sb.toString();
     }

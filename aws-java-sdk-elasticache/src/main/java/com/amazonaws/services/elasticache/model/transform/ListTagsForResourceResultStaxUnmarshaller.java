@@ -45,6 +45,11 @@ public class ListTagsForResourceResultStaxUnmarshaller implements Unmarshaller<L
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TagList", targetDepth)) {
+                    listTagsForResourceResult.withTagList(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("TagList/Tag", targetDepth)) {
                     listTagsForResourceResult.withTagList(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

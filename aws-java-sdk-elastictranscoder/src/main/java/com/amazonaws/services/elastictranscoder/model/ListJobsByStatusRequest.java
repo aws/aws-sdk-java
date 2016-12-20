@@ -201,11 +201,11 @@ public class ListJobsByStatusRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getAscending() != null)
-            sb.append("Ascending: " + getAscending() + ",");
+            sb.append("Ascending: ").append(getAscending()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

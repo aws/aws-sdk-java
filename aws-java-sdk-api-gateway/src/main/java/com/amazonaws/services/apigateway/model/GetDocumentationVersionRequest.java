@@ -127,9 +127,9 @@ public class GetDocumentationVersionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDocumentationVersion() != null)
-            sb.append("DocumentationVersion: " + getDocumentationVersion());
+            sb.append("DocumentationVersion: ").append(getDocumentationVersion());
         sb.append("}");
         return sb.toString();
     }

@@ -171,11 +171,11 @@ public class DescribeEffectivePatchesForPatchBaselineRequest extends com.amazona
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId() + ",");
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

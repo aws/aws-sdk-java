@@ -521,19 +521,19 @@ public class IdentityNotificationAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBounceTopic() != null)
-            sb.append("BounceTopic: " + getBounceTopic() + ",");
+            sb.append("BounceTopic: ").append(getBounceTopic()).append(",");
         if (getComplaintTopic() != null)
-            sb.append("ComplaintTopic: " + getComplaintTopic() + ",");
+            sb.append("ComplaintTopic: ").append(getComplaintTopic()).append(",");
         if (getDeliveryTopic() != null)
-            sb.append("DeliveryTopic: " + getDeliveryTopic() + ",");
+            sb.append("DeliveryTopic: ").append(getDeliveryTopic()).append(",");
         if (getForwardingEnabled() != null)
-            sb.append("ForwardingEnabled: " + getForwardingEnabled() + ",");
+            sb.append("ForwardingEnabled: ").append(getForwardingEnabled()).append(",");
         if (getHeadersInBounceNotificationsEnabled() != null)
-            sb.append("HeadersInBounceNotificationsEnabled: " + getHeadersInBounceNotificationsEnabled() + ",");
+            sb.append("HeadersInBounceNotificationsEnabled: ").append(getHeadersInBounceNotificationsEnabled()).append(",");
         if (getHeadersInComplaintNotificationsEnabled() != null)
-            sb.append("HeadersInComplaintNotificationsEnabled: " + getHeadersInComplaintNotificationsEnabled() + ",");
+            sb.append("HeadersInComplaintNotificationsEnabled: ").append(getHeadersInComplaintNotificationsEnabled()).append(",");
         if (getHeadersInDeliveryNotificationsEnabled() != null)
-            sb.append("HeadersInDeliveryNotificationsEnabled: " + getHeadersInDeliveryNotificationsEnabled());
+            sb.append("HeadersInDeliveryNotificationsEnabled: ").append(getHeadersInDeliveryNotificationsEnabled());
         sb.append("}");
         return sb.toString();
     }

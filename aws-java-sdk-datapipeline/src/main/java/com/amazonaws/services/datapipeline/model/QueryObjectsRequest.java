@@ -307,15 +307,15 @@ public class QueryObjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getQuery() != null)
-            sb.append("Query: " + getQuery() + ",");
+            sb.append("Query: ").append(getQuery()).append(",");
         if (getSphere() != null)
-            sb.append("Sphere: " + getSphere() + ",");
+            sb.append("Sphere: ").append(getSphere()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

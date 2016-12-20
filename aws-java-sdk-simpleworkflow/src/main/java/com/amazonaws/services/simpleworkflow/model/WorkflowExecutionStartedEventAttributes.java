@@ -839,29 +839,29 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getExecutionStartToCloseTimeout() != null)
-            sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");
+            sb.append("ExecutionStartToCloseTimeout: ").append(getExecutionStartToCloseTimeout()).append(",");
         if (getTaskStartToCloseTimeout() != null)
-            sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");
+            sb.append("TaskStartToCloseTimeout: ").append(getTaskStartToCloseTimeout()).append(",");
         if (getChildPolicy() != null)
-            sb.append("ChildPolicy: " + getChildPolicy() + ",");
+            sb.append("ChildPolicy: ").append(getChildPolicy()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList() + ",");
+            sb.append("TagList: ").append(getTagList()).append(",");
         if (getTaskPriority() != null)
-            sb.append("TaskPriority: " + getTaskPriority() + ",");
+            sb.append("TaskPriority: ").append(getTaskPriority()).append(",");
         if (getContinuedExecutionRunId() != null)
-            sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ",");
+            sb.append("ContinuedExecutionRunId: ").append(getContinuedExecutionRunId()).append(",");
         if (getParentWorkflowExecution() != null)
-            sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ",");
+            sb.append("ParentWorkflowExecution: ").append(getParentWorkflowExecution()).append(",");
         if (getParentInitiatedEventId() != null)
-            sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() + ",");
+            sb.append("ParentInitiatedEventId: ").append(getParentInitiatedEventId()).append(",");
         if (getLambdaRole() != null)
-            sb.append("LambdaRole: " + getLambdaRole());
+            sb.append("LambdaRole: ").append(getLambdaRole());
         sb.append("}");
         return sb.toString();
     }

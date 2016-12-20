@@ -232,9 +232,9 @@ public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getNewStatus() != null)
-            sb.append("NewStatus: " + getNewStatus());
+            sb.append("NewStatus: ").append(getNewStatus());
         sb.append("}");
         return sb.toString();
     }

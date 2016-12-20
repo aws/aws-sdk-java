@@ -1165,29 +1165,29 @@ public class Job implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getInputs() != null)
-            sb.append("Inputs: " + getInputs() + ",");
+            sb.append("Inputs: ").append(getInputs()).append(",");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput() + ",");
+            sb.append("Output: ").append(getOutput()).append(",");
         if (getOutputs() != null)
-            sb.append("Outputs: " + getOutputs() + ",");
+            sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getOutputKeyPrefix() != null)
-            sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");
+            sb.append("OutputKeyPrefix: ").append(getOutputKeyPrefix()).append(",");
         if (getPlaylists() != null)
-            sb.append("Playlists: " + getPlaylists() + ",");
+            sb.append("Playlists: ").append(getPlaylists()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getUserMetadata() != null)
-            sb.append("UserMetadata: " + getUserMetadata() + ",");
+            sb.append("UserMetadata: ").append(getUserMetadata()).append(",");
         if (getTiming() != null)
-            sb.append("Timing: " + getTiming());
+            sb.append("Timing: ").append(getTiming());
         sb.append("}");
         return sb.toString();
     }

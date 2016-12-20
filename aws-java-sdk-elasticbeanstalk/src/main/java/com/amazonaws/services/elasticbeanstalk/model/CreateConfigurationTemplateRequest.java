@@ -656,19 +656,19 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getSolutionStackName() != null)
-            sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+            sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
         if (getSourceConfiguration() != null)
-            sb.append("SourceConfiguration: " + getSourceConfiguration() + ",");
+            sb.append("SourceConfiguration: ").append(getSourceConfiguration()).append(",");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getOptionSettings() != null)
-            sb.append("OptionSettings: " + getOptionSettings());
+            sb.append("OptionSettings: ").append(getOptionSettings());
         sb.append("}");
         return sb.toString();
     }

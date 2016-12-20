@@ -55,6 +55,11 @@ public class IdentityDkimAttributesStaxUnmarshaller implements Unmarshaller<Iden
                     continue;
                 }
 
+                if (context.testExpression("DkimTokens", targetDepth)) {
+                    identityDkimAttributes.withDkimTokens(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("DkimTokens/member", targetDepth)) {
                     identityDkimAttributes.withDkimTokens(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -53,10 +53,8 @@ public class DeleteVPCAssociationAuthorizationRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/deauthorizevpcassociation";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (deleteVPCAssociationAuthorizationRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteVPCAssociationAuthorizationRequest.getHostedZoneId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
+                deleteVPCAssociationAuthorizationRequest.getHostedZoneId());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -180,11 +180,11 @@ public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartShardId() != null)
-            sb.append("ExclusiveStartShardId: " + getExclusiveStartShardId());
+            sb.append("ExclusiveStartShardId: ").append(getExclusiveStartShardId());
         sb.append("}");
         return sb.toString();
     }

@@ -78,7 +78,7 @@ public class GetJobManifestResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManifestURI() != null)
-            sb.append("ManifestURI: " + getManifestURI());
+            sb.append("ManifestURI: ").append(getManifestURI());
         sb.append("}");
         return sb.toString();
     }

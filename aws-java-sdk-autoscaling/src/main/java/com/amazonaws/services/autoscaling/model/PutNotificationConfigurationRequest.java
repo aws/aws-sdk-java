@@ -215,11 +215,11 @@ public class PutNotificationConfigurationRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getTopicARN() != null)
-            sb.append("TopicARN: " + getTopicARN() + ",");
+            sb.append("TopicARN: ").append(getTopicARN()).append(",");
         if (getNotificationTypes() != null)
-            sb.append("NotificationTypes: " + getNotificationTypes());
+            sb.append("NotificationTypes: ").append(getNotificationTypes());
         sb.append("}");
         return sb.toString();
     }

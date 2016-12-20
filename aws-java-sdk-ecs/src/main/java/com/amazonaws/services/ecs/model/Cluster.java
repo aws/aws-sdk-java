@@ -400,19 +400,19 @@ public class Cluster implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterArn() != null)
-            sb.append("ClusterArn: " + getClusterArn() + ",");
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getClusterName() != null)
-            sb.append("ClusterName: " + getClusterName() + ",");
+            sb.append("ClusterName: ").append(getClusterName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getRegisteredContainerInstancesCount() != null)
-            sb.append("RegisteredContainerInstancesCount: " + getRegisteredContainerInstancesCount() + ",");
+            sb.append("RegisteredContainerInstancesCount: ").append(getRegisteredContainerInstancesCount()).append(",");
         if (getRunningTasksCount() != null)
-            sb.append("RunningTasksCount: " + getRunningTasksCount() + ",");
+            sb.append("RunningTasksCount: ").append(getRunningTasksCount()).append(",");
         if (getPendingTasksCount() != null)
-            sb.append("PendingTasksCount: " + getPendingTasksCount() + ",");
+            sb.append("PendingTasksCount: ").append(getPendingTasksCount()).append(",");
         if (getActiveServicesCount() != null)
-            sb.append("ActiveServicesCount: " + getActiveServicesCount());
+            sb.append("ActiveServicesCount: ").append(getActiveServicesCount());
         sb.append("}");
         return sb.toString();
     }

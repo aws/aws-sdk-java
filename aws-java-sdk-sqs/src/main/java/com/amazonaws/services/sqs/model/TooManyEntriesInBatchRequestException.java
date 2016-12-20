@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Batch request contains more number of entries than permissible.
+ * The batch request contains more entries than permissible.
  * </p>
  */
 public class TooManyEntriesInBatchRequestException extends com.amazonaws.services.sqs.model.AmazonSQSException {

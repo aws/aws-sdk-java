@@ -210,11 +210,11 @@ public class UpdateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getMLModelName() != null)
-            sb.append("MLModelName: " + getMLModelName() + ",");
+            sb.append("MLModelName: ").append(getMLModelName()).append(",");
         if (getScoreThreshold() != null)
-            sb.append("ScoreThreshold: " + getScoreThreshold());
+            sb.append("ScoreThreshold: ").append(getScoreThreshold());
         sb.append("}");
         return sb.toString();
     }

@@ -238,11 +238,11 @@ public class DhcpOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDhcpOptionsId() != null)
-            sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");
+            sb.append("DhcpOptionsId: ").append(getDhcpOptionsId()).append(",");
         if (getDhcpConfigurations() != null)
-            sb.append("DhcpConfigurations: " + getDhcpConfigurations() + ",");
+            sb.append("DhcpConfigurations: ").append(getDhcpConfigurations()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

@@ -120,7 +120,7 @@ public class RouteFilterPrefix implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidr() != null)
-            sb.append("Cidr: " + getCidr());
+            sb.append("Cidr: ").append(getCidr());
         sb.append("}");
         return sb.toString();
     }

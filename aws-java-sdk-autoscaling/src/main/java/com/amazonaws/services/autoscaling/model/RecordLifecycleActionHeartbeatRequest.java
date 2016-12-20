@@ -226,13 +226,13 @@ public class RecordLifecycleActionHeartbeatRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHookName() != null)
-            sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
+            sb.append("LifecycleHookName: ").append(getLifecycleHookName()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLifecycleActionToken() != null)
-            sb.append("LifecycleActionToken: " + getLifecycleActionToken() + ",");
+            sb.append("LifecycleActionToken: ").append(getLifecycleActionToken()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

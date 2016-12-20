@@ -55,6 +55,11 @@ public class GeoRestrictionStaxUnmarshaller implements Unmarshaller<GeoRestricti
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    geoRestriction.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Location", targetDepth)) {
                     geoRestriction.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

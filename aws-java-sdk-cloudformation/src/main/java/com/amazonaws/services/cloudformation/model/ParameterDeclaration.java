@@ -326,17 +326,17 @@ public class ParameterDeclaration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterKey() != null)
-            sb.append("ParameterKey: " + getParameterKey() + ",");
+            sb.append("ParameterKey: ").append(getParameterKey()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getParameterType() != null)
-            sb.append("ParameterType: " + getParameterType() + ",");
+            sb.append("ParameterType: ").append(getParameterType()).append(",");
         if (getNoEcho() != null)
-            sb.append("NoEcho: " + getNoEcho() + ",");
+            sb.append("NoEcho: ").append(getNoEcho()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getParameterConstraints() != null)
-            sb.append("ParameterConstraints: " + getParameterConstraints());
+            sb.append("ParameterConstraints: ").append(getParameterConstraints());
         sb.append("}");
         return sb.toString();
     }

@@ -240,11 +240,11 @@ public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials() + ",");
+            sb.append("Credentials: ").append(getCredentials()).append(",");
         if (getAssumedRoleUser() != null)
-            sb.append("AssumedRoleUser: " + getAssumedRoleUser() + ",");
+            sb.append("AssumedRoleUser: ").append(getAssumedRoleUser()).append(",");
         if (getPackedPolicySize() != null)
-            sb.append("PackedPolicySize: " + getPackedPolicySize());
+            sb.append("PackedPolicySize: ").append(getPackedPolicySize());
         sb.append("}");
         return sb.toString();
     }

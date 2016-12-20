@@ -46,6 +46,11 @@ public class DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller imple
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    disableAvailabilityZonesForLoadBalancerResult.withAvailabilityZones(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
                     disableAvailabilityZonesForLoadBalancerResult.withAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

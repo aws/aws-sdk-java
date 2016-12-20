@@ -110,7 +110,7 @@ public class ListPolicyVersionsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyVersions() != null)
-            sb.append("PolicyVersions: " + getPolicyVersions());
+            sb.append("PolicyVersions: ").append(getPolicyVersions());
         sb.append("}");
         return sb.toString();
     }

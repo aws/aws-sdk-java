@@ -264,15 +264,15 @@ public class Subscription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionArn() != null)
-            sb.append("SubscriptionArn: " + getSubscriptionArn() + ",");
+            sb.append("SubscriptionArn: ").append(getSubscriptionArn()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn());
+            sb.append("TopicArn: ").append(getTopicArn());
         sb.append("}");
         return sb.toString();
     }

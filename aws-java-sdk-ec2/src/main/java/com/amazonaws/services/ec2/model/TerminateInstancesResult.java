@@ -114,7 +114,7 @@ public class TerminateInstancesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTerminatingInstances() != null)
-            sb.append("TerminatingInstances: " + getTerminatingInstances());
+            sb.append("TerminatingInstances: ").append(getTerminatingInstances());
         sb.append("}");
         return sb.toString();
     }

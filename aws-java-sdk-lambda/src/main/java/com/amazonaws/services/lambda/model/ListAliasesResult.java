@@ -157,9 +157,9 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: " + getAliases());
+            sb.append("Aliases: ").append(getAliases());
         sb.append("}");
         return sb.toString();
     }

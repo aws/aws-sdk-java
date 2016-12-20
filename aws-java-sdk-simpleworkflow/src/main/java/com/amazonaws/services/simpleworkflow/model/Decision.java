@@ -865,33 +865,34 @@ public class Decision implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDecisionType() != null)
-            sb.append("DecisionType: " + getDecisionType() + ",");
+            sb.append("DecisionType: ").append(getDecisionType()).append(",");
         if (getScheduleActivityTaskDecisionAttributes() != null)
-            sb.append("ScheduleActivityTaskDecisionAttributes: " + getScheduleActivityTaskDecisionAttributes() + ",");
+            sb.append("ScheduleActivityTaskDecisionAttributes: ").append(getScheduleActivityTaskDecisionAttributes()).append(",");
         if (getRequestCancelActivityTaskDecisionAttributes() != null)
-            sb.append("RequestCancelActivityTaskDecisionAttributes: " + getRequestCancelActivityTaskDecisionAttributes() + ",");
+            sb.append("RequestCancelActivityTaskDecisionAttributes: ").append(getRequestCancelActivityTaskDecisionAttributes()).append(",");
         if (getCompleteWorkflowExecutionDecisionAttributes() != null)
-            sb.append("CompleteWorkflowExecutionDecisionAttributes: " + getCompleteWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("CompleteWorkflowExecutionDecisionAttributes: ").append(getCompleteWorkflowExecutionDecisionAttributes()).append(",");
         if (getFailWorkflowExecutionDecisionAttributes() != null)
-            sb.append("FailWorkflowExecutionDecisionAttributes: " + getFailWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("FailWorkflowExecutionDecisionAttributes: ").append(getFailWorkflowExecutionDecisionAttributes()).append(",");
         if (getCancelWorkflowExecutionDecisionAttributes() != null)
-            sb.append("CancelWorkflowExecutionDecisionAttributes: " + getCancelWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("CancelWorkflowExecutionDecisionAttributes: ").append(getCancelWorkflowExecutionDecisionAttributes()).append(",");
         if (getContinueAsNewWorkflowExecutionDecisionAttributes() != null)
-            sb.append("ContinueAsNewWorkflowExecutionDecisionAttributes: " + getContinueAsNewWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("ContinueAsNewWorkflowExecutionDecisionAttributes: ").append(getContinueAsNewWorkflowExecutionDecisionAttributes()).append(",");
         if (getRecordMarkerDecisionAttributes() != null)
-            sb.append("RecordMarkerDecisionAttributes: " + getRecordMarkerDecisionAttributes() + ",");
+            sb.append("RecordMarkerDecisionAttributes: ").append(getRecordMarkerDecisionAttributes()).append(",");
         if (getStartTimerDecisionAttributes() != null)
-            sb.append("StartTimerDecisionAttributes: " + getStartTimerDecisionAttributes() + ",");
+            sb.append("StartTimerDecisionAttributes: ").append(getStartTimerDecisionAttributes()).append(",");
         if (getCancelTimerDecisionAttributes() != null)
-            sb.append("CancelTimerDecisionAttributes: " + getCancelTimerDecisionAttributes() + ",");
+            sb.append("CancelTimerDecisionAttributes: ").append(getCancelTimerDecisionAttributes()).append(",");
         if (getSignalExternalWorkflowExecutionDecisionAttributes() != null)
-            sb.append("SignalExternalWorkflowExecutionDecisionAttributes: " + getSignalExternalWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("SignalExternalWorkflowExecutionDecisionAttributes: ").append(getSignalExternalWorkflowExecutionDecisionAttributes()).append(",");
         if (getRequestCancelExternalWorkflowExecutionDecisionAttributes() != null)
-            sb.append("RequestCancelExternalWorkflowExecutionDecisionAttributes: " + getRequestCancelExternalWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("RequestCancelExternalWorkflowExecutionDecisionAttributes: ").append(getRequestCancelExternalWorkflowExecutionDecisionAttributes())
+                    .append(",");
         if (getStartChildWorkflowExecutionDecisionAttributes() != null)
-            sb.append("StartChildWorkflowExecutionDecisionAttributes: " + getStartChildWorkflowExecutionDecisionAttributes() + ",");
+            sb.append("StartChildWorkflowExecutionDecisionAttributes: ").append(getStartChildWorkflowExecutionDecisionAttributes()).append(",");
         if (getScheduleLambdaFunctionDecisionAttributes() != null)
-            sb.append("ScheduleLambdaFunctionDecisionAttributes: " + getScheduleLambdaFunctionDecisionAttributes());
+            sb.append("ScheduleLambdaFunctionDecisionAttributes: ").append(getScheduleLambdaFunctionDecisionAttributes());
         sb.append("}");
         return sb.toString();
     }

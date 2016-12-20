@@ -127,9 +127,9 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity());
+            sb.append("Quantity: ").append(getQuantity());
         sb.append("}");
         return sb.toString();
     }

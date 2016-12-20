@@ -166,9 +166,9 @@ public class DescribePoliciesResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScalingPolicies() != null)
-            sb.append("ScalingPolicies: " + getScalingPolicies() + ",");
+            sb.append("ScalingPolicies: ").append(getScalingPolicies()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

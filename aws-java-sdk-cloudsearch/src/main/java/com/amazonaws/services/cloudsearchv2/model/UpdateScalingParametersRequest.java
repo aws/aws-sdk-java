@@ -91,9 +91,9 @@ public class UpdateScalingParametersRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getScalingParameters() != null)
-            sb.append("ScalingParameters: " + getScalingParameters());
+            sb.append("ScalingParameters: ").append(getScalingParameters());
         sb.append("}");
         return sb.toString();
     }

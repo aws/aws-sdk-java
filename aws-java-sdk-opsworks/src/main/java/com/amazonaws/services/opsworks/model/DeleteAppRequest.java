@@ -79,7 +79,7 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppId() != null)
-            sb.append("AppId: " + getAppId());
+            sb.append("AppId: ").append(getAppId());
         sb.append("}");
         return sb.toString();
     }

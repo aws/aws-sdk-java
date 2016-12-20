@@ -89,9 +89,9 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainInfo() != null)
-            sb.append("DomainInfo: " + getDomainInfo() + ",");
+            sb.append("DomainInfo: ").append(getDomainInfo()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }

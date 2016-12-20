@@ -160,6 +160,11 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("NodeSnapshots", targetDepth)) {
+                    snapshot.withNodeSnapshots(new ArrayList<NodeSnapshot>());
+                    continue;
+                }
+
                 if (context.testExpression("NodeSnapshots/NodeSnapshot", targetDepth)) {
                     snapshot.withNodeSnapshots(NodeSnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

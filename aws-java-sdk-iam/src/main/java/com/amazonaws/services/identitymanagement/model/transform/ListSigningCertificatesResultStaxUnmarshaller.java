@@ -45,6 +45,11 @@ public class ListSigningCertificatesResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Certificates", targetDepth)) {
+                    listSigningCertificatesResult.withCertificates(new ArrayList<SigningCertificate>());
+                    continue;
+                }
+
                 if (context.testExpression("Certificates/member", targetDepth)) {
                     listSigningCertificatesResult.withCertificates(SigningCertificateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

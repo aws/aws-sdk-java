@@ -156,9 +156,9 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getIfMatch() != null)
-            sb.append("IfMatch: " + getIfMatch());
+            sb.append("IfMatch: ").append(getIfMatch());
         sb.append("}");
         return sb.toString();
     }

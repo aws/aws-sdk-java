@@ -79,7 +79,7 @@ public class DeleteReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier());
+            sb.append("ReplicationSubnetGroupIdentifier: ").append(getReplicationSubnetGroupIdentifier());
         sb.append("}");
         return sb.toString();
     }

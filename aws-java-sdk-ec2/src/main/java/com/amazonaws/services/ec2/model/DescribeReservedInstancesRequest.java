@@ -1186,13 +1186,13 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesIds() != null)
-            sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ",");
+            sb.append("ReservedInstancesIds: ").append(getReservedInstancesIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType() + ",");
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getOfferingClass() != null)
-            sb.append("OfferingClass: " + getOfferingClass());
+            sb.append("OfferingClass: ").append(getOfferingClass());
         sb.append("}");
         return sb.toString();
     }

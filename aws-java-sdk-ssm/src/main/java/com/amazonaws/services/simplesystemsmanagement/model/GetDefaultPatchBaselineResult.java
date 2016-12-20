@@ -78,7 +78,7 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId());
+            sb.append("BaselineId: ").append(getBaselineId());
         sb.append("}");
         return sb.toString();
     }

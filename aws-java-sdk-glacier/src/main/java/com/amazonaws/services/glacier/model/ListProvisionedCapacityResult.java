@@ -108,7 +108,7 @@ public class ListProvisionedCapacityResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProvisionedCapacityList() != null)
-            sb.append("ProvisionedCapacityList: " + getProvisionedCapacityList());
+            sb.append("ProvisionedCapacityList: ").append(getProvisionedCapacityList());
         sb.append("}");
         return sb.toString();
     }

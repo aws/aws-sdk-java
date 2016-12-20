@@ -580,11 +580,11 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSnapshotIdentifier() != null)
-            sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
+            sb.append("DBSnapshotIdentifier: ").append(getDBSnapshotIdentifier()).append(",");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

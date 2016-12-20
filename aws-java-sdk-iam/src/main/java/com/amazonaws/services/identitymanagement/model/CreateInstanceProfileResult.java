@@ -80,7 +80,7 @@ public class CreateInstanceProfileResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceProfile() != null)
-            sb.append("InstanceProfile: " + getInstanceProfile());
+            sb.append("InstanceProfile: ").append(getInstanceProfile());
         sb.append("}");
         return sb.toString();
     }

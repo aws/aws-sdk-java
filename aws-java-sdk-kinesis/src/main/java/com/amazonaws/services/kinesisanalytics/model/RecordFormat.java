@@ -142,9 +142,9 @@ public class RecordFormat implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordFormatType() != null)
-            sb.append("RecordFormatType: " + getRecordFormatType() + ",");
+            sb.append("RecordFormatType: ").append(getRecordFormatType()).append(",");
         if (getMappingParameters() != null)
-            sb.append("MappingParameters: " + getMappingParameters());
+            sb.append("MappingParameters: ").append(getMappingParameters());
         sb.append("}");
         return sb.toString();
     }

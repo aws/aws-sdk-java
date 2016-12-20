@@ -543,13 +543,13 @@ public class CopyDBParameterGroupRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceDBParameterGroupIdentifier() != null)
-            sb.append("SourceDBParameterGroupIdentifier: " + getSourceDBParameterGroupIdentifier() + ",");
+            sb.append("SourceDBParameterGroupIdentifier: ").append(getSourceDBParameterGroupIdentifier()).append(",");
         if (getTargetDBParameterGroupIdentifier() != null)
-            sb.append("TargetDBParameterGroupIdentifier: " + getTargetDBParameterGroupIdentifier() + ",");
+            sb.append("TargetDBParameterGroupIdentifier: ").append(getTargetDBParameterGroupIdentifier()).append(",");
         if (getTargetDBParameterGroupDescription() != null)
-            sb.append("TargetDBParameterGroupDescription: " + getTargetDBParameterGroupDescription() + ",");
+            sb.append("TargetDBParameterGroupDescription: ").append(getTargetDBParameterGroupDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

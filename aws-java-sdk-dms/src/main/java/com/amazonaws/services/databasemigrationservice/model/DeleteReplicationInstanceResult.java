@@ -78,7 +78,7 @@ public class DeleteReplicationInstanceResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstance() != null)
-            sb.append("ReplicationInstance: " + getReplicationInstance());
+            sb.append("ReplicationInstance: ").append(getReplicationInstance());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class GetTemplateResultStaxUnmarshaller implements Unmarshaller<GetTempla
                     continue;
                 }
 
+                if (context.testExpression("StagesAvailable", targetDepth)) {
+                    getTemplateResult.withStagesAvailable(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("StagesAvailable/member", targetDepth)) {
                     getTemplateResult.withStagesAvailable(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

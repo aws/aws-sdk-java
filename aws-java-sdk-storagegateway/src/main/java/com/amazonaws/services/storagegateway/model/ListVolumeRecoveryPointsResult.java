@@ -116,9 +116,9 @@ public class ListVolumeRecoveryPointsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getVolumeRecoveryPointInfos() != null)
-            sb.append("VolumeRecoveryPointInfos: " + getVolumeRecoveryPointInfos());
+            sb.append("VolumeRecoveryPointInfos: ").append(getVolumeRecoveryPointInfos());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getAlias() != null)
-            sb.append("Alias: " + getAlias());
+            sb.append("Alias: ").append(getAlias());
         sb.append("}");
         return sb.toString();
     }

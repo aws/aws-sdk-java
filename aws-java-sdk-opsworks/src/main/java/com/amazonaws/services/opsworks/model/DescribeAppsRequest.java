@@ -174,9 +174,9 @@ public class DescribeAppsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getAppIds() != null)
-            sb.append("AppIds: " + getAppIds());
+            sb.append("AppIds: ").append(getAppIds());
         sb.append("}");
         return sb.toString();
     }

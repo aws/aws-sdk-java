@@ -50,6 +50,11 @@ public class DescribeClusterSubnetGroupsResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("ClusterSubnetGroups", targetDepth)) {
+                    describeClusterSubnetGroupsResult.withClusterSubnetGroups(new ArrayList<ClusterSubnetGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("ClusterSubnetGroups/ClusterSubnetGroup", targetDepth)) {
                     describeClusterSubnetGroupsResult.withClusterSubnetGroups(ClusterSubnetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -31,12 +31,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Factory to generate the various JSON protocol handlers and generators depending on the wire
- * protocol to be used for communicating with the AWS service.
+ * Factory to generate the various JSON protocol handlers and generators depending on the wire protocol to be used for
+ * communicating with the AWS service.
  */
 @ThreadSafe
 @SdkProtectedApi
-public class SdkJsonProtocolFactory {
+public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
 
     private final JsonClientMetadata metadata;
 
@@ -47,18 +47,20 @@ public class SdkJsonProtocolFactory {
         createErrorUnmarshallers();
     }
 
-    /**
-     * Returns the {@link SdkJsonGenerator} to be used for marshalling the request.
-     */
+    @Override
     public StructuredJsonGenerator createGenerator() {
         return getSdkFactory().createWriter(getContentType());
     }
 
+    @Override
+    public String getContentType() {
+        return getContentTypeResolver().resolveContentType(metadata);
+    }
+
     /**
-     * Returns the response handler to be used for handling a successfull response.
+     * Returns the response handler to be used for handling a successful response.
      *
-     * @param operationMetadata Additional context information about an operation to create the
-     *                          appropriate response handler.
+     * @param operationMetadata Additional context information about an operation to create the appropriate response handler.
      */
     public <T> HttpResponseHandler<AmazonWebServiceResponse<T>> createResponseHandler(
             JsonOperationMetadata operationMetadata,
@@ -67,7 +69,7 @@ public class SdkJsonProtocolFactory {
     }
 
     /**
-     * Returns the error response handler for handling a error response.
+     * Creates a response handler for handling a error response (non 2xx response).
      */
     public HttpResponseHandler<AmazonServiceException> createErrorResponseHandler(
             JsonErrorResponseMetadata errorResponsMetadata) {
@@ -75,21 +77,17 @@ public class SdkJsonProtocolFactory {
                 .getCustomErrorCodeFieldName());
     }
 
-    /**
-     * @return Content type to send in requests.
-     */
-    public String getContentType() {
-        return getContentTypeResolver().resolveContentType(metadata);
-    }
-
+    @SuppressWarnings("unchecked")
     private void createErrorUnmarshallers() {
         for (JsonErrorShapeMetadata errorMetadata : metadata.getErrorShapeMetadata()) {
-            errorUnmarshallers.add(new JsonErrorUnmarshaller(errorMetadata.getModeledClass(),
-                                                             errorMetadata.getErrorCode()));
+            errorUnmarshallers.add(new JsonErrorUnmarshaller(
+                    (Class<? extends AmazonServiceException>) errorMetadata.getModeledClass(),
+                    errorMetadata.getErrorCode()));
 
         }
-        errorUnmarshallers
-                .add(new JsonErrorUnmarshaller(metadata.getBaseServiceExceptionClass(), null));
+        errorUnmarshallers.add(new JsonErrorUnmarshaller(
+                (Class<? extends AmazonServiceException>) metadata.getBaseServiceExceptionClass(),
+                null));
     }
 
     /**
@@ -113,7 +111,7 @@ public class SdkJsonProtocolFactory {
     private JsonContentTypeResolver getContentTypeResolver() {
         if (isCborEnabled()) {
             return JsonContentTypeResolver.CBOR;
-        } else if (isIonEnabled()){
+        } else if (isIonEnabled()) {
             return isIonBinaryEnabled()
                     ? JsonContentTypeResolver.ION_BINARY
                     : JsonContentTypeResolver.ION_TEXT;

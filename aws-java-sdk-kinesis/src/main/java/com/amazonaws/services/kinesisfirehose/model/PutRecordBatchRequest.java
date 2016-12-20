@@ -157,9 +157,9 @@ public class PutRecordBatchRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getRecords() != null)
-            sb.append("Records: " + getRecords());
+            sb.append("Records: ").append(getRecords());
         sb.append("}");
         return sb.toString();
     }

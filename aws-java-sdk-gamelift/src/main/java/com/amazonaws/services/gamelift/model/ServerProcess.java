@@ -210,11 +210,11 @@ public class ServerProcess implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchPath() != null)
-            sb.append("LaunchPath: " + getLaunchPath() + ",");
+            sb.append("LaunchPath: ").append(getLaunchPath()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getConcurrentExecutions() != null)
-            sb.append("ConcurrentExecutions: " + getConcurrentExecutions());
+            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions());
         sb.append("}");
         return sb.toString();
     }

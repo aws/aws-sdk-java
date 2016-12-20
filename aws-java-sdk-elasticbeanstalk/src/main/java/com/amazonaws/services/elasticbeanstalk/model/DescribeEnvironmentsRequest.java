@@ -482,17 +482,17 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getEnvironmentIds() != null)
-            sb.append("EnvironmentIds: " + getEnvironmentIds() + ",");
+            sb.append("EnvironmentIds: ").append(getEnvironmentIds()).append(",");
         if (getEnvironmentNames() != null)
-            sb.append("EnvironmentNames: " + getEnvironmentNames() + ",");
+            sb.append("EnvironmentNames: ").append(getEnvironmentNames()).append(",");
         if (getIncludeDeleted() != null)
-            sb.append("IncludeDeleted: " + getIncludeDeleted() + ",");
+            sb.append("IncludeDeleted: ").append(getIncludeDeleted()).append(",");
         if (getIncludedDeletedBackTo() != null)
-            sb.append("IncludedDeletedBackTo: " + getIncludedDeletedBackTo());
+            sb.append("IncludedDeletedBackTo: ").append(getIncludedDeletedBackTo());
         sb.append("}");
         return sb.toString();
     }

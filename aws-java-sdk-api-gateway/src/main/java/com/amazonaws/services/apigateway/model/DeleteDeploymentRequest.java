@@ -127,9 +127,9 @@ public class DeleteDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId());
+            sb.append("DeploymentId: ").append(getDeploymentId());
         sb.append("}");
         return sb.toString();
     }

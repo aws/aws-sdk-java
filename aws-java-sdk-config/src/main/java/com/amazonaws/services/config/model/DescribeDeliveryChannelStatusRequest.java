@@ -114,7 +114,7 @@ public class DescribeDeliveryChannelStatusRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryChannelNames() != null)
-            sb.append("DeliveryChannelNames: " + getDeliveryChannelNames());
+            sb.append("DeliveryChannelNames: ").append(getDeliveryChannelNames());
         sb.append("}");
         return sb.toString();
     }

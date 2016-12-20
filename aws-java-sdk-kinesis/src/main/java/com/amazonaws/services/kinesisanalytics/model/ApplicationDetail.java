@@ -725,27 +725,27 @@ public class ApplicationDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getApplicationDescription() != null)
-            sb.append("ApplicationDescription: " + getApplicationDescription() + ",");
+            sb.append("ApplicationDescription: ").append(getApplicationDescription()).append(",");
         if (getApplicationARN() != null)
-            sb.append("ApplicationARN: " + getApplicationARN() + ",");
+            sb.append("ApplicationARN: ").append(getApplicationARN()).append(",");
         if (getApplicationStatus() != null)
-            sb.append("ApplicationStatus: " + getApplicationStatus() + ",");
+            sb.append("ApplicationStatus: ").append(getApplicationStatus()).append(",");
         if (getCreateTimestamp() != null)
-            sb.append("CreateTimestamp: " + getCreateTimestamp() + ",");
+            sb.append("CreateTimestamp: ").append(getCreateTimestamp()).append(",");
         if (getLastUpdateTimestamp() != null)
-            sb.append("LastUpdateTimestamp: " + getLastUpdateTimestamp() + ",");
+            sb.append("LastUpdateTimestamp: ").append(getLastUpdateTimestamp()).append(",");
         if (getInputDescriptions() != null)
-            sb.append("InputDescriptions: " + getInputDescriptions() + ",");
+            sb.append("InputDescriptions: ").append(getInputDescriptions()).append(",");
         if (getOutputDescriptions() != null)
-            sb.append("OutputDescriptions: " + getOutputDescriptions() + ",");
+            sb.append("OutputDescriptions: ").append(getOutputDescriptions()).append(",");
         if (getReferenceDataSourceDescriptions() != null)
-            sb.append("ReferenceDataSourceDescriptions: " + getReferenceDataSourceDescriptions() + ",");
+            sb.append("ReferenceDataSourceDescriptions: ").append(getReferenceDataSourceDescriptions()).append(",");
         if (getApplicationCode() != null)
-            sb.append("ApplicationCode: " + getApplicationCode() + ",");
+            sb.append("ApplicationCode: ").append(getApplicationCode()).append(",");
         if (getApplicationVersionId() != null)
-            sb.append("ApplicationVersionId: " + getApplicationVersionId());
+            sb.append("ApplicationVersionId: ").append(getApplicationVersionId());
         sb.append("}");
         return sb.toString();
     }

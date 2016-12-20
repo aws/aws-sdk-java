@@ -75,13 +75,28 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     continue;
                 }
 
+                if (context.testExpression("SupportedCharacterSets", targetDepth)) {
+                    dBEngineVersion.withSupportedCharacterSets(new ArrayList<CharacterSet>());
+                    continue;
+                }
+
                 if (context.testExpression("SupportedCharacterSets/CharacterSet", targetDepth)) {
                     dBEngineVersion.withSupportedCharacterSets(CharacterSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("ValidUpgradeTarget", targetDepth)) {
+                    dBEngineVersion.withValidUpgradeTarget(new ArrayList<UpgradeTarget>());
+                    continue;
+                }
+
                 if (context.testExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth)) {
                     dBEngineVersion.withValidUpgradeTarget(UpgradeTargetStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedTimezones", targetDepth)) {
+                    dBEngineVersion.withSupportedTimezones(new ArrayList<Timezone>());
                     continue;
                 }
 

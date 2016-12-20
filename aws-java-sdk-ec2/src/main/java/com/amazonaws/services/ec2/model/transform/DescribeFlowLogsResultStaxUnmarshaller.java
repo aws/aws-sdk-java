@@ -45,6 +45,11 @@ public class DescribeFlowLogsResultStaxUnmarshaller implements Unmarshaller<Desc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("flowLogSet", targetDepth)) {
+                    describeFlowLogsResult.withFlowLogs(new ArrayList<FlowLog>());
+                    continue;
+                }
+
                 if (context.testExpression("flowLogSet/item", targetDepth)) {
                     describeFlowLogsResult.withFlowLogs(FlowLogStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

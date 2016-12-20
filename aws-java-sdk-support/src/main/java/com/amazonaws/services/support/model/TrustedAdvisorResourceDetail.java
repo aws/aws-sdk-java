@@ -345,15 +345,15 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getIsSuppressed() != null)
-            sb.append("IsSuppressed: " + getIsSuppressed() + ",");
+            sb.append("IsSuppressed: ").append(getIsSuppressed()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata());
+            sb.append("Metadata: ").append(getMetadata());
         sb.append("}");
         return sb.toString();
     }

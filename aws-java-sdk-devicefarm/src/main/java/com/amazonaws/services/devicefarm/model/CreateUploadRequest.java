@@ -1247,13 +1247,13 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectArn() != null)
-            sb.append("ProjectArn: " + getProjectArn() + ",");
+            sb.append("ProjectArn: ").append(getProjectArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType());
+            sb.append("ContentType: ").append(getContentType());
         sb.append("}");
         return sb.toString();
     }

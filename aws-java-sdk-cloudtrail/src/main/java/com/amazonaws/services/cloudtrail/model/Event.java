@@ -390,19 +390,19 @@ public class Event implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId() + ",");
+            sb.append("EventId: ").append(getEventId()).append(",");
         if (getEventName() != null)
-            sb.append("EventName: " + getEventName() + ",");
+            sb.append("EventName: ").append(getEventName()).append(",");
         if (getEventTime() != null)
-            sb.append("EventTime: " + getEventTime() + ",");
+            sb.append("EventTime: ").append(getEventTime()).append(",");
         if (getEventSource() != null)
-            sb.append("EventSource: " + getEventSource() + ",");
+            sb.append("EventSource: ").append(getEventSource()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getCloudTrailEvent() != null)
-            sb.append("CloudTrailEvent: " + getCloudTrailEvent());
+            sb.append("CloudTrailEvent: ").append(getCloudTrailEvent());
         sb.append("}");
         return sb.toString();
     }

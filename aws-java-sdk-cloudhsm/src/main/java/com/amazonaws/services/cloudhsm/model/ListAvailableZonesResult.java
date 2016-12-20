@@ -111,7 +111,7 @@ public class ListAvailableZonesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAZList() != null)
-            sb.append("AZList: " + getAZList());
+            sb.append("AZList: ").append(getAZList());
         sb.append("}");
         return sb.toString();
     }

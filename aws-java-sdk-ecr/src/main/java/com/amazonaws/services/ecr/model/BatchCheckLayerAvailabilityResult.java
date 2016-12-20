@@ -184,9 +184,9 @@ public class BatchCheckLayerAvailabilityResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayers() != null)
-            sb.append("Layers: " + getLayers() + ",");
+            sb.append("Layers: ").append(getLayers()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures());
+            sb.append("Failures: ").append(getFailures());
         sb.append("}");
         return sb.toString();
     }

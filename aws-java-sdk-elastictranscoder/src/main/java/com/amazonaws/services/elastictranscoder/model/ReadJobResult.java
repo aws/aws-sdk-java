@@ -80,7 +80,7 @@ public class ReadJobResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJob() != null)
-            sb.append("Job: " + getJob());
+            sb.append("Job: ").append(getJob());
         sb.append("}");
         return sb.toString();
     }

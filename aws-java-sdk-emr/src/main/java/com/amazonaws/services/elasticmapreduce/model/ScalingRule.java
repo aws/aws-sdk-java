@@ -220,13 +220,13 @@ public class ScalingRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getTrigger() != null)
-            sb.append("Trigger: " + getTrigger());
+            sb.append("Trigger: ").append(getTrigger());
         sb.append("}");
         return sb.toString();
     }

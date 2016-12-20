@@ -452,15 +452,15 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getNewGameSessionProtectionPolicy() != null)
-            sb.append("NewGameSessionProtectionPolicy: " + getNewGameSessionProtectionPolicy() + ",");
+            sb.append("NewGameSessionProtectionPolicy: ").append(getNewGameSessionProtectionPolicy()).append(",");
         if (getResourceCreationLimitPolicy() != null)
-            sb.append("ResourceCreationLimitPolicy: " + getResourceCreationLimitPolicy());
+            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy());
         sb.append("}");
         return sb.toString();
     }

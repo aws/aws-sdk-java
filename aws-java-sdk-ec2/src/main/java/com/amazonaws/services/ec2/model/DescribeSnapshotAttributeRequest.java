@@ -209,9 +209,9 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute());
+            sb.append("Attribute: ").append(getAttribute());
         sb.append("}");
         return sb.toString();
     }

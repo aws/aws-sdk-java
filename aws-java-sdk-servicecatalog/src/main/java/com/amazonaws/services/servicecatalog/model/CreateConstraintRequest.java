@@ -443,19 +443,19 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: " + getPortfolioId() + ",");
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: " + getIdempotencyToken());
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken());
         sb.append("}");
         return sb.toString();
     }

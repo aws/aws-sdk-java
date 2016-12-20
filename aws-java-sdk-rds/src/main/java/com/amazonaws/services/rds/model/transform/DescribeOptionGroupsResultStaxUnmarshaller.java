@@ -45,6 +45,11 @@ public class DescribeOptionGroupsResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("OptionGroupsList", targetDepth)) {
+                    describeOptionGroupsResult.withOptionGroupsList(new ArrayList<OptionGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("OptionGroupsList/OptionGroup", targetDepth)) {
                     describeOptionGroupsResult.withOptionGroupsList(OptionGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

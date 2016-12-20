@@ -139,9 +139,9 @@ public class DeleteSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSizeConstraintSetId() != null)
-            sb.append("SizeConstraintSetId: " + getSizeConstraintSetId() + ",");
+            sb.append("SizeConstraintSetId: ").append(getSizeConstraintSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

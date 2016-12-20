@@ -800,11 +800,11 @@ public class Rule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute() + ",");
+            sb.append("Attribute: ").append(getAttribute()).append(",");
         if (getOperator() != null)
-            sb.append("Operator: " + getOperator() + ",");
+            sb.append("Operator: ").append(getOperator()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }

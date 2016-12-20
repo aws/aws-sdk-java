@@ -85,6 +85,11 @@ public class UpdateConfigurationTemplateResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("OptionSettings", targetDepth)) {
+                    updateConfigurationTemplateResult.withOptionSettings(new ArrayList<ConfigurationOptionSetting>());
+                    continue;
+                }
+
                 if (context.testExpression("OptionSettings/member", targetDepth)) {
                     updateConfigurationTemplateResult.withOptionSettings(ConfigurationOptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -139,9 +139,9 @@ public class DescribeSubscriptionFiltersResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionFilters() != null)
-            sb.append("SubscriptionFilters: " + getSubscriptionFilters() + ",");
+            sb.append("SubscriptionFilters: ").append(getSubscriptionFilters()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

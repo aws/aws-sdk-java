@@ -114,7 +114,7 @@ public class DescribeIdFormatResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatuses() != null)
-            sb.append("Statuses: " + getStatuses());
+            sb.append("Statuses: ").append(getStatuses());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribeNetworkAclsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAcls() != null)
-            sb.append("NetworkAcls: " + getNetworkAcls());
+            sb.append("NetworkAcls: ").append(getNetworkAcls());
         sb.append("}");
         return sb.toString();
     }

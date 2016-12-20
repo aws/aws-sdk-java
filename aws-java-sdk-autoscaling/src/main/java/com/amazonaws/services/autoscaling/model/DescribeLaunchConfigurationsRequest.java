@@ -206,11 +206,11 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchConfigurationNames() != null)
-            sb.append("LaunchConfigurationNames: " + getLaunchConfigurationNames() + ",");
+            sb.append("LaunchConfigurationNames: ").append(getLaunchConfigurationNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords());
+            sb.append("MaxRecords: ").append(getMaxRecords());
         sb.append("}");
         return sb.toString();
     }

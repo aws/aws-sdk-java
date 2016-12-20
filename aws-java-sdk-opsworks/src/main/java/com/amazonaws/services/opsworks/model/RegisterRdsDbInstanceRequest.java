@@ -217,13 +217,13 @@ public class RegisterRdsDbInstanceRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getRdsDbInstanceArn() != null)
-            sb.append("RdsDbInstanceArn: " + getRdsDbInstanceArn() + ",");
+            sb.append("RdsDbInstanceArn: ").append(getRdsDbInstanceArn()).append(",");
         if (getDbUser() != null)
-            sb.append("DbUser: " + getDbUser() + ",");
+            sb.append("DbUser: ").append(getDbUser()).append(",");
         if (getDbPassword() != null)
-            sb.append("DbPassword: " + getDbPassword());
+            sb.append("DbPassword: ").append(getDbPassword());
         sb.append("}");
         return sb.toString();
     }

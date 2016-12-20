@@ -164,9 +164,9 @@ public class DescribePatchBaselinesResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineIdentities() != null)
-            sb.append("BaselineIdentities: " + getBaselineIdentities() + ",");
+            sb.append("BaselineIdentities: ").append(getBaselineIdentities()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

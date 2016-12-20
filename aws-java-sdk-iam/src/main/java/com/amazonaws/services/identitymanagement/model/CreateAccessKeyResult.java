@@ -80,7 +80,7 @@ public class CreateAccessKeyResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessKey() != null)
-            sb.append("AccessKey: " + getAccessKey());
+            sb.append("AccessKey: ").append(getAccessKey());
         sb.append("}");
         return sb.toString();
     }

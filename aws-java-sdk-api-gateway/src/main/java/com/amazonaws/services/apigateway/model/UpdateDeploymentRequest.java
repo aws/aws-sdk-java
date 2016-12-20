@@ -214,11 +214,11 @@ public class UpdateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

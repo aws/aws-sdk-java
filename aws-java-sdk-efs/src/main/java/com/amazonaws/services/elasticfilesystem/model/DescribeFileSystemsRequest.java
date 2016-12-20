@@ -248,13 +248,13 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCreationToken() != null)
-            sb.append("CreationToken: " + getCreationToken() + ",");
+            sb.append("CreationToken: ").append(getCreationToken()).append(",");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId());
+            sb.append("FileSystemId: ").append(getFileSystemId());
         sb.append("}");
         return sb.toString();
     }

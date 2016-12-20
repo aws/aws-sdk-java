@@ -79,7 +79,7 @@ public class DeleteClusterSubnetGroupRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName());
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName());
         sb.append("}");
         return sb.toString();
     }

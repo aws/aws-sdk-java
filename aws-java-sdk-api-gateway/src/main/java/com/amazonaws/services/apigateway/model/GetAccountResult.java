@@ -296,13 +296,13 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudwatchRoleArn() != null)
-            sb.append("CloudwatchRoleArn: " + getCloudwatchRoleArn() + ",");
+            sb.append("CloudwatchRoleArn: ").append(getCloudwatchRoleArn()).append(",");
         if (getThrottleSettings() != null)
-            sb.append("ThrottleSettings: " + getThrottleSettings() + ",");
+            sb.append("ThrottleSettings: ").append(getThrottleSettings()).append(",");
         if (getFeatures() != null)
-            sb.append("Features: " + getFeatures() + ",");
+            sb.append("Features: ").append(getFeatures()).append(",");
         if (getApiKeyVersion() != null)
-            sb.append("ApiKeyVersion: " + getApiKeyVersion());
+            sb.append("ApiKeyVersion: ").append(getApiKeyVersion());
         sb.append("}");
         return sb.toString();
     }

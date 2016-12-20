@@ -80,7 +80,7 @@ public class InputParallelismUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCountUpdate() != null)
-            sb.append("CountUpdate: " + getCountUpdate());
+            sb.append("CountUpdate: ").append(getCountUpdate());
         sb.append("}");
         return sb.toString();
     }

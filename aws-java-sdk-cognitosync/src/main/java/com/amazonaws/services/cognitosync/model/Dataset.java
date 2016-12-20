@@ -305,19 +305,19 @@ public class Dataset implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDatasetName() != null)
-            sb.append("DatasetName: " + getDatasetName() + ",");
+            sb.append("DatasetName: ").append(getDatasetName()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getLastModifiedBy() != null)
-            sb.append("LastModifiedBy: " + getLastModifiedBy() + ",");
+            sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getDataStorage() != null)
-            sb.append("DataStorage: " + getDataStorage() + ",");
+            sb.append("DataStorage: ").append(getDataStorage()).append(",");
         if (getNumRecords() != null)
-            sb.append("NumRecords: " + getNumRecords());
+            sb.append("NumRecords: ").append(getNumRecords());
         sb.append("}");
         return sb.toString();
     }

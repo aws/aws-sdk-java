@@ -79,7 +79,7 @@ public class DetachVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachment() != null)
-            sb.append("Attachment: " + getAttachment());
+            sb.append("Attachment: ").append(getAttachment());
         sb.append("}");
         return sb.toString();
     }

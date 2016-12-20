@@ -45,6 +45,11 @@ public class AvailableCapacityStaxUnmarshaller implements Unmarshaller<Available
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("availableInstanceCapacity", targetDepth)) {
+                    availableCapacity.withAvailableInstanceCapacity(new ArrayList<InstanceCapacity>());
+                    continue;
+                }
+
                 if (context.testExpression("availableInstanceCapacity/item", targetDepth)) {
                     availableCapacity.withAvailableInstanceCapacity(InstanceCapacityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

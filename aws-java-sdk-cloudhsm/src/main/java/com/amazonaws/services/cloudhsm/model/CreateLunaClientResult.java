@@ -80,7 +80,7 @@ public class CreateLunaClientResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn());
+            sb.append("ClientArn: ").append(getClientArn());
         sb.append("}");
         return sb.toString();
     }

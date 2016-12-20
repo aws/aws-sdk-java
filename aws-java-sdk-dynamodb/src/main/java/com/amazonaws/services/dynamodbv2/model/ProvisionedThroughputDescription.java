@@ -307,15 +307,15 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLastIncreaseDateTime() != null)
-            sb.append("LastIncreaseDateTime: " + getLastIncreaseDateTime() + ",");
+            sb.append("LastIncreaseDateTime: ").append(getLastIncreaseDateTime()).append(",");
         if (getLastDecreaseDateTime() != null)
-            sb.append("LastDecreaseDateTime: " + getLastDecreaseDateTime() + ",");
+            sb.append("LastDecreaseDateTime: ").append(getLastDecreaseDateTime()).append(",");
         if (getNumberOfDecreasesToday() != null)
-            sb.append("NumberOfDecreasesToday: " + getNumberOfDecreasesToday() + ",");
+            sb.append("NumberOfDecreasesToday: ").append(getNumberOfDecreasesToday()).append(",");
         if (getReadCapacityUnits() != null)
-            sb.append("ReadCapacityUnits: " + getReadCapacityUnits() + ",");
+            sb.append("ReadCapacityUnits: ").append(getReadCapacityUnits()).append(",");
         if (getWriteCapacityUnits() != null)
-            sb.append("WriteCapacityUnits: " + getWriteCapacityUnits());
+            sb.append("WriteCapacityUnits: ").append(getWriteCapacityUnits());
         sb.append("}");
         return sb.toString();
     }

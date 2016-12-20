@@ -172,9 +172,9 @@ public class DataRetrievalRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStrategy() != null)
-            sb.append("Strategy: " + getStrategy() + ",");
+            sb.append("Strategy: ").append(getStrategy()).append(",");
         if (getBytesPerHour() != null)
-            sb.append("BytesPerHour: " + getBytesPerHour());
+            sb.append("BytesPerHour: ").append(getBytesPerHour());
         sb.append("}");
         return sb.toString();
     }

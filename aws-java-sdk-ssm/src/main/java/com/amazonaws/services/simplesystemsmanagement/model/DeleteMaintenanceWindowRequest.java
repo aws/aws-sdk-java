@@ -79,7 +79,7 @@ public class DeleteMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId());
+            sb.append("WindowId: ").append(getWindowId());
         sb.append("}");
         return sb.toString();
     }

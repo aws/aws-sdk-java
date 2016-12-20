@@ -206,11 +206,11 @@ public class DomainValidation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getValidationEmails() != null)
-            sb.append("ValidationEmails: " + getValidationEmails() + ",");
+            sb.append("ValidationEmails: ").append(getValidationEmails()).append(",");
         if (getValidationDomain() != null)
-            sb.append("ValidationDomain: " + getValidationDomain());
+            sb.append("ValidationDomain: ").append(getValidationDomain());
         sb.append("}");
         return sb.toString();
     }

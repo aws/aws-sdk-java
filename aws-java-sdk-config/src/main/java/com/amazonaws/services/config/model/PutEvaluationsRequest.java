@@ -174,9 +174,9 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluations() != null)
-            sb.append("Evaluations: " + getEvaluations() + ",");
+            sb.append("Evaluations: ").append(getEvaluations()).append(",");
         if (getResultToken() != null)
-            sb.append("ResultToken: " + getResultToken());
+            sb.append("ResultToken: ").append(getResultToken());
         sb.append("}");
         return sb.toString();
     }

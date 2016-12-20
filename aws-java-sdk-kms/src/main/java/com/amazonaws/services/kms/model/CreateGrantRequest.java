@@ -1345,19 +1345,19 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getGranteePrincipal() != null)
-            sb.append("GranteePrincipal: " + getGranteePrincipal() + ",");
+            sb.append("GranteePrincipal: ").append(getGranteePrincipal()).append(",");
         if (getRetiringPrincipal() != null)
-            sb.append("RetiringPrincipal: " + getRetiringPrincipal() + ",");
+            sb.append("RetiringPrincipal: ").append(getRetiringPrincipal()).append(",");
         if (getOperations() != null)
-            sb.append("Operations: " + getOperations() + ",");
+            sb.append("Operations: ").append(getOperations()).append(",");
         if (getConstraints() != null)
-            sb.append("Constraints: " + getConstraints() + ",");
+            sb.append("Constraints: ").append(getConstraints()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens() + ",");
+            sb.append("GrantTokens: ").append(getGrantTokens()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

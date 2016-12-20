@@ -45,6 +45,11 @@ public class DescribeAdjustmentTypesResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AdjustmentTypes", targetDepth)) {
+                    describeAdjustmentTypesResult.withAdjustmentTypes(new ArrayList<AdjustmentType>());
+                    continue;
+                }
+
                 if (context.testExpression("AdjustmentTypes/member", targetDepth)) {
                     describeAdjustmentTypesResult.withAdjustmentTypes(AdjustmentTypeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

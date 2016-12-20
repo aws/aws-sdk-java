@@ -57,10 +57,7 @@ public class DeleteStreamingDistributionRequestMarshaller implements
 
         String uriResourcePath = "/2016-11-25/streaming-distribution/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (deleteStreamingDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteStreamingDistributionRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteStreamingDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

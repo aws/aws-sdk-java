@@ -225,11 +225,11 @@ public class Service implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCategories() != null)
-            sb.append("Categories: " + getCategories());
+            sb.append("Categories: ").append(getCategories());
         sb.append("}");
         return sb.toString();
     }

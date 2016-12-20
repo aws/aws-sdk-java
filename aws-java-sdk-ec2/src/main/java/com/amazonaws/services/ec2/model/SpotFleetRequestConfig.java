@@ -363,15 +363,15 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: " + getSpotFleetRequestId() + ",");
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getSpotFleetRequestState() != null)
-            sb.append("SpotFleetRequestState: " + getSpotFleetRequestState() + ",");
+            sb.append("SpotFleetRequestState: ").append(getSpotFleetRequestState()).append(",");
         if (getSpotFleetRequestConfig() != null)
-            sb.append("SpotFleetRequestConfig: " + getSpotFleetRequestConfig() + ",");
+            sb.append("SpotFleetRequestConfig: ").append(getSpotFleetRequestConfig()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime() + ",");
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getActivityStatus() != null)
-            sb.append("ActivityStatus: " + getActivityStatus());
+            sb.append("ActivityStatus: ").append(getActivityStatus());
         sb.append("}");
         return sb.toString();
     }

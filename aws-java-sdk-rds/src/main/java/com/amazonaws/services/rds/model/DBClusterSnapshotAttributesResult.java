@@ -163,9 +163,9 @@ public class DBClusterSnapshotAttributesResult implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterSnapshotIdentifier() != null)
-            sb.append("DBClusterSnapshotIdentifier: " + getDBClusterSnapshotIdentifier() + ",");
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier()).append(",");
         if (getDBClusterSnapshotAttributes() != null)
-            sb.append("DBClusterSnapshotAttributes: " + getDBClusterSnapshotAttributes());
+            sb.append("DBClusterSnapshotAttributes: ").append(getDBClusterSnapshotAttributes());
         sb.append("}");
         return sb.toString();
     }

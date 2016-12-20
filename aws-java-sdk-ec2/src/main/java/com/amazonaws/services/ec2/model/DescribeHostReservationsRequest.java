@@ -478,13 +478,13 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostReservationIdSet() != null)
-            sb.append("HostReservationIdSet: " + getHostReservationIdSet() + ",");
+            sb.append("HostReservationIdSet: ").append(getHostReservationIdSet()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

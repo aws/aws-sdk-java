@@ -359,13 +359,13 @@ public class ResyncMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber() + ",");
+            sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getAuthenticationCode1() != null)
-            sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");
+            sb.append("AuthenticationCode1: ").append(getAuthenticationCode1()).append(",");
         if (getAuthenticationCode2() != null)
-            sb.append("AuthenticationCode2: " + getAuthenticationCode2());
+            sb.append("AuthenticationCode2: ").append(getAuthenticationCode2());
         sb.append("}");
         return sb.toString();
     }

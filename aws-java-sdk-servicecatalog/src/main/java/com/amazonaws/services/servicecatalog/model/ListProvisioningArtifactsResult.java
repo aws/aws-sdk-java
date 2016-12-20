@@ -161,9 +161,9 @@ public class ListProvisioningArtifactsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProvisioningArtifactDetails() != null)
-            sb.append("ProvisioningArtifactDetails: " + getProvisioningArtifactDetails() + ",");
+            sb.append("ProvisioningArtifactDetails: ").append(getProvisioningArtifactDetails()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

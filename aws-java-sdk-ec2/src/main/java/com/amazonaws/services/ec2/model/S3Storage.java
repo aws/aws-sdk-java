@@ -296,15 +296,15 @@ public class S3Storage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucket() != null)
-            sb.append("Bucket: " + getBucket() + ",");
+            sb.append("Bucket: ").append(getBucket()).append(",");
         if (getPrefix() != null)
-            sb.append("Prefix: " + getPrefix() + ",");
+            sb.append("Prefix: ").append(getPrefix()).append(",");
         if (getAWSAccessKeyId() != null)
-            sb.append("AWSAccessKeyId: " + getAWSAccessKeyId() + ",");
+            sb.append("AWSAccessKeyId: ").append(getAWSAccessKeyId()).append(",");
         if (getUploadPolicy() != null)
-            sb.append("UploadPolicy: " + getUploadPolicy() + ",");
+            sb.append("UploadPolicy: ").append(getUploadPolicy()).append(",");
         if (getUploadPolicySignature() != null)
-            sb.append("UploadPolicySignature: " + getUploadPolicySignature());
+            sb.append("UploadPolicySignature: ").append(getUploadPolicySignature());
         sb.append("}");
         return sb.toString();
     }

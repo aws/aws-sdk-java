@@ -126,9 +126,9 @@ public class EbsVolume implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId());
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }

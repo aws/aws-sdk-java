@@ -61,12 +61,9 @@ public class PutMethodRequestMarshaller implements Marshaller<Request<PutMethodR
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (putMethodRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{resource_id}",
-                (putMethodRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodRequest.getResourceId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{http_method}",
-                (putMethodRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(putMethodRequest.getHttpMethod()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", putMethodRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", putMethodRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", putMethodRequest.getHttpMethod());
         request.setResourcePath(uriResourcePath);
 
         try {

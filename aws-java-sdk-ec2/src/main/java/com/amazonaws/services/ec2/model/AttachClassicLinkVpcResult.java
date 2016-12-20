@@ -93,7 +93,7 @@ public class AttachClassicLinkVpcResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReturn() != null)
-            sb.append("Return: " + getReturn());
+            sb.append("Return: ").append(getReturn());
         sb.append("}");
         return sb.toString();
     }

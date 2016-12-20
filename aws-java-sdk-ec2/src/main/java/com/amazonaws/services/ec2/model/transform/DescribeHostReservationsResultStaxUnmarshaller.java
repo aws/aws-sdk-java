@@ -45,6 +45,11 @@ public class DescribeHostReservationsResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("hostReservationSet", targetDepth)) {
+                    describeHostReservationsResult.withHostReservationSet(new ArrayList<HostReservation>());
+                    continue;
+                }
+
                 if (context.testExpression("hostReservationSet/member", targetDepth)) {
                     describeHostReservationsResult.withHostReservationSet(HostReservationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

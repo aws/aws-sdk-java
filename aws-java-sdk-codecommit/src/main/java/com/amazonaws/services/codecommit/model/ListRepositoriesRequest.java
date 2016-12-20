@@ -253,11 +253,11 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getSortBy() != null)
-            sb.append("SortBy: " + getSortBy() + ",");
+            sb.append("SortBy: ").append(getSortBy()).append(",");
         if (getOrder() != null)
-            sb.append("Order: " + getOrder());
+            sb.append("Order: ").append(getOrder());
         sb.append("}");
         return sb.toString();
     }

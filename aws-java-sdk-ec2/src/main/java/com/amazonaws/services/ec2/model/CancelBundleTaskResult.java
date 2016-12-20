@@ -81,7 +81,7 @@ public class CancelBundleTaskResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundleTask() != null)
-            sb.append("BundleTask: " + getBundleTask());
+            sb.append("BundleTask: ").append(getBundleTask());
         sb.append("}");
         return sb.toString();
     }

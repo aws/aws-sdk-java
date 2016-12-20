@@ -357,11 +357,11 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceIdentifier() != null)
-            sb.append("ResourceIdentifier: " + getResourceIdentifier() + ",");
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier()).append(",");
         if (getApplyAction() != null)
-            sb.append("ApplyAction: " + getApplyAction() + ",");
+            sb.append("ApplyAction: ").append(getApplyAction()).append(",");
         if (getOptInType() != null)
-            sb.append("OptInType: " + getOptInType());
+            sb.append("OptInType: ").append(getOptInType());
         sb.append("}");
         return sb.toString();
     }

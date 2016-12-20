@@ -190,9 +190,9 @@ public class CreateAssociationBatchResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccessful() != null)
-            sb.append("Successful: " + getSuccessful() + ",");
+            sb.append("Successful: ").append(getSuccessful()).append(",");
         if (getFailed() != null)
-            sb.append("Failed: " + getFailed());
+            sb.append("Failed: ").append(getFailed());
         sb.append("}");
         return sb.toString();
     }

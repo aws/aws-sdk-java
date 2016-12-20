@@ -169,9 +169,9 @@ public class DescribeReservedInstancesModificationsResult extends com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesModifications() != null)
-            sb.append("ReservedInstancesModifications: " + getReservedInstancesModifications() + ",");
+            sb.append("ReservedInstancesModifications: ").append(getReservedInstancesModifications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

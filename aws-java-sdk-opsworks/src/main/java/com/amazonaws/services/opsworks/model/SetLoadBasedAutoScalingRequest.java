@@ -249,13 +249,13 @@ public class SetLoadBasedAutoScalingRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId() + ",");
+            sb.append("LayerId: ").append(getLayerId()).append(",");
         if (getEnable() != null)
-            sb.append("Enable: " + getEnable() + ",");
+            sb.append("Enable: ").append(getEnable()).append(",");
         if (getUpScaling() != null)
-            sb.append("UpScaling: " + getUpScaling() + ",");
+            sb.append("UpScaling: ").append(getUpScaling()).append(",");
         if (getDownScaling() != null)
-            sb.append("DownScaling: " + getDownScaling());
+            sb.append("DownScaling: ").append(getDownScaling());
         sb.append("}");
         return sb.toString();
     }

@@ -16,6 +16,7 @@
 package com.amazonaws.codegen.model.intermediate;
 
 import com.amazonaws.codegen.internal.TypeUtils;
+import com.amazonaws.transform.PathMarshallers;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
@@ -38,6 +39,12 @@ public class MemberModel extends DocumentationModel {
     private VariableModel variable;
 
     private VariableModel setterModel;
+
+    private String getterMethodName;
+
+    private String setterMethodName;
+
+    private String fluentSetterMethodName;
 
     private ReturnTypeModel getterModel;
 
@@ -119,6 +126,45 @@ public class MemberModel extends DocumentationModel {
 
     public MemberModel withSetterModel(VariableModel setterModel) {
         setSetterModel(setterModel);
+        return this;
+    }
+
+    public String getGetterMethodName() {
+        return getterMethodName;
+    }
+
+    public void setGetterMethodName(String getterMethodName) {
+        this.getterMethodName = getterMethodName;
+    }
+
+    public MemberModel withGetterMethodName(String getterMethodName) {
+        setGetterMethodName(getterMethodName);
+        return this;
+    }
+
+    public String getSetterMethodName() {
+        return setterMethodName;
+    }
+
+    public void setSetterMethodName(String setterMethodName) {
+        this.setterMethodName = setterMethodName;
+    }
+
+    public MemberModel withSetterMethodName(String setterMethodName) {
+        setSetterMethodName(setterMethodName);
+        return this;
+    }
+
+    public String getFluentSetterMethodName() {
+        return fluentSetterMethodName;
+    }
+
+    public void setFluentSetterMethodName(String fluentSetterMethodName) {
+        this.fluentSetterMethodName = fluentSetterMethodName;
+    }
+
+    public MemberModel withFluentSetterMethodName(String fluentMethodName) {
+        setFluentSetterMethodName(fluentMethodName);
         return this;
     }
 
@@ -359,6 +405,27 @@ public class MemberModel extends DocumentationModel {
 
     public void setIdempotencyToken(boolean idempotencyToken) {
         this.idempotencyToken = idempotencyToken;
+    }
+
+    /**
+     * @return Implementation of {@link com.amazonaws.transform.PathMarshallers.PathMarshaller} to use if this
+     * member is bound the the URI.
+     * @throws IllegalStateException If this member is not bound to the URI. Templates should first check {@link
+     *                               ParameterHttpMapping#isUri()} first.
+     */
+    @JsonIgnore
+    public String getPathMarshaller() {
+        if (!http.isUri()) {
+            throw new IllegalStateException("Only members bound to the URI have a path marshaller");
+        }
+        final String prefix = PathMarshallers.class.getName();
+        if (http.isGreedy()) {
+            return prefix + ".GREEDY";
+        } else if (isIdempotencyToken()) {
+            return prefix + ".IDEMPOTENCY";
+        } else {
+            return prefix + ".NON_GREEDY";
+        }
     }
 
     @JsonIgnore

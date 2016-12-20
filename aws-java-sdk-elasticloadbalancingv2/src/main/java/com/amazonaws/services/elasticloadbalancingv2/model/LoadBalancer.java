@@ -738,27 +738,27 @@ public class LoadBalancer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn() + ",");
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName() + ",");
+            sb.append("DNSName: ").append(getDNSName()).append(",");
         if (getCanonicalHostedZoneId() != null)
-            sb.append("CanonicalHostedZoneId: " + getCanonicalHostedZoneId() + ",");
+            sb.append("CanonicalHostedZoneId: ").append(getCanonicalHostedZoneId()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getScheme() != null)
-            sb.append("Scheme: " + getScheme() + ",");
+            sb.append("Scheme: ").append(getScheme()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

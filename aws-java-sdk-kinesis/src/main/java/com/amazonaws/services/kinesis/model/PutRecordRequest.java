@@ -355,15 +355,15 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getData() != null)
-            sb.append("Data: " + getData() + ",");
+            sb.append("Data: ").append(getData()).append(",");
         if (getPartitionKey() != null)
-            sb.append("PartitionKey: " + getPartitionKey() + ",");
+            sb.append("PartitionKey: ").append(getPartitionKey()).append(",");
         if (getExplicitHashKey() != null)
-            sb.append("ExplicitHashKey: " + getExplicitHashKey() + ",");
+            sb.append("ExplicitHashKey: ").append(getExplicitHashKey()).append(",");
         if (getSequenceNumberForOrdering() != null)
-            sb.append("SequenceNumberForOrdering: " + getSequenceNumberForOrdering());
+            sb.append("SequenceNumberForOrdering: ").append(getSequenceNumberForOrdering());
         sb.append("}");
         return sb.toString();
     }

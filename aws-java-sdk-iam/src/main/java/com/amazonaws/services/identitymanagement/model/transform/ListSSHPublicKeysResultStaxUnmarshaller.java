@@ -45,6 +45,11 @@ public class ListSSHPublicKeysResultStaxUnmarshaller implements Unmarshaller<Lis
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SSHPublicKeys", targetDepth)) {
+                    listSSHPublicKeysResult.withSSHPublicKeys(new ArrayList<SSHPublicKeyMetadata>());
+                    continue;
+                }
+
                 if (context.testExpression("SSHPublicKeys/member", targetDepth)) {
                     listSSHPublicKeysResult.withSSHPublicKeys(SSHPublicKeyMetadataStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

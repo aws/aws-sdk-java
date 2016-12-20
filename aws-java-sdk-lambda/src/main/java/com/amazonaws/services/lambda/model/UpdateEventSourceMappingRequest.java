@@ -343,13 +343,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUUID() != null)
-            sb.append("UUID: " + getUUID() + ",");
+            sb.append("UUID: ").append(getUUID()).append(",");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getBatchSize() != null)
-            sb.append("BatchSize: " + getBatchSize());
+            sb.append("BatchSize: ").append(getBatchSize());
         sb.append("}");
         return sb.toString();
     }

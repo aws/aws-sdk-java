@@ -232,11 +232,11 @@ public class EnvironmentVariable implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getSecure() != null)
-            sb.append("Secure: " + getSecure());
+            sb.append("Secure: ").append(getSecure());
         sb.append("}");
         return sb.toString();
     }

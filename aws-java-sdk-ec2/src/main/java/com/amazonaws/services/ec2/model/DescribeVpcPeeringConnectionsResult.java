@@ -115,7 +115,7 @@ public class DescribeVpcPeeringConnectionsResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcPeeringConnections() != null)
-            sb.append("VpcPeeringConnections: " + getVpcPeeringConnections());
+            sb.append("VpcPeeringConnections: ").append(getVpcPeeringConnections());
         sb.append("}");
         return sb.toString();
     }

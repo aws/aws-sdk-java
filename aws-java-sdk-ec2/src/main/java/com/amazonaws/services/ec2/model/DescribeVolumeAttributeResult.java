@@ -218,11 +218,11 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getAutoEnableIO() != null)
-            sb.append("AutoEnableIO: " + getAutoEnableIO() + ",");
+            sb.append("AutoEnableIO: ").append(getAutoEnableIO()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: " + getProductCodes());
+            sb.append("ProductCodes: ").append(getProductCodes());
         sb.append("}");
         return sb.toString();
     }

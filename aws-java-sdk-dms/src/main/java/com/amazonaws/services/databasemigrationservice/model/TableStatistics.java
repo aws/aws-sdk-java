@@ -446,23 +446,23 @@ public class TableStatistics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchemaName() != null)
-            sb.append("SchemaName: " + getSchemaName() + ",");
+            sb.append("SchemaName: ").append(getSchemaName()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getInserts() != null)
-            sb.append("Inserts: " + getInserts() + ",");
+            sb.append("Inserts: ").append(getInserts()).append(",");
         if (getDeletes() != null)
-            sb.append("Deletes: " + getDeletes() + ",");
+            sb.append("Deletes: ").append(getDeletes()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates() + ",");
+            sb.append("Updates: ").append(getUpdates()).append(",");
         if (getDdls() != null)
-            sb.append("Ddls: " + getDdls() + ",");
+            sb.append("Ddls: ").append(getDdls()).append(",");
         if (getFullLoadRows() != null)
-            sb.append("FullLoadRows: " + getFullLoadRows() + ",");
+            sb.append("FullLoadRows: ").append(getFullLoadRows()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: " + getLastUpdateTime() + ",");
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getTableState() != null)
-            sb.append("TableState: " + getTableState());
+            sb.append("TableState: ").append(getTableState());
         sb.append("}");
         return sb.toString();
     }

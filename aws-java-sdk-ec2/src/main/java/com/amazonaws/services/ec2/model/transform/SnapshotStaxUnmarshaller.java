@@ -95,6 +95,11 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    snapshot.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     snapshot.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

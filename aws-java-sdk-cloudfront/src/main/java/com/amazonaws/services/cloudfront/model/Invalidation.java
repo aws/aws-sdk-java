@@ -225,13 +225,13 @@ public class Invalidation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime() + ",");
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getInvalidationBatch() != null)
-            sb.append("InvalidationBatch: " + getInvalidationBatch());
+            sb.append("InvalidationBatch: ").append(getInvalidationBatch());
         sb.append("}");
         return sb.toString();
     }

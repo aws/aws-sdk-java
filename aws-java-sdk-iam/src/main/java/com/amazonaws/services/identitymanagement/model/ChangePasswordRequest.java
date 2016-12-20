@@ -174,9 +174,9 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOldPassword() != null)
-            sb.append("OldPassword: " + getOldPassword() + ",");
+            sb.append("OldPassword: ").append(getOldPassword()).append(",");
         if (getNewPassword() != null)
-            sb.append("NewPassword: " + getNewPassword());
+            sb.append("NewPassword: ").append(getNewPassword());
         sb.append("}");
         return sb.toString();
     }

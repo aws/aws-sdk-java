@@ -181,9 +181,9 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends com.amazonaws
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones());
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }

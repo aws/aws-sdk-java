@@ -506,25 +506,25 @@ public class Bundle implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrice() != null)
-            sb.append("Price: " + getPrice() + ",");
+            sb.append("Price: ").append(getPrice()).append(",");
         if (getCpuCount() != null)
-            sb.append("CpuCount: " + getCpuCount() + ",");
+            sb.append("CpuCount: ").append(getCpuCount()).append(",");
         if (getDiskSizeInGb() != null)
-            sb.append("DiskSizeInGb: " + getDiskSizeInGb() + ",");
+            sb.append("DiskSizeInGb: ").append(getDiskSizeInGb()).append(",");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getIsActive() != null)
-            sb.append("IsActive: " + getIsActive() + ",");
+            sb.append("IsActive: ").append(getIsActive()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPower() != null)
-            sb.append("Power: " + getPower() + ",");
+            sb.append("Power: ").append(getPower()).append(",");
         if (getRamSizeInGb() != null)
-            sb.append("RamSizeInGb: " + getRamSizeInGb() + ",");
+            sb.append("RamSizeInGb: ").append(getRamSizeInGb()).append(",");
         if (getTransferPerMonthInGb() != null)
-            sb.append("TransferPerMonthInGb: " + getTransferPerMonthInGb());
+            sb.append("TransferPerMonthInGb: ").append(getTransferPerMonthInGb());
         sb.append("}");
         return sb.toString();
     }

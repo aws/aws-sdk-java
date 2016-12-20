@@ -80,7 +80,7 @@ public class ReservedInstancesId implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: " + getReservedInstancesId());
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId());
         sb.append("}");
         return sb.toString();
     }

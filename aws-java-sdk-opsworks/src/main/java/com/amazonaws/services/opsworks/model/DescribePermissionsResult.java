@@ -289,7 +289,7 @@ public class DescribePermissionsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPermissions() != null)
-            sb.append("Permissions: " + getPermissions());
+            sb.append("Permissions: ").append(getPermissions());
         sb.append("}");
         return sb.toString();
     }

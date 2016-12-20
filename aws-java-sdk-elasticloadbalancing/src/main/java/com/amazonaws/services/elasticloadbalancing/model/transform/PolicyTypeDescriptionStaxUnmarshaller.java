@@ -55,6 +55,11 @@ public class PolicyTypeDescriptionStaxUnmarshaller implements Unmarshaller<Polic
                     continue;
                 }
 
+                if (context.testExpression("PolicyAttributeTypeDescriptions", targetDepth)) {
+                    policyTypeDescription.withPolicyAttributeTypeDescriptions(new ArrayList<PolicyAttributeTypeDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyAttributeTypeDescriptions/member", targetDepth)) {
                     policyTypeDescription.withPolicyAttributeTypeDescriptions(PolicyAttributeTypeDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

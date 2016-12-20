@@ -192,13 +192,13 @@ public class GetServersResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLastModifiedOn() != null)
-            sb.append("LastModifiedOn: " + getLastModifiedOn() + ",");
+            sb.append("LastModifiedOn: ").append(getLastModifiedOn()).append(",");
         if (getServerCatalogStatus() != null)
-            sb.append("ServerCatalogStatus: " + getServerCatalogStatus() + ",");
+            sb.append("ServerCatalogStatus: ").append(getServerCatalogStatus()).append(",");
         if (getServerList() != null)
-            sb.append("ServerList: " + getServerList() + ",");
+            sb.append("ServerList: ").append(getServerList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

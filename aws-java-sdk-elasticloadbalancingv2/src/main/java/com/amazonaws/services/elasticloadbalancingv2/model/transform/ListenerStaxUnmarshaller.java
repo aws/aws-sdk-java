@@ -65,6 +65,11 @@ public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("Certificates", targetDepth)) {
+                    listener.withCertificates(new ArrayList<Certificate>());
+                    continue;
+                }
+
                 if (context.testExpression("Certificates/member", targetDepth)) {
                     listener.withCertificates(CertificateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -72,6 +77,11 @@ public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnma
 
                 if (context.testExpression("SslPolicy", targetDepth)) {
                     listener.setSslPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DefaultActions", targetDepth)) {
+                    listener.withDefaultActions(new ArrayList<Action>());
                     continue;
                 }
 

@@ -98,7 +98,7 @@ public class PlacementType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

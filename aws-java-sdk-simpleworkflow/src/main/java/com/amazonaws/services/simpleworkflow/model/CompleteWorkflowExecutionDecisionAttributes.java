@@ -98,7 +98,7 @@ public class CompleteWorkflowExecutionDecisionAttributes implements Serializable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResult() != null)
-            sb.append("Result: " + getResult());
+            sb.append("Result: ").append(getResult());
         sb.append("}");
         return sb.toString();
     }

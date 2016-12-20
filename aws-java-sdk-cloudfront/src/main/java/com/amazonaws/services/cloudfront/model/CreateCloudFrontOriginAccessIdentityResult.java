@@ -183,11 +183,11 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontOriginAccessIdentity() != null)
-            sb.append("CloudFrontOriginAccessIdentity: " + getCloudFrontOriginAccessIdentity() + ",");
+            sb.append("CloudFrontOriginAccessIdentity: ").append(getCloudFrontOriginAccessIdentity()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

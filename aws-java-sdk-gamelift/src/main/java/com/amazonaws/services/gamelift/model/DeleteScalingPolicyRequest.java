@@ -127,9 +127,9 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId());
+            sb.append("FleetId: ").append(getFleetId());
         sb.append("}");
         return sb.toString();
     }

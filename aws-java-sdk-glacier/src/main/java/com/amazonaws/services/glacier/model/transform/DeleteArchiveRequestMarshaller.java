@@ -61,21 +61,10 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{accountId}",
-                        (deleteArchiveRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteArchiveRequest.getAccountId()),
-                                false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{vaultName}",
-                        (deleteArchiveRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteArchiveRequest.getVaultName()),
-                                false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{archiveId}",
-                        (deleteArchiveRequest.getArchiveId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteArchiveRequest.getArchiveId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                deleteArchiveRequest.getAccountId() == null ? "-" : deleteArchiveRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", deleteArchiveRequest.getVaultName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "archiveId", deleteArchiveRequest.getArchiveId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

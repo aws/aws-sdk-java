@@ -346,15 +346,15 @@ public class CreateAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetArn() != null)
-            sb.append("AssessmentTargetArn: " + getAssessmentTargetArn() + ",");
+            sb.append("AssessmentTargetArn: ").append(getAssessmentTargetArn()).append(",");
         if (getAssessmentTemplateName() != null)
-            sb.append("AssessmentTemplateName: " + getAssessmentTemplateName() + ",");
+            sb.append("AssessmentTemplateName: ").append(getAssessmentTemplateName()).append(",");
         if (getDurationInSeconds() != null)
-            sb.append("DurationInSeconds: " + getDurationInSeconds() + ",");
+            sb.append("DurationInSeconds: ").append(getDurationInSeconds()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getUserAttributesForFindings() != null)
-            sb.append("UserAttributesForFindings: " + getUserAttributesForFindings());
+            sb.append("UserAttributesForFindings: ").append(getUserAttributesForFindings());
         sb.append("}");
         return sb.toString();
     }

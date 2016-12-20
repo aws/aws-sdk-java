@@ -61,7 +61,7 @@ public class OpenIDConnectProviderListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn());
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }

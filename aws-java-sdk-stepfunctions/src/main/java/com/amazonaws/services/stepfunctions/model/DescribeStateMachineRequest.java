@@ -79,7 +79,7 @@ public class DescribeStateMachineRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn());
+            sb.append("StateMachineArn: ").append(getStateMachineArn());
         sb.append("}");
         return sb.toString();
     }

@@ -73,16 +73,9 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{vaultName}",
-                        (uploadArchiveRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(uploadArchiveRequest.getVaultName()),
-                                false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{accountId}",
-                        (uploadArchiveRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(uploadArchiveRequest.getAccountId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", uploadArchiveRequest.getVaultName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                uploadArchiveRequest.getAccountId() == null ? "-" : uploadArchiveRequest.getAccountId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(uploadArchiveRequest.getBody());

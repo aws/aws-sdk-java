@@ -357,17 +357,17 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccepterVpcInfo() != null)
-            sb.append("AccepterVpcInfo: " + getAccepterVpcInfo() + ",");
+            sb.append("AccepterVpcInfo: ").append(getAccepterVpcInfo()).append(",");
         if (getExpirationTime() != null)
-            sb.append("ExpirationTime: " + getExpirationTime() + ",");
+            sb.append("ExpirationTime: ").append(getExpirationTime()).append(",");
         if (getRequesterVpcInfo() != null)
-            sb.append("RequesterVpcInfo: " + getRequesterVpcInfo() + ",");
+            sb.append("RequesterVpcInfo: ").append(getRequesterVpcInfo()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
         sb.append("}");
         return sb.toString();
     }

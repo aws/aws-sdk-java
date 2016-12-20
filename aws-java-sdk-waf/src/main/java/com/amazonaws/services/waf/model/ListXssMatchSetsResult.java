@@ -177,9 +177,9 @@ public class ListXssMatchSetsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getXssMatchSets() != null)
-            sb.append("XssMatchSets: " + getXssMatchSets());
+            sb.append("XssMatchSets: ").append(getXssMatchSets());
         sb.append("}");
         return sb.toString();
     }

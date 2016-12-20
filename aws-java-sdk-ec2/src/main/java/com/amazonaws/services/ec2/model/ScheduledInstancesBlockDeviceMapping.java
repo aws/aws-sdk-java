@@ -271,13 +271,13 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceName() != null)
-            sb.append("DeviceName: " + getDeviceName() + ",");
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getNoDevice() != null)
-            sb.append("NoDevice: " + getNoDevice() + ",");
+            sb.append("NoDevice: ").append(getNoDevice()).append(",");
         if (getVirtualName() != null)
-            sb.append("VirtualName: " + getVirtualName() + ",");
+            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getEbs() != null)
-            sb.append("Ebs: " + getEbs());
+            sb.append("Ebs: ").append(getEbs());
         sb.append("}");
         return sb.toString();
     }

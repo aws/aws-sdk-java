@@ -126,9 +126,9 @@ public class ElasticIpStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

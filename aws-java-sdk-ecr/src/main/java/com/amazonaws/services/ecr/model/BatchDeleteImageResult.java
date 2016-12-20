@@ -184,9 +184,9 @@ public class BatchDeleteImageResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageIds() != null)
-            sb.append("ImageIds: " + getImageIds() + ",");
+            sb.append("ImageIds: ").append(getImageIds()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures());
+            sb.append("Failures: ").append(getFailures());
         sb.append("}");
         return sb.toString();
     }

@@ -124,9 +124,9 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionArn() != null)
-            sb.append("ExecutionArn: " + getExecutionArn() + ",");
+            sb.append("ExecutionArn: ").append(getExecutionArn()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate());
+            sb.append("StartDate: ").append(getStartDate());
         sb.append("}");
         return sb.toString();
     }

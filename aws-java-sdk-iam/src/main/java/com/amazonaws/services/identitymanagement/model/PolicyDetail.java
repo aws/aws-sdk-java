@@ -129,9 +129,9 @@ public class PolicyDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: " + getPolicyDocument());
+            sb.append("PolicyDocument: ").append(getPolicyDocument());
         sb.append("}");
         return sb.toString();
     }

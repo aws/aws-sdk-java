@@ -609,17 +609,17 @@ public class ReceiptRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getTlsPolicy() != null)
-            sb.append("TlsPolicy: " + getTlsPolicy() + ",");
+            sb.append("TlsPolicy: ").append(getTlsPolicy()).append(",");
         if (getRecipients() != null)
-            sb.append("Recipients: " + getRecipients() + ",");
+            sb.append("Recipients: ").append(getRecipients()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions() + ",");
+            sb.append("Actions: ").append(getActions()).append(",");
         if (getScanEnabled() != null)
-            sb.append("ScanEnabled: " + getScanEnabled());
+            sb.append("ScanEnabled: ").append(getScanEnabled());
         sb.append("}");
         return sb.toString();
     }

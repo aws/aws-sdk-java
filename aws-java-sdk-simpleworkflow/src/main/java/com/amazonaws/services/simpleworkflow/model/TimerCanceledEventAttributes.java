@@ -196,11 +196,11 @@ public class TimerCanceledEventAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimerId() != null)
-            sb.append("TimerId: " + getTimerId() + ",");
+            sb.append("TimerId: ").append(getTimerId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: " + getStartedEventId() + ",");
+            sb.append("StartedEventId: ").append(getStartedEventId()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

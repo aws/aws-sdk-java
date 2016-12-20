@@ -65,6 +65,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    stack.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/member", targetDepth)) {
                     stack.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -95,6 +100,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("NotificationARNs", targetDepth)) {
+                    stack.withNotificationARNs(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("NotificationARNs/member", targetDepth)) {
                     stack.withNotificationARNs(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -105,8 +115,18 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("Capabilities", targetDepth)) {
+                    stack.withCapabilities(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Capabilities/member", targetDepth)) {
                     stack.withCapabilities(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Outputs", targetDepth)) {
+                    stack.withOutputs(new ArrayList<Output>());
                     continue;
                 }
 
@@ -117,6 +137,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
 
                 if (context.testExpression("RoleARN", targetDepth)) {
                     stack.setRoleARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Tags", targetDepth)) {
+                    stack.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

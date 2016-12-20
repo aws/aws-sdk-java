@@ -94,7 +94,7 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportTaskId() != null)
-            sb.append("ExportTaskId: " + getExportTaskId());
+            sb.append("ExportTaskId: ").append(getExportTaskId());
         sb.append("}");
         return sb.toString();
     }

@@ -200,17 +200,17 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getTargetName() != null)
-            sb.append("TargetName: " + getTargetName() + ",");
+            sb.append("TargetName: ").append(getTargetName()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

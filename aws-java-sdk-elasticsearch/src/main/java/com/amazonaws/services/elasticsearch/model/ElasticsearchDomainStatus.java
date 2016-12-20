@@ -756,31 +756,31 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainId() != null)
-            sb.append("DomainId: " + getDomainId() + ",");
+            sb.append("DomainId: ").append(getDomainId()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getARN() != null)
-            sb.append("ARN: " + getARN() + ",");
+            sb.append("ARN: ").append(getARN()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getDeleted() != null)
-            sb.append("Deleted: " + getDeleted() + ",");
+            sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getProcessing() != null)
-            sb.append("Processing: " + getProcessing() + ",");
+            sb.append("Processing: ").append(getProcessing()).append(",");
         if (getElasticsearchVersion() != null)
-            sb.append("ElasticsearchVersion: " + getElasticsearchVersion() + ",");
+            sb.append("ElasticsearchVersion: ").append(getElasticsearchVersion()).append(",");
         if (getElasticsearchClusterConfig() != null)
-            sb.append("ElasticsearchClusterConfig: " + getElasticsearchClusterConfig() + ",");
+            sb.append("ElasticsearchClusterConfig: ").append(getElasticsearchClusterConfig()).append(",");
         if (getEBSOptions() != null)
-            sb.append("EBSOptions: " + getEBSOptions() + ",");
+            sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
-            sb.append("AccessPolicies: " + getAccessPolicies() + ",");
+            sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
         if (getSnapshotOptions() != null)
-            sb.append("SnapshotOptions: " + getSnapshotOptions() + ",");
+            sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getAdvancedOptions() != null)
-            sb.append("AdvancedOptions: " + getAdvancedOptions());
+            sb.append("AdvancedOptions: ").append(getAdvancedOptions());
         sb.append("}");
         return sb.toString();
     }

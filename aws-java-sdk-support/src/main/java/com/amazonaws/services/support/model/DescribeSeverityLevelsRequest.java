@@ -86,7 +86,7 @@ public class DescribeSeverityLevelsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage());
+            sb.append("Language: ").append(getLanguage());
         sb.append("}");
         return sb.toString();
     }

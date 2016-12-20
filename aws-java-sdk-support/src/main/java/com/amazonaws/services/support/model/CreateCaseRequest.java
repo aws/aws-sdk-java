@@ -533,23 +533,23 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubject() != null)
-            sb.append("Subject: " + getSubject() + ",");
+            sb.append("Subject: ").append(getSubject()).append(",");
         if (getServiceCode() != null)
-            sb.append("ServiceCode: " + getServiceCode() + ",");
+            sb.append("ServiceCode: ").append(getServiceCode()).append(",");
         if (getSeverityCode() != null)
-            sb.append("SeverityCode: " + getSeverityCode() + ",");
+            sb.append("SeverityCode: ").append(getSeverityCode()).append(",");
         if (getCategoryCode() != null)
-            sb.append("CategoryCode: " + getCategoryCode() + ",");
+            sb.append("CategoryCode: ").append(getCategoryCode()).append(",");
         if (getCommunicationBody() != null)
-            sb.append("CommunicationBody: " + getCommunicationBody() + ",");
+            sb.append("CommunicationBody: ").append(getCommunicationBody()).append(",");
         if (getCcEmailAddresses() != null)
-            sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
+            sb.append("CcEmailAddresses: ").append(getCcEmailAddresses()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage() + ",");
+            sb.append("Language: ").append(getLanguage()).append(",");
         if (getIssueType() != null)
-            sb.append("IssueType: " + getIssueType() + ",");
+            sb.append("IssueType: ").append(getIssueType()).append(",");
         if (getAttachmentSetId() != null)
-            sb.append("AttachmentSetId: " + getAttachmentSetId());
+            sb.append("AttachmentSetId: ").append(getAttachmentSetId());
         sb.append("}");
         return sb.toString();
     }

@@ -276,13 +276,13 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCode() != null)
-            sb.append("Code: " + getCode() + ",");
+            sb.append("Code: ").append(getCode()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getNotBefore() != null)
-            sb.append("NotBefore: " + getNotBefore() + ",");
+            sb.append("NotBefore: ").append(getNotBefore()).append(",");
         if (getNotAfter() != null)
-            sb.append("NotAfter: " + getNotAfter());
+            sb.append("NotAfter: ").append(getNotAfter());
         sb.append("}");
         return sb.toString();
     }

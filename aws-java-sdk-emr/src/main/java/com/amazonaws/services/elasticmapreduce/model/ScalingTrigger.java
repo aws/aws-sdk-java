@@ -87,7 +87,7 @@ public class ScalingTrigger implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudWatchAlarmDefinition() != null)
-            sb.append("CloudWatchAlarmDefinition: " + getCloudWatchAlarmDefinition());
+            sb.append("CloudWatchAlarmDefinition: ").append(getCloudWatchAlarmDefinition());
         sb.append("}");
         return sb.toString();
     }

@@ -94,7 +94,7 @@ public class DeleteNatGatewayRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNatGatewayId() != null)
-            sb.append("NatGatewayId: " + getNatGatewayId());
+            sb.append("NatGatewayId: ").append(getNatGatewayId());
         sb.append("}");
         return sb.toString();
     }

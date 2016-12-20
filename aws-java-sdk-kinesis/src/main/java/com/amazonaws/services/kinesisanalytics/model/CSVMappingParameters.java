@@ -134,9 +134,9 @@ public class CSVMappingParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordRowDelimiter() != null)
-            sb.append("RecordRowDelimiter: " + getRecordRowDelimiter() + ",");
+            sb.append("RecordRowDelimiter: ").append(getRecordRowDelimiter()).append(",");
         if (getRecordColumnDelimiter() != null)
-            sb.append("RecordColumnDelimiter: " + getRecordColumnDelimiter());
+            sb.append("RecordColumnDelimiter: ").append(getRecordColumnDelimiter());
         sb.append("}");
         return sb.toString();
     }

@@ -167,9 +167,9 @@ public class CancelCommandRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds());
+            sb.append("InstanceIds: ").append(getInstanceIds());
         sb.append("}");
         return sb.toString();
     }

@@ -224,11 +224,11 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId());
+            sb.append("AllocationId: ").append(getAllocationId());
         sb.append("}");
         return sb.toString();
     }

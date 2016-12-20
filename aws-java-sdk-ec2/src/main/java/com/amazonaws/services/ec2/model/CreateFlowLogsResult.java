@@ -239,11 +239,11 @@ public class CreateFlowLogsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFlowLogIds() != null)
-            sb.append("FlowLogIds: " + getFlowLogIds() + ",");
+            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getUnsuccessful() != null)
-            sb.append("Unsuccessful: " + getUnsuccessful());
+            sb.append("Unsuccessful: ").append(getUnsuccessful());
         sb.append("}");
         return sb.toString();
     }

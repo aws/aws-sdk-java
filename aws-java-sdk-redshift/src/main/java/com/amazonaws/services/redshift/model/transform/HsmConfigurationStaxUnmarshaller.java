@@ -65,6 +65,11 @@ public class HsmConfigurationStaxUnmarshaller implements Unmarshaller<HsmConfigu
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    hsmConfiguration.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     hsmConfiguration.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

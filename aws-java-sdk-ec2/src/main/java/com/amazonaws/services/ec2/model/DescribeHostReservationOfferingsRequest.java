@@ -517,17 +517,17 @@ public class DescribeHostReservationOfferingsRequest extends AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getMinDuration() != null)
-            sb.append("MinDuration: " + getMinDuration() + ",");
+            sb.append("MinDuration: ").append(getMinDuration()).append(",");
         if (getMaxDuration() != null)
-            sb.append("MaxDuration: " + getMaxDuration() + ",");
+            sb.append("MaxDuration: ").append(getMaxDuration()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter() + ",");
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

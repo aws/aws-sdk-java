@@ -87,9 +87,9 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountLimit() != null)
-            sb.append("AccountLimit: " + getAccountLimit() + ",");
+            sb.append("AccountLimit: ").append(getAccountLimit()).append(",");
         if (getAccountUsage() != null)
-            sb.append("AccountUsage: " + getAccountUsage());
+            sb.append("AccountUsage: ").append(getAccountUsage());
         sb.append("}");
         return sb.toString();
     }

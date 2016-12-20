@@ -284,11 +284,11 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getBgpAsn() != null)
-            sb.append("BgpAsn: " + getBgpAsn());
+            sb.append("BgpAsn: ").append(getBgpAsn());
         sb.append("}");
         return sb.toString();
     }

@@ -139,11 +139,11 @@ public class CostTypes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIncludeTax() != null)
-            sb.append("IncludeTax: " + getIncludeTax() + ",");
+            sb.append("IncludeTax: ").append(getIncludeTax()).append(",");
         if (getIncludeSubscription() != null)
-            sb.append("IncludeSubscription: " + getIncludeSubscription() + ",");
+            sb.append("IncludeSubscription: ").append(getIncludeSubscription()).append(",");
         if (getUseBlended() != null)
-            sb.append("UseBlended: " + getUseBlended());
+            sb.append("UseBlended: ").append(getUseBlended());
         sb.append("}");
         return sb.toString();
     }

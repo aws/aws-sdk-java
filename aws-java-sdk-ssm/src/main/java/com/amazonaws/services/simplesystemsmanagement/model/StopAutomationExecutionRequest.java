@@ -79,7 +79,7 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecutionId() != null)
-            sb.append("AutomationExecutionId: " + getAutomationExecutionId());
+            sb.append("AutomationExecutionId: ").append(getAutomationExecutionId());
         sb.append("}");
         return sb.toString();
     }

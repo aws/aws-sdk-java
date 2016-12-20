@@ -117,7 +117,7 @@ public class GetIdentityDkimAttributesRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentities() != null)
-            sb.append("Identities: " + getIdentities());
+            sb.append("Identities: ").append(getIdentities());
         sb.append("}");
         return sb.toString();
     }

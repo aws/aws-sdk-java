@@ -405,19 +405,19 @@ public class TopicRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName() + ",");
+            sb.append("RuleName: ").append(getRuleName()).append(",");
         if (getSql() != null)
-            sb.append("Sql: " + getSql() + ",");
+            sb.append("Sql: ").append(getSql()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions() + ",");
+            sb.append("Actions: ").append(getActions()).append(",");
         if (getRuleDisabled() != null)
-            sb.append("RuleDisabled: " + getRuleDisabled() + ",");
+            sb.append("RuleDisabled: ").append(getRuleDisabled()).append(",");
         if (getAwsIotSqlVersion() != null)
-            sb.append("AwsIotSqlVersion: " + getAwsIotSqlVersion());
+            sb.append("AwsIotSqlVersion: ").append(getAwsIotSqlVersion());
         sb.append("}");
         return sb.toString();
     }

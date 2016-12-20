@@ -81,7 +81,7 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId());
+            sb.append("DeploymentId: ").append(getDeploymentId());
         sb.append("}");
         return sb.toString();
     }

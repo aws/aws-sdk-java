@@ -61,11 +61,7 @@ public class DeletePolicyRequestMarshaller implements Marshaller<Request<DeleteP
 
         String uriResourcePath = "/policies/{policyName}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{policyName}",
-                        (deletePolicyRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deletePolicyRequest.getPolicyName()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyName", deletePolicyRequest.getPolicyName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

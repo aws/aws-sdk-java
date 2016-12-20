@@ -126,9 +126,9 @@ public class HostInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType());
         sb.append("}");
         return sb.toString();
     }

@@ -87,7 +87,7 @@ public class ConnectionSettings implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdleTimeout() != null)
-            sb.append("IdleTimeout: " + getIdleTimeout());
+            sb.append("IdleTimeout: ").append(getIdleTimeout());
         sb.append("}");
         return sb.toString();
     }

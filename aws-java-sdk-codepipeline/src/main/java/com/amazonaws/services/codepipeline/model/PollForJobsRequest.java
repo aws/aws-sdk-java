@@ -189,11 +189,11 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionTypeId() != null)
-            sb.append("ActionTypeId: " + getActionTypeId() + ",");
+            sb.append("ActionTypeId: ").append(getActionTypeId()).append(",");
         if (getMaxBatchSize() != null)
-            sb.append("MaxBatchSize: " + getMaxBatchSize() + ",");
+            sb.append("MaxBatchSize: ").append(getMaxBatchSize()).append(",");
         if (getQueryParam() != null)
-            sb.append("QueryParam: " + getQueryParam());
+            sb.append("QueryParam: ").append(getQueryParam());
         sb.append("}");
         return sb.toString();
     }

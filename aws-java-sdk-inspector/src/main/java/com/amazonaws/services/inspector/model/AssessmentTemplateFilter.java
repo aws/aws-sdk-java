@@ -243,11 +243,11 @@ public class AssessmentTemplateFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamePattern() != null)
-            sb.append("NamePattern: " + getNamePattern() + ",");
+            sb.append("NamePattern: ").append(getNamePattern()).append(",");
         if (getDurationRange() != null)
-            sb.append("DurationRange: " + getDurationRange() + ",");
+            sb.append("DurationRange: ").append(getDurationRange()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns());
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns());
         sb.append("}");
         return sb.toString();
     }

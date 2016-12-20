@@ -331,13 +331,13 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: " + getPortfolioId() + ",");
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getPrincipalARN() != null)
-            sb.append("PrincipalARN: " + getPrincipalARN() + ",");
+            sb.append("PrincipalARN: ").append(getPrincipalARN()).append(",");
         if (getPrincipalType() != null)
-            sb.append("PrincipalType: " + getPrincipalType());
+            sb.append("PrincipalType: ").append(getPrincipalType());
         sb.append("}");
         return sb.toString();
     }

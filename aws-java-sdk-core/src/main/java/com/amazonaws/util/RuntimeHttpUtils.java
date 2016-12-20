@@ -15,6 +15,7 @@
 package com.amazonaws.util;
 
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.Protocol;
 import com.amazonaws.Request;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkProtectedApi;
@@ -167,7 +168,16 @@ public class RuntimeHttpUtils {
         if (config == null) {
             throw new IllegalArgumentException("ClientConfiguration cannot be null");
         }
+        return toUri(endpoint, config.getProtocol());
+    }
 
+    /**
+     * Returns an URI for the given endpoint.
+     * Prefixes the protocol if the endpoint given does not have it.
+     *
+     * @throws IllegalArgumentException if the inputs are null.
+     */
+    public static URI toUri(String endpoint, Protocol protocol) {
         if (endpoint == null) {
             throw new IllegalArgumentException("endpoint cannot be null");
         }
@@ -178,7 +188,7 @@ public class RuntimeHttpUtils {
          * configuration.
          */
         if (!endpoint.contains("://")) {
-            endpoint = config.getProtocol().toString() + "://" + endpoint;
+            endpoint = protocol.toString() + "://" + endpoint;
         }
 
         try {

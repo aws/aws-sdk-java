@@ -113,7 +113,7 @@ public class ListOpenIDConnectProvidersResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenIDConnectProviderList() != null)
-            sb.append("OpenIDConnectProviderList: " + getOpenIDConnectProviderList());
+            sb.append("OpenIDConnectProviderList: ").append(getOpenIDConnectProviderList());
         sb.append("}");
         return sb.toString();
     }

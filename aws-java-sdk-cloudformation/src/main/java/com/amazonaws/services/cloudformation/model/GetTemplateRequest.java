@@ -379,11 +379,11 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getChangeSetName() != null)
-            sb.append("ChangeSetName: " + getChangeSetName() + ",");
+            sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getTemplateStage() != null)
-            sb.append("TemplateStage: " + getTemplateStage());
+            sb.append("TemplateStage: ").append(getTemplateStage());
         sb.append("}");
         return sb.toString();
     }

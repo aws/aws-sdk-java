@@ -45,6 +45,11 @@ public class DescribeAccountAttributesResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("accountAttributeSet", targetDepth)) {
+                    describeAccountAttributesResult.withAccountAttributes(new ArrayList<AccountAttribute>());
+                    continue;
+                }
+
                 if (context.testExpression("accountAttributeSet/item", targetDepth)) {
                     describeAccountAttributesResult.withAccountAttributes(AccountAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

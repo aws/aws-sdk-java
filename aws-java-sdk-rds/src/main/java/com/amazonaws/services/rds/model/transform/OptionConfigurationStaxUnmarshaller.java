@@ -60,13 +60,28 @@ public class OptionConfigurationStaxUnmarshaller implements Unmarshaller<OptionC
                     continue;
                 }
 
+                if (context.testExpression("DBSecurityGroupMemberships", targetDepth)) {
+                    optionConfiguration.withDBSecurityGroupMemberships(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("DBSecurityGroupMemberships/DBSecurityGroupName", targetDepth)) {
                     optionConfiguration.withDBSecurityGroupMemberships(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("VpcSecurityGroupMemberships", targetDepth)) {
+                    optionConfiguration.withVpcSecurityGroupMemberships(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("VpcSecurityGroupMemberships/VpcSecurityGroupId", targetDepth)) {
                     optionConfiguration.withVpcSecurityGroupMemberships(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OptionSettings", targetDepth)) {
+                    optionConfiguration.withOptionSettings(new ArrayList<OptionSetting>());
                     continue;
                 }
 

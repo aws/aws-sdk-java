@@ -373,15 +373,15 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getNumTapesToCreate() != null)
-            sb.append("NumTapesToCreate: " + getNumTapesToCreate() + ",");
+            sb.append("NumTapesToCreate: ").append(getNumTapesToCreate()).append(",");
         if (getTapeBarcodePrefix() != null)
-            sb.append("TapeBarcodePrefix: " + getTapeBarcodePrefix());
+            sb.append("TapeBarcodePrefix: ").append(getTapeBarcodePrefix());
         sb.append("}");
         return sb.toString();
     }

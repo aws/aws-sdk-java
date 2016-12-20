@@ -25,6 +25,8 @@ import java.util.Map;
 
 public class CustomizationConfig {
 
+    public static final CustomizationConfig DEFAULT = new CustomizationConfig();
+
     /**
      * The fully-qualified class name of the custom metric types to be collected by the client.
      *
@@ -212,6 +214,9 @@ public class CustomizationConfig {
      * to the models directory. Default is {@value Constants#PACKAGE_NAME_TRANSFORM_SUFFIX}.
      */
     private String transformDirectory = Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
+
+    private CustomizationConfig(){
+    }
 
     public String getRequestMetrics() {
         return requestMetrics;

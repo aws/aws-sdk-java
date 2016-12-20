@@ -171,11 +171,11 @@ public class UpdateAssociationStatusRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAssociationStatus() != null)
-            sb.append("AssociationStatus: " + getAssociationStatus());
+            sb.append("AssociationStatus: ").append(getAssociationStatus());
         sb.append("}");
         return sb.toString();
     }

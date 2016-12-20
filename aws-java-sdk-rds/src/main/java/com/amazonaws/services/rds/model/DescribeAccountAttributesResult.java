@@ -122,7 +122,7 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountQuotas() != null)
-            sb.append("AccountQuotas: " + getAccountQuotas());
+            sb.append("AccountQuotas: ").append(getAccountQuotas());
         sb.append("}");
         return sb.toString();
     }

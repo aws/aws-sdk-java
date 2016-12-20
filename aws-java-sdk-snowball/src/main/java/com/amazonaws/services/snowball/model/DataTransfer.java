@@ -233,13 +233,13 @@ public class DataTransfer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBytesTransferred() != null)
-            sb.append("BytesTransferred: " + getBytesTransferred() + ",");
+            sb.append("BytesTransferred: ").append(getBytesTransferred()).append(",");
         if (getObjectsTransferred() != null)
-            sb.append("ObjectsTransferred: " + getObjectsTransferred() + ",");
+            sb.append("ObjectsTransferred: ").append(getObjectsTransferred()).append(",");
         if (getTotalBytes() != null)
-            sb.append("TotalBytes: " + getTotalBytes() + ",");
+            sb.append("TotalBytes: ").append(getTotalBytes()).append(",");
         if (getTotalObjects() != null)
-            sb.append("TotalObjects: " + getTotalObjects());
+            sb.append("TotalObjects: ").append(getTotalObjects());
         sb.append("}");
         return sb.toString();
     }

@@ -298,15 +298,15 @@ public class BounceAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getSmtpReplyCode() != null)
-            sb.append("SmtpReplyCode: " + getSmtpReplyCode() + ",");
+            sb.append("SmtpReplyCode: ").append(getSmtpReplyCode()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getSender() != null)
-            sb.append("Sender: " + getSender());
+            sb.append("Sender: ").append(getSender());
         sb.append("}");
         return sb.toString();
     }

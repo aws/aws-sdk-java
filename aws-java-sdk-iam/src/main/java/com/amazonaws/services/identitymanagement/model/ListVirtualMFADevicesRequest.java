@@ -293,11 +293,11 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssignmentStatus() != null)
-            sb.append("AssignmentStatus: " + getAssignmentStatus() + ",");
+            sb.append("AssignmentStatus: ").append(getAssignmentStatus()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

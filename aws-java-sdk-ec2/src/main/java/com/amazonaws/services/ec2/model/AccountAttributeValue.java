@@ -80,7 +80,7 @@ public class AccountAttributeValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeValue() != null)
-            sb.append("AttributeValue: " + getAttributeValue());
+            sb.append("AttributeValue: ").append(getAttributeValue());
         sb.append("}");
         return sb.toString();
     }

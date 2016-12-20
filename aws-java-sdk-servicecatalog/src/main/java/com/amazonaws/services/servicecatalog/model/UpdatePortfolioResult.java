@@ -154,9 +154,9 @@ public class UpdatePortfolioResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPortfolioDetail() != null)
-            sb.append("PortfolioDetail: " + getPortfolioDetail() + ",");
+            sb.append("PortfolioDetail: ").append(getPortfolioDetail()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

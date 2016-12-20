@@ -80,7 +80,7 @@ public class Mitigation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMitigationName() != null)
-            sb.append("MitigationName: " + getMitigationName());
+            sb.append("MitigationName: ").append(getMitigationName());
         sb.append("}");
         return sb.toString();
     }

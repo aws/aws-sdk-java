@@ -376,19 +376,19 @@ public class ReceiptAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3Action() != null)
-            sb.append("S3Action: " + getS3Action() + ",");
+            sb.append("S3Action: ").append(getS3Action()).append(",");
         if (getBounceAction() != null)
-            sb.append("BounceAction: " + getBounceAction() + ",");
+            sb.append("BounceAction: ").append(getBounceAction()).append(",");
         if (getWorkmailAction() != null)
-            sb.append("WorkmailAction: " + getWorkmailAction() + ",");
+            sb.append("WorkmailAction: ").append(getWorkmailAction()).append(",");
         if (getLambdaAction() != null)
-            sb.append("LambdaAction: " + getLambdaAction() + ",");
+            sb.append("LambdaAction: ").append(getLambdaAction()).append(",");
         if (getStopAction() != null)
-            sb.append("StopAction: " + getStopAction() + ",");
+            sb.append("StopAction: ").append(getStopAction()).append(",");
         if (getAddHeaderAction() != null)
-            sb.append("AddHeaderAction: " + getAddHeaderAction() + ",");
+            sb.append("AddHeaderAction: ").append(getAddHeaderAction()).append(",");
         if (getSNSAction() != null)
-            sb.append("SNSAction: " + getSNSAction());
+            sb.append("SNSAction: ").append(getSNSAction());
         sb.append("}");
         return sb.toString();
     }

@@ -446,21 +446,21 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCacheClusterEnabled() != null)
-            sb.append("CacheClusterEnabled: " + getCacheClusterEnabled() + ",");
+            sb.append("CacheClusterEnabled: ").append(getCacheClusterEnabled()).append(",");
         if (getCacheClusterSize() != null)
-            sb.append("CacheClusterSize: " + getCacheClusterSize() + ",");
+            sb.append("CacheClusterSize: ").append(getCacheClusterSize()).append(",");
         if (getVariables() != null)
-            sb.append("Variables: " + getVariables() + ",");
+            sb.append("Variables: ").append(getVariables()).append(",");
         if (getDocumentationVersion() != null)
-            sb.append("DocumentationVersion: " + getDocumentationVersion());
+            sb.append("DocumentationVersion: ").append(getDocumentationVersion());
         sb.append("}");
         return sb.toString();
     }

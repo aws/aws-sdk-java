@@ -401,9 +401,9 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailName() != null)
-            sb.append("TrailName: " + getTrailName() + ",");
+            sb.append("TrailName: ").append(getTrailName()).append(",");
         if (getEventSelectors() != null)
-            sb.append("EventSelectors: " + getEventSelectors());
+            sb.append("EventSelectors: ").append(getEventSelectors());
         sb.append("}");
         return sb.toString();
     }

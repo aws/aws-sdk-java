@@ -266,13 +266,13 @@ public class AddCommunicationToCaseRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId() + ",");
+            sb.append("CaseId: ").append(getCaseId()).append(",");
         if (getCommunicationBody() != null)
-            sb.append("CommunicationBody: " + getCommunicationBody() + ",");
+            sb.append("CommunicationBody: ").append(getCommunicationBody()).append(",");
         if (getCcEmailAddresses() != null)
-            sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
+            sb.append("CcEmailAddresses: ").append(getCcEmailAddresses()).append(",");
         if (getAttachmentSetId() != null)
-            sb.append("AttachmentSetId: " + getAttachmentSetId());
+            sb.append("AttachmentSetId: ").append(getAttachmentSetId());
         sb.append("}");
         return sb.toString();
     }

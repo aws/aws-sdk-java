@@ -167,9 +167,9 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrefixLists() != null)
-            sb.append("PrefixLists: " + getPrefixLists() + ",");
+            sb.append("PrefixLists: ").append(getPrefixLists()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

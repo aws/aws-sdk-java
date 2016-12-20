@@ -80,7 +80,7 @@ public class ListInvalidationsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInvalidationList() != null)
-            sb.append("InvalidationList: " + getInvalidationList());
+            sb.append("InvalidationList: ").append(getInvalidationList());
         sb.append("}");
         return sb.toString();
     }

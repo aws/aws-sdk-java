@@ -45,6 +45,11 @@ public class DescribeStaleSecurityGroupsResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("staleSecurityGroupSet", targetDepth)) {
+                    describeStaleSecurityGroupsResult.withStaleSecurityGroupSet(new ArrayList<StaleSecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("staleSecurityGroupSet/item", targetDepth)) {
                     describeStaleSecurityGroupsResult.withStaleSecurityGroupSet(StaleSecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

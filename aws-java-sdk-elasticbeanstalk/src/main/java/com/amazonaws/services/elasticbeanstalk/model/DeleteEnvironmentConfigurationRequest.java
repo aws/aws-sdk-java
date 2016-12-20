@@ -148,9 +148,9 @@ public class DeleteEnvironmentConfigurationRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName());
+            sb.append("EnvironmentName: ").append(getEnvironmentName());
         sb.append("}");
         return sb.toString();
     }

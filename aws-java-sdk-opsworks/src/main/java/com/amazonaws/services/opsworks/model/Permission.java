@@ -523,15 +523,15 @@ public class Permission implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getAllowSsh() != null)
-            sb.append("AllowSsh: " + getAllowSsh() + ",");
+            sb.append("AllowSsh: ").append(getAllowSsh()).append(",");
         if (getAllowSudo() != null)
-            sb.append("AllowSudo: " + getAllowSudo() + ",");
+            sb.append("AllowSudo: ").append(getAllowSudo()).append(",");
         if (getLevel() != null)
-            sb.append("Level: " + getLevel());
+            sb.append("Level: ").append(getLevel());
         sb.append("}");
         return sb.toString();
     }

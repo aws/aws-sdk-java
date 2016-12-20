@@ -126,9 +126,9 @@ public class DistributionConfigWithTags implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionConfig() != null)
-            sb.append("DistributionConfig: " + getDistributionConfig() + ",");
+            sb.append("DistributionConfig: ").append(getDistributionConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

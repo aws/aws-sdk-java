@@ -178,9 +178,9 @@ public class DescribeOrderableDBInstanceOptionsResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOrderableDBInstanceOptions() != null)
-            sb.append("OrderableDBInstanceOptions: " + getOrderableDBInstanceOptions() + ",");
+            sb.append("OrderableDBInstanceOptions: ").append(getOrderableDBInstanceOptions()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

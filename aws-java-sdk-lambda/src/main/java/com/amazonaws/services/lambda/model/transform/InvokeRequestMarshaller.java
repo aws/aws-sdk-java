@@ -73,8 +73,7 @@ public class InvokeRequestMarshaller implements Marshaller<Request<InvokeRequest
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/invocations";
 
-        uriResourcePath = uriResourcePath.replace("{FunctionName}",
-                (invokeRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(invokeRequest.getFunctionName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", invokeRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         if (invokeRequest.getQualifier() != null) {

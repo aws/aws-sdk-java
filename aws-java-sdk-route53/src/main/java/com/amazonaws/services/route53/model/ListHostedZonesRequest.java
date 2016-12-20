@@ -284,11 +284,11 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getDelegationSetId() != null)
-            sb.append("DelegationSetId: " + getDelegationSetId());
+            sb.append("DelegationSetId: ").append(getDelegationSetId());
         sb.append("}");
         return sb.toString();
     }

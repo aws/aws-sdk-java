@@ -647,25 +647,25 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesListingId() != null)
-            sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");
+            sb.append("ReservedInstancesListingId: ").append(getReservedInstancesListingId()).append(",");
         if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getUpdateDate() != null)
-            sb.append("UpdateDate: " + getUpdateDate() + ",");
+            sb.append("UpdateDate: ").append(getUpdateDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getInstanceCounts() != null)
-            sb.append("InstanceCounts: " + getInstanceCounts() + ",");
+            sb.append("InstanceCounts: ").append(getInstanceCounts()).append(",");
         if (getPriceSchedules() != null)
-            sb.append("PriceSchedules: " + getPriceSchedules() + ",");
+            sb.append("PriceSchedules: ").append(getPriceSchedules()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

@@ -336,15 +336,15 @@ public class ProvisionedBandwidth implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProvisioned() != null)
-            sb.append("Provisioned: " + getProvisioned() + ",");
+            sb.append("Provisioned: ").append(getProvisioned()).append(",");
         if (getRequested() != null)
-            sb.append("Requested: " + getRequested() + ",");
+            sb.append("Requested: ").append(getRequested()).append(",");
         if (getRequestTime() != null)
-            sb.append("RequestTime: " + getRequestTime() + ",");
+            sb.append("RequestTime: ").append(getRequestTime()).append(",");
         if (getProvisionTime() != null)
-            sb.append("ProvisionTime: " + getProvisionTime() + ",");
+            sb.append("ProvisionTime: ").append(getProvisionTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

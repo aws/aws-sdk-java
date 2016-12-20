@@ -61,10 +61,8 @@ public class GetApplicationSettingsRequestMarshaller implements Marshaller<Reque
 
         String uriResourcePath = "/v1/apps/{application-id}/settings";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getApplicationSettingsRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getApplicationSettingsRequest.getApplicationId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getApplicationSettingsRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

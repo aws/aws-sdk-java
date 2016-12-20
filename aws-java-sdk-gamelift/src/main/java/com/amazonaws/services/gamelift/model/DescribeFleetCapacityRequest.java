@@ -233,11 +233,11 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetIds() != null)
-            sb.append("FleetIds: " + getFleetIds() + ",");
+            sb.append("FleetIds: ").append(getFleetIds()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

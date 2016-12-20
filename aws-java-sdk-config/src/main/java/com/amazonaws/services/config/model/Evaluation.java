@@ -423,15 +423,15 @@ public class Evaluation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComplianceResourceType() != null)
-            sb.append("ComplianceResourceType: " + getComplianceResourceType() + ",");
+            sb.append("ComplianceResourceType: ").append(getComplianceResourceType()).append(",");
         if (getComplianceResourceId() != null)
-            sb.append("ComplianceResourceId: " + getComplianceResourceId() + ",");
+            sb.append("ComplianceResourceId: ").append(getComplianceResourceId()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: " + getComplianceType() + ",");
+            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
         if (getAnnotation() != null)
-            sb.append("Annotation: " + getAnnotation() + ",");
+            sb.append("Annotation: ").append(getAnnotation()).append(",");
         if (getOrderingTimestamp() != null)
-            sb.append("OrderingTimestamp: " + getOrderingTimestamp());
+            sb.append("OrderingTimestamp: ").append(getOrderingTimestamp());
         sb.append("}");
         return sb.toString();
     }

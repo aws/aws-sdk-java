@@ -50,6 +50,11 @@ public class DescribeReservedNodesResultStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("ReservedNodes", targetDepth)) {
+                    describeReservedNodesResult.withReservedNodes(new ArrayList<ReservedNode>());
+                    continue;
+                }
+
                 if (context.testExpression("ReservedNodes/ReservedNode", targetDepth)) {
                     describeReservedNodesResult.withReservedNodes(ReservedNodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

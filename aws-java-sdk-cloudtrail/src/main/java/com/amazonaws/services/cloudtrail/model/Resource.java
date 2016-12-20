@@ -175,9 +175,9 @@ public class Resource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName());
+            sb.append("ResourceName: ").append(getResourceName());
         sb.append("}");
         return sb.toString();
     }

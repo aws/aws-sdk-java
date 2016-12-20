@@ -322,21 +322,21 @@ public class Budget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBudgetName() != null)
-            sb.append("BudgetName: " + getBudgetName() + ",");
+            sb.append("BudgetName: ").append(getBudgetName()).append(",");
         if (getBudgetLimit() != null)
-            sb.append("BudgetLimit: " + getBudgetLimit() + ",");
+            sb.append("BudgetLimit: ").append(getBudgetLimit()).append(",");
         if (getCostFilters() != null)
-            sb.append("CostFilters: " + getCostFilters() + ",");
+            sb.append("CostFilters: ").append(getCostFilters()).append(",");
         if (getCostTypes() != null)
-            sb.append("CostTypes: " + getCostTypes() + ",");
+            sb.append("CostTypes: ").append(getCostTypes()).append(",");
         if (getTimeUnit() != null)
-            sb.append("TimeUnit: " + getTimeUnit() + ",");
+            sb.append("TimeUnit: ").append(getTimeUnit()).append(",");
         if (getTimePeriod() != null)
-            sb.append("TimePeriod: " + getTimePeriod() + ",");
+            sb.append("TimePeriod: ").append(getTimePeriod()).append(",");
         if (getCalculatedSpend() != null)
-            sb.append("CalculatedSpend: " + getCalculatedSpend() + ",");
+            sb.append("CalculatedSpend: ").append(getCalculatedSpend()).append(",");
         if (getBudgetType() != null)
-            sb.append("BudgetType: " + getBudgetType());
+            sb.append("BudgetType: ").append(getBudgetType());
         sb.append("}");
         return sb.toString();
     }

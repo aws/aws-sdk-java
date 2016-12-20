@@ -652,21 +652,21 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCapabilities() != null)
-            sb.append("Capabilities: " + getCapabilities() + ",");
+            sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getCapabilitiesReason() != null)
-            sb.append("CapabilitiesReason: " + getCapabilitiesReason() + ",");
+            sb.append("CapabilitiesReason: ").append(getCapabilitiesReason()).append(",");
         if (getResourceTypes() != null)
-            sb.append("ResourceTypes: " + getResourceTypes() + ",");
+            sb.append("ResourceTypes: ").append(getResourceTypes()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: " + getMetadata() + ",");
+            sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getDeclaredTransforms() != null)
-            sb.append("DeclaredTransforms: " + getDeclaredTransforms());
+            sb.append("DeclaredTransforms: ").append(getDeclaredTransforms());
         sb.append("}");
         return sb.toString();
     }

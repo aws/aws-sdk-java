@@ -278,13 +278,13 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getCidrBlock() != null)
-            sb.append("CidrBlock: " + getCidrBlock() + ",");
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock() + ",");
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

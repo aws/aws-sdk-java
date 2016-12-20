@@ -375,11 +375,11 @@ public class UpdateSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlInjectionMatchSetId() != null)
-            sb.append("SqlInjectionMatchSetId: " + getSqlInjectionMatchSetId() + ",");
+            sb.append("SqlInjectionMatchSetId: ").append(getSqlInjectionMatchSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates());
+            sb.append("Updates: ").append(getUpdates());
         sb.append("}");
         return sb.toString();
     }

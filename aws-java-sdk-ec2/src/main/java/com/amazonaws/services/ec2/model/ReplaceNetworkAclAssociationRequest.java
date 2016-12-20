@@ -141,9 +141,9 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getNetworkAclId() != null)
-            sb.append("NetworkAclId: " + getNetworkAclId());
+            sb.append("NetworkAclId: ").append(getNetworkAclId());
         sb.append("}");
         return sb.toString();
     }

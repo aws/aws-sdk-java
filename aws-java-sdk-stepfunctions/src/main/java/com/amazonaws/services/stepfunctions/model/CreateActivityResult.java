@@ -124,9 +124,9 @@ public class CreateActivityResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityArn() != null)
-            sb.append("ActivityArn: " + getActivityArn() + ",");
+            sb.append("ActivityArn: ").append(getActivityArn()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

@@ -292,15 +292,15 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier() + ",");
+            sb.append("ReplicationSubnetGroupIdentifier: ").append(getReplicationSubnetGroupIdentifier()).append(",");
         if (getReplicationSubnetGroupDescription() != null)
-            sb.append("ReplicationSubnetGroupDescription: " + getReplicationSubnetGroupDescription() + ",");
+            sb.append("ReplicationSubnetGroupDescription: ").append(getReplicationSubnetGroupDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetGroupStatus() != null)
-            sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
+            sb.append("SubnetGroupStatus: ").append(getSubnetGroupStatus()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
         return sb.toString();
     }

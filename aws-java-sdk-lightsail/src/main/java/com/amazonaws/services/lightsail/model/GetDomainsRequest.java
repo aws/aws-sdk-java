@@ -79,7 +79,7 @@ public class GetDomainsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

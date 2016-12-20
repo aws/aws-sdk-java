@@ -265,13 +265,13 @@ public class DocumentParameter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue());
+            sb.append("DefaultValue: ").append(getDefaultValue());
         sb.append("}");
         return sb.toString();
     }

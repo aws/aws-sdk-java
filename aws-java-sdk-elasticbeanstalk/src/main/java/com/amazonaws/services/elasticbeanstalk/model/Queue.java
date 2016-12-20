@@ -126,9 +126,9 @@ public class Queue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getURL() != null)
-            sb.append("URL: " + getURL());
+            sb.append("URL: ").append(getURL());
         sb.append("}");
         return sb.toString();
     }

@@ -232,13 +232,13 @@ public class TemporaryCredential implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getValidForInMinutes() != null)
-            sb.append("ValidForInMinutes: " + getValidForInMinutes() + ",");
+            sb.append("ValidForInMinutes: ").append(getValidForInMinutes()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

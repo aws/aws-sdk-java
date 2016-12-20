@@ -136,9 +136,9 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceTagList() != null)
-            sb.append("ResourceTagList: " + getResourceTagList() + ",");
+            sb.append("ResourceTagList: ").append(getResourceTagList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

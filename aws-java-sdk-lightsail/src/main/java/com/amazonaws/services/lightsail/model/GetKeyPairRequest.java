@@ -79,7 +79,7 @@ public class GetKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPairName() != null)
-            sb.append("KeyPairName: " + getKeyPairName());
+            sb.append("KeyPairName: ").append(getKeyPairName());
         sb.append("}");
         return sb.toString();
     }

@@ -140,9 +140,9 @@ public class CancelImportTaskRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportTaskId() != null)
-            sb.append("ImportTaskId: " + getImportTaskId() + ",");
+            sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
         if (getCancelReason() != null)
-            sb.append("CancelReason: " + getCancelReason());
+            sb.append("CancelReason: ").append(getCancelReason());
         sb.append("}");
         return sb.toString();
     }

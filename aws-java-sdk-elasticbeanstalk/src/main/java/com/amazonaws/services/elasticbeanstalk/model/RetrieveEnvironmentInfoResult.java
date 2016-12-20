@@ -113,7 +113,7 @@ public class RetrieveEnvironmentInfoResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentInfo() != null)
-            sb.append("EnvironmentInfo: " + getEnvironmentInfo());
+            sb.append("EnvironmentInfo: ").append(getEnvironmentInfo());
         sb.append("}");
         return sb.toString();
     }

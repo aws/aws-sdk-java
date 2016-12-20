@@ -81,7 +81,7 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceAccess() != null)
-            sb.append("InstanceAccess: " + getInstanceAccess());
+            sb.append("InstanceAccess: ").append(getInstanceAccess());
         sb.append("}");
         return sb.toString();
     }

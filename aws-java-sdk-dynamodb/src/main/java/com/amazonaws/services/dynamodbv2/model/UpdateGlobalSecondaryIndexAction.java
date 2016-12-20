@@ -108,9 +108,9 @@ public class UpdateGlobalSecondaryIndexAction implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexName() != null)
-            sb.append("IndexName: " + getIndexName() + ",");
+            sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getProvisionedThroughput() != null)
-            sb.append("ProvisionedThroughput: " + getProvisionedThroughput());
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput());
         sb.append("}");
         return sb.toString();
     }

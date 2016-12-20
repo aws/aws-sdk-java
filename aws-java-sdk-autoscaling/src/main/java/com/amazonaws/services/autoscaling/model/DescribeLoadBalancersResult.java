@@ -166,9 +166,9 @@ public class DescribeLoadBalancersResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancers() != null)
-            sb.append("LoadBalancers: " + getLoadBalancers() + ",");
+            sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -59,7 +59,7 @@ public class GetCampaignVersionsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCampaignsResponse() != null)
-            sb.append("CampaignsResponse: " + getCampaignsResponse());
+            sb.append("CampaignsResponse: ").append(getCampaignsResponse());
         sb.append("}");
         return sb.toString();
     }

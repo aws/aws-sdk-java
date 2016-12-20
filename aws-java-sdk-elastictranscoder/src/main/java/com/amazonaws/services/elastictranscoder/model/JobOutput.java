@@ -2344,47 +2344,47 @@ public class JobOutput implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getThumbnailPattern() != null)
-            sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");
+            sb.append("ThumbnailPattern: ").append(getThumbnailPattern()).append(",");
         if (getThumbnailEncryption() != null)
-            sb.append("ThumbnailEncryption: " + getThumbnailEncryption() + ",");
+            sb.append("ThumbnailEncryption: ").append(getThumbnailEncryption()).append(",");
         if (getRotate() != null)
-            sb.append("Rotate: " + getRotate() + ",");
+            sb.append("Rotate: ").append(getRotate()).append(",");
         if (getPresetId() != null)
-            sb.append("PresetId: " + getPresetId() + ",");
+            sb.append("PresetId: ").append(getPresetId()).append(",");
         if (getSegmentDuration() != null)
-            sb.append("SegmentDuration: " + getSegmentDuration() + ",");
+            sb.append("SegmentDuration: ").append(getSegmentDuration()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetail() != null)
-            sb.append("StatusDetail: " + getStatusDetail() + ",");
+            sb.append("StatusDetail: ").append(getStatusDetail()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getWidth() != null)
-            sb.append("Width: " + getWidth() + ",");
+            sb.append("Width: ").append(getWidth()).append(",");
         if (getHeight() != null)
-            sb.append("Height: " + getHeight() + ",");
+            sb.append("Height: ").append(getHeight()).append(",");
         if (getFrameRate() != null)
-            sb.append("FrameRate: " + getFrameRate() + ",");
+            sb.append("FrameRate: ").append(getFrameRate()).append(",");
         if (getFileSize() != null)
-            sb.append("FileSize: " + getFileSize() + ",");
+            sb.append("FileSize: ").append(getFileSize()).append(",");
         if (getDurationMillis() != null)
-            sb.append("DurationMillis: " + getDurationMillis() + ",");
+            sb.append("DurationMillis: ").append(getDurationMillis()).append(",");
         if (getWatermarks() != null)
-            sb.append("Watermarks: " + getWatermarks() + ",");
+            sb.append("Watermarks: ").append(getWatermarks()).append(",");
         if (getAlbumArt() != null)
-            sb.append("AlbumArt: " + getAlbumArt() + ",");
+            sb.append("AlbumArt: ").append(getAlbumArt()).append(",");
         if (getComposition() != null)
-            sb.append("Composition: " + getComposition() + ",");
+            sb.append("Composition: ").append(getComposition()).append(",");
         if (getCaptions() != null)
-            sb.append("Captions: " + getCaptions() + ",");
+            sb.append("Captions: ").append(getCaptions()).append(",");
         if (getEncryption() != null)
-            sb.append("Encryption: " + getEncryption() + ",");
+            sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getAppliedColorSpaceConversion() != null)
-            sb.append("AppliedColorSpaceConversion: " + getAppliedColorSpaceConversion());
+            sb.append("AppliedColorSpaceConversion: ").append(getAppliedColorSpaceConversion());
         sb.append("}");
         return sb.toString();
     }

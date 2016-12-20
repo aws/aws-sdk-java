@@ -524,31 +524,31 @@ public class IndexField implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexFieldName() != null)
-            sb.append("IndexFieldName: " + getIndexFieldName() + ",");
+            sb.append("IndexFieldName: ").append(getIndexFieldName()).append(",");
         if (getIndexFieldType() != null)
-            sb.append("IndexFieldType: " + getIndexFieldType() + ",");
+            sb.append("IndexFieldType: ").append(getIndexFieldType()).append(",");
         if (getIntOptions() != null)
-            sb.append("IntOptions: " + getIntOptions() + ",");
+            sb.append("IntOptions: ").append(getIntOptions()).append(",");
         if (getDoubleOptions() != null)
-            sb.append("DoubleOptions: " + getDoubleOptions() + ",");
+            sb.append("DoubleOptions: ").append(getDoubleOptions()).append(",");
         if (getLiteralOptions() != null)
-            sb.append("LiteralOptions: " + getLiteralOptions() + ",");
+            sb.append("LiteralOptions: ").append(getLiteralOptions()).append(",");
         if (getTextOptions() != null)
-            sb.append("TextOptions: " + getTextOptions() + ",");
+            sb.append("TextOptions: ").append(getTextOptions()).append(",");
         if (getDateOptions() != null)
-            sb.append("DateOptions: " + getDateOptions() + ",");
+            sb.append("DateOptions: ").append(getDateOptions()).append(",");
         if (getLatLonOptions() != null)
-            sb.append("LatLonOptions: " + getLatLonOptions() + ",");
+            sb.append("LatLonOptions: ").append(getLatLonOptions()).append(",");
         if (getIntArrayOptions() != null)
-            sb.append("IntArrayOptions: " + getIntArrayOptions() + ",");
+            sb.append("IntArrayOptions: ").append(getIntArrayOptions()).append(",");
         if (getDoubleArrayOptions() != null)
-            sb.append("DoubleArrayOptions: " + getDoubleArrayOptions() + ",");
+            sb.append("DoubleArrayOptions: ").append(getDoubleArrayOptions()).append(",");
         if (getLiteralArrayOptions() != null)
-            sb.append("LiteralArrayOptions: " + getLiteralArrayOptions() + ",");
+            sb.append("LiteralArrayOptions: ").append(getLiteralArrayOptions()).append(",");
         if (getTextArrayOptions() != null)
-            sb.append("TextArrayOptions: " + getTextArrayOptions() + ",");
+            sb.append("TextArrayOptions: ").append(getTextArrayOptions()).append(",");
         if (getDateArrayOptions() != null)
-            sb.append("DateArrayOptions: " + getDateArrayOptions());
+            sb.append("DateArrayOptions: ").append(getDateArrayOptions());
         sb.append("}");
         return sb.toString();
     }

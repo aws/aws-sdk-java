@@ -90,7 +90,7 @@ public class InputParallelism implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCount() != null)
-            sb.append("Count: " + getCount());
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }

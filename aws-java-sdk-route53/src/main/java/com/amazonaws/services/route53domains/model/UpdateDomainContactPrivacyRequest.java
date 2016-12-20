@@ -709,13 +709,13 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAdminPrivacy() != null)
-            sb.append("AdminPrivacy: " + getAdminPrivacy() + ",");
+            sb.append("AdminPrivacy: ").append(getAdminPrivacy()).append(",");
         if (getRegistrantPrivacy() != null)
-            sb.append("RegistrantPrivacy: " + getRegistrantPrivacy() + ",");
+            sb.append("RegistrantPrivacy: ").append(getRegistrantPrivacy()).append(",");
         if (getTechPrivacy() != null)
-            sb.append("TechPrivacy: " + getTechPrivacy());
+            sb.append("TechPrivacy: ").append(getTechPrivacy());
         sb.append("}");
         return sb.toString();
     }

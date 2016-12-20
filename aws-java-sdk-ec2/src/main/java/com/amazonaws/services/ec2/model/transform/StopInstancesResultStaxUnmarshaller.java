@@ -45,6 +45,11 @@ public class StopInstancesResultStaxUnmarshaller implements Unmarshaller<StopIns
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instancesSet", targetDepth)) {
+                    stopInstancesResult.withStoppingInstances(new ArrayList<InstanceStateChange>());
+                    continue;
+                }
+
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     stopInstancesResult.withStoppingInstances(InstanceStateChangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

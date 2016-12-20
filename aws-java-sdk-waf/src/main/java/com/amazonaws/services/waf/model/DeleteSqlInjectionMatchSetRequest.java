@@ -141,9 +141,9 @@ public class DeleteSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlInjectionMatchSetId() != null)
-            sb.append("SqlInjectionMatchSetId: " + getSqlInjectionMatchSetId() + ",");
+            sb.append("SqlInjectionMatchSetId: ").append(getSqlInjectionMatchSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

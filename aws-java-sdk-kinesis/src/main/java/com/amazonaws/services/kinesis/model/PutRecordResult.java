@@ -140,9 +140,9 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShardId() != null)
-            sb.append("ShardId: " + getShardId() + ",");
+            sb.append("ShardId: ").append(getShardId()).append(",");
         if (getSequenceNumber() != null)
-            sb.append("SequenceNumber: " + getSequenceNumber());
+            sb.append("SequenceNumber: ").append(getSequenceNumber());
         sb.append("}");
         return sb.toString();
     }

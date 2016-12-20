@@ -168,11 +168,11 @@ public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDatasetName() != null)
-            sb.append("DatasetName: " + getDatasetName());
+            sb.append("DatasetName: ").append(getDatasetName());
         sb.append("}");
         return sb.toString();
     }

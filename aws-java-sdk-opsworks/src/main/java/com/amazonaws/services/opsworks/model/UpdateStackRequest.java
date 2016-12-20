@@ -2339,41 +2339,41 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+            sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getDefaultInstanceProfileArn() != null)
-            sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");
+            sb.append("DefaultInstanceProfileArn: ").append(getDefaultInstanceProfileArn()).append(",");
         if (getDefaultOs() != null)
-            sb.append("DefaultOs: " + getDefaultOs() + ",");
+            sb.append("DefaultOs: ").append(getDefaultOs()).append(",");
         if (getHostnameTheme() != null)
-            sb.append("HostnameTheme: " + getHostnameTheme() + ",");
+            sb.append("HostnameTheme: ").append(getHostnameTheme()).append(",");
         if (getDefaultAvailabilityZone() != null)
-            sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
+            sb.append("DefaultAvailabilityZone: ").append(getDefaultAvailabilityZone()).append(",");
         if (getDefaultSubnetId() != null)
-            sb.append("DefaultSubnetId: " + getDefaultSubnetId() + ",");
+            sb.append("DefaultSubnetId: ").append(getDefaultSubnetId()).append(",");
         if (getCustomJson() != null)
-            sb.append("CustomJson: " + getCustomJson() + ",");
+            sb.append("CustomJson: ").append(getCustomJson()).append(",");
         if (getConfigurationManager() != null)
-            sb.append("ConfigurationManager: " + getConfigurationManager() + ",");
+            sb.append("ConfigurationManager: ").append(getConfigurationManager()).append(",");
         if (getChefConfiguration() != null)
-            sb.append("ChefConfiguration: " + getChefConfiguration() + ",");
+            sb.append("ChefConfiguration: ").append(getChefConfiguration()).append(",");
         if (getUseCustomCookbooks() != null)
-            sb.append("UseCustomCookbooks: " + getUseCustomCookbooks() + ",");
+            sb.append("UseCustomCookbooks: ").append(getUseCustomCookbooks()).append(",");
         if (getCustomCookbooksSource() != null)
-            sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
+            sb.append("CustomCookbooksSource: ").append(getCustomCookbooksSource()).append(",");
         if (getDefaultSshKeyName() != null)
-            sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
+            sb.append("DefaultSshKeyName: ").append(getDefaultSshKeyName()).append(",");
         if (getDefaultRootDeviceType() != null)
-            sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() + ",");
+            sb.append("DefaultRootDeviceType: ").append(getDefaultRootDeviceType()).append(",");
         if (getUseOpsworksSecurityGroups() != null)
-            sb.append("UseOpsworksSecurityGroups: " + getUseOpsworksSecurityGroups() + ",");
+            sb.append("UseOpsworksSecurityGroups: ").append(getUseOpsworksSecurityGroups()).append(",");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion());
+            sb.append("AgentVersion: ").append(getAgentVersion());
         sb.append("}");
         return sb.toString();
     }

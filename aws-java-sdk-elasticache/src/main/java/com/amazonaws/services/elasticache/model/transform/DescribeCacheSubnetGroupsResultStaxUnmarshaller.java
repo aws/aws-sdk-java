@@ -50,6 +50,11 @@ public class DescribeCacheSubnetGroupsResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("CacheSubnetGroups", targetDepth)) {
+                    describeCacheSubnetGroupsResult.withCacheSubnetGroups(new ArrayList<CacheSubnetGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheSubnetGroups/CacheSubnetGroup", targetDepth)) {
                     describeCacheSubnetGroupsResult.withCacheSubnetGroups(CacheSubnetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

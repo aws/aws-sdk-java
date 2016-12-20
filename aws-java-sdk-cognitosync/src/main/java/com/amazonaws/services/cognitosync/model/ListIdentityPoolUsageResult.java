@@ -207,13 +207,13 @@ public class ListIdentityPoolUsageResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolUsages() != null)
-            sb.append("IdentityPoolUsages: " + getIdentityPoolUsages() + ",");
+            sb.append("IdentityPoolUsages: ").append(getIdentityPoolUsages()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

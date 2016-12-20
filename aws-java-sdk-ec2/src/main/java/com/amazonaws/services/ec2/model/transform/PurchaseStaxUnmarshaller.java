@@ -50,6 +50,11 @@ public class PurchaseStaxUnmarshaller implements Unmarshaller<Purchase, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("hostIdSet", targetDepth)) {
+                    purchase.withHostIdSet(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("hostIdSet/item", targetDepth)) {
                     purchase.withHostIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

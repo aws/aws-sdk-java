@@ -110,7 +110,7 @@ public class ModifyTargetGroupResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetGroups() != null)
-            sb.append("TargetGroups: " + getTargetGroups());
+            sb.append("TargetGroups: ").append(getTargetGroups());
         sb.append("}");
         return sb.toString();
     }

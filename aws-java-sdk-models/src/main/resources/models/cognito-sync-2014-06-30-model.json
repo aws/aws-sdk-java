@@ -19,31 +19,55 @@
       "documentation" : "<p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.",
+        "error" : {
+          "code" : "DuplicateRequest",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "DuplicateRequestException"
       }, {
         "documentation" : "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.",
+        "error" : {
+          "code" : "AlreadyStreamed",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "AlreadyStreamedException"
@@ -73,31 +97,55 @@
       "documentation" : "<p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
+        "error" : {
+          "code" : "ResourceConflict",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceConflictException"
@@ -127,26 +175,46 @@
       "documentation" : "<p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -176,26 +244,46 @@
       "documentation" : "<p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -225,26 +313,46 @@
       "documentation" : "<p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -274,21 +382,37 @@
       "documentation" : "<p>Get the status of the last BulkPublish operation for an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
@@ -318,26 +442,46 @@
       "documentation" : "<p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -367,26 +511,46 @@
       "documentation" : "<p>Gets the configuration settings of an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -416,21 +580,37 @@
       "documentation" : "<p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -460,21 +640,37 @@
       "documentation" : "<p>Gets a list of identity pools registered with Cognito.</p> <p>ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -504,21 +700,37 @@
       "documentation" : "<p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
@@ -548,31 +760,55 @@
       "documentation" : "<p>Registers a device to receive push sync notifications.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : {
+          "code" : "InvalidConfiguration",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidConfigurationException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -602,26 +838,46 @@
       "documentation" : "<p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -646,31 +902,55 @@
       "documentation" : "<p>Sets the necessary configuration for push sync.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : "<p>Thrown if there are parallel requests to modify a resource.</p>",
+        "error" : {
+          "code" : "ConcurrentModification",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ConcurrentModificationException"
@@ -700,31 +980,55 @@
       "documentation" : "<p>Subscribes to receive notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : {
+          "code" : "InvalidConfiguration",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidConfigurationException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -754,31 +1058,55 @@
       "documentation" : "<p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
       }, {
         "documentation" : null,
+        "error" : {
+          "code" : "InvalidConfiguration",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidConfigurationException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
@@ -808,46 +1136,82 @@
       "documentation" : "<p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p> <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
       "errors" : [ {
         "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
+        "error" : {
+          "code" : "InvalidParameter",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidParameterException"
       }, {
         "documentation" : "Thrown when the limit on the number of objects or operations has been exceeded.",
+        "error" : {
+          "code" : "LimitExceeded",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LimitExceededException"
       }, {
         "documentation" : "Thrown when a user is not authorized to access the requested resource.",
+        "error" : {
+          "code" : "NotAuthorizedError",
+          "httpStatusCode" : 403
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "NotAuthorizedException"
       }, {
         "documentation" : "Thrown if the resource doesn't exist.",
+        "error" : {
+          "code" : "ResourceNotFound",
+          "httpStatusCode" : 404
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceNotFoundException"
       }, {
         "documentation" : "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
+        "error" : {
+          "code" : "ResourceConflict",
+          "httpStatusCode" : 409
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "ResourceConflictException"
       }, {
         "documentation" : "<p>The AWS Lambda function returned invalid output or an exception.</p>",
+        "error" : {
+          "code" : "InvalidLambdaFunctionOutput",
+          "httpStatusCode" : 400
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "InvalidLambdaFunctionOutputException"
       }, {
         "documentation" : "<p>AWS Lambda throttled your account, please contact AWS Support</p>",
+        "error" : {
+          "code" : "LambdaThrottled",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "LambdaThrottledException"
       }, {
         "documentation" : "Thrown if the request is throttled.",
+        "error" : {
+          "code" : "TooManyRequests",
+          "httpStatusCode" : 429
+        },
         "exception" : true,
         "fault" : false,
         "shape" : "TooManyRequestsException"
       }, {
         "documentation" : "Indicates an internal service error.",
+        "error" : {
+          "code" : "InternalError",
+          "httpStatusCode" : 500
+        },
         "exception" : true,
         "fault" : true,
         "shape" : "InternalErrorException"
@@ -878,7 +1242,8 @@
       "documentation" : "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.",
       "enum" : null,
       "error" : {
-        "code" : "AlreadyStreamed"
+        "code" : "AlreadyStreamed",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -921,7 +1286,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : "arn:aws:sns:[-0-9a-z]+:\\d+:app/[A-Z_]+/[a-zA-Z0-9_.-]+",
       "payload" : null,
@@ -954,7 +1319,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -975,7 +1340,7 @@
       "key" : null,
       "max" : 2048,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 20,
       "pattern" : "arn:aws:iam::\\d+:role/.*",
       "payload" : null,
@@ -996,7 +1361,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1087,7 +1452,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1108,7 +1473,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1129,7 +1494,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1205,7 +1570,8 @@
       "documentation" : "<p>Thrown if there are parallel requests to modify a resource.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ConcurrentModification"
+        "code" : "ConcurrentModification",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -1373,7 +1739,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1394,7 +1760,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[a-zA-Z0-9_.:-]+",
       "payload" : null,
@@ -1415,7 +1781,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1781,7 +2147,7 @@
       "key" : null,
       "max" : 256,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -1796,7 +2162,8 @@
       "documentation" : "An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.",
       "enum" : null,
       "error" : {
-        "code" : "DuplicateRequest"
+        "code" : "DuplicateRequest",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -1851,7 +2218,7 @@
       },
       "max" : 1,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -1884,7 +2251,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2193,7 +2560,7 @@
       "key" : null,
       "max" : 55,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w-]+:[0-9a-f-]+",
       "payload" : null,
@@ -2214,7 +2581,7 @@
       "key" : null,
       "max" : 55,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : "[\\w-]+:[0-9a-f-]+",
       "payload" : null,
@@ -2321,7 +2688,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2429,7 +2796,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2450,7 +2817,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2465,7 +2832,8 @@
       "documentation" : "Indicates an internal service error.",
       "enum" : null,
       "error" : {
-        "code" : "InternalError"
+        "code" : "InternalError",
+        "httpStatusCode" : 500
       },
       "exception" : true,
       "fault" : true,
@@ -2502,7 +2870,8 @@
       "documentation" : null,
       "enum" : null,
       "error" : {
-        "code" : "InvalidConfiguration"
+        "code" : "InvalidConfiguration",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -2539,7 +2908,8 @@
       "documentation" : "<p>The AWS Lambda function returned invalid output or an exception.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidLambdaFunctionOutput"
+        "code" : "InvalidLambdaFunctionOutput",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -2576,7 +2946,8 @@
       "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
       "enum" : null,
       "error" : {
-        "code" : "InvalidParameter"
+        "code" : "InvalidParameter",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -2619,7 +2990,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2634,7 +3005,8 @@
       "documentation" : "<p>AWS Lambda throttled your account, please contact AWS Support</p>",
       "enum" : null,
       "error" : {
-        "code" : "LambdaThrottled"
+        "code" : "LambdaThrottled",
+        "httpStatusCode" : 429
       },
       "exception" : true,
       "fault" : false,
@@ -2671,7 +3043,8 @@
       "documentation" : "Thrown when the limit on the number of objects or operations has been exceeded.",
       "enum" : null,
       "error" : {
-        "code" : "LimitExceeded"
+        "code" : "LimitExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -3223,7 +3596,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3256,7 +3629,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3271,7 +3644,8 @@
       "documentation" : "Thrown when a user is not authorized to access the requested resource.",
       "enum" : null,
       "error" : {
-        "code" : "NotAuthorizedError"
+        "code" : "NotAuthorizedError",
+        "httpStatusCode" : 403
       },
       "exception" : true,
       "fault" : false,
@@ -3314,7 +3688,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3335,7 +3709,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3404,7 +3778,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3525,7 +3899,7 @@
       "key" : null,
       "max" : 1024,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -3558,7 +3932,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3678,7 +4052,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3699,7 +4073,7 @@
       "key" : null,
       "max" : 1048575,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3823,7 +4197,8 @@
       "documentation" : "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
       "enum" : null,
       "error" : {
-        "code" : "ResourceConflict"
+        "code" : "ResourceConflict",
+        "httpStatusCode" : 409
       },
       "exception" : true,
       "fault" : false,
@@ -3860,7 +4235,8 @@
       "documentation" : "Thrown if the resource doesn't exist.",
       "enum" : null,
       "error" : {
-        "code" : "ResourceNotFound"
+        "code" : "ResourceNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -4073,7 +4449,7 @@
       "key" : null,
       "max" : 128,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 1,
       "pattern" : null,
       "payload" : null,
@@ -4094,7 +4470,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4115,7 +4491,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4231,7 +4607,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4246,7 +4622,8 @@
       "documentation" : "Thrown if the request is throttled.",
       "enum" : null,
       "error" : {
-        "code" : "TooManyRequests"
+        "code" : "TooManyRequests",
+        "httpStatusCode" : 429
       },
       "exception" : true,
       "fault" : false,

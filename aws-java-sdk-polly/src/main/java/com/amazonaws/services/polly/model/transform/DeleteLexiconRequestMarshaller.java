@@ -61,8 +61,7 @@ public class DeleteLexiconRequestMarshaller implements Marshaller<Request<Delete
 
         String uriResourcePath = "/v1/lexicons/{LexiconName}";
 
-        uriResourcePath = uriResourcePath.replace("{LexiconName}",
-                (deleteLexiconRequest.getName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteLexiconRequest.getName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "LexiconName", deleteLexiconRequest.getName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

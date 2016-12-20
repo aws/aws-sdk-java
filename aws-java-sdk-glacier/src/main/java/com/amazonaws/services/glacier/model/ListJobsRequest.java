@@ -395,17 +395,17 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getStatuscode() != null)
-            sb.append("Statuscode: " + getStatuscode() + ",");
+            sb.append("Statuscode: ").append(getStatuscode()).append(",");
         if (getCompleted() != null)
-            sb.append("Completed: " + getCompleted());
+            sb.append("Completed: ").append(getCompleted());
         sb.append("}");
         return sb.toString();
     }

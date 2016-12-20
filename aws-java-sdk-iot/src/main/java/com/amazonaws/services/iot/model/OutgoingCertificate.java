@@ -310,17 +310,17 @@ public class OutgoingCertificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getTransferredTo() != null)
-            sb.append("TransferredTo: " + getTransferredTo() + ",");
+            sb.append("TransferredTo: ").append(getTransferredTo()).append(",");
         if (getTransferDate() != null)
-            sb.append("TransferDate: " + getTransferDate() + ",");
+            sb.append("TransferDate: ").append(getTransferDate()).append(",");
         if (getTransferMessage() != null)
-            sb.append("TransferMessage: " + getTransferMessage() + ",");
+            sb.append("TransferMessage: ").append(getTransferMessage()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

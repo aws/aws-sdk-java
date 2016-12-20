@@ -50,6 +50,11 @@ public class OriginSslProtocolsStaxUnmarshaller implements Unmarshaller<OriginSs
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    originSslProtocols.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/SslProtocol", targetDepth)) {
                     originSslProtocols.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

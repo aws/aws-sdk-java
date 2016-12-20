@@ -45,6 +45,11 @@ public class DescribeTargetGroupsResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("TargetGroups", targetDepth)) {
+                    describeTargetGroupsResult.withTargetGroups(new ArrayList<TargetGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("TargetGroups/member", targetDepth)) {
                     describeTargetGroupsResult.withTargetGroups(TargetGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -141,7 +141,7 @@ public class DeleteDeploymentGroupResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHooksNotCleanedUp() != null)
-            sb.append("HooksNotCleanedUp: " + getHooksNotCleanedUp());
+            sb.append("HooksNotCleanedUp: ").append(getHooksNotCleanedUp());
         sb.append("}");
         return sb.toString();
     }

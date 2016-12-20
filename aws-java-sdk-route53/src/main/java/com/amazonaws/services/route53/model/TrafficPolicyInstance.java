@@ -688,23 +688,23 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getTTL() != null)
-            sb.append("TTL: " + getTTL() + ",");
+            sb.append("TTL: ").append(getTTL()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getTrafficPolicyId() != null)
-            sb.append("TrafficPolicyId: " + getTrafficPolicyId() + ",");
+            sb.append("TrafficPolicyId: ").append(getTrafficPolicyId()).append(",");
         if (getTrafficPolicyVersion() != null)
-            sb.append("TrafficPolicyVersion: " + getTrafficPolicyVersion() + ",");
+            sb.append("TrafficPolicyVersion: ").append(getTrafficPolicyVersion()).append(",");
         if (getTrafficPolicyType() != null)
-            sb.append("TrafficPolicyType: " + getTrafficPolicyType());
+            sb.append("TrafficPolicyType: ").append(getTrafficPolicyType());
         sb.append("}");
         return sb.toString();
     }

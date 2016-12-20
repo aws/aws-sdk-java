@@ -253,9 +253,9 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFaceDetails() != null)
-            sb.append("FaceDetails: " + getFaceDetails() + ",");
+            sb.append("FaceDetails: ").append(getFaceDetails()).append(",");
         if (getOrientationCorrection() != null)
-            sb.append("OrientationCorrection: " + getOrientationCorrection());
+            sb.append("OrientationCorrection: ").append(getOrientationCorrection());
         sb.append("}");
         return sb.toString();
     }

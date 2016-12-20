@@ -113,7 +113,7 @@ public class DescribePipelinesResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineDescriptionList() != null)
-            sb.append("PipelineDescriptionList: " + getPipelineDescriptionList());
+            sb.append("PipelineDescriptionList: ").append(getPipelineDescriptionList());
         sb.append("}");
         return sb.toString();
     }

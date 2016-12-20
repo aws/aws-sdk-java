@@ -174,9 +174,9 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute());
+            sb.append("Attribute: ").append(getAttribute());
         sb.append("}");
         return sb.toString();
     }

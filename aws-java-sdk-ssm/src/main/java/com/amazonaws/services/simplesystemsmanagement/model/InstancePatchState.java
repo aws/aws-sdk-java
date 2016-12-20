@@ -702,31 +702,31 @@ public class InstancePatchState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: " + getPatchGroup() + ",");
+            sb.append("PatchGroup: ").append(getPatchGroup()).append(",");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId() + ",");
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: " + getOwnerInformation() + ",");
+            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
         if (getInstalledCount() != null)
-            sb.append("InstalledCount: " + getInstalledCount() + ",");
+            sb.append("InstalledCount: ").append(getInstalledCount()).append(",");
         if (getInstalledOtherCount() != null)
-            sb.append("InstalledOtherCount: " + getInstalledOtherCount() + ",");
+            sb.append("InstalledOtherCount: ").append(getInstalledOtherCount()).append(",");
         if (getMissingCount() != null)
-            sb.append("MissingCount: " + getMissingCount() + ",");
+            sb.append("MissingCount: ").append(getMissingCount()).append(",");
         if (getFailedCount() != null)
-            sb.append("FailedCount: " + getFailedCount() + ",");
+            sb.append("FailedCount: ").append(getFailedCount()).append(",");
         if (getNotApplicableCount() != null)
-            sb.append("NotApplicableCount: " + getNotApplicableCount() + ",");
+            sb.append("NotApplicableCount: ").append(getNotApplicableCount()).append(",");
         if (getOperationStartTime() != null)
-            sb.append("OperationStartTime: " + getOperationStartTime() + ",");
+            sb.append("OperationStartTime: ").append(getOperationStartTime()).append(",");
         if (getOperationEndTime() != null)
-            sb.append("OperationEndTime: " + getOperationEndTime() + ",");
+            sb.append("OperationEndTime: ").append(getOperationEndTime()).append(",");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation());
+            sb.append("Operation: ").append(getOperation());
         sb.append("}");
         return sb.toString();
     }

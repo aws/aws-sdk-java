@@ -305,15 +305,15 @@ public class CreateModelResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSchema() != null)
-            sb.append("Schema: " + getSchema() + ",");
+            sb.append("Schema: ").append(getSchema()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType());
+            sb.append("ContentType: ").append(getContentType());
         sb.append("}");
         return sb.toString();
     }

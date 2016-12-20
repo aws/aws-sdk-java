@@ -61,10 +61,9 @@ public class CreateVaultRequestMarshaller implements Marshaller<Request<CreateVa
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}";
 
-        uriResourcePath = uriResourcePath.replace("{accountId}",
-                (createVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createVaultRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{vaultName}",
-                (createVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createVaultRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                createVaultRequest.getAccountId() == null ? "-" : createVaultRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", createVaultRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

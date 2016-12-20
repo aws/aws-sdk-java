@@ -276,15 +276,15 @@ public class TopicRuleListItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn() + ",");
+            sb.append("RuleArn: ").append(getRuleArn()).append(",");
         if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName() + ",");
+            sb.append("RuleName: ").append(getRuleName()).append(",");
         if (getTopicPattern() != null)
-            sb.append("TopicPattern: " + getTopicPattern() + ",");
+            sb.append("TopicPattern: ").append(getTopicPattern()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getRuleDisabled() != null)
-            sb.append("RuleDisabled: " + getRuleDisabled());
+            sb.append("RuleDisabled: ").append(getRuleDisabled());
         sb.append("}");
         return sb.toString();
     }

@@ -433,19 +433,19 @@ public class AssessmentTemplate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAssessmentTargetArn() != null)
-            sb.append("AssessmentTargetArn: " + getAssessmentTargetArn() + ",");
+            sb.append("AssessmentTargetArn: ").append(getAssessmentTargetArn()).append(",");
         if (getDurationInSeconds() != null)
-            sb.append("DurationInSeconds: " + getDurationInSeconds() + ",");
+            sb.append("DurationInSeconds: ").append(getDurationInSeconds()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getUserAttributesForFindings() != null)
-            sb.append("UserAttributesForFindings: " + getUserAttributesForFindings() + ",");
+            sb.append("UserAttributesForFindings: ").append(getUserAttributesForFindings()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt());
         sb.append("}");
         return sb.toString();
     }

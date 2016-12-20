@@ -221,13 +221,13 @@ public class PutTelemetryRecordsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTelemetryRecords() != null)
-            sb.append("TelemetryRecords: " + getTelemetryRecords() + ",");
+            sb.append("TelemetryRecords: ").append(getTelemetryRecords()).append(",");
         if (getEC2InstanceId() != null)
-            sb.append("EC2InstanceId: " + getEC2InstanceId() + ",");
+            sb.append("EC2InstanceId: ").append(getEC2InstanceId()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN());
+            sb.append("ResourceARN: ").append(getResourceARN());
         sb.append("}");
         return sb.toString();
     }

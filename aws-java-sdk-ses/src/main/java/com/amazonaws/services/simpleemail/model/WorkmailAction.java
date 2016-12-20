@@ -182,9 +182,9 @@ public class WorkmailAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getOrganizationArn() != null)
-            sb.append("OrganizationArn: " + getOrganizationArn());
+            sb.append("OrganizationArn: ").append(getOrganizationArn());
         sb.append("}");
         return sb.toString();
     }

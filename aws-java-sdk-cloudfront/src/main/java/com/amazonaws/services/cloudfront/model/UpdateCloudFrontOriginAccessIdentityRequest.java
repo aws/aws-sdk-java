@@ -206,11 +206,11 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFrontOriginAccessIdentityConfig() != null)
-            sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() + ",");
+            sb.append("CloudFrontOriginAccessIdentityConfig: ").append(getCloudFrontOriginAccessIdentityConfig()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getIfMatch() != null)
-            sb.append("IfMatch: " + getIfMatch());
+            sb.append("IfMatch: ").append(getIfMatch());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class DeleteTrustResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId());
+            sb.append("TrustId: ").append(getTrustId());
         sb.append("}");
         return sb.toString();
     }

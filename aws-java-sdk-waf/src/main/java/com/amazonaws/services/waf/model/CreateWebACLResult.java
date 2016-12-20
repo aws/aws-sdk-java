@@ -131,9 +131,9 @@ public class CreateWebACLResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACL() != null)
-            sb.append("WebACL: " + getWebACL() + ",");
+            sb.append("WebACL: ").append(getWebACL()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

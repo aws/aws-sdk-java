@@ -355,15 +355,15 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getExecution() != null)
-            sb.append("Execution: " + getExecution() + ",");
+            sb.append("Execution: ").append(getExecution()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken() + ",");
+            sb.append("NextPageToken: ").append(getNextPageToken()).append(",");
         if (getMaximumPageSize() != null)
-            sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");
+            sb.append("MaximumPageSize: ").append(getMaximumPageSize()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: " + getReverseOrder());
+            sb.append("ReverseOrder: ").append(getReverseOrder());
         sb.append("}");
         return sb.toString();
     }

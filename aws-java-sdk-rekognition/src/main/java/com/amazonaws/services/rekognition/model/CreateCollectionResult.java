@@ -124,9 +124,9 @@ public class CreateCollectionResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getCollectionArn() != null)
-            sb.append("CollectionArn: " + getCollectionArn());
+            sb.append("CollectionArn: ").append(getCollectionArn());
         sb.append("}");
         return sb.toString();
     }

@@ -166,9 +166,9 @@ public class ListPlatformApplicationsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplications() != null)
-            sb.append("PlatformApplications: " + getPlatformApplications() + ",");
+            sb.append("PlatformApplications: ").append(getPlatformApplications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

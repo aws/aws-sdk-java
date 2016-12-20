@@ -343,17 +343,17 @@ public class AssetAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getAgentId() != null)
-            sb.append("AgentId: " + getAgentId() + ",");
+            sb.append("AgentId: ").append(getAgentId()).append(",");
         if (getAutoScalingGroup() != null)
-            sb.append("AutoScalingGroup: " + getAutoScalingGroup() + ",");
+            sb.append("AutoScalingGroup: ").append(getAutoScalingGroup()).append(",");
         if (getAmiId() != null)
-            sb.append("AmiId: " + getAmiId() + ",");
+            sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getIpv4Addresses() != null)
-            sb.append("Ipv4Addresses: " + getIpv4Addresses());
+            sb.append("Ipv4Addresses: ").append(getIpv4Addresses());
         sb.append("}");
         return sb.toString();
     }

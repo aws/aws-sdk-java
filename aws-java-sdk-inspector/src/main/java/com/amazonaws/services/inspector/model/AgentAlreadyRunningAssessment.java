@@ -134,9 +134,9 @@ public class AgentAlreadyRunningAssessment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentId() != null)
-            sb.append("AgentId: " + getAgentId() + ",");
+            sb.append("AgentId: ").append(getAgentId()).append(",");
         if (getAssessmentRunArn() != null)
-            sb.append("AssessmentRunArn: " + getAssessmentRunArn());
+            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn());
         sb.append("}");
         return sb.toString();
     }

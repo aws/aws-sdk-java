@@ -80,7 +80,7 @@ public class UpdateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuild() != null)
-            sb.append("Build: " + getBuild());
+            sb.append("Build: ").append(getBuild());
         sb.append("}");
         return sb.toString();
     }

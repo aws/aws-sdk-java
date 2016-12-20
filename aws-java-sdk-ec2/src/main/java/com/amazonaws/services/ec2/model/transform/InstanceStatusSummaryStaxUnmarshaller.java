@@ -50,6 +50,11 @@ public class InstanceStatusSummaryStaxUnmarshaller implements Unmarshaller<Insta
                     continue;
                 }
 
+                if (context.testExpression("details", targetDepth)) {
+                    instanceStatusSummary.withDetails(new ArrayList<InstanceStatusDetails>());
+                    continue;
+                }
+
                 if (context.testExpression("details/item", targetDepth)) {
                     instanceStatusSummary.withDetails(InstanceStatusDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

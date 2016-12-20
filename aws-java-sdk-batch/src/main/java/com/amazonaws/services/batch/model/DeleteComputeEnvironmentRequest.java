@@ -79,7 +79,7 @@ public class DeleteComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputeEnvironment() != null)
-            sb.append("ComputeEnvironment: " + getComputeEnvironment());
+            sb.append("ComputeEnvironment: ").append(getComputeEnvironment());
         sb.append("}");
         return sb.toString();
     }

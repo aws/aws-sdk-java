@@ -45,13 +45,28 @@ public class ListEntitiesForPolicyResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("PolicyGroups", targetDepth)) {
+                    listEntitiesForPolicyResult.withPolicyGroups(new ArrayList<PolicyGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyGroups/member", targetDepth)) {
                     listEntitiesForPolicyResult.withPolicyGroups(PolicyGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("PolicyUsers", targetDepth)) {
+                    listEntitiesForPolicyResult.withPolicyUsers(new ArrayList<PolicyUser>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyUsers/member", targetDepth)) {
                     listEntitiesForPolicyResult.withPolicyUsers(PolicyUserStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PolicyRoles", targetDepth)) {
+                    listEntitiesForPolicyResult.withPolicyRoles(new ArrayList<PolicyRole>());
                     continue;
                 }
 

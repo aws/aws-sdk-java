@@ -182,9 +182,9 @@ public class DeleteSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSSHPublicKeyId() != null)
-            sb.append("SSHPublicKeyId: " + getSSHPublicKeyId());
+            sb.append("SSHPublicKeyId: ").append(getSSHPublicKeyId());
         sb.append("}");
         return sb.toString();
     }

@@ -294,15 +294,15 @@ public class UserProfile implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSshUsername() != null)
-            sb.append("SshUsername: " + getSshUsername() + ",");
+            sb.append("SshUsername: ").append(getSshUsername()).append(",");
         if (getSshPublicKey() != null)
-            sb.append("SshPublicKey: " + getSshPublicKey() + ",");
+            sb.append("SshPublicKey: ").append(getSshPublicKey()).append(",");
         if (getAllowSelfManagement() != null)
-            sb.append("AllowSelfManagement: " + getAllowSelfManagement());
+            sb.append("AllowSelfManagement: ").append(getAllowSelfManagement());
         sb.append("}");
         return sb.toString();
     }

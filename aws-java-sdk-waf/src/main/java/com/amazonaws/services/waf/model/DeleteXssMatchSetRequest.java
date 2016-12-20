@@ -134,9 +134,9 @@ public class DeleteXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getXssMatchSetId() != null)
-            sb.append("XssMatchSetId: " + getXssMatchSetId() + ",");
+            sb.append("XssMatchSetId: ").append(getXssMatchSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

@@ -830,15 +830,15 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId() + ",");
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getDataSourceName() != null)
-            sb.append("DataSourceName: " + getDataSourceName() + ",");
+            sb.append("DataSourceName: ").append(getDataSourceName()).append(",");
         if (getRDSData() != null)
-            sb.append("RDSData: " + getRDSData() + ",");
+            sb.append("RDSData: ").append(getRDSData()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getComputeStatistics() != null)
-            sb.append("ComputeStatistics: " + getComputeStatistics());
+            sb.append("ComputeStatistics: ").append(getComputeStatistics());
         sb.append("}");
         return sb.toString();
     }

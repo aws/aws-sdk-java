@@ -250,11 +250,11 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName()).append(",");
         if (getDBSubnetGroupDescription() != null)
-            sb.append("DBSubnetGroupDescription: " + getDBSubnetGroupDescription() + ",");
+            sb.append("DBSubnetGroupDescription: ").append(getDBSubnetGroupDescription()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds());
         sb.append("}");
         return sb.toString();
     }

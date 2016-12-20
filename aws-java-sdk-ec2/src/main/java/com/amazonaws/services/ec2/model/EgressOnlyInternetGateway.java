@@ -159,9 +159,9 @@ public class EgressOnlyInternetGateway implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEgressOnlyInternetGatewayId() != null)
-            sb.append("EgressOnlyInternetGatewayId: " + getEgressOnlyInternetGatewayId() + ",");
+            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
         if (getAttachments() != null)
-            sb.append("Attachments: " + getAttachments());
+            sb.append("Attachments: ").append(getAttachments());
         sb.append("}");
         return sb.toString();
     }

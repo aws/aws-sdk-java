@@ -350,13 +350,13 @@ public class DescribeOrderableClusterOptionsRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getNodeType() != null)
-            sb.append("NodeType: " + getNodeType() + ",");
+            sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

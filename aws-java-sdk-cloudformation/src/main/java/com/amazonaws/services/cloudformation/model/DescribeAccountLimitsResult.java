@@ -166,9 +166,9 @@ public class DescribeAccountLimitsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountLimits() != null)
-            sb.append("AccountLimits: " + getAccountLimits() + ",");
+            sb.append("AccountLimits: ").append(getAccountLimits()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

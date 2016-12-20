@@ -159,9 +159,9 @@ public class AssessmentRunStateChange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateChangedAt() != null)
-            sb.append("StateChangedAt: " + getStateChangedAt() + ",");
+            sb.append("StateChangedAt: ").append(getStateChangedAt()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

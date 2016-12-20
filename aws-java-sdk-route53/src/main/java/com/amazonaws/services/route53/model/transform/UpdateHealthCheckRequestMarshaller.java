@@ -51,10 +51,8 @@ public class UpdateHealthCheckRequestMarshaller implements Marshaller<Request<Up
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (updateHealthCheckRequest.getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateHealthCheckRequest.getHealthCheckId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "HealthCheckId",
+                updateHealthCheckRequest.getHealthCheckId());
         request.setResourcePath(uriResourcePath);
 
         try {

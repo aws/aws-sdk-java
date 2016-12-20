@@ -79,7 +79,7 @@ public class DeleteHsmClientCertificateRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmClientCertificateIdentifier() != null)
-            sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier());
+            sb.append("HsmClientCertificateIdentifier: ").append(getHsmClientCertificateIdentifier());
         sb.append("}");
         return sb.toString();
     }

@@ -311,17 +311,17 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsagePlanId() != null)
-            sb.append("UsagePlanId: " + getUsagePlanId() + ",");
+            sb.append("UsagePlanId: ").append(getUsagePlanId()).append(",");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getEndDate() != null)
-            sb.append("EndDate: " + getEndDate() + ",");
+            sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getPosition() != null)
-            sb.append("Position: " + getPosition() + ",");
+            sb.append("Position: ").append(getPosition()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

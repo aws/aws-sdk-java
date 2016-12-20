@@ -45,6 +45,11 @@ public class DescribeLoadBalancerAttributesResultStaxUnmarshaller implements Unm
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Attributes", targetDepth)) {
+                    describeLoadBalancerAttributesResult.withAttributes(new ArrayList<LoadBalancerAttribute>());
+                    continue;
+                }
+
                 if (context.testExpression("Attributes/member", targetDepth)) {
                     describeLoadBalancerAttributesResult.withAttributes(LoadBalancerAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -165,9 +165,9 @@ public class DescribeEffectiveInstanceAssociationsResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociations() != null)
-            sb.append("Associations: " + getAssociations() + ",");
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

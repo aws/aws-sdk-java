@@ -595,19 +595,19 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceRegion() != null)
-            sb.append("SourceRegion: " + getSourceRegion() + ",");
+            sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
         if (getSourceSnapshotId() != null)
-            sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
+            sb.append("SourceSnapshotId: ").append(getSourceSnapshotId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDestinationRegion() != null)
-            sb.append("DestinationRegion: " + getDestinationRegion() + ",");
+            sb.append("DestinationRegion: ").append(getDestinationRegion()).append(",");
         if (getPresignedUrl() != null)
-            sb.append("PresignedUrl: " + getPresignedUrl() + ",");
+            sb.append("PresignedUrl: ").append(getPresignedUrl()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: " + getEncrypted() + ",");
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }

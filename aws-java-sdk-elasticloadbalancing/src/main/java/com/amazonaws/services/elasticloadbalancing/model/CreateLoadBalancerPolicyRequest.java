@@ -262,13 +262,13 @@ public class CreateLoadBalancerPolicyRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyTypeName() != null)
-            sb.append("PolicyTypeName: " + getPolicyTypeName() + ",");
+            sb.append("PolicyTypeName: ").append(getPolicyTypeName()).append(",");
         if (getPolicyAttributes() != null)
-            sb.append("PolicyAttributes: " + getPolicyAttributes());
+            sb.append("PolicyAttributes: ").append(getPolicyAttributes());
         sb.append("}");
         return sb.toString();
     }

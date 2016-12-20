@@ -217,11 +217,11 @@ public class ScalingParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDesiredInstanceType() != null)
-            sb.append("DesiredInstanceType: " + getDesiredInstanceType() + ",");
+            sb.append("DesiredInstanceType: ").append(getDesiredInstanceType()).append(",");
         if (getDesiredReplicationCount() != null)
-            sb.append("DesiredReplicationCount: " + getDesiredReplicationCount() + ",");
+            sb.append("DesiredReplicationCount: ").append(getDesiredReplicationCount()).append(",");
         if (getDesiredPartitionCount() != null)
-            sb.append("DesiredPartitionCount: " + getDesiredPartitionCount());
+            sb.append("DesiredPartitionCount: ").append(getDesiredPartitionCount());
         sb.append("}");
         return sb.toString();
     }

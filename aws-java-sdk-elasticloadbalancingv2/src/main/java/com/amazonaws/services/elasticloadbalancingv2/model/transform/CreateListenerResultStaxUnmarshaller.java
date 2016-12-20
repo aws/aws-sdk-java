@@ -45,6 +45,11 @@ public class CreateListenerResultStaxUnmarshaller implements Unmarshaller<Create
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Listeners", targetDepth)) {
+                    createListenerResult.withListeners(new ArrayList<Listener>());
+                    continue;
+                }
+
                 if (context.testExpression("Listeners/member", targetDepth)) {
                     createListenerResult.withListeners(ListenerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

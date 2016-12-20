@@ -61,8 +61,7 @@ public class DeleteThingRequestMarshaller implements Marshaller<Request<DeleteTh
 
         String uriResourcePath = "/things/{thingName}";
 
-        uriResourcePath = uriResourcePath.replace("{thingName}",
-                (deleteThingRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteThingRequest.getThingName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", deleteThingRequest.getThingName());
         request.setResourcePath(uriResourcePath);
 
         if (deleteThingRequest.getExpectedVersion() != null) {

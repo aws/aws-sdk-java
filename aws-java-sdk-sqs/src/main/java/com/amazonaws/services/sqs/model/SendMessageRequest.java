@@ -22,7 +22,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which a message is sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -31,15 +31,57 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String queueUrl;
     /**
      * <p>
-     * The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.
+     * The message to send. The maximum string size is 256 KB.
      * </p>
+     * <important>
+     * <p>
+     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
+     * specification:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#x9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x20</code> to <code>#xD7FF</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xE000</code> to <code>#xFFFD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x10000</code> to <code>#x10FFFF</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
+     * that aren't included in this list, your request is rejected.
+     * </p>
+     * </important>
      */
     private String messageBody;
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
+     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
+     * you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -51,7 +93,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer delaySeconds;
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
@@ -128,7 +171,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * troubleshooting delivery issues).
      * </p>
      * <p>
-     * If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
      * </p>
      * </note>
@@ -194,12 +237,53 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which a message is sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param messageBody
-     *        The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding
-     *        note.
+     *        The message to send. The maximum string size is 256 KB.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        The following list shows the characters (in Unicode) that are allowed in your message, according to the
+     *        W3C XML specification:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>#x9</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xD</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#x20</code> to <code>#xD7FF</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xE000</code> to <code>#xFFFD</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#x10000</code> to <code>#x10FFFF</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
+     *        characters that aren't included in this list, your request is rejected.
+     *        </p>
      */
     public SendMessageRequest(String queueUrl, String messageBody) {
         setQueueUrl(queueUrl);
@@ -208,14 +292,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which a message is sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which a message is sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -226,13 +310,13 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which a message is sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue to which a message is sent.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -243,14 +327,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which a message is sent.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which a message is sent.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -263,12 +347,93 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.
+     * The message to send. The maximum string size is 256 KB.
      * </p>
+     * <important>
+     * <p>
+     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
+     * specification:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#x9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x20</code> to <code>#xD7FF</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xE000</code> to <code>#xFFFD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x10000</code> to <code>#x10FFFF</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
+     * that aren't included in this list, your request is rejected.
+     * </p>
+     * </important>
      * 
      * @param messageBody
-     *        The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding
-     *        note.
+     *        The message to send. The maximum string size is 256 KB.</p> <important>
+     *        <p>
+     *        The following list shows the characters (in Unicode) that are allowed in your message, according to the
+     *        W3C XML specification:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>#x9</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xD</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#x20</code> to <code>#xD7FF</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xE000</code> to <code>#xFFFD</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#x10000</code> to <code>#x10FFFF</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
+     *        characters that aren't included in this list, your request is rejected.
+     *        </p>
      */
 
     public void setMessageBody(String messageBody) {
@@ -277,11 +442,92 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.
+     * The message to send. The maximum string size is 256 KB.
      * </p>
+     * <important>
+     * <p>
+     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
+     * specification:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#x9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x20</code> to <code>#xD7FF</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xE000</code> to <code>#xFFFD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x10000</code> to <code>#x10FFFF</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
+     * that aren't included in this list, your request is rejected.
+     * </p>
+     * </important>
      * 
-     * @return The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding
-     *         note.
+     * @return The message to send. The maximum string size is 256 KB.</p> <important>
+     *         <p>
+     *         The following list shows the characters (in Unicode) that are allowed in your message, according to the
+     *         W3C XML specification:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>#x9</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>#xA</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>#xD</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>#x20</code> to <code>#xD7FF</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>#xE000</code> to <code>#xFFFD</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>#x10000</code> to <code>#x10FFFF</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
+     *         characters that aren't included in this list, your request is rejected.
+     *         </p>
      */
 
     public String getMessageBody() {
@@ -290,12 +536,93 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.
+     * The message to send. The maximum string size is 256 KB.
      * </p>
+     * <important>
+     * <p>
+     * The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML
+     * specification:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>#x9</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x20</code> to <code>#xD7FF</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#xE000</code> to <code>#xFFFD</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>#x10000</code> to <code>#x10FFFF</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters
+     * that aren't included in this list, your request is rejected.
+     * </p>
+     * </important>
      * 
      * @param messageBody
-     *        The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding
-     *        note.
+     *        The message to send. The maximum string size is 256 KB.</p> <important>
+     *        <p>
+     *        The following list shows the characters (in Unicode) that are allowed in your message, according to the
+     *        W3C XML specification:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>#x9</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xD</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#x20</code> to <code>#xD7FF</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#xE000</code> to <code>#xFFFD</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>#x10000</code> to <code>#x10FFFF</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any
+     *        characters that aren't included in this list, your request is rejected.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,9 +633,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
+     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
+     * you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -318,9 +645,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     *        <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you
-     *        don't specify a value, the default value for the queue applies. </p> <note>
+     *        The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages
+     *        with a positive <code>DelaySeconds</code> value become available for processing after the delay period is
+     *        finished. If you don't specify a value, the default value for the queue applies. </p> <note>
      *        <p>
      *        When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this
      *        parameter only on a queue level.
@@ -333,9 +660,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
+     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
+     * you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -344,9 +671,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * 
-     * @return The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     *         <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you
-     *         don't specify a value, the default value for the queue applies. </p> <note>
+     * @return The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages
+     *         with a positive <code>DelaySeconds</code> value become available for processing after the delay period is
+     *         finished. If you don't specify a value, the default value for the queue applies. </p> <note>
      *         <p>
      *         When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set
      *         this parameter only on a queue level.
@@ -359,9 +686,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     * <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you don't
-     * specify a value, the default value for the queue applies.
+     * The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a
+     * positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If
+     * you don't specify a value, the default value for the queue applies.
      * </p>
      * <note>
      * <p>
@@ -371,9 +698,9 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive
-     *        <code>DelaySeconds</code> value become available for processing after the delay time is finished. If you
-     *        don't specify a value, the default value for the queue applies. </p> <note>
+     *        The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages
+     *        with a positive <code>DelaySeconds</code> value become available for processing after the delay period is
+     *        finished. If you don't specify a value, the default value for the queue applies. </p> <note>
      *        <p>
      *        When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this
      *        parameter only on a queue level.
@@ -388,12 +715,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
-     * @return Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
+     *         more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      *         >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      */
@@ -407,13 +736,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      *        >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      */
@@ -424,13 +755,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
+     * information, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      * >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
-     *        Each message attribute consists of a Name, Type, and Value. For more information, see <a href=
+     *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
+     *        more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation"
      *        >Message Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -533,7 +866,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * troubleshooting delivery issues).
      * </p>
      * <p>
-     * If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
      * </p>
      * </note>
@@ -617,7 +950,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        for troubleshooting delivery issues).
      *        </p>
      *        <p>
-     *        If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     *        If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      *        <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate
      *        messages.
      *        </p>
@@ -708,7 +1041,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * troubleshooting delivery issues).
      * </p>
      * <p>
-     * If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
      * </p>
      * </note>
@@ -792,7 +1125,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         for troubleshooting delivery issues).
      *         </p>
      *         <p>
-     *         If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     *         If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      *         <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate
      *         messages.
      *         </p>
@@ -883,7 +1216,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * troubleshooting delivery issues).
      * </p>
      * <p>
-     * If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     * If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      * <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.
      * </p>
      * </note>
@@ -967,7 +1300,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        for troubleshooting delivery issues).
      *        </p>
      *        <p>
-     *        If a message is sent successfully but the acknowledgdment is lost and the message is resent with the same
+     *        If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
      *        <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate
      *        messages.
      *        </p>
@@ -1224,17 +1557,17 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getMessageBody() != null)
-            sb.append("MessageBody: " + getMessageBody() + ",");
+            sb.append("MessageBody: ").append(getMessageBody()).append(",");
         if (getDelaySeconds() != null)
-            sb.append("DelaySeconds: " + getDelaySeconds() + ",");
+            sb.append("DelaySeconds: ").append(getDelaySeconds()).append(",");
         if (getMessageAttributes() != null)
-            sb.append("MessageAttributes: " + getMessageAttributes() + ",");
+            sb.append("MessageAttributes: ").append(getMessageAttributes()).append(",");
         if (getMessageDeduplicationId() != null)
-            sb.append("MessageDeduplicationId: " + getMessageDeduplicationId() + ",");
+            sb.append("MessageDeduplicationId: ").append(getMessageDeduplicationId()).append(",");
         if (getMessageGroupId() != null)
-            sb.append("MessageGroupId: " + getMessageGroupId());
+            sb.append("MessageGroupId: ").append(getMessageGroupId());
         sb.append("}");
         return sb.toString();
     }

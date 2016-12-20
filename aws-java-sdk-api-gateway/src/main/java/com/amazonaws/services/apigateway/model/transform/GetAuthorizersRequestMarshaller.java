@@ -61,9 +61,7 @@ public class GetAuthorizersRequestMarshaller implements Marshaller<Request<GetAu
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (getAuthorizersRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getAuthorizersRequest.getRestApiId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getAuthorizersRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         if (getAuthorizersRequest.getPosition() != null) {

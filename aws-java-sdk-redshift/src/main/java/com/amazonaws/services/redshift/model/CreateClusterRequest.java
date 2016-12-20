@@ -3419,59 +3419,59 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBName() != null)
-            sb.append("DBName: " + getDBName() + ",");
+            sb.append("DBName: ").append(getDBName()).append(",");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getClusterType() != null)
-            sb.append("ClusterType: " + getClusterType() + ",");
+            sb.append("ClusterType: ").append(getClusterType()).append(",");
         if (getNodeType() != null)
-            sb.append("NodeType: " + getNodeType() + ",");
+            sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getMasterUsername() != null)
-            sb.append("MasterUsername: " + getMasterUsername() + ",");
+            sb.append("MasterUsername: ").append(getMasterUsername()).append(",");
         if (getMasterUserPassword() != null)
-            sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+            sb.append("MasterUserPassword: ").append(getMasterUserPassword()).append(",");
         if (getClusterSecurityGroups() != null)
-            sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");
+            sb.append("ClusterSecurityGroups: ").append(getClusterSecurityGroups()).append(",");
         if (getVpcSecurityGroupIds() != null)
-            sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+            sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getClusterParameterGroupName() != null)
-            sb.append("ClusterParameterGroupName: " + getClusterParameterGroupName() + ",");
+            sb.append("ClusterParameterGroupName: ").append(getClusterParameterGroupName()).append(",");
         if (getAutomatedSnapshotRetentionPeriod() != null)
-            sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+            sb.append("AutomatedSnapshotRetentionPeriod: ").append(getAutomatedSnapshotRetentionPeriod()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getAllowVersionUpgrade() != null)
-            sb.append("AllowVersionUpgrade: " + getAllowVersionUpgrade() + ",");
+            sb.append("AllowVersionUpgrade: ").append(getAllowVersionUpgrade()).append(",");
         if (getNumberOfNodes() != null)
-            sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
+            sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
+            sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: " + getEncrypted() + ",");
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getHsmClientCertificateIdentifier() != null)
-            sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+            sb.append("HsmClientCertificateIdentifier: ").append(getHsmClientCertificateIdentifier()).append(",");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+            sb.append("HsmConfigurationIdentifier: ").append(getHsmConfigurationIdentifier()).append(",");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getEnhancedVpcRouting() != null)
-            sb.append("EnhancedVpcRouting: " + getEnhancedVpcRouting() + ",");
+            sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getAdditionalInfo() != null)
-            sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo()).append(",");
         if (getIamRoles() != null)
-            sb.append("IamRoles: " + getIamRoles());
+            sb.append("IamRoles: ").append(getIamRoles());
         sb.append("}");
         return sb.toString();
     }

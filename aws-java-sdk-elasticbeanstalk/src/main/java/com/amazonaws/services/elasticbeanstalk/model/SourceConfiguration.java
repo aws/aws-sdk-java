@@ -126,9 +126,9 @@ public class SourceConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName());
+            sb.append("TemplateName: ").append(getTemplateName());
         sb.append("}");
         return sb.toString();
     }

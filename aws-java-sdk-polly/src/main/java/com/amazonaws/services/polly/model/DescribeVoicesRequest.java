@@ -181,9 +181,9 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLanguageCode() != null)
-            sb.append("LanguageCode: " + getLanguageCode() + ",");
+            sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

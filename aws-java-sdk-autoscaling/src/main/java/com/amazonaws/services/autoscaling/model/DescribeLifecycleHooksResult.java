@@ -113,7 +113,7 @@ public class DescribeLifecycleHooksResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHooks() != null)
-            sb.append("LifecycleHooks: " + getLifecycleHooks());
+            sb.append("LifecycleHooks: ").append(getLifecycleHooks());
         sb.append("}");
         return sb.toString();
     }

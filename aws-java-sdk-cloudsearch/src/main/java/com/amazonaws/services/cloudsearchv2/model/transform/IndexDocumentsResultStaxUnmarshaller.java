@@ -45,6 +45,11 @@ public class IndexDocumentsResultStaxUnmarshaller implements Unmarshaller<IndexD
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("FieldNames", targetDepth)) {
+                    indexDocumentsResult.withFieldNames(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("FieldNames/member", targetDepth)) {
                     indexDocumentsResult.withFieldNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

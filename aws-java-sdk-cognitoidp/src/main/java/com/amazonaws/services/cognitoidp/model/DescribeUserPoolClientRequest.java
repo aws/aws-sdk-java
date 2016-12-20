@@ -127,9 +127,9 @@ public class DescribeUserPoolClientRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId());
+            sb.append("ClientId: ").append(getClientId());
         sb.append("}");
         return sb.toString();
     }

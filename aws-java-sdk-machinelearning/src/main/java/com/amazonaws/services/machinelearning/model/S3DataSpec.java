@@ -1201,13 +1201,13 @@ public class S3DataSpec implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataLocationS3() != null)
-            sb.append("DataLocationS3: " + getDataLocationS3() + ",");
+            sb.append("DataLocationS3: ").append(getDataLocationS3()).append(",");
         if (getDataRearrangement() != null)
-            sb.append("DataRearrangement: " + getDataRearrangement() + ",");
+            sb.append("DataRearrangement: ").append(getDataRearrangement()).append(",");
         if (getDataSchema() != null)
-            sb.append("DataSchema: " + getDataSchema() + ",");
+            sb.append("DataSchema: ").append(getDataSchema()).append(",");
         if (getDataSchemaLocationS3() != null)
-            sb.append("DataSchemaLocationS3: " + getDataSchemaLocationS3());
+            sb.append("DataSchemaLocationS3: ").append(getDataSchemaLocationS3());
         sb.append("}");
         return sb.toString();
     }

@@ -142,11 +142,11 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBudget() != null)
-            sb.append("Budget: " + getBudget() + ",");
+            sb.append("Budget: ").append(getBudget()).append(",");
         if (getNotificationsWithSubscribers() != null)
-            sb.append("NotificationsWithSubscribers: " + getNotificationsWithSubscribers());
+            sb.append("NotificationsWithSubscribers: ").append(getNotificationsWithSubscribers());
         sb.append("}");
         return sb.toString();
     }

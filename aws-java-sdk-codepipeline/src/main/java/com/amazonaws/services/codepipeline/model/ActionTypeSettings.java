@@ -260,13 +260,13 @@ public class ActionTypeSettings implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThirdPartyConfigurationUrl() != null)
-            sb.append("ThirdPartyConfigurationUrl: " + getThirdPartyConfigurationUrl() + ",");
+            sb.append("ThirdPartyConfigurationUrl: ").append(getThirdPartyConfigurationUrl()).append(",");
         if (getEntityUrlTemplate() != null)
-            sb.append("EntityUrlTemplate: " + getEntityUrlTemplate() + ",");
+            sb.append("EntityUrlTemplate: ").append(getEntityUrlTemplate()).append(",");
         if (getExecutionUrlTemplate() != null)
-            sb.append("ExecutionUrlTemplate: " + getExecutionUrlTemplate() + ",");
+            sb.append("ExecutionUrlTemplate: ").append(getExecutionUrlTemplate()).append(",");
         if (getRevisionUrlTemplate() != null)
-            sb.append("RevisionUrlTemplate: " + getRevisionUrlTemplate());
+            sb.append("RevisionUrlTemplate: ").append(getRevisionUrlTemplate());
         sb.append("}");
         return sb.toString();
     }

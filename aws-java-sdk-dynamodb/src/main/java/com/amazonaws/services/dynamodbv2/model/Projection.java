@@ -424,9 +424,9 @@ public class Projection implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectionType() != null)
-            sb.append("ProjectionType: " + getProjectionType() + ",");
+            sb.append("ProjectionType: ").append(getProjectionType()).append(",");
         if (getNonKeyAttributes() != null)
-            sb.append("NonKeyAttributes: " + getNonKeyAttributes());
+            sb.append("NonKeyAttributes: ").append(getNonKeyAttributes());
         sb.append("}");
         return sb.toString();
     }

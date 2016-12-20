@@ -298,13 +298,13 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getLaunchSpecification() != null)
-            sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");
+            sb.append("LaunchSpecification: ").append(getLaunchSpecification()).append(",");
         if (getDiskImages() != null)
-            sb.append("DiskImages: " + getDiskImages() + ",");
+            sb.append("DiskImages: ").append(getDiskImages()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform());
+            sb.append("Platform: ").append(getPlatform());
         sb.append("}");
         return sb.toString();
     }

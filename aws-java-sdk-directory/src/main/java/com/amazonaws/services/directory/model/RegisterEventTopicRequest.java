@@ -134,9 +134,9 @@ public class RegisterEventTopicRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getTopicName() != null)
-            sb.append("TopicName: " + getTopicName());
+            sb.append("TopicName: ").append(getTopicName());
         sb.append("}");
         return sb.toString();
     }

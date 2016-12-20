@@ -1397,9 +1397,9 @@ public class AttributeValueUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction());
+            sb.append("Action: ").append(getAction());
         sb.append("}");
         return sb.toString();
     }

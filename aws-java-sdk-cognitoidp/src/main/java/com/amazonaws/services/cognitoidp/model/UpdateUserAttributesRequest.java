@@ -157,9 +157,9 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken());
+            sb.append("AccessToken: ").append(getAccessToken());
         sb.append("}");
         return sb.toString();
     }

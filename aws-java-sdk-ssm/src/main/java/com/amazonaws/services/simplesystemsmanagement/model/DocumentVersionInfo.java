@@ -230,13 +230,13 @@ public class DocumentVersionInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getIsDefaultVersion() != null)
-            sb.append("IsDefaultVersion: " + getIsDefaultVersion());
+            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion());
         sb.append("}");
         return sb.toString();
     }

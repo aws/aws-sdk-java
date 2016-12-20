@@ -251,13 +251,13 @@ public class OrderableClusterOption implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getClusterType() != null)
-            sb.append("ClusterType: " + getClusterType() + ",");
+            sb.append("ClusterType: ").append(getClusterType()).append(",");
         if (getNodeType() != null)
-            sb.append("NodeType: " + getNodeType() + ",");
+            sb.append("NodeType: ").append(getNodeType()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones());
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }

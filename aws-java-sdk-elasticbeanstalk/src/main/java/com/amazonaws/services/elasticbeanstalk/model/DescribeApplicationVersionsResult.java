@@ -159,9 +159,9 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationVersions() != null)
-            sb.append("ApplicationVersions: " + getApplicationVersions() + ",");
+            sb.append("ApplicationVersions: ").append(getApplicationVersions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

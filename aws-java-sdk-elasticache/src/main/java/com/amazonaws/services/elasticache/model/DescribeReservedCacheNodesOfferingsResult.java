@@ -170,9 +170,9 @@ public class DescribeReservedCacheNodesOfferingsResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getReservedCacheNodesOfferings() != null)
-            sb.append("ReservedCacheNodesOfferings: " + getReservedCacheNodesOfferings());
+            sb.append("ReservedCacheNodesOfferings: ").append(getReservedCacheNodesOfferings());
         sb.append("}");
         return sb.toString();
     }

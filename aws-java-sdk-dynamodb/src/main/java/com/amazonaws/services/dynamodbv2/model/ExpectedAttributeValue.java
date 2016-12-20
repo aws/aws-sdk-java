@@ -2777,13 +2777,13 @@ public class ExpectedAttributeValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getExists() != null)
-            sb.append("Exists: " + getExists() + ",");
+            sb.append("Exists: ").append(getExists()).append(",");
         if (getComparisonOperator() != null)
-            sb.append("ComparisonOperator: " + getComparisonOperator() + ",");
+            sb.append("ComparisonOperator: ").append(getComparisonOperator()).append(",");
         if (getAttributeValueList() != null)
-            sb.append("AttributeValueList: " + getAttributeValueList());
+            sb.append("AttributeValueList: ").append(getAttributeValueList());
         sb.append("}");
         return sb.toString();
     }

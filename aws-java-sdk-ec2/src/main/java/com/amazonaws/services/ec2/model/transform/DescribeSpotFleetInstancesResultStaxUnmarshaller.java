@@ -50,6 +50,11 @@ public class DescribeSpotFleetInstancesResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("activeInstanceSet", targetDepth)) {
+                    describeSpotFleetInstancesResult.withActiveInstances(new ArrayList<ActiveInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("activeInstanceSet/item", targetDepth)) {
                     describeSpotFleetInstancesResult.withActiveInstances(ActiveInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -354,15 +354,15 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPurchase() != null)
-            sb.append("Purchase: " + getPurchase() + ",");
+            sb.append("Purchase: ").append(getPurchase()).append(",");
         if (getTotalUpfrontPrice() != null)
-            sb.append("TotalUpfrontPrice: " + getTotalUpfrontPrice() + ",");
+            sb.append("TotalUpfrontPrice: ").append(getTotalUpfrontPrice()).append(",");
         if (getTotalHourlyPrice() != null)
-            sb.append("TotalHourlyPrice: " + getTotalHourlyPrice() + ",");
+            sb.append("TotalHourlyPrice: ").append(getTotalHourlyPrice()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

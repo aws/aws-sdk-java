@@ -139,9 +139,9 @@ public class ComplianceContributorCount implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCappedCount() != null)
-            sb.append("CappedCount: " + getCappedCount() + ",");
+            sb.append("CappedCount: ").append(getCappedCount()).append(",");
         if (getCapExceeded() != null)
-            sb.append("CapExceeded: " + getCapExceeded());
+            sb.append("CapExceeded: ").append(getCapExceeded());
         sb.append("}");
         return sb.toString();
     }

@@ -55,6 +55,11 @@ public class TrustedSignersStaxUnmarshaller implements Unmarshaller<TrustedSigne
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    trustedSigners.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/AwsAccountNumber", targetDepth)) {
                     trustedSigners.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

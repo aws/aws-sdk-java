@@ -239,11 +239,11 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailOnWarnings() != null)
-            sb.append("FailOnWarnings: " + getFailOnWarnings() + ",");
+            sb.append("FailOnWarnings: ").append(getFailOnWarnings()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody());
+            sb.append("Body: ").append(getBody());
         sb.append("}");
         return sb.toString();
     }

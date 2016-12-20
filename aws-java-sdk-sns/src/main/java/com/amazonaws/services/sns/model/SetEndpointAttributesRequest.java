@@ -302,9 +302,9 @@ public class SetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

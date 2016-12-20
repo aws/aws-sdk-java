@@ -81,7 +81,7 @@ public class CreateInstanceExportTaskResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportTask() != null)
-            sb.append("ExportTask: " + getExportTask());
+            sb.append("ExportTask: ").append(getExportTask());
         sb.append("}");
         return sb.toString();
     }

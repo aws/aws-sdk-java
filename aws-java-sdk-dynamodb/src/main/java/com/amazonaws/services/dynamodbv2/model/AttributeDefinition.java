@@ -408,9 +408,9 @@ public class AttributeDefinition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getAttributeType() != null)
-            sb.append("AttributeType: " + getAttributeType());
+            sb.append("AttributeType: ").append(getAttributeType());
         sb.append("}");
         return sb.toString();
     }

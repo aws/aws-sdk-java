@@ -172,11 +172,11 @@ public class S3OutputLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutputS3Region() != null)
-            sb.append("OutputS3Region: " + getOutputS3Region() + ",");
+            sb.append("OutputS3Region: ").append(getOutputS3Region()).append(",");
         if (getOutputS3BucketName() != null)
-            sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
+            sb.append("OutputS3BucketName: ").append(getOutputS3BucketName()).append(",");
         if (getOutputS3KeyPrefix() != null)
-            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix());
+            sb.append("OutputS3KeyPrefix: ").append(getOutputS3KeyPrefix());
         sb.append("}");
         return sb.toString();
     }

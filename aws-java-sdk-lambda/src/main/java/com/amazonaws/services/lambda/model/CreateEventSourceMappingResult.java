@@ -430,21 +430,21 @@ public class CreateEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUUID() != null)
-            sb.append("UUID: " + getUUID() + ",");
+            sb.append("UUID: ").append(getUUID()).append(",");
         if (getBatchSize() != null)
-            sb.append("BatchSize: " + getBatchSize() + ",");
+            sb.append("BatchSize: ").append(getBatchSize()).append(",");
         if (getEventSourceArn() != null)
-            sb.append("EventSourceArn: " + getEventSourceArn() + ",");
+            sb.append("EventSourceArn: ").append(getEventSourceArn()).append(",");
         if (getFunctionArn() != null)
-            sb.append("FunctionArn: " + getFunctionArn() + ",");
+            sb.append("FunctionArn: ").append(getFunctionArn()).append(",");
         if (getLastModified() != null)
-            sb.append("LastModified: " + getLastModified() + ",");
+            sb.append("LastModified: ").append(getLastModified()).append(",");
         if (getLastProcessingResult() != null)
-            sb.append("LastProcessingResult: " + getLastProcessingResult() + ",");
+            sb.append("LastProcessingResult: ").append(getLastProcessingResult()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStateTransitionReason() != null)
-            sb.append("StateTransitionReason: " + getStateTransitionReason());
+            sb.append("StateTransitionReason: ").append(getStateTransitionReason());
         sb.append("}");
         return sb.toString();
     }

@@ -132,9 +132,9 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityArn() != null)
-            sb.append("ActivityArn: " + getActivityArn() + ",");
+            sb.append("ActivityArn: ").append(getActivityArn()).append(",");
         if (getWorkerName() != null)
-            sb.append("WorkerName: " + getWorkerName());
+            sb.append("WorkerName: ").append(getWorkerName());
         sb.append("}");
         return sb.toString();
     }

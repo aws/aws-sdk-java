@@ -114,7 +114,7 @@ public class DescribeSecurityGroupsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

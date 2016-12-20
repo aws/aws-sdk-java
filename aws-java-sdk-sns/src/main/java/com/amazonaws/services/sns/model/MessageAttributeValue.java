@@ -229,11 +229,11 @@ public class MessageAttributeValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType() + ",");
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getStringValue() != null)
-            sb.append("StringValue: " + getStringValue() + ",");
+            sb.append("StringValue: ").append(getStringValue()).append(",");
         if (getBinaryValue() != null)
-            sb.append("BinaryValue: " + getBinaryValue());
+            sb.append("BinaryValue: ").append(getBinaryValue());
         sb.append("}");
         return sb.toString();
     }

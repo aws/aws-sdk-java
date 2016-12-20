@@ -157,9 +157,9 @@ public class WriteRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPutRequest() != null)
-            sb.append("PutRequest: " + getPutRequest() + ",");
+            sb.append("PutRequest: ").append(getPutRequest()).append(",");
         if (getDeleteRequest() != null)
-            sb.append("DeleteRequest: " + getDeleteRequest());
+            sb.append("DeleteRequest: ").append(getDeleteRequest());
         sb.append("}");
         return sb.toString();
     }

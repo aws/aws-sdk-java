@@ -61,14 +61,9 @@ public class DeleteBasePathMappingRequestMarshaller implements Marshaller<Reques
 
         String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{domain_name}",
-                (deleteBasePathMappingRequest.getDomainName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteBasePathMappingRequest.getDomainName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{base_path}",
-                (deleteBasePathMappingRequest.getBasePath() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteBasePathMappingRequest.getBasePath()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "domain_name",
+                deleteBasePathMappingRequest.getDomainName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "base_path", deleteBasePathMappingRequest.getBasePath());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

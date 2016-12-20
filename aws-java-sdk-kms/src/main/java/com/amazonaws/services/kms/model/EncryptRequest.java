@@ -510,13 +510,13 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPlaintext() != null)
-            sb.append("Plaintext: " + getPlaintext() + ",");
+            sb.append("Plaintext: ").append(getPlaintext()).append(",");
         if (getEncryptionContext() != null)
-            sb.append("EncryptionContext: " + getEncryptionContext() + ",");
+            sb.append("EncryptionContext: ").append(getEncryptionContext()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
         return sb.toString();
     }

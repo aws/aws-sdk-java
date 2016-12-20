@@ -81,7 +81,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointAddress() != null)
-            sb.append("EndpointAddress: " + getEndpointAddress());
+            sb.append("EndpointAddress: ").append(getEndpointAddress());
         sb.append("}");
         return sb.toString();
     }

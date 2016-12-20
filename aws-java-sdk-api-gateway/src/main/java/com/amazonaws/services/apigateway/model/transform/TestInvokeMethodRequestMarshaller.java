@@ -61,19 +61,9 @@ public class TestInvokeMethodRequestMarshaller implements Marshaller<Request<Tes
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (testInvokeMethodRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(testInvokeMethodRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (testInvokeMethodRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(testInvokeMethodRequest.getResourceId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (testInvokeMethodRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(testInvokeMethodRequest.getHttpMethod()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", testInvokeMethodRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", testInvokeMethodRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", testInvokeMethodRequest.getHttpMethod());
         request.setResourcePath(uriResourcePath);
 
         try {

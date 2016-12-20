@@ -61,14 +61,10 @@ public class DeleteVaultNotificationsRequestMarshaller implements Marshaller<Req
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (deleteVaultNotificationsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteVaultNotificationsRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (deleteVaultNotificationsRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteVaultNotificationsRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                deleteVaultNotificationsRequest.getAccountId() == null ? "-" : deleteVaultNotificationsRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName",
+                deleteVaultNotificationsRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

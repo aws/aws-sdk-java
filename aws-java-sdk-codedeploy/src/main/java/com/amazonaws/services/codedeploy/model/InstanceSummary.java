@@ -677,15 +677,15 @@ public class InstanceSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastUpdatedAt() != null)
-            sb.append("LastUpdatedAt: " + getLastUpdatedAt() + ",");
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getLifecycleEvents() != null)
-            sb.append("LifecycleEvents: " + getLifecycleEvents());
+            sb.append("LifecycleEvents: ").append(getLifecycleEvents());
         sb.append("}");
         return sb.toString();
     }

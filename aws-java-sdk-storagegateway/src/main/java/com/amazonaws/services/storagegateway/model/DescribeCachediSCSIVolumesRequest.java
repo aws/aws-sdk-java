@@ -89,7 +89,7 @@ public class DescribeCachediSCSIVolumesRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARNs() != null)
-            sb.append("VolumeARNs: " + getVolumeARNs());
+            sb.append("VolumeARNs: ").append(getVolumeARNs());
         sb.append("}");
         return sb.toString();
     }

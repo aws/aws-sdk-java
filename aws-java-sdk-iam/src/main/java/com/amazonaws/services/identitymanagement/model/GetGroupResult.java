@@ -306,13 +306,13 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroup() != null)
-            sb.append("Group: " + getGroup() + ",");
+            sb.append("Group: ").append(getGroup()).append(",");
         if (getUsers() != null)
-            sb.append("Users: " + getUsers() + ",");
+            sb.append("Users: ").append(getUsers()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

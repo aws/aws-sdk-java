@@ -216,11 +216,11 @@ public class DescribeRecordResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordDetail() != null)
-            sb.append("RecordDetail: " + getRecordDetail() + ",");
+            sb.append("RecordDetail: ").append(getRecordDetail()).append(",");
         if (getRecordOutputs() != null)
-            sb.append("RecordOutputs: " + getRecordOutputs() + ",");
+            sb.append("RecordOutputs: ").append(getRecordOutputs()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

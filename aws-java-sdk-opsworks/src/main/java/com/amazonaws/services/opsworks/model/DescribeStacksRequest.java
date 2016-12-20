@@ -121,7 +121,7 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackIds() != null)
-            sb.append("StackIds: " + getStackIds());
+            sb.append("StackIds: ").append(getStackIds());
         sb.append("}");
         return sb.toString();
     }

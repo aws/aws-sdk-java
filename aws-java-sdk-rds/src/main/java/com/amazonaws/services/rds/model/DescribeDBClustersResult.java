@@ -159,9 +159,9 @@ public class DescribeDBClustersResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBClusters() != null)
-            sb.append("DBClusters: " + getDBClusters());
+            sb.append("DBClusters: ").append(getDBClusters());
         sb.append("}");
         return sb.toString();
     }

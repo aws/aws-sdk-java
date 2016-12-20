@@ -157,9 +157,9 @@ public class GetMetricStatisticsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getDatapoints() != null)
-            sb.append("Datapoints: " + getDatapoints());
+            sb.append("Datapoints: ").append(getDatapoints());
         sb.append("}");
         return sb.toString();
     }

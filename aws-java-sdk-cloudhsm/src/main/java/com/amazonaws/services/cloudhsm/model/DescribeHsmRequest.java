@@ -130,9 +130,9 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmArn() != null)
-            sb.append("HsmArn: " + getHsmArn() + ",");
+            sb.append("HsmArn: ").append(getHsmArn()).append(",");
         if (getHsmSerialNumber() != null)
-            sb.append("HsmSerialNumber: " + getHsmSerialNumber());
+            sb.append("HsmSerialNumber: ").append(getHsmSerialNumber());
         sb.append("}");
         return sb.toString();
     }

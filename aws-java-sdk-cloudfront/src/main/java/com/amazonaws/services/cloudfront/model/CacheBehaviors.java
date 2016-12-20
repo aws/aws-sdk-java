@@ -168,9 +168,9 @@ public class CacheBehaviors implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity() + ",");
+            sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getItems() != null)
-            sb.append("Items: " + getItems());
+            sb.append("Items: ").append(getItems());
         sb.append("}");
         return sb.toString();
     }

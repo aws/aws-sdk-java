@@ -86,7 +86,7 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasName() != null)
-            sb.append("AliasName: " + getAliasName());
+            sb.append("AliasName: ").append(getAliasName());
         sb.append("}");
         return sb.toString();
     }

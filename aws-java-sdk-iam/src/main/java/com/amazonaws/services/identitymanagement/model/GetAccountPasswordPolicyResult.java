@@ -61,7 +61,7 @@ public class GetAccountPasswordPolicyResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPasswordPolicy() != null)
-            sb.append("PasswordPolicy: " + getPasswordPolicy());
+            sb.append("PasswordPolicy: ").append(getPasswordPolicy());
         sb.append("}");
         return sb.toString();
     }

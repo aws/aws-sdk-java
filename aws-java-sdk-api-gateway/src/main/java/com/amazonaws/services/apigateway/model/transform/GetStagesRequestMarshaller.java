@@ -61,8 +61,7 @@ public class GetStagesRequestMarshaller implements Marshaller<Request<GetStagesR
 
         String uriResourcePath = "/restapis/{restapi_id}/stages";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (getStagesRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getStagesRequest.getRestApiId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getStagesRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         if (getStagesRequest.getDeploymentId() != null) {

@@ -207,11 +207,11 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getModelName() != null)
-            sb.append("ModelName: " + getModelName() + ",");
+            sb.append("ModelName: ").append(getModelName()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

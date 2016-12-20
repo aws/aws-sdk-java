@@ -275,15 +275,15 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getShortName() != null)
-            sb.append("ShortName: " + getShortName() + ",");
+            sb.append("ShortName: ").append(getShortName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVpcSettings() != null)
-            sb.append("VpcSettings: " + getVpcSettings());
+            sb.append("VpcSettings: ").append(getVpcSettings());
         sb.append("}");
         return sb.toString();
     }

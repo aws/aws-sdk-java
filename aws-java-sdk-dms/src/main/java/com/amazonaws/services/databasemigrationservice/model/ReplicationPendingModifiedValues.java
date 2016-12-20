@@ -262,13 +262,13 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceClass() != null)
-            sb.append("ReplicationInstanceClass: " + getReplicationInstanceClass() + ",");
+            sb.append("ReplicationInstanceClass: ").append(getReplicationInstanceClass()).append(",");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getMultiAZ() != null)
-            sb.append("MultiAZ: " + getMultiAZ() + ",");
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion());
         sb.append("}");
         return sb.toString();
     }

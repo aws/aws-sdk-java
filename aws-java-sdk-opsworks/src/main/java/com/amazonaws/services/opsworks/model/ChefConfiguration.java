@@ -138,9 +138,9 @@ public class ChefConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManageBerkshelf() != null)
-            sb.append("ManageBerkshelf: " + getManageBerkshelf() + ",");
+            sb.append("ManageBerkshelf: ").append(getManageBerkshelf()).append(",");
         if (getBerkshelfVersion() != null)
-            sb.append("BerkshelfVersion: " + getBerkshelfVersion());
+            sb.append("BerkshelfVersion: ").append(getBerkshelfVersion());
         sb.append("}");
         return sb.toString();
     }

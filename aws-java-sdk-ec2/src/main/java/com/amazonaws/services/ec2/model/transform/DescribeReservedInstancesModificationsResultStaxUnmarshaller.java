@@ -46,6 +46,11 @@ public class DescribeReservedInstancesModificationsResultStaxUnmarshaller implem
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("reservedInstancesModificationsSet", targetDepth)) {
+                    describeReservedInstancesModificationsResult.withReservedInstancesModifications(new ArrayList<ReservedInstancesModification>());
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstancesModificationsSet/item", targetDepth)) {
                     describeReservedInstancesModificationsResult.withReservedInstancesModifications(ReservedInstancesModificationStaxUnmarshaller.getInstance()
                             .unmarshall(context));

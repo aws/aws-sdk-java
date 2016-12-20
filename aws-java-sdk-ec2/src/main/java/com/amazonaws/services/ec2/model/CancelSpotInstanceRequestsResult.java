@@ -114,7 +114,7 @@ public class CancelSpotInstanceRequestsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCancelledSpotInstanceRequests() != null)
-            sb.append("CancelledSpotInstanceRequests: " + getCancelledSpotInstanceRequests());
+            sb.append("CancelledSpotInstanceRequests: ").append(getCancelledSpotInstanceRequests());
         sb.append("}");
         return sb.toString();
     }

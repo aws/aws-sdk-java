@@ -50,8 +50,18 @@ public class DhcpOptionsStaxUnmarshaller implements Unmarshaller<DhcpOptions, St
                     continue;
                 }
 
+                if (context.testExpression("dhcpConfigurationSet", targetDepth)) {
+                    dhcpOptions.withDhcpConfigurations(new ArrayList<DhcpConfiguration>());
+                    continue;
+                }
+
                 if (context.testExpression("dhcpConfigurationSet/item", targetDepth)) {
                     dhcpOptions.withDhcpConfigurations(DhcpConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    dhcpOptions.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

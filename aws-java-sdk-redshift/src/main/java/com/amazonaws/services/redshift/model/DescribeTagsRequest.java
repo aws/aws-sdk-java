@@ -882,17 +882,17 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: " + getTagKeys() + ",");
+            sb.append("TagKeys: ").append(getTagKeys()).append(",");
         if (getTagValues() != null)
-            sb.append("TagValues: " + getTagValues());
+            sb.append("TagValues: ").append(getTagValues());
         sb.append("}");
         return sb.toString();
     }

@@ -61,14 +61,9 @@ public class InitiateVaultLockRequestMarshaller implements Marshaller<Request<In
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (initiateVaultLockRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(initiateVaultLockRequest.getAccountId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (initiateVaultLockRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(initiateVaultLockRequest.getVaultName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                initiateVaultLockRequest.getAccountId() == null ? "-" : initiateVaultLockRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", initiateVaultLockRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         try {

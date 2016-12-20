@@ -61,10 +61,8 @@ public class UpdateCertificateRequestMarshaller implements Marshaller<Request<Up
 
         String uriResourcePath = "/certificates/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (updateCertificateRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateCertificateRequest.getCertificateId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
+                updateCertificateRequest.getCertificateId());
         request.setResourcePath(uriResourcePath);
 
         if (updateCertificateRequest.getNewStatus() != null) {

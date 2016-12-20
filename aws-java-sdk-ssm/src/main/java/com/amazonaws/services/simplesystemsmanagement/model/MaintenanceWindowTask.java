@@ -655,27 +655,27 @@ public class MaintenanceWindowTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId() + ",");
+            sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getWindowTaskId() != null)
-            sb.append("WindowTaskId: " + getWindowTaskId() + ",");
+            sb.append("WindowTaskId: ").append(getWindowTaskId()).append(",");
         if (getTaskArn() != null)
-            sb.append("TaskArn: " + getTaskArn() + ",");
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: " + getTaskParameters() + ",");
+            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getLoggingInfo() != null)
-            sb.append("LoggingInfo: " + getLoggingInfo() + ",");
+            sb.append("LoggingInfo: ").append(getLoggingInfo()).append(",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+            sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getMaxConcurrency() != null)
-            sb.append("MaxConcurrency: " + getMaxConcurrency() + ",");
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getMaxErrors() != null)
-            sb.append("MaxErrors: " + getMaxErrors());
+            sb.append("MaxErrors: ").append(getMaxErrors());
         sb.append("}");
         return sb.toString();
     }

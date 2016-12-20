@@ -443,21 +443,21 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getSshKey() != null)
-            sb.append("SshKey: " + getSshKey() + ",");
+            sb.append("SshKey: ").append(getSshKey()).append(",");
         if (getEniIp() != null)
-            sb.append("EniIp: " + getEniIp() + ",");
+            sb.append("EniIp: ").append(getEniIp()).append(",");
         if (getIamRoleArn() != null)
-            sb.append("IamRoleArn: " + getIamRoleArn() + ",");
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getExternalId() != null)
-            sb.append("ExternalId: " + getExternalId() + ",");
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getSubscriptionType() != null)
-            sb.append("SubscriptionType: " + getSubscriptionType() + ",");
+            sb.append("SubscriptionType: ").append(getSubscriptionType()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSyslogIp() != null)
-            sb.append("SyslogIp: " + getSyslogIp());
+            sb.append("SyslogIp: ").append(getSyslogIp());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class TargetDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort());
+            sb.append("Port: ").append(getPort());
         sb.append("}");
         return sb.toString();
     }

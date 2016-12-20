@@ -50,6 +50,11 @@ public class LambdaFunctionAssociationsStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    lambdaFunctionAssociations.withItems(new ArrayList<LambdaFunctionAssociation>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/LambdaFunctionAssociation", targetDepth)) {
                     lambdaFunctionAssociations.withItems(LambdaFunctionAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

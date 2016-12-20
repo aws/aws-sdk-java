@@ -271,13 +271,13 @@ public class ScheduleLambdaFunctionDecisionAttributes implements Serializable, C
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput() + ",");
+            sb.append("Input: ").append(getInput()).append(",");
         if (getStartToCloseTimeout() != null)
-            sb.append("StartToCloseTimeout: " + getStartToCloseTimeout());
+            sb.append("StartToCloseTimeout: ").append(getStartToCloseTimeout());
         sb.append("}");
         return sb.toString();
     }

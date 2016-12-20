@@ -88,9 +88,9 @@ public class UpdateApplicationSettingsRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getWriteApplicationSettingsRequest() != null)
-            sb.append("WriteApplicationSettingsRequest: " + getWriteApplicationSettingsRequest());
+            sb.append("WriteApplicationSettingsRequest: ").append(getWriteApplicationSettingsRequest());
         sb.append("}");
         return sb.toString();
     }

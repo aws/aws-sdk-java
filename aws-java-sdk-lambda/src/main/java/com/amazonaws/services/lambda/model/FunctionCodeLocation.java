@@ -133,9 +133,9 @@ public class FunctionCodeLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryType() != null)
-            sb.append("RepositoryType: " + getRepositoryType() + ",");
+            sb.append("RepositoryType: ").append(getRepositoryType()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

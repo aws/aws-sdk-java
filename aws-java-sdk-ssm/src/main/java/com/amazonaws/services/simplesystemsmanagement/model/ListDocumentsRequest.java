@@ -211,11 +211,11 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocumentFilterList() != null)
-            sb.append("DocumentFilterList: " + getDocumentFilterList() + ",");
+            sb.append("DocumentFilterList: ").append(getDocumentFilterList()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

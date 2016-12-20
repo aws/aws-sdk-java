@@ -81,7 +81,7 @@ public class AcceptVpcPeeringConnectionResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcPeeringConnection() != null)
-            sb.append("VpcPeeringConnection: " + getVpcPeeringConnection());
+            sb.append("VpcPeeringConnection: ").append(getVpcPeeringConnection());
         sb.append("}");
         return sb.toString();
     }

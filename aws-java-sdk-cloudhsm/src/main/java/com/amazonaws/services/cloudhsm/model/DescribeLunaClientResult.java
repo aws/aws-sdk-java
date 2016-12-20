@@ -262,15 +262,15 @@ public class DescribeLunaClientResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn() + ",");
+            sb.append("ClientArn: ").append(getClientArn()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate() + ",");
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getCertificateFingerprint() != null)
-            sb.append("CertificateFingerprint: " + getCertificateFingerprint() + ",");
+            sb.append("CertificateFingerprint: ").append(getCertificateFingerprint()).append(",");
         if (getLastModifiedTimestamp() != null)
-            sb.append("LastModifiedTimestamp: " + getLastModifiedTimestamp() + ",");
+            sb.append("LastModifiedTimestamp: ").append(getLastModifiedTimestamp()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel());
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }

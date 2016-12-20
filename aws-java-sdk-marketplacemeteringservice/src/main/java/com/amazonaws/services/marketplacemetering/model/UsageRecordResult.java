@@ -419,11 +419,11 @@ public class UsageRecordResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsageRecord() != null)
-            sb.append("UsageRecord: " + getUsageRecord() + ",");
+            sb.append("UsageRecord: ").append(getUsageRecord()).append(",");
         if (getMeteringRecordId() != null)
-            sb.append("MeteringRecordId: " + getMeteringRecordId() + ",");
+            sb.append("MeteringRecordId: ").append(getMeteringRecordId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

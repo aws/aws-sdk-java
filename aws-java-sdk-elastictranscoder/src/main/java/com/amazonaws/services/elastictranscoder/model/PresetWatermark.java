@@ -1755,25 +1755,25 @@ public class PresetWatermark implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getMaxWidth() != null)
-            sb.append("MaxWidth: " + getMaxWidth() + ",");
+            sb.append("MaxWidth: ").append(getMaxWidth()).append(",");
         if (getMaxHeight() != null)
-            sb.append("MaxHeight: " + getMaxHeight() + ",");
+            sb.append("MaxHeight: ").append(getMaxHeight()).append(",");
         if (getSizingPolicy() != null)
-            sb.append("SizingPolicy: " + getSizingPolicy() + ",");
+            sb.append("SizingPolicy: ").append(getSizingPolicy()).append(",");
         if (getHorizontalAlign() != null)
-            sb.append("HorizontalAlign: " + getHorizontalAlign() + ",");
+            sb.append("HorizontalAlign: ").append(getHorizontalAlign()).append(",");
         if (getHorizontalOffset() != null)
-            sb.append("HorizontalOffset: " + getHorizontalOffset() + ",");
+            sb.append("HorizontalOffset: ").append(getHorizontalOffset()).append(",");
         if (getVerticalAlign() != null)
-            sb.append("VerticalAlign: " + getVerticalAlign() + ",");
+            sb.append("VerticalAlign: ").append(getVerticalAlign()).append(",");
         if (getVerticalOffset() != null)
-            sb.append("VerticalOffset: " + getVerticalOffset() + ",");
+            sb.append("VerticalOffset: ").append(getVerticalOffset()).append(",");
         if (getOpacity() != null)
-            sb.append("Opacity: " + getOpacity() + ",");
+            sb.append("Opacity: ").append(getOpacity()).append(",");
         if (getTarget() != null)
-            sb.append("Target: " + getTarget());
+            sb.append("Target: ").append(getTarget());
         sb.append("}");
         return sb.toString();
     }

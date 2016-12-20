@@ -204,11 +204,11 @@ public class ModifyClusterSubnetGroupRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds());
         sb.append("}");
         return sb.toString();
     }

@@ -345,11 +345,11 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDurationInYears() != null)
-            sb.append("DurationInYears: " + getDurationInYears() + ",");
+            sb.append("DurationInYears: ").append(getDurationInYears()).append(",");
         if (getCurrentExpiryYear() != null)
-            sb.append("CurrentExpiryYear: " + getCurrentExpiryYear());
+            sb.append("CurrentExpiryYear: ").append(getCurrentExpiryYear());
         sb.append("}");
         return sb.toString();
     }

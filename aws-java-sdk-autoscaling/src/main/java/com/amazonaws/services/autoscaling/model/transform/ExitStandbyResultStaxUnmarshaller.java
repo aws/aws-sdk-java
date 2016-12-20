@@ -45,6 +45,11 @@ public class ExitStandbyResultStaxUnmarshaller implements Unmarshaller<ExitStand
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Activities", targetDepth)) {
+                    exitStandbyResult.withActivities(new ArrayList<Activity>());
+                    continue;
+                }
+
                 if (context.testExpression("Activities/member", targetDepth)) {
                     exitStandbyResult.withActivities(ActivityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

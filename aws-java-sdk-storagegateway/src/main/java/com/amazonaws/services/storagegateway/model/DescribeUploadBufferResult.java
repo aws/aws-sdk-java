@@ -172,13 +172,13 @@ public class DescribeUploadBufferResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDiskIds() != null)
-            sb.append("DiskIds: " + getDiskIds() + ",");
+            sb.append("DiskIds: ").append(getDiskIds()).append(",");
         if (getUploadBufferUsedInBytes() != null)
-            sb.append("UploadBufferUsedInBytes: " + getUploadBufferUsedInBytes() + ",");
+            sb.append("UploadBufferUsedInBytes: ").append(getUploadBufferUsedInBytes()).append(",");
         if (getUploadBufferAllocatedInBytes() != null)
-            sb.append("UploadBufferAllocatedInBytes: " + getUploadBufferAllocatedInBytes());
+            sb.append("UploadBufferAllocatedInBytes: ").append(getUploadBufferAllocatedInBytes());
         sb.append("}");
         return sb.toString();
     }

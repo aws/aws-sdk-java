@@ -332,17 +332,17 @@ public class CreatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getContainer() != null)
-            sb.append("Container: " + getContainer() + ",");
+            sb.append("Container: ").append(getContainer()).append(",");
         if (getVideo() != null)
-            sb.append("Video: " + getVideo() + ",");
+            sb.append("Video: ").append(getVideo()).append(",");
         if (getAudio() != null)
-            sb.append("Audio: " + getAudio() + ",");
+            sb.append("Audio: ").append(getAudio()).append(",");
         if (getThumbnails() != null)
-            sb.append("Thumbnails: " + getThumbnails());
+            sb.append("Thumbnails: ").append(getThumbnails());
         sb.append("}");
         return sb.toString();
     }

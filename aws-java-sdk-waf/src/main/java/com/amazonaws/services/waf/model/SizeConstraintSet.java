@@ -260,11 +260,11 @@ public class SizeConstraintSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSizeConstraintSetId() != null)
-            sb.append("SizeConstraintSetId: " + getSizeConstraintSetId() + ",");
+            sb.append("SizeConstraintSetId: ").append(getSizeConstraintSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSizeConstraints() != null)
-            sb.append("SizeConstraints: " + getSizeConstraints());
+            sb.append("SizeConstraints: ").append(getSizeConstraints());
         sb.append("}");
         return sb.toString();
     }

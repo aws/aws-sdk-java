@@ -252,13 +252,13 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountMaxReadCapacityUnits() != null)
-            sb.append("AccountMaxReadCapacityUnits: " + getAccountMaxReadCapacityUnits() + ",");
+            sb.append("AccountMaxReadCapacityUnits: ").append(getAccountMaxReadCapacityUnits()).append(",");
         if (getAccountMaxWriteCapacityUnits() != null)
-            sb.append("AccountMaxWriteCapacityUnits: " + getAccountMaxWriteCapacityUnits() + ",");
+            sb.append("AccountMaxWriteCapacityUnits: ").append(getAccountMaxWriteCapacityUnits()).append(",");
         if (getTableMaxReadCapacityUnits() != null)
-            sb.append("TableMaxReadCapacityUnits: " + getTableMaxReadCapacityUnits() + ",");
+            sb.append("TableMaxReadCapacityUnits: ").append(getTableMaxReadCapacityUnits()).append(",");
         if (getTableMaxWriteCapacityUnits() != null)
-            sb.append("TableMaxWriteCapacityUnits: " + getTableMaxWriteCapacityUnits());
+            sb.append("TableMaxWriteCapacityUnits: ").append(getTableMaxWriteCapacityUnits());
         sb.append("}");
         return sb.toString();
     }

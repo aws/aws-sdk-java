@@ -1320,17 +1320,17 @@ public class BuildPhase implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPhaseType() != null)
-            sb.append("PhaseType: " + getPhaseType() + ",");
+            sb.append("PhaseType: ").append(getPhaseType()).append(",");
         if (getPhaseStatus() != null)
-            sb.append("PhaseStatus: " + getPhaseStatus() + ",");
+            sb.append("PhaseStatus: ").append(getPhaseStatus()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getDurationInSeconds() != null)
-            sb.append("DurationInSeconds: " + getDurationInSeconds() + ",");
+            sb.append("DurationInSeconds: ").append(getDurationInSeconds()).append(",");
         if (getContexts() != null)
-            sb.append("Contexts: " + getContexts());
+            sb.append("Contexts: ").append(getContexts());
         sb.append("}");
         return sb.toString();
     }

@@ -109,9 +109,9 @@ public class DeleteIndexFieldRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getIndexFieldName() != null)
-            sb.append("IndexFieldName: " + getIndexFieldName());
+            sb.append("IndexFieldName: ").append(getIndexFieldName());
         sb.append("}");
         return sb.toString();
     }

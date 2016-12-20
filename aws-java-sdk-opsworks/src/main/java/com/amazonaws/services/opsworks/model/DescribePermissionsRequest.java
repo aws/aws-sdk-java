@@ -132,9 +132,9 @@ public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId());
+            sb.append("StackId: ").append(getStackId());
         sb.append("}");
         return sb.toString();
     }

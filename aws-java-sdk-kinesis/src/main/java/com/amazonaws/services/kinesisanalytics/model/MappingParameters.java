@@ -128,9 +128,9 @@ public class MappingParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJSONMappingParameters() != null)
-            sb.append("JSONMappingParameters: " + getJSONMappingParameters() + ",");
+            sb.append("JSONMappingParameters: ").append(getJSONMappingParameters()).append(",");
         if (getCSVMappingParameters() != null)
-            sb.append("CSVMappingParameters: " + getCSVMappingParameters());
+            sb.append("CSVMappingParameters: ").append(getCSVMappingParameters());
         sb.append("}");
         return sb.toString();
     }

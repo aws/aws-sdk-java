@@ -125,9 +125,9 @@ public class AssociateElasticIpRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

@@ -186,9 +186,9 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getCidr() != null)
-            sb.append("Cidr: " + getCidr());
+            sb.append("Cidr: ").append(getCidr());
         sb.append("}");
         return sb.toString();
     }

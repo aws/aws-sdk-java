@@ -612,13 +612,13 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSubjectAlternativeNames() != null)
-            sb.append("SubjectAlternativeNames: " + getSubjectAlternativeNames() + ",");
+            sb.append("SubjectAlternativeNames: ").append(getSubjectAlternativeNames()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: " + getIdempotencyToken() + ",");
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getDomainValidationOptions() != null)
-            sb.append("DomainValidationOptions: " + getDomainValidationOptions());
+            sb.append("DomainValidationOptions: ").append(getDomainValidationOptions());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class ComplianceByConfigRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleName() != null)
-            sb.append("ConfigRuleName: " + getConfigRuleName() + ",");
+            sb.append("ConfigRuleName: ").append(getConfigRuleName()).append(",");
         if (getCompliance() != null)
-            sb.append("Compliance: " + getCompliance());
+            sb.append("Compliance: ").append(getCompliance());
         sb.append("}");
         return sb.toString();
     }

@@ -15,7 +15,7 @@
 
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
@@ -29,8 +29,8 @@ import java.util.List;
  * Current implementations include {@link SdkStructuredPlainJsonFactory} and {@link
  * SdkStructuredCborFactory}
  */
-@SdkInternalApi
-interface SdkStructuredJsonFactory {
+@SdkProtectedApi
+public interface SdkStructuredJsonFactory {
 
     /**
      * Returns the {@link StructuredJsonGenerator} to be used for marshalling the request.

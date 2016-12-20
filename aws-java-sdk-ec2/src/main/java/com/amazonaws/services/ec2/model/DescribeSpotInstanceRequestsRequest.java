@@ -2194,9 +2194,9 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotInstanceRequestIds() != null)
-            sb.append("SpotInstanceRequestIds: " + getSpotInstanceRequestIds() + ",");
+            sb.append("SpotInstanceRequestIds: ").append(getSpotInstanceRequestIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

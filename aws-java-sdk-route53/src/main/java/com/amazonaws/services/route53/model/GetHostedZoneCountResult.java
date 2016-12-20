@@ -80,7 +80,7 @@ public class GetHostedZoneCountResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneCount() != null)
-            sb.append("HostedZoneCount: " + getHostedZoneCount());
+            sb.append("HostedZoneCount: ").append(getHostedZoneCount());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class ChangeBatchStaxUnmarshaller implements Unmarshaller<ChangeBatch, St
                     continue;
                 }
 
+                if (context.testExpression("Changes", targetDepth)) {
+                    changeBatch.withChanges(new ArrayList<Change>());
+                    continue;
+                }
+
                 if (context.testExpression("Changes/Change", targetDepth)) {
                     changeBatch.withChanges(ChangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

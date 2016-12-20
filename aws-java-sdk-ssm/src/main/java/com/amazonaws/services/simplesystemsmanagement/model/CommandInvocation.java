@@ -1215,33 +1215,33 @@ public class CommandInvocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getDocumentName() != null)
-            sb.append("DocumentName: " + getDocumentName() + ",");
+            sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getRequestedDateTime() != null)
-            sb.append("RequestedDateTime: " + getRequestedDateTime() + ",");
+            sb.append("RequestedDateTime: ").append(getRequestedDateTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getTraceOutput() != null)
-            sb.append("TraceOutput: " + getTraceOutput() + ",");
+            sb.append("TraceOutput: ").append(getTraceOutput()).append(",");
         if (getStandardOutputUrl() != null)
-            sb.append("StandardOutputUrl: " + getStandardOutputUrl() + ",");
+            sb.append("StandardOutputUrl: ").append(getStandardOutputUrl()).append(",");
         if (getStandardErrorUrl() != null)
-            sb.append("StandardErrorUrl: " + getStandardErrorUrl() + ",");
+            sb.append("StandardErrorUrl: ").append(getStandardErrorUrl()).append(",");
         if (getCommandPlugins() != null)
-            sb.append("CommandPlugins: " + getCommandPlugins() + ",");
+            sb.append("CommandPlugins: ").append(getCommandPlugins()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getNotificationConfig() != null)
-            sb.append("NotificationConfig: " + getNotificationConfig());
+            sb.append("NotificationConfig: ").append(getNotificationConfig());
         sb.append("}");
         return sb.toString();
     }

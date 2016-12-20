@@ -211,11 +211,11 @@ public class InputSchemaUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordFormatUpdate() != null)
-            sb.append("RecordFormatUpdate: " + getRecordFormatUpdate() + ",");
+            sb.append("RecordFormatUpdate: ").append(getRecordFormatUpdate()).append(",");
         if (getRecordEncodingUpdate() != null)
-            sb.append("RecordEncodingUpdate: " + getRecordEncodingUpdate() + ",");
+            sb.append("RecordEncodingUpdate: ").append(getRecordEncodingUpdate()).append(",");
         if (getRecordColumnUpdates() != null)
-            sb.append("RecordColumnUpdates: " + getRecordColumnUpdates());
+            sb.append("RecordColumnUpdates: ").append(getRecordColumnUpdates());
         sb.append("}");
         return sb.toString();
     }

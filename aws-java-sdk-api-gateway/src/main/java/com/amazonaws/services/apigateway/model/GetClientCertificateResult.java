@@ -290,15 +290,15 @@ public class GetClientCertificateResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientCertificateId() != null)
-            sb.append("ClientCertificateId: " + getClientCertificateId() + ",");
+            sb.append("ClientCertificateId: ").append(getClientCertificateId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getPemEncodedCertificate() != null)
-            sb.append("PemEncodedCertificate: " + getPemEncodedCertificate() + ",");
+            sb.append("PemEncodedCertificate: ").append(getPemEncodedCertificate()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: " + getExpirationDate());
+            sb.append("ExpirationDate: ").append(getExpirationDate());
         sb.append("}");
         return sb.toString();
     }

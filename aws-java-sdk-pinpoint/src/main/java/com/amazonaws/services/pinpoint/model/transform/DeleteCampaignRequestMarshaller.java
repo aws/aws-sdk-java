@@ -61,13 +61,9 @@ public class DeleteCampaignRequestMarshaller implements Marshaller<Request<Delet
 
         String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (deleteCampaignRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteCampaignRequest.getApplicationId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{campaign-id}",
-                (deleteCampaignRequest.getCampaignId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteCampaignRequest.getCampaignId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                deleteCampaignRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "campaign-id", deleteCampaignRequest.getCampaignId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

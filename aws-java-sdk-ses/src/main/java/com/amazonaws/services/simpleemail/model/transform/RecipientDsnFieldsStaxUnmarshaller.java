@@ -75,6 +75,11 @@ public class RecipientDsnFieldsStaxUnmarshaller implements Unmarshaller<Recipien
                     continue;
                 }
 
+                if (context.testExpression("ExtensionFields", targetDepth)) {
+                    recipientDsnFields.withExtensionFields(new ArrayList<ExtensionField>());
+                    continue;
+                }
+
                 if (context.testExpression("ExtensionFields/member", targetDepth)) {
                     recipientDsnFields.withExtensionFields(ExtensionFieldStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

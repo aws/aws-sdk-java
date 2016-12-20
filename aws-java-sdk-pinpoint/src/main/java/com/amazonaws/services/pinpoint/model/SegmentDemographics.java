@@ -212,15 +212,15 @@ public class SegmentDemographics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppVersion() != null)
-            sb.append("AppVersion: " + getAppVersion() + ",");
+            sb.append("AppVersion: ").append(getAppVersion()).append(",");
         if (getDeviceType() != null)
-            sb.append("DeviceType: " + getDeviceType() + ",");
+            sb.append("DeviceType: ").append(getDeviceType()).append(",");
         if (getMake() != null)
-            sb.append("Make: " + getMake() + ",");
+            sb.append("Make: ").append(getMake()).append(",");
         if (getModel() != null)
-            sb.append("Model: " + getModel() + ",");
+            sb.append("Model: ").append(getModel()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform());
+            sb.append("Platform: ").append(getPlatform());
         sb.append("}");
         return sb.toString();
     }

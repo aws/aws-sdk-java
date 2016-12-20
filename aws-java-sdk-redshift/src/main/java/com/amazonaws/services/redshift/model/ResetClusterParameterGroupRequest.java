@@ -275,11 +275,11 @@ public class ResetClusterParameterGroupRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupName() != null)
-            sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
+            sb.append("ParameterGroupName: ").append(getParameterGroupName()).append(",");
         if (getResetAllParameters() != null)
-            sb.append("ResetAllParameters: " + getResetAllParameters() + ",");
+            sb.append("ResetAllParameters: ").append(getResetAllParameters()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

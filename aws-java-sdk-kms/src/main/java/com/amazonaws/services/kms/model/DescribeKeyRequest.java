@@ -357,9 +357,9 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
         return sb.toString();
     }

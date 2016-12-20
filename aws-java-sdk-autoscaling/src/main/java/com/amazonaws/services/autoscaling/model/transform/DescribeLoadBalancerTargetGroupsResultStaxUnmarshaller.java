@@ -45,6 +45,11 @@ public class DescribeLoadBalancerTargetGroupsResultStaxUnmarshaller implements U
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("LoadBalancerTargetGroups", targetDepth)) {
+                    describeLoadBalancerTargetGroupsResult.withLoadBalancerTargetGroups(new ArrayList<LoadBalancerTargetGroupState>());
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancerTargetGroups/member", targetDepth)) {
                     describeLoadBalancerTargetGroupsResult.withLoadBalancerTargetGroups(LoadBalancerTargetGroupStateStaxUnmarshaller.getInstance().unmarshall(
                             context));

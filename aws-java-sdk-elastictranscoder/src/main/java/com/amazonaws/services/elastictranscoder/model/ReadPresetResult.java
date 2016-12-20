@@ -80,7 +80,7 @@ public class ReadPresetResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPreset() != null)
-            sb.append("Preset: " + getPreset());
+            sb.append("Preset: ").append(getPreset());
         sb.append("}");
         return sb.toString();
     }

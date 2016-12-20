@@ -62,14 +62,10 @@ public class FlushStageAuthorizersCacheRequestMarshaller implements Marshaller<R
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/authorizers";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (flushStageAuthorizersCacheRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(flushStageAuthorizersCacheRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{stage_name}",
-                (flushStageAuthorizersCacheRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(flushStageAuthorizersCacheRequest.getStageName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
+                flushStageAuthorizersCacheRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name",
+                flushStageAuthorizersCacheRequest.getStageName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

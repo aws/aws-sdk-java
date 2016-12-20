@@ -61,17 +61,10 @@ public class CompleteVaultLockRequestMarshaller implements Marshaller<Request<Co
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy/{lockId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (completeVaultLockRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(completeVaultLockRequest.getAccountId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (completeVaultLockRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(completeVaultLockRequest.getVaultName()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{lockId}",
-                (completeVaultLockRequest.getLockId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(completeVaultLockRequest.getLockId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                completeVaultLockRequest.getAccountId() == null ? "-" : completeVaultLockRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", completeVaultLockRequest.getVaultName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "lockId", completeVaultLockRequest.getLockId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

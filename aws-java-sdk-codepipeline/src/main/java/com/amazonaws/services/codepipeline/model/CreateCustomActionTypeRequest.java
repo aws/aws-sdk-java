@@ -495,19 +495,19 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCategory() != null)
-            sb.append("Category: " + getCategory() + ",");
+            sb.append("Category: ").append(getCategory()).append(",");
         if (getProvider() != null)
-            sb.append("Provider: " + getProvider() + ",");
+            sb.append("Provider: ").append(getProvider()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getSettings() != null)
-            sb.append("Settings: " + getSettings() + ",");
+            sb.append("Settings: ").append(getSettings()).append(",");
         if (getConfigurationProperties() != null)
-            sb.append("ConfigurationProperties: " + getConfigurationProperties() + ",");
+            sb.append("ConfigurationProperties: ").append(getConfigurationProperties()).append(",");
         if (getInputArtifactDetails() != null)
-            sb.append("InputArtifactDetails: " + getInputArtifactDetails() + ",");
+            sb.append("InputArtifactDetails: ").append(getInputArtifactDetails()).append(",");
         if (getOutputArtifactDetails() != null)
-            sb.append("OutputArtifactDetails: " + getOutputArtifactDetails());
+            sb.append("OutputArtifactDetails: ").append(getOutputArtifactDetails());
         sb.append("}");
         return sb.toString();
     }

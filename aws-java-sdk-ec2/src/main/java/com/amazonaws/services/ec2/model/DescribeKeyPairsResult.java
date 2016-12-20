@@ -114,7 +114,7 @@ public class DescribeKeyPairsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPairs() != null)
-            sb.append("KeyPairs: " + getKeyPairs());
+            sb.append("KeyPairs: ").append(getKeyPairs());
         sb.append("}");
         return sb.toString();
     }

@@ -207,11 +207,11 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllowAdminCreateUserOnly() != null)
-            sb.append("AllowAdminCreateUserOnly: " + getAllowAdminCreateUserOnly() + ",");
+            sb.append("AllowAdminCreateUserOnly: ").append(getAllowAdminCreateUserOnly()).append(",");
         if (getUnusedAccountValidityDays() != null)
-            sb.append("UnusedAccountValidityDays: " + getUnusedAccountValidityDays() + ",");
+            sb.append("UnusedAccountValidityDays: ").append(getUnusedAccountValidityDays()).append(",");
         if (getInviteMessageTemplate() != null)
-            sb.append("InviteMessageTemplate: " + getInviteMessageTemplate());
+            sb.append("InviteMessageTemplate: ").append(getInviteMessageTemplate());
         sb.append("}");
         return sb.toString();
     }

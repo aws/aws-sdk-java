@@ -109,9 +109,9 @@ public class DeleteSuggesterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSuggesterName() != null)
-            sb.append("SuggesterName: " + getSuggesterName());
+            sb.append("SuggesterName: ").append(getSuggesterName());
         sb.append("}");
         return sb.toString();
     }

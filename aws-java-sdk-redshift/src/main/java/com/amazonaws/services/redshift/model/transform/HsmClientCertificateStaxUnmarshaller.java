@@ -55,6 +55,11 @@ public class HsmClientCertificateStaxUnmarshaller implements Unmarshaller<HsmCli
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    hsmClientCertificate.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     hsmClientCertificate.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

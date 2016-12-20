@@ -237,7 +237,7 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier());
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier());
         sb.append("}");
         return sb.toString();
     }

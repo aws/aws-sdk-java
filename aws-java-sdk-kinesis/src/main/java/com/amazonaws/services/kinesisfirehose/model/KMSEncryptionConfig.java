@@ -80,7 +80,7 @@ public class KMSEncryptionConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAWSKMSKeyARN() != null)
-            sb.append("AWSKMSKeyARN: " + getAWSKMSKeyARN());
+            sb.append("AWSKMSKeyARN: ").append(getAWSKMSKeyARN());
         sb.append("}");
         return sb.toString();
     }

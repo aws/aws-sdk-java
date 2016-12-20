@@ -127,9 +127,9 @@ public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey() + ",");
+            sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken());
+            sb.append("AccessToken: ").append(getAccessToken());
         sb.append("}");
         return sb.toString();
     }

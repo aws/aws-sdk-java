@@ -398,17 +398,17 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowType() != null)
-            sb.append("WorkflowType: " + getWorkflowType() + ",");
+            sb.append("WorkflowType: ").append(getWorkflowType()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause() + ",");
+            sb.append("Cause: ").append(getCause()).append(",");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getInitiatedEventId() != null)
-            sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");
+            sb.append("InitiatedEventId: ").append(getInitiatedEventId()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId()).append(",");
         if (getControl() != null)
-            sb.append("Control: " + getControl());
+            sb.append("Control: ").append(getControl());
         sb.append("}");
         return sb.toString();
     }

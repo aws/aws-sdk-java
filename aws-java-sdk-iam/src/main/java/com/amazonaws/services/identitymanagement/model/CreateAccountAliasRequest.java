@@ -133,7 +133,7 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountAlias() != null)
-            sb.append("AccountAlias: " + getAccountAlias());
+            sb.append("AccountAlias: ").append(getAccountAlias());
         sb.append("}");
         return sb.toString();
     }

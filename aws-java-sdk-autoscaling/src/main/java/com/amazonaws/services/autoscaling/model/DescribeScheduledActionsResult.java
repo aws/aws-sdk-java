@@ -166,9 +166,9 @@ public class DescribeScheduledActionsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledUpdateGroupActions() != null)
-            sb.append("ScheduledUpdateGroupActions: " + getScheduledUpdateGroupActions() + ",");
+            sb.append("ScheduledUpdateGroupActions: ").append(getScheduledUpdateGroupActions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

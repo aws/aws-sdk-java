@@ -113,7 +113,7 @@ public class BucketInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuckets() != null)
-            sb.append("Buckets: " + getBuckets());
+            sb.append("Buckets: ").append(getBuckets());
         sb.append("}");
         return sb.toString();
     }

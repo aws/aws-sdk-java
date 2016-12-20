@@ -524,13 +524,13 @@ public class ProjectEnvironment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getComputeType() != null)
-            sb.append("ComputeType: " + getComputeType() + ",");
+            sb.append("ComputeType: ").append(getComputeType()).append(",");
         if (getEnvironmentVariables() != null)
-            sb.append("EnvironmentVariables: " + getEnvironmentVariables());
+            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables());
         sb.append("}");
         return sb.toString();
     }

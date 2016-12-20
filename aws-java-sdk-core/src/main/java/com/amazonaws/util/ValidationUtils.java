@@ -68,19 +68,23 @@ public class ValidationUtils {
     }
 
     public static <T extends Collection<?>> T assertNotEmpty(T collection, String fieldName) throws IllegalArgumentException{
-        if(collection == null){
-            throw new IllegalArgumentException(String.format("%s cannot be null", fieldName));
-        }
+        assertNotNull(collection, fieldName);
         if (collection.isEmpty()) {
             throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
         }
         return collection;
     }
 
-    public static String assertStringNotEmpty(String string, String fieldName) throws IllegalArgumentException {
-        if (string == null) {
-            throw new IllegalArgumentException(String.format("%s cannot be null", fieldName));
+    public static <T> T[] assertNotEmpty(T[] array, String fieldName) throws IllegalArgumentException {
+        assertNotNull(array, fieldName);
+        if (array.length == 0) {
+            throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
         }
+        return array;
+    }
+
+    public static String assertStringNotEmpty(String string, String fieldName) throws IllegalArgumentException {
+        assertNotNull(string, fieldName);
         if (string.isEmpty()) {
             throw new IllegalArgumentException(String.format("%s cannot be empty", fieldName));
         }

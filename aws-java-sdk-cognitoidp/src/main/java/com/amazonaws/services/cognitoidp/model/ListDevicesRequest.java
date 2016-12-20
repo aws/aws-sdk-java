@@ -173,11 +173,11 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getPaginationToken() != null)
-            sb.append("PaginationToken: " + getPaginationToken());
+            sb.append("PaginationToken: ").append(getPaginationToken());
         sb.append("}");
         return sb.toString();
     }

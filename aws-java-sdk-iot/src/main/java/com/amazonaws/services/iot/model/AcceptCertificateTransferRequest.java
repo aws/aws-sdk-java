@@ -139,9 +139,9 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive());
+            sb.append("SetAsActive: ").append(getSetAsActive());
         sb.append("}");
         return sb.toString();
     }

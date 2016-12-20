@@ -166,9 +166,9 @@ public class ListDiscoveredResourcesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceIdentifiers() != null)
-            sb.append("ResourceIdentifiers: " + getResourceIdentifiers() + ",");
+            sb.append("ResourceIdentifiers: ").append(getResourceIdentifiers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

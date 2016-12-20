@@ -178,9 +178,9 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getInstanceGroups() != null)
-            sb.append("InstanceGroups: " + getInstanceGroups());
+            sb.append("InstanceGroups: ").append(getInstanceGroups());
         sb.append("}");
         return sb.toString();
     }

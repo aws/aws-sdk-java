@@ -126,9 +126,9 @@ public class NewDeviceMetadataType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey() + ",");
+            sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getDeviceGroupKey() != null)
-            sb.append("DeviceGroupKey: " + getDeviceGroupKey());
+            sb.append("DeviceGroupKey: ").append(getDeviceGroupKey());
         sb.append("}");
         return sb.toString();
     }

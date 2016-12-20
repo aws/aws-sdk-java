@@ -65,8 +65,18 @@ public class StaleSecurityGroupStaxUnmarshaller implements Unmarshaller<StaleSec
                     continue;
                 }
 
+                if (context.testExpression("staleIpPermissions", targetDepth)) {
+                    staleSecurityGroup.withStaleIpPermissions(new ArrayList<StaleIpPermission>());
+                    continue;
+                }
+
                 if (context.testExpression("staleIpPermissions/item", targetDepth)) {
                     staleSecurityGroup.withStaleIpPermissions(StaleIpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("staleIpPermissionsEgress", targetDepth)) {
+                    staleSecurityGroup.withStaleIpPermissionsEgress(new ArrayList<StaleIpPermission>());
                     continue;
                 }
 

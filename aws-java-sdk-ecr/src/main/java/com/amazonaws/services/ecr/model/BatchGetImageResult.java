@@ -184,9 +184,9 @@ public class BatchGetImageResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImages() != null)
-            sb.append("Images: " + getImages() + ",");
+            sb.append("Images: ").append(getImages()).append(",");
         if (getFailures() != null)
-            sb.append("Failures: " + getFailures());
+            sb.append("Failures: ").append(getFailures());
         sb.append("}");
         return sb.toString();
     }

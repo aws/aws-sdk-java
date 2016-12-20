@@ -118,7 +118,7 @@ public class AllocateHostsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostIds() != null)
-            sb.append("HostIds: " + getHostIds());
+            sb.append("HostIds: ").append(getHostIds());
         sb.append("}");
         return sb.toString();
     }

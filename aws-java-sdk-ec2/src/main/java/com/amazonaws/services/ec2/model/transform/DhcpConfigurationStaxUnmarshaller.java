@@ -50,6 +50,11 @@ public class DhcpConfigurationStaxUnmarshaller implements Unmarshaller<DhcpConfi
                     continue;
                 }
 
+                if (context.testExpression("valueSet", targetDepth)) {
+                    dhcpConfiguration.withValues(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("valueSet/item/value", targetDepth)) {
                     dhcpConfiguration.withValues(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

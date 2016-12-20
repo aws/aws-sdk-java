@@ -157,9 +157,9 @@ public class AddCustomAttributesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getCustomAttributes() != null)
-            sb.append("CustomAttributes: " + getCustomAttributes());
+            sb.append("CustomAttributes: ").append(getCustomAttributes());
         sb.append("}");
         return sb.toString();
     }

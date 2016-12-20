@@ -80,7 +80,7 @@ public class CreateLoginProfileResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoginProfile() != null)
-            sb.append("LoginProfile: " + getLoginProfile());
+            sb.append("LoginProfile: ").append(getLoginProfile());
         sb.append("}");
         return sb.toString();
     }

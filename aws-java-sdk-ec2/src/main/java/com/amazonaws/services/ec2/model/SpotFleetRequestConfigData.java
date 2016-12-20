@@ -878,29 +878,29 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSpotPrice() != null)
-            sb.append("SpotPrice: " + getSpotPrice() + ",");
+            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getTargetCapacity() != null)
-            sb.append("TargetCapacity: " + getTargetCapacity() + ",");
+            sb.append("TargetCapacity: ").append(getTargetCapacity()).append(",");
         if (getValidFrom() != null)
-            sb.append("ValidFrom: " + getValidFrom() + ",");
+            sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidUntil() != null)
-            sb.append("ValidUntil: " + getValidUntil() + ",");
+            sb.append("ValidUntil: ").append(getValidUntil()).append(",");
         if (getTerminateInstancesWithExpiration() != null)
-            sb.append("TerminateInstancesWithExpiration: " + getTerminateInstancesWithExpiration() + ",");
+            sb.append("TerminateInstancesWithExpiration: ").append(getTerminateInstancesWithExpiration()).append(",");
         if (getIamFleetRole() != null)
-            sb.append("IamFleetRole: " + getIamFleetRole() + ",");
+            sb.append("IamFleetRole: ").append(getIamFleetRole()).append(",");
         if (getLaunchSpecifications() != null)
-            sb.append("LaunchSpecifications: " + getLaunchSpecifications() + ",");
+            sb.append("LaunchSpecifications: ").append(getLaunchSpecifications()).append(",");
         if (getExcessCapacityTerminationPolicy() != null)
-            sb.append("ExcessCapacityTerminationPolicy: " + getExcessCapacityTerminationPolicy() + ",");
+            sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy()).append(",");
         if (getAllocationStrategy() != null)
-            sb.append("AllocationStrategy: " + getAllocationStrategy() + ",");
+            sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
         if (getFulfilledCapacity() != null)
-            sb.append("FulfilledCapacity: " + getFulfilledCapacity() + ",");
+            sb.append("FulfilledCapacity: ").append(getFulfilledCapacity()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType());
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }

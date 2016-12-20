@@ -112,7 +112,7 @@ public class StartConfigRulesEvaluationRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleNames() != null)
-            sb.append("ConfigRuleNames: " + getConfigRuleNames());
+            sb.append("ConfigRuleNames: ").append(getConfigRuleNames());
         sb.append("}");
         return sb.toString();
     }

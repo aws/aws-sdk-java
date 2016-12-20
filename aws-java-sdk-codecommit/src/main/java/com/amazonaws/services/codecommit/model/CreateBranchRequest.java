@@ -173,11 +173,11 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getBranchName() != null)
-            sb.append("BranchName: " + getBranchName() + ",");
+            sb.append("BranchName: ").append(getBranchName()).append(",");
         if (getCommitId() != null)
-            sb.append("CommitId: " + getCommitId());
+            sb.append("CommitId: ").append(getCommitId());
         sb.append("}");
         return sb.toString();
     }

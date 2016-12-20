@@ -317,15 +317,15 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTime() != null)
-            sb.append("Time: " + getTime() + ",");
+            sb.append("Time: ").append(getTime()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getDetailType() != null)
-            sb.append("DetailType: " + getDetailType() + ",");
+            sb.append("DetailType: ").append(getDetailType()).append(",");
         if (getDetail() != null)
-            sb.append("Detail: " + getDetail());
+            sb.append("Detail: ").append(getDetail());
         sb.append("}");
         return sb.toString();
     }

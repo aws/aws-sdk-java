@@ -61,19 +61,11 @@ public class GetCampaignVersionRequestMarshaller implements Marshaller<Request<G
 
         String uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions/{version}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getCampaignVersionRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getCampaignVersionRequest.getApplicationId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{campaign-id}",
-                (getCampaignVersionRequest.getCampaignId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getCampaignVersionRequest.getCampaignId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{version}",
-                        (getCampaignVersionRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(getCampaignVersionRequest.getVersion()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getCampaignVersionRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "campaign-id", getCampaignVersionRequest.getCampaignId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "version", getCampaignVersionRequest.getVersion());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

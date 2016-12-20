@@ -126,9 +126,9 @@ public class TrustedAdvisorCostOptimizingSummary implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEstimatedMonthlySavings() != null)
-            sb.append("EstimatedMonthlySavings: " + getEstimatedMonthlySavings() + ",");
+            sb.append("EstimatedMonthlySavings: ").append(getEstimatedMonthlySavings()).append(",");
         if (getEstimatedPercentMonthlySavings() != null)
-            sb.append("EstimatedPercentMonthlySavings: " + getEstimatedPercentMonthlySavings());
+            sb.append("EstimatedPercentMonthlySavings: ").append(getEstimatedPercentMonthlySavings());
         sb.append("}");
         return sb.toString();
     }

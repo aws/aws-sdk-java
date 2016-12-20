@@ -167,9 +167,9 @@ public class DescribeScheduledInstancesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getScheduledInstanceSet() != null)
-            sb.append("ScheduledInstanceSet: " + getScheduledInstanceSet());
+            sb.append("ScheduledInstanceSet: ").append(getScheduledInstanceSet());
         sb.append("}");
         return sb.toString();
     }

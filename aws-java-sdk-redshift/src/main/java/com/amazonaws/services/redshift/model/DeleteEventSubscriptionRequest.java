@@ -79,7 +79,7 @@ public class DeleteEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionName() != null)
-            sb.append("SubscriptionName: " + getSubscriptionName());
+            sb.append("SubscriptionName: ").append(getSubscriptionName());
         sb.append("}");
         return sb.toString();
     }

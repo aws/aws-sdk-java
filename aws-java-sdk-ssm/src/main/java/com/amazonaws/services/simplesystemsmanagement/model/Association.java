@@ -442,21 +442,21 @@ public class Association implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getLastExecutionDate() != null)
-            sb.append("LastExecutionDate: " + getLastExecutionDate() + ",");
+            sb.append("LastExecutionDate: ").append(getLastExecutionDate()).append(",");
         if (getOverview() != null)
-            sb.append("Overview: " + getOverview() + ",");
+            sb.append("Overview: ").append(getOverview()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: " + getScheduleExpression());
+            sb.append("ScheduleExpression: ").append(getScheduleExpression());
         sb.append("}");
         return sb.toString();
     }

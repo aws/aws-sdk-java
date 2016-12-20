@@ -236,11 +236,11 @@ public class DescribeElasticIpsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getIps() != null)
-            sb.append("Ips: " + getIps());
+            sb.append("Ips: ").append(getIps());
         sb.append("}");
         return sb.toString();
     }

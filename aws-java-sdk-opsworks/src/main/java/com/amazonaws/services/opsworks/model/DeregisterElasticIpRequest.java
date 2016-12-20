@@ -79,7 +79,7 @@ public class DeregisterElasticIpRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp());
+            sb.append("ElasticIp: ").append(getElasticIp());
         sb.append("}");
         return sb.toString();
     }

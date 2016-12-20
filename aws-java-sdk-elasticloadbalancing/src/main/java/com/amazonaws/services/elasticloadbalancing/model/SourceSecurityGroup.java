@@ -126,9 +126,9 @@ public class SourceSecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerAlias() != null)
-            sb.append("OwnerAlias: " + getOwnerAlias() + ",");
+            sb.append("OwnerAlias: ").append(getOwnerAlias()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }

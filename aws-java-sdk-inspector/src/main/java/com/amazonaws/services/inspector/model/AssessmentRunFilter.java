@@ -527,19 +527,19 @@ public class AssessmentRunFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamePattern() != null)
-            sb.append("NamePattern: " + getNamePattern() + ",");
+            sb.append("NamePattern: ").append(getNamePattern()).append(",");
         if (getStates() != null)
-            sb.append("States: " + getStates() + ",");
+            sb.append("States: ").append(getStates()).append(",");
         if (getDurationRange() != null)
-            sb.append("DurationRange: " + getDurationRange() + ",");
+            sb.append("DurationRange: ").append(getDurationRange()).append(",");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getStartTimeRange() != null)
-            sb.append("StartTimeRange: " + getStartTimeRange() + ",");
+            sb.append("StartTimeRange: ").append(getStartTimeRange()).append(",");
         if (getCompletionTimeRange() != null)
-            sb.append("CompletionTimeRange: " + getCompletionTimeRange() + ",");
+            sb.append("CompletionTimeRange: ").append(getCompletionTimeRange()).append(",");
         if (getStateChangeTimeRange() != null)
-            sb.append("StateChangeTimeRange: " + getStateChangeTimeRange());
+            sb.append("StateChangeTimeRange: ").append(getStateChangeTimeRange());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribeListenersResultStaxUnmarshaller implements Unmarshaller<Des
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Listeners", targetDepth)) {
+                    describeListenersResult.withListeners(new ArrayList<Listener>());
+                    continue;
+                }
+
                 if (context.testExpression("Listeners/member", targetDepth)) {
                     describeListenersResult.withListeners(ListenerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

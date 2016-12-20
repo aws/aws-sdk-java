@@ -305,15 +305,15 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getService() != null)
-            sb.append("Service: " + getService() + ",");
+            sb.append("Service: ").append(getService()).append(",");
         if (getDesiredCount() != null)
-            sb.append("DesiredCount: " + getDesiredCount() + ",");
+            sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getDeploymentConfiguration() != null)
-            sb.append("DeploymentConfiguration: " + getDeploymentConfiguration());
+            sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration());
         sb.append("}");
         return sb.toString();
     }

@@ -81,7 +81,7 @@ public class GetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplicationArn() != null)
-            sb.append("PlatformApplicationArn: " + getPlatformApplicationArn());
+            sb.append("PlatformApplicationArn: ").append(getPlatformApplicationArn());
         sb.append("}");
         return sb.toString();
     }

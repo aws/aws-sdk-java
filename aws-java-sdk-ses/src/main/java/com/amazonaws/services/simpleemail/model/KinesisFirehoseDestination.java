@@ -139,9 +139,9 @@ public class KinesisFirehoseDestination implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIAMRoleARN() != null)
-            sb.append("IAMRoleARN: " + getIAMRoleARN() + ",");
+            sb.append("IAMRoleARN: ").append(getIAMRoleARN()).append(",");
         if (getDeliveryStreamARN() != null)
-            sb.append("DeliveryStreamARN: " + getDeliveryStreamARN());
+            sb.append("DeliveryStreamARN: ").append(getDeliveryStreamARN());
         sb.append("}");
         return sb.toString();
     }

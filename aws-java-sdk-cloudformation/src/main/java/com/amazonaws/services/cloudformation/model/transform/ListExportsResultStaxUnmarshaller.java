@@ -45,6 +45,11 @@ public class ListExportsResultStaxUnmarshaller implements Unmarshaller<ListExpor
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Exports", targetDepth)) {
+                    listExportsResult.withExports(new ArrayList<Export>());
+                    continue;
+                }
+
                 if (context.testExpression("Exports/member", targetDepth)) {
                     listExportsResult.withExports(ExportStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

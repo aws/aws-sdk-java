@@ -79,7 +79,7 @@ public class GetInstanceSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceSnapshotName() != null)
-            sb.append("InstanceSnapshotName: " + getInstanceSnapshotName());
+            sb.append("InstanceSnapshotName: ").append(getInstanceSnapshotName());
         sb.append("}");
         return sb.toString();
     }

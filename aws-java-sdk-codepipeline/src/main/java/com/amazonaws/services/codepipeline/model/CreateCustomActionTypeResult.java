@@ -61,7 +61,7 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActionType() != null)
-            sb.append("ActionType: " + getActionType());
+            sb.append("ActionType: ").append(getActionType());
         sb.append("}");
         return sb.toString();
     }

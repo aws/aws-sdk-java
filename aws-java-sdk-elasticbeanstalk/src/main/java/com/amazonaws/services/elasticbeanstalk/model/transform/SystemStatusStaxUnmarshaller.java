@@ -50,6 +50,11 @@ public class SystemStatusStaxUnmarshaller implements Unmarshaller<SystemStatus, 
                     continue;
                 }
 
+                if (context.testExpression("LoadAverage", targetDepth)) {
+                    systemStatus.withLoadAverage(new ArrayList<Double>());
+                    continue;
+                }
+
                 if (context.testExpression("LoadAverage/member", targetDepth)) {
                     systemStatus.withLoadAverage(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

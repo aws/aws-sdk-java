@@ -126,9 +126,9 @@ public class CreateThingResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getThingArn() != null)
-            sb.append("ThingArn: " + getThingArn());
+            sb.append("ThingArn: ").append(getThingArn());
         sb.append("}");
         return sb.toString();
     }

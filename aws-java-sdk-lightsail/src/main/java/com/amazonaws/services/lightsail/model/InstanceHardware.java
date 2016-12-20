@@ -202,11 +202,11 @@ public class InstanceHardware implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCpuCount() != null)
-            sb.append("CpuCount: " + getCpuCount() + ",");
+            sb.append("CpuCount: ").append(getCpuCount()).append(",");
         if (getDisks() != null)
-            sb.append("Disks: " + getDisks() + ",");
+            sb.append("Disks: ").append(getDisks()).append(",");
         if (getRamSizeInGb() != null)
-            sb.append("RamSizeInGb: " + getRamSizeInGb());
+            sb.append("RamSizeInGb: ").append(getRamSizeInGb());
         sb.append("}");
         return sb.toString();
     }

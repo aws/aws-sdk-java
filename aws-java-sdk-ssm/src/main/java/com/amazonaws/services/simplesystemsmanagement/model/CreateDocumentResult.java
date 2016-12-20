@@ -78,7 +78,7 @@ public class CreateDocumentResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocumentDescription() != null)
-            sb.append("DocumentDescription: " + getDocumentDescription());
+            sb.append("DocumentDescription: ").append(getDocumentDescription());
         sb.append("}");
         return sb.toString();
     }

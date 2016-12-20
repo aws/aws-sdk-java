@@ -53,10 +53,8 @@ public class ListDistributionsByWebACLIdRequestMarshaller implements
 
         String uriResourcePath = "/2016-11-25/distributionsByWebACLId/{WebACLId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{WebACLId}",
-                (listDistributionsByWebACLIdRequest.getWebACLId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listDistributionsByWebACLIdRequest.getWebACLId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "WebACLId",
+                listDistributionsByWebACLIdRequest.getWebACLId());
         request.setResourcePath(uriResourcePath);
 
         if (listDistributionsByWebACLIdRequest.getMarker() != null) {

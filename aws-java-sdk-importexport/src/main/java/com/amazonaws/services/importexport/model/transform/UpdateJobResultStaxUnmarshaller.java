@@ -55,6 +55,11 @@ public class UpdateJobResultStaxUnmarshaller implements Unmarshaller<UpdateJobRe
                     continue;
                 }
 
+                if (context.testExpression("ArtifactList", targetDepth)) {
+                    updateJobResult.withArtifactList(new ArrayList<Artifact>());
+                    continue;
+                }
+
                 if (context.testExpression("ArtifactList/member", targetDepth)) {
                     updateJobResult.withArtifactList(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -51,11 +51,8 @@ public class GetTrafficPolicyRequestMarshaller implements Marshaller<Request<Get
 
         String uriResourcePath = "/2013-04-01/trafficpolicy/{Id}/{Version}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (getTrafficPolicyRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getTrafficPolicyRequest.getId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{Version}",
-                (getTrafficPolicyRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromInteger(getTrafficPolicyRequest.getVersion()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getTrafficPolicyRequest.getId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Version", getTrafficPolicyRequest.getVersion());
         request.setResourcePath(uriResourcePath);
 
         return request;

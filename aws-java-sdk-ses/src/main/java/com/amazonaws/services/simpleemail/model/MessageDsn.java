@@ -231,11 +231,11 @@ public class MessageDsn implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReportingMta() != null)
-            sb.append("ReportingMta: " + getReportingMta() + ",");
+            sb.append("ReportingMta: ").append(getReportingMta()).append(",");
         if (getArrivalDate() != null)
-            sb.append("ArrivalDate: " + getArrivalDate() + ",");
+            sb.append("ArrivalDate: ").append(getArrivalDate()).append(",");
         if (getExtensionFields() != null)
-            sb.append("ExtensionFields: " + getExtensionFields());
+            sb.append("ExtensionFields: ").append(getExtensionFields());
         sb.append("}");
         return sb.toString();
     }

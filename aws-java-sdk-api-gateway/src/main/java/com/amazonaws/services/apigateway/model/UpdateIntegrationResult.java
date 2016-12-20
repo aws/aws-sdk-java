@@ -1356,27 +1356,27 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getUri() != null)
-            sb.append("Uri: " + getUri() + ",");
+            sb.append("Uri: ").append(getUri()).append(",");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials() + ",");
+            sb.append("Credentials: ").append(getCredentials()).append(",");
         if (getRequestParameters() != null)
-            sb.append("RequestParameters: " + getRequestParameters() + ",");
+            sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestTemplates() != null)
-            sb.append("RequestTemplates: " + getRequestTemplates() + ",");
+            sb.append("RequestTemplates: ").append(getRequestTemplates()).append(",");
         if (getPassthroughBehavior() != null)
-            sb.append("PassthroughBehavior: " + getPassthroughBehavior() + ",");
+            sb.append("PassthroughBehavior: ").append(getPassthroughBehavior()).append(",");
         if (getContentHandling() != null)
-            sb.append("ContentHandling: " + getContentHandling() + ",");
+            sb.append("ContentHandling: ").append(getContentHandling()).append(",");
         if (getCacheNamespace() != null)
-            sb.append("CacheNamespace: " + getCacheNamespace() + ",");
+            sb.append("CacheNamespace: ").append(getCacheNamespace()).append(",");
         if (getCacheKeyParameters() != null)
-            sb.append("CacheKeyParameters: " + getCacheKeyParameters() + ",");
+            sb.append("CacheKeyParameters: ").append(getCacheKeyParameters()).append(",");
         if (getIntegrationResponses() != null)
-            sb.append("IntegrationResponses: " + getIntegrationResponses());
+            sb.append("IntegrationResponses: ").append(getIntegrationResponses());
         sb.append("}");
         return sb.toString();
     }

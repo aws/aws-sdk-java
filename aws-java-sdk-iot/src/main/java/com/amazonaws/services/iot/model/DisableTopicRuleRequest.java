@@ -81,7 +81,7 @@ public class DisableTopicRuleRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName());
+            sb.append("RuleName: ").append(getRuleName());
         sb.append("}");
         return sb.toString();
     }

@@ -311,17 +311,17 @@ public class GeoLocationDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContinentCode() != null)
-            sb.append("ContinentCode: " + getContinentCode() + ",");
+            sb.append("ContinentCode: ").append(getContinentCode()).append(",");
         if (getContinentName() != null)
-            sb.append("ContinentName: " + getContinentName() + ",");
+            sb.append("ContinentName: ").append(getContinentName()).append(",");
         if (getCountryCode() != null)
-            sb.append("CountryCode: " + getCountryCode() + ",");
+            sb.append("CountryCode: ").append(getCountryCode()).append(",");
         if (getCountryName() != null)
-            sb.append("CountryName: " + getCountryName() + ",");
+            sb.append("CountryName: ").append(getCountryName()).append(",");
         if (getSubdivisionCode() != null)
-            sb.append("SubdivisionCode: " + getSubdivisionCode() + ",");
+            sb.append("SubdivisionCode: ").append(getSubdivisionCode()).append(",");
         if (getSubdivisionName() != null)
-            sb.append("SubdivisionName: " + getSubdivisionName());
+            sb.append("SubdivisionName: ").append(getSubdivisionName());
         sb.append("}");
         return sb.toString();
     }

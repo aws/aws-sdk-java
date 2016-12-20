@@ -75,8 +75,18 @@ public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpnConnection.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     vpnConnection.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vgwTelemetry", targetDepth)) {
+                    vpnConnection.withVgwTelemetry(new ArrayList<VgwTelemetry>());
                     continue;
                 }
 
@@ -87,6 +97,11 @@ public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection
 
                 if (context.testExpression("options", targetDepth)) {
                     vpnConnection.setOptions(VpnConnectionOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("routes", targetDepth)) {
+                    vpnConnection.withRoutes(new ArrayList<VpnStaticRoute>());
                     continue;
                 }
 

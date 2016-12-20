@@ -216,9 +216,9 @@ public class GetReservedInstancesExchangeQuoteRequest extends AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstanceIds() != null)
-            sb.append("ReservedInstanceIds: " + getReservedInstanceIds() + ",");
+            sb.append("ReservedInstanceIds: ").append(getReservedInstanceIds()).append(",");
         if (getTargetConfigurations() != null)
-            sb.append("TargetConfigurations: " + getTargetConfigurations());
+            sb.append("TargetConfigurations: ").append(getTargetConfigurations());
         sb.append("}");
         return sb.toString();
     }

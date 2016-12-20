@@ -126,9 +126,9 @@ public class WorkflowExecution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId());
+            sb.append("RunId: ").append(getRunId());
         sb.append("}");
         return sb.toString();
     }

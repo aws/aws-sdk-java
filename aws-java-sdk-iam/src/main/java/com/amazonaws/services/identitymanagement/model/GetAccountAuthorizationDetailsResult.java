@@ -498,17 +498,17 @@ public class GetAccountAuthorizationDetailsResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserDetailList() != null)
-            sb.append("UserDetailList: " + getUserDetailList() + ",");
+            sb.append("UserDetailList: ").append(getUserDetailList()).append(",");
         if (getGroupDetailList() != null)
-            sb.append("GroupDetailList: " + getGroupDetailList() + ",");
+            sb.append("GroupDetailList: ").append(getGroupDetailList()).append(",");
         if (getRoleDetailList() != null)
-            sb.append("RoleDetailList: " + getRoleDetailList() + ",");
+            sb.append("RoleDetailList: ").append(getRoleDetailList()).append(",");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies() + ",");
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

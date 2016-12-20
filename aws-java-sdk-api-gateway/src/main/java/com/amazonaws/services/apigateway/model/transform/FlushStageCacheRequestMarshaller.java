@@ -61,12 +61,8 @@ public class FlushStageCacheRequestMarshaller implements Marshaller<Request<Flus
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/cache/data";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (flushStageCacheRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(flushStageCacheRequest.getRestApiId()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{stage_name}",
-                (flushStageCacheRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(flushStageCacheRequest.getStageName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", flushStageCacheRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name", flushStageCacheRequest.getStageName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

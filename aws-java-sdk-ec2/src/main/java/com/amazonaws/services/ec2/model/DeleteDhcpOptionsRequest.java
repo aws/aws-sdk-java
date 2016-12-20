@@ -112,7 +112,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDhcpOptionsId() != null)
-            sb.append("DhcpOptionsId: " + getDhcpOptionsId());
+            sb.append("DhcpOptionsId: ").append(getDhcpOptionsId());
         sb.append("}");
         return sb.toString();
     }

@@ -190,11 +190,11 @@ public class CreateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName() + ",");
+            sb.append("RuleSetName: ").append(getRuleSetName()).append(",");
         if (getAfter() != null)
-            sb.append("After: " + getAfter() + ",");
+            sb.append("After: ").append(getAfter()).append(",");
         if (getRule() != null)
-            sb.append("Rule: " + getRule());
+            sb.append("Rule: ").append(getRule());
         sb.append("}");
         return sb.toString();
     }

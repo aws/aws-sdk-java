@@ -88,9 +88,9 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJobId() != null)
-            sb.append("ReplicationJobId: " + getReplicationJobId() + ",");
+            sb.append("ReplicationJobId: ").append(getReplicationJobId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

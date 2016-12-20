@@ -156,9 +156,9 @@ public class RemoveTargetsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedEntryCount() != null)
-            sb.append("FailedEntryCount: " + getFailedEntryCount() + ",");
+            sb.append("FailedEntryCount: ").append(getFailedEntryCount()).append(",");
         if (getFailedEntries() != null)
-            sb.append("FailedEntries: " + getFailedEntries());
+            sb.append("FailedEntries: ").append(getFailedEntries());
         sb.append("}");
         return sb.toString();
     }

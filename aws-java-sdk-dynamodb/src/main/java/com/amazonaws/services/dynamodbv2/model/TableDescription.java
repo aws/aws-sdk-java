@@ -3364,33 +3364,33 @@ public class TableDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeDefinitions() != null)
-            sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");
+            sb.append("AttributeDefinitions: ").append(getAttributeDefinitions()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getKeySchema() != null)
-            sb.append("KeySchema: " + getKeySchema() + ",");
+            sb.append("KeySchema: ").append(getKeySchema()).append(",");
         if (getTableStatus() != null)
-            sb.append("TableStatus: " + getTableStatus() + ",");
+            sb.append("TableStatus: ").append(getTableStatus()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getProvisionedThroughput() != null)
-            sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getTableSizeBytes() != null)
-            sb.append("TableSizeBytes: " + getTableSizeBytes() + ",");
+            sb.append("TableSizeBytes: ").append(getTableSizeBytes()).append(",");
         if (getItemCount() != null)
-            sb.append("ItemCount: " + getItemCount() + ",");
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
         if (getTableArn() != null)
-            sb.append("TableArn: " + getTableArn() + ",");
+            sb.append("TableArn: ").append(getTableArn()).append(",");
         if (getLocalSecondaryIndexes() != null)
-            sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");
+            sb.append("LocalSecondaryIndexes: ").append(getLocalSecondaryIndexes()).append(",");
         if (getGlobalSecondaryIndexes() != null)
-            sb.append("GlobalSecondaryIndexes: " + getGlobalSecondaryIndexes() + ",");
+            sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
         if (getStreamSpecification() != null)
-            sb.append("StreamSpecification: " + getStreamSpecification() + ",");
+            sb.append("StreamSpecification: ").append(getStreamSpecification()).append(",");
         if (getLatestStreamLabel() != null)
-            sb.append("LatestStreamLabel: " + getLatestStreamLabel() + ",");
+            sb.append("LatestStreamLabel: ").append(getLatestStreamLabel()).append(",");
         if (getLatestStreamArn() != null)
-            sb.append("LatestStreamArn: " + getLatestStreamArn());
+            sb.append("LatestStreamArn: ").append(getLatestStreamArn());
         sb.append("}");
         return sb.toString();
     }

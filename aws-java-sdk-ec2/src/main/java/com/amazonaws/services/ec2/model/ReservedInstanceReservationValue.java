@@ -126,9 +126,9 @@ public class ReservedInstanceReservationValue implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstanceId() != null)
-            sb.append("ReservedInstanceId: " + getReservedInstanceId() + ",");
+            sb.append("ReservedInstanceId: ").append(getReservedInstanceId()).append(",");
         if (getReservationValue() != null)
-            sb.append("ReservationValue: " + getReservationValue());
+            sb.append("ReservationValue: ").append(getReservationValue());
         sb.append("}");
         return sb.toString();
     }

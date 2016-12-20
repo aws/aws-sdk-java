@@ -263,13 +263,13 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSubnetGroupName() != null)
-            sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");
+            sb.append("CacheSubnetGroupName: ").append(getCacheSubnetGroupName()).append(",");
         if (getCacheSubnetGroupDescription() != null)
-            sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");
+            sb.append("CacheSubnetGroupDescription: ").append(getCacheSubnetGroupDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
         return sb.toString();
     }

@@ -160,11 +160,11 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getCurrentApplicationVersionId() != null)
-            sb.append("CurrentApplicationVersionId: " + getCurrentApplicationVersionId() + ",");
+            sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput());
+            sb.append("Input: ").append(getInput());
         sb.append("}");
         return sb.toString();
     }

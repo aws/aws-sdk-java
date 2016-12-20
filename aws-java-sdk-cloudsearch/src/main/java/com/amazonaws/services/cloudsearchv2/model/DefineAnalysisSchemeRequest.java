@@ -91,9 +91,9 @@ public class DefineAnalysisSchemeRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAnalysisScheme() != null)
-            sb.append("AnalysisScheme: " + getAnalysisScheme());
+            sb.append("AnalysisScheme: ").append(getAnalysisScheme());
         sb.append("}");
         return sb.toString();
     }

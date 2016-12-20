@@ -65,8 +65,18 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     continue;
                 }
 
+                if (context.testExpression("MemberClusters", targetDepth)) {
+                    replicationGroup.withMemberClusters(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("MemberClusters/ClusterId", targetDepth)) {
                     replicationGroup.withMemberClusters(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NodeGroups", targetDepth)) {
+                    replicationGroup.withNodeGroups(new ArrayList<NodeGroup>());
                     continue;
                 }
 

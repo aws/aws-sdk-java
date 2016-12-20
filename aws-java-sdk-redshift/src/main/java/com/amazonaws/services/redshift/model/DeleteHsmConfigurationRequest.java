@@ -79,7 +79,7 @@ public class DeleteHsmConfigurationRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier());
+            sb.append("HsmConfigurationIdentifier: ").append(getHsmConfigurationIdentifier());
         sb.append("}");
         return sb.toString();
     }

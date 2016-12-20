@@ -488,23 +488,23 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getSourceBuildInformation() != null)
-            sb.append("SourceBuildInformation: " + getSourceBuildInformation() + ",");
+            sb.append("SourceBuildInformation: ").append(getSourceBuildInformation()).append(",");
         if (getBuildArn() != null)
-            sb.append("BuildArn: " + getBuildArn() + ",");
+            sb.append("BuildArn: ").append(getBuildArn()).append(",");
         if (getSourceBundle() != null)
-            sb.append("SourceBundle: " + getSourceBundle() + ",");
+            sb.append("SourceBundle: ").append(getSourceBundle()).append(",");
         if (getDateCreated() != null)
-            sb.append("DateCreated: " + getDateCreated() + ",");
+            sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getDateUpdated() != null)
-            sb.append("DateUpdated: " + getDateUpdated() + ",");
+            sb.append("DateUpdated: ").append(getDateUpdated()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

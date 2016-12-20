@@ -61,22 +61,12 @@ public class SubscribeToDatasetRequestMarshaller implements Marshaller<Request<S
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (subscribeToDatasetRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(subscribeToDatasetRequest.getIdentityPoolId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (subscribeToDatasetRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(subscribeToDatasetRequest.getIdentityId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{DatasetName}",
-                (subscribeToDatasetRequest.getDatasetName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(subscribeToDatasetRequest.getDatasetName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{DeviceId}",
-                (subscribeToDatasetRequest.getDeviceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(subscribeToDatasetRequest.getDeviceId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                subscribeToDatasetRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", subscribeToDatasetRequest.getIdentityId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DatasetName",
+                subscribeToDatasetRequest.getDatasetName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DeviceId", subscribeToDatasetRequest.getDeviceId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

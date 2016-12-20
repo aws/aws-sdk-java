@@ -28,13 +28,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     private String configurationType;
     /**
      * <p>
-     * You can filter the list using a <i>key</i>-<i>value</i> format. For example:
+     * You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:
      * </p>
      * <p>
      * <code>{"key": "serverType", "value": "webServer"}</code>
      * </p>
      * <p>
-     * You can separate these items by using logical operators.
+     * For a complete list of filter options and guidance about using them with this action, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -46,10 +48,21 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100
+     * items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
+     * along with a token. Use that token in this query to get the next set of 10.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
+     * characteristics for each filter, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
+     * </p>
+     */
+    private java.util.List<OrderByElement> orderBy;
 
     /**
      * <p>
@@ -126,21 +139,26 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can filter the list using a <i>key</i>-<i>value</i> format. For example:
+     * You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:
      * </p>
      * <p>
      * <code>{"key": "serverType", "value": "webServer"}</code>
      * </p>
      * <p>
-     * You can separate these items by using logical operators.
+     * For a complete list of filter options and guidance about using them with this action, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
-     * @return You can filter the list using a <i>key</i>-<i>value</i> format. For example: </p>
+     * @return You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
+     *         example: </p>
      *         <p>
      *         <code>{"key": "serverType", "value": "webServer"}</code>
      *         </p>
      *         <p>
-     *         You can separate these items by using logical operators.
+     *         For a complete list of filter options and guidance about using them with this action, see <a href=
+     *         "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *         >Querying Discovered Configuration Items</a>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -149,22 +167,27 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can filter the list using a <i>key</i>-<i>value</i> format. For example:
+     * You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:
      * </p>
      * <p>
      * <code>{"key": "serverType", "value": "webServer"}</code>
      * </p>
      * <p>
-     * You can separate these items by using logical operators.
+     * For a complete list of filter options and guidance about using them with this action, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
      * @param filters
-     *        You can filter the list using a <i>key</i>-<i>value</i> format. For example: </p>
+     *        You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
+     *        example: </p>
      *        <p>
      *        <code>{"key": "serverType", "value": "webServer"}</code>
      *        </p>
      *        <p>
-     *        You can separate these items by using logical operators.
+     *        For a complete list of filter options and guidance about using them with this action, see <a href=
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        >Querying Discovered Configuration Items</a>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -178,13 +201,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can filter the list using a <i>key</i>-<i>value</i> format. For example:
+     * You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:
      * </p>
      * <p>
      * <code>{"key": "serverType", "value": "webServer"}</code>
      * </p>
      * <p>
-     * You can separate these items by using logical operators.
+     * For a complete list of filter options and guidance about using them with this action, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,12 +218,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param filters
-     *        You can filter the list using a <i>key</i>-<i>value</i> format. For example: </p>
+     *        You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
+     *        example: </p>
      *        <p>
      *        <code>{"key": "serverType", "value": "webServer"}</code>
      *        </p>
      *        <p>
-     *        You can separate these items by using logical operators.
+     *        For a complete list of filter options and guidance about using them with this action, see <a href=
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        >Querying Discovered Configuration Items</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,22 +242,27 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can filter the list using a <i>key</i>-<i>value</i> format. For example:
+     * You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For example:
      * </p>
      * <p>
      * <code>{"key": "serverType", "value": "webServer"}</code>
      * </p>
      * <p>
-     * You can separate these items by using logical operators.
+     * For a complete list of filter options and guidance about using them with this action, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
      * </p>
      * 
      * @param filters
-     *        You can filter the list using a <i>key</i>-<i>value</i> format. For example: </p>
+     *        You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
+     *        example: </p>
      *        <p>
      *        <code>{"key": "serverType", "value": "webServer"}</code>
      *        </p>
      *        <p>
-     *        You can separate these items by using logical operators.
+     *        For a complete list of filter options and guidance about using them with this action, see <a href=
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        >Querying Discovered Configuration Items</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +313,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100
+     * items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
+     * along with a token. Use that token in this query to get the next set of 10.
      * </p>
      * 
      * @param nextToken
-     *        A token to start the list. Use this token to get the next set of results.
+     *        Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned
+     *        100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10
+     *        results along with a token. Use that token in this query to get the next set of 10.
      */
 
     public void setNextToken(String nextToken) {
@@ -293,10 +330,14 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100
+     * items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
+     * along with a token. Use that token in this query to get the next set of 10.
      * </p>
      * 
-     * @return A token to start the list. Use this token to get the next set of results.
+     * @return Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned
+     *         100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10
+     *         results along with a token. Use that token in this query to get the next set of 10.
      */
 
     public String getNextToken() {
@@ -305,16 +346,114 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A token to start the list. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned 100
+     * items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results
+     * along with a token. Use that token in this query to get the next set of 10.
      * </p>
      * 
      * @param nextToken
-     *        A token to start the list. Use this token to get the next set of results.
+     *        Token to retrieve the next set of results. For example, if a previous call to ListConfigurations returned
+     *        100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10
+     *        results along with a token. Use that token in this query to get the next set of 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListConfigurationsRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
+     * characteristics for each filter, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
+     * </p>
+     * 
+     * @return Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
+     *         output characteristics for each filter, see <a href=
+     *         "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *         >Querying Discovered Configuration Items</a>.
+     */
+
+    public java.util.List<OrderByElement> getOrderBy() {
+        return orderBy;
+    }
+
+    /**
+     * <p>
+     * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
+     * characteristics for each filter, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
+     * </p>
+     * 
+     * @param orderBy
+     *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
+     *        output characteristics for each filter, see <a href=
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        >Querying Discovered Configuration Items</a>.
+     */
+
+    public void setOrderBy(java.util.Collection<OrderByElement> orderBy) {
+        if (orderBy == null) {
+            this.orderBy = null;
+            return;
+        }
+
+        this.orderBy = new java.util.ArrayList<OrderByElement>(orderBy);
+    }
+
+    /**
+     * <p>
+     * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
+     * characteristics for each filter, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrderBy(java.util.Collection)} or {@link #withOrderBy(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param orderBy
+     *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
+     *        output characteristics for each filter, see <a href=
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        >Querying Discovered Configuration Items</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConfigurationsRequest withOrderBy(OrderByElement... orderBy) {
+        if (this.orderBy == null) {
+            setOrderBy(new java.util.ArrayList<OrderByElement>(orderBy.length));
+        }
+        for (OrderByElement ele : orderBy) {
+            this.orderBy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Certain filter criteria return output that can be sorted in ascending or descending order. For a list of output
+     * characteristics for each filter, see <a href=
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     * >Querying Discovered Configuration Items</a>.
+     * </p>
+     * 
+     * @param orderBy
+     *        Certain filter criteria return output that can be sorted in ascending or descending order. For a list of
+     *        output characteristics for each filter, see <a href=
+     *        "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations"
+     *        >Querying Discovered Configuration Items</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConfigurationsRequest withOrderBy(java.util.Collection<OrderByElement> orderBy) {
+        setOrderBy(orderBy);
         return this;
     }
 
@@ -330,13 +469,15 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationType() != null)
-            sb.append("ConfigurationType: " + getConfigurationType() + ",");
+            sb.append("ConfigurationType: ").append(getConfigurationType()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getOrderBy() != null)
+            sb.append("OrderBy: ").append(getOrderBy());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +508,10 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getOrderBy() == null ^ this.getOrderBy() == null)
+            return false;
+        if (other.getOrderBy() != null && other.getOrderBy().equals(this.getOrderBy()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +524,7 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOrderBy() == null) ? 0 : getOrderBy().hashCode());
         return hashCode;
     }
 

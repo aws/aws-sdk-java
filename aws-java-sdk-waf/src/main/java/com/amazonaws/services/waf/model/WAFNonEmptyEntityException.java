@@ -40,7 +40,7 @@ package com.amazonaws.services.waf.model;
  * </li>
  * </ul>
  */
-public class WAFNonEmptyEntityException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
+public class WAFNonEmptyEntityException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

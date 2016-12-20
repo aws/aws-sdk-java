@@ -175,9 +175,9 @@ public class ListReceiptRuleSetsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSets() != null)
-            sb.append("RuleSets: " + getRuleSets() + ",");
+            sb.append("RuleSets: ").append(getRuleSets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

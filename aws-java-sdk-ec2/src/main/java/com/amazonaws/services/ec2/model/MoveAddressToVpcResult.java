@@ -160,9 +160,9 @@ public class MoveAddressToVpcResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId() + ",");
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

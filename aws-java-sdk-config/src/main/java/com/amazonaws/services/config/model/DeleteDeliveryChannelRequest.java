@@ -81,7 +81,7 @@ public class DeleteDeliveryChannelRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryChannelName() != null)
-            sb.append("DeliveryChannelName: " + getDeliveryChannelName());
+            sb.append("DeliveryChannelName: ").append(getDeliveryChannelName());
         sb.append("}");
         return sb.toString();
     }

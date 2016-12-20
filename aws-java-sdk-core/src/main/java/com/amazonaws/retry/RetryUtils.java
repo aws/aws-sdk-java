@@ -14,9 +14,10 @@
  */
 package com.amazonaws.retry;
 
-import org.apache.http.HttpStatus;
-
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.SdkBaseException;
+
+import org.apache.http.HttpStatus;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -51,56 +52,83 @@ public class RetryUtils {
     }
 
     /**
+     * @deprecated By {@link RetryUtils#isRetryableServiceException(SdkBaseException)}
+     */
+    @Deprecated
+    public static boolean isRetryableServiceException(AmazonServiceException exception) {
+        return isRetryableServiceException((SdkBaseException) exception);
+    }
+
+    /**
      * Returns true if the specified exception is a retryable service side exception.
      *
-     * @param ase The exception to test.
+     * @param exception The exception to test.
      * @return True if the exception resulted from a retryable service error, otherwise false.
      */
-    public static boolean isRetryableServiceException(AmazonServiceException ase) {
-        if (ase == null) {
-            return false;
-        }
-        final int statusCode = ase.getStatusCode();
-        return RETRYABLE_STATUS_CODES.contains(statusCode);
+    public static boolean isRetryableServiceException(SdkBaseException exception) {
+        return isAse(exception) && RETRYABLE_STATUS_CODES.contains(toAse(exception).getStatusCode());
+    }
+
+    /**
+     * @deprecated In favor of {@link RetryUtils#isThrottlingException(SdkBaseException)}
+     */
+    @Deprecated
+    public static boolean isThrottlingException(AmazonServiceException exception) {
+        return isThrottlingException((SdkBaseException) exception);
     }
 
     /**
      * Returns true if the specified exception is a throttling error.
      *
-     * @param ase The exception to test.
-     * @return True if the exception resulted from a throttling error message from a service,
-     * otherwise false.
+     * @param exception The exception to test.
+     * @return True if the exception resulted from a throttling error message from a service, otherwise false.
      */
-    public static boolean isThrottlingException(AmazonServiceException ase) {
-        if (ase == null) {
-            return false;
-        }
-        return THROTTLING_ERROR_CODES.contains(ase.getErrorCode());
+    public static boolean isThrottlingException(SdkBaseException exception) {
+        return isAse(exception) && THROTTLING_ERROR_CODES.contains(toAse(exception).getErrorCode());
+    }
+
+    /**
+     * @deprecated By {@link RetryUtils#isRequestEntityTooLargeException(SdkBaseException)}
+     */
+    @Deprecated
+    public static boolean isRequestEntityTooLargeException(AmazonServiceException exception) {
+        return isRequestEntityTooLargeException((SdkBaseException) exception);
     }
 
     /**
      * Returns true if the specified exception is a request entity too large error.
      *
-     * @param ase The exception to test.
-     * @return True if the exception resulted from a request entity too large error message from a
-     * service, otherwise false.
+     * @param exception The exception to test.
+     * @return True if the exception resulted from a request entity too large error message from a service, otherwise false.
      */
-    public static boolean isRequestEntityTooLargeException(AmazonServiceException ase) {
-        return ase != null && ase.getStatusCode() == HttpStatus.SC_REQUEST_TOO_LONG;
+    public static boolean isRequestEntityTooLargeException(SdkBaseException exception) {
+        return isAse(exception) && toAse(exception).getStatusCode() == HttpStatus.SC_REQUEST_TOO_LONG;
+    }
+
+    /**
+     * @deprecated By {@link RetryUtils#isClockSkewError(SdkBaseException)}
+     */
+    @Deprecated
+    public static boolean isClockSkewError(AmazonServiceException exception) {
+        return isClockSkewError((SdkBaseException) exception);
     }
 
     /**
      * Returns true if the specified exception is a clock skew error.
      *
-     * @param ase The exception to test.
-     * @return True if the exception resulted from a clock skews error message from a service,
-     * otherwise false.
+     * @param exception The exception to test.
+     * @return True if the exception resulted from a clock skews error message from a service, otherwise false.
      */
-    public static boolean isClockSkewError(AmazonServiceException ase) {
-        if (ase == null) {
-            return false;
-        }
-        return CLOCK_SKEW_ERROR_CODES.contains(ase.getErrorCode());
+    public static boolean isClockSkewError(SdkBaseException exception) {
+        return isAse(exception) && CLOCK_SKEW_ERROR_CODES.contains(toAse(exception).getErrorCode());
+    }
+
+    private static boolean isAse(SdkBaseException e) {
+        return e instanceof AmazonServiceException;
+    }
+
+    private static AmazonServiceException toAse(SdkBaseException e) {
+        return (AmazonServiceException) e;
     }
 
 }

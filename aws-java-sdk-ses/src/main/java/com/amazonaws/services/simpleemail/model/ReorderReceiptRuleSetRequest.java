@@ -163,9 +163,9 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName() + ",");
+            sb.append("RuleSetName: ").append(getRuleSetName()).append(",");
         if (getRuleNames() != null)
-            sb.append("RuleNames: " + getRuleNames());
+            sb.append("RuleNames: ").append(getRuleNames());
         sb.append("}");
         return sb.toString();
     }

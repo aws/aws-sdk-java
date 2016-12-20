@@ -308,13 +308,13 @@ public class ListPortfoliosForProductRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken() + ",");
+            sb.append("PageToken: ").append(getPageToken()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize());
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }

@@ -168,9 +168,9 @@ public class DescribeReservedInstancesOfferingsResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesOfferings() != null)
-            sb.append("ReservedInstancesOfferings: " + getReservedInstancesOfferings() + ",");
+            sb.append("ReservedInstancesOfferings: ").append(getReservedInstancesOfferings()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

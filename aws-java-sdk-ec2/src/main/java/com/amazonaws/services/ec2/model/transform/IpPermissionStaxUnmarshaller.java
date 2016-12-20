@@ -60,8 +60,18 @@ public class IpPermissionStaxUnmarshaller implements Unmarshaller<IpPermission, 
                     continue;
                 }
 
+                if (context.testExpression("groups", targetDepth)) {
+                    ipPermission.withUserIdGroupPairs(new ArrayList<UserIdGroupPair>());
+                    continue;
+                }
+
                 if (context.testExpression("groups/item", targetDepth)) {
                     ipPermission.withUserIdGroupPairs(UserIdGroupPairStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6Ranges", targetDepth)) {
+                    ipPermission.withIpv6Ranges(new ArrayList<Ipv6Range>());
                     continue;
                 }
 
@@ -70,8 +80,18 @@ public class IpPermissionStaxUnmarshaller implements Unmarshaller<IpPermission, 
                     continue;
                 }
 
+                if (context.testExpression("prefixListIds", targetDepth)) {
+                    ipPermission.withPrefixListIds(new ArrayList<PrefixListId>());
+                    continue;
+                }
+
                 if (context.testExpression("prefixListIds/item", targetDepth)) {
                     ipPermission.withPrefixListIds(PrefixListIdStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipRanges", targetDepth)) {
+                    ipPermission.withIpv4Ranges(new ArrayList<IpRange>());
                     continue;
                 }
 

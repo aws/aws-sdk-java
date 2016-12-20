@@ -200,9 +200,9 @@ public class AutoRollbackConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents());
+            sb.append("Events: ").append(getEvents());
         sb.append("}");
         return sb.toString();
     }

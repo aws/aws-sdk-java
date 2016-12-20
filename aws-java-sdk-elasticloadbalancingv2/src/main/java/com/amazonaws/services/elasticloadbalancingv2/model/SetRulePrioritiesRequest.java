@@ -111,7 +111,7 @@ public class SetRulePrioritiesRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRulePriorities() != null)
-            sb.append("RulePriorities: " + getRulePriorities());
+            sb.append("RulePriorities: ").append(getRulePriorities());
         sb.append("}");
         return sb.toString();
     }

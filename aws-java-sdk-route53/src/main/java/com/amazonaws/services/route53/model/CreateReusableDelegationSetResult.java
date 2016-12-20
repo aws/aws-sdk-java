@@ -124,9 +124,9 @@ public class CreateReusableDelegationSetResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDelegationSet() != null)
-            sb.append("DelegationSet: " + getDelegationSet() + ",");
+            sb.append("DelegationSet: ").append(getDelegationSet()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

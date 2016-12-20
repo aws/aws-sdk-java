@@ -131,9 +131,9 @@ public class CreateIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSet() != null)
-            sb.append("IPSet: " + getIPSet() + ",");
+            sb.append("IPSet: ").append(getIPSet()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

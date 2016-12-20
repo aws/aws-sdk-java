@@ -393,17 +393,17 @@ public class ServerCertificateMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getServerCertificateName() != null)
-            sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+            sb.append("ServerCertificateName: ").append(getServerCertificateName()).append(",");
         if (getServerCertificateId() != null)
-            sb.append("ServerCertificateId: " + getServerCertificateId() + ",");
+            sb.append("ServerCertificateId: ").append(getServerCertificateId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getUploadDate() != null)
-            sb.append("UploadDate: " + getUploadDate() + ",");
+            sb.append("UploadDate: ").append(getUploadDate()).append(",");
         if (getExpiration() != null)
-            sb.append("Expiration: " + getExpiration());
+            sb.append("Expiration: ").append(getExpiration());
         sb.append("}");
         return sb.toString();
     }

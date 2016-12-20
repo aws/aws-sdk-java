@@ -239,11 +239,11 @@ public class EC2InstanceLimit implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEC2InstanceType() != null)
-            sb.append("EC2InstanceType: " + getEC2InstanceType() + ",");
+            sb.append("EC2InstanceType: ").append(getEC2InstanceType()).append(",");
         if (getCurrentInstances() != null)
-            sb.append("CurrentInstances: " + getCurrentInstances() + ",");
+            sb.append("CurrentInstances: ").append(getCurrentInstances()).append(",");
         if (getInstanceLimit() != null)
-            sb.append("InstanceLimit: " + getInstanceLimit());
+            sb.append("InstanceLimit: ").append(getInstanceLimit());
         sb.append("}");
         return sb.toString();
     }

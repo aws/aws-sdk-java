@@ -90,6 +90,11 @@ public class ScalingPolicyStaxUnmarshaller implements Unmarshaller<ScalingPolicy
                     continue;
                 }
 
+                if (context.testExpression("StepAdjustments", targetDepth)) {
+                    scalingPolicy.withStepAdjustments(new ArrayList<StepAdjustment>());
+                    continue;
+                }
+
                 if (context.testExpression("StepAdjustments/member", targetDepth)) {
                     scalingPolicy.withStepAdjustments(StepAdjustmentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -102,6 +107,11 @@ public class ScalingPolicyStaxUnmarshaller implements Unmarshaller<ScalingPolicy
 
                 if (context.testExpression("EstimatedInstanceWarmup", targetDepth)) {
                     scalingPolicy.setEstimatedInstanceWarmup(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Alarms", targetDepth)) {
+                    scalingPolicy.withAlarms(new ArrayList<Alarm>());
                     continue;
                 }
 

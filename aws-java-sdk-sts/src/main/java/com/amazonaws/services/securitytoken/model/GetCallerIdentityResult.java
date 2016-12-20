@@ -194,11 +194,11 @@ public class GetCallerIdentityResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getAccount() != null)
-            sb.append("Account: " + getAccount() + ",");
+            sb.append("Account: ").append(getAccount()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn());
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }

@@ -113,7 +113,7 @@ public class DescribeVirtualGatewaysResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualGateways() != null)
-            sb.append("VirtualGateways: " + getVirtualGateways());
+            sb.append("VirtualGateways: ").append(getVirtualGateways());
         sb.append("}");
         return sb.toString();
     }

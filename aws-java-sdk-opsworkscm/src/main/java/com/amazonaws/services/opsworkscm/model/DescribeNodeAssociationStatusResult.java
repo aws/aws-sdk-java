@@ -83,7 +83,7 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNodeAssociationStatus() != null)
-            sb.append("NodeAssociationStatus: " + getNodeAssociationStatus());
+            sb.append("NodeAssociationStatus: ").append(getNodeAssociationStatus());
         sb.append("}");
         return sb.toString();
     }

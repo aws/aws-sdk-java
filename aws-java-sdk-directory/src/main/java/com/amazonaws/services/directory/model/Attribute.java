@@ -126,9 +126,9 @@ public class Attribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue());
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }

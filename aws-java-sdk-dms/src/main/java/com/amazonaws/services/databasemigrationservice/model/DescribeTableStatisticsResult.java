@@ -207,11 +207,11 @@ public class DescribeTableStatisticsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTaskArn() != null)
-            sb.append("ReplicationTaskArn: " + getReplicationTaskArn() + ",");
+            sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getTableStatistics() != null)
-            sb.append("TableStatistics: " + getTableStatistics() + ",");
+            sb.append("TableStatistics: ").append(getTableStatistics()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

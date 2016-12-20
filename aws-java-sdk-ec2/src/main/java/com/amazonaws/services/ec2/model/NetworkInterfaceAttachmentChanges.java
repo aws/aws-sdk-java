@@ -138,9 +138,9 @@ public class NetworkInterfaceAttachmentChanges implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentId() != null)
-            sb.append("AttachmentId: " + getAttachmentId() + ",");
+            sb.append("AttachmentId: ").append(getAttachmentId()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
         sb.append("}");
         return sb.toString();
     }

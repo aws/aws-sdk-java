@@ -22,7 +22,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -31,7 +31,8 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String queueUrl;
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added using the
+     * <code> <a>AddPermission</a> </code> action.
      * </p>
      */
     private String label;
@@ -48,12 +49,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * to initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which permissions are removed.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param label
-     *        The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
-     *        action.
+     *        The identification of the permission to remove. This is the label added using the
+     *        <code> <a>AddPermission</a> </code> action.
      */
     public RemovePermissionRequest(String queueUrl, String label) {
         setQueueUrl(queueUrl);
@@ -62,14 +63,14 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which permissions are removed.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -80,13 +81,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue from which permissions are removed.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -97,14 +98,14 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which permissions are removed.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which permissions are removed.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,12 +118,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added using the
+     * <code> <a>AddPermission</a> </code> action.
      * </p>
      * 
      * @param label
-     *        The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
-     *        action.
+     *        The identification of the permission to remove. This is the label added using the
+     *        <code> <a>AddPermission</a> </code> action.
      */
 
     public void setLabel(String label) {
@@ -131,11 +133,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added using the
+     * <code> <a>AddPermission</a> </code> action.
      * </p>
      * 
-     * @return The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
-     *         action.
+     * @return The identification of the permission to remove. This is the label added using the
+     *         <code> <a>AddPermission</a> </code> action.
      */
 
     public String getLabel() {
@@ -144,12 +147,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
+     * The identification of the permission to remove. This is the label added using the
+     * <code> <a>AddPermission</a> </code> action.
      * </p>
      * 
      * @param label
-     *        The identification of the permission to remove. This is the label added with the <a>AddPermission</a>
-     *        action.
+     *        The identification of the permission to remove. This is the label added using the
+     *        <code> <a>AddPermission</a> </code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,9 +174,9 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel());
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }

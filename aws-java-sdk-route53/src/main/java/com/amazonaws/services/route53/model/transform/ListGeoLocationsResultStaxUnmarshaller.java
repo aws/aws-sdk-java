@@ -45,6 +45,11 @@ public class ListGeoLocationsResultStaxUnmarshaller implements Unmarshaller<List
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("GeoLocationDetailsList", targetDepth)) {
+                    listGeoLocationsResult.withGeoLocationDetailsList(new ArrayList<GeoLocationDetails>());
+                    continue;
+                }
+
                 if (context.testExpression("GeoLocationDetailsList/GeoLocationDetails", targetDepth)) {
                     listGeoLocationsResult.withGeoLocationDetailsList(GeoLocationDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -80,6 +80,11 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("instances", targetDepth)) {
+                    host.withInstances(new ArrayList<HostInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("instances/item", targetDepth)) {
                     host.withInstances(HostInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

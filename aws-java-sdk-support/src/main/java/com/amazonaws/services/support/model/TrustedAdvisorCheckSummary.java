@@ -312,17 +312,17 @@ public class TrustedAdvisorCheckSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckId() != null)
-            sb.append("CheckId: " + getCheckId() + ",");
+            sb.append("CheckId: ").append(getCheckId()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getHasFlaggedResources() != null)
-            sb.append("HasFlaggedResources: " + getHasFlaggedResources() + ",");
+            sb.append("HasFlaggedResources: ").append(getHasFlaggedResources()).append(",");
         if (getResourcesSummary() != null)
-            sb.append("ResourcesSummary: " + getResourcesSummary() + ",");
+            sb.append("ResourcesSummary: ").append(getResourcesSummary()).append(",");
         if (getCategorySpecificSummary() != null)
-            sb.append("CategorySpecificSummary: " + getCategorySpecificSummary());
+            sb.append("CategorySpecificSummary: ").append(getCategorySpecificSummary());
         sb.append("}");
         return sb.toString();
     }

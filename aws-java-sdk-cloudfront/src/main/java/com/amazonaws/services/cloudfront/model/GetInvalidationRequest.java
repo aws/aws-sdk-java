@@ -148,9 +148,9 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistributionId() != null)
-            sb.append("DistributionId: " + getDistributionId() + ",");
+            sb.append("DistributionId: ").append(getDistributionId()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

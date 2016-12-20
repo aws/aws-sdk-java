@@ -81,7 +81,7 @@ public class GetJobDetailsRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }

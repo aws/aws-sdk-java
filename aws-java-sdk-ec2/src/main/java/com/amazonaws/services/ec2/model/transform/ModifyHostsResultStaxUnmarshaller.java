@@ -45,8 +45,18 @@ public class ModifyHostsResultStaxUnmarshaller implements Unmarshaller<ModifyHos
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("successful", targetDepth)) {
+                    modifyHostsResult.withSuccessful(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("successful/item", targetDepth)) {
                     modifyHostsResult.withSuccessful(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("unsuccessful", targetDepth)) {
+                    modifyHostsResult.withUnsuccessful(new ArrayList<UnsuccessfulItem>());
                     continue;
                 }
 

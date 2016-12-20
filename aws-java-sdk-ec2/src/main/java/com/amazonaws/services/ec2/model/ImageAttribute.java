@@ -501,21 +501,21 @@ public class ImageAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getLaunchPermissions() != null)
-            sb.append("LaunchPermissions: " + getLaunchPermissions() + ",");
+            sb.append("LaunchPermissions: ").append(getLaunchPermissions()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: " + getProductCodes() + ",");
+            sb.append("ProductCodes: ").append(getProductCodes()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: " + getSriovNetSupport() + ",");
+            sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings());
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings());
         sb.append("}");
         return sb.toString();
     }

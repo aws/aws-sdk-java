@@ -161,9 +161,9 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroups() != null)
-            sb.append("Groups: " + getGroups() + ",");
+            sb.append("Groups: ").append(getGroups()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

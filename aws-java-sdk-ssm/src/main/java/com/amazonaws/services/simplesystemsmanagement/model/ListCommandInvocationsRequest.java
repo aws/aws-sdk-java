@@ -370,17 +370,17 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails());
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }

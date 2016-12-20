@@ -79,7 +79,7 @@ public class DeleteLunaClientRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn());
+            sb.append("ClientArn: ").append(getClientArn());
         sb.append("}");
         return sb.toString();
     }

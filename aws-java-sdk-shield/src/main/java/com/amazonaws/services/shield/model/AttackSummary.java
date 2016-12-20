@@ -294,15 +294,15 @@ public class AttackSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttackId() != null)
-            sb.append("AttackId: " + getAttackId() + ",");
+            sb.append("AttackId: ").append(getAttackId()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn() + ",");
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getAttackVectors() != null)
-            sb.append("AttackVectors: " + getAttackVectors());
+            sb.append("AttackVectors: ").append(getAttackVectors());
         sb.append("}");
         return sb.toString();
     }

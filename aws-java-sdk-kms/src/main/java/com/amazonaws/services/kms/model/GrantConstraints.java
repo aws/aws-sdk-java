@@ -220,9 +220,9 @@ public class GrantConstraints implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEncryptionContextSubset() != null)
-            sb.append("EncryptionContextSubset: " + getEncryptionContextSubset() + ",");
+            sb.append("EncryptionContextSubset: ").append(getEncryptionContextSubset()).append(",");
         if (getEncryptionContextEquals() != null)
-            sb.append("EncryptionContextEquals: " + getEncryptionContextEquals());
+            sb.append("EncryptionContextEquals: ").append(getEncryptionContextEquals());
         sb.append("}");
         return sb.toString();
     }

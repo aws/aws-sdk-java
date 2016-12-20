@@ -52,14 +52,9 @@ public class UpdateTrafficPolicyCommentRequestMarshaller implements Marshaller<R
 
         String uriResourcePath = "/2013-04-01/trafficpolicy/{Id}/{Version}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updateTrafficPolicyCommentRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateTrafficPolicyCommentRequest.getId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{Version}",
-                (updateTrafficPolicyCommentRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromInteger(updateTrafficPolicyCommentRequest.getVersion()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateTrafficPolicyCommentRequest.getId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Version",
+                updateTrafficPolicyCommentRequest.getVersion());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -424,17 +424,17 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getRemoteDomainName() != null)
-            sb.append("RemoteDomainName: " + getRemoteDomainName() + ",");
+            sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getTrustPassword() != null)
-            sb.append("TrustPassword: " + getTrustPassword() + ",");
+            sb.append("TrustPassword: ").append(getTrustPassword()).append(",");
         if (getTrustDirection() != null)
-            sb.append("TrustDirection: " + getTrustDirection() + ",");
+            sb.append("TrustDirection: ").append(getTrustDirection()).append(",");
         if (getTrustType() != null)
-            sb.append("TrustType: " + getTrustType() + ",");
+            sb.append("TrustType: ").append(getTrustType()).append(",");
         if (getConditionalForwarderIpAddrs() != null)
-            sb.append("ConditionalForwarderIpAddrs: " + getConditionalForwarderIpAddrs());
+            sb.append("ConditionalForwarderIpAddrs: ").append(getConditionalForwarderIpAddrs());
         sb.append("}");
         return sb.toString();
     }

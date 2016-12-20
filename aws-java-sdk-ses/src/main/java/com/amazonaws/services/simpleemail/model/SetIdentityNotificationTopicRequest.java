@@ -230,11 +230,11 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity() + ",");
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getNotificationType() != null)
-            sb.append("NotificationType: " + getNotificationType() + ",");
+            sb.append("NotificationType: ").append(getNotificationType()).append(",");
         if (getSnsTopic() != null)
-            sb.append("SnsTopic: " + getSnsTopic());
+            sb.append("SnsTopic: ").append(getSnsTopic());
         sb.append("}");
         return sb.toString();
     }

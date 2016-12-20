@@ -1306,29 +1306,29 @@ public class CommandPlugin implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getResponseCode() != null)
-            sb.append("ResponseCode: " + getResponseCode() + ",");
+            sb.append("ResponseCode: ").append(getResponseCode()).append(",");
         if (getResponseStartDateTime() != null)
-            sb.append("ResponseStartDateTime: " + getResponseStartDateTime() + ",");
+            sb.append("ResponseStartDateTime: ").append(getResponseStartDateTime()).append(",");
         if (getResponseFinishDateTime() != null)
-            sb.append("ResponseFinishDateTime: " + getResponseFinishDateTime() + ",");
+            sb.append("ResponseFinishDateTime: ").append(getResponseFinishDateTime()).append(",");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput() + ",");
+            sb.append("Output: ").append(getOutput()).append(",");
         if (getStandardOutputUrl() != null)
-            sb.append("StandardOutputUrl: " + getStandardOutputUrl() + ",");
+            sb.append("StandardOutputUrl: ").append(getStandardOutputUrl()).append(",");
         if (getStandardErrorUrl() != null)
-            sb.append("StandardErrorUrl: " + getStandardErrorUrl() + ",");
+            sb.append("StandardErrorUrl: ").append(getStandardErrorUrl()).append(",");
         if (getOutputS3Region() != null)
-            sb.append("OutputS3Region: " + getOutputS3Region() + ",");
+            sb.append("OutputS3Region: ").append(getOutputS3Region()).append(",");
         if (getOutputS3BucketName() != null)
-            sb.append("OutputS3BucketName: " + getOutputS3BucketName() + ",");
+            sb.append("OutputS3BucketName: ").append(getOutputS3BucketName()).append(",");
         if (getOutputS3KeyPrefix() != null)
-            sb.append("OutputS3KeyPrefix: " + getOutputS3KeyPrefix());
+            sb.append("OutputS3KeyPrefix: ").append(getOutputS3KeyPrefix());
         sb.append("}");
         return sb.toString();
     }

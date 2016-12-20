@@ -81,22 +81,28 @@
       "documentation" : "<p>BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers.</p> <p>For identical requests, the API is idempotent; requests can be retried with the same records or a subset of the input records.</p> <p>Every request to BatchMeterUsage is for one product. If you need to meter usage for multiple products, you must make multiple calls to BatchMeterUsage.</p> <p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>",
       "exceptions" : [ {
         "exceptionName" : "InternalServiceErrorException",
-        "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>"
+        "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidProductCodeException",
-        "documentation" : "<p>The product code passed does not match the product code used for publishing the product.</p>"
+        "documentation" : "<p>The product code passed does not match the product code used for publishing the product.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidUsageDimensionException",
-        "documentation" : "<p>The usage dimension does not match one of the UsageDimensions associated with products.</p>"
+        "documentation" : "<p>The usage dimension does not match one of the UsageDimensions associated with products.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidCustomerIdentifierException",
-        "documentation" : "<p>You have metered usage for a CustomerIdentifier that does not exist.</p>"
+        "documentation" : "<p>You have metered usage for a CustomerIdentifier that does not exist.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "TimestampOutOfBoundsException",
-        "documentation" : "<p>The timestamp value passed in the meterUsage() is out of allowed range.</p>"
+        "documentation" : "<p>The timestamp value passed in the meterUsage() is out of allowed range.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>"
+        "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -126,25 +132,32 @@
       "documentation" : "<p>API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on the buyer's AWS account, generally when running from an EC2 instance on the AWS Marketplace.</p>",
       "exceptions" : [ {
         "exceptionName" : "InternalServiceErrorException",
-        "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>"
+        "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidProductCodeException",
-        "documentation" : "<p>The product code passed does not match the product code used for publishing the product.</p>"
+        "documentation" : "<p>The product code passed does not match the product code used for publishing the product.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidUsageDimensionException",
-        "documentation" : "<p>The usage dimension does not match one of the UsageDimensions associated with products.</p>"
+        "documentation" : "<p>The usage dimension does not match one of the UsageDimensions associated with products.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidEndpointRegionException",
-        "documentation" : "<p>The endpoint being called is in a region different from your EC2 instance. The region of the Metering service endpoint and the region of the EC2 instance must match.</p>"
+        "documentation" : "<p>The endpoint being called is in a region different from your EC2 instance. The region of the Metering service endpoint and the region of the EC2 instance must match.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "TimestampOutOfBoundsException",
-        "documentation" : "<p>The timestamp value passed in the meterUsage() is out of allowed range.</p>"
+        "documentation" : "<p>The timestamp value passed in the meterUsage() is out of allowed range.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "DuplicateRequestException",
-        "documentation" : "<p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity.</p>"
+        "documentation" : "<p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>"
+        "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -174,16 +187,20 @@
       "documentation" : "<p>ResolveCustomer is called by a SaaS application during the registration process. When a buyer visits your website during the registration process, the buyer submits a registration token through their browser. The registration token is resolved through this API to obtain a CustomerIdentifier and product code.</p>",
       "exceptions" : [ {
         "exceptionName" : "InvalidTokenException",
-        "documentation" : null
+        "documentation" : null,
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "ExpiredTokenException",
-        "documentation" : "<p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>"
+        "documentation" : "<p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
-        "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>"
+        "documentation" : "<p>The calls to the MeterUsage API are throttled.</p>",
+        "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceErrorException",
-        "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>"
+        "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -221,7 +238,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : {
         "action" : "BatchMeterUsage",
         "locationName" : null,
@@ -237,7 +253,9 @@
         "documentation" : "<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUsageRecords",
         "getterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@return The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
+        "getterMethodName" : "getUsageRecords",
         "getterModel" : {
           "returnType" : "java.util.List<UsageRecord>",
           "documentation" : null
@@ -246,6 +264,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -268,7 +287,9 @@
             "documentation" : "",
             "enumType" : null,
             "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
             "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
             "getterModel" : {
               "returnType" : "UsageRecord",
               "documentation" : null
@@ -277,6 +298,7 @@
               "additionalMarshallingPath" : null,
               "additionalUnmarshallingPath" : null,
               "flattened" : false,
+              "greedy" : false,
               "header" : false,
               "isPayload" : false,
               "isStreaming" : false,
@@ -294,6 +316,7 @@
             "mapModel" : null,
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
             "setterModel" : {
               "variableDeclarationType" : "UsageRecord",
               "variableName" : "member",
@@ -330,6 +353,7 @@
         "mapModel" : null,
         "name" : "UsageRecords",
         "setterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
+        "setterMethodName" : "setUsageRecords",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<UsageRecord>",
           "variableName" : "usageRecords",
@@ -356,7 +380,9 @@
         "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withProductCode",
         "getterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+        "getterMethodName" : "getProductCode",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -365,6 +391,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -382,6 +409,7 @@
         "mapModel" : null,
         "name" : "ProductCode",
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+        "setterMethodName" : "setProductCode",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
@@ -410,7 +438,9 @@
           "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withProductCode",
           "getterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+          "getterMethodName" : "getProductCode",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -419,6 +449,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -436,6 +467,7 @@
           "mapModel" : null,
           "name" : "ProductCode",
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+          "setterMethodName" : "setProductCode",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
@@ -463,7 +495,9 @@
           "documentation" : "<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUsageRecords",
           "getterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@return The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
+          "getterMethodName" : "getUsageRecords",
           "getterModel" : {
             "returnType" : "java.util.List<UsageRecord>",
             "documentation" : null
@@ -472,6 +506,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -494,7 +529,9 @@
               "documentation" : "",
               "enumType" : null,
               "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
               "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
               "getterModel" : {
                 "returnType" : "UsageRecord",
                 "documentation" : null
@@ -503,6 +540,7 @@
                 "additionalMarshallingPath" : null,
                 "additionalUnmarshallingPath" : null,
                 "flattened" : false,
+                "greedy" : false,
                 "header" : false,
                 "isPayload" : false,
                 "isStreaming" : false,
@@ -520,6 +558,7 @@
               "mapModel" : null,
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
               "setterModel" : {
                 "variableDeclarationType" : "UsageRecord",
                 "variableName" : "member",
@@ -556,6 +595,7 @@
           "mapModel" : null,
           "name" : "UsageRecords",
           "setterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
+          "setterMethodName" : "setUsageRecords",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<UsageRecord>",
             "variableName" : "usageRecords",
@@ -606,7 +646,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Results",
@@ -615,7 +654,9 @@
         "documentation" : "<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withResults",
         "getterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@return Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
+        "getterMethodName" : "getResults",
         "getterModel" : {
           "returnType" : "java.util.List<UsageRecordResult>",
           "documentation" : null
@@ -624,6 +665,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -646,7 +688,9 @@
             "documentation" : "",
             "enumType" : null,
             "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
             "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
             "getterModel" : {
               "returnType" : "UsageRecordResult",
               "documentation" : null
@@ -655,6 +699,7 @@
               "additionalMarshallingPath" : null,
               "additionalUnmarshallingPath" : null,
               "flattened" : false,
+              "greedy" : false,
               "header" : false,
               "isPayload" : false,
               "isStreaming" : false,
@@ -672,6 +717,7 @@
             "mapModel" : null,
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
             "setterModel" : {
               "variableDeclarationType" : "UsageRecordResult",
               "variableName" : "member",
@@ -708,6 +754,7 @@
         "mapModel" : null,
         "name" : "Results",
         "setterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
+        "setterMethodName" : "setResults",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<UsageRecordResult>",
           "variableName" : "results",
@@ -734,7 +781,9 @@
         "documentation" : "<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUnprocessedRecords",
         "getterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@return Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
+        "getterMethodName" : "getUnprocessedRecords",
         "getterModel" : {
           "returnType" : "java.util.List<UsageRecord>",
           "documentation" : null
@@ -743,6 +792,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -765,7 +815,9 @@
             "documentation" : "",
             "enumType" : null,
             "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
             "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
             "getterModel" : {
               "returnType" : "UsageRecord",
               "documentation" : null
@@ -774,6 +826,7 @@
               "additionalMarshallingPath" : null,
               "additionalUnmarshallingPath" : null,
               "flattened" : false,
+              "greedy" : false,
               "header" : false,
               "isPayload" : false,
               "isStreaming" : false,
@@ -791,6 +844,7 @@
             "mapModel" : null,
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
             "setterModel" : {
               "variableDeclarationType" : "UsageRecord",
               "variableName" : "member",
@@ -827,6 +881,7 @@
         "mapModel" : null,
         "name" : "UnprocessedRecords",
         "setterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
+        "setterMethodName" : "setUnprocessedRecords",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<UsageRecord>",
           "variableName" : "unprocessedRecords",
@@ -855,7 +910,9 @@
           "documentation" : "<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withResults",
           "getterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@return Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
+          "getterMethodName" : "getResults",
           "getterModel" : {
             "returnType" : "java.util.List<UsageRecordResult>",
             "documentation" : null
@@ -864,6 +921,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -886,7 +944,9 @@
               "documentation" : "",
               "enumType" : null,
               "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
               "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
               "getterModel" : {
                 "returnType" : "UsageRecordResult",
                 "documentation" : null
@@ -895,6 +955,7 @@
                 "additionalMarshallingPath" : null,
                 "additionalUnmarshallingPath" : null,
                 "flattened" : false,
+                "greedy" : false,
                 "header" : false,
                 "isPayload" : false,
                 "isStreaming" : false,
@@ -912,6 +973,7 @@
               "mapModel" : null,
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
               "setterModel" : {
                 "variableDeclarationType" : "UsageRecordResult",
                 "variableName" : "member",
@@ -948,6 +1010,7 @@
           "mapModel" : null,
           "name" : "Results",
           "setterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
+          "setterMethodName" : "setResults",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<UsageRecordResult>",
             "variableName" : "results",
@@ -975,7 +1038,9 @@
           "documentation" : "<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUnprocessedRecords",
           "getterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@return Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
+          "getterMethodName" : "getUnprocessedRecords",
           "getterModel" : {
             "returnType" : "java.util.List<UsageRecord>",
             "documentation" : null
@@ -984,6 +1049,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -1006,7 +1072,9 @@
               "documentation" : "",
               "enumType" : null,
               "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
               "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
               "getterModel" : {
                 "returnType" : "UsageRecord",
                 "documentation" : null
@@ -1015,6 +1083,7 @@
                 "additionalMarshallingPath" : null,
                 "additionalUnmarshallingPath" : null,
                 "flattened" : false,
+                "greedy" : false,
                 "header" : false,
                 "isPayload" : false,
                 "isStreaming" : false,
@@ -1032,6 +1101,7 @@
               "mapModel" : null,
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
               "setterModel" : {
                 "variableDeclarationType" : "UsageRecord",
                 "variableName" : "member",
@@ -1068,6 +1138,7 @@
           "mapModel" : null,
           "name" : "UnprocessedRecords",
           "setterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
+          "setterMethodName" : "setUnprocessedRecords",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<UsageRecord>",
             "variableName" : "unprocessedRecords",
@@ -1121,7 +1192,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1154,7 +1224,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1187,7 +1256,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1220,7 +1288,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1253,7 +1320,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1286,7 +1352,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1319,7 +1384,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1352,7 +1416,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -1385,7 +1448,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : {
         "action" : "MeterUsage",
         "locationName" : null,
@@ -1401,7 +1463,9 @@
         "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withProductCode",
         "getterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+        "getterMethodName" : "getProductCode",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -1410,6 +1474,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -1427,6 +1492,7 @@
         "mapModel" : null,
         "name" : "ProductCode",
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+        "setterMethodName" : "setProductCode",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
@@ -1453,7 +1519,9 @@
         "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTimestamp",
         "getterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
+        "getterMethodName" : "getTimestamp",
         "getterModel" : {
           "returnType" : "java.util.Date",
           "documentation" : null
@@ -1462,6 +1530,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -1479,6 +1548,7 @@
         "mapModel" : null,
         "name" : "Timestamp",
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
+        "setterMethodName" : "setTimestamp",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
@@ -1505,7 +1575,9 @@
         "documentation" : "<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUsageDimension",
         "getterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@return It will be one of the fcp dimension name provided during the publishing of the product.*/",
+        "getterMethodName" : "getUsageDimension",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -1514,6 +1586,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -1531,6 +1604,7 @@
         "mapModel" : null,
         "name" : "UsageDimension",
         "setterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.*/",
+        "setterMethodName" : "setUsageDimension",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "usageDimension",
@@ -1557,7 +1631,9 @@
         "documentation" : "<p>Consumption value for the hour.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUsageQuantity",
         "getterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@return Consumption value for the hour.*/",
+        "getterMethodName" : "getUsageQuantity",
         "getterModel" : {
           "returnType" : "Integer",
           "documentation" : null
@@ -1566,6 +1642,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -1583,6 +1660,7 @@
         "mapModel" : null,
         "name" : "UsageQuantity",
         "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
+        "setterMethodName" : "setUsageQuantity",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "usageQuantity",
@@ -1609,7 +1687,9 @@
         "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDryRun",
         "getterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@return Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
+        "getterMethodName" : "getDryRun",
         "getterModel" : {
           "returnType" : "Boolean",
           "documentation" : null
@@ -1618,6 +1698,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -1635,6 +1716,7 @@
         "mapModel" : null,
         "name" : "DryRun",
         "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
+        "setterMethodName" : "setDryRun",
         "setterModel" : {
           "variableDeclarationType" : "Boolean",
           "variableName" : "dryRun",
@@ -1663,7 +1745,9 @@
           "documentation" : "<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDryRun",
           "getterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@return Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
+          "getterMethodName" : "getDryRun",
           "getterModel" : {
             "returnType" : "Boolean",
             "documentation" : null
@@ -1672,6 +1756,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -1689,6 +1774,7 @@
           "mapModel" : null,
           "name" : "DryRun",
           "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
+          "setterMethodName" : "setDryRun",
           "setterModel" : {
             "variableDeclarationType" : "Boolean",
             "variableName" : "dryRun",
@@ -1716,7 +1802,9 @@
           "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withProductCode",
           "getterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@return Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+          "getterMethodName" : "getProductCode",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -1725,6 +1813,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -1742,6 +1831,7 @@
           "mapModel" : null,
           "name" : "ProductCode",
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
+          "setterMethodName" : "setProductCode",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
@@ -1769,7 +1859,9 @@
           "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTimestamp",
           "getterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
+          "getterMethodName" : "getTimestamp",
           "getterModel" : {
             "returnType" : "java.util.Date",
             "documentation" : null
@@ -1778,6 +1870,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -1795,6 +1888,7 @@
           "mapModel" : null,
           "name" : "Timestamp",
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
+          "setterMethodName" : "setTimestamp",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
@@ -1822,7 +1916,9 @@
           "documentation" : "<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUsageDimension",
           "getterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@return It will be one of the fcp dimension name provided during the publishing of the product.*/",
+          "getterMethodName" : "getUsageDimension",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -1831,6 +1927,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -1848,6 +1945,7 @@
           "mapModel" : null,
           "name" : "UsageDimension",
           "setterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.*/",
+          "setterMethodName" : "setUsageDimension",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "usageDimension",
@@ -1875,7 +1973,9 @@
           "documentation" : "<p>Consumption value for the hour.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUsageQuantity",
           "getterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@return Consumption value for the hour.*/",
+          "getterMethodName" : "getUsageQuantity",
           "getterModel" : {
             "returnType" : "Integer",
             "documentation" : null
@@ -1884,6 +1984,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -1901,6 +2002,7 @@
           "mapModel" : null,
           "name" : "UsageQuantity",
           "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
+          "setterMethodName" : "setUsageQuantity",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "usageQuantity",
@@ -1951,7 +2053,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "MeteringRecordId",
@@ -1960,7 +2061,9 @@
         "documentation" : "",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMeteringRecordId",
         "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getMeteringRecordId",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -1969,6 +2072,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -1986,6 +2090,7 @@
         "mapModel" : null,
         "name" : "MeteringRecordId",
         "setterDocumentation" : "/**\n@param meteringRecordId */",
+        "setterMethodName" : "setMeteringRecordId",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "meteringRecordId",
@@ -2014,7 +2119,9 @@
           "documentation" : "",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMeteringRecordId",
           "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getMeteringRecordId",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2023,6 +2130,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2040,6 +2148,7 @@
           "mapModel" : null,
           "name" : "MeteringRecordId",
           "setterDocumentation" : "/**\n@param meteringRecordId */",
+          "setterMethodName" : "setMeteringRecordId",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "meteringRecordId",
@@ -2093,7 +2202,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : {
         "action" : "ResolveCustomer",
         "locationName" : null,
@@ -2109,7 +2217,9 @@
         "documentation" : "<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRegistrationToken",
         "getterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@return When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
+        "getterMethodName" : "getRegistrationToken",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2118,6 +2228,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2135,6 +2246,7 @@
         "mapModel" : null,
         "name" : "RegistrationToken",
         "setterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
+        "setterMethodName" : "setRegistrationToken",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "registrationToken",
@@ -2163,7 +2275,9 @@
           "documentation" : "<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRegistrationToken",
           "getterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@return When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
+          "getterMethodName" : "getRegistrationToken",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2172,6 +2286,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2189,6 +2304,7 @@
           "mapModel" : null,
           "name" : "RegistrationToken",
           "setterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
+          "setterMethodName" : "setRegistrationToken",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "registrationToken",
@@ -2239,7 +2355,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "CustomerIdentifier",
@@ -2248,7 +2363,9 @@
         "documentation" : "<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCustomerIdentifier",
         "getterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@return The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
+        "getterMethodName" : "getCustomerIdentifier",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2257,6 +2374,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2274,6 +2392,7 @@
         "mapModel" : null,
         "name" : "CustomerIdentifier",
         "setterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
+        "setterMethodName" : "setCustomerIdentifier",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
@@ -2300,7 +2419,9 @@
         "documentation" : "<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withProductCode",
         "getterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@return The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
+        "getterMethodName" : "getProductCode",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2309,6 +2430,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2326,6 +2448,7 @@
         "mapModel" : null,
         "name" : "ProductCode",
         "setterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
+        "setterMethodName" : "setProductCode",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "productCode",
@@ -2354,7 +2477,9 @@
           "documentation" : "<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCustomerIdentifier",
           "getterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@return The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
+          "getterMethodName" : "getCustomerIdentifier",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2363,6 +2488,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2380,6 +2506,7 @@
           "mapModel" : null,
           "name" : "CustomerIdentifier",
           "setterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
+          "setterMethodName" : "setCustomerIdentifier",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
@@ -2407,7 +2534,9 @@
           "documentation" : "<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withProductCode",
           "getterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@return The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
+          "getterMethodName" : "getProductCode",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2416,6 +2545,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2433,6 +2563,7 @@
           "mapModel" : null,
           "name" : "ProductCode",
           "setterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
+          "setterMethodName" : "setProductCode",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "productCode",
@@ -2486,7 +2617,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -2519,7 +2649,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
@@ -2552,7 +2681,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Timestamp",
@@ -2561,7 +2689,9 @@
         "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTimestamp",
         "getterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
+        "getterMethodName" : "getTimestamp",
         "getterModel" : {
           "returnType" : "java.util.Date",
           "documentation" : null
@@ -2570,6 +2700,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2587,6 +2718,7 @@
         "mapModel" : null,
         "name" : "Timestamp",
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
+        "setterMethodName" : "setTimestamp",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "timestamp",
@@ -2613,7 +2745,9 @@
         "documentation" : "<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCustomerIdentifier",
         "getterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@return The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
+        "getterMethodName" : "getCustomerIdentifier",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2622,6 +2756,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2639,6 +2774,7 @@
         "mapModel" : null,
         "name" : "CustomerIdentifier",
         "setterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
+        "setterMethodName" : "setCustomerIdentifier",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "customerIdentifier",
@@ -2665,7 +2801,9 @@
         "documentation" : "<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDimension",
         "getterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@return During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
+        "getterMethodName" : "getDimension",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -2674,6 +2812,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2691,6 +2830,7 @@
         "mapModel" : null,
         "name" : "Dimension",
         "setterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
+        "setterMethodName" : "setDimension",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "dimension",
@@ -2717,7 +2857,9 @@
         "documentation" : "<p>The quantity of usage consumed by the customer for the given dimension and time.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withQuantity",
         "getterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@return The quantity of usage consumed by the customer for the given dimension and time.*/",
+        "getterMethodName" : "getQuantity",
         "getterModel" : {
           "returnType" : "Integer",
           "documentation" : null
@@ -2726,6 +2868,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -2743,6 +2886,7 @@
         "mapModel" : null,
         "name" : "Quantity",
         "setterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.*/",
+        "setterMethodName" : "setQuantity",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "quantity",
@@ -2771,7 +2915,9 @@
           "documentation" : "<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCustomerIdentifier",
           "getterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@return The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
+          "getterMethodName" : "getCustomerIdentifier",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2780,6 +2926,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2797,6 +2944,7 @@
           "mapModel" : null,
           "name" : "CustomerIdentifier",
           "setterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
+          "setterMethodName" : "setCustomerIdentifier",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "customerIdentifier",
@@ -2824,7 +2972,9 @@
           "documentation" : "<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDimension",
           "getterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@return During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
+          "getterMethodName" : "getDimension",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -2833,6 +2983,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2850,6 +3001,7 @@
           "mapModel" : null,
           "name" : "Dimension",
           "setterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
+          "setterMethodName" : "setDimension",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "dimension",
@@ -2877,7 +3029,9 @@
           "documentation" : "<p>The quantity of usage consumed by the customer for the given dimension and time.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withQuantity",
           "getterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@return The quantity of usage consumed by the customer for the given dimension and time.*/",
+          "getterMethodName" : "getQuantity",
           "getterModel" : {
             "returnType" : "Integer",
             "documentation" : null
@@ -2886,6 +3040,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2903,6 +3058,7 @@
           "mapModel" : null,
           "name" : "Quantity",
           "setterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.*/",
+          "setterMethodName" : "setQuantity",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "quantity",
@@ -2930,7 +3086,9 @@
           "documentation" : "<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTimestamp",
           "getterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@return Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
+          "getterMethodName" : "getTimestamp",
           "getterModel" : {
             "returnType" : "java.util.Date",
             "documentation" : null
@@ -2939,6 +3097,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -2956,6 +3115,7 @@
           "mapModel" : null,
           "name" : "Timestamp",
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
+          "setterMethodName" : "setTimestamp",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "timestamp",
@@ -3009,7 +3169,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "UsageRecord",
@@ -3018,7 +3177,9 @@
         "documentation" : "<p>The UsageRecord that was part of the BatchMeterUsage request.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUsageRecord",
         "getterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@return The UsageRecord that was part of the BatchMeterUsage request.*/",
+        "getterMethodName" : "getUsageRecord",
         "getterModel" : {
           "returnType" : "UsageRecord",
           "documentation" : null
@@ -3027,6 +3188,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -3044,6 +3206,7 @@
         "mapModel" : null,
         "name" : "UsageRecord",
         "setterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.*/",
+        "setterMethodName" : "setUsageRecord",
         "setterModel" : {
           "variableDeclarationType" : "UsageRecord",
           "variableName" : "usageRecord",
@@ -3070,7 +3233,9 @@
         "documentation" : "<p>The MeteringRecordId is a unique identifier for this metering event.</p>",
         "enumType" : null,
         "fluentSetterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMeteringRecordId",
         "getterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@return The MeteringRecordId is a unique identifier for this metering event.*/",
+        "getterMethodName" : "getMeteringRecordId",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -3079,6 +3244,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -3096,6 +3262,7 @@
         "mapModel" : null,
         "name" : "MeteringRecordId",
         "setterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.*/",
+        "setterMethodName" : "setMeteringRecordId",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "meteringRecordId",
@@ -3122,7 +3289,9 @@
         "documentation" : "<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>",
         "enumType" : "UsageRecordResultStatus",
         "fluentSetterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see UsageRecordResultStatus*/",
+        "fluentSetterMethodName" : "withStatus",
         "getterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@return The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
+        "getterMethodName" : "getStatus",
         "getterModel" : {
           "returnType" : "String",
           "documentation" : null
@@ -3131,6 +3300,7 @@
           "additionalMarshallingPath" : null,
           "additionalUnmarshallingPath" : null,
           "flattened" : false,
+          "greedy" : false,
           "header" : false,
           "isPayload" : false,
           "isStreaming" : false,
@@ -3148,6 +3318,7 @@
         "mapModel" : null,
         "name" : "Status",
         "setterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
+        "setterMethodName" : "setStatus",
         "setterModel" : {
           "variableDeclarationType" : "String",
           "variableName" : "status",
@@ -3176,7 +3347,9 @@
           "documentation" : "<p>The MeteringRecordId is a unique identifier for this metering event.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMeteringRecordId",
           "getterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@return The MeteringRecordId is a unique identifier for this metering event.*/",
+          "getterMethodName" : "getMeteringRecordId",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -3185,6 +3358,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -3202,6 +3376,7 @@
           "mapModel" : null,
           "name" : "MeteringRecordId",
           "setterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.*/",
+          "setterMethodName" : "setMeteringRecordId",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "meteringRecordId",
@@ -3229,7 +3404,9 @@
           "documentation" : "<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>",
           "enumType" : "UsageRecordResultStatus",
           "fluentSetterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see UsageRecordResultStatus*/",
+          "fluentSetterMethodName" : "withStatus",
           "getterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@return The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
+          "getterMethodName" : "getStatus",
           "getterModel" : {
             "returnType" : "String",
             "documentation" : null
@@ -3238,6 +3415,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -3255,6 +3433,7 @@
           "mapModel" : null,
           "name" : "Status",
           "setterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
+          "setterMethodName" : "setStatus",
           "setterModel" : {
             "variableDeclarationType" : "String",
             "variableName" : "status",
@@ -3282,7 +3461,9 @@
           "documentation" : "<p>The UsageRecord that was part of the BatchMeterUsage request.</p>",
           "enumType" : null,
           "fluentSetterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUsageRecord",
           "getterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@return The UsageRecord that was part of the BatchMeterUsage request.*/",
+          "getterMethodName" : "getUsageRecord",
           "getterModel" : {
             "returnType" : "UsageRecord",
             "documentation" : null
@@ -3291,6 +3472,7 @@
             "additionalMarshallingPath" : null,
             "additionalUnmarshallingPath" : null,
             "flattened" : false,
+            "greedy" : false,
             "header" : false,
             "isPayload" : false,
             "isStreaming" : false,
@@ -3308,6 +3490,7 @@
           "mapModel" : null,
           "name" : "UsageRecord",
           "setterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.*/",
+          "setterMethodName" : "setUsageRecord",
           "setterModel" : {
             "variableDeclarationType" : "UsageRecord",
             "variableName" : "usageRecord",
@@ -3370,7 +3553,6 @@
       "hasPayloadMember" : false,
       "hasStatusCodeMember" : false,
       "hasStreamingMember" : false,
-      "hasUriMember" : false,
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },

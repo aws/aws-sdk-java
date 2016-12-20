@@ -113,7 +113,7 @@ public class DescribeTrailsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailList() != null)
-            sb.append("TrailList: " + getTrailList());
+            sb.append("TrailList: ").append(getTrailList());
         sb.append("}");
         return sb.toString();
     }

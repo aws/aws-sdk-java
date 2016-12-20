@@ -6649,29 +6649,29 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getAttributeUpdates() != null)
-            sb.append("AttributeUpdates: " + getAttributeUpdates() + ",");
+            sb.append("AttributeUpdates: ").append(getAttributeUpdates()).append(",");
         if (getExpected() != null)
-            sb.append("Expected: " + getExpected() + ",");
+            sb.append("Expected: ").append(getExpected()).append(",");
         if (getConditionalOperator() != null)
-            sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
+            sb.append("ConditionalOperator: ").append(getConditionalOperator()).append(",");
         if (getReturnValues() != null)
-            sb.append("ReturnValues: " + getReturnValues() + ",");
+            sb.append("ReturnValues: ").append(getReturnValues()).append(",");
         if (getReturnConsumedCapacity() != null)
-            sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
+            sb.append("ReturnConsumedCapacity: ").append(getReturnConsumedCapacity()).append(",");
         if (getReturnItemCollectionMetrics() != null)
-            sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics() + ",");
+            sb.append("ReturnItemCollectionMetrics: ").append(getReturnItemCollectionMetrics()).append(",");
         if (getUpdateExpression() != null)
-            sb.append("UpdateExpression: " + getUpdateExpression() + ",");
+            sb.append("UpdateExpression: ").append(getUpdateExpression()).append(",");
         if (getConditionExpression() != null)
-            sb.append("ConditionExpression: " + getConditionExpression() + ",");
+            sb.append("ConditionExpression: ").append(getConditionExpression()).append(",");
         if (getExpressionAttributeNames() != null)
-            sb.append("ExpressionAttributeNames: " + getExpressionAttributeNames() + ",");
+            sb.append("ExpressionAttributeNames: ").append(getExpressionAttributeNames()).append(",");
         if (getExpressionAttributeValues() != null)
-            sb.append("ExpressionAttributeValues: " + getExpressionAttributeValues());
+            sb.append("ExpressionAttributeValues: ").append(getExpressionAttributeValues());
         sb.append("}");
         return sb.toString();
     }

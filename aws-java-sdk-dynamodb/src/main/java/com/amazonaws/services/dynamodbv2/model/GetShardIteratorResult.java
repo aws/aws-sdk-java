@@ -87,7 +87,7 @@ public class GetShardIteratorResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShardIterator() != null)
-            sb.append("ShardIterator: " + getShardIterator());
+            sb.append("ShardIterator: ").append(getShardIterator());
         sb.append("}");
         return sb.toString();
     }

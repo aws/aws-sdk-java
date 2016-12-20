@@ -45,6 +45,11 @@ public class ListMetricsResultStaxUnmarshaller implements Unmarshaller<ListMetri
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Metrics", targetDepth)) {
+                    listMetricsResult.withMetrics(new ArrayList<Metric>());
+                    continue;
+                }
+
                 if (context.testExpression("Metrics/member", targetDepth)) {
                     listMetricsResult.withMetrics(MetricStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

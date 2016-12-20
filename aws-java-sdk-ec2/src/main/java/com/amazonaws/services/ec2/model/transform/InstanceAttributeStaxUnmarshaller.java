@@ -85,8 +85,18 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     continue;
                 }
 
+                if (context.testExpression("blockDeviceMapping", targetDepth)) {
+                    instanceAttribute.withBlockDeviceMappings(new ArrayList<InstanceBlockDeviceMapping>());
+                    continue;
+                }
+
                 if (context.testExpression("blockDeviceMapping/item", targetDepth)) {
                     instanceAttribute.withBlockDeviceMappings(InstanceBlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("productCodes", targetDepth)) {
+                    instanceAttribute.withProductCodes(new ArrayList<ProductCode>());
                     continue;
                 }
 
@@ -112,6 +122,11 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
 
                 if (context.testExpression("sourceDestCheck/value", targetDepth)) {
                     instanceAttribute.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groupSet", targetDepth)) {
+                    instanceAttribute.withGroups(new ArrayList<GroupIdentifier>());
                     continue;
                 }
 

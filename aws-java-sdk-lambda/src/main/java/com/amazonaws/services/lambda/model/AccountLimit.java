@@ -253,13 +253,13 @@ public class AccountLimit implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTotalCodeSize() != null)
-            sb.append("TotalCodeSize: " + getTotalCodeSize() + ",");
+            sb.append("TotalCodeSize: ").append(getTotalCodeSize()).append(",");
         if (getCodeSizeUnzipped() != null)
-            sb.append("CodeSizeUnzipped: " + getCodeSizeUnzipped() + ",");
+            sb.append("CodeSizeUnzipped: ").append(getCodeSizeUnzipped()).append(",");
         if (getCodeSizeZipped() != null)
-            sb.append("CodeSizeZipped: " + getCodeSizeZipped() + ",");
+            sb.append("CodeSizeZipped: ").append(getCodeSizeZipped()).append(",");
         if (getConcurrentExecutions() != null)
-            sb.append("ConcurrentExecutions: " + getConcurrentExecutions());
+            sb.append("ConcurrentExecutions: ").append(getConcurrentExecutions());
         sb.append("}");
         return sb.toString();
     }

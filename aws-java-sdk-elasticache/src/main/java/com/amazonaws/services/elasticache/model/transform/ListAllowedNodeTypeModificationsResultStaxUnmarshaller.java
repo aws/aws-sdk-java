@@ -45,6 +45,11 @@ public class ListAllowedNodeTypeModificationsResultStaxUnmarshaller implements U
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ScaleUpModifications", targetDepth)) {
+                    listAllowedNodeTypeModificationsResult.withScaleUpModifications(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ScaleUpModifications/member", targetDepth)) {
                     listAllowedNodeTypeModificationsResult.withScaleUpModifications(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

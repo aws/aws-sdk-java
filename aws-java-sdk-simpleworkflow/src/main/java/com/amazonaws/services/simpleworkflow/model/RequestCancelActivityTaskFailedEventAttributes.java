@@ -263,11 +263,11 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId() + ",");
+            sb.append("ActivityId: ").append(getActivityId()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause() + ",");
+            sb.append("Cause: ").append(getCause()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

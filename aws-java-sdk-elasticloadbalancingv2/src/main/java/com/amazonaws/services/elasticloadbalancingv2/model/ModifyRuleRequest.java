@@ -233,11 +233,11 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn() + ",");
+            sb.append("RuleArn: ").append(getRuleArn()).append(",");
         if (getConditions() != null)
-            sb.append("Conditions: " + getConditions() + ",");
+            sb.append("Conditions: ").append(getConditions()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions());
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }

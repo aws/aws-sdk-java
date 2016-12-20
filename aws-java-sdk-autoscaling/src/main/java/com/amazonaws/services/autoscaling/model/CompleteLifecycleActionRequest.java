@@ -278,15 +278,15 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHookName() != null)
-            sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
+            sb.append("LifecycleHookName: ").append(getLifecycleHookName()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLifecycleActionToken() != null)
-            sb.append("LifecycleActionToken: " + getLifecycleActionToken() + ",");
+            sb.append("LifecycleActionToken: ").append(getLifecycleActionToken()).append(",");
         if (getLifecycleActionResult() != null)
-            sb.append("LifecycleActionResult: " + getLifecycleActionResult() + ",");
+            sb.append("LifecycleActionResult: ").append(getLifecycleActionResult()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

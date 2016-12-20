@@ -148,9 +148,9 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApiKey() != null)
-            sb.append("ApiKey: " + getApiKey() + ",");
+            sb.append("ApiKey: ").append(getApiKey()).append(",");
         if (getIncludeValue() != null)
-            sb.append("IncludeValue: " + getIncludeValue());
+            sb.append("IncludeValue: ").append(getIncludeValue());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class CreateVirtualMFADeviceResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualMFADevice() != null)
-            sb.append("VirtualMFADevice: " + getVirtualMFADevice());
+            sb.append("VirtualMFADevice: ").append(getVirtualMFADevice());
         sb.append("}");
         return sb.toString();
     }

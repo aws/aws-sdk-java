@@ -90,7 +90,7 @@ public class IsVpcPeeredResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIsPeered() != null)
-            sb.append("IsPeered: " + getIsPeered());
+            sb.append("IsPeered: ").append(getIsPeered());
         sb.append("}");
         return sb.toString();
     }

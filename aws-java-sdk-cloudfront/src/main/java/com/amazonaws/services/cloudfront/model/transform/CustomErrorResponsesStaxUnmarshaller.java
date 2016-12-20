@@ -50,6 +50,11 @@ public class CustomErrorResponsesStaxUnmarshaller implements Unmarshaller<Custom
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    customErrorResponses.withItems(new ArrayList<CustomErrorResponse>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/CustomErrorResponse", targetDepth)) {
                     customErrorResponses.withItems(CustomErrorResponseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

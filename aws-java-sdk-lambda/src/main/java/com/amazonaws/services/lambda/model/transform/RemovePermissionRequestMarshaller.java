@@ -61,14 +61,9 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
 
         String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{FunctionName}",
-                (removePermissionRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(removePermissionRequest.getFunctionName()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{StatementId}",
-                (removePermissionRequest.getStatementId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(removePermissionRequest.getStatementId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName",
+                removePermissionRequest.getFunctionName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "StatementId", removePermissionRequest.getStatementId());
         request.setResourcePath(uriResourcePath);
 
         if (removePermissionRequest.getQualifier() != null) {

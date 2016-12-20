@@ -173,9 +173,9 @@ public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getInputConfigurations() != null)
-            sb.append("InputConfigurations: " + getInputConfigurations());
+            sb.append("InputConfigurations: ").append(getInputConfigurations());
         sb.append("}");
         return sb.toString();
     }

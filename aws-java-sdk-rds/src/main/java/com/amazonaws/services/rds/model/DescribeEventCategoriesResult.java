@@ -113,7 +113,7 @@ public class DescribeEventCategoriesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventCategoriesMapList() != null)
-            sb.append("EventCategoriesMapList: " + getEventCategoriesMapList());
+            sb.append("EventCategoriesMapList: ").append(getEventCategoriesMapList());
         sb.append("}");
         return sb.toString();
     }

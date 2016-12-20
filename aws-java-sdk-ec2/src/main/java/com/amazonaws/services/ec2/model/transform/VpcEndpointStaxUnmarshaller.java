@@ -70,6 +70,11 @@ public class VpcEndpointStaxUnmarshaller implements Unmarshaller<VpcEndpoint, St
                     continue;
                 }
 
+                if (context.testExpression("routeTableIdSet", targetDepth)) {
+                    vpcEndpoint.withRouteTableIds(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("routeTableIdSet/item", targetDepth)) {
                     vpcEndpoint.withRouteTableIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

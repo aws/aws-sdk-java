@@ -89,7 +89,7 @@ public class DescribeElasticsearchDomainConfigResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainConfig() != null)
-            sb.append("DomainConfig: " + getDomainConfig());
+            sb.append("DomainConfig: ").append(getDomainConfig());
         sb.append("}");
         return sb.toString();
     }

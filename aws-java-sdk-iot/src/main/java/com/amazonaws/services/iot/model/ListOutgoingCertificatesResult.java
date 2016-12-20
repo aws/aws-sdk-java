@@ -156,9 +156,9 @@ public class ListOutgoingCertificatesResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutgoingCertificates() != null)
-            sb.append("OutgoingCertificates: " + getOutgoingCertificates() + ",");
+            sb.append("OutgoingCertificates: ").append(getOutgoingCertificates()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker());
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }

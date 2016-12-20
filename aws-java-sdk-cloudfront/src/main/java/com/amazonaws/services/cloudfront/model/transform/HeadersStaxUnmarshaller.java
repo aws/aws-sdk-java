@@ -50,6 +50,11 @@ public class HeadersStaxUnmarshaller implements Unmarshaller<Headers, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    headers.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Name", targetDepth)) {
                     headers.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

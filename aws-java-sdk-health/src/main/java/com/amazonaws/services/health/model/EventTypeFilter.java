@@ -301,11 +301,11 @@ public class EventTypeFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventTypeCodes() != null)
-            sb.append("EventTypeCodes: " + getEventTypeCodes() + ",");
+            sb.append("EventTypeCodes: ").append(getEventTypeCodes()).append(",");
         if (getServices() != null)
-            sb.append("Services: " + getServices() + ",");
+            sb.append("Services: ").append(getServices()).append(",");
         if (getEventTypeCategories() != null)
-            sb.append("EventTypeCategories: " + getEventTypeCategories());
+            sb.append("EventTypeCategories: ").append(getEventTypeCategories());
         sb.append("}");
         return sb.toString();
     }

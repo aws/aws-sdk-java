@@ -306,13 +306,13 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLastStatus() != null)
-            sb.append("LastStatus: " + getLastStatus() + ",");
+            sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getLastErrorCode() != null)
-            sb.append("LastErrorCode: " + getLastErrorCode() + ",");
+            sb.append("LastErrorCode: ").append(getLastErrorCode()).append(",");
         if (getLastErrorMessage() != null)
-            sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
+            sb.append("LastErrorMessage: ").append(getLastErrorMessage()).append(",");
         if (getLastStatusChangeTime() != null)
-            sb.append("LastStatusChangeTime: " + getLastStatusChangeTime());
+            sb.append("LastStatusChangeTime: ").append(getLastStatusChangeTime());
         sb.append("}");
         return sb.toString();
     }

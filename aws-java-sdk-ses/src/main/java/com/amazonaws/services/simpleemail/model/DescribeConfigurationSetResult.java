@@ -162,9 +162,9 @@ public class DescribeConfigurationSetResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationSet() != null)
-            sb.append("ConfigurationSet: " + getConfigurationSet() + ",");
+            sb.append("ConfigurationSet: ").append(getConfigurationSet()).append(",");
         if (getEventDestinations() != null)
-            sb.append("EventDestinations: " + getEventDestinations());
+            sb.append("EventDestinations: ").append(getEventDestinations());
         sb.append("}");
         return sb.toString();
     }

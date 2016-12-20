@@ -172,11 +172,11 @@ public class LoggingInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3BucketName() != null)
-            sb.append("S3BucketName: " + getS3BucketName() + ",");
+            sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
         if (getS3KeyPrefix() != null)
-            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+            sb.append("S3KeyPrefix: ").append(getS3KeyPrefix()).append(",");
         if (getS3Region() != null)
-            sb.append("S3Region: " + getS3Region());
+            sb.append("S3Region: ").append(getS3Region());
         sb.append("}");
         return sb.toString();
     }

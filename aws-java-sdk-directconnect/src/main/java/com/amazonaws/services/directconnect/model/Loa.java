@@ -131,9 +131,9 @@ public class Loa implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoaContent() != null)
-            sb.append("LoaContent: " + getLoaContent() + ",");
+            sb.append("LoaContent: ").append(getLoaContent()).append(",");
         if (getLoaContentType() != null)
-            sb.append("LoaContentType: " + getLoaContentType());
+            sb.append("LoaContentType: ").append(getLoaContentType());
         sb.append("}");
         return sb.toString();
     }

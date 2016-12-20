@@ -253,7 +253,7 @@ public class DeleteDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName());
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName());
         sb.append("}");
         return sb.toString();
     }

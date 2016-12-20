@@ -61,10 +61,8 @@ public class UpdateEndpointsBatchRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/v1/apps/{application-id}/endpoints";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (updateEndpointsBatchRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateEndpointsBatchRequest.getApplicationId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                updateEndpointsBatchRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         try {

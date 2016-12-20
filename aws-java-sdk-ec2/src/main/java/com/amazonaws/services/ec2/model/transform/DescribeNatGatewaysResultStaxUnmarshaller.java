@@ -45,6 +45,11 @@ public class DescribeNatGatewaysResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("natGatewaySet", targetDepth)) {
+                    describeNatGatewaysResult.withNatGateways(new ArrayList<NatGateway>());
+                    continue;
+                }
+
                 if (context.testExpression("natGatewaySet/item", targetDepth)) {
                     describeNatGatewaysResult.withNatGateways(NatGatewayStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

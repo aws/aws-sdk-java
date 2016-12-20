@@ -816,19 +816,19 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getListeners() != null)
-            sb.append("Listeners: " + getListeners() + ",");
+            sb.append("Listeners: ").append(getListeners()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getScheme() != null)
-            sb.append("Scheme: " + getScheme() + ",");
+            sb.append("Scheme: ").append(getScheme()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

@@ -53,10 +53,8 @@ public class DisassociateVPCFromHostedZoneRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/disassociatevpc";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (disassociateVPCFromHostedZoneRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(disassociateVPCFromHostedZoneRequest.getHostedZoneId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
+                disassociateVPCFromHostedZoneRequest.getHostedZoneId());
         request.setResourcePath(uriResourcePath);
 
         try {

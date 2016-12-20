@@ -266,11 +266,11 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlInjectionMatchSetId() != null)
-            sb.append("SqlInjectionMatchSetId: " + getSqlInjectionMatchSetId() + ",");
+            sb.append("SqlInjectionMatchSetId: ").append(getSqlInjectionMatchSetId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSqlInjectionMatchTuples() != null)
-            sb.append("SqlInjectionMatchTuples: " + getSqlInjectionMatchTuples());
+            sb.append("SqlInjectionMatchTuples: ").append(getSqlInjectionMatchTuples());
         sb.append("}");
         return sb.toString();
     }

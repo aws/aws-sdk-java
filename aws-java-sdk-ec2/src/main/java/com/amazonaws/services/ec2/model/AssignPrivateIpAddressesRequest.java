@@ -330,13 +330,13 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIpAddresses() != null)
-            sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
+            sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
         if (getSecondaryPrivateIpAddressCount() != null)
-            sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ",");
+            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getAllowReassignment() != null)
-            sb.append("AllowReassignment: " + getAllowReassignment());
+            sb.append("AllowReassignment: ").append(getAllowReassignment());
         sb.append("}");
         return sb.toString();
     }

@@ -444,19 +444,19 @@ public class ActionDeclaration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getActionTypeId() != null)
-            sb.append("ActionTypeId: " + getActionTypeId() + ",");
+            sb.append("ActionTypeId: ").append(getActionTypeId()).append(",");
         if (getRunOrder() != null)
-            sb.append("RunOrder: " + getRunOrder() + ",");
+            sb.append("RunOrder: ").append(getRunOrder()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration() + ",");
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getOutputArtifacts() != null)
-            sb.append("OutputArtifacts: " + getOutputArtifacts() + ",");
+            sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
         if (getInputArtifacts() != null)
-            sb.append("InputArtifacts: " + getInputArtifacts() + ",");
+            sb.append("InputArtifacts: ").append(getInputArtifacts()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

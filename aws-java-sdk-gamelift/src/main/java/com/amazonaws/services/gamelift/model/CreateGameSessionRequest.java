@@ -451,19 +451,19 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getAliasId() != null)
-            sb.append("AliasId: " + getAliasId() + ",");
+            sb.append("AliasId: ").append(getAliasId()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: " + getMaximumPlayerSessionCount() + ",");
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getGameProperties() != null)
-            sb.append("GameProperties: " + getGameProperties() + ",");
+            sb.append("GameProperties: ").append(getGameProperties()).append(",");
         if (getCreatorId() != null)
-            sb.append("CreatorId: " + getCreatorId() + ",");
+            sb.append("CreatorId: ").append(getCreatorId()).append(",");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId());
+            sb.append("GameSessionId: ").append(getGameSessionId());
         sb.append("}");
         return sb.toString();
     }

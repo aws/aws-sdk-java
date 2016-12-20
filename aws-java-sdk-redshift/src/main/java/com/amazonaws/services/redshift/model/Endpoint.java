@@ -126,9 +126,9 @@ public class Endpoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddress() != null)
-            sb.append("Address: " + getAddress() + ",");
+            sb.append("Address: ").append(getAddress()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort());
+            sb.append("Port: ").append(getPort());
         sb.append("}");
         return sb.toString();
     }

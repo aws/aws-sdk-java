@@ -79,7 +79,7 @@ public class DeleteAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTemplateArn() != null)
-            sb.append("AssessmentTemplateArn: " + getAssessmentTemplateArn());
+            sb.append("AssessmentTemplateArn: ").append(getAssessmentTemplateArn());
         sb.append("}");
         return sb.toString();
     }

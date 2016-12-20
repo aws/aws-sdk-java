@@ -61,22 +61,10 @@ public class GetMethodResponseRequestMarshaller implements Marshaller<Request<Ge
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/responses/{status_code}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (getMethodResponseRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getMethodResponseRequest.getRestApiId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (getMethodResponseRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getMethodResponseRequest.getResourceId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (getMethodResponseRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getMethodResponseRequest.getHttpMethod()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{status_code}",
-                (getMethodResponseRequest.getStatusCode() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getMethodResponseRequest.getStatusCode()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getMethodResponseRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", getMethodResponseRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", getMethodResponseRequest.getHttpMethod());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "status_code", getMethodResponseRequest.getStatusCode());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -126,9 +126,9 @@ public class ClusterSecurityGroupMembership implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() + ",");
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

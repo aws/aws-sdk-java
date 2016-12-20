@@ -122,7 +122,7 @@ public class DescribeAgentVersionsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentVersions() != null)
-            sb.append("AgentVersions: " + getAgentVersions());
+            sb.append("AgentVersions: ").append(getAgentVersions());
         sb.append("}");
         return sb.toString();
     }

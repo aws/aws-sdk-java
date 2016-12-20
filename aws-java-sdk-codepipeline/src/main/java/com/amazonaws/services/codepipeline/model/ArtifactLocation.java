@@ -159,9 +159,9 @@ public class ArtifactLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getS3Location() != null)
-            sb.append("S3Location: " + getS3Location());
+            sb.append("S3Location: ").append(getS3Location());
         sb.append("}");
         return sb.toString();
     }

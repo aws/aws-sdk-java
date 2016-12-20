@@ -85,6 +85,11 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     continue;
                 }
 
+                if (context.testExpression("blockDeviceMapping", targetDepth)) {
+                    launchSpecification.withBlockDeviceMappings(new ArrayList<BlockDeviceMapping>());
+                    continue;
+                }
+
                 if (context.testExpression("blockDeviceMapping/item", targetDepth)) {
                     launchSpecification.withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -92,6 +97,11 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
 
                 if (context.testExpression("subnetId", targetDepth)) {
                     launchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkInterfaceSet", targetDepth)) {
+                    launchSpecification.withNetworkInterfaces(new ArrayList<InstanceNetworkInterfaceSpecification>());
                     continue;
                 }
 
@@ -110,6 +120,11 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    launchSpecification.withAllSecurityGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     launchSpecification.withAllSecurityGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -117,6 +132,11 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
 
                 if (context.testExpression("monitoring/enabled", targetDepth)) {
                     launchSpecification.setMonitoringEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("securityGroup", targetDepth)) {
+                    launchSpecification.withSecurityGroups(new ArrayList<String>());
                     continue;
                 }
 

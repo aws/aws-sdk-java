@@ -358,19 +358,19 @@ public class EC2InstanceCounts implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDESIRED() != null)
-            sb.append("DESIRED: " + getDESIRED() + ",");
+            sb.append("DESIRED: ").append(getDESIRED()).append(",");
         if (getMINIMUM() != null)
-            sb.append("MINIMUM: " + getMINIMUM() + ",");
+            sb.append("MINIMUM: ").append(getMINIMUM()).append(",");
         if (getMAXIMUM() != null)
-            sb.append("MAXIMUM: " + getMAXIMUM() + ",");
+            sb.append("MAXIMUM: ").append(getMAXIMUM()).append(",");
         if (getPENDING() != null)
-            sb.append("PENDING: " + getPENDING() + ",");
+            sb.append("PENDING: ").append(getPENDING()).append(",");
         if (getACTIVE() != null)
-            sb.append("ACTIVE: " + getACTIVE() + ",");
+            sb.append("ACTIVE: ").append(getACTIVE()).append(",");
         if (getIDLE() != null)
-            sb.append("IDLE: " + getIDLE() + ",");
+            sb.append("IDLE: ").append(getIDLE()).append(",");
         if (getTERMINATING() != null)
-            sb.append("TERMINATING: " + getTERMINATING());
+            sb.append("TERMINATING: ").append(getTERMINATING());
         sb.append("}");
         return sb.toString();
     }

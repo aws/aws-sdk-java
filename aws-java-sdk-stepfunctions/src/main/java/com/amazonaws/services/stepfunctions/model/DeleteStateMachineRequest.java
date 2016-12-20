@@ -79,7 +79,7 @@ public class DeleteStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStateMachineArn() != null)
-            sb.append("StateMachineArn: " + getStateMachineArn());
+            sb.append("StateMachineArn: ").append(getStateMachineArn());
         sb.append("}");
         return sb.toString();
     }

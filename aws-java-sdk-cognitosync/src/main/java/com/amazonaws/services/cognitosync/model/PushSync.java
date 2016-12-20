@@ -159,9 +159,9 @@ public class PushSync implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationArns() != null)
-            sb.append("ApplicationArns: " + getApplicationArns() + ",");
+            sb.append("ApplicationArns: ").append(getApplicationArns()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

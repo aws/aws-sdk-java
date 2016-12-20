@@ -199,13 +199,13 @@ public class SegmentDimensions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getBehavior() != null)
-            sb.append("Behavior: " + getBehavior() + ",");
+            sb.append("Behavior: ").append(getBehavior()).append(",");
         if (getDemographic() != null)
-            sb.append("Demographic: " + getDemographic() + ",");
+            sb.append("Demographic: ").append(getDemographic()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

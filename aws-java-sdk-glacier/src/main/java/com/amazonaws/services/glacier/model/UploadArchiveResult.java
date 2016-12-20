@@ -178,11 +178,11 @@ public class UploadArchiveResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum() + ",");
+            sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getArchiveId() != null)
-            sb.append("ArchiveId: " + getArchiveId());
+            sb.append("ArchiveId: ").append(getArchiveId());
         sb.append("}");
         return sb.toString();
     }

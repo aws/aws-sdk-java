@@ -196,11 +196,11 @@ public class ServerCertificate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificateMetadata() != null)
-            sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ",");
+            sb.append("ServerCertificateMetadata: ").append(getServerCertificateMetadata()).append(",");
         if (getCertificateBody() != null)
-            sb.append("CertificateBody: " + getCertificateBody() + ",");
+            sb.append("CertificateBody: ").append(getCertificateBody()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: " + getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");
         return sb.toString();
     }

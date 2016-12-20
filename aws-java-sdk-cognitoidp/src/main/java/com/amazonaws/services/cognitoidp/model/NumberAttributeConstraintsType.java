@@ -126,9 +126,9 @@ public class NumberAttributeConstraintsType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinValue() != null)
-            sb.append("MinValue: " + getMinValue() + ",");
+            sb.append("MinValue: ").append(getMinValue()).append(",");
         if (getMaxValue() != null)
-            sb.append("MaxValue: " + getMaxValue());
+            sb.append("MaxValue: ").append(getMaxValue());
         sb.append("}");
         return sb.toString();
     }

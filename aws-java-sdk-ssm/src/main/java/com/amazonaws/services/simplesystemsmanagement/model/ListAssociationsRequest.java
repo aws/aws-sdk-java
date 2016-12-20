@@ -211,11 +211,11 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationFilterList() != null)
-            sb.append("AssociationFilterList: " + getAssociationFilterList() + ",");
+            sb.append("AssociationFilterList: ").append(getAssociationFilterList()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

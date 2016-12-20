@@ -595,25 +595,25 @@ public class DynamoDBAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation() + ",");
+            sb.append("Operation: ").append(getOperation()).append(",");
         if (getHashKeyField() != null)
-            sb.append("HashKeyField: " + getHashKeyField() + ",");
+            sb.append("HashKeyField: ").append(getHashKeyField()).append(",");
         if (getHashKeyValue() != null)
-            sb.append("HashKeyValue: " + getHashKeyValue() + ",");
+            sb.append("HashKeyValue: ").append(getHashKeyValue()).append(",");
         if (getHashKeyType() != null)
-            sb.append("HashKeyType: " + getHashKeyType() + ",");
+            sb.append("HashKeyType: ").append(getHashKeyType()).append(",");
         if (getRangeKeyField() != null)
-            sb.append("RangeKeyField: " + getRangeKeyField() + ",");
+            sb.append("RangeKeyField: ").append(getRangeKeyField()).append(",");
         if (getRangeKeyValue() != null)
-            sb.append("RangeKeyValue: " + getRangeKeyValue() + ",");
+            sb.append("RangeKeyValue: ").append(getRangeKeyValue()).append(",");
         if (getRangeKeyType() != null)
-            sb.append("RangeKeyType: " + getRangeKeyType() + ",");
+            sb.append("RangeKeyType: ").append(getRangeKeyType()).append(",");
         if (getPayloadField() != null)
-            sb.append("PayloadField: " + getPayloadField());
+            sb.append("PayloadField: ").append(getPayloadField());
         sb.append("}");
         return sb.toString();
     }

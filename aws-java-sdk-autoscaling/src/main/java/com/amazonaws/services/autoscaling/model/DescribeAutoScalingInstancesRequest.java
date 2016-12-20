@@ -215,11 +215,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

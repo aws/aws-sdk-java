@@ -114,7 +114,7 @@ public class TerminateWorkspacesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTerminateWorkspaceRequests() != null)
-            sb.append("TerminateWorkspaceRequests: " + getTerminateWorkspaceRequests());
+            sb.append("TerminateWorkspaceRequests: ").append(getTerminateWorkspaceRequests());
         sb.append("}");
         return sb.toString();
     }

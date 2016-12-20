@@ -168,9 +168,9 @@ public class ListFindingsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFindingArns() != null)
-            sb.append("FindingArns: " + getFindingArns() + ",");
+            sb.append("FindingArns: ").append(getFindingArns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

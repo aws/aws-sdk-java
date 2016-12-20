@@ -114,7 +114,7 @@ public class RebootWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRebootWorkspaceRequests() != null)
-            sb.append("RebootWorkspaceRequests: " + getRebootWorkspaceRequests());
+            sb.append("RebootWorkspaceRequests: ").append(getRebootWorkspaceRequests());
         sb.append("}");
         return sb.toString();
     }

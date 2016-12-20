@@ -161,9 +161,9 @@ public class DescribeStacksResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStacks() != null)
-            sb.append("Stacks: " + getStacks() + ",");
+            sb.append("Stacks: ").append(getStacks()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

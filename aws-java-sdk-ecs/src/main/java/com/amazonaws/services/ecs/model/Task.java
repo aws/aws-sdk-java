@@ -756,33 +756,33 @@ public class Task implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskArn() != null)
-            sb.append("TaskArn: " + getTaskArn() + ",");
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getClusterArn() != null)
-            sb.append("ClusterArn: " + getClusterArn() + ",");
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getTaskDefinitionArn() != null)
-            sb.append("TaskDefinitionArn: " + getTaskDefinitionArn() + ",");
+            sb.append("TaskDefinitionArn: ").append(getTaskDefinitionArn()).append(",");
         if (getContainerInstanceArn() != null)
-            sb.append("ContainerInstanceArn: " + getContainerInstanceArn() + ",");
+            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getOverrides() != null)
-            sb.append("Overrides: " + getOverrides() + ",");
+            sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getLastStatus() != null)
-            sb.append("LastStatus: " + getLastStatus() + ",");
+            sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getDesiredStatus() != null)
-            sb.append("DesiredStatus: " + getDesiredStatus() + ",");
+            sb.append("DesiredStatus: ").append(getDesiredStatus()).append(",");
         if (getContainers() != null)
-            sb.append("Containers: " + getContainers() + ",");
+            sb.append("Containers: ").append(getContainers()).append(",");
         if (getStartedBy() != null)
-            sb.append("StartedBy: " + getStartedBy() + ",");
+            sb.append("StartedBy: ").append(getStartedBy()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getStoppedReason() != null)
-            sb.append("StoppedReason: " + getStoppedReason() + ",");
+            sb.append("StoppedReason: ").append(getStoppedReason()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getStartedAt() != null)
-            sb.append("StartedAt: " + getStartedAt() + ",");
+            sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getStoppedAt() != null)
-            sb.append("StoppedAt: " + getStoppedAt());
+            sb.append("StoppedAt: ").append(getStoppedAt());
         sb.append("}");
         return sb.toString();
     }

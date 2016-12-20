@@ -205,11 +205,11 @@ public class BatchGetApplicationRevisionsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage() + ",");
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getRevisions() != null)
-            sb.append("Revisions: " + getRevisions());
+            sb.append("Revisions: ").append(getRevisions());
         sb.append("}");
         return sb.toString();
     }

@@ -113,7 +113,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList());
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }

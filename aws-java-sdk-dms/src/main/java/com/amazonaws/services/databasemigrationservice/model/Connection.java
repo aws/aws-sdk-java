@@ -315,17 +315,17 @@ public class Connection implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn() + ",");
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn()).append(",");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn() + ",");
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastFailureMessage() != null)
-            sb.append("LastFailureMessage: " + getLastFailureMessage() + ",");
+            sb.append("LastFailureMessage: ").append(getLastFailureMessage()).append(",");
         if (getEndpointIdentifier() != null)
-            sb.append("EndpointIdentifier: " + getEndpointIdentifier() + ",");
+            sb.append("EndpointIdentifier: ").append(getEndpointIdentifier()).append(",");
         if (getReplicationInstanceIdentifier() != null)
-            sb.append("ReplicationInstanceIdentifier: " + getReplicationInstanceIdentifier());
+            sb.append("ReplicationInstanceIdentifier: ").append(getReplicationInstanceIdentifier());
         sb.append("}");
         return sb.toString();
     }

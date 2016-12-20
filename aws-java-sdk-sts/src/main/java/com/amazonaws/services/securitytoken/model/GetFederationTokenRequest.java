@@ -457,11 +457,11 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: " + getDurationSeconds());
+            sb.append("DurationSeconds: ").append(getDurationSeconds());
         sb.append("}");
         return sb.toString();
     }

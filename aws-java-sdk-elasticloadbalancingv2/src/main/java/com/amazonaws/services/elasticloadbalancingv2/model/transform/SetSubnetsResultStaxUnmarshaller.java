@@ -45,6 +45,11 @@ public class SetSubnetsResultStaxUnmarshaller implements Unmarshaller<SetSubnets
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AvailabilityZones", targetDepth)) {
+                    setSubnetsResult.withAvailabilityZones(new ArrayList<AvailabilityZone>());
+                    continue;
+                }
+
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
                     setSubnetsResult.withAvailabilityZones(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

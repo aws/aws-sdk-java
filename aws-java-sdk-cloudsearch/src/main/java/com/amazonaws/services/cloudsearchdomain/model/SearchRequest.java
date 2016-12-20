@@ -2711,33 +2711,33 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCursor() != null)
-            sb.append("Cursor: " + getCursor() + ",");
+            sb.append("Cursor: ").append(getCursor()).append(",");
         if (getExpr() != null)
-            sb.append("Expr: " + getExpr() + ",");
+            sb.append("Expr: ").append(getExpr()).append(",");
         if (getFacet() != null)
-            sb.append("Facet: " + getFacet() + ",");
+            sb.append("Facet: ").append(getFacet()).append(",");
         if (getFilterQuery() != null)
-            sb.append("FilterQuery: " + getFilterQuery() + ",");
+            sb.append("FilterQuery: ").append(getFilterQuery()).append(",");
         if (getHighlight() != null)
-            sb.append("Highlight: " + getHighlight() + ",");
+            sb.append("Highlight: ").append(getHighlight()).append(",");
         if (getPartial() != null)
-            sb.append("Partial: " + getPartial() + ",");
+            sb.append("Partial: ").append(getPartial()).append(",");
         if (getQuery() != null)
-            sb.append("Query: " + getQuery() + ",");
+            sb.append("Query: ").append(getQuery()).append(",");
         if (getQueryOptions() != null)
-            sb.append("QueryOptions: " + getQueryOptions() + ",");
+            sb.append("QueryOptions: ").append(getQueryOptions()).append(",");
         if (getQueryParser() != null)
-            sb.append("QueryParser: " + getQueryParser() + ",");
+            sb.append("QueryParser: ").append(getQueryParser()).append(",");
         if (getReturn() != null)
-            sb.append("Return: " + getReturn() + ",");
+            sb.append("Return: ").append(getReturn()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getSort() != null)
-            sb.append("Sort: " + getSort() + ",");
+            sb.append("Sort: ").append(getSort()).append(",");
         if (getStart() != null)
-            sb.append("Start: " + getStart() + ",");
+            sb.append("Start: ").append(getStart()).append(",");
         if (getStats() != null)
-            sb.append("Stats: " + getStats());
+            sb.append("Stats: ").append(getStats());
         sb.append("}");
         return sb.toString();
     }

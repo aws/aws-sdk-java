@@ -126,9 +126,9 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistributionConfig() != null)
-            sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ",");
+            sb.append("StreamingDistributionConfig: ").append(getStreamingDistributionConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

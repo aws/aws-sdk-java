@@ -318,13 +318,13 @@ public class PutPipelineDefinitionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getPipelineObjects() != null)
-            sb.append("PipelineObjects: " + getPipelineObjects() + ",");
+            sb.append("PipelineObjects: ").append(getPipelineObjects()).append(",");
         if (getParameterObjects() != null)
-            sb.append("ParameterObjects: " + getParameterObjects() + ",");
+            sb.append("ParameterObjects: ").append(getParameterObjects()).append(",");
         if (getParameterValues() != null)
-            sb.append("ParameterValues: " + getParameterValues());
+            sb.append("ParameterValues: ").append(getParameterValues());
         sb.append("}");
         return sb.toString();
     }

@@ -146,9 +146,9 @@ public class RespondActivityTaskCanceledRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails());
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }

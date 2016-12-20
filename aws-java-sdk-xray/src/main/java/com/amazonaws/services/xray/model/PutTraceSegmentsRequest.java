@@ -721,7 +721,7 @@ public class PutTraceSegmentsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTraceSegmentDocuments() != null)
-            sb.append("TraceSegmentDocuments: " + getTraceSegmentDocuments());
+            sb.append("TraceSegmentDocuments: ").append(getTraceSegmentDocuments());
         sb.append("}");
         return sb.toString();
     }

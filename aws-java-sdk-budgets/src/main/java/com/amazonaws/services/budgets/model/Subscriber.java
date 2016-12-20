@@ -110,9 +110,9 @@ public class Subscriber implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionType() != null)
-            sb.append("SubscriptionType: " + getSubscriptionType() + ",");
+            sb.append("SubscriptionType: ").append(getSubscriptionType()).append(",");
         if (getAddress() != null)
-            sb.append("Address: " + getAddress());
+            sb.append("Address: ").append(getAddress());
         sb.append("}");
         return sb.toString();
     }

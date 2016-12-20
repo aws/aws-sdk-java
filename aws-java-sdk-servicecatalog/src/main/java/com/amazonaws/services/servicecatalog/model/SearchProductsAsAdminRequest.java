@@ -619,21 +619,21 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getPortfolioId() != null)
-            sb.append("PortfolioId: " + getPortfolioId() + ",");
+            sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters() + ",");
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getSortBy() != null)
-            sb.append("SortBy: " + getSortBy() + ",");
+            sb.append("SortBy: ").append(getSortBy()).append(",");
         if (getSortOrder() != null)
-            sb.append("SortOrder: " + getSortOrder() + ",");
+            sb.append("SortOrder: ").append(getSortOrder()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken() + ",");
+            sb.append("PageToken: ").append(getPageToken()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getProductSource() != null)
-            sb.append("ProductSource: " + getProductSource());
+            sb.append("ProductSource: ").append(getProductSource());
         sb.append("}");
         return sb.toString();
     }

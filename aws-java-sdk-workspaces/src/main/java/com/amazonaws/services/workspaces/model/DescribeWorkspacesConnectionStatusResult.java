@@ -158,9 +158,9 @@ public class DescribeWorkspacesConnectionStatusResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkspacesConnectionStatus() != null)
-            sb.append("WorkspacesConnectionStatus: " + getWorkspacesConnectionStatus() + ",");
+            sb.append("WorkspacesConnectionStatus: ").append(getWorkspacesConnectionStatus()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

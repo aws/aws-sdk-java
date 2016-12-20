@@ -23,9 +23,13 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      */
     private String id;
     /**
@@ -47,8 +51,10 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      * @param receiptHandle
      *        A receipt handle.
      */
@@ -59,13 +65,19 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      */
 
     public void setId(String id) {
@@ -74,12 +86,18 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
-     * @return An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *         <code>Id</code>s of a batch request need to be unique within the request.
+     * @return An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *         <p>
+     *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         </p>
      */
 
     public String getId() {
@@ -88,13 +106,19 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,9 +179,9 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getReceiptHandle() != null)
-            sb.append("ReceiptHandle: " + getReceiptHandle());
+            sb.append("ReceiptHandle: ").append(getReceiptHandle());
         sb.append("}");
         return sb.toString();
     }

@@ -86,7 +86,7 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseId() != null)
-            sb.append("CaseId: " + getCaseId());
+            sb.append("CaseId: ").append(getCaseId());
         sb.append("}");
         return sb.toString();
     }

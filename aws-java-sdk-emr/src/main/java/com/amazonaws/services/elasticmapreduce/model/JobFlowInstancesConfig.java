@@ -925,35 +925,35 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMasterInstanceType() != null)
-            sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");
+            sb.append("MasterInstanceType: ").append(getMasterInstanceType()).append(",");
         if (getSlaveInstanceType() != null)
-            sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");
+            sb.append("SlaveInstanceType: ").append(getSlaveInstanceType()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getInstanceGroups() != null)
-            sb.append("InstanceGroups: " + getInstanceGroups() + ",");
+            sb.append("InstanceGroups: ").append(getInstanceGroups()).append(",");
         if (getEc2KeyName() != null)
-            sb.append("Ec2KeyName: " + getEc2KeyName() + ",");
+            sb.append("Ec2KeyName: ").append(getEc2KeyName()).append(",");
         if (getPlacement() != null)
-            sb.append("Placement: " + getPlacement() + ",");
+            sb.append("Placement: ").append(getPlacement()).append(",");
         if (getKeepJobFlowAliveWhenNoSteps() != null)
-            sb.append("KeepJobFlowAliveWhenNoSteps: " + getKeepJobFlowAliveWhenNoSteps() + ",");
+            sb.append("KeepJobFlowAliveWhenNoSteps: ").append(getKeepJobFlowAliveWhenNoSteps()).append(",");
         if (getTerminationProtected() != null)
-            sb.append("TerminationProtected: " + getTerminationProtected() + ",");
+            sb.append("TerminationProtected: ").append(getTerminationProtected()).append(",");
         if (getHadoopVersion() != null)
-            sb.append("HadoopVersion: " + getHadoopVersion() + ",");
+            sb.append("HadoopVersion: ").append(getHadoopVersion()).append(",");
         if (getEc2SubnetId() != null)
-            sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");
+            sb.append("Ec2SubnetId: ").append(getEc2SubnetId()).append(",");
         if (getEmrManagedMasterSecurityGroup() != null)
-            sb.append("EmrManagedMasterSecurityGroup: " + getEmrManagedMasterSecurityGroup() + ",");
+            sb.append("EmrManagedMasterSecurityGroup: ").append(getEmrManagedMasterSecurityGroup()).append(",");
         if (getEmrManagedSlaveSecurityGroup() != null)
-            sb.append("EmrManagedSlaveSecurityGroup: " + getEmrManagedSlaveSecurityGroup() + ",");
+            sb.append("EmrManagedSlaveSecurityGroup: ").append(getEmrManagedSlaveSecurityGroup()).append(",");
         if (getServiceAccessSecurityGroup() != null)
-            sb.append("ServiceAccessSecurityGroup: " + getServiceAccessSecurityGroup() + ",");
+            sb.append("ServiceAccessSecurityGroup: ").append(getServiceAccessSecurityGroup()).append(",");
         if (getAdditionalMasterSecurityGroups() != null)
-            sb.append("AdditionalMasterSecurityGroups: " + getAdditionalMasterSecurityGroups() + ",");
+            sb.append("AdditionalMasterSecurityGroups: ").append(getAdditionalMasterSecurityGroups()).append(",");
         if (getAdditionalSlaveSecurityGroups() != null)
-            sb.append("AdditionalSlaveSecurityGroups: " + getAdditionalSlaveSecurityGroups());
+            sb.append("AdditionalSlaveSecurityGroups: ").append(getAdditionalSlaveSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

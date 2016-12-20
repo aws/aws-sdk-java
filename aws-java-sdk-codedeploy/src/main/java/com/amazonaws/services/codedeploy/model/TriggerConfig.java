@@ -240,11 +240,11 @@ public class TriggerConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTriggerName() != null)
-            sb.append("TriggerName: " + getTriggerName() + ",");
+            sb.append("TriggerName: ").append(getTriggerName()).append(",");
         if (getTriggerTargetArn() != null)
-            sb.append("TriggerTargetArn: " + getTriggerTargetArn() + ",");
+            sb.append("TriggerTargetArn: ").append(getTriggerTargetArn()).append(",");
         if (getTriggerEvents() != null)
-            sb.append("TriggerEvents: " + getTriggerEvents());
+            sb.append("TriggerEvents: ").append(getTriggerEvents());
         sb.append("}");
         return sb.toString();
     }

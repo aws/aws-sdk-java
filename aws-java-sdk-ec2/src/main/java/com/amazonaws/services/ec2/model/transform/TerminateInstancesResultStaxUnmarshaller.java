@@ -45,6 +45,11 @@ public class TerminateInstancesResultStaxUnmarshaller implements Unmarshaller<Te
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instancesSet", targetDepth)) {
+                    terminateInstancesResult.withTerminatingInstances(new ArrayList<InstanceStateChange>());
+                    continue;
+                }
+
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     terminateInstancesResult.withTerminatingInstances(InstanceStateChangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

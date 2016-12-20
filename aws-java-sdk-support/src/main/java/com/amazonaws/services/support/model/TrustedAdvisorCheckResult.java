@@ -332,17 +332,17 @@ public class TrustedAdvisorCheckResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckId() != null)
-            sb.append("CheckId: " + getCheckId() + ",");
+            sb.append("CheckId: ").append(getCheckId()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getResourcesSummary() != null)
-            sb.append("ResourcesSummary: " + getResourcesSummary() + ",");
+            sb.append("ResourcesSummary: ").append(getResourcesSummary()).append(",");
         if (getCategorySpecificSummary() != null)
-            sb.append("CategorySpecificSummary: " + getCategorySpecificSummary() + ",");
+            sb.append("CategorySpecificSummary: ").append(getCategorySpecificSummary()).append(",");
         if (getFlaggedResources() != null)
-            sb.append("FlaggedResources: " + getFlaggedResources());
+            sb.append("FlaggedResources: ").append(getFlaggedResources());
         sb.append("}");
         return sb.toString();
     }

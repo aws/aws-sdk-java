@@ -419,9 +419,9 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getZoneNames() != null)
-            sb.append("ZoneNames: " + getZoneNames() + ",");
+            sb.append("ZoneNames: ").append(getZoneNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

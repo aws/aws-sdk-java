@@ -166,9 +166,9 @@ public class ListStackResourcesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackResourceSummaries() != null)
-            sb.append("StackResourceSummaries: " + getStackResourceSummaries() + ",");
+            sb.append("StackResourceSummaries: ").append(getStackResourceSummaries()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -171,11 +171,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName());
         sb.append("}");
         return sb.toString();
     }

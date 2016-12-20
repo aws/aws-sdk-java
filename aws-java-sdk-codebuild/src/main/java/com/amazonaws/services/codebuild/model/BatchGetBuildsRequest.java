@@ -109,7 +109,7 @@ public class BatchGetBuildsRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIds() != null)
-            sb.append("Ids: " + getIds());
+            sb.append("Ids: ").append(getIds());
         sb.append("}");
         return sb.toString();
     }

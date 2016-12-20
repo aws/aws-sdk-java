@@ -329,13 +329,13 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCollectionId() != null)
-            sb.append("CollectionId: " + getCollectionId() + ",");
+            sb.append("CollectionId: ").append(getCollectionId()).append(",");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getExternalImageId() != null)
-            sb.append("ExternalImageId: " + getExternalImageId() + ",");
+            sb.append("ExternalImageId: ").append(getExternalImageId()).append(",");
         if (getDetectionAttributes() != null)
-            sb.append("DetectionAttributes: " + getDetectionAttributes());
+            sb.append("DetectionAttributes: ").append(getDetectionAttributes());
         sb.append("}");
         return sb.toString();
     }

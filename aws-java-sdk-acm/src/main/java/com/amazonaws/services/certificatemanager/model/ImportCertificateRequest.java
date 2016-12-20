@@ -485,13 +485,13 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate() + ",");
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: " + getPrivateKey() + ",");
+            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: " + getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");
         return sb.toString();
     }

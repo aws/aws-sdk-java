@@ -45,6 +45,11 @@ public class CancelReservedInstancesListingResultStaxUnmarshaller implements Unm
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("reservedInstancesListingsSet", targetDepth)) {
+                    cancelReservedInstancesListingResult.withReservedInstancesListings(new ArrayList<ReservedInstancesListing>());
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstancesListingsSet/item", targetDepth)) {
                     cancelReservedInstancesListingResult.withReservedInstancesListings(ReservedInstancesListingStaxUnmarshaller.getInstance().unmarshall(
                             context));

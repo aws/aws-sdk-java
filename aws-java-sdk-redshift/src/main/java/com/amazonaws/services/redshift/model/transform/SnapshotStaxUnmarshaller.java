@@ -130,6 +130,11 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("AccountsWithRestoreAccess", targetDepth)) {
+                    snapshot.withAccountsWithRestoreAccess(new ArrayList<AccountWithRestoreAccess>());
+                    continue;
+                }
+
                 if (context.testExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth)) {
                     snapshot.withAccountsWithRestoreAccess(AccountWithRestoreAccessStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -175,8 +180,18 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    snapshot.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     snapshot.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RestorableNodeTypes", targetDepth)) {
+                    snapshot.withRestorableNodeTypes(new ArrayList<String>());
                     continue;
                 }
 

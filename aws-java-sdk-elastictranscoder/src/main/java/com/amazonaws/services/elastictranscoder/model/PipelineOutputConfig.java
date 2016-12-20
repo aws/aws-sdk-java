@@ -519,11 +519,11 @@ public class PipelineOutputConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucket() != null)
-            sb.append("Bucket: " + getBucket() + ",");
+            sb.append("Bucket: ").append(getBucket()).append(",");
         if (getStorageClass() != null)
-            sb.append("StorageClass: " + getStorageClass() + ",");
+            sb.append("StorageClass: ").append(getStorageClass()).append(",");
         if (getPermissions() != null)
-            sb.append("Permissions: " + getPermissions());
+            sb.append("Permissions: ").append(getPermissions());
         sb.append("}");
         return sb.toString();
     }

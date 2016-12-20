@@ -125,9 +125,9 @@ public class UpdateManagedInstanceRoleRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIamRole() != null)
-            sb.append("IamRole: " + getIamRole());
+            sb.append("IamRole: ").append(getIamRole());
         sb.append("}");
         return sb.toString();
     }

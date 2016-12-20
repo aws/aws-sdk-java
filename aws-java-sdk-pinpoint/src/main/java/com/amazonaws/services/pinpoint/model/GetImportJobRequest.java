@@ -88,9 +88,9 @@ public class GetImportJobRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }

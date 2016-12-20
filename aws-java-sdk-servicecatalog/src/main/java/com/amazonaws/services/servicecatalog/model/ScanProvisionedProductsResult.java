@@ -161,9 +161,9 @@ public class ScanProvisionedProductsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProvisionedProducts() != null)
-            sb.append("ProvisionedProducts: " + getProvisionedProducts() + ",");
+            sb.append("ProvisionedProducts: ").append(getProvisionedProducts()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

@@ -244,11 +244,11 @@ public class StreamingLoggingConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getBucket() != null)
-            sb.append("Bucket: " + getBucket() + ",");
+            sb.append("Bucket: ").append(getBucket()).append(",");
         if (getPrefix() != null)
-            sb.append("Prefix: " + getPrefix());
+            sb.append("Prefix: ").append(getPrefix());
         sb.append("}");
         return sb.toString();
     }

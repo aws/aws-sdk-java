@@ -171,11 +171,11 @@ public class AdminRemoveUserFromGroupRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }

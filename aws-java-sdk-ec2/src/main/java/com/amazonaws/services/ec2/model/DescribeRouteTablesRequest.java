@@ -1232,9 +1232,9 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableIds() != null)
-            sb.append("RouteTableIds: " + getRouteTableIds() + ",");
+            sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

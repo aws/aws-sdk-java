@@ -61,14 +61,10 @@ public class DeletePolicyVersionRequestMarshaller implements Marshaller<Request<
 
         String uriResourcePath = "/policies/{policyName}/version/{policyVersionId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (deletePolicyVersionRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deletePolicyVersionRequest.getPolicyName()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{policyVersionId}",
-                (deletePolicyVersionRequest.getPolicyVersionId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deletePolicyVersionRequest.getPolicyVersionId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "policyName", deletePolicyVersionRequest.getPolicyName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyVersionId",
+                deletePolicyVersionRequest.getPolicyVersionId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

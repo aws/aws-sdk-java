@@ -2065,9 +2065,9 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceIds() != null)
-            sb.append("NetworkInterfaceIds: " + getNetworkInterfaceIds() + ",");
+            sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

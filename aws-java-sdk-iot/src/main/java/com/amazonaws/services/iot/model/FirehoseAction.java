@@ -179,11 +179,11 @@ public class FirehoseAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getSeparator() != null)
-            sb.append("Separator: " + getSeparator());
+            sb.append("Separator: ").append(getSeparator());
         sb.append("}");
         return sb.toString();
     }

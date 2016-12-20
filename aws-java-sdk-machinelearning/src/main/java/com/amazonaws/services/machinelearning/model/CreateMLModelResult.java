@@ -92,7 +92,7 @@ public class CreateMLModelResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId());
+            sb.append("MLModelId: ").append(getMLModelId());
         sb.append("}");
         return sb.toString();
     }

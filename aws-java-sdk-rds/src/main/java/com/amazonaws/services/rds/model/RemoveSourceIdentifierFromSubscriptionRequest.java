@@ -132,9 +132,9 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends com.amazonaws
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionName() != null)
-            sb.append("SubscriptionName: " + getSubscriptionName() + ",");
+            sb.append("SubscriptionName: ").append(getSubscriptionName()).append(",");
         if (getSourceIdentifier() != null)
-            sb.append("SourceIdentifier: " + getSourceIdentifier());
+            sb.append("SourceIdentifier: ").append(getSourceIdentifier());
         sb.append("}");
         return sb.toString();
     }

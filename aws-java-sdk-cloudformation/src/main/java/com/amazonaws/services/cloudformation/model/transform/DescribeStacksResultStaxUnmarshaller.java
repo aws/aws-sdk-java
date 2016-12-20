@@ -45,6 +45,11 @@ public class DescribeStacksResultStaxUnmarshaller implements Unmarshaller<Descri
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Stacks", targetDepth)) {
+                    describeStacksResult.withStacks(new ArrayList<Stack>());
+                    continue;
+                }
+
                 if (context.testExpression("Stacks/member", targetDepth)) {
                     describeStacksResult.withStacks(StackStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

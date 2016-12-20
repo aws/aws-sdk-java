@@ -155,9 +155,9 @@ public class DecryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getPlaintext() != null)
-            sb.append("Plaintext: " + getPlaintext());
+            sb.append("Plaintext: ").append(getPlaintext());
         sb.append("}");
         return sb.toString();
     }

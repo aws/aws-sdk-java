@@ -2397,19 +2397,19 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeDefinitions() != null)
-            sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");
+            sb.append("AttributeDefinitions: ").append(getAttributeDefinitions()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getKeySchema() != null)
-            sb.append("KeySchema: " + getKeySchema() + ",");
+            sb.append("KeySchema: ").append(getKeySchema()).append(",");
         if (getLocalSecondaryIndexes() != null)
-            sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");
+            sb.append("LocalSecondaryIndexes: ").append(getLocalSecondaryIndexes()).append(",");
         if (getGlobalSecondaryIndexes() != null)
-            sb.append("GlobalSecondaryIndexes: " + getGlobalSecondaryIndexes() + ",");
+            sb.append("GlobalSecondaryIndexes: ").append(getGlobalSecondaryIndexes()).append(",");
         if (getProvisionedThroughput() != null)
-            sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
+            sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getStreamSpecification() != null)
-            sb.append("StreamSpecification: " + getStreamSpecification());
+            sb.append("StreamSpecification: ").append(getStreamSpecification());
         sb.append("}");
         return sb.toString();
     }

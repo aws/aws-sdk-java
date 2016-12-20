@@ -219,13 +219,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getDesiredInstances() != null)
-            sb.append("DesiredInstances: " + getDesiredInstances() + ",");
+            sb.append("DesiredInstances: ").append(getDesiredInstances()).append(",");
         if (getMinSize() != null)
-            sb.append("MinSize: " + getMinSize() + ",");
+            sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
-            sb.append("MaxSize: " + getMaxSize());
+            sb.append("MaxSize: ").append(getMaxSize());
         sb.append("}");
         return sb.toString();
     }

@@ -84,7 +84,7 @@ public class DescribeReceiptRuleSetRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName());
+            sb.append("RuleSetName: ").append(getRuleSetName());
         sb.append("}");
         return sb.toString();
     }

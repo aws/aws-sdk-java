@@ -368,15 +368,15 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getArchiveSize() != null)
-            sb.append("ArchiveSize: " + getArchiveSize() + ",");
+            sb.append("ArchiveSize: ").append(getArchiveSize()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum());
+            sb.append("Checksum: ").append(getChecksum());
         sb.append("}");
         return sb.toString();
     }

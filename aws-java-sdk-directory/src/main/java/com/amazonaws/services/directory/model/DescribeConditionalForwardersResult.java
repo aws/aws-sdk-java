@@ -114,7 +114,7 @@ public class DescribeConditionalForwardersResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConditionalForwarders() != null)
-            sb.append("ConditionalForwarders: " + getConditionalForwarders());
+            sb.append("ConditionalForwarders: ").append(getConditionalForwarders());
         sb.append("}");
         return sb.toString();
     }

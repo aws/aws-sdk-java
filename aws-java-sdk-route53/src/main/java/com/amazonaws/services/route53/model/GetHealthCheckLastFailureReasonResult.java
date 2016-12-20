@@ -123,7 +123,7 @@ public class GetHealthCheckLastFailureReasonResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHealthCheckObservations() != null)
-            sb.append("HealthCheckObservations: " + getHealthCheckObservations());
+            sb.append("HealthCheckObservations: ").append(getHealthCheckObservations());
         sb.append("}");
         return sb.toString();
     }

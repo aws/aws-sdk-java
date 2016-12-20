@@ -209,11 +209,11 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getTapeBarcode() != null)
-            sb.append("TapeBarcode: " + getTapeBarcode());
+            sb.append("TapeBarcode: ").append(getTapeBarcode());
         sb.append("}");
         return sb.toString();
     }

@@ -4059,57 +4059,57 @@ public class ContainerDefinition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getCpu() != null)
-            sb.append("Cpu: " + getCpu() + ",");
+            sb.append("Cpu: ").append(getCpu()).append(",");
         if (getMemory() != null)
-            sb.append("Memory: " + getMemory() + ",");
+            sb.append("Memory: ").append(getMemory()).append(",");
         if (getMemoryReservation() != null)
-            sb.append("MemoryReservation: " + getMemoryReservation() + ",");
+            sb.append("MemoryReservation: ").append(getMemoryReservation()).append(",");
         if (getLinks() != null)
-            sb.append("Links: " + getLinks() + ",");
+            sb.append("Links: ").append(getLinks()).append(",");
         if (getPortMappings() != null)
-            sb.append("PortMappings: " + getPortMappings() + ",");
+            sb.append("PortMappings: ").append(getPortMappings()).append(",");
         if (getEssential() != null)
-            sb.append("Essential: " + getEssential() + ",");
+            sb.append("Essential: ").append(getEssential()).append(",");
         if (getEntryPoint() != null)
-            sb.append("EntryPoint: " + getEntryPoint() + ",");
+            sb.append("EntryPoint: ").append(getEntryPoint()).append(",");
         if (getCommand() != null)
-            sb.append("Command: " + getCommand() + ",");
+            sb.append("Command: ").append(getCommand()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment() + ",");
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getMountPoints() != null)
-            sb.append("MountPoints: " + getMountPoints() + ",");
+            sb.append("MountPoints: ").append(getMountPoints()).append(",");
         if (getVolumesFrom() != null)
-            sb.append("VolumesFrom: " + getVolumesFrom() + ",");
+            sb.append("VolumesFrom: ").append(getVolumesFrom()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getUser() != null)
-            sb.append("User: " + getUser() + ",");
+            sb.append("User: ").append(getUser()).append(",");
         if (getWorkingDirectory() != null)
-            sb.append("WorkingDirectory: " + getWorkingDirectory() + ",");
+            sb.append("WorkingDirectory: ").append(getWorkingDirectory()).append(",");
         if (getDisableNetworking() != null)
-            sb.append("DisableNetworking: " + getDisableNetworking() + ",");
+            sb.append("DisableNetworking: ").append(getDisableNetworking()).append(",");
         if (getPrivileged() != null)
-            sb.append("Privileged: " + getPrivileged() + ",");
+            sb.append("Privileged: ").append(getPrivileged()).append(",");
         if (getReadonlyRootFilesystem() != null)
-            sb.append("ReadonlyRootFilesystem: " + getReadonlyRootFilesystem() + ",");
+            sb.append("ReadonlyRootFilesystem: ").append(getReadonlyRootFilesystem()).append(",");
         if (getDnsServers() != null)
-            sb.append("DnsServers: " + getDnsServers() + ",");
+            sb.append("DnsServers: ").append(getDnsServers()).append(",");
         if (getDnsSearchDomains() != null)
-            sb.append("DnsSearchDomains: " + getDnsSearchDomains() + ",");
+            sb.append("DnsSearchDomains: ").append(getDnsSearchDomains()).append(",");
         if (getExtraHosts() != null)
-            sb.append("ExtraHosts: " + getExtraHosts() + ",");
+            sb.append("ExtraHosts: ").append(getExtraHosts()).append(",");
         if (getDockerSecurityOptions() != null)
-            sb.append("DockerSecurityOptions: " + getDockerSecurityOptions() + ",");
+            sb.append("DockerSecurityOptions: ").append(getDockerSecurityOptions()).append(",");
         if (getDockerLabels() != null)
-            sb.append("DockerLabels: " + getDockerLabels() + ",");
+            sb.append("DockerLabels: ").append(getDockerLabels()).append(",");
         if (getUlimits() != null)
-            sb.append("Ulimits: " + getUlimits() + ",");
+            sb.append("Ulimits: ").append(getUlimits()).append(",");
         if (getLogConfiguration() != null)
-            sb.append("LogConfiguration: " + getLogConfiguration());
+            sb.append("LogConfiguration: ").append(getLogConfiguration());
         sb.append("}");
         return sb.toString();
     }

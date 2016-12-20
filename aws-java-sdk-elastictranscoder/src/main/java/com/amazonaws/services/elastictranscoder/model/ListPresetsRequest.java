@@ -141,9 +141,9 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAscending() != null)
-            sb.append("Ascending: " + getAscending() + ",");
+            sb.append("Ascending: ").append(getAscending()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

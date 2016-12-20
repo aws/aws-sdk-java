@@ -288,15 +288,15 @@ public class Repository implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryArn() != null)
-            sb.append("RepositoryArn: " + getRepositoryArn() + ",");
+            sb.append("RepositoryArn: ").append(getRepositoryArn()).append(",");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getRepositoryUri() != null)
-            sb.append("RepositoryUri: " + getRepositoryUri() + ",");
+            sb.append("RepositoryUri: ").append(getRepositoryUri()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt());
         sb.append("}");
         return sb.toString();
     }

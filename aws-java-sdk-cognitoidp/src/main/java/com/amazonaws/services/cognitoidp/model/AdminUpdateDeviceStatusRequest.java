@@ -252,13 +252,13 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey() + ",");
+            sb.append("DeviceKey: ").append(getDeviceKey()).append(",");
         if (getDeviceRememberedStatus() != null)
-            sb.append("DeviceRememberedStatus: " + getDeviceRememberedStatus());
+            sb.append("DeviceRememberedStatus: ").append(getDeviceRememberedStatus());
         sb.append("}");
         return sb.toString();
     }

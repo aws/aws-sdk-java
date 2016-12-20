@@ -285,11 +285,11 @@ public class StepAdjustment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricIntervalLowerBound() != null)
-            sb.append("MetricIntervalLowerBound: " + getMetricIntervalLowerBound() + ",");
+            sb.append("MetricIntervalLowerBound: ").append(getMetricIntervalLowerBound()).append(",");
         if (getMetricIntervalUpperBound() != null)
-            sb.append("MetricIntervalUpperBound: " + getMetricIntervalUpperBound() + ",");
+            sb.append("MetricIntervalUpperBound: ").append(getMetricIntervalUpperBound()).append(",");
         if (getScalingAdjustment() != null)
-            sb.append("ScalingAdjustment: " + getScalingAdjustment());
+            sb.append("ScalingAdjustment: ").append(getScalingAdjustment());
         sb.append("}");
         return sb.toString();
     }

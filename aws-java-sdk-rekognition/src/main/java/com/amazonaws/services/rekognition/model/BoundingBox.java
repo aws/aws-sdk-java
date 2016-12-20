@@ -238,13 +238,13 @@ public class BoundingBox implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWidth() != null)
-            sb.append("Width: " + getWidth() + ",");
+            sb.append("Width: ").append(getWidth()).append(",");
         if (getHeight() != null)
-            sb.append("Height: " + getHeight() + ",");
+            sb.append("Height: ").append(getHeight()).append(",");
         if (getLeft() != null)
-            sb.append("Left: " + getLeft() + ",");
+            sb.append("Left: ").append(getLeft()).append(",");
         if (getTop() != null)
-            sb.append("Top: " + getTop());
+            sb.append("Top: ").append(getTop());
         sb.append("}");
         return sb.toString();
     }

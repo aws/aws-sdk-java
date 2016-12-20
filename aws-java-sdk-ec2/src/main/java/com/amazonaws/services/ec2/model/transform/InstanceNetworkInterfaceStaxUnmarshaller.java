@@ -95,6 +95,11 @@ public class InstanceNetworkInterfaceStaxUnmarshaller implements Unmarshaller<In
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    instanceNetworkInterface.withGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     instanceNetworkInterface.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -110,8 +115,18 @@ public class InstanceNetworkInterfaceStaxUnmarshaller implements Unmarshaller<In
                     continue;
                 }
 
+                if (context.testExpression("privateIpAddressesSet", targetDepth)) {
+                    instanceNetworkInterface.withPrivateIpAddresses(new ArrayList<InstancePrivateIpAddress>());
+                    continue;
+                }
+
                 if (context.testExpression("privateIpAddressesSet/item", targetDepth)) {
                     instanceNetworkInterface.withPrivateIpAddresses(InstancePrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6AddressesSet", targetDepth)) {
+                    instanceNetworkInterface.withIpv6Addresses(new ArrayList<InstanceIpv6Address>());
                     continue;
                 }
 

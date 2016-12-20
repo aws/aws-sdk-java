@@ -182,9 +182,9 @@ public class ActivityTypeDetail extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTypeInfo() != null)
-            sb.append("TypeInfo: " + getTypeInfo() + ",");
+            sb.append("TypeInfo: ").append(getTypeInfo()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }

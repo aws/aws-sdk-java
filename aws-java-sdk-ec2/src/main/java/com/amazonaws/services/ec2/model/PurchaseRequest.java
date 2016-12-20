@@ -126,9 +126,9 @@ public class PurchaseRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPurchaseToken() != null)
-            sb.append("PurchaseToken: " + getPurchaseToken() + ",");
+            sb.append("PurchaseToken: ").append(getPurchaseToken()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount());
         sb.append("}");
         return sb.toString();
     }

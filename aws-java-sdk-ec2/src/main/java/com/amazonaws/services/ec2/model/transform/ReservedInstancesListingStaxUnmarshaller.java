@@ -75,13 +75,28 @@ public class ReservedInstancesListingStaxUnmarshaller implements Unmarshaller<Re
                     continue;
                 }
 
+                if (context.testExpression("instanceCounts", targetDepth)) {
+                    reservedInstancesListing.withInstanceCounts(new ArrayList<InstanceCount>());
+                    continue;
+                }
+
                 if (context.testExpression("instanceCounts/item", targetDepth)) {
                     reservedInstancesListing.withInstanceCounts(InstanceCountStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("priceSchedules", targetDepth)) {
+                    reservedInstancesListing.withPriceSchedules(new ArrayList<PriceSchedule>());
+                    continue;
+                }
+
                 if (context.testExpression("priceSchedules/item", targetDepth)) {
                     reservedInstancesListing.withPriceSchedules(PriceScheduleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    reservedInstancesListing.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

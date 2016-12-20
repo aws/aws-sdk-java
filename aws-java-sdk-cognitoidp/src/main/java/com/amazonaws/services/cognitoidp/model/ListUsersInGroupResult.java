@@ -161,9 +161,9 @@ public class ListUsersInGroupResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsers() != null)
-            sb.append("Users: " + getUsers() + ",");
+            sb.append("Users: ").append(getUsers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

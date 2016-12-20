@@ -45,6 +45,11 @@ public class DescribeCertificatesResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Certificates", targetDepth)) {
+                    describeCertificatesResult.withCertificates(new ArrayList<Certificate>());
+                    continue;
+                }
+
                 if (context.testExpression("Certificates/Certificate", targetDepth)) {
                     describeCertificatesResult.withCertificates(CertificateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

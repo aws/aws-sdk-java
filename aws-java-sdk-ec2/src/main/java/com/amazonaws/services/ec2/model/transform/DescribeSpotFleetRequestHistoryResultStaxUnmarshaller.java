@@ -60,6 +60,11 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Un
                     continue;
                 }
 
+                if (context.testExpression("historyRecordSet", targetDepth)) {
+                    describeSpotFleetRequestHistoryResult.withHistoryRecords(new ArrayList<HistoryRecord>());
+                    continue;
+                }
+
                 if (context.testExpression("historyRecordSet/item", targetDepth)) {
                     describeSpotFleetRequestHistoryResult.withHistoryRecords(HistoryRecordStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

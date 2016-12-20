@@ -61,9 +61,7 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
 
         String uriResourcePath = "/2015-02-01/tags/{FileSystemId}/";
 
-        uriResourcePath = uriResourcePath.replace("{FileSystemId}",
-                (describeTagsRequest.getFileSystemId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(describeTagsRequest.getFileSystemId()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FileSystemId", describeTagsRequest.getFileSystemId());
         request.setResourcePath(uriResourcePath);
 
         if (describeTagsRequest.getMaxItems() != null) {

@@ -1061,29 +1061,29 @@ public class ClusterMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getKmsKeyARN() != null)
-            sb.append("KmsKeyARN: " + getKmsKeyARN() + ",");
+            sb.append("KmsKeyARN: ").append(getKmsKeyARN()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getClusterState() != null)
-            sb.append("ClusterState: " + getClusterState() + ",");
+            sb.append("ClusterState: ").append(getClusterState()).append(",");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType() + ",");
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getSnowballType() != null)
-            sb.append("SnowballType: " + getSnowballType() + ",");
+            sb.append("SnowballType: ").append(getSnowballType()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getAddressId() != null)
-            sb.append("AddressId: " + getAddressId() + ",");
+            sb.append("AddressId: ").append(getAddressId()).append(",");
         if (getShippingOption() != null)
-            sb.append("ShippingOption: " + getShippingOption() + ",");
+            sb.append("ShippingOption: ").append(getShippingOption()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification());
+            sb.append("Notification: ").append(getNotification());
         sb.append("}");
         return sb.toString();
     }

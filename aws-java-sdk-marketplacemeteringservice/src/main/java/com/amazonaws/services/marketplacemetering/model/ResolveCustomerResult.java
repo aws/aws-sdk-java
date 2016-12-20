@@ -140,9 +140,9 @@ public class ResolveCustomerResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerIdentifier() != null)
-            sb.append("CustomerIdentifier: " + getCustomerIdentifier() + ",");
+            sb.append("CustomerIdentifier: ").append(getCustomerIdentifier()).append(",");
         if (getProductCode() != null)
-            sb.append("ProductCode: " + getProductCode());
+            sb.append("ProductCode: ").append(getProductCode());
         sb.append("}");
         return sb.toString();
     }

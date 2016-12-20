@@ -296,11 +296,11 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getNewPath() != null)
-            sb.append("NewPath: " + getNewPath() + ",");
+            sb.append("NewPath: ").append(getNewPath()).append(",");
         if (getNewGroupName() != null)
-            sb.append("NewGroupName: " + getNewGroupName());
+            sb.append("NewGroupName: ").append(getNewGroupName());
         sb.append("}");
         return sb.toString();
     }

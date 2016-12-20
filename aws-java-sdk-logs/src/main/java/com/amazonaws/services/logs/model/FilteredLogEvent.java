@@ -264,15 +264,15 @@ public class FilteredLogEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogStreamName() != null)
-            sb.append("LogStreamName: " + getLogStreamName() + ",");
+            sb.append("LogStreamName: ").append(getLogStreamName()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getIngestionTime() != null)
-            sb.append("IngestionTime: " + getIngestionTime() + ",");
+            sb.append("IngestionTime: ").append(getIngestionTime()).append(",");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId());
+            sb.append("EventId: ").append(getEventId());
         sb.append("}");
         return sb.toString();
     }

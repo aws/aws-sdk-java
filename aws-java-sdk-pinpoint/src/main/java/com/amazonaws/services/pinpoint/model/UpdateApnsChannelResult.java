@@ -59,7 +59,7 @@ public class UpdateApnsChannelResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAPNSChannelResponse() != null)
-            sb.append("APNSChannelResponse: " + getAPNSChannelResponse());
+            sb.append("APNSChannelResponse: ").append(getAPNSChannelResponse());
         sb.append("}");
         return sb.toString();
     }

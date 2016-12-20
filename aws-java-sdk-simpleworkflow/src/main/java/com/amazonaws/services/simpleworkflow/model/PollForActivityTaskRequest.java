@@ -213,11 +213,11 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getIdentity() != null)
-            sb.append("Identity: " + getIdentity());
+            sb.append("Identity: ").append(getIdentity());
         sb.append("}");
         return sb.toString();
     }

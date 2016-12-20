@@ -214,9 +214,9 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMappings() != null)
-            sb.append("Mappings: " + getMappings() + ",");
+            sb.append("Mappings: ").append(getMappings()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

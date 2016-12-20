@@ -175,9 +175,9 @@ public class DescribeResourceGroupsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceGroups() != null)
-            sb.append("ResourceGroups: " + getResourceGroups() + ",");
+            sb.append("ResourceGroups: ").append(getResourceGroups()).append(",");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

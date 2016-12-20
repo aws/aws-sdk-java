@@ -61,10 +61,8 @@ public class GetDataRetrievalPolicyRequestMarshaller implements Marshaller<Reque
 
         String uriResourcePath = "/{accountId}/policies/data-retrieval";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (getDataRetrievalPolicyRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getDataRetrievalPolicyRequest.getAccountId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                getDataRetrievalPolicyRequest.getAccountId() == null ? "-" : getDataRetrievalPolicyRequest.getAccountId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

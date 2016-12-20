@@ -218,13 +218,13 @@ public class NatGatewayAddress implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: " + getAllocationId() + ",");
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getPrivateIp() != null)
-            sb.append("PrivateIp: " + getPrivateIp() + ",");
+            sb.append("PrivateIp: ").append(getPrivateIp()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }

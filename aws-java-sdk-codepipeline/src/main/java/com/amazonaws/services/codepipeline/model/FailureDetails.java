@@ -205,11 +205,11 @@ public class FailureDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getExternalExecutionId() != null)
-            sb.append("ExternalExecutionId: " + getExternalExecutionId());
+            sb.append("ExternalExecutionId: ").append(getExternalExecutionId());
         sb.append("}");
         return sb.toString();
     }

@@ -515,25 +515,25 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageName() != null)
-            sb.append("ImageName: " + getImageName() + ",");
+            sb.append("ImageName: ").append(getImageName()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getComputeCapacity() != null)
-            sb.append("ComputeCapacity: " + getComputeCapacity() + ",");
+            sb.append("ComputeCapacity: ").append(getComputeCapacity()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: " + getVpcConfig() + ",");
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getMaxUserDurationInSeconds() != null)
-            sb.append("MaxUserDurationInSeconds: " + getMaxUserDurationInSeconds() + ",");
+            sb.append("MaxUserDurationInSeconds: ").append(getMaxUserDurationInSeconds()).append(",");
         if (getDisconnectTimeoutInSeconds() != null)
-            sb.append("DisconnectTimeoutInSeconds: " + getDisconnectTimeoutInSeconds() + ",");
+            sb.append("DisconnectTimeoutInSeconds: ").append(getDisconnectTimeoutInSeconds()).append(",");
         if (getDeleteVpcConfig() != null)
-            sb.append("DeleteVpcConfig: " + getDeleteVpcConfig() + ",");
+            sb.append("DeleteVpcConfig: ").append(getDeleteVpcConfig()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: " + getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName());
         sb.append("}");
         return sb.toString();
     }

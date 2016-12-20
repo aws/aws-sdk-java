@@ -28,8 +28,8 @@ public class StartAssessmentRunRequest extends com.amazonaws.AmazonWebServiceReq
     private String assessmentTemplateArn;
     /**
      * <p>
-     * You can specify the name for the assessment run, or you can use the auto-generated name that is based on the
-     * assessment template name. The name must be unique for the assessment template.
+     * You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is
+     * used to start the assessment run.
      * </p>
      */
     private String assessmentRunName;
@@ -76,13 +76,13 @@ public class StartAssessmentRunRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can specify the name for the assessment run, or you can use the auto-generated name that is based on the
-     * assessment template name. The name must be unique for the assessment template.
+     * You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is
+     * used to start the assessment run.
      * </p>
      * 
      * @param assessmentRunName
-     *        You can specify the name for the assessment run, or you can use the auto-generated name that is based on
-     *        the assessment template name. The name must be unique for the assessment template.
+     *        You can specify the name for the assessment run. The name must be unique for the assessment template whose
+     *        ARN is used to start the assessment run.
      */
 
     public void setAssessmentRunName(String assessmentRunName) {
@@ -91,12 +91,12 @@ public class StartAssessmentRunRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can specify the name for the assessment run, or you can use the auto-generated name that is based on the
-     * assessment template name. The name must be unique for the assessment template.
+     * You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is
+     * used to start the assessment run.
      * </p>
      * 
-     * @return You can specify the name for the assessment run, or you can use the auto-generated name that is based on
-     *         the assessment template name. The name must be unique for the assessment template.
+     * @return You can specify the name for the assessment run. The name must be unique for the assessment template
+     *         whose ARN is used to start the assessment run.
      */
 
     public String getAssessmentRunName() {
@@ -105,13 +105,13 @@ public class StartAssessmentRunRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * You can specify the name for the assessment run, or you can use the auto-generated name that is based on the
-     * assessment template name. The name must be unique for the assessment template.
+     * You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is
+     * used to start the assessment run.
      * </p>
      * 
      * @param assessmentRunName
-     *        You can specify the name for the assessment run, or you can use the auto-generated name that is based on
-     *        the assessment template name. The name must be unique for the assessment template.
+     *        You can specify the name for the assessment run. The name must be unique for the assessment template whose
+     *        ARN is used to start the assessment run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,9 +132,9 @@ public class StartAssessmentRunRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTemplateArn() != null)
-            sb.append("AssessmentTemplateArn: " + getAssessmentTemplateArn() + ",");
+            sb.append("AssessmentTemplateArn: ").append(getAssessmentTemplateArn()).append(",");
         if (getAssessmentRunName() != null)
-            sb.append("AssessmentRunName: " + getAssessmentRunName());
+            sb.append("AssessmentRunName: ").append(getAssessmentRunName());
         sb.append("}");
         return sb.toString();
     }

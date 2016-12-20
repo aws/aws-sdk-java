@@ -154,11 +154,11 @@ public class JobDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getData() != null)
-            sb.append("Data: " + getData() + ",");
+            sb.append("Data: ").append(getData()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId());
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }

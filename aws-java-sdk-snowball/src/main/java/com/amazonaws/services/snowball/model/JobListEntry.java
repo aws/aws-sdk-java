@@ -502,19 +502,19 @@ public class JobListEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobState() != null)
-            sb.append("JobState: " + getJobState() + ",");
+            sb.append("JobState: ").append(getJobState()).append(",");
         if (getIsMaster() != null)
-            sb.append("IsMaster: " + getIsMaster() + ",");
+            sb.append("IsMaster: ").append(getIsMaster()).append(",");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType() + ",");
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getSnowballType() != null)
-            sb.append("SnowballType: " + getSnowballType() + ",");
+            sb.append("SnowballType: ").append(getSnowballType()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

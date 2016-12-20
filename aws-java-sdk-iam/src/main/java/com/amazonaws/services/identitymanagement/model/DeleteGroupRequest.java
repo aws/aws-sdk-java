@@ -133,7 +133,7 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName());
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }

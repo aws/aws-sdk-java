@@ -110,7 +110,7 @@ public class PollForJobsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobs() != null)
-            sb.append("Jobs: " + getJobs());
+            sb.append("Jobs: ").append(getJobs());
         sb.append("}");
         return sb.toString();
     }

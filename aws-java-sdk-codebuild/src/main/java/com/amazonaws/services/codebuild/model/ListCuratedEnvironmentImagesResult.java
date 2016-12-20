@@ -108,7 +108,7 @@ public class ListCuratedEnvironmentImagesResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatforms() != null)
-            sb.append("Platforms: " + getPlatforms());
+            sb.append("Platforms: ").append(getPlatforms());
         sb.append("}");
         return sb.toString();
     }

@@ -271,15 +271,15 @@ public class ElasticIp implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIp() != null)
-            sb.append("Ip: " + getIp() + ",");
+            sb.append("Ip: ").append(getIp()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }

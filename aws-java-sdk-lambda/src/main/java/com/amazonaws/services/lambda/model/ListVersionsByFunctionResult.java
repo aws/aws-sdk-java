@@ -157,9 +157,9 @@ public class ListVersionsByFunctionResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getVersions() != null)
-            sb.append("Versions: " + getVersions());
+            sb.append("Versions: ").append(getVersions());
         sb.append("}");
         return sb.toString();
     }

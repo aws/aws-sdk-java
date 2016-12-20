@@ -218,13 +218,13 @@ public class CurrentRevision implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getChangeIdentifier() != null)
-            sb.append("ChangeIdentifier: " + getChangeIdentifier() + ",");
+            sb.append("ChangeIdentifier: ").append(getChangeIdentifier()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getRevisionSummary() != null)
-            sb.append("RevisionSummary: " + getRevisionSummary());
+            sb.append("RevisionSummary: ").append(getRevisionSummary());
         sb.append("}");
         return sb.toString();
     }

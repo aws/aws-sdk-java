@@ -584,11 +584,11 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRequestItems() != null)
-            sb.append("RequestItems: " + getRequestItems() + ",");
+            sb.append("RequestItems: ").append(getRequestItems()).append(",");
         if (getReturnConsumedCapacity() != null)
-            sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
+            sb.append("ReturnConsumedCapacity: ").append(getReturnConsumedCapacity()).append(",");
         if (getReturnItemCollectionMetrics() != null)
-            sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics());
+            sb.append("ReturnItemCollectionMetrics: ").append(getReturnItemCollectionMetrics());
         sb.append("}");
         return sb.toString();
     }

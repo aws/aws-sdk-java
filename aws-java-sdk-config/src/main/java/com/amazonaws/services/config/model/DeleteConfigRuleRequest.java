@@ -79,7 +79,7 @@ public class DeleteConfigRuleRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleName() != null)
-            sb.append("ConfigRuleName: " + getConfigRuleName());
+            sb.append("ConfigRuleName: ").append(getConfigRuleName());
         sb.append("}");
         return sb.toString();
     }

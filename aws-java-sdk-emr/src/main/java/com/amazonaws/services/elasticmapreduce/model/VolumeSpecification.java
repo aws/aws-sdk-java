@@ -180,11 +180,11 @@ public class VolumeSpecification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops() + ",");
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getSizeInGB() != null)
-            sb.append("SizeInGB: " + getSizeInGB());
+            sb.append("SizeInGB: ").append(getSizeInGB());
         sb.append("}");
         return sb.toString();
     }

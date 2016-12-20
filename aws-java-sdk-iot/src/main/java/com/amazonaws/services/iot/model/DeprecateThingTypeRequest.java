@@ -148,9 +148,9 @@ public class DeprecateThingTypeRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName() + ",");
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getUndoDeprecate() != null)
-            sb.append("UndoDeprecate: " + getUndoDeprecate());
+            sb.append("UndoDeprecate: ").append(getUndoDeprecate());
         sb.append("}");
         return sb.toString();
     }

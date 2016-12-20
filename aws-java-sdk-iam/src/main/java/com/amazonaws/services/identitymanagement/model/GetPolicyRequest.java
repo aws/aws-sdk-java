@@ -111,7 +111,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }

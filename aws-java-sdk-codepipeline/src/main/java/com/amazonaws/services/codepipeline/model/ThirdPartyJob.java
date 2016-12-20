@@ -134,9 +134,9 @@ public class ThirdPartyJob implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId());
+            sb.append("JobId: ").append(getJobId());
         sb.append("}");
         return sb.toString();
     }

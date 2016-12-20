@@ -460,15 +460,15 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItems() != null)
-            sb.append("Items: " + getItems() + ",");
+            sb.append("Items: ").append(getItems()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getScannedCount() != null)
-            sb.append("ScannedCount: " + getScannedCount() + ",");
+            sb.append("ScannedCount: ").append(getScannedCount()).append(",");
         if (getLastEvaluatedKey() != null)
-            sb.append("LastEvaluatedKey: " + getLastEvaluatedKey() + ",");
+            sb.append("LastEvaluatedKey: ").append(getLastEvaluatedKey()).append(",");
         if (getConsumedCapacity() != null)
-            sb.append("ConsumedCapacity: " + getConsumedCapacity());
+            sb.append("ConsumedCapacity: ").append(getConsumedCapacity());
         sb.append("}");
         return sb.toString();
     }

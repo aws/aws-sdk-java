@@ -138,9 +138,9 @@ public class CreateActivationResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivationId() != null)
-            sb.append("ActivationId: " + getActivationId() + ",");
+            sb.append("ActivationId: ").append(getActivationId()).append(",");
         if (getActivationCode() != null)
-            sb.append("ActivationCode: " + getActivationCode());
+            sb.append("ActivationCode: ").append(getActivationCode());
         sb.append("}");
         return sb.toString();
     }

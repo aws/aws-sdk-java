@@ -359,15 +359,15 @@ public class DeliveryChannel implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getS3BucketName() != null)
-            sb.append("S3BucketName: " + getS3BucketName() + ",");
+            sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
         if (getS3KeyPrefix() != null)
-            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+            sb.append("S3KeyPrefix: ").append(getS3KeyPrefix()).append(",");
         if (getSnsTopicARN() != null)
-            sb.append("SnsTopicARN: " + getSnsTopicARN() + ",");
+            sb.append("SnsTopicARN: ").append(getSnsTopicARN()).append(",");
         if (getConfigSnapshotDeliveryProperties() != null)
-            sb.append("ConfigSnapshotDeliveryProperties: " + getConfigSnapshotDeliveryProperties());
+            sb.append("ConfigSnapshotDeliveryProperties: ").append(getConfigSnapshotDeliveryProperties());
         sb.append("}");
         return sb.toString();
     }

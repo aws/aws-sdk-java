@@ -140,9 +140,9 @@ public class ActivityTaskCancelRequestedEventAttributes implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId()).append(",");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId());
+            sb.append("ActivityId: ").append(getActivityId());
         sb.append("}");
         return sb.toString();
     }

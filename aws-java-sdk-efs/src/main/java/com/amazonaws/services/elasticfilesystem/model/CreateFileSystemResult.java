@@ -576,23 +576,23 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getCreationToken() != null)
-            sb.append("CreationToken: " + getCreationToken() + ",");
+            sb.append("CreationToken: ").append(getCreationToken()).append(",");
         if (getFileSystemId() != null)
-            sb.append("FileSystemId: " + getFileSystemId() + ",");
+            sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLifeCycleState() != null)
-            sb.append("LifeCycleState: " + getLifeCycleState() + ",");
+            sb.append("LifeCycleState: ").append(getLifeCycleState()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getNumberOfMountTargets() != null)
-            sb.append("NumberOfMountTargets: " + getNumberOfMountTargets() + ",");
+            sb.append("NumberOfMountTargets: ").append(getNumberOfMountTargets()).append(",");
         if (getSizeInBytes() != null)
-            sb.append("SizeInBytes: " + getSizeInBytes() + ",");
+            sb.append("SizeInBytes: ").append(getSizeInBytes()).append(",");
         if (getPerformanceMode() != null)
-            sb.append("PerformanceMode: " + getPerformanceMode());
+            sb.append("PerformanceMode: ").append(getPerformanceMode());
         sb.append("}");
         return sb.toString();
     }

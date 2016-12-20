@@ -391,19 +391,19 @@ public class JobDefinition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobDefinitionName() != null)
-            sb.append("JobDefinitionName: " + getJobDefinitionName() + ",");
+            sb.append("JobDefinitionName: ").append(getJobDefinitionName()).append(",");
         if (getJobDefinitionArn() != null)
-            sb.append("JobDefinitionArn: " + getJobDefinitionArn() + ",");
+            sb.append("JobDefinitionArn: ").append(getJobDefinitionArn()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerProperties() != null)
-            sb.append("ContainerProperties: " + getContainerProperties());
+            sb.append("ContainerProperties: ").append(getContainerProperties());
         sb.append("}");
         return sb.toString();
     }

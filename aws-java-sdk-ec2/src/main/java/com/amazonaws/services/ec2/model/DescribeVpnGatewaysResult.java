@@ -114,7 +114,7 @@ public class DescribeVpnGatewaysResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnGateways() != null)
-            sb.append("VpnGateways: " + getVpnGateways());
+            sb.append("VpnGateways: ").append(getVpnGateways());
         sb.append("}");
         return sb.toString();
     }

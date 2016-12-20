@@ -78,7 +78,7 @@ public class UpdateAssociationResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationDescription() != null)
-            sb.append("AssociationDescription: " + getAssociationDescription());
+            sb.append("AssociationDescription: ").append(getAssociationDescription());
         sb.append("}");
         return sb.toString();
     }

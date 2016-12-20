@@ -84,7 +84,7 @@ public class ConfirmConnectionResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectionState() != null)
-            sb.append("ConnectionState: " + getConnectionState());
+            sb.append("ConnectionState: ").append(getConnectionState());
         sb.append("}");
         return sb.toString();
     }

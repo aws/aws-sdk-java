@@ -189,9 +189,9 @@ public class DescribeEventsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerEvents() != null)
-            sb.append("ServerEvents: " + getServerEvents() + ",");
+            sb.append("ServerEvents: ").append(getServerEvents()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

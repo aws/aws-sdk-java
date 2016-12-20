@@ -80,7 +80,7 @@ public class CreateDeploymentResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId());
+            sb.append("DeploymentId: ").append(getDeploymentId());
         sb.append("}");
         return sb.toString();
     }

@@ -466,17 +466,17 @@ public class HlsContentProtection implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMethod() != null)
-            sb.append("Method: " + getMethod() + ",");
+            sb.append("Method: ").append(getMethod()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getKeyMd5() != null)
-            sb.append("KeyMd5: " + getKeyMd5() + ",");
+            sb.append("KeyMd5: ").append(getKeyMd5()).append(",");
         if (getInitializationVector() != null)
-            sb.append("InitializationVector: " + getInitializationVector() + ",");
+            sb.append("InitializationVector: ").append(getInitializationVector()).append(",");
         if (getLicenseAcquisitionUrl() != null)
-            sb.append("LicenseAcquisitionUrl: " + getLicenseAcquisitionUrl() + ",");
+            sb.append("LicenseAcquisitionUrl: ").append(getLicenseAcquisitionUrl()).append(",");
         if (getKeyStoragePolicy() != null)
-            sb.append("KeyStoragePolicy: " + getKeyStoragePolicy());
+            sb.append("KeyStoragePolicy: ").append(getKeyStoragePolicy());
         sb.append("}");
         return sb.toString();
     }

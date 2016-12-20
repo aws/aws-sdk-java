@@ -409,17 +409,17 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId() + ",");
+            sb.append("UploadId: ").append(getUploadId()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum() + ",");
+            sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getRange() != null)
-            sb.append("Range: " + getRange() + ",");
+            sb.append("Range: ").append(getRange()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody());
+            sb.append("Body: ").append(getBody());
         sb.append("}");
         return sb.toString();
     }

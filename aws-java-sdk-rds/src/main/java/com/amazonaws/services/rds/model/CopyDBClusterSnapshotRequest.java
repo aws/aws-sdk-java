@@ -505,11 +505,11 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceDBClusterSnapshotIdentifier() != null)
-            sb.append("SourceDBClusterSnapshotIdentifier: " + getSourceDBClusterSnapshotIdentifier() + ",");
+            sb.append("SourceDBClusterSnapshotIdentifier: ").append(getSourceDBClusterSnapshotIdentifier()).append(",");
         if (getTargetDBClusterSnapshotIdentifier() != null)
-            sb.append("TargetDBClusterSnapshotIdentifier: " + getTargetDBClusterSnapshotIdentifier() + ",");
+            sb.append("TargetDBClusterSnapshotIdentifier: ").append(getTargetDBClusterSnapshotIdentifier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

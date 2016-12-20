@@ -14,9 +14,6 @@
  */
 package com.amazonaws.services.glacier.internal;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.amazonaws.Request;
 import com.amazonaws.handlers.AbstractRequestHandler;
 import com.amazonaws.services.glacier.model.DescribeJobRequest;
@@ -26,17 +23,8 @@ import com.amazonaws.services.glacier.model.UploadMultipartPartRequest;
 
 public class GlacierRequestHandler extends AbstractRequestHandler {
 
-	private static final List<String> PARAMETERS = Arrays.asList(new String[] {"vaults"});
-
     @Override
     public void beforeRequest(Request<?> request) {
-
-    	// Plug in the default account ID ('-') if none has been specified
-
-    	if (!startsWithUserId(request)) {
-    		String resourcePath = request.getResourcePath();
-    		request.setResourcePath(resourcePath.replaceFirst("//", "/-/"));
-    	}
 
         request.addHeader("x-amz-glacier-version", "2012-06-01");
 
@@ -75,11 +63,4 @@ public class GlacierRequestHandler extends AbstractRequestHandler {
         }
     }
 
-	private boolean startsWithUserId(Request<?> request) {
-		for (String parameter : PARAMETERS)
-			if (request.getResourcePath().startsWith("//" + parameter)) {
-				return false;
-			}
-		return true;
-	}
 }

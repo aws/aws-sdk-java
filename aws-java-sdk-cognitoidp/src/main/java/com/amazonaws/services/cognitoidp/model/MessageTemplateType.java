@@ -172,11 +172,11 @@ public class MessageTemplateType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSMSMessage() != null)
-            sb.append("SMSMessage: " + getSMSMessage() + ",");
+            sb.append("SMSMessage: ").append(getSMSMessage()).append(",");
         if (getEmailMessage() != null)
-            sb.append("EmailMessage: " + getEmailMessage() + ",");
+            sb.append("EmailMessage: ").append(getEmailMessage()).append(",");
         if (getEmailSubject() != null)
-            sb.append("EmailSubject: " + getEmailSubject());
+            sb.append("EmailSubject: ").append(getEmailSubject());
         sb.append("}");
         return sb.toString();
     }

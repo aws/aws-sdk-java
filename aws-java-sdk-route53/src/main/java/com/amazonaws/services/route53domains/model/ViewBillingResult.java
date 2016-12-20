@@ -267,9 +267,9 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextPageMarker() != null)
-            sb.append("NextPageMarker: " + getNextPageMarker() + ",");
+            sb.append("NextPageMarker: ").append(getNextPageMarker()).append(",");
         if (getBillingRecords() != null)
-            sb.append("BillingRecords: " + getBillingRecords());
+            sb.append("BillingRecords: ").append(getBillingRecords());
         sb.append("}");
         return sb.toString();
     }

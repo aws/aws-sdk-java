@@ -259,13 +259,13 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: " + getPipelineExecutionId() + ",");
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId()).append(",");
         if (getRetryMode() != null)
-            sb.append("RetryMode: " + getRetryMode());
+            sb.append("RetryMode: ").append(getRetryMode());
         sb.append("}");
         return sb.toString();
     }

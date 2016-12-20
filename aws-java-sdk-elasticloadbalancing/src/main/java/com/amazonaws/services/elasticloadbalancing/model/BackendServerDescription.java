@@ -159,9 +159,9 @@ public class BackendServerDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstancePort() != null)
-            sb.append("InstancePort: " + getInstancePort() + ",");
+            sb.append("InstancePort: ").append(getInstancePort()).append(",");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames());
+            sb.append("PolicyNames: ").append(getPolicyNames());
         sb.append("}");
         return sb.toString();
     }

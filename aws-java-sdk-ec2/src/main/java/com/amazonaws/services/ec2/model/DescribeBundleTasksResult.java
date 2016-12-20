@@ -114,7 +114,7 @@ public class DescribeBundleTasksResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBundleTasks() != null)
-            sb.append("BundleTasks: " + getBundleTasks());
+            sb.append("BundleTasks: ").append(getBundleTasks());
         sb.append("}");
         return sb.toString();
     }

@@ -81,7 +81,7 @@ public class ImportVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConversionTask() != null)
-            sb.append("ConversionTask: " + getConversionTask());
+            sb.append("ConversionTask: ").append(getConversionTask());
         sb.append("}");
         return sb.toString();
     }

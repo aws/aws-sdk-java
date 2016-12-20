@@ -112,7 +112,7 @@ public class GetJobDetailsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobDetails() != null)
-            sb.append("JobDetails: " + getJobDetails());
+            sb.append("JobDetails: ").append(getJobDetails());
         sb.append("}");
         return sb.toString();
     }

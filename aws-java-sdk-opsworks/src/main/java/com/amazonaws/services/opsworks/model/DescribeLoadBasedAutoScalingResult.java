@@ -121,7 +121,7 @@ public class DescribeLoadBasedAutoScalingResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBasedAutoScalingConfigurations() != null)
-            sb.append("LoadBasedAutoScalingConfigurations: " + getLoadBasedAutoScalingConfigurations());
+            sb.append("LoadBasedAutoScalingConfigurations: ").append(getLoadBasedAutoScalingConfigurations());
         sb.append("}");
         return sb.toString();
     }

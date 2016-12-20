@@ -112,7 +112,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }

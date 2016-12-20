@@ -250,11 +250,11 @@ public class Configuration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClassification() != null)
-            sb.append("Classification: " + getClassification() + ",");
+            sb.append("Classification: ").append(getClassification()).append(",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations() + ",");
+            sb.append("Configurations: ").append(getConfigurations()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: " + getProperties());
+            sb.append("Properties: ").append(getProperties());
         sb.append("}");
         return sb.toString();
     }

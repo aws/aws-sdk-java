@@ -111,7 +111,7 @@ public class DescribeAlarmsForMetricResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricAlarms() != null)
-            sb.append("MetricAlarms: " + getMetricAlarms());
+            sb.append("MetricAlarms: ").append(getMetricAlarms());
         sb.append("}");
         return sb.toString();
     }

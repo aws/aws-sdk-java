@@ -161,9 +161,9 @@ public class ListPortfolioAccessResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountIds() != null)
-            sb.append("AccountIds: " + getAccountIds() + ",");
+            sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

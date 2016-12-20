@@ -184,9 +184,9 @@ public class BatchGetBuildsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuilds() != null)
-            sb.append("Builds: " + getBuilds() + ",");
+            sb.append("Builds: ").append(getBuilds()).append(",");
         if (getBuildsNotFound() != null)
-            sb.append("BuildsNotFound: " + getBuildsNotFound());
+            sb.append("BuildsNotFound: ").append(getBuildsNotFound());
         sb.append("}");
         return sb.toString();
     }

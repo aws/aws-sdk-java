@@ -191,11 +191,11 @@ public class IdFormat implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResource() != null)
-            sb.append("Resource: " + getResource() + ",");
+            sb.append("Resource: ").append(getResource()).append(",");
         if (getUseLongIds() != null)
-            sb.append("UseLongIds: " + getUseLongIds() + ",");
+            sb.append("UseLongIds: ").append(getUseLongIds()).append(",");
         if (getDeadline() != null)
-            sb.append("Deadline: " + getDeadline());
+            sb.append("Deadline: ").append(getDeadline());
         sb.append("}");
         return sb.toString();
     }

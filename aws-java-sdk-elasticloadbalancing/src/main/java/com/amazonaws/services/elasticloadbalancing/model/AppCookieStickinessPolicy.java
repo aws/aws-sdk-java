@@ -155,9 +155,9 @@ public class AppCookieStickinessPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getCookieName() != null)
-            sb.append("CookieName: " + getCookieName());
+            sb.append("CookieName: ").append(getCookieName());
         sb.append("}");
         return sb.toString();
     }

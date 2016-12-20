@@ -85,6 +85,11 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     continue;
                 }
 
+                if (context.testExpression("ResourceRecords", targetDepth)) {
+                    resourceRecordSet.withResourceRecords(new ArrayList<ResourceRecord>());
+                    continue;
+                }
+
                 if (context.testExpression("ResourceRecords/ResourceRecord", targetDepth)) {
                     resourceRecordSet.withResourceRecords(ResourceRecordStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

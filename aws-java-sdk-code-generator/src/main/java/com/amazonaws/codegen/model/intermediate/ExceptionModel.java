@@ -23,6 +23,8 @@ public class ExceptionModel {
 
     private String documentation;
 
+    private Integer httpStatusCode;
+
     public ExceptionModel(
     		@JsonProperty("exceptionName") String exceptionName) {
         super();
@@ -47,6 +49,19 @@ public class ExceptionModel {
 
     public ExceptionModel withDocumentation(String documentation) {
         setDocumentation(documentation);
+        return this;
+    }
+
+    public Integer getHttpStatusCode() {
+        return httpStatusCode;
+    }
+
+    public void setHttpStatusCode(Integer httpStatusCode) {
+        this.httpStatusCode = httpStatusCode;
+    }
+
+    public ExceptionModel withHttpStatusCode(Integer httpStatusCode) {
+        this.httpStatusCode = httpStatusCode;
         return this;
     }
 }

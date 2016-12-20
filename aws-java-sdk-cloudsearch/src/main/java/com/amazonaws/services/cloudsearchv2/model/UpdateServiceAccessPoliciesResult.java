@@ -80,7 +80,7 @@ public class UpdateServiceAccessPoliciesResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessPolicies() != null)
-            sb.append("AccessPolicies: " + getAccessPolicies());
+            sb.append("AccessPolicies: ").append(getAccessPolicies());
         sb.append("}");
         return sb.toString();
     }

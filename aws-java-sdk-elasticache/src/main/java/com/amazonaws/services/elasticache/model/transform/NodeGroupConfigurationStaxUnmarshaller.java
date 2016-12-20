@@ -60,6 +60,11 @@ public class NodeGroupConfigurationStaxUnmarshaller implements Unmarshaller<Node
                     continue;
                 }
 
+                if (context.testExpression("ReplicaAvailabilityZones", targetDepth)) {
+                    nodeGroupConfiguration.withReplicaAvailabilityZones(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ReplicaAvailabilityZones/AvailabilityZone", targetDepth)) {
                     nodeGroupConfiguration.withReplicaAvailabilityZones(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

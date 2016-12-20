@@ -417,9 +417,9 @@ public class EnabledMetric implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetric() != null)
-            sb.append("Metric: " + getMetric() + ",");
+            sb.append("Metric: ").append(getMetric()).append(",");
         if (getGranularity() != null)
-            sb.append("Granularity: " + getGranularity());
+            sb.append("Granularity: ").append(getGranularity());
         sb.append("}");
         return sb.toString();
     }

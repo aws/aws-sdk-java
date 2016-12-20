@@ -126,9 +126,9 @@ public class GetCredentialsForIdentityResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getCredentials() != null)
-            sb.append("Credentials: " + getCredentials());
+            sb.append("Credentials: ").append(getCredentials());
         sb.append("}");
         return sb.toString();
     }

@@ -210,11 +210,11 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest implements Seri
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice());
+            sb.append("Device: ").append(getDevice());
         sb.append("}");
         return sb.toString();
     }

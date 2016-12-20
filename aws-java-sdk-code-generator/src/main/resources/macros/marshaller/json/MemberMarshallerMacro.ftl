@@ -8,7 +8,7 @@
       -->
     <#local http = (member.http) />
     <#if !(http.location)?? && !(http.isStreaming) && !(http.isPayload)>
-        <#local getMember = getterFunctionPrefix + ".get" + member.name />
+        <#local getMember = getterFunctionPrefix + "." + member.getterMethodName />
         <#if member.simple>
             <#if member.idempotencyToken>
                 jsonGenerator.writeFieldName("${http.marshallLocationName}").writeValue(<@IdempotencyTokenMacro.content getMember member.variable.simpleType/>);

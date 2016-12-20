@@ -315,15 +315,15 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getSecretHash() != null)
-            sb.append("SecretHash: " + getSecretHash() + ",");
+            sb.append("SecretHash: ").append(getSecretHash()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getConfirmationCode() != null)
-            sb.append("ConfirmationCode: " + getConfirmationCode() + ",");
+            sb.append("ConfirmationCode: ").append(getConfirmationCode()).append(",");
         if (getForceAliasCreation() != null)
-            sb.append("ForceAliasCreation: " + getForceAliasCreation());
+            sb.append("ForceAliasCreation: ").append(getForceAliasCreation());
         sb.append("}");
         return sb.toString();
     }

@@ -86,7 +86,7 @@ public class GetAutomationExecutionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecutionId() != null)
-            sb.append("AutomationExecutionId: " + getAutomationExecutionId());
+            sb.append("AutomationExecutionId: ").append(getAutomationExecutionId());
         sb.append("}");
         return sb.toString();
     }

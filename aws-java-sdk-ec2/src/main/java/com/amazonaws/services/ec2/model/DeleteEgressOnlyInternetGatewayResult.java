@@ -92,7 +92,7 @@ public class DeleteEgressOnlyInternetGatewayResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReturnCode() != null)
-            sb.append("ReturnCode: " + getReturnCode());
+            sb.append("ReturnCode: ").append(getReturnCode());
         sb.append("}");
         return sb.toString();
     }

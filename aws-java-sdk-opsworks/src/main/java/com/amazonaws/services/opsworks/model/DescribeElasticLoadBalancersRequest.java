@@ -158,9 +158,9 @@ public class DescribeElasticLoadBalancersRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds());
+            sb.append("LayerIds: ").append(getLayerIds());
         sb.append("}");
         return sb.toString();
     }

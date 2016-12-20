@@ -178,11 +178,11 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationName() != null)
-            sb.append("DestinationName: " + getDestinationName() + ",");
+            sb.append("DestinationName: ").append(getDestinationName()).append(",");
         if (getTargetArn() != null)
-            sb.append("TargetArn: " + getTargetArn() + ",");
+            sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

@@ -249,11 +249,11 @@ public class ComposeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getVersionLabels() != null)
-            sb.append("VersionLabels: " + getVersionLabels());
+            sb.append("VersionLabels: ").append(getVersionLabels());
         sb.append("}");
         return sb.toString();
     }

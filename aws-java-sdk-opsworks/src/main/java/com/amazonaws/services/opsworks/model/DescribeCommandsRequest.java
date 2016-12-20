@@ -227,11 +227,11 @@ public class DescribeCommandsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getCommandIds() != null)
-            sb.append("CommandIds: " + getCommandIds());
+            sb.append("CommandIds: ").append(getCommandIds());
         sb.append("}");
         return sb.toString();
     }

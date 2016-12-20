@@ -515,15 +515,15 @@ public class BillingRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getOperation() != null)
-            sb.append("Operation: " + getOperation() + ",");
+            sb.append("Operation: ").append(getOperation()).append(",");
         if (getInvoiceId() != null)
-            sb.append("InvoiceId: " + getInvoiceId() + ",");
+            sb.append("InvoiceId: ").append(getInvoiceId()).append(",");
         if (getBillDate() != null)
-            sb.append("BillDate: " + getBillDate() + ",");
+            sb.append("BillDate: ").append(getBillDate()).append(",");
         if (getPrice() != null)
-            sb.append("Price: " + getPrice());
+            sb.append("Price: ").append(getPrice());
         sb.append("}");
         return sb.toString();
     }

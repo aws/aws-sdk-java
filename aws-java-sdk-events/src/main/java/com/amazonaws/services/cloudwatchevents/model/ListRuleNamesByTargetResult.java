@@ -156,9 +156,9 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleNames() != null)
-            sb.append("RuleNames: " + getRuleNames() + ",");
+            sb.append("RuleNames: ").append(getRuleNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

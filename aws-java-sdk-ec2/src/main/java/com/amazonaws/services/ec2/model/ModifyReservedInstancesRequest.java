@@ -274,11 +274,11 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getReservedInstancesIds() != null)
-            sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ",");
+            sb.append("ReservedInstancesIds: ").append(getReservedInstancesIds()).append(",");
         if (getTargetConfigurations() != null)
-            sb.append("TargetConfigurations: " + getTargetConfigurations());
+            sb.append("TargetConfigurations: ").append(getTargetConfigurations());
         sb.append("}");
         return sb.toString();
     }

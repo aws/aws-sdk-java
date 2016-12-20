@@ -65,8 +65,18 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
                     continue;
                 }
 
+                if (context.testExpression("ipPermissions", targetDepth)) {
+                    securityGroup.withIpPermissions(new ArrayList<IpPermission>());
+                    continue;
+                }
+
                 if (context.testExpression("ipPermissions/item", targetDepth)) {
                     securityGroup.withIpPermissions(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipPermissionsEgress", targetDepth)) {
+                    securityGroup.withIpPermissionsEgress(new ArrayList<IpPermission>());
                     continue;
                 }
 
@@ -77,6 +87,11 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
 
                 if (context.testExpression("vpcId", targetDepth)) {
                     securityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    securityGroup.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

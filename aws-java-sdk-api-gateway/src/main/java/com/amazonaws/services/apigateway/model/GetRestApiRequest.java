@@ -81,7 +81,7 @@ public class GetRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId());
+            sb.append("RestApiId: ").append(getRestApiId());
         sb.append("}");
         return sb.toString();
     }

@@ -478,23 +478,23 @@ public class RdsDbInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRdsDbInstanceArn() != null)
-            sb.append("RdsDbInstanceArn: " + getRdsDbInstanceArn() + ",");
+            sb.append("RdsDbInstanceArn: ").append(getRdsDbInstanceArn()).append(",");
         if (getDbInstanceIdentifier() != null)
-            sb.append("DbInstanceIdentifier: " + getDbInstanceIdentifier() + ",");
+            sb.append("DbInstanceIdentifier: ").append(getDbInstanceIdentifier()).append(",");
         if (getDbUser() != null)
-            sb.append("DbUser: " + getDbUser() + ",");
+            sb.append("DbUser: ").append(getDbUser()).append(",");
         if (getDbPassword() != null)
-            sb.append("DbPassword: " + getDbPassword() + ",");
+            sb.append("DbPassword: ").append(getDbPassword()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getAddress() != null)
-            sb.append("Address: " + getAddress() + ",");
+            sb.append("Address: ").append(getAddress()).append(",");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getMissingOnRds() != null)
-            sb.append("MissingOnRds: " + getMissingOnRds());
+            sb.append("MissingOnRds: ").append(getMissingOnRds());
         sb.append("}");
         return sb.toString();
     }

@@ -46,6 +46,11 @@ public class DescribeAutoScalingNotificationTypesResultStaxUnmarshaller implemen
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AutoScalingNotificationTypes", targetDepth)) {
+                    describeAutoScalingNotificationTypesResult.withAutoScalingNotificationTypes(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("AutoScalingNotificationTypes/member", targetDepth)) {
                     describeAutoScalingNotificationTypesResult.withAutoScalingNotificationTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

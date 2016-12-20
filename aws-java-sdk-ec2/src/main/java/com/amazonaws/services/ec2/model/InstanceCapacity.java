@@ -172,11 +172,11 @@ public class InstanceCapacity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAvailableCapacity() != null)
-            sb.append("AvailableCapacity: " + getAvailableCapacity() + ",");
+            sb.append("AvailableCapacity: ").append(getAvailableCapacity()).append(",");
         if (getTotalCapacity() != null)
-            sb.append("TotalCapacity: " + getTotalCapacity());
+            sb.append("TotalCapacity: ").append(getTotalCapacity());
         sb.append("}");
         return sb.toString();
     }

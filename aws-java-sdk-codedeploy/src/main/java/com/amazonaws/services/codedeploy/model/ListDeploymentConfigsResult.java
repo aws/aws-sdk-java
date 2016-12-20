@@ -173,9 +173,9 @@ public class ListDeploymentConfigsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentConfigsList() != null)
-            sb.append("DeploymentConfigsList: " + getDeploymentConfigsList() + ",");
+            sb.append("DeploymentConfigsList: ").append(getDeploymentConfigsList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

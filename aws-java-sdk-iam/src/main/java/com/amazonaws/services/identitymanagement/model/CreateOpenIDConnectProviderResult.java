@@ -87,7 +87,7 @@ public class CreateOpenIDConnectProviderResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenIDConnectProviderArn() != null)
-            sb.append("OpenIDConnectProviderArn: " + getOpenIDConnectProviderArn());
+            sb.append("OpenIDConnectProviderArn: ").append(getOpenIDConnectProviderArn());
         sb.append("}");
         return sb.toString();
     }

@@ -140,9 +140,9 @@ public class DeleteTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrustId() != null)
-            sb.append("TrustId: " + getTrustId() + ",");
+            sb.append("TrustId: ").append(getTrustId()).append(",");
         if (getDeleteAssociatedConditionalForwarder() != null)
-            sb.append("DeleteAssociatedConditionalForwarder: " + getDeleteAssociatedConditionalForwarder());
+            sb.append("DeleteAssociatedConditionalForwarder: ").append(getDeleteAssociatedConditionalForwarder());
         sb.append("}");
         return sb.toString();
     }

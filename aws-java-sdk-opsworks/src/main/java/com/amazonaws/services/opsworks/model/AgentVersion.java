@@ -126,9 +126,9 @@ public class AgentVersion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getConfigurationManager() != null)
-            sb.append("ConfigurationManager: " + getConfigurationManager());
+            sb.append("ConfigurationManager: ").append(getConfigurationManager());
         sb.append("}");
         return sb.toString();
     }

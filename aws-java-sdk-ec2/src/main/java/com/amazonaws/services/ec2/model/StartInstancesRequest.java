@@ -191,9 +191,9 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getAdditionalInfo() != null)
-            sb.append("AdditionalInfo: " + getAdditionalInfo());
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo());
         sb.append("}");
         return sb.toString();
     }

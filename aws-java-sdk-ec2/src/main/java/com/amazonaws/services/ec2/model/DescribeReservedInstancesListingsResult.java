@@ -115,7 +115,7 @@ public class DescribeReservedInstancesListingsResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesListings() != null)
-            sb.append("ReservedInstancesListings: " + getReservedInstancesListings());
+            sb.append("ReservedInstancesListings: ").append(getReservedInstancesListings());
         sb.append("}");
         return sb.toString();
     }

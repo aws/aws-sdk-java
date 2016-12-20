@@ -143,9 +143,9 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVTLDeviceARN() != null)
-            sb.append("VTLDeviceARN: " + getVTLDeviceARN() + ",");
+            sb.append("VTLDeviceARN: ").append(getVTLDeviceARN()).append(",");
         if (getDeviceType() != null)
-            sb.append("DeviceType: " + getDeviceType());
+            sb.append("DeviceType: ").append(getDeviceType());
         sb.append("}");
         return sb.toString();
     }

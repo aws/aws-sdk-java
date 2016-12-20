@@ -79,7 +79,7 @@ public class DetachStaticIpRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStaticIpName() != null)
-            sb.append("StaticIpName: " + getStaticIpName());
+            sb.append("StaticIpName: ").append(getStaticIpName());
         sb.append("}");
         return sb.toString();
     }

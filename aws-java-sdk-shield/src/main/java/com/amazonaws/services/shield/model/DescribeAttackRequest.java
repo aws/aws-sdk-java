@@ -79,7 +79,7 @@ public class DescribeAttackRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttackId() != null)
-            sb.append("AttackId: " + getAttackId());
+            sb.append("AttackId: ").append(getAttackId());
         sb.append("}");
         return sb.toString();
     }

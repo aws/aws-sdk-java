@@ -306,11 +306,11 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificateName() != null)
-            sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+            sb.append("ServerCertificateName: ").append(getServerCertificateName()).append(",");
         if (getNewPath() != null)
-            sb.append("NewPath: " + getNewPath() + ",");
+            sb.append("NewPath: ").append(getNewPath()).append(",");
         if (getNewServerCertificateName() != null)
-            sb.append("NewServerCertificateName: " + getNewServerCertificateName());
+            sb.append("NewServerCertificateName: ").append(getNewServerCertificateName());
         sb.append("}");
         return sb.toString();
     }

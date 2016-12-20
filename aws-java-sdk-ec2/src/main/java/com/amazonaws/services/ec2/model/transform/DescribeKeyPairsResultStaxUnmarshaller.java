@@ -45,6 +45,11 @@ public class DescribeKeyPairsResultStaxUnmarshaller implements Unmarshaller<Desc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("keySet", targetDepth)) {
+                    describeKeyPairsResult.withKeyPairs(new ArrayList<KeyPairInfo>());
+                    continue;
+                }
+
                 if (context.testExpression("keySet/item", targetDepth)) {
                     describeKeyPairsResult.withKeyPairs(KeyPairInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

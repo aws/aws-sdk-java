@@ -231,11 +231,11 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getAppId() != null)
-            sb.append("AppId: " + getAppId() + ",");
+            sb.append("AppId: ").append(getAppId()).append(",");
         if (getDeploymentIds() != null)
-            sb.append("DeploymentIds: " + getDeploymentIds());
+            sb.append("DeploymentIds: ").append(getDeploymentIds());
         sb.append("}");
         return sb.toString();
     }

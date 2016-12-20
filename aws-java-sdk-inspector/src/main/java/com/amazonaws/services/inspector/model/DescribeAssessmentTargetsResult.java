@@ -175,9 +175,9 @@ public class DescribeAssessmentTargetsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargets() != null)
-            sb.append("AssessmentTargets: " + getAssessmentTargets() + ",");
+            sb.append("AssessmentTargets: ").append(getAssessmentTargets()).append(",");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

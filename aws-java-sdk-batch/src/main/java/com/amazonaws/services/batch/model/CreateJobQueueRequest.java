@@ -328,13 +328,13 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobQueueName() != null)
-            sb.append("JobQueueName: " + getJobQueueName() + ",");
+            sb.append("JobQueueName: ").append(getJobQueueName()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getComputeEnvironmentOrder() != null)
-            sb.append("ComputeEnvironmentOrder: " + getComputeEnvironmentOrder());
+            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder());
         sb.append("}");
         return sb.toString();
     }

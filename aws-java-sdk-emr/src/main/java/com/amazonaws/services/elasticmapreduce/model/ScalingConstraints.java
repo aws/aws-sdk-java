@@ -141,9 +141,9 @@ public class ScalingConstraints implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinCapacity() != null)
-            sb.append("MinCapacity: " + getMinCapacity() + ",");
+            sb.append("MinCapacity: ").append(getMinCapacity()).append(",");
         if (getMaxCapacity() != null)
-            sb.append("MaxCapacity: " + getMaxCapacity());
+            sb.append("MaxCapacity: ").append(getMaxCapacity());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribePrefixListsResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("prefixListSet", targetDepth)) {
+                    describePrefixListsResult.withPrefixLists(new ArrayList<PrefixList>());
+                    continue;
+                }
+
                 if (context.testExpression("prefixListSet/item", targetDepth)) {
                     describePrefixListsResult.withPrefixLists(PrefixListStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

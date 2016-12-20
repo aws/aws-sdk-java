@@ -87,7 +87,7 @@ public class Matcher implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHttpCode() != null)
-            sb.append("HttpCode: " + getHttpCode());
+            sb.append("HttpCode: ").append(getHttpCode());
         sb.append("}");
         return sb.toString();
     }

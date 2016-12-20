@@ -205,11 +205,11 @@ public class GetHostedZoneResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZone() != null)
-            sb.append("HostedZone: " + getHostedZone() + ",");
+            sb.append("HostedZone: ").append(getHostedZone()).append(",");
         if (getDelegationSet() != null)
-            sb.append("DelegationSet: " + getDelegationSet() + ",");
+            sb.append("DelegationSet: ").append(getDelegationSet()).append(",");
         if (getVPCs() != null)
-            sb.append("VPCs: " + getVPCs());
+            sb.append("VPCs: ").append(getVPCs());
         sb.append("}");
         return sb.toString();
     }

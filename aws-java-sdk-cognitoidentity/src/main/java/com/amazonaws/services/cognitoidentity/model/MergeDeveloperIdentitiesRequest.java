@@ -240,13 +240,13 @@ public class MergeDeveloperIdentitiesRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceUserIdentifier() != null)
-            sb.append("SourceUserIdentifier: " + getSourceUserIdentifier() + ",");
+            sb.append("SourceUserIdentifier: ").append(getSourceUserIdentifier()).append(",");
         if (getDestinationUserIdentifier() != null)
-            sb.append("DestinationUserIdentifier: " + getDestinationUserIdentifier() + ",");
+            sb.append("DestinationUserIdentifier: ").append(getDestinationUserIdentifier()).append(",");
         if (getDeveloperProviderName() != null)
-            sb.append("DeveloperProviderName: " + getDeveloperProviderName() + ",");
+            sb.append("DeveloperProviderName: ").append(getDeveloperProviderName()).append(",");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId());
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId());
         sb.append("}");
         return sb.toString();
     }

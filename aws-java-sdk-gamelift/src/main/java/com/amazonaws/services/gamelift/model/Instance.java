@@ -689,19 +689,19 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: " + getFleetId() + ",");
+            sb.append("FleetId: ").append(getFleetId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }

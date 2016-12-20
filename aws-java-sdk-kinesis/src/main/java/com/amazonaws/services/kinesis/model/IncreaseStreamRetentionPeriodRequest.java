@@ -127,9 +127,9 @@ public class IncreaseStreamRetentionPeriodRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getRetentionPeriodHours() != null)
-            sb.append("RetentionPeriodHours: " + getRetentionPeriodHours());
+            sb.append("RetentionPeriodHours: ").append(getRetentionPeriodHours());
         sb.append("}");
         return sb.toString();
     }

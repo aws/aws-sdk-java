@@ -45,6 +45,11 @@ public class ModifyLoadBalancerAttributesResultStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Attributes", targetDepth)) {
+                    modifyLoadBalancerAttributesResult.withAttributes(new ArrayList<LoadBalancerAttribute>());
+                    continue;
+                }
+
                 if (context.testExpression("Attributes/member", targetDepth)) {
                     modifyLoadBalancerAttributesResult.withAttributes(LoadBalancerAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

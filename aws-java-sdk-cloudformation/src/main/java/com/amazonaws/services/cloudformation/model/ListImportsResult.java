@@ -157,9 +157,9 @@ public class ListImportsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImports() != null)
-            sb.append("Imports: " + getImports() + ",");
+            sb.append("Imports: ").append(getImports()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

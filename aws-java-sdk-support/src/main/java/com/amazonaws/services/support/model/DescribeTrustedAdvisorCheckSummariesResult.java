@@ -114,7 +114,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSummaries() != null)
-            sb.append("Summaries: " + getSummaries());
+            sb.append("Summaries: ").append(getSummaries());
         sb.append("}");
         return sb.toString();
     }

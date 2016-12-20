@@ -419,21 +419,21 @@ public class Deployment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getDesiredCount() != null)
-            sb.append("DesiredCount: " + getDesiredCount() + ",");
+            sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getPendingCount() != null)
-            sb.append("PendingCount: " + getPendingCount() + ",");
+            sb.append("PendingCount: ").append(getPendingCount()).append(",");
         if (getRunningCount() != null)
-            sb.append("RunningCount: " + getRunningCount() + ",");
+            sb.append("RunningCount: ").append(getRunningCount()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: " + getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
         return sb.toString();
     }

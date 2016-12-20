@@ -4807,29 +4807,29 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getSetIdentifier() != null)
-            sb.append("SetIdentifier: " + getSetIdentifier() + ",");
+            sb.append("SetIdentifier: ").append(getSetIdentifier()).append(",");
         if (getWeight() != null)
-            sb.append("Weight: " + getWeight() + ",");
+            sb.append("Weight: ").append(getWeight()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getGeoLocation() != null)
-            sb.append("GeoLocation: " + getGeoLocation() + ",");
+            sb.append("GeoLocation: ").append(getGeoLocation()).append(",");
         if (getFailover() != null)
-            sb.append("Failover: " + getFailover() + ",");
+            sb.append("Failover: ").append(getFailover()).append(",");
         if (getTTL() != null)
-            sb.append("TTL: " + getTTL() + ",");
+            sb.append("TTL: ").append(getTTL()).append(",");
         if (getResourceRecords() != null)
-            sb.append("ResourceRecords: " + getResourceRecords() + ",");
+            sb.append("ResourceRecords: ").append(getResourceRecords()).append(",");
         if (getAliasTarget() != null)
-            sb.append("AliasTarget: " + getAliasTarget() + ",");
+            sb.append("AliasTarget: ").append(getAliasTarget()).append(",");
         if (getHealthCheckId() != null)
-            sb.append("HealthCheckId: " + getHealthCheckId() + ",");
+            sb.append("HealthCheckId: ").append(getHealthCheckId()).append(",");
         if (getTrafficPolicyInstanceId() != null)
-            sb.append("TrafficPolicyInstanceId: " + getTrafficPolicyInstanceId());
+            sb.append("TrafficPolicyInstanceId: ").append(getTrafficPolicyInstanceId());
         sb.append("}");
         return sb.toString();
     }

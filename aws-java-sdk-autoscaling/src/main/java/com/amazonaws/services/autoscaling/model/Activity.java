@@ -528,25 +528,25 @@ public class Activity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityId() != null)
-            sb.append("ActivityId: " + getActivityId() + ",");
+            sb.append("ActivityId: ").append(getActivityId()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause() + ",");
+            sb.append("Cause: ").append(getCause()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: " + getProgress() + ",");
+            sb.append("Progress: ").append(getProgress()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails());
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }

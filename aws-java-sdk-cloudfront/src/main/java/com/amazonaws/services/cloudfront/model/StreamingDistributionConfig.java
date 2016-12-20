@@ -574,21 +574,21 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getS3Origin() != null)
-            sb.append("S3Origin: " + getS3Origin() + ",");
+            sb.append("S3Origin: ").append(getS3Origin()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: " + getAliases() + ",");
+            sb.append("Aliases: ").append(getAliases()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getLogging() != null)
-            sb.append("Logging: " + getLogging() + ",");
+            sb.append("Logging: ").append(getLogging()).append(",");
         if (getTrustedSigners() != null)
-            sb.append("TrustedSigners: " + getTrustedSigners() + ",");
+            sb.append("TrustedSigners: ").append(getTrustedSigners()).append(",");
         if (getPriceClass() != null)
-            sb.append("PriceClass: " + getPriceClass() + ",");
+            sb.append("PriceClass: ").append(getPriceClass()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled());
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }

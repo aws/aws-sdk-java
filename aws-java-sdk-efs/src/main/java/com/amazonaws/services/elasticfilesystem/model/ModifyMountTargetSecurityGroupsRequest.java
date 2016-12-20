@@ -158,9 +158,9 @@ public class ModifyMountTargetSecurityGroupsRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: " + getMountTargetId() + ",");
+            sb.append("MountTargetId: ").append(getMountTargetId()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }

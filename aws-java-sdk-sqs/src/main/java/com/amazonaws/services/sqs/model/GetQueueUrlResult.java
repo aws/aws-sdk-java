@@ -25,18 +25,18 @@ public class GetQueueUrlResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The URL for the queue.
+     * The URL of the queue.
      * </p>
      */
     private String queueUrl;
 
     /**
      * <p>
-     * The URL for the queue.
+     * The URL of the queue.
      * </p>
      * 
      * @param queueUrl
-     *        The URL for the queue.
+     *        The URL of the queue.
      */
 
     public void setQueueUrl(String queueUrl) {
@@ -45,10 +45,10 @@ public class GetQueueUrlResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The URL for the queue.
+     * The URL of the queue.
      * </p>
      * 
-     * @return The URL for the queue.
+     * @return The URL of the queue.
      */
 
     public String getQueueUrl() {
@@ -57,11 +57,11 @@ public class GetQueueUrlResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The URL for the queue.
+     * The URL of the queue.
      * </p>
      * 
      * @param queueUrl
-     *        The URL for the queue.
+     *        The URL of the queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +82,7 @@ public class GetQueueUrlResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl());
+            sb.append("QueueUrl: ").append(getQueueUrl());
         sb.append("}");
         return sb.toString();
     }

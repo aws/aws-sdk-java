@@ -272,13 +272,13 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputeEnvironment() != null)
-            sb.append("ComputeEnvironment: " + getComputeEnvironment() + ",");
+            sb.append("ComputeEnvironment: ").append(getComputeEnvironment()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getComputeResources() != null)
-            sb.append("ComputeResources: " + getComputeResources() + ",");
+            sb.append("ComputeResources: ").append(getComputeResources()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole());
+            sb.append("ServiceRole: ").append(getServiceRole());
         sb.append("}");
         return sb.toString();
     }

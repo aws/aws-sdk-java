@@ -88,9 +88,9 @@ public class GetSegmentRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getSegmentId() != null)
-            sb.append("SegmentId: " + getSegmentId());
+            sb.append("SegmentId: ").append(getSegmentId());
         sb.append("}");
         return sb.toString();
     }

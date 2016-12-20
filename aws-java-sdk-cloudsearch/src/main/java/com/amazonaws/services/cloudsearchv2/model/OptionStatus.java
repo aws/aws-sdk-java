@@ -397,15 +397,15 @@ public class OptionStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getUpdateDate() != null)
-            sb.append("UpdateDate: " + getUpdateDate() + ",");
+            sb.append("UpdateDate: ").append(getUpdateDate()).append(",");
         if (getUpdateVersion() != null)
-            sb.append("UpdateVersion: " + getUpdateVersion() + ",");
+            sb.append("UpdateVersion: ").append(getUpdateVersion()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getPendingDeletion() != null)
-            sb.append("PendingDeletion: " + getPendingDeletion());
+            sb.append("PendingDeletion: ").append(getPendingDeletion());
         sb.append("}");
         return sb.toString();
     }

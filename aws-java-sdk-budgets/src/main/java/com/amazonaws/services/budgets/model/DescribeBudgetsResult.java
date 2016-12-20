@@ -113,9 +113,9 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBudgets() != null)
-            sb.append("Budgets: " + getBudgets() + ",");
+            sb.append("Budgets: ").append(getBudgets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

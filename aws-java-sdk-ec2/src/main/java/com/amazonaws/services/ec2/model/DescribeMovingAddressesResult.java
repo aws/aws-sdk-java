@@ -167,9 +167,9 @@ public class DescribeMovingAddressesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMovingAddressStatuses() != null)
-            sb.append("MovingAddressStatuses: " + getMovingAddressStatuses() + ",");
+            sb.append("MovingAddressStatuses: ").append(getMovingAddressStatuses()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

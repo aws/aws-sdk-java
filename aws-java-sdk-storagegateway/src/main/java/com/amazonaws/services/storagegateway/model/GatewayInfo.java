@@ -296,15 +296,15 @@ public class GatewayInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId() + ",");
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getGatewayType() != null)
-            sb.append("GatewayType: " + getGatewayType() + ",");
+            sb.append("GatewayType: ").append(getGatewayType()).append(",");
         if (getGatewayOperationalState() != null)
-            sb.append("GatewayOperationalState: " + getGatewayOperationalState() + ",");
+            sb.append("GatewayOperationalState: ").append(getGatewayOperationalState()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: " + getGatewayName());
+            sb.append("GatewayName: ").append(getGatewayName());
         sb.append("}");
         return sb.toString();
     }

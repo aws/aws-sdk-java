@@ -219,9 +219,9 @@ public class UploadSigningCertificateRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getCertificateBody() != null)
-            sb.append("CertificateBody: " + getCertificateBody());
+            sb.append("CertificateBody: ").append(getCertificateBody());
         sb.append("}");
         return sb.toString();
     }

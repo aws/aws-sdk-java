@@ -188,9 +188,9 @@ public class DescribeHsmClientCertificatesResult extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getHsmClientCertificates() != null)
-            sb.append("HsmClientCertificates: " + getHsmClientCertificates());
+            sb.append("HsmClientCertificates: ").append(getHsmClientCertificates());
         sb.append("}");
         return sb.toString();
     }

@@ -494,25 +494,25 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssociationId() != null)
-            sb.append("AssociationId: " + getAssociationId() + ",");
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getExecutionDate() != null)
-            sb.append("ExecutionDate: " + getExecutionDate() + ",");
+            sb.append("ExecutionDate: ").append(getExecutionDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDetailedStatus() != null)
-            sb.append("DetailedStatus: " + getDetailedStatus() + ",");
+            sb.append("DetailedStatus: ").append(getDetailedStatus()).append(",");
         if (getExecutionSummary() != null)
-            sb.append("ExecutionSummary: " + getExecutionSummary() + ",");
+            sb.append("ExecutionSummary: ").append(getExecutionSummary()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getOutputUrl() != null)
-            sb.append("OutputUrl: " + getOutputUrl());
+            sb.append("OutputUrl: ").append(getOutputUrl());
         sb.append("}");
         return sb.toString();
     }

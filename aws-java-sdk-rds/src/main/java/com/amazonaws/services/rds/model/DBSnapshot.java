@@ -1236,55 +1236,55 @@ public class DBSnapshot implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSnapshotIdentifier() != null)
-            sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
+            sb.append("DBSnapshotIdentifier: ").append(getDBSnapshotIdentifier()).append(",");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getSnapshotCreateTime() != null)
-            sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ",");
+            sb.append("SnapshotCreateTime: ").append(getSnapshotCreateTime()).append(",");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort() + ",");
+            sb.append("Port: ").append(getPort()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getInstanceCreateTime() != null)
-            sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");
+            sb.append("InstanceCreateTime: ").append(getInstanceCreateTime()).append(",");
         if (getMasterUsername() != null)
-            sb.append("MasterUsername: " + getMasterUsername() + ",");
+            sb.append("MasterUsername: ").append(getMasterUsername()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getLicenseModel() != null)
-            sb.append("LicenseModel: " + getLicenseModel() + ",");
+            sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getSnapshotType() != null)
-            sb.append("SnapshotType: " + getSnapshotType() + ",");
+            sb.append("SnapshotType: ").append(getSnapshotType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops() + ",");
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getOptionGroupName() != null)
-            sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getPercentProgress() != null)
-            sb.append("PercentProgress: " + getPercentProgress() + ",");
+            sb.append("PercentProgress: ").append(getPercentProgress()).append(",");
         if (getSourceRegion() != null)
-            sb.append("SourceRegion: " + getSourceRegion() + ",");
+            sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
         if (getSourceDBSnapshotIdentifier() != null)
-            sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");
+            sb.append("SourceDBSnapshotIdentifier: ").append(getSourceDBSnapshotIdentifier()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: " + getStorageType() + ",");
+            sb.append("StorageType: ").append(getStorageType()).append(",");
         if (getTdeCredentialArn() != null)
-            sb.append("TdeCredentialArn: " + getTdeCredentialArn() + ",");
+            sb.append("TdeCredentialArn: ").append(getTdeCredentialArn()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: " + getEncrypted() + ",");
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDBSnapshotArn() != null)
-            sb.append("DBSnapshotArn: " + getDBSnapshotArn() + ",");
+            sb.append("DBSnapshotArn: ").append(getDBSnapshotArn()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: " + getTimezone());
+            sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
         return sb.toString();
     }

@@ -161,9 +161,9 @@ public class DescribeScalingActivitiesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScalingActivities() != null)
-            sb.append("ScalingActivities: " + getScalingActivities() + ",");
+            sb.append("ScalingActivities: ").append(getScalingActivities()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

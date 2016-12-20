@@ -61,10 +61,7 @@ public class DeleteThingShadowRequestMarshaller implements Marshaller<Request<De
 
         String uriResourcePath = "/things/{thingName}/shadow";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingName}",
-                (deleteThingShadowRequest.getThingName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteThingShadowRequest.getThingName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", deleteThingShadowRequest.getThingName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

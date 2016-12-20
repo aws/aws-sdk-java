@@ -386,15 +386,15 @@ public class Listener implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getLoadBalancerPort() != null)
-            sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");
+            sb.append("LoadBalancerPort: ").append(getLoadBalancerPort()).append(",");
         if (getInstanceProtocol() != null)
-            sb.append("InstanceProtocol: " + getInstanceProtocol() + ",");
+            sb.append("InstanceProtocol: ").append(getInstanceProtocol()).append(",");
         if (getInstancePort() != null)
-            sb.append("InstancePort: " + getInstancePort() + ",");
+            sb.append("InstancePort: ").append(getInstancePort()).append(",");
         if (getSSLCertificateId() != null)
-            sb.append("SSLCertificateId: " + getSSLCertificateId());
+            sb.append("SSLCertificateId: ").append(getSSLCertificateId());
         sb.append("}");
         return sb.toString();
     }

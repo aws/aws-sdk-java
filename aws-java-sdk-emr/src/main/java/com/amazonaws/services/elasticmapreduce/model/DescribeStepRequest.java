@@ -127,9 +127,9 @@ public class DescribeStepRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getStepId() != null)
-            sb.append("StepId: " + getStepId());
+            sb.append("StepId: ").append(getStepId());
         sb.append("}");
         return sb.toString();
     }

@@ -1525,29 +1525,29 @@ public class CacheBehavior implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPathPattern() != null)
-            sb.append("PathPattern: " + getPathPattern() + ",");
+            sb.append("PathPattern: ").append(getPathPattern()).append(",");
         if (getTargetOriginId() != null)
-            sb.append("TargetOriginId: " + getTargetOriginId() + ",");
+            sb.append("TargetOriginId: ").append(getTargetOriginId()).append(",");
         if (getForwardedValues() != null)
-            sb.append("ForwardedValues: " + getForwardedValues() + ",");
+            sb.append("ForwardedValues: ").append(getForwardedValues()).append(",");
         if (getTrustedSigners() != null)
-            sb.append("TrustedSigners: " + getTrustedSigners() + ",");
+            sb.append("TrustedSigners: ").append(getTrustedSigners()).append(",");
         if (getViewerProtocolPolicy() != null)
-            sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");
+            sb.append("ViewerProtocolPolicy: ").append(getViewerProtocolPolicy()).append(",");
         if (getMinTTL() != null)
-            sb.append("MinTTL: " + getMinTTL() + ",");
+            sb.append("MinTTL: ").append(getMinTTL()).append(",");
         if (getAllowedMethods() != null)
-            sb.append("AllowedMethods: " + getAllowedMethods() + ",");
+            sb.append("AllowedMethods: ").append(getAllowedMethods()).append(",");
         if (getSmoothStreaming() != null)
-            sb.append("SmoothStreaming: " + getSmoothStreaming() + ",");
+            sb.append("SmoothStreaming: ").append(getSmoothStreaming()).append(",");
         if (getDefaultTTL() != null)
-            sb.append("DefaultTTL: " + getDefaultTTL() + ",");
+            sb.append("DefaultTTL: ").append(getDefaultTTL()).append(",");
         if (getMaxTTL() != null)
-            sb.append("MaxTTL: " + getMaxTTL() + ",");
+            sb.append("MaxTTL: ").append(getMaxTTL()).append(",");
         if (getCompress() != null)
-            sb.append("Compress: " + getCompress() + ",");
+            sb.append("Compress: ").append(getCompress()).append(",");
         if (getLambdaFunctionAssociations() != null)
-            sb.append("LambdaFunctionAssociations: " + getLambdaFunctionAssociations());
+            sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations());
         sb.append("}");
         return sb.toString();
     }

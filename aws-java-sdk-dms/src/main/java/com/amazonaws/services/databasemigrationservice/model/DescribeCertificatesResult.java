@@ -154,9 +154,9 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCertificates() != null)
-            sb.append("Certificates: " + getCertificates());
+            sb.append("Certificates: ").append(getCertificates());
         sb.append("}");
         return sb.toString();
     }

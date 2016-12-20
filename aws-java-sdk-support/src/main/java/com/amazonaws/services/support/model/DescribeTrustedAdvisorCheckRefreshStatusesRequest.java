@@ -121,7 +121,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckIds() != null)
-            sb.append("CheckIds: " + getCheckIds());
+            sb.append("CheckIds: ").append(getCheckIds());
         sb.append("}");
         return sb.toString();
     }

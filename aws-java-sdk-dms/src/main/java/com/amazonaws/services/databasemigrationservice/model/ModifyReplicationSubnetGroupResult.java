@@ -78,7 +78,7 @@ public class ModifyReplicationSubnetGroupResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroup() != null)
-            sb.append("ReplicationSubnetGroup: " + getReplicationSubnetGroup());
+            sb.append("ReplicationSubnetGroup: ").append(getReplicationSubnetGroup());
         sb.append("}");
         return sb.toString();
     }

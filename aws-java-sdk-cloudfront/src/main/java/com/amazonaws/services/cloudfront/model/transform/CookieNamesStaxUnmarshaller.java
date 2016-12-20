@@ -50,6 +50,11 @@ public class CookieNamesStaxUnmarshaller implements Unmarshaller<CookieNames, St
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    cookieNames.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Name", targetDepth)) {
                     cookieNames.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

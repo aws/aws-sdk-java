@@ -61,8 +61,7 @@ public class CreateModelRequestMarshaller implements Marshaller<Request<CreateMo
 
         String uriResourcePath = "/restapis/{restapi_id}/models";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (createModelRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createModelRequest.getRestApiId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", createModelRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         try {

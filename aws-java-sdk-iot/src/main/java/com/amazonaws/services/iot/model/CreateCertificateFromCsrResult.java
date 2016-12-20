@@ -175,11 +175,11 @@ public class CreateCertificateFromCsrResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: " + getCertificateArn() + ",");
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId() + ",");
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: " + getCertificatePem());
+            sb.append("CertificatePem: ").append(getCertificatePem());
         sb.append("}");
         return sb.toString();
     }

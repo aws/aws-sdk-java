@@ -45,6 +45,11 @@ public class DescribeConversionTasksResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("conversionTasks", targetDepth)) {
+                    describeConversionTasksResult.withConversionTasks(new ArrayList<ConversionTask>());
+                    continue;
+                }
+
                 if (context.testExpression("conversionTasks/item", targetDepth)) {
                     describeConversionTasksResult.withConversionTasks(ConversionTaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

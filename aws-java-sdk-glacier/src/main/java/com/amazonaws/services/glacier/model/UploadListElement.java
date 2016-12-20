@@ -271,15 +271,15 @@ public class UploadListElement implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMultipartUploadId() != null)
-            sb.append("MultipartUploadId: " + getMultipartUploadId() + ",");
+            sb.append("MultipartUploadId: ").append(getMultipartUploadId()).append(",");
         if (getVaultARN() != null)
-            sb.append("VaultARN: " + getVaultARN() + ",");
+            sb.append("VaultARN: ").append(getVaultARN()).append(",");
         if (getArchiveDescription() != null)
-            sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+            sb.append("ArchiveDescription: ").append(getArchiveDescription()).append(",");
         if (getPartSizeInBytes() != null)
-            sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ",");
+            sb.append("PartSizeInBytes: ").append(getPartSizeInBytes()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

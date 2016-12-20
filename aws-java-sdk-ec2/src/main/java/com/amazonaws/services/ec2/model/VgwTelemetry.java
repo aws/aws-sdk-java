@@ -297,15 +297,15 @@ public class VgwTelemetry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutsideIpAddress() != null)
-            sb.append("OutsideIpAddress: " + getOutsideIpAddress() + ",");
+            sb.append("OutsideIpAddress: ").append(getOutsideIpAddress()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastStatusChange() != null)
-            sb.append("LastStatusChange: " + getLastStatusChange() + ",");
+            sb.append("LastStatusChange: ").append(getLastStatusChange()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: " + getStatusMessage() + ",");
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getAcceptedRouteCount() != null)
-            sb.append("AcceptedRouteCount: " + getAcceptedRouteCount());
+            sb.append("AcceptedRouteCount: ").append(getAcceptedRouteCount());
         sb.append("}");
         return sb.toString();
     }

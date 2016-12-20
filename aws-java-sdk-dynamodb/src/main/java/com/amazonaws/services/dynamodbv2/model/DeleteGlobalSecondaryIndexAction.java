@@ -80,7 +80,7 @@ public class DeleteGlobalSecondaryIndexAction implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIndexName() != null)
-            sb.append("IndexName: " + getIndexName());
+            sb.append("IndexName: ").append(getIndexName());
         sb.append("}");
         return sb.toString();
     }

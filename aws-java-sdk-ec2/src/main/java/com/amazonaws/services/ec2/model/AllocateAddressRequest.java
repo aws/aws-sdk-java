@@ -155,7 +155,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain());
+            sb.append("Domain: ").append(getDomain());
         sb.append("}");
         return sb.toString();
     }

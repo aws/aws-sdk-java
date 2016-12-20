@@ -50,6 +50,11 @@ public class FilterStaxUnmarshaller implements Unmarshaller<Filter, StaxUnmarsha
                     continue;
                 }
 
+                if (context.testExpression("Value", targetDepth)) {
+                    filter.withValues(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Value/item", targetDepth)) {
                     filter.withValues(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

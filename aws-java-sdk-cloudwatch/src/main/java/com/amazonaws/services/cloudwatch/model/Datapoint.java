@@ -456,21 +456,21 @@ public class Datapoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getSampleCount() != null)
-            sb.append("SampleCount: " + getSampleCount() + ",");
+            sb.append("SampleCount: ").append(getSampleCount()).append(",");
         if (getAverage() != null)
-            sb.append("Average: " + getAverage() + ",");
+            sb.append("Average: ").append(getAverage()).append(",");
         if (getSum() != null)
-            sb.append("Sum: " + getSum() + ",");
+            sb.append("Sum: ").append(getSum()).append(",");
         if (getMinimum() != null)
-            sb.append("Minimum: " + getMinimum() + ",");
+            sb.append("Minimum: ").append(getMinimum()).append(",");
         if (getMaximum() != null)
-            sb.append("Maximum: " + getMaximum() + ",");
+            sb.append("Maximum: ").append(getMaximum()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit() + ",");
+            sb.append("Unit: ").append(getUnit()).append(",");
         if (getExtendedStatistics() != null)
-            sb.append("ExtendedStatistics: " + getExtendedStatistics());
+            sb.append("ExtendedStatistics: ").append(getExtendedStatistics());
         sb.append("}");
         return sb.toString();
     }

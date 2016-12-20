@@ -343,13 +343,13 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPermissionType() != null)
-            sb.append("PermissionType: " + getPermissionType() + ",");
+            sb.append("PermissionType: ").append(getPermissionType()).append(",");
         if (getAccountIdsToAdd() != null)
-            sb.append("AccountIdsToAdd: " + getAccountIdsToAdd() + ",");
+            sb.append("AccountIdsToAdd: ").append(getAccountIdsToAdd()).append(",");
         if (getAccountIdsToRemove() != null)
-            sb.append("AccountIdsToRemove: " + getAccountIdsToRemove());
+            sb.append("AccountIdsToRemove: ").append(getAccountIdsToRemove());
         sb.append("}");
         return sb.toString();
     }

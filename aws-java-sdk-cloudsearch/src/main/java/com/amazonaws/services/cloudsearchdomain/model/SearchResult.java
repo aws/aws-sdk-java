@@ -267,13 +267,13 @@ public class SearchResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getHits() != null)
-            sb.append("Hits: " + getHits() + ",");
+            sb.append("Hits: ").append(getHits()).append(",");
         if (getFacets() != null)
-            sb.append("Facets: " + getFacets() + ",");
+            sb.append("Facets: ").append(getFacets()).append(",");
         if (getStats() != null)
-            sb.append("Stats: " + getStats());
+            sb.append("Stats: ").append(getStats());
         sb.append("}");
         return sb.toString();
     }

@@ -264,11 +264,11 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceSnapshotName() != null)
-            sb.append("SourceSnapshotName: " + getSourceSnapshotName() + ",");
+            sb.append("SourceSnapshotName: ").append(getSourceSnapshotName()).append(",");
         if (getTargetSnapshotName() != null)
-            sb.append("TargetSnapshotName: " + getTargetSnapshotName() + ",");
+            sb.append("TargetSnapshotName: ").append(getTargetSnapshotName()).append(",");
         if (getTargetBucket() != null)
-            sb.append("TargetBucket: " + getTargetBucket());
+            sb.append("TargetBucket: ").append(getTargetBucket());
         sb.append("}");
         return sb.toString();
     }

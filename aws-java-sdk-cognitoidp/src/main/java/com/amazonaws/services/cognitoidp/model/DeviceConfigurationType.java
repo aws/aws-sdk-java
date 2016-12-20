@@ -150,9 +150,9 @@ public class DeviceConfigurationType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChallengeRequiredOnNewDevice() != null)
-            sb.append("ChallengeRequiredOnNewDevice: " + getChallengeRequiredOnNewDevice() + ",");
+            sb.append("ChallengeRequiredOnNewDevice: ").append(getChallengeRequiredOnNewDevice()).append(",");
         if (getDeviceOnlyRememberedOnUserPrompt() != null)
-            sb.append("DeviceOnlyRememberedOnUserPrompt: " + getDeviceOnlyRememberedOnUserPrompt());
+            sb.append("DeviceOnlyRememberedOnUserPrompt: ").append(getDeviceOnlyRememberedOnUserPrompt());
         sb.append("}");
         return sb.toString();
     }

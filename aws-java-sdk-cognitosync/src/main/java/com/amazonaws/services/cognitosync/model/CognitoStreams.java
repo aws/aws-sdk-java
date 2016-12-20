@@ -266,11 +266,11 @@ public class CognitoStreams implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStreamingStatus() != null)
-            sb.append("StreamingStatus: " + getStreamingStatus());
+            sb.append("StreamingStatus: ").append(getStreamingStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,8 @@ public class ListProvisionedCapacityRequestMarshaller implements Marshaller<Requ
 
         String uriResourcePath = "/{accountId}/provisioned-capacity";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (listProvisionedCapacityRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listProvisionedCapacityRequest.getAccountId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                listProvisionedCapacityRequest.getAccountId() == null ? "-" : listProvisionedCapacityRequest.getAccountId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

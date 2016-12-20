@@ -126,9 +126,9 @@ public class RepositoryTriggerExecutionFailure implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrigger() != null)
-            sb.append("Trigger: " + getTrigger() + ",");
+            sb.append("Trigger: ").append(getTrigger()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage());
         sb.append("}");
         return sb.toString();
     }

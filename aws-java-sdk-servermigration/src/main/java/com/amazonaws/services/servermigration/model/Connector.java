@@ -406,25 +406,25 @@ public class Connector implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectorId() != null)
-            sb.append("ConnectorId: " + getConnectorId() + ",");
+            sb.append("ConnectorId: ").append(getConnectorId()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCapabilityList() != null)
-            sb.append("CapabilityList: " + getCapabilityList() + ",");
+            sb.append("CapabilityList: ").append(getCapabilityList()).append(",");
         if (getVmManagerName() != null)
-            sb.append("VmManagerName: " + getVmManagerName() + ",");
+            sb.append("VmManagerName: ").append(getVmManagerName()).append(",");
         if (getVmManagerType() != null)
-            sb.append("VmManagerType: " + getVmManagerType() + ",");
+            sb.append("VmManagerType: ").append(getVmManagerType()).append(",");
         if (getVmManagerId() != null)
-            sb.append("VmManagerId: " + getVmManagerId() + ",");
+            sb.append("VmManagerId: ").append(getVmManagerId()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getMacAddress() != null)
-            sb.append("MacAddress: " + getMacAddress() + ",");
+            sb.append("MacAddress: ").append(getMacAddress()).append(",");
         if (getAssociatedOn() != null)
-            sb.append("AssociatedOn: " + getAssociatedOn());
+            sb.append("AssociatedOn: ").append(getAssociatedOn());
         sb.append("}");
         return sb.toString();
     }

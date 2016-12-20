@@ -271,15 +271,15 @@ public class TapeInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN() + ",");
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getTapeBarcode() != null)
-            sb.append("TapeBarcode: " + getTapeBarcode() + ",");
+            sb.append("TapeBarcode: ").append(getTapeBarcode()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: " + getTapeStatus() + ",");
+            sb.append("TapeStatus: ").append(getTapeStatus()).append(",");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN());
         sb.append("}");
         return sb.toString();
     }

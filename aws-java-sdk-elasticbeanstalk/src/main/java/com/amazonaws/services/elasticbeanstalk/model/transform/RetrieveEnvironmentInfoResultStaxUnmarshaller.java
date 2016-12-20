@@ -45,6 +45,11 @@ public class RetrieveEnvironmentInfoResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("EnvironmentInfo", targetDepth)) {
+                    retrieveEnvironmentInfoResult.withEnvironmentInfo(new ArrayList<EnvironmentInfoDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("EnvironmentInfo/member", targetDepth)) {
                     retrieveEnvironmentInfoResult.withEnvironmentInfo(EnvironmentInfoDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

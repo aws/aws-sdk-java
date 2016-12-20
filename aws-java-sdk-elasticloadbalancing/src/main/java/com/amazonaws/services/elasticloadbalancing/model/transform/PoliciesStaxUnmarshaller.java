@@ -45,13 +45,28 @@ public class PoliciesStaxUnmarshaller implements Unmarshaller<Policies, StaxUnma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AppCookieStickinessPolicies", targetDepth)) {
+                    policies.withAppCookieStickinessPolicies(new ArrayList<AppCookieStickinessPolicy>());
+                    continue;
+                }
+
                 if (context.testExpression("AppCookieStickinessPolicies/member", targetDepth)) {
                     policies.withAppCookieStickinessPolicies(AppCookieStickinessPolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("LBCookieStickinessPolicies", targetDepth)) {
+                    policies.withLBCookieStickinessPolicies(new ArrayList<LBCookieStickinessPolicy>());
+                    continue;
+                }
+
                 if (context.testExpression("LBCookieStickinessPolicies/member", targetDepth)) {
                     policies.withLBCookieStickinessPolicies(LBCookieStickinessPolicyStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OtherPolicies", targetDepth)) {
+                    policies.withOtherPolicies(new ArrayList<String>());
                     continue;
                 }
 

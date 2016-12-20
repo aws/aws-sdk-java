@@ -172,11 +172,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTooNewLogEventStartIndex() != null)
-            sb.append("TooNewLogEventStartIndex: " + getTooNewLogEventStartIndex() + ",");
+            sb.append("TooNewLogEventStartIndex: ").append(getTooNewLogEventStartIndex()).append(",");
         if (getTooOldLogEventEndIndex() != null)
-            sb.append("TooOldLogEventEndIndex: " + getTooOldLogEventEndIndex() + ",");
+            sb.append("TooOldLogEventEndIndex: ").append(getTooOldLogEventEndIndex()).append(",");
         if (getExpiredLogEventEndIndex() != null)
-            sb.append("ExpiredLogEventEndIndex: " + getExpiredLogEventEndIndex());
+            sb.append("ExpiredLogEventEndIndex: ").append(getExpiredLogEventEndIndex());
         sb.append("}");
         return sb.toString();
     }

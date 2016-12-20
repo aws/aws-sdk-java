@@ -154,9 +154,9 @@ public class GitHubLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepository() != null)
-            sb.append("Repository: " + getRepository() + ",");
+            sb.append("Repository: ").append(getRepository()).append(",");
         if (getCommitId() != null)
-            sb.append("CommitId: " + getCommitId());
+            sb.append("CommitId: ").append(getCommitId());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribePlacementGroupsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlacementGroups() != null)
-            sb.append("PlacementGroups: " + getPlacementGroups());
+            sb.append("PlacementGroups: ").append(getPlacementGroups());
         sb.append("}");
         return sb.toString();
     }

@@ -344,17 +344,17 @@ public class PatchComplianceData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTitle() != null)
-            sb.append("Title: " + getTitle() + ",");
+            sb.append("Title: ").append(getTitle()).append(",");
         if (getKBId() != null)
-            sb.append("KBId: " + getKBId() + ",");
+            sb.append("KBId: ").append(getKBId()).append(",");
         if (getClassification() != null)
-            sb.append("Classification: " + getClassification() + ",");
+            sb.append("Classification: ").append(getClassification()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getInstalledTime() != null)
-            sb.append("InstalledTime: " + getInstalledTime());
+            sb.append("InstalledTime: ").append(getInstalledTime());
         sb.append("}");
         return sb.toString();
     }

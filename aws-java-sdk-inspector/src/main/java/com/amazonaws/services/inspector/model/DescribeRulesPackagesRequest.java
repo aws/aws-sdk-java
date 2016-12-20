@@ -188,9 +188,9 @@ public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRulesPackageArns() != null)
-            sb.append("RulesPackageArns: " + getRulesPackageArns() + ",");
+            sb.append("RulesPackageArns: ").append(getRulesPackageArns()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: " + getLocale());
+            sb.append("Locale: ").append(getLocale());
         sb.append("}");
         return sb.toString();
     }

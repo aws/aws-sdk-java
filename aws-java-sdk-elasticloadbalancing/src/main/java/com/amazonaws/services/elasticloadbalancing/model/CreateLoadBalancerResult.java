@@ -80,7 +80,7 @@ public class CreateLoadBalancerResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDNSName() != null)
-            sb.append("DNSName: " + getDNSName());
+            sb.append("DNSName: ").append(getDNSName());
         sb.append("}");
         return sb.toString();
     }

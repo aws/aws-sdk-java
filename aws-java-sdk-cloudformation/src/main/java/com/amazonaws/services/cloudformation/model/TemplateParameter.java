@@ -230,13 +230,13 @@ public class TemplateParameter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterKey() != null)
-            sb.append("ParameterKey: " + getParameterKey() + ",");
+            sb.append("ParameterKey: ").append(getParameterKey()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getNoEcho() != null)
-            sb.append("NoEcho: " + getNoEcho() + ",");
+            sb.append("NoEcho: ").append(getNoEcho()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

@@ -126,9 +126,9 @@ public class UnsuccessfulItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError());
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }

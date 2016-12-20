@@ -61,8 +61,7 @@ public class GetApiKeyRequestMarshaller implements Marshaller<Request<GetApiKeyR
 
         String uriResourcePath = "/apikeys/{api_Key}";
 
-        uriResourcePath = uriResourcePath.replace("{api_Key}",
-                (getApiKeyRequest.getApiKey() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getApiKeyRequest.getApiKey()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "api_Key", getApiKeyRequest.getApiKey());
         request.setResourcePath(uriResourcePath);
 
         if (getApiKeyRequest.getIncludeValue() != null) {

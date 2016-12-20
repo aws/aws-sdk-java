@@ -718,29 +718,29 @@ public class DeploymentGroupInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupId() != null)
-            sb.append("DeploymentGroupId: " + getDeploymentGroupId() + ",");
+            sb.append("DeploymentGroupId: ").append(getDeploymentGroupId()).append(",");
         if (getDeploymentGroupName() != null)
-            sb.append("DeploymentGroupName: " + getDeploymentGroupName() + ",");
+            sb.append("DeploymentGroupName: ").append(getDeploymentGroupName()).append(",");
         if (getDeploymentConfigName() != null)
-            sb.append("DeploymentConfigName: " + getDeploymentConfigName() + ",");
+            sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getEc2TagFilters() != null)
-            sb.append("Ec2TagFilters: " + getEc2TagFilters() + ",");
+            sb.append("Ec2TagFilters: ").append(getEc2TagFilters()).append(",");
         if (getOnPremisesInstanceTagFilters() != null)
-            sb.append("OnPremisesInstanceTagFilters: " + getOnPremisesInstanceTagFilters() + ",");
+            sb.append("OnPremisesInstanceTagFilters: ").append(getOnPremisesInstanceTagFilters()).append(",");
         if (getAutoScalingGroups() != null)
-            sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
+            sb.append("AutoScalingGroups: ").append(getAutoScalingGroups()).append(",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+            sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getTargetRevision() != null)
-            sb.append("TargetRevision: " + getTargetRevision() + ",");
+            sb.append("TargetRevision: ").append(getTargetRevision()).append(",");
         if (getTriggerConfigurations() != null)
-            sb.append("TriggerConfigurations: " + getTriggerConfigurations() + ",");
+            sb.append("TriggerConfigurations: ").append(getTriggerConfigurations()).append(",");
         if (getAlarmConfiguration() != null)
-            sb.append("AlarmConfiguration: " + getAlarmConfiguration() + ",");
+            sb.append("AlarmConfiguration: ").append(getAlarmConfiguration()).append(",");
         if (getAutoRollbackConfiguration() != null)
-            sb.append("AutoRollbackConfiguration: " + getAutoRollbackConfiguration());
+            sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration());
         sb.append("}");
         return sb.toString();
     }

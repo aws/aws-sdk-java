@@ -438,23 +438,23 @@ public class ListRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecords() != null)
-            sb.append("Records: " + getRecords() + ",");
+            sb.append("Records: ").append(getRecords()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getDatasetSyncCount() != null)
-            sb.append("DatasetSyncCount: " + getDatasetSyncCount() + ",");
+            sb.append("DatasetSyncCount: ").append(getDatasetSyncCount()).append(",");
         if (getLastModifiedBy() != null)
-            sb.append("LastModifiedBy: " + getLastModifiedBy() + ",");
+            sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getMergedDatasetNames() != null)
-            sb.append("MergedDatasetNames: " + getMergedDatasetNames() + ",");
+            sb.append("MergedDatasetNames: ").append(getMergedDatasetNames()).append(",");
         if (getDatasetExists() != null)
-            sb.append("DatasetExists: " + getDatasetExists() + ",");
+            sb.append("DatasetExists: ").append(getDatasetExists()).append(",");
         if (getDatasetDeletedAfterRequestedSyncCount() != null)
-            sb.append("DatasetDeletedAfterRequestedSyncCount: " + getDatasetDeletedAfterRequestedSyncCount() + ",");
+            sb.append("DatasetDeletedAfterRequestedSyncCount: ").append(getDatasetDeletedAfterRequestedSyncCount()).append(",");
         if (getSyncSessionToken() != null)
-            sb.append("SyncSessionToken: " + getSyncSessionToken());
+            sb.append("SyncSessionToken: ").append(getSyncSessionToken());
         sb.append("}");
         return sb.toString();
     }

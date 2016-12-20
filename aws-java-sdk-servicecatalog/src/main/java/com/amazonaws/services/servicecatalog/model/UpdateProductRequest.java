@@ -680,27 +680,27 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOwner() != null)
-            sb.append("Owner: " + getOwner() + ",");
+            sb.append("Owner: ").append(getOwner()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDistributor() != null)
-            sb.append("Distributor: " + getDistributor() + ",");
+            sb.append("Distributor: ").append(getDistributor()).append(",");
         if (getSupportDescription() != null)
-            sb.append("SupportDescription: " + getSupportDescription() + ",");
+            sb.append("SupportDescription: ").append(getSupportDescription()).append(",");
         if (getSupportEmail() != null)
-            sb.append("SupportEmail: " + getSupportEmail() + ",");
+            sb.append("SupportEmail: ").append(getSupportEmail()).append(",");
         if (getSupportUrl() != null)
-            sb.append("SupportUrl: " + getSupportUrl() + ",");
+            sb.append("SupportUrl: ").append(getSupportUrl()).append(",");
         if (getAddTags() != null)
-            sb.append("AddTags: " + getAddTags() + ",");
+            sb.append("AddTags: ").append(getAddTags()).append(",");
         if (getRemoveTags() != null)
-            sb.append("RemoveTags: " + getRemoveTags());
+            sb.append("RemoveTags: ").append(getRemoveTags());
         sb.append("}");
         return sb.toString();
     }

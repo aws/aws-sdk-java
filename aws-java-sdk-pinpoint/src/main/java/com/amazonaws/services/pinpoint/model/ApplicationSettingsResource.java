@@ -194,13 +194,13 @@ public class ApplicationSettingsResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getLimits() != null)
-            sb.append("Limits: " + getLimits() + ",");
+            sb.append("Limits: ").append(getLimits()).append(",");
         if (getQuietTime() != null)
-            sb.append("QuietTime: " + getQuietTime());
+            sb.append("QuietTime: ").append(getQuietTime());
         sb.append("}");
         return sb.toString();
     }

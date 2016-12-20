@@ -159,9 +159,9 @@ public class StageExecution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: " + getPipelineExecutionId() + ",");
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

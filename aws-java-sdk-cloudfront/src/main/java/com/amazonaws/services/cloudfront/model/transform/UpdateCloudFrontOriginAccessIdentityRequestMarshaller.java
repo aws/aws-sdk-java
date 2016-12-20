@@ -57,10 +57,8 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements
 
         String uriResourcePath = "/2016-11-25/origin-access-identity/cloudfront/{Id}/config";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updateCloudFrontOriginAccessIdentityRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateCloudFrontOriginAccessIdentityRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
+                updateCloudFrontOriginAccessIdentityRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {

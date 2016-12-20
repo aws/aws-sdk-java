@@ -333,9 +333,9 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyNames() != null)
-            sb.append("KeyNames: " + getKeyNames() + ",");
+            sb.append("KeyNames: ").append(getKeyNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

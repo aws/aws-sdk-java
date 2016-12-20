@@ -311,11 +311,11 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInterconnectName() != null)
-            sb.append("InterconnectName: " + getInterconnectName() + ",");
+            sb.append("InterconnectName: ").append(getInterconnectName()).append(",");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth() + ",");
+            sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

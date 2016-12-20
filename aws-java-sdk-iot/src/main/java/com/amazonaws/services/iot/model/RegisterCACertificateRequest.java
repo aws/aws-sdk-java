@@ -243,13 +243,13 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaCertificate() != null)
-            sb.append("CaCertificate: " + getCaCertificate() + ",");
+            sb.append("CaCertificate: ").append(getCaCertificate()).append(",");
         if (getVerificationCertificate() != null)
-            sb.append("VerificationCertificate: " + getVerificationCertificate() + ",");
+            sb.append("VerificationCertificate: ").append(getVerificationCertificate()).append(",");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive() + ",");
+            sb.append("SetAsActive: ").append(getSetAsActive()).append(",");
         if (getAllowAutoRegistration() != null)
-            sb.append("AllowAutoRegistration: " + getAllowAutoRegistration());
+            sb.append("AllowAutoRegistration: ").append(getAllowAutoRegistration());
         sb.append("}");
         return sb.toString();
     }

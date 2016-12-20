@@ -381,17 +381,17 @@ public class VolumeInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId() + ",");
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes());
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes());
         sb.append("}");
         return sb.toString();
     }

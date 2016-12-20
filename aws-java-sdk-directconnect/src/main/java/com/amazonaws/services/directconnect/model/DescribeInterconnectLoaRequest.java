@@ -187,11 +187,11 @@ public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInterconnectId() != null)
-            sb.append("InterconnectId: " + getInterconnectId() + ",");
+            sb.append("InterconnectId: ").append(getInterconnectId()).append(",");
         if (getProviderName() != null)
-            sb.append("ProviderName: " + getProviderName() + ",");
+            sb.append("ProviderName: ").append(getProviderName()).append(",");
         if (getLoaContentType() != null)
-            sb.append("LoaContentType: " + getLoaContentType());
+            sb.append("LoaContentType: ").append(getLoaContentType());
         sb.append("}");
         return sb.toString();
     }

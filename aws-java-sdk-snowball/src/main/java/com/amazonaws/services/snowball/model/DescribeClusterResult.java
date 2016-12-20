@@ -85,7 +85,7 @@ public class DescribeClusterResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterMetadata() != null)
-            sb.append("ClusterMetadata: " + getClusterMetadata());
+            sb.append("ClusterMetadata: ").append(getClusterMetadata());
         sb.append("}");
         return sb.toString();
     }

@@ -253,13 +253,13 @@ public class NetworkBinding implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBindIP() != null)
-            sb.append("BindIP: " + getBindIP() + ",");
+            sb.append("BindIP: ").append(getBindIP()).append(",");
         if (getContainerPort() != null)
-            sb.append("ContainerPort: " + getContainerPort() + ",");
+            sb.append("ContainerPort: ").append(getContainerPort()).append(",");
         if (getHostPort() != null)
-            sb.append("HostPort: " + getHostPort() + ",");
+            sb.append("HostPort: ").append(getHostPort()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol());
+            sb.append("Protocol: ").append(getProtocol());
         sb.append("}");
         return sb.toString();
     }

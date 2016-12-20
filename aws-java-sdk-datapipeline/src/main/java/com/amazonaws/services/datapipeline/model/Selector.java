@@ -122,9 +122,9 @@ public class Selector implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFieldName() != null)
-            sb.append("FieldName: " + getFieldName() + ",");
+            sb.append("FieldName: ").append(getFieldName()).append(",");
         if (getOperator() != null)
-            sb.append("Operator: " + getOperator());
+            sb.append("Operator: ").append(getOperator());
         sb.append("}");
         return sb.toString();
     }

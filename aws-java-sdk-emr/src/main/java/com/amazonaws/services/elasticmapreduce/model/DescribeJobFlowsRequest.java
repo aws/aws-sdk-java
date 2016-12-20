@@ -331,13 +331,13 @@ public class DescribeJobFlowsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreatedAfter() != null)
-            sb.append("CreatedAfter: " + getCreatedAfter() + ",");
+            sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
         if (getCreatedBefore() != null)
-            sb.append("CreatedBefore: " + getCreatedBefore() + ",");
+            sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
         if (getJobFlowIds() != null)
-            sb.append("JobFlowIds: " + getJobFlowIds() + ",");
+            sb.append("JobFlowIds: ").append(getJobFlowIds()).append(",");
         if (getJobFlowStates() != null)
-            sb.append("JobFlowStates: " + getJobFlowStates());
+            sb.append("JobFlowStates: ").append(getJobFlowStates());
         sb.append("}");
         return sb.toString();
     }

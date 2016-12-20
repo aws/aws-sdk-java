@@ -125,9 +125,9 @@ public class AssociateVpcCidrBlockResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getIpv6CidrBlockAssociation() != null)
-            sb.append("Ipv6CidrBlockAssociation: " + getIpv6CidrBlockAssociation());
+            sb.append("Ipv6CidrBlockAssociation: ").append(getIpv6CidrBlockAssociation());
         sb.append("}");
         return sb.toString();
     }

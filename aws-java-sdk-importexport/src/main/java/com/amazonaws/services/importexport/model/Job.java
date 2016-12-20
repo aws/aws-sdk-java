@@ -174,13 +174,13 @@ public class Job implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getIsCanceled() != null)
-            sb.append("IsCanceled: " + getIsCanceled() + ",");
+            sb.append("IsCanceled: ").append(getIsCanceled()).append(",");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType());
+            sb.append("JobType: ").append(getJobType());
         sb.append("}");
         return sb.toString();
     }

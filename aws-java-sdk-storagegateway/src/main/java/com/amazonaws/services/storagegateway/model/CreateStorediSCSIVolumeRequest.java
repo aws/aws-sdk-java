@@ -455,17 +455,17 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDiskId() != null)
-            sb.append("DiskId: " + getDiskId() + ",");
+            sb.append("DiskId: ").append(getDiskId()).append(",");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getPreserveExistingData() != null)
-            sb.append("PreserveExistingData: " + getPreserveExistingData() + ",");
+            sb.append("PreserveExistingData: ").append(getPreserveExistingData()).append(",");
         if (getTargetName() != null)
-            sb.append("TargetName: " + getTargetName() + ",");
+            sb.append("TargetName: ").append(getTargetName()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }

@@ -161,9 +161,9 @@ public class ListPrincipalsForPortfolioResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrincipals() != null)
-            sb.append("Principals: " + getPrincipals() + ",");
+            sb.append("Principals: ").append(getPrincipals()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

@@ -297,9 +297,9 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimeoutType() != null)
-            sb.append("TimeoutType: " + getTimeoutType() + ",");
+            sb.append("TimeoutType: ").append(getTimeoutType()).append(",");
         if (getChildPolicy() != null)
-            sb.append("ChildPolicy: " + getChildPolicy());
+            sb.append("ChildPolicy: ").append(getChildPolicy());
         sb.append("}");
         return sb.toString();
     }

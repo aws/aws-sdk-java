@@ -241,11 +241,11 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getData() != null)
-            sb.append("Data: " + getData() + ",");
+            sb.append("Data: ").append(getData()).append(",");
         if (getExplicitHashKey() != null)
-            sb.append("ExplicitHashKey: " + getExplicitHashKey() + ",");
+            sb.append("ExplicitHashKey: ").append(getExplicitHashKey()).append(",");
         if (getPartitionKey() != null)
-            sb.append("PartitionKey: " + getPartitionKey());
+            sb.append("PartitionKey: ").append(getPartitionKey());
         sb.append("}");
         return sb.toString();
     }

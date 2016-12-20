@@ -492,23 +492,23 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstanceValueSet() != null)
-            sb.append("ReservedInstanceValueSet: " + getReservedInstanceValueSet() + ",");
+            sb.append("ReservedInstanceValueSet: ").append(getReservedInstanceValueSet()).append(",");
         if (getReservedInstanceValueRollup() != null)
-            sb.append("ReservedInstanceValueRollup: " + getReservedInstanceValueRollup() + ",");
+            sb.append("ReservedInstanceValueRollup: ").append(getReservedInstanceValueRollup()).append(",");
         if (getTargetConfigurationValueSet() != null)
-            sb.append("TargetConfigurationValueSet: " + getTargetConfigurationValueSet() + ",");
+            sb.append("TargetConfigurationValueSet: ").append(getTargetConfigurationValueSet()).append(",");
         if (getTargetConfigurationValueRollup() != null)
-            sb.append("TargetConfigurationValueRollup: " + getTargetConfigurationValueRollup() + ",");
+            sb.append("TargetConfigurationValueRollup: ").append(getTargetConfigurationValueRollup()).append(",");
         if (getPaymentDue() != null)
-            sb.append("PaymentDue: " + getPaymentDue() + ",");
+            sb.append("PaymentDue: ").append(getPaymentDue()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getOutputReservedInstancesWillExpireAt() != null)
-            sb.append("OutputReservedInstancesWillExpireAt: " + getOutputReservedInstancesWillExpireAt() + ",");
+            sb.append("OutputReservedInstancesWillExpireAt: ").append(getOutputReservedInstancesWillExpireAt()).append(",");
         if (getIsValidExchange() != null)
-            sb.append("IsValidExchange: " + getIsValidExchange() + ",");
+            sb.append("IsValidExchange: ").append(getIsValidExchange()).append(",");
         if (getValidationFailureReason() != null)
-            sb.append("ValidationFailureReason: " + getValidationFailureReason());
+            sb.append("ValidationFailureReason: ").append(getValidationFailureReason());
         sb.append("}");
         return sb.toString();
     }

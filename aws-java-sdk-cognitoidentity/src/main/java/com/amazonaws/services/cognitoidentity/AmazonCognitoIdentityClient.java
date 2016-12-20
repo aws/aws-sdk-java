@@ -297,13 +297,35 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * Creates a new identity pool. The identity pool is a store of user identity information that is specific to your
      * AWS account. The limit on identity pools is 60 per account. The keys for <code>SupportedLoginProviders</code> are
      * as follows:
+     * </p>
      * <ul>
-     * <li>Facebook: <code>graph.facebook.com</code></li>
-     * <li>Google: <code>accounts.google.com</code></li>
-     * <li>Amazon: <code>www.amazon.com</code></li>
-     * <li>Twitter: <code>api.twitter.com</code></li>
-     * <li>Digits: <code>www.digits.com</code></li>
+     * <li>
+     * <p>
+     * Facebook: <code>graph.facebook.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Google: <code>accounts.google.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon: <code>www.amazon.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Twitter: <code>api.twitter.com</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Digits: <code>www.digits.com</code>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
      * You must use AWS Developer credentials to call this API.
      * </p>
      * 
@@ -1115,8 +1137,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Sets the roles for an identity pool. These roles are used when making calls to
-     * <code>GetCredentialsForIdentity</code> action.
+     * Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a>
+     * action.
      * </p>
      * <p>
      * You must use AWS Developer credentials to call this API.
@@ -1299,7 +1321,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * </p>
      * 
      * @param updateIdentityPoolRequest
-     *        An object representing a Cognito identity pool.
+     *        An object representing an Amazon Cognito identity pool.
      * @return Result of the UpdateIdentityPool operation returned by the service.
      * @throws InvalidParameterException
      *         Thrown for missing or bad input parameter(s).

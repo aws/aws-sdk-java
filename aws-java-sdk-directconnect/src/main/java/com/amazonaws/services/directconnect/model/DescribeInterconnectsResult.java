@@ -113,7 +113,7 @@ public class DescribeInterconnectsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInterconnects() != null)
-            sb.append("Interconnects: " + getInterconnects());
+            sb.append("Interconnects: ").append(getInterconnects());
         sb.append("}");
         return sb.toString();
     }

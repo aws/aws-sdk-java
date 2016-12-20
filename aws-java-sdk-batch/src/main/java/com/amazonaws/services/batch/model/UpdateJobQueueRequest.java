@@ -314,13 +314,13 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobQueue() != null)
-            sb.append("JobQueue: " + getJobQueue() + ",");
+            sb.append("JobQueue: ").append(getJobQueue()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getComputeEnvironmentOrder() != null)
-            sb.append("ComputeEnvironmentOrder: " + getComputeEnvironmentOrder());
+            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder());
         sb.append("}");
         return sb.toString();
     }

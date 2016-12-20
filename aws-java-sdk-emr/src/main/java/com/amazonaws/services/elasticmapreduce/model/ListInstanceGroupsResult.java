@@ -159,9 +159,9 @@ public class ListInstanceGroupsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceGroups() != null)
-            sb.append("InstanceGroups: " + getInstanceGroups() + ",");
+            sb.append("InstanceGroups: ").append(getInstanceGroups()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

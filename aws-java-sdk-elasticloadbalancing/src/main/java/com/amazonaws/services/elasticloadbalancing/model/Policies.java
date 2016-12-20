@@ -271,11 +271,11 @@ public class Policies implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppCookieStickinessPolicies() != null)
-            sb.append("AppCookieStickinessPolicies: " + getAppCookieStickinessPolicies() + ",");
+            sb.append("AppCookieStickinessPolicies: ").append(getAppCookieStickinessPolicies()).append(",");
         if (getLBCookieStickinessPolicies() != null)
-            sb.append("LBCookieStickinessPolicies: " + getLBCookieStickinessPolicies() + ",");
+            sb.append("LBCookieStickinessPolicies: ").append(getLBCookieStickinessPolicies()).append(",");
         if (getOtherPolicies() != null)
-            sb.append("OtherPolicies: " + getOtherPolicies());
+            sb.append("OtherPolicies: ").append(getOtherPolicies());
         sb.append("}");
         return sb.toString();
     }

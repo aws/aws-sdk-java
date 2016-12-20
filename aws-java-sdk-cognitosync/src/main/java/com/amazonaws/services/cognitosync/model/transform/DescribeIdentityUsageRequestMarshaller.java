@@ -61,14 +61,10 @@ public class DescribeIdentityUsageRequestMarshaller implements Marshaller<Reques
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (describeIdentityUsageRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(describeIdentityUsageRequest.getIdentityPoolId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityId}",
-                (describeIdentityUsageRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(describeIdentityUsageRequest.getIdentityId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                describeIdentityUsageRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId",
+                describeIdentityUsageRequest.getIdentityId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

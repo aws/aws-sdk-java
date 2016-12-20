@@ -402,21 +402,21 @@ public class LambdaConfigType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPreSignUp() != null)
-            sb.append("PreSignUp: " + getPreSignUp() + ",");
+            sb.append("PreSignUp: ").append(getPreSignUp()).append(",");
         if (getCustomMessage() != null)
-            sb.append("CustomMessage: " + getCustomMessage() + ",");
+            sb.append("CustomMessage: ").append(getCustomMessage()).append(",");
         if (getPostConfirmation() != null)
-            sb.append("PostConfirmation: " + getPostConfirmation() + ",");
+            sb.append("PostConfirmation: ").append(getPostConfirmation()).append(",");
         if (getPreAuthentication() != null)
-            sb.append("PreAuthentication: " + getPreAuthentication() + ",");
+            sb.append("PreAuthentication: ").append(getPreAuthentication()).append(",");
         if (getPostAuthentication() != null)
-            sb.append("PostAuthentication: " + getPostAuthentication() + ",");
+            sb.append("PostAuthentication: ").append(getPostAuthentication()).append(",");
         if (getDefineAuthChallenge() != null)
-            sb.append("DefineAuthChallenge: " + getDefineAuthChallenge() + ",");
+            sb.append("DefineAuthChallenge: ").append(getDefineAuthChallenge()).append(",");
         if (getCreateAuthChallenge() != null)
-            sb.append("CreateAuthChallenge: " + getCreateAuthChallenge() + ",");
+            sb.append("CreateAuthChallenge: ").append(getCreateAuthChallenge()).append(",");
         if (getVerifyAuthChallengeResponse() != null)
-            sb.append("VerifyAuthChallengeResponse: " + getVerifyAuthChallengeResponse());
+            sb.append("VerifyAuthChallengeResponse: ").append(getVerifyAuthChallengeResponse());
         sb.append("}");
         return sb.toString();
     }

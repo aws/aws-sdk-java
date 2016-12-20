@@ -92,7 +92,7 @@ public class ActivityTaskStatus extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCancelRequested() != null)
-            sb.append("CancelRequested: " + getCancelRequested());
+            sb.append("CancelRequested: ").append(getCancelRequested());
         sb.append("}");
         return sb.toString();
     }

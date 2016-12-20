@@ -264,15 +264,15 @@ public class CreateHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZone() != null)
-            sb.append("HostedZone: " + getHostedZone() + ",");
+            sb.append("HostedZone: ").append(getHostedZone()).append(",");
         if (getChangeInfo() != null)
-            sb.append("ChangeInfo: " + getChangeInfo() + ",");
+            sb.append("ChangeInfo: ").append(getChangeInfo()).append(",");
         if (getDelegationSet() != null)
-            sb.append("DelegationSet: " + getDelegationSet() + ",");
+            sb.append("DelegationSet: ").append(getDelegationSet()).append(",");
         if (getVPC() != null)
-            sb.append("VPC: " + getVPC() + ",");
+            sb.append("VPC: ").append(getVPC()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation());
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }

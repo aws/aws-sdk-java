@@ -437,19 +437,19 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExtraDataPackageArn() != null)
-            sb.append("ExtraDataPackageArn: " + getExtraDataPackageArn() + ",");
+            sb.append("ExtraDataPackageArn: ").append(getExtraDataPackageArn()).append(",");
         if (getNetworkProfileArn() != null)
-            sb.append("NetworkProfileArn: " + getNetworkProfileArn() + ",");
+            sb.append("NetworkProfileArn: ").append(getNetworkProfileArn()).append(",");
         if (getLocale() != null)
-            sb.append("Locale: " + getLocale() + ",");
+            sb.append("Locale: ").append(getLocale()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getRadios() != null)
-            sb.append("Radios: " + getRadios() + ",");
+            sb.append("Radios: ").append(getRadios()).append(",");
         if (getAuxiliaryApps() != null)
-            sb.append("AuxiliaryApps: " + getAuxiliaryApps() + ",");
+            sb.append("AuxiliaryApps: ").append(getAuxiliaryApps()).append(",");
         if (getBillingMethod() != null)
-            sb.append("BillingMethod: " + getBillingMethod());
+            sb.append("BillingMethod: ").append(getBillingMethod());
         sb.append("}");
         return sb.toString();
     }

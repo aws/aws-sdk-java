@@ -354,15 +354,15 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getTaskStatus() != null)
-            sb.append("TaskStatus: " + getTaskStatus() + ",");
+            sb.append("TaskStatus: ").append(getTaskStatus()).append(",");
         if (getErrorId() != null)
-            sb.append("ErrorId: " + getErrorId() + ",");
+            sb.append("ErrorId: ").append(getErrorId()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage() + ",");
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getErrorStackTrace() != null)
-            sb.append("ErrorStackTrace: " + getErrorStackTrace());
+            sb.append("ErrorStackTrace: ").append(getErrorStackTrace());
         sb.append("}");
         return sb.toString();
     }

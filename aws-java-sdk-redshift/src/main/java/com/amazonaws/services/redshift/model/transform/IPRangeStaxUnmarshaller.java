@@ -55,6 +55,11 @@ public class IPRangeStaxUnmarshaller implements Unmarshaller<IPRange, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    iPRange.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     iPRange.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

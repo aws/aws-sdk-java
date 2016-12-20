@@ -160,9 +160,9 @@ public class DescribeLifecycleHooksRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLifecycleHookNames() != null)
-            sb.append("LifecycleHookNames: " + getLifecycleHookNames());
+            sb.append("LifecycleHookNames: ").append(getLifecycleHookNames());
         sb.append("}");
         return sb.toString();
     }

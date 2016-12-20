@@ -551,21 +551,21 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLifecycleHookName() != null)
-            sb.append("LifecycleHookName: " + getLifecycleHookName() + ",");
+            sb.append("LifecycleHookName: ").append(getLifecycleHookName()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLifecycleTransition() != null)
-            sb.append("LifecycleTransition: " + getLifecycleTransition() + ",");
+            sb.append("LifecycleTransition: ").append(getLifecycleTransition()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getNotificationTargetARN() != null)
-            sb.append("NotificationTargetARN: " + getNotificationTargetARN() + ",");
+            sb.append("NotificationTargetARN: ").append(getNotificationTargetARN()).append(",");
         if (getNotificationMetadata() != null)
-            sb.append("NotificationMetadata: " + getNotificationMetadata() + ",");
+            sb.append("NotificationMetadata: ").append(getNotificationMetadata()).append(",");
         if (getHeartbeatTimeout() != null)
-            sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ",");
+            sb.append("HeartbeatTimeout: ").append(getHeartbeatTimeout()).append(",");
         if (getDefaultResult() != null)
-            sb.append("DefaultResult: " + getDefaultResult());
+            sb.append("DefaultResult: ").append(getDefaultResult());
         sb.append("}");
         return sb.toString();
     }

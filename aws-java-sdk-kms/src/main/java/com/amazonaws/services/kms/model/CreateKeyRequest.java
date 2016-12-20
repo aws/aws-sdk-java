@@ -881,15 +881,15 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getKeyUsage() != null)
-            sb.append("KeyUsage: " + getKeyUsage() + ",");
+            sb.append("KeyUsage: ").append(getKeyUsage()).append(",");
         if (getOrigin() != null)
-            sb.append("Origin: " + getOrigin() + ",");
+            sb.append("Origin: ").append(getOrigin()).append(",");
         if (getBypassPolicyLockoutSafetyCheck() != null)
-            sb.append("BypassPolicyLockoutSafetyCheck: " + getBypassPolicyLockoutSafetyCheck());
+            sb.append("BypassPolicyLockoutSafetyCheck: ").append(getBypassPolicyLockoutSafetyCheck());
         sb.append("}");
         return sb.toString();
     }

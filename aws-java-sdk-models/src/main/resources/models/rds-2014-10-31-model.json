@@ -19,21 +19,25 @@
       "documentation" : "<p>Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html\">Authorizing Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterRoleAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterRoleQuotaExceededFault"
@@ -58,11 +62,13 @@
       "documentation" : "<p>Adds a source identifier to an existing RDS event notification subscription.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SourceNotFoundFault"
@@ -92,16 +98,19 @@
       "documentation" : "<p>Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon RDS resources, or used in a Condition statement in an IAM policy for Amazon RDS.</p> <p>For an overview on tagging Amazon RDS resources, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html\">Tagging Amazon RDS Resources</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
@@ -126,6 +135,7 @@
       "documentation" : "<p>Applies a pending maintenance action to a resource (for example, to a DB instance).</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundFault"
@@ -155,21 +165,25 @@
       "documentation" : "<p>Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p> <note> <p>You cannot authorize ingress from an EC2 security group in one region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.</p> </note> <p>For an overview of CIDR ranges, go to the <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Wikipedia Tutorial</a>. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSecurityGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationQuotaExceededFault"
@@ -199,16 +213,19 @@
       "documentation" : "<p>Copies the specified DB cluster parameter group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupAlreadyExistsFault"
@@ -238,31 +255,37 @@
       "documentation" : "<p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SnapshotQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
@@ -292,16 +315,19 @@
       "documentation" : "<p>Copies the specified DB parameter group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupQuotaExceededFault"
@@ -331,26 +357,31 @@
       "documentation" : "<p>Copies the specified DB snapshot. The source DB snapshot must be in the \"available\" state.</p> <p>To copy a DB snapshot from a shared manual DB snapshot, <code>SourceDBSnapshotIdentifier</code> must be the Amazon Resource Name (ARN) of the shared DB snapshot.</p> <p>You can not copy an encrypted DB snapshot from another AWS region.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SnapshotQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
@@ -380,16 +411,19 @@
       "documentation" : "<p>Copies the specified option group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupQuotaExceededFault"
@@ -419,66 +453,79 @@
       "documentation" : "<p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a Read Replica of another DB cluster.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientStorageClusterCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSubnetGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
@@ -508,11 +555,13 @@
       "documentation" : "<p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.</p> <p> A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after creating it using <a>ModifyDBClusterParameterGroup</a>. Once you've created a DB cluster parameter group, you need to associate it with your DB cluster using <a>ModifyDBCluster</a>. When you associate a new DB cluster parameter group with a running DB cluster, you need to reboot the DB instances in the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect. </p> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter group has been created or modified.</p> </important> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupAlreadyExistsFault"
@@ -542,26 +591,31 @@
       "documentation" : "<p>Creates a snapshot of a DB cluster. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SnapshotQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
@@ -591,91 +645,109 @@
       "documentation" : "<p>Creates a new DB instance.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBInstanceCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InstanceQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupDoesNotCoverEnoughAZs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ProvisionedIopsNotAvailableInAZFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageTypeNotSupportedFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DomainNotFoundFault"
@@ -705,91 +777,109 @@
       "documentation" : "<p>Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that acts as a Read Replica of a source DB instance.</p> <p>All Read Replica DB instances are created as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are inherited from the source DB instance, except as specified below.</p> <important> <p>The source DB instance must have backup retention enabled.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBInstanceCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InstanceQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupDoesNotCoverEnoughAZs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ProvisionedIopsNotAvailableInAZFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotAllowedFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSubnetGroupFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageTypeNotSupportedFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
@@ -819,11 +909,13 @@
       "documentation" : "<p>Creates a new DB parameter group.</p> <p> A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i>. Once you've created a DB parameter group, you need to associate it with your DB instance using <i>ModifyDBInstance</i>. When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect. </p> <important> <p>After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB parameter group has been created or modified.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupAlreadyExistsFault"
@@ -853,16 +945,19 @@
       "documentation" : "<p>Creates a new DB security group. DB security groups control access to a DB instance.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotSupportedFault"
@@ -892,21 +987,25 @@
       "documentation" : "<p>Creates a DBSnapshot. The source DBInstance must be in \"available\" state.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SnapshotQuotaExceededFault"
@@ -936,26 +1035,31 @@
       "documentation" : "<p>Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupDoesNotCoverEnoughAZs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
@@ -985,36 +1089,43 @@
       "documentation" : "<p>Creates an RDS event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.</p> <p>If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you will be notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you will receive notice of the events for that source type for all your RDS sources. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer account.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "EventSubscriptionQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionAlreadyExistFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SNSInvalidTopicFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SNSNoAuthorizationFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SNSTopicArnNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionCategoryNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SourceNotFoundFault"
@@ -1044,11 +1155,13 @@
       "documentation" : "<p>Creates a new option group. You can create up to 20 option groups.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupQuotaExceededFault"
@@ -1078,26 +1191,31 @@
       "documentation" : "<p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and cannot be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p> <p/> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SnapshotQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
@@ -1127,11 +1245,13 @@
       "documentation" : "<p>Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted cannot be associated with any DB clusters.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBParameterGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -1156,11 +1276,13 @@
       "documentation" : "<p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</p> </note> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
@@ -1190,26 +1312,31 @@
       "documentation" : "<p>The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code> are not deleted.</p> <p> If you request a final DB snapshot the status of the Amazon RDS DB instance is <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code> is used to monitor the status of this operation. The action cannot be canceled or reverted once submitted. </p> <p>Note that when a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p> <p>If the specified DB instance is part of an Amazon Aurora DB cluster, you cannot delete the DB instance if the following are true:</p> <ul> <li> <p>The DB cluster is a Read Replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance is the only instance in the DB cluster.</p> </li> </ul> <p>To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a> API action to promote the DB cluster so it's no longer a Read Replica. After the promotion completes, then call the <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SnapshotQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
@@ -1239,11 +1366,13 @@
       "documentation" : "<p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted cannot be associated with any DB instances.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBParameterGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -1268,11 +1397,13 @@
       "documentation" : "<p>Deletes a DB security group.</p> <note> <p>The specified DB security group must not be associated with any DB instances.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSecurityGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
@@ -1297,11 +1428,13 @@
       "documentation" : "<p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code> state to be deleted.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
@@ -1331,16 +1464,19 @@
       "documentation" : "<p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group must not be associated with any DB instances.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSubnetGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSubnetStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
@@ -1365,11 +1501,13 @@
       "documentation" : "<p>Deletes an RDS event notification subscription.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidEventSubscriptionStateFault"
@@ -1399,11 +1537,13 @@
       "documentation" : "<p>Deletes an existing option group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOptionGroupStateFault"
@@ -1452,6 +1592,7 @@
       "documentation" : "<p>Lists the set of CA certificates provided by Amazon RDS for this AWS account.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CertificateNotFoundFault"
@@ -1481,6 +1622,7 @@
       "documentation" : "<p> Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list will contain only the description of the specified DB cluster parameter group. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -1510,6 +1652,7 @@
       "documentation" : "<p>Returns the detailed parameter list for a particular DB cluster parameter group.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -1539,6 +1682,7 @@
       "documentation" : "<p>Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.</p> <p>When sharing snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code> attribute, then the manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.</p> <p>To add or remove access for an AWS account to copy or restore a manual DB cluster snapshot, or to make the manual DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
@@ -1568,6 +1712,7 @@
       "documentation" : "<p>Returns information about DB cluster snapshots. This API action supports pagination.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
@@ -1597,6 +1742,7 @@
       "documentation" : "<p>Returns information about provisioned Aurora DB clusters. This API supports pagination.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
@@ -1650,6 +1796,7 @@
       "documentation" : "<p>Returns information about provisioned RDS instances. This API supports pagination.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
@@ -1679,6 +1826,7 @@
       "documentation" : "<p>Returns a list of DB log files for the DB instance.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
@@ -1708,6 +1856,7 @@
       "documentation" : "<p> Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified, the list will contain only the description of the specified DB parameter group. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -1737,6 +1886,7 @@
       "documentation" : "<p>Returns the detailed parameter list for a particular DB parameter group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -1766,6 +1916,7 @@
       "documentation" : "<p> Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified, the list will contain only the descriptions of the specified DB security group. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
@@ -1795,6 +1946,7 @@
       "documentation" : "<p>Returns a list of DB snapshot attribute names and values for a manual DB snapshot.</p> <p>When sharing snapshots with other AWS accounts, <code>DescribeDBSnapshotAttributes</code> returns the <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the manual DB snapshot. If <code>all</code> is included in the list of values for the <code>restore</code> attribute, then the manual DB snapshot is public and can be copied or restored by all AWS accounts.</p> <p>To add or remove access for an AWS account to copy or restore a manual DB snapshot, or to make the manual DB snapshot public or private, use the <a>ModifyDBSnapshotAttribute</a> API action.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
@@ -1824,6 +1976,7 @@
       "documentation" : "<p>Returns information about DB snapshots. This API action supports pagination.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
@@ -1853,6 +2006,7 @@
       "documentation" : "<p>Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup.</p> <p>For an overview of CIDR ranges, go to the <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Wikipedia Tutorial</a>. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
@@ -1954,6 +2108,7 @@
       "documentation" : "<p>Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.</p> <p>If you specify a SubscriptionName, lists the description for that subscription.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionNotFoundFault"
@@ -2031,6 +2186,7 @@
       "documentation" : "<p>Describes the available option groups.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
@@ -2084,6 +2240,7 @@
       "documentation" : "<p>Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceNotFoundFault"
@@ -2113,6 +2270,7 @@
       "documentation" : "<p>Returns information about reserved DB instances for this account, or about a specified reserved DB instance.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ReservedDBInstanceNotFoundFault"
@@ -2142,6 +2300,7 @@
       "documentation" : "<p>Lists available reserved DB instance offerings.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ReservedDBInstancesOfferingNotFoundFault"
@@ -2195,11 +2354,13 @@
       "documentation" : "<p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBLogFileNotFoundFault"
@@ -2229,16 +2390,19 @@
       "documentation" : "<p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster promotes one of the Aurora Replicas (read-only instances) in the DB cluster to be the primary instance (the cluster writer).</p> <p>Amazon Aurora will automatically fail over to an Aurora Replica, if one exists, when the primary instance fails. You can force a failover when you want to simulate a failure of a primary instance for testing. Because each instance in a DB cluster has its own endpoint address, you will need to clean up and re-establish any existing connections that use those endpoint addresses when the failover is complete.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
@@ -2268,16 +2432,19 @@
       "documentation" : "<p>Lists all tags on an Amazon RDS resource.</p> <p>For an overview on tagging an Amazon RDS resource, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html\">Tagging Amazon RDS Resources</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
@@ -2307,56 +2474,67 @@
       "documentation" : "<p>Modify a setting for an Amazon Aurora DB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSubnetGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSecurityGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterAlreadyExistsFault"
@@ -2386,11 +2564,13 @@
       "documentation" : "<p> Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p> <note> <p>Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB cluster associated with the parameter group before the change can take effect.</p> </note> <important> <p>After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully complete the create action before the parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter group has been created or modified.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBParameterGroupStateFault"
@@ -2420,16 +2600,19 @@
       "documentation" : "<p>Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.</p> <p>To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want available to all AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>If a manual DB cluster snapshot is encrypted, it cannot be shared.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SharedSnapshotQuotaExceededFault"
@@ -2459,81 +2642,97 @@
       "documentation" : "<p>Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSecurityGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBInstanceCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ProvisionedIopsNotAvailableInAZFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBUpgradeDependencyFailureFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageTypeNotSupportedFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "CertificateNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DomainNotFoundFault"
@@ -2563,11 +2762,13 @@
       "documentation" : "<p> Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request. </p> <note> <p>Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB instance associated with the parameter group before the change can take effect.</p> </note> <important> <p>After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the modify action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the <code>character_set_database</code> parameter. You can use the <i>Parameter Groups</i> option of the <a href=\"https://console.aws.amazon.com/rds/\">Amazon RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB parameter group has been created or modified.</p> </important>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBParameterGroupStateFault"
@@ -2597,16 +2798,19 @@
       "documentation" : "<p>Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.</p> <p>To share a manual DB snapshot with other AWS accounts, specify <code>restore</code> as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which means it can be copied or restored by all AWS accounts. Do not add the <code>all</code> value for any manual DB snapshots that contain private information that you don't want available to all AWS accounts.</p> <p>To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API action.</p> <p>If the manual DB snapshot is encrypted, it cannot be shared.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SharedSnapshotQuotaExceededFault"
@@ -2636,26 +2840,31 @@
       "documentation" : "<p>Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubnetAlreadyInUse"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupDoesNotCoverEnoughAZs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
@@ -2685,31 +2894,37 @@
       "documentation" : "<p>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to change source identifiers for a subscription, use the <a>AddSourceIdentifierToSubscription</a> and <a>RemoveSourceIdentifierFromSubscription</a> calls.</p> <p>You can see a list of the event categories for a given SourceType in the <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html\">Events</a> topic in the Amazon RDS User Guide or by using the <b>DescribeEventCategories</b> action.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "EventSubscriptionQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SNSInvalidTopicFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SNSNoAuthorizationFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SNSTopicArnNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionCategoryNotFoundFault"
@@ -2739,11 +2954,13 @@
       "documentation" : "<p>Modifies an existing option group.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidOptionGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
@@ -2773,11 +2990,13 @@
       "documentation" : "<p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note> <p>We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary instance, backups are taken based on your backup settings.</p> </note>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
@@ -2807,11 +3026,13 @@
       "documentation" : "<p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
@@ -2841,16 +3062,19 @@
       "documentation" : "<p>Purchases a reserved DB instance offering.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ReservedDBInstancesOfferingNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ReservedDBInstanceAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ReservedDBInstanceQuotaExceededFault"
@@ -2880,11 +3104,13 @@
       "documentation" : "<p>Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the associated DB parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a failover. An Amazon RDS event is created when the reboot is completed.</p> <p>If your DB instance is deployed in multiple Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force a failover to test the availability of your DB instance deployment or to restore operations to the original AZ after a failover occurs.</p> <p>The time required to reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
@@ -2914,16 +3140,19 @@
       "documentation" : "<p>Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html\">Authorizing Amazon Aurora to Access Other AWS Services On Your Behalf</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterRoleNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
@@ -2948,11 +3177,13 @@
       "documentation" : "<p>Removes a source identifier from an existing RDS event notification subscription.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SubscriptionNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "SourceNotFoundFault"
@@ -2982,16 +3213,19 @@
       "documentation" : "<p>Removes metadata tags from an Amazon RDS resource.</p> <p>For an overview on tagging an Amazon RDS resource, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html\">Tagging Amazon RDS Resources</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
@@ -3016,11 +3250,13 @@
       "documentation" : "<p> Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters. </p> <p> When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <a>RebootDBInstance</a> request. You must call <a>RebootDBInstance</a> for every DB instance in your DB cluster that you want the updated static parameter to apply to.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBParameterGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -3050,11 +3286,13 @@
       "documentation" : "<p> Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request. </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBParameterGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBParameterGroupNotFoundFault"
@@ -3084,66 +3322,79 @@
       "documentation" : "<p>Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a href=\"AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3\">Migrating Data from MySQL by Using an Amazon S3 Bucket</a>.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSubnetGroupStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidS3BucketFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterParameterGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientStorageClusterCapacityFault"
@@ -3173,86 +3424,103 @@
       "documentation" : "<p>Creates a new DB cluster from a DB cluster snapshot. The target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group.</p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBClusterCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientStorageClusterCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRestoreFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
@@ -3282,86 +3550,103 @@
       "documentation" : "<p> Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group. </p> <p>For more information on Amazon Aurora, see <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html\">Aurora on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBClusterSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBClusterCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientStorageClusterCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBClusterSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRestoreFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
@@ -3391,91 +3676,109 @@
       "documentation" : "<p>Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the most of original configuration with the default security group and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored AZ deployment and not a single-AZ deployment.</p> <p>If your intent is to replace your original DB instance with the new, restored DB instance, then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB instances with the same name. Once you have renamed your original DB instance with a different identifier, then you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB instance created from the snapshot.</p> <p>If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of the shared DB snapshot.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSnapshotNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InstanceQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBInstanceCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSnapshotStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRestoreFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupDoesNotCoverEnoughAZs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ProvisionedIopsNotAvailableInAZFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageTypeNotSupportedFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DomainNotFoundFault"
@@ -3505,96 +3808,115 @@
       "documentation" : "<p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by the BackupRetentionPeriod property.</p> <p>The target database is created with most of the original configuration, but in a system-selected availability zone, with the default security group, the default subnet group, and the default DB parameter group. By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server instance that has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment and not a single-AZ deployment.</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceAlreadyExistsFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBInstanceNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InstanceQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InsufficientDBInstanceCapacityFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBInstanceStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "PointInTimeRestoreNotEnabledFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageQuotaExceededFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidVPCNetworkStateFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRestoreFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSubnetGroupDoesNotCoverEnoughAZs"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidSubnet"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ProvisionedIopsNotAvailableInAZFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "OptionGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "StorageTypeNotSupportedFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "KMSKeyNotAccessibleFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DomainNotFoundFault"
@@ -3624,16 +3946,19 @@
       "documentation" : "<p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).</p>",
       "errors" : [ {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "DBSecurityGroupNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "AuthorizationNotFoundFault"
       }, {
         "documentation" : null,
+        "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidDBSecurityGroupStateFault"
@@ -3778,7 +4103,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -3978,7 +4303,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4107,7 +4432,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4122,7 +4447,8 @@
       "documentation" : "<p>The specified CIDRIP or EC2 security group is already authorized for the specified DB security group.</p>",
       "enum" : null,
       "error" : {
-        "code" : "AuthorizationAlreadyExists"
+        "code" : "AuthorizationAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -4145,7 +4471,8 @@
       "documentation" : "<p>Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p> <p>RDS may not also be authorized via IAM to perform necessary actions on your behalf.</p>",
       "enum" : null,
       "error" : {
-        "code" : "AuthorizationNotFound"
+        "code" : "AuthorizationNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -4168,7 +4495,8 @@
       "documentation" : "<p>DB security group authorization quota has been reached.</p>",
       "enum" : null,
       "error" : {
-        "code" : "AuthorizationQuotaExceeded"
+        "code" : "AuthorizationQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -4366,7 +4694,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4399,7 +4727,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4420,7 +4748,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4441,7 +4769,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4574,7 +4902,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -4637,7 +4965,8 @@
       "documentation" : "<p> <i>CertificateIdentifier</i> does not refer to an existing certificate. </p>",
       "enum" : null,
       "error" : {
-        "code" : "CertificateNotFound"
+        "code" : "CertificateNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -7709,7 +8038,8 @@
       "documentation" : "<p>User already has a DB cluster with the given identifier.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterAlreadyExistsFault"
+        "code" : "DBClusterAlreadyExistsFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -7750,7 +8080,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7857,7 +8187,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7920,7 +8250,8 @@
       "documentation" : "<p> <i>DBClusterIdentifier</i> does not refer to an existing DB cluster. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterNotFoundFault"
+        "code" : "DBClusterNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -7961,7 +8292,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8164,7 +8495,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8214,7 +8545,8 @@
       "documentation" : "<p> <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterParameterGroupNotFound"
+        "code" : "DBClusterParameterGroupNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8285,7 +8617,8 @@
       "documentation" : "<p>User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterQuotaExceededFault"
+        "code" : "DBClusterQuotaExceededFault",
+        "httpStatusCode" : 403
       },
       "exception" : true,
       "fault" : false,
@@ -8356,7 +8689,8 @@
       "documentation" : "<p>The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterRoleAlreadyExists"
+        "code" : "DBClusterRoleAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -8379,7 +8713,8 @@
       "documentation" : "<p>The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterRoleNotFound"
+        "code" : "DBClusterRoleNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -8402,7 +8737,8 @@
       "documentation" : "<p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterRoleQuotaExceeded"
+        "code" : "DBClusterRoleQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -8443,7 +8779,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8714,7 +9050,8 @@
       "documentation" : "<p>User already has a DB cluster snapshot with the given identifier.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterSnapshotAlreadyExistsFault"
+        "code" : "DBClusterSnapshotAlreadyExistsFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -8803,7 +9140,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8884,7 +9221,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -8947,7 +9284,8 @@
       "documentation" : "<p> <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBClusterSnapshotNotFoundFault"
+        "code" : "DBClusterSnapshotNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -9127,7 +9465,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9823,7 +10161,8 @@
       "documentation" : "<p>User already has a DB instance with the given identifier.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBInstanceAlreadyExists"
+        "code" : "DBInstanceAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -9864,7 +10203,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -9927,7 +10266,8 @@
       "documentation" : "<p> <i>DBInstanceIdentifier</i> does not refer to an existing DB instance. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBInstanceNotFound"
+        "code" : "DBInstanceNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10042,7 +10382,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10057,7 +10397,8 @@
       "documentation" : "<p> <i>LogFileName</i> does not refer to an existing DB log file.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBLogFileNotFoundFault"
+        "code" : "DBLogFileNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10154,7 +10495,8 @@
       "documentation" : "<p>A DB parameter group with the same name exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBParameterGroupAlreadyExists"
+        "code" : "DBParameterGroupAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10243,7 +10585,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10293,7 +10635,8 @@
       "documentation" : "<p> <i>DBParameterGroupName</i> does not refer to an existing DB parameter group. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBParameterGroupNotFound"
+        "code" : "DBParameterGroupNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10316,7 +10659,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed number of DB parameter groups.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBParameterGroupQuotaExceeded"
+        "code" : "DBParameterGroupQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10405,7 +10749,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10581,7 +10925,8 @@
       "documentation" : "<p> A DB security group with the name specified in <i>DBSecurityGroupName</i> already exists. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSecurityGroupAlreadyExists"
+        "code" : "DBSecurityGroupAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10670,7 +11015,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10751,7 +11096,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -10766,7 +11111,8 @@
       "documentation" : "<p> <i>DBSecurityGroupName</i> does not refer to an existing DB security group. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSecurityGroupNotFound"
+        "code" : "DBSecurityGroupNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -10789,7 +11135,8 @@
       "documentation" : "<p>A DB security group is not allowed for this action.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSecurityGroupNotSupported"
+        "code" : "DBSecurityGroupNotSupported",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10812,7 +11159,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed number of DB security groups.</p>",
       "enum" : null,
       "error" : {
-        "code" : "QuotaExceeded.DBSecurityGroup"
+        "code" : "QuotaExceeded.DBSecurityGroup",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -10853,7 +11201,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11215,7 +11563,8 @@
       "documentation" : "<p> <i>DBSnapshotIdentifier</i> is already used by an existing snapshot. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSnapshotAlreadyExists"
+        "code" : "DBSnapshotAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11304,7 +11653,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11385,7 +11734,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11448,7 +11797,8 @@
       "documentation" : "<p> <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSnapshotNotFound"
+        "code" : "DBSnapshotNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -11571,7 +11921,8 @@
       "documentation" : "<p> <i>DBSubnetGroupName</i> is already used by an existing DB subnet group. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSubnetGroupAlreadyExists"
+        "code" : "DBSubnetGroupAlreadyExists",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11594,7 +11945,8 @@
       "documentation" : "<p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSubnetGroupDoesNotCoverEnoughAZs"
+        "code" : "DBSubnetGroupDoesNotCoverEnoughAZs",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11665,7 +12017,8 @@
       "documentation" : "<p>Indicates that the DBSubnetGroup should not be specified while creating read replicas that lie in the same region as the source instance.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSubnetGroupNotAllowedFault"
+        "code" : "DBSubnetGroupNotAllowedFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11688,7 +12041,8 @@
       "documentation" : "<p> <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSubnetGroupNotFoundFault"
+        "code" : "DBSubnetGroupNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -11711,7 +12065,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed number of DB subnet groups.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSubnetGroupQuotaExceeded"
+        "code" : "DBSubnetGroupQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11752,7 +12107,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -11767,7 +12122,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed number of subnets in a DB subnet groups.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBSubnetQuotaExceededFault"
+        "code" : "DBSubnetQuotaExceededFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -11790,7 +12146,8 @@
       "documentation" : "<p>The DB upgrade failed because a resource the DB depends on could not be modified.</p>",
       "enum" : null,
       "error" : {
-        "code" : "DBUpgradeDependencyFailure"
+        "code" : "DBUpgradeDependencyFailure",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -13208,7 +13565,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -15212,7 +15569,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -15227,7 +15584,8 @@
       "documentation" : "<p> <i>Domain</i> does not refer to an existing Active Directory Domain. </p>",
       "enum" : null,
       "error" : {
-        "code" : "DomainNotFoundFault"
+        "code" : "DomainNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -15256,7 +15614,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -15498,7 +15856,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -15753,7 +16111,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -15834,7 +16192,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -15902,7 +16260,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16069,7 +16427,8 @@
       "documentation" : "<p>You have reached the maximum number of event subscriptions.</p>",
       "enum" : null,
       "error" : {
-        "code" : "EventSubscriptionQuotaExceeded"
+        "code" : "EventSubscriptionQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16110,7 +16469,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16370,7 +16729,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16403,7 +16762,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16484,7 +16843,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16499,7 +16858,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed number of DB instances.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InstanceQuotaExceeded"
+        "code" : "InstanceQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16522,7 +16882,8 @@
       "documentation" : "<p>The DB cluster does not have enough capacity for the current operation.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InsufficientDBClusterCapacityFault"
+        "code" : "InsufficientDBClusterCapacityFault",
+        "httpStatusCode" : 403
       },
       "exception" : true,
       "fault" : false,
@@ -16545,7 +16906,8 @@
       "documentation" : "<p>Specified DB instance class is not available in the specified Availability Zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InsufficientDBInstanceCapacity"
+        "code" : "InsufficientDBInstanceCapacity",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16568,7 +16930,8 @@
       "documentation" : "<p>There is insufficient storage available for the current action. You may be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InsufficientStorageClusterCapacity"
+        "code" : "InsufficientStorageClusterCapacity",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16597,7 +16960,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16618,7 +16981,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -16633,7 +16996,8 @@
       "documentation" : "<p>The supplied value is not a valid DB cluster snapshot state.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBClusterSnapshotStateFault"
+        "code" : "InvalidDBClusterSnapshotStateFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16656,7 +17020,8 @@
       "documentation" : "<p>The DB cluster is not in a valid state.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBClusterStateFault"
+        "code" : "InvalidDBClusterStateFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16679,7 +17044,8 @@
       "documentation" : "<p> The specified DB instance is not in the <i>available</i> state. </p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBInstanceState"
+        "code" : "InvalidDBInstanceState",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16702,7 +17068,8 @@
       "documentation" : "<p>The DB parameter group cannot be deleted because it is in use.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBParameterGroupState"
+        "code" : "InvalidDBParameterGroupState",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16725,7 +17092,8 @@
       "documentation" : "<p>The state of the DB security group does not allow deletion.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBSecurityGroupState"
+        "code" : "InvalidDBSecurityGroupState",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16748,7 +17116,8 @@
       "documentation" : "<p>The state of the DB snapshot does not allow deletion.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBSnapshotState"
+        "code" : "InvalidDBSnapshotState",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16771,7 +17140,8 @@
       "documentation" : "<p>Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read replica of the same source instance.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBSubnetGroupFault"
+        "code" : "InvalidDBSubnetGroupFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16794,7 +17164,8 @@
       "documentation" : "<p>The DB subnet group cannot be deleted because it is in use.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBSubnetGroupStateFault"
+        "code" : "InvalidDBSubnetGroupStateFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16817,7 +17188,8 @@
       "documentation" : "<p> The DB subnet is not in the <i>available</i> state. </p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidDBSubnetStateFault"
+        "code" : "InvalidDBSubnetStateFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16840,7 +17212,8 @@
       "documentation" : "<p>This error can occur if someone else is modifying a subscription. You should retry the action.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidEventSubscriptionState"
+        "code" : "InvalidEventSubscriptionState",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16863,7 +17236,8 @@
       "documentation" : "<p> The option group is not in the <i>available</i> state. </p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidOptionGroupStateFault"
+        "code" : "InvalidOptionGroupStateFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16886,7 +17260,8 @@
       "documentation" : "<p>Cannot restore from vpc backup to non-vpc DB instance.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidRestoreFault"
+        "code" : "InvalidRestoreFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16909,7 +17284,8 @@
       "documentation" : "<p>The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidS3BucketFault"
+        "code" : "InvalidS3BucketFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16932,7 +17308,8 @@
       "documentation" : "<p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidSubnet"
+        "code" : "InvalidSubnet",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16955,7 +17332,8 @@
       "documentation" : "<p>DB subnet group does not cover all Availability Zones after it is created because users' change.</p>",
       "enum" : null,
       "error" : {
-        "code" : "InvalidVPCNetworkStateFault"
+        "code" : "InvalidVPCNetworkStateFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -16978,7 +17356,8 @@
       "documentation" : "<p>Error accessing KMS key.</p>",
       "enum" : null,
       "error" : {
-        "code" : "KMSKeyNotAccessibleFault"
+        "code" : "KMSKeyNotAccessibleFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -17019,7 +17398,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -17088,7 +17467,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -18674,7 +19053,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -18815,7 +19194,8 @@
       "documentation" : "<p>The option group you are trying to create already exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : "OptionGroupAlreadyExistsFault"
+        "code" : "OptionGroupAlreadyExistsFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -18904,7 +19284,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -18919,7 +19299,8 @@
       "documentation" : "<p>The specified option group could not be found.</p>",
       "enum" : null,
       "error" : {
-        "code" : "OptionGroupNotFoundFault"
+        "code" : "OptionGroupNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -19251,7 +19632,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19284,7 +19665,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19317,7 +19698,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19380,7 +19761,8 @@
       "documentation" : "<p>The quota of 20 option groups was exceeded for this AWS account.</p>",
       "enum" : null,
       "error" : {
-        "code" : "OptionGroupQuotaExceededFault"
+        "code" : "OptionGroupQuotaExceededFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -19469,7 +19851,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19502,7 +19884,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19674,7 +20056,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19707,7 +20089,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19788,7 +20170,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19821,7 +20203,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -19854,7 +20236,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -20065,7 +20447,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -20298,7 +20680,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -20431,7 +20813,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -20464,7 +20846,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -20718,7 +21100,8 @@
       "documentation" : "<p> <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0. </p>",
       "enum" : null,
       "error" : {
-        "code" : "PointInTimeRestoreNotEnabled"
+        "code" : "PointInTimeRestoreNotEnabled",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -20907,7 +21290,8 @@
       "documentation" : "<p>Provisioned IOPS not available in the specified Availability Zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ProvisionedIopsNotAvailableInAZFault"
+        "code" : "ProvisionedIopsNotAvailableInAZFault",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -21057,7 +21441,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -21090,7 +21474,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -21254,7 +21638,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -21665,7 +22049,8 @@
       "documentation" : "<p>User already has a reservation with the given identifier.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ReservedDBInstanceAlreadyExists"
+        "code" : "ReservedDBInstanceAlreadyExists",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -21706,7 +22091,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -21769,7 +22154,8 @@
       "documentation" : "<p>The specified reserved DB Instance not found.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ReservedDBInstanceNotFound"
+        "code" : "ReservedDBInstanceNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -21792,7 +22178,8 @@
       "documentation" : "<p>Request would exceed the user's DB Instance quota.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ReservedDBInstanceQuotaExceeded"
+        "code" : "ReservedDBInstanceQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -21985,7 +22372,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -22048,7 +22435,8 @@
       "documentation" : "<p>Specified offering does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ReservedDBInstancesOfferingNotFound"
+        "code" : "ReservedDBInstancesOfferingNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -22193,7 +22581,8 @@
       "documentation" : "<p>The specified resource ID was not found.</p>",
       "enum" : null,
       "error" : {
-        "code" : "ResourceNotFoundFault"
+        "code" : "ResourceNotFoundFault",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -23841,7 +24230,8 @@
       "documentation" : "<p>SNS has responded that there is a problem with the SND topic specified.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SNSInvalidTopic"
+        "code" : "SNSInvalidTopic",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -23864,7 +24254,8 @@
       "documentation" : "<p>You do not have permission to publish to the SNS topic ARN.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SNSNoAuthorization"
+        "code" : "SNSNoAuthorization",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -23887,7 +24278,8 @@
       "documentation" : "<p>The SNS topic ARN does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SNSTopicArnNotFound"
+        "code" : "SNSTopicArnNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -23910,7 +24302,8 @@
       "documentation" : "<p>You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SharedSnapshotQuotaExceeded"
+        "code" : "SharedSnapshotQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -23933,7 +24326,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed number of DB snapshots.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SnapshotQuotaExceeded"
+        "code" : "SnapshotQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -23974,7 +24368,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -23989,7 +24383,8 @@
       "documentation" : "<p>The requested source could not be found.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SourceNotFound"
+        "code" : "SourceNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -24091,7 +24486,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24160,7 +24555,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24175,7 +24570,8 @@
       "documentation" : "<p>Request would result in user exceeding the allowed amount of storage available across all DB instances.</p>",
       "enum" : null,
       "error" : {
-        "code" : "StorageQuotaExceeded"
+        "code" : "StorageQuotaExceeded",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -24198,7 +24594,8 @@
       "documentation" : "<p> <i>StorageType</i> specified cannot be associated with the DB Instance. </p>",
       "enum" : null,
       "error" : {
-        "code" : "StorageTypeNotSupported"
+        "code" : "StorageTypeNotSupported",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -24227,7 +24624,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24303,7 +24700,8 @@
       "documentation" : "<p>The DB subnet is already in use in the Availability Zone.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SubnetAlreadyInUse"
+        "code" : "SubnetAlreadyInUse",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -24344,7 +24742,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24377,7 +24775,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24392,7 +24790,8 @@
       "documentation" : "<p>The supplied subscription name already exists.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SubscriptionAlreadyExist"
+        "code" : "SubscriptionAlreadyExist",
+        "httpStatusCode" : 400
       },
       "exception" : true,
       "fault" : false,
@@ -24415,7 +24814,8 @@
       "documentation" : "<p>The supplied category does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SubscriptionCategoryNotFound"
+        "code" : "SubscriptionCategoryNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -24438,7 +24838,8 @@
       "documentation" : "<p>The subscription name does not exist.</p>",
       "enum" : null,
       "error" : {
-        "code" : "SubscriptionNotFound"
+        "code" : "SubscriptionNotFound",
+        "httpStatusCode" : 404
       },
       "exception" : true,
       "fault" : false,
@@ -24479,7 +24880,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24512,7 +24913,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24533,7 +24934,7 @@
       "key" : null,
       "max" : 0,
       "member" : null,
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24614,7 +25015,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24804,7 +25205,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24837,7 +25238,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -24918,7 +25319,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "members" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,

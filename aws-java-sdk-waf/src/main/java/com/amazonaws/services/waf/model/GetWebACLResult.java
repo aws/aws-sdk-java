@@ -250,7 +250,7 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWebACL() != null)
-            sb.append("WebACL: " + getWebACL());
+            sb.append("WebACL: ").append(getWebACL());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,8 @@ public class DescribeCACertificateRequestMarshaller implements Marshaller<Reques
 
         String uriResourcePath = "/cacertificate/{caCertificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{caCertificateId}",
-                (describeCACertificateRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(describeCACertificateRequest.getCertificateId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "caCertificateId",
+                describeCACertificateRequest.getCertificateId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

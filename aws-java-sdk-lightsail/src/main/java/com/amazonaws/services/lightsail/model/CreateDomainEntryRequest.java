@@ -125,9 +125,9 @@ public class CreateDomainEntryRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDomainEntry() != null)
-            sb.append("DomainEntry: " + getDomainEntry());
+            sb.append("DomainEntry: ").append(getDomainEntry());
         sb.append("}");
         return sb.toString();
     }

@@ -117,7 +117,7 @@ public class DescribeElasticLoadBalancersResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticLoadBalancers() != null)
-            sb.append("ElasticLoadBalancers: " + getElasticLoadBalancers());
+            sb.append("ElasticLoadBalancers: ").append(getElasticLoadBalancers());
         sb.append("}");
         return sb.toString();
     }

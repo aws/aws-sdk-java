@@ -173,11 +173,11 @@ public class TelemetryMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageType() != null)
-            sb.append("MessageType: " + getMessageType() + ",");
+            sb.append("MessageType: ").append(getMessageType()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount() + ",");
+            sb.append("Count: ").append(getCount()).append(",");
         if (getDataSize() != null)
-            sb.append("DataSize: " + getDataSize());
+            sb.append("DataSize: ").append(getDataSize());
         sb.append("}");
         return sb.toString();
     }

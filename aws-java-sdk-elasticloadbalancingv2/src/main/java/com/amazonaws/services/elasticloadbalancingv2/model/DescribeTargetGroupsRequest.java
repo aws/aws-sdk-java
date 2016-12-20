@@ -325,15 +325,15 @@ public class DescribeTargetGroupsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerArn() != null)
-            sb.append("LoadBalancerArn: " + getLoadBalancerArn() + ",");
+            sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getTargetGroupArns() != null)
-            sb.append("TargetGroupArns: " + getTargetGroupArns() + ",");
+            sb.append("TargetGroupArns: ").append(getTargetGroupArns()).append(",");
         if (getNames() != null)
-            sb.append("Names: " + getNames() + ",");
+            sb.append("Names: ").append(getNames()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize());
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }

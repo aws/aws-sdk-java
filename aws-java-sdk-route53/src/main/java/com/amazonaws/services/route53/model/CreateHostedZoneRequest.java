@@ -539,15 +539,15 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVPC() != null)
-            sb.append("VPC: " + getVPC() + ",");
+            sb.append("VPC: ").append(getVPC()).append(",");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getHostedZoneConfig() != null)
-            sb.append("HostedZoneConfig: " + getHostedZoneConfig() + ",");
+            sb.append("HostedZoneConfig: ").append(getHostedZoneConfig()).append(",");
         if (getDelegationSetId() != null)
-            sb.append("DelegationSetId: " + getDelegationSetId());
+            sb.append("DelegationSetId: ").append(getDelegationSetId());
         sb.append("}");
         return sb.toString();
     }

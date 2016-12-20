@@ -61,8 +61,7 @@ public class GetPolicyRequestMarshaller implements Marshaller<Request<GetPolicyR
 
         String uriResourcePath = "/policies/{policyName}";
 
-        uriResourcePath = uriResourcePath.replace("{policyName}",
-                (getPolicyRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getPolicyRequest.getPolicyName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyName", getPolicyRequest.getPolicyName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -191,9 +191,9 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId() + ",");
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getVerbose() != null)
-            sb.append("Verbose: " + getVerbose());
+            sb.append("Verbose: ").append(getVerbose());
         sb.append("}");
         return sb.toString();
     }

@@ -45,8 +45,18 @@ public class DescribeMetricCollectionTypesResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Metrics", targetDepth)) {
+                    describeMetricCollectionTypesResult.withMetrics(new ArrayList<MetricCollectionType>());
+                    continue;
+                }
+
                 if (context.testExpression("Metrics/member", targetDepth)) {
                     describeMetricCollectionTypesResult.withMetrics(MetricCollectionTypeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Granularities", targetDepth)) {
+                    describeMetricCollectionTypesResult.withGranularities(new ArrayList<MetricGranularityType>());
                     continue;
                 }
 

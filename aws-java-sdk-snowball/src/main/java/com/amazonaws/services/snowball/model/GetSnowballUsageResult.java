@@ -127,9 +127,9 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnowballLimit() != null)
-            sb.append("SnowballLimit: " + getSnowballLimit() + ",");
+            sb.append("SnowballLimit: ").append(getSnowballLimit()).append(",");
         if (getSnowballsInUse() != null)
-            sb.append("SnowballsInUse: " + getSnowballsInUse());
+            sb.append("SnowballsInUse: ").append(getSnowballsInUse());
         sb.append("}");
         return sb.toString();
     }

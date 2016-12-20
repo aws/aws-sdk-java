@@ -215,11 +215,11 @@ public class EngineDefaults implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupFamily() != null)
-            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+            sb.append("DBParameterGroupFamily: ").append(getDBParameterGroupFamily()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

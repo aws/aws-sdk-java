@@ -1349,45 +1349,45 @@ public class Cluster implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getEc2InstanceAttributes() != null)
-            sb.append("Ec2InstanceAttributes: " + getEc2InstanceAttributes() + ",");
+            sb.append("Ec2InstanceAttributes: ").append(getEc2InstanceAttributes()).append(",");
         if (getLogUri() != null)
-            sb.append("LogUri: " + getLogUri() + ",");
+            sb.append("LogUri: ").append(getLogUri()).append(",");
         if (getRequestedAmiVersion() != null)
-            sb.append("RequestedAmiVersion: " + getRequestedAmiVersion() + ",");
+            sb.append("RequestedAmiVersion: ").append(getRequestedAmiVersion()).append(",");
         if (getRunningAmiVersion() != null)
-            sb.append("RunningAmiVersion: " + getRunningAmiVersion() + ",");
+            sb.append("RunningAmiVersion: ").append(getRunningAmiVersion()).append(",");
         if (getReleaseLabel() != null)
-            sb.append("ReleaseLabel: " + getReleaseLabel() + ",");
+            sb.append("ReleaseLabel: ").append(getReleaseLabel()).append(",");
         if (getAutoTerminate() != null)
-            sb.append("AutoTerminate: " + getAutoTerminate() + ",");
+            sb.append("AutoTerminate: ").append(getAutoTerminate()).append(",");
         if (getTerminationProtected() != null)
-            sb.append("TerminationProtected: " + getTerminationProtected() + ",");
+            sb.append("TerminationProtected: ").append(getTerminationProtected()).append(",");
         if (getVisibleToAllUsers() != null)
-            sb.append("VisibleToAllUsers: " + getVisibleToAllUsers() + ",");
+            sb.append("VisibleToAllUsers: ").append(getVisibleToAllUsers()).append(",");
         if (getApplications() != null)
-            sb.append("Applications: " + getApplications() + ",");
+            sb.append("Applications: ").append(getApplications()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getNormalizedInstanceHours() != null)
-            sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");
+            sb.append("NormalizedInstanceHours: ").append(getNormalizedInstanceHours()).append(",");
         if (getMasterPublicDnsName() != null)
-            sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");
+            sb.append("MasterPublicDnsName: ").append(getMasterPublicDnsName()).append(",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations() + ",");
+            sb.append("Configurations: ").append(getConfigurations()).append(",");
         if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: " + getSecurityConfiguration() + ",");
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getAutoScalingRole() != null)
-            sb.append("AutoScalingRole: " + getAutoScalingRole() + ",");
+            sb.append("AutoScalingRole: ").append(getAutoScalingRole()).append(",");
         if (getScaleDownBehavior() != null)
-            sb.append("ScaleDownBehavior: " + getScaleDownBehavior());
+            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior());
         sb.append("}");
         return sb.toString();
     }

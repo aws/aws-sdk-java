@@ -203,15 +203,15 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getManifest() != null)
-            sb.append("Manifest: " + getManifest() + ",");
+            sb.append("Manifest: ").append(getManifest()).append(",");
         if (getJobType() != null)
-            sb.append("JobType: " + getJobType() + ",");
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getValidateOnly() != null)
-            sb.append("ValidateOnly: " + getValidateOnly() + ",");
+            sb.append("ValidateOnly: ").append(getValidateOnly()).append(",");
         if (getAPIVersion() != null)
-            sb.append("APIVersion: " + getAPIVersion());
+            sb.append("APIVersion: ").append(getAPIVersion());
         sb.append("}");
         return sb.toString();
     }

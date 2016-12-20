@@ -221,13 +221,13 @@ public class ReferenceDataSourceDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReferenceId() != null)
-            sb.append("ReferenceId: " + getReferenceId() + ",");
+            sb.append("ReferenceId: ").append(getReferenceId()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getS3ReferenceDataSourceDescription() != null)
-            sb.append("S3ReferenceDataSourceDescription: " + getS3ReferenceDataSourceDescription() + ",");
+            sb.append("S3ReferenceDataSourceDescription: ").append(getS3ReferenceDataSourceDescription()).append(",");
         if (getReferenceSchema() != null)
-            sb.append("ReferenceSchema: " + getReferenceSchema());
+            sb.append("ReferenceSchema: ").append(getReferenceSchema());
         sb.append("}");
         return sb.toString();
     }

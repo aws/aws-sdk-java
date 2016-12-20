@@ -81,7 +81,7 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName());
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName());
         sb.append("}");
         return sb.toString();
     }

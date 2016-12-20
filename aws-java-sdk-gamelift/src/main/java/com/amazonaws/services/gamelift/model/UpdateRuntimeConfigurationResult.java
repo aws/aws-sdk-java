@@ -87,7 +87,7 @@ public class UpdateRuntimeConfigurationResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuntimeConfiguration() != null)
-            sb.append("RuntimeConfiguration: " + getRuntimeConfiguration());
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration());
         sb.append("}");
         return sb.toString();
     }

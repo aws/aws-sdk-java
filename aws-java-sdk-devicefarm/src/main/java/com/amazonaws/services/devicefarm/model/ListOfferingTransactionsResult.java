@@ -163,9 +163,9 @@ public class ListOfferingTransactionsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingTransactions() != null)
-            sb.append("OfferingTransactions: " + getOfferingTransactions() + ",");
+            sb.append("OfferingTransactions: ").append(getOfferingTransactions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

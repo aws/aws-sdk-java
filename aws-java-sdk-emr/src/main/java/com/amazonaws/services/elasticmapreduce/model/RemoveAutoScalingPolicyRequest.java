@@ -132,9 +132,9 @@ public class RemoveAutoScalingPolicyRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId());
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId());
         sb.append("}");
         return sb.toString();
     }

@@ -345,17 +345,17 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId() + ",");
+            sb.append("UserId: ").append(getUserId()).append(",");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getGroupId() != null)
-            sb.append("GroupId: " + getGroupId() + ",");
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
         if (getPeeringStatus() != null)
-            sb.append("PeeringStatus: " + getPeeringStatus());
+            sb.append("PeeringStatus: ").append(getPeeringStatus());
         sb.append("}");
         return sb.toString();
     }

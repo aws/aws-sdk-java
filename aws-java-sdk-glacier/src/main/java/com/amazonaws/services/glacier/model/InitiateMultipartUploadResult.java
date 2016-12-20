@@ -126,9 +126,9 @@ public class InitiateMultipartUploadResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getUploadId() != null)
-            sb.append("UploadId: " + getUploadId());
+            sb.append("UploadId: ").append(getUploadId());
         sb.append("}");
         return sb.toString();
     }

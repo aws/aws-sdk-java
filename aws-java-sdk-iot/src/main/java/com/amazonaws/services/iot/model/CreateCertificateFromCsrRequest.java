@@ -139,9 +139,9 @@ public class CreateCertificateFromCsrRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateSigningRequest() != null)
-            sb.append("CertificateSigningRequest: " + getCertificateSigningRequest() + ",");
+            sb.append("CertificateSigningRequest: ").append(getCertificateSigningRequest()).append(",");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive());
+            sb.append("SetAsActive: ").append(getSetAsActive());
         sb.append("}");
         return sb.toString();
     }

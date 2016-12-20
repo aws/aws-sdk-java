@@ -325,15 +325,15 @@ public class ScheduledInstanceRecurrence implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getInterval() != null)
-            sb.append("Interval: " + getInterval() + ",");
+            sb.append("Interval: ").append(getInterval()).append(",");
         if (getOccurrenceDaySet() != null)
-            sb.append("OccurrenceDaySet: " + getOccurrenceDaySet() + ",");
+            sb.append("OccurrenceDaySet: ").append(getOccurrenceDaySet()).append(",");
         if (getOccurrenceRelativeToEnd() != null)
-            sb.append("OccurrenceRelativeToEnd: " + getOccurrenceRelativeToEnd() + ",");
+            sb.append("OccurrenceRelativeToEnd: ").append(getOccurrenceRelativeToEnd()).append(",");
         if (getOccurrenceUnit() != null)
-            sb.append("OccurrenceUnit: " + getOccurrenceUnit());
+            sb.append("OccurrenceUnit: ").append(getOccurrenceUnit());
         sb.append("}");
         return sb.toString();
     }

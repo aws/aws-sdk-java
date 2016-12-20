@@ -152,9 +152,9 @@ public class SetCognitoEventsRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents());
+            sb.append("Events: ").append(getEvents());
         sb.append("}");
         return sb.toString();
     }

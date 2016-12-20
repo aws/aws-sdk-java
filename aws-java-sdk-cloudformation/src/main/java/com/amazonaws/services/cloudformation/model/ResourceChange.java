@@ -671,19 +671,19 @@ public class ResourceChange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getLogicalResourceId() != null)
-            sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");
+            sb.append("LogicalResourceId: ").append(getLogicalResourceId()).append(",");
         if (getPhysicalResourceId() != null)
-            sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ",");
+            sb.append("PhysicalResourceId: ").append(getPhysicalResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getReplacement() != null)
-            sb.append("Replacement: " + getReplacement() + ",");
+            sb.append("Replacement: ").append(getReplacement()).append(",");
         if (getScope() != null)
-            sb.append("Scope: " + getScope() + ",");
+            sb.append("Scope: ").append(getScope()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails());
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }

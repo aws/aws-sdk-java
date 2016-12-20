@@ -822,15 +822,15 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceDBSnapshotIdentifier() != null)
-            sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");
+            sb.append("SourceDBSnapshotIdentifier: ").append(getSourceDBSnapshotIdentifier()).append(",");
         if (getTargetDBSnapshotIdentifier() != null)
-            sb.append("TargetDBSnapshotIdentifier: " + getTargetDBSnapshotIdentifier() + ",");
+            sb.append("TargetDBSnapshotIdentifier: ").append(getTargetDBSnapshotIdentifier()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getCopyTags() != null)
-            sb.append("CopyTags: " + getCopyTags());
+            sb.append("CopyTags: ").append(getCopyTags());
         sb.append("}");
         return sb.toString();
     }

@@ -104,7 +104,7 @@ public class GetIdentityPoliciesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies());
+            sb.append("Policies: ").append(getPolicies());
         sb.append("}");
         return sb.toString();
     }

@@ -630,15 +630,15 @@ public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyId() != null)
-            sb.append("KeyId: " + getKeyId() + ",");
+            sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getEncryptionContext() != null)
-            sb.append("EncryptionContext: " + getEncryptionContext() + ",");
+            sb.append("EncryptionContext: ").append(getEncryptionContext()).append(",");
         if (getNumberOfBytes() != null)
-            sb.append("NumberOfBytes: " + getNumberOfBytes() + ",");
+            sb.append("NumberOfBytes: ").append(getNumberOfBytes()).append(",");
         if (getKeySpec() != null)
-            sb.append("KeySpec: " + getKeySpec() + ",");
+            sb.append("KeySpec: ").append(getKeySpec()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: " + getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens());
         sb.append("}");
         return sb.toString();
     }

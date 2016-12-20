@@ -99,7 +99,7 @@ public class DeleteLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName());
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName());
         sb.append("}");
         return sb.toString();
     }

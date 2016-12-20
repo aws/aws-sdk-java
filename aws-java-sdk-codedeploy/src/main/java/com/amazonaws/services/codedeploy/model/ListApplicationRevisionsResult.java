@@ -166,9 +166,9 @@ public class ListApplicationRevisionsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRevisions() != null)
-            sb.append("Revisions: " + getRevisions() + ",");
+            sb.append("Revisions: ").append(getRevisions()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

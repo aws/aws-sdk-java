@@ -297,15 +297,15 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getHistoryItemType() != null)
-            sb.append("HistoryItemType: " + getHistoryItemType() + ",");
+            sb.append("HistoryItemType: ").append(getHistoryItemType()).append(",");
         if (getHistorySummary() != null)
-            sb.append("HistorySummary: " + getHistorySummary() + ",");
+            sb.append("HistorySummary: ").append(getHistorySummary()).append(",");
         if (getHistoryData() != null)
-            sb.append("HistoryData: " + getHistoryData());
+            sb.append("HistoryData: ").append(getHistoryData());
         sb.append("}");
         return sb.toString();
     }

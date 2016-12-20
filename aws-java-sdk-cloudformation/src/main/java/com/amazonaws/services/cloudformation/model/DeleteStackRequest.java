@@ -294,11 +294,11 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName() + ",");
+            sb.append("StackName: ").append(getStackName()).append(",");
         if (getRetainResources() != null)
-            sb.append("RetainResources: " + getRetainResources() + ",");
+            sb.append("RetainResources: ").append(getRetainResources()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN());
+            sb.append("RoleARN: ").append(getRoleARN());
         sb.append("}");
         return sb.toString();
     }

@@ -61,10 +61,8 @@ public class TransferCertificateRequestMarshaller implements Marshaller<Request<
 
         String uriResourcePath = "/transfer-certificate/{certificateId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{certificateId}",
-                (transferCertificateRequest.getCertificateId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(transferCertificateRequest.getCertificateId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "certificateId",
+                transferCertificateRequest.getCertificateId());
         request.setResourcePath(uriResourcePath);
 
         if (transferCertificateRequest.getTargetAwsAccount() != null) {

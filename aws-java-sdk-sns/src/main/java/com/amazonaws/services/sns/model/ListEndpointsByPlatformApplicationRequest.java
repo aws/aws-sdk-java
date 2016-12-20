@@ -134,9 +134,9 @@ public class ListEndpointsByPlatformApplicationRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatformApplicationArn() != null)
-            sb.append("PlatformApplicationArn: " + getPlatformApplicationArn() + ",");
+            sb.append("PlatformApplicationArn: ").append(getPlatformApplicationArn()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

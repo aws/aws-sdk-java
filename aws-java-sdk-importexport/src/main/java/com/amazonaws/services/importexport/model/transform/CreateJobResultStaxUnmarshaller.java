@@ -70,6 +70,11 @@ public class CreateJobResultStaxUnmarshaller implements Unmarshaller<CreateJobRe
                     continue;
                 }
 
+                if (context.testExpression("ArtifactList", targetDepth)) {
+                    createJobResult.withArtifactList(new ArrayList<Artifact>());
+                    continue;
+                }
+
                 if (context.testExpression("ArtifactList/member", targetDepth)) {
                     createJobResult.withArtifactList(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

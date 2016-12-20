@@ -263,13 +263,13 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeId() != null)
-            sb.append("VolumeId: " + getVolumeId() + ",");
+            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getAttachTime() != null)
-            sb.append("AttachTime: " + getAttachTime() + ",");
+            sb.append("AttachTime: ").append(getAttachTime()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
         sb.append("}");
         return sb.toString();
     }

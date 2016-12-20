@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The receipt handle provided is not valid.
+ * The receipt handle provided isn't valid.
  * </p>
  */
 public class ReceiptHandleIsInvalidException extends com.amazonaws.services.sqs.model.AmazonSQSException {

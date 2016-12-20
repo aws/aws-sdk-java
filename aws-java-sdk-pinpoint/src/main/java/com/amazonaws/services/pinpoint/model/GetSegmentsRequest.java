@@ -116,11 +116,11 @@ public class GetSegmentsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken());
+            sb.append("Token: ").append(getToken());
         sb.append("}");
         return sb.toString();
     }

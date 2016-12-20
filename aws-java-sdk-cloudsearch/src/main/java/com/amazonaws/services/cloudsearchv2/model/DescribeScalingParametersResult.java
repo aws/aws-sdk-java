@@ -62,7 +62,7 @@ public class DescribeScalingParametersResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScalingParameters() != null)
-            sb.append("ScalingParameters: " + getScalingParameters());
+            sb.append("ScalingParameters: ").append(getScalingParameters());
         sb.append("}");
         return sb.toString();
     }

@@ -134,9 +134,9 @@ public class CreateByteMatchSetResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getByteMatchSet() != null)
-            sb.append("ByteMatchSet: " + getByteMatchSet() + ",");
+            sb.append("ByteMatchSet: ").append(getByteMatchSet()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

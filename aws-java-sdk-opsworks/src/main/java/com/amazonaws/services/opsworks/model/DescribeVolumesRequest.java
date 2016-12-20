@@ -273,13 +273,13 @@ public class DescribeVolumesRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getRaidArrayId() != null)
-            sb.append("RaidArrayId: " + getRaidArrayId() + ",");
+            sb.append("RaidArrayId: ").append(getRaidArrayId()).append(",");
         if (getVolumeIds() != null)
-            sb.append("VolumeIds: " + getVolumeIds());
+            sb.append("VolumeIds: ").append(getVolumeIds());
         sb.append("}");
         return sb.toString();
     }

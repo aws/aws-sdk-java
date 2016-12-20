@@ -1072,19 +1072,19 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getSortBy() != null)
-            sb.append("SortBy: " + getSortBy() + ",");
+            sb.append("SortBy: ").append(getSortBy()).append(",");
         if (getSortOrder() != null)
-            sb.append("SortOrder: " + getSortOrder() + ",");
+            sb.append("SortOrder: ").append(getSortOrder()).append(",");
         if (getS3Bucket() != null)
-            sb.append("S3Bucket: " + getS3Bucket() + ",");
+            sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3KeyPrefix() != null)
-            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+            sb.append("S3KeyPrefix: ").append(getS3KeyPrefix()).append(",");
         if (getDeployed() != null)
-            sb.append("Deployed: " + getDeployed() + ",");
+            sb.append("Deployed: ").append(getDeployed()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

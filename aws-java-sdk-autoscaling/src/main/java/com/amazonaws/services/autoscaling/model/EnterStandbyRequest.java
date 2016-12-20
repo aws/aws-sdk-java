@@ -236,11 +236,11 @@ public class EnterStandbyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getShouldDecrementDesiredCapacity() != null)
-            sb.append("ShouldDecrementDesiredCapacity: " + getShouldDecrementDesiredCapacity());
+            sb.append("ShouldDecrementDesiredCapacity: ").append(getShouldDecrementDesiredCapacity());
         sb.append("}");
         return sb.toString();
     }

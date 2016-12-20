@@ -79,7 +79,7 @@ public class RegisterTaskWithMaintenanceWindowResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowTaskId() != null)
-            sb.append("WindowTaskId: " + getWindowTaskId());
+            sb.append("WindowTaskId: ").append(getWindowTaskId());
         sb.append("}");
         return sb.toString();
     }

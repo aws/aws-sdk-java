@@ -81,7 +81,7 @@ public class CopySnapshotResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId());
+            sb.append("SnapshotId: ").append(getSnapshotId());
         sb.append("}");
         return sb.toString();
     }

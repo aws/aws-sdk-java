@@ -128,9 +128,9 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDataSourceId() != null)
-            sb.append("DataSourceId: " + getDataSourceId() + ",");
+            sb.append("DataSourceId: ").append(getDataSourceId()).append(",");
         if (getDataSourceName() != null)
-            sb.append("DataSourceName: " + getDataSourceName());
+            sb.append("DataSourceName: ").append(getDataSourceName());
         sb.append("}");
         return sb.toString();
     }

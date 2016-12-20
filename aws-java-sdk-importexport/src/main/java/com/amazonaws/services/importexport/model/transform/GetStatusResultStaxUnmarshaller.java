@@ -120,6 +120,11 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
                     continue;
                 }
 
+                if (context.testExpression("ArtifactList", targetDepth)) {
+                    getStatusResult.withArtifactList(new ArrayList<Artifact>());
+                    continue;
+                }
+
                 if (context.testExpression("ArtifactList/member", targetDepth)) {
                     getStatusResult.withArtifactList(ArtifactStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

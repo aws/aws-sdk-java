@@ -127,9 +127,9 @@ public class GetApplicationRevisionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision());
+            sb.append("Revision: ").append(getRevision());
         sb.append("}");
         return sb.toString();
     }

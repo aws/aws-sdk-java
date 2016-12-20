@@ -113,7 +113,7 @@ public class ListVolumeInitiatorsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInitiators() != null)
-            sb.append("Initiators: " + getInitiators());
+            sb.append("Initiators: ").append(getInitiators());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribeAlarmHistoryResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AlarmHistoryItems", targetDepth)) {
+                    describeAlarmHistoryResult.withAlarmHistoryItems(new ArrayList<AlarmHistoryItem>());
+                    continue;
+                }
+
                 if (context.testExpression("AlarmHistoryItems/member", targetDepth)) {
                     describeAlarmHistoryResult.withAlarmHistoryItems(AlarmHistoryItemStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

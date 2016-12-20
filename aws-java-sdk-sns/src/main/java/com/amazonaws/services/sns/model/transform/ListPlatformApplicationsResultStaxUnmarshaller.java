@@ -45,6 +45,11 @@ public class ListPlatformApplicationsResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("PlatformApplications", targetDepth)) {
+                    listPlatformApplicationsResult.withPlatformApplications(new ArrayList<PlatformApplication>());
+                    continue;
+                }
+
                 if (context.testExpression("PlatformApplications/member", targetDepth)) {
                     listPlatformApplicationsResult.withPlatformApplications(PlatformApplicationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

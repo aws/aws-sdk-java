@@ -50,6 +50,11 @@ public class PendingModifiedValuesStaxUnmarshaller implements Unmarshaller<Pendi
                     continue;
                 }
 
+                if (context.testExpression("CacheNodeIdsToRemove", targetDepth)) {
+                    pendingModifiedValues.withCacheNodeIdsToRemove(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheNodeIdsToRemove/CacheNodeId", targetDepth)) {
                     pendingModifiedValues.withCacheNodeIdsToRemove(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

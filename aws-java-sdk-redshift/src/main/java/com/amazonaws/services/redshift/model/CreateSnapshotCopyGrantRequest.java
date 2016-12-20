@@ -420,11 +420,11 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotCopyGrantName() != null)
-            sb.append("SnapshotCopyGrantName: " + getSnapshotCopyGrantName() + ",");
+            sb.append("SnapshotCopyGrantName: ").append(getSnapshotCopyGrantName()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

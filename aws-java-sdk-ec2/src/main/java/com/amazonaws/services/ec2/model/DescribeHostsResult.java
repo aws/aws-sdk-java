@@ -167,9 +167,9 @@ public class DescribeHostsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHosts() != null)
-            sb.append("Hosts: " + getHosts() + ",");
+            sb.append("Hosts: ").append(getHosts()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

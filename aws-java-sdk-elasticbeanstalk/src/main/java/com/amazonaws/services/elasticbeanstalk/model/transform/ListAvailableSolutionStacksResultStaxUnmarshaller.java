@@ -45,8 +45,18 @@ public class ListAvailableSolutionStacksResultStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("SolutionStacks", targetDepth)) {
+                    listAvailableSolutionStacksResult.withSolutionStacks(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SolutionStacks/member", targetDepth)) {
                     listAvailableSolutionStacksResult.withSolutionStacks(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SolutionStackDetails", targetDepth)) {
+                    listAvailableSolutionStacksResult.withSolutionStackDetails(new ArrayList<SolutionStackDescription>());
                     continue;
                 }
 

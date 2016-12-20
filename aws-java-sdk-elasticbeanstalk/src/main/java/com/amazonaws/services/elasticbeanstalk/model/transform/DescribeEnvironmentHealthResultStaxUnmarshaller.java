@@ -65,6 +65,11 @@ public class DescribeEnvironmentHealthResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("Causes", targetDepth)) {
+                    describeEnvironmentHealthResult.withCauses(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Causes/member", targetDepth)) {
                     describeEnvironmentHealthResult.withCauses(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

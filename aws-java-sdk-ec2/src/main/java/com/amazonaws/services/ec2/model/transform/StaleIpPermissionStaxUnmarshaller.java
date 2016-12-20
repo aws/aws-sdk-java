@@ -55,8 +55,18 @@ public class StaleIpPermissionStaxUnmarshaller implements Unmarshaller<StaleIpPe
                     continue;
                 }
 
+                if (context.testExpression("ipRanges", targetDepth)) {
+                    staleIpPermission.withIpRanges(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ipRanges/item", targetDepth)) {
                     staleIpPermission.withIpRanges(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("prefixListIds", targetDepth)) {
+                    staleIpPermission.withPrefixListIds(new ArrayList<String>());
                     continue;
                 }
 
@@ -67,6 +77,11 @@ public class StaleIpPermissionStaxUnmarshaller implements Unmarshaller<StaleIpPe
 
                 if (context.testExpression("toPort", targetDepth)) {
                     staleIpPermission.setToPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groups", targetDepth)) {
+                    staleIpPermission.withUserIdGroupPairs(new ArrayList<UserIdGroupPair>());
                     continue;
                 }
 

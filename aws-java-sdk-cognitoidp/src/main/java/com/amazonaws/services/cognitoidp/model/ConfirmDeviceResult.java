@@ -92,7 +92,7 @@ public class ConfirmDeviceResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserConfirmationNecessary() != null)
-            sb.append("UserConfirmationNecessary: " + getUserConfirmationNecessary());
+            sb.append("UserConfirmationNecessary: ").append(getUserConfirmationNecessary());
         sb.append("}");
         return sb.toString();
     }

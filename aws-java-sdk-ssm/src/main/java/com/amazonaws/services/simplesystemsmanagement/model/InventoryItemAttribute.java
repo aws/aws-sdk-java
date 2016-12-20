@@ -159,9 +159,9 @@ public class InventoryItemAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType());
+            sb.append("DataType: ").append(getDataType());
         sb.append("}");
         return sb.toString();
     }

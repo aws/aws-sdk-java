@@ -55,6 +55,11 @@ public class ScheduledInstancesLaunchSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
+                if (context.testExpression("SecurityGroupId", targetDepth)) {
+                    scheduledInstancesLaunchSpecification.withSecurityGroupIds(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SecurityGroupId/SecurityGroupId", targetDepth)) {
                     scheduledInstancesLaunchSpecification.withSecurityGroupIds(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -85,6 +90,11 @@ public class ScheduledInstancesLaunchSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
+                if (context.testExpression("BlockDeviceMapping", targetDepth)) {
+                    scheduledInstancesLaunchSpecification.withBlockDeviceMappings(new ArrayList<ScheduledInstancesBlockDeviceMapping>());
+                    continue;
+                }
+
                 if (context.testExpression("BlockDeviceMapping/BlockDeviceMapping", targetDepth)) {
                     scheduledInstancesLaunchSpecification.withBlockDeviceMappings(ScheduledInstancesBlockDeviceMappingStaxUnmarshaller.getInstance()
                             .unmarshall(context));
@@ -98,6 +108,11 @@ public class ScheduledInstancesLaunchSpecificationStaxUnmarshaller implements Un
 
                 if (context.testExpression("SubnetId", targetDepth)) {
                     scheduledInstancesLaunchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NetworkInterface", targetDepth)) {
+                    scheduledInstancesLaunchSpecification.withNetworkInterfaces(new ArrayList<ScheduledInstancesNetworkInterface>());
                     continue;
                 }
 

@@ -134,9 +134,9 @@ public class ShrinkPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDecommissionTimeout() != null)
-            sb.append("DecommissionTimeout: " + getDecommissionTimeout() + ",");
+            sb.append("DecommissionTimeout: ").append(getDecommissionTimeout()).append(",");
         if (getInstanceResizePolicy() != null)
-            sb.append("InstanceResizePolicy: " + getInstanceResizePolicy());
+            sb.append("InstanceResizePolicy: ").append(getInstanceResizePolicy());
         sb.append("}");
         return sb.toString();
     }

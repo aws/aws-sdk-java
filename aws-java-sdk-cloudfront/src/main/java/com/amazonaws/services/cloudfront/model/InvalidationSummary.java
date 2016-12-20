@@ -154,11 +154,11 @@ public class InvalidationSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime() + ",");
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

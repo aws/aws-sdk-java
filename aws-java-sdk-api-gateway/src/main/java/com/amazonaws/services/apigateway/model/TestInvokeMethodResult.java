@@ -288,15 +288,15 @@ public class TestInvokeMethodResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody() + ",");
+            sb.append("Body: ").append(getBody()).append(",");
         if (getHeaders() != null)
-            sb.append("Headers: " + getHeaders() + ",");
+            sb.append("Headers: ").append(getHeaders()).append(",");
         if (getLog() != null)
-            sb.append("Log: " + getLog() + ",");
+            sb.append("Log: ").append(getLog()).append(",");
         if (getLatency() != null)
-            sb.append("Latency: " + getLatency());
+            sb.append("Latency: ").append(getLatency());
         sb.append("}");
         return sb.toString();
     }

@@ -227,11 +227,11 @@ public class UploadDocumentsRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocuments() != null)
-            sb.append("Documents: " + getDocuments() + ",");
+            sb.append("Documents: ").append(getDocuments()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType() + ",");
+            sb.append("ContentType: ").append(getContentType()).append(",");
         if (getContentLength() != null)
-            sb.append("ContentLength: " + getContentLength());
+            sb.append("ContentLength: ").append(getContentLength());
         sb.append("}");
         return sb.toString();
     }

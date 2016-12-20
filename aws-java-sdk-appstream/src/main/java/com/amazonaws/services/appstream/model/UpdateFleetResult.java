@@ -78,7 +78,7 @@ public class UpdateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleet() != null)
-            sb.append("Fleet: " + getFleet());
+            sb.append("Fleet: ").append(getFleet());
         sb.append("}");
         return sb.toString();
     }

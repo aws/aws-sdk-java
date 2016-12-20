@@ -45,6 +45,11 @@ public class DescribeImportImageTasksResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("importImageTaskSet", targetDepth)) {
+                    describeImportImageTasksResult.withImportImageTasks(new ArrayList<ImportImageTask>());
+                    continue;
+                }
+
                 if (context.testExpression("importImageTaskSet/item", targetDepth)) {
                     describeImportImageTasksResult.withImportImageTasks(ImportImageTaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

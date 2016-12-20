@@ -125,9 +125,9 @@ public class SetTimeBasedAutoScalingRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAutoScalingSchedule() != null)
-            sb.append("AutoScalingSchedule: " + getAutoScalingSchedule());
+            sb.append("AutoScalingSchedule: ").append(getAutoScalingSchedule());
         sb.append("}");
         return sb.toString();
     }

@@ -248,11 +248,11 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExternalWorkflowExecution() != null)
-            sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ",");
+            sb.append("ExternalWorkflowExecution: ").append(getExternalWorkflowExecution()).append(",");
         if (getExternalInitiatedEventId() != null)
-            sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() + ",");
+            sb.append("ExternalInitiatedEventId: ").append(getExternalInitiatedEventId()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause());
+            sb.append("Cause: ").append(getCause());
         sb.append("}");
         return sb.toString();
     }

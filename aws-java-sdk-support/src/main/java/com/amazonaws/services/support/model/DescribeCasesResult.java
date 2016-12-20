@@ -160,9 +160,9 @@ public class DescribeCasesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCases() != null)
-            sb.append("Cases: " + getCases() + ",");
+            sb.append("Cases: ").append(getCases()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

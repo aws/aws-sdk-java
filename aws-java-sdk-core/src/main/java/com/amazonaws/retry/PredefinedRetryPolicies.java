@@ -66,15 +66,20 @@ public class PredefinedRetryPolicies {
      *       clock skew errors.
      * </ul>
      */
-    public static final RetryPolicy.RetryCondition DEFAULT_RETRY_CONDITION =
-            new SDKDefaultRetryCondition();
+    public static final RetryPolicy.RetryCondition DEFAULT_RETRY_CONDITION = new SDKDefaultRetryCondition();
 
     /**
-     * The SDK default back-off strategy, which increases exponentially up to a
-     * max amount of delay. It also applies a larger scale factor upon service
-     * throttling exception.
+     * The SDK default back-off strategy, which increases exponentially up to a max amount of delay. It also applies a larger
+     * scale factor upon service throttling exception.
      */
     public static final RetryPolicy.BackoffStrategy DEFAULT_BACKOFF_STRATEGY =
+            new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy();
+
+    /**
+     * The SDK default back-off strategy, which increases exponentially up to a max amount of delay. It also applies a larger
+     * scale factor upon service throttling exception.
+     */
+    public static final V2CompatibleBackoffStrategy DEFAULT_BACKOFF_STRATEGY_V2 =
             new PredefinedBackoffStrategies.SDKDefaultBackoffStrategy();
 
     /**

@@ -160,9 +160,9 @@ public class ListLunaClientsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientList() != null)
-            sb.append("ClientList: " + getClientList() + ",");
+            sb.append("ClientList: ").append(getClientList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

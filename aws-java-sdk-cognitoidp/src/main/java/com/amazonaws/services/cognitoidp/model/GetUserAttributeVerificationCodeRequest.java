@@ -127,9 +127,9 @@ public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName());
+            sb.append("AttributeName: ").append(getAttributeName());
         sb.append("}");
         return sb.toString();
     }

@@ -113,7 +113,7 @@ public class DescribeRaidArraysResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRaidArrays() != null)
-            sb.append("RaidArrays: " + getRaidArrays());
+            sb.append("RaidArrays: ").append(getRaidArrays());
         sb.append("}");
         return sb.toString();
     }

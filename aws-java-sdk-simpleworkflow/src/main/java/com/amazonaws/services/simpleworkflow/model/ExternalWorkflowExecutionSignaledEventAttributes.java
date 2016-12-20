@@ -140,9 +140,9 @@ public class ExternalWorkflowExecutionSignaledEventAttributes implements Seriali
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowExecution() != null)
-            sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");
+            sb.append("WorkflowExecution: ").append(getWorkflowExecution()).append(",");
         if (getInitiatedEventId() != null)
-            sb.append("InitiatedEventId: " + getInitiatedEventId());
+            sb.append("InitiatedEventId: ").append(getInitiatedEventId());
         sb.append("}");
         return sb.toString();
     }

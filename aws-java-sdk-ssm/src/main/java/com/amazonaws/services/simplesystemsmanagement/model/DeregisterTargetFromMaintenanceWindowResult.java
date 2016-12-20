@@ -125,9 +125,9 @@ public class DeregisterTargetFromMaintenanceWindowResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId() + ",");
+            sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getWindowTargetId() != null)
-            sb.append("WindowTargetId: " + getWindowTargetId());
+            sb.append("WindowTargetId: ").append(getWindowTargetId());
         sb.append("}");
         return sb.toString();
     }

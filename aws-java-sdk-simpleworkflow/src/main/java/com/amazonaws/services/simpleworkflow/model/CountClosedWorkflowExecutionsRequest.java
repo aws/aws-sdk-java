@@ -446,19 +446,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getStartTimeFilter() != null)
-            sb.append("StartTimeFilter: " + getStartTimeFilter() + ",");
+            sb.append("StartTimeFilter: ").append(getStartTimeFilter()).append(",");
         if (getCloseTimeFilter() != null)
-            sb.append("CloseTimeFilter: " + getCloseTimeFilter() + ",");
+            sb.append("CloseTimeFilter: ").append(getCloseTimeFilter()).append(",");
         if (getExecutionFilter() != null)
-            sb.append("ExecutionFilter: " + getExecutionFilter() + ",");
+            sb.append("ExecutionFilter: ").append(getExecutionFilter()).append(",");
         if (getTypeFilter() != null)
-            sb.append("TypeFilter: " + getTypeFilter() + ",");
+            sb.append("TypeFilter: ").append(getTypeFilter()).append(",");
         if (getTagFilter() != null)
-            sb.append("TagFilter: " + getTagFilter() + ",");
+            sb.append("TagFilter: ").append(getTagFilter()).append(",");
         if (getCloseStatusFilter() != null)
-            sb.append("CloseStatusFilter: " + getCloseStatusFilter());
+            sb.append("CloseStatusFilter: ").append(getCloseStatusFilter());
         sb.append("}");
         return sb.toString();
     }

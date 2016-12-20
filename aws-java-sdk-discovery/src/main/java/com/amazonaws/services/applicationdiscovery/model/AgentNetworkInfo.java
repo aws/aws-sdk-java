@@ -16,31 +16,31 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Network details about the host where the agent resides.
+ * Network details about the host where the agent/Connector resides.
  * </p>
  */
 public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address for the host where the agent resides.
+     * The IP address for the host where the agent/Connector resides.
      * </p>
      */
     private String ipAddress;
     /**
      * <p>
-     * The MAC address for the host where the agent resides.
+     * The MAC address for the host where the agent/Connector resides.
      * </p>
      */
     private String macAddress;
 
     /**
      * <p>
-     * The IP address for the host where the agent resides.
+     * The IP address for the host where the agent/Connector resides.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address for the host where the agent resides.
+     *        The IP address for the host where the agent/Connector resides.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -49,10 +49,10 @@ public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address for the host where the agent resides.
+     * The IP address for the host where the agent/Connector resides.
      * </p>
      * 
-     * @return The IP address for the host where the agent resides.
+     * @return The IP address for the host where the agent/Connector resides.
      */
 
     public String getIpAddress() {
@@ -61,11 +61,11 @@ public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address for the host where the agent resides.
+     * The IP address for the host where the agent/Connector resides.
      * </p>
      * 
      * @param ipAddress
-     *        The IP address for the host where the agent resides.
+     *        The IP address for the host where the agent/Connector resides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,11 +76,11 @@ public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MAC address for the host where the agent resides.
+     * The MAC address for the host where the agent/Connector resides.
      * </p>
      * 
      * @param macAddress
-     *        The MAC address for the host where the agent resides.
+     *        The MAC address for the host where the agent/Connector resides.
      */
 
     public void setMacAddress(String macAddress) {
@@ -89,10 +89,10 @@ public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MAC address for the host where the agent resides.
+     * The MAC address for the host where the agent/Connector resides.
      * </p>
      * 
-     * @return The MAC address for the host where the agent resides.
+     * @return The MAC address for the host where the agent/Connector resides.
      */
 
     public String getMacAddress() {
@@ -101,11 +101,11 @@ public class AgentNetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The MAC address for the host where the agent resides.
+     * The MAC address for the host where the agent/Connector resides.
      * </p>
      * 
      * @param macAddress
-     *        The MAC address for the host where the agent resides.
+     *        The MAC address for the host where the agent/Connector resides.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,9 +126,9 @@ public class AgentNetworkInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getMacAddress() != null)
-            sb.append("MacAddress: " + getMacAddress());
+            sb.append("MacAddress: ").append(getMacAddress());
         sb.append("}");
         return sb.toString();
     }

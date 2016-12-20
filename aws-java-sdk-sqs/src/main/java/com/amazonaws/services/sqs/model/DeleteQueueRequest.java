@@ -22,7 +22,7 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to delete.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -42,7 +42,7 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to delete.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -52,14 +52,14 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to delete.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to delete.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -70,13 +70,13 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to delete.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue to delete.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -87,14 +87,14 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to delete.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to delete.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,7 +117,7 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl());
+            sb.append("QueueUrl: ").append(getQueueUrl());
         sb.append("}");
         return sb.toString();
     }

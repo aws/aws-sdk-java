@@ -219,9 +219,9 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId());
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId());
         sb.append("}");
         return sb.toString();
     }

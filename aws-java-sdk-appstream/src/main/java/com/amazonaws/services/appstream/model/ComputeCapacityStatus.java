@@ -218,13 +218,13 @@ public class ComputeCapacityStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDesired() != null)
-            sb.append("Desired: " + getDesired() + ",");
+            sb.append("Desired: ").append(getDesired()).append(",");
         if (getRunning() != null)
-            sb.append("Running: " + getRunning() + ",");
+            sb.append("Running: ").append(getRunning()).append(",");
         if (getInUse() != null)
-            sb.append("InUse: " + getInUse() + ",");
+            sb.append("InUse: ").append(getInUse()).append(",");
         if (getAvailable() != null)
-            sb.append("Available: " + getAvailable());
+            sb.append("Available: ").append(getAvailable());
         sb.append("}");
         return sb.toString();
     }

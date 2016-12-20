@@ -210,9 +210,9 @@ public class ListStacksRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getStackStatusFilters() != null)
-            sb.append("StackStatusFilters: " + getStackStatusFilters());
+            sb.append("StackStatusFilters: ").append(getStackStatusFilters());
         sb.append("}");
         return sb.toString();
     }

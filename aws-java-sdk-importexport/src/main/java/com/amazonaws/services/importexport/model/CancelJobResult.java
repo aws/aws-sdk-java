@@ -67,7 +67,7 @@ public class CancelJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccess() != null)
-            sb.append("Success: " + getSuccess());
+            sb.append("Success: ").append(getSuccess());
         sb.append("}");
         return sb.toString();
     }

@@ -389,19 +389,19 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getEventPattern() != null)
-            sb.append("EventPattern: " + getEventPattern() + ",");
+            sb.append("EventPattern: ").append(getEventPattern()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: " + getScheduleExpression() + ",");
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class HostEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress());
+            sb.append("IpAddress: ").append(getIpAddress());
         sb.append("}");
         return sb.toString();
     }

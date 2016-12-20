@@ -212,15 +212,15 @@ public class WriteTreatmentResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageConfiguration() != null)
-            sb.append("MessageConfiguration: " + getMessageConfiguration() + ",");
+            sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
         if (getSchedule() != null)
-            sb.append("Schedule: " + getSchedule() + ",");
+            sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getSizePercent() != null)
-            sb.append("SizePercent: " + getSizePercent() + ",");
+            sb.append("SizePercent: ").append(getSizePercent()).append(",");
         if (getTreatmentDescription() != null)
-            sb.append("TreatmentDescription: " + getTreatmentDescription() + ",");
+            sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
-            sb.append("TreatmentName: " + getTreatmentName());
+            sb.append("TreatmentName: ").append(getTreatmentName());
         sb.append("}");
         return sb.toString();
     }

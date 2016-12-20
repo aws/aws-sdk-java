@@ -226,11 +226,11 @@ public class DefaultClusterParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupFamily() != null)
-            sb.append("ParameterGroupFamily: " + getParameterGroupFamily() + ",");
+            sb.append("ParameterGroupFamily: ").append(getParameterGroupFamily()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters());
+            sb.append("Parameters: ").append(getParameters());
         sb.append("}");
         return sb.toString();
     }

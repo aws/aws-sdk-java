@@ -192,11 +192,11 @@ public class DescribeCrossAccountAccessRoleResult extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getValid() != null)
-            sb.append("Valid: " + getValid() + ",");
+            sb.append("Valid: ").append(getValid()).append(",");
         if (getRegisteredAt() != null)
-            sb.append("RegisteredAt: " + getRegisteredAt());
+            sb.append("RegisteredAt: ").append(getRegisteredAt());
         sb.append("}");
         return sb.toString();
     }

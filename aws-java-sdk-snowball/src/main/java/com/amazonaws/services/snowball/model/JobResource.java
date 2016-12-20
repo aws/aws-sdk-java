@@ -187,9 +187,9 @@ public class JobResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3Resources() != null)
-            sb.append("S3Resources: " + getS3Resources() + ",");
+            sb.append("S3Resources: ").append(getS3Resources()).append(",");
         if (getLambdaResources() != null)
-            sb.append("LambdaResources: " + getLambdaResources());
+            sb.append("LambdaResources: ").append(getLambdaResources());
         sb.append("}");
         return sb.toString();
     }

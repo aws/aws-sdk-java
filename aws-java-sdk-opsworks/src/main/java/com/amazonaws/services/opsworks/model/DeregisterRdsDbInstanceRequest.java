@@ -79,7 +79,7 @@ public class DeregisterRdsDbInstanceRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRdsDbInstanceArn() != null)
-            sb.append("RdsDbInstanceArn: " + getRdsDbInstanceArn());
+            sb.append("RdsDbInstanceArn: ").append(getRdsDbInstanceArn());
         sb.append("}");
         return sb.toString();
     }

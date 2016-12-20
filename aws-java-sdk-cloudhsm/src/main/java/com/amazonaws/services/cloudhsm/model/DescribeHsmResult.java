@@ -1071,47 +1071,47 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmArn() != null)
-            sb.append("HsmArn: " + getHsmArn() + ",");
+            sb.append("HsmArn: ").append(getHsmArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getEniId() != null)
-            sb.append("EniId: " + getEniId() + ",");
+            sb.append("EniId: ").append(getEniId()).append(",");
         if (getEniIp() != null)
-            sb.append("EniIp: " + getEniIp() + ",");
+            sb.append("EniIp: ").append(getEniIp()).append(",");
         if (getSubscriptionType() != null)
-            sb.append("SubscriptionType: " + getSubscriptionType() + ",");
+            sb.append("SubscriptionType: ").append(getSubscriptionType()).append(",");
         if (getSubscriptionStartDate() != null)
-            sb.append("SubscriptionStartDate: " + getSubscriptionStartDate() + ",");
+            sb.append("SubscriptionStartDate: ").append(getSubscriptionStartDate()).append(",");
         if (getSubscriptionEndDate() != null)
-            sb.append("SubscriptionEndDate: " + getSubscriptionEndDate() + ",");
+            sb.append("SubscriptionEndDate: ").append(getSubscriptionEndDate()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getIamRoleArn() != null)
-            sb.append("IamRoleArn: " + getIamRoleArn() + ",");
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber() + ",");
+            sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getVendorName() != null)
-            sb.append("VendorName: " + getVendorName() + ",");
+            sb.append("VendorName: ").append(getVendorName()).append(",");
         if (getHsmType() != null)
-            sb.append("HsmType: " + getHsmType() + ",");
+            sb.append("HsmType: ").append(getHsmType()).append(",");
         if (getSoftwareVersion() != null)
-            sb.append("SoftwareVersion: " + getSoftwareVersion() + ",");
+            sb.append("SoftwareVersion: ").append(getSoftwareVersion()).append(",");
         if (getSshPublicKey() != null)
-            sb.append("SshPublicKey: " + getSshPublicKey() + ",");
+            sb.append("SshPublicKey: ").append(getSshPublicKey()).append(",");
         if (getSshKeyLastUpdated() != null)
-            sb.append("SshKeyLastUpdated: " + getSshKeyLastUpdated() + ",");
+            sb.append("SshKeyLastUpdated: ").append(getSshKeyLastUpdated()).append(",");
         if (getServerCertUri() != null)
-            sb.append("ServerCertUri: " + getServerCertUri() + ",");
+            sb.append("ServerCertUri: ").append(getServerCertUri()).append(",");
         if (getServerCertLastUpdated() != null)
-            sb.append("ServerCertLastUpdated: " + getServerCertLastUpdated() + ",");
+            sb.append("ServerCertLastUpdated: ").append(getServerCertLastUpdated()).append(",");
         if (getPartitions() != null)
-            sb.append("Partitions: " + getPartitions());
+            sb.append("Partitions: ").append(getPartitions());
         sb.append("}");
         return sb.toString();
     }

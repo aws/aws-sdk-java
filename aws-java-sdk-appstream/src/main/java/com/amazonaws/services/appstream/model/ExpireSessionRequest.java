@@ -79,7 +79,7 @@ public class ExpireSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSessionId() != null)
-            sb.append("SessionId: " + getSessionId());
+            sb.append("SessionId: ").append(getSessionId());
         sb.append("}");
         return sb.toString();
     }

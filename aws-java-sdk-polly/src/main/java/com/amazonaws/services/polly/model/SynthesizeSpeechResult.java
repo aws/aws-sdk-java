@@ -324,11 +324,11 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAudioStream() != null)
-            sb.append("AudioStream: " + getAudioStream() + ",");
+            sb.append("AudioStream: ").append(getAudioStream()).append(",");
         if (getContentType() != null)
-            sb.append("ContentType: " + getContentType() + ",");
+            sb.append("ContentType: ").append(getContentType()).append(",");
         if (getRequestCharacters() != null)
-            sb.append("RequestCharacters: " + getRequestCharacters());
+            sb.append("RequestCharacters: ").append(getRequestCharacters());
         sb.append("}");
         return sb.toString();
     }

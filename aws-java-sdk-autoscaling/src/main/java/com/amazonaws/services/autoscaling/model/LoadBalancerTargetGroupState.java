@@ -333,9 +333,9 @@ public class LoadBalancerTargetGroupState implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerTargetGroupARN() != null)
-            sb.append("LoadBalancerTargetGroupARN: " + getLoadBalancerTargetGroupARN() + ",");
+            sb.append("LoadBalancerTargetGroupARN: ").append(getLoadBalancerTargetGroupARN()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }

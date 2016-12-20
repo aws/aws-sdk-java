@@ -449,25 +449,25 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerAccount() != null)
-            sb.append("OwnerAccount: " + getOwnerAccount() + ",");
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: " + getConnectionId() + ",");
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: " + getConnectionName() + ",");
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
         if (getConnectionState() != null)
-            sb.append("ConnectionState: " + getConnectionState() + ",");
+            sb.append("ConnectionState: ").append(getConnectionState()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth() + ",");
+            sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getVlan() != null)
-            sb.append("Vlan: " + getVlan() + ",");
+            sb.append("Vlan: ").append(getVlan()).append(",");
         if (getPartnerName() != null)
-            sb.append("PartnerName: " + getPartnerName() + ",");
+            sb.append("PartnerName: ").append(getPartnerName()).append(",");
         if (getLoaIssueTime() != null)
-            sb.append("LoaIssueTime: " + getLoaIssueTime());
+            sb.append("LoaIssueTime: ").append(getLoaIssueTime());
         sb.append("}");
         return sb.toString();
     }

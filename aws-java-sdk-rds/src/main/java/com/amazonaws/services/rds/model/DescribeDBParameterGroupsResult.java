@@ -166,9 +166,9 @@ public class DescribeDBParameterGroupsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBParameterGroups() != null)
-            sb.append("DBParameterGroups: " + getDBParameterGroups());
+            sb.append("DBParameterGroups: ").append(getDBParameterGroups());
         sb.append("}");
         return sb.toString();
     }

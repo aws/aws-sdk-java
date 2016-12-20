@@ -338,17 +338,17 @@ public class CloudwatchMetricAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getMetricNamespace() != null)
-            sb.append("MetricNamespace: " + getMetricNamespace() + ",");
+            sb.append("MetricNamespace: ").append(getMetricNamespace()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getMetricValue() != null)
-            sb.append("MetricValue: " + getMetricValue() + ",");
+            sb.append("MetricValue: ").append(getMetricValue()).append(",");
         if (getMetricUnit() != null)
-            sb.append("MetricUnit: " + getMetricUnit() + ",");
+            sb.append("MetricUnit: ").append(getMetricUnit()).append(",");
         if (getMetricTimestamp() != null)
-            sb.append("MetricTimestamp: " + getMetricTimestamp());
+            sb.append("MetricTimestamp: ").append(getMetricTimestamp());
         sb.append("}");
         return sb.toString();
     }

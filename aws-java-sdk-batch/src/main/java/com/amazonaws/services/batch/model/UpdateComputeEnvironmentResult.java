@@ -124,9 +124,9 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputeEnvironmentName() != null)
-            sb.append("ComputeEnvironmentName: " + getComputeEnvironmentName() + ",");
+            sb.append("ComputeEnvironmentName: ").append(getComputeEnvironmentName()).append(",");
         if (getComputeEnvironmentArn() != null)
-            sb.append("ComputeEnvironmentArn: " + getComputeEnvironmentArn());
+            sb.append("ComputeEnvironmentArn: ").append(getComputeEnvironmentArn());
         sb.append("}");
         return sb.toString();
     }

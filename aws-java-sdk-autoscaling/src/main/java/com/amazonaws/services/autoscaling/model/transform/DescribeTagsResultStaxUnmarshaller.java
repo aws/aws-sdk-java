@@ -45,6 +45,11 @@ public class DescribeTagsResultStaxUnmarshaller implements Unmarshaller<Describe
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    describeTagsResult.withTags(new ArrayList<TagDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/member", targetDepth)) {
                     describeTagsResult.withTags(TagDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

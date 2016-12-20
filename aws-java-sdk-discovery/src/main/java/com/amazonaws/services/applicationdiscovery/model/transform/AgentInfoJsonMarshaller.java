@@ -69,6 +69,18 @@ public class AgentInfoJsonMarshaller {
             if (agentInfo.getHealth() != null) {
                 jsonGenerator.writeFieldName("health").writeValue(agentInfo.getHealth());
             }
+            if (agentInfo.getLastHealthPingTime() != null) {
+                jsonGenerator.writeFieldName("lastHealthPingTime").writeValue(agentInfo.getLastHealthPingTime());
+            }
+            if (agentInfo.getCollectionStatus() != null) {
+                jsonGenerator.writeFieldName("collectionStatus").writeValue(agentInfo.getCollectionStatus());
+            }
+            if (agentInfo.getAgentType() != null) {
+                jsonGenerator.writeFieldName("agentType").writeValue(agentInfo.getAgentType());
+            }
+            if (agentInfo.getRegisteredTime() != null) {
+                jsonGenerator.writeFieldName("registeredTime").writeValue(agentInfo.getRegisteredTime());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

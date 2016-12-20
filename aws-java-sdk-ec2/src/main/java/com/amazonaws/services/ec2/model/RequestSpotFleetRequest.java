@@ -94,7 +94,7 @@ public class RequestSpotFleetRequest extends AmazonWebServiceRequest implements 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestConfig() != null)
-            sb.append("SpotFleetRequestConfig: " + getSpotFleetRequestConfig());
+            sb.append("SpotFleetRequestConfig: ").append(getSpotFleetRequestConfig());
         sb.append("}");
         return sb.toString();
     }

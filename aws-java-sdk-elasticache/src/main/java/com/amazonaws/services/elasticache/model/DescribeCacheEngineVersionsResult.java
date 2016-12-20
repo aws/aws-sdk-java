@@ -168,9 +168,9 @@ public class DescribeCacheEngineVersionsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCacheEngineVersions() != null)
-            sb.append("CacheEngineVersions: " + getCacheEngineVersions());
+            sb.append("CacheEngineVersions: ").append(getCacheEngineVersions());
         sb.append("}");
         return sb.toString();
     }

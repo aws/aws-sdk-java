@@ -80,7 +80,7 @@ public class PutRepositoryTriggersResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationId() != null)
-            sb.append("ConfigurationId: " + getConfigurationId());
+            sb.append("ConfigurationId: ").append(getConfigurationId());
         sb.append("}");
         return sb.toString();
     }

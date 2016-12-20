@@ -282,11 +282,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getWorkflowExecutionRetentionPeriodInDays() != null)
-            sb.append("WorkflowExecutionRetentionPeriodInDays: " + getWorkflowExecutionRetentionPeriodInDays());
+            sb.append("WorkflowExecutionRetentionPeriodInDays: ").append(getWorkflowExecutionRetentionPeriodInDays());
         sb.append("}");
         return sb.toString();
     }

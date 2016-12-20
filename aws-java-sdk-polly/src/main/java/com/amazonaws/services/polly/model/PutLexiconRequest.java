@@ -132,9 +132,9 @@ public class PutLexiconRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getContent() != null)
-            sb.append("Content: " + getContent());
+            sb.append("Content: ").append(getContent());
         sb.append("}");
         return sb.toString();
     }

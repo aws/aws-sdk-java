@@ -278,15 +278,15 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDiskContainer() != null)
-            sb.append("DiskContainer: " + getDiskContainer() + ",");
+            sb.append("DiskContainer: ").append(getDiskContainer()).append(",");
         if (getClientData() != null)
-            sb.append("ClientData: " + getClientData() + ",");
+            sb.append("ClientData: ").append(getClientData()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
         return sb.toString();
     }

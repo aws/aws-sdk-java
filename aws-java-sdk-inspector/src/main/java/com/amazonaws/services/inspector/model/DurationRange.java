@@ -126,9 +126,9 @@ public class DurationRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinSeconds() != null)
-            sb.append("MinSeconds: " + getMinSeconds() + ",");
+            sb.append("MinSeconds: ").append(getMinSeconds()).append(",");
         if (getMaxSeconds() != null)
-            sb.append("MaxSeconds: " + getMaxSeconds());
+            sb.append("MaxSeconds: ").append(getMaxSeconds());
         sb.append("}");
         return sb.toString();
     }

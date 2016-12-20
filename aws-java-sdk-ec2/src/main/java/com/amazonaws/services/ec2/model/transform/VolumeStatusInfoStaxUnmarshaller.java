@@ -50,6 +50,11 @@ public class VolumeStatusInfoStaxUnmarshaller implements Unmarshaller<VolumeStat
                     continue;
                 }
 
+                if (context.testExpression("details", targetDepth)) {
+                    volumeStatusInfo.withDetails(new ArrayList<VolumeStatusDetails>());
+                    continue;
+                }
+
                 if (context.testExpression("details/item", targetDepth)) {
                     volumeStatusInfo.withDetails(VolumeStatusDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

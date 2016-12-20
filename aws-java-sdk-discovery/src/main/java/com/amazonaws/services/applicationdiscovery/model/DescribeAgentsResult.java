@@ -21,29 +21,35 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID.
-     * The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where
-     * the agent resides, and the version number of each agent.
+     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
+     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
+     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
+     * each agent/Connector.
      * </p>
      */
     private java.util.List<AgentInfo> agentsInfo;
     /**
      * <p>
-     * The call returns a token. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     * <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you
+     * received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of
+     * 10.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID.
-     * The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where
-     * the agent resides, and the version number of each agent.
+     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
+     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
+     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
+     * each agent/Connector.
      * </p>
      * 
-     * @return Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an
-     *         agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent
-     *         health, host name where the agent resides, and the version number of each agent.
+     * @return Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
+     *         you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
+     *         access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
+     *         the version number of each agent/Connector.
      */
 
     public java.util.List<AgentInfo> getAgentsInfo() {
@@ -52,15 +58,17 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID.
-     * The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where
-     * the agent resides, and the version number of each agent.
+     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
+     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
+     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
+     * each agent/Connector.
      * </p>
      * 
      * @param agentsInfo
-     *        Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an
-     *        agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health,
-     *        host name where the agent resides, and the version number of each agent.
+     *        Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
+     *        you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
+     *        access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
+     *        the version number of each agent/Connector.
      */
 
     public void setAgentsInfo(java.util.Collection<AgentInfo> agentsInfo) {
@@ -74,9 +82,10 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID.
-     * The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where
-     * the agent resides, and the version number of each agent.
+     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
+     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
+     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
+     * each agent/Connector.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,9 +94,10 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param agentsInfo
-     *        Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an
-     *        agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health,
-     *        host name where the agent resides, and the version number of each agent.
+     *        Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
+     *        you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
+     *        access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
+     *        the version number of each agent/Connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,15 +113,17 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an agent ID.
-     * The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health, host name where
-     * the agent resides, and the version number of each agent.
+     * Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did
+     * not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media access control
+     * (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and the version number of
+     * each agent/Connector.
      * </p>
      * 
      * @param agentsInfo
-     *        Lists AWS agents by ID or lists all agents associated with your user account if you did not specify an
-     *        agent ID. The output includes agent IDs, IP addresses, media access control (MAC) addresses, agent health,
-     *        host name where the agent resides, and the version number of each agent.
+     *        Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if
+     *        you did not specify an agent/Connector ID. The output includes agent/Connector IDs, IP addresses, media
+     *        access control (MAC) addresses, agent/Connector health, host name where the agent/Connector resides, and
+     *        the version number of each agent/Connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,11 +134,17 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The call returns a token. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     * <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you
+     * received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of
+     * 10.
      * </p>
      * 
      * @param nextToken
-     *        The call returns a token. Use this token to get the next set of results.
+     *        Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     *        <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10,
+     *        you received a set of 10 results along with this token. Use this token in the next query to retrieve the
+     *        next set of 10.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,10 +153,16 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The call returns a token. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     * <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you
+     * received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of
+     * 10.
      * </p>
      * 
-     * @return The call returns a token. Use this token to get the next set of results.
+     * @return Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     *         <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10,
+     *         you received a set of 10 results along with this token. Use this token in the next query to retrieve the
+     *         next set of 10.
      */
 
     public String getNextToken() {
@@ -147,11 +171,17 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The call returns a token. Use this token to get the next set of results.
+     * Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     * <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10, you
+     * received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of
+     * 10.
      * </p>
      * 
      * @param nextToken
-     *        The call returns a token. Use this token to get the next set of results.
+     *        Token to retrieve the next set of results. For example, if you specified 100 IDs for
+     *        <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code> to 10,
+     *        you received a set of 10 results along with this token. Use this token in the next query to retrieve the
+     *        next set of 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,9 +202,9 @@ public class DescribeAgentsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentsInfo() != null)
-            sb.append("AgentsInfo: " + getAgentsInfo() + ",");
+            sb.append("AgentsInfo: ").append(getAgentsInfo()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

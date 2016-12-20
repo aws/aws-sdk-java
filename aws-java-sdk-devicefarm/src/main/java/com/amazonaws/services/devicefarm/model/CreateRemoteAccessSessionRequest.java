@@ -219,13 +219,13 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectArn() != null)
-            sb.append("ProjectArn: " + getProjectArn() + ",");
+            sb.append("ProjectArn: ").append(getProjectArn()).append(",");
         if (getDeviceArn() != null)
-            sb.append("DeviceArn: " + getDeviceArn() + ",");
+            sb.append("DeviceArn: ").append(getDeviceArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }

@@ -120,7 +120,7 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEntries() != null)
-            sb.append("Entries: " + getEntries());
+            sb.append("Entries: ").append(getEntries());
         sb.append("}");
         return sb.toString();
     }

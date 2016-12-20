@@ -364,19 +364,19 @@ public class SubscriptionFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilterName() != null)
-            sb.append("FilterName: " + getFilterName() + ",");
+            sb.append("FilterName: ").append(getFilterName()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getFilterPattern() != null)
-            sb.append("FilterPattern: " + getFilterPattern() + ",");
+            sb.append("FilterPattern: ").append(getFilterPattern()).append(",");
         if (getDestinationArn() != null)
-            sb.append("DestinationArn: " + getDestinationArn() + ",");
+            sb.append("DestinationArn: ").append(getDestinationArn()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getDistribution() != null)
-            sb.append("Distribution: " + getDistribution() + ",");
+            sb.append("Distribution: ").append(getDistribution()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }

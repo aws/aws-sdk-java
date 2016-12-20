@@ -22,7 +22,7 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are deleted.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -48,7 +48,7 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
      * initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which messages are deleted.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param receiptHandle
@@ -61,14 +61,14 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are deleted.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which messages are deleted.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -79,13 +79,13 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are deleted.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue from which messages are deleted.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -96,14 +96,14 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue from which messages are deleted.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue from which messages are deleted.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -166,9 +166,9 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getReceiptHandle() != null)
-            sb.append("ReceiptHandle: " + getReceiptHandle());
+            sb.append("ReceiptHandle: ").append(getReceiptHandle());
         sb.append("}");
         return sb.toString();
     }

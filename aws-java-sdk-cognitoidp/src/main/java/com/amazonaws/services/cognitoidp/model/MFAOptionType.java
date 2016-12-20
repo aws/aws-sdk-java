@@ -159,9 +159,9 @@ public class MFAOptionType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryMedium() != null)
-            sb.append("DeliveryMedium: " + getDeliveryMedium() + ",");
+            sb.append("DeliveryMedium: ").append(getDeliveryMedium()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName());
+            sb.append("AttributeName: ").append(getAttributeName());
         sb.append("}");
         return sb.toString();
     }

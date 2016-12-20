@@ -476,19 +476,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceRegion() != null)
-            sb.append("SourceRegion: " + getSourceRegion() + ",");
+            sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
         if (getSourceImageId() != null)
-            sb.append("SourceImageId: " + getSourceImageId() + ",");
+            sb.append("SourceImageId: ").append(getSourceImageId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: " + getEncrypted() + ",");
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }

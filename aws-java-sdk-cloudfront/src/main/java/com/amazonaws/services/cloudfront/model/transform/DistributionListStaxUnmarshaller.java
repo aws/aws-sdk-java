@@ -70,6 +70,11 @@ public class DistributionListStaxUnmarshaller implements Unmarshaller<Distributi
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    distributionList.withItems(new ArrayList<DistributionSummary>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/DistributionSummary", targetDepth)) {
                     distributionList.withItems(DistributionSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

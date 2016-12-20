@@ -184,9 +184,9 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceId() != null)
-            sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");
+            sb.append("VirtualInterfaceId: ").append(getVirtualInterfaceId()).append(",");
         if (getNewBGPPeer() != null)
-            sb.append("NewBGPPeer: " + getNewBGPPeer());
+            sb.append("NewBGPPeer: ").append(getNewBGPPeer());
         sb.append("}");
         return sb.toString();
     }

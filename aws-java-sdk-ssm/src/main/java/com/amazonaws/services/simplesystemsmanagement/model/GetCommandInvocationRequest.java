@@ -185,11 +185,11 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPluginName() != null)
-            sb.append("PluginName: " + getPluginName());
+            sb.append("PluginName: ").append(getPluginName());
         sb.append("}");
         return sb.toString();
     }

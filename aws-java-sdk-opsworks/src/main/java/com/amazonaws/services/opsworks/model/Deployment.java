@@ -784,29 +784,29 @@ public class Deployment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getAppId() != null)
-            sb.append("AppId: " + getAppId() + ",");
+            sb.append("AppId: ").append(getAppId()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getCompletedAt() != null)
-            sb.append("CompletedAt: " + getCompletedAt() + ",");
+            sb.append("CompletedAt: ").append(getCompletedAt()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getIamUserArn() != null)
-            sb.append("IamUserArn: " + getIamUserArn() + ",");
+            sb.append("IamUserArn: ").append(getIamUserArn()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getCommand() != null)
-            sb.append("Command: " + getCommand() + ",");
+            sb.append("Command: ").append(getCommand()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCustomJson() != null)
-            sb.append("CustomJson: " + getCustomJson() + ",");
+            sb.append("CustomJson: ").append(getCustomJson()).append(",");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds());
+            sb.append("InstanceIds: ").append(getInstanceIds());
         sb.append("}");
         return sb.toString();
     }

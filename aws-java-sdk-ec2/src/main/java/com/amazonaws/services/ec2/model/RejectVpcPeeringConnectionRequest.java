@@ -95,7 +95,7 @@ public class RejectVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
         sb.append("}");
         return sb.toString();
     }

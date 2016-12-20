@@ -568,23 +568,23 @@ public class Host implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostId() != null)
-            sb.append("HostId: " + getHostId() + ",");
+            sb.append("HostId: ").append(getHostId()).append(",");
         if (getAutoPlacement() != null)
-            sb.append("AutoPlacement: " + getAutoPlacement() + ",");
+            sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
         if (getHostReservationId() != null)
-            sb.append("HostReservationId: " + getHostReservationId() + ",");
+            sb.append("HostReservationId: ").append(getHostReservationId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getHostProperties() != null)
-            sb.append("HostProperties: " + getHostProperties() + ",");
+            sb.append("HostProperties: ").append(getHostProperties()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getAvailableCapacity() != null)
-            sb.append("AvailableCapacity: " + getAvailableCapacity());
+            sb.append("AvailableCapacity: ").append(getAvailableCapacity());
         sb.append("}");
         return sb.toString();
     }

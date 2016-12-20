@@ -45,6 +45,11 @@ public class ComposeEnvironmentsResultStaxUnmarshaller implements Unmarshaller<C
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Environments", targetDepth)) {
+                    composeEnvironmentsResult.withEnvironments(new ArrayList<EnvironmentDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Environments/member", targetDepth)) {
                     composeEnvironmentsResult.withEnvironments(EnvironmentDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

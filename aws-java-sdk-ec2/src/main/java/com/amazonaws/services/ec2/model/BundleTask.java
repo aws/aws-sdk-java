@@ -435,21 +435,21 @@ public class BundleTask implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getBundleId() != null)
-            sb.append("BundleId: " + getBundleId() + ",");
+            sb.append("BundleId: ").append(getBundleId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getUpdateTime() != null)
-            sb.append("UpdateTime: " + getUpdateTime() + ",");
+            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
         if (getStorage() != null)
-            sb.append("Storage: " + getStorage() + ",");
+            sb.append("Storage: ").append(getStorage()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: " + getProgress() + ",");
+            sb.append("Progress: ").append(getProgress()).append(",");
         if (getBundleTaskError() != null)
-            sb.append("BundleTaskError: " + getBundleTaskError());
+            sb.append("BundleTaskError: ").append(getBundleTaskError());
         sb.append("}");
         return sb.toString();
     }

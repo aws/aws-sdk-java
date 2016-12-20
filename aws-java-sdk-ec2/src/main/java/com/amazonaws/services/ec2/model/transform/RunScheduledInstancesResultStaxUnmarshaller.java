@@ -45,6 +45,11 @@ public class RunScheduledInstancesResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instanceIdSet", targetDepth)) {
+                    runScheduledInstancesResult.withInstanceIdSet(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("instanceIdSet/item", targetDepth)) {
                     runScheduledInstancesResult.withInstanceIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

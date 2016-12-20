@@ -156,7 +156,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributeNames() != null)
-            sb.append("AttributeNames: " + getAttributeNames());
+            sb.append("AttributeNames: ").append(getAttributeNames());
         sb.append("}");
         return sb.toString();
     }

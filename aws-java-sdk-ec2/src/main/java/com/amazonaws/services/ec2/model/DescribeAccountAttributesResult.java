@@ -114,7 +114,7 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountAttributes() != null)
-            sb.append("AccountAttributes: " + getAccountAttributes());
+            sb.append("AccountAttributes: ").append(getAccountAttributes());
         sb.append("}");
         return sb.toString();
     }

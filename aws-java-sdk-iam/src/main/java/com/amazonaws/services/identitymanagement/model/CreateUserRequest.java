@@ -261,9 +261,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName());
+            sb.append("UserName: ").append(getUserName());
         sb.append("}");
         return sb.toString();
     }

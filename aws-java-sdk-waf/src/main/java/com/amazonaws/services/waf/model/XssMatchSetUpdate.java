@@ -178,9 +178,9 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getXssMatchTuple() != null)
-            sb.append("XssMatchTuple: " + getXssMatchTuple());
+            sb.append("XssMatchTuple: ").append(getXssMatchTuple());
         sb.append("}");
         return sb.toString();
     }

@@ -280,15 +280,15 @@ public class TextArrayOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getSourceFields() != null)
-            sb.append("SourceFields: " + getSourceFields() + ",");
+            sb.append("SourceFields: ").append(getSourceFields()).append(",");
         if (getReturnEnabled() != null)
-            sb.append("ReturnEnabled: " + getReturnEnabled() + ",");
+            sb.append("ReturnEnabled: ").append(getReturnEnabled()).append(",");
         if (getHighlightEnabled() != null)
-            sb.append("HighlightEnabled: " + getHighlightEnabled() + ",");
+            sb.append("HighlightEnabled: ").append(getHighlightEnabled()).append(",");
         if (getAnalysisScheme() != null)
-            sb.append("AnalysisScheme: " + getAnalysisScheme());
+            sb.append("AnalysisScheme: ").append(getAnalysisScheme());
         sb.append("}");
         return sb.toString();
     }

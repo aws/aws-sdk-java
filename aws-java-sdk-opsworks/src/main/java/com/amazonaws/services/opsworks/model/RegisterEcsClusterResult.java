@@ -80,7 +80,7 @@ public class RegisterEcsClusterResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn());
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn());
         sb.append("}");
         return sb.toString();
     }

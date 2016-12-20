@@ -636,23 +636,23 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: " + getAttribute() + ",");
+            sb.append("Attribute: ").append(getAttribute()).append(",");
         if (getOperationType() != null)
-            sb.append("OperationType: " + getOperationType() + ",");
+            sb.append("OperationType: ").append(getOperationType()).append(",");
         if (getUserIds() != null)
-            sb.append("UserIds: " + getUserIds() + ",");
+            sb.append("UserIds: ").append(getUserIds()).append(",");
         if (getUserGroups() != null)
-            sb.append("UserGroups: " + getUserGroups() + ",");
+            sb.append("UserGroups: ").append(getUserGroups()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: " + getProductCodes() + ",");
+            sb.append("ProductCodes: ").append(getProductCodes()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getLaunchPermission() != null)
-            sb.append("LaunchPermission: " + getLaunchPermission() + ",");
+            sb.append("LaunchPermission: ").append(getLaunchPermission()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

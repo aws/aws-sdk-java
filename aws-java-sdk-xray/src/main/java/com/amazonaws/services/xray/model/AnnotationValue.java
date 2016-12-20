@@ -184,11 +184,11 @@ public class AnnotationValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNumberValue() != null)
-            sb.append("NumberValue: " + getNumberValue() + ",");
+            sb.append("NumberValue: ").append(getNumberValue()).append(",");
         if (getBooleanValue() != null)
-            sb.append("BooleanValue: " + getBooleanValue() + ",");
+            sb.append("BooleanValue: ").append(getBooleanValue()).append(",");
         if (getStringValue() != null)
-            sb.append("StringValue: " + getStringValue());
+            sb.append("StringValue: ").append(getStringValue());
         sb.append("}");
         return sb.toString();
     }

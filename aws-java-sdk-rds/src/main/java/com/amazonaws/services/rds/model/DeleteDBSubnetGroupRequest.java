@@ -178,7 +178,7 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSubnetGroupName() != null)
-            sb.append("DBSubnetGroupName: " + getDBSubnetGroupName());
+            sb.append("DBSubnetGroupName: ").append(getDBSubnetGroupName());
         sb.append("}");
         return sb.toString();
     }

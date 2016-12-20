@@ -483,23 +483,23 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetGroupArn() != null)
-            sb.append("TargetGroupArn: " + getTargetGroupArn() + ",");
+            sb.append("TargetGroupArn: ").append(getTargetGroupArn()).append(",");
         if (getHealthCheckProtocol() != null)
-            sb.append("HealthCheckProtocol: " + getHealthCheckProtocol() + ",");
+            sb.append("HealthCheckProtocol: ").append(getHealthCheckProtocol()).append(",");
         if (getHealthCheckPort() != null)
-            sb.append("HealthCheckPort: " + getHealthCheckPort() + ",");
+            sb.append("HealthCheckPort: ").append(getHealthCheckPort()).append(",");
         if (getHealthCheckPath() != null)
-            sb.append("HealthCheckPath: " + getHealthCheckPath() + ",");
+            sb.append("HealthCheckPath: ").append(getHealthCheckPath()).append(",");
         if (getHealthCheckIntervalSeconds() != null)
-            sb.append("HealthCheckIntervalSeconds: " + getHealthCheckIntervalSeconds() + ",");
+            sb.append("HealthCheckIntervalSeconds: ").append(getHealthCheckIntervalSeconds()).append(",");
         if (getHealthCheckTimeoutSeconds() != null)
-            sb.append("HealthCheckTimeoutSeconds: " + getHealthCheckTimeoutSeconds() + ",");
+            sb.append("HealthCheckTimeoutSeconds: ").append(getHealthCheckTimeoutSeconds()).append(",");
         if (getHealthyThresholdCount() != null)
-            sb.append("HealthyThresholdCount: " + getHealthyThresholdCount() + ",");
+            sb.append("HealthyThresholdCount: ").append(getHealthyThresholdCount()).append(",");
         if (getUnhealthyThresholdCount() != null)
-            sb.append("UnhealthyThresholdCount: " + getUnhealthyThresholdCount() + ",");
+            sb.append("UnhealthyThresholdCount: ").append(getUnhealthyThresholdCount()).append(",");
         if (getMatcher() != null)
-            sb.append("Matcher: " + getMatcher());
+            sb.append("Matcher: ").append(getMatcher());
         sb.append("}");
         return sb.toString();
     }

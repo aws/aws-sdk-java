@@ -165,9 +165,9 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getTasks() != null)
-            sb.append("Tasks: " + getTasks());
+            sb.append("Tasks: ").append(getTasks());
         sb.append("}");
         return sb.toString();
     }

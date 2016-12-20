@@ -629,19 +629,19 @@ public class DescribeScheduledInstanceAvailabilityRequest extends AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecurrence() != null)
-            sb.append("Recurrence: " + getRecurrence() + ",");
+            sb.append("Recurrence: ").append(getRecurrence()).append(",");
         if (getFirstSlotStartTimeRange() != null)
-            sb.append("FirstSlotStartTimeRange: " + getFirstSlotStartTimeRange() + ",");
+            sb.append("FirstSlotStartTimeRange: ").append(getFirstSlotStartTimeRange()).append(",");
         if (getMinSlotDurationInHours() != null)
-            sb.append("MinSlotDurationInHours: " + getMinSlotDurationInHours() + ",");
+            sb.append("MinSlotDurationInHours: ").append(getMinSlotDurationInHours()).append(",");
         if (getMaxSlotDurationInHours() != null)
-            sb.append("MaxSlotDurationInHours: " + getMaxSlotDurationInHours() + ",");
+            sb.append("MaxSlotDurationInHours: ").append(getMaxSlotDurationInHours()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

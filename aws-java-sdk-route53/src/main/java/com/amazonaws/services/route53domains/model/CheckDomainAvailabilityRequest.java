@@ -215,9 +215,9 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getIdnLangCode() != null)
-            sb.append("IdnLangCode: " + getIdnLangCode());
+            sb.append("IdnLangCode: ").append(getIdnLangCode());
         sb.append("}");
         return sb.toString();
     }

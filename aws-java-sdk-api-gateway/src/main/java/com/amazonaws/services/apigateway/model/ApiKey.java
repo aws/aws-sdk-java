@@ -501,23 +501,23 @@ public class ApiKey implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCustomerId() != null)
-            sb.append("CustomerId: " + getCustomerId() + ",");
+            sb.append("CustomerId: ").append(getCustomerId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getLastUpdatedDate() != null)
-            sb.append("LastUpdatedDate: " + getLastUpdatedDate() + ",");
+            sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
         if (getStageKeys() != null)
-            sb.append("StageKeys: " + getStageKeys());
+            sb.append("StageKeys: ").append(getStageKeys());
         sb.append("}");
         return sb.toString();
     }

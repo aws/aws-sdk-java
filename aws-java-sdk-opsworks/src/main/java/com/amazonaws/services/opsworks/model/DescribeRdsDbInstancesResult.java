@@ -113,7 +113,7 @@ public class DescribeRdsDbInstancesResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRdsDbInstances() != null)
-            sb.append("RdsDbInstances: " + getRdsDbInstances());
+            sb.append("RdsDbInstances: ").append(getRdsDbInstances());
         sb.append("}");
         return sb.toString();
     }

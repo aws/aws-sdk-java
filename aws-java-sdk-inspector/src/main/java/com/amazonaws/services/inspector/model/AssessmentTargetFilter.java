@@ -94,7 +94,7 @@ public class AssessmentTargetFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentTargetNamePattern() != null)
-            sb.append("AssessmentTargetNamePattern: " + getAssessmentTargetNamePattern());
+            sb.append("AssessmentTargetNamePattern: ").append(getAssessmentTargetNamePattern());
         sb.append("}");
         return sb.toString();
     }

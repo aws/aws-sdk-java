@@ -179,11 +179,11 @@ public class CreateDistributionWithTagsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDistribution() != null)
-            sb.append("Distribution: " + getDistribution() + ",");
+            sb.append("Distribution: ").append(getDistribution()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DescribeEventCategoriesResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("EventCategoriesMapList", targetDepth)) {
+                    describeEventCategoriesResult.withEventCategoriesMapList(new ArrayList<EventCategoriesMap>());
+                    continue;
+                }
+
                 if (context.testExpression("EventCategoriesMapList/EventCategoriesMap", targetDepth)) {
                     describeEventCategoriesResult.withEventCategoriesMapList(EventCategoriesMapStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

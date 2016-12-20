@@ -554,19 +554,19 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getAutoScalingGroups() != null)
-            sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
+            sb.append("AutoScalingGroups: ").append(getAutoScalingGroups()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getLaunchConfigurations() != null)
-            sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ",");
+            sb.append("LaunchConfigurations: ").append(getLaunchConfigurations()).append(",");
         if (getLoadBalancers() != null)
-            sb.append("LoadBalancers: " + getLoadBalancers() + ",");
+            sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
         if (getTriggers() != null)
-            sb.append("Triggers: " + getTriggers() + ",");
+            sb.append("Triggers: ").append(getTriggers()).append(",");
         if (getQueues() != null)
-            sb.append("Queues: " + getQueues());
+            sb.append("Queues: ").append(getQueues());
         sb.append("}");
         return sb.toString();
     }

@@ -468,19 +468,19 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getSnapshotName() != null)
-            sb.append("SnapshotName: " + getSnapshotName() + ",");
+            sb.append("SnapshotName: ").append(getSnapshotName()).append(",");
         if (getSnapshotSource() != null)
-            sb.append("SnapshotSource: " + getSnapshotSource() + ",");
+            sb.append("SnapshotSource: ").append(getSnapshotSource()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getShowNodeGroupConfig() != null)
-            sb.append("ShowNodeGroupConfig: " + getShowNodeGroupConfig());
+            sb.append("ShowNodeGroupConfig: ").append(getShowNodeGroupConfig());
         sb.append("}");
         return sb.toString();
     }

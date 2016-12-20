@@ -80,7 +80,7 @@ public class DeliverConfigSnapshotResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigSnapshotId() != null)
-            sb.append("ConfigSnapshotId: " + getConfigSnapshotId());
+            sb.append("ConfigSnapshotId: ").append(getConfigSnapshotId());
         sb.append("}");
         return sb.toString();
     }

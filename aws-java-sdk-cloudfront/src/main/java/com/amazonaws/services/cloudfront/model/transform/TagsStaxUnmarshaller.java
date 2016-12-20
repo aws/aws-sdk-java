@@ -45,6 +45,11 @@ public class TagsStaxUnmarshaller implements Unmarshaller<Tags, StaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Items", targetDepth)) {
+                    tags.withItems(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Tag", targetDepth)) {
                     tags.withItems(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

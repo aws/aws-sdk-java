@@ -375,11 +375,11 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getByteMatchSetId() != null)
-            sb.append("ByteMatchSetId: " + getByteMatchSetId() + ",");
+            sb.append("ByteMatchSetId: ").append(getByteMatchSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken() + ",");
+            sb.append("ChangeToken: ").append(getChangeToken()).append(",");
         if (getUpdates() != null)
-            sb.append("Updates: " + getUpdates());
+            sb.append("Updates: ").append(getUpdates());
         sb.append("}");
         return sb.toString();
     }

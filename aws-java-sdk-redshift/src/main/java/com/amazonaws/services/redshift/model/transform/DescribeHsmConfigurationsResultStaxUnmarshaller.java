@@ -50,6 +50,11 @@ public class DescribeHsmConfigurationsResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("HsmConfigurations", targetDepth)) {
+                    describeHsmConfigurationsResult.withHsmConfigurations(new ArrayList<HsmConfiguration>());
+                    continue;
+                }
+
                 if (context.testExpression("HsmConfigurations/HsmConfiguration", targetDepth)) {
                     describeHsmConfigurationsResult.withHsmConfigurations(HsmConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

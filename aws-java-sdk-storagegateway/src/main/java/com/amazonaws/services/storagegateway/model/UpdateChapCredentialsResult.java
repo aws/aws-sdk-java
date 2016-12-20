@@ -127,9 +127,9 @@ public class UpdateChapCredentialsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetARN() != null)
-            sb.append("TargetARN: " + getTargetARN() + ",");
+            sb.append("TargetARN: ").append(getTargetARN()).append(",");
         if (getInitiatorName() != null)
-            sb.append("InitiatorName: " + getInitiatorName());
+            sb.append("InitiatorName: ").append(getInitiatorName());
         sb.append("}");
         return sb.toString();
     }

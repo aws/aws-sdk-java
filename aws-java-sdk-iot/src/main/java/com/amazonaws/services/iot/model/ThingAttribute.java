@@ -239,13 +239,13 @@ public class ThingAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName() + ",");
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion());
+            sb.append("Version: ").append(getVersion());
         sb.append("}");
         return sb.toString();
     }

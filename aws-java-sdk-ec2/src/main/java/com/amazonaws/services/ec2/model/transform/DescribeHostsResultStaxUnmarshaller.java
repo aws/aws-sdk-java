@@ -45,6 +45,11 @@ public class DescribeHostsResultStaxUnmarshaller implements Unmarshaller<Describ
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("hostSet", targetDepth)) {
+                    describeHostsResult.withHosts(new ArrayList<Host>());
+                    continue;
+                }
+
                 if (context.testExpression("hostSet/item", targetDepth)) {
                     describeHostsResult.withHosts(HostStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

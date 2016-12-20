@@ -582,17 +582,17 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getCacheParameterGroupFamily() != null)
-            sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");
+            sb.append("CacheParameterGroupFamily: ").append(getCacheParameterGroupFamily()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDefaultOnly() != null)
-            sb.append("DefaultOnly: " + getDefaultOnly());
+            sb.append("DefaultOnly: ").append(getDefaultOnly());
         sb.append("}");
         return sb.toString();
     }

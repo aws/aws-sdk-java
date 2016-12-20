@@ -186,9 +186,9 @@ public class CancelSpotFleetRequestsRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSpotFleetRequestIds() != null)
-            sb.append("SpotFleetRequestIds: " + getSpotFleetRequestIds() + ",");
+            sb.append("SpotFleetRequestIds: ").append(getSpotFleetRequestIds()).append(",");
         if (getTerminateInstances() != null)
-            sb.append("TerminateInstances: " + getTerminateInstances());
+            sb.append("TerminateInstances: ").append(getTerminateInstances());
         sb.append("}");
         return sb.toString();
     }

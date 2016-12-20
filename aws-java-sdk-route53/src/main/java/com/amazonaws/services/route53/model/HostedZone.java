@@ -338,15 +338,15 @@ public class HostedZone implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCallerReference() != null)
-            sb.append("CallerReference: " + getCallerReference() + ",");
+            sb.append("CallerReference: ").append(getCallerReference()).append(",");
         if (getConfig() != null)
-            sb.append("Config: " + getConfig() + ",");
+            sb.append("Config: ").append(getConfig()).append(",");
         if (getResourceRecordSetCount() != null)
-            sb.append("ResourceRecordSetCount: " + getResourceRecordSetCount());
+            sb.append("ResourceRecordSetCount: ").append(getResourceRecordSetCount());
         sb.append("}");
         return sb.toString();
     }

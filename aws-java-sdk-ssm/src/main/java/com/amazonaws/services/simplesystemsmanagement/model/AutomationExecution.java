@@ -618,25 +618,25 @@ public class AutomationExecution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutomationExecutionId() != null)
-            sb.append("AutomationExecutionId: " + getAutomationExecutionId() + ",");
+            sb.append("AutomationExecutionId: ").append(getAutomationExecutionId()).append(",");
         if (getDocumentName() != null)
-            sb.append("DocumentName: " + getDocumentName() + ",");
+            sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getExecutionStartTime() != null)
-            sb.append("ExecutionStartTime: " + getExecutionStartTime() + ",");
+            sb.append("ExecutionStartTime: ").append(getExecutionStartTime()).append(",");
         if (getExecutionEndTime() != null)
-            sb.append("ExecutionEndTime: " + getExecutionEndTime() + ",");
+            sb.append("ExecutionEndTime: ").append(getExecutionEndTime()).append(",");
         if (getAutomationExecutionStatus() != null)
-            sb.append("AutomationExecutionStatus: " + getAutomationExecutionStatus() + ",");
+            sb.append("AutomationExecutionStatus: ").append(getAutomationExecutionStatus()).append(",");
         if (getStepExecutions() != null)
-            sb.append("StepExecutions: " + getStepExecutions() + ",");
+            sb.append("StepExecutions: ").append(getStepExecutions()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getOutputs() != null)
-            sb.append("Outputs: " + getOutputs() + ",");
+            sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: " + getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage());
         sb.append("}");
         return sb.toString();
     }

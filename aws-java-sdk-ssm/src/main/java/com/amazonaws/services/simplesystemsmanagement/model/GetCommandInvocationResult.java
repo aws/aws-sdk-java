@@ -1332,35 +1332,35 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommandId() != null)
-            sb.append("CommandId: " + getCommandId() + ",");
+            sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getDocumentName() != null)
-            sb.append("DocumentName: " + getDocumentName() + ",");
+            sb.append("DocumentName: ").append(getDocumentName()).append(",");
         if (getPluginName() != null)
-            sb.append("PluginName: " + getPluginName() + ",");
+            sb.append("PluginName: ").append(getPluginName()).append(",");
         if (getResponseCode() != null)
-            sb.append("ResponseCode: " + getResponseCode() + ",");
+            sb.append("ResponseCode: ").append(getResponseCode()).append(",");
         if (getExecutionStartDateTime() != null)
-            sb.append("ExecutionStartDateTime: " + getExecutionStartDateTime() + ",");
+            sb.append("ExecutionStartDateTime: ").append(getExecutionStartDateTime()).append(",");
         if (getExecutionElapsedTime() != null)
-            sb.append("ExecutionElapsedTime: " + getExecutionElapsedTime() + ",");
+            sb.append("ExecutionElapsedTime: ").append(getExecutionElapsedTime()).append(",");
         if (getExecutionEndDateTime() != null)
-            sb.append("ExecutionEndDateTime: " + getExecutionEndDateTime() + ",");
+            sb.append("ExecutionEndDateTime: ").append(getExecutionEndDateTime()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getStandardOutputContent() != null)
-            sb.append("StandardOutputContent: " + getStandardOutputContent() + ",");
+            sb.append("StandardOutputContent: ").append(getStandardOutputContent()).append(",");
         if (getStandardOutputUrl() != null)
-            sb.append("StandardOutputUrl: " + getStandardOutputUrl() + ",");
+            sb.append("StandardOutputUrl: ").append(getStandardOutputUrl()).append(",");
         if (getStandardErrorContent() != null)
-            sb.append("StandardErrorContent: " + getStandardErrorContent() + ",");
+            sb.append("StandardErrorContent: ").append(getStandardErrorContent()).append(",");
         if (getStandardErrorUrl() != null)
-            sb.append("StandardErrorUrl: " + getStandardErrorUrl());
+            sb.append("StandardErrorUrl: ").append(getStandardErrorUrl());
         sb.append("}");
         return sb.toString();
     }

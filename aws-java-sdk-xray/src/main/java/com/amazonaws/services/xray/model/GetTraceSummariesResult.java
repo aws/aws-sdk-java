@@ -254,13 +254,13 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTraceSummaries() != null)
-            sb.append("TraceSummaries: " + getTraceSummaries() + ",");
+            sb.append("TraceSummaries: ").append(getTraceSummaries()).append(",");
         if (getApproximateTime() != null)
-            sb.append("ApproximateTime: " + getApproximateTime() + ",");
+            sb.append("ApproximateTime: ").append(getApproximateTime()).append(",");
         if (getTracesProcessedCount() != null)
-            sb.append("TracesProcessedCount: " + getTracesProcessedCount() + ",");
+            sb.append("TracesProcessedCount: ").append(getTracesProcessedCount()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

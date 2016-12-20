@@ -305,15 +305,15 @@ public class HsmConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmConfigurationIdentifier() != null)
-            sb.append("HsmConfigurationIdentifier: " + getHsmConfigurationIdentifier() + ",");
+            sb.append("HsmConfigurationIdentifier: ").append(getHsmConfigurationIdentifier()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getHsmIpAddress() != null)
-            sb.append("HsmIpAddress: " + getHsmIpAddress() + ",");
+            sb.append("HsmIpAddress: ").append(getHsmIpAddress()).append(",");
         if (getHsmPartitionName() != null)
-            sb.append("HsmPartitionName: " + getHsmPartitionName() + ",");
+            sb.append("HsmPartitionName: ").append(getHsmPartitionName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

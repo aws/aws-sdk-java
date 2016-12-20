@@ -186,11 +186,11 @@ public class FailureDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getLogFile() != null)
-            sb.append("LogFile: " + getLogFile());
+            sb.append("LogFile: ").append(getLogFile());
         sb.append("}");
         return sb.toString();
     }

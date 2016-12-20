@@ -139,9 +139,9 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: " + getIpv6CidrBlock());
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }

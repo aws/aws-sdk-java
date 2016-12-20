@@ -61,8 +61,7 @@ public class DeletePipelineRequestMarshaller implements Marshaller<Request<Delet
 
         String uriResourcePath = "/2012-09-25/pipelines/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (deletePipelineRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deletePipelineRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deletePipelineRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

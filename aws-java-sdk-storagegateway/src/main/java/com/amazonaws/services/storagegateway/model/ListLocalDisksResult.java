@@ -116,9 +116,9 @@ public class ListLocalDisksResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDisks() != null)
-            sb.append("Disks: " + getDisks());
+            sb.append("Disks: ").append(getDisks());
         sb.append("}");
         return sb.toString();
     }

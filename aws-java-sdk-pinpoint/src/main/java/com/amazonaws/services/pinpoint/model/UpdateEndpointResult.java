@@ -59,7 +59,7 @@ public class UpdateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageBody() != null)
-            sb.append("MessageBody: " + getMessageBody());
+            sb.append("MessageBody: ").append(getMessageBody());
         sb.append("}");
         return sb.toString();
     }

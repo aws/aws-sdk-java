@@ -133,9 +133,9 @@ public class ReservedInstancesModificationResult implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
         if (getTargetConfiguration() != null)
-            sb.append("TargetConfiguration: " + getTargetConfiguration());
+            sb.append("TargetConfiguration: ").append(getTargetConfiguration());
         sb.append("}");
         return sb.toString();
     }

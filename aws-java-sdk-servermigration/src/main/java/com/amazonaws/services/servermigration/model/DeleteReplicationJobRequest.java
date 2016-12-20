@@ -60,7 +60,7 @@ public class DeleteReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationJobId() != null)
-            sb.append("ReplicationJobId: " + getReplicationJobId());
+            sb.append("ReplicationJobId: ").append(getReplicationJobId());
         sb.append("}");
         return sb.toString();
     }

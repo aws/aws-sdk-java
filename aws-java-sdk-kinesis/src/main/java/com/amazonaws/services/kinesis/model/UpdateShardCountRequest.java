@@ -204,11 +204,11 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getTargetShardCount() != null)
-            sb.append("TargetShardCount: " + getTargetShardCount() + ",");
+            sb.append("TargetShardCount: ").append(getTargetShardCount()).append(",");
         if (getScalingType() != null)
-            sb.append("ScalingType: " + getScalingType());
+            sb.append("ScalingType: ").append(getScalingType());
         sb.append("}");
         return sb.toString();
     }

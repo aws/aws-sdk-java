@@ -127,9 +127,9 @@ public class Lexicon implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContent() != null)
-            sb.append("Content: " + getContent() + ",");
+            sb.append("Content: ").append(getContent()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }

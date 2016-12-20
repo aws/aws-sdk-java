@@ -164,9 +164,9 @@ public class ListIpRoutesResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpRoutesInfo() != null)
-            sb.append("IpRoutesInfo: " + getIpRoutesInfo() + ",");
+            sb.append("IpRoutesInfo: ").append(getIpRoutesInfo()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

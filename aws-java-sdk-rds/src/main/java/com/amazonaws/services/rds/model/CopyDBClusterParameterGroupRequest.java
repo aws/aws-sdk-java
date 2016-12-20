@@ -596,13 +596,13 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceDBClusterParameterGroupIdentifier() != null)
-            sb.append("SourceDBClusterParameterGroupIdentifier: " + getSourceDBClusterParameterGroupIdentifier() + ",");
+            sb.append("SourceDBClusterParameterGroupIdentifier: ").append(getSourceDBClusterParameterGroupIdentifier()).append(",");
         if (getTargetDBClusterParameterGroupIdentifier() != null)
-            sb.append("TargetDBClusterParameterGroupIdentifier: " + getTargetDBClusterParameterGroupIdentifier() + ",");
+            sb.append("TargetDBClusterParameterGroupIdentifier: ").append(getTargetDBClusterParameterGroupIdentifier()).append(",");
         if (getTargetDBClusterParameterGroupDescription() != null)
-            sb.append("TargetDBClusterParameterGroupDescription: " + getTargetDBClusterParameterGroupDescription() + ",");
+            sb.append("TargetDBClusterParameterGroupDescription: ").append(getTargetDBClusterParameterGroupDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

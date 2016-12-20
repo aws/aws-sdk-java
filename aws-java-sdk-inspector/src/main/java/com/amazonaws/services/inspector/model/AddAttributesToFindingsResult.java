@@ -99,7 +99,7 @@ public class AddAttributesToFindingsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

@@ -169,9 +169,9 @@ public class DeploymentConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaximumPercent() != null)
-            sb.append("MaximumPercent: " + getMaximumPercent() + ",");
+            sb.append("MaximumPercent: ").append(getMaximumPercent()).append(",");
         if (getMinimumHealthyPercent() != null)
-            sb.append("MinimumHealthyPercent: " + getMinimumHealthyPercent());
+            sb.append("MinimumHealthyPercent: ").append(getMinimumHealthyPercent());
         sb.append("}");
         return sb.toString();
     }

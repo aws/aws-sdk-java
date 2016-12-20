@@ -254,9 +254,9 @@ public class AttributePayload implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getMerge() != null)
-            sb.append("Merge: " + getMerge());
+            sb.append("Merge: ").append(getMerge());
         sb.append("}");
         return sb.toString();
     }

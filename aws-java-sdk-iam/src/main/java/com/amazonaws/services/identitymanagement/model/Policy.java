@@ -632,25 +632,25 @@ public class Policy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyId() != null)
-            sb.append("PolicyId: " + getPolicyId() + ",");
+            sb.append("PolicyId: ").append(getPolicyId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getDefaultVersionId() != null)
-            sb.append("DefaultVersionId: " + getDefaultVersionId() + ",");
+            sb.append("DefaultVersionId: ").append(getDefaultVersionId()).append(",");
         if (getAttachmentCount() != null)
-            sb.append("AttachmentCount: " + getAttachmentCount() + ",");
+            sb.append("AttachmentCount: ").append(getAttachmentCount()).append(",");
         if (getIsAttachable() != null)
-            sb.append("IsAttachable: " + getIsAttachable() + ",");
+            sb.append("IsAttachable: ").append(getIsAttachable()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate() + ",");
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getUpdateDate() != null)
-            sb.append("UpdateDate: " + getUpdateDate());
+            sb.append("UpdateDate: ").append(getUpdateDate());
         sb.append("}");
         return sb.toString();
     }

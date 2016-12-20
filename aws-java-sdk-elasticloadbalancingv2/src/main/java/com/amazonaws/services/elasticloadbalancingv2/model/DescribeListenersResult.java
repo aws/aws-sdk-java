@@ -163,9 +163,9 @@ public class DescribeListenersResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getListeners() != null)
-            sb.append("Listeners: " + getListeners() + ",");
+            sb.append("Listeners: ").append(getListeners()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker());
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }

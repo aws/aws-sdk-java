@@ -191,9 +191,9 @@ public class RebootCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getCacheNodeIdsToReboot() != null)
-            sb.append("CacheNodeIdsToReboot: " + getCacheNodeIdsToReboot());
+            sb.append("CacheNodeIdsToReboot: ").append(getCacheNodeIdsToReboot());
         sb.append("}");
         return sb.toString();
     }

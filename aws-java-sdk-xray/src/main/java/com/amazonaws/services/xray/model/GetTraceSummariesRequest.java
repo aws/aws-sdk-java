@@ -278,15 +278,15 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getSampling() != null)
-            sb.append("Sampling: " + getSampling() + ",");
+            sb.append("Sampling: ").append(getSampling()).append(",");
         if (getFilterExpression() != null)
-            sb.append("FilterExpression: " + getFilterExpression() + ",");
+            sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

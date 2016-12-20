@@ -179,9 +179,9 @@ public class TimeSpan implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration());
+            sb.append("Duration: ").append(getDuration());
         sb.append("}");
         return sb.toString();
     }

@@ -45,9 +45,19 @@ public class CancelSpotFleetRequestsResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("unsuccessfulFleetRequestSet", targetDepth)) {
+                    cancelSpotFleetRequestsResult.withUnsuccessfulFleetRequests(new ArrayList<CancelSpotFleetRequestsErrorItem>());
+                    continue;
+                }
+
                 if (context.testExpression("unsuccessfulFleetRequestSet/item", targetDepth)) {
                     cancelSpotFleetRequestsResult.withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItemStaxUnmarshaller.getInstance().unmarshall(
                             context));
+                    continue;
+                }
+
+                if (context.testExpression("successfulFleetRequestSet", targetDepth)) {
+                    cancelSpotFleetRequestsResult.withSuccessfulFleetRequests(new ArrayList<CancelSpotFleetRequestsSuccessItem>());
                     continue;
                 }
 

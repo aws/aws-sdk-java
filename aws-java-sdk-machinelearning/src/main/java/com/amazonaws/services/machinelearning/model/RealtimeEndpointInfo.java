@@ -358,13 +358,13 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPeakRequestsPerSecond() != null)
-            sb.append("PeakRequestsPerSecond: " + getPeakRequestsPerSecond() + ",");
+            sb.append("PeakRequestsPerSecond: ").append(getPeakRequestsPerSecond()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getEndpointUrl() != null)
-            sb.append("EndpointUrl: " + getEndpointUrl() + ",");
+            sb.append("EndpointUrl: ").append(getEndpointUrl()).append(",");
         if (getEndpointStatus() != null)
-            sb.append("EndpointStatus: " + getEndpointStatus());
+            sb.append("EndpointStatus: ").append(getEndpointStatus());
         sb.append("}");
         return sb.toString();
     }

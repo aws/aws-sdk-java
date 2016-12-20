@@ -159,9 +159,9 @@ public class BatchGetDeploymentGroupsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentGroupsInfo() != null)
-            sb.append("DeploymentGroupsInfo: " + getDeploymentGroupsInfo() + ",");
+            sb.append("DeploymentGroupsInfo: ").append(getDeploymentGroupsInfo()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }

@@ -323,13 +323,13 @@ public class CreateReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationSubnetGroupIdentifier() != null)
-            sb.append("ReplicationSubnetGroupIdentifier: " + getReplicationSubnetGroupIdentifier() + ",");
+            sb.append("ReplicationSubnetGroupIdentifier: ").append(getReplicationSubnetGroupIdentifier()).append(",");
         if (getReplicationSubnetGroupDescription() != null)
-            sb.append("ReplicationSubnetGroupDescription: " + getReplicationSubnetGroupDescription() + ",");
+            sb.append("ReplicationSubnetGroupDescription: ").append(getReplicationSubnetGroupDescription()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

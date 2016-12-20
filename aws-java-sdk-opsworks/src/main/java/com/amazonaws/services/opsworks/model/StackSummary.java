@@ -310,17 +310,17 @@ public class StackSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getLayersCount() != null)
-            sb.append("LayersCount: " + getLayersCount() + ",");
+            sb.append("LayersCount: ").append(getLayersCount()).append(",");
         if (getAppsCount() != null)
-            sb.append("AppsCount: " + getAppsCount() + ",");
+            sb.append("AppsCount: ").append(getAppsCount()).append(",");
         if (getInstancesCount() != null)
-            sb.append("InstancesCount: " + getInstancesCount());
+            sb.append("InstancesCount: ").append(getInstancesCount());
         sb.append("}");
         return sb.toString();
     }

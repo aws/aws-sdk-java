@@ -265,11 +265,11 @@ public class ContainerOverride implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCommand() != null)
-            sb.append("Command: " + getCommand() + ",");
+            sb.append("Command: ").append(getCommand()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment());
+            sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
         return sb.toString();
     }

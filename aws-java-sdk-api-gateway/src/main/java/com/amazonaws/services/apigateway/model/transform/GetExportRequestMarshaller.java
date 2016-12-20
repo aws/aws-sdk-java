@@ -65,12 +65,9 @@ public class GetExportRequestMarshaller implements Marshaller<Request<GetExportR
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/exports/{export_type}";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (getExportRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getExportRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{stage_name}",
-                (getExportRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getExportRequest.getStageName()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{export_type}",
-                (getExportRequest.getExportType() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getExportRequest.getExportType()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getExportRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name", getExportRequest.getStageName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "export_type", getExportRequest.getExportType());
         request.setResourcePath(uriResourcePath);
 
         java.util.Map<String, String> parameters = getExportRequest.getParameters();

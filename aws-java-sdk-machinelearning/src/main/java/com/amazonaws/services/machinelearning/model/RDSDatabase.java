@@ -108,9 +108,9 @@ public class RDSDatabase implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIdentifier() != null)
-            sb.append("InstanceIdentifier: " + getInstanceIdentifier() + ",");
+            sb.append("InstanceIdentifier: ").append(getInstanceIdentifier()).append(",");
         if (getDatabaseName() != null)
-            sb.append("DatabaseName: " + getDatabaseName());
+            sb.append("DatabaseName: ").append(getDatabaseName());
         sb.append("}");
         return sb.toString();
     }

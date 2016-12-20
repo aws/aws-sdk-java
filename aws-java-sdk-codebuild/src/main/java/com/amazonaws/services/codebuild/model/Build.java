@@ -1337,37 +1337,37 @@ public class Build implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getCurrentPhase() != null)
-            sb.append("CurrentPhase: " + getCurrentPhase() + ",");
+            sb.append("CurrentPhase: ").append(getCurrentPhase()).append(",");
         if (getBuildStatus() != null)
-            sb.append("BuildStatus: " + getBuildStatus() + ",");
+            sb.append("BuildStatus: ").append(getBuildStatus()).append(",");
         if (getSourceVersion() != null)
-            sb.append("SourceVersion: " + getSourceVersion() + ",");
+            sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
         if (getProjectName() != null)
-            sb.append("ProjectName: " + getProjectName() + ",");
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getPhases() != null)
-            sb.append("Phases: " + getPhases() + ",");
+            sb.append("Phases: ").append(getPhases()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getArtifacts() != null)
-            sb.append("Artifacts: " + getArtifacts() + ",");
+            sb.append("Artifacts: ").append(getArtifacts()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment() + ",");
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getLogs() != null)
-            sb.append("Logs: " + getLogs() + ",");
+            sb.append("Logs: ").append(getLogs()).append(",");
         if (getTimeoutInMinutes() != null)
-            sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
+            sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes()).append(",");
         if (getBuildComplete() != null)
-            sb.append("BuildComplete: " + getBuildComplete() + ",");
+            sb.append("BuildComplete: ").append(getBuildComplete()).append(",");
         if (getInitiator() != null)
-            sb.append("Initiator: " + getInitiator());
+            sb.append("Initiator: ").append(getInitiator());
         sb.append("}");
         return sb.toString();
     }

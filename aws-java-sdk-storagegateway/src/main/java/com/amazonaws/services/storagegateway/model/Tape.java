@@ -331,17 +331,17 @@ public class Tape implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN() + ",");
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getTapeBarcode() != null)
-            sb.append("TapeBarcode: " + getTapeBarcode() + ",");
+            sb.append("TapeBarcode: ").append(getTapeBarcode()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: " + getTapeStatus() + ",");
+            sb.append("TapeStatus: ").append(getTapeStatus()).append(",");
         if (getVTLDevice() != null)
-            sb.append("VTLDevice: " + getVTLDevice() + ",");
+            sb.append("VTLDevice: ").append(getVTLDevice()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: " + getProgress());
+            sb.append("Progress: ").append(getProgress());
         sb.append("}");
         return sb.toString();
     }

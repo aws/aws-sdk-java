@@ -51,14 +51,10 @@ public class ListTagsForResourceRequestMarshaller implements Marshaller<Request<
 
         String uriResourcePath = "/2013-04-01/tags/{ResourceType}/{ResourceId}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{ResourceType}",
-                (listTagsForResourceRequest.getResourceType() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listTagsForResourceRequest.getResourceType()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{ResourceId}",
-                (listTagsForResourceRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(listTagsForResourceRequest.getResourceId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ResourceType",
+                listTagsForResourceRequest.getResourceType());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "ResourceId", listTagsForResourceRequest.getResourceId());
         request.setResourcePath(uriResourcePath);
 
         return request;

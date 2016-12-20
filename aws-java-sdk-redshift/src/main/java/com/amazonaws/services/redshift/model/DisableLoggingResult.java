@@ -322,17 +322,17 @@ public class DisableLoggingResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoggingEnabled() != null)
-            sb.append("LoggingEnabled: " + getLoggingEnabled() + ",");
+            sb.append("LoggingEnabled: ").append(getLoggingEnabled()).append(",");
         if (getBucketName() != null)
-            sb.append("BucketName: " + getBucketName() + ",");
+            sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getS3KeyPrefix() != null)
-            sb.append("S3KeyPrefix: " + getS3KeyPrefix() + ",");
+            sb.append("S3KeyPrefix: ").append(getS3KeyPrefix()).append(",");
         if (getLastSuccessfulDeliveryTime() != null)
-            sb.append("LastSuccessfulDeliveryTime: " + getLastSuccessfulDeliveryTime() + ",");
+            sb.append("LastSuccessfulDeliveryTime: ").append(getLastSuccessfulDeliveryTime()).append(",");
         if (getLastFailureTime() != null)
-            sb.append("LastFailureTime: " + getLastFailureTime() + ",");
+            sb.append("LastFailureTime: ").append(getLastFailureTime()).append(",");
         if (getLastFailureMessage() != null)
-            sb.append("LastFailureMessage: " + getLastFailureMessage());
+            sb.append("LastFailureMessage: ").append(getLastFailureMessage());
         sb.append("}");
         return sb.toString();
     }

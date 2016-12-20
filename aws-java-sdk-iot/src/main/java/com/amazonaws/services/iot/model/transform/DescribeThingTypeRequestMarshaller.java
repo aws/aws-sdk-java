@@ -61,10 +61,8 @@ public class DescribeThingTypeRequestMarshaller implements Marshaller<Request<De
 
         String uriResourcePath = "/thing-types/{thingTypeName}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{thingTypeName}",
-                (describeThingTypeRequest.getThingTypeName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(describeThingTypeRequest.getThingTypeName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingTypeName",
+                describeThingTypeRequest.getThingTypeName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

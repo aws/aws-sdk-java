@@ -79,7 +79,7 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: " + getPatchGroup());
+            sb.append("PatchGroup: ").append(getPatchGroup());
         sb.append("}");
         return sb.toString();
     }

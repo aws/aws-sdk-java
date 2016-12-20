@@ -591,25 +591,25 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId() + ",");
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getGlobalFilters() != null)
-            sb.append("GlobalFilters: " + getGlobalFilters() + ",");
+            sb.append("GlobalFilters: ").append(getGlobalFilters()).append(",");
         if (getApprovalRules() != null)
-            sb.append("ApprovalRules: " + getApprovalRules() + ",");
+            sb.append("ApprovalRules: ").append(getApprovalRules()).append(",");
         if (getApprovedPatches() != null)
-            sb.append("ApprovedPatches: " + getApprovedPatches() + ",");
+            sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
         if (getRejectedPatches() != null)
-            sb.append("RejectedPatches: " + getRejectedPatches() + ",");
+            sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getPatchGroups() != null)
-            sb.append("PatchGroups: " + getPatchGroups() + ",");
+            sb.append("PatchGroups: ").append(getPatchGroups()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getModifiedDate() != null)
-            sb.append("ModifiedDate: " + getModifiedDate() + ",");
+            sb.append("ModifiedDate: ").append(getModifiedDate()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

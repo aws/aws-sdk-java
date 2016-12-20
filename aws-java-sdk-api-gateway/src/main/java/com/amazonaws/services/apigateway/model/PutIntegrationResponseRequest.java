@@ -726,21 +726,21 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getSelectionPattern() != null)
-            sb.append("SelectionPattern: " + getSelectionPattern() + ",");
+            sb.append("SelectionPattern: ").append(getSelectionPattern()).append(",");
         if (getResponseParameters() != null)
-            sb.append("ResponseParameters: " + getResponseParameters() + ",");
+            sb.append("ResponseParameters: ").append(getResponseParameters()).append(",");
         if (getResponseTemplates() != null)
-            sb.append("ResponseTemplates: " + getResponseTemplates() + ",");
+            sb.append("ResponseTemplates: ").append(getResponseTemplates()).append(",");
         if (getContentHandling() != null)
-            sb.append("ContentHandling: " + getContentHandling());
+            sb.append("ContentHandling: ").append(getContentHandling());
         sb.append("}");
         return sb.toString();
     }

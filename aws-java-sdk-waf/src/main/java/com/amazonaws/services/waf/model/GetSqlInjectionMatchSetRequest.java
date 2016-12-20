@@ -95,7 +95,7 @@ public class GetSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSqlInjectionMatchSetId() != null)
-            sb.append("SqlInjectionMatchSetId: " + getSqlInjectionMatchSetId());
+            sb.append("SqlInjectionMatchSetId: ").append(getSqlInjectionMatchSetId());
         sb.append("}");
         return sb.toString();
     }

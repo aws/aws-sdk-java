@@ -126,9 +126,9 @@ public class ImageQuality implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBrightness() != null)
-            sb.append("Brightness: " + getBrightness() + ",");
+            sb.append("Brightness: ").append(getBrightness()).append(",");
         if (getSharpness() != null)
-            sb.append("Sharpness: " + getSharpness());
+            sb.append("Sharpness: ").append(getSharpness());
         sb.append("}");
         return sb.toString();
     }

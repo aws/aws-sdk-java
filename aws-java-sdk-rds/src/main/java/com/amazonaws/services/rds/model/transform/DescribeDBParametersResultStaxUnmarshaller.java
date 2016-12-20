@@ -45,6 +45,11 @@ public class DescribeDBParametersResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    describeDBParametersResult.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/Parameter", targetDepth)) {
                     describeDBParametersResult.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

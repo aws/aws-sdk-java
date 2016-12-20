@@ -296,11 +296,11 @@ public class RevisionLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRevisionType() != null)
-            sb.append("RevisionType: " + getRevisionType() + ",");
+            sb.append("RevisionType: ").append(getRevisionType()).append(",");
         if (getS3Location() != null)
-            sb.append("S3Location: " + getS3Location() + ",");
+            sb.append("S3Location: ").append(getS3Location()).append(",");
         if (getGitHubLocation() != null)
-            sb.append("GitHubLocation: " + getGitHubLocation());
+            sb.append("GitHubLocation: ").append(getGitHubLocation());
         sb.append("}");
         return sb.toString();
     }

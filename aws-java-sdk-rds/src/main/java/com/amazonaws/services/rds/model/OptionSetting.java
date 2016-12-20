@@ -474,23 +474,23 @@ public class OptionSetting implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: " + getDefaultValue() + ",");
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getApplyType() != null)
-            sb.append("ApplyType: " + getApplyType() + ",");
+            sb.append("ApplyType: ").append(getApplyType()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType() + ",");
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getAllowedValues() != null)
-            sb.append("AllowedValues: " + getAllowedValues() + ",");
+            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getIsModifiable() != null)
-            sb.append("IsModifiable: " + getIsModifiable() + ",");
+            sb.append("IsModifiable: ").append(getIsModifiable()).append(",");
         if (getIsCollection() != null)
-            sb.append("IsCollection: " + getIsCollection());
+            sb.append("IsCollection: ").append(getIsCollection());
         sb.append("}");
         return sb.toString();
     }

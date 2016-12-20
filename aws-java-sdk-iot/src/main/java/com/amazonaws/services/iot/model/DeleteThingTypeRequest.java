@@ -81,7 +81,7 @@ public class DeleteThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName());
+            sb.append("ThingTypeName: ").append(getThingTypeName());
         sb.append("}");
         return sb.toString();
     }

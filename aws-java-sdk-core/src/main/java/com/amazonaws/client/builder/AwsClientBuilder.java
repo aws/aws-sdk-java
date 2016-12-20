@@ -14,11 +14,11 @@
  */
 package com.amazonaws.client.builder;
 
-import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
 import com.amazonaws.PredefinedClientConfigurations;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
@@ -374,6 +374,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         public ExecutorService getExecutor() {
             throw new UnsupportedOperationException("ExecutorService is not used for sync client.");
         }
+
     }
 
 }

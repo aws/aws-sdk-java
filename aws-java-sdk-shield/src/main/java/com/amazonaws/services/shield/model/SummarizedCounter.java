@@ -310,17 +310,17 @@ public class SummarizedCounter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMax() != null)
-            sb.append("Max: " + getMax() + ",");
+            sb.append("Max: ").append(getMax()).append(",");
         if (getAverage() != null)
-            sb.append("Average: " + getAverage() + ",");
+            sb.append("Average: ").append(getAverage()).append(",");
         if (getSum() != null)
-            sb.append("Sum: " + getSum() + ",");
+            sb.append("Sum: ").append(getSum()).append(",");
         if (getN() != null)
-            sb.append("N: " + getN() + ",");
+            sb.append("N: ").append(getN()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: ").append(getUnit());
         sb.append("}");
         return sb.toString();
     }

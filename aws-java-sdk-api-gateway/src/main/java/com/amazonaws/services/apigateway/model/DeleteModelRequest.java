@@ -127,9 +127,9 @@ public class DeleteModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getModelName() != null)
-            sb.append("ModelName: " + getModelName());
+            sb.append("ModelName: ").append(getModelName());
         sb.append("}");
         return sb.toString();
     }

@@ -481,23 +481,23 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getEc2InstanceId() != null)
-            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
         if (getPublicDnsName() != null)
-            sb.append("PublicDnsName: " + getPublicDnsName() + ",");
+            sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getPublicIpAddress() != null)
-            sb.append("PublicIpAddress: " + getPublicIpAddress() + ",");
+            sb.append("PublicIpAddress: ").append(getPublicIpAddress()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
         if (getEbsVolumes() != null)
-            sb.append("EbsVolumes: " + getEbsVolumes());
+            sb.append("EbsVolumes: ").append(getEbsVolumes());
         sb.append("}");
         return sb.toString();
     }

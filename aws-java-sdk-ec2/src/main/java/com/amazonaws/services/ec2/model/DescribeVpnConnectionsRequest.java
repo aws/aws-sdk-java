@@ -857,9 +857,9 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnConnectionIds() != null)
-            sb.append("VpnConnectionIds: " + getVpnConnectionIds() + ",");
+            sb.append("VpnConnectionIds: ").append(getVpnConnectionIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

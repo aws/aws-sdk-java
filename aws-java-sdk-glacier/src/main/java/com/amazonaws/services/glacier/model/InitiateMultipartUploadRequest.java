@@ -327,13 +327,13 @@ public class InitiateMultipartUploadRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getArchiveDescription() != null)
-            sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+            sb.append("ArchiveDescription: ").append(getArchiveDescription()).append(",");
         if (getPartSize() != null)
-            sb.append("PartSize: " + getPartSize());
+            sb.append("PartSize: ").append(getPartSize());
         sb.append("}");
         return sb.toString();
     }

@@ -265,15 +265,15 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getAttributeValue() != null)
-            sb.append("AttributeValue: " + getAttributeValue() + ",");
+            sb.append("AttributeValue: ").append(getAttributeValue()).append(",");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName());
+            sb.append("ThingTypeName: ").append(getThingTypeName());
         sb.append("}");
         return sb.toString();
     }

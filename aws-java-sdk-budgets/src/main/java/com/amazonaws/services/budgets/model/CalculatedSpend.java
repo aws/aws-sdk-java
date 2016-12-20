@@ -87,9 +87,9 @@ public class CalculatedSpend implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActualSpend() != null)
-            sb.append("ActualSpend: " + getActualSpend() + ",");
+            sb.append("ActualSpend: ").append(getActualSpend()).append(",");
         if (getForecastedSpend() != null)
-            sb.append("ForecastedSpend: " + getForecastedSpend());
+            sb.append("ForecastedSpend: ").append(getForecastedSpend());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class ComputeCapacity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDesiredInstances() != null)
-            sb.append("DesiredInstances: " + getDesiredInstances());
+            sb.append("DesiredInstances: ").append(getDesiredInstances());
         sb.append("}");
         return sb.toString();
     }

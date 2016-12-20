@@ -50,6 +50,11 @@ public class AccountAttributeStaxUnmarshaller implements Unmarshaller<AccountAtt
                     continue;
                 }
 
+                if (context.testExpression("attributeValueSet", targetDepth)) {
+                    accountAttribute.withAttributeValues(new ArrayList<AccountAttributeValue>());
+                    continue;
+                }
+
                 if (context.testExpression("attributeValueSet/item", targetDepth)) {
                     accountAttribute.withAttributeValues(AccountAttributeValueStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

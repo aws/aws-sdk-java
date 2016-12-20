@@ -80,7 +80,7 @@ public class ConfirmSubscriptionResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubscriptionArn() != null)
-            sb.append("SubscriptionArn: " + getSubscriptionArn());
+            sb.append("SubscriptionArn: ").append(getSubscriptionArn());
         sb.append("}");
         return sb.toString();
     }

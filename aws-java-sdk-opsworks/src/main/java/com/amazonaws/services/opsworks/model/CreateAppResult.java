@@ -80,7 +80,7 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppId() != null)
-            sb.append("AppId: " + getAppId());
+            sb.append("AppId: ").append(getAppId());
         sb.append("}");
         return sb.toString();
     }

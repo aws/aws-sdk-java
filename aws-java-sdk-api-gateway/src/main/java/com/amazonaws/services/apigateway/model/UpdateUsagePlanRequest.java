@@ -161,9 +161,9 @@ public class UpdateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsagePlanId() != null)
-            sb.append("UsagePlanId: " + getUsagePlanId() + ",");
+            sb.append("UsagePlanId: ").append(getUsagePlanId()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

@@ -94,7 +94,7 @@ public class LambdaFunctionStartedEventAttributes implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledEventId() != null)
-            sb.append("ScheduledEventId: " + getScheduledEventId());
+            sb.append("ScheduledEventId: ").append(getScheduledEventId());
         sb.append("}");
         return sb.toString();
     }

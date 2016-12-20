@@ -138,9 +138,9 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getInput() != null)
-            sb.append("Input: " + getInput());
+            sb.append("Input: ").append(getInput());
         sb.append("}");
         return sb.toString();
     }

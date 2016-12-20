@@ -512,15 +512,15 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdjustmentType() != null)
-            sb.append("AdjustmentType: " + getAdjustmentType() + ",");
+            sb.append("AdjustmentType: ").append(getAdjustmentType()).append(",");
         if (getStepAdjustments() != null)
-            sb.append("StepAdjustments: " + getStepAdjustments() + ",");
+            sb.append("StepAdjustments: ").append(getStepAdjustments()).append(",");
         if (getMinAdjustmentMagnitude() != null)
-            sb.append("MinAdjustmentMagnitude: " + getMinAdjustmentMagnitude() + ",");
+            sb.append("MinAdjustmentMagnitude: ").append(getMinAdjustmentMagnitude()).append(",");
         if (getCooldown() != null)
-            sb.append("Cooldown: " + getCooldown() + ",");
+            sb.append("Cooldown: ").append(getCooldown()).append(",");
         if (getMetricAggregationType() != null)
-            sb.append("MetricAggregationType: " + getMetricAggregationType());
+            sb.append("MetricAggregationType: ").append(getMetricAggregationType());
         sb.append("}");
         return sb.toString();
     }

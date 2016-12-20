@@ -171,9 +171,9 @@ public class EbsConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEbsBlockDeviceConfigs() != null)
-            sb.append("EbsBlockDeviceConfigs: " + getEbsBlockDeviceConfigs() + ",");
+            sb.append("EbsBlockDeviceConfigs: ").append(getEbsBlockDeviceConfigs()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized());
+            sb.append("EbsOptimized: ").append(getEbsOptimized());
         sb.append("}");
         return sb.toString();
     }

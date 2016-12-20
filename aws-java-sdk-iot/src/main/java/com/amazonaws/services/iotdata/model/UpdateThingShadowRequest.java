@@ -144,9 +144,9 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: " + getPayload());
+            sb.append("Payload: ").append(getPayload());
         sb.append("}");
         return sb.toString();
     }

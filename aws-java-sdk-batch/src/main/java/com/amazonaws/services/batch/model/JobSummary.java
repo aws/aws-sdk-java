@@ -126,9 +126,9 @@ public class JobSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobName() != null)
-            sb.append("JobName: " + getJobName());
+            sb.append("JobName: ").append(getJobName());
         sb.append("}");
         return sb.toString();
     }

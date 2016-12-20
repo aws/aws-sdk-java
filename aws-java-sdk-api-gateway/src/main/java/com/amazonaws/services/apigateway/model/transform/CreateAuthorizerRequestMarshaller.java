@@ -61,11 +61,7 @@ public class CreateAuthorizerRequestMarshaller implements Marshaller<Request<Cre
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers";
 
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{restapi_id}",
-                        (createAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                                StringUtils.fromString(createAuthorizerRequest.getRestApiId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", createAuthorizerRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         try {

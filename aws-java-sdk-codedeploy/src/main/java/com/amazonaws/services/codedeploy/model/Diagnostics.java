@@ -616,13 +616,13 @@ public class Diagnostics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getScriptName() != null)
-            sb.append("ScriptName: " + getScriptName() + ",");
+            sb.append("ScriptName: ").append(getScriptName()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getLogTail() != null)
-            sb.append("LogTail: " + getLogTail());
+            sb.append("LogTail: ").append(getLogTail());
         sb.append("}");
         return sb.toString();
     }

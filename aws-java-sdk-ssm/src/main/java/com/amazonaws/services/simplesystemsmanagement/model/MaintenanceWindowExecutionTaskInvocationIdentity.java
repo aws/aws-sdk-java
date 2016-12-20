@@ -588,27 +588,27 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowExecutionId() != null)
-            sb.append("WindowExecutionId: " + getWindowExecutionId() + ",");
+            sb.append("WindowExecutionId: ").append(getWindowExecutionId()).append(",");
         if (getTaskExecutionId() != null)
-            sb.append("TaskExecutionId: " + getTaskExecutionId() + ",");
+            sb.append("TaskExecutionId: ").append(getTaskExecutionId()).append(",");
         if (getInvocationId() != null)
-            sb.append("InvocationId: " + getInvocationId() + ",");
+            sb.append("InvocationId: ").append(getInvocationId()).append(",");
         if (getExecutionId() != null)
-            sb.append("ExecutionId: " + getExecutionId() + ",");
+            sb.append("ExecutionId: ").append(getExecutionId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: " + getStatusDetails() + ",");
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: " + getOwnerInformation() + ",");
+            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
         if (getWindowTargetId() != null)
-            sb.append("WindowTargetId: " + getWindowTargetId());
+            sb.append("WindowTargetId: ").append(getWindowTargetId());
         sb.append("}");
         return sb.toString();
     }

@@ -61,15 +61,9 @@ public class ListDatasetsRequestMarshaller implements Marshaller<Request<ListDat
 
         String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{IdentityPoolId}",
-                (listDatasetsRequest.getIdentityPoolId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listDatasetsRequest.getIdentityPoolId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{IdentityId}",
-                        (listDatasetsRequest.getIdentityId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listDatasetsRequest.getIdentityId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
+                listDatasetsRequest.getIdentityPoolId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", listDatasetsRequest.getIdentityId());
         request.setResourcePath(uriResourcePath);
 
         if (listDatasetsRequest.getNextToken() != null) {

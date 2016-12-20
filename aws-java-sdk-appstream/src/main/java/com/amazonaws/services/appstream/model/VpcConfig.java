@@ -110,7 +110,7 @@ public class VpcConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds());
+            sb.append("SubnetIds: ").append(getSubnetIds());
         sb.append("}");
         return sb.toString();
     }

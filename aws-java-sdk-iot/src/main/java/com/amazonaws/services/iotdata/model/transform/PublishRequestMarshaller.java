@@ -61,8 +61,7 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
 
         String uriResourcePath = "/topics/{topic}";
 
-        uriResourcePath = uriResourcePath.replace("{topic}",
-                (publishRequest.getTopic() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(publishRequest.getTopic()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "topic", publishRequest.getTopic());
         request.setResourcePath(uriResourcePath);
 
         if (publishRequest.getQos() != null) {

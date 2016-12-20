@@ -81,7 +81,7 @@ public class SetLoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoggingOptionsPayload() != null)
-            sb.append("LoggingOptionsPayload: " + getLoggingOptionsPayload());
+            sb.append("LoggingOptionsPayload: ").append(getLoggingOptionsPayload());
         sb.append("}");
         return sb.toString();
     }

@@ -159,9 +159,9 @@ public class GetResourceConfigHistoryResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationItems() != null)
-            sb.append("ConfigurationItems: " + getConfigurationItems() + ",");
+            sb.append("ConfigurationItems: ").append(getConfigurationItems()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

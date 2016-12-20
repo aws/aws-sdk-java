@@ -141,9 +141,9 @@ public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: " + getSourceDestCheck());
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck());
         sb.append("}");
         return sb.toString();
     }

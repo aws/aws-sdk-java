@@ -108,7 +108,7 @@ public class PerformanceMetrics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProperties() != null)
-            sb.append("Properties: " + getProperties());
+            sb.append("Properties: ").append(getProperties());
         sb.append("}");
         return sb.toString();
     }

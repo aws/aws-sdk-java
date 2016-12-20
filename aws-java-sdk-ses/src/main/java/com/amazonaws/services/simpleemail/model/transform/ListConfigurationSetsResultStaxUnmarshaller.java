@@ -45,6 +45,11 @@ public class ListConfigurationSetsResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ConfigurationSets", targetDepth)) {
+                    listConfigurationSetsResult.withConfigurationSets(new ArrayList<ConfigurationSet>());
+                    continue;
+                }
+
                 if (context.testExpression("ConfigurationSets/member", targetDepth)) {
                     listConfigurationSetsResult.withConfigurationSets(ConfigurationSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

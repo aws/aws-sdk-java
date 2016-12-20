@@ -87,9 +87,9 @@ public class Spend implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAmount() != null)
-            sb.append("Amount: " + getAmount() + ",");
+            sb.append("Amount: ").append(getAmount()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: ").append(getUnit());
         sb.append("}");
         return sb.toString();
     }

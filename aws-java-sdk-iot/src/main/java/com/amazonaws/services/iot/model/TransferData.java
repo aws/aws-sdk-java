@@ -264,15 +264,15 @@ public class TransferData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTransferMessage() != null)
-            sb.append("TransferMessage: " + getTransferMessage() + ",");
+            sb.append("TransferMessage: ").append(getTransferMessage()).append(",");
         if (getRejectReason() != null)
-            sb.append("RejectReason: " + getRejectReason() + ",");
+            sb.append("RejectReason: ").append(getRejectReason()).append(",");
         if (getTransferDate() != null)
-            sb.append("TransferDate: " + getTransferDate() + ",");
+            sb.append("TransferDate: ").append(getTransferDate()).append(",");
         if (getAcceptDate() != null)
-            sb.append("AcceptDate: " + getAcceptDate() + ",");
+            sb.append("AcceptDate: ").append(getAcceptDate()).append(",");
         if (getRejectDate() != null)
-            sb.append("RejectDate: " + getRejectDate());
+            sb.append("RejectDate: ").append(getRejectDate());
         sb.append("}");
         return sb.toString();
     }

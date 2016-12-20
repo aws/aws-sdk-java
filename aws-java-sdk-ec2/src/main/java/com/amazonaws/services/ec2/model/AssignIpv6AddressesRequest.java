@@ -233,11 +233,11 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getIpv6Addresses() != null)
-            sb.append("Ipv6Addresses: " + getIpv6Addresses() + ",");
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
         if (getIpv6AddressCount() != null)
-            sb.append("Ipv6AddressCount: " + getIpv6AddressCount());
+            sb.append("Ipv6AddressCount: ").append(getIpv6AddressCount());
         sb.append("}");
         return sb.toString();
     }

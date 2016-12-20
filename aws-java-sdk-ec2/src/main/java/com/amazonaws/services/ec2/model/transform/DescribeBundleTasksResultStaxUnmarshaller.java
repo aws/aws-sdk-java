@@ -45,6 +45,11 @@ public class DescribeBundleTasksResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("bundleInstanceTasksSet", targetDepth)) {
+                    describeBundleTasksResult.withBundleTasks(new ArrayList<BundleTask>());
+                    continue;
+                }
+
                 if (context.testExpression("bundleInstanceTasksSet/item", targetDepth)) {
                     describeBundleTasksResult.withBundleTasks(BundleTaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

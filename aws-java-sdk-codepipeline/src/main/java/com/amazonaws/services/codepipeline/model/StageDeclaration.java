@@ -232,11 +232,11 @@ public class StageDeclaration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getBlockers() != null)
-            sb.append("Blockers: " + getBlockers() + ",");
+            sb.append("Blockers: ").append(getBlockers()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions());
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }

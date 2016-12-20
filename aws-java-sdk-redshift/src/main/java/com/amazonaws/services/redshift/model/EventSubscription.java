@@ -820,27 +820,27 @@ public class EventSubscription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCustomerAwsId() != null)
-            sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");
+            sb.append("CustomerAwsId: ").append(getCustomerAwsId()).append(",");
         if (getCustSubscriptionId() != null)
-            sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");
+            sb.append("CustSubscriptionId: ").append(getCustSubscriptionId()).append(",");
         if (getSnsTopicArn() != null)
-            sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSubscriptionCreationTime() != null)
-            sb.append("SubscriptionCreationTime: " + getSubscriptionCreationTime() + ",");
+            sb.append("SubscriptionCreationTime: ").append(getSubscriptionCreationTime()).append(",");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType() + ",");
+            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getSourceIdsList() != null)
-            sb.append("SourceIdsList: " + getSourceIdsList() + ",");
+            sb.append("SourceIdsList: ").append(getSourceIdsList()).append(",");
         if (getEventCategoriesList() != null)
-            sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
+            sb.append("EventCategoriesList: ").append(getEventCategoriesList()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity() + ",");
+            sb.append("Severity: ").append(getSeverity()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

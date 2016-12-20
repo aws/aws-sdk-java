@@ -156,9 +156,9 @@ public class ListCertificatesResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificates() != null)
-            sb.append("Certificates: " + getCertificates() + ",");
+            sb.append("Certificates: ").append(getCertificates()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker());
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }

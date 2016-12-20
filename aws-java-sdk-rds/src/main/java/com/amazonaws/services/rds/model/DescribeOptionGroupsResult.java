@@ -166,9 +166,9 @@ public class DescribeOptionGroupsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptionGroupsList() != null)
-            sb.append("OptionGroupsList: " + getOptionGroupsList() + ",");
+            sb.append("OptionGroupsList: ").append(getOptionGroupsList()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

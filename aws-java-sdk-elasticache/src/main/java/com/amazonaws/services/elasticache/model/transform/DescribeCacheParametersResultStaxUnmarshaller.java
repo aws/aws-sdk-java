@@ -50,8 +50,18 @@ public class DescribeCacheParametersResultStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    describeCacheParametersResult.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/Parameter", targetDepth)) {
                     describeCacheParametersResult.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CacheNodeTypeSpecificParameters", targetDepth)) {
+                    describeCacheParametersResult.withCacheNodeTypeSpecificParameters(new ArrayList<CacheNodeTypeSpecificParameter>());
                     continue;
                 }
 

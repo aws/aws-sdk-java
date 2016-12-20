@@ -129,9 +129,9 @@ public class PartListElement implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRangeInBytes() != null)
-            sb.append("RangeInBytes: " + getRangeInBytes() + ",");
+            sb.append("RangeInBytes: ").append(getRangeInBytes()).append(",");
         if (getSHA256TreeHash() != null)
-            sb.append("SHA256TreeHash: " + getSHA256TreeHash());
+            sb.append("SHA256TreeHash: ").append(getSHA256TreeHash());
         sb.append("}");
         return sb.toString();
     }

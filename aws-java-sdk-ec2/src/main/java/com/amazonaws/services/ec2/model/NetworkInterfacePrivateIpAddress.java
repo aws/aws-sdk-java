@@ -230,13 +230,13 @@ public class NetworkInterfacePrivateIpAddress implements Serializable, Cloneable
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrivateDnsName() != null)
-            sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+            sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getPrimary() != null)
-            sb.append("Primary: " + getPrimary() + ",");
+            sb.append("Primary: ").append(getPrimary()).append(",");
         if (getAssociation() != null)
-            sb.append("Association: " + getAssociation());
+            sb.append("Association: ").append(getAssociation());
         sb.append("}");
         return sb.toString();
     }

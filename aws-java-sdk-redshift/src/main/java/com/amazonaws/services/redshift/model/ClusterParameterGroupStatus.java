@@ -246,11 +246,11 @@ public class ClusterParameterGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterGroupName() != null)
-            sb.append("ParameterGroupName: " + getParameterGroupName() + ",");
+            sb.append("ParameterGroupName: ").append(getParameterGroupName()).append(",");
         if (getParameterApplyStatus() != null)
-            sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ",");
+            sb.append("ParameterApplyStatus: ").append(getParameterApplyStatus()).append(",");
         if (getClusterParameterStatusList() != null)
-            sb.append("ClusterParameterStatusList: " + getClusterParameterStatusList());
+            sb.append("ClusterParameterStatusList: ").append(getClusterParameterStatusList());
         sb.append("}");
         return sb.toString();
     }

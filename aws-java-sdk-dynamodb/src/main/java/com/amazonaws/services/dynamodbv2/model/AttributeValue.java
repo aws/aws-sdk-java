@@ -710,25 +710,25 @@ public class AttributeValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS() != null)
-            sb.append("S: " + getS() + ",");
+            sb.append("S: ").append(getS()).append(",");
         if (getN() != null)
-            sb.append("N: " + getN() + ",");
+            sb.append("N: ").append(getN()).append(",");
         if (getB() != null)
-            sb.append("B: " + getB() + ",");
+            sb.append("B: ").append(getB()).append(",");
         if (getSS() != null)
-            sb.append("SS: " + getSS() + ",");
+            sb.append("SS: ").append(getSS()).append(",");
         if (getNS() != null)
-            sb.append("NS: " + getNS() + ",");
+            sb.append("NS: ").append(getNS()).append(",");
         if (getBS() != null)
-            sb.append("BS: " + getBS() + ",");
+            sb.append("BS: ").append(getBS()).append(",");
         if (getM() != null)
-            sb.append("M: " + getM() + ",");
+            sb.append("M: ").append(getM()).append(",");
         if (getL() != null)
-            sb.append("L: " + getL() + ",");
+            sb.append("L: ").append(getL()).append(",");
         if (getNULL() != null)
-            sb.append("NULL: " + getNULL() + ",");
+            sb.append("NULL: ").append(getNULL()).append(",");
         if (getBOOL() != null)
-            sb.append("BOOL: " + getBOOL());
+            sb.append("BOOL: ").append(getBOOL());
         sb.append("}");
         return sb.toString();
     }

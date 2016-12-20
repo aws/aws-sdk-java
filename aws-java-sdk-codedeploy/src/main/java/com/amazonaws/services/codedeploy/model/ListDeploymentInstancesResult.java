@@ -166,9 +166,9 @@ public class ListDeploymentInstancesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstancesList() != null)
-            sb.append("InstancesList: " + getInstancesList() + ",");
+            sb.append("InstancesList: ").append(getInstancesList()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

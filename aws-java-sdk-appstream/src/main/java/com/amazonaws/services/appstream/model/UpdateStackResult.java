@@ -78,7 +78,7 @@ public class UpdateStackResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStack() != null)
-            sb.append("Stack: " + getStack());
+            sb.append("Stack: ").append(getStack());
         sb.append("}");
         return sb.toString();
     }

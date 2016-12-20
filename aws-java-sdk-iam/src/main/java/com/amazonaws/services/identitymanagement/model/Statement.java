@@ -256,13 +256,13 @@ public class Statement implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourcePolicyId() != null)
-            sb.append("SourcePolicyId: " + getSourcePolicyId() + ",");
+            sb.append("SourcePolicyId: ").append(getSourcePolicyId()).append(",");
         if (getSourcePolicyType() != null)
-            sb.append("SourcePolicyType: " + getSourcePolicyType() + ",");
+            sb.append("SourcePolicyType: ").append(getSourcePolicyType()).append(",");
         if (getStartPosition() != null)
-            sb.append("StartPosition: " + getStartPosition() + ",");
+            sb.append("StartPosition: ").append(getStartPosition()).append(",");
         if (getEndPosition() != null)
-            sb.append("EndPosition: " + getEndPosition());
+            sb.append("EndPosition: ").append(getEndPosition());
         sb.append("}");
         return sb.toString();
     }

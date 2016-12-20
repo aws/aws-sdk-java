@@ -334,15 +334,15 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getExportType() != null)
-            sb.append("ExportType: " + getExportType() + ",");
+            sb.append("ExportType: ").append(getExportType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getAccepts() != null)
-            sb.append("Accepts: " + getAccepts());
+            sb.append("Accepts: ").append(getAccepts());
         sb.append("}");
         return sb.toString();
     }

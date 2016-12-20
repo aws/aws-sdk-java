@@ -1151,41 +1151,41 @@ public class ConfigurationItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getConfigurationItemCaptureTime() != null)
-            sb.append("ConfigurationItemCaptureTime: " + getConfigurationItemCaptureTime() + ",");
+            sb.append("ConfigurationItemCaptureTime: ").append(getConfigurationItemCaptureTime()).append(",");
         if (getConfigurationItemStatus() != null)
-            sb.append("ConfigurationItemStatus: " + getConfigurationItemStatus() + ",");
+            sb.append("ConfigurationItemStatus: ").append(getConfigurationItemStatus()).append(",");
         if (getConfigurationStateId() != null)
-            sb.append("ConfigurationStateId: " + getConfigurationStateId() + ",");
+            sb.append("ConfigurationStateId: ").append(getConfigurationStateId()).append(",");
         if (getConfigurationItemMD5Hash() != null)
-            sb.append("ConfigurationItemMD5Hash: " + getConfigurationItemMD5Hash() + ",");
+            sb.append("ConfigurationItemMD5Hash: ").append(getConfigurationItemMD5Hash()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getAwsRegion() != null)
-            sb.append("AwsRegion: " + getAwsRegion() + ",");
+            sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getResourceCreationTime() != null)
-            sb.append("ResourceCreationTime: " + getResourceCreationTime() + ",");
+            sb.append("ResourceCreationTime: ").append(getResourceCreationTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getRelatedEvents() != null)
-            sb.append("RelatedEvents: " + getRelatedEvents() + ",");
+            sb.append("RelatedEvents: ").append(getRelatedEvents()).append(",");
         if (getRelationships() != null)
-            sb.append("Relationships: " + getRelationships() + ",");
+            sb.append("Relationships: ").append(getRelationships()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: " + getConfiguration() + ",");
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getSupplementaryConfiguration() != null)
-            sb.append("SupplementaryConfiguration: " + getSupplementaryConfiguration());
+            sb.append("SupplementaryConfiguration: ").append(getSupplementaryConfiguration());
         sb.append("}");
         return sb.toString();
     }

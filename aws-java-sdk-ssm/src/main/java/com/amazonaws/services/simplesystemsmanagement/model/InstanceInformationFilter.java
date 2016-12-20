@@ -192,9 +192,9 @@ public class InstanceInformationFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValueSet() != null)
-            sb.append("ValueSet: " + getValueSet());
+            sb.append("ValueSet: ").append(getValueSet());
         sb.append("}");
         return sb.toString();
     }

@@ -61,17 +61,10 @@ public class GetSegmentVersionRequestMarshaller implements Marshaller<Request<Ge
 
         String uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/versions/{version}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (getSegmentVersionRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getSegmentVersionRequest.getApplicationId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{segment-id}",
-                (getSegmentVersionRequest.getSegmentId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSegmentVersionRequest.getSegmentId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace("{version}",
-                (getSegmentVersionRequest.getVersion() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSegmentVersionRequest.getVersion()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                getSegmentVersionRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "segment-id", getSegmentVersionRequest.getSegmentId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "version", getSegmentVersionRequest.getVersion());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

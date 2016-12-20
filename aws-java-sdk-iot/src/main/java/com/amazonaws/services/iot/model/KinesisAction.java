@@ -172,11 +172,11 @@ public class KinesisAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getPartitionKey() != null)
-            sb.append("PartitionKey: " + getPartitionKey());
+            sb.append("PartitionKey: ").append(getPartitionKey());
         sb.append("}");
         return sb.toString();
     }

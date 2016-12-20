@@ -114,7 +114,7 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentIds() != null)
-            sb.append("DeploymentIds: " + getDeploymentIds());
+            sb.append("DeploymentIds: ").append(getDeploymentIds());
         sb.append("}");
         return sb.toString();
     }

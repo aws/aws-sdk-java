@@ -553,25 +553,25 @@ public class Parameter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterName() != null)
-            sb.append("ParameterName: " + getParameterName() + ",");
+            sb.append("ParameterName: ").append(getParameterName()).append(",");
         if (getParameterValue() != null)
-            sb.append("ParameterValue: " + getParameterValue() + ",");
+            sb.append("ParameterValue: ").append(getParameterValue()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSource() != null)
-            sb.append("Source: " + getSource() + ",");
+            sb.append("Source: ").append(getSource()).append(",");
         if (getApplyType() != null)
-            sb.append("ApplyType: " + getApplyType() + ",");
+            sb.append("ApplyType: ").append(getApplyType()).append(",");
         if (getDataType() != null)
-            sb.append("DataType: " + getDataType() + ",");
+            sb.append("DataType: ").append(getDataType()).append(",");
         if (getAllowedValues() != null)
-            sb.append("AllowedValues: " + getAllowedValues() + ",");
+            sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getIsModifiable() != null)
-            sb.append("IsModifiable: " + getIsModifiable() + ",");
+            sb.append("IsModifiable: ").append(getIsModifiable()).append(",");
         if (getMinimumEngineVersion() != null)
-            sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ",");
+            sb.append("MinimumEngineVersion: ").append(getMinimumEngineVersion()).append(",");
         if (getApplyMethod() != null)
-            sb.append("ApplyMethod: " + getApplyMethod());
+            sb.append("ApplyMethod: ").append(getApplyMethod());
         sb.append("}");
         return sb.toString();
     }

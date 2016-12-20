@@ -325,17 +325,17 @@ public class RestoreStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCurrentRestoreRateInMegaBytesPerSecond() != null)
-            sb.append("CurrentRestoreRateInMegaBytesPerSecond: " + getCurrentRestoreRateInMegaBytesPerSecond() + ",");
+            sb.append("CurrentRestoreRateInMegaBytesPerSecond: ").append(getCurrentRestoreRateInMegaBytesPerSecond()).append(",");
         if (getSnapshotSizeInMegaBytes() != null)
-            sb.append("SnapshotSizeInMegaBytes: " + getSnapshotSizeInMegaBytes() + ",");
+            sb.append("SnapshotSizeInMegaBytes: ").append(getSnapshotSizeInMegaBytes()).append(",");
         if (getProgressInMegaBytes() != null)
-            sb.append("ProgressInMegaBytes: " + getProgressInMegaBytes() + ",");
+            sb.append("ProgressInMegaBytes: ").append(getProgressInMegaBytes()).append(",");
         if (getElapsedTimeInSeconds() != null)
-            sb.append("ElapsedTimeInSeconds: " + getElapsedTimeInSeconds() + ",");
+            sb.append("ElapsedTimeInSeconds: ").append(getElapsedTimeInSeconds()).append(",");
         if (getEstimatedTimeToCompletionInSeconds() != null)
-            sb.append("EstimatedTimeToCompletionInSeconds: " + getEstimatedTimeToCompletionInSeconds());
+            sb.append("EstimatedTimeToCompletionInSeconds: ").append(getEstimatedTimeToCompletionInSeconds());
         sb.append("}");
         return sb.toString();
     }

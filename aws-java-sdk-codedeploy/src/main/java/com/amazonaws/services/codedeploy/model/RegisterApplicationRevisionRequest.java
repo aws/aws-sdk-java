@@ -173,11 +173,11 @@ public class RegisterApplicationRevisionRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision());
+            sb.append("Revision: ").append(getRevision());
         sb.append("}");
         return sb.toString();
     }

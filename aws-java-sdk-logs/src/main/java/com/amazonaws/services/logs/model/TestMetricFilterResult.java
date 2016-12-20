@@ -111,7 +111,7 @@ public class TestMetricFilterResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMatches() != null)
-            sb.append("Matches: " + getMatches());
+            sb.append("Matches: ").append(getMatches());
         sb.append("}");
         return sb.toString();
     }

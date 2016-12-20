@@ -296,13 +296,13 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getUploadIdMarker() != null)
-            sb.append("UploadIdMarker: " + getUploadIdMarker());
+            sb.append("UploadIdMarker: ").append(getUploadIdMarker());
         sb.append("}");
         return sb.toString();
     }

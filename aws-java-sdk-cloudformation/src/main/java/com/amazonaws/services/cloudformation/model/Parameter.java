@@ -200,11 +200,11 @@ public class Parameter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getParameterKey() != null)
-            sb.append("ParameterKey: " + getParameterKey() + ",");
+            sb.append("ParameterKey: ").append(getParameterKey()).append(",");
         if (getParameterValue() != null)
-            sb.append("ParameterValue: " + getParameterValue() + ",");
+            sb.append("ParameterValue: ").append(getParameterValue()).append(",");
         if (getUsePreviousValue() != null)
-            sb.append("UsePreviousValue: " + getUsePreviousValue());
+            sb.append("UsePreviousValue: ").append(getUsePreviousValue());
         sb.append("}");
         return sb.toString();
     }

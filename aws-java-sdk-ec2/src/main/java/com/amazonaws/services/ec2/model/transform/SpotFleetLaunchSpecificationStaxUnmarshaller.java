@@ -55,6 +55,11 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    spotFleetLaunchSpecification.withSecurityGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     spotFleetLaunchSpecification.withSecurityGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -90,6 +95,11 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("blockDeviceMapping", targetDepth)) {
+                    spotFleetLaunchSpecification.withBlockDeviceMappings(new ArrayList<BlockDeviceMapping>());
+                    continue;
+                }
+
                 if (context.testExpression("blockDeviceMapping/item", targetDepth)) {
                     spotFleetLaunchSpecification.withBlockDeviceMappings(BlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -102,6 +112,11 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
 
                 if (context.testExpression("subnetId", targetDepth)) {
                     spotFleetLaunchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkInterfaceSet", targetDepth)) {
+                    spotFleetLaunchSpecification.withNetworkInterfaces(new ArrayList<InstanceNetworkInterfaceSpecification>());
                     continue;
                 }
 

@@ -82,6 +82,19 @@ public class ListConfigurationsRequestMarshaller implements Marshaller<Request<L
                 jsonGenerator.writeFieldName("nextToken").writeValue(listConfigurationsRequest.getNextToken());
             }
 
+            java.util.List<OrderByElement> orderByList = listConfigurationsRequest.getOrderBy();
+            if (orderByList != null) {
+                jsonGenerator.writeFieldName("orderBy");
+                jsonGenerator.writeStartArray();
+                for (OrderByElement orderByListValue : orderByList) {
+                    if (orderByListValue != null) {
+
+                        OrderByElementJsonMarshaller.getInstance().marshall(orderByListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();

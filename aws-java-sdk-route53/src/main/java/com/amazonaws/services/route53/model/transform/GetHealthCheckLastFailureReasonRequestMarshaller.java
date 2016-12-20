@@ -53,10 +53,8 @@ public class GetHealthCheckLastFailureReasonRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}/lastfailurereason";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{HealthCheckId}",
-                (getHealthCheckLastFailureReasonRequest.getHealthCheckId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getHealthCheckLastFailureReasonRequest.getHealthCheckId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "HealthCheckId",
+                getHealthCheckLastFailureReasonRequest.getHealthCheckId());
         request.setResourcePath(uriResourcePath);
 
         return request;

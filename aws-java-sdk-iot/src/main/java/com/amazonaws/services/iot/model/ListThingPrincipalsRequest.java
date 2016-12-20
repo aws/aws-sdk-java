@@ -81,7 +81,7 @@ public class ListThingPrincipalsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName());
+            sb.append("ThingName: ").append(getThingName());
         sb.append("}");
         return sb.toString();
     }

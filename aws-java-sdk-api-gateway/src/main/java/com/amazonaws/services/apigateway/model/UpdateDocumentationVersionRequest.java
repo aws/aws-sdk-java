@@ -207,11 +207,11 @@ public class UpdateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDocumentationVersion() != null)
-            sb.append("DocumentationVersion: " + getDocumentationVersion() + ",");
+            sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

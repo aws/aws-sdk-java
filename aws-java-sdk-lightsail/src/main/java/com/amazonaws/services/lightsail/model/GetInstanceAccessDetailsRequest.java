@@ -158,9 +158,9 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName() + ",");
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol());
+            sb.append("Protocol: ").append(getProtocol());
         sb.append("}");
         return sb.toString();
     }

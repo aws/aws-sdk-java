@@ -61,10 +61,8 @@ public class UpdateApnsChannelRequestMarshaller implements Marshaller<Request<Up
 
         String uriResourcePath = "/v1/apps/{application-id}/channels/apns";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (updateApnsChannelRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateApnsChannelRequest.getApplicationId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                updateApnsChannelRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         try {

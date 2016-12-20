@@ -158,9 +158,9 @@ public class UnassignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getUnassignedIpv6Addresses() != null)
-            sb.append("UnassignedIpv6Addresses: " + getUnassignedIpv6Addresses());
+            sb.append("UnassignedIpv6Addresses: ").append(getUnassignedIpv6Addresses());
         sb.append("}");
         return sb.toString();
     }

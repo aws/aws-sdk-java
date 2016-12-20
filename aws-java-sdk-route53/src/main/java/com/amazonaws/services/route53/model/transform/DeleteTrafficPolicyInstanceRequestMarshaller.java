@@ -53,10 +53,7 @@ public class DeleteTrafficPolicyInstanceRequestMarshaller implements
 
         String uriResourcePath = "/2013-04-01/trafficpolicyinstance/{Id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (deleteTrafficPolicyInstanceRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteTrafficPolicyInstanceRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteTrafficPolicyInstanceRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

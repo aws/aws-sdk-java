@@ -178,9 +178,9 @@ public class DescribeInstanceHealthRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances());
+            sb.append("Instances: ").append(getInstances());
         sb.append("}");
         return sb.toString();
     }

@@ -174,9 +174,9 @@ public class DescribeDBClusterSnapshotsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBClusterSnapshots() != null)
-            sb.append("DBClusterSnapshots: " + getDBClusterSnapshots());
+            sb.append("DBClusterSnapshots: ").append(getDBClusterSnapshots());
         sb.append("}");
         return sb.toString();
     }

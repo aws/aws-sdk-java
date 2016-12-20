@@ -521,15 +521,15 @@ public class BuildConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArtifactName() != null)
-            sb.append("ArtifactName: " + getArtifactName() + ",");
+            sb.append("ArtifactName: ").append(getArtifactName()).append(",");
         if (getCodeBuildServiceRole() != null)
-            sb.append("CodeBuildServiceRole: " + getCodeBuildServiceRole() + ",");
+            sb.append("CodeBuildServiceRole: ").append(getCodeBuildServiceRole()).append(",");
         if (getComputeType() != null)
-            sb.append("ComputeType: " + getComputeType() + ",");
+            sb.append("ComputeType: ").append(getComputeType()).append(",");
         if (getImage() != null)
-            sb.append("Image: " + getImage() + ",");
+            sb.append("Image: ").append(getImage()).append(",");
         if (getTimeoutInMinutes() != null)
-            sb.append("TimeoutInMinutes: " + getTimeoutInMinutes());
+            sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes());
         sb.append("}");
         return sb.toString();
     }

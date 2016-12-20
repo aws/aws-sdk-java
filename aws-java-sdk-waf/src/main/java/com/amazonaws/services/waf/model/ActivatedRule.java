@@ -369,11 +369,11 @@ public class ActivatedRule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPriority() != null)
-            sb.append("Priority: " + getPriority() + ",");
+            sb.append("Priority: ").append(getPriority()).append(",");
         if (getRuleId() != null)
-            sb.append("RuleId: " + getRuleId() + ",");
+            sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction());
+            sb.append("Action: ").append(getAction());
         sb.append("}");
         return sb.toString();
     }

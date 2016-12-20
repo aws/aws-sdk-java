@@ -160,9 +160,9 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getSnapshotDescription() != null)
-            sb.append("SnapshotDescription: " + getSnapshotDescription());
+            sb.append("SnapshotDescription: ").append(getSnapshotDescription());
         sb.append("}");
         return sb.toString();
     }

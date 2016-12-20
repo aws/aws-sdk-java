@@ -455,19 +455,19 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getLaterTime() != null)
-            sb.append("LaterTime: " + getLaterTime() + ",");
+            sb.append("LaterTime: ").append(getLaterTime()).append(",");
         if (getEarlierTime() != null)
-            sb.append("EarlierTime: " + getEarlierTime() + ",");
+            sb.append("EarlierTime: ").append(getEarlierTime()).append(",");
         if (getChronologicalOrder() != null)
-            sb.append("ChronologicalOrder: " + getChronologicalOrder() + ",");
+            sb.append("ChronologicalOrder: ").append(getChronologicalOrder()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

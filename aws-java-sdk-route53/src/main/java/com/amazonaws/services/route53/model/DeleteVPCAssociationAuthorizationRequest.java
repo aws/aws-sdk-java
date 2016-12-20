@@ -142,9 +142,9 @@ public class DeleteVPCAssociationAuthorizationRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getVPC() != null)
-            sb.append("VPC: " + getVPC());
+            sb.append("VPC: ").append(getVPC());
         sb.append("}");
         return sb.toString();
     }

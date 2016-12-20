@@ -88,7 +88,7 @@ public class DescribeStorediSCSIVolumesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStorediSCSIVolumes() != null)
-            sb.append("StorediSCSIVolumes: " + getStorediSCSIVolumes());
+            sb.append("StorediSCSIVolumes: ").append(getStorediSCSIVolumes());
         sb.append("}");
         return sb.toString();
     }

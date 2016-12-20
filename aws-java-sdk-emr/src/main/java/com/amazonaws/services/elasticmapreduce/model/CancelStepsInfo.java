@@ -138,11 +138,11 @@ public class CancelStepsInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStepId() != null)
-            sb.append("StepId: " + getStepId() + ",");
+            sb.append("StepId: ").append(getStepId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getReason() != null)
-            sb.append("Reason: " + getReason());
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }

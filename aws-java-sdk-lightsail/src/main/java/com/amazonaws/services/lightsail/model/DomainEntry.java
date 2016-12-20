@@ -285,15 +285,15 @@ public class DomainEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getTarget() != null)
-            sb.append("Target: " + getTarget() + ",");
+            sb.append("Target: ").append(getTarget()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions());
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }

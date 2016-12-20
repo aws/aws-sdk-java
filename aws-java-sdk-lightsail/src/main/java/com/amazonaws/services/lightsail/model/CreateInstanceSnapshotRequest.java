@@ -125,9 +125,9 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceSnapshotName() != null)
-            sb.append("InstanceSnapshotName: " + getInstanceSnapshotName() + ",");
+            sb.append("InstanceSnapshotName: ").append(getInstanceSnapshotName()).append(",");
         if (getInstanceName() != null)
-            sb.append("InstanceName: " + getInstanceName());
+            sb.append("InstanceName: ").append(getInstanceName());
         sb.append("}");
         return sb.toString();
     }

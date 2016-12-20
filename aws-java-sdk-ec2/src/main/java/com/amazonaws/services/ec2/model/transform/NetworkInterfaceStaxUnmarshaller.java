@@ -110,6 +110,11 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    networkInterface.withGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     networkInterface.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -125,13 +130,28 @@ public class NetworkInterfaceStaxUnmarshaller implements Unmarshaller<NetworkInt
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    networkInterface.withTagSet(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     networkInterface.withTagSet(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("privateIpAddressesSet", targetDepth)) {
+                    networkInterface.withPrivateIpAddresses(new ArrayList<NetworkInterfacePrivateIpAddress>());
+                    continue;
+                }
+
                 if (context.testExpression("privateIpAddressesSet/item", targetDepth)) {
                     networkInterface.withPrivateIpAddresses(NetworkInterfacePrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6AddressesSet", targetDepth)) {
+                    networkInterface.withIpv6Addresses(new ArrayList<NetworkInterfaceIpv6Address>());
                     continue;
                 }
 

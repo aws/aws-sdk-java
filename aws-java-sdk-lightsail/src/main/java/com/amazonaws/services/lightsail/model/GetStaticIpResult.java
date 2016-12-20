@@ -78,7 +78,7 @@ public class GetStaticIpResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStaticIp() != null)
-            sb.append("StaticIp: " + getStaticIp());
+            sb.append("StaticIp: ").append(getStaticIp());
         sb.append("}");
         return sb.toString();
     }

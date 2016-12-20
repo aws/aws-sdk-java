@@ -127,9 +127,9 @@ public class AttachThingPrincipalRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getPrincipal() != null)
-            sb.append("Principal: " + getPrincipal());
+            sb.append("Principal: ").append(getPrincipal());
         sb.append("}");
         return sb.toString();
     }

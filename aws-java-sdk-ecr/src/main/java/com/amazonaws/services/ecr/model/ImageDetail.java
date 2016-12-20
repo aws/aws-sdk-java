@@ -390,17 +390,17 @@ public class ImageDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageDigest() != null)
-            sb.append("ImageDigest: " + getImageDigest() + ",");
+            sb.append("ImageDigest: ").append(getImageDigest()).append(",");
         if (getImageTags() != null)
-            sb.append("ImageTags: " + getImageTags() + ",");
+            sb.append("ImageTags: ").append(getImageTags()).append(",");
         if (getImageSizeInBytes() != null)
-            sb.append("ImageSizeInBytes: " + getImageSizeInBytes() + ",");
+            sb.append("ImageSizeInBytes: ").append(getImageSizeInBytes()).append(",");
         if (getImagePushedAt() != null)
-            sb.append("ImagePushedAt: " + getImagePushedAt());
+            sb.append("ImagePushedAt: ").append(getImagePushedAt());
         sb.append("}");
         return sb.toString();
     }

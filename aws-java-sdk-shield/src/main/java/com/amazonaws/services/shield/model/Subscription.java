@@ -126,9 +126,9 @@ public class Subscription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getTimeCommitmentInSeconds() != null)
-            sb.append("TimeCommitmentInSeconds: " + getTimeCommitmentInSeconds());
+            sb.append("TimeCommitmentInSeconds: ").append(getTimeCommitmentInSeconds());
         sb.append("}");
         return sb.toString();
     }

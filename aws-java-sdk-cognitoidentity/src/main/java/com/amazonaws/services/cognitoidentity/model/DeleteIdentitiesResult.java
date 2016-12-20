@@ -110,7 +110,7 @@ public class DeleteIdentitiesResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnprocessedIdentityIds() != null)
-            sb.append("UnprocessedIdentityIds: " + getUnprocessedIdentityIds());
+            sb.append("UnprocessedIdentityIds: ").append(getUnprocessedIdentityIds());
         sb.append("}");
         return sb.toString();
     }

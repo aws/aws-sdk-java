@@ -175,9 +175,9 @@ public class DescribeFindingsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFindings() != null)
-            sb.append("Findings: " + getFindings() + ",");
+            sb.append("Findings: ").append(getFindings()).append(",");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

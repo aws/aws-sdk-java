@@ -61,7 +61,7 @@ public class GetProjectResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProject() != null)
-            sb.append("Project: " + getProject());
+            sb.append("Project: ").append(getProject());
         sb.append("}");
         return sb.toString();
     }

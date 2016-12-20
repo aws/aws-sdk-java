@@ -376,7 +376,7 @@ public class ProcessType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProcessName() != null)
-            sb.append("ProcessName: " + getProcessName());
+            sb.append("ProcessName: ").append(getProcessName());
         sb.append("}");
         return sb.toString();
     }

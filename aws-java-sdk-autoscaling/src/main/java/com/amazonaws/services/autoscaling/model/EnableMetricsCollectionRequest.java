@@ -580,11 +580,11 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getMetrics() != null)
-            sb.append("Metrics: " + getMetrics() + ",");
+            sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getGranularity() != null)
-            sb.append("Granularity: " + getGranularity());
+            sb.append("Granularity: ").append(getGranularity());
         sb.append("}");
         return sb.toString();
     }

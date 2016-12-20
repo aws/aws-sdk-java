@@ -124,9 +124,9 @@ public class StateExitedEventDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getOutput() != null)
-            sb.append("Output: " + getOutput());
+            sb.append("Output: ").append(getOutput());
         sb.append("}");
         return sb.toString();
     }

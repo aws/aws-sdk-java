@@ -433,11 +433,11 @@ public class SourceDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventSource() != null)
-            sb.append("EventSource: " + getEventSource() + ",");
+            sb.append("EventSource: ").append(getEventSource()).append(",");
         if (getMessageType() != null)
-            sb.append("MessageType: " + getMessageType() + ",");
+            sb.append("MessageType: ").append(getMessageType()).append(",");
         if (getMaximumExecutionFrequency() != null)
-            sb.append("MaximumExecutionFrequency: " + getMaximumExecutionFrequency());
+            sb.append("MaximumExecutionFrequency: ").append(getMaximumExecutionFrequency());
         sb.append("}");
         return sb.toString();
     }

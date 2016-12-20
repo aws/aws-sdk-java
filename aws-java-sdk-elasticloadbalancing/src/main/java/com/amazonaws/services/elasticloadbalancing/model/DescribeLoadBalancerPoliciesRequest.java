@@ -160,9 +160,9 @@ public class DescribeLoadBalancerPoliciesRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getPolicyNames() != null)
-            sb.append("PolicyNames: " + getPolicyNames());
+            sb.append("PolicyNames: ").append(getPolicyNames());
         sb.append("}");
         return sb.toString();
     }

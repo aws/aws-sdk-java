@@ -83,7 +83,7 @@ public class DescribeRuntimeConfigurationResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuntimeConfiguration() != null)
-            sb.append("RuntimeConfiguration: " + getRuntimeConfiguration());
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration());
         sb.append("}");
         return sb.toString();
     }

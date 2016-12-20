@@ -484,23 +484,23 @@ public class DirectoryLimits implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudOnlyDirectoriesLimit() != null)
-            sb.append("CloudOnlyDirectoriesLimit: " + getCloudOnlyDirectoriesLimit() + ",");
+            sb.append("CloudOnlyDirectoriesLimit: ").append(getCloudOnlyDirectoriesLimit()).append(",");
         if (getCloudOnlyDirectoriesCurrentCount() != null)
-            sb.append("CloudOnlyDirectoriesCurrentCount: " + getCloudOnlyDirectoriesCurrentCount() + ",");
+            sb.append("CloudOnlyDirectoriesCurrentCount: ").append(getCloudOnlyDirectoriesCurrentCount()).append(",");
         if (getCloudOnlyDirectoriesLimitReached() != null)
-            sb.append("CloudOnlyDirectoriesLimitReached: " + getCloudOnlyDirectoriesLimitReached() + ",");
+            sb.append("CloudOnlyDirectoriesLimitReached: ").append(getCloudOnlyDirectoriesLimitReached()).append(",");
         if (getCloudOnlyMicrosoftADLimit() != null)
-            sb.append("CloudOnlyMicrosoftADLimit: " + getCloudOnlyMicrosoftADLimit() + ",");
+            sb.append("CloudOnlyMicrosoftADLimit: ").append(getCloudOnlyMicrosoftADLimit()).append(",");
         if (getCloudOnlyMicrosoftADCurrentCount() != null)
-            sb.append("CloudOnlyMicrosoftADCurrentCount: " + getCloudOnlyMicrosoftADCurrentCount() + ",");
+            sb.append("CloudOnlyMicrosoftADCurrentCount: ").append(getCloudOnlyMicrosoftADCurrentCount()).append(",");
         if (getCloudOnlyMicrosoftADLimitReached() != null)
-            sb.append("CloudOnlyMicrosoftADLimitReached: " + getCloudOnlyMicrosoftADLimitReached() + ",");
+            sb.append("CloudOnlyMicrosoftADLimitReached: ").append(getCloudOnlyMicrosoftADLimitReached()).append(",");
         if (getConnectedDirectoriesLimit() != null)
-            sb.append("ConnectedDirectoriesLimit: " + getConnectedDirectoriesLimit() + ",");
+            sb.append("ConnectedDirectoriesLimit: ").append(getConnectedDirectoriesLimit()).append(",");
         if (getConnectedDirectoriesCurrentCount() != null)
-            sb.append("ConnectedDirectoriesCurrentCount: " + getConnectedDirectoriesCurrentCount() + ",");
+            sb.append("ConnectedDirectoriesCurrentCount: ").append(getConnectedDirectoriesCurrentCount()).append(",");
         if (getConnectedDirectoriesLimitReached() != null)
-            sb.append("ConnectedDirectoriesLimitReached: " + getConnectedDirectoriesLimitReached());
+            sb.append("ConnectedDirectoriesLimitReached: ").append(getConnectedDirectoriesLimitReached());
         sb.append("}");
         return sb.toString();
     }

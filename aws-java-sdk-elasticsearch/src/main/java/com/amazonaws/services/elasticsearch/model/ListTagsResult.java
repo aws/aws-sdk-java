@@ -110,7 +110,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTagList() != null)
-            sb.append("TagList: " + getTagList());
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }

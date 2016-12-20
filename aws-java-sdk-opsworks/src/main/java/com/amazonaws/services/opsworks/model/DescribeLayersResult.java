@@ -113,7 +113,7 @@ public class DescribeLayersResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayers() != null)
-            sb.append("Layers: " + getLayers());
+            sb.append("Layers: ").append(getLayers());
         sb.append("}");
         return sb.toString();
     }

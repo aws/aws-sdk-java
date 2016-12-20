@@ -311,15 +311,15 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: " + getSourceDestCheck() + ",");
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
         if (getGroups() != null)
-            sb.append("Groups: " + getGroups() + ",");
+            sb.append("Groups: ").append(getGroups()).append(",");
         if (getAttachment() != null)
-            sb.append("Attachment: " + getAttachment());
+            sb.append("Attachment: ").append(getAttachment());
         sb.append("}");
         return sb.toString();
     }

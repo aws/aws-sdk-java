@@ -126,9 +126,9 @@ public class EventAggregate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAggregateValue() != null)
-            sb.append("AggregateValue: " + getAggregateValue() + ",");
+            sb.append("AggregateValue: ").append(getAggregateValue()).append(",");
         if (getCount() != null)
-            sb.append("Count: " + getCount());
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }

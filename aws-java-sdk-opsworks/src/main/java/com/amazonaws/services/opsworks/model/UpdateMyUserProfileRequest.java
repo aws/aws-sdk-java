@@ -79,7 +79,7 @@ public class UpdateMyUserProfileRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSshPublicKey() != null)
-            sb.append("SshPublicKey: " + getSshPublicKey());
+            sb.append("SshPublicKey: ").append(getSshPublicKey());
         sb.append("}");
         return sb.toString();
     }

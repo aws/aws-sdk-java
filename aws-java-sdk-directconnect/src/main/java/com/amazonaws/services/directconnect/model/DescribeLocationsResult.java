@@ -119,7 +119,7 @@ public class DescribeLocationsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLocations() != null)
-            sb.append("Locations: " + getLocations());
+            sb.append("Locations: ").append(getLocations());
         sb.append("}");
         return sb.toString();
     }

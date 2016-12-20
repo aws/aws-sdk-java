@@ -269,15 +269,15 @@ public class OutputDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutputId() != null)
-            sb.append("OutputId: " + getOutputId() + ",");
+            sb.append("OutputId: ").append(getOutputId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getKinesisStreamsOutputDescription() != null)
-            sb.append("KinesisStreamsOutputDescription: " + getKinesisStreamsOutputDescription() + ",");
+            sb.append("KinesisStreamsOutputDescription: ").append(getKinesisStreamsOutputDescription()).append(",");
         if (getKinesisFirehoseOutputDescription() != null)
-            sb.append("KinesisFirehoseOutputDescription: " + getKinesisFirehoseOutputDescription() + ",");
+            sb.append("KinesisFirehoseOutputDescription: ").append(getKinesisFirehoseOutputDescription()).append(",");
         if (getDestinationSchema() != null)
-            sb.append("DestinationSchema: " + getDestinationSchema());
+            sb.append("DestinationSchema: ").append(getDestinationSchema());
         sb.append("}");
         return sb.toString();
     }

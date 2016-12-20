@@ -81,7 +81,7 @@ public class DescribeBuildRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuildId() != null)
-            sb.append("BuildId: " + getBuildId());
+            sb.append("BuildId: ").append(getBuildId());
         sb.append("}");
         return sb.toString();
     }

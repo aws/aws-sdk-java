@@ -159,9 +159,9 @@ public class LoggingOptionsPayload implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getLogLevel() != null)
-            sb.append("LogLevel: " + getLogLevel());
+            sb.append("LogLevel: ").append(getLogLevel());
         sb.append("}");
         return sb.toString();
     }

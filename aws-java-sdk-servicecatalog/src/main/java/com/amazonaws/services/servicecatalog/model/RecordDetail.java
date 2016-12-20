@@ -725,31 +725,31 @@ public class RecordDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordId() != null)
-            sb.append("RecordId: " + getRecordId() + ",");
+            sb.append("RecordId: ").append(getRecordId()).append(",");
         if (getProvisionedProductName() != null)
-            sb.append("ProvisionedProductName: " + getProvisionedProductName() + ",");
+            sb.append("ProvisionedProductName: ").append(getProvisionedProductName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: " + getCreatedTime() + ",");
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getUpdatedTime() != null)
-            sb.append("UpdatedTime: " + getUpdatedTime() + ",");
+            sb.append("UpdatedTime: ").append(getUpdatedTime()).append(",");
         if (getProvisionedProductType() != null)
-            sb.append("ProvisionedProductType: " + getProvisionedProductType() + ",");
+            sb.append("ProvisionedProductType: ").append(getProvisionedProductType()).append(",");
         if (getRecordType() != null)
-            sb.append("RecordType: " + getRecordType() + ",");
+            sb.append("RecordType: ").append(getRecordType()).append(",");
         if (getProvisionedProductId() != null)
-            sb.append("ProvisionedProductId: " + getProvisionedProductId() + ",");
+            sb.append("ProvisionedProductId: ").append(getProvisionedProductId()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: " + getProductId() + ",");
+            sb.append("ProductId: ").append(getProductId()).append(",");
         if (getProvisioningArtifactId() != null)
-            sb.append("ProvisioningArtifactId: " + getProvisioningArtifactId() + ",");
+            sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
         if (getPathId() != null)
-            sb.append("PathId: " + getPathId() + ",");
+            sb.append("PathId: ").append(getPathId()).append(",");
         if (getRecordErrors() != null)
-            sb.append("RecordErrors: " + getRecordErrors() + ",");
+            sb.append("RecordErrors: ").append(getRecordErrors()).append(",");
         if (getRecordTags() != null)
-            sb.append("RecordTags: " + getRecordTags());
+            sb.append("RecordTags: ").append(getRecordTags());
         sb.append("}");
         return sb.toString();
     }

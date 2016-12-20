@@ -163,9 +163,9 @@ public class ListVaultsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVaultList() != null)
-            sb.append("VaultList: " + getVaultList() + ",");
+            sb.append("VaultList: ").append(getVaultList()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

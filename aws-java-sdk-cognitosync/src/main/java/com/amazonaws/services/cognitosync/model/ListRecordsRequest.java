@@ -312,19 +312,19 @@ public class ListRecordsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDatasetName() != null)
-            sb.append("DatasetName: " + getDatasetName() + ",");
+            sb.append("DatasetName: ").append(getDatasetName()).append(",");
         if (getLastSyncCount() != null)
-            sb.append("LastSyncCount: " + getLastSyncCount() + ",");
+            sb.append("LastSyncCount: ").append(getLastSyncCount()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getSyncSessionToken() != null)
-            sb.append("SyncSessionToken: " + getSyncSessionToken());
+            sb.append("SyncSessionToken: ").append(getSyncSessionToken());
         sb.append("}");
         return sb.toString();
     }

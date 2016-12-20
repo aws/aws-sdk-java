@@ -140,9 +140,9 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId());
+            sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
         return sb.toString();
     }

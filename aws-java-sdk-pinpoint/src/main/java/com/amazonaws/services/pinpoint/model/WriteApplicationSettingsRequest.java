@@ -122,9 +122,9 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLimits() != null)
-            sb.append("Limits: " + getLimits() + ",");
+            sb.append("Limits: ").append(getLimits()).append(",");
         if (getQuietTime() != null)
-            sb.append("QuietTime: " + getQuietTime());
+            sb.append("QuietTime: ").append(getQuietTime());
         sb.append("}");
         return sb.toString();
     }

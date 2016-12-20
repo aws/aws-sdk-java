@@ -87,7 +87,7 @@ public class EstimateTemplateCostResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl());
+            sb.append("Url: ").append(getUrl());
         sb.append("}");
         return sb.toString();
     }

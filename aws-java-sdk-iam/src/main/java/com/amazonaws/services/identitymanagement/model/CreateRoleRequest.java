@@ -323,11 +323,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getAssumeRolePolicyDocument() != null)
-            sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument());
+            sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument());
         sb.append("}");
         return sb.toString();
     }

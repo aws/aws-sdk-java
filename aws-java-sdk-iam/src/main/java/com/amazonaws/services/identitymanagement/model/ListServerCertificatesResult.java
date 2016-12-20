@@ -260,11 +260,11 @@ public class ListServerCertificatesResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificateMetadataList() != null)
-            sb.append("ServerCertificateMetadataList: " + getServerCertificateMetadataList() + ",");
+            sb.append("ServerCertificateMetadataList: ").append(getServerCertificateMetadataList()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

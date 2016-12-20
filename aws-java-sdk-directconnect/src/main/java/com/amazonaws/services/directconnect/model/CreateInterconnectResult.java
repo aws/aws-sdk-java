@@ -280,19 +280,19 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInterconnectId() != null)
-            sb.append("InterconnectId: " + getInterconnectId() + ",");
+            sb.append("InterconnectId: ").append(getInterconnectId()).append(",");
         if (getInterconnectName() != null)
-            sb.append("InterconnectName: " + getInterconnectName() + ",");
+            sb.append("InterconnectName: ").append(getInterconnectName()).append(",");
         if (getInterconnectState() != null)
-            sb.append("InterconnectState: " + getInterconnectState() + ",");
+            sb.append("InterconnectState: ").append(getInterconnectState()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth() + ",");
+            sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getLoaIssueTime() != null)
-            sb.append("LoaIssueTime: " + getLoaIssueTime());
+            sb.append("LoaIssueTime: ").append(getLoaIssueTime());
         sb.append("}");
         return sb.toString();
     }

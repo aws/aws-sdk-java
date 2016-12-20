@@ -65,6 +65,11 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpc.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     vpc.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -77,6 +82,11 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
 
                 if (context.testExpression("isDefault", targetDepth)) {
                     vpc.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6CidrBlockAssociationSet", targetDepth)) {
+                    vpc.withIpv6CidrBlockAssociationSet(new ArrayList<VpcIpv6CidrBlockAssociation>());
                     continue;
                 }
 

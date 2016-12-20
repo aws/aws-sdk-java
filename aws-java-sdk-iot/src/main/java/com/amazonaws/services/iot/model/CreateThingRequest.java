@@ -192,11 +192,11 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingName() != null)
-            sb.append("ThingName: " + getThingName() + ",");
+            sb.append("ThingName: ").append(getThingName()).append(",");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName() + ",");
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getAttributePayload() != null)
-            sb.append("AttributePayload: " + getAttributePayload());
+            sb.append("AttributePayload: ").append(getAttributePayload());
         sb.append("}");
         return sb.toString();
     }

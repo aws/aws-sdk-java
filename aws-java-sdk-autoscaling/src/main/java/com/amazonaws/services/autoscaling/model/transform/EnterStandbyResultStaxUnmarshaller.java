@@ -45,6 +45,11 @@ public class EnterStandbyResultStaxUnmarshaller implements Unmarshaller<EnterSta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Activities", targetDepth)) {
+                    enterStandbyResult.withActivities(new ArrayList<Activity>());
+                    continue;
+                }
+
                 if (context.testExpression("Activities/member", targetDepth)) {
                     enterStandbyResult.withActivities(ActivityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

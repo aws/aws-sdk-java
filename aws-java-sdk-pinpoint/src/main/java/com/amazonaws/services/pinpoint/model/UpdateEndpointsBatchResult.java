@@ -59,7 +59,7 @@ public class UpdateEndpointsBatchResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageBody() != null)
-            sb.append("MessageBody: " + getMessageBody());
+            sb.append("MessageBody: ").append(getMessageBody());
         sb.append("}");
         return sb.toString();
     }

@@ -98,7 +98,7 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthCode() != null)
-            sb.append("AuthCode: " + getAuthCode());
+            sb.append("AuthCode: ").append(getAuthCode());
         sb.append("}");
         return sb.toString();
     }

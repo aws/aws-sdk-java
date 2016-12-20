@@ -195,11 +195,11 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getCompatible() != null)
-            sb.append("Compatible: " + getCompatible() + ",");
+            sb.append("Compatible: ").append(getCompatible()).append(",");
         if (getIncompatibilityMessages() != null)
-            sb.append("IncompatibilityMessages: " + getIncompatibilityMessages());
+            sb.append("IncompatibilityMessages: ").append(getIncompatibilityMessages());
         sb.append("}");
         return sb.toString();
     }

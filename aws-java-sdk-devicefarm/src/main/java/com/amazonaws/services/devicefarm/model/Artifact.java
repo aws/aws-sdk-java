@@ -1615,15 +1615,15 @@ public class Artifact implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getExtension() != null)
-            sb.append("Extension: " + getExtension() + ",");
+            sb.append("Extension: ").append(getExtension()).append(",");
         if (getUrl() != null)
-            sb.append("Url: " + getUrl());
+            sb.append("Url: ").append(getUrl());
         sb.append("}");
         return sb.toString();
     }

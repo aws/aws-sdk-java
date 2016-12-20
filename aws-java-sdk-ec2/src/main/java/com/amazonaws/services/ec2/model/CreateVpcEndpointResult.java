@@ -127,9 +127,9 @@ public class CreateVpcEndpointResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcEndpoint() != null)
-            sb.append("VpcEndpoint: " + getVpcEndpoint() + ",");
+            sb.append("VpcEndpoint: ").append(getVpcEndpoint()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

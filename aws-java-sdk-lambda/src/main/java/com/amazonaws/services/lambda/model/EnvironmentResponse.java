@@ -136,9 +136,9 @@ public class EnvironmentResponse implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVariables() != null)
-            sb.append("Variables: " + getVariables() + ",");
+            sb.append("Variables: ").append(getVariables()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError());
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }

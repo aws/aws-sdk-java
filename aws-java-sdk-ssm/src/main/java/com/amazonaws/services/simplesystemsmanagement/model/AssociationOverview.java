@@ -203,11 +203,11 @@ public class AssociationOverview implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDetailedStatus() != null)
-            sb.append("DetailedStatus: " + getDetailedStatus() + ",");
+            sb.append("DetailedStatus: ").append(getDetailedStatus()).append(",");
         if (getAssociationStatusAggregatedCount() != null)
-            sb.append("AssociationStatusAggregatedCount: " + getAssociationStatusAggregatedCount());
+            sb.append("AssociationStatusAggregatedCount: ").append(getAssociationStatusAggregatedCount());
         sb.append("}");
         return sb.toString();
     }

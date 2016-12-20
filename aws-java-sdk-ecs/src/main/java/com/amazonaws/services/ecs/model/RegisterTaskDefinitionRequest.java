@@ -554,15 +554,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFamily() != null)
-            sb.append("Family: " + getFamily() + ",");
+            sb.append("Family: ").append(getFamily()).append(",");
         if (getTaskRoleArn() != null)
-            sb.append("TaskRoleArn: " + getTaskRoleArn() + ",");
+            sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
         if (getNetworkMode() != null)
-            sb.append("NetworkMode: " + getNetworkMode() + ",");
+            sb.append("NetworkMode: ").append(getNetworkMode()).append(",");
         if (getContainerDefinitions() != null)
-            sb.append("ContainerDefinitions: " + getContainerDefinitions() + ",");
+            sb.append("ContainerDefinitions: ").append(getContainerDefinitions()).append(",");
         if (getVolumes() != null)
-            sb.append("Volumes: " + getVolumes());
+            sb.append("Volumes: ").append(getVolumes());
         sb.append("}");
         return sb.toString();
     }

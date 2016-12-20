@@ -118,11 +118,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getBandwidth() != null)
-            sb.append("Bandwidth: " + getBandwidth() + ",");
+            sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: " + getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName());
         sb.append("}");
         return sb.toString();
     }

@@ -231,13 +231,13 @@ public class ListPolicyPrincipalsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getAscendingOrder() != null)
-            sb.append("AscendingOrder: " + getAscendingOrder());
+            sb.append("AscendingOrder: ").append(getAscendingOrder());
         sb.append("}");
         return sb.toString();
     }

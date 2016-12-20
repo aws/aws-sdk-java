@@ -108,7 +108,7 @@ public class AllocateStaticIpResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperations() != null)
-            sb.append("Operations: " + getOperations());
+            sb.append("Operations: ").append(getOperations());
         sb.append("}");
         return sb.toString();
     }

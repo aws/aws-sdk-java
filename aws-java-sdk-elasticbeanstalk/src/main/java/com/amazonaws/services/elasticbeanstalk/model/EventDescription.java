@@ -435,21 +435,21 @@ public class EventDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventDate() != null)
-            sb.append("EventDate: " + getEventDate() + ",");
+            sb.append("EventDate: ").append(getEventDate()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getVersionLabel() != null)
-            sb.append("VersionLabel: " + getVersionLabel() + ",");
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getTemplateName() != null)
-            sb.append("TemplateName: " + getTemplateName() + ",");
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: " + getRequestId() + ",");
+            sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: " + getSeverity());
+            sb.append("Severity: ").append(getSeverity());
         sb.append("}");
         return sb.toString();
     }

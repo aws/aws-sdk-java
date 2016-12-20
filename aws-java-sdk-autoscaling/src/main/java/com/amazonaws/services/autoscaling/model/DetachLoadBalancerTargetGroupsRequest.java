@@ -158,9 +158,9 @@ public class DetachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getTargetGroupARNs() != null)
-            sb.append("TargetGroupARNs: " + getTargetGroupARNs());
+            sb.append("TargetGroupARNs: ").append(getTargetGroupARNs());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class DescribeAlarmsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricAlarms() != null)
-            sb.append("MetricAlarms: " + getMetricAlarms() + ",");
+            sb.append("MetricAlarms: ").append(getMetricAlarms()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

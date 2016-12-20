@@ -720,29 +720,29 @@ public class CreateStageResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getClientCertificateId() != null)
-            sb.append("ClientCertificateId: " + getClientCertificateId() + ",");
+            sb.append("ClientCertificateId: ").append(getClientCertificateId()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getCacheClusterEnabled() != null)
-            sb.append("CacheClusterEnabled: " + getCacheClusterEnabled() + ",");
+            sb.append("CacheClusterEnabled: ").append(getCacheClusterEnabled()).append(",");
         if (getCacheClusterSize() != null)
-            sb.append("CacheClusterSize: " + getCacheClusterSize() + ",");
+            sb.append("CacheClusterSize: ").append(getCacheClusterSize()).append(",");
         if (getCacheClusterStatus() != null)
-            sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ",");
+            sb.append("CacheClusterStatus: ").append(getCacheClusterStatus()).append(",");
         if (getMethodSettings() != null)
-            sb.append("MethodSettings: " + getMethodSettings() + ",");
+            sb.append("MethodSettings: ").append(getMethodSettings()).append(",");
         if (getVariables() != null)
-            sb.append("Variables: " + getVariables() + ",");
+            sb.append("Variables: ").append(getVariables()).append(",");
         if (getDocumentationVersion() != null)
-            sb.append("DocumentationVersion: " + getDocumentationVersion() + ",");
+            sb.append("DocumentationVersion: ").append(getDocumentationVersion()).append(",");
         if (getCreatedDate() != null)
-            sb.append("CreatedDate: " + getCreatedDate() + ",");
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getLastUpdatedDate() != null)
-            sb.append("LastUpdatedDate: " + getLastUpdatedDate());
+            sb.append("LastUpdatedDate: ").append(getLastUpdatedDate());
         sb.append("}");
         return sb.toString();
     }

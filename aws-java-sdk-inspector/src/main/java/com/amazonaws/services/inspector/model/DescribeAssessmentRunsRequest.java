@@ -109,7 +109,7 @@ public class DescribeAssessmentRunsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunArns() != null)
-            sb.append("AssessmentRunArns: " + getAssessmentRunArns());
+            sb.append("AssessmentRunArns: ").append(getAssessmentRunArns());
         sb.append("}");
         return sb.toString();
     }

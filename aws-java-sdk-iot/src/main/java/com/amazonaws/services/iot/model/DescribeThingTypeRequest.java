@@ -81,7 +81,7 @@ public class DescribeThingTypeRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName());
+            sb.append("ThingTypeName: ").append(getThingTypeName());
         sb.append("}");
         return sb.toString();
     }

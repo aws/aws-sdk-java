@@ -319,8 +319,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public BulkPublishResult bulkPublish(BulkPublishRequest bulkPublishRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(bulkPublishRequest.getIdentityPoolId()), "IdentityPoolId");
-
         ExecutionContext executionContext = createExecutionContext(bulkPublishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -381,10 +379,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public DeleteDatasetResult deleteDataset(DeleteDatasetRequest deleteDatasetRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDatasetRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDatasetRequest.getIdentityId()), "IdentityId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteDatasetRequest.getDatasetName()), "DatasetName");
-
         ExecutionContext executionContext = createExecutionContext(deleteDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -442,10 +436,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public DescribeDatasetResult describeDataset(DescribeDatasetRequest describeDatasetRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeDatasetRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeDatasetRequest.getIdentityId()), "IdentityId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeDatasetRequest.getDatasetName()), "DatasetName");
-
         ExecutionContext executionContext = createExecutionContext(describeDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -500,8 +490,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public DescribeIdentityPoolUsageResult describeIdentityPoolUsage(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeIdentityPoolUsageRequest.getIdentityPoolId()), "IdentityPoolId");
 
         ExecutionContext executionContext = createExecutionContext(describeIdentityPoolUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -559,9 +547,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public DescribeIdentityUsageResult describeIdentityUsage(DescribeIdentityUsageRequest describeIdentityUsageRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeIdentityUsageRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(describeIdentityUsageRequest.getIdentityId()), "IdentityId");
-
         ExecutionContext executionContext = createExecutionContext(describeIdentityUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -615,8 +600,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public GetBulkPublishDetailsResult getBulkPublishDetails(GetBulkPublishDetailsRequest getBulkPublishDetailsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getBulkPublishDetailsRequest.getIdentityPoolId()), "IdentityPoolId");
 
         ExecutionContext executionContext = createExecutionContext(getBulkPublishDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -674,8 +657,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public GetCognitoEventsResult getCognitoEvents(GetCognitoEventsRequest getCognitoEventsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getCognitoEventsRequest.getIdentityPoolId()), "IdentityPoolId");
-
         ExecutionContext executionContext = createExecutionContext(getCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -730,8 +711,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public GetIdentityPoolConfigurationResult getIdentityPoolConfiguration(GetIdentityPoolConfigurationRequest getIdentityPoolConfigurationRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getIdentityPoolConfigurationRequest.getIdentityPoolId()), "IdentityPoolId");
 
         ExecutionContext executionContext = createExecutionContext(getIdentityPoolConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -788,9 +767,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listDatasetsRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listDatasetsRequest.getIdentityId()), "IdentityId");
 
         ExecutionContext executionContext = createExecutionContext(listDatasetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -901,10 +877,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public ListRecordsResult listRecords(ListRecordsRequest listRecordsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listRecordsRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listRecordsRequest.getIdentityId()), "IdentityId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listRecordsRequest.getDatasetName()), "DatasetName");
-
         ExecutionContext executionContext = createExecutionContext(listRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -960,9 +932,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public RegisterDeviceResult registerDevice(RegisterDeviceRequest registerDeviceRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(registerDeviceRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(registerDeviceRequest.getIdentityId()), "IdentityId");
 
         ExecutionContext executionContext = createExecutionContext(registerDeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1021,8 +990,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public SetCognitoEventsResult setCognitoEvents(SetCognitoEventsRequest setCognitoEventsRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(setCognitoEventsRequest.getIdentityPoolId()), "IdentityPoolId");
-
         ExecutionContext executionContext = createExecutionContext(setCognitoEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1079,8 +1046,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public SetIdentityPoolConfigurationResult setIdentityPoolConfiguration(SetIdentityPoolConfigurationRequest setIdentityPoolConfigurationRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(setIdentityPoolConfigurationRequest.getIdentityPoolId()), "IdentityPoolId");
 
         ExecutionContext executionContext = createExecutionContext(setIdentityPoolConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1140,11 +1105,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
     @Override
     public SubscribeToDatasetResult subscribeToDataset(SubscribeToDatasetRequest subscribeToDatasetRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(subscribeToDatasetRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(subscribeToDatasetRequest.getIdentityId()), "IdentityId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(subscribeToDatasetRequest.getDatasetName()), "DatasetName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(subscribeToDatasetRequest.getDeviceId()), "DeviceId");
-
         ExecutionContext executionContext = createExecutionContext(subscribeToDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1200,11 +1160,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UnsubscribeFromDatasetResult unsubscribeFromDataset(UnsubscribeFromDatasetRequest unsubscribeFromDatasetRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(unsubscribeFromDatasetRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(unsubscribeFromDatasetRequest.getIdentityId()), "IdentityId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(unsubscribeFromDatasetRequest.getDatasetName()), "DatasetName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(unsubscribeFromDatasetRequest.getDeviceId()), "DeviceId");
 
         ExecutionContext executionContext = createExecutionContext(unsubscribeFromDatasetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1282,10 +1237,6 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
      */
     @Override
     public UpdateRecordsResult updateRecords(UpdateRecordsRequest updateRecordsRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateRecordsRequest.getIdentityPoolId()), "IdentityPoolId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateRecordsRequest.getIdentityId()), "IdentityId");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateRecordsRequest.getDatasetName()), "DatasetName");
 
         ExecutionContext executionContext = createExecutionContext(updateRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

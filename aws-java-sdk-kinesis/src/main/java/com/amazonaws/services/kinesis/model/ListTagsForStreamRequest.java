@@ -194,11 +194,11 @@ public class ListTagsForStreamRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getExclusiveStartTagKey() != null)
-            sb.append("ExclusiveStartTagKey: " + getExclusiveStartTagKey() + ",");
+            sb.append("ExclusiveStartTagKey: ").append(getExclusiveStartTagKey()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

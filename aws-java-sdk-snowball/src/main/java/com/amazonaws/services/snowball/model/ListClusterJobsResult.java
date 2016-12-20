@@ -173,9 +173,9 @@ public class ListClusterJobsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobListEntries() != null)
-            sb.append("JobListEntries: " + getJobListEntries() + ",");
+            sb.append("JobListEntries: ").append(getJobListEntries()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

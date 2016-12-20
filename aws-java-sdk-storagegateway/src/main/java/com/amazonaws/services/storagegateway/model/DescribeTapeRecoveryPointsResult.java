@@ -218,11 +218,11 @@ public class DescribeTapeRecoveryPointsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getTapeRecoveryPointInfos() != null)
-            sb.append("TapeRecoveryPointInfos: " + getTapeRecoveryPointInfos() + ",");
+            sb.append("TapeRecoveryPointInfos: ").append(getTapeRecoveryPointInfos()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

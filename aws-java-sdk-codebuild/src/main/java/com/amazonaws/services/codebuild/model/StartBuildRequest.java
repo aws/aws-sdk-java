@@ -464,17 +464,17 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectName() != null)
-            sb.append("ProjectName: " + getProjectName() + ",");
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getSourceVersion() != null)
-            sb.append("SourceVersion: " + getSourceVersion() + ",");
+            sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
         if (getArtifactsOverride() != null)
-            sb.append("ArtifactsOverride: " + getArtifactsOverride() + ",");
+            sb.append("ArtifactsOverride: ").append(getArtifactsOverride()).append(",");
         if (getEnvironmentVariablesOverride() != null)
-            sb.append("EnvironmentVariablesOverride: " + getEnvironmentVariablesOverride() + ",");
+            sb.append("EnvironmentVariablesOverride: ").append(getEnvironmentVariablesOverride()).append(",");
         if (getBuildspecOverride() != null)
-            sb.append("BuildspecOverride: " + getBuildspecOverride() + ",");
+            sb.append("BuildspecOverride: ").append(getBuildspecOverride()).append(",");
         if (getTimeoutInMinutesOverride() != null)
-            sb.append("TimeoutInMinutesOverride: " + getTimeoutInMinutesOverride());
+            sb.append("TimeoutInMinutesOverride: ").append(getTimeoutInMinutesOverride());
         sb.append("}");
         return sb.toString();
     }

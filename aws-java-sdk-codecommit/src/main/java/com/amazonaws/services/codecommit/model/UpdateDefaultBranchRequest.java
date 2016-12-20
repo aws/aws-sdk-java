@@ -127,9 +127,9 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getDefaultBranchName() != null)
-            sb.append("DefaultBranchName: " + getDefaultBranchName());
+            sb.append("DefaultBranchName: ").append(getDefaultBranchName());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class GetDeploymentGroupRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupName() != null)
-            sb.append("DeploymentGroupName: " + getDeploymentGroupName());
+            sb.append("DeploymentGroupName: ").append(getDeploymentGroupName());
         sb.append("}");
         return sb.toString();
     }

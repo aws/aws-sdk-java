@@ -61,8 +61,7 @@ public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobR
 
         String uriResourcePath = "/2012-09-25/jobs/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (cancelJobRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(cancelJobRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", cancelJobRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -50,6 +50,11 @@ public class CustomHeadersStaxUnmarshaller implements Unmarshaller<CustomHeaders
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    customHeaders.withItems(new ArrayList<OriginCustomHeader>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/OriginCustomHeader", targetDepth)) {
                     customHeaders.withItems(OriginCustomHeaderStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

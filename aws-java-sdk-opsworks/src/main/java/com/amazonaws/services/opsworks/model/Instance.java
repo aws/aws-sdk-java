@@ -2803,85 +2803,85 @@ public class Instance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentVersion() != null)
-            sb.append("AgentVersion: " + getAgentVersion() + ",");
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getAmiId() != null)
-            sb.append("AmiId: " + getAmiId() + ",");
+            sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getAutoScalingType() != null)
-            sb.append("AutoScalingType: " + getAutoScalingType() + ",");
+            sb.append("AutoScalingType: ").append(getAutoScalingType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getEc2InstanceId() != null)
-            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
         if (getEcsContainerInstanceArn() != null)
-            sb.append("EcsContainerInstanceArn: " + getEcsContainerInstanceArn() + ",");
+            sb.append("EcsContainerInstanceArn: ").append(getEcsContainerInstanceArn()).append(",");
         if (getElasticIp() != null)
-            sb.append("ElasticIp: " + getElasticIp() + ",");
+            sb.append("ElasticIp: ").append(getElasticIp()).append(",");
         if (getHostname() != null)
-            sb.append("Hostname: " + getHostname() + ",");
+            sb.append("Hostname: ").append(getHostname()).append(",");
         if (getInfrastructureClass() != null)
-            sb.append("InfrastructureClass: " + getInfrastructureClass() + ",");
+            sb.append("InfrastructureClass: ").append(getInfrastructureClass()).append(",");
         if (getInstallUpdatesOnBoot() != null)
-            sb.append("InstallUpdatesOnBoot: " + getInstallUpdatesOnBoot() + ",");
+            sb.append("InstallUpdatesOnBoot: ").append(getInstallUpdatesOnBoot()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getInstanceProfileArn() != null)
-            sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");
+            sb.append("InstanceProfileArn: ").append(getInstanceProfileArn()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getLastServiceErrorId() != null)
-            sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ",");
+            sb.append("LastServiceErrorId: ").append(getLastServiceErrorId()).append(",");
         if (getLayerIds() != null)
-            sb.append("LayerIds: " + getLayerIds() + ",");
+            sb.append("LayerIds: ").append(getLayerIds()).append(",");
         if (getOs() != null)
-            sb.append("Os: " + getOs() + ",");
+            sb.append("Os: ").append(getOs()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getPrivateDns() != null)
-            sb.append("PrivateDns: " + getPrivateDns() + ",");
+            sb.append("PrivateDns: ").append(getPrivateDns()).append(",");
         if (getPrivateIp() != null)
-            sb.append("PrivateIp: " + getPrivateIp() + ",");
+            sb.append("PrivateIp: ").append(getPrivateIp()).append(",");
         if (getPublicDns() != null)
-            sb.append("PublicDns: " + getPublicDns() + ",");
+            sb.append("PublicDns: ").append(getPublicDns()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: " + getPublicIp() + ",");
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getRegisteredBy() != null)
-            sb.append("RegisteredBy: " + getRegisteredBy() + ",");
+            sb.append("RegisteredBy: ").append(getRegisteredBy()).append(",");
         if (getReportedAgentVersion() != null)
-            sb.append("ReportedAgentVersion: " + getReportedAgentVersion() + ",");
+            sb.append("ReportedAgentVersion: ").append(getReportedAgentVersion()).append(",");
         if (getReportedOs() != null)
-            sb.append("ReportedOs: " + getReportedOs() + ",");
+            sb.append("ReportedOs: ").append(getReportedOs()).append(",");
         if (getRootDeviceType() != null)
-            sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+            sb.append("RootDeviceType: ").append(getRootDeviceType()).append(",");
         if (getRootDeviceVolumeId() != null)
-            sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() + ",");
+            sb.append("RootDeviceVolumeId: ").append(getRootDeviceVolumeId()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getSshHostDsaKeyFingerprint() != null)
-            sb.append("SshHostDsaKeyFingerprint: " + getSshHostDsaKeyFingerprint() + ",");
+            sb.append("SshHostDsaKeyFingerprint: ").append(getSshHostDsaKeyFingerprint()).append(",");
         if (getSshHostRsaKeyFingerprint() != null)
-            sb.append("SshHostRsaKeyFingerprint: " + getSshHostRsaKeyFingerprint() + ",");
+            sb.append("SshHostRsaKeyFingerprint: ").append(getSshHostRsaKeyFingerprint()).append(",");
         if (getSshKeyName() != null)
-            sb.append("SshKeyName: " + getSshKeyName() + ",");
+            sb.append("SshKeyName: ").append(getSshKeyName()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getTenancy() != null)
-            sb.append("Tenancy: " + getTenancy() + ",");
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: " + getVirtualizationType());
+            sb.append("VirtualizationType: ").append(getVirtualizationType());
         sb.append("}");
         return sb.toString();
     }

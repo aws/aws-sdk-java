@@ -481,15 +481,15 @@ public class DescribeClusterSubnetGroupsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSubnetGroupName() != null)
-            sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+            sb.append("ClusterSubnetGroupName: ").append(getClusterSubnetGroupName()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: " + getTagKeys() + ",");
+            sb.append("TagKeys: ").append(getTagKeys()).append(",");
         if (getTagValues() != null)
-            sb.append("TagValues: " + getTagValues());
+            sb.append("TagValues: ").append(getTagValues());
         sb.append("}");
         return sb.toString();
     }

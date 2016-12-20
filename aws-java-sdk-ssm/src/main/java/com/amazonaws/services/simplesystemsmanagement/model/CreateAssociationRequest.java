@@ -469,19 +469,19 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
-            sb.append("DocumentVersion: " + getDocumentVersion() + ",");
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: " + getScheduleExpression() + ",");
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getOutputLocation() != null)
-            sb.append("OutputLocation: " + getOutputLocation());
+            sb.append("OutputLocation: ").append(getOutputLocation());
         sb.append("}");
         return sb.toString();
     }

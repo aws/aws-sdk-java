@@ -2357,43 +2357,43 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getLogUri() != null)
-            sb.append("LogUri: " + getLogUri() + ",");
+            sb.append("LogUri: ").append(getLogUri()).append(",");
         if (getAdditionalInfo() != null)
-            sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
+            sb.append("AdditionalInfo: ").append(getAdditionalInfo()).append(",");
         if (getAmiVersion() != null)
-            sb.append("AmiVersion: " + getAmiVersion() + ",");
+            sb.append("AmiVersion: ").append(getAmiVersion()).append(",");
         if (getReleaseLabel() != null)
-            sb.append("ReleaseLabel: " + getReleaseLabel() + ",");
+            sb.append("ReleaseLabel: ").append(getReleaseLabel()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: " + getInstances() + ",");
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getSteps() != null)
-            sb.append("Steps: " + getSteps() + ",");
+            sb.append("Steps: ").append(getSteps()).append(",");
         if (getBootstrapActions() != null)
-            sb.append("BootstrapActions: " + getBootstrapActions() + ",");
+            sb.append("BootstrapActions: ").append(getBootstrapActions()).append(",");
         if (getSupportedProducts() != null)
-            sb.append("SupportedProducts: " + getSupportedProducts() + ",");
+            sb.append("SupportedProducts: ").append(getSupportedProducts()).append(",");
         if (getNewSupportedProducts() != null)
-            sb.append("NewSupportedProducts: " + getNewSupportedProducts() + ",");
+            sb.append("NewSupportedProducts: ").append(getNewSupportedProducts()).append(",");
         if (getApplications() != null)
-            sb.append("Applications: " + getApplications() + ",");
+            sb.append("Applications: ").append(getApplications()).append(",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations() + ",");
+            sb.append("Configurations: ").append(getConfigurations()).append(",");
         if (getVisibleToAllUsers() != null)
-            sb.append("VisibleToAllUsers: " + getVisibleToAllUsers() + ",");
+            sb.append("VisibleToAllUsers: ").append(getVisibleToAllUsers()).append(",");
         if (getJobFlowRole() != null)
-            sb.append("JobFlowRole: " + getJobFlowRole() + ",");
+            sb.append("JobFlowRole: ").append(getJobFlowRole()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole() + ",");
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getSecurityConfiguration() != null)
-            sb.append("SecurityConfiguration: " + getSecurityConfiguration() + ",");
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getAutoScalingRole() != null)
-            sb.append("AutoScalingRole: " + getAutoScalingRole() + ",");
+            sb.append("AutoScalingRole: ").append(getAutoScalingRole()).append(",");
         if (getScaleDownBehavior() != null)
-            sb.append("ScaleDownBehavior: " + getScaleDownBehavior());
+            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class DescribeDBEngineVersionsResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("DBEngineVersions", targetDepth)) {
+                    describeDBEngineVersionsResult.withDBEngineVersions(new ArrayList<DBEngineVersion>());
+                    continue;
+                }
+
                 if (context.testExpression("DBEngineVersions/DBEngineVersion", targetDepth)) {
                     describeDBEngineVersionsResult.withDBEngineVersions(DBEngineVersionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

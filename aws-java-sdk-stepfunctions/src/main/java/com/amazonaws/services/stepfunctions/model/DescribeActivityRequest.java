@@ -79,7 +79,7 @@ public class DescribeActivityRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivityArn() != null)
-            sb.append("ActivityArn: " + getActivityArn());
+            sb.append("ActivityArn: ").append(getActivityArn());
         sb.append("}");
         return sb.toString();
     }

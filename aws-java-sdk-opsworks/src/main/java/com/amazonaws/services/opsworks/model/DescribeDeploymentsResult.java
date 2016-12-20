@@ -113,7 +113,7 @@ public class DescribeDeploymentsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeployments() != null)
-            sb.append("Deployments: " + getDeployments());
+            sb.append("Deployments: ").append(getDeployments());
         sb.append("}");
         return sb.toString();
     }

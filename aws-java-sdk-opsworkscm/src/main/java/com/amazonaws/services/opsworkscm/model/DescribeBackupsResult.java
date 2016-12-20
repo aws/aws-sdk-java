@@ -189,9 +189,9 @@ public class DescribeBackupsResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBackups() != null)
-            sb.append("Backups: " + getBackups() + ",");
+            sb.append("Backups: ").append(getBackups()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -52,10 +52,8 @@ public class AssociateVPCWithHostedZoneRequestMarshaller implements Marshaller<R
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}/associatevpc";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (associateVPCWithHostedZoneRequest.getHostedZoneId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(associateVPCWithHostedZoneRequest.getHostedZoneId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
+                associateVPCWithHostedZoneRequest.getHostedZoneId());
         request.setResourcePath(uriResourcePath);
 
         try {

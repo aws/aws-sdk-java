@@ -313,13 +313,13 @@ public class ListStepsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterId() != null)
-            sb.append("ClusterId: " + getClusterId() + ",");
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getStepStates() != null)
-            sb.append("StepStates: " + getStepStates() + ",");
+            sb.append("StepStates: ").append(getStepStates()).append(",");
         if (getStepIds() != null)
-            sb.append("StepIds: " + getStepIds() + ",");
+            sb.append("StepIds: ").append(getStepIds()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

@@ -101,7 +101,7 @@ public class ReportTaskProgressResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCanceled() != null)
-            sb.append("Canceled: " + getCanceled());
+            sb.append("Canceled: ").append(getCanceled());
         sb.append("}");
         return sb.toString();
     }

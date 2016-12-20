@@ -163,9 +163,9 @@ public class DescribeSSLPoliciesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSslPolicies() != null)
-            sb.append("SslPolicies: " + getSslPolicies() + ",");
+            sb.append("SslPolicies: ").append(getSslPolicies()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker());
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }

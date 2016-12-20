@@ -168,9 +168,9 @@ public class ListDeliveryStreamsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamNames() != null)
-            sb.append("DeliveryStreamNames: " + getDeliveryStreamNames() + ",");
+            sb.append("DeliveryStreamNames: ").append(getDeliveryStreamNames()).append(",");
         if (getHasMoreDeliveryStreams() != null)
-            sb.append("HasMoreDeliveryStreams: " + getHasMoreDeliveryStreams());
+            sb.append("HasMoreDeliveryStreams: ").append(getHasMoreDeliveryStreams());
         sb.append("}");
         return sb.toString();
     }

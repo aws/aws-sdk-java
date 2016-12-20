@@ -81,7 +81,7 @@ public class CreateSubnetResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnet() != null)
-            sb.append("Subnet: " + getSubnet());
+            sb.append("Subnet: ").append(getSubnet());
         sb.append("}");
         return sb.toString();
     }

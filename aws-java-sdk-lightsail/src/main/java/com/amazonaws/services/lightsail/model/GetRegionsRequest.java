@@ -100,7 +100,7 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIncludeAvailabilityZones() != null)
-            sb.append("IncludeAvailabilityZones: " + getIncludeAvailabilityZones());
+            sb.append("IncludeAvailabilityZones: ").append(getIncludeAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }

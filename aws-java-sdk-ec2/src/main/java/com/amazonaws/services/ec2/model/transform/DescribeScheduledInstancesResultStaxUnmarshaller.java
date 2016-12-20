@@ -50,6 +50,11 @@ public class DescribeScheduledInstancesResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("scheduledInstanceSet", targetDepth)) {
+                    describeScheduledInstancesResult.withScheduledInstanceSet(new ArrayList<ScheduledInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("scheduledInstanceSet/item", targetDepth)) {
                     describeScheduledInstancesResult.withScheduledInstanceSet(ScheduledInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

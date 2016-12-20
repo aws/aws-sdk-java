@@ -50,6 +50,11 @@ public class SolutionStackDescriptionStaxUnmarshaller implements Unmarshaller<So
                     continue;
                 }
 
+                if (context.testExpression("PermittedFileTypes", targetDepth)) {
+                    solutionStackDescription.withPermittedFileTypes(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("PermittedFileTypes/member", targetDepth)) {
                     solutionStackDescription.withPermittedFileTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

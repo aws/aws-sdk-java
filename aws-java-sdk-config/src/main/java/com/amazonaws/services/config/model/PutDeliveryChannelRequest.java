@@ -88,7 +88,7 @@ public class PutDeliveryChannelRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryChannel() != null)
-            sb.append("DeliveryChannel: " + getDeliveryChannel());
+            sb.append("DeliveryChannel: ").append(getDeliveryChannel());
         sb.append("}");
         return sb.toString();
     }

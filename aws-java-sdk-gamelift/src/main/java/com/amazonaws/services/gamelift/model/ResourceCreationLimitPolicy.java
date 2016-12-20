@@ -134,9 +134,9 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNewGameSessionsPerCreator() != null)
-            sb.append("NewGameSessionsPerCreator: " + getNewGameSessionsPerCreator() + ",");
+            sb.append("NewGameSessionsPerCreator: ").append(getNewGameSessionsPerCreator()).append(",");
         if (getPolicyPeriodInMinutes() != null)
-            sb.append("PolicyPeriodInMinutes: " + getPolicyPeriodInMinutes());
+            sb.append("PolicyPeriodInMinutes: ").append(getPolicyPeriodInMinutes());
         sb.append("}");
         return sb.toString();
     }

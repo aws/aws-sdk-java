@@ -551,21 +551,21 @@ public class JobParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getArchiveId() != null)
-            sb.append("ArchiveId: " + getArchiveId() + ",");
+            sb.append("ArchiveId: ").append(getArchiveId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSNSTopic() != null)
-            sb.append("SNSTopic: " + getSNSTopic() + ",");
+            sb.append("SNSTopic: ").append(getSNSTopic()).append(",");
         if (getRetrievalByteRange() != null)
-            sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ",");
+            sb.append("RetrievalByteRange: ").append(getRetrievalByteRange()).append(",");
         if (getTier() != null)
-            sb.append("Tier: " + getTier() + ",");
+            sb.append("Tier: ").append(getTier()).append(",");
         if (getInventoryRetrievalParameters() != null)
-            sb.append("InventoryRetrievalParameters: " + getInventoryRetrievalParameters());
+            sb.append("InventoryRetrievalParameters: ").append(getInventoryRetrievalParameters());
         sb.append("}");
         return sb.toString();
     }

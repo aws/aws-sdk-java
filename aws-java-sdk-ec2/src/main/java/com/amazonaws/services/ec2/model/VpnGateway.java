@@ -449,17 +449,17 @@ public class VpnGateway implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnGatewayId() != null)
-            sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
+            sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getVpcAttachments() != null)
-            sb.append("VpcAttachments: " + getVpcAttachments() + ",");
+            sb.append("VpcAttachments: ").append(getVpcAttachments()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

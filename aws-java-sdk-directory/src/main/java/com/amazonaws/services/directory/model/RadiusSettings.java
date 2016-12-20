@@ -496,21 +496,21 @@ public class RadiusSettings implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRadiusServers() != null)
-            sb.append("RadiusServers: " + getRadiusServers() + ",");
+            sb.append("RadiusServers: ").append(getRadiusServers()).append(",");
         if (getRadiusPort() != null)
-            sb.append("RadiusPort: " + getRadiusPort() + ",");
+            sb.append("RadiusPort: ").append(getRadiusPort()).append(",");
         if (getRadiusTimeout() != null)
-            sb.append("RadiusTimeout: " + getRadiusTimeout() + ",");
+            sb.append("RadiusTimeout: ").append(getRadiusTimeout()).append(",");
         if (getRadiusRetries() != null)
-            sb.append("RadiusRetries: " + getRadiusRetries() + ",");
+            sb.append("RadiusRetries: ").append(getRadiusRetries()).append(",");
         if (getSharedSecret() != null)
-            sb.append("SharedSecret: " + getSharedSecret() + ",");
+            sb.append("SharedSecret: ").append(getSharedSecret()).append(",");
         if (getAuthenticationProtocol() != null)
-            sb.append("AuthenticationProtocol: " + getAuthenticationProtocol() + ",");
+            sb.append("AuthenticationProtocol: ").append(getAuthenticationProtocol()).append(",");
         if (getDisplayLabel() != null)
-            sb.append("DisplayLabel: " + getDisplayLabel() + ",");
+            sb.append("DisplayLabel: ").append(getDisplayLabel()).append(",");
         if (getUseSameUsername() != null)
-            sb.append("UseSameUsername: " + getUseSameUsername());
+            sb.append("UseSameUsername: ").append(getUseSameUsername());
         sb.append("}");
         return sb.toString();
     }

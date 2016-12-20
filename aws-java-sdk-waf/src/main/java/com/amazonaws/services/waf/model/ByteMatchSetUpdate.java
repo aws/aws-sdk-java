@@ -181,9 +181,9 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getByteMatchTuple() != null)
-            sb.append("ByteMatchTuple: " + getByteMatchTuple());
+            sb.append("ByteMatchTuple: ").append(getByteMatchTuple());
         sb.append("}");
         return sb.toString();
     }

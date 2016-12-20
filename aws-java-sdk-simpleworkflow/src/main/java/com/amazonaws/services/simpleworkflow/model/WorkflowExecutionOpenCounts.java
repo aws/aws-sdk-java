@@ -267,15 +267,15 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpenActivityTasks() != null)
-            sb.append("OpenActivityTasks: " + getOpenActivityTasks() + ",");
+            sb.append("OpenActivityTasks: ").append(getOpenActivityTasks()).append(",");
         if (getOpenDecisionTasks() != null)
-            sb.append("OpenDecisionTasks: " + getOpenDecisionTasks() + ",");
+            sb.append("OpenDecisionTasks: ").append(getOpenDecisionTasks()).append(",");
         if (getOpenTimers() != null)
-            sb.append("OpenTimers: " + getOpenTimers() + ",");
+            sb.append("OpenTimers: ").append(getOpenTimers()).append(",");
         if (getOpenChildWorkflowExecutions() != null)
-            sb.append("OpenChildWorkflowExecutions: " + getOpenChildWorkflowExecutions() + ",");
+            sb.append("OpenChildWorkflowExecutions: ").append(getOpenChildWorkflowExecutions()).append(",");
         if (getOpenLambdaFunctions() != null)
-            sb.append("OpenLambdaFunctions: " + getOpenLambdaFunctions());
+            sb.append("OpenLambdaFunctions: ").append(getOpenLambdaFunctions());
         sb.append("}");
         return sb.toString();
     }

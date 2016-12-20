@@ -224,9 +224,9 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicyIdMarker() != null)
-            sb.append("TrafficPolicyIdMarker: " + getTrafficPolicyIdMarker() + ",");
+            sb.append("TrafficPolicyIdMarker: ").append(getTrafficPolicyIdMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

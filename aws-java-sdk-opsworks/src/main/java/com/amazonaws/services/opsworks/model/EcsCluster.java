@@ -218,13 +218,13 @@ public class EcsCluster implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn() + ",");
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn()).append(",");
         if (getEcsClusterName() != null)
-            sb.append("EcsClusterName: " + getEcsClusterName() + ",");
+            sb.append("EcsClusterName: ").append(getEcsClusterName()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getRegisteredAt() != null)
-            sb.append("RegisteredAt: " + getRegisteredAt());
+            sb.append("RegisteredAt: ").append(getRegisteredAt());
         sb.append("}");
         return sb.toString();
     }

@@ -259,13 +259,13 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getItemName() != null)
-            sb.append("ItemName: " + getItemName() + ",");
+            sb.append("ItemName: ").append(getItemName()).append(",");
         if (getAttributeNames() != null)
-            sb.append("AttributeNames: " + getAttributeNames() + ",");
+            sb.append("AttributeNames: ").append(getAttributeNames()).append(",");
         if (getConsistentRead() != null)
-            sb.append("ConsistentRead: " + getConsistentRead());
+            sb.append("ConsistentRead: ").append(getConsistentRead());
         sb.append("}");
         return sb.toString();
     }

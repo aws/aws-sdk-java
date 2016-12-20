@@ -61,7 +61,7 @@ public class GetDeviceResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice());
+            sb.append("Device: ").append(getDevice());
         sb.append("}");
         return sb.toString();
     }

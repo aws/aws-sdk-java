@@ -185,9 +185,9 @@ public class AddAttributesToFindingsRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFindingArns() != null)
-            sb.append("FindingArns: " + getFindingArns() + ",");
+            sb.append("FindingArns: ").append(getFindingArns()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

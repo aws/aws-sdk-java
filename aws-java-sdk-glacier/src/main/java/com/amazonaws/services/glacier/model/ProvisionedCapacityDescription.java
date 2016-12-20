@@ -172,11 +172,11 @@ public class ProvisionedCapacityDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCapacityId() != null)
-            sb.append("CapacityId: " + getCapacityId() + ",");
+            sb.append("CapacityId: ").append(getCapacityId()).append(",");
         if (getStartDate() != null)
-            sb.append("StartDate: " + getStartDate() + ",");
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: " + getExpirationDate());
+            sb.append("ExpirationDate: ").append(getExpirationDate());
         sb.append("}");
         return sb.toString();
     }

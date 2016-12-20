@@ -449,19 +449,19 @@ public class AffectedEntity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEntityArn() != null)
-            sb.append("EntityArn: " + getEntityArn() + ",");
+            sb.append("EntityArn: ").append(getEntityArn()).append(",");
         if (getEventArn() != null)
-            sb.append("EventArn: " + getEventArn() + ",");
+            sb.append("EventArn: ").append(getEventArn()).append(",");
         if (getEntityValue() != null)
-            sb.append("EntityValue: " + getEntityValue() + ",");
+            sb.append("EntityValue: ").append(getEntityValue()).append(",");
         if (getAwsAccountId() != null)
-            sb.append("AwsAccountId: " + getAwsAccountId() + ",");
+            sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

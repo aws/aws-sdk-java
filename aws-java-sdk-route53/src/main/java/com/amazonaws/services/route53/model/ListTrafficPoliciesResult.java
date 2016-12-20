@@ -336,13 +336,13 @@ public class ListTrafficPoliciesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrafficPolicySummaries() != null)
-            sb.append("TrafficPolicySummaries: " + getTrafficPolicySummaries() + ",");
+            sb.append("TrafficPolicySummaries: ").append(getTrafficPolicySummaries()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getTrafficPolicyIdMarker() != null)
-            sb.append("TrafficPolicyIdMarker: " + getTrafficPolicyIdMarker() + ",");
+            sb.append("TrafficPolicyIdMarker: ").append(getTrafficPolicyIdMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

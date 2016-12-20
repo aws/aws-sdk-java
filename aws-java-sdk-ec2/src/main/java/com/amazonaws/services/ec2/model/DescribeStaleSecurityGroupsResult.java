@@ -165,9 +165,9 @@ public class DescribeStaleSecurityGroupsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStaleSecurityGroupSet() != null)
-            sb.append("StaleSecurityGroupSet: " + getStaleSecurityGroupSet() + ",");
+            sb.append("StaleSecurityGroupSet: ").append(getStaleSecurityGroupSet()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

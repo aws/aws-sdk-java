@@ -125,9 +125,9 @@ public class CountPendingActivityTasksRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList());
+            sb.append("TaskList: ").append(getTaskList());
         sb.append("}");
         return sb.toString();
     }

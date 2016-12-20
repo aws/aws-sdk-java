@@ -55,6 +55,11 @@ public class DescribeVolumeAttributeResultStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("productCodes", targetDepth)) {
+                    describeVolumeAttributeResult.withProductCodes(new ArrayList<ProductCode>());
+                    continue;
+                }
+
                 if (context.testExpression("productCodes/item", targetDepth)) {
                     describeVolumeAttributeResult.withProductCodes(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

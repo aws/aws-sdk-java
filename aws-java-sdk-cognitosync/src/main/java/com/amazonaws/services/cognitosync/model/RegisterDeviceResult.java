@@ -80,7 +80,7 @@ public class RegisterDeviceResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceId() != null)
-            sb.append("DeviceId: " + getDeviceId());
+            sb.append("DeviceId: ").append(getDeviceId());
         sb.append("}");
         return sb.toString();
     }

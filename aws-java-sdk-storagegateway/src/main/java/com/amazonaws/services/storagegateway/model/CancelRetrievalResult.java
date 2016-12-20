@@ -80,7 +80,7 @@ public class CancelRetrievalResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN());
+            sb.append("TapeARN: ").append(getTapeARN());
         sb.append("}");
         return sb.toString();
     }

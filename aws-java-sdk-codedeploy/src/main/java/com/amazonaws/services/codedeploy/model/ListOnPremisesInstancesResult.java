@@ -166,9 +166,9 @@ public class ListOnPremisesInstancesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceNames() != null)
-            sb.append("InstanceNames: " + getInstanceNames() + ",");
+            sb.append("InstanceNames: ").append(getInstanceNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

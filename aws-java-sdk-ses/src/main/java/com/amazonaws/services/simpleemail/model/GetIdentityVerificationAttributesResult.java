@@ -107,7 +107,7 @@ public class GetIdentityVerificationAttributesResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVerificationAttributes() != null)
-            sb.append("VerificationAttributes: " + getVerificationAttributes());
+            sb.append("VerificationAttributes: ").append(getVerificationAttributes());
         sb.append("}");
         return sb.toString();
     }

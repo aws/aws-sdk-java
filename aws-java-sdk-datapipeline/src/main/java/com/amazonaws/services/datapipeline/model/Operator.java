@@ -554,9 +554,9 @@ public class Operator implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getValues() != null)
-            sb.append("Values: " + getValues());
+            sb.append("Values: ").append(getValues());
         sb.append("}");
         return sb.toString();
     }

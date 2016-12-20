@@ -113,7 +113,7 @@ public class DescribeCommandsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommands() != null)
-            sb.append("Commands: " + getCommands());
+            sb.append("Commands: ").append(getCommands());
         sb.append("}");
         return sb.toString();
     }

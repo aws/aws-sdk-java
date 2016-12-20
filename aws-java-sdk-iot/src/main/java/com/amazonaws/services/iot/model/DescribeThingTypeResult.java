@@ -161,11 +161,11 @@ public class DescribeThingTypeResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: " + getThingTypeName() + ",");
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
         if (getThingTypeProperties() != null)
-            sb.append("ThingTypeProperties: " + getThingTypeProperties() + ",");
+            sb.append("ThingTypeProperties: ").append(getThingTypeProperties()).append(",");
         if (getThingTypeMetadata() != null)
-            sb.append("ThingTypeMetadata: " + getThingTypeMetadata());
+            sb.append("ThingTypeMetadata: ").append(getThingTypeMetadata());
         sb.append("}");
         return sb.toString();
     }

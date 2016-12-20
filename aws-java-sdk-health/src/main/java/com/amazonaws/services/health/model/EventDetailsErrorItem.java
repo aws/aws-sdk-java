@@ -186,11 +186,11 @@ public class EventDetailsErrorItem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventArn() != null)
-            sb.append("EventArn: " + getEventArn() + ",");
+            sb.append("EventArn: ").append(getEventArn()).append(",");
         if (getErrorName() != null)
-            sb.append("ErrorName: " + getErrorName() + ",");
+            sb.append("ErrorName: ").append(getErrorName()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: " + getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class ConfigureHealthCheckResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHealthCheck() != null)
-            sb.append("HealthCheck: " + getHealthCheck());
+            sb.append("HealthCheck: ").append(getHealthCheck());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getCommitId() != null)
-            sb.append("CommitId: " + getCommitId());
+            sb.append("CommitId: ").append(getCommitId());
         sb.append("}");
         return sb.toString();
     }

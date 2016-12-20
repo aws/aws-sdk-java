@@ -356,19 +356,19 @@ public class Counters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTotal() != null)
-            sb.append("Total: " + getTotal() + ",");
+            sb.append("Total: ").append(getTotal()).append(",");
         if (getPassed() != null)
-            sb.append("Passed: " + getPassed() + ",");
+            sb.append("Passed: ").append(getPassed()).append(",");
         if (getFailed() != null)
-            sb.append("Failed: " + getFailed() + ",");
+            sb.append("Failed: ").append(getFailed()).append(",");
         if (getWarned() != null)
-            sb.append("Warned: " + getWarned() + ",");
+            sb.append("Warned: ").append(getWarned()).append(",");
         if (getErrored() != null)
-            sb.append("Errored: " + getErrored() + ",");
+            sb.append("Errored: ").append(getErrored()).append(",");
         if (getStopped() != null)
-            sb.append("Stopped: " + getStopped() + ",");
+            sb.append("Stopped: ").append(getStopped()).append(",");
         if (getSkipped() != null)
-            sb.append("Skipped: " + getSkipped());
+            sb.append("Skipped: ").append(getSkipped());
         sb.append("}");
         return sb.toString();
     }

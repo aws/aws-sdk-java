@@ -311,13 +311,13 @@ public class SubResourceSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getAttackVectors() != null)
-            sb.append("AttackVectors: " + getAttackVectors() + ",");
+            sb.append("AttackVectors: ").append(getAttackVectors()).append(",");
         if (getCounters() != null)
-            sb.append("Counters: " + getCounters());
+            sb.append("Counters: ").append(getCounters());
         sb.append("}");
         return sb.toString();
     }

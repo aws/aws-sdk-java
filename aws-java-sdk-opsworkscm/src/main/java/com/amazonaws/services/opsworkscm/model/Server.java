@@ -1396,47 +1396,47 @@ public class Server implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBackupRetentionCount() != null)
-            sb.append("BackupRetentionCount: " + getBackupRetentionCount() + ",");
+            sb.append("BackupRetentionCount: ").append(getBackupRetentionCount()).append(",");
         if (getServerName() != null)
-            sb.append("ServerName: " + getServerName() + ",");
+            sb.append("ServerName: ").append(getServerName()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDisableAutomatedBackup() != null)
-            sb.append("DisableAutomatedBackup: " + getDisableAutomatedBackup() + ",");
+            sb.append("DisableAutomatedBackup: ").append(getDisableAutomatedBackup()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getEngine() != null)
-            sb.append("Engine: " + getEngine() + ",");
+            sb.append("Engine: ").append(getEngine()).append(",");
         if (getEngineModel() != null)
-            sb.append("EngineModel: " + getEngineModel() + ",");
+            sb.append("EngineModel: ").append(getEngineModel()).append(",");
         if (getEngineAttributes() != null)
-            sb.append("EngineAttributes: " + getEngineAttributes() + ",");
+            sb.append("EngineAttributes: ").append(getEngineAttributes()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getInstanceProfileArn() != null)
-            sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");
+            sb.append("InstanceProfileArn: ").append(getInstanceProfileArn()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getKeyPair() != null)
-            sb.append("KeyPair: " + getKeyPair() + ",");
+            sb.append("KeyPair: ").append(getKeyPair()).append(",");
         if (getMaintenanceStatus() != null)
-            sb.append("MaintenanceStatus: " + getMaintenanceStatus() + ",");
+            sb.append("MaintenanceStatus: ").append(getMaintenanceStatus()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getPreferredBackupWindow() != null)
-            sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+            sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getServiceRoleArn() != null)
-            sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+            sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: " + getStatusReason() + ",");
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getServerArn() != null)
-            sb.append("ServerArn: " + getServerArn());
+            sb.append("ServerArn: ").append(getServerArn());
         sb.append("}");
         return sb.toString();
     }

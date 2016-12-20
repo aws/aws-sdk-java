@@ -78,7 +78,7 @@ public class CreateBackupResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBackup() != null)
-            sb.append("Backup: " + getBackup());
+            sb.append("Backup: ").append(getBackup());
         sb.append("}");
         return sb.toString();
     }

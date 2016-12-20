@@ -127,9 +127,9 @@ public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getDeviceKey() != null)
-            sb.append("DeviceKey: " + getDeviceKey());
+            sb.append("DeviceKey: ").append(getDeviceKey());
         sb.append("}");
         return sb.toString();
     }

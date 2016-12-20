@@ -127,9 +127,9 @@ public class ProductViewAggregationValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getApproximateCount() != null)
-            sb.append("ApproximateCount: " + getApproximateCount());
+            sb.append("ApproximateCount: ").append(getApproximateCount());
         sb.append("}");
         return sb.toString();
     }

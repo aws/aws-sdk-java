@@ -407,17 +407,17 @@ public class TestDNSAnswerResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNameserver() != null)
-            sb.append("Nameserver: " + getNameserver() + ",");
+            sb.append("Nameserver: ").append(getNameserver()).append(",");
         if (getRecordName() != null)
-            sb.append("RecordName: " + getRecordName() + ",");
+            sb.append("RecordName: ").append(getRecordName()).append(",");
         if (getRecordType() != null)
-            sb.append("RecordType: " + getRecordType() + ",");
+            sb.append("RecordType: ").append(getRecordType()).append(",");
         if (getRecordData() != null)
-            sb.append("RecordData: " + getRecordData() + ",");
+            sb.append("RecordData: ").append(getRecordData()).append(",");
         if (getResponseCode() != null)
-            sb.append("ResponseCode: " + getResponseCode() + ",");
+            sb.append("ResponseCode: ").append(getResponseCode()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol());
+            sb.append("Protocol: ").append(getProtocol());
         sb.append("}");
         return sb.toString();
     }

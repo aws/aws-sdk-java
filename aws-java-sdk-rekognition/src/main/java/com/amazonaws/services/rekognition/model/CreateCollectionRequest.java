@@ -79,7 +79,7 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCollectionId() != null)
-            sb.append("CollectionId: " + getCollectionId());
+            sb.append("CollectionId: ").append(getCollectionId());
         sb.append("}");
         return sb.toString();
     }

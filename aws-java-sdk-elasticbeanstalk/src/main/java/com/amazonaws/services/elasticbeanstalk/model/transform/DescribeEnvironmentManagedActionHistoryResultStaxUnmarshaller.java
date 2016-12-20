@@ -46,6 +46,11 @@ public class DescribeEnvironmentManagedActionHistoryResultStaxUnmarshaller imple
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ManagedActionHistoryItems", targetDepth)) {
+                    describeEnvironmentManagedActionHistoryResult.withManagedActionHistoryItems(new ArrayList<ManagedActionHistoryItem>());
+                    continue;
+                }
+
                 if (context.testExpression("ManagedActionHistoryItems/member", targetDepth)) {
                     describeEnvironmentManagedActionHistoryResult.withManagedActionHistoryItems(ManagedActionHistoryItemStaxUnmarshaller.getInstance()
                             .unmarshall(context));

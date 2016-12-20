@@ -126,9 +126,9 @@ public class Segment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDocument() != null)
-            sb.append("Document: " + getDocument());
+            sb.append("Document: ").append(getDocument());
         sb.append("}");
         return sb.toString();
     }

@@ -88,9 +88,9 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBudgetName() != null)
-            sb.append("BudgetName: " + getBudgetName());
+            sb.append("BudgetName: ").append(getBudgetName());
         sb.append("}");
         return sb.toString();
     }

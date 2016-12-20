@@ -172,11 +172,11 @@ public class StepTimeline implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getStartDateTime() != null)
-            sb.append("StartDateTime: " + getStartDateTime() + ",");
+            sb.append("StartDateTime: ").append(getStartDateTime()).append(",");
         if (getEndDateTime() != null)
-            sb.append("EndDateTime: " + getEndDateTime());
+            sb.append("EndDateTime: ").append(getEndDateTime());
         sb.append("}");
         return sb.toString();
     }

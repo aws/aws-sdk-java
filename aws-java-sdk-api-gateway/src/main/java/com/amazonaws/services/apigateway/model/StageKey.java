@@ -126,9 +126,9 @@ public class StageKey implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName());
+            sb.append("StageName: ").append(getStageName());
         sb.append("}");
         return sb.toString();
     }

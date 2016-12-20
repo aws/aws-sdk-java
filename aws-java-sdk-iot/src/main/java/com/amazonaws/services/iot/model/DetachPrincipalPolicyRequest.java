@@ -152,9 +152,9 @@ public class DetachPrincipalPolicyRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPrincipal() != null)
-            sb.append("Principal: " + getPrincipal());
+            sb.append("Principal: ").append(getPrincipal());
         sb.append("}");
         return sb.toString();
     }

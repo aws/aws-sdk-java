@@ -80,7 +80,7 @@ public class PutRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleArn() != null)
-            sb.append("RuleArn: " + getRuleArn());
+            sb.append("RuleArn: ").append(getRuleArn());
         sb.append("}");
         return sb.toString();
     }

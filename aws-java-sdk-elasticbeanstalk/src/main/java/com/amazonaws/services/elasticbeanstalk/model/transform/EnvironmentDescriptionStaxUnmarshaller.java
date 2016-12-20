@@ -130,6 +130,11 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentLinks", targetDepth)) {
+                    environmentDescription.withEnvironmentLinks(new ArrayList<EnvironmentLink>());
+                    continue;
+                }
+
                 if (context.testExpression("EnvironmentLinks/member", targetDepth)) {
                     environmentDescription.withEnvironmentLinks(EnvironmentLinkStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

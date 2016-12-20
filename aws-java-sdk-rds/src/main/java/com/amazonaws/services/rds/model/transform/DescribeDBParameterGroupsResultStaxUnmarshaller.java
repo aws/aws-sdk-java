@@ -50,6 +50,11 @@ public class DescribeDBParameterGroupsResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
+                if (context.testExpression("DBParameterGroups", targetDepth)) {
+                    describeDBParameterGroupsResult.withDBParameterGroups(new ArrayList<DBParameterGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("DBParameterGroups/DBParameterGroup", targetDepth)) {
                     describeDBParameterGroupsResult.withDBParameterGroups(DBParameterGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

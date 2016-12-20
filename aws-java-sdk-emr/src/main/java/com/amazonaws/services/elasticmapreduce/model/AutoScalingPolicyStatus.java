@@ -149,9 +149,9 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStateChangeReason() != null)
-            sb.append("StateChangeReason: " + getStateChangeReason());
+            sb.append("StateChangeReason: ").append(getStateChangeReason());
         sb.append("}");
         return sb.toString();
     }

@@ -319,13 +319,13 @@ public class HadoopJarStepConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProperties() != null)
-            sb.append("Properties: " + getProperties() + ",");
+            sb.append("Properties: ").append(getProperties()).append(",");
         if (getJar() != null)
-            sb.append("Jar: " + getJar() + ",");
+            sb.append("Jar: ").append(getJar()).append(",");
         if (getMainClass() != null)
-            sb.append("MainClass: " + getMainClass() + ",");
+            sb.append("MainClass: ").append(getMainClass()).append(",");
         if (getArgs() != null)
-            sb.append("Args: " + getArgs());
+            sb.append("Args: ").append(getArgs());
         sb.append("}");
         return sb.toString();
     }

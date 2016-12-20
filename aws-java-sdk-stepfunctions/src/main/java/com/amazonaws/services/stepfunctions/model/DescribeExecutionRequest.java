@@ -79,7 +79,7 @@ public class DescribeExecutionRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExecutionArn() != null)
-            sb.append("ExecutionArn: " + getExecutionArn());
+            sb.append("ExecutionArn: ").append(getExecutionArn());
         sb.append("}");
         return sb.toString();
     }

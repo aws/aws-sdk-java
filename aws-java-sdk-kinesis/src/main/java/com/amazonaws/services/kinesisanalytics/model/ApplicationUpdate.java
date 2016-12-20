@@ -308,13 +308,13 @@ public class ApplicationUpdate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputUpdates() != null)
-            sb.append("InputUpdates: " + getInputUpdates() + ",");
+            sb.append("InputUpdates: ").append(getInputUpdates()).append(",");
         if (getApplicationCodeUpdate() != null)
-            sb.append("ApplicationCodeUpdate: " + getApplicationCodeUpdate() + ",");
+            sb.append("ApplicationCodeUpdate: ").append(getApplicationCodeUpdate()).append(",");
         if (getOutputUpdates() != null)
-            sb.append("OutputUpdates: " + getOutputUpdates() + ",");
+            sb.append("OutputUpdates: ").append(getOutputUpdates()).append(",");
         if (getReferenceDataSourceUpdates() != null)
-            sb.append("ReferenceDataSourceUpdates: " + getReferenceDataSourceUpdates());
+            sb.append("ReferenceDataSourceUpdates: ").append(getReferenceDataSourceUpdates());
         sb.append("}");
         return sb.toString();
     }

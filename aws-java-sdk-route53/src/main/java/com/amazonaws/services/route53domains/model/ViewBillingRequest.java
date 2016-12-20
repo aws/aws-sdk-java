@@ -551,13 +551,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStart() != null)
-            sb.append("Start: " + getStart() + ",");
+            sb.append("Start: ").append(getStart()).append(",");
         if (getEnd() != null)
-            sb.append("End: " + getEnd() + ",");
+            sb.append("End: ").append(getEnd()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroup() != null)
-            sb.append("Group: " + getGroup());
+            sb.append("Group: ").append(getGroup());
         sb.append("}");
         return sb.toString();
     }

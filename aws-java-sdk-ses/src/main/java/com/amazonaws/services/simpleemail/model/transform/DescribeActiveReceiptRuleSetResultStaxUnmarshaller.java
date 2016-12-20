@@ -50,6 +50,11 @@ public class DescribeActiveReceiptRuleSetResultStaxUnmarshaller implements Unmar
                     continue;
                 }
 
+                if (context.testExpression("Rules", targetDepth)) {
+                    describeActiveReceiptRuleSetResult.withRules(new ArrayList<ReceiptRule>());
+                    continue;
+                }
+
                 if (context.testExpression("Rules/member", targetDepth)) {
                     describeActiveReceiptRuleSetResult.withRules(ReceiptRuleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

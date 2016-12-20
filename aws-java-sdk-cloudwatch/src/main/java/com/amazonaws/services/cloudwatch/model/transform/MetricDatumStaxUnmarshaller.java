@@ -50,6 +50,11 @@ public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, St
                     continue;
                 }
 
+                if (context.testExpression("Dimensions", targetDepth)) {
+                    metricDatum.withDimensions(new ArrayList<Dimension>());
+                    continue;
+                }
+
                 if (context.testExpression("Dimensions/member", targetDepth)) {
                     metricDatum.withDimensions(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -420,19 +420,19 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getGenerateDistinctId() != null)
-            sb.append("GenerateDistinctId: " + getGenerateDistinctId() + ",");
+            sb.append("GenerateDistinctId: ").append(getGenerateDistinctId()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getStageKeys() != null)
-            sb.append("StageKeys: " + getStageKeys() + ",");
+            sb.append("StageKeys: ").append(getStageKeys()).append(",");
         if (getCustomerId() != null)
-            sb.append("CustomerId: " + getCustomerId());
+            sb.append("CustomerId: ").append(getCustomerId());
         sb.append("}");
         return sb.toString();
     }

@@ -172,11 +172,11 @@ public class LogsLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getDeepLink() != null)
-            sb.append("DeepLink: " + getDeepLink());
+            sb.append("DeepLink: ").append(getDeepLink());
         sb.append("}");
         return sb.toString();
     }

@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * The receipt handle is not valid for the current version.
+ * The receipt handle isn't valid for the current version.
  * </p>
  */
 public class InvalidIdFormatException extends com.amazonaws.services.sqs.model.AmazonSQSException {

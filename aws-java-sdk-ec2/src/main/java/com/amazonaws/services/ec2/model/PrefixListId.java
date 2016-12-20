@@ -80,7 +80,7 @@ public class PrefixListId implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrefixListId() != null)
-            sb.append("PrefixListId: " + getPrefixListId());
+            sb.append("PrefixListId: ").append(getPrefixListId());
         sb.append("}");
         return sb.toString();
     }

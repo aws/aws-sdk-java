@@ -178,11 +178,11 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceARN() != null)
-            sb.append("ResourceARN: " + getResourceARN() + ",");
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getInputStartingPositionConfiguration() != null)
-            sb.append("InputStartingPositionConfiguration: " + getInputStartingPositionConfiguration());
+            sb.append("InputStartingPositionConfiguration: ").append(getInputStartingPositionConfiguration());
         sb.append("}");
         return sb.toString();
     }

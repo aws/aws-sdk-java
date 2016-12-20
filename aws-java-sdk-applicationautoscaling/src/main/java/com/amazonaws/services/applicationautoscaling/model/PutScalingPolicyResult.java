@@ -78,7 +78,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyARN() != null)
-            sb.append("PolicyARN: " + getPolicyARN());
+            sb.append("PolicyARN: ").append(getPolicyARN());
         sb.append("}");
         return sb.toString();
     }

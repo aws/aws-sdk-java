@@ -45,6 +45,11 @@ public class DescribeReservedInstancesListingsResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("reservedInstancesListingsSet", targetDepth)) {
+                    describeReservedInstancesListingsResult.withReservedInstancesListings(new ArrayList<ReservedInstancesListing>());
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstancesListingsSet/item", targetDepth)) {
                     describeReservedInstancesListingsResult.withReservedInstancesListings(ReservedInstancesListingStaxUnmarshaller.getInstance().unmarshall(
                             context));

@@ -411,13 +411,13 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReason() != null)
-            sb.append("Reason: " + getReason() + ",");
+            sb.append("Reason: ").append(getReason()).append(",");
         if (getDetails() != null)
-            sb.append("Details: " + getDetails() + ",");
+            sb.append("Details: ").append(getDetails()).append(",");
         if (getChildPolicy() != null)
-            sb.append("ChildPolicy: " + getChildPolicy() + ",");
+            sb.append("ChildPolicy: ").append(getChildPolicy()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause());
+            sb.append("Cause: ").append(getCause());
         sb.append("}");
         return sb.toString();
     }

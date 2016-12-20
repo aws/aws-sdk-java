@@ -55,6 +55,11 @@ public class ClusterParameterGroupStatusStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("ClusterParameterStatusList", targetDepth)) {
+                    clusterParameterGroupStatus.withClusterParameterStatusList(new ArrayList<ClusterParameterStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("ClusterParameterStatusList/member", targetDepth)) {
                     clusterParameterGroupStatus.withClusterParameterStatusList(ClusterParameterStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

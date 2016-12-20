@@ -178,11 +178,11 @@ public class SendTaskFailureRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskToken() != null)
-            sb.append("TaskToken: " + getTaskToken() + ",");
+            sb.append("TaskToken: ").append(getTaskToken()).append(",");
         if (getError() != null)
-            sb.append("Error: " + getError() + ",");
+            sb.append("Error: ").append(getError()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause());
+            sb.append("Cause: ").append(getCause());
         sb.append("}");
         return sb.toString();
     }

@@ -174,9 +174,9 @@ public class CreateGrantResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGrantToken() != null)
-            sb.append("GrantToken: " + getGrantToken() + ",");
+            sb.append("GrantToken: ").append(getGrantToken()).append(",");
         if (getGrantId() != null)
-            sb.append("GrantId: " + getGrantId());
+            sb.append("GrantId: ").append(getGrantId());
         sb.append("}");
         return sb.toString();
     }

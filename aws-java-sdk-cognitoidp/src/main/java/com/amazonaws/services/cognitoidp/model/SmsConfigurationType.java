@@ -126,9 +126,9 @@ public class SmsConfigurationType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnsCallerArn() != null)
-            sb.append("SnsCallerArn: " + getSnsCallerArn() + ",");
+            sb.append("SnsCallerArn: ").append(getSnsCallerArn()).append(",");
         if (getExternalId() != null)
-            sb.append("ExternalId: " + getExternalId());
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }

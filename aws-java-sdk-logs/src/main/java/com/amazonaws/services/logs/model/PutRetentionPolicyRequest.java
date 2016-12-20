@@ -127,9 +127,9 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getRetentionInDays() != null)
-            sb.append("RetentionInDays: " + getRetentionInDays());
+            sb.append("RetentionInDays: ").append(getRetentionInDays());
         sb.append("}");
         return sb.toString();
     }

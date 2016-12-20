@@ -153,9 +153,9 @@ public class RetrieveTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN() + ",");
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN());
         sb.append("}");
         return sb.toString();
     }

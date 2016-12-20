@@ -45,6 +45,11 @@ public class DescribeAutoScalingInstancesResultStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AutoScalingInstances", targetDepth)) {
+                    describeAutoScalingInstancesResult.withAutoScalingInstances(new ArrayList<AutoScalingInstanceDetails>());
+                    continue;
+                }
+
                 if (context.testExpression("AutoScalingInstances/member", targetDepth)) {
                     describeAutoScalingInstancesResult.withAutoScalingInstances(AutoScalingInstanceDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

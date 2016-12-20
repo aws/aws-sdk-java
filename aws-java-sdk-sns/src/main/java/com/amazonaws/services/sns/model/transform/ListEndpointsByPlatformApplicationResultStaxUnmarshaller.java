@@ -46,6 +46,11 @@ public class ListEndpointsByPlatformApplicationResultStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Endpoints", targetDepth)) {
+                    listEndpointsByPlatformApplicationResult.withEndpoints(new ArrayList<Endpoint>());
+                    continue;
+                }
+
                 if (context.testExpression("Endpoints/member", targetDepth)) {
                     listEndpointsByPlatformApplicationResult.withEndpoints(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

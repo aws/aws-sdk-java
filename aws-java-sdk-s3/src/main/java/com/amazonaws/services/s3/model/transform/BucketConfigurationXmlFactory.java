@@ -14,9 +14,6 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
@@ -38,8 +35,6 @@ import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.CloudFunctionConfiguration;
 import com.amazonaws.services.s3.model.Filter;
 import com.amazonaws.services.s3.model.FilterRule;
-import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
-import com.amazonaws.services.s3.model.inventory.InventoryDestination;
 import com.amazonaws.services.s3.model.LambdaConfiguration;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
@@ -52,6 +47,24 @@ import com.amazonaws.services.s3.model.S3KeyFilter;
 import com.amazonaws.services.s3.model.Tag;
 import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.TopicConfiguration;
+import com.amazonaws.services.s3.model.analytics.AnalyticsAndOperator;
+import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.analytics.AnalyticsExportDestination;
+import com.amazonaws.services.s3.model.analytics.AnalyticsFilter;
+import com.amazonaws.services.s3.model.analytics.AnalyticsFilterPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsPredicateVisitor;
+import com.amazonaws.services.s3.model.analytics.AnalyticsPrefixPredicate;
+import com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination;
+import com.amazonaws.services.s3.model.analytics.AnalyticsTagPredicate;
+import com.amazonaws.services.s3.model.analytics.StorageClassAnalysis;
+import com.amazonaws.services.s3.model.analytics.StorageClassAnalysisDataExport;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
+import com.amazonaws.services.s3.model.inventory.InventoryDestination;
+import com.amazonaws.services.s3.model.inventory.InventoryFilter;
+import com.amazonaws.services.s3.model.inventory.InventoryFilterPredicate;
+import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
+import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
+import com.amazonaws.services.s3.model.inventory.InventorySchedule;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleAndOperator;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilter;
 import com.amazonaws.services.s3.model.lifecycle.LifecycleFilterPredicate;
@@ -65,23 +78,10 @@ import com.amazonaws.services.s3.model.metrics.MetricsFilterPredicate;
 import com.amazonaws.services.s3.model.metrics.MetricsPredicateVisitor;
 import com.amazonaws.services.s3.model.metrics.MetricsPrefixPredicate;
 import com.amazonaws.services.s3.model.metrics.MetricsTagPredicate;
-import com.amazonaws.services.s3.model.analytics.AnalyticsAndOperator;
-import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
-import com.amazonaws.services.s3.model.analytics.AnalyticsExportDestination;
-import com.amazonaws.services.s3.model.analytics.AnalyticsFilter;
-import com.amazonaws.services.s3.model.analytics.AnalyticsFilterPredicate;
-import com.amazonaws.services.s3.model.analytics.AnalyticsPredicateVisitor;
-import com.amazonaws.services.s3.model.analytics.AnalyticsPrefixPredicate;
-import com.amazonaws.services.s3.model.analytics.AnalyticsS3BucketDestination;
-import com.amazonaws.services.s3.model.analytics.AnalyticsTagPredicate;
-import com.amazonaws.services.s3.model.analytics.StorageClassAnalysis;
-import com.amazonaws.services.s3.model.analytics.StorageClassAnalysisDataExport;
-import com.amazonaws.services.s3.model.inventory.InventoryFilter;
-import com.amazonaws.services.s3.model.inventory.InventoryFilterPredicate;
-import com.amazonaws.services.s3.model.inventory.InventoryPrefixPredicate;
-import com.amazonaws.services.s3.model.inventory.InventoryS3BucketDestination;
-import com.amazonaws.services.s3.model.inventory.InventorySchedule;
 import com.amazonaws.util.CollectionUtils;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Converts bucket configuration objects into XML byte arrays.
@@ -469,7 +469,7 @@ public class BucketConfigurationXmlFactory {
         if (rule.getId() != null) {
             xml.start("ID").value(rule.getId()).end();
         }
-        writePrefix(xml, rule.getPrefix());
+        writePrefix(xml, rule);
         xml.start("Status").value(rule.getStatus()).end();
         writeLifecycleFilter(xml, rule.getFilter());
 
@@ -1076,6 +1076,16 @@ public class BucketConfigurationXmlFactory {
     private void addParameterIfNotNull(XmlWriter xml, String xmlTagName, String value) {
         if (value != null) {
             xml.start(xmlTagName).value(value).end();
+        }
+    }
+
+    private void writePrefix(XmlWriter xml, Rule rule) {
+        // If no filter is set stick with the legacy behavior where we treat a null prefix as empty prefix.
+        if (rule.getFilter() == null) {
+            xml.start("Prefix").value(rule.getPrefix() == null ? "" : rule.getPrefix()).end();
+        } else if (rule.getPrefix() != null) {
+            throw new IllegalArgumentException(
+                    "Prefix cannot be used with Filter. Use LifecyclePrefixPredicate to create a LifecycleFilter");
         }
     }
 

@@ -183,11 +183,11 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartDestinationId() != null)
-            sb.append("ExclusiveStartDestinationId: " + getExclusiveStartDestinationId());
+            sb.append("ExclusiveStartDestinationId: ").append(getExclusiveStartDestinationId());
         sb.append("}");
         return sb.toString();
     }

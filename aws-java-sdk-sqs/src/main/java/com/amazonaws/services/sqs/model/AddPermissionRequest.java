@@ -22,7 +22,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which permissions are added.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
@@ -31,16 +31,17 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String queueUrl;
     /**
      * <p>
-     * The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>). Constraints:
-     * Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum
+     * 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (
+     * <code>_</code>).
      * </p>
      */
     private String label;
     /**
      * <p>
      * The AWS account number of the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given permission.
-     * The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
+     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The
+     * principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
      * locating the AWS account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS
      * Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
@@ -49,14 +50,52 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> aWSAccountIds;
     /**
      * <p>
-     * The action the client wants to allow for the specified principal. The following are valid values:
-     * <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     * . For more information about these actions, see <a href=
+     * The action the client wants to allow for the specified principal. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ChangeMessageVisibility</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueAttributes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueUrl</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReceiveMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SendMessage</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these actions, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      * >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the
+     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for
      * <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.
      * </p>
@@ -75,29 +114,68 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * initialize any additional object members.
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which permissions are added.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @param label
-     *        The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>).
-     *        Constraints: Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     *        The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>).
+     *        Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and
+     *        underscores (<code>_</code>).
      * @param aWSAccountIds
      *        The AWS account number of the <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given
+     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given
      *        permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For
      *        information about locating the AWS account identification, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
      *        AWS Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * @param actions
-     *        The action the client wants to allow for the specified principal. The following are valid values:
-     *        <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     *        . For more information about these actions, see <a href=
+     *        The action the client wants to allow for the specified principal. The following values are valid:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ChangeMessageVisibility</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeleteMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueAttributes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueUrl</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReceiveMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SendMessage</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these actions, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
      *        </p>
      *        <p>
      *        Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code>
-     *        for the <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
+     *        for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
      *        actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      *        <code>ChangeMessageVisibilityBatch</code>.
      */
@@ -110,14 +188,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which permissions are added.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which permissions are added.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      */
@@ -128,13 +206,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which permissions are added.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
-     * @return The URL of the Amazon SQS queue to take action on.</p>
+     * @return The URL of the Amazon SQS queue to which permissions are added.</p>
      *         <p>
      *         Queue URLs are case-sensitive.
      */
@@ -145,14 +223,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The URL of the Amazon SQS queue to take action on.
+     * The URL of the Amazon SQS queue to which permissions are added.
      * </p>
      * <p>
      * Queue URLs are case-sensitive.
      * </p>
      * 
      * @param queueUrl
-     *        The URL of the Amazon SQS queue to take action on.</p>
+     *        The URL of the Amazon SQS queue to which permissions are added.</p>
      *        <p>
      *        Queue URLs are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -165,13 +243,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>). Constraints:
-     * Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum
+     * 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (
+     * <code>_</code>).
      * </p>
      * 
      * @param label
-     *        The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>).
-     *        Constraints: Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     *        The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>).
+     *        Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and
+     *        underscores (<code>_</code>).
      */
 
     public void setLabel(String label) {
@@ -180,13 +260,14 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>). Constraints:
-     * Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum
+     * 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (
+     * <code>_</code>).
      * </p>
      * 
-     * @return The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>).
-     *         Constraints: Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are
-     *         allowed.
+     * @return The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>).
+     *         Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and
+     *         underscores (<code>_</code>).
      */
 
     public String getLabel() {
@@ -195,13 +276,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>). Constraints:
-     * Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     * The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum
+     * 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (
+     * <code>_</code>).
      * </p>
      * 
      * @param label
-     *        The unique identification of the permission you're setting (e.g., <code>AliceSendMessage</code>).
-     *        Constraints: Maximum 80 characters; alphanumeric characters, hyphens (-), and underscores (_) are allowed.
+     *        The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>).
+     *        Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and
+     *        underscores (<code>_</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,15 +296,15 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The AWS account number of the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given permission.
-     * The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
+     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The
+     * principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
      * locating the AWS account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS
      * Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * 
      * @return The AWS account number of the <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given
+     *         href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given
      *         permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For
      *         information about locating the AWS account identification, see <a
      *         href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
@@ -238,8 +321,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The AWS account number of the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given permission.
-     * The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
+     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The
+     * principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
      * locating the AWS account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS
      * Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
@@ -247,7 +330,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param aWSAccountIds
      *        The AWS account number of the <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given
+     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given
      *        permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For
      *        information about locating the AWS account identification, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
@@ -266,8 +349,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The AWS account number of the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given permission.
-     * The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
+     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The
+     * principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
      * locating the AWS account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS
      * Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
@@ -280,7 +363,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param aWSAccountIds
      *        The AWS account number of the <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given
+     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given
      *        permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For
      *        information about locating the AWS account identification, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
@@ -301,8 +384,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The AWS account number of the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given permission.
-     * The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
+     * href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given permission. The
+     * principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about
      * locating the AWS account identification, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS
      * Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
@@ -310,7 +393,7 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param aWSAccountIds
      *        The AWS account number of the <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given
+     *        href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who is given
      *        permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For
      *        information about locating the AWS account identification, see <a
      *        href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your
@@ -325,26 +408,102 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action the client wants to allow for the specified principal. The following are valid values:
-     * <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     * . For more information about these actions, see <a href=
+     * The action the client wants to allow for the specified principal. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ChangeMessageVisibility</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueAttributes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueUrl</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReceiveMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SendMessage</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these actions, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      * >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the
+     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for
      * <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.
      * </p>
      * 
-     * @return The action the client wants to allow for the specified principal. The following are valid values:
-     *         <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     *         . For more information about these actions, see <a href=
+     * @return The action the client wants to allow for the specified principal. The following values are valid:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>*</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ChangeMessageVisibility</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DeleteMessage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GetQueueAttributes</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GetQueueUrl</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReceiveMessage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SendMessage</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about these actions, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
-     *         >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     *         >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
+     *         </p>
      *         <p>
      *         Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code>
-     *         for the <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
+     *         for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
      *         actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      *         <code>ChangeMessageVisibilityBatch</code>.
      */
@@ -358,27 +517,103 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action the client wants to allow for the specified principal. The following are valid values:
-     * <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     * . For more information about these actions, see <a href=
+     * The action the client wants to allow for the specified principal. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ChangeMessageVisibility</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueAttributes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueUrl</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReceiveMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SendMessage</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these actions, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      * >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the
+     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for
      * <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.
      * </p>
      * 
      * @param actions
-     *        The action the client wants to allow for the specified principal. The following are valid values:
-     *        <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     *        . For more information about these actions, see <a href=
+     *        The action the client wants to allow for the specified principal. The following values are valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ChangeMessageVisibility</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeleteMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueAttributes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueUrl</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReceiveMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SendMessage</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these actions, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
-     *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code>
-     *        for the <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
+     *        for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
      *        actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      *        <code>ChangeMessageVisibilityBatch</code>.
      */
@@ -394,14 +629,52 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action the client wants to allow for the specified principal. The following are valid values:
-     * <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     * . For more information about these actions, see <a href=
+     * The action the client wants to allow for the specified principal. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ChangeMessageVisibility</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueAttributes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueUrl</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReceiveMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SendMessage</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these actions, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      * >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the
+     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for
      * <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.
      * </p>
@@ -412,14 +685,52 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param actions
-     *        The action the client wants to allow for the specified principal. The following are valid values:
-     *        <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     *        . For more information about these actions, see <a href=
+     *        The action the client wants to allow for the specified principal. The following values are valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ChangeMessageVisibility</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeleteMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueAttributes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueUrl</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReceiveMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SendMessage</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these actions, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
-     *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code>
-     *        for the <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
+     *        for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
      *        actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      *        <code>ChangeMessageVisibilityBatch</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -437,27 +748,103 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The action the client wants to allow for the specified principal. The following are valid values:
-     * <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     * . For more information about these actions, see <a href=
+     * The action the client wants to allow for the specified principal. The following values are valid:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ChangeMessageVisibility</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueAttributes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetQueueUrl</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReceiveMessage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SendMessage</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these actions, see <a href=
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
      * >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for the
+     * Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for
      * <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions:
      * <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.
      * </p>
      * 
      * @param actions
-     *        The action the client wants to allow for the specified principal. The following are valid values:
-     *        <code>* | SendMessage | ReceiveMessage | DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</code>
-     *        . For more information about these actions, see <a href=
+     *        The action the client wants to allow for the specified principal. The following values are valid:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ChangeMessageVisibility</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeleteMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueAttributes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GetQueueUrl</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReceiveMessage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SendMessage</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these actions, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes"
-     *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     *        >Understanding Permissions</a> in the <i>Amazon SQS Developer Guide</i>.
+     *        </p>
      *        <p>
      *        Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code>
-     *        for the <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
+     *        for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those
      *        actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and
      *        <code>ChangeMessageVisibilityBatch</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -480,13 +867,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrl() != null)
-            sb.append("QueueUrl: " + getQueueUrl() + ",");
+            sb.append("QueueUrl: ").append(getQueueUrl()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel() + ",");
+            sb.append("Label: ").append(getLabel()).append(",");
         if (getAWSAccountIds() != null)
-            sb.append("AWSAccountIds: " + getAWSAccountIds() + ",");
+            sb.append("AWSAccountIds: ").append(getAWSAccountIds()).append(",");
         if (getActions() != null)
-            sb.append("Actions: " + getActions());
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }

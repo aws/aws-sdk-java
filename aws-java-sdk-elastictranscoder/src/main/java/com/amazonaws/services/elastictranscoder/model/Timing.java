@@ -172,11 +172,11 @@ public class Timing implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubmitTimeMillis() != null)
-            sb.append("SubmitTimeMillis: " + getSubmitTimeMillis() + ",");
+            sb.append("SubmitTimeMillis: ").append(getSubmitTimeMillis()).append(",");
         if (getStartTimeMillis() != null)
-            sb.append("StartTimeMillis: " + getStartTimeMillis() + ",");
+            sb.append("StartTimeMillis: ").append(getStartTimeMillis()).append(",");
         if (getFinishTimeMillis() != null)
-            sb.append("FinishTimeMillis: " + getFinishTimeMillis());
+            sb.append("FinishTimeMillis: ").append(getFinishTimeMillis());
         sb.append("}");
         return sb.toString();
     }

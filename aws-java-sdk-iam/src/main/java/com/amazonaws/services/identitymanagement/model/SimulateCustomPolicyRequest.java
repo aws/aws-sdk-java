@@ -1531,25 +1531,25 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyInputList() != null)
-            sb.append("PolicyInputList: " + getPolicyInputList() + ",");
+            sb.append("PolicyInputList: ").append(getPolicyInputList()).append(",");
         if (getActionNames() != null)
-            sb.append("ActionNames: " + getActionNames() + ",");
+            sb.append("ActionNames: ").append(getActionNames()).append(",");
         if (getResourceArns() != null)
-            sb.append("ResourceArns: " + getResourceArns() + ",");
+            sb.append("ResourceArns: ").append(getResourceArns()).append(",");
         if (getResourcePolicy() != null)
-            sb.append("ResourcePolicy: " + getResourcePolicy() + ",");
+            sb.append("ResourcePolicy: ").append(getResourcePolicy()).append(",");
         if (getResourceOwner() != null)
-            sb.append("ResourceOwner: " + getResourceOwner() + ",");
+            sb.append("ResourceOwner: ").append(getResourceOwner()).append(",");
         if (getCallerArn() != null)
-            sb.append("CallerArn: " + getCallerArn() + ",");
+            sb.append("CallerArn: ").append(getCallerArn()).append(",");
         if (getContextEntries() != null)
-            sb.append("ContextEntries: " + getContextEntries() + ",");
+            sb.append("ContextEntries: ").append(getContextEntries()).append(",");
         if (getResourceHandlingOption() != null)
-            sb.append("ResourceHandlingOption: " + getResourceHandlingOption() + ",");
+            sb.append("ResourceHandlingOption: ").append(getResourceHandlingOption()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems() + ",");
+            sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

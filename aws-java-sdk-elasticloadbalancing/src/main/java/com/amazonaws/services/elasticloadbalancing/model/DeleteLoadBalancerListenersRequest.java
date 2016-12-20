@@ -181,9 +181,9 @@ public class DeleteLoadBalancerListenersRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getLoadBalancerPorts() != null)
-            sb.append("LoadBalancerPorts: " + getLoadBalancerPorts());
+            sb.append("LoadBalancerPorts: ").append(getLoadBalancerPorts());
         sb.append("}");
         return sb.toString();
     }

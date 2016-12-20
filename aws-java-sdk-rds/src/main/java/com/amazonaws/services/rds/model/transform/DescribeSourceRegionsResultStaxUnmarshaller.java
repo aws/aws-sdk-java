@@ -50,6 +50,11 @@ public class DescribeSourceRegionsResultStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("SourceRegions", targetDepth)) {
+                    describeSourceRegionsResult.withSourceRegions(new ArrayList<SourceRegion>());
+                    continue;
+                }
+
                 if (context.testExpression("SourceRegions/SourceRegion", targetDepth)) {
                     describeSourceRegionsResult.withSourceRegions(SourceRegionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

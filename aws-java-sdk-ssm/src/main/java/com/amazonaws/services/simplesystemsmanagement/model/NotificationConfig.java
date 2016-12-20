@@ -317,11 +317,11 @@ public class NotificationConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNotificationArn() != null)
-            sb.append("NotificationArn: " + getNotificationArn() + ",");
+            sb.append("NotificationArn: ").append(getNotificationArn()).append(",");
         if (getNotificationEvents() != null)
-            sb.append("NotificationEvents: " + getNotificationEvents() + ",");
+            sb.append("NotificationEvents: ").append(getNotificationEvents()).append(",");
         if (getNotificationType() != null)
-            sb.append("NotificationType: " + getNotificationType());
+            sb.append("NotificationType: ").append(getNotificationType());
         sb.append("}");
         return sb.toString();
     }

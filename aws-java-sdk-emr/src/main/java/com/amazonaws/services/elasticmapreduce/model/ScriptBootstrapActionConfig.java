@@ -188,9 +188,9 @@ public class ScriptBootstrapActionConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getArgs() != null)
-            sb.append("Args: " + getArgs());
+            sb.append("Args: ").append(getArgs());
         sb.append("}");
         return sb.toString();
     }

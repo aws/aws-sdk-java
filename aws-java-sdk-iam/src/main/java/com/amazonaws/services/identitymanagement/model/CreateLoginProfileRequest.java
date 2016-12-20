@@ -297,11 +297,11 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getPasswordResetRequired() != null)
-            sb.append("PasswordResetRequired: " + getPasswordResetRequired());
+            sb.append("PasswordResetRequired: ").append(getPasswordResetRequired());
         sb.append("}");
         return sb.toString();
     }

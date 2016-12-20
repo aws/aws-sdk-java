@@ -535,17 +535,17 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLexiconNames() != null)
-            sb.append("LexiconNames: " + getLexiconNames() + ",");
+            sb.append("LexiconNames: ").append(getLexiconNames()).append(",");
         if (getOutputFormat() != null)
-            sb.append("OutputFormat: " + getOutputFormat() + ",");
+            sb.append("OutputFormat: ").append(getOutputFormat()).append(",");
         if (getSampleRate() != null)
-            sb.append("SampleRate: " + getSampleRate() + ",");
+            sb.append("SampleRate: ").append(getSampleRate()).append(",");
         if (getText() != null)
-            sb.append("Text: " + getText() + ",");
+            sb.append("Text: ").append(getText()).append(",");
         if (getTextType() != null)
-            sb.append("TextType: " + getTextType() + ",");
+            sb.append("TextType: ").append(getTextType()).append(",");
         if (getVoiceId() != null)
-            sb.append("VoiceId: " + getVoiceId());
+            sb.append("VoiceId: ").append(getVoiceId());
         sb.append("}");
         return sb.toString();
     }

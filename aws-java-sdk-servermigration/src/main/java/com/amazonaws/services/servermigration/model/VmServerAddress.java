@@ -87,9 +87,9 @@ public class VmServerAddress implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVmManagerId() != null)
-            sb.append("VmManagerId: " + getVmManagerId() + ",");
+            sb.append("VmManagerId: ").append(getVmManagerId()).append(",");
         if (getVmId() != null)
-            sb.append("VmId: " + getVmId());
+            sb.append("VmId: ").append(getVmId());
         sb.append("}");
         return sb.toString();
     }

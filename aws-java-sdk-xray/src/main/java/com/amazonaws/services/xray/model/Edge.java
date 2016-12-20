@@ -370,17 +370,17 @@ public class Edge implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReferenceId() != null)
-            sb.append("ReferenceId: " + getReferenceId() + ",");
+            sb.append("ReferenceId: ").append(getReferenceId()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getSummaryStatistics() != null)
-            sb.append("SummaryStatistics: " + getSummaryStatistics() + ",");
+            sb.append("SummaryStatistics: ").append(getSummaryStatistics()).append(",");
         if (getResponseTimeHistogram() != null)
-            sb.append("ResponseTimeHistogram: " + getResponseTimeHistogram() + ",");
+            sb.append("ResponseTimeHistogram: ").append(getResponseTimeHistogram()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: " + getAliases());
+            sb.append("Aliases: ").append(getAliases());
         sb.append("}");
         return sb.toString();
     }

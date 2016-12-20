@@ -109,7 +109,7 @@ public class DescribeConfigurationsRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationIds() != null)
-            sb.append("ConfigurationIds: " + getConfigurationIds());
+            sb.append("ConfigurationIds: ").append(getConfigurationIds());
         sb.append("}");
         return sb.toString();
     }

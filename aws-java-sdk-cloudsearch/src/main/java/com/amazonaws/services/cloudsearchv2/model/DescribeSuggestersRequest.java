@@ -230,11 +230,11 @@ public class DescribeSuggestersRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getSuggesterNames() != null)
-            sb.append("SuggesterNames: " + getSuggesterNames() + ",");
+            sb.append("SuggesterNames: ").append(getSuggesterNames()).append(",");
         if (getDeployed() != null)
-            sb.append("Deployed: " + getDeployed());
+            sb.append("Deployed: ").append(getDeployed());
         sb.append("}");
         return sb.toString();
     }

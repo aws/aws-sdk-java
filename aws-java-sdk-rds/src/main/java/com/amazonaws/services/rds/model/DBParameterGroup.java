@@ -222,13 +222,13 @@ public class DBParameterGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBParameterGroupName() != null)
-            sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getDBParameterGroupFamily() != null)
-            sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+            sb.append("DBParameterGroupFamily: ").append(getDBParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDBParameterGroupArn() != null)
-            sb.append("DBParameterGroupArn: " + getDBParameterGroupArn());
+            sb.append("DBParameterGroupArn: ").append(getDBParameterGroupArn());
         sb.append("}");
         return sb.toString();
     }

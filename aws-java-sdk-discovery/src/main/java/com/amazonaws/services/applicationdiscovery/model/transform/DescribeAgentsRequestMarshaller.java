@@ -70,6 +70,19 @@ public class DescribeAgentsRequestMarshaller implements Marshaller<Request<Descr
                 }
                 jsonGenerator.writeEndArray();
             }
+
+            java.util.List<Filter> filtersList = describeAgentsRequest.getFilters();
+            if (filtersList != null) {
+                jsonGenerator.writeFieldName("filters");
+                jsonGenerator.writeStartArray();
+                for (Filter filtersListValue : filtersList) {
+                    if (filtersListValue != null) {
+
+                        FilterJsonMarshaller.getInstance().marshall(filtersListValue, jsonGenerator);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
             if (describeAgentsRequest.getMaxResults() != null) {
                 jsonGenerator.writeFieldName("maxResults").writeValue(describeAgentsRequest.getMaxResults());
             }

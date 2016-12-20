@@ -55,6 +55,11 @@ public class VpcClassicLinkStaxUnmarshaller implements Unmarshaller<VpcClassicLi
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpcClassicLink.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     vpcClassicLink.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

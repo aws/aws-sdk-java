@@ -308,17 +308,17 @@ public class ReplicationTaskStats implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFullLoadProgressPercent() != null)
-            sb.append("FullLoadProgressPercent: " + getFullLoadProgressPercent() + ",");
+            sb.append("FullLoadProgressPercent: ").append(getFullLoadProgressPercent()).append(",");
         if (getElapsedTimeMillis() != null)
-            sb.append("ElapsedTimeMillis: " + getElapsedTimeMillis() + ",");
+            sb.append("ElapsedTimeMillis: ").append(getElapsedTimeMillis()).append(",");
         if (getTablesLoaded() != null)
-            sb.append("TablesLoaded: " + getTablesLoaded() + ",");
+            sb.append("TablesLoaded: ").append(getTablesLoaded()).append(",");
         if (getTablesLoading() != null)
-            sb.append("TablesLoading: " + getTablesLoading() + ",");
+            sb.append("TablesLoading: ").append(getTablesLoading()).append(",");
         if (getTablesQueued() != null)
-            sb.append("TablesQueued: " + getTablesQueued() + ",");
+            sb.append("TablesQueued: ").append(getTablesQueued()).append(",");
         if (getTablesErrored() != null)
-            sb.append("TablesErrored: " + getTablesErrored());
+            sb.append("TablesErrored: ").append(getTablesErrored());
         sb.append("}");
         return sb.toString();
     }

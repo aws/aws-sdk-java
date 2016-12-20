@@ -61,11 +61,8 @@ public class GetEndpointRequestMarshaller implements Marshaller<Request<GetEndpo
 
         String uriResourcePath = "/v1/apps/{application-id}/endpoints/{endpoint-id}";
 
-        uriResourcePath = uriResourcePath.replace("{application-id}",
-                (getEndpointRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getEndpointRequest.getApplicationId()), false)
-                        : "");
-        uriResourcePath = uriResourcePath.replace("{endpoint-id}",
-                (getEndpointRequest.getEndpointId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getEndpointRequest.getEndpointId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id", getEndpointRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "endpoint-id", getEndpointRequest.getEndpointId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

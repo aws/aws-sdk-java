@@ -534,15 +534,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: " + getPrincipalArn() + ",");
+            sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
         if (getSAMLAssertion() != null)
-            sb.append("SAMLAssertion: " + getSAMLAssertion() + ",");
+            sb.append("SAMLAssertion: ").append(getSAMLAssertion()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy() + ",");
+            sb.append("Policy: ").append(getPolicy()).append(",");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: " + getDurationSeconds());
+            sb.append("DurationSeconds: ").append(getDurationSeconds());
         sb.append("}");
         return sb.toString();
     }

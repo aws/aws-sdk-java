@@ -110,7 +110,7 @@ public class SetSecurityGroupsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: " + getSecurityGroupIds());
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
         sb.append("}");
         return sb.toString();
     }

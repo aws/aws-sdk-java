@@ -61,10 +61,8 @@ public class GetClientCertificateRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/clientcertificates/{clientcertificate_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{clientcertificate_id}",
-                (getClientCertificateRequest.getClientCertificateId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getClientCertificateRequest.getClientCertificateId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "clientcertificate_id",
+                getClientCertificateRequest.getClientCertificateId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

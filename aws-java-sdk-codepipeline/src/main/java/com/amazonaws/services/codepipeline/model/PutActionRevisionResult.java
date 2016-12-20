@@ -138,9 +138,9 @@ public class PutActionRevisionResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNewRevision() != null)
-            sb.append("NewRevision: " + getNewRevision() + ",");
+            sb.append("NewRevision: ").append(getNewRevision()).append(",");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: " + getPipelineExecutionId());
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId());
         sb.append("}");
         return sb.toString();
     }

@@ -57,10 +57,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements
 
         String uriResourcePath = "/2016-11-25/streaming-distribution/{Id}/config";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updateStreamingDistributionRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updateStreamingDistributionRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateStreamingDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {

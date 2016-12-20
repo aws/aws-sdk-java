@@ -159,9 +159,9 @@ public class UnprocessedIdentityId implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode());
+            sb.append("ErrorCode: ").append(getErrorCode());
         sb.append("}");
         return sb.toString();
     }

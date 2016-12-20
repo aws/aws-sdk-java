@@ -171,15 +171,15 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getHourOfDay() != null)
-            sb.append("HourOfDay: " + getHourOfDay() + ",");
+            sb.append("HourOfDay: ").append(getHourOfDay()).append(",");
         if (getMinuteOfHour() != null)
-            sb.append("MinuteOfHour: " + getMinuteOfHour() + ",");
+            sb.append("MinuteOfHour: ").append(getMinuteOfHour()).append(",");
         if (getDayOfWeek() != null)
-            sb.append("DayOfWeek: " + getDayOfWeek() + ",");
+            sb.append("DayOfWeek: ").append(getDayOfWeek()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: " + getTimezone());
+            sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
         return sb.toString();
     }

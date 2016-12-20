@@ -172,9 +172,9 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceImageFace() != null)
-            sb.append("SourceImageFace: " + getSourceImageFace() + ",");
+            sb.append("SourceImageFace: ").append(getSourceImageFace()).append(",");
         if (getFaceMatches() != null)
-            sb.append("FaceMatches: " + getFaceMatches());
+            sb.append("FaceMatches: ").append(getFaceMatches());
         sb.append("}");
         return sb.toString();
     }

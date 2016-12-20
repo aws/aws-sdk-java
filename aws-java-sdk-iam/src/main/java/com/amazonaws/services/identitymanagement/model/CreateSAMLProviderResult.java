@@ -80,7 +80,7 @@ public class CreateSAMLProviderResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLProviderArn() != null)
-            sb.append("SAMLProviderArn: " + getSAMLProviderArn());
+            sb.append("SAMLProviderArn: ").append(getSAMLProviderArn());
         sb.append("}");
         return sb.toString();
     }

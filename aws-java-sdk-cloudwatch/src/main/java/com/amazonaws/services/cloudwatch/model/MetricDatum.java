@@ -413,17 +413,17 @@ public class MetricDatum implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions() + ",");
+            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getStatisticValues() != null)
-            sb.append("StatisticValues: " + getStatisticValues() + ",");
+            sb.append("StatisticValues: ").append(getStatisticValues()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: ").append(getUnit());
         sb.append("}");
         return sb.toString();
     }

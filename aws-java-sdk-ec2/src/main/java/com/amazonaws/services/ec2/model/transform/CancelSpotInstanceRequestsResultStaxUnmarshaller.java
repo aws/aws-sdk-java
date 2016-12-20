@@ -45,6 +45,11 @@ public class CancelSpotInstanceRequestsResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("spotInstanceRequestSet", targetDepth)) {
+                    cancelSpotInstanceRequestsResult.withCancelledSpotInstanceRequests(new ArrayList<CancelledSpotInstanceRequest>());
+                    continue;
+                }
+
                 if (context.testExpression("spotInstanceRequestSet/item", targetDepth)) {
                     cancelSpotInstanceRequestsResult.withCancelledSpotInstanceRequests(CancelledSpotInstanceRequestStaxUnmarshaller.getInstance().unmarshall(
                             context));

@@ -124,9 +124,9 @@ public class DescribeLimitsResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getShardLimit() != null)
-            sb.append("ShardLimit: " + getShardLimit() + ",");
+            sb.append("ShardLimit: ").append(getShardLimit()).append(",");
         if (getOpenShardCount() != null)
-            sb.append("OpenShardCount: " + getOpenShardCount());
+            sb.append("OpenShardCount: ").append(getOpenShardCount());
         sb.append("}");
         return sb.toString();
     }

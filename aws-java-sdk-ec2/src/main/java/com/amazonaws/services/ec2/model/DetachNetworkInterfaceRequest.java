@@ -153,9 +153,9 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentId() != null)
-            sb.append("AttachmentId: " + getAttachmentId() + ",");
+            sb.append("AttachmentId: ").append(getAttachmentId()).append(",");
         if (getForce() != null)
-            sb.append("Force: " + getForce());
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }

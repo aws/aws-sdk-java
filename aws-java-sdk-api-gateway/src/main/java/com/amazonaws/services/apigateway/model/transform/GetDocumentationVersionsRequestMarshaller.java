@@ -62,10 +62,8 @@ public class GetDocumentationVersionsRequestMarshaller implements Marshaller<Req
 
         String uriResourcePath = "/restapis/{restapi_id}/documentation/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (getDocumentationVersionsRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getDocumentationVersionsRequest.getRestApiId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
+                getDocumentationVersionsRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         if (getDocumentationVersionsRequest.getPosition() != null) {

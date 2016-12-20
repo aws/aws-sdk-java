@@ -45,6 +45,11 @@ public class DescribeDhcpOptionsResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("dhcpOptionsSet", targetDepth)) {
+                    describeDhcpOptionsResult.withDhcpOptions(new ArrayList<DhcpOptions>());
+                    continue;
+                }
+
                 if (context.testExpression("dhcpOptionsSet/item", targetDepth)) {
                     describeDhcpOptionsResult.withDhcpOptions(DhcpOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

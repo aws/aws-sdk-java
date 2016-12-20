@@ -112,7 +112,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCheckIds() != null)
-            sb.append("CheckIds: " + getCheckIds());
+            sb.append("CheckIds: ").append(getCheckIds());
         sb.append("}");
         return sb.toString();
     }

@@ -52,10 +52,7 @@ public class ListTrafficPolicyVersionsRequestMarshaller implements Marshaller<Re
 
         String uriResourcePath = "/2013-04-01/trafficpolicies/{Id}/versions";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (listTrafficPolicyVersionsRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listTrafficPolicyVersionsRequest.getId()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", listTrafficPolicyVersionsRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         if (listTrafficPolicyVersionsRequest.getTrafficPolicyVersionMarker() != null) {

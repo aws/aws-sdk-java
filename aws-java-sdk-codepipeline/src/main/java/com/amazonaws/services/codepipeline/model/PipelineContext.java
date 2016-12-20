@@ -161,11 +161,11 @@ public class PipelineContext implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getStage() != null)
-            sb.append("Stage: " + getStage() + ",");
+            sb.append("Stage: ").append(getStage()).append(",");
         if (getAction() != null)
-            sb.append("Action: " + getAction());
+            sb.append("Action: ").append(getAction());
         sb.append("}");
         return sb.toString();
     }

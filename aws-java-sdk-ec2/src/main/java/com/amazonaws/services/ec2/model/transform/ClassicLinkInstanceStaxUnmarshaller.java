@@ -55,8 +55,18 @@ public class ClassicLinkInstanceStaxUnmarshaller implements Unmarshaller<Classic
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    classicLinkInstance.withGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     classicLinkInstance.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    classicLinkInstance.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

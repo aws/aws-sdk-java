@@ -228,9 +228,9 @@ public class CreateWorkspacesResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedRequests() != null)
-            sb.append("FailedRequests: " + getFailedRequests() + ",");
+            sb.append("FailedRequests: ").append(getFailedRequests()).append(",");
         if (getPendingRequests() != null)
-            sb.append("PendingRequests: " + getPendingRequests());
+            sb.append("PendingRequests: ").append(getPendingRequests());
         sb.append("}");
         return sb.toString();
     }

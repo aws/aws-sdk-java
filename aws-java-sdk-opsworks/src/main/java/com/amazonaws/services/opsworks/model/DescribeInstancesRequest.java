@@ -227,11 +227,11 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId() + ",");
+            sb.append("LayerId: ").append(getLayerId()).append(",");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds());
+            sb.append("InstanceIds: ").append(getInstanceIds());
         sb.append("}");
         return sb.toString();
     }

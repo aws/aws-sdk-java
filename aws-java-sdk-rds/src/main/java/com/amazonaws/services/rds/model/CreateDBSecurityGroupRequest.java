@@ -423,11 +423,11 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSecurityGroupName() != null)
-            sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
+            sb.append("DBSecurityGroupName: ").append(getDBSecurityGroupName()).append(",");
         if (getDBSecurityGroupDescription() != null)
-            sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ",");
+            sb.append("DBSecurityGroupDescription: ").append(getDBSecurityGroupDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

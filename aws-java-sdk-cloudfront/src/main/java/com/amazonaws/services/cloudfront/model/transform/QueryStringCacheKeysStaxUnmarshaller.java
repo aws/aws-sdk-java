@@ -50,6 +50,11 @@ public class QueryStringCacheKeysStaxUnmarshaller implements Unmarshaller<QueryS
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    queryStringCacheKeys.withItems(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Name", targetDepth)) {
                     queryStringCacheKeys.withItems(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

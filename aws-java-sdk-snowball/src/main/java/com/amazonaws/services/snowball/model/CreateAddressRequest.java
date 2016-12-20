@@ -79,7 +79,7 @@ public class CreateAddressRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAddress() != null)
-            sb.append("Address: " + getAddress());
+            sb.append("Address: ").append(getAddress());
         sb.append("}");
         return sb.toString();
     }

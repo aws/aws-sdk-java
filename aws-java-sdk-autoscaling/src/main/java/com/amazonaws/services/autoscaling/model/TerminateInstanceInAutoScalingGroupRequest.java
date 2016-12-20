@@ -139,9 +139,9 @@ public class TerminateInstanceInAutoScalingGroupRequest extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getShouldDecrementDesiredCapacity() != null)
-            sb.append("ShouldDecrementDesiredCapacity: " + getShouldDecrementDesiredCapacity());
+            sb.append("ShouldDecrementDesiredCapacity: ").append(getShouldDecrementDesiredCapacity());
         sb.append("}");
         return sb.toString();
     }

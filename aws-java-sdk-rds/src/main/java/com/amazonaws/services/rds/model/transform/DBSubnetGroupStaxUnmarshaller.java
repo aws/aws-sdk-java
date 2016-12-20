@@ -65,6 +65,11 @@ public class DBSubnetGroupStaxUnmarshaller implements Unmarshaller<DBSubnetGroup
                     continue;
                 }
 
+                if (context.testExpression("Subnets", targetDepth)) {
+                    dBSubnetGroup.withSubnets(new ArrayList<Subnet>());
+                    continue;
+                }
+
                 if (context.testExpression("Subnets/Subnet", targetDepth)) {
                     dBSubnetGroup.withSubnets(SubnetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

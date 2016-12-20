@@ -50,6 +50,11 @@ public class DescribeSnapshotsResultStaxUnmarshaller implements Unmarshaller<Des
                     continue;
                 }
 
+                if (context.testExpression("Snapshots", targetDepth)) {
+                    describeSnapshotsResult.withSnapshots(new ArrayList<Snapshot>());
+                    continue;
+                }
+
                 if (context.testExpression("Snapshots/Snapshot", targetDepth)) {
                     describeSnapshotsResult.withSnapshots(SnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

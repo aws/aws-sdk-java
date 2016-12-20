@@ -92,7 +92,7 @@ public class AdjustmentType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdjustmentType() != null)
-            sb.append("AdjustmentType: " + getAdjustmentType());
+            sb.append("AdjustmentType: ").append(getAdjustmentType());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class UnassignIpv6AddressesResultStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("unassignedIpv6Addresses", targetDepth)) {
+                    unassignIpv6AddressesResult.withUnassignedIpv6Addresses(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("unassignedIpv6Addresses/item", targetDepth)) {
                     unassignIpv6AddressesResult.withUnassignedIpv6Addresses(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

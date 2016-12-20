@@ -61,9 +61,7 @@ public class InvokeAsyncRequestMarshaller implements Marshaller<Request<InvokeAs
 
         String uriResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
 
-        uriResourcePath = uriResourcePath.replace("{FunctionName}",
-                (invokeAsyncRequest.getFunctionName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(invokeAsyncRequest.getFunctionName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", invokeAsyncRequest.getFunctionName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(invokeAsyncRequest.getInvokeArgs());

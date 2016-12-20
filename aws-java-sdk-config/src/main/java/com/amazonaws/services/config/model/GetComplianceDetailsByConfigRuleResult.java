@@ -158,9 +158,9 @@ public class GetComplianceDetailsByConfigRuleResult extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationResults() != null)
-            sb.append("EvaluationResults: " + getEvaluationResults() + ",");
+            sb.append("EvaluationResults: ").append(getEvaluationResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

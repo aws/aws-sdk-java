@@ -113,7 +113,7 @@ public class ComposeEnvironmentsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironments() != null)
-            sb.append("Environments: " + getEnvironments());
+            sb.append("Environments: ").append(getEnvironments());
         sb.append("}");
         return sb.toString();
     }

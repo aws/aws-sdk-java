@@ -159,9 +159,9 @@ public class Action implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getTargetGroupArn() != null)
-            sb.append("TargetGroupArn: " + getTargetGroupArn());
+            sb.append("TargetGroupArn: ").append(getTargetGroupArn());
         sb.append("}");
         return sb.toString();
     }

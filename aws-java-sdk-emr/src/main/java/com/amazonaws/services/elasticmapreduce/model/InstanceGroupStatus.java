@@ -205,11 +205,11 @@ public class InstanceGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStateChangeReason() != null)
-            sb.append("StateChangeReason: " + getStateChangeReason() + ",");
+            sb.append("StateChangeReason: ").append(getStateChangeReason()).append(",");
         if (getTimeline() != null)
-            sb.append("Timeline: " + getTimeline());
+            sb.append("Timeline: ").append(getTimeline());
         sb.append("}");
         return sb.toString();
     }

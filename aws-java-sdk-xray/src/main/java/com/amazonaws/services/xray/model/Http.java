@@ -264,15 +264,15 @@ public class Http implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHttpURL() != null)
-            sb.append("HttpURL: " + getHttpURL() + ",");
+            sb.append("HttpURL: ").append(getHttpURL()).append(",");
         if (getHttpStatus() != null)
-            sb.append("HttpStatus: " + getHttpStatus() + ",");
+            sb.append("HttpStatus: ").append(getHttpStatus()).append(",");
         if (getHttpMethod() != null)
-            sb.append("HttpMethod: " + getHttpMethod() + ",");
+            sb.append("HttpMethod: ").append(getHttpMethod()).append(",");
         if (getUserAgent() != null)
-            sb.append("UserAgent: " + getUserAgent() + ",");
+            sb.append("UserAgent: ").append(getUserAgent()).append(",");
         if (getClientIp() != null)
-            sb.append("ClientIp: " + getClientIp());
+            sb.append("ClientIp: ").append(getClientIp());
         sb.append("}");
         return sb.toString();
     }

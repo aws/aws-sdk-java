@@ -55,7 +55,6 @@ import com.amazonaws.util.StringInputStream;
 public class RetryPolicyTestBase {
     
     protected static ClientConfiguration clientConfiguration = new ClientConfiguration();
-    protected static AmazonHttpClient testedClient = new AmazonHttpClient(clientConfiguration);
     protected static final AmazonWebServiceRequest originalRequest = new TestAmazonWebServiceRequest();
     protected static final HttpResponseHandler<AmazonServiceException> errorResponseHandler = new TestHttpResponseHandler();
  

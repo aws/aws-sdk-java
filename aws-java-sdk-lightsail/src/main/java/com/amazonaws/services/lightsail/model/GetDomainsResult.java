@@ -155,9 +155,9 @@ public class GetDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomains() != null)
-            sb.append("Domains: " + getDomains() + ",");
+            sb.append("Domains: ").append(getDomains()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

@@ -115,7 +115,7 @@ public class DestinationSchema implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordFormatType() != null)
-            sb.append("RecordFormatType: " + getRecordFormatType());
+            sb.append("RecordFormatType: ").append(getRecordFormatType());
         sb.append("}");
         return sb.toString();
     }

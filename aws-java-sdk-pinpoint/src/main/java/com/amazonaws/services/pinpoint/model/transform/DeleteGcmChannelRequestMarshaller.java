@@ -61,10 +61,8 @@ public class DeleteGcmChannelRequestMarshaller implements Marshaller<Request<Del
 
         String uriResourcePath = "/v1/apps/{application-id}/channels/gcm";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (deleteGcmChannelRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(deleteGcmChannelRequest.getApplicationId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                deleteGcmChannelRequest.getApplicationId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

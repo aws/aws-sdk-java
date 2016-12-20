@@ -16,31 +16,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * For each message in the batch, the response contains a <a>SendMessageBatchResultEntry</a> tag if the message succeeds
- * or a <a>BatchResultErrorEntry</a> tag if the message fails.
+ * For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a> </code> tag if the
+ * message succeeds or a <code> <a>BatchResultErrorEntry</a> </code> tag if the message fails.
  * </p>
  */
 public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchResultEntry</a> items.
+     * A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SendMessageBatchResultEntry> successful;
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that can't be
+     * enqueued.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BatchResultErrorEntry> failed;
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchResultEntry</a> items.
+     * A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * </p>
      * 
-     * @return A list of <a>SendMessageBatchResultEntry</a> items.
+     * @return A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      */
 
     public java.util.List<SendMessageBatchResultEntry> getSuccessful() {
@@ -52,11 +53,11 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchResultEntry</a> items.
+     * A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * </p>
      * 
      * @param successful
-     *        A list of <a>SendMessageBatchResultEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      */
 
     public void setSuccessful(java.util.Collection<SendMessageBatchResultEntry> successful) {
@@ -70,7 +71,7 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchResultEntry</a> items.
+     * A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +80,7 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param successful
-     *        A list of <a>SendMessageBatchResultEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +96,11 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>SendMessageBatchResultEntry</a> items.
+     * A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * </p>
      * 
      * @param successful
-     *        A list of <a>SendMessageBatchResultEntry</a> items.
+     *        A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +111,12 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that can't be
+     * enqueued.
      * </p>
      * 
-     * @return A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be
-     *         enqueued.
+     * @return A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that
+     *         can't be enqueued.
      */
 
     public java.util.List<BatchResultErrorEntry> getFailed() {
@@ -126,12 +128,13 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that can't be
+     * enqueued.
      * </p>
      * 
      * @param failed
-     *        A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be
-     *        enqueued.
+     *        A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that
+     *        can't be enqueued.
      */
 
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
@@ -145,7 +148,8 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that can't be
+     * enqueued.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,8 +158,8 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param failed
-     *        A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be
-     *        enqueued.
+     *        A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that
+     *        can't be enqueued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,12 +175,13 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
+     * A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that can't be
+     * enqueued.
      * </p>
      * 
      * @param failed
-     *        A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be
-     *        enqueued.
+     *        A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about each message that
+     *        can't be enqueued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,9 +202,9 @@ public class SendMessageBatchResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuccessful() != null)
-            sb.append("Successful: " + getSuccessful() + ",");
+            sb.append("Successful: ").append(getSuccessful()).append(",");
         if (getFailed() != null)
-            sb.append("Failed: " + getFailed());
+            sb.append("Failed: ").append(getFailed());
         sb.append("}");
         return sb.toString();
     }

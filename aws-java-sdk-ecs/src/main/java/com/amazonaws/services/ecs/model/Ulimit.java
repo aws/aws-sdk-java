@@ -205,11 +205,11 @@ public class Ulimit implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSoftLimit() != null)
-            sb.append("SoftLimit: " + getSoftLimit() + ",");
+            sb.append("SoftLimit: ").append(getSoftLimit()).append(",");
         if (getHardLimit() != null)
-            sb.append("HardLimit: " + getHardLimit());
+            sb.append("HardLimit: ").append(getHardLimit());
         sb.append("}");
         return sb.toString();
     }

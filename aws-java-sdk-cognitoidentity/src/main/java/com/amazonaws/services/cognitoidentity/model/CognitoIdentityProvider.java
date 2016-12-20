@@ -133,9 +133,9 @@ public class CognitoIdentityProvider implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProviderName() != null)
-            sb.append("ProviderName: " + getProviderName() + ",");
+            sb.append("ProviderName: ").append(getProviderName()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId());
+            sb.append("ClientId: ").append(getClientId());
         sb.append("}");
         return sb.toString();
     }

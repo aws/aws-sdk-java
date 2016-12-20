@@ -304,11 +304,11 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTemplateBody() != null)
-            sb.append("TemplateBody: " + getTemplateBody() + ",");
+            sb.append("TemplateBody: ").append(getTemplateBody()).append(",");
         if (getTemplateURL() != null)
-            sb.append("TemplateURL: " + getTemplateURL() + ",");
+            sb.append("TemplateURL: ").append(getTemplateURL()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: ").append(getStackName());
         sb.append("}");
         return sb.toString();
     }

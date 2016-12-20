@@ -205,11 +205,11 @@ public class IPRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getCIDRIP() != null)
-            sb.append("CIDRIP: " + getCIDRIP() + ",");
+            sb.append("CIDRIP: ").append(getCIDRIP()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

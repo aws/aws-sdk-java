@@ -110,7 +110,7 @@ public class CreateLoadBalancerResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancers() != null)
-            sb.append("LoadBalancers: " + getLoadBalancers());
+            sb.append("LoadBalancers: ").append(getLoadBalancers());
         sb.append("}");
         return sb.toString();
     }

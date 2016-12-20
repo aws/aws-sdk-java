@@ -124,9 +124,9 @@ public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getTelemetryEndpoint() != null)
-            sb.append("TelemetryEndpoint: " + getTelemetryEndpoint());
+            sb.append("TelemetryEndpoint: ").append(getTelemetryEndpoint());
         sb.append("}");
         return sb.toString();
     }

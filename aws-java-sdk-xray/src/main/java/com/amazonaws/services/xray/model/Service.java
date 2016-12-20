@@ -861,29 +861,29 @@ public class Service implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReferenceId() != null)
-            sb.append("ReferenceId: " + getReferenceId() + ",");
+            sb.append("ReferenceId: ").append(getReferenceId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getNames() != null)
-            sb.append("Names: " + getNames() + ",");
+            sb.append("Names: ").append(getNames()).append(",");
         if (getRoot() != null)
-            sb.append("Root: " + getRoot() + ",");
+            sb.append("Root: ").append(getRoot()).append(",");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getEdges() != null)
-            sb.append("Edges: " + getEdges() + ",");
+            sb.append("Edges: ").append(getEdges()).append(",");
         if (getSummaryStatistics() != null)
-            sb.append("SummaryStatistics: " + getSummaryStatistics() + ",");
+            sb.append("SummaryStatistics: ").append(getSummaryStatistics()).append(",");
         if (getDurationHistogram() != null)
-            sb.append("DurationHistogram: " + getDurationHistogram());
+            sb.append("DurationHistogram: ").append(getDurationHistogram());
         sb.append("}");
         return sb.toString();
     }

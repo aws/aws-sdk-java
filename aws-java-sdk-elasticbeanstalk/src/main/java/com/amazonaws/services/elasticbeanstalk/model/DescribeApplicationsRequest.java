@@ -123,7 +123,7 @@ public class DescribeApplicationsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationNames() != null)
-            sb.append("ApplicationNames: " + getApplicationNames());
+            sb.append("ApplicationNames: ").append(getApplicationNames());
         sb.append("}");
         return sb.toString();
     }

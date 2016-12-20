@@ -80,7 +80,7 @@ public class UpdatePipelineStatusResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipeline() != null)
-            sb.append("Pipeline: " + getPipeline());
+            sb.append("Pipeline: ").append(getPipeline());
         sb.append("}");
         return sb.toString();
     }

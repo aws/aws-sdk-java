@@ -294,11 +294,11 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: " + getDurationSeconds() + ",");
+            sb.append("DurationSeconds: ").append(getDurationSeconds()).append(",");
         if (getSerialNumber() != null)
-            sb.append("SerialNumber: " + getSerialNumber() + ",");
+            sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getTokenCode() != null)
-            sb.append("TokenCode: " + getTokenCode());
+            sb.append("TokenCode: ").append(getTokenCode());
         sb.append("}");
         return sb.toString();
     }

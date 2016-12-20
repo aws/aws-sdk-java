@@ -79,7 +79,7 @@ public class DeregisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEcsClusterArn() != null)
-            sb.append("EcsClusterArn: " + getEcsClusterArn());
+            sb.append("EcsClusterArn: ").append(getEcsClusterArn());
         sb.append("}");
         return sb.toString();
     }

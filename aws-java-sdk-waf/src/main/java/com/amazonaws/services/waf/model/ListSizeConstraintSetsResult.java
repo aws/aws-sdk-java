@@ -178,9 +178,9 @@ public class ListSizeConstraintSetsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getSizeConstraintSets() != null)
-            sb.append("SizeConstraintSets: " + getSizeConstraintSets());
+            sb.append("SizeConstraintSets: ").append(getSizeConstraintSets());
         sb.append("}");
         return sb.toString();
     }

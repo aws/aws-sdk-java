@@ -80,7 +80,7 @@ public class MetricGranularityType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGranularity() != null)
-            sb.append("Granularity: " + getGranularity());
+            sb.append("Granularity: ").append(getGranularity());
         sb.append("}");
         return sb.toString();
     }

@@ -251,13 +251,13 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInfoType() != null)
-            sb.append("InfoType: " + getInfoType() + ",");
+            sb.append("InfoType: ").append(getInfoType()).append(",");
         if (getEc2InstanceId() != null)
-            sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+            sb.append("Ec2InstanceId: ").append(getEc2InstanceId()).append(",");
         if (getSampleTimestamp() != null)
-            sb.append("SampleTimestamp: " + getSampleTimestamp() + ",");
+            sb.append("SampleTimestamp: ").append(getSampleTimestamp()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

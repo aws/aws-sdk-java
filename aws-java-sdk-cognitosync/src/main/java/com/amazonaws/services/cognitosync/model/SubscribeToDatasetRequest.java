@@ -226,13 +226,13 @@ public class SubscribeToDatasetRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getDatasetName() != null)
-            sb.append("DatasetName: " + getDatasetName() + ",");
+            sb.append("DatasetName: ").append(getDatasetName()).append(",");
         if (getDeviceId() != null)
-            sb.append("DeviceId: " + getDeviceId());
+            sb.append("DeviceId: ").append(getDeviceId());
         sb.append("}");
         return sb.toString();
     }

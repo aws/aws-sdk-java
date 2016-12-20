@@ -230,13 +230,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: " + getBaselineId() + ",");
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getBaselineName() != null)
-            sb.append("BaselineName: " + getBaselineName() + ",");
+            sb.append("BaselineName: ").append(getBaselineName()).append(",");
         if (getBaselineDescription() != null)
-            sb.append("BaselineDescription: " + getBaselineDescription() + ",");
+            sb.append("BaselineDescription: ").append(getBaselineDescription()).append(",");
         if (getDefaultBaseline() != null)
-            sb.append("DefaultBaseline: " + getDefaultBaseline());
+            sb.append("DefaultBaseline: ").append(getDefaultBaseline());
         sb.append("}");
         return sb.toString();
     }

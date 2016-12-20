@@ -113,7 +113,7 @@ public class DescribeInstanceHealthResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceStates() != null)
-            sb.append("InstanceStates: " + getInstanceStates());
+            sb.append("InstanceStates: ").append(getInstanceStates());
         sb.append("}");
         return sb.toString();
     }

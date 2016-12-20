@@ -159,9 +159,9 @@ public class ListIdentitiesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentities() != null)
-            sb.append("Identities: " + getIdentities() + ",");
+            sb.append("Identities: ").append(getIdentities()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -264,15 +264,15 @@ public class DeploymentOverview implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPending() != null)
-            sb.append("Pending: " + getPending() + ",");
+            sb.append("Pending: ").append(getPending()).append(",");
         if (getInProgress() != null)
-            sb.append("InProgress: " + getInProgress() + ",");
+            sb.append("InProgress: ").append(getInProgress()).append(",");
         if (getSucceeded() != null)
-            sb.append("Succeeded: " + getSucceeded() + ",");
+            sb.append("Succeeded: ").append(getSucceeded()).append(",");
         if (getFailed() != null)
-            sb.append("Failed: " + getFailed() + ",");
+            sb.append("Failed: ").append(getFailed()).append(",");
         if (getSkipped() != null)
-            sb.append("Skipped: " + getSkipped());
+            sb.append("Skipped: ").append(getSkipped());
         sb.append("}");
         return sb.toString();
     }

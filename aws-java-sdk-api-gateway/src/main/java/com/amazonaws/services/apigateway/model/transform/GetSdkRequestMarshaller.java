@@ -61,12 +61,9 @@ public class GetSdkRequestMarshaller implements Marshaller<Request<GetSdkRequest
 
         String uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (getSdkRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSdkRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{stage_name}",
-                (getSdkRequest.getStageName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSdkRequest.getStageName()), false) : "");
-        uriResourcePath = uriResourcePath.replace("{sdk_type}",
-                (getSdkRequest.getSdkType() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(getSdkRequest.getSdkType()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getSdkRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "stage_name", getSdkRequest.getStageName());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "sdk_type", getSdkRequest.getSdkType());
         request.setResourcePath(uriResourcePath);
 
         java.util.Map<String, String> parameters = getSdkRequest.getParameters();

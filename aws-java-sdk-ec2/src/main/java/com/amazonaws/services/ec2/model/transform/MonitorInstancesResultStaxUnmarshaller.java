@@ -45,6 +45,11 @@ public class MonitorInstancesResultStaxUnmarshaller implements Unmarshaller<Moni
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instancesSet", targetDepth)) {
+                    monitorInstancesResult.withInstanceMonitorings(new ArrayList<InstanceMonitoring>());
+                    continue;
+                }
+
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     monitorInstancesResult.withInstanceMonitorings(InstanceMonitoringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -173,11 +173,11 @@ public class VerifyUserAttributeRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: " + getAccessToken() + ",");
+            sb.append("AccessToken: ").append(getAccessToken()).append(",");
         if (getAttributeName() != null)
-            sb.append("AttributeName: " + getAttributeName() + ",");
+            sb.append("AttributeName: ").append(getAttributeName()).append(",");
         if (getCode() != null)
-            sb.append("Code: " + getCode());
+            sb.append("Code: ").append(getCode());
         sb.append("}");
         return sb.toString();
     }

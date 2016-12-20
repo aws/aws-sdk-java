@@ -236,9 +236,9 @@ public class ItemCollectionMetrics implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItemCollectionKey() != null)
-            sb.append("ItemCollectionKey: " + getItemCollectionKey() + ",");
+            sb.append("ItemCollectionKey: ").append(getItemCollectionKey()).append(",");
         if (getSizeEstimateRangeGB() != null)
-            sb.append("SizeEstimateRangeGB: " + getSizeEstimateRangeGB());
+            sb.append("SizeEstimateRangeGB: ").append(getSizeEstimateRangeGB());
         sb.append("}");
         return sb.toString();
     }

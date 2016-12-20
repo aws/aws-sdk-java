@@ -378,17 +378,17 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getSecretHash() != null)
-            sb.append("SecretHash: " + getSecretHash() + ",");
+            sb.append("SecretHash: ").append(getSecretHash()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: " + getPassword() + ",");
+            sb.append("Password: ").append(getPassword()).append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getValidationData() != null)
-            sb.append("ValidationData: " + getValidationData());
+            sb.append("ValidationData: ").append(getValidationData());
         sb.append("}");
         return sb.toString();
     }

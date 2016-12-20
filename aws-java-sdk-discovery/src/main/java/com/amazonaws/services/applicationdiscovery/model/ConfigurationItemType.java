@@ -19,7 +19,8 @@ public enum ConfigurationItemType {
 
     SERVER("SERVER"),
     PROCESS("PROCESS"),
-    CONNECTION("CONNECTION");
+    CONNECTION("CONNECTION"),
+    APPLICATION("APPLICATION");
 
     private String value;
 

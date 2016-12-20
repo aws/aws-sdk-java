@@ -753,19 +753,19 @@ public class UserType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getUserCreateDate() != null)
-            sb.append("UserCreateDate: " + getUserCreateDate() + ",");
+            sb.append("UserCreateDate: ").append(getUserCreateDate()).append(",");
         if (getUserLastModifiedDate() != null)
-            sb.append("UserLastModifiedDate: " + getUserLastModifiedDate() + ",");
+            sb.append("UserLastModifiedDate: ").append(getUserLastModifiedDate()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getUserStatus() != null)
-            sb.append("UserStatus: " + getUserStatus() + ",");
+            sb.append("UserStatus: ").append(getUserStatus()).append(",");
         if (getMFAOptions() != null)
-            sb.append("MFAOptions: " + getMFAOptions());
+            sb.append("MFAOptions: ").append(getMFAOptions());
         sb.append("}");
         return sb.toString();
     }

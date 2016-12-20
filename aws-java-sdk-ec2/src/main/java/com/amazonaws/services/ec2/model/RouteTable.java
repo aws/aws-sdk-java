@@ -442,17 +442,17 @@ public class RouteTable implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId() + ",");
+            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getRoutes() != null)
-            sb.append("Routes: " + getRoutes() + ",");
+            sb.append("Routes: ").append(getRoutes()).append(",");
         if (getAssociations() != null)
-            sb.append("Associations: " + getAssociations() + ",");
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getPropagatingVgws() != null)
-            sb.append("PropagatingVgws: " + getPropagatingVgws());
+            sb.append("PropagatingVgws: ").append(getPropagatingVgws());
         sb.append("}");
         return sb.toString();
     }

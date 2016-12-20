@@ -61,18 +61,9 @@ public class UpdateIntegrationRequestMarshaller implements Marshaller<Request<Up
 
         String uriResourcePath = "/restapis/{restapi_id}/resources/{resource_id}/methods/{http_method}/integration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (updateIntegrationRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateIntegrationRequest.getRestApiId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{resource_id}",
-                (updateIntegrationRequest.getResourceId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateIntegrationRequest.getResourceId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{http_method}",
-                (updateIntegrationRequest.getHttpMethod() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(updateIntegrationRequest.getHttpMethod()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", updateIntegrationRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "resource_id", updateIntegrationRequest.getResourceId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "http_method", updateIntegrationRequest.getHttpMethod());
         request.setResourcePath(uriResourcePath);
 
         try {

@@ -371,11 +371,11 @@ public class LambdaAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getFunctionArn() != null)
-            sb.append("FunctionArn: " + getFunctionArn() + ",");
+            sb.append("FunctionArn: ").append(getFunctionArn()).append(",");
         if (getInvocationType() != null)
-            sb.append("InvocationType: " + getInvocationType());
+            sb.append("InvocationType: ").append(getInvocationType());
         sb.append("}");
         return sb.toString();
     }

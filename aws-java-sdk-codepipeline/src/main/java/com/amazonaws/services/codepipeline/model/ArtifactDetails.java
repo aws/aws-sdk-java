@@ -126,9 +126,9 @@ public class ArtifactDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMinimumCount() != null)
-            sb.append("MinimumCount: " + getMinimumCount() + ",");
+            sb.append("MinimumCount: ").append(getMinimumCount()).append(",");
         if (getMaximumCount() != null)
-            sb.append("MaximumCount: " + getMaximumCount());
+            sb.append("MaximumCount: ").append(getMaximumCount());
         sb.append("}");
         return sb.toString();
     }

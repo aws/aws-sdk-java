@@ -61,15 +61,9 @@ public class DeleteSegmentRequestMarshaller implements Marshaller<Request<Delete
 
         String uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{application-id}",
-                (deleteSegmentRequest.getApplicationId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteSegmentRequest.getApplicationId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath
-                .replace(
-                        "{segment-id}",
-                        (deleteSegmentRequest.getSegmentId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteSegmentRequest.getSegmentId()),
-                                false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id",
+                deleteSegmentRequest.getApplicationId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "segment-id", deleteSegmentRequest.getSegmentId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

@@ -166,9 +166,9 @@ public class ListProjectsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjects() != null)
-            sb.append("Projects: " + getProjects() + ",");
+            sb.append("Projects: ").append(getProjects()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -246,15 +246,15 @@ public class NodeGroupMember implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getCacheNodeId() != null)
-            sb.append("CacheNodeId: " + getCacheNodeId() + ",");
+            sb.append("CacheNodeId: ").append(getCacheNodeId()).append(",");
         if (getReadEndpoint() != null)
-            sb.append("ReadEndpoint: " + getReadEndpoint() + ",");
+            sb.append("ReadEndpoint: ").append(getReadEndpoint()).append(",");
         if (getPreferredAvailabilityZone() != null)
-            sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");
+            sb.append("PreferredAvailabilityZone: ").append(getPreferredAvailabilityZone()).append(",");
         if (getCurrentRole() != null)
-            sb.append("CurrentRole: " + getCurrentRole());
+            sb.append("CurrentRole: ").append(getCurrentRole());
         sb.append("}");
         return sb.toString();
     }

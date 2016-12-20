@@ -80,7 +80,7 @@ public class DisableGatewayResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN());
+            sb.append("GatewayARN: ").append(getGatewayARN());
         sb.append("}");
         return sb.toString();
     }

@@ -335,15 +335,15 @@ public class EbsBlockDevice implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotId() != null)
-            sb.append("SnapshotId: " + getSnapshotId() + ",");
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops() + ",");
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getVolumeSize() != null)
-            sb.append("VolumeSize: " + getVolumeSize() + ",");
+            sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: " + getVolumeType() + ",");
+            sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: " + getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
         sb.append("}");
         return sb.toString();
     }

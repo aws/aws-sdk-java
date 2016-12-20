@@ -437,17 +437,17 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getRecordName() != null)
-            sb.append("RecordName: " + getRecordName() + ",");
+            sb.append("RecordName: ").append(getRecordName()).append(",");
         if (getRecordType() != null)
-            sb.append("RecordType: " + getRecordType() + ",");
+            sb.append("RecordType: ").append(getRecordType()).append(",");
         if (getResolverIP() != null)
-            sb.append("ResolverIP: " + getResolverIP() + ",");
+            sb.append("ResolverIP: ").append(getResolverIP()).append(",");
         if (getEDNS0ClientSubnetIP() != null)
-            sb.append("EDNS0ClientSubnetIP: " + getEDNS0ClientSubnetIP() + ",");
+            sb.append("EDNS0ClientSubnetIP: ").append(getEDNS0ClientSubnetIP()).append(",");
         if (getEDNS0ClientSubnetMask() != null)
-            sb.append("EDNS0ClientSubnetMask: " + getEDNS0ClientSubnetMask());
+            sb.append("EDNS0ClientSubnetMask: ").append(getEDNS0ClientSubnetMask());
         sb.append("}");
         return sb.toString();
     }

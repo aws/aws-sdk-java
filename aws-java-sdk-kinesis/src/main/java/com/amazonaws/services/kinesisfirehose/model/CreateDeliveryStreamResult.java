@@ -80,7 +80,7 @@ public class CreateDeliveryStreamResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamARN() != null)
-            sb.append("DeliveryStreamARN: " + getDeliveryStreamARN());
+            sb.append("DeliveryStreamARN: ").append(getDeliveryStreamARN());
         sb.append("}");
         return sb.toString();
     }

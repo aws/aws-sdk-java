@@ -45,6 +45,11 @@ public class PurchaseHostReservationResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("purchase", targetDepth)) {
+                    purchaseHostReservationResult.withPurchase(new ArrayList<Purchase>());
+                    continue;
+                }
+
                 if (context.testExpression("purchase/member", targetDepth)) {
                     purchaseHostReservationResult.withPurchase(PurchaseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

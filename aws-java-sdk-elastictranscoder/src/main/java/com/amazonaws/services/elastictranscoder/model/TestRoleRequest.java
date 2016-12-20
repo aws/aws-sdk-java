@@ -271,13 +271,13 @@ public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRole() != null)
-            sb.append("Role: " + getRole() + ",");
+            sb.append("Role: ").append(getRole()).append(",");
         if (getInputBucket() != null)
-            sb.append("InputBucket: " + getInputBucket() + ",");
+            sb.append("InputBucket: ").append(getInputBucket()).append(",");
         if (getOutputBucket() != null)
-            sb.append("OutputBucket: " + getOutputBucket() + ",");
+            sb.append("OutputBucket: ").append(getOutputBucket()).append(",");
         if (getTopics() != null)
-            sb.append("Topics: " + getTopics());
+            sb.append("Topics: ").append(getTopics());
         sb.append("}");
         return sb.toString();
     }

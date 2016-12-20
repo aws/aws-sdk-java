@@ -169,9 +169,9 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getPublicKeyMaterial() != null)
-            sb.append("PublicKeyMaterial: " + getPublicKeyMaterial());
+            sb.append("PublicKeyMaterial: ").append(getPublicKeyMaterial());
         sb.append("}");
         return sb.toString();
     }

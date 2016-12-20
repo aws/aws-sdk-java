@@ -368,11 +368,11 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrBlock() != null)
-            sb.append("CidrBlock: " + getCidrBlock() + ",");
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getAmazonProvidedIpv6CidrBlock() != null)
-            sb.append("AmazonProvidedIpv6CidrBlock: " + getAmazonProvidedIpv6CidrBlock());
+            sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }

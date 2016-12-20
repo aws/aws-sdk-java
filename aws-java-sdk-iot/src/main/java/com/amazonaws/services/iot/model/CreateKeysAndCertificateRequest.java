@@ -93,7 +93,7 @@ public class CreateKeysAndCertificateRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSetAsActive() != null)
-            sb.append("SetAsActive: " + getSetAsActive());
+            sb.append("SetAsActive: ").append(getSetAsActive());
         sb.append("}");
         return sb.toString();
     }

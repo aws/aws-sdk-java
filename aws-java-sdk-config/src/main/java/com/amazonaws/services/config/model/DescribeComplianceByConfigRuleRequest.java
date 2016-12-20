@@ -305,11 +305,11 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleNames() != null)
-            sb.append("ConfigRuleNames: " + getConfigRuleNames() + ",");
+            sb.append("ConfigRuleNames: ").append(getConfigRuleNames()).append(",");
         if (getComplianceTypes() != null)
-            sb.append("ComplianceTypes: " + getComplianceTypes() + ",");
+            sb.append("ComplianceTypes: ").append(getComplianceTypes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

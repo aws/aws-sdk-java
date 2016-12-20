@@ -159,11 +159,11 @@ public class PredictRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getRecord() != null)
-            sb.append("Record: " + getRecord() + ",");
+            sb.append("Record: ").append(getRecord()).append(",");
         if (getPredictEndpoint() != null)
-            sb.append("PredictEndpoint: " + getPredictEndpoint());
+            sb.append("PredictEndpoint: ").append(getPredictEndpoint());
         sb.append("}");
         return sb.toString();
     }

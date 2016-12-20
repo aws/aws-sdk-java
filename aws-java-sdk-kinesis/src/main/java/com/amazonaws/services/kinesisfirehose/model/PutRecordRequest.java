@@ -127,9 +127,9 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeliveryStreamName() != null)
-            sb.append("DeliveryStreamName: " + getDeliveryStreamName() + ",");
+            sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getRecord() != null)
-            sb.append("Record: " + getRecord());
+            sb.append("Record: ").append(getRecord());
         sb.append("}");
         return sb.toString();
     }

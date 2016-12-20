@@ -126,9 +126,9 @@ public class AccountUsage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTotalCodeSize() != null)
-            sb.append("TotalCodeSize: " + getTotalCodeSize() + ",");
+            sb.append("TotalCodeSize: ").append(getTotalCodeSize()).append(",");
         if (getFunctionCount() != null)
-            sb.append("FunctionCount: " + getFunctionCount());
+            sb.append("FunctionCount: ").append(getFunctionCount());
         sb.append("}");
         return sb.toString();
     }

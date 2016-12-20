@@ -51,6 +51,11 @@ public class DescribeReservedDBInstancesOfferingsResultStaxUnmarshaller implemen
                     continue;
                 }
 
+                if (context.testExpression("ReservedDBInstancesOfferings", targetDepth)) {
+                    describeReservedDBInstancesOfferingsResult.withReservedDBInstancesOfferings(new ArrayList<ReservedDBInstancesOffering>());
+                    continue;
+                }
+
                 if (context.testExpression("ReservedDBInstancesOfferings/ReservedDBInstancesOffering", targetDepth)) {
                     describeReservedDBInstancesOfferingsResult.withReservedDBInstancesOfferings(ReservedDBInstancesOfferingStaxUnmarshaller.getInstance()
                             .unmarshall(context));

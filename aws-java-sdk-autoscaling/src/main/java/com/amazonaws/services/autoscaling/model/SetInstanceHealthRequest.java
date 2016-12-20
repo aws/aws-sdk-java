@@ -244,11 +244,11 @@ public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: " + getHealthStatus() + ",");
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
         if (getShouldRespectGracePeriod() != null)
-            sb.append("ShouldRespectGracePeriod: " + getShouldRespectGracePeriod());
+            sb.append("ShouldRespectGracePeriod: ").append(getShouldRespectGracePeriod());
         sb.append("}");
         return sb.toString();
     }

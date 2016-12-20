@@ -200,11 +200,11 @@ public class ListTapesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARNs() != null)
-            sb.append("TapeARNs: " + getTapeARNs() + ",");
+            sb.append("TapeARNs: ").append(getTapeARNs()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

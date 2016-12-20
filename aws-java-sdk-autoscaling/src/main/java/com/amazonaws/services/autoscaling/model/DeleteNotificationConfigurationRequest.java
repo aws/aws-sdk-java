@@ -127,9 +127,9 @@ public class DeleteNotificationConfigurationRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getTopicARN() != null)
-            sb.append("TopicARN: " + getTopicARN());
+            sb.append("TopicARN: ").append(getTopicARN());
         sb.append("}");
         return sb.toString();
     }

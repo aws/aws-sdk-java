@@ -378,17 +378,17 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getStartDateTime() != null)
-            sb.append("StartDateTime: " + getStartDateTime() + ",");
+            sb.append("StartDateTime: ").append(getStartDateTime()).append(",");
         if (getReadyDateTime() != null)
-            sb.append("ReadyDateTime: " + getReadyDateTime() + ",");
+            sb.append("ReadyDateTime: ").append(getReadyDateTime()).append(",");
         if (getEndDateTime() != null)
-            sb.append("EndDateTime: " + getEndDateTime() + ",");
+            sb.append("EndDateTime: ").append(getEndDateTime()).append(",");
         if (getLastStateChangeReason() != null)
-            sb.append("LastStateChangeReason: " + getLastStateChangeReason());
+            sb.append("LastStateChangeReason: ").append(getLastStateChangeReason());
         sb.append("}");
         return sb.toString();
     }

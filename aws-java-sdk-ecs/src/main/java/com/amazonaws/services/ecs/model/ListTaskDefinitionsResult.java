@@ -178,9 +178,9 @@ public class ListTaskDefinitionsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskDefinitionArns() != null)
-            sb.append("TaskDefinitionArns: " + getTaskDefinitionArns() + ",");
+            sb.append("TaskDefinitionArns: ").append(getTaskDefinitionArns()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

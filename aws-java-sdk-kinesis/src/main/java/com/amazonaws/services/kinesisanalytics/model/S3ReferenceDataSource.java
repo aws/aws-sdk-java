@@ -191,11 +191,11 @@ public class S3ReferenceDataSource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBucketARN() != null)
-            sb.append("BucketARN: " + getBucketARN() + ",");
+            sb.append("BucketARN: ").append(getBucketARN()).append(",");
         if (getFileKey() != null)
-            sb.append("FileKey: " + getFileKey() + ",");
+            sb.append("FileKey: ").append(getFileKey()).append(",");
         if (getReferenceRoleARN() != null)
-            sb.append("ReferenceRoleARN: " + getReferenceRoleARN());
+            sb.append("ReferenceRoleARN: ").append(getReferenceRoleARN());
         sb.append("}");
         return sb.toString();
     }

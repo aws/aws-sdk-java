@@ -80,8 +80,18 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     continue;
                 }
 
+                if (context.testExpression("OptionsDependedOn", targetDepth)) {
+                    optionGroupOption.withOptionsDependedOn(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("OptionsDependedOn/OptionName", targetDepth)) {
                     optionGroupOption.withOptionsDependedOn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OptionsConflictsWith", targetDepth)) {
+                    optionGroupOption.withOptionsConflictsWith(new ArrayList<String>());
                     continue;
                 }
 
@@ -100,8 +110,18 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     continue;
                 }
 
+                if (context.testExpression("OptionGroupOptionSettings", targetDepth)) {
+                    optionGroupOption.withOptionGroupOptionSettings(new ArrayList<OptionGroupOptionSetting>());
+                    continue;
+                }
+
                 if (context.testExpression("OptionGroupOptionSettings/OptionGroupOptionSetting", targetDepth)) {
                     optionGroupOption.withOptionGroupOptionSettings(OptionGroupOptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OptionGroupOptionVersions", targetDepth)) {
+                    optionGroupOption.withOptionGroupOptionVersions(new ArrayList<OptionVersion>());
                     continue;
                 }
 

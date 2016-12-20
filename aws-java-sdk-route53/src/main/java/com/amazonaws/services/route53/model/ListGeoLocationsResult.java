@@ -442,17 +442,17 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGeoLocationDetailsList() != null)
-            sb.append("GeoLocationDetailsList: " + getGeoLocationDetailsList() + ",");
+            sb.append("GeoLocationDetailsList: ").append(getGeoLocationDetailsList()).append(",");
         if (getIsTruncated() != null)
-            sb.append("IsTruncated: " + getIsTruncated() + ",");
+            sb.append("IsTruncated: ").append(getIsTruncated()).append(",");
         if (getNextContinentCode() != null)
-            sb.append("NextContinentCode: " + getNextContinentCode() + ",");
+            sb.append("NextContinentCode: ").append(getNextContinentCode()).append(",");
         if (getNextCountryCode() != null)
-            sb.append("NextCountryCode: " + getNextCountryCode() + ",");
+            sb.append("NextCountryCode: ").append(getNextCountryCode()).append(",");
         if (getNextSubdivisionCode() != null)
-            sb.append("NextSubdivisionCode: " + getNextSubdivisionCode() + ",");
+            sb.append("NextSubdivisionCode: ").append(getNextSubdivisionCode()).append(",");
         if (getMaxItems() != null)
-            sb.append("MaxItems: " + getMaxItems());
+            sb.append("MaxItems: ").append(getMaxItems());
         sb.append("}");
         return sb.toString();
     }

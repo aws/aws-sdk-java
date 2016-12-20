@@ -60,6 +60,11 @@ public class EventStaxUnmarshaller implements Unmarshaller<Event, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("EventCategories", targetDepth)) {
+                    event.withEventCategories(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("EventCategories/EventCategory", targetDepth)) {
                     event.withEventCategories(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

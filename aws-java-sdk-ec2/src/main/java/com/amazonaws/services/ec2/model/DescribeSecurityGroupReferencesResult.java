@@ -113,7 +113,7 @@ public class DescribeSecurityGroupReferencesResult extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSecurityGroupReferenceSet() != null)
-            sb.append("SecurityGroupReferenceSet: " + getSecurityGroupReferenceSet());
+            sb.append("SecurityGroupReferenceSet: ").append(getSecurityGroupReferenceSet());
         sb.append("}");
         return sb.toString();
     }

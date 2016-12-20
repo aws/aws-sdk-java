@@ -126,9 +126,9 @@ public class Listener implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProtocol() != null)
-            sb.append("Protocol: " + getProtocol() + ",");
+            sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getPort() != null)
-            sb.append("Port: " + getPort());
+            sb.append("Port: ").append(getPort());
         sb.append("}");
         return sb.toString();
     }

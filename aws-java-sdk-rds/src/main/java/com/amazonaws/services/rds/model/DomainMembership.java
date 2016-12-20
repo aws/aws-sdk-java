@@ -221,13 +221,13 @@ public class DomainMembership implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: " + getDomain() + ",");
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getFQDN() != null)
-            sb.append("FQDN: " + getFQDN() + ",");
+            sb.append("FQDN: ").append(getFQDN()).append(",");
         if (getIAMRoleName() != null)
-            sb.append("IAMRoleName: " + getIAMRoleName());
+            sb.append("IAMRoleName: ").append(getIAMRoleName());
         sb.append("}");
         return sb.toString();
     }

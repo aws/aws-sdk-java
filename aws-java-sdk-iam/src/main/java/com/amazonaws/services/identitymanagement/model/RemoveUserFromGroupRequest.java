@@ -219,9 +219,9 @@ public class RemoveUserFromGroupRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGroupName() != null)
-            sb.append("GroupName: " + getGroupName() + ",");
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName());
+            sb.append("UserName: ").append(getUserName());
         sb.append("}");
         return sb.toString();
     }

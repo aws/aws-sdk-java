@@ -88,9 +88,9 @@ public class UpdateEndpointsBatchRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getEndpointBatchRequest() != null)
-            sb.append("EndpointBatchRequest: " + getEndpointBatchRequest());
+            sb.append("EndpointBatchRequest: ").append(getEndpointBatchRequest());
         sb.append("}");
         return sb.toString();
     }

@@ -292,13 +292,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobDefinitionName() != null)
-            sb.append("JobDefinitionName: " + getJobDefinitionName() + ",");
+            sb.append("JobDefinitionName: ").append(getJobDefinitionName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: " + getParameters() + ",");
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerProperties() != null)
-            sb.append("ContainerProperties: " + getContainerProperties());
+            sb.append("ContainerProperties: ").append(getContainerProperties());
         sb.append("}");
         return sb.toString();
     }

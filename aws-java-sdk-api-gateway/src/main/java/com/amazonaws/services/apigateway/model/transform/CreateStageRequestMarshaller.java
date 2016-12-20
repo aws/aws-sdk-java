@@ -61,8 +61,7 @@ public class CreateStageRequestMarshaller implements Marshaller<Request<CreateSt
 
         String uriResourcePath = "/restapis/{restapi_id}/stages";
 
-        uriResourcePath = uriResourcePath.replace("{restapi_id}",
-                (createStageRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(createStageRequest.getRestApiId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", createStageRequest.getRestApiId());
         request.setResourcePath(uriResourcePath);
 
         try {

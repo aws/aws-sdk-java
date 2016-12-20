@@ -505,13 +505,13 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentId() != null)
-            sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+            sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
         if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getTerminateResources() != null)
-            sb.append("TerminateResources: " + getTerminateResources() + ",");
+            sb.append("TerminateResources: ").append(getTerminateResources()).append(",");
         if (getForceTerminate() != null)
-            sb.append("ForceTerminate: " + getForceTerminate());
+            sb.append("ForceTerminate: ").append(getForceTerminate());
         sb.append("}");
         return sb.toString();
     }

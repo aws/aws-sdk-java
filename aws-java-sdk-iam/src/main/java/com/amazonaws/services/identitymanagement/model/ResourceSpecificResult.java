@@ -498,15 +498,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvalResourceName() != null)
-            sb.append("EvalResourceName: " + getEvalResourceName() + ",");
+            sb.append("EvalResourceName: ").append(getEvalResourceName()).append(",");
         if (getEvalResourceDecision() != null)
-            sb.append("EvalResourceDecision: " + getEvalResourceDecision() + ",");
+            sb.append("EvalResourceDecision: ").append(getEvalResourceDecision()).append(",");
         if (getMatchedStatements() != null)
-            sb.append("MatchedStatements: " + getMatchedStatements() + ",");
+            sb.append("MatchedStatements: ").append(getMatchedStatements()).append(",");
         if (getMissingContextValues() != null)
-            sb.append("MissingContextValues: " + getMissingContextValues() + ",");
+            sb.append("MissingContextValues: ").append(getMissingContextValues()).append(",");
         if (getEvalDecisionDetails() != null)
-            sb.append("EvalDecisionDetails: " + getEvalDecisionDetails());
+            sb.append("EvalDecisionDetails: ").append(getEvalDecisionDetails());
         sb.append("}");
         return sb.toString();
     }

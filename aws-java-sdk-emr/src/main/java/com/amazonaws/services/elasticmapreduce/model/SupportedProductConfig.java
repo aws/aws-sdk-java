@@ -160,9 +160,9 @@ public class SupportedProductConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArgs() != null)
-            sb.append("Args: " + getArgs());
+            sb.append("Args: ").append(getArgs());
         sb.append("}");
         return sb.toString();
     }

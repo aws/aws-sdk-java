@@ -61,7 +61,7 @@ public class DefineSuggesterResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuggester() != null)
-            sb.append("Suggester: " + getSuggester());
+            sb.append("Suggester: ").append(getSuggester());
         sb.append("}");
         return sb.toString();
     }

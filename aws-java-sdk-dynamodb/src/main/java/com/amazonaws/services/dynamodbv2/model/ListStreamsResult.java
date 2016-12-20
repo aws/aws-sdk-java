@@ -223,9 +223,9 @@ public class ListStreamsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreams() != null)
-            sb.append("Streams: " + getStreams() + ",");
+            sb.append("Streams: ").append(getStreams()).append(",");
         if (getLastEvaluatedStreamArn() != null)
-            sb.append("LastEvaluatedStreamArn: " + getLastEvaluatedStreamArn());
+            sb.append("LastEvaluatedStreamArn: ").append(getLastEvaluatedStreamArn());
         sb.append("}");
         return sb.toString();
     }

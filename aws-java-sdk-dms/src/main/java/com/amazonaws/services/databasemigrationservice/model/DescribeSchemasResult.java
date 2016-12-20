@@ -161,9 +161,9 @@ public class DescribeSchemasResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getSchemas() != null)
-            sb.append("Schemas: " + getSchemas());
+            sb.append("Schemas: ").append(getSchemas());
         sb.append("}");
         return sb.toString();
     }

@@ -166,9 +166,9 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobMetadata() != null)
-            sb.append("JobMetadata: " + getJobMetadata() + ",");
+            sb.append("JobMetadata: ").append(getJobMetadata()).append(",");
         if (getSubJobMetadata() != null)
-            sb.append("SubJobMetadata: " + getSubJobMetadata());
+            sb.append("SubJobMetadata: ").append(getSubJobMetadata());
         sb.append("}");
         return sb.toString();
     }

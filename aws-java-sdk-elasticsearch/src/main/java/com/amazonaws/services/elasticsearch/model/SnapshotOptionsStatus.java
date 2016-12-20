@@ -126,9 +126,9 @@ public class SnapshotOptionsStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOptions() != null)
-            sb.append("Options: " + getOptions() + ",");
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

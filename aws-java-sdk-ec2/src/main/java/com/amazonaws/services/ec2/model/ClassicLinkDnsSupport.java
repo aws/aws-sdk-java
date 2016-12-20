@@ -138,9 +138,9 @@ public class ClassicLinkDnsSupport implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getClassicLinkDnsSupported() != null)
-            sb.append("ClassicLinkDnsSupported: " + getClassicLinkDnsSupported());
+            sb.append("ClassicLinkDnsSupported: ").append(getClassicLinkDnsSupported());
         sb.append("}");
         return sb.toString();
     }

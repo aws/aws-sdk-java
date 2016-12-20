@@ -153,7 +153,7 @@ public class GetComplianceSummaryByResourceTypeRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceTypes() != null)
-            sb.append("ResourceTypes: " + getResourceTypes());
+            sb.append("ResourceTypes: ").append(getResourceTypes());
         sb.append("}");
         return sb.toString();
     }

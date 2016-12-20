@@ -186,11 +186,11 @@ public class ComplianceSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCompliantResourceCount() != null)
-            sb.append("CompliantResourceCount: " + getCompliantResourceCount() + ",");
+            sb.append("CompliantResourceCount: ").append(getCompliantResourceCount()).append(",");
         if (getNonCompliantResourceCount() != null)
-            sb.append("NonCompliantResourceCount: " + getNonCompliantResourceCount() + ",");
+            sb.append("NonCompliantResourceCount: ").append(getNonCompliantResourceCount()).append(",");
         if (getComplianceSummaryTimestamp() != null)
-            sb.append("ComplianceSummaryTimestamp: " + getComplianceSummaryTimestamp());
+            sb.append("ComplianceSummaryTimestamp: ").append(getComplianceSummaryTimestamp());
         sb.append("}");
         return sb.toString();
     }

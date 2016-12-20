@@ -61,14 +61,10 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (setVaultNotificationsRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(setVaultNotificationsRequest.getAccountId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (setVaultNotificationsRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(setVaultNotificationsRequest.getVaultName()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                setVaultNotificationsRequest.getAccountId() == null ? "-" : setVaultNotificationsRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "vaultName", setVaultNotificationsRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         try {

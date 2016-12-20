@@ -1532,51 +1532,51 @@ public class UserPoolType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPolicies() != null)
-            sb.append("Policies: " + getPolicies() + ",");
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getLambdaConfig() != null)
-            sb.append("LambdaConfig: " + getLambdaConfig() + ",");
+            sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getLastModifiedDate() != null)
-            sb.append("LastModifiedDate: " + getLastModifiedDate() + ",");
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate() + ",");
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getSchemaAttributes() != null)
-            sb.append("SchemaAttributes: " + getSchemaAttributes() + ",");
+            sb.append("SchemaAttributes: ").append(getSchemaAttributes()).append(",");
         if (getAutoVerifiedAttributes() != null)
-            sb.append("AutoVerifiedAttributes: " + getAutoVerifiedAttributes() + ",");
+            sb.append("AutoVerifiedAttributes: ").append(getAutoVerifiedAttributes()).append(",");
         if (getAliasAttributes() != null)
-            sb.append("AliasAttributes: " + getAliasAttributes() + ",");
+            sb.append("AliasAttributes: ").append(getAliasAttributes()).append(",");
         if (getSmsVerificationMessage() != null)
-            sb.append("SmsVerificationMessage: " + getSmsVerificationMessage() + ",");
+            sb.append("SmsVerificationMessage: ").append(getSmsVerificationMessage()).append(",");
         if (getEmailVerificationMessage() != null)
-            sb.append("EmailVerificationMessage: " + getEmailVerificationMessage() + ",");
+            sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
-            sb.append("EmailVerificationSubject: " + getEmailVerificationSubject() + ",");
+            sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
         if (getSmsAuthenticationMessage() != null)
-            sb.append("SmsAuthenticationMessage: " + getSmsAuthenticationMessage() + ",");
+            sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
-            sb.append("MfaConfiguration: " + getMfaConfiguration() + ",");
+            sb.append("MfaConfiguration: ").append(getMfaConfiguration()).append(",");
         if (getDeviceConfiguration() != null)
-            sb.append("DeviceConfiguration: " + getDeviceConfiguration() + ",");
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
         if (getEstimatedNumberOfUsers() != null)
-            sb.append("EstimatedNumberOfUsers: " + getEstimatedNumberOfUsers() + ",");
+            sb.append("EstimatedNumberOfUsers: ").append(getEstimatedNumberOfUsers()).append(",");
         if (getEmailConfiguration() != null)
-            sb.append("EmailConfiguration: " + getEmailConfiguration() + ",");
+            sb.append("EmailConfiguration: ").append(getEmailConfiguration()).append(",");
         if (getSmsConfiguration() != null)
-            sb.append("SmsConfiguration: " + getSmsConfiguration() + ",");
+            sb.append("SmsConfiguration: ").append(getSmsConfiguration()).append(",");
         if (getUserPoolTags() != null)
-            sb.append("UserPoolTags: " + getUserPoolTags() + ",");
+            sb.append("UserPoolTags: ").append(getUserPoolTags()).append(",");
         if (getSmsConfigurationFailure() != null)
-            sb.append("SmsConfigurationFailure: " + getSmsConfigurationFailure() + ",");
+            sb.append("SmsConfigurationFailure: ").append(getSmsConfigurationFailure()).append(",");
         if (getEmailConfigurationFailure() != null)
-            sb.append("EmailConfigurationFailure: " + getEmailConfigurationFailure() + ",");
+            sb.append("EmailConfigurationFailure: ").append(getEmailConfigurationFailure()).append(",");
         if (getAdminCreateUserConfig() != null)
-            sb.append("AdminCreateUserConfig: " + getAdminCreateUserConfig());
+            sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig());
         sb.append("}");
         return sb.toString();
     }

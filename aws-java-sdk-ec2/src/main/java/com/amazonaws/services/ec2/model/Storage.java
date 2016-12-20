@@ -80,7 +80,7 @@ public class Storage implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3() != null)
-            sb.append("S3: " + getS3());
+            sb.append("S3: ").append(getS3());
         sb.append("}");
         return sb.toString();
     }

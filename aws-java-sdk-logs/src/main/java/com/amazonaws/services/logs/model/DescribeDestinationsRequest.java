@@ -171,11 +171,11 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationNamePrefix() != null)
-            sb.append("DestinationNamePrefix: " + getDestinationNamePrefix() + ",");
+            sb.append("DestinationNamePrefix: ").append(getDestinationNamePrefix()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

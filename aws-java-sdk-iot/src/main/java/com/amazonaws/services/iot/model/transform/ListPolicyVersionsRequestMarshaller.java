@@ -61,10 +61,7 @@ public class ListPolicyVersionsRequestMarshaller implements Marshaller<Request<L
 
         String uriResourcePath = "/policies/{policyName}/version";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{policyName}",
-                (listPolicyVersionsRequest.getPolicyName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(listPolicyVersionsRequest.getPolicyName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "policyName", listPolicyVersionsRequest.getPolicyName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

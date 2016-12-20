@@ -115,7 +115,7 @@ public class HostVolumeProperties implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourcePath() != null)
-            sb.append("SourcePath: " + getSourcePath());
+            sb.append("SourcePath: ").append(getSourcePath());
         sb.append("}");
         return sb.toString();
     }

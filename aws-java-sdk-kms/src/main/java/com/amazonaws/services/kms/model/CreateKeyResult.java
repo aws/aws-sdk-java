@@ -78,7 +78,7 @@ public class CreateKeyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyMetadata() != null)
-            sb.append("KeyMetadata: " + getKeyMetadata());
+            sb.append("KeyMetadata: ").append(getKeyMetadata());
         sb.append("}");
         return sb.toString();
     }

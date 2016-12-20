@@ -218,7 +218,7 @@ public class GetByteMatchSetResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getByteMatchSet() != null)
-            sb.append("ByteMatchSet: " + getByteMatchSet());
+            sb.append("ByteMatchSet: ").append(getByteMatchSet());
         sb.append("}");
         return sb.toString();
     }

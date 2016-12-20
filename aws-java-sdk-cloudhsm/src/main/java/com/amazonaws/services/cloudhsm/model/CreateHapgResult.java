@@ -80,7 +80,7 @@ public class CreateHapgResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHapgArn() != null)
-            sb.append("HapgArn: " + getHapgArn());
+            sb.append("HapgArn: ").append(getHapgArn());
         sb.append("}");
         return sb.toString();
     }

@@ -327,17 +327,17 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getFilterNamePrefix() != null)
-            sb.append("FilterNamePrefix: " + getFilterNamePrefix() + ",");
+            sb.append("FilterNamePrefix: ").append(getFilterNamePrefix()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getMetricNamespace() != null)
-            sb.append("MetricNamespace: " + getMetricNamespace());
+            sb.append("MetricNamespace: ").append(getMetricNamespace());
         sb.append("}");
         return sb.toString();
     }

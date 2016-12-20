@@ -453,19 +453,19 @@ public class AssessmentRunAgent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentId() != null)
-            sb.append("AgentId: " + getAgentId() + ",");
+            sb.append("AgentId: ").append(getAgentId()).append(",");
         if (getAssessmentRunArn() != null)
-            sb.append("AssessmentRunArn: " + getAssessmentRunArn() + ",");
+            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn()).append(",");
         if (getAgentHealth() != null)
-            sb.append("AgentHealth: " + getAgentHealth() + ",");
+            sb.append("AgentHealth: ").append(getAgentHealth()).append(",");
         if (getAgentHealthCode() != null)
-            sb.append("AgentHealthCode: " + getAgentHealthCode() + ",");
+            sb.append("AgentHealthCode: ").append(getAgentHealthCode()).append(",");
         if (getAgentHealthDetails() != null)
-            sb.append("AgentHealthDetails: " + getAgentHealthDetails() + ",");
+            sb.append("AgentHealthDetails: ").append(getAgentHealthDetails()).append(",");
         if (getAutoScalingGroup() != null)
-            sb.append("AutoScalingGroup: " + getAutoScalingGroup() + ",");
+            sb.append("AutoScalingGroup: ").append(getAutoScalingGroup()).append(",");
         if (getTelemetryMetadata() != null)
-            sb.append("TelemetryMetadata: " + getTelemetryMetadata());
+            sb.append("TelemetryMetadata: ").append(getTelemetryMetadata());
         sb.append("}");
         return sb.toString();
     }

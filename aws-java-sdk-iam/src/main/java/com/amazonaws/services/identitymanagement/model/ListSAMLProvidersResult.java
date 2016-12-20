@@ -113,7 +113,7 @@ public class ListSAMLProvidersResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLProviderList() != null)
-            sb.append("SAMLProviderList: " + getSAMLProviderList());
+            sb.append("SAMLProviderList: ").append(getSAMLProviderList());
         sb.append("}");
         return sb.toString();
     }

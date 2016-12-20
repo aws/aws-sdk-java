@@ -45,6 +45,11 @@ public class ListVirtualMFADevicesResultStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("VirtualMFADevices", targetDepth)) {
+                    listVirtualMFADevicesResult.withVirtualMFADevices(new ArrayList<VirtualMFADevice>());
+                    continue;
+                }
+
                 if (context.testExpression("VirtualMFADevices/member", targetDepth)) {
                     listVirtualMFADevicesResult.withVirtualMFADevices(VirtualMFADeviceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

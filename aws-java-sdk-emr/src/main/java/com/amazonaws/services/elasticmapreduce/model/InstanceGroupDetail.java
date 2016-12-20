@@ -838,33 +838,33 @@ public class InstanceGroupDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceGroupId() != null)
-            sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");
+            sb.append("InstanceGroupId: ").append(getInstanceGroupId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMarket() != null)
-            sb.append("Market: " + getMarket() + ",");
+            sb.append("Market: ").append(getMarket()).append(",");
         if (getInstanceRole() != null)
-            sb.append("InstanceRole: " + getInstanceRole() + ",");
+            sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
         if (getBidPrice() != null)
-            sb.append("BidPrice: " + getBidPrice() + ",");
+            sb.append("BidPrice: ").append(getBidPrice()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceRequestCount() != null)
-            sb.append("InstanceRequestCount: " + getInstanceRequestCount() + ",");
+            sb.append("InstanceRequestCount: ").append(getInstanceRequestCount()).append(",");
         if (getInstanceRunningCount() != null)
-            sb.append("InstanceRunningCount: " + getInstanceRunningCount() + ",");
+            sb.append("InstanceRunningCount: ").append(getInstanceRunningCount()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getLastStateChangeReason() != null)
-            sb.append("LastStateChangeReason: " + getLastStateChangeReason() + ",");
+            sb.append("LastStateChangeReason: ").append(getLastStateChangeReason()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getStartDateTime() != null)
-            sb.append("StartDateTime: " + getStartDateTime() + ",");
+            sb.append("StartDateTime: ").append(getStartDateTime()).append(",");
         if (getReadyDateTime() != null)
-            sb.append("ReadyDateTime: " + getReadyDateTime() + ",");
+            sb.append("ReadyDateTime: ").append(getReadyDateTime()).append(",");
         if (getEndDateTime() != null)
-            sb.append("EndDateTime: " + getEndDateTime());
+            sb.append("EndDateTime: ").append(getEndDateTime());
         sb.append("}");
         return sb.toString();
     }

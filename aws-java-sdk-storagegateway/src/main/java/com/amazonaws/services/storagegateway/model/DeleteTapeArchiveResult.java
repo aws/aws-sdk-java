@@ -80,7 +80,7 @@ public class DeleteTapeArchiveResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN());
+            sb.append("TapeARN: ").append(getTapeARN());
         sb.append("}");
         return sb.toString();
     }

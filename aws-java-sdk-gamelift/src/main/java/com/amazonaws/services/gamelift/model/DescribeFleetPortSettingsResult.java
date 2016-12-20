@@ -110,7 +110,7 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInboundPermissions() != null)
-            sb.append("InboundPermissions: " + getInboundPermissions());
+            sb.append("InboundPermissions: ").append(getInboundPermissions());
         sb.append("}");
         return sb.toString();
     }

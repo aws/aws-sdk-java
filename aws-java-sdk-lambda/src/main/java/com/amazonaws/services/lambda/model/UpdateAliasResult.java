@@ -232,13 +232,13 @@ public class UpdateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasArn() != null)
-            sb.append("AliasArn: " + getAliasArn() + ",");
+            sb.append("AliasArn: ").append(getAliasArn()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getFunctionVersion() != null)
-            sb.append("FunctionVersion: " + getFunctionVersion() + ",");
+            sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

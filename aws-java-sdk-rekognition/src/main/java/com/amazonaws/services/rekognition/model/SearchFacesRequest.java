@@ -231,13 +231,13 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCollectionId() != null)
-            sb.append("CollectionId: " + getCollectionId() + ",");
+            sb.append("CollectionId: ").append(getCollectionId()).append(",");
         if (getFaceId() != null)
-            sb.append("FaceId: " + getFaceId() + ",");
+            sb.append("FaceId: ").append(getFaceId()).append(",");
         if (getMaxFaces() != null)
-            sb.append("MaxFaces: " + getMaxFaces() + ",");
+            sb.append("MaxFaces: ").append(getMaxFaces()).append(",");
         if (getFaceMatchThreshold() != null)
-            sb.append("FaceMatchThreshold: " + getFaceMatchThreshold());
+            sb.append("FaceMatchThreshold: ").append(getFaceMatchThreshold());
         sb.append("}");
         return sb.toString();
     }

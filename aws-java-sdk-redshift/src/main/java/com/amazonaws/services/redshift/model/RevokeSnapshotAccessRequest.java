@@ -181,11 +181,11 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotIdentifier() != null)
-            sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+            sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
         if (getSnapshotClusterIdentifier() != null)
-            sb.append("SnapshotClusterIdentifier: " + getSnapshotClusterIdentifier() + ",");
+            sb.append("SnapshotClusterIdentifier: ").append(getSnapshotClusterIdentifier()).append(",");
         if (getAccountWithRestoreAccess() != null)
-            sb.append("AccountWithRestoreAccess: " + getAccountWithRestoreAccess());
+            sb.append("AccountWithRestoreAccess: ").append(getAccountWithRestoreAccess());
         sb.append("}");
         return sb.toString();
     }

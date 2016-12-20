@@ -1533,9 +1533,9 @@ public class Change implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: " + getAction() + ",");
+            sb.append("Action: ").append(getAction()).append(",");
         if (getResourceRecordSet() != null)
-            sb.append("ResourceRecordSet: " + getResourceRecordSet());
+            sb.append("ResourceRecordSet: ").append(getResourceRecordSet());
         sb.append("}");
         return sb.toString();
     }

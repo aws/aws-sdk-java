@@ -205,11 +205,11 @@ public class Metric implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions());
+            sb.append("Dimensions: ").append(getDimensions());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class DescribeConfigurationOptionsResultStaxUnmarshaller implements Unmar
                     continue;
                 }
 
+                if (context.testExpression("Options", targetDepth)) {
+                    describeConfigurationOptionsResult.withOptions(new ArrayList<ConfigurationOptionDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Options/member", targetDepth)) {
                     describeConfigurationOptionsResult.withOptions(ConfigurationOptionDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

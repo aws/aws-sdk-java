@@ -431,9 +431,9 @@ public class RuleCondition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getField() != null)
-            sb.append("Field: " + getField() + ",");
+            sb.append("Field: ").append(getField()).append(",");
         if (getValues() != null)
-            sb.append("Values: " + getValues());
+            sb.append("Values: ").append(getValues());
         sb.append("}");
         return sb.toString();
     }

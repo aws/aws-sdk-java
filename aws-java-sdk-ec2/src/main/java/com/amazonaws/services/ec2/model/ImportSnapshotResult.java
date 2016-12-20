@@ -173,11 +173,11 @@ public class ImportSnapshotResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImportTaskId() != null)
-            sb.append("ImportTaskId: " + getImportTaskId() + ",");
+            sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
         if (getSnapshotTaskDetail() != null)
-            sb.append("SnapshotTaskDetail: " + getSnapshotTaskDetail() + ",");
+            sb.append("SnapshotTaskDetail: ").append(getSnapshotTaskDetail()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

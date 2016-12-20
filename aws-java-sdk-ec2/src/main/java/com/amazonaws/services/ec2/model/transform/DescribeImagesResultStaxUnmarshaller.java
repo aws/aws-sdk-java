@@ -45,6 +45,11 @@ public class DescribeImagesResultStaxUnmarshaller implements Unmarshaller<Descri
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("imagesSet", targetDepth)) {
+                    describeImagesResult.withImages(new ArrayList<Image>());
+                    continue;
+                }
+
                 if (context.testExpression("imagesSet/item", targetDepth)) {
                     describeImagesResult.withImages(ImageStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

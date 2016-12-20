@@ -180,11 +180,11 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getSecretHash() != null)
-            sb.append("SecretHash: " + getSecretHash() + ",");
+            sb.append("SecretHash: ").append(getSecretHash()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername());
+            sb.append("Username: ").append(getUsername());
         sb.append("}");
         return sb.toString();
     }

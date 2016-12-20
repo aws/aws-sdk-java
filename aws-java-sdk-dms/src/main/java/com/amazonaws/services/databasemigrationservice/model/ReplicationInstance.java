@@ -1355,47 +1355,47 @@ public class ReplicationInstance implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceIdentifier() != null)
-            sb.append("ReplicationInstanceIdentifier: " + getReplicationInstanceIdentifier() + ",");
+            sb.append("ReplicationInstanceIdentifier: ").append(getReplicationInstanceIdentifier()).append(",");
         if (getReplicationInstanceClass() != null)
-            sb.append("ReplicationInstanceClass: " + getReplicationInstanceClass() + ",");
+            sb.append("ReplicationInstanceClass: ").append(getReplicationInstanceClass()).append(",");
         if (getReplicationInstanceStatus() != null)
-            sb.append("ReplicationInstanceStatus: " + getReplicationInstanceStatus() + ",");
+            sb.append("ReplicationInstanceStatus: ").append(getReplicationInstanceStatus()).append(",");
         if (getAllocatedStorage() != null)
-            sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getInstanceCreateTime() != null)
-            sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");
+            sb.append("InstanceCreateTime: ").append(getInstanceCreateTime()).append(",");
         if (getVpcSecurityGroups() != null)
-            sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
+            sb.append("VpcSecurityGroups: ").append(getVpcSecurityGroups()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getReplicationSubnetGroup() != null)
-            sb.append("ReplicationSubnetGroup: " + getReplicationSubnetGroup() + ",");
+            sb.append("ReplicationSubnetGroup: ").append(getReplicationSubnetGroup()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getPendingModifiedValues() != null)
-            sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
+            sb.append("PendingModifiedValues: ").append(getPendingModifiedValues()).append(",");
         if (getMultiAZ() != null)
-            sb.append("MultiAZ: " + getMultiAZ() + ",");
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: " + getEngineVersion() + ",");
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: " + getAutoMinorVersionUpgrade() + ",");
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: " + getKmsKeyId() + ",");
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn() + ",");
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn()).append(",");
         if (getReplicationInstancePublicIpAddress() != null)
-            sb.append("ReplicationInstancePublicIpAddress: " + getReplicationInstancePublicIpAddress() + ",");
+            sb.append("ReplicationInstancePublicIpAddress: ").append(getReplicationInstancePublicIpAddress()).append(",");
         if (getReplicationInstancePrivateIpAddress() != null)
-            sb.append("ReplicationInstancePrivateIpAddress: " + getReplicationInstancePrivateIpAddress() + ",");
+            sb.append("ReplicationInstancePrivateIpAddress: ").append(getReplicationInstancePrivateIpAddress()).append(",");
         if (getReplicationInstancePublicIpAddresses() != null)
-            sb.append("ReplicationInstancePublicIpAddresses: " + getReplicationInstancePublicIpAddresses() + ",");
+            sb.append("ReplicationInstancePublicIpAddresses: ").append(getReplicationInstancePublicIpAddresses()).append(",");
         if (getReplicationInstancePrivateIpAddresses() != null)
-            sb.append("ReplicationInstancePrivateIpAddresses: " + getReplicationInstancePrivateIpAddresses() + ",");
+            sb.append("ReplicationInstancePrivateIpAddresses: ").append(getReplicationInstancePrivateIpAddresses()).append(",");
         if (getPubliclyAccessible() != null)
-            sb.append("PubliclyAccessible: " + getPubliclyAccessible() + ",");
+            sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecondaryAvailabilityZone() != null)
-            sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone());
+            sb.append("SecondaryAvailabilityZone: ").append(getSecondaryAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

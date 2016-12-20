@@ -424,11 +424,11 @@ public class EventSelector implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReadWriteType() != null)
-            sb.append("ReadWriteType: " + getReadWriteType() + ",");
+            sb.append("ReadWriteType: ").append(getReadWriteType()).append(",");
         if (getIncludeManagementEvents() != null)
-            sb.append("IncludeManagementEvents: " + getIncludeManagementEvents() + ",");
+            sb.append("IncludeManagementEvents: ").append(getIncludeManagementEvents()).append(",");
         if (getDataResources() != null)
-            sb.append("DataResources: " + getDataResources());
+            sb.append("DataResources: ").append(getDataResources());
         sb.append("}");
         return sb.toString();
     }

@@ -160,9 +160,9 @@ public class Body implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getText() != null)
-            sb.append("Text: " + getText() + ",");
+            sb.append("Text: ").append(getText()).append(",");
         if (getHtml() != null)
-            sb.append("Html: " + getHtml());
+            sb.append("Html: ").append(getHtml());
         sb.append("}");
         return sb.toString();
     }

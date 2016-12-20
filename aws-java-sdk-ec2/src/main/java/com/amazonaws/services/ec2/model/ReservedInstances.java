@@ -1203,41 +1203,41 @@ public class ReservedInstances implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesId() != null)
-            sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+            sb.append("ReservedInstancesId: ").append(getReservedInstancesId()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getStart() != null)
-            sb.append("Start: " + getStart() + ",");
+            sb.append("Start: ").append(getStart()).append(",");
         if (getEnd() != null)
-            sb.append("End: " + getEnd() + ",");
+            sb.append("End: ").append(getEnd()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getUsagePrice() != null)
-            sb.append("UsagePrice: " + getUsagePrice() + ",");
+            sb.append("UsagePrice: ").append(getUsagePrice()).append(",");
         if (getFixedPrice() != null)
-            sb.append("FixedPrice: " + getFixedPrice() + ",");
+            sb.append("FixedPrice: ").append(getFixedPrice()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getProductDescription() != null)
-            sb.append("ProductDescription: " + getProductDescription() + ",");
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType() + ",");
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges() + ",");
+            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
         if (getOfferingClass() != null)
-            sb.append("OfferingClass: " + getOfferingClass() + ",");
+            sb.append("OfferingClass: ").append(getOfferingClass()).append(",");
         if (getScope() != null)
-            sb.append("Scope: " + getScope());
+            sb.append("Scope: ").append(getScope());
         sb.append("}");
         return sb.toString();
     }

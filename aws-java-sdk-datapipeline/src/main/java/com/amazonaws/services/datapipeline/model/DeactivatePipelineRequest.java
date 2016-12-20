@@ -152,9 +152,9 @@ public class DeactivatePipelineRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getCancelActive() != null)
-            sb.append("CancelActive: " + getCancelActive());
+            sb.append("CancelActive: ").append(getCancelActive());
         sb.append("}");
         return sb.toString();
     }

@@ -267,11 +267,11 @@ public class AccountAttribute implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMaximum() != null)
-            sb.append("Maximum: " + getMaximum() + ",");
+            sb.append("Maximum: ").append(getMaximum()).append(",");
         if (getUsed() != null)
-            sb.append("Used: " + getUsed());
+            sb.append("Used: ").append(getUsed());
         sb.append("}");
         return sb.toString();
     }

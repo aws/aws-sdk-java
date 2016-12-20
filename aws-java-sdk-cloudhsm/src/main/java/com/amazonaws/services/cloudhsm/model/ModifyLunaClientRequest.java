@@ -125,9 +125,9 @@ public class ModifyLunaClientRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientArn() != null)
-            sb.append("ClientArn: " + getClientArn() + ",");
+            sb.append("ClientArn: ").append(getClientArn()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate());
+            sb.append("Certificate: ").append(getCertificate());
         sb.append("}");
         return sb.toString();
     }

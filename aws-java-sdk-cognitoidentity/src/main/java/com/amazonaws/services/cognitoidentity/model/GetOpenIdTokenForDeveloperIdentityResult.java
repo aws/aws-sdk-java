@@ -127,9 +127,9 @@ public class GetOpenIdTokenForDeveloperIdentityResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken());
+            sb.append("Token: ").append(getToken());
         sb.append("}");
         return sb.toString();
     }

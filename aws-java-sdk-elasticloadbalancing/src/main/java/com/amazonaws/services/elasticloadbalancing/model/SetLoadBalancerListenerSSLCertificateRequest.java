@@ -197,11 +197,11 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends com.amazonaws.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getLoadBalancerPort() != null)
-            sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");
+            sb.append("LoadBalancerPort: ").append(getLoadBalancerPort()).append(",");
         if (getSSLCertificateId() != null)
-            sb.append("SSLCertificateId: " + getSSLCertificateId());
+            sb.append("SSLCertificateId: ").append(getSSLCertificateId());
         sb.append("}");
         return sb.toString();
     }

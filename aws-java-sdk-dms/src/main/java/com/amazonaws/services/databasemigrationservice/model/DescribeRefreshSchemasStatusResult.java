@@ -78,7 +78,7 @@ public class DescribeRefreshSchemasStatusResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRefreshSchemasStatus() != null)
-            sb.append("RefreshSchemasStatus: " + getRefreshSchemasStatus());
+            sb.append("RefreshSchemasStatus: ").append(getRefreshSchemasStatus());
         sb.append("}");
         return sb.toString();
     }

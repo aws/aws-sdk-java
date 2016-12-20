@@ -63,14 +63,9 @@ public class RemoveTagsFromVaultRequestMarshaller implements Marshaller<Request<
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
-        uriResourcePath = uriResourcePath.replace(
-                "{accountId}",
-                (removeTagsFromVaultRequest.getAccountId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(removeTagsFromVaultRequest.getAccountId()),
-                        false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{vaultName}",
-                (removeTagsFromVaultRequest.getVaultName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(removeTagsFromVaultRequest.getVaultName()),
-                        false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
+                removeTagsFromVaultRequest.getAccountId() == null ? "-" : removeTagsFromVaultRequest.getAccountId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", removeTagsFromVaultRequest.getVaultName());
         request.setResourcePath(uriResourcePath);
 
         try {

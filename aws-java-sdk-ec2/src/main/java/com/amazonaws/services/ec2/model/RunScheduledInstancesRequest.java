@@ -272,13 +272,13 @@ public class RunScheduledInstancesRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getScheduledInstanceId() != null)
-            sb.append("ScheduledInstanceId: " + getScheduledInstanceId() + ",");
+            sb.append("ScheduledInstanceId: ").append(getScheduledInstanceId()).append(",");
         if (getLaunchSpecification() != null)
-            sb.append("LaunchSpecification: " + getLaunchSpecification());
+            sb.append("LaunchSpecification: ").append(getLaunchSpecification());
         sb.append("}");
         return sb.toString();
     }

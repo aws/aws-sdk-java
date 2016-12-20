@@ -80,7 +80,7 @@ public class PurchaseOfferingResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingTransaction() != null)
-            sb.append("OfferingTransaction: " + getOfferingTransaction());
+            sb.append("OfferingTransaction: ").append(getOfferingTransaction());
         sb.append("}");
         return sb.toString();
     }

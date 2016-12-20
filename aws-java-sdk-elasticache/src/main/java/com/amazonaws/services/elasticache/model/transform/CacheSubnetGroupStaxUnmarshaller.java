@@ -60,6 +60,11 @@ public class CacheSubnetGroupStaxUnmarshaller implements Unmarshaller<CacheSubne
                     continue;
                 }
 
+                if (context.testExpression("Subnets", targetDepth)) {
+                    cacheSubnetGroup.withSubnets(new ArrayList<Subnet>());
+                    continue;
+                }
+
                 if (context.testExpression("Subnets/Subnet", targetDepth)) {
                     cacheSubnetGroup.withSubnets(SubnetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

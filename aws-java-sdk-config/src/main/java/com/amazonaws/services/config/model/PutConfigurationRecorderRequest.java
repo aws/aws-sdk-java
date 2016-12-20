@@ -81,7 +81,7 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationRecorder() != null)
-            sb.append("ConfigurationRecorder: " + getConfigurationRecorder());
+            sb.append("ConfigurationRecorder: ").append(getConfigurationRecorder());
         sb.append("}");
         return sb.toString();
     }

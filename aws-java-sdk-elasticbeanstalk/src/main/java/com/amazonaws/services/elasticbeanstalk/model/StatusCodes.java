@@ -220,13 +220,13 @@ public class StatusCodes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus2xx() != null)
-            sb.append("Status2xx: " + getStatus2xx() + ",");
+            sb.append("Status2xx: ").append(getStatus2xx()).append(",");
         if (getStatus3xx() != null)
-            sb.append("Status3xx: " + getStatus3xx() + ",");
+            sb.append("Status3xx: ").append(getStatus3xx()).append(",");
         if (getStatus4xx() != null)
-            sb.append("Status4xx: " + getStatus4xx() + ",");
+            sb.append("Status4xx: ").append(getStatus4xx()).append(",");
         if (getStatus5xx() != null)
-            sb.append("Status5xx: " + getStatus5xx());
+            sb.append("Status5xx: ").append(getStatus5xx());
         sb.append("}");
         return sb.toString();
     }

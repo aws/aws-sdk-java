@@ -321,7 +321,7 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailName() != null)
-            sb.append("TrailName: " + getTrailName());
+            sb.append("TrailName: ").append(getTrailName());
         sb.append("}");
         return sb.toString();
     }

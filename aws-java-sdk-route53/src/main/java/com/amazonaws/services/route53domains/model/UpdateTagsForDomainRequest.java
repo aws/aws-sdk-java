@@ -837,9 +837,9 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getTagsToUpdate() != null)
-            sb.append("TagsToUpdate: " + getTagsToUpdate());
+            sb.append("TagsToUpdate: ").append(getTagsToUpdate());
         sb.append("}");
         return sb.toString();
     }

@@ -80,7 +80,7 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetAttributes() != null)
-            sb.append("FleetAttributes: " + getFleetAttributes());
+            sb.append("FleetAttributes: ").append(getFleetAttributes());
         sb.append("}");
         return sb.toString();
     }

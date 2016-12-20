@@ -80,7 +80,7 @@ public class UploadMultipartPartResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum());
+            sb.append("Checksum: ").append(getChecksum());
         sb.append("}");
         return sb.toString();
     }

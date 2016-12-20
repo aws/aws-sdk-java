@@ -148,9 +148,9 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTopicArn() != null)
-            sb.append("TopicArn: " + getTopicArn() + ",");
+            sb.append("TopicArn: ").append(getTopicArn()).append(",");
         if (getLabel() != null)
-            sb.append("Label: " + getLabel());
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }

@@ -193,9 +193,9 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUnsuccessfulFleetRequests() != null)
-            sb.append("UnsuccessfulFleetRequests: " + getUnsuccessfulFleetRequests() + ",");
+            sb.append("UnsuccessfulFleetRequests: ").append(getUnsuccessfulFleetRequests()).append(",");
         if (getSuccessfulFleetRequests() != null)
-            sb.append("SuccessfulFleetRequests: " + getSuccessfulFleetRequests());
+            sb.append("SuccessfulFleetRequests: ").append(getSuccessfulFleetRequests());
         sb.append("}");
         return sb.toString();
     }

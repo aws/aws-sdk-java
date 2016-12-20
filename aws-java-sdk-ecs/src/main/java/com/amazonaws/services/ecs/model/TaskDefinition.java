@@ -803,23 +803,23 @@ public class TaskDefinition implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskDefinitionArn() != null)
-            sb.append("TaskDefinitionArn: " + getTaskDefinitionArn() + ",");
+            sb.append("TaskDefinitionArn: ").append(getTaskDefinitionArn()).append(",");
         if (getContainerDefinitions() != null)
-            sb.append("ContainerDefinitions: " + getContainerDefinitions() + ",");
+            sb.append("ContainerDefinitions: ").append(getContainerDefinitions()).append(",");
         if (getFamily() != null)
-            sb.append("Family: " + getFamily() + ",");
+            sb.append("Family: ").append(getFamily()).append(",");
         if (getTaskRoleArn() != null)
-            sb.append("TaskRoleArn: " + getTaskRoleArn() + ",");
+            sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
         if (getNetworkMode() != null)
-            sb.append("NetworkMode: " + getNetworkMode() + ",");
+            sb.append("NetworkMode: ").append(getNetworkMode()).append(",");
         if (getRevision() != null)
-            sb.append("Revision: " + getRevision() + ",");
+            sb.append("Revision: ").append(getRevision()).append(",");
         if (getVolumes() != null)
-            sb.append("Volumes: " + getVolumes() + ",");
+            sb.append("Volumes: ").append(getVolumes()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getRequiresAttributes() != null)
-            sb.append("RequiresAttributes: " + getRequiresAttributes());
+            sb.append("RequiresAttributes: ").append(getRequiresAttributes());
         sb.append("}");
         return sb.toString();
     }

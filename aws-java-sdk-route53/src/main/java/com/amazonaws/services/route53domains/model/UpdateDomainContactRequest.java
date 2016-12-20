@@ -547,13 +547,13 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAdminContact() != null)
-            sb.append("AdminContact: " + getAdminContact() + ",");
+            sb.append("AdminContact: ").append(getAdminContact()).append(",");
         if (getRegistrantContact() != null)
-            sb.append("RegistrantContact: " + getRegistrantContact() + ",");
+            sb.append("RegistrantContact: ").append(getRegistrantContact()).append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: " + getTechContact());
+            sb.append("TechContact: ").append(getTechContact());
         sb.append("}");
         return sb.toString();
     }

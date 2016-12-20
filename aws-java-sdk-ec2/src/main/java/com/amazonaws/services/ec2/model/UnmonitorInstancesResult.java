@@ -114,7 +114,7 @@ public class UnmonitorInstancesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceMonitorings() != null)
-            sb.append("InstanceMonitorings: " + getInstanceMonitorings());
+            sb.append("InstanceMonitorings: ").append(getInstanceMonitorings());
         sb.append("}");
         return sb.toString();
     }

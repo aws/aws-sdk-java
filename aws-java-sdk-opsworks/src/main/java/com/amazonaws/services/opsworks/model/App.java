@@ -955,33 +955,33 @@ public class App implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAppId() != null)
-            sb.append("AppId: " + getAppId() + ",");
+            sb.append("AppId: ").append(getAppId()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getShortname() != null)
-            sb.append("Shortname: " + getShortname() + ",");
+            sb.append("Shortname: ").append(getShortname()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDataSources() != null)
-            sb.append("DataSources: " + getDataSources() + ",");
+            sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getAppSource() != null)
-            sb.append("AppSource: " + getAppSource() + ",");
+            sb.append("AppSource: ").append(getAppSource()).append(",");
         if (getDomains() != null)
-            sb.append("Domains: " + getDomains() + ",");
+            sb.append("Domains: ").append(getDomains()).append(",");
         if (getEnableSsl() != null)
-            sb.append("EnableSsl: " + getEnableSsl() + ",");
+            sb.append("EnableSsl: ").append(getEnableSsl()).append(",");
         if (getSslConfiguration() != null)
-            sb.append("SslConfiguration: " + getSslConfiguration() + ",");
+            sb.append("SslConfiguration: ").append(getSslConfiguration()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes() + ",");
+            sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: " + getEnvironment());
+            sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
         return sb.toString();
     }

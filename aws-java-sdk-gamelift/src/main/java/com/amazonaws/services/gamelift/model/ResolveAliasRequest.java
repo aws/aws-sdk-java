@@ -81,7 +81,7 @@ public class ResolveAliasRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAliasId() != null)
-            sb.append("AliasId: " + getAliasId());
+            sb.append("AliasId: ").append(getAliasId());
         sb.append("}");
         return sb.toString();
     }

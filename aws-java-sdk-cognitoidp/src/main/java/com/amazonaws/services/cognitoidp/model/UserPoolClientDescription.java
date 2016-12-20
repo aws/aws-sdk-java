@@ -172,11 +172,11 @@ public class UserPoolClientDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getClientName() != null)
-            sb.append("ClientName: " + getClientName());
+            sb.append("ClientName: ").append(getClientName());
         sb.append("}");
         return sb.toString();
     }

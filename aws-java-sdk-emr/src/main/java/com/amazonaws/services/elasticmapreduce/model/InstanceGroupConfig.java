@@ -659,23 +659,23 @@ public class InstanceGroupConfig implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getMarket() != null)
-            sb.append("Market: " + getMarket() + ",");
+            sb.append("Market: ").append(getMarket()).append(",");
         if (getInstanceRole() != null)
-            sb.append("InstanceRole: " + getInstanceRole() + ",");
+            sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
         if (getBidPrice() != null)
-            sb.append("BidPrice: " + getBidPrice() + ",");
+            sb.append("BidPrice: ").append(getBidPrice()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount() + ",");
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getConfigurations() != null)
-            sb.append("Configurations: " + getConfigurations() + ",");
+            sb.append("Configurations: ").append(getConfigurations()).append(",");
         if (getEbsConfiguration() != null)
-            sb.append("EbsConfiguration: " + getEbsConfiguration() + ",");
+            sb.append("EbsConfiguration: ").append(getEbsConfiguration()).append(",");
         if (getAutoScalingPolicy() != null)
-            sb.append("AutoScalingPolicy: " + getAutoScalingPolicy());
+            sb.append("AutoScalingPolicy: ").append(getAutoScalingPolicy());
         sb.append("}");
         return sb.toString();
     }

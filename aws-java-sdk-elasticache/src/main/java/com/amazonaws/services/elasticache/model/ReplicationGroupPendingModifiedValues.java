@@ -376,9 +376,9 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrimaryClusterId() != null)
-            sb.append("PrimaryClusterId: " + getPrimaryClusterId() + ",");
+            sb.append("PrimaryClusterId: ").append(getPrimaryClusterId()).append(",");
         if (getAutomaticFailoverStatus() != null)
-            sb.append("AutomaticFailoverStatus: " + getAutomaticFailoverStatus());
+            sb.append("AutomaticFailoverStatus: ").append(getAutomaticFailoverStatus());
         sb.append("}");
         return sb.toString();
     }

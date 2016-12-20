@@ -45,6 +45,11 @@ public class DescribeApplicationsResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Applications", targetDepth)) {
+                    describeApplicationsResult.withApplications(new ArrayList<ApplicationDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("Applications/member", targetDepth)) {
                     describeApplicationsResult.withApplications(ApplicationDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

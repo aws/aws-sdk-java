@@ -80,7 +80,7 @@ public class DescribeMyUserProfileResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserProfile() != null)
-            sb.append("UserProfile: " + getUserProfile());
+            sb.append("UserProfile: ").append(getUserProfile());
         sb.append("}");
         return sb.toString();
     }

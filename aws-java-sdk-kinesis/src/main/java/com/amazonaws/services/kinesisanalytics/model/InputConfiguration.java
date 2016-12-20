@@ -127,9 +127,9 @@ public class InputConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getInputStartingPositionConfiguration() != null)
-            sb.append("InputStartingPositionConfiguration: " + getInputStartingPositionConfiguration());
+            sb.append("InputStartingPositionConfiguration: ").append(getInputStartingPositionConfiguration());
         sb.append("}");
         return sb.toString();
     }

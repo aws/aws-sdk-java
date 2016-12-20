@@ -297,13 +297,13 @@ public class DiskImageDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFormat() != null)
-            sb.append("Format: " + getFormat() + ",");
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getSize() != null)
-            sb.append("Size: " + getSize() + ",");
+            sb.append("Size: ").append(getSize()).append(",");
         if (getImportManifestUrl() != null)
-            sb.append("ImportManifestUrl: " + getImportManifestUrl() + ",");
+            sb.append("ImportManifestUrl: ").append(getImportManifestUrl()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: " + getChecksum());
+            sb.append("Checksum: ").append(getChecksum());
         sb.append("}");
         return sb.toString();
     }

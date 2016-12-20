@@ -323,11 +323,11 @@ public class Stream implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamArn() != null)
-            sb.append("StreamArn: " + getStreamArn() + ",");
+            sb.append("StreamArn: ").append(getStreamArn()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getStreamLabel() != null)
-            sb.append("StreamLabel: " + getStreamLabel());
+            sb.append("StreamLabel: ").append(getStreamLabel());
         sb.append("}");
         return sb.toString();
     }

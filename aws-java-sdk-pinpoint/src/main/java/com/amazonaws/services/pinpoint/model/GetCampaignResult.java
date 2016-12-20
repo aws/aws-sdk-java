@@ -59,7 +59,7 @@ public class GetCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCampaignResponse() != null)
-            sb.append("CampaignResponse: " + getCampaignResponse());
+            sb.append("CampaignResponse: ").append(getCampaignResponse());
         sb.append("}");
         return sb.toString();
     }

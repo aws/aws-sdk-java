@@ -121,7 +121,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusters() != null)
-            sb.append("Clusters: " + getClusters());
+            sb.append("Clusters: ").append(getClusters());
         sb.append("}");
         return sb.toString();
     }

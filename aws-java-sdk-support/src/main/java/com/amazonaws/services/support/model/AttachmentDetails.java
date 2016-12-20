@@ -127,9 +127,9 @@ public class AttachmentDetails implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentId() != null)
-            sb.append("AttachmentId: " + getAttachmentId() + ",");
+            sb.append("AttachmentId: ").append(getAttachmentId()).append(",");
         if (getFileName() != null)
-            sb.append("FileName: " + getFileName());
+            sb.append("FileName: ").append(getFileName());
         sb.append("}");
         return sb.toString();
     }

@@ -159,9 +159,9 @@ public class DescribeDBLogFilesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescribeDBLogFiles() != null)
-            sb.append("DescribeDBLogFiles: " + getDescribeDBLogFiles() + ",");
+            sb.append("DescribeDBLogFiles: ").append(getDescribeDBLogFiles()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

@@ -310,11 +310,11 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getEnableDnsSupport() != null)
-            sb.append("EnableDnsSupport: " + getEnableDnsSupport() + ",");
+            sb.append("EnableDnsSupport: ").append(getEnableDnsSupport()).append(",");
         if (getEnableDnsHostnames() != null)
-            sb.append("EnableDnsHostnames: " + getEnableDnsHostnames());
+            sb.append("EnableDnsHostnames: ").append(getEnableDnsHostnames());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class ListCommandsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommands() != null)
-            sb.append("Commands: " + getCommands() + ",");
+            sb.append("Commands: ").append(getCommands()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -791,27 +791,27 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyType() != null)
-            sb.append("PolicyType: " + getPolicyType() + ",");
+            sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getAdjustmentType() != null)
-            sb.append("AdjustmentType: " + getAdjustmentType() + ",");
+            sb.append("AdjustmentType: ").append(getAdjustmentType()).append(",");
         if (getMinAdjustmentStep() != null)
-            sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() + ",");
+            sb.append("MinAdjustmentStep: ").append(getMinAdjustmentStep()).append(",");
         if (getMinAdjustmentMagnitude() != null)
-            sb.append("MinAdjustmentMagnitude: " + getMinAdjustmentMagnitude() + ",");
+            sb.append("MinAdjustmentMagnitude: ").append(getMinAdjustmentMagnitude()).append(",");
         if (getScalingAdjustment() != null)
-            sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
+            sb.append("ScalingAdjustment: ").append(getScalingAdjustment()).append(",");
         if (getCooldown() != null)
-            sb.append("Cooldown: " + getCooldown() + ",");
+            sb.append("Cooldown: ").append(getCooldown()).append(",");
         if (getMetricAggregationType() != null)
-            sb.append("MetricAggregationType: " + getMetricAggregationType() + ",");
+            sb.append("MetricAggregationType: ").append(getMetricAggregationType()).append(",");
         if (getStepAdjustments() != null)
-            sb.append("StepAdjustments: " + getStepAdjustments() + ",");
+            sb.append("StepAdjustments: ").append(getStepAdjustments()).append(",");
         if (getEstimatedInstanceWarmup() != null)
-            sb.append("EstimatedInstanceWarmup: " + getEstimatedInstanceWarmup());
+            sb.append("EstimatedInstanceWarmup: ").append(getEstimatedInstanceWarmup());
         sb.append("}");
         return sb.toString();
     }

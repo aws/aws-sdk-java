@@ -141,9 +141,9 @@ public class DisableVgwRoutePropagationRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRouteTableId() != null)
-            sb.append("RouteTableId: " + getRouteTableId() + ",");
+            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId());
+            sb.append("GatewayId: ").append(getGatewayId());
         sb.append("}");
         return sb.toString();
     }

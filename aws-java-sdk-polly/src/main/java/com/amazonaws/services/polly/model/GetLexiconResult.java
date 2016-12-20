@@ -131,9 +131,9 @@ public class GetLexiconResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLexicon() != null)
-            sb.append("Lexicon: " + getLexicon() + ",");
+            sb.append("Lexicon: ").append(getLexicon()).append(",");
         if (getLexiconAttributes() != null)
-            sb.append("LexiconAttributes: " + getLexiconAttributes());
+            sb.append("LexiconAttributes: ").append(getLexiconAttributes());
         sb.append("}");
         return sb.toString();
     }

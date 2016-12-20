@@ -235,11 +235,11 @@ public class PeeringConnectionOptionsRequest implements Serializable, Cloneable 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllowEgressFromLocalClassicLinkToRemoteVpc() != null)
-            sb.append("AllowEgressFromLocalClassicLinkToRemoteVpc: " + getAllowEgressFromLocalClassicLinkToRemoteVpc() + ",");
+            sb.append("AllowEgressFromLocalClassicLinkToRemoteVpc: ").append(getAllowEgressFromLocalClassicLinkToRemoteVpc()).append(",");
         if (getAllowEgressFromLocalVpcToRemoteClassicLink() != null)
-            sb.append("AllowEgressFromLocalVpcToRemoteClassicLink: " + getAllowEgressFromLocalVpcToRemoteClassicLink() + ",");
+            sb.append("AllowEgressFromLocalVpcToRemoteClassicLink: ").append(getAllowEgressFromLocalVpcToRemoteClassicLink()).append(",");
         if (getAllowDnsResolutionFromRemoteVpc() != null)
-            sb.append("AllowDnsResolutionFromRemoteVpc: " + getAllowDnsResolutionFromRemoteVpc());
+            sb.append("AllowDnsResolutionFromRemoteVpc: ").append(getAllowDnsResolutionFromRemoteVpc());
         sb.append("}");
         return sb.toString();
     }

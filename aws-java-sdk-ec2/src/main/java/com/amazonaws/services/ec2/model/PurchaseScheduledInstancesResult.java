@@ -114,7 +114,7 @@ public class PurchaseScheduledInstancesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduledInstanceSet() != null)
-            sb.append("ScheduledInstanceSet: " + getScheduledInstanceSet());
+            sb.append("ScheduledInstanceSet: ").append(getScheduledInstanceSet());
         sb.append("}");
         return sb.toString();
     }

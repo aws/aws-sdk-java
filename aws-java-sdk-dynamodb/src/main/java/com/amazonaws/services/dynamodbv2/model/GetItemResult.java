@@ -129,9 +129,9 @@ public class GetItemResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItem() != null)
-            sb.append("Item: " + getItem() + ",");
+            sb.append("Item: ").append(getItem()).append(",");
         if (getConsumedCapacity() != null)
-            sb.append("ConsumedCapacity: " + getConsumedCapacity());
+            sb.append("ConsumedCapacity: ").append(getConsumedCapacity());
         sb.append("}");
         return sb.toString();
     }

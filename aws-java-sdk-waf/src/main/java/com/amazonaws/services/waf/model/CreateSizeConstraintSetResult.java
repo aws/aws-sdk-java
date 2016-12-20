@@ -134,9 +134,9 @@ public class CreateSizeConstraintSetResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSizeConstraintSet() != null)
-            sb.append("SizeConstraintSet: " + getSizeConstraintSet() + ",");
+            sb.append("SizeConstraintSet: ").append(getSizeConstraintSet()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

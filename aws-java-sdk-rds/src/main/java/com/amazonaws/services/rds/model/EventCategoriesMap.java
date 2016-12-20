@@ -159,9 +159,9 @@ public class EventCategoriesMap implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceType() != null)
-            sb.append("SourceType: " + getSourceType() + ",");
+            sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getEventCategories() != null)
-            sb.append("EventCategories: " + getEventCategories());
+            sb.append("EventCategories: ").append(getEventCategories());
         sb.append("}");
         return sb.toString();
     }

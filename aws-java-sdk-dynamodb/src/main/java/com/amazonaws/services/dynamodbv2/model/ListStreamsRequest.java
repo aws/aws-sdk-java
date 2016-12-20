@@ -180,11 +180,11 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getExclusiveStartStreamArn() != null)
-            sb.append("ExclusiveStartStreamArn: " + getExclusiveStartStreamArn());
+            sb.append("ExclusiveStartStreamArn: ").append(getExclusiveStartStreamArn());
         sb.append("}");
         return sb.toString();
     }

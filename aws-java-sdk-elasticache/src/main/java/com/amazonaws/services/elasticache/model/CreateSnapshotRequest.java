@@ -173,11 +173,11 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getSnapshotName() != null)
-            sb.append("SnapshotName: " + getSnapshotName());
+            sb.append("SnapshotName: ").append(getSnapshotName());
         sb.append("}");
         return sb.toString();
     }

@@ -185,9 +185,9 @@ public class RemoveAttributesFromFindingsRequest extends com.amazonaws.AmazonWeb
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFindingArns() != null)
-            sb.append("FindingArns: " + getFindingArns() + ",");
+            sb.append("FindingArns: ").append(getFindingArns()).append(",");
         if (getAttributeKeys() != null)
-            sb.append("AttributeKeys: " + getAttributeKeys());
+            sb.append("AttributeKeys: ").append(getAttributeKeys());
         sb.append("}");
         return sb.toString();
     }

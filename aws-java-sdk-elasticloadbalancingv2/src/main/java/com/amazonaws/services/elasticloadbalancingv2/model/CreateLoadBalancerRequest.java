@@ -527,15 +527,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets() + ",");
+            sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getScheme() != null)
-            sb.append("Scheme: " + getScheme() + ",");
+            sb.append("Scheme: ").append(getScheme()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

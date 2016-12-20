@@ -60,13 +60,28 @@ public class ReservationStaxUnmarshaller implements Unmarshaller<Reservation, St
                     continue;
                 }
 
+                if (context.testExpression("groupSet", targetDepth)) {
+                    reservation.withGroups(new ArrayList<GroupIdentifier>());
+                    continue;
+                }
+
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     reservation.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("instancesSet", targetDepth)) {
+                    reservation.withInstances(new ArrayList<Instance>());
+                    continue;
+                }
+
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     reservation.withInstances(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groupName", targetDepth)) {
+                    reservation.withGroupNames(new ArrayList<String>());
                     continue;
                 }
 

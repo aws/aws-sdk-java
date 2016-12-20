@@ -348,17 +348,17 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTypeName() != null)
-            sb.append("TypeName: " + getTypeName() + ",");
+            sb.append("TypeName: ").append(getTypeName()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: " + getSchemaVersion() + ",");
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
         if (getCaptureTime() != null)
-            sb.append("CaptureTime: " + getCaptureTime() + ",");
+            sb.append("CaptureTime: ").append(getCaptureTime()).append(",");
         if (getEntries() != null)
-            sb.append("Entries: " + getEntries() + ",");
+            sb.append("Entries: ").append(getEntries()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

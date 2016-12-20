@@ -78,7 +78,7 @@ public class CreateServiceResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getService() != null)
-            sb.append("Service: " + getService());
+            sb.append("Service: ").append(getService());
         sb.append("}");
         return sb.toString();
     }

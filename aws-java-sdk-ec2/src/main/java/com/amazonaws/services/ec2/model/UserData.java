@@ -87,7 +87,7 @@ public class UserData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getData() != null)
-            sb.append("Data: " + getData());
+            sb.append("Data: ").append(getData());
         sb.append("}");
         return sb.toString();
     }

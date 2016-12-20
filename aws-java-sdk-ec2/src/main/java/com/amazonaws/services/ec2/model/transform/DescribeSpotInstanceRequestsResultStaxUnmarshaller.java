@@ -45,6 +45,11 @@ public class DescribeSpotInstanceRequestsResultStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("spotInstanceRequestSet", targetDepth)) {
+                    describeSpotInstanceRequestsResult.withSpotInstanceRequests(new ArrayList<SpotInstanceRequest>());
+                    continue;
+                }
+
                 if (context.testExpression("spotInstanceRequestSet/item", targetDepth)) {
                     describeSpotInstanceRequestsResult.withSpotInstanceRequests(SpotInstanceRequestStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

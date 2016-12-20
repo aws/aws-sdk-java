@@ -140,9 +140,9 @@ public class WorkflowExecutionCompletedEventAttributes implements Serializable, 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getDecisionTaskCompletedEventId() != null)
-            sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId());
+            sb.append("DecisionTaskCompletedEventId: ").append(getDecisionTaskCompletedEventId());
         sb.append("}");
         return sb.toString();
     }

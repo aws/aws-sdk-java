@@ -344,13 +344,13 @@ public class PriceSchedule implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTerm() != null)
-            sb.append("Term: " + getTerm() + ",");
+            sb.append("Term: ").append(getTerm()).append(",");
         if (getPrice() != null)
-            sb.append("Price: " + getPrice() + ",");
+            sb.append("Price: ").append(getPrice()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getActive() != null)
-            sb.append("Active: " + getActive());
+            sb.append("Active: ").append(getActive());
         sb.append("}");
         return sb.toString();
     }

@@ -174,11 +174,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getCurrentApplicationVersionId() != null)
-            sb.append("CurrentApplicationVersionId: " + getCurrentApplicationVersionId() + ",");
+            sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getApplicationUpdate() != null)
-            sb.append("ApplicationUpdate: " + getApplicationUpdate());
+            sb.append("ApplicationUpdate: ").append(getApplicationUpdate());
         sb.append("}");
         return sb.toString();
     }

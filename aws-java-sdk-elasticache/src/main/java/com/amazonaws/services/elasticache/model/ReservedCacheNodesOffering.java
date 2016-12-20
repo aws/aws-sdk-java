@@ -987,21 +987,21 @@ public class ReservedCacheNodesOffering implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedCacheNodesOfferingId() != null)
-            sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");
+            sb.append("ReservedCacheNodesOfferingId: ").append(getReservedCacheNodesOfferingId()).append(",");
         if (getCacheNodeType() != null)
-            sb.append("CacheNodeType: " + getCacheNodeType() + ",");
+            sb.append("CacheNodeType: ").append(getCacheNodeType()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration() + ",");
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getFixedPrice() != null)
-            sb.append("FixedPrice: " + getFixedPrice() + ",");
+            sb.append("FixedPrice: ").append(getFixedPrice()).append(",");
         if (getUsagePrice() != null)
-            sb.append("UsagePrice: " + getUsagePrice() + ",");
+            sb.append("UsagePrice: ").append(getUsagePrice()).append(",");
         if (getProductDescription() != null)
-            sb.append("ProductDescription: " + getProductDescription() + ",");
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getOfferingType() != null)
-            sb.append("OfferingType: " + getOfferingType() + ",");
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: " + getRecurringCharges());
+            sb.append("RecurringCharges: ").append(getRecurringCharges());
         sb.append("}");
         return sb.toString();
     }

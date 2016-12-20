@@ -272,11 +272,11 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getSSHPublicKeyId() != null)
-            sb.append("SSHPublicKeyId: " + getSSHPublicKeyId() + ",");
+            sb.append("SSHPublicKeyId: ").append(getSSHPublicKeyId()).append(",");
         if (getEncoding() != null)
-            sb.append("Encoding: " + getEncoding());
+            sb.append("Encoding: ").append(getEncoding());
         sb.append("}");
         return sb.toString();
     }

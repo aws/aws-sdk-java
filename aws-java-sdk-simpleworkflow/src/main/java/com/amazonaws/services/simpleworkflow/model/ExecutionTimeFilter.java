@@ -129,9 +129,9 @@ public class ExecutionTimeFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOldestDate() != null)
-            sb.append("OldestDate: " + getOldestDate() + ",");
+            sb.append("OldestDate: ").append(getOldestDate()).append(",");
         if (getLatestDate() != null)
-            sb.append("LatestDate: " + getLatestDate());
+            sb.append("LatestDate: ").append(getLatestDate());
         sb.append("}");
         return sb.toString();
     }

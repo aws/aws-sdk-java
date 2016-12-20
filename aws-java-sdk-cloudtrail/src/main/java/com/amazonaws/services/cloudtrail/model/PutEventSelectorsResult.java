@@ -175,9 +175,9 @@ public class PutEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailARN() != null)
-            sb.append("TrailARN: " + getTrailARN() + ",");
+            sb.append("TrailARN: ").append(getTrailARN()).append(",");
         if (getEventSelectors() != null)
-            sb.append("EventSelectors: " + getEventSelectors());
+            sb.append("EventSelectors: ").append(getEventSelectors());
         sb.append("}");
         return sb.toString();
     }

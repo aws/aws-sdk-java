@@ -275,15 +275,15 @@ public class ActionType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getSettings() != null)
-            sb.append("Settings: " + getSettings() + ",");
+            sb.append("Settings: ").append(getSettings()).append(",");
         if (getActionConfigurationProperties() != null)
-            sb.append("ActionConfigurationProperties: " + getActionConfigurationProperties() + ",");
+            sb.append("ActionConfigurationProperties: ").append(getActionConfigurationProperties()).append(",");
         if (getInputArtifactDetails() != null)
-            sb.append("InputArtifactDetails: " + getInputArtifactDetails() + ",");
+            sb.append("InputArtifactDetails: ").append(getInputArtifactDetails()).append(",");
         if (getOutputArtifactDetails() != null)
-            sb.append("OutputArtifactDetails: " + getOutputArtifactDetails());
+            sb.append("OutputArtifactDetails: ").append(getOutputArtifactDetails());
         sb.append("}");
         return sb.toString();
     }

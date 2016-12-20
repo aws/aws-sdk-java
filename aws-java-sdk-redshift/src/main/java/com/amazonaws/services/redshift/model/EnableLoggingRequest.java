@@ -589,11 +589,11 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterIdentifier() != null)
-            sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+            sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getBucketName() != null)
-            sb.append("BucketName: " + getBucketName() + ",");
+            sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getS3KeyPrefix() != null)
-            sb.append("S3KeyPrefix: " + getS3KeyPrefix());
+            sb.append("S3KeyPrefix: ").append(getS3KeyPrefix());
         sb.append("}");
         return sb.toString();
     }

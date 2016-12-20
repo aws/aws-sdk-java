@@ -172,11 +172,11 @@ public class OptionSpecification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getOptionName() != null)
-            sb.append("OptionName: " + getOptionName());
+            sb.append("OptionName: ").append(getOptionName());
         sb.append("}");
         return sb.toString();
     }

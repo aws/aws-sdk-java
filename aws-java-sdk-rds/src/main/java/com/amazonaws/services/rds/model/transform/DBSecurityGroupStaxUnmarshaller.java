@@ -65,8 +65,18 @@ public class DBSecurityGroupStaxUnmarshaller implements Unmarshaller<DBSecurityG
                     continue;
                 }
 
+                if (context.testExpression("EC2SecurityGroups", targetDepth)) {
+                    dBSecurityGroup.withEC2SecurityGroups(new ArrayList<EC2SecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth)) {
                     dBSecurityGroup.withEC2SecurityGroups(EC2SecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IPRanges", targetDepth)) {
+                    dBSecurityGroup.withIPRanges(new ArrayList<IPRange>());
                     continue;
                 }
 

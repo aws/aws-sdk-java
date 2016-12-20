@@ -5668,39 +5668,39 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getIndexName() != null)
-            sb.append("IndexName: " + getIndexName() + ",");
+            sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getSelect() != null)
-            sb.append("Select: " + getSelect() + ",");
+            sb.append("Select: ").append(getSelect()).append(",");
         if (getAttributesToGet() != null)
-            sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+            sb.append("AttributesToGet: ").append(getAttributesToGet()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getConsistentRead() != null)
-            sb.append("ConsistentRead: " + getConsistentRead() + ",");
+            sb.append("ConsistentRead: ").append(getConsistentRead()).append(",");
         if (getKeyConditions() != null)
-            sb.append("KeyConditions: " + getKeyConditions() + ",");
+            sb.append("KeyConditions: ").append(getKeyConditions()).append(",");
         if (getQueryFilter() != null)
-            sb.append("QueryFilter: " + getQueryFilter() + ",");
+            sb.append("QueryFilter: ").append(getQueryFilter()).append(",");
         if (getConditionalOperator() != null)
-            sb.append("ConditionalOperator: " + getConditionalOperator() + ",");
+            sb.append("ConditionalOperator: ").append(getConditionalOperator()).append(",");
         if (getScanIndexForward() != null)
-            sb.append("ScanIndexForward: " + getScanIndexForward() + ",");
+            sb.append("ScanIndexForward: ").append(getScanIndexForward()).append(",");
         if (getExclusiveStartKey() != null)
-            sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
+            sb.append("ExclusiveStartKey: ").append(getExclusiveStartKey()).append(",");
         if (getReturnConsumedCapacity() != null)
-            sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
+            sb.append("ReturnConsumedCapacity: ").append(getReturnConsumedCapacity()).append(",");
         if (getProjectionExpression() != null)
-            sb.append("ProjectionExpression: " + getProjectionExpression() + ",");
+            sb.append("ProjectionExpression: ").append(getProjectionExpression()).append(",");
         if (getFilterExpression() != null)
-            sb.append("FilterExpression: " + getFilterExpression() + ",");
+            sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
         if (getKeyConditionExpression() != null)
-            sb.append("KeyConditionExpression: " + getKeyConditionExpression() + ",");
+            sb.append("KeyConditionExpression: ").append(getKeyConditionExpression()).append(",");
         if (getExpressionAttributeNames() != null)
-            sb.append("ExpressionAttributeNames: " + getExpressionAttributeNames() + ",");
+            sb.append("ExpressionAttributeNames: ").append(getExpressionAttributeNames()).append(",");
         if (getExpressionAttributeValues() != null)
-            sb.append("ExpressionAttributeValues: " + getExpressionAttributeValues());
+            sb.append("ExpressionAttributeValues: ").append(getExpressionAttributeValues());
         sb.append("}");
         return sb.toString();
     }

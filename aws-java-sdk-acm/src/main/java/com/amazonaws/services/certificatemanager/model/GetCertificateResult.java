@@ -124,9 +124,9 @@ public class GetCertificateResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificate() != null)
-            sb.append("Certificate: " + getCertificate() + ",");
+            sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: " + getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");
         return sb.toString();
     }

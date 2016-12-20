@@ -156,9 +156,9 @@ public class ListThingsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThings() != null)
-            sb.append("Things: " + getThings() + ",");
+            sb.append("Things: ").append(getThings()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

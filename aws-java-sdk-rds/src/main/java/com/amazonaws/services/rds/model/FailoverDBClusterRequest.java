@@ -287,9 +287,9 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getTargetDBInstanceIdentifier() != null)
-            sb.append("TargetDBInstanceIdentifier: " + getTargetDBInstanceIdentifier());
+            sb.append("TargetDBInstanceIdentifier: ").append(getTargetDBInstanceIdentifier());
         sb.append("}");
         return sb.toString();
     }

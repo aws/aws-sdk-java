@@ -45,6 +45,11 @@ public class ListVerifiedEmailAddressesResultStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("VerifiedEmailAddresses", targetDepth)) {
+                    listVerifiedEmailAddressesResult.withVerifiedEmailAddresses(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("VerifiedEmailAddresses/member", targetDepth)) {
                     listVerifiedEmailAddressesResult.withVerifiedEmailAddresses(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

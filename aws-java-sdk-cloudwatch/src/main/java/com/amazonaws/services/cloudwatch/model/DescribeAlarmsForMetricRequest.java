@@ -474,19 +474,19 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: " + getNamespace() + ",");
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getStatistic() != null)
-            sb.append("Statistic: " + getStatistic() + ",");
+            sb.append("Statistic: ").append(getStatistic()).append(",");
         if (getExtendedStatistic() != null)
-            sb.append("ExtendedStatistic: " + getExtendedStatistic() + ",");
+            sb.append("ExtendedStatistic: ").append(getExtendedStatistic()).append(",");
         if (getDimensions() != null)
-            sb.append("Dimensions: " + getDimensions() + ",");
+            sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getPeriod() != null)
-            sb.append("Period: " + getPeriod() + ",");
+            sb.append("Period: ").append(getPeriod()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: " + getUnit());
+            sb.append("Unit: ").append(getUnit());
         sb.append("}");
         return sb.toString();
     }

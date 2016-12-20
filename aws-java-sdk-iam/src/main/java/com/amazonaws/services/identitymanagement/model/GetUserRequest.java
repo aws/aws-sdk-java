@@ -118,7 +118,7 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName());
+            sb.append("UserName: ").append(getUserName());
         sb.append("}");
         return sb.toString();
     }

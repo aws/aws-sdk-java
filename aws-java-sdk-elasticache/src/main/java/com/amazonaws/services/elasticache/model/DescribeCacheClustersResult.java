@@ -159,9 +159,9 @@ public class DescribeCacheClustersResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getCacheClusters() != null)
-            sb.append("CacheClusters: " + getCacheClusters());
+            sb.append("CacheClusters: ").append(getCacheClusters());
         sb.append("}");
         return sb.toString();
     }

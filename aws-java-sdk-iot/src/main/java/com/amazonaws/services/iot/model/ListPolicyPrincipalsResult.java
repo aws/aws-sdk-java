@@ -156,9 +156,9 @@ public class ListPolicyPrincipalsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrincipals() != null)
-            sb.append("Principals: " + getPrincipals() + ",");
+            sb.append("Principals: ").append(getPrincipals()).append(",");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker());
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }

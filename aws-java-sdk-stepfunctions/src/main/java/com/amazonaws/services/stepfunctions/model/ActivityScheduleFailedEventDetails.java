@@ -124,9 +124,9 @@ public class ActivityScheduleFailedEventDetails implements Serializable, Cloneab
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getError() != null)
-            sb.append("Error: " + getError() + ",");
+            sb.append("Error: ").append(getError()).append(",");
         if (getCause() != null)
-            sb.append("Cause: " + getCause());
+            sb.append("Cause: ").append(getCause());
         sb.append("}");
         return sb.toString();
     }

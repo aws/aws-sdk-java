@@ -126,9 +126,9 @@ public class CharacterSet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCharacterSetName() != null)
-            sb.append("CharacterSetName: " + getCharacterSetName() + ",");
+            sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
         if (getCharacterSetDescription() != null)
-            sb.append("CharacterSetDescription: " + getCharacterSetDescription());
+            sb.append("CharacterSetDescription: ").append(getCharacterSetDescription());
         sb.append("}");
         return sb.toString();
     }

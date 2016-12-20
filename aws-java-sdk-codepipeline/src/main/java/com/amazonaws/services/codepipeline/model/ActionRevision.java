@@ -179,11 +179,11 @@ public class ActionRevision implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRevisionId() != null)
-            sb.append("RevisionId: " + getRevisionId() + ",");
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
         if (getRevisionChangeId() != null)
-            sb.append("RevisionChangeId: " + getRevisionChangeId() + ",");
+            sb.append("RevisionChangeId: ").append(getRevisionChangeId()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated());
+            sb.append("Created: ").append(getCreated());
         sb.append("}");
         return sb.toString();
     }

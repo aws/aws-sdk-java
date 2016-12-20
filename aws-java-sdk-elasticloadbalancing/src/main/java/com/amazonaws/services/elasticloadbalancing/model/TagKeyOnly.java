@@ -80,7 +80,7 @@ public class TagKeyOnly implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey());
+            sb.append("Key: ").append(getKey());
         sb.append("}");
         return sb.toString();
     }

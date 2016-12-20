@@ -15,9 +15,10 @@
 
 package com.amazonaws.codegen.model.service;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ErrorMap {
 
-    // TODO: There is an error http status code in service model.Not sure if this is needed.
     private String shape;
 
     private String documentation;
@@ -25,6 +26,9 @@ public class ErrorMap {
     private boolean exception;
 
     private boolean fault;
+
+    @JsonProperty("error")
+    private ErrorTrait errorTrait;
 
     public String getShape() {
         return shape;
@@ -58,4 +62,11 @@ public class ErrorMap {
         this.fault = fault;
     }
 
+    public ErrorTrait getErrorTrait() {
+        return errorTrait;
+    }
+
+    public void setErrorTrait(ErrorTrait errorTrait) {
+        this.errorTrait = errorTrait;
+    }
 }

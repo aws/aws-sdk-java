@@ -109,9 +109,9 @@ public class UpdateServiceAccessPoliciesRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAccessPolicies() != null)
-            sb.append("AccessPolicies: " + getAccessPolicies());
+            sb.append("AccessPolicies: ").append(getAccessPolicies());
         sb.append("}");
         return sb.toString();
     }

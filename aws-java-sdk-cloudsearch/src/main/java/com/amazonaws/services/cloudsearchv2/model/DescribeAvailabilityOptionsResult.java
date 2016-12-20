@@ -81,7 +81,7 @@ public class DescribeAvailabilityOptionsResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityOptions() != null)
-            sb.append("AvailabilityOptions: " + getAvailabilityOptions());
+            sb.append("AvailabilityOptions: ").append(getAvailabilityOptions());
         sb.append("}");
         return sb.toString();
     }

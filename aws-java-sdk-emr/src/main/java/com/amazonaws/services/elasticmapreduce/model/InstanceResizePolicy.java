@@ -239,11 +239,11 @@ public class InstanceResizePolicy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstancesToTerminate() != null)
-            sb.append("InstancesToTerminate: " + getInstancesToTerminate() + ",");
+            sb.append("InstancesToTerminate: ").append(getInstancesToTerminate()).append(",");
         if (getInstancesToProtect() != null)
-            sb.append("InstancesToProtect: " + getInstancesToProtect() + ",");
+            sb.append("InstancesToProtect: ").append(getInstancesToProtect()).append(",");
         if (getInstanceTerminationTimeout() != null)
-            sb.append("InstanceTerminationTimeout: " + getInstanceTerminationTimeout());
+            sb.append("InstanceTerminationTimeout: ").append(getInstanceTerminationTimeout());
         sb.append("}");
         return sb.toString();
     }

@@ -397,29 +397,29 @@ public class GetShippingLabelRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobIds() != null)
-            sb.append("JobIds: " + getJobIds() + ",");
+            sb.append("JobIds: ").append(getJobIds()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getCompany() != null)
-            sb.append("Company: " + getCompany() + ",");
+            sb.append("Company: ").append(getCompany()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: " + getPhoneNumber() + ",");
+            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
         if (getCountry() != null)
-            sb.append("Country: " + getCountry() + ",");
+            sb.append("Country: ").append(getCountry()).append(",");
         if (getStateOrProvince() != null)
-            sb.append("StateOrProvince: " + getStateOrProvince() + ",");
+            sb.append("StateOrProvince: ").append(getStateOrProvince()).append(",");
         if (getCity() != null)
-            sb.append("City: " + getCity() + ",");
+            sb.append("City: ").append(getCity()).append(",");
         if (getPostalCode() != null)
-            sb.append("PostalCode: " + getPostalCode() + ",");
+            sb.append("PostalCode: ").append(getPostalCode()).append(",");
         if (getStreet1() != null)
-            sb.append("Street1: " + getStreet1() + ",");
+            sb.append("Street1: ").append(getStreet1()).append(",");
         if (getStreet2() != null)
-            sb.append("Street2: " + getStreet2() + ",");
+            sb.append("Street2: ").append(getStreet2()).append(",");
         if (getStreet3() != null)
-            sb.append("Street3: " + getStreet3() + ",");
+            sb.append("Street3: ").append(getStreet3()).append(",");
         if (getAPIVersion() != null)
-            sb.append("APIVersion: " + getAPIVersion());
+            sb.append("APIVersion: ").append(getAPIVersion());
         sb.append("}");
         return sb.toString();
     }

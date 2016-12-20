@@ -284,19 +284,19 @@ public class TreatmentResource implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getMessageConfiguration() != null)
-            sb.append("MessageConfiguration: " + getMessageConfiguration() + ",");
+            sb.append("MessageConfiguration: ").append(getMessageConfiguration()).append(",");
         if (getSchedule() != null)
-            sb.append("Schedule: " + getSchedule() + ",");
+            sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getSizePercent() != null)
-            sb.append("SizePercent: " + getSizePercent() + ",");
+            sb.append("SizePercent: ").append(getSizePercent()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getTreatmentDescription() != null)
-            sb.append("TreatmentDescription: " + getTreatmentDescription() + ",");
+            sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
-            sb.append("TreatmentName: " + getTreatmentName());
+            sb.append("TreatmentName: ").append(getTreatmentName());
         sb.append("}");
         return sb.toString();
     }

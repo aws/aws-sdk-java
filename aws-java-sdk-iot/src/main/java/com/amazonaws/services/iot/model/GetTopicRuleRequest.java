@@ -81,7 +81,7 @@ public class GetTopicRuleRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleName() != null)
-            sb.append("RuleName: " + getRuleName());
+            sb.append("RuleName: ").append(getRuleName());
         sb.append("}");
         return sb.toString();
     }

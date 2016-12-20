@@ -159,9 +159,9 @@ public class RecurringCharge implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFrequency() != null)
-            sb.append("Frequency: " + getFrequency() + ",");
+            sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getAmount() != null)
-            sb.append("Amount: " + getAmount());
+            sb.append("Amount: ").append(getAmount());
         sb.append("}");
         return sb.toString();
     }

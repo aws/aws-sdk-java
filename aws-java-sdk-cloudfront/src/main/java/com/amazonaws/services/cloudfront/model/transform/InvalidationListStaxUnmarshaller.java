@@ -70,6 +70,11 @@ public class InvalidationListStaxUnmarshaller implements Unmarshaller<Invalidati
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    invalidationList.withItems(new ArrayList<InvalidationSummary>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/InvalidationSummary", targetDepth)) {
                     invalidationList.withItems(InvalidationSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -81,7 +81,7 @@ public class DisableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId());
+            sb.append("DirectoryId: ").append(getDirectoryId());
         sb.append("}");
         return sb.toString();
     }

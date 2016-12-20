@@ -110,6 +110,11 @@ public class ReservedDBInstanceStaxUnmarshaller implements Unmarshaller<Reserved
                     continue;
                 }
 
+                if (context.testExpression("RecurringCharges", targetDepth)) {
+                    reservedDBInstance.withRecurringCharges(new ArrayList<RecurringCharge>());
+                    continue;
+                }
+
                 if (context.testExpression("RecurringCharges/RecurringCharge", targetDepth)) {
                     reservedDBInstance.withRecurringCharges(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

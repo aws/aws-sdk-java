@@ -197,11 +197,11 @@ public class InitiateVaultLockRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getVaultName() != null)
-            sb.append("VaultName: " + getVaultName() + ",");
+            sb.append("VaultName: ").append(getVaultName()).append(",");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy());
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }

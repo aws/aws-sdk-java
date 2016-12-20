@@ -350,11 +350,11 @@ public class AlarmConfiguration implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnabled() != null)
-            sb.append("Enabled: " + getEnabled() + ",");
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getIgnorePollAlarmFailure() != null)
-            sb.append("IgnorePollAlarmFailure: " + getIgnorePollAlarmFailure() + ",");
+            sb.append("IgnorePollAlarmFailure: ").append(getIgnorePollAlarmFailure()).append(",");
         if (getAlarms() != null)
-            sb.append("Alarms: " + getAlarms());
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }

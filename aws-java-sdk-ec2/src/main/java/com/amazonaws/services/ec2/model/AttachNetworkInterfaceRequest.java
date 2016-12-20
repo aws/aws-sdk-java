@@ -187,11 +187,11 @@ public class AttachNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDeviceIndex() != null)
-            sb.append("DeviceIndex: " + getDeviceIndex());
+            sb.append("DeviceIndex: ").append(getDeviceIndex());
         sb.append("}");
         return sb.toString();
     }

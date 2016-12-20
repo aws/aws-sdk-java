@@ -396,9 +396,9 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLambdaFunctionARN() != null)
-            sb.append("LambdaFunctionARN: " + getLambdaFunctionARN() + ",");
+            sb.append("LambdaFunctionARN: ").append(getLambdaFunctionARN()).append(",");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType());
+            sb.append("EventType: ").append(getEventType());
         sb.append("}");
         return sb.toString();
     }

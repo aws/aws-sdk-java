@@ -319,13 +319,13 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getMode() != null)
-            sb.append("Mode: " + getMode() + ",");
+            sb.append("Mode: ").append(getMode()).append(",");
         if (getFailOnWarnings() != null)
-            sb.append("FailOnWarnings: " + getFailOnWarnings() + ",");
+            sb.append("FailOnWarnings: ").append(getFailOnWarnings()).append(",");
         if (getBody() != null)
-            sb.append("Body: " + getBody());
+            sb.append("Body: ").append(getBody());
         sb.append("}");
         return sb.toString();
     }

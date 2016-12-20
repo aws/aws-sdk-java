@@ -189,9 +189,9 @@ public class EnvironmentPlatform implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getLanguages() != null)
-            sb.append("Languages: " + getLanguages());
+            sb.append("Languages: ").append(getLanguages());
         sb.append("}");
         return sb.toString();
     }

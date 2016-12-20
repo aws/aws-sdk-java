@@ -1266,23 +1266,23 @@ public class StreamDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamArn() != null)
-            sb.append("StreamArn: " + getStreamArn() + ",");
+            sb.append("StreamArn: ").append(getStreamArn()).append(",");
         if (getStreamLabel() != null)
-            sb.append("StreamLabel: " + getStreamLabel() + ",");
+            sb.append("StreamLabel: ").append(getStreamLabel()).append(",");
         if (getStreamStatus() != null)
-            sb.append("StreamStatus: " + getStreamStatus() + ",");
+            sb.append("StreamStatus: ").append(getStreamStatus()).append(",");
         if (getStreamViewType() != null)
-            sb.append("StreamViewType: " + getStreamViewType() + ",");
+            sb.append("StreamViewType: ").append(getStreamViewType()).append(",");
         if (getCreationRequestDateTime() != null)
-            sb.append("CreationRequestDateTime: " + getCreationRequestDateTime() + ",");
+            sb.append("CreationRequestDateTime: ").append(getCreationRequestDateTime()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: " + getTableName() + ",");
+            sb.append("TableName: ").append(getTableName()).append(",");
         if (getKeySchema() != null)
-            sb.append("KeySchema: " + getKeySchema() + ",");
+            sb.append("KeySchema: ").append(getKeySchema()).append(",");
         if (getShards() != null)
-            sb.append("Shards: " + getShards() + ",");
+            sb.append("Shards: ").append(getShards()).append(",");
         if (getLastEvaluatedShardId() != null)
-            sb.append("LastEvaluatedShardId: " + getLastEvaluatedShardId());
+            sb.append("LastEvaluatedShardId: ").append(getLastEvaluatedShardId());
         sb.append("}");
         return sb.toString();
     }

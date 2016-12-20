@@ -309,21 +309,21 @@ public class NewPublicVirtualInterface implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVirtualInterfaceName() != null)
-            sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");
+            sb.append("VirtualInterfaceName: ").append(getVirtualInterfaceName()).append(",");
         if (getVlan() != null)
-            sb.append("Vlan: " + getVlan() + ",");
+            sb.append("Vlan: ").append(getVlan()).append(",");
         if (getAsn() != null)
-            sb.append("Asn: " + getAsn() + ",");
+            sb.append("Asn: ").append(getAsn()).append(",");
         if (getAuthKey() != null)
-            sb.append("AuthKey: " + getAuthKey() + ",");
+            sb.append("AuthKey: ").append(getAuthKey()).append(",");
         if (getAmazonAddress() != null)
-            sb.append("AmazonAddress: " + getAmazonAddress() + ",");
+            sb.append("AmazonAddress: ").append(getAmazonAddress()).append(",");
         if (getCustomerAddress() != null)
-            sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+            sb.append("CustomerAddress: ").append(getCustomerAddress()).append(",");
         if (getAddressFamily() != null)
-            sb.append("AddressFamily: " + getAddressFamily() + ",");
+            sb.append("AddressFamily: ").append(getAddressFamily()).append(",");
         if (getRouteFilterPrefixes() != null)
-            sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes());
+            sb.append("RouteFilterPrefixes: ").append(getRouteFilterPrefixes());
         sb.append("}");
         return sb.toString();
     }

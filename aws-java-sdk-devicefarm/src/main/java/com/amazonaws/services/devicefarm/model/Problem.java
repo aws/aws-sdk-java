@@ -824,19 +824,19 @@ public class Problem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRun() != null)
-            sb.append("Run: " + getRun() + ",");
+            sb.append("Run: ").append(getRun()).append(",");
         if (getJob() != null)
-            sb.append("Job: " + getJob() + ",");
+            sb.append("Job: ").append(getJob()).append(",");
         if (getSuite() != null)
-            sb.append("Suite: " + getSuite() + ",");
+            sb.append("Suite: ").append(getSuite()).append(",");
         if (getTest() != null)
-            sb.append("Test: " + getTest() + ",");
+            sb.append("Test: ").append(getTest()).append(",");
         if (getDevice() != null)
-            sb.append("Device: " + getDevice() + ",");
+            sb.append("Device: ").append(getDevice()).append(",");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

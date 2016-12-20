@@ -29,7 +29,7 @@ public class DescribeExportConfigurationsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A token to get the next set of results. For example, if you specified 100 IDs for
-     * <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     * <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      * <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the
      * token in the query to get the next set of 10.
      * </p>
@@ -117,14 +117,14 @@ public class DescribeExportConfigurationsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A token to get the next set of results. For example, if you specified 100 IDs for
-     * <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     * <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      * <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the
      * token in the query to get the next set of 10.
      * </p>
      * 
      * @param nextToken
      *        A token to get the next set of results. For example, if you specified 100 IDs for
-     *        <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     *        <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      *        <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10.
      *        Use the token in the query to get the next set of 10.
      */
@@ -136,13 +136,13 @@ public class DescribeExportConfigurationsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A token to get the next set of results. For example, if you specified 100 IDs for
-     * <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     * <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      * <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the
      * token in the query to get the next set of 10.
      * </p>
      * 
      * @return A token to get the next set of results. For example, if you specified 100 IDs for
-     *         <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     *         <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      *         <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10.
      *         Use the token in the query to get the next set of 10.
      */
@@ -154,14 +154,14 @@ public class DescribeExportConfigurationsResult extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A token to get the next set of results. For example, if you specified 100 IDs for
-     * <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     * <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      * <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10. Use the
      * token in the query to get the next set of 10.
      * </p>
      * 
      * @param nextToken
      *        A token to get the next set of results. For example, if you specified 100 IDs for
-     *        <code>DescribeConfigurationsRequest$configurationIds</code> but set
+     *        <code>DescribeExportConfigurationsRequest$exportIds</code> but set
      *        <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you will get results in a set of 10.
      *        Use the token in the query to get the next set of 10.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -184,9 +184,9 @@ public class DescribeExportConfigurationsResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportsInfo() != null)
-            sb.append("ExportsInfo: " + getExportsInfo() + ",");
+            sb.append("ExportsInfo: ").append(getExportsInfo()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -133,9 +133,9 @@ public class TargetReservationValue implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetConfiguration() != null)
-            sb.append("TargetConfiguration: " + getTargetConfiguration() + ",");
+            sb.append("TargetConfiguration: ").append(getTargetConfiguration()).append(",");
         if (getReservationValue() != null)
-            sb.append("ReservationValue: " + getReservationValue());
+            sb.append("ReservationValue: ").append(getReservationValue());
         sb.append("}");
         return sb.toString();
     }

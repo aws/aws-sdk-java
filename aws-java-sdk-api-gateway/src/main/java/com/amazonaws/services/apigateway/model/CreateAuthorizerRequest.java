@@ -558,25 +558,25 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRestApiId() != null)
-            sb.append("RestApiId: " + getRestApiId() + ",");
+            sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getProviderARNs() != null)
-            sb.append("ProviderARNs: " + getProviderARNs() + ",");
+            sb.append("ProviderARNs: ").append(getProviderARNs()).append(",");
         if (getAuthType() != null)
-            sb.append("AuthType: " + getAuthType() + ",");
+            sb.append("AuthType: ").append(getAuthType()).append(",");
         if (getAuthorizerUri() != null)
-            sb.append("AuthorizerUri: " + getAuthorizerUri() + ",");
+            sb.append("AuthorizerUri: ").append(getAuthorizerUri()).append(",");
         if (getAuthorizerCredentials() != null)
-            sb.append("AuthorizerCredentials: " + getAuthorizerCredentials() + ",");
+            sb.append("AuthorizerCredentials: ").append(getAuthorizerCredentials()).append(",");
         if (getIdentitySource() != null)
-            sb.append("IdentitySource: " + getIdentitySource() + ",");
+            sb.append("IdentitySource: ").append(getIdentitySource()).append(",");
         if (getIdentityValidationExpression() != null)
-            sb.append("IdentityValidationExpression: " + getIdentityValidationExpression() + ",");
+            sb.append("IdentityValidationExpression: ").append(getIdentityValidationExpression()).append(",");
         if (getAuthorizerResultTtlInSeconds() != null)
-            sb.append("AuthorizerResultTtlInSeconds: " + getAuthorizerResultTtlInSeconds());
+            sb.append("AuthorizerResultTtlInSeconds: ").append(getAuthorizerResultTtlInSeconds());
         sb.append("}");
         return sb.toString();
     }

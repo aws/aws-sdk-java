@@ -172,11 +172,11 @@ public class TargetHealthDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTarget() != null)
-            sb.append("Target: " + getTarget() + ",");
+            sb.append("Target: ").append(getTarget()).append(",");
         if (getHealthCheckPort() != null)
-            sb.append("HealthCheckPort: " + getHealthCheckPort() + ",");
+            sb.append("HealthCheckPort: ").append(getHealthCheckPort()).append(",");
         if (getTargetHealth() != null)
-            sb.append("TargetHealth: " + getTargetHealth());
+            sb.append("TargetHealth: ").append(getTargetHealth());
         sb.append("}");
         return sb.toString();
     }

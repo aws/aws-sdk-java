@@ -50,8 +50,18 @@ public class ReservedInstancesModificationStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("reservedInstancesSet", targetDepth)) {
+                    reservedInstancesModification.withReservedInstancesIds(new ArrayList<ReservedInstancesId>());
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstancesSet/item", targetDepth)) {
                     reservedInstancesModification.withReservedInstancesIds(ReservedInstancesIdStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("modificationResultSet", targetDepth)) {
+                    reservedInstancesModification.withModificationResults(new ArrayList<ReservedInstancesModificationResult>());
                     continue;
                 }
 

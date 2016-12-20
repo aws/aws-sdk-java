@@ -543,23 +543,23 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCaseIdList() != null)
-            sb.append("CaseIdList: " + getCaseIdList() + ",");
+            sb.append("CaseIdList: ").append(getCaseIdList()).append(",");
         if (getDisplayId() != null)
-            sb.append("DisplayId: " + getDisplayId() + ",");
+            sb.append("DisplayId: ").append(getDisplayId()).append(",");
         if (getAfterTime() != null)
-            sb.append("AfterTime: " + getAfterTime() + ",");
+            sb.append("AfterTime: ").append(getAfterTime()).append(",");
         if (getBeforeTime() != null)
-            sb.append("BeforeTime: " + getBeforeTime() + ",");
+            sb.append("BeforeTime: ").append(getBeforeTime()).append(",");
         if (getIncludeResolvedCases() != null)
-            sb.append("IncludeResolvedCases: " + getIncludeResolvedCases() + ",");
+            sb.append("IncludeResolvedCases: ").append(getIncludeResolvedCases()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: " + getLanguage() + ",");
+            sb.append("Language: ").append(getLanguage()).append(",");
         if (getIncludeCommunications() != null)
-            sb.append("IncludeCommunications: " + getIncludeCommunications());
+            sb.append("IncludeCommunications: ").append(getIncludeCommunications());
         sb.append("}");
         return sb.toString();
     }

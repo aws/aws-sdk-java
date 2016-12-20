@@ -178,9 +178,9 @@ public class DescribeEventSubscriptionsResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getEventSubscriptionsList() != null)
-            sb.append("EventSubscriptionsList: " + getEventSubscriptionsList());
+            sb.append("EventSubscriptionsList: ").append(getEventSubscriptionsList());
         sb.append("}");
         return sb.toString();
     }

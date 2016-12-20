@@ -502,21 +502,21 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification() + ",");
+            sb.append("Notification: ").append(getNotification()).append(",");
         if (getResources() != null)
-            sb.append("Resources: " + getResources() + ",");
+            sb.append("Resources: ").append(getResources()).append(",");
         if (getAddressId() != null)
-            sb.append("AddressId: " + getAddressId() + ",");
+            sb.append("AddressId: ").append(getAddressId()).append(",");
         if (getShippingOption() != null)
-            sb.append("ShippingOption: " + getShippingOption() + ",");
+            sb.append("ShippingOption: ").append(getShippingOption()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSnowballCapacityPreference() != null)
-            sb.append("SnowballCapacityPreference: " + getSnowballCapacityPreference());
+            sb.append("SnowballCapacityPreference: ").append(getSnowballCapacityPreference());
         sb.append("}");
         return sb.toString();
     }

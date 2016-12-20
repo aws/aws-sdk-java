@@ -438,15 +438,15 @@ public class ExecutePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getHonorCooldown() != null)
-            sb.append("HonorCooldown: " + getHonorCooldown() + ",");
+            sb.append("HonorCooldown: ").append(getHonorCooldown()).append(",");
         if (getMetricValue() != null)
-            sb.append("MetricValue: " + getMetricValue() + ",");
+            sb.append("MetricValue: ").append(getMetricValue()).append(",");
         if (getBreachThreshold() != null)
-            sb.append("BreachThreshold: " + getBreachThreshold());
+            sb.append("BreachThreshold: ").append(getBreachThreshold());
         sb.append("}");
         return sb.toString();
     }

@@ -156,9 +156,9 @@ public class UniqueProblem implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage() + ",");
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getProblems() != null)
-            sb.append("Problems: " + getProblems());
+            sb.append("Problems: ").append(getProblems());
         sb.append("}");
         return sb.toString();
     }

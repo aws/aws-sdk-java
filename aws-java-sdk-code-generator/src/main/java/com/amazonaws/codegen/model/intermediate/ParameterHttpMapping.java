@@ -29,6 +29,7 @@ public class ParameterHttpMapping {
     private boolean isStreaming;
     private Location location;
     private boolean flattened;
+    private boolean isGreedy;
 
     public boolean getIsPayload() {
         return isPayload;
@@ -150,4 +151,17 @@ public class ParameterHttpMapping {
         return this;
     }
 
+    public boolean isGreedy() {
+        return isGreedy;
+    }
+
+    public ParameterHttpMapping setIsGreedy(boolean greedy) {
+        isGreedy = greedy;
+        return this;
+    }
+
+    public ParameterHttpMapping withIsGreedy(boolean greedy) {
+        setIsGreedy(greedy);
+        return this;
+    }
 }

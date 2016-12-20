@@ -216,11 +216,11 @@ public class CreateLBCookieStickinessPolicyRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getCookieExpirationPeriod() != null)
-            sb.append("CookieExpirationPeriod: " + getCookieExpirationPeriod());
+            sb.append("CookieExpirationPeriod: ").append(getCookieExpirationPeriod());
         sb.append("}");
         return sb.toString();
     }

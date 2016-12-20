@@ -45,6 +45,11 @@ public class DescribeClusterParametersResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Parameters", targetDepth)) {
+                    describeClusterParametersResult.withParameters(new ArrayList<Parameter>());
+                    continue;
+                }
+
                 if (context.testExpression("Parameters/Parameter", targetDepth)) {
                     describeClusterParametersResult.withParameters(ParameterStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

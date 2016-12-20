@@ -258,11 +258,11 @@ public class DescribeCacheSecurityGroupsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheSecurityGroupName() != null)
-            sb.append("CacheSecurityGroupName: " + getCacheSecurityGroupName() + ",");
+            sb.append("CacheSecurityGroupName: ").append(getCacheSecurityGroupName()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

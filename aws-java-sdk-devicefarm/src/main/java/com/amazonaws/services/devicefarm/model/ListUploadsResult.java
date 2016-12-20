@@ -166,9 +166,9 @@ public class ListUploadsResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploads() != null)
-            sb.append("Uploads: " + getUploads() + ",");
+            sb.append("Uploads: ").append(getUploads()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

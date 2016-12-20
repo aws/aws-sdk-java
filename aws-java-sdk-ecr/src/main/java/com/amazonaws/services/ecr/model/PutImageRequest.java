@@ -178,11 +178,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageManifest() != null)
-            sb.append("ImageManifest: " + getImageManifest());
+            sb.append("ImageManifest: ").append(getImageManifest());
         sb.append("}");
         return sb.toString();
     }

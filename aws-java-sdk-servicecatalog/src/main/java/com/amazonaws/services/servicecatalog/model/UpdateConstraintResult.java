@@ -203,11 +203,11 @@ public class UpdateConstraintResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConstraintDetail() != null)
-            sb.append("ConstraintDetail: " + getConstraintDetail() + ",");
+            sb.append("ConstraintDetail: ").append(getConstraintDetail()).append(",");
         if (getConstraintParameters() != null)
-            sb.append("ConstraintParameters: " + getConstraintParameters() + ",");
+            sb.append("ConstraintParameters: ").append(getConstraintParameters()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

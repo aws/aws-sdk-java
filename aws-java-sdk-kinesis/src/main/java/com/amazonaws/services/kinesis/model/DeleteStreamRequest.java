@@ -81,7 +81,7 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName());
+            sb.append("StreamName: ").append(getStreamName());
         sb.append("}");
         return sb.toString();
     }

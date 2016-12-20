@@ -343,7 +343,7 @@ public class DescribeChapCredentialsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChapCredentials() != null)
-            sb.append("ChapCredentials: " + getChapCredentials());
+            sb.append("ChapCredentials: ").append(getChapCredentials());
         sb.append("}");
         return sb.toString();
     }

@@ -697,19 +697,19 @@ public class Build implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBuildId() != null)
-            sb.append("BuildId: " + getBuildId() + ",");
+            sb.append("BuildId: ").append(getBuildId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getSizeOnDisk() != null)
-            sb.append("SizeOnDisk: " + getSizeOnDisk() + ",");
+            sb.append("SizeOnDisk: ").append(getSizeOnDisk()).append(",");
         if (getOperatingSystem() != null)
-            sb.append("OperatingSystem: " + getOperatingSystem() + ",");
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }

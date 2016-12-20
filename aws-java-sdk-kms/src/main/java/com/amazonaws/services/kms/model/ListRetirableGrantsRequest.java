@@ -272,11 +272,11 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getRetiringPrincipal() != null)
-            sb.append("RetiringPrincipal: " + getRetiringPrincipal());
+            sb.append("RetiringPrincipal: ").append(getRetiringPrincipal());
         sb.append("}");
         return sb.toString();
     }

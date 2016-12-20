@@ -80,7 +80,7 @@ public class GetServerCertificateResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerCertificate() != null)
-            sb.append("ServerCertificate: " + getServerCertificate());
+            sb.append("ServerCertificate: ").append(getServerCertificate());
         sb.append("}");
         return sb.toString();
     }

@@ -206,11 +206,11 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupNames() != null)
-            sb.append("AutoScalingGroupNames: " + getAutoScalingGroupNames() + ",");
+            sb.append("AutoScalingGroupNames: ").append(getAutoScalingGroupNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords());
+            sb.append("MaxRecords: ").append(getMaxRecords());
         sb.append("}");
         return sb.toString();
     }

@@ -127,9 +127,9 @@ public class GetPipelineExecutionRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: " + getPipelineExecutionId());
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId());
         sb.append("}");
         return sb.toString();
     }

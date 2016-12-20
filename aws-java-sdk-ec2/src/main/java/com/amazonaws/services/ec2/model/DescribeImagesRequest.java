@@ -1903,13 +1903,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageIds() != null)
-            sb.append("ImageIds: " + getImageIds() + ",");
+            sb.append("ImageIds: ").append(getImageIds()).append(",");
         if (getOwners() != null)
-            sb.append("Owners: " + getOwners() + ",");
+            sb.append("Owners: ").append(getOwners()).append(",");
         if (getExecutableUsers() != null)
-            sb.append("ExecutableUsers: " + getExecutableUsers() + ",");
+            sb.append("ExecutableUsers: ").append(getExecutableUsers()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

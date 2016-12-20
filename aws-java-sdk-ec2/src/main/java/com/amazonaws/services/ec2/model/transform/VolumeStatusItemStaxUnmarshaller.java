@@ -60,8 +60,18 @@ public class VolumeStatusItemStaxUnmarshaller implements Unmarshaller<VolumeStat
                     continue;
                 }
 
+                if (context.testExpression("eventsSet", targetDepth)) {
+                    volumeStatusItem.withEvents(new ArrayList<VolumeStatusEvent>());
+                    continue;
+                }
+
                 if (context.testExpression("eventsSet/item", targetDepth)) {
                     volumeStatusItem.withEvents(VolumeStatusEventStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("actionsSet", targetDepth)) {
+                    volumeStatusItem.withActions(new ArrayList<VolumeStatusAction>());
                     continue;
                 }
 

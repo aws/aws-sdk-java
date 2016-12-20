@@ -249,13 +249,13 @@ public class CreateEvaluationRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEvaluationId() != null)
-            sb.append("EvaluationId: " + getEvaluationId() + ",");
+            sb.append("EvaluationId: ").append(getEvaluationId()).append(",");
         if (getEvaluationName() != null)
-            sb.append("EvaluationName: " + getEvaluationName() + ",");
+            sb.append("EvaluationName: ").append(getEvaluationName()).append(",");
         if (getMLModelId() != null)
-            sb.append("MLModelId: " + getMLModelId() + ",");
+            sb.append("MLModelId: ").append(getMLModelId()).append(",");
         if (getEvaluationDataSourceId() != null)
-            sb.append("EvaluationDataSourceId: " + getEvaluationDataSourceId());
+            sb.append("EvaluationDataSourceId: ").append(getEvaluationDataSourceId());
         sb.append("}");
         return sb.toString();
     }

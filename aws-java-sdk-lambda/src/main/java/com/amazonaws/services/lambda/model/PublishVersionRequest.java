@@ -220,11 +220,11 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getCodeSha256() != null)
-            sb.append("CodeSha256: " + getCodeSha256() + ",");
+            sb.append("CodeSha256: ").append(getCodeSha256()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

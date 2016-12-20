@@ -159,9 +159,9 @@ public class InstanceCount implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: " + getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount());
         sb.append("}");
         return sb.toString();
     }

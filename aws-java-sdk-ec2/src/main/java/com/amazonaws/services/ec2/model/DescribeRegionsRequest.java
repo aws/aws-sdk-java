@@ -314,9 +314,9 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegionNames() != null)
-            sb.append("RegionNames: " + getRegionNames() + ",");
+            sb.append("RegionNames: ").append(getRegionNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

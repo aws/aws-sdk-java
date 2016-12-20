@@ -173,11 +173,11 @@ public class Field implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getStringValue() != null)
-            sb.append("StringValue: " + getStringValue() + ",");
+            sb.append("StringValue: ").append(getStringValue()).append(",");
         if (getRefValue() != null)
-            sb.append("RefValue: " + getRefValue());
+            sb.append("RefValue: ").append(getRefValue());
         sb.append("}");
         return sb.toString();
     }

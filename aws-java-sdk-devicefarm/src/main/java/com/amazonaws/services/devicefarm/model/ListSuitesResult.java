@@ -166,9 +166,9 @@ public class ListSuitesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuites() != null)
-            sb.append("Suites: " + getSuites() + ",");
+            sb.append("Suites: ").append(getSuites()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

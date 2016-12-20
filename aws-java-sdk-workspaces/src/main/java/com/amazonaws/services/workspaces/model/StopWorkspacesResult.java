@@ -111,7 +111,7 @@ public class StopWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedRequests() != null)
-            sb.append("FailedRequests: " + getFailedRequests());
+            sb.append("FailedRequests: ").append(getFailedRequests());
         sb.append("}");
         return sb.toString();
     }

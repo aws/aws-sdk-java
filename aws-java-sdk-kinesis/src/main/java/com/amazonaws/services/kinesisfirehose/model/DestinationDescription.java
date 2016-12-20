@@ -218,13 +218,13 @@ public class DestinationDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestinationId() != null)
-            sb.append("DestinationId: " + getDestinationId() + ",");
+            sb.append("DestinationId: ").append(getDestinationId()).append(",");
         if (getS3DestinationDescription() != null)
-            sb.append("S3DestinationDescription: " + getS3DestinationDescription() + ",");
+            sb.append("S3DestinationDescription: ").append(getS3DestinationDescription()).append(",");
         if (getRedshiftDestinationDescription() != null)
-            sb.append("RedshiftDestinationDescription: " + getRedshiftDestinationDescription() + ",");
+            sb.append("RedshiftDestinationDescription: ").append(getRedshiftDestinationDescription()).append(",");
         if (getElasticsearchDestinationDescription() != null)
-            sb.append("ElasticsearchDestinationDescription: " + getElasticsearchDestinationDescription());
+            sb.append("ElasticsearchDestinationDescription: ").append(getElasticsearchDestinationDescription());
         sb.append("}");
         return sb.toString();
     }

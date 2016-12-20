@@ -434,19 +434,19 @@ public class SchemaAttributeType implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getAttributeDataType() != null)
-            sb.append("AttributeDataType: " + getAttributeDataType() + ",");
+            sb.append("AttributeDataType: ").append(getAttributeDataType()).append(",");
         if (getDeveloperOnlyAttribute() != null)
-            sb.append("DeveloperOnlyAttribute: " + getDeveloperOnlyAttribute() + ",");
+            sb.append("DeveloperOnlyAttribute: ").append(getDeveloperOnlyAttribute()).append(",");
         if (getMutable() != null)
-            sb.append("Mutable: " + getMutable() + ",");
+            sb.append("Mutable: ").append(getMutable()).append(",");
         if (getRequired() != null)
-            sb.append("Required: " + getRequired() + ",");
+            sb.append("Required: ").append(getRequired()).append(",");
         if (getNumberAttributeConstraints() != null)
-            sb.append("NumberAttributeConstraints: " + getNumberAttributeConstraints() + ",");
+            sb.append("NumberAttributeConstraints: ").append(getNumberAttributeConstraints()).append(",");
         if (getStringAttributeConstraints() != null)
-            sb.append("StringAttributeConstraints: " + getStringAttributeConstraints());
+            sb.append("StringAttributeConstraints: ").append(getStringAttributeConstraints());
         sb.append("}");
         return sb.toString();
     }

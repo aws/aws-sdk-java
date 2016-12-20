@@ -447,19 +447,19 @@ public class DBSecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOwnerId() != null)
-            sb.append("OwnerId: " + getOwnerId() + ",");
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getDBSecurityGroupName() != null)
-            sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
+            sb.append("DBSecurityGroupName: ").append(getDBSecurityGroupName()).append(",");
         if (getDBSecurityGroupDescription() != null)
-            sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ",");
+            sb.append("DBSecurityGroupDescription: ").append(getDBSecurityGroupDescription()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getEC2SecurityGroups() != null)
-            sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ",");
+            sb.append("EC2SecurityGroups: ").append(getEC2SecurityGroups()).append(",");
         if (getIPRanges() != null)
-            sb.append("IPRanges: " + getIPRanges() + ",");
+            sb.append("IPRanges: ").append(getIPRanges()).append(",");
         if (getDBSecurityGroupArn() != null)
-            sb.append("DBSecurityGroupArn: " + getDBSecurityGroupArn());
+            sb.append("DBSecurityGroupArn: ").append(getDBSecurityGroupArn());
         sb.append("}");
         return sb.toString();
     }

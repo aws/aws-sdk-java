@@ -279,15 +279,15 @@ public class PutApprovalResultRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineName() != null)
-            sb.append("PipelineName: " + getPipelineName() + ",");
+            sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getStageName() != null)
-            sb.append("StageName: " + getStageName() + ",");
+            sb.append("StageName: ").append(getStageName()).append(",");
         if (getActionName() != null)
-            sb.append("ActionName: " + getActionName() + ",");
+            sb.append("ActionName: ").append(getActionName()).append(",");
         if (getResult() != null)
-            sb.append("Result: " + getResult() + ",");
+            sb.append("Result: ").append(getResult()).append(",");
         if (getToken() != null)
-            sb.append("Token: " + getToken());
+            sb.append("Token: ").append(getToken());
         sb.append("}");
         return sb.toString();
     }

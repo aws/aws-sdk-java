@@ -126,9 +126,9 @@ public class Policy implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyName() != null)
-            sb.append("PolicyName: " + getPolicyName() + ",");
+            sb.append("PolicyName: ").append(getPolicyName()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: " + getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn());
         sb.append("}");
         return sb.toString();
     }

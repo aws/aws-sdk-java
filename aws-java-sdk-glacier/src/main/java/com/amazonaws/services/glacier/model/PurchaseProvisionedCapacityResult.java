@@ -78,7 +78,7 @@ public class PurchaseProvisionedCapacityResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCapacityId() != null)
-            sb.append("CapacityId: " + getCapacityId());
+            sb.append("CapacityId: ").append(getCapacityId());
         sb.append("}");
         return sb.toString();
     }

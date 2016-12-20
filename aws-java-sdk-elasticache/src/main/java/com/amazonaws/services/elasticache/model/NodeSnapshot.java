@@ -356,19 +356,19 @@ public class NodeSnapshot implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheClusterId() != null)
-            sb.append("CacheClusterId: " + getCacheClusterId() + ",");
+            sb.append("CacheClusterId: ").append(getCacheClusterId()).append(",");
         if (getNodeGroupId() != null)
-            sb.append("NodeGroupId: " + getNodeGroupId() + ",");
+            sb.append("NodeGroupId: ").append(getNodeGroupId()).append(",");
         if (getCacheNodeId() != null)
-            sb.append("CacheNodeId: " + getCacheNodeId() + ",");
+            sb.append("CacheNodeId: ").append(getCacheNodeId()).append(",");
         if (getNodeGroupConfiguration() != null)
-            sb.append("NodeGroupConfiguration: " + getNodeGroupConfiguration() + ",");
+            sb.append("NodeGroupConfiguration: ").append(getNodeGroupConfiguration()).append(",");
         if (getCacheSize() != null)
-            sb.append("CacheSize: " + getCacheSize() + ",");
+            sb.append("CacheSize: ").append(getCacheSize()).append(",");
         if (getCacheNodeCreateTime() != null)
-            sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ",");
+            sb.append("CacheNodeCreateTime: ").append(getCacheNodeCreateTime()).append(",");
         if (getSnapshotCreateTime() != null)
-            sb.append("SnapshotCreateTime: " + getSnapshotCreateTime());
+            sb.append("SnapshotCreateTime: ").append(getSnapshotCreateTime());
         sb.append("}");
         return sb.toString();
     }

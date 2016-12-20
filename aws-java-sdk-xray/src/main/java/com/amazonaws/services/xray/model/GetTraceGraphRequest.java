@@ -155,9 +155,9 @@ public class GetTraceGraphRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTraceIds() != null)
-            sb.append("TraceIds: " + getTraceIds() + ",");
+            sb.append("TraceIds: ").append(getTraceIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

@@ -1491,9 +1491,9 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRequestItems() != null)
-            sb.append("RequestItems: " + getRequestItems() + ",");
+            sb.append("RequestItems: ").append(getRequestItems()).append(",");
         if (getReturnConsumedCapacity() != null)
-            sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity());
+            sb.append("ReturnConsumedCapacity: ").append(getReturnConsumedCapacity());
         sb.append("}");
         return sb.toString();
     }

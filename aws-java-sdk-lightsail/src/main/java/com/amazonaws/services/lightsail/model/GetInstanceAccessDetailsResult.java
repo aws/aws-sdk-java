@@ -78,7 +78,7 @@ public class GetInstanceAccessDetailsResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessDetails() != null)
-            sb.append("AccessDetails: " + getAccessDetails());
+            sb.append("AccessDetails: ").append(getAccessDetails());
         sb.append("}");
         return sb.toString();
     }

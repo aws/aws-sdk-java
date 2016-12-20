@@ -1097,39 +1097,39 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImageId() != null)
-            sb.append("ImageId: " + getImageId() + ",");
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getKeyName() != null)
-            sb.append("KeyName: " + getKeyName() + ",");
+            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getUserData() != null)
-            sb.append("UserData: " + getUserData() + ",");
+            sb.append("UserData: ").append(getUserData()).append(",");
         if (getAddressingType() != null)
-            sb.append("AddressingType: " + getAddressingType() + ",");
+            sb.append("AddressingType: ").append(getAddressingType()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: " + getInstanceType() + ",");
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getPlacement() != null)
-            sb.append("Placement: " + getPlacement() + ",");
+            sb.append("Placement: ").append(getPlacement()).append(",");
         if (getKernelId() != null)
-            sb.append("KernelId: " + getKernelId() + ",");
+            sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
-            sb.append("RamdiskId: " + getRamdiskId() + ",");
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getMonitoring() != null)
-            sb.append("Monitoring: " + getMonitoring() + ",");
+            sb.append("Monitoring: ").append(getMonitoring()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: " + getSubnetId() + ",");
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEbsOptimized() != null)
-            sb.append("EbsOptimized: " + getEbsOptimized() + ",");
+            sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getWeightedCapacity() != null)
-            sb.append("WeightedCapacity: " + getWeightedCapacity() + ",");
+            sb.append("WeightedCapacity: ").append(getWeightedCapacity()).append(",");
         if (getSpotPrice() != null)
-            sb.append("SpotPrice: " + getSpotPrice());
+            sb.append("SpotPrice: ").append(getSpotPrice());
         sb.append("}");
         return sb.toString();
     }

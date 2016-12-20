@@ -125,9 +125,9 @@ public class EndpointUser implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes() + ",");
+            sb.append("UserAttributes: ").append(getUserAttributes()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId());
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }

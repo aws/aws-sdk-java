@@ -148,9 +148,9 @@ public class PolicyRole implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName() + ",");
+            sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getRoleId() != null)
-            sb.append("RoleId: " + getRoleId());
+            sb.append("RoleId: ").append(getRoleId());
         sb.append("}");
         return sb.toString();
     }

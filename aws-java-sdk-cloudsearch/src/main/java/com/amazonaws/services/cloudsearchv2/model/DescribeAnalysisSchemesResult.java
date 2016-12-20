@@ -114,7 +114,7 @@ public class DescribeAnalysisSchemesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAnalysisSchemes() != null)
-            sb.append("AnalysisSchemes: " + getAnalysisSchemes());
+            sb.append("AnalysisSchemes: ").append(getAnalysisSchemes());
         sb.append("}");
         return sb.toString();
     }

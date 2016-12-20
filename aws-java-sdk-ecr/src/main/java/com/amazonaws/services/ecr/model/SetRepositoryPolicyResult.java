@@ -170,11 +170,11 @@ public class SetRepositoryPolicyResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRegistryId() != null)
-            sb.append("RegistryId: " + getRegistryId() + ",");
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getPolicyText() != null)
-            sb.append("PolicyText: " + getPolicyText());
+            sb.append("PolicyText: ").append(getPolicyText());
         sb.append("}");
         return sb.toString();
     }

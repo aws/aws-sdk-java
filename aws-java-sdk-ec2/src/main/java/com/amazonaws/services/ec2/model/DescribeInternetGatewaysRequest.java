@@ -568,9 +568,9 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInternetGatewayIds() != null)
-            sb.append("InternetGatewayIds: " + getInternetGatewayIds() + ",");
+            sb.append("InternetGatewayIds: ").append(getInternetGatewayIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: " + getFilters());
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }

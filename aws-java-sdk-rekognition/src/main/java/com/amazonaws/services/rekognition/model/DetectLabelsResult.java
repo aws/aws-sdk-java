@@ -220,9 +220,9 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLabels() != null)
-            sb.append("Labels: " + getLabels() + ",");
+            sb.append("Labels: ").append(getLabels()).append(",");
         if (getOrientationCorrection() != null)
-            sb.append("OrientationCorrection: " + getOrientationCorrection());
+            sb.append("OrientationCorrection: ").append(getOrientationCorrection());
         sb.append("}");
         return sb.toString();
     }

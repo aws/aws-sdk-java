@@ -248,13 +248,13 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusType() != null)
-            sb.append("StatusType: " + getStatusType() + ",");
+            sb.append("StatusType: ").append(getStatusType()).append(",");
         if (getNormal() != null)
-            sb.append("Normal: " + getNormal() + ",");
+            sb.append("Normal: ").append(getNormal()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getMessage() != null)
-            sb.append("Message: " + getMessage());
+            sb.append("Message: ").append(getMessage());
         sb.append("}");
         return sb.toString();
     }

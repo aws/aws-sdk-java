@@ -125,9 +125,9 @@ public class CancelSchemaExtensionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getSchemaExtensionId() != null)
-            sb.append("SchemaExtensionId: " + getSchemaExtensionId());
+            sb.append("SchemaExtensionId: ").append(getSchemaExtensionId());
         sb.append("}");
         return sb.toString();
     }

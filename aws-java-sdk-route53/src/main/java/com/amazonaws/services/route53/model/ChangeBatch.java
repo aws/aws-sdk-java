@@ -177,9 +177,9 @@ public class ChangeBatch implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComment() != null)
-            sb.append("Comment: " + getComment() + ",");
+            sb.append("Comment: ").append(getComment()).append(",");
         if (getChanges() != null)
-            sb.append("Changes: " + getChanges());
+            sb.append("Changes: ").append(getChanges());
         sb.append("}");
         return sb.toString();
     }

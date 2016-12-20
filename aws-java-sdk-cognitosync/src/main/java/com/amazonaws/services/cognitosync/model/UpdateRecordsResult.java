@@ -99,7 +99,7 @@ public class UpdateRecordsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecords() != null)
-            sb.append("Records: " + getRecords());
+            sb.append("Records: ").append(getRecords());
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class TestRepositoryTriggersRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryName() != null)
-            sb.append("RepositoryName: " + getRepositoryName() + ",");
+            sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getTriggers() != null)
-            sb.append("Triggers: " + getTriggers());
+            sb.append("Triggers: ").append(getTriggers());
         sb.append("}");
         return sb.toString();
     }

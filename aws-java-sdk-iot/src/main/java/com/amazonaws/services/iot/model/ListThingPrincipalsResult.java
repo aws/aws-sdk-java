@@ -110,7 +110,7 @@ public class ListThingPrincipalsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrincipals() != null)
-            sb.append("Principals: " + getPrincipals());
+            sb.append("Principals: ").append(getPrincipals());
         sb.append("}");
         return sb.toString();
     }

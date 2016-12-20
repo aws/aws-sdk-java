@@ -159,9 +159,9 @@ public class ResourceLocation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getRegionName() != null)
-            sb.append("RegionName: " + getRegionName());
+            sb.append("RegionName: ").append(getRegionName());
         sb.append("}");
         return sb.toString();
     }

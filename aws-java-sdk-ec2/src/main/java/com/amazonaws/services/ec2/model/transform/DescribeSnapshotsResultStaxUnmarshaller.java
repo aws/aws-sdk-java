@@ -45,6 +45,11 @@ public class DescribeSnapshotsResultStaxUnmarshaller implements Unmarshaller<Des
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("snapshotSet", targetDepth)) {
+                    describeSnapshotsResult.withSnapshots(new ArrayList<Snapshot>());
+                    continue;
+                }
+
                 if (context.testExpression("snapshotSet/item", targetDepth)) {
                     describeSnapshotsResult.withSnapshots(SnapshotStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

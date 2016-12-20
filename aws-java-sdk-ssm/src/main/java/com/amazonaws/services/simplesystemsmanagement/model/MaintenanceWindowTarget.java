@@ -355,15 +355,15 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWindowId() != null)
-            sb.append("WindowId: " + getWindowId() + ",");
+            sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getWindowTargetId() != null)
-            sb.append("WindowTargetId: " + getWindowTargetId() + ",");
+            sb.append("WindowTargetId: ").append(getWindowTargetId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: " + getTargets() + ",");
+            sb.append("Targets: ").append(getTargets()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: " + getOwnerInformation());
+            sb.append("OwnerInformation: ").append(getOwnerInformation());
         sb.append("}");
         return sb.toString();
     }

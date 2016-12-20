@@ -250,11 +250,11 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskList() != null)
-            sb.append("TaskList: " + getTaskList() + ",");
+            sb.append("TaskList: ").append(getTaskList()).append(",");
         if (getTaskPriority() != null)
-            sb.append("TaskPriority: " + getTaskPriority() + ",");
+            sb.append("TaskPriority: ").append(getTaskPriority()).append(",");
         if (getStartToCloseTimeout() != null)
-            sb.append("StartToCloseTimeout: " + getStartToCloseTimeout());
+            sb.append("StartToCloseTimeout: ").append(getStartToCloseTimeout());
         sb.append("}");
         return sb.toString();
     }

@@ -155,9 +155,9 @@ public class DeleteFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCollectionId() != null)
-            sb.append("CollectionId: " + getCollectionId() + ",");
+            sb.append("CollectionId: ").append(getCollectionId()).append(",");
         if (getFaceIds() != null)
-            sb.append("FaceIds: " + getFaceIds());
+            sb.append("FaceIds: ").append(getFaceIds());
         sb.append("}");
         return sb.toString();
     }

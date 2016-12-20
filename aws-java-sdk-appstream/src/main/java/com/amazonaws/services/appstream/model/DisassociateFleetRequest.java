@@ -125,9 +125,9 @@ public class DisassociateFleetRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetName() != null)
-            sb.append("FleetName: " + getFleetName() + ",");
+            sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: ").append(getStackName());
         sb.append("}");
         return sb.toString();
     }

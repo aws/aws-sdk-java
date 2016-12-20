@@ -80,7 +80,7 @@ public class DescribeEnvironmentResourcesResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnvironmentResources() != null)
-            sb.append("EnvironmentResources: " + getEnvironmentResources());
+            sb.append("EnvironmentResources: ").append(getEnvironmentResources());
         sb.append("}");
         return sb.toString();
     }

@@ -162,11 +162,11 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getFailureDetails() != null)
-            sb.append("FailureDetails: " + getFailureDetails());
+            sb.append("FailureDetails: ").append(getFailureDetails());
         sb.append("}");
         return sb.toString();
     }

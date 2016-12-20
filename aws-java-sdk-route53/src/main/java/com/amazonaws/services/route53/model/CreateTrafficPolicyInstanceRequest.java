@@ -304,15 +304,15 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostedZoneId() != null)
-            sb.append("HostedZoneId: " + getHostedZoneId() + ",");
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getTTL() != null)
-            sb.append("TTL: " + getTTL() + ",");
+            sb.append("TTL: ").append(getTTL()).append(",");
         if (getTrafficPolicyId() != null)
-            sb.append("TrafficPolicyId: " + getTrafficPolicyId() + ",");
+            sb.append("TrafficPolicyId: ").append(getTrafficPolicyId()).append(",");
         if (getTrafficPolicyVersion() != null)
-            sb.append("TrafficPolicyVersion: " + getTrafficPolicyVersion());
+            sb.append("TrafficPolicyVersion: ").append(getTrafficPolicyVersion());
         sb.append("}");
         return sb.toString();
     }

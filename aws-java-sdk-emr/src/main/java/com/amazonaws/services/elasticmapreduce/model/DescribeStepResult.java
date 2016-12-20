@@ -80,7 +80,7 @@ public class DescribeStepResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStep() != null)
-            sb.append("Step: " + getStep());
+            sb.append("Step: ").append(getStep());
         sb.append("}");
         return sb.toString();
     }

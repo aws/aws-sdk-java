@@ -315,11 +315,11 @@ public class Predicate implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNegated() != null)
-            sb.append("Negated: " + getNegated() + ",");
+            sb.append("Negated: ").append(getNegated()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getDataId() != null)
-            sb.append("DataId: " + getDataId());
+            sb.append("DataId: ").append(getDataId());
         sb.append("}");
         return sb.toString();
     }

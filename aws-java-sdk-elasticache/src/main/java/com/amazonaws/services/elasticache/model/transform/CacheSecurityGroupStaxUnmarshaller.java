@@ -60,6 +60,11 @@ public class CacheSecurityGroupStaxUnmarshaller implements Unmarshaller<CacheSec
                     continue;
                 }
 
+                if (context.testExpression("EC2SecurityGroups", targetDepth)) {
+                    cacheSecurityGroup.withEC2SecurityGroups(new ArrayList<EC2SecurityGroup>());
+                    continue;
+                }
+
                 if (context.testExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth)) {
                     cacheSecurityGroup.withEC2SecurityGroups(EC2SecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

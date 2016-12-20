@@ -16,15 +16,23 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Input to the DescribeIdentityPool action.
+ * </p>
  */
 public class DescribeIdentityPoolRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** An identity pool ID in the format REGION:GUID. */
+    /**
+     * <p>
+     * An identity pool ID in the format REGION:GUID.
+     * </p>
+     */
     private String identityPoolId;
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -35,7 +43,9 @@ public class DescribeIdentityPoolRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @return An identity pool ID in the format REGION:GUID.
      */
@@ -45,7 +55,9 @@ public class DescribeIdentityPoolRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * An identity pool ID in the format REGION:GUID.
+     * </p>
      * 
      * @param identityPoolId
      *        An identity pool ID in the format REGION:GUID.
@@ -69,7 +81,7 @@ public class DescribeIdentityPoolRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId());
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId());
         sb.append("}");
         return sb.toString();
     }

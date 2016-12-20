@@ -174,9 +174,9 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFailedEntryCount() != null)
-            sb.append("FailedEntryCount: " + getFailedEntryCount() + ",");
+            sb.append("FailedEntryCount: ").append(getFailedEntryCount()).append(",");
         if (getEntries() != null)
-            sb.append("Entries: " + getEntries());
+            sb.append("Entries: ").append(getEntries());
         sb.append("}");
         return sb.toString();
     }

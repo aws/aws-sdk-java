@@ -116,11 +116,11 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountId() != null)
-            sb.append("AccountId: " + getAccountId() + ",");
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBudgetName() != null)
-            sb.append("BudgetName: " + getBudgetName() + ",");
+            sb.append("BudgetName: ").append(getBudgetName()).append(",");
         if (getNotification() != null)
-            sb.append("Notification: " + getNotification());
+            sb.append("Notification: ").append(getNotification());
         sb.append("}");
         return sb.toString();
     }

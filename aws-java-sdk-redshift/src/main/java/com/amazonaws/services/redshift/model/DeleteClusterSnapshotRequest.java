@@ -171,9 +171,9 @@ public class DeleteClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSnapshotIdentifier() != null)
-            sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
+            sb.append("SnapshotIdentifier: ").append(getSnapshotIdentifier()).append(",");
         if (getSnapshotClusterIdentifier() != null)
-            sb.append("SnapshotClusterIdentifier: " + getSnapshotClusterIdentifier());
+            sb.append("SnapshotClusterIdentifier: ").append(getSnapshotClusterIdentifier());
         sb.append("}");
         return sb.toString();
     }

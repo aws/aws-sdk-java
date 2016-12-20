@@ -170,9 +170,9 @@ public class ListMultipartUploadsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUploadsList() != null)
-            sb.append("UploadsList: " + getUploadsList() + ",");
+            sb.append("UploadsList: ").append(getUploadsList()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

@@ -185,11 +185,11 @@ public class ThingTypeMetadata implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeprecated() != null)
-            sb.append("Deprecated: " + getDeprecated() + ",");
+            sb.append("Deprecated: ").append(getDeprecated()).append(",");
         if (getDeprecationDate() != null)
-            sb.append("DeprecationDate: " + getDeprecationDate() + ",");
+            sb.append("DeprecationDate: ").append(getDeprecationDate()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: " + getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate());
         sb.append("}");
         return sb.toString();
     }

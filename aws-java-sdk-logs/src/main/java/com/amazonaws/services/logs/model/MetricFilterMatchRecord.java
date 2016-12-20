@@ -196,11 +196,11 @@ public class MetricFilterMatchRecord implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventNumber() != null)
-            sb.append("EventNumber: " + getEventNumber() + ",");
+            sb.append("EventNumber: ").append(getEventNumber()).append(",");
         if (getEventMessage() != null)
-            sb.append("EventMessage: " + getEventMessage() + ",");
+            sb.append("EventMessage: ").append(getEventMessage()).append(",");
         if (getExtractedValues() != null)
-            sb.append("ExtractedValues: " + getExtractedValues());
+            sb.append("ExtractedValues: ").append(getExtractedValues());
         sb.append("}");
         return sb.toString();
     }

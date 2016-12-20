@@ -65,6 +65,11 @@ public class VpcPeeringConnectionStaxUnmarshaller implements Unmarshaller<VpcPee
                     continue;
                 }
 
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpcPeeringConnection.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     vpcPeeringConnection.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

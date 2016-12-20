@@ -745,33 +745,33 @@ public class Disk implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSupportCode() != null)
-            sb.append("SupportCode: " + getSupportCode() + ",");
+            sb.append("SupportCode: ").append(getSupportCode()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getSizeInGb() != null)
-            sb.append("SizeInGb: " + getSizeInGb() + ",");
+            sb.append("SizeInGb: ").append(getSizeInGb()).append(",");
         if (getGbInUse() != null)
-            sb.append("GbInUse: " + getGbInUse() + ",");
+            sb.append("GbInUse: ").append(getGbInUse()).append(",");
         if (getIsSystemDisk() != null)
-            sb.append("IsSystemDisk: " + getIsSystemDisk() + ",");
+            sb.append("IsSystemDisk: ").append(getIsSystemDisk()).append(",");
         if (getIops() != null)
-            sb.append("Iops: " + getIops() + ",");
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getAttachedTo() != null)
-            sb.append("AttachedTo: " + getAttachedTo() + ",");
+            sb.append("AttachedTo: ").append(getAttachedTo()).append(",");
         if (getIsAttached() != null)
-            sb.append("IsAttached: " + getIsAttached() + ",");
+            sb.append("IsAttached: ").append(getIsAttached()).append(",");
         if (getAttachmentState() != null)
-            sb.append("AttachmentState: " + getAttachmentState());
+            sb.append("AttachmentState: ").append(getAttachmentState());
         sb.append("}");
         return sb.toString();
     }

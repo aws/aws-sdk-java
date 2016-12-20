@@ -13,7 +13,9 @@
 package com.amazonaws.services.cognitoidentity.model;
 
 /**
+ * <p>
  * Thrown when the requested resource (for example, a dataset or record) does not exist.
+ * </p>
  */
 public class ResourceNotFoundException extends com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException {
     private static final long serialVersionUID = 1L;

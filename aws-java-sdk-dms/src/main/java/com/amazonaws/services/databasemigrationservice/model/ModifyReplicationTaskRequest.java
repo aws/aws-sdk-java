@@ -525,17 +525,17 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTaskArn() != null)
-            sb.append("ReplicationTaskArn: " + getReplicationTaskArn() + ",");
+            sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getReplicationTaskIdentifier() != null)
-            sb.append("ReplicationTaskIdentifier: " + getReplicationTaskIdentifier() + ",");
+            sb.append("ReplicationTaskIdentifier: ").append(getReplicationTaskIdentifier()).append(",");
         if (getMigrationType() != null)
-            sb.append("MigrationType: " + getMigrationType() + ",");
+            sb.append("MigrationType: ").append(getMigrationType()).append(",");
         if (getTableMappings() != null)
-            sb.append("TableMappings: " + getTableMappings() + ",");
+            sb.append("TableMappings: ").append(getTableMappings()).append(",");
         if (getReplicationTaskSettings() != null)
-            sb.append("ReplicationTaskSettings: " + getReplicationTaskSettings() + ",");
+            sb.append("ReplicationTaskSettings: ").append(getReplicationTaskSettings()).append(",");
         if (getCdcStartTime() != null)
-            sb.append("CdcStartTime: " + getCdcStartTime());
+            sb.append("CdcStartTime: ").append(getCdcStartTime());
         sb.append("}");
         return sb.toString();
     }

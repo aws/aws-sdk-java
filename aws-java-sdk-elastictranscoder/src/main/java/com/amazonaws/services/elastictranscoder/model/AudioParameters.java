@@ -1972,17 +1972,17 @@ public class AudioParameters implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCodec() != null)
-            sb.append("Codec: " + getCodec() + ",");
+            sb.append("Codec: ").append(getCodec()).append(",");
         if (getSampleRate() != null)
-            sb.append("SampleRate: " + getSampleRate() + ",");
+            sb.append("SampleRate: ").append(getSampleRate()).append(",");
         if (getBitRate() != null)
-            sb.append("BitRate: " + getBitRate() + ",");
+            sb.append("BitRate: ").append(getBitRate()).append(",");
         if (getChannels() != null)
-            sb.append("Channels: " + getChannels() + ",");
+            sb.append("Channels: ").append(getChannels()).append(",");
         if (getAudioPackingMode() != null)
-            sb.append("AudioPackingMode: " + getAudioPackingMode() + ",");
+            sb.append("AudioPackingMode: ").append(getAudioPackingMode()).append(",");
         if (getCodecOptions() != null)
-            sb.append("CodecOptions: " + getCodecOptions());
+            sb.append("CodecOptions: ").append(getCodecOptions());
         sb.append("}");
         return sb.toString();
     }

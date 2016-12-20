@@ -200,11 +200,11 @@ public class DescribeVTLDevicesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getVTLDevices() != null)
-            sb.append("VTLDevices: " + getVTLDevices() + ",");
+            sb.append("VTLDevices: ").append(getVTLDevices()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

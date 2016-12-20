@@ -167,9 +167,9 @@ public class ListEndpointsByPlatformApplicationResult extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpoints() != null)
-            sb.append("Endpoints: " + getEndpoints() + ",");
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

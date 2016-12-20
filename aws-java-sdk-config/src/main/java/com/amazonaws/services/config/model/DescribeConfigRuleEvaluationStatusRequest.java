@@ -273,11 +273,11 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleNames() != null)
-            sb.append("ConfigRuleNames: " + getConfigRuleNames() + ",");
+            sb.append("ConfigRuleNames: ").append(getConfigRuleNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit());
+            sb.append("Limit: ").append(getLimit());
         sb.append("}");
         return sb.toString();
     }

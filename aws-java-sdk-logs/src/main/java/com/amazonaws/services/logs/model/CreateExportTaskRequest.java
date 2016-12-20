@@ -383,19 +383,19 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskName() != null)
-            sb.append("TaskName: " + getTaskName() + ",");
+            sb.append("TaskName: ").append(getTaskName()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName() + ",");
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getLogStreamNamePrefix() != null)
-            sb.append("LogStreamNamePrefix: " + getLogStreamNamePrefix() + ",");
+            sb.append("LogStreamNamePrefix: ").append(getLogStreamNamePrefix()).append(",");
         if (getFrom() != null)
-            sb.append("From: " + getFrom() + ",");
+            sb.append("From: ").append(getFrom()).append(",");
         if (getTo() != null)
-            sb.append("To: " + getTo() + ",");
+            sb.append("To: ").append(getTo()).append(",");
         if (getDestination() != null)
-            sb.append("Destination: " + getDestination() + ",");
+            sb.append("Destination: ").append(getDestination()).append(",");
         if (getDestinationPrefix() != null)
-            sb.append("DestinationPrefix: " + getDestinationPrefix());
+            sb.append("DestinationPrefix: ").append(getDestinationPrefix());
         sb.append("}");
         return sb.toString();
     }

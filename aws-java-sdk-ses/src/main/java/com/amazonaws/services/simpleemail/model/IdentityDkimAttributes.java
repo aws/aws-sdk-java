@@ -342,11 +342,11 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDkimEnabled() != null)
-            sb.append("DkimEnabled: " + getDkimEnabled() + ",");
+            sb.append("DkimEnabled: ").append(getDkimEnabled()).append(",");
         if (getDkimVerificationStatus() != null)
-            sb.append("DkimVerificationStatus: " + getDkimVerificationStatus() + ",");
+            sb.append("DkimVerificationStatus: ").append(getDkimVerificationStatus()).append(",");
         if (getDkimTokens() != null)
-            sb.append("DkimTokens: " + getDkimTokens());
+            sb.append("DkimTokens: ").append(getDkimTokens());
         sb.append("}");
         return sb.toString();
     }

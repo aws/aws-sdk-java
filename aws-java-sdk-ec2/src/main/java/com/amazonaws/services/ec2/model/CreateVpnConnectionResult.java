@@ -81,7 +81,7 @@ public class CreateVpnConnectionResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnConnection() != null)
-            sb.append("VpnConnection: " + getVpnConnection());
+            sb.append("VpnConnection: ").append(getVpnConnection());
         sb.append("}");
         return sb.toString();
     }

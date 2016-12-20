@@ -250,7 +250,7 @@ public class ResetDBClusterParameterGroupResult extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterParameterGroupName() != null)
-            sb.append("DBClusterParameterGroupName: " + getDBClusterParameterGroupName());
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName());
         sb.append("}");
         return sb.toString();
     }

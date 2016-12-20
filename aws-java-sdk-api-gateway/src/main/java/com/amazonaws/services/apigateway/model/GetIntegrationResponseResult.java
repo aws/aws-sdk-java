@@ -632,15 +632,15 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatusCode() != null)
-            sb.append("StatusCode: " + getStatusCode() + ",");
+            sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getSelectionPattern() != null)
-            sb.append("SelectionPattern: " + getSelectionPattern() + ",");
+            sb.append("SelectionPattern: ").append(getSelectionPattern()).append(",");
         if (getResponseParameters() != null)
-            sb.append("ResponseParameters: " + getResponseParameters() + ",");
+            sb.append("ResponseParameters: ").append(getResponseParameters()).append(",");
         if (getResponseTemplates() != null)
-            sb.append("ResponseTemplates: " + getResponseTemplates() + ",");
+            sb.append("ResponseTemplates: ").append(getResponseTemplates()).append(",");
         if (getContentHandling() != null)
-            sb.append("ContentHandling: " + getContentHandling());
+            sb.append("ContentHandling: ").append(getContentHandling());
         sb.append("}");
         return sb.toString();
     }

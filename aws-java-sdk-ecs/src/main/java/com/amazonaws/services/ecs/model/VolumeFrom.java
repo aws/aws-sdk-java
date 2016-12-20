@@ -147,9 +147,9 @@ public class VolumeFrom implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSourceContainer() != null)
-            sb.append("SourceContainer: " + getSourceContainer() + ",");
+            sb.append("SourceContainer: ").append(getSourceContainer()).append(",");
         if (getReadOnly() != null)
-            sb.append("ReadOnly: " + getReadOnly());
+            sb.append("ReadOnly: ").append(getReadOnly());
         sb.append("}");
         return sb.toString();
     }

@@ -148,7 +148,7 @@ public class GetOperationDetailRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperationId() != null)
-            sb.append("OperationId: " + getOperationId());
+            sb.append("OperationId: ").append(getOperationId());
         sb.append("}");
         return sb.toString();
     }

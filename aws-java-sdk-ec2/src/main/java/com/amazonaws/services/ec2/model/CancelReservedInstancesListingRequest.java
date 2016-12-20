@@ -95,7 +95,7 @@ public class CancelReservedInstancesListingRequest extends AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservedInstancesListingId() != null)
-            sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId());
+            sb.append("ReservedInstancesListingId: ").append(getReservedInstancesListingId());
         sb.append("}");
         return sb.toString();
     }

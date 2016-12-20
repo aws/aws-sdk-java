@@ -177,9 +177,9 @@ public class SystemStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCPUUtilization() != null)
-            sb.append("CPUUtilization: " + getCPUUtilization() + ",");
+            sb.append("CPUUtilization: ").append(getCPUUtilization()).append(",");
         if (getLoadAverage() != null)
-            sb.append("LoadAverage: " + getLoadAverage());
+            sb.append("LoadAverage: ").append(getLoadAverage());
         sb.append("}");
         return sb.toString();
     }

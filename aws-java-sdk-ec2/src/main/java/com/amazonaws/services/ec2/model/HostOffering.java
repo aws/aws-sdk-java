@@ -422,19 +422,19 @@ public class HostOffering implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getInstanceFamily() != null)
-            sb.append("InstanceFamily: " + getInstanceFamily() + ",");
+            sb.append("InstanceFamily: ").append(getInstanceFamily()).append(",");
         if (getPaymentOption() != null)
-            sb.append("PaymentOption: " + getPaymentOption() + ",");
+            sb.append("PaymentOption: ").append(getPaymentOption()).append(",");
         if (getUpfrontPrice() != null)
-            sb.append("UpfrontPrice: " + getUpfrontPrice() + ",");
+            sb.append("UpfrontPrice: ").append(getUpfrontPrice()).append(",");
         if (getHourlyPrice() != null)
-            sb.append("HourlyPrice: " + getHourlyPrice() + ",");
+            sb.append("HourlyPrice: ").append(getHourlyPrice()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getDuration() != null)
-            sb.append("Duration: " + getDuration());
+            sb.append("Duration: ").append(getDuration());
         sb.append("}");
         return sb.toString();
     }

@@ -70,6 +70,11 @@ public class StreamingDistributionListStaxUnmarshaller implements Unmarshaller<S
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    streamingDistributionList.withItems(new ArrayList<StreamingDistributionSummary>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/StreamingDistributionSummary", targetDepth)) {
                     streamingDistributionList.withItems(StreamingDistributionSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

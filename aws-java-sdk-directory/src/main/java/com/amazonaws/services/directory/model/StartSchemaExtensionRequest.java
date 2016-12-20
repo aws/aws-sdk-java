@@ -229,13 +229,13 @@ public class StartSchemaExtensionRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getCreateSnapshotBeforeSchemaExtension() != null)
-            sb.append("CreateSnapshotBeforeSchemaExtension: " + getCreateSnapshotBeforeSchemaExtension() + ",");
+            sb.append("CreateSnapshotBeforeSchemaExtension: ").append(getCreateSnapshotBeforeSchemaExtension()).append(",");
         if (getLdifContent() != null)
-            sb.append("LdifContent: " + getLdifContent() + ",");
+            sb.append("LdifContent: ").append(getLdifContent()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }

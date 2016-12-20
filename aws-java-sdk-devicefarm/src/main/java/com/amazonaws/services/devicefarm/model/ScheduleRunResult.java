@@ -80,7 +80,7 @@ public class ScheduleRunResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRun() != null)
-            sb.append("Run: " + getRun());
+            sb.append("Run: ").append(getRun());
         sb.append("}");
         return sb.toString();
     }

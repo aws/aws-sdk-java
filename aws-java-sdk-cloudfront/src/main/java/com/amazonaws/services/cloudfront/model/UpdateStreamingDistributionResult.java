@@ -126,9 +126,9 @@ public class UpdateStreamingDistributionResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamingDistribution() != null)
-            sb.append("StreamingDistribution: " + getStreamingDistribution() + ",");
+            sb.append("StreamingDistribution: ").append(getStreamingDistribution()).append(",");
         if (getETag() != null)
-            sb.append("ETag: " + getETag());
+            sb.append("ETag: ").append(getETag());
         sb.append("}");
         return sb.toString();
     }

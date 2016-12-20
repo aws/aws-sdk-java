@@ -251,13 +251,13 @@ public class OfferingStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getOffering() != null)
-            sb.append("Offering: " + getOffering() + ",");
+            sb.append("Offering: ").append(getOffering()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: " + getQuantity() + ",");
+            sb.append("Quantity: ").append(getQuantity()).append(",");
         if (getEffectiveOn() != null)
-            sb.append("EffectiveOn: " + getEffectiveOn());
+            sb.append("EffectiveOn: ").append(getEffectiveOn());
         sb.append("}");
         return sb.toString();
     }

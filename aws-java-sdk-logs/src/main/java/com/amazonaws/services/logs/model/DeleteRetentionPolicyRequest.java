@@ -97,7 +97,7 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName());
+            sb.append("LogGroupName: ").append(getLogGroupName());
         sb.append("}");
         return sb.toString();
     }

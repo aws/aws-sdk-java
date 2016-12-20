@@ -100,13 +100,28 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("DBSecurityGroups", targetDepth)) {
+                    dBInstance.withDBSecurityGroups(new ArrayList<DBSecurityGroupMembership>());
+                    continue;
+                }
+
                 if (context.testExpression("DBSecurityGroups/DBSecurityGroup", targetDepth)) {
                     dBInstance.withDBSecurityGroups(DBSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("VpcSecurityGroups", targetDepth)) {
+                    dBInstance.withVpcSecurityGroups(new ArrayList<VpcSecurityGroupMembership>());
+                    continue;
+                }
+
                 if (context.testExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth)) {
                     dBInstance.withVpcSecurityGroups(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DBParameterGroups", targetDepth)) {
+                    dBInstance.withDBParameterGroups(new ArrayList<DBParameterGroupStatus>());
                     continue;
                 }
 
@@ -160,6 +175,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("ReadReplicaDBInstanceIdentifiers", targetDepth)) {
+                    dBInstance.withReadReplicaDBInstanceIdentifiers(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ReadReplicaDBInstanceIdentifiers/ReadReplicaDBInstanceIdentifier", targetDepth)) {
                     dBInstance.withReadReplicaDBInstanceIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -172,6 +192,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
 
                 if (context.testExpression("Iops", targetDepth)) {
                     dBInstance.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OptionGroupMemberships", targetDepth)) {
+                    dBInstance.withOptionGroupMemberships(new ArrayList<OptionGroupMembership>());
                     continue;
                 }
 
@@ -192,6 +217,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
 
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
                     dBInstance.setPubliclyAccessible(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StatusInfos", targetDepth)) {
+                    dBInstance.withStatusInfos(new ArrayList<DBInstanceStatusInfo>());
                     continue;
                 }
 
@@ -237,6 +267,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
 
                 if (context.testExpression("CACertificateIdentifier", targetDepth)) {
                     dBInstance.setCACertificateIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DomainMemberships", targetDepth)) {
+                    dBInstance.withDomainMemberships(new ArrayList<DomainMembership>());
                     continue;
                 }
 

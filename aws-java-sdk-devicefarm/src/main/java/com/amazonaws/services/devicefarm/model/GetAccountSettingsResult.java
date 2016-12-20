@@ -61,7 +61,7 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccountSettings() != null)
-            sb.append("AccountSettings: " + getAccountSettings());
+            sb.append("AccountSettings: ").append(getAccountSettings());
         sb.append("}");
         return sb.toString();
     }

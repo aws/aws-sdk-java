@@ -172,11 +172,11 @@ public class InstanceStateChange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getCurrentState() != null)
-            sb.append("CurrentState: " + getCurrentState() + ",");
+            sb.append("CurrentState: ").append(getCurrentState()).append(",");
         if (getPreviousState() != null)
-            sb.append("PreviousState: " + getPreviousState());
+            sb.append("PreviousState: ").append(getPreviousState());
         sb.append("}");
         return sb.toString();
     }

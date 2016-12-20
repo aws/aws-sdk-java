@@ -61,7 +61,7 @@ public class DefineExpressionResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExpression() != null)
-            sb.append("Expression: " + getExpression());
+            sb.append("Expression: ").append(getExpression());
         sb.append("}");
         return sb.toString();
     }

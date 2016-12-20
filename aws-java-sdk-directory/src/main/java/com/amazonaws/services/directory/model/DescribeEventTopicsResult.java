@@ -113,7 +113,7 @@ public class DescribeEventTopicsResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventTopics() != null)
-            sb.append("EventTopics: " + getEventTopics());
+            sb.append("EventTopics: ").append(getEventTopics());
         sb.append("}");
         return sb.toString();
     }

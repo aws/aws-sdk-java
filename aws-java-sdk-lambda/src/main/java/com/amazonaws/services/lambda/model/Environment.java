@@ -111,7 +111,7 @@ public class Environment implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVariables() != null)
-            sb.append("Variables: " + getVariables());
+            sb.append("Variables: ").append(getVariables());
         sb.append("}");
         return sb.toString();
     }

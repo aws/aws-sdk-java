@@ -589,13 +589,13 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBInstanceIdentifier() != null)
-            sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+            sb.append("DBInstanceIdentifier: ").append(getDBInstanceIdentifier()).append(",");
         if (getLogFileName() != null)
-            sb.append("LogFileName: " + getLogFileName() + ",");
+            sb.append("LogFileName: ").append(getLogFileName()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getNumberOfLines() != null)
-            sb.append("NumberOfLines: " + getNumberOfLines());
+            sb.append("NumberOfLines: ").append(getNumberOfLines());
         sb.append("}");
         return sb.toString();
     }

@@ -50,6 +50,11 @@ public class RuleConditionStaxUnmarshaller implements Unmarshaller<RuleCondition
                     continue;
                 }
 
+                if (context.testExpression("Values", targetDepth)) {
+                    ruleCondition.withValues(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Values/member", targetDepth)) {
                     ruleCondition.withValues(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

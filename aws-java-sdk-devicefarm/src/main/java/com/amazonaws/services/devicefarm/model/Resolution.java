@@ -126,9 +126,9 @@ public class Resolution implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWidth() != null)
-            sb.append("Width: " + getWidth() + ",");
+            sb.append("Width: ").append(getWidth()).append(",");
         if (getHeight() != null)
-            sb.append("Height: " + getHeight());
+            sb.append("Height: ").append(getHeight());
         sb.append("}");
         return sb.toString();
     }

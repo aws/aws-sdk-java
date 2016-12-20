@@ -303,13 +303,13 @@ public class PolicyVersion implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDocument() != null)
-            sb.append("Document: " + getDocument() + ",");
+            sb.append("Document: ").append(getDocument()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: " + getVersionId() + ",");
+            sb.append("VersionId: ").append(getVersionId()).append(",");
         if (getIsDefaultVersion() != null)
-            sb.append("IsDefaultVersion: " + getIsDefaultVersion() + ",");
+            sb.append("IsDefaultVersion: ").append(getIsDefaultVersion()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: " + getCreateDate());
+            sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");
         return sb.toString();
     }

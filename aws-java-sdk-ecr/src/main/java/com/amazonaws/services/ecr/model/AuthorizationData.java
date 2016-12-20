@@ -207,11 +207,11 @@ public class AuthorizationData implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthorizationToken() != null)
-            sb.append("AuthorizationToken: " + getAuthorizationToken() + ",");
+            sb.append("AuthorizationToken: ").append(getAuthorizationToken()).append(",");
         if (getExpiresAt() != null)
-            sb.append("ExpiresAt: " + getExpiresAt() + ",");
+            sb.append("ExpiresAt: ").append(getExpiresAt()).append(",");
         if (getProxyEndpoint() != null)
-            sb.append("ProxyEndpoint: " + getProxyEndpoint());
+            sb.append("ProxyEndpoint: ").append(getProxyEndpoint());
         sb.append("}");
         return sb.toString();
     }

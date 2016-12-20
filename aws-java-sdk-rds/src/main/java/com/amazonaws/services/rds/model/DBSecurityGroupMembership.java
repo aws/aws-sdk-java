@@ -148,9 +148,9 @@ public class DBSecurityGroupMembership implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSecurityGroupName() != null)
-            sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
+            sb.append("DBSecurityGroupName: ").append(getDBSecurityGroupName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

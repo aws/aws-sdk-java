@@ -185,11 +185,11 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: " + getVpcPeeringConnectionId() + ",");
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
         if (getRequesterPeeringConnectionOptions() != null)
-            sb.append("RequesterPeeringConnectionOptions: " + getRequesterPeeringConnectionOptions() + ",");
+            sb.append("RequesterPeeringConnectionOptions: ").append(getRequesterPeeringConnectionOptions()).append(",");
         if (getAccepterPeeringConnectionOptions() != null)
-            sb.append("AccepterPeeringConnectionOptions: " + getAccepterPeeringConnectionOptions());
+            sb.append("AccepterPeeringConnectionOptions: ").append(getAccepterPeeringConnectionOptions());
         sb.append("}");
         return sb.toString();
     }

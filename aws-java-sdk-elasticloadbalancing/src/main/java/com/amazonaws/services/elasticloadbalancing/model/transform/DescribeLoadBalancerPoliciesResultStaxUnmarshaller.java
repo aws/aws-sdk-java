@@ -45,6 +45,11 @@ public class DescribeLoadBalancerPoliciesResultStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("PolicyDescriptions", targetDepth)) {
+                    describeLoadBalancerPoliciesResult.withPolicyDescriptions(new ArrayList<PolicyDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyDescriptions/member", targetDepth)) {
                     describeLoadBalancerPoliciesResult.withPolicyDescriptions(PolicyDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

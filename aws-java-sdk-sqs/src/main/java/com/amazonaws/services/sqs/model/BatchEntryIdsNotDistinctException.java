@@ -14,7 +14,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Two or more batch entries have the same <code>Id</code> in the request.
+ * Two or more batch entries in the request have the same <code>Id</code>.
  * </p>
  */
 public class BatchEntryIdsNotDistinctException extends com.amazonaws.services.sqs.model.AmazonSQSException {

@@ -189,9 +189,9 @@ public class ListTagsForStreamResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTags() != null)
-            sb.append("Tags: " + getTags() + ",");
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getHasMoreTags() != null)
-            sb.append("HasMoreTags: " + getHasMoreTags());
+            sb.append("HasMoreTags: ").append(getHasMoreTags());
         sb.append("}");
         return sb.toString();
     }

@@ -190,11 +190,11 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkflowId() != null)
-            sb.append("WorkflowId: " + getWorkflowId() + ",");
+            sb.append("WorkflowId: ").append(getWorkflowId()).append(",");
         if (getRunId() != null)
-            sb.append("RunId: " + getRunId() + ",");
+            sb.append("RunId: ").append(getRunId()).append(",");
         if (getControl() != null)
-            sb.append("Control: " + getControl());
+            sb.append("Control: ").append(getControl());
         sb.append("}");
         return sb.toString();
     }

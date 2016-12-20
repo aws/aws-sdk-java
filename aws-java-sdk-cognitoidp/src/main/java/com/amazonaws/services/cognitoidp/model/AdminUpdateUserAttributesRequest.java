@@ -203,11 +203,11 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getUserAttributes() != null)
-            sb.append("UserAttributes: " + getUserAttributes());
+            sb.append("UserAttributes: ").append(getUserAttributes());
         sb.append("}");
         return sb.toString();
     }

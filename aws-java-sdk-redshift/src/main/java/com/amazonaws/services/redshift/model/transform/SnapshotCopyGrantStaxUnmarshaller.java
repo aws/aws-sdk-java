@@ -55,6 +55,11 @@ public class SnapshotCopyGrantStaxUnmarshaller implements Unmarshaller<SnapshotC
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    snapshotCopyGrant.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     snapshotCopyGrant.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

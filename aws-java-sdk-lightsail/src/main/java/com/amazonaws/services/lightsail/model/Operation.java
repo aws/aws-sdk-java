@@ -697,29 +697,29 @@ public class Operation implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getIsTerminal() != null)
-            sb.append("IsTerminal: " + getIsTerminal() + ",");
+            sb.append("IsTerminal: ").append(getIsTerminal()).append(",");
         if (getOperationDetails() != null)
-            sb.append("OperationDetails: " + getOperationDetails() + ",");
+            sb.append("OperationDetails: ").append(getOperationDetails()).append(",");
         if (getOperationType() != null)
-            sb.append("OperationType: " + getOperationType() + ",");
+            sb.append("OperationType: ").append(getOperationType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusChangedAt() != null)
-            sb.append("StatusChangedAt: " + getStatusChangedAt() + ",");
+            sb.append("StatusChangedAt: ").append(getStatusChangedAt()).append(",");
         if (getErrorCode() != null)
-            sb.append("ErrorCode: " + getErrorCode() + ",");
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorDetails() != null)
-            sb.append("ErrorDetails: " + getErrorDetails());
+            sb.append("ErrorDetails: ").append(getErrorDetails());
         sb.append("}");
         return sb.toString();
     }

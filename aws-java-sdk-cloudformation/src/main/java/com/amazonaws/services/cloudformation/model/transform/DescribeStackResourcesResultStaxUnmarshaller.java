@@ -45,6 +45,11 @@ public class DescribeStackResourcesResultStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("StackResources", targetDepth)) {
+                    describeStackResourcesResult.withStackResources(new ArrayList<StackResource>());
+                    continue;
+                }
+
                 if (context.testExpression("StackResources/member", targetDepth)) {
                     describeStackResourcesResult.withStackResources(StackResourceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

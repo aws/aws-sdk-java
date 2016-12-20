@@ -113,7 +113,7 @@ public class ReceiveMessageResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessages() != null)
-            sb.append("Messages: " + getMessages());
+            sb.append("Messages: ").append(getMessages());
         sb.append("}");
         return sb.toString();
     }

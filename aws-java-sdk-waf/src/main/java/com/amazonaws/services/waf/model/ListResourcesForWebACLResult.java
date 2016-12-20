@@ -117,7 +117,7 @@ public class ListResourcesForWebACLResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArns() != null)
-            sb.append("ResourceArns: " + getResourceArns());
+            sb.append("ResourceArns: ").append(getResourceArns());
         sb.append("}");
         return sb.toString();
     }

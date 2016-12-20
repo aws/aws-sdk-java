@@ -160,9 +160,9 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getAmazonProvidedIpv6CidrBlock() != null)
-            sb.append("AmazonProvidedIpv6CidrBlock: " + getAmazonProvidedIpv6CidrBlock());
+            sb.append("AmazonProvidedIpv6CidrBlock: ").append(getAmazonProvidedIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }

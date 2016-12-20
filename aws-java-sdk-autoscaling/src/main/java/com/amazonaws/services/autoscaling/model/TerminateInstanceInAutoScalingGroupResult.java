@@ -81,7 +81,7 @@ public class TerminateInstanceInAutoScalingGroupResult extends com.amazonaws.Ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getActivity() != null)
-            sb.append("Activity: " + getActivity());
+            sb.append("Activity: ").append(getActivity());
         sb.append("}");
         return sb.toString();
     }

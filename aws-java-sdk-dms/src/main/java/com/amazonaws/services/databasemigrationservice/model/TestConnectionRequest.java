@@ -125,9 +125,9 @@ public class TestConnectionRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationInstanceArn() != null)
-            sb.append("ReplicationInstanceArn: " + getReplicationInstanceArn() + ",");
+            sb.append("ReplicationInstanceArn: ").append(getReplicationInstanceArn()).append(",");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: " + getEndpointArn());
+            sb.append("EndpointArn: ").append(getEndpointArn());
         sb.append("}");
         return sb.toString();
     }

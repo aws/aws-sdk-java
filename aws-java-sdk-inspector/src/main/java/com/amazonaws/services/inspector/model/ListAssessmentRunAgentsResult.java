@@ -168,9 +168,9 @@ public class ListAssessmentRunAgentsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunAgents() != null)
-            sb.append("AssessmentRunAgents: " + getAssessmentRunAgents() + ",");
+            sb.append("AssessmentRunAgents: ").append(getAssessmentRunAgents()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

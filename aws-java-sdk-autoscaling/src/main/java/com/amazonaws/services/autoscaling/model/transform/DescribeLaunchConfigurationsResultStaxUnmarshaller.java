@@ -45,6 +45,11 @@ public class DescribeLaunchConfigurationsResultStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("LaunchConfigurations", targetDepth)) {
+                    describeLaunchConfigurationsResult.withLaunchConfigurations(new ArrayList<LaunchConfiguration>());
+                    continue;
+                }
+
                 if (context.testExpression("LaunchConfigurations/member", targetDepth)) {
                     describeLaunchConfigurationsResult.withLaunchConfigurations(LaunchConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

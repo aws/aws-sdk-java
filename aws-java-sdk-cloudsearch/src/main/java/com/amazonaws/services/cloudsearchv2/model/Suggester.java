@@ -91,9 +91,9 @@ public class Suggester implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSuggesterName() != null)
-            sb.append("SuggesterName: " + getSuggesterName() + ",");
+            sb.append("SuggesterName: ").append(getSuggesterName()).append(",");
         if (getDocumentSuggesterOptions() != null)
-            sb.append("DocumentSuggesterOptions: " + getDocumentSuggesterOptions());
+            sb.append("DocumentSuggesterOptions: ").append(getDocumentSuggesterOptions());
         sb.append("}");
         return sb.toString();
     }

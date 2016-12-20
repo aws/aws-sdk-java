@@ -113,7 +113,7 @@ public class DescribeServiceErrorsResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServiceErrors() != null)
-            sb.append("ServiceErrors: " + getServiceErrors());
+            sb.append("ServiceErrors: ").append(getServiceErrors());
         sb.append("}");
         return sb.toString();
     }

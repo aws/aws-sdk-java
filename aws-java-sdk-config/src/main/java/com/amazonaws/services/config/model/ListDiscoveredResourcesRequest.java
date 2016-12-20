@@ -426,17 +426,17 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceIds() != null)
-            sb.append("ResourceIds: " + getResourceIds() + ",");
+            sb.append("ResourceIds: ").append(getResourceIds()).append(",");
         if (getResourceName() != null)
-            sb.append("ResourceName: " + getResourceName() + ",");
+            sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getLimit() != null)
-            sb.append("Limit: " + getLimit() + ",");
+            sb.append("Limit: ").append(getLimit()).append(",");
         if (getIncludeDeletedResources() != null)
-            sb.append("IncludeDeletedResources: " + getIncludeDeletedResources() + ",");
+            sb.append("IncludeDeletedResources: ").append(getIncludeDeletedResources()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

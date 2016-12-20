@@ -79,7 +79,7 @@ public class GetTelemetryMetadataRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunArn() != null)
-            sb.append("AssessmentRunArn: " + getAssessmentRunArn());
+            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn());
         sb.append("}");
         return sb.toString();
     }

@@ -446,19 +446,19 @@ public class AttackDetail implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttackId() != null)
-            sb.append("AttackId: " + getAttackId() + ",");
+            sb.append("AttackId: ").append(getAttackId()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: " + getResourceArn() + ",");
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getSubResources() != null)
-            sb.append("SubResources: " + getSubResources() + ",");
+            sb.append("SubResources: ").append(getSubResources()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: " + getStartTime() + ",");
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: " + getEndTime() + ",");
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getAttackCounters() != null)
-            sb.append("AttackCounters: " + getAttackCounters() + ",");
+            sb.append("AttackCounters: ").append(getAttackCounters()).append(",");
         if (getMitigations() != null)
-            sb.append("Mitigations: " + getMitigations());
+            sb.append("Mitigations: ").append(getMitigations());
         sb.append("}");
         return sb.toString();
     }

@@ -407,15 +407,15 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOfferingId() != null)
-            sb.append("OfferingId: " + getOfferingId() + ",");
+            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getHostIdSet() != null)
-            sb.append("HostIdSet: " + getHostIdSet() + ",");
+            sb.append("HostIdSet: ").append(getHostIdSet()).append(",");
         if (getLimitPrice() != null)
-            sb.append("LimitPrice: " + getLimitPrice() + ",");
+            sb.append("LimitPrice: ").append(getLimitPrice()).append(",");
         if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken());
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }

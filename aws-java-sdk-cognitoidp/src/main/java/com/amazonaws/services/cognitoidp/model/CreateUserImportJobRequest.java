@@ -173,11 +173,11 @@ public class CreateUserImportJobRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobName() != null)
-            sb.append("JobName: " + getJobName() + ",");
+            sb.append("JobName: ").append(getJobName()).append(",");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getCloudWatchLogsRoleArn() != null)
-            sb.append("CloudWatchLogsRoleArn: " + getCloudWatchLogsRoleArn());
+            sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn());
         sb.append("}");
         return sb.toString();
     }

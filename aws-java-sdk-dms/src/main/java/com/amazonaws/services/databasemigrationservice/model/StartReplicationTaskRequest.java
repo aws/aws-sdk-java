@@ -204,11 +204,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTaskArn() != null)
-            sb.append("ReplicationTaskArn: " + getReplicationTaskArn() + ",");
+            sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getStartReplicationTaskType() != null)
-            sb.append("StartReplicationTaskType: " + getStartReplicationTaskType() + ",");
+            sb.append("StartReplicationTaskType: ").append(getStartReplicationTaskType()).append(",");
         if (getCdcStartTime() != null)
-            sb.append("CdcStartTime: " + getCdcStartTime());
+            sb.append("CdcStartTime: ").append(getCdcStartTime());
         sb.append("}");
         return sb.toString();
     }

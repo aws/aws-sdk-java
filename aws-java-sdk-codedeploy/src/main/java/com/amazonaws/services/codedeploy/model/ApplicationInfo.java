@@ -230,13 +230,13 @@ public class ApplicationInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationId() != null)
-            sb.append("ApplicationId: " + getApplicationId() + ",");
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getCreateTime() != null)
-            sb.append("CreateTime: " + getCreateTime() + ",");
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getLinkedToGitHub() != null)
-            sb.append("LinkedToGitHub: " + getLinkedToGitHub());
+            sb.append("LinkedToGitHub: ").append(getLinkedToGitHub());
         sb.append("}");
         return sb.toString();
     }

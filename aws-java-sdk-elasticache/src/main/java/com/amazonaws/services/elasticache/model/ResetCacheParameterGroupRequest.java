@@ -300,11 +300,11 @@ public class ResetCacheParameterGroupRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheParameterGroupName() != null)
-            sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");
+            sb.append("CacheParameterGroupName: ").append(getCacheParameterGroupName()).append(",");
         if (getResetAllParameters() != null)
-            sb.append("ResetAllParameters: " + getResetAllParameters() + ",");
+            sb.append("ResetAllParameters: ").append(getResetAllParameters()).append(",");
         if (getParameterNameValues() != null)
-            sb.append("ParameterNameValues: " + getParameterNameValues());
+            sb.append("ParameterNameValues: ").append(getParameterNameValues());
         sb.append("}");
         return sb.toString();
     }

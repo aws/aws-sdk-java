@@ -91,9 +91,9 @@ public class DefineExpressionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getExpression() != null)
-            sb.append("Expression: " + getExpression());
+            sb.append("Expression: ").append(getExpression());
         sb.append("}");
         return sb.toString();
     }

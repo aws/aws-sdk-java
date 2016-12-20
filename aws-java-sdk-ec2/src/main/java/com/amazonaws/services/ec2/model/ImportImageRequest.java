@@ -609,23 +609,23 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDiskContainers() != null)
-            sb.append("DiskContainers: " + getDiskContainers() + ",");
+            sb.append("DiskContainers: ").append(getDiskContainers()).append(",");
         if (getLicenseType() != null)
-            sb.append("LicenseType: " + getLicenseType() + ",");
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getHypervisor() != null)
-            sb.append("Hypervisor: " + getHypervisor() + ",");
+            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: " + getArchitecture() + ",");
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: " + getPlatform() + ",");
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getClientData() != null)
-            sb.append("ClientData: " + getClientData() + ",");
+            sb.append("ClientData: ").append(getClientData()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: " + getRoleName());
+            sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
         return sb.toString();
     }

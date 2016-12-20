@@ -165,9 +165,9 @@ public class CreateHsmClientCertificateRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHsmClientCertificateIdentifier() != null)
-            sb.append("HsmClientCertificateIdentifier: " + getHsmClientCertificateIdentifier() + ",");
+            sb.append("HsmClientCertificateIdentifier: ").append(getHsmClientCertificateIdentifier()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

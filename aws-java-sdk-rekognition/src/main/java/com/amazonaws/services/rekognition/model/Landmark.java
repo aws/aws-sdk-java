@@ -225,11 +225,11 @@ public class Landmark implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getX() != null)
-            sb.append("X: " + getX() + ",");
+            sb.append("X: ").append(getX()).append(",");
         if (getY() != null)
-            sb.append("Y: " + getY());
+            sb.append("Y: ").append(getY());
         sb.append("}");
         return sb.toString();
     }

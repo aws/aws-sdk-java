@@ -195,9 +195,9 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFunctionName() != null)
-            sb.append("FunctionName: " + getFunctionName() + ",");
+            sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getQualifier() != null)
-            sb.append("Qualifier: " + getQualifier());
+            sb.append("Qualifier: ").append(getQualifier());
         sb.append("}");
         return sb.toString();
     }

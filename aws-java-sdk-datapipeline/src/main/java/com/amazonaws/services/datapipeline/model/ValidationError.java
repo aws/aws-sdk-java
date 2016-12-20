@@ -160,9 +160,9 @@ public class ValidationError implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getErrors() != null)
-            sb.append("Errors: " + getErrors());
+            sb.append("Errors: ").append(getErrors());
         sb.append("}");
         return sb.toString();
     }

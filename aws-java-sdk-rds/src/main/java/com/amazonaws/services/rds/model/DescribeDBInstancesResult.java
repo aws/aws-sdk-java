@@ -166,9 +166,9 @@ public class DescribeDBInstancesResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker() + ",");
+            sb.append("Marker: ").append(getMarker()).append(",");
         if (getDBInstances() != null)
-            sb.append("DBInstances: " + getDBInstances());
+            sb.append("DBInstances: ").append(getDBInstances());
         sb.append("}");
         return sb.toString();
     }

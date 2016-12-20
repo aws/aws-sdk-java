@@ -50,6 +50,11 @@ public class DescribeDBInstancesResultStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
+                if (context.testExpression("DBInstances", targetDepth)) {
+                    describeDBInstancesResult.withDBInstances(new ArrayList<DBInstance>());
+                    continue;
+                }
+
                 if (context.testExpression("DBInstances/DBInstance", targetDepth)) {
                     describeDBInstancesResult.withDBInstances(DBInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

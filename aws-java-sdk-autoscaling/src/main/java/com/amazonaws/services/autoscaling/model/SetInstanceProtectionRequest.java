@@ -218,11 +218,11 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds() + ",");
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getProtectedFromScaleIn() != null)
-            sb.append("ProtectedFromScaleIn: " + getProtectedFromScaleIn());
+            sb.append("ProtectedFromScaleIn: ").append(getProtectedFromScaleIn());
         sb.append("}");
         return sb.toString();
     }

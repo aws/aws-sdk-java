@@ -65,13 +65,28 @@ public class DescribeResizeResultStaxUnmarshaller implements Unmarshaller<Descri
                     continue;
                 }
 
+                if (context.testExpression("ImportTablesCompleted", targetDepth)) {
+                    describeResizeResult.withImportTablesCompleted(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ImportTablesCompleted/member", targetDepth)) {
                     describeResizeResult.withImportTablesCompleted(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("ImportTablesInProgress", targetDepth)) {
+                    describeResizeResult.withImportTablesInProgress(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("ImportTablesInProgress/member", targetDepth)) {
                     describeResizeResult.withImportTablesInProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ImportTablesNotStarted", targetDepth)) {
+                    describeResizeResult.withImportTablesNotStarted(new ArrayList<String>());
                     continue;
                 }
 

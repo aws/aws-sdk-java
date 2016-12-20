@@ -344,17 +344,17 @@ public class ConfigExportDeliveryInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLastStatus() != null)
-            sb.append("LastStatus: " + getLastStatus() + ",");
+            sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getLastErrorCode() != null)
-            sb.append("LastErrorCode: " + getLastErrorCode() + ",");
+            sb.append("LastErrorCode: ").append(getLastErrorCode()).append(",");
         if (getLastErrorMessage() != null)
-            sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
+            sb.append("LastErrorMessage: ").append(getLastErrorMessage()).append(",");
         if (getLastAttemptTime() != null)
-            sb.append("LastAttemptTime: " + getLastAttemptTime() + ",");
+            sb.append("LastAttemptTime: ").append(getLastAttemptTime()).append(",");
         if (getLastSuccessfulTime() != null)
-            sb.append("LastSuccessfulTime: " + getLastSuccessfulTime() + ",");
+            sb.append("LastSuccessfulTime: ").append(getLastSuccessfulTime()).append(",");
         if (getNextDeliveryTime() != null)
-            sb.append("NextDeliveryTime: " + getNextDeliveryTime());
+            sb.append("NextDeliveryTime: ").append(getNextDeliveryTime());
         sb.append("}");
         return sb.toString();
     }

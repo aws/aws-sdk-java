@@ -61,9 +61,7 @@ public class DisableTopicRuleRequestMarshaller implements Marshaller<Request<Dis
 
         String uriResourcePath = "/rules/{ruleName}/disable";
 
-        uriResourcePath = uriResourcePath.replace("{ruleName}",
-                (disableTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(disableTopicRuleRequest.getRuleName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", disableTopicRuleRequest.getRuleName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

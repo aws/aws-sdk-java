@@ -208,11 +208,11 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityId() != null)
-            sb.append("IdentityId: " + getIdentityId() + ",");
+            sb.append("IdentityId: ").append(getIdentityId()).append(",");
         if (getLogins() != null)
-            sb.append("Logins: " + getLogins() + ",");
+            sb.append("Logins: ").append(getLogins()).append(",");
         if (getCustomRoleArn() != null)
-            sb.append("CustomRoleArn: " + getCustomRoleArn());
+            sb.append("CustomRoleArn: ").append(getCustomRoleArn());
         sb.append("}");
         return sb.toString();
     }

@@ -79,7 +79,7 @@ public class DeleteProtectionRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProtectionId() != null)
-            sb.append("ProtectionId: " + getProtectionId());
+            sb.append("ProtectionId: ").append(getProtectionId());
         sb.append("}");
         return sb.toString();
     }

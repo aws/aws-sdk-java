@@ -450,19 +450,19 @@ public class CacheNode implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCacheNodeId() != null)
-            sb.append("CacheNodeId: " + getCacheNodeId() + ",");
+            sb.append("CacheNodeId: ").append(getCacheNodeId()).append(",");
         if (getCacheNodeStatus() != null)
-            sb.append("CacheNodeStatus: " + getCacheNodeStatus() + ",");
+            sb.append("CacheNodeStatus: ").append(getCacheNodeStatus()).append(",");
         if (getCacheNodeCreateTime() != null)
-            sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ",");
+            sb.append("CacheNodeCreateTime: ").append(getCacheNodeCreateTime()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: " + getEndpoint() + ",");
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getParameterGroupStatus() != null)
-            sb.append("ParameterGroupStatus: " + getParameterGroupStatus() + ",");
+            sb.append("ParameterGroupStatus: ").append(getParameterGroupStatus()).append(",");
         if (getSourceCacheNodeId() != null)
-            sb.append("SourceCacheNodeId: " + getSourceCacheNodeId() + ",");
+            sb.append("SourceCacheNodeId: ").append(getSourceCacheNodeId()).append(",");
         if (getCustomerAvailabilityZone() != null)
-            sb.append("CustomerAvailabilityZone: " + getCustomerAvailabilityZone());
+            sb.append("CustomerAvailabilityZone: ").append(getCustomerAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

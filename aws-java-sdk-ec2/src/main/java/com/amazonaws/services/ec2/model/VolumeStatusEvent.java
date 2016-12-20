@@ -264,15 +264,15 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventType() != null)
-            sb.append("EventType: " + getEventType() + ",");
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getNotBefore() != null)
-            sb.append("NotBefore: " + getNotBefore() + ",");
+            sb.append("NotBefore: ").append(getNotBefore()).append(",");
         if (getNotAfter() != null)
-            sb.append("NotAfter: " + getNotAfter() + ",");
+            sb.append("NotAfter: ").append(getNotAfter()).append(",");
         if (getEventId() != null)
-            sb.append("EventId: " + getEventId());
+            sb.append("EventId: ").append(getEventId());
         sb.append("}");
         return sb.toString();
     }

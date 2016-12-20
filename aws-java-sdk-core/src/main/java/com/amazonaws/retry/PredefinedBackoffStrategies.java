@@ -14,9 +14,8 @@
  */
 package com.amazonaws.retry;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.AmazonServiceException;
-import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.retry.v2.BackoffStrategy;
+import com.amazonaws.retry.v2.RetryPolicyContext;
 import com.amazonaws.util.ValidationUtils;
 
 import java.util.Random;
@@ -28,27 +27,35 @@ import java.util.Random;
  */
 public class PredefinedBackoffStrategies {
 
-    /** Default base sleep time (milliseconds) for non-throttled exceptions. **/
-    static final int SDK_DEFAULT_BASE_DELAY = 100;
+    /**
+     * Default base sleep time (milliseconds) for non-throttled exceptions.
+     **/
+    private static final int SDK_DEFAULT_BASE_DELAY = 100;
 
-    /** Default base sleep time (milliseconds) for throttled exceptions. **/
+    /**
+     * Default base sleep time (milliseconds) for throttled exceptions.
+     **/
     static final int SDK_DEFAULT_THROTTLED_BASE_DELAY = 500;
 
-    /** Default maximum back-off time before retrying a request */
+    /**
+     * Default maximum back-off time before retrying a request
+     */
     static final int SDK_DEFAULT_MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
-    /** Default base sleep time for DynamoDB. **/
+    /**
+     * Default base sleep time for DynamoDB.
+     **/
     static final int DYNAMODB_DEFAULT_BASE_DELAY = 25;
 
     /**
-     *  Maximum retry limit. Avoids integer overflow issues.
+     * Maximum retry limit. Avoids integer overflow issues.
      *
-     *  NOTE: If the value is greater than 30, there can be integer overflow
-     *  issues during delay calculation.
-     *  **/
+     * NOTE: If the value is greater than 30, there can be integer overflow
+     * issues during delay calculation.
+     **/
     private static final int MAX_RETRIES = 30;
 
-    public static class FullJitterBackoffStrategy implements RetryPolicy.BackoffStrategy {
+    public static class FullJitterBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
 
         private final int baseDelay;
         private final int maxBackoffTime;
@@ -60,16 +67,15 @@ public class PredefinedBackoffStrategies {
             this.maxBackoffTime = ValidationUtils.assertIsPositive(maxBackoffTime, "Max backoff");
         }
 
+
         @Override
-        public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                         AmazonClientException exception,
-                                         int retriesAttempted) {
-            int ceil = calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+        public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
+            int ceil = calculateExponentialDelay(context.retriesAttempted(), baseDelay, maxBackoffTime);
             return random.nextInt(ceil);
         }
     }
 
-    public static class EqualJitterBackoffStrategy implements RetryPolicy.BackoffStrategy {
+    public static class EqualJitterBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
 
         private final int baseDelay;
         private final int maxBackoffTime;
@@ -82,15 +88,13 @@ public class PredefinedBackoffStrategies {
         }
 
         @Override
-        public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                        AmazonClientException exception,
-                                        int retriesAttempted) {
-            int ceil = calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+        public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
+            int ceil = calculateExponentialDelay(context.retriesAttempted(), baseDelay, maxBackoffTime);
             return (ceil / 2) + random.nextInt((ceil / 2) + 1);
         }
     }
 
-    public static class ExponentialBackoffStrategy implements RetryPolicy.BackoffStrategy {
+    public static class ExponentialBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
 
         private final int baseDelay;
         private final int maxBackoffTime;
@@ -102,10 +106,8 @@ public class PredefinedBackoffStrategies {
         }
 
         @Override
-        public long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                         AmazonClientException exception,
-                                         int retriesAttempted) {
-            return calculateExponentialDelay(retriesAttempted, baseDelay, maxBackoffTime);
+        public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
+            return calculateExponentialDelay(context.retriesAttempted(), baseDelay, maxBackoffTime);
         }
     }
 
@@ -114,11 +116,14 @@ public class PredefinedBackoffStrategies {
         return (int) Math.min((1L << retries) * baseDelay, maxBackoffTime);
     }
 
-    /** A private class that implements the default back-off strategy. **/
-    static class SDKDefaultBackoffStrategy implements RetryPolicy.BackoffStrategy {
 
-        private final RetryPolicy.BackoffStrategy fullJitterBackoffStrategy;
-        private final RetryPolicy.BackoffStrategy equalJitterBackoffStrategy;
+    /**
+     * A private class that implements the default back-off strategy.
+     **/
+    static class SDKDefaultBackoffStrategy extends V2CompatibleBackoffStrategyAdapter {
+
+        private final BackoffStrategy fullJitterBackoffStrategy;
+        private final BackoffStrategy equalJitterBackoffStrategy;
 
         SDKDefaultBackoffStrategy() {
             fullJitterBackoffStrategy = new PredefinedBackoffStrategies.FullJitterBackoffStrategy(
@@ -134,22 +139,18 @@ public class PredefinedBackoffStrategies {
                     throttledBaseDelay, maxBackoff);
         }
 
-        /** {@inheritDoc} */
         @Override
-        public final long delayBeforeNextRetry(AmazonWebServiceRequest originalRequest,
-                                               AmazonClientException exception,
-                                               int retriesAttempted) {
+        public long computeDelayBeforeNextRetry(RetryPolicyContext context) {
             /*
              * We use the full jitter scheme for non-throttled exceptions and the
              * equal jitter scheme for throttled exceptions.  This gives a preference
              * to quicker response and larger retry distribution for service errors
              * and guarantees a minimum delay for throttled exceptions.
              */
-            if (exception instanceof AmazonServiceException
-                    && RetryUtils.isThrottlingException((AmazonServiceException)exception)) {
-                return equalJitterBackoffStrategy.delayBeforeNextRetry(originalRequest, exception, retriesAttempted);
+            if (RetryUtils.isThrottlingException(context.exception())) {
+                return equalJitterBackoffStrategy.computeDelayBeforeNextRetry(context);
             } else {
-                return fullJitterBackoffStrategy.delayBeforeNextRetry(originalRequest, exception, retriesAttempted);
+                return fullJitterBackoffStrategy.computeDelayBeforeNextRetry(context);
             }
         }
     }

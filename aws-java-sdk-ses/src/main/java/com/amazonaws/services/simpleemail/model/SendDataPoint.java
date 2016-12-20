@@ -265,15 +265,15 @@ public class SendDataPoint implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTimestamp() != null)
-            sb.append("Timestamp: " + getTimestamp() + ",");
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getDeliveryAttempts() != null)
-            sb.append("DeliveryAttempts: " + getDeliveryAttempts() + ",");
+            sb.append("DeliveryAttempts: ").append(getDeliveryAttempts()).append(",");
         if (getBounces() != null)
-            sb.append("Bounces: " + getBounces() + ",");
+            sb.append("Bounces: ").append(getBounces()).append(",");
         if (getComplaints() != null)
-            sb.append("Complaints: " + getComplaints() + ",");
+            sb.append("Complaints: ").append(getComplaints()).append(",");
         if (getRejects() != null)
-            sb.append("Rejects: " + getRejects());
+            sb.append("Rejects: ").append(getRejects());
         sb.append("}");
         return sb.toString();
     }

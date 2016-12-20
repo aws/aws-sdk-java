@@ -94,7 +94,7 @@ public class GetStackPolicyResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackPolicyBody() != null)
-            sb.append("StackPolicyBody: " + getStackPolicyBody());
+            sb.append("StackPolicyBody: ").append(getStackPolicyBody());
         sb.append("}");
         return sb.toString();
     }

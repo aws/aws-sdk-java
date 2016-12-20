@@ -113,7 +113,7 @@ public class DescribeAdjustmentTypesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAdjustmentTypes() != null)
-            sb.append("AdjustmentTypes: " + getAdjustmentTypes());
+            sb.append("AdjustmentTypes: ").append(getAdjustmentTypes());
         sb.append("}");
         return sb.toString();
     }

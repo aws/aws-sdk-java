@@ -181,9 +181,9 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttachmentSetId() != null)
-            sb.append("AttachmentSetId: " + getAttachmentSetId() + ",");
+            sb.append("AttachmentSetId: ").append(getAttachmentSetId()).append(",");
         if (getAttachments() != null)
-            sb.append("Attachments: " + getAttachments());
+            sb.append("Attachments: ").append(getAttachments());
         sb.append("}");
         return sb.toString();
     }

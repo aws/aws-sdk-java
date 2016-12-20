@@ -126,9 +126,9 @@ public class DocumentDefaultVersionDescription implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getDefaultVersion() != null)
-            sb.append("DefaultVersion: " + getDefaultVersion());
+            sb.append("DefaultVersion: ").append(getDefaultVersion());
         sb.append("}");
         return sb.toString();
     }

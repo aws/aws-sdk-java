@@ -625,13 +625,13 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostIds() != null)
-            sb.append("HostIds: " + getHostIds() + ",");
+            sb.append("HostIds: ").append(getHostIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: " + getMaxResults() + ",");
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter());
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }

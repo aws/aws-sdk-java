@@ -86,7 +86,7 @@ public class GetByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getByteMatchSetId() != null)
-            sb.append("ByteMatchSetId: " + getByteMatchSetId());
+            sb.append("ByteMatchSetId: ").append(getByteMatchSetId());
         sb.append("}");
         return sb.toString();
     }

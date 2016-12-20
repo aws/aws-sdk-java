@@ -45,6 +45,11 @@ public class DescribeRouteTablesResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("routeTableSet", targetDepth)) {
+                    describeRouteTablesResult.withRouteTables(new ArrayList<RouteTable>());
+                    continue;
+                }
+
                 if (context.testExpression("routeTableSet/item", targetDepth)) {
                     describeRouteTablesResult.withRouteTables(RouteTableStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

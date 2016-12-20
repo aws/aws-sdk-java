@@ -163,9 +163,9 @@ public class ReportTaskProgressRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTaskId() != null)
-            sb.append("TaskId: " + getTaskId() + ",");
+            sb.append("TaskId: ").append(getTaskId()).append(",");
         if (getFields() != null)
-            sb.append("Fields: " + getFields());
+            sb.append("Fields: ").append(getFields());
         sb.append("}");
         return sb.toString();
     }

@@ -243,11 +243,11 @@ public class SnsAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetArn() != null)
-            sb.append("TargetArn: " + getTargetArn() + ",");
+            sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getMessageFormat() != null)
-            sb.append("MessageFormat: " + getMessageFormat());
+            sb.append("MessageFormat: ").append(getMessageFormat());
         sb.append("}");
         return sb.toString();
     }

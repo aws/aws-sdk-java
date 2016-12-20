@@ -78,7 +78,7 @@ public class StartSchemaExtensionResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchemaExtensionId() != null)
-            sb.append("SchemaExtensionId: " + getSchemaExtensionId());
+            sb.append("SchemaExtensionId: ").append(getSchemaExtensionId());
         sb.append("}");
         return sb.toString();
     }

@@ -80,6 +80,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("launchSpecifications", targetDepth)) {
+                    spotFleetRequestConfigData.withLaunchSpecifications(new ArrayList<SpotFleetLaunchSpecification>());
+                    continue;
+                }
+
                 if (context.testExpression("launchSpecifications/item", targetDepth)) {
                     spotFleetRequestConfigData.withLaunchSpecifications(SpotFleetLaunchSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

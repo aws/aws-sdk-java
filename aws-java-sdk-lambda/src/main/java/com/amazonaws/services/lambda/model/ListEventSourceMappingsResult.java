@@ -159,9 +159,9 @@ public class ListEventSourceMappingsResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNextMarker() != null)
-            sb.append("NextMarker: " + getNextMarker() + ",");
+            sb.append("NextMarker: ").append(getNextMarker()).append(",");
         if (getEventSourceMappings() != null)
-            sb.append("EventSourceMappings: " + getEventSourceMappings());
+            sb.append("EventSourceMappings: ").append(getEventSourceMappings());
         sb.append("}");
         return sb.toString();
     }

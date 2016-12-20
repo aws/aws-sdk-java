@@ -240,13 +240,13 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: " + getJobId() + ",");
+            sb.append("JobId: ").append(getJobId()).append(",");
         if (getCurrentRevision() != null)
-            sb.append("CurrentRevision: " + getCurrentRevision() + ",");
+            sb.append("CurrentRevision: ").append(getCurrentRevision()).append(",");
         if (getContinuationToken() != null)
-            sb.append("ContinuationToken: " + getContinuationToken() + ",");
+            sb.append("ContinuationToken: ").append(getContinuationToken()).append(",");
         if (getExecutionDetails() != null)
-            sb.append("ExecutionDetails: " + getExecutionDetails());
+            sb.append("ExecutionDetails: ").append(getExecutionDetails());
         sb.append("}");
         return sb.toString();
     }

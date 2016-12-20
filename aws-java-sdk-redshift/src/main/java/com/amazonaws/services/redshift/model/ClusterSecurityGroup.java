@@ -376,15 +376,15 @@ public class ClusterSecurityGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterSecurityGroupName() != null)
-            sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() + ",");
+            sb.append("ClusterSecurityGroupName: ").append(getClusterSecurityGroupName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEC2SecurityGroups() != null)
-            sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ",");
+            sb.append("EC2SecurityGroups: ").append(getEC2SecurityGroups()).append(",");
         if (getIPRanges() != null)
-            sb.append("IPRanges: " + getIPRanges() + ",");
+            sb.append("IPRanges: ").append(getIPRanges()).append(",");
         if (getTags() != null)
-            sb.append("Tags: " + getTags());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }

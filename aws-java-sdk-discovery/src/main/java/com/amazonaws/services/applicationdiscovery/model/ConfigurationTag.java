@@ -297,15 +297,15 @@ public class ConfigurationTag implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationType() != null)
-            sb.append("ConfigurationType: " + getConfigurationType() + ",");
+            sb.append("ConfigurationType: ").append(getConfigurationType()).append(",");
         if (getConfigurationId() != null)
-            sb.append("ConfigurationId: " + getConfigurationId() + ",");
+            sb.append("ConfigurationId: ").append(getConfigurationId()).append(",");
         if (getKey() != null)
-            sb.append("Key: " + getKey() + ",");
+            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
-            sb.append("Value: " + getValue() + ",");
+            sb.append("Value: ").append(getValue()).append(",");
         if (getTimeOfCreation() != null)
-            sb.append("TimeOfCreation: " + getTimeOfCreation());
+            sb.append("TimeOfCreation: ").append(getTimeOfCreation());
         sb.append("}");
         return sb.toString();
     }

@@ -932,17 +932,17 @@ public class Origin implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: " + getDomainName() + ",");
+            sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getOriginPath() != null)
-            sb.append("OriginPath: " + getOriginPath() + ",");
+            sb.append("OriginPath: ").append(getOriginPath()).append(",");
         if (getCustomHeaders() != null)
-            sb.append("CustomHeaders: " + getCustomHeaders() + ",");
+            sb.append("CustomHeaders: ").append(getCustomHeaders()).append(",");
         if (getS3OriginConfig() != null)
-            sb.append("S3OriginConfig: " + getS3OriginConfig() + ",");
+            sb.append("S3OriginConfig: ").append(getS3OriginConfig()).append(",");
         if (getCustomOriginConfig() != null)
-            sb.append("CustomOriginConfig: " + getCustomOriginConfig());
+            sb.append("CustomOriginConfig: ").append(getCustomOriginConfig());
         sb.append("}");
         return sb.toString();
     }

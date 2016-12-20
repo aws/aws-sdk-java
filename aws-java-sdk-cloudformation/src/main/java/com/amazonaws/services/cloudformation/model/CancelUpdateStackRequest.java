@@ -81,7 +81,7 @@ public class CancelUpdateStackRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStackName() != null)
-            sb.append("StackName: " + getStackName());
+            sb.append("StackName: ").append(getStackName());
         sb.append("}");
         return sb.toString();
     }

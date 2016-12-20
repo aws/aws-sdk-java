@@ -130,9 +130,9 @@ public class UpdateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleSetName() != null)
-            sb.append("RuleSetName: " + getRuleSetName() + ",");
+            sb.append("RuleSetName: ").append(getRuleSetName()).append(",");
         if (getRule() != null)
-            sb.append("Rule: " + getRule());
+            sb.append("Rule: ").append(getRule());
         sb.append("}");
         return sb.toString();
     }

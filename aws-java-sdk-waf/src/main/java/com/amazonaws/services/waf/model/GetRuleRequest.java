@@ -86,7 +86,7 @@ public class GetRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRuleId() != null)
-            sb.append("RuleId: " + getRuleId());
+            sb.append("RuleId: ").append(getRuleId());
         sb.append("}");
         return sb.toString();
     }

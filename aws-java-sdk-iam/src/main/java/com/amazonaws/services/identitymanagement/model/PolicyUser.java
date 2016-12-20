@@ -148,9 +148,9 @@ public class PolicyUser implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserName() != null)
-            sb.append("UserName: " + getUserName() + ",");
+            sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: " + getUserId());
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }

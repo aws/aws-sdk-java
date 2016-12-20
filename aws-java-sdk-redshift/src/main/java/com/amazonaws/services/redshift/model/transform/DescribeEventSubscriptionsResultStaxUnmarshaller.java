@@ -50,6 +50,11 @@ public class DescribeEventSubscriptionsResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("EventSubscriptionsList", targetDepth)) {
+                    describeEventSubscriptionsResult.withEventSubscriptionsList(new ArrayList<EventSubscription>());
+                    continue;
+                }
+
                 if (context.testExpression("EventSubscriptionsList/EventSubscription", targetDepth)) {
                     describeEventSubscriptionsResult.withEventSubscriptionsList(EventSubscriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

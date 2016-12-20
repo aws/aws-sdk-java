@@ -80,7 +80,7 @@ public class AttackVectorDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVectorType() != null)
-            sb.append("VectorType: " + getVectorType());
+            sb.append("VectorType: ").append(getVectorType());
         sb.append("}");
         return sb.toString();
     }

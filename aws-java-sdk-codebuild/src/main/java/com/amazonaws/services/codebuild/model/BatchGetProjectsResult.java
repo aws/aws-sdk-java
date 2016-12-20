@@ -184,9 +184,9 @@ public class BatchGetProjectsResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjects() != null)
-            sb.append("Projects: " + getProjects() + ",");
+            sb.append("Projects: ").append(getProjects()).append(",");
         if (getProjectsNotFound() != null)
-            sb.append("ProjectsNotFound: " + getProjectsNotFound());
+            sb.append("ProjectsNotFound: ").append(getProjectsNotFound());
         sb.append("}");
         return sb.toString();
     }

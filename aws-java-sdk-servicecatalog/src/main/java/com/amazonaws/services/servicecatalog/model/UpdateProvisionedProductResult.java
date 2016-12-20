@@ -92,7 +92,7 @@ public class UpdateProvisionedProductResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRecordDetail() != null)
-            sb.append("RecordDetail: " + getRecordDetail());
+            sb.append("RecordDetail: ").append(getRecordDetail());
         sb.append("}");
         return sb.toString();
     }

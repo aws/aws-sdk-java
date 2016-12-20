@@ -86,7 +86,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSetId() != null)
-            sb.append("IPSetId: " + getIPSetId());
+            sb.append("IPSetId: ").append(getIPSetId());
         sb.append("}");
         return sb.toString();
     }

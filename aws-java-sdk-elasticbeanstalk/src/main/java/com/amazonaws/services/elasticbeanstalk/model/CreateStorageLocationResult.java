@@ -80,7 +80,7 @@ public class CreateStorageLocationResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3Bucket() != null)
-            sb.append("S3Bucket: " + getS3Bucket());
+            sb.append("S3Bucket: ").append(getS3Bucket());
         sb.append("}");
         return sb.toString();
     }

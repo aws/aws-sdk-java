@@ -188,9 +188,9 @@ public class PurchaseScheduledInstancesRequest extends AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClientToken() != null)
-            sb.append("ClientToken: " + getClientToken() + ",");
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getPurchaseRequests() != null)
-            sb.append("PurchaseRequests: " + getPurchaseRequests());
+            sb.append("PurchaseRequests: ").append(getPurchaseRequests());
         sb.append("}");
         return sb.toString();
     }

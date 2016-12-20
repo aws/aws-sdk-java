@@ -280,15 +280,15 @@ public class MetricFilter implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilterName() != null)
-            sb.append("FilterName: " + getFilterName() + ",");
+            sb.append("FilterName: ").append(getFilterName()).append(",");
         if (getFilterPattern() != null)
-            sb.append("FilterPattern: " + getFilterPattern() + ",");
+            sb.append("FilterPattern: ").append(getFilterPattern()).append(",");
         if (getMetricTransformations() != null)
-            sb.append("MetricTransformations: " + getMetricTransformations() + ",");
+            sb.append("MetricTransformations: ").append(getMetricTransformations()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime() + ",");
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLogGroupName() != null)
-            sb.append("LogGroupName: " + getLogGroupName());
+            sb.append("LogGroupName: ").append(getLogGroupName());
         sb.append("}");
         return sb.toString();
     }

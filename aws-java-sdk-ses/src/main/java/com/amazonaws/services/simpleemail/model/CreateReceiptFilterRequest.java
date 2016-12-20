@@ -91,7 +91,7 @@ public class CreateReceiptFilterRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFilter() != null)
-            sb.append("Filter: " + getFilter());
+            sb.append("Filter: ").append(getFilter());
         sb.append("}");
         return sb.toString();
     }

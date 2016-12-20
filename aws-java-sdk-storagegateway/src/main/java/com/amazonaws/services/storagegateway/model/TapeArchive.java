@@ -346,17 +346,17 @@ public class TapeArchive implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: " + getTapeARN() + ",");
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getTapeBarcode() != null)
-            sb.append("TapeBarcode: " + getTapeBarcode() + ",");
+            sb.append("TapeBarcode: ").append(getTapeBarcode()).append(",");
         if (getTapeSizeInBytes() != null)
-            sb.append("TapeSizeInBytes: " + getTapeSizeInBytes() + ",");
+            sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getCompletionTime() != null)
-            sb.append("CompletionTime: " + getCompletionTime() + ",");
+            sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
         if (getRetrievedTo() != null)
-            sb.append("RetrievedTo: " + getRetrievedTo() + ",");
+            sb.append("RetrievedTo: ").append(getRetrievedTo()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: " + getTapeStatus());
+            sb.append("TapeStatus: ").append(getTapeStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -114,7 +114,7 @@ public class DescribeVpnConnectionsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVpnConnections() != null)
-            sb.append("VpnConnections: " + getVpnConnections());
+            sb.append("VpnConnections: ").append(getVpnConnections());
         sb.append("}");
         return sb.toString();
     }

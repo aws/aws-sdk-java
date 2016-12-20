@@ -127,9 +127,9 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDirectoryId() != null)
-            sb.append("DirectoryId: " + getDirectoryId() + ",");
+            sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getRadiusSettings() != null)
-            sb.append("RadiusSettings: " + getRadiusSettings());
+            sb.append("RadiusSettings: ").append(getRadiusSettings());
         sb.append("}");
         return sb.toString();
     }

@@ -483,23 +483,23 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: " + getGatewayId() + ",");
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getGatewayName() != null)
-            sb.append("GatewayName: " + getGatewayName() + ",");
+            sb.append("GatewayName: ").append(getGatewayName()).append(",");
         if (getGatewayTimezone() != null)
-            sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");
+            sb.append("GatewayTimezone: ").append(getGatewayTimezone()).append(",");
         if (getGatewayState() != null)
-            sb.append("GatewayState: " + getGatewayState() + ",");
+            sb.append("GatewayState: ").append(getGatewayState()).append(",");
         if (getGatewayNetworkInterfaces() != null)
-            sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ",");
+            sb.append("GatewayNetworkInterfaces: ").append(getGatewayNetworkInterfaces()).append(",");
         if (getGatewayType() != null)
-            sb.append("GatewayType: " + getGatewayType() + ",");
+            sb.append("GatewayType: ").append(getGatewayType()).append(",");
         if (getNextUpdateAvailabilityDate() != null)
-            sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() + ",");
+            sb.append("NextUpdateAvailabilityDate: ").append(getNextUpdateAvailabilityDate()).append(",");
         if (getLastSoftwareUpdate() != null)
-            sb.append("LastSoftwareUpdate: " + getLastSoftwareUpdate());
+            sb.append("LastSoftwareUpdate: ").append(getLastSoftwareUpdate());
         sb.append("}");
         return sb.toString();
     }

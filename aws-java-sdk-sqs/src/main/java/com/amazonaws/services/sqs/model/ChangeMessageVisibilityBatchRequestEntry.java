@@ -16,13 +16,13 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Encloses a receipt handle and an entry id for each message in <a>ChangeMessageVisibilityBatch</a>.
+ * Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a> </code>.
  * </p>
  * <important>
  * <p>
- * All of the following parameters are list parameters that must be prefixed with
- * <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with 1.
- * For example, a parameter list for this action might look like this:
+ * All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>,
+ * where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action
+ * might look like this:
  * </p>
  * </important>
  * <p>
@@ -39,9 +39,13 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, C
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      */
     private String id;
     /**
@@ -69,8 +73,10 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, C
      * (with...) methods to initialize any additional object members.
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for this particular receipt handle used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      * @param receiptHandle
      *        A receipt handle.
      */
@@ -81,13 +87,19 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, C
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for this particular receipt handle used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      */
 
     public void setId(String id) {
@@ -96,12 +108,18 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, C
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
-     * @return An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *         <code>Id</code>s of a batch request need to be unique within the request.
+     * @return An identifier for this particular receipt handle used to communicate the result.</p> <note>
+     *         <p>
+     *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         </p>
      */
 
     public String getId() {
@@ -110,13 +128,19 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, C
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     * <code>Id</code>s of a batch request need to be unique within the request.
+     * An identifier for this particular receipt handle used to communicate the result.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Id</code>s of a batch request need to be unique within a request
+     * </p>
+     * </note>
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result. Note that the
-     *        <code>Id</code>s of a batch request need to be unique within the request.
+     *        An identifier for this particular receipt handle used to communicate the result.</p> <note>
+     *        <p>
+     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +241,11 @@ public class ChangeMessageVisibilityBatchRequestEntry implements Serializable, C
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getReceiptHandle() != null)
-            sb.append("ReceiptHandle: " + getReceiptHandle() + ",");
+            sb.append("ReceiptHandle: ").append(getReceiptHandle()).append(",");
         if (getVisibilityTimeout() != null)
-            sb.append("VisibilityTimeout: " + getVisibilityTimeout());
+            sb.append("VisibilityTimeout: ").append(getVisibilityTimeout());
         sb.append("}");
         return sb.toString();
     }

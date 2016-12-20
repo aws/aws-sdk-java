@@ -191,9 +191,9 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricName() != null)
-            sb.append("MetricName: " + getMetricName() + ",");
+            sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getMetricData() != null)
-            sb.append("MetricData: " + getMetricData());
+            sb.append("MetricData: ").append(getMetricData());
         sb.append("}");
         return sb.toString();
     }

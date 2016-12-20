@@ -79,7 +79,7 @@ public class DescribeMountTargetSecurityGroupsRequest extends com.amazonaws.Amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMountTargetId() != null)
-            sb.append("MountTargetId: " + getMountTargetId());
+            sb.append("MountTargetId: ").append(getMountTargetId());
         sb.append("}");
         return sb.toString();
     }

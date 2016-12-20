@@ -45,6 +45,11 @@ public class ListInstanceProfilesResultStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("InstanceProfiles", targetDepth)) {
+                    listInstanceProfilesResult.withInstanceProfiles(new ArrayList<InstanceProfile>());
+                    continue;
+                }
+
                 if (context.testExpression("InstanceProfiles/member", targetDepth)) {
                     listInstanceProfilesResult.withInstanceProfiles(InstanceProfileStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

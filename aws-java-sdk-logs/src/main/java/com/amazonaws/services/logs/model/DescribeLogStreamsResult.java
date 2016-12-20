@@ -139,9 +139,9 @@ public class DescribeLogStreamsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogStreams() != null)
-            sb.append("LogStreams: " + getLogStreams() + ",");
+            sb.append("LogStreams: ").append(getLogStreams()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

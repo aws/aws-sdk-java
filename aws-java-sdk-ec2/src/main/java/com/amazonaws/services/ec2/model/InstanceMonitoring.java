@@ -126,9 +126,9 @@ public class InstanceMonitoring implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: " + getInstanceId() + ",");
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getMonitoring() != null)
-            sb.append("Monitoring: " + getMonitoring());
+            sb.append("Monitoring: ").append(getMonitoring());
         sb.append("}");
         return sb.toString();
     }

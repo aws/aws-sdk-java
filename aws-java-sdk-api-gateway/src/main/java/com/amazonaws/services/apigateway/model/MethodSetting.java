@@ -729,25 +729,25 @@ public class MethodSetting implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetricsEnabled() != null)
-            sb.append("MetricsEnabled: " + getMetricsEnabled() + ",");
+            sb.append("MetricsEnabled: ").append(getMetricsEnabled()).append(",");
         if (getLoggingLevel() != null)
-            sb.append("LoggingLevel: " + getLoggingLevel() + ",");
+            sb.append("LoggingLevel: ").append(getLoggingLevel()).append(",");
         if (getDataTraceEnabled() != null)
-            sb.append("DataTraceEnabled: " + getDataTraceEnabled() + ",");
+            sb.append("DataTraceEnabled: ").append(getDataTraceEnabled()).append(",");
         if (getThrottlingBurstLimit() != null)
-            sb.append("ThrottlingBurstLimit: " + getThrottlingBurstLimit() + ",");
+            sb.append("ThrottlingBurstLimit: ").append(getThrottlingBurstLimit()).append(",");
         if (getThrottlingRateLimit() != null)
-            sb.append("ThrottlingRateLimit: " + getThrottlingRateLimit() + ",");
+            sb.append("ThrottlingRateLimit: ").append(getThrottlingRateLimit()).append(",");
         if (getCachingEnabled() != null)
-            sb.append("CachingEnabled: " + getCachingEnabled() + ",");
+            sb.append("CachingEnabled: ").append(getCachingEnabled()).append(",");
         if (getCacheTtlInSeconds() != null)
-            sb.append("CacheTtlInSeconds: " + getCacheTtlInSeconds() + ",");
+            sb.append("CacheTtlInSeconds: ").append(getCacheTtlInSeconds()).append(",");
         if (getCacheDataEncrypted() != null)
-            sb.append("CacheDataEncrypted: " + getCacheDataEncrypted() + ",");
+            sb.append("CacheDataEncrypted: ").append(getCacheDataEncrypted()).append(",");
         if (getRequireAuthorizationForCacheControl() != null)
-            sb.append("RequireAuthorizationForCacheControl: " + getRequireAuthorizationForCacheControl() + ",");
+            sb.append("RequireAuthorizationForCacheControl: ").append(getRequireAuthorizationForCacheControl()).append(",");
         if (getUnauthorizedCacheControlHeaderStrategy() != null)
-            sb.append("UnauthorizedCacheControlHeaderStrategy: " + getUnauthorizedCacheControlHeaderStrategy());
+            sb.append("UnauthorizedCacheControlHeaderStrategy: ").append(getUnauthorizedCacheControlHeaderStrategy());
         sb.append("}");
         return sb.toString();
     }

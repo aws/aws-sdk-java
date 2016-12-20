@@ -88,7 +88,7 @@ public class DeleteConfigurationRecorderRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigurationRecorderName() != null)
-            sb.append("ConfigurationRecorderName: " + getConfigurationRecorderName());
+            sb.append("ConfigurationRecorderName: ").append(getConfigurationRecorderName());
         sb.append("}");
         return sb.toString();
     }

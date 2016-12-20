@@ -921,31 +921,31 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingGroupName() != null)
-            sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+            sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");
+            sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName()).append(",");
         if (getMinSize() != null)
-            sb.append("MinSize: " + getMinSize() + ",");
+            sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
-            sb.append("MaxSize: " + getMaxSize() + ",");
+            sb.append("MaxSize: ").append(getMaxSize()).append(",");
         if (getDesiredCapacity() != null)
-            sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");
+            sb.append("DesiredCapacity: ").append(getDesiredCapacity()).append(",");
         if (getDefaultCooldown() != null)
-            sb.append("DefaultCooldown: " + getDefaultCooldown() + ",");
+            sb.append("DefaultCooldown: ").append(getDefaultCooldown()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getHealthCheckType() != null)
-            sb.append("HealthCheckType: " + getHealthCheckType() + ",");
+            sb.append("HealthCheckType: ").append(getHealthCheckType()).append(",");
         if (getHealthCheckGracePeriod() != null)
-            sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ",");
+            sb.append("HealthCheckGracePeriod: ").append(getHealthCheckGracePeriod()).append(",");
         if (getPlacementGroup() != null)
-            sb.append("PlacementGroup: " + getPlacementGroup() + ",");
+            sb.append("PlacementGroup: ").append(getPlacementGroup()).append(",");
         if (getVPCZoneIdentifier() != null)
-            sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ",");
+            sb.append("VPCZoneIdentifier: ").append(getVPCZoneIdentifier()).append(",");
         if (getTerminationPolicies() != null)
-            sb.append("TerminationPolicies: " + getTerminationPolicies() + ",");
+            sb.append("TerminationPolicies: ").append(getTerminationPolicies()).append(",");
         if (getNewInstancesProtectedFromScaleIn() != null)
-            sb.append("NewInstancesProtectedFromScaleIn: " + getNewInstancesProtectedFromScaleIn());
+            sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn());
         sb.append("}");
         return sb.toString();
     }

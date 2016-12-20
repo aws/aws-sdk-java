@@ -45,6 +45,11 @@ public class DescribeConfigurationSettingsResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ConfigurationSettings", targetDepth)) {
+                    describeConfigurationSettingsResult.withConfigurationSettings(new ArrayList<ConfigurationSettingsDescription>());
+                    continue;
+                }
+
                 if (context.testExpression("ConfigurationSettings/member", targetDepth)) {
                     describeConfigurationSettingsResult.withConfigurationSettings(ConfigurationSettingsDescriptionStaxUnmarshaller.getInstance().unmarshall(
                             context));

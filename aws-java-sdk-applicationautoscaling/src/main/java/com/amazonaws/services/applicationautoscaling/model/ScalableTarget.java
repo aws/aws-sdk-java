@@ -782,19 +782,19 @@ public class ScalableTarget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServiceNamespace() != null)
-            sb.append("ServiceNamespace: " + getServiceNamespace() + ",");
+            sb.append("ServiceNamespace: ").append(getServiceNamespace()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getScalableDimension() != null)
-            sb.append("ScalableDimension: " + getScalableDimension() + ",");
+            sb.append("ScalableDimension: ").append(getScalableDimension()).append(",");
         if (getMinCapacity() != null)
-            sb.append("MinCapacity: " + getMinCapacity() + ",");
+            sb.append("MinCapacity: ").append(getMinCapacity()).append(",");
         if (getMaxCapacity() != null)
-            sb.append("MaxCapacity: " + getMaxCapacity() + ",");
+            sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: " + getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }

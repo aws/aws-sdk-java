@@ -159,9 +159,9 @@ public class DeleteTagsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceId() != null)
-            sb.append("ResourceId: " + getResourceId() + ",");
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType());
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }

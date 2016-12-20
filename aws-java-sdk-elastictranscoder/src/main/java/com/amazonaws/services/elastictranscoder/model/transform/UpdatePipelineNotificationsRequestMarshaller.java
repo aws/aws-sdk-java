@@ -63,10 +63,7 @@ public class UpdatePipelineNotificationsRequestMarshaller implements
 
         String uriResourcePath = "/2012-09-25/pipelines/{Id}/notifications";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{Id}",
-                (updatePipelineNotificationsRequest.getId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(updatePipelineNotificationsRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updatePipelineNotificationsRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {

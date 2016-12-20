@@ -80,7 +80,7 @@ public class GetBranchResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBranch() != null)
-            sb.append("Branch: " + getBranch());
+            sb.append("Branch: ").append(getBranch());
         sb.append("}");
         return sb.toString();
     }

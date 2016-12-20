@@ -79,7 +79,7 @@ public class DeleteReplicationTaskRequest extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationTaskArn() != null)
-            sb.append("ReplicationTaskArn: " + getReplicationTaskArn());
+            sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn());
         sb.append("}");
         return sb.toString();
     }

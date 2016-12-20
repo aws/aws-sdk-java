@@ -231,13 +231,13 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGatewayARN() != null)
-            sb.append("GatewayARN: " + getGatewayARN() + ",");
+            sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getHourOfDay() != null)
-            sb.append("HourOfDay: " + getHourOfDay() + ",");
+            sb.append("HourOfDay: ").append(getHourOfDay()).append(",");
         if (getMinuteOfHour() != null)
-            sb.append("MinuteOfHour: " + getMinuteOfHour() + ",");
+            sb.append("MinuteOfHour: ").append(getMinuteOfHour()).append(",");
         if (getDayOfWeek() != null)
-            sb.append("DayOfWeek: " + getDayOfWeek());
+            sb.append("DayOfWeek: ").append(getDayOfWeek());
         sb.append("}");
         return sb.toString();
     }

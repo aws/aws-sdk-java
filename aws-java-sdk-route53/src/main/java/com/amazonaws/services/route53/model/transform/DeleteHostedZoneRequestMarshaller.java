@@ -51,8 +51,7 @@ public class DeleteHostedZoneRequestMarshaller implements Marshaller<Request<Del
 
         String uriResourcePath = "/2013-04-01/hostedzone/{Id}";
 
-        uriResourcePath = uriResourcePath.replace("{Id}",
-                (deleteHostedZoneRequest.getId() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteHostedZoneRequest.getId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteHostedZoneRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         return request;

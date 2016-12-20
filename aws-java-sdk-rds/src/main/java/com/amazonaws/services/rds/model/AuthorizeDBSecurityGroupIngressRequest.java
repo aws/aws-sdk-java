@@ -333,15 +333,15 @@ public class AuthorizeDBSecurityGroupIngressRequest extends com.amazonaws.Amazon
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBSecurityGroupName() != null)
-            sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
+            sb.append("DBSecurityGroupName: ").append(getDBSecurityGroupName()).append(",");
         if (getCIDRIP() != null)
-            sb.append("CIDRIP: " + getCIDRIP() + ",");
+            sb.append("CIDRIP: ").append(getCIDRIP()).append(",");
         if (getEC2SecurityGroupName() != null)
-            sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");
+            sb.append("EC2SecurityGroupName: ").append(getEC2SecurityGroupName()).append(",");
         if (getEC2SecurityGroupId() != null)
-            sb.append("EC2SecurityGroupId: " + getEC2SecurityGroupId() + ",");
+            sb.append("EC2SecurityGroupId: ").append(getEC2SecurityGroupId()).append(",");
         if (getEC2SecurityGroupOwnerId() != null)
-            sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId());
+            sb.append("EC2SecurityGroupOwnerId: ").append(getEC2SecurityGroupOwnerId());
         sb.append("}");
         return sb.toString();
     }

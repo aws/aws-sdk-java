@@ -126,9 +126,9 @@ public class HashKeyRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStartingHashKey() != null)
-            sb.append("StartingHashKey: " + getStartingHashKey() + ",");
+            sb.append("StartingHashKey: ").append(getStartingHashKey()).append(",");
         if (getEndingHashKey() != null)
-            sb.append("EndingHashKey: " + getEndingHashKey());
+            sb.append("EndingHashKey: ").append(getEndingHashKey());
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class DetachLoadBalancerFromSubnetsResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Subnets", targetDepth)) {
+                    detachLoadBalancerFromSubnetsResult.withSubnets(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("Subnets/member", targetDepth)) {
                     detachLoadBalancerFromSubnetsResult.withSubnets(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -127,9 +127,9 @@ public class Subnet implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSubnetIdentifier() != null)
-            sb.append("SubnetIdentifier: " + getSubnetIdentifier() + ",");
+            sb.append("SubnetIdentifier: ").append(getSubnetIdentifier()).append(",");
         if (getSubnetAvailabilityZone() != null)
-            sb.append("SubnetAvailabilityZone: " + getSubnetAvailabilityZone());
+            sb.append("SubnetAvailabilityZone: ").append(getSubnetAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }

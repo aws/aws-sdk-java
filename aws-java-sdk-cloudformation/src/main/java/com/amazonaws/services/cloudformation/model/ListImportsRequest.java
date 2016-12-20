@@ -135,9 +135,9 @@ public class ListImportsRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExportName() != null)
-            sb.append("ExportName: " + getExportName() + ",");
+            sb.append("ExportName: ").append(getExportName()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

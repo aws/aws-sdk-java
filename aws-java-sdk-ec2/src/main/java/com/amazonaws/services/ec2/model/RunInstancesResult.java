@@ -79,7 +79,7 @@ public class RunInstancesResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReservation() != null)
-            sb.append("Reservation: " + getReservation());
+            sb.append("Reservation: ").append(getReservation());
         sb.append("}");
         return sb.toString();
     }

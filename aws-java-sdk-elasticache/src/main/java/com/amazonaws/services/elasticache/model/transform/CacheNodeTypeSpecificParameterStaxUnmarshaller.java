@@ -80,6 +80,11 @@ public class CacheNodeTypeSpecificParameterStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("CacheNodeTypeSpecificValues", targetDepth)) {
+                    cacheNodeTypeSpecificParameter.withCacheNodeTypeSpecificValues(new ArrayList<CacheNodeTypeSpecificValue>());
+                    continue;
+                }
+
                 if (context.testExpression("CacheNodeTypeSpecificValues/CacheNodeTypeSpecificValue", targetDepth)) {
                     cacheNodeTypeSpecificParameter
                             .withCacheNodeTypeSpecificValues(CacheNodeTypeSpecificValueStaxUnmarshaller.getInstance().unmarshall(context));

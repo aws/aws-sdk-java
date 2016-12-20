@@ -113,7 +113,7 @@ public class ListTagsForResourcesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceTagSets() != null)
-            sb.append("ResourceTagSets: " + getResourceTagSets());
+            sb.append("ResourceTagSets: ").append(getResourceTagSets());
         sb.append("}");
         return sb.toString();
     }

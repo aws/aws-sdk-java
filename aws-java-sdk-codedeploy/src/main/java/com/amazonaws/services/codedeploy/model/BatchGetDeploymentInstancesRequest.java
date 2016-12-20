@@ -160,9 +160,9 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: " + getDeploymentId() + ",");
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
         if (getInstanceIds() != null)
-            sb.append("InstanceIds: " + getInstanceIds());
+            sb.append("InstanceIds: ").append(getInstanceIds());
         sb.append("}");
         return sb.toString();
     }

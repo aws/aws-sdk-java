@@ -212,11 +212,11 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroups() != null)
-            sb.append("DeploymentGroups: " + getDeploymentGroups() + ",");
+            sb.append("DeploymentGroups: ").append(getDeploymentGroups()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

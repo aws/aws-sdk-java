@@ -143,13 +143,13 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getVolumeARN() != null)
-            sb.append("VolumeARN: " + getVolumeARN() + ",");
+            sb.append("VolumeARN: ").append(getVolumeARN()).append(",");
         if (getVolumeSizeInBytes() != null)
-            sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+            sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
         if (getVolumeUsageInBytes() != null)
-            sb.append("VolumeUsageInBytes: " + getVolumeUsageInBytes() + ",");
+            sb.append("VolumeUsageInBytes: ").append(getVolumeUsageInBytes()).append(",");
         if (getVolumeRecoveryPointTime() != null)
-            sb.append("VolumeRecoveryPointTime: " + getVolumeRecoveryPointTime());
+            sb.append("VolumeRecoveryPointTime: ").append(getVolumeRecoveryPointTime());
         sb.append("}");
         return sb.toString();
     }

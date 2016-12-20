@@ -79,7 +79,7 @@ public class DeleteEvaluationResultsRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfigRuleName() != null)
-            sb.append("ConfigRuleName: " + getConfigRuleName());
+            sb.append("ConfigRuleName: ").append(getConfigRuleName());
         sb.append("}");
         return sb.toString();
     }

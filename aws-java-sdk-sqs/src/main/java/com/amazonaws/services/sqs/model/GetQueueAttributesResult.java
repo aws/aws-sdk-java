@@ -23,17 +23,17 @@ public class GetQueueAttributesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A map of attributes to the respective values.
+     * A map of attributes to their respective values.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
 
     /**
      * <p>
-     * A map of attributes to the respective values.
+     * A map of attributes to their respective values.
      * </p>
      * 
-     * @return A map of attributes to the respective values.
+     * @return A map of attributes to their respective values.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -45,11 +45,11 @@ public class GetQueueAttributesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A map of attributes to the respective values.
+     * A map of attributes to their respective values.
      * </p>
      * 
      * @param attributes
-     *        A map of attributes to the respective values.
+     *        A map of attributes to their respective values.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -58,11 +58,11 @@ public class GetQueueAttributesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A map of attributes to the respective values.
+     * A map of attributes to their respective values.
      * </p>
      * 
      * @param attributes
-     *        A map of attributes to the respective values.
+     *        A map of attributes to their respective values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +104,7 @@ public class GetQueueAttributesResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttributes() != null)
-            sb.append("Attributes: " + getAttributes());
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }

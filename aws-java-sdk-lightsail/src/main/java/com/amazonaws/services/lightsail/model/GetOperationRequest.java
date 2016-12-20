@@ -79,7 +79,7 @@ public class GetOperationRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperationId() != null)
-            sb.append("OperationId: " + getOperationId());
+            sb.append("OperationId: ").append(getOperationId());
         sb.append("}");
         return sb.toString();
     }

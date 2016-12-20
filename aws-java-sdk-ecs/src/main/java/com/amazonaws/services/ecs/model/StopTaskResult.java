@@ -78,7 +78,7 @@ public class StopTaskResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTask() != null)
-            sb.append("Task: " + getTask());
+            sb.append("Task: ").append(getTask());
         sb.append("}");
         return sb.toString();
     }

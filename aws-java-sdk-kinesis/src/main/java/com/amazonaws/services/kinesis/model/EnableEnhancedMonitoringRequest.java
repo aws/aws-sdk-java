@@ -734,9 +734,9 @@ public class EnableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStreamName() != null)
-            sb.append("StreamName: " + getStreamName() + ",");
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getShardLevelMetrics() != null)
-            sb.append("ShardLevelMetrics: " + getShardLevelMetrics());
+            sb.append("ShardLevelMetrics: ").append(getShardLevelMetrics());
         sb.append("}");
         return sb.toString();
     }

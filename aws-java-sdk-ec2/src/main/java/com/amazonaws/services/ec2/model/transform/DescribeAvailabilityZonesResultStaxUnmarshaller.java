@@ -45,6 +45,11 @@ public class DescribeAvailabilityZonesResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("availabilityZoneInfo", targetDepth)) {
+                    describeAvailabilityZonesResult.withAvailabilityZones(new ArrayList<AvailabilityZone>());
+                    continue;
+                }
+
                 if (context.testExpression("availabilityZoneInfo/item", targetDepth)) {
                     describeAvailabilityZonesResult.withAvailabilityZones(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

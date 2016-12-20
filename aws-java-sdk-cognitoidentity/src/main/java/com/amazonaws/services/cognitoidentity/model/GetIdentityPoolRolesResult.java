@@ -33,6 +33,14 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Map<String, String> roles;
+    /**
+     * <p>
+     * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
+     * map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * </p>
+     */
+    private java.util.Map<String, RoleMapping> roleMappings;
 
     /**
      * <p>
@@ -139,6 +147,79 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
+     * map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * </p>
+     * 
+     * @return How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
+     *         object map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     *         "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     */
+
+    public java.util.Map<String, RoleMapping> getRoleMappings() {
+        return roleMappings;
+    }
+
+    /**
+     * <p>
+     * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
+     * map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * </p>
+     * 
+     * @param roleMappings
+     *        How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
+     *        object map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     *        "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     */
+
+    public void setRoleMappings(java.util.Map<String, RoleMapping> roleMappings) {
+        this.roleMappings = roleMappings;
+    }
+
+    /**
+     * <p>
+     * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
+     * map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * </p>
+     * 
+     * @param roleMappings
+     *        How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
+     *        object map. The string identifies the identity provider, for example, "graph.facebook.com" or
+     *        "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIdentityPoolRolesResult withRoleMappings(java.util.Map<String, RoleMapping> roleMappings) {
+        setRoleMappings(roleMappings);
+        return this;
+    }
+
+    public GetIdentityPoolRolesResult addRoleMappingsEntry(String key, RoleMapping value) {
+        if (null == this.roleMappings) {
+            this.roleMappings = new java.util.HashMap<String, RoleMapping>();
+        }
+        if (this.roleMappings.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.roleMappings.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into RoleMappings.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIdentityPoolRolesResult clearRoleMappingsEntries() {
+        this.roleMappings = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -150,9 +231,11 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentityPoolId() != null)
-            sb.append("IdentityPoolId: " + getIdentityPoolId() + ",");
+            sb.append("IdentityPoolId: ").append(getIdentityPoolId()).append(",");
         if (getRoles() != null)
-            sb.append("Roles: " + getRoles());
+            sb.append("Roles: ").append(getRoles()).append(",");
+        if (getRoleMappings() != null)
+            sb.append("RoleMappings: ").append(getRoleMappings());
         sb.append("}");
         return sb.toString();
     }
@@ -175,6 +258,10 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getRoles() != null && other.getRoles().equals(this.getRoles()) == false)
             return false;
+        if (other.getRoleMappings() == null ^ this.getRoleMappings() == null)
+            return false;
+        if (other.getRoleMappings() != null && other.getRoleMappings().equals(this.getRoleMappings()) == false)
+            return false;
         return true;
     }
 
@@ -185,6 +272,7 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getIdentityPoolId() == null) ? 0 : getIdentityPoolId().hashCode());
         hashCode = prime * hashCode + ((getRoles() == null) ? 0 : getRoles().hashCode());
+        hashCode = prime * hashCode + ((getRoleMappings() == null) ? 0 : getRoleMappings().hashCode());
         return hashCode;
     }
 

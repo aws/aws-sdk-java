@@ -75,8 +75,18 @@ public class EventSubscriptionStaxUnmarshaller implements Unmarshaller<EventSubs
                     continue;
                 }
 
+                if (context.testExpression("SourceIdsList", targetDepth)) {
+                    eventSubscription.withSourceIdsList(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("SourceIdsList/SourceId", targetDepth)) {
                     eventSubscription.withSourceIdsList(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EventCategoriesList", targetDepth)) {
+                    eventSubscription.withEventCategoriesList(new ArrayList<String>());
                     continue;
                 }
 

@@ -79,7 +79,7 @@ public class CreateKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyPair() != null)
-            sb.append("KeyPair: " + getKeyPair());
+            sb.append("KeyPair: ").append(getKeyPair());
         sb.append("}");
         return sb.toString();
     }

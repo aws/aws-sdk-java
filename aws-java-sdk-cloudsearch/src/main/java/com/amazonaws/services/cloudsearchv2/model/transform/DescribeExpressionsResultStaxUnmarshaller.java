@@ -45,6 +45,11 @@ public class DescribeExpressionsResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Expressions", targetDepth)) {
+                    describeExpressionsResult.withExpressions(new ArrayList<ExpressionStatus>());
+                    continue;
+                }
+
                 if (context.testExpression("Expressions/member", targetDepth)) {
                     describeExpressionsResult.withExpressions(ExpressionStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

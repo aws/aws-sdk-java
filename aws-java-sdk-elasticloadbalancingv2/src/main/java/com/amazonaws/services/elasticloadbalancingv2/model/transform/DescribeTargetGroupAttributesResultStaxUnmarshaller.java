@@ -45,6 +45,11 @@ public class DescribeTargetGroupAttributesResultStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Attributes", targetDepth)) {
+                    describeTargetGroupAttributesResult.withAttributes(new ArrayList<TargetGroupAttribute>());
+                    continue;
+                }
+
                 if (context.testExpression("Attributes/member", targetDepth)) {
                     describeTargetGroupAttributesResult.withAttributes(TargetGroupAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

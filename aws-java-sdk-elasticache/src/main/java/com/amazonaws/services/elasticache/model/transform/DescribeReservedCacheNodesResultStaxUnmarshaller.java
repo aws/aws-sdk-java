@@ -50,6 +50,11 @@ public class DescribeReservedCacheNodesResultStaxUnmarshaller implements Unmarsh
                     continue;
                 }
 
+                if (context.testExpression("ReservedCacheNodes", targetDepth)) {
+                    describeReservedCacheNodesResult.withReservedCacheNodes(new ArrayList<ReservedCacheNode>());
+                    continue;
+                }
+
                 if (context.testExpression("ReservedCacheNodes/ReservedCacheNode", targetDepth)) {
                     describeReservedCacheNodesResult.withReservedCacheNodes(ReservedCacheNodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

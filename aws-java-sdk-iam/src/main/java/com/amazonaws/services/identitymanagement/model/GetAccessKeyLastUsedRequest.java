@@ -104,7 +104,7 @@ public class GetAccessKeyLastUsedRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessKeyId() != null)
-            sb.append("AccessKeyId: " + getAccessKeyId());
+            sb.append("AccessKeyId: ").append(getAccessKeyId());
         sb.append("}");
         return sb.toString();
     }

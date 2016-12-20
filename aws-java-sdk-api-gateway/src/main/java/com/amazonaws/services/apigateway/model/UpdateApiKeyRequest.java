@@ -161,9 +161,9 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApiKey() != null)
-            sb.append("ApiKey: " + getApiKey() + ",");
+            sb.append("ApiKey: ").append(getApiKey()).append(",");
         if (getPatchOperations() != null)
-            sb.append("PatchOperations: " + getPatchOperations());
+            sb.append("PatchOperations: ").append(getPatchOperations());
         sb.append("}");
         return sb.toString();
     }

@@ -447,21 +447,21 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getLastStartTime() != null)
-            sb.append("LastStartTime: " + getLastStartTime() + ",");
+            sb.append("LastStartTime: ").append(getLastStartTime()).append(",");
         if (getLastStopTime() != null)
-            sb.append("LastStopTime: " + getLastStopTime() + ",");
+            sb.append("LastStopTime: ").append(getLastStopTime()).append(",");
         if (getRecording() != null)
-            sb.append("Recording: " + getRecording() + ",");
+            sb.append("Recording: ").append(getRecording()).append(",");
         if (getLastStatus() != null)
-            sb.append("LastStatus: " + getLastStatus() + ",");
+            sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getLastErrorCode() != null)
-            sb.append("LastErrorCode: " + getLastErrorCode() + ",");
+            sb.append("LastErrorCode: ").append(getLastErrorCode()).append(",");
         if (getLastErrorMessage() != null)
-            sb.append("LastErrorMessage: " + getLastErrorMessage() + ",");
+            sb.append("LastErrorMessage: ").append(getLastErrorMessage()).append(",");
         if (getLastStatusChangeTime() != null)
-            sb.append("LastStatusChangeTime: " + getLastStatusChangeTime());
+            sb.append("LastStatusChangeTime: ").append(getLastStatusChangeTime());
         sb.append("}");
         return sb.toString();
     }

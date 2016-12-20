@@ -218,13 +218,13 @@ public class PipelineSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: " + getVersion() + ",");
+            sb.append("Version: ").append(getVersion()).append(",");
         if (getCreated() != null)
-            sb.append("Created: " + getCreated() + ",");
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getUpdated() != null)
-            sb.append("Updated: " + getUpdated());
+            sb.append("Updated: ").append(getUpdated());
         sb.append("}");
         return sb.toString();
     }

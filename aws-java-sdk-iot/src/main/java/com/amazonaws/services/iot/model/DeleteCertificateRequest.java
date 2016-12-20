@@ -81,7 +81,7 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: " + getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId());
         sb.append("}");
         return sb.toString();
     }

@@ -154,9 +154,9 @@ public class GetBlueprintsResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBlueprints() != null)
-            sb.append("Blueprints: " + getBlueprints() + ",");
+            sb.append("Blueprints: ").append(getBlueprints()).append(",");
         if (getNextPageToken() != null)
-            sb.append("NextPageToken: " + getNextPageToken());
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }

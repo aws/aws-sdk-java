@@ -81,7 +81,7 @@ public class DeleteLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLaunchConfigurationName() != null)
-            sb.append("LaunchConfigurationName: " + getLaunchConfigurationName());
+            sb.append("LaunchConfigurationName: ").append(getLaunchConfigurationName());
         sb.append("}");
         return sb.toString();
     }

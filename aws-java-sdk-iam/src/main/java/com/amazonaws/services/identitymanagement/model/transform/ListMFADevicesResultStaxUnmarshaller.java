@@ -45,6 +45,11 @@ public class ListMFADevicesResultStaxUnmarshaller implements Unmarshaller<ListMF
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("MFADevices", targetDepth)) {
+                    listMFADevicesResult.withMFADevices(new ArrayList<MFADevice>());
+                    continue;
+                }
+
                 if (context.testExpression("MFADevices/member", targetDepth)) {
                     listMFADevicesResult.withMFADevices(MFADeviceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

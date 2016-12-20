@@ -61,7 +61,7 @@ public class StopRunResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRun() != null)
-            sb.append("Run: " + getRun());
+            sb.append("Run: ").append(getRun());
         sb.append("}");
         return sb.toString();
     }

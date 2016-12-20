@@ -452,13 +452,13 @@ public class DescribeClusterVersionsRequest extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterVersion() != null)
-            sb.append("ClusterVersion: " + getClusterVersion() + ",");
+            sb.append("ClusterVersion: ").append(getClusterVersion()).append(",");
         if (getClusterParameterGroupFamily() != null)
-            sb.append("ClusterParameterGroupFamily: " + getClusterParameterGroupFamily() + ",");
+            sb.append("ClusterParameterGroupFamily: ").append(getClusterParameterGroupFamily()).append(",");
         if (getMaxRecords() != null)
-            sb.append("MaxRecords: " + getMaxRecords() + ",");
+            sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getMarker() != null)
-            sb.append("Marker: " + getMarker());
+            sb.append("Marker: ").append(getMarker());
         sb.append("}");
         return sb.toString();
     }

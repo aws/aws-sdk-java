@@ -203,11 +203,11 @@ public class AdminDeleteUserAttributesRequest extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getUsername() != null)
-            sb.append("Username: " + getUsername() + ",");
+            sb.append("Username: ").append(getUsername()).append(",");
         if (getUserAttributeNames() != null)
-            sb.append("UserAttributeNames: " + getUserAttributeNames());
+            sb.append("UserAttributeNames: ").append(getUserAttributeNames());
         sb.append("}");
         return sb.toString();
     }

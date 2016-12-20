@@ -160,9 +160,9 @@ public class AttachLoadBalancerToSubnetsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLoadBalancerName() != null)
-            sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+            sb.append("LoadBalancerName: ").append(getLoadBalancerName()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: " + getSubnets());
+            sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
         return sb.toString();
     }

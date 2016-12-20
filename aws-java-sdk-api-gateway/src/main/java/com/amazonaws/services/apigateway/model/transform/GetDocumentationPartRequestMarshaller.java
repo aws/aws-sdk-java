@@ -61,14 +61,10 @@ public class GetDocumentationPartRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/restapis/{restapi_id}/documentation/parts/{part_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (getDocumentationPartRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getDocumentationPartRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{part_id}",
-                (getDocumentationPartRequest.getDocumentationPartId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(getDocumentationPartRequest.getDocumentationPartId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "restapi_id", getDocumentationPartRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "part_id",
+                getDocumentationPartRequest.getDocumentationPartId());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

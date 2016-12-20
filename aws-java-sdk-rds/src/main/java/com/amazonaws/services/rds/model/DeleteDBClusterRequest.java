@@ -594,11 +594,11 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterIdentifier() != null)
-            sb.append("DBClusterIdentifier: " + getDBClusterIdentifier() + ",");
+            sb.append("DBClusterIdentifier: ").append(getDBClusterIdentifier()).append(",");
         if (getSkipFinalSnapshot() != null)
-            sb.append("SkipFinalSnapshot: " + getSkipFinalSnapshot() + ",");
+            sb.append("SkipFinalSnapshot: ").append(getSkipFinalSnapshot()).append(",");
         if (getFinalDBSnapshotIdentifier() != null)
-            sb.append("FinalDBSnapshotIdentifier: " + getFinalDBSnapshotIdentifier());
+            sb.append("FinalDBSnapshotIdentifier: ").append(getFinalDBSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }

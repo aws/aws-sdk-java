@@ -139,9 +139,9 @@ public class UpdateContainerAgentRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCluster() != null)
-            sb.append("Cluster: " + getCluster() + ",");
+            sb.append("Cluster: ").append(getCluster()).append(",");
         if (getContainerInstance() != null)
-            sb.append("ContainerInstance: " + getContainerInstance());
+            sb.append("ContainerInstance: ").append(getContainerInstance());
         sb.append("}");
         return sb.toString();
     }

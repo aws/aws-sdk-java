@@ -340,15 +340,15 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUserPoolId() != null)
-            sb.append("UserPoolId: " + getUserPoolId() + ",");
+            sb.append("UserPoolId: ").append(getUserPoolId()).append(",");
         if (getClientId() != null)
-            sb.append("ClientId: " + getClientId() + ",");
+            sb.append("ClientId: ").append(getClientId()).append(",");
         if (getAuthFlow() != null)
-            sb.append("AuthFlow: " + getAuthFlow() + ",");
+            sb.append("AuthFlow: ").append(getAuthFlow()).append(",");
         if (getAuthParameters() != null)
-            sb.append("AuthParameters: " + getAuthParameters() + ",");
+            sb.append("AuthParameters: ").append(getAuthParameters()).append(",");
         if (getClientMetadata() != null)
-            sb.append("ClientMetadata: " + getClientMetadata());
+            sb.append("ClientMetadata: ").append(getClientMetadata());
         sb.append("}");
         return sb.toString();
     }

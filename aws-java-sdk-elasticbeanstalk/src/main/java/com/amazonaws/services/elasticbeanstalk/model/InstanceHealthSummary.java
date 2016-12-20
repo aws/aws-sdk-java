@@ -432,21 +432,21 @@ public class InstanceHealthSummary implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNoData() != null)
-            sb.append("NoData: " + getNoData() + ",");
+            sb.append("NoData: ").append(getNoData()).append(",");
         if (getUnknown() != null)
-            sb.append("Unknown: " + getUnknown() + ",");
+            sb.append("Unknown: ").append(getUnknown()).append(",");
         if (getPending() != null)
-            sb.append("Pending: " + getPending() + ",");
+            sb.append("Pending: ").append(getPending()).append(",");
         if (getOk() != null)
-            sb.append("Ok: " + getOk() + ",");
+            sb.append("Ok: ").append(getOk()).append(",");
         if (getInfo() != null)
-            sb.append("Info: " + getInfo() + ",");
+            sb.append("Info: ").append(getInfo()).append(",");
         if (getWarning() != null)
-            sb.append("Warning: " + getWarning() + ",");
+            sb.append("Warning: ").append(getWarning()).append(",");
         if (getDegraded() != null)
-            sb.append("Degraded: " + getDegraded() + ",");
+            sb.append("Degraded: ").append(getDegraded()).append(",");
         if (getSevere() != null)
-            sb.append("Severe: " + getSevere());
+            sb.append("Severe: ").append(getSevere());
         sb.append("}");
         return sb.toString();
     }

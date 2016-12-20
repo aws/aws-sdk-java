@@ -354,15 +354,15 @@ public class ListRecordHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: " + getAcceptLanguage() + ",");
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getAccessLevelFilter() != null)
-            sb.append("AccessLevelFilter: " + getAccessLevelFilter() + ",");
+            sb.append("AccessLevelFilter: ").append(getAccessLevelFilter()).append(",");
         if (getSearchFilter() != null)
-            sb.append("SearchFilter: " + getSearchFilter() + ",");
+            sb.append("SearchFilter: ").append(getSearchFilter()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: " + getPageSize() + ",");
+            sb.append("PageSize: ").append(getPageSize()).append(",");
         if (getPageToken() != null)
-            sb.append("PageToken: " + getPageToken());
+            sb.append("PageToken: ").append(getPageToken());
         sb.append("}");
         return sb.toString();
     }

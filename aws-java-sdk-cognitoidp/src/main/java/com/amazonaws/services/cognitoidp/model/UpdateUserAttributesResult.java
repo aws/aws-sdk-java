@@ -110,7 +110,7 @@ public class UpdateUserAttributesResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCodeDeliveryDetailsList() != null)
-            sb.append("CodeDeliveryDetailsList: " + getCodeDeliveryDetailsList());
+            sb.append("CodeDeliveryDetailsList: ").append(getCodeDeliveryDetailsList());
         sb.append("}");
         return sb.toString();
     }

@@ -420,19 +420,19 @@ public class S3DestinationDescription implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleARN() != null)
-            sb.append("RoleARN: " + getRoleARN() + ",");
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getBucketARN() != null)
-            sb.append("BucketARN: " + getBucketARN() + ",");
+            sb.append("BucketARN: ").append(getBucketARN()).append(",");
         if (getPrefix() != null)
-            sb.append("Prefix: " + getPrefix() + ",");
+            sb.append("Prefix: ").append(getPrefix()).append(",");
         if (getBufferingHints() != null)
-            sb.append("BufferingHints: " + getBufferingHints() + ",");
+            sb.append("BufferingHints: ").append(getBufferingHints()).append(",");
         if (getCompressionFormat() != null)
-            sb.append("CompressionFormat: " + getCompressionFormat() + ",");
+            sb.append("CompressionFormat: ").append(getCompressionFormat()).append(",");
         if (getEncryptionConfiguration() != null)
-            sb.append("EncryptionConfiguration: " + getEncryptionConfiguration() + ",");
+            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
-            sb.append("CloudWatchLoggingOptions: " + getCloudWatchLoggingOptions());
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
         sb.append("}");
         return sb.toString();
     }

@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Encloses the id an entry in <a>DeleteMessageBatch</a>.
+ * Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a> </code>.
  * </p>
  */
 public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
@@ -80,7 +80,7 @@ public class DeleteMessageBatchResultEntry implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId());
+            sb.append("Id: ").append(getId());
         sb.append("}");
         return sb.toString();
     }

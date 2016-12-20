@@ -55,6 +55,11 @@ public class ResourceTagSetStaxUnmarshaller implements Unmarshaller<ResourceTagS
                     continue;
                 }
 
+                if (context.testExpression("Tags", targetDepth)) {
+                    resourceTagSet.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     resourceTagSet.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

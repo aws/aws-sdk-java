@@ -60,13 +60,28 @@ public class NetworkAclStaxUnmarshaller implements Unmarshaller<NetworkAcl, Stax
                     continue;
                 }
 
+                if (context.testExpression("entrySet", targetDepth)) {
+                    networkAcl.withEntries(new ArrayList<NetworkAclEntry>());
+                    continue;
+                }
+
                 if (context.testExpression("entrySet/item", targetDepth)) {
                     networkAcl.withEntries(NetworkAclEntryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("associationSet", targetDepth)) {
+                    networkAcl.withAssociations(new ArrayList<NetworkAclAssociation>());
+                    continue;
+                }
+
                 if (context.testExpression("associationSet/item", targetDepth)) {
                     networkAcl.withAssociations(NetworkAclAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    networkAcl.withTags(new ArrayList<Tag>());
                     continue;
                 }
 

@@ -61,14 +61,10 @@ public class TestInvokeAuthorizerRequestMarshaller implements Marshaller<Request
 
         String uriResourcePath = "/restapis/{restapi_id}/authorizers/{authorizer_id}";
 
-        uriResourcePath = uriResourcePath.replace(
-                "{restapi_id}",
-                (testInvokeAuthorizerRequest.getRestApiId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(testInvokeAuthorizerRequest.getRestApiId()), false) : "");
-        uriResourcePath = uriResourcePath.replace(
-                "{authorizer_id}",
-                (testInvokeAuthorizerRequest.getAuthorizerId() != null) ? SdkHttpUtils.urlEncode(
-                        StringUtils.fromString(testInvokeAuthorizerRequest.getAuthorizerId()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
+                .marshall(uriResourcePath, "restapi_id", testInvokeAuthorizerRequest.getRestApiId());
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "authorizer_id",
+                testInvokeAuthorizerRequest.getAuthorizerId());
         request.setResourcePath(uriResourcePath);
 
         try {

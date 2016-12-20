@@ -126,9 +126,9 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDBClusterOptionGroupName() != null)
-            sb.append("DBClusterOptionGroupName: " + getDBClusterOptionGroupName() + ",");
+            sb.append("DBClusterOptionGroupName: ").append(getDBClusterOptionGroupName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus());
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }

@@ -163,9 +163,9 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetAttributes() != null)
-            sb.append("FleetAttributes: " + getFleetAttributes() + ",");
+            sb.append("FleetAttributes: ").append(getFleetAttributes()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }

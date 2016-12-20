@@ -863,33 +863,33 @@ public class Service implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServiceArn() != null)
-            sb.append("ServiceArn: " + getServiceArn() + ",");
+            sb.append("ServiceArn: ").append(getServiceArn()).append(",");
         if (getServiceName() != null)
-            sb.append("ServiceName: " + getServiceName() + ",");
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
         if (getClusterArn() != null)
-            sb.append("ClusterArn: " + getClusterArn() + ",");
+            sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getLoadBalancers() != null)
-            sb.append("LoadBalancers: " + getLoadBalancers() + ",");
+            sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getDesiredCount() != null)
-            sb.append("DesiredCount: " + getDesiredCount() + ",");
+            sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getRunningCount() != null)
-            sb.append("RunningCount: " + getRunningCount() + ",");
+            sb.append("RunningCount: ").append(getRunningCount()).append(",");
         if (getPendingCount() != null)
-            sb.append("PendingCount: " + getPendingCount() + ",");
+            sb.append("PendingCount: ").append(getPendingCount()).append(",");
         if (getTaskDefinition() != null)
-            sb.append("TaskDefinition: " + getTaskDefinition() + ",");
+            sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getDeploymentConfiguration() != null)
-            sb.append("DeploymentConfiguration: " + getDeploymentConfiguration() + ",");
+            sb.append("DeploymentConfiguration: ").append(getDeploymentConfiguration()).append(",");
         if (getDeployments() != null)
-            sb.append("Deployments: " + getDeployments() + ",");
+            sb.append("Deployments: ").append(getDeployments()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getEvents() != null)
-            sb.append("Events: " + getEvents() + ",");
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt());
         sb.append("}");
         return sb.toString();
     }

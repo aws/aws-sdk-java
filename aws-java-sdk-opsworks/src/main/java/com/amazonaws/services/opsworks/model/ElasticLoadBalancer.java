@@ -547,23 +547,23 @@ public class ElasticLoadBalancer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElasticLoadBalancerName() != null)
-            sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");
+            sb.append("ElasticLoadBalancerName: ").append(getElasticLoadBalancerName()).append(",");
         if (getRegion() != null)
-            sb.append("Region: " + getRegion() + ",");
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getDnsName() != null)
-            sb.append("DnsName: " + getDnsName() + ",");
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getStackId() != null)
-            sb.append("StackId: " + getStackId() + ",");
+            sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerId() != null)
-            sb.append("LayerId: " + getLayerId() + ",");
+            sb.append("LayerId: ").append(getLayerId()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: " + getVpcId() + ",");
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getSubnetIds() != null)
-            sb.append("SubnetIds: " + getSubnetIds() + ",");
+            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getEc2InstanceIds() != null)
-            sb.append("Ec2InstanceIds: " + getEc2InstanceIds());
+            sb.append("Ec2InstanceIds: ").append(getEc2InstanceIds());
         sb.append("}");
         return sb.toString();
     }

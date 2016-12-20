@@ -61,8 +61,7 @@ public class DeleteApiKeyRequestMarshaller implements Marshaller<Request<DeleteA
 
         String uriResourcePath = "/apikeys/{api_Key}";
 
-        uriResourcePath = uriResourcePath.replace("{api_Key}",
-                (deleteApiKeyRequest.getApiKey() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(deleteApiKeyRequest.getApiKey()), false) : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "api_Key", deleteApiKeyRequest.getApiKey());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

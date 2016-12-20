@@ -61,9 +61,7 @@ public class EnableTopicRuleRequestMarshaller implements Marshaller<Request<Enab
 
         String uriResourcePath = "/rules/{ruleName}/enable";
 
-        uriResourcePath = uriResourcePath.replace("{ruleName}",
-                (enableTopicRuleRequest.getRuleName() != null) ? SdkHttpUtils.urlEncode(StringUtils.fromString(enableTopicRuleRequest.getRuleName()), false)
-                        : "");
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", enableTopicRuleRequest.getRuleName());
         request.setResourcePath(uriResourcePath);
 
         request.setContent(new ByteArrayInputStream(new byte[0]));

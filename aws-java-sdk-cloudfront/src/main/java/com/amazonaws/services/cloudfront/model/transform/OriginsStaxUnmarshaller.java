@@ -50,6 +50,11 @@ public class OriginsStaxUnmarshaller implements Unmarshaller<Origins, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("Items", targetDepth)) {
+                    origins.withItems(new ArrayList<Origin>());
+                    continue;
+                }
+
                 if (context.testExpression("Items/Origin", targetDepth)) {
                     origins.withItems(OriginStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

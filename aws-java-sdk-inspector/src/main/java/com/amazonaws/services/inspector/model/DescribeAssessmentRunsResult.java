@@ -175,9 +175,9 @@ public class DescribeAssessmentRunsResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRuns() != null)
-            sb.append("AssessmentRuns: " + getAssessmentRuns() + ",");
+            sb.append("AssessmentRuns: ").append(getAssessmentRuns()).append(",");
         if (getFailedItems() != null)
-            sb.append("FailedItems: " + getFailedItems());
+            sb.append("FailedItems: ").append(getFailedItems());
         sb.append("}");
         return sb.toString();
     }

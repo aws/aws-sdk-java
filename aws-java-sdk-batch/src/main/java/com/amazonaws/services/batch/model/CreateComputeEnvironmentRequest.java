@@ -361,15 +361,15 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getComputeEnvironmentName() != null)
-            sb.append("ComputeEnvironmentName: " + getComputeEnvironmentName() + ",");
+            sb.append("ComputeEnvironmentName: ").append(getComputeEnvironmentName()).append(",");
         if (getType() != null)
-            sb.append("Type: " + getType() + ",");
+            sb.append("Type: ").append(getType()).append(",");
         if (getState() != null)
-            sb.append("State: " + getState() + ",");
+            sb.append("State: ").append(getState()).append(",");
         if (getComputeResources() != null)
-            sb.append("ComputeResources: " + getComputeResources() + ",");
+            sb.append("ComputeResources: ").append(getComputeResources()).append(",");
         if (getServiceRole() != null)
-            sb.append("ServiceRole: " + getServiceRole());
+            sb.append("ServiceRole: ").append(getServiceRole());
         sb.append("}");
         return sb.toString();
     }

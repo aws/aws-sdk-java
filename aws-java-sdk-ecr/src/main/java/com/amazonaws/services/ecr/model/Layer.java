@@ -210,11 +210,11 @@ public class Layer implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLayerDigest() != null)
-            sb.append("LayerDigest: " + getLayerDigest() + ",");
+            sb.append("LayerDigest: ").append(getLayerDigest()).append(",");
         if (getLayerAvailability() != null)
-            sb.append("LayerAvailability: " + getLayerAvailability() + ",");
+            sb.append("LayerAvailability: ").append(getLayerAvailability()).append(",");
         if (getLayerSize() != null)
-            sb.append("LayerSize: " + getLayerSize());
+            sb.append("LayerSize: ").append(getLayerSize());
         sb.append("}");
         return sb.toString();
     }

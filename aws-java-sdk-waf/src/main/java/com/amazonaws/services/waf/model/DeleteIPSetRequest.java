@@ -132,9 +132,9 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIPSetId() != null)
-            sb.append("IPSetId: " + getIPSetId() + ",");
+            sb.append("IPSetId: ").append(getIPSetId()).append(",");
         if (getChangeToken() != null)
-            sb.append("ChangeToken: " + getChangeToken());
+            sb.append("ChangeToken: ").append(getChangeToken());
         sb.append("}");
         return sb.toString();
     }

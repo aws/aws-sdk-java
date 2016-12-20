@@ -510,23 +510,23 @@ public class StaticIp implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: " + getArn() + ",");
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getSupportCode() != null)
-            sb.append("SupportCode: " + getSupportCode() + ",");
+            sb.append("SupportCode: ").append(getSupportCode()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: " + getCreatedAt() + ",");
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLocation() != null)
-            sb.append("Location: " + getLocation() + ",");
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: " + getResourceType() + ",");
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getIpAddress() != null)
-            sb.append("IpAddress: " + getIpAddress() + ",");
+            sb.append("IpAddress: ").append(getIpAddress()).append(",");
         if (getAttachedTo() != null)
-            sb.append("AttachedTo: " + getAttachedTo() + ",");
+            sb.append("AttachedTo: ").append(getAttachedTo()).append(",");
         if (getIsAttached() != null)
-            sb.append("IsAttached: " + getIsAttached());
+            sb.append("IsAttached: ").append(getIsAttached());
         sb.append("}");
         return sb.toString();
     }

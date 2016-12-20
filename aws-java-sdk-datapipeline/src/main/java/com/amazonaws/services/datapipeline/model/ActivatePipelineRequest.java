@@ -209,11 +209,11 @@ public class ActivatePipelineRequest extends com.amazonaws.AmazonWebServiceReque
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineId() != null)
-            sb.append("PipelineId: " + getPipelineId() + ",");
+            sb.append("PipelineId: ").append(getPipelineId()).append(",");
         if (getParameterValues() != null)
-            sb.append("ParameterValues: " + getParameterValues() + ",");
+            sb.append("ParameterValues: ").append(getParameterValues()).append(",");
         if (getStartTimestamp() != null)
-            sb.append("StartTimestamp: " + getStartTimestamp());
+            sb.append("StartTimestamp: ").append(getStartTimestamp());
         sb.append("}");
         return sb.toString();
     }

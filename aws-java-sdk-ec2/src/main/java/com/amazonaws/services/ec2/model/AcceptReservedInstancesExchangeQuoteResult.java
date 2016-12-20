@@ -82,7 +82,7 @@ public class AcceptReservedInstancesExchangeQuoteResult extends com.amazonaws.Am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getExchangeId() != null)
-            sb.append("ExchangeId: " + getExchangeId());
+            sb.append("ExchangeId: ").append(getExchangeId());
         sb.append("}");
         return sb.toString();
     }

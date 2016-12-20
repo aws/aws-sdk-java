@@ -218,13 +218,13 @@ public class CloudwatchAlarmAction implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRoleArn() != null)
-            sb.append("RoleArn: " + getRoleArn() + ",");
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getAlarmName() != null)
-            sb.append("AlarmName: " + getAlarmName() + ",");
+            sb.append("AlarmName: ").append(getAlarmName()).append(",");
         if (getStateReason() != null)
-            sb.append("StateReason: " + getStateReason() + ",");
+            sb.append("StateReason: ").append(getStateReason()).append(",");
         if (getStateValue() != null)
-            sb.append("StateValue: " + getStateValue());
+            sb.append("StateValue: ").append(getStateValue());
         sb.append("}");
         return sb.toString();
     }

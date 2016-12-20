@@ -490,15 +490,15 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getGameSessionId() != null)
-            sb.append("GameSessionId: " + getGameSessionId() + ",");
+            sb.append("GameSessionId: ").append(getGameSessionId()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: " + getMaximumPlayerSessionCount() + ",");
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount()).append(",");
         if (getName() != null)
-            sb.append("Name: " + getName() + ",");
+            sb.append("Name: ").append(getName()).append(",");
         if (getPlayerSessionCreationPolicy() != null)
-            sb.append("PlayerSessionCreationPolicy: " + getPlayerSessionCreationPolicy() + ",");
+            sb.append("PlayerSessionCreationPolicy: ").append(getPlayerSessionCreationPolicy()).append(",");
         if (getProtectionPolicy() != null)
-            sb.append("ProtectionPolicy: " + getProtectionPolicy());
+            sb.append("ProtectionPolicy: ").append(getProtectionPolicy());
         sb.append("}");
         return sb.toString();
     }

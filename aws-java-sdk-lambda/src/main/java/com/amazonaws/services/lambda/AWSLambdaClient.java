@@ -344,8 +344,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(addPermissionRequest.getFunctionName()), "FunctionName");
-
         ExecutionContext executionContext = createExecutionContext(addPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -401,8 +399,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(createAliasRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -602,9 +598,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteAliasRequest.getFunctionName()), "FunctionName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteAliasRequest.getName()), "Name");
-
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -658,8 +651,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public DeleteEventSourceMappingResult deleteEventSourceMapping(DeleteEventSourceMappingRequest deleteEventSourceMappingRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteEventSourceMappingRequest.getUUID()), "UUID");
 
         ExecutionContext executionContext = createExecutionContext(deleteEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -728,8 +719,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public DeleteFunctionResult deleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(deleteFunctionRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -834,9 +823,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public GetAliasResult getAlias(GetAliasRequest getAliasRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getAliasRequest.getFunctionName()), "FunctionName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getAliasRequest.getName()), "Name");
-
         ExecutionContext executionContext = createExecutionContext(getAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -889,8 +875,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public GetEventSourceMappingResult getEventSourceMapping(GetEventSourceMappingRequest getEventSourceMappingRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getEventSourceMappingRequest.getUUID()), "UUID");
 
         ExecutionContext executionContext = createExecutionContext(getEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -956,8 +940,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getFunctionRequest.getFunctionName()), "FunctionName");
-
         ExecutionContext executionContext = createExecutionContext(getFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1019,8 +1001,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public GetFunctionConfigurationResult getFunctionConfiguration(GetFunctionConfigurationRequest getFunctionConfigurationRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getFunctionConfigurationRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(getFunctionConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1085,8 +1065,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(getPolicyRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1189,8 +1167,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public InvokeResult invoke(InvokeRequest invokeRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(invokeRequest.getFunctionName()), "FunctionName");
-
         ExecutionContext executionContext = createExecutionContext(invokeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1248,8 +1224,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Deprecated
     public InvokeAsyncResult invokeAsync(InvokeAsyncRequest invokeAsyncRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(invokeAsyncRequest.getFunctionName()), "FunctionName");
-
         ExecutionContext executionContext = createExecutionContext(invokeAsyncRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1304,8 +1278,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listAliasesRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1487,8 +1459,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public ListVersionsByFunctionResult listVersionsByFunction(ListVersionsByFunctionRequest listVersionsByFunctionRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(listVersionsByFunctionRequest.getFunctionName()), "FunctionName");
-
         ExecutionContext executionContext = createExecutionContext(listVersionsByFunctionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1546,8 +1516,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public PublishVersionResult publishVersion(PublishVersionRequest publishVersionRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(publishVersionRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(publishVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1612,9 +1580,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(removePermissionRequest.getFunctionName()), "FunctionName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(removePermissionRequest.getStatementId()), "StatementId");
-
         ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1669,9 +1634,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateAliasRequest.getFunctionName()), "FunctionName");
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateAliasRequest.getName()), "Name");
 
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1741,8 +1703,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public UpdateEventSourceMappingResult updateEventSourceMapping(UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateEventSourceMappingRequest.getUUID()), "UUID");
-
         ExecutionContext executionContext = createExecutionContext(updateEventSourceMappingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1807,8 +1767,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public UpdateFunctionCodeResult updateFunctionCode(UpdateFunctionCodeRequest updateFunctionCodeRequest) {
 
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateFunctionCodeRequest.getFunctionName()), "FunctionName");
-
         ExecutionContext executionContext = createExecutionContext(updateFunctionCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
         awsRequestMetrics.startEvent(Field.ClientExecuteTime);
@@ -1869,8 +1827,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      */
     @Override
     public UpdateFunctionConfigurationResult updateFunctionConfiguration(UpdateFunctionConfigurationRequest updateFunctionConfigurationRequest) {
-
-        ValidationUtils.assertStringNotEmpty(StringUtils.fromString(updateFunctionConfigurationRequest.getFunctionName()), "FunctionName");
 
         ExecutionContext executionContext = createExecutionContext(updateFunctionConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();

@@ -976,27 +976,27 @@ public class ReplicationGroup implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getReplicationGroupId() != null)
-            sb.append("ReplicationGroupId: " + getReplicationGroupId() + ",");
+            sb.append("ReplicationGroupId: ").append(getReplicationGroupId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: " + getDescription() + ",");
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getStatus() != null)
-            sb.append("Status: " + getStatus() + ",");
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getPendingModifiedValues() != null)
-            sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
+            sb.append("PendingModifiedValues: ").append(getPendingModifiedValues()).append(",");
         if (getMemberClusters() != null)
-            sb.append("MemberClusters: " + getMemberClusters() + ",");
+            sb.append("MemberClusters: ").append(getMemberClusters()).append(",");
         if (getNodeGroups() != null)
-            sb.append("NodeGroups: " + getNodeGroups() + ",");
+            sb.append("NodeGroups: ").append(getNodeGroups()).append(",");
         if (getSnapshottingClusterId() != null)
-            sb.append("SnapshottingClusterId: " + getSnapshottingClusterId() + ",");
+            sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailover() != null)
-            sb.append("AutomaticFailover: " + getAutomaticFailover() + ",");
+            sb.append("AutomaticFailover: ").append(getAutomaticFailover()).append(",");
         if (getConfigurationEndpoint() != null)
-            sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ",");
+            sb.append("ConfigurationEndpoint: ").append(getConfigurationEndpoint()).append(",");
         if (getSnapshotRetentionLimit() != null)
-            sb.append("SnapshotRetentionLimit: " + getSnapshotRetentionLimit() + ",");
+            sb.append("SnapshotRetentionLimit: ").append(getSnapshotRetentionLimit()).append(",");
         if (getSnapshotWindow() != null)
-            sb.append("SnapshotWindow: " + getSnapshotWindow());
+            sb.append("SnapshotWindow: ").append(getSnapshotWindow());
         sb.append("}");
         return sb.toString();
     }

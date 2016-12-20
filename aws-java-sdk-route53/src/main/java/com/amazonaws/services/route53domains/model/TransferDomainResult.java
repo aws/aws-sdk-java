@@ -147,7 +147,7 @@ public class TransferDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOperationId() != null)
-            sb.append("OperationId: " + getOperationId());
+            sb.append("OperationId: ").append(getOperationId());
         sb.append("}");
         return sb.toString();
     }

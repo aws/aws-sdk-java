@@ -205,11 +205,11 @@ public class SelectRequest extends com.amazonaws.AmazonWebServiceRequest impleme
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSelectExpression() != null)
-            sb.append("SelectExpression: " + getSelectExpression() + ",");
+            sb.append("SelectExpression: ").append(getSelectExpression()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: " + getNextToken() + ",");
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getConsistentRead() != null)
-            sb.append("ConsistentRead: " + getConsistentRead());
+            sb.append("ConsistentRead: ").append(getConsistentRead());
         sb.append("}");
         return sb.toString();
     }

@@ -630,13 +630,13 @@ public class AudioCodecOptions implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProfile() != null)
-            sb.append("Profile: " + getProfile() + ",");
+            sb.append("Profile: ").append(getProfile()).append(",");
         if (getBitDepth() != null)
-            sb.append("BitDepth: " + getBitDepth() + ",");
+            sb.append("BitDepth: ").append(getBitDepth()).append(",");
         if (getBitOrder() != null)
-            sb.append("BitOrder: " + getBitOrder() + ",");
+            sb.append("BitOrder: ").append(getBitOrder()).append(",");
         if (getSigned() != null)
-            sb.append("Signed: " + getSigned());
+            sb.append("Signed: ").append(getSigned());
         sb.append("}");
         return sb.toString();
     }

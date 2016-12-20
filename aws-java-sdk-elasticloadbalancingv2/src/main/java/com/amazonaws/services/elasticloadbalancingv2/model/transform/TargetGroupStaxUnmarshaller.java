@@ -110,6 +110,11 @@ public class TargetGroupStaxUnmarshaller implements Unmarshaller<TargetGroup, St
                     continue;
                 }
 
+                if (context.testExpression("LoadBalancerArns", targetDepth)) {
+                    targetGroup.withLoadBalancerArns(new ArrayList<String>());
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancerArns/member", targetDepth)) {
                     targetGroup.withLoadBalancerArns(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

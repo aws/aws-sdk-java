@@ -12,9 +12,6 @@
         "location" : "/macros/syncclientclass/common/ClientMethodForOperation.ftl",
         "importAsNamespace" : "ClientMethodForOperation"
       }, {
-        "location" : "/macros/syncclientclass/rest/ClientMethodParametersValidation.ftl",
-        "importAsNamespace" : "ClientMethodParametersValidation"
-      }, {
         "location" : "/macros/syncclientclass/awsquery/ClientInvokeMethodErrorResponseHandlerCreation.ftl",
         "importAsNamespace" : "ClientInvokeMethodErrorResponseHandlerCreation"
       }, {
@@ -110,6 +107,9 @@
         }, {
           "location" : "/macros/marshaller/rest/UriMemberMarshallerMacro.ftl",
           "importAsNamespace" : "UriMemberMarshallerMacro"
+        }, {
+          "location" : "/macros/marshaller/rest/UriGetMemberMarshallerMacro.ftl",
+          "importAsNamespace" : "UriGetMemberMarshallerMacro"
         }, {
           "location" : "/macros/marshaller/rest/QueryStringMemberMarshallerMacro.ftl",
           "importAsNamespace" : "QueryStringMemberMarshallerMacro"

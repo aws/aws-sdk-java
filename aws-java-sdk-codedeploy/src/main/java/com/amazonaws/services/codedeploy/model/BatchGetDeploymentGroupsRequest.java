@@ -160,9 +160,9 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationName() != null)
-            sb.append("ApplicationName: " + getApplicationName() + ",");
+            sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDeploymentGroupNames() != null)
-            sb.append("DeploymentGroupNames: " + getDeploymentGroupNames());
+            sb.append("DeploymentGroupNames: ").append(getDeploymentGroupNames());
         sb.append("}");
         return sb.toString();
     }

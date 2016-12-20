@@ -108,7 +108,7 @@ public class DescribeEntityAggregatesResult extends com.amazonaws.AmazonWebServi
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEntityAggregates() != null)
-            sb.append("EntityAggregates: " + getEntityAggregates());
+            sb.append("EntityAggregates: ").append(getEntityAggregates());
         sb.append("}");
         return sb.toString();
     }

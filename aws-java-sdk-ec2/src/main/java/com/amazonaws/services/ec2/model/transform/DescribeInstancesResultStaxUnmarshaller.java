@@ -45,6 +45,11 @@ public class DescribeInstancesResultStaxUnmarshaller implements Unmarshaller<Des
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("reservationSet", targetDepth)) {
+                    describeInstancesResult.withReservations(new ArrayList<Reservation>());
+                    continue;
+                }
+
                 if (context.testExpression("reservationSet/item", targetDepth)) {
                     describeInstancesResult.withReservations(ReservationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -126,9 +126,9 @@ public class AgentPreview implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAgentId() != null)
-            sb.append("AgentId: " + getAgentId() + ",");
+            sb.append("AgentId: ").append(getAgentId()).append(",");
         if (getAutoScalingGroup() != null)
-            sb.append("AutoScalingGroup: " + getAutoScalingGroup());
+            sb.append("AutoScalingGroup: ").append(getAutoScalingGroup());
         sb.append("}");
         return sb.toString();
     }

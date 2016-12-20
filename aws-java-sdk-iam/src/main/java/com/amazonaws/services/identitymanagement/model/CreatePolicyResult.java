@@ -80,7 +80,7 @@ public class CreatePolicyResult extends com.amazonaws.AmazonWebServiceResult<com
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicy() != null)
-            sb.append("Policy: " + getPolicy());
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }

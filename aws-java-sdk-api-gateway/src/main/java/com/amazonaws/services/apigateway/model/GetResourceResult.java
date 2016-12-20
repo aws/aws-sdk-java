@@ -448,15 +448,15 @@ public class GetResourceResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null)
-            sb.append("Id: " + getId() + ",");
+            sb.append("Id: ").append(getId()).append(",");
         if (getParentId() != null)
-            sb.append("ParentId: " + getParentId() + ",");
+            sb.append("ParentId: ").append(getParentId()).append(",");
         if (getPathPart() != null)
-            sb.append("PathPart: " + getPathPart() + ",");
+            sb.append("PathPart: ").append(getPathPart()).append(",");
         if (getPath() != null)
-            sb.append("Path: " + getPath() + ",");
+            sb.append("Path: ").append(getPath()).append(",");
         if (getResourceMethods() != null)
-            sb.append("ResourceMethods: " + getResourceMethods());
+            sb.append("ResourceMethods: ").append(getResourceMethods());
         sb.append("}");
         return sb.toString();
     }

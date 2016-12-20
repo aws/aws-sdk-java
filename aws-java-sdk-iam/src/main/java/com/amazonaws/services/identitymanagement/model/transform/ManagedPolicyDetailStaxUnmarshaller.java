@@ -95,6 +95,11 @@ public class ManagedPolicyDetailStaxUnmarshaller implements Unmarshaller<Managed
                     continue;
                 }
 
+                if (context.testExpression("PolicyVersionList", targetDepth)) {
+                    managedPolicyDetail.withPolicyVersionList(new ArrayList<PolicyVersion>());
+                    continue;
+                }
+
                 if (context.testExpression("PolicyVersionList/member", targetDepth)) {
                     managedPolicyDetail.withPolicyVersionList(PolicyVersionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
