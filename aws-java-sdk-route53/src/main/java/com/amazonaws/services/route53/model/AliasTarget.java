@@ -80,23 +80,40 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
-     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
-     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     * load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     * <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See
-     * <a>HostedZone$Name</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of <code>DNSName</code>
+     * for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * AWS CLI: Use
      * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     * to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the value of
+     * <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * </ul>
@@ -104,10 +121,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     * information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website Endpoints</a> in
-     * the <i>Amazon Web Services General Reference</i>.
+     * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     * values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
+     * Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -147,23 +163,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code> attribute. For
-     * more information, see <a
+     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * attribute. For more information, see <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      * </p>
@@ -172,8 +188,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by using
-     * the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
+     * <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS name by
+     * using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value
      * from the API or the CLI, creating the resource record set will fail.
      * </p>
@@ -181,24 +197,41 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
-     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
-     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
+     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.) Use the same
+     * process to get the value of the <b>Hosted zone</b> field. See <a>AliasTarget$HostedZoneId</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     * applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * <i>AWS CLI</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     * to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      * </p>
      * </li>
      * </ul>
@@ -206,12 +239,13 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3
-     * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
+     * website endpoint in which you created the bucket, for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
-     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     * buckets for websites, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -371,23 +405,40 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *        select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
-     *        tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     *        select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     *        Use the same process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     *        <a>AliasTarget$DNSName</a>.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *        <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *        <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of
+     *        <code>DNSName</code> for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Classic Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Application Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
      *        AWS CLI: Use
      *        <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *        to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the
+     *        value of <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -395,10 +446,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>An Amazon S3 bucket configured as a static website</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     *        information about valid values, see the table <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website
-     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+     *        Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     *        values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
+     *        Simple Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -434,21 +484,21 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li> <li>
      *        <p>
-     *        <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of
-     *        the <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     *        <code>CNAME</code> attribute. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li> <li>
      *        <p>
-     *        <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code>
-     *        attribute. For more information, see <a
+     *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME
+     *        </code> attribute. For more information, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      *        >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      *        </p>
@@ -456,45 +506,62 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </ul>
      *        </li> <li>
      *        <p>
-     *        <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by
-     *        using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
-     *        <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other
-     *        value from the API or the CLI, creating the resource record set will fail.
+     *        <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS
+     *        name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values
+     *        for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the
+     *        other value from the API or the CLI, creating the resource record set will fail.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
-     *        field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
-     *        <a>HostedZone$Id</a>.
+     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
+     *        field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
+     *        <b>dualstack</b>.) Use the same process to get the value of the <b>Hosted zone</b> field. See
+     *        <a>AliasTarget$HostedZoneId</a>.
      *        </p>
      *        </li> <li>
      *        <p>
-     *        <i>Elastic Load Balancing API</i>: Use <code> <a
-     *        href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     *        >DescribeLoadBalancers</a> </code> to get the value of <code>CanonicalHostedZoneName</code>. Use the same
-     *        process to get the <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     *        <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of <code>
+     *        DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of <code>
+     *        CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     *        applicable guide:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Classic Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li> <li>
+     *        <p>
+     *        Application Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li> <li>
      *        <p>
      *        <i>AWS CLI</i>: Use <code> <a
-     *        href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html"
-     *        >describe-load-balancers</a> </code> to get the value of <code>CanonicalHostedZoneName</code>. Use the
-     *        same process to get the <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     *        href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html"
+     *        >describe-load-balancers</a> </code> to get the value of <code>DNSName</code> and <code>
+     *        CanonicalHostedZoneNameId</code>. (You specify the value of <code>CanonicalHostedZoneNameId</code> for
+     *        <a>AliasTarget$HostedZoneId</a>.)
      *        </p>
      *        </li>
      *        </ul>
      *        </li> <li>
      *        <p>
      *        <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon
-     *        S3 website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com
+     *        S3 website endpoint in which you created the bucket, for example, <code>s3-website-us-east-1.amazonaws.com
      *        </code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
      *        using S3 buckets for websites, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *        Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *        Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *        </p>
      *        </li> <li>
      *        <p>
@@ -542,23 +609,40 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
-     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
-     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     * load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     * <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See
-     * <a>HostedZone$Name</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of <code>DNSName</code>
+     * for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * AWS CLI: Use
      * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     * to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the value of
+     * <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * </ul>
@@ -566,10 +650,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     * information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website Endpoints</a> in
-     * the <i>Amazon Web Services General Reference</i>.
+     * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     * values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
+     * Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -613,23 +696,40 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *        select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
-     *        tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     *        select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     *        Use the same process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     *        <a>AliasTarget$DNSName</a>.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *        <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *        <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of
+     *        <code>DNSName</code> for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Classic Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Application Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
      *        AWS CLI: Use
      *        <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *        to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the
+     *        value of <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -637,10 +737,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>An Amazon S3 bucket configured as a static website</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     *        information about valid values, see the table <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website
-     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+     *        Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     *        values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
+     *        Simple Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -690,23 +789,40 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
-     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
-     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     * load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     * <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See
-     * <a>HostedZone$Name</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of <code>DNSName</code>
+     * for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * AWS CLI: Use
      * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     * to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the value of
+     * <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * </ul>
@@ -714,10 +830,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     * information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website Endpoints</a> in
-     * the <i>Amazon Web Services General Reference</i>.
+     * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     * values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
+     * Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -760,23 +875,40 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *         select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
-     *         tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     *         select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b>
+     *         tab. Use the same process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b>
+     *         for <a>AliasTarget$DNSName</a>.)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     *         <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *         <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *         <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *         <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of
+     *         <code>DNSName</code> for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Classic Load Balancer: <a href=
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *         >DescribeLoadBalancers</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Application Load Balancer: <a href=
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *         >DescribeLoadBalancers</a>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
      *         AWS CLI: Use
      *         <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     *         to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *         <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *         to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the
+     *         value of <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      *         </p>
      *         </li>
      *         </ul>
@@ -784,10 +916,10 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <dt>An Amazon S3 bucket configured as a static website</dt>
      *         <dd>
      *         <p>
-     *         Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     *         information about valid values, see the table <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website
-     *         Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+     *         Specify the hosted zone ID for the region that you created the bucket in. For more information about
+     *         valid values, see the table <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
+     *         Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *         </p>
      *         </dd>
      *         <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -837,23 +969,40 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the
-     * load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same
-     * process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     * load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab. Use the same
+     * process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     * <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See
-     * <a>HostedZone$Name</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of <code>DNSName</code>
+     * for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * AWS CLI: Use
      * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     * to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the value of
+     * <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      * </p>
      * </li>
      * </ul>
@@ -861,10 +1010,9 @@ public class AliasTarget implements Serializable, Cloneable {
      * <dt>An Amazon S3 bucket configured as a static website</dt>
      * <dd>
      * <p>
-     * Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     * information about valid values, see the table <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website Endpoints</a> in
-     * the <i>Amazon Web Services General Reference</i>.
+     * Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     * values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple
+     * Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </dd>
      * <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -908,23 +1056,40 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *        select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b>
-     *        tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
+     *        select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.
+     *        Use the same process to get the value of <b>DNS name</b>. (You specify the value of <b>DNS name</b> for
+     *        <a>AliasTarget$DNSName</a>.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of
-     *        <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *        <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *        <code>CanonicalHostedZoneNameId</code> and <code>DNSName</code>. (You specify the value of
+     *        <code>DNSName</code> for <a>AliasTarget$DNSName</a>.) For more information, see the applicable guide:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Classic Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Application Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
      *        AWS CLI: Use
      *        <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>.
+     *        to get the value of <code>CanonicalHostedZoneNameID</code> and <code>DNSName</code>. (You specify the
+     *        value of <code>DNSName</code> for <a>AliasTarget$DNSName</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -932,10 +1097,9 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <dt>An Amazon S3 bucket configured as a static website</dt>
      *        <dd>
      *        <p>
-     *        Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more
-     *        information about valid values, see the table <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website
-     *        Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+     *        Specify the hosted zone ID for the region that you created the bucket in. For more information about valid
+     *        values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
+     *        Simple Storage Service Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.
      *        </p>
      *        </dd>
      *        <dt>Another Amazon Route 53 resource record set in your hosted zone</dt>
@@ -980,23 +1144,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code> attribute. For
-     * more information, see <a
+     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * attribute. For more information, see <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      * </p>
@@ -1005,8 +1169,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by using
-     * the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
+     * <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS name by
+     * using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value
      * from the API or the CLI, creating the resource record set will fail.
      * </p>
@@ -1014,24 +1178,41 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
-     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
-     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
+     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.) Use the same
+     * process to get the value of the <b>Hosted zone</b> field. See <a>AliasTarget$HostedZoneId</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     * applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * <i>AWS CLI</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     * to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      * </p>
      * </li>
      * </ul>
@@ -1039,12 +1220,13 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3
-     * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
+     * website endpoint in which you created the bucket, for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
-     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     * buckets for websites, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -1082,23 +1264,23 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of
-     *        the <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     *        <code>CNAME</code> attribute. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code>
-     *        attribute. For more information, see <a
+     *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
+     *        <code>CNAME</code> attribute. For more information, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      *        >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      *        </p>
@@ -1107,34 +1289,51 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by
-     *        using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
-     *        <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other
-     *        value from the API or the CLI, creating the resource record set will fail.
+     *        <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS
+     *        name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values
+     *        for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the
+     *        other value from the API or the CLI, creating the resource record set will fail.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
-     *        field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
-     *        <a>HostedZone$Id</a>.
+     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
+     *        field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
+     *        <b>dualstack</b>.) Use the same process to get the value of the <b>Hosted zone</b> field. See
+     *        <a>AliasTarget$HostedZoneId</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Elastic Load Balancing API</i>: Use
-     *        <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     *        <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *        <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     *        <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     *        applicable guide:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Classic Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Application Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
      *        <i>AWS CLI</i>: Use
-     *        <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     *        <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     *        to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the
+     *        value of <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -1142,13 +1341,13 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon
-     *        S3 website endpoint in which you created the bucket; for example,
+     *        S3 website endpoint in which you created the bucket, for example,
      *        <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
      *        using S3 buckets for websites, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *        Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *        Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *        </p>
      *        </li>
      *        <li>
@@ -1190,23 +1389,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code> attribute. For
-     * more information, see <a
+     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * attribute. For more information, see <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      * </p>
@@ -1215,8 +1414,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by using
-     * the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
+     * <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS name by
+     * using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value
      * from the API or the CLI, creating the resource record set will fail.
      * </p>
@@ -1224,24 +1423,41 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
-     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
-     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
+     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.) Use the same
+     * process to get the value of the <b>Hosted zone</b> field. See <a>AliasTarget$HostedZoneId</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     * applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * <i>AWS CLI</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     * to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      * </p>
      * </li>
      * </ul>
@@ -1249,12 +1465,13 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3
-     * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
+     * website endpoint in which you created the bucket, for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
-     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     * buckets for websites, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -1291,23 +1508,23 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     *         <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *         AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of
-     *         the <code>CNAME</code> attribute. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     *         <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     *         <code>CNAME</code> attribute. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *         >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code>
-     *         attribute. For more information, see <a
+     *         <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
+     *         <code>CNAME</code> attribute. For more information, see <a
      *         href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      *         >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      *         </p>
@@ -1316,34 +1533,51 @@ public class AliasTarget implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by
-     *         using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
-     *         <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other
-     *         value from the API or the CLI, creating the resource record set will fail.
+     *         <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS
+     *         name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values
+     *         for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the
+     *         other value from the API or the CLI, creating the resource record set will fail.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *         choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
-     *         field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
-     *         <a>HostedZone$Id</a>.
+     *         choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
+     *         field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
+     *         <b>dualstack</b>.) Use the same process to get the value of the <b>Hosted zone</b> field. See
+     *         <a>AliasTarget$HostedZoneId</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>Elastic Load Balancing API</i>: Use
-     *         <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     *         to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     *         <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     *         <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *         <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     *         <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see
+     *         the applicable guide:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Classic Load Balancer: <a href=
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *         >DescribeLoadBalancers</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Application Load Balancer: <a href=
+     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *         >DescribeLoadBalancers</a>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
      *         <i>AWS CLI</i>: Use
-     *         <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     *         to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     *         <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     *         <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     *         to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the
+     *         value of <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      *         </p>
      *         </li>
      *         </ul>
@@ -1351,13 +1585,13 @@ public class AliasTarget implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon
-     *         S3 website endpoint in which you created the bucket; for example,
+     *         S3 website endpoint in which you created the bucket, for example,
      *         <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table
      *         <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *         (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information
      *         about using S3 buckets for websites, see <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *         Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *         Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1399,23 +1633,23 @@ public class AliasTarget implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     * <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS
      * Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     * <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
      * <code>CNAME</code> attribute. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      * >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code> attribute. For
-     * more information, see <a
+     * <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code>
+     * attribute. For more information, see <a
      * href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      * >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      * </p>
@@ -1424,8 +1658,8 @@ public class AliasTarget implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by using
-     * the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
+     * <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS name by
+     * using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
      * <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value
      * from the API or the CLI, creating the resource record set will fail.
      * </p>
@@ -1433,24 +1667,41 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the
-     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with
-     * dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
+     * load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. (If you're
+     * routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.) Use the same
+     * process to get the value of the <b>Hosted zone</b> field. See <a>AliasTarget$HostedZoneId</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>Elastic Load Balancing API</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     * <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     * <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     * applicable guide:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Classic Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Application Load Balancer: <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     * >DescribeLoadBalancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
      * <i>AWS CLI</i>: Use
-     * <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     * to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     * <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     * <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     * to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     * <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      * </p>
      * </li>
      * </ul>
@@ -1458,12 +1709,13 @@ public class AliasTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3
-     * website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>.
+     * website endpoint in which you created the bucket, for example, <code>s3-website-us-east-1.amazonaws.com</code>.
      * For more information about valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3)
      * Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3
-     * buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a
-     * Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     * buckets for websites, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon
+     * Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      * </p>
      * </li>
      * <li>
@@ -1501,23 +1753,23 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a
+     *        <i>AWS Management Console</i>: For information about how to get the value by using the console, see <a
      *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with
      *        AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of
-     *        the <code>CNAME</code> attribute. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html"
+     *        <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the
+     *        <code>CNAME</code> attribute. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html"
      *        >DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code>
-     *        attribute. For more information, see <a
+     *        <i>AWS CLI</i>: Use the <code>describe-environments</code> command to get the value of the
+     *        <code>CNAME</code> attribute. For more information, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html"
      *        >describe-environments</a> in the <i>AWS Command Line Interface Reference</i>.
      *        </p>
@@ -1526,34 +1778,51 @@ public class AliasTarget implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by
-     *        using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for
-     *        <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other
-     *        value from the API or the CLI, creating the resource record set will fail.
+     *        <b>An ELB load balancer:</b> Specify the DNS name that is associated with the load balancer. Get the DNS
+     *        name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values
+     *        for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the
+     *        other value from the API or the CLI, creating the resource record set will fail.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane,
-     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b>
-     *        field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See
-     *        <a>HostedZone$Id</a>.
+     *        choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b>
+     *        field. (If you're routing traffic to a Classic Load Balancer, get the value that begins with
+     *        <b>dualstack</b>.) Use the same process to get the value of the <b>Hosted zone</b> field. See
+     *        <a>AliasTarget$HostedZoneId</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>Elastic Load Balancing API</i>: Use
-     *        <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>.
+     *        <i>Elastic Load Balancing API</i>: Use <code>DescribeLoadBalancers</code> to get the value of
+     *        <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the value of
+     *        <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.) For more information, see the
+     *        applicable guide:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Classic Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Application Load Balancer: <a href=
+     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html"
+     *        >DescribeLoadBalancers</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
      *        <i>AWS CLI</i>: Use
-     *        <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code>
-     *        to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the
-     *        <code>CanonicalHostedZoneNameId</code>. See HostedZoneId.
+     *        <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code>
+     *        to get the value of <code>DNSName</code> and <code>CanonicalHostedZoneNameId</code>. (You specify the
+     *        value of <code>CanonicalHostedZoneNameId</code> for <a>AliasTarget$HostedZoneId</a>.)
      *        </p>
      *        </li>
      *        </ul>
@@ -1561,13 +1830,13 @@ public class AliasTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon
-     *        S3 website endpoint in which you created the bucket; for example,
+     *        S3 website endpoint in which you created the bucket, for example,
      *        <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service
      *        (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about
      *        using S3 buckets for websites, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on
-     *        Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with
+     *        Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i>
      *        </p>
      *        </li>
      *        <li>

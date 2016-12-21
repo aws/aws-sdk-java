@@ -55,6 +55,10 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                     context.nextToken();
                     tapeArchive.setTapeBarcode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TapeCreatedDate", targetDepth)) {
+                    context.nextToken();
+                    tapeArchive.setTapeCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("TapeSizeInBytes", targetDepth)) {
                     context.nextToken();
                     tapeArchive.setTapeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));

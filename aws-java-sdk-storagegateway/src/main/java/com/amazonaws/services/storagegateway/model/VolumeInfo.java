@@ -59,7 +59,7 @@ public class VolumeInfo implements Serializable, Cloneable {
     private String volumeType;
     /**
      * <p>
-     * The size, in bytes, of the volume.
+     * The size of the volume in bytes.
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
@@ -316,14 +316,14 @@ public class VolumeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the volume.
+     * The size of the volume in bytes.
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
      * </p>
      * 
      * @param volumeSizeInBytes
-     *        The size, in bytes, of the volume.</p>
+     *        The size of the volume in bytes.</p>
      *        <p>
      *        Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
      */
@@ -334,13 +334,13 @@ public class VolumeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the volume.
+     * The size of the volume in bytes.
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
      * </p>
      * 
-     * @return The size, in bytes, of the volume.</p>
+     * @return The size of the volume in bytes.</p>
      *         <p>
      *         Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
      */
@@ -351,14 +351,14 @@ public class VolumeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The size, in bytes, of the volume.
+     * The size of the volume in bytes.
      * </p>
      * <p>
      * Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
      * </p>
      * 
      * @param volumeSizeInBytes
-     *        The size, in bytes, of the volume.</p>
+     *        The size of the volume in bytes.</p>
      *        <p>
      *        Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).
      * @return Returns a reference to this object so that method calls can be chained together.

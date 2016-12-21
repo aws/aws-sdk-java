@@ -28,8 +28,9 @@ public class BufferingHints implements Serializable, Cloneable {
      * 5.
      * </p>
      * <p>
-     * We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery
-     * stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
      * </p>
      */
     private Integer sizeInMBs;
@@ -47,17 +48,18 @@ public class BufferingHints implements Serializable, Cloneable {
      * 5.
      * </p>
      * <p>
-     * We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery
-     * stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
      * </p>
      * 
      * @param sizeInMBs
      *        Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
      *        value is 5.</p>
      *        <p>
-     *        We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the
-     *        delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be
-     *        10 MB or higher.
+     *        We recommend setting this parameter to a value greater than the amount of data you typically ingest into
+     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should
+     *        be 10 MB or higher.
      */
 
     public void setSizeInMBs(Integer sizeInMBs) {
@@ -70,16 +72,17 @@ public class BufferingHints implements Serializable, Cloneable {
      * 5.
      * </p>
      * <p>
-     * We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery
-     * stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
      * </p>
      * 
      * @return Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
      *         value is 5.</p>
      *         <p>
-     *         We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the
-     *         delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be
-     *         10 MB or higher.
+     *         We recommend setting this parameter to a value greater than the amount of data you typically ingest into
+     *         the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value
+     *         should be 10 MB or higher.
      */
 
     public Integer getSizeInMBs() {
@@ -92,17 +95,18 @@ public class BufferingHints implements Serializable, Cloneable {
      * 5.
      * </p>
      * <p>
-     * We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the delivery
-     * stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be 10 MB or higher.
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
      * </p>
      * 
      * @param sizeInMBs
      *        Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
      *        value is 5.</p>
      *        <p>
-     *        We recommend setting SizeInMBs to a value greater than the amount of data you typically ingest into the
-     *        delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec set SizeInMBs to be
-     *        10 MB or higher.
+     *        We recommend setting this parameter to a value greater than the amount of data you typically ingest into
+     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should
+     *        be 10 MB or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

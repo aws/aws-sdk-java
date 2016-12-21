@@ -34,29 +34,32 @@ import com.amazonaws.annotation.ThreadSafe;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
- * Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
+ * <a href=
+ * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
- * Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic describes how
- * sign such a request.
+ * <a href=
+ * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
+ * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error Responses</a>:
- * Provides reference information about AWS Storage Gateway errors.
+ * <a
+ * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
+ * Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
- * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request
- * parameters, response elements, possible errors, and examples of requests and responses.
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
+ * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
+ * elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
@@ -539,6 +542,38 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(CreateNFSFileShareRequest request) {
+
+        return createNFSFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(final CreateNFSFileShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNFSFileShareRequest, CreateNFSFileShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNFSFileShareResult>() {
+            @Override
+            public CreateNFSFileShareResult call() throws Exception {
+                CreateNFSFileShareResult result;
+
+                try {
+                    result = createNFSFileShare(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request) {
 
         return createSnapshotAsync(request, null);
@@ -749,6 +784,38 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = deleteChapCredentials(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileShareResult> deleteFileShareAsync(DeleteFileShareRequest request) {
+
+        return deleteFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileShareResult> deleteFileShareAsync(final DeleteFileShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFileShareRequest, DeleteFileShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFileShareResult>() {
+            @Override
+            public DeleteFileShareResult call() throws Exception {
+                DeleteFileShareResult result;
+
+                try {
+                    result = deleteFileShare(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1117,6 +1184,38 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNFSFileSharesResult> describeNFSFileSharesAsync(DescribeNFSFileSharesRequest request) {
+
+        return describeNFSFileSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNFSFileSharesResult> describeNFSFileSharesAsync(final DescribeNFSFileSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeNFSFileSharesRequest, DescribeNFSFileSharesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeNFSFileSharesResult>() {
+            @Override
+            public DescribeNFSFileSharesResult call() throws Exception {
+                DescribeNFSFileSharesResult result;
+
+                try {
+                    result = describeNFSFileShares(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotScheduleResult> describeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request) {
 
         return describeSnapshotScheduleAsync(request, null);
@@ -1411,6 +1510,38 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = disableGateway(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest request) {
+
+        return listFileSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(final ListFileSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFileSharesRequest, ListFileSharesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFileSharesResult>() {
+            @Override
+            public ListFileSharesResult call() throws Exception {
+                ListFileSharesResult result;
+
+                try {
+                    result = listFileShares(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2085,6 +2216,38 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = updateMaintenanceStartTime(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(UpdateNFSFileShareRequest request) {
+
+        return updateNFSFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(final UpdateNFSFileShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNFSFileShareRequest, UpdateNFSFileShareResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNFSFileShareResult>() {
+            @Override
+            public UpdateNFSFileShareResult call() throws Exception {
+                UpdateNFSFileShareResult result;
+
+                try {
+                    result = updateNFSFileShare(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

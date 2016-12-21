@@ -72,6 +72,10 @@ public class UpdateDestinationRequestMarshaller implements Marshaller<Request<Up
                 jsonGenerator.writeFieldName("S3DestinationUpdate");
                 S3DestinationUpdateJsonMarshaller.getInstance().marshall(updateDestinationRequest.getS3DestinationUpdate(), jsonGenerator);
             }
+            if (updateDestinationRequest.getExtendedS3DestinationUpdate() != null) {
+                jsonGenerator.writeFieldName("ExtendedS3DestinationUpdate");
+                ExtendedS3DestinationUpdateJsonMarshaller.getInstance().marshall(updateDestinationRequest.getExtendedS3DestinationUpdate(), jsonGenerator);
+            }
             if (updateDestinationRequest.getRedshiftDestinationUpdate() != null) {
                 jsonGenerator.writeFieldName("RedshiftDestinationUpdate");
                 RedshiftDestinationUpdateJsonMarshaller.getInstance().marshall(updateDestinationRequest.getRedshiftDestinationUpdate(), jsonGenerator);

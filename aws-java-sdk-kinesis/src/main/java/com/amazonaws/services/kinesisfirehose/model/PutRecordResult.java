@@ -15,9 +15,7 @@ package com.amazonaws.services.kinesisfirehose.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Contains the output of <a>PutRecord</a>.
- * </p>
+ * 
  */
 public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

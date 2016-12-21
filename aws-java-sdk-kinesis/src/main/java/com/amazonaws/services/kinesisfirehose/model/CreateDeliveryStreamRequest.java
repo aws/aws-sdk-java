@@ -16,47 +16,52 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for <a>CreateDeliveryStream</a>.
- * </p>
+ * 
  */
 public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the delivery stream.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
+     * multiple delivery streams with the same name if they are in different accounts or different regions.
      * </p>
      */
     private String deliveryStreamName;
     /**
      * <p>
-     * The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
+     * [Deprecated] The destination in Amazon S3. You can specify only one destination.
      * </p>
      */
+    @Deprecated
     private S3DestinationConfiguration s3DestinationConfiguration;
     /**
      * <p>
-     * The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is the
-     * desired destination (see restrictions listed above).
+     * The destination in Amazon S3. You can specify only one destination.
+     * </p>
+     */
+    private ExtendedS3DestinationConfiguration extendedS3DestinationConfiguration;
+    /**
+     * <p>
+     * The destination in Amazon Redshift. You can specify only one destination.
      * </p>
      */
     private RedshiftDestinationConfiguration redshiftDestinationConfiguration;
     /**
      * <p>
-     * The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the desired
-     * destination (see restrictions listed above).
+     * The destination in Amazon ES. You can specify only one destination.
      * </p>
      */
     private ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration;
 
     /**
      * <p>
-     * The name of the delivery stream.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
+     * multiple delivery streams with the same name if they are in different accounts or different regions.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream.
+     *        The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
+     *        multiple delivery streams with the same name if they are in different accounts or different regions.
      */
 
     public void setDeliveryStreamName(String deliveryStreamName) {
@@ -65,10 +70,12 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
+     * multiple delivery streams with the same name if they are in different accounts or different regions.
      * </p>
      * 
-     * @return The name of the delivery stream.
+     * @return The name of the delivery stream. This name must be unique per AWS account in the same region. You can
+     *         have multiple delivery streams with the same name if they are in different accounts or different regions.
      */
 
     public String getDeliveryStreamName() {
@@ -77,11 +84,13 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
+     * multiple delivery streams with the same name if they are in different accounts or different regions.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream.
+     *        The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
+     *        multiple delivery streams with the same name if they are in different accounts or different regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,46 +101,39 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
+     * [Deprecated] The destination in Amazon S3. You can specify only one destination.
      * </p>
      * 
      * @param s3DestinationConfiguration
-     *        The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b>
-     *        or <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
+     *        [Deprecated] The destination in Amazon S3. You can specify only one destination.
      */
-
+    @Deprecated
     public void setS3DestinationConfiguration(S3DestinationConfiguration s3DestinationConfiguration) {
         this.s3DestinationConfiguration = s3DestinationConfiguration;
     }
 
     /**
      * <p>
-     * The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
+     * [Deprecated] The destination in Amazon S3. You can specify only one destination.
      * </p>
      * 
-     * @return The destination in Amazon S3. This value must be specified if
-     *         <b>ElasticsearchDestinationConfiguration</b> or <b>RedshiftDestinationConfiguration</b> is specified (see
-     *         restrictions listed above).
+     * @return [Deprecated] The destination in Amazon S3. You can specify only one destination.
      */
-
+    @Deprecated
     public S3DestinationConfiguration getS3DestinationConfiguration() {
         return this.s3DestinationConfiguration;
     }
 
     /**
      * <p>
-     * The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b> or
-     * <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
+     * [Deprecated] The destination in Amazon S3. You can specify only one destination.
      * </p>
      * 
      * @param s3DestinationConfiguration
-     *        The destination in Amazon S3. This value must be specified if <b>ElasticsearchDestinationConfiguration</b>
-     *        or <b>RedshiftDestinationConfiguration</b> is specified (see restrictions listed above).
+     *        [Deprecated] The destination in Amazon S3. You can specify only one destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CreateDeliveryStreamRequest withS3DestinationConfiguration(S3DestinationConfiguration s3DestinationConfiguration) {
         setS3DestinationConfiguration(s3DestinationConfiguration);
         return this;
@@ -139,13 +141,51 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is the
-     * desired destination (see restrictions listed above).
+     * The destination in Amazon S3. You can specify only one destination.
+     * </p>
+     * 
+     * @param extendedS3DestinationConfiguration
+     *        The destination in Amazon S3. You can specify only one destination.
+     */
+
+    public void setExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration extendedS3DestinationConfiguration) {
+        this.extendedS3DestinationConfiguration = extendedS3DestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in Amazon S3. You can specify only one destination.
+     * </p>
+     * 
+     * @return The destination in Amazon S3. You can specify only one destination.
+     */
+
+    public ExtendedS3DestinationConfiguration getExtendedS3DestinationConfiguration() {
+        return this.extendedS3DestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in Amazon S3. You can specify only one destination.
+     * </p>
+     * 
+     * @param extendedS3DestinationConfiguration
+     *        The destination in Amazon S3. You can specify only one destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withExtendedS3DestinationConfiguration(ExtendedS3DestinationConfiguration extendedS3DestinationConfiguration) {
+        setExtendedS3DestinationConfiguration(extendedS3DestinationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination in Amazon Redshift. You can specify only one destination.
      * </p>
      * 
      * @param redshiftDestinationConfiguration
-     *        The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is
-     *        the desired destination (see restrictions listed above).
+     *        The destination in Amazon Redshift. You can specify only one destination.
      */
 
     public void setRedshiftDestinationConfiguration(RedshiftDestinationConfiguration redshiftDestinationConfiguration) {
@@ -154,12 +194,10 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is the
-     * desired destination (see restrictions listed above).
+     * The destination in Amazon Redshift. You can specify only one destination.
      * </p>
      * 
-     * @return The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch
-     *         is the desired destination (see restrictions listed above).
+     * @return The destination in Amazon Redshift. You can specify only one destination.
      */
 
     public RedshiftDestinationConfiguration getRedshiftDestinationConfiguration() {
@@ -168,13 +206,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is the
-     * desired destination (see restrictions listed above).
+     * The destination in Amazon Redshift. You can specify only one destination.
      * </p>
      * 
      * @param redshiftDestinationConfiguration
-     *        The destination in Amazon Redshift. This value cannot be specified if Amazon S3 or Amazon Elasticsearch is
-     *        the desired destination (see restrictions listed above).
+     *        The destination in Amazon Redshift. You can specify only one destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,13 +221,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the desired
-     * destination (see restrictions listed above).
+     * The destination in Amazon ES. You can specify only one destination.
      * </p>
      * 
      * @param elasticsearchDestinationConfiguration
-     *        The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the
-     *        desired destination (see restrictions listed above).
+     *        The destination in Amazon ES. You can specify only one destination.
      */
 
     public void setElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration) {
@@ -200,12 +234,10 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the desired
-     * destination (see restrictions listed above).
+     * The destination in Amazon ES. You can specify only one destination.
      * </p>
      * 
-     * @return The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the
-     *         desired destination (see restrictions listed above).
+     * @return The destination in Amazon ES. You can specify only one destination.
      */
 
     public ElasticsearchDestinationConfiguration getElasticsearchDestinationConfiguration() {
@@ -214,13 +246,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the desired
-     * destination (see restrictions listed above).
+     * The destination in Amazon ES. You can specify only one destination.
      * </p>
      * 
      * @param elasticsearchDestinationConfiguration
-     *        The destination in Amazon ES. This value cannot be specified if Amazon S3 or Amazon Redshift is the
-     *        desired destination (see restrictions listed above).
+     *        The destination in Amazon ES. You can specify only one destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,6 +274,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
         if (getS3DestinationConfiguration() != null)
             sb.append("S3DestinationConfiguration: ").append(getS3DestinationConfiguration()).append(",");
+        if (getExtendedS3DestinationConfiguration() != null)
+            sb.append("ExtendedS3DestinationConfiguration: ").append(getExtendedS3DestinationConfiguration()).append(",");
         if (getRedshiftDestinationConfiguration() != null)
             sb.append("RedshiftDestinationConfiguration: ").append(getRedshiftDestinationConfiguration()).append(",");
         if (getElasticsearchDestinationConfiguration() != null)
@@ -270,6 +302,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getS3DestinationConfiguration() != null && other.getS3DestinationConfiguration().equals(this.getS3DestinationConfiguration()) == false)
             return false;
+        if (other.getExtendedS3DestinationConfiguration() == null ^ this.getExtendedS3DestinationConfiguration() == null)
+            return false;
+        if (other.getExtendedS3DestinationConfiguration() != null
+                && other.getExtendedS3DestinationConfiguration().equals(this.getExtendedS3DestinationConfiguration()) == false)
+            return false;
         if (other.getRedshiftDestinationConfiguration() == null ^ this.getRedshiftDestinationConfiguration() == null)
             return false;
         if (other.getRedshiftDestinationConfiguration() != null
@@ -290,6 +327,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
         hashCode = prime * hashCode + ((getS3DestinationConfiguration() == null) ? 0 : getS3DestinationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExtendedS3DestinationConfiguration() == null) ? 0 : getExtendedS3DestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDestinationConfiguration() == null) ? 0 : getRedshiftDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationConfiguration() == null) ? 0 : getElasticsearchDestinationConfiguration().hashCode());
         return hashCode;

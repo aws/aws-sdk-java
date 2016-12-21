@@ -39,7 +39,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a
      * folder in the S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the
-     * <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a>.
+     * <i>Amazon Kinesis Firehose Developer Guide</i>.
      * </p>
      */
     private String prefix;
@@ -51,7 +51,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
     private BufferingHints bufferingHints;
     /**
      * <p>
-     * The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+     * The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
@@ -68,7 +68,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
     private EncryptionConfiguration encryptionConfiguration;
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
@@ -159,7 +159,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a
      * folder in the S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the
-     * <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a>.
+     * <i>Amazon Kinesis Firehose Developer Guide</i>.
      * </p>
      * 
      * @param prefix
@@ -167,8 +167,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it
      *        appears as a folder in the S3 bucket. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a>
-     *        in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer
-     *        Guide</a>.
+     *        in the <i>Amazon Kinesis Firehose Developer Guide</i>.
      */
 
     public void setPrefix(String prefix) {
@@ -181,15 +180,14 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a
      * folder in the S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the
-     * <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a>.
+     * <i>Amazon Kinesis Firehose Developer Guide</i>.
      * </p>
      * 
      * @return The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files. You can specify an
      *         extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash,
      *         it appears as a folder in the S3 bucket. For more information, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a>
-     *         in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer
-     *         Guide</a>.
+     *         in the <i>Amazon Kinesis Firehose Developer Guide</i>.
      */
 
     public String getPrefix() {
@@ -202,7 +200,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it appears as a
      * folder in the S3 bucket. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a> in the
-     * <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer Guide</a>.
+     * <i>Amazon Kinesis Firehose Developer Guide</i>.
      * </p>
      * 
      * @param prefix
@@ -210,8 +208,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      *        extra prefix to be added in front of the time format prefix. Note that if the prefix ends with a slash, it
      *        appears as a folder in the S3 bucket. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon S3 Object Name Format</a>
-     *        in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon Kinesis Firehose Developer
-     *        Guide</a>.
+     *        in the <i>Amazon Kinesis Firehose Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,7 +259,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+     * The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
@@ -271,7 +268,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * </p>
      * 
      * @param compressionFormat
-     *        The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>
+     *        The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
      *        destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads
@@ -285,7 +282,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+     * The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
@@ -293,7 +290,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * the S3 bucket.
      * </p>
      * 
-     * @return The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>
+     * @return The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
      *         <p>
      *         The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
      *         destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads
@@ -307,7 +304,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+     * The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
@@ -316,7 +313,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * </p>
      * 
      * @param compressionFormat
-     *        The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>
+     *        The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
      *        destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads
@@ -332,7 +329,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+     * The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
@@ -341,7 +338,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * </p>
      * 
      * @param compressionFormat
-     *        The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>
+     *        The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
      *        destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads
@@ -355,7 +352,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+     * The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
@@ -364,7 +361,7 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
      * </p>
      * 
      * @param compressionFormat
-     *        The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.</p>
+     *        The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified for Amazon Redshift
      *        destinations because they are not supported by the Amazon Redshift <code>COPY</code> operation that reads
@@ -420,11 +417,11 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        Describes CloudWatch logging options for your delivery stream.
+     *        The CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -433,10 +430,10 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return Describes CloudWatch logging options for your delivery stream.
+     * @return The CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -445,11 +442,11 @@ public class S3DestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        Describes CloudWatch logging options for your delivery stream.
+     *        The CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

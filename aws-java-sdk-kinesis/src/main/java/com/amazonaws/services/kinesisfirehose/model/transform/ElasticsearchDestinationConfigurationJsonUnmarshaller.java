@@ -83,6 +83,10 @@ public class ElasticsearchDestinationConfigurationJsonUnmarshaller implements Un
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setS3Configuration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDestinationConfiguration.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDestinationConfiguration.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance()

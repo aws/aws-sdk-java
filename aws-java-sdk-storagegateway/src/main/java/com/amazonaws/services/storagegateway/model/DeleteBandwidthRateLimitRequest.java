@@ -16,12 +16,28 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * <p>
+ * A JSON object containing the following fields:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DeleteBandwidthRateLimitInput$BandwidthType</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
+     * </p>
+     * <p>
+     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * </p>
+     */
     private String bandwidthType;
 
     /**
@@ -51,7 +67,17 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
+     * </p>
+     * <p>
+     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * </p>
+     * 
      * @param bandwidthType
+     *        One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
+     *        <p>
+     *        Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
      */
 
     public void setBandwidthType(String bandwidthType) {
@@ -59,7 +85,16 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
+     * </p>
+     * <p>
+     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * </p>
+     * 
+     * @return One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
+     *         <p>
+     *         Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
      */
 
     public String getBandwidthType() {
@@ -67,7 +102,17 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
+     * </p>
+     * <p>
+     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * </p>
+     * 
      * @param bandwidthType
+     *        One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
+     *        <p>
+     *        Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

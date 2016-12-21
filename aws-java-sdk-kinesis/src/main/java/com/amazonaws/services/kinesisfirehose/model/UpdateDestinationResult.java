@@ -15,9 +15,7 @@ package com.amazonaws.services.kinesisfirehose.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Contains the output of <a>UpdateDestination</a>.
- * </p>
+ * 
  */
 public class UpdateDestinationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

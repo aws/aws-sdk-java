@@ -48,6 +48,11 @@ public class DestinationDescriptionJsonMarshaller {
                 jsonGenerator.writeFieldName("S3DestinationDescription");
                 S3DestinationDescriptionJsonMarshaller.getInstance().marshall(destinationDescription.getS3DestinationDescription(), jsonGenerator);
             }
+            if (destinationDescription.getExtendedS3DestinationDescription() != null) {
+                jsonGenerator.writeFieldName("ExtendedS3DestinationDescription");
+                ExtendedS3DestinationDescriptionJsonMarshaller.getInstance().marshall(destinationDescription.getExtendedS3DestinationDescription(),
+                        jsonGenerator);
+            }
             if (destinationDescription.getRedshiftDestinationDescription() != null) {
                 jsonGenerator.writeFieldName("RedshiftDestinationDescription");
                 RedshiftDestinationDescriptionJsonMarshaller.getInstance().marshall(destinationDescription.getRedshiftDestinationDescription(), jsonGenerator);

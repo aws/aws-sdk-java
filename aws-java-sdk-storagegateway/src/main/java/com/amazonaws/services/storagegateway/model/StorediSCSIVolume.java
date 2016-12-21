@@ -15,32 +15,88 @@ package com.amazonaws.services.storagegateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Describes an iSCSI stored volume.
+ * </p>
  */
 public class StorediSCSIVolume implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     */
     private String volumeARN;
-
+    /**
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     */
     private String volumeId;
-
+    /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     */
     private String volumeType;
-
+    /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     */
     private String volumeStatus;
-
+    /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     */
     private Long volumeSizeInBytes;
-
+    /**
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the stored volume is not restoring or
+     * bootstrapping.
+     * </p>
+     */
     private Double volumeProgress;
-
+    /**
+     * <p>
+     * The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
+     * </p>
+     */
     private String volumeDiskId;
-
+    /**
+     * <p>
+     * If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     */
     private String sourceSnapshotId;
-
+    /**
+     * <p>
+     * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
+     * </p>
+     * <p>
+     * Valid Values: true, false
+     * </p>
+     */
     private Boolean preservedExistingData;
-
+    /**
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     */
     private VolumeiSCSIAttributes volumeiSCSIAttributes;
 
+    private java.util.Date createdDate;
+
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the storage volume.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -48,7 +104,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the storage volume.
      */
 
     public String getVolumeARN() {
@@ -56,7 +116,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the storage volume.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the storage volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +131,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     * 
      * @param volumeId
+     *        The unique identifier of the volume, e.g. vol-AE4B946D.
      */
 
     public void setVolumeId(String volumeId) {
@@ -74,7 +144,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     * 
+     * @return The unique identifier of the volume, e.g. vol-AE4B946D.
      */
 
     public String getVolumeId() {
@@ -82,7 +156,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * </p>
+     * 
      * @param volumeId
+     *        The unique identifier of the volume, e.g. vol-AE4B946D.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,7 +171,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values describing the type of the volume.
      */
 
     public void setVolumeType(String volumeType) {
@@ -100,7 +184,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
+     * @return One of the VolumeType enumeration values describing the type of the volume.
      */
 
     public String getVolumeType() {
@@ -108,7 +196,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeType enumeration values describing the type of the volume.
+     * </p>
+     * 
      * @param volumeType
+     *        One of the VolumeType enumeration values describing the type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +211,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
      * @param volumeStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
      */
 
     public void setVolumeStatus(String volumeStatus) {
@@ -126,7 +224,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
+     * @return One of the VolumeStatus values that indicates the state of the storage volume.
      */
 
     public String getVolumeStatus() {
@@ -134,7 +236,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One of the VolumeStatus values that indicates the state of the storage volume.
+     * </p>
+     * 
      * @param volumeStatus
+     *        One of the VolumeStatus values that indicates the state of the storage volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +251,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size of the volume in bytes.
      */
 
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -152,7 +264,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
+     * @return The size of the volume in bytes.
      */
 
     public Long getVolumeSizeInBytes() {
@@ -160,7 +276,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size of the volume in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,7 +291,16 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the stored volume is not restoring or
+     * bootstrapping.
+     * </p>
+     * 
      * @param volumeProgress
+     *        Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent
+     *        of data transferred. This field does not appear in the response if the stored volume is not restoring or
+     *        bootstrapping.
      */
 
     public void setVolumeProgress(Double volumeProgress) {
@@ -178,7 +308,15 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the stored volume is not restoring or
+     * bootstrapping.
+     * </p>
+     * 
+     * @return Represents the percentage complete if the volume is restoring or bootstrapping that represents the
+     *         percent of data transferred. This field does not appear in the response if the stored volume is not
+     *         restoring or bootstrapping.
      */
 
     public Double getVolumeProgress() {
@@ -186,7 +324,16 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the stored volume is not restoring or
+     * bootstrapping.
+     * </p>
+     * 
      * @param volumeProgress
+     *        Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent
+     *        of data transferred. This field does not appear in the response if the stored volume is not restoring or
+     *        bootstrapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,7 +343,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
+     * </p>
+     * 
      * @param volumeDiskId
+     *        The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
      */
 
     public void setVolumeDiskId(String volumeDiskId) {
@@ -204,7 +356,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
+     * </p>
+     * 
+     * @return The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
      */
 
     public String getVolumeDiskId() {
@@ -212,7 +368,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
+     * </p>
+     * 
      * @param volumeDiskId
+     *        The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,7 +383,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     * 
      * @param sourceSnapshotId
+     *        If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *        snap-78e22663. Otherwise, this field is not included.
      */
 
     public void setSourceSnapshotId(String sourceSnapshotId) {
@@ -230,7 +398,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     * 
+     * @return If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *         snap-78e22663. Otherwise, this field is not included.
      */
 
     public String getSourceSnapshotId() {
@@ -238,7 +412,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * Otherwise, this field is not included.
+     * </p>
+     * 
      * @param sourceSnapshotId
+     *        If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *        snap-78e22663. Otherwise, this field is not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,7 +429,18 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
+     * </p>
+     * <p>
+     * Valid Values: true, false
+     * </p>
+     * 
      * @param preservedExistingData
+     *        Indicates if when the stored volume was created, existing data on the underlying local disk was
+     *        preserved.</p>
+     *        <p>
+     *        Valid Values: true, false
      */
 
     public void setPreservedExistingData(Boolean preservedExistingData) {
@@ -256,7 +448,17 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
+     * </p>
+     * <p>
+     * Valid Values: true, false
+     * </p>
+     * 
+     * @return Indicates if when the stored volume was created, existing data on the underlying local disk was
+     *         preserved.</p>
+     *         <p>
+     *         Valid Values: true, false
      */
 
     public Boolean getPreservedExistingData() {
@@ -264,7 +466,18 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
+     * </p>
+     * <p>
+     * Valid Values: true, false
+     * </p>
+     * 
      * @param preservedExistingData
+     *        Indicates if when the stored volume was created, existing data on the underlying local disk was
+     *        preserved.</p>
+     *        <p>
+     *        Valid Values: true, false
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,7 +487,17 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
+     * </p>
+     * <p>
+     * Valid Values: true, false
+     * </p>
+     * 
+     * @return Indicates if when the stored volume was created, existing data on the underlying local disk was
+     *         preserved.</p>
+     *         <p>
+     *         Valid Values: true, false
      */
 
     public Boolean isPreservedExistingData() {
@@ -282,7 +505,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     * 
      * @param volumeiSCSIAttributes
+     *        An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored
+     *        volume.
      */
 
     public void setVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
@@ -290,7 +519,12 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     * 
+     * @return An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored
+     *         volume.
      */
 
     public VolumeiSCSIAttributes getVolumeiSCSIAttributes() {
@@ -298,12 +532,44 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.
+     * </p>
+     * 
      * @param volumeiSCSIAttributes
+     *        An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored
+     *        volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StorediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
         setVolumeiSCSIAttributes(volumeiSCSIAttributes);
+        return this;
+    }
+
+    /**
+     * @param createdDate
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * @param createdDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorediSCSIVolume withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
         return this;
     }
 
@@ -337,7 +603,9 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         if (getPreservedExistingData() != null)
             sb.append("PreservedExistingData: ").append(getPreservedExistingData()).append(",");
         if (getVolumeiSCSIAttributes() != null)
-            sb.append("VolumeiSCSIAttributes: ").append(getVolumeiSCSIAttributes());
+            sb.append("VolumeiSCSIAttributes: ").append(getVolumeiSCSIAttributes()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -392,6 +660,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
             return false;
         if (other.getVolumeiSCSIAttributes() != null && other.getVolumeiSCSIAttributes().equals(this.getVolumeiSCSIAttributes()) == false)
             return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
         return true;
     }
 
@@ -410,6 +682,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getPreservedExistingData() == null) ? 0 : getPreservedExistingData().hashCode());
         hashCode = prime * hashCode + ((getVolumeiSCSIAttributes() == null) ? 0 : getVolumeiSCSIAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         return hashCode;
     }
 

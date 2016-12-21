@@ -17,7 +17,7 @@ package com.amazonaws.services.waf.model;
  * The operation failed because the entity referenced is temporarily unavailable. Retry your request.
  * </p>
  */
-public class WAFUnavailableEntityException extends com.amazonaws.services.waf.model.AWSWAFRegionalException {
+public class WAFUnavailableEntityException extends com.amazonaws.services.waf.model.AWSWAFException {
     private static final long serialVersionUID = 1L;
 
     /**

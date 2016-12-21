@@ -15,9 +15,7 @@ package com.amazonaws.services.kinesisfirehose.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Contains the output of <a>DescribeDeliveryStream</a>.
- * </p>
+ * 
  */
 public class DescribeDeliveryStreamResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

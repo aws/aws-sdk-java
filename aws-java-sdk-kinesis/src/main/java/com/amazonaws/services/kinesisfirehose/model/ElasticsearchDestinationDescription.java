@@ -53,27 +53,37 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private String indexRotationPeriod;
     /**
      * <p>
-     * Buffering options.
+     * The buffering options.
      * </p>
      */
     private ElasticsearchBufferingHints bufferingHints;
     /**
      * <p>
-     * Elasticsearch retry options.
+     * The Amazon ES retry options.
      * </p>
      */
     private ElasticsearchRetryOptions retryOptions;
     /**
      * <p>
-     * Amazon S3 backup mode.
+     * The Amazon S3 backup mode.
      * </p>
      */
     private String s3BackupMode;
-
+    /**
+     * <p>
+     * The Amazon S3 destination.
+     * </p>
+     */
     private S3DestinationDescription s3DestinationDescription;
     /**
      * <p>
-     * CloudWatch logging options.
+     * The data processing configuration.
+     * </p>
+     */
+    private ProcessingConfiguration processingConfiguration;
+    /**
+     * <p>
+     * The CloudWatch logging options.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
@@ -313,11 +323,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Buffering options.
+     * The buffering options.
      * </p>
      * 
      * @param bufferingHints
-     *        Buffering options.
+     *        The buffering options.
      */
 
     public void setBufferingHints(ElasticsearchBufferingHints bufferingHints) {
@@ -326,10 +336,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Buffering options.
+     * The buffering options.
      * </p>
      * 
-     * @return Buffering options.
+     * @return The buffering options.
      */
 
     public ElasticsearchBufferingHints getBufferingHints() {
@@ -338,11 +348,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Buffering options.
+     * The buffering options.
      * </p>
      * 
      * @param bufferingHints
-     *        Buffering options.
+     *        The buffering options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,11 +363,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Elasticsearch retry options.
+     * The Amazon ES retry options.
      * </p>
      * 
      * @param retryOptions
-     *        Elasticsearch retry options.
+     *        The Amazon ES retry options.
      */
 
     public void setRetryOptions(ElasticsearchRetryOptions retryOptions) {
@@ -366,10 +376,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Elasticsearch retry options.
+     * The Amazon ES retry options.
      * </p>
      * 
-     * @return Elasticsearch retry options.
+     * @return The Amazon ES retry options.
      */
 
     public ElasticsearchRetryOptions getRetryOptions() {
@@ -378,11 +388,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Elasticsearch retry options.
+     * The Amazon ES retry options.
      * </p>
      * 
      * @param retryOptions
-     *        Elasticsearch retry options.
+     *        The Amazon ES retry options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,11 +403,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Amazon S3 backup mode.
+     * The Amazon S3 backup mode.
      * </p>
      * 
      * @param s3BackupMode
-     *        Amazon S3 backup mode.
+     *        The Amazon S3 backup mode.
      * @see ElasticsearchS3BackupMode
      */
 
@@ -407,10 +417,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Amazon S3 backup mode.
+     * The Amazon S3 backup mode.
      * </p>
      * 
-     * @return Amazon S3 backup mode.
+     * @return The Amazon S3 backup mode.
      * @see ElasticsearchS3BackupMode
      */
 
@@ -420,11 +430,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Amazon S3 backup mode.
+     * The Amazon S3 backup mode.
      * </p>
      * 
      * @param s3BackupMode
-     *        Amazon S3 backup mode.
+     *        The Amazon S3 backup mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchS3BackupMode
      */
@@ -436,11 +446,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Amazon S3 backup mode.
+     * The Amazon S3 backup mode.
      * </p>
      * 
      * @param s3BackupMode
-     *        Amazon S3 backup mode.
+     *        The Amazon S3 backup mode.
      * @see ElasticsearchS3BackupMode
      */
 
@@ -450,11 +460,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Amazon S3 backup mode.
+     * The Amazon S3 backup mode.
      * </p>
      * 
      * @param s3BackupMode
-     *        Amazon S3 backup mode.
+     *        The Amazon S3 backup mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchS3BackupMode
      */
@@ -465,7 +475,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The Amazon S3 destination.
+     * </p>
+     * 
      * @param s3DestinationDescription
+     *        The Amazon S3 destination.
      */
 
     public void setS3DestinationDescription(S3DestinationDescription s3DestinationDescription) {
@@ -473,7 +488,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon S3 destination.
+     * </p>
+     * 
+     * @return The Amazon S3 destination.
      */
 
     public S3DestinationDescription getS3DestinationDescription() {
@@ -481,7 +500,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The Amazon S3 destination.
+     * </p>
+     * 
      * @param s3DestinationDescription
+     *        The Amazon S3 destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,11 +516,51 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * CloudWatch logging options.
+     * The data processing configuration.
+     * </p>
+     * 
+     * @param processingConfiguration
+     *        The data processing configuration.
+     */
+
+    public void setProcessingConfiguration(ProcessingConfiguration processingConfiguration) {
+        this.processingConfiguration = processingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The data processing configuration.
+     * </p>
+     * 
+     * @return The data processing configuration.
+     */
+
+    public ProcessingConfiguration getProcessingConfiguration() {
+        return this.processingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The data processing configuration.
+     * </p>
+     * 
+     * @param processingConfiguration
+     *        The data processing configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationDescription withProcessingConfiguration(ProcessingConfiguration processingConfiguration) {
+        setProcessingConfiguration(processingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch logging options.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        CloudWatch logging options.
+     *        The CloudWatch logging options.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -505,10 +569,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * CloudWatch logging options.
+     * The CloudWatch logging options.
      * </p>
      * 
-     * @return CloudWatch logging options.
+     * @return The CloudWatch logging options.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -517,11 +581,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * CloudWatch logging options.
+     * The CloudWatch logging options.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        CloudWatch logging options.
+     *        The CloudWatch logging options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,6 +623,8 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
             sb.append("S3BackupMode: ").append(getS3BackupMode()).append(",");
         if (getS3DestinationDescription() != null)
             sb.append("S3DestinationDescription: ").append(getS3DestinationDescription()).append(",");
+        if (getProcessingConfiguration() != null)
+            sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
         sb.append("}");
@@ -611,6 +677,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
             return false;
         if (other.getS3DestinationDescription() != null && other.getS3DestinationDescription().equals(this.getS3DestinationDescription()) == false)
             return false;
+        if (other.getProcessingConfiguration() == null ^ this.getProcessingConfiguration() == null)
+            return false;
+        if (other.getProcessingConfiguration() != null && other.getProcessingConfiguration().equals(this.getProcessingConfiguration()) == false)
+            return false;
         if (other.getCloudWatchLoggingOptions() == null ^ this.getCloudWatchLoggingOptions() == null)
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
@@ -632,6 +702,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         hashCode = prime * hashCode + ((getRetryOptions() == null) ? 0 : getRetryOptions().hashCode());
         hashCode = prime * hashCode + ((getS3BackupMode() == null) ? 0 : getS3BackupMode().hashCode());
         hashCode = prime * hashCode + ((getS3DestinationDescription() == null) ? 0 : getS3DestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }

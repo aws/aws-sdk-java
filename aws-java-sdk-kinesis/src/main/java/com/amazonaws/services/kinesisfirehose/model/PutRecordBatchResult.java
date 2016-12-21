@@ -15,33 +15,31 @@ package com.amazonaws.services.kinesisfirehose.model;
 import java.io.Serializable;
 
 /**
- * <p>
- * Contains the output of <a>PutRecordBatch</a>.
- * </p>
+ * 
  */
 public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of unsuccessfully written records.
+     * The number of records that might have failed processing.
      * </p>
      */
     private Integer failedPutCount;
     /**
      * <p>
-     * The results for the individual records. The index of each element matches the same index in which records were
-     * sent.
+     * The results array. For each record, the index of the response element is the same as the index used in the
+     * request array.
      * </p>
      */
     private java.util.List<PutRecordBatchResponseEntry> requestResponses;
 
     /**
      * <p>
-     * The number of unsuccessfully written records.
+     * The number of records that might have failed processing.
      * </p>
      * 
      * @param failedPutCount
-     *        The number of unsuccessfully written records.
+     *        The number of records that might have failed processing.
      */
 
     public void setFailedPutCount(Integer failedPutCount) {
@@ -50,10 +48,10 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of unsuccessfully written records.
+     * The number of records that might have failed processing.
      * </p>
      * 
-     * @return The number of unsuccessfully written records.
+     * @return The number of records that might have failed processing.
      */
 
     public Integer getFailedPutCount() {
@@ -62,11 +60,11 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of unsuccessfully written records.
+     * The number of records that might have failed processing.
      * </p>
      * 
      * @param failedPutCount
-     *        The number of unsuccessfully written records.
+     *        The number of records that might have failed processing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,12 +75,12 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The results for the individual records. The index of each element matches the same index in which records were
-     * sent.
+     * The results array. For each record, the index of the response element is the same as the index used in the
+     * request array.
      * </p>
      * 
-     * @return The results for the individual records. The index of each element matches the same index in which records
-     *         were sent.
+     * @return The results array. For each record, the index of the response element is the same as the index used in
+     *         the request array.
      */
 
     public java.util.List<PutRecordBatchResponseEntry> getRequestResponses() {
@@ -91,13 +89,13 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The results for the individual records. The index of each element matches the same index in which records were
-     * sent.
+     * The results array. For each record, the index of the response element is the same as the index used in the
+     * request array.
      * </p>
      * 
      * @param requestResponses
-     *        The results for the individual records. The index of each element matches the same index in which records
-     *        were sent.
+     *        The results array. For each record, the index of the response element is the same as the index used in the
+     *        request array.
      */
 
     public void setRequestResponses(java.util.Collection<PutRecordBatchResponseEntry> requestResponses) {
@@ -111,8 +109,8 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The results for the individual records. The index of each element matches the same index in which records were
-     * sent.
+     * The results array. For each record, the index of the response element is the same as the index used in the
+     * request array.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,8 +119,8 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param requestResponses
-     *        The results for the individual records. The index of each element matches the same index in which records
-     *        were sent.
+     *        The results array. For each record, the index of the response element is the same as the index used in the
+     *        request array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,13 +136,13 @@ public class PutRecordBatchResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The results for the individual records. The index of each element matches the same index in which records were
-     * sent.
+     * The results array. For each record, the index of the response element is the same as the index used in the
+     * request array.
      * </p>
      * 
      * @param requestResponses
-     *        The results for the individual records. The index of each element matches the same index in which records
-     *        were sent.
+     *        The results array. For each record, the index of the response element is the same as the index used in the
+     *        request array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,6 +55,11 @@ public class DestinationDescriptionJsonUnmarshaller implements Unmarshaller<Dest
                     context.nextToken();
                     destinationDescription.setS3DestinationDescription(S3DestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ExtendedS3DestinationDescription", targetDepth)) {
+                    context.nextToken();
+                    destinationDescription.setExtendedS3DestinationDescription(ExtendedS3DestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
                 if (context.testExpression("RedshiftDestinationDescription", targetDepth)) {
                     context.nextToken();
                     destinationDescription.setRedshiftDestinationDescription(RedshiftDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));

@@ -47,6 +47,9 @@ public class TapeArchiveJsonMarshaller {
             if (tapeArchive.getTapeBarcode() != null) {
                 jsonGenerator.writeFieldName("TapeBarcode").writeValue(tapeArchive.getTapeBarcode());
             }
+            if (tapeArchive.getTapeCreatedDate() != null) {
+                jsonGenerator.writeFieldName("TapeCreatedDate").writeValue(tapeArchive.getTapeCreatedDate());
+            }
             if (tapeArchive.getTapeSizeInBytes() != null) {
                 jsonGenerator.writeFieldName("TapeSizeInBytes").writeValue(tapeArchive.getTapeSizeInBytes());
             }

@@ -66,6 +66,9 @@ public class CachediSCSIVolumeJsonMarshaller {
                 jsonGenerator.writeFieldName("VolumeiSCSIAttributes");
                 VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(cachediSCSIVolume.getVolumeiSCSIAttributes(), jsonGenerator);
             }
+            if (cachediSCSIVolume.getCreatedDate() != null) {
+                jsonGenerator.writeFieldName("CreatedDate").writeValue(cachediSCSIVolume.getCreatedDate());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

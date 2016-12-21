@@ -75,6 +75,18 @@ public class RedshiftDestinationUpdateJsonUnmarshaller implements Unmarshaller<R
                     context.nextToken();
                     redshiftDestinationUpdate.setS3Update(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationUpdate.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3BackupMode", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationUpdate.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("S3BackupUpdate", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationUpdate.setS3BackupUpdate(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
                     context.nextToken();
                     redshiftDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));

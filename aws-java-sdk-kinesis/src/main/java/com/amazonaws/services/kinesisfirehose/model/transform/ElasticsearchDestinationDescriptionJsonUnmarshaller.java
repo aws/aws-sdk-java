@@ -83,6 +83,10 @@ public class ElasticsearchDestinationDescriptionJsonUnmarshaller implements Unma
                     context.nextToken();
                     elasticsearchDestinationDescription.setS3DestinationDescription(S3DestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDestinationDescription.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDestinationDescription.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));

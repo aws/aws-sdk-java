@@ -37,7 +37,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * <p>
      * Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the
      * "Optional Parameters" section of <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows.
+     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:
      * </p>
      * <p>
      * <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.
@@ -148,7 +148,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * <p>
      * Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the
      * "Optional Parameters" section of <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows.
+     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:
      * </p>
      * <p>
      * <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.
@@ -177,7 +177,7 @@ public class CopyCommand implements Serializable, Cloneable {
      *        Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see
      *        the "Optional Parameters" section of <a
      *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some
-     *        possible examples that would apply to Firehose are as follows.</p>
+     *        possible examples that would apply to Firehose are as follows:</p>
      *        <p>
      *        <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using
      *        lzop.
@@ -210,7 +210,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * <p>
      * Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the
      * "Optional Parameters" section of <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows.
+     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:
      * </p>
      * <p>
      * <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.
@@ -238,7 +238,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * @return Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see
      *         the "Optional Parameters" section of <a
      *         href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some
-     *         possible examples that would apply to Firehose are as follows.</p>
+     *         possible examples that would apply to Firehose are as follows:</p>
      *         <p>
      *         <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using
      *         lzop.
@@ -271,7 +271,7 @@ public class CopyCommand implements Serializable, Cloneable {
      * <p>
      * Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see the
      * "Optional Parameters" section of <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows.
+     * Redshift COPY command</a>. Some possible examples that would apply to Firehose are as follows:
      * </p>
      * <p>
      * <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using lzop.
@@ -300,7 +300,7 @@ public class CopyCommand implements Serializable, Cloneable {
      *        Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For more information, see
      *        the "Optional Parameters" section of <a
      *        href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift COPY command</a>. Some
-     *        possible examples that would apply to Firehose are as follows.</p>
+     *        possible examples that would apply to Firehose are as follows:</p>
      *        <p>
      *        <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character) and compressed using
      *        lzop.

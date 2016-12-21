@@ -75,6 +75,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +111,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFileShareResult deleteFileShare(DeleteFileShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -165,6 +175,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +226,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public DisableGatewayResult disableGateway(DisableGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFileSharesResult listFileShares(ListFileSharesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -321,6 +341,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

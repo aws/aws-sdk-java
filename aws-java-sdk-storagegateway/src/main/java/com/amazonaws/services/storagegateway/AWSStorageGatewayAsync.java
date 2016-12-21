@@ -36,29 +36,32 @@ import com.amazonaws.services.storagegateway.model.*;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
- * Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
+ * <a href=
+ * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
- * Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic describes how
- * sign such a request.
+ * <a href=
+ * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
+ * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error Responses</a>:
- * Provides reference information about AWS Storage Gateway errors.
+ * <a
+ * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
+ * Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
- * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request
- * parameters, response elements, possible errors, and examples of requests and responses.
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
+ * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
+ * elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
@@ -522,8 +525,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address
      * on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and
-     * returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-     * that initiators can use to connect to the volume target.
+     * returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the
+     * iSCSI target ARN that initiators can use to connect to the volume target.
+     * </p>
+     * <p>
+     * Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached
+     * volume, which creates an exact copy of the existing volume’s latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of the copied volume, in bytes.
      * </p>
      * 
      * @param createCachediSCSIVolumeRequest
@@ -546,8 +554,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address
      * on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and
-     * returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-     * that initiators can use to connect to the volume target.
+     * returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the
+     * iSCSI target ARN that initiators can use to connect to the volume target.
+     * </p>
+     * <p>
+     * Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached
+     * volume, which creates an exact copy of the existing volume’s latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of the copied volume, in bytes.
      * </p>
      * 
      * @param createCachediSCSIVolumeRequest
@@ -560,6 +573,39 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<CreateCachediSCSIVolumeResult> createCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
+     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
+     * interface.
+     * </p>
+     * 
+     * @param createNFSFileShareRequest
+     *        CreateNFSFileShareInput
+     * @return A Java Future containing the result of the CreateNFSFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateNFSFileShare
+     */
+    java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(CreateNFSFileShareRequest createNFSFileShareRequest);
+
+    /**
+     * <p>
+     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
+     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
+     * interface.
+     * </p>
+     * 
+     * @param createNFSFileShareRequest
+     *        CreateNFSFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNFSFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateNFSFileShare
+     */
+    java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(CreateNFSFileShareRequest createNFSFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNFSFileShareRequest, CreateNFSFileShareResult> asyncHandler);
 
     /**
      * <p>
@@ -928,6 +974,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * 
      * @param deleteBandwidthRateLimitRequest
+     *        A JSON object containing the following fields:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>DeleteBandwidthRateLimitInput$BandwidthType</a>
+     *        </p>
+     *        </li>
      * @return A Java Future containing the result of the DeleteBandwidthRateLimit operation returned by the service.
      * @sample AWSStorageGatewayAsync.DeleteBandwidthRateLimit
      */
@@ -941,6 +994,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * 
      * @param deleteBandwidthRateLimitRequest
+     *        A JSON object containing the following fields:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>DeleteBandwidthRateLimitInput$BandwidthType</a>
+     *        </p>
+     *        </li>
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1003,6 +1063,35 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<DeleteChapCredentialsResult> deleteChapCredentialsAsync(DeleteChapCredentialsRequest deleteChapCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteChapCredentialsRequest, DeleteChapCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a file share from a file gateway.
+     * </p>
+     * 
+     * @param deleteFileShareRequest
+     *        DeleteFileShareInput
+     * @return A Java Future containing the result of the DeleteFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteFileShare
+     */
+    java.util.concurrent.Future<DeleteFileShareResult> deleteFileShareAsync(DeleteFileShareRequest deleteFileShareRequest);
+
+    /**
+     * <p>
+     * Deletes a file share from a file gateway.
+     * </p>
+     * 
+     * @param deleteFileShareRequest
+     *        DeleteFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteFileShare
+     */
+    java.util.concurrent.Future<DeleteFileShareResult> deleteFileShareAsync(DeleteFileShareRequest deleteFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFileShareRequest, DeleteFileShareResult> asyncHandler);
 
     /**
      * <p>
@@ -1451,6 +1540,35 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Gets a description for one or more file shares from a file gateway.
+     * </p>
+     * 
+     * @param describeNFSFileSharesRequest
+     *        DescribeNFSFileSharesInput
+     * @return A Java Future containing the result of the DescribeNFSFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeNFSFileShares
+     */
+    java.util.concurrent.Future<DescribeNFSFileSharesResult> describeNFSFileSharesAsync(DescribeNFSFileSharesRequest describeNFSFileSharesRequest);
+
+    /**
+     * <p>
+     * Gets a description for one or more file shares from a file gateway.
+     * </p>
+     * 
+     * @param describeNFSFileSharesRequest
+     *        DescribeNFSFileSharesInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNFSFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeNFSFileShares
+     */
+    java.util.concurrent.Future<DescribeNFSFileSharesResult> describeNFSFileSharesAsync(DescribeNFSFileSharesRequest describeNFSFileSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNFSFileSharesRequest, DescribeNFSFileSharesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes
      * intervals at which snapshots are automatically initiated on the volume.
      * </p>
@@ -1813,6 +1931,37 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
+     * user account.
+     * </p>
+     * 
+     * @param listFileSharesRequest
+     *        ListFileShareInput
+     * @return A Java Future containing the result of the ListFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListFileShares
+     */
+    java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest listFileSharesRequest);
+
+    /**
+     * <p>
+     * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
+     * user account.
+     * </p>
+     * 
+     * @param listFileSharesRequest
+     *        ListFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListFileShares
+     */
+    java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest listFileSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFileSharesRequest, ListFileSharesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by
      * gateway Amazon Resource Name (ARN).
      * </p>
@@ -2133,7 +2282,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the
-     * volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> API.
+     * volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> or the
+     * <a>DescribeCachediSCSIVolumes</a> API.
      * </p>
      * <p>
      * The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can
@@ -2163,7 +2313,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the
-     * volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> API.
+     * volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> or the
+     * <a>DescribeCachediSCSIVolumes</a> API.
      * </p>
      * <p>
      * The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can
@@ -2867,6 +3018,45 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     java.util.concurrent.Future<UpdateMaintenanceStartTimeResult> updateMaintenanceStartTimeAsync(
             UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a file share.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null.
+     * </p>
+     * </note>
+     * 
+     * @param updateNFSFileShareRequest
+     *        UpdateNFSFileShareInput
+     * @return A Java Future containing the result of the UpdateNFSFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateNFSFileShare
+     */
+    java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(UpdateNFSFileShareRequest updateNFSFileShareRequest);
+
+    /**
+     * <p>
+     * Updates a file share.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null.
+     * </p>
+     * </note>
+     * 
+     * @param updateNFSFileShareRequest
+     *        UpdateNFSFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNFSFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateNFSFileShare
+     */
+    java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(UpdateNFSFileShareRequest updateNFSFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNFSFileShareRequest, UpdateNFSFileShareResult> asyncHandler);
 
     /**
      * <p>

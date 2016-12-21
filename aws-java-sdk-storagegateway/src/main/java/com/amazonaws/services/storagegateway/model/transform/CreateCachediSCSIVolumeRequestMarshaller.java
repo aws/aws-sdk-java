@@ -72,6 +72,9 @@ public class CreateCachediSCSIVolumeRequestMarshaller implements Marshaller<Requ
             if (createCachediSCSIVolumeRequest.getTargetName() != null) {
                 jsonGenerator.writeFieldName("TargetName").writeValue(createCachediSCSIVolumeRequest.getTargetName());
             }
+            if (createCachediSCSIVolumeRequest.getSourceVolumeARN() != null) {
+                jsonGenerator.writeFieldName("SourceVolumeARN").writeValue(createCachediSCSIVolumeRequest.getSourceVolumeARN());
+            }
             if (createCachediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
                 jsonGenerator.writeFieldName("NetworkInterfaceId").writeValue(createCachediSCSIVolumeRequest.getNetworkInterfaceId());
             }

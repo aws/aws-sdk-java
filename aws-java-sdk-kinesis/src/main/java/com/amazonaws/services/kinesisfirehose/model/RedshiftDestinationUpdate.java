@@ -53,8 +53,8 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
     private String password;
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     * value is 3600 (60 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     * 3600 (60 minutes).
      * </p>
      */
     private RedshiftRetryOptions retryOptions;
@@ -71,7 +71,25 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
     private S3DestinationUpdate s3Update;
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The data processing configuration.
+     * </p>
+     */
+    private ProcessingConfiguration processingConfiguration;
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     */
+    private String s3BackupMode;
+    /**
+     * <p>
+     * The Amazon S3 destination for backup.
+     * </p>
+     */
+    private S3DestinationUpdate s3BackupUpdate;
+    /**
+     * <p>
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
@@ -278,13 +296,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     * value is 3600 (60 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     * 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
-     *        Default value is 3600 (60 minutes).
+     *        The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     *        value is 3600 (60 minutes).
      */
 
     public void setRetryOptions(RedshiftRetryOptions retryOptions) {
@@ -293,12 +311,12 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     * value is 3600 (60 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     * 3600 (60 minutes).
      * </p>
      * 
-     * @return Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
-     *         Default value is 3600 (60 minutes).
+     * @return The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     *         value is 3600 (60 minutes).
      */
 
     public RedshiftRetryOptions getRetryOptions() {
@@ -307,13 +325,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
-     * value is 3600 (60 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     * 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift.
-     *        Default value is 3600 (60 minutes).
+     *        The retry behavior in the event that Firehose is unable to deliver documents to Amazon Redshift. Default
+     *        value is 3600 (60 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +409,164 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The data processing configuration.
+     * </p>
+     * 
+     * @param processingConfiguration
+     *        The data processing configuration.
+     */
+
+    public void setProcessingConfiguration(ProcessingConfiguration processingConfiguration) {
+        this.processingConfiguration = processingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The data processing configuration.
+     * </p>
+     * 
+     * @return The data processing configuration.
+     */
+
+    public ProcessingConfiguration getProcessingConfiguration() {
+        return this.processingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The data processing configuration.
+     * </p>
+     * 
+     * @param processingConfiguration
+     *        The data processing configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftDestinationUpdate withProcessingConfiguration(ProcessingConfiguration processingConfiguration) {
+        setProcessingConfiguration(processingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
+     * @param s3BackupMode
+     *        The Amazon S3 backup mode.
+     * @see RedshiftS3BackupMode
+     */
+
+    public void setS3BackupMode(String s3BackupMode) {
+        this.s3BackupMode = s3BackupMode;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
+     * @return The Amazon S3 backup mode.
+     * @see RedshiftS3BackupMode
+     */
+
+    public String getS3BackupMode() {
+        return this.s3BackupMode;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
+     * @param s3BackupMode
+     *        The Amazon S3 backup mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RedshiftS3BackupMode
+     */
+
+    public RedshiftDestinationUpdate withS3BackupMode(String s3BackupMode) {
+        setS3BackupMode(s3BackupMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
+     * @param s3BackupMode
+     *        The Amazon S3 backup mode.
+     * @see RedshiftS3BackupMode
+     */
+
+    public void setS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
+        this.s3BackupMode = s3BackupMode.toString();
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
+     * @param s3BackupMode
+     *        The Amazon S3 backup mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RedshiftS3BackupMode
+     */
+
+    public RedshiftDestinationUpdate withS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
+        setS3BackupMode(s3BackupMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 destination for backup.
+     * </p>
+     * 
+     * @param s3BackupUpdate
+     *        The Amazon S3 destination for backup.
+     */
+
+    public void setS3BackupUpdate(S3DestinationUpdate s3BackupUpdate) {
+        this.s3BackupUpdate = s3BackupUpdate;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 destination for backup.
+     * </p>
+     * 
+     * @return The Amazon S3 destination for backup.
+     */
+
+    public S3DestinationUpdate getS3BackupUpdate() {
+        return this.s3BackupUpdate;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 destination for backup.
+     * </p>
+     * 
+     * @param s3BackupUpdate
+     *        The Amazon S3 destination for backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RedshiftDestinationUpdate withS3BackupUpdate(S3DestinationUpdate s3BackupUpdate) {
+        setS3BackupUpdate(s3BackupUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        Describes CloudWatch logging options for your delivery stream.
+     *        The CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -404,10 +575,10 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return Describes CloudWatch logging options for your delivery stream.
+     * @return The CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -416,11 +587,11 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        Describes CloudWatch logging options for your delivery stream.
+     *        The CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,6 +625,12 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
             sb.append("RetryOptions: ").append(getRetryOptions()).append(",");
         if (getS3Update() != null)
             sb.append("S3Update: ").append(getS3Update()).append(",");
+        if (getProcessingConfiguration() != null)
+            sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
+        if (getS3BackupMode() != null)
+            sb.append("S3BackupMode: ").append(getS3BackupMode()).append(",");
+        if (getS3BackupUpdate() != null)
+            sb.append("S3BackupUpdate: ").append(getS3BackupUpdate()).append(",");
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
         sb.append("}");
@@ -498,6 +675,18 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
             return false;
         if (other.getS3Update() != null && other.getS3Update().equals(this.getS3Update()) == false)
             return false;
+        if (other.getProcessingConfiguration() == null ^ this.getProcessingConfiguration() == null)
+            return false;
+        if (other.getProcessingConfiguration() != null && other.getProcessingConfiguration().equals(this.getProcessingConfiguration()) == false)
+            return false;
+        if (other.getS3BackupMode() == null ^ this.getS3BackupMode() == null)
+            return false;
+        if (other.getS3BackupMode() != null && other.getS3BackupMode().equals(this.getS3BackupMode()) == false)
+            return false;
+        if (other.getS3BackupUpdate() == null ^ this.getS3BackupUpdate() == null)
+            return false;
+        if (other.getS3BackupUpdate() != null && other.getS3BackupUpdate().equals(this.getS3BackupUpdate()) == false)
+            return false;
         if (other.getCloudWatchLoggingOptions() == null ^ this.getCloudWatchLoggingOptions() == null)
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
@@ -517,6 +706,9 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getRetryOptions() == null) ? 0 : getRetryOptions().hashCode());
         hashCode = prime * hashCode + ((getS3Update() == null) ? 0 : getS3Update().hashCode());
+        hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getS3BackupMode() == null) ? 0 : getS3BackupMode().hashCode());
+        hashCode = prime * hashCode + ((getS3BackupUpdate() == null) ? 0 : getS3BackupUpdate().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }

@@ -75,6 +75,18 @@ public class RedshiftDestinationConfigurationJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     redshiftDestinationConfiguration.setS3Configuration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationConfiguration.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3BackupMode", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationConfiguration.setS3BackupMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("S3BackupConfiguration", targetDepth)) {
+                    context.nextToken();
+                    redshiftDestinationConfiguration.setS3BackupConfiguration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
                     context.nextToken();
                     redshiftDestinationConfiguration.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));

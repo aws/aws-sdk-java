@@ -16,9 +16,7 @@ import java.io.Serializable;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for <a>DescribeDeliveryStream</a>.
- * </p>
+ * 
  */
 public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
@@ -36,7 +34,7 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
     private Integer limit;
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination information. Currently Firehose supports one
+     * The ID of the destination to start returning the destination information. Currently Firehose supports one
      * destination per delivery stream.
      * </p>
      */
@@ -127,13 +125,13 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination information. Currently Firehose supports one
+     * The ID of the destination to start returning the destination information. Currently Firehose supports one
      * destination per delivery stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
-     *        Specifies the destination ID to start returning the destination information. Currently Firehose supports
-     *        one destination per delivery stream.
+     *        The ID of the destination to start returning the destination information. Currently Firehose supports one
+     *        destination per delivery stream.
      */
 
     public void setExclusiveStartDestinationId(String exclusiveStartDestinationId) {
@@ -142,12 +140,12 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination information. Currently Firehose supports one
+     * The ID of the destination to start returning the destination information. Currently Firehose supports one
      * destination per delivery stream.
      * </p>
      * 
-     * @return Specifies the destination ID to start returning the destination information. Currently Firehose supports
-     *         one destination per delivery stream.
+     * @return The ID of the destination to start returning the destination information. Currently Firehose supports one
+     *         destination per delivery stream.
      */
 
     public String getExclusiveStartDestinationId() {
@@ -156,13 +154,13 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies the destination ID to start returning the destination information. Currently Firehose supports one
+     * The ID of the destination to start returning the destination information. Currently Firehose supports one
      * destination per delivery stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
-     *        Specifies the destination ID to start returning the destination information. Currently Firehose supports
-     *        one destination per delivery stream.
+     *        The ID of the destination to start returning the destination information. Currently Firehose supports one
+     *        destination per delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

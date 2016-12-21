@@ -108,7 +108,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
             .addErrorMetadata(
                     new JsonErrorShapeMetadata().withErrorCode("WAFUnavailableEntityException").withModeledClass(
                             com.amazonaws.services.waf.model.WAFUnavailableEntityException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.waf.model.AWSWAFRegionalException.class));
+            .withBaseServiceExceptionClass(com.amazonaws.services.waf.model.AWSWAFException.class));
 
     /**
      * Constructs a new client to invoke service methods on WAF Regional. A credentials provider chain will be used that

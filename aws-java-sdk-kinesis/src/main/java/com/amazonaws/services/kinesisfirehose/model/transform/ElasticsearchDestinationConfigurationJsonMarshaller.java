@@ -71,6 +71,10 @@ public class ElasticsearchDestinationConfigurationJsonMarshaller {
                 jsonGenerator.writeFieldName("S3Configuration");
                 S3DestinationConfigurationJsonMarshaller.getInstance().marshall(elasticsearchDestinationConfiguration.getS3Configuration(), jsonGenerator);
             }
+            if (elasticsearchDestinationConfiguration.getProcessingConfiguration() != null) {
+                jsonGenerator.writeFieldName("ProcessingConfiguration");
+                ProcessingConfigurationJsonMarshaller.getInstance().marshall(elasticsearchDestinationConfiguration.getProcessingConfiguration(), jsonGenerator);
+            }
             if (elasticsearchDestinationConfiguration.getCloudWatchLoggingOptions() != null) {
                 jsonGenerator.writeFieldName("CloudWatchLoggingOptions");
                 CloudWatchLoggingOptionsJsonMarshaller.getInstance().marshall(elasticsearchDestinationConfiguration.getCloudWatchLoggingOptions(),

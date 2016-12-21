@@ -79,6 +79,10 @@ public class ElasticsearchDestinationUpdateJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     elasticsearchDestinationUpdate.setS3Update(S3DestinationUpdateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProcessingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDestinationUpdate.setProcessingConfiguration(ProcessingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CloudWatchLoggingOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDestinationUpdate.setCloudWatchLoggingOptions(CloudWatchLoggingOptionsJsonUnmarshaller.getInstance().unmarshall(context));

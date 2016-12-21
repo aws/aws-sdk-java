@@ -15,16 +15,55 @@ package com.amazonaws.services.storagegateway.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * A JSON object containing the following fields:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMaintenanceStartTimeOutput$Timezone</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     */
     private Integer hourOfDay;
-
+    /**
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     */
     private Integer minuteOfHour;
-
+    /**
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     */
     private Integer dayOfWeek;
 
     private String timezone;
@@ -56,7 +95,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
      * @param hourOfDay
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0
+     *        to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public void setHourOfDay(Integer hourOfDay) {
@@ -64,7 +110,13 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0
+     *         to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public Integer getHourOfDay() {
@@ -72,7 +124,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23).
+     * The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
      * @param hourOfDay
+     *        The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0
+     *        to 23). The hour of the day is in the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +141,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     * 
      * @param minuteOfHour
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (0 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public void setMinuteOfHour(Integer minuteOfHour) {
@@ -90,7 +156,13 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the
+     *         minute (0 to 59). The minute of the hour is in the time zone of the gateway.
      */
 
     public Integer getMinuteOfHour() {
@@ -98,7 +170,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to
+     * 59). The minute of the hour is in the time zone of the gateway.
+     * </p>
+     * 
      * @param minuteOfHour
+     *        The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute
+     *        (0 to 59). The minute of the hour is in the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,7 +187,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     * 
      * @param dayOfWeek
+     *        An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6
+     *        represents Saturday. The day of week is in the time zone of the gateway.
      */
 
     public void setDayOfWeek(Integer dayOfWeek) {
@@ -116,7 +202,13 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6
+     *         represents Saturday. The day of week is in the time zone of the gateway.
      */
 
     public Integer getDayOfWeek() {
@@ -124,7 +216,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents
+     * Saturday. The day of week is in the time zone of the gateway.
+     * </p>
+     * 
      * @param dayOfWeek
+     *        An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6
+     *        represents Saturday. The day of week is in the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

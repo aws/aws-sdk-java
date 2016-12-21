@@ -66,6 +66,11 @@ public class CreateDeliveryStreamRequestMarshaller implements Marshaller<Request
                 jsonGenerator.writeFieldName("S3DestinationConfiguration");
                 S3DestinationConfigurationJsonMarshaller.getInstance().marshall(createDeliveryStreamRequest.getS3DestinationConfiguration(), jsonGenerator);
             }
+            if (createDeliveryStreamRequest.getExtendedS3DestinationConfiguration() != null) {
+                jsonGenerator.writeFieldName("ExtendedS3DestinationConfiguration");
+                ExtendedS3DestinationConfigurationJsonMarshaller.getInstance().marshall(createDeliveryStreamRequest.getExtendedS3DestinationConfiguration(),
+                        jsonGenerator);
+            }
             if (createDeliveryStreamRequest.getRedshiftDestinationConfiguration() != null) {
                 jsonGenerator.writeFieldName("RedshiftDestinationConfiguration");
                 RedshiftDestinationConfigurationJsonMarshaller.getInstance().marshall(createDeliveryStreamRequest.getRedshiftDestinationConfiguration(),

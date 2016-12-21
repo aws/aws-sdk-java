@@ -65,6 +65,17 @@ public class RedshiftDestinationConfigurationJsonMarshaller {
                 jsonGenerator.writeFieldName("S3Configuration");
                 S3DestinationConfigurationJsonMarshaller.getInstance().marshall(redshiftDestinationConfiguration.getS3Configuration(), jsonGenerator);
             }
+            if (redshiftDestinationConfiguration.getProcessingConfiguration() != null) {
+                jsonGenerator.writeFieldName("ProcessingConfiguration");
+                ProcessingConfigurationJsonMarshaller.getInstance().marshall(redshiftDestinationConfiguration.getProcessingConfiguration(), jsonGenerator);
+            }
+            if (redshiftDestinationConfiguration.getS3BackupMode() != null) {
+                jsonGenerator.writeFieldName("S3BackupMode").writeValue(redshiftDestinationConfiguration.getS3BackupMode());
+            }
+            if (redshiftDestinationConfiguration.getS3BackupConfiguration() != null) {
+                jsonGenerator.writeFieldName("S3BackupConfiguration");
+                S3DestinationConfigurationJsonMarshaller.getInstance().marshall(redshiftDestinationConfiguration.getS3BackupConfiguration(), jsonGenerator);
+            }
             if (redshiftDestinationConfiguration.getCloudWatchLoggingOptions() != null) {
                 jsonGenerator.writeFieldName("CloudWatchLoggingOptions");
                 CloudWatchLoggingOptionsJsonMarshaller.getInstance().marshall(redshiftDestinationConfiguration.getCloudWatchLoggingOptions(), jsonGenerator);

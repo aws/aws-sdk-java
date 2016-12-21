@@ -266,16 +266,6 @@ public class UploadCallable implements Callable<UploadResult> {
             ;
         CompleteMultipartUploadResult res = s3.completeMultipartUpload(req);
 
-        // Note: The multipart upload API does not currently support tagging.
-        // This is a workaround until it is supported by the service.
-        ObjectTagging tagging = origReq.getTagging();
-        if (tagging != null) {
-            s3.setObjectTagging(new SetObjectTaggingRequest(
-                    origReq.getBucketName(),
-                    origReq.getKey(),
-                    tagging));
-        }
-
         UploadResult uploadResult = new UploadResult();
         uploadResult.setBucketName(res.getBucketName());
         uploadResult.setKey(res.getKey());

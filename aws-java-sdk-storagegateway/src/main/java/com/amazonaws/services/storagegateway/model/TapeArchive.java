@@ -33,6 +33,8 @@ public class TapeArchive implements Serializable, Cloneable {
      * </p>
      */
     private String tapeBarcode;
+
+    private java.util.Date tapeCreatedDate;
     /**
      * <p>
      * The size, in bytes, of the archived virtual tape.
@@ -141,6 +143,32 @@ public class TapeArchive implements Serializable, Cloneable {
 
     public TapeArchive withTapeBarcode(String tapeBarcode) {
         setTapeBarcode(tapeBarcode);
+        return this;
+    }
+
+    /**
+     * @param tapeCreatedDate
+     */
+
+    public void setTapeCreatedDate(java.util.Date tapeCreatedDate) {
+        this.tapeCreatedDate = tapeCreatedDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getTapeCreatedDate() {
+        return this.tapeCreatedDate;
+    }
+
+    /**
+     * @param tapeCreatedDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withTapeCreatedDate(java.util.Date tapeCreatedDate) {
+        setTapeCreatedDate(tapeCreatedDate);
         return this;
     }
 
@@ -349,6 +377,8 @@ public class TapeArchive implements Serializable, Cloneable {
             sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getTapeBarcode() != null)
             sb.append("TapeBarcode: ").append(getTapeBarcode()).append(",");
+        if (getTapeCreatedDate() != null)
+            sb.append("TapeCreatedDate: ").append(getTapeCreatedDate()).append(",");
         if (getTapeSizeInBytes() != null)
             sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getCompletionTime() != null)
@@ -379,6 +409,10 @@ public class TapeArchive implements Serializable, Cloneable {
             return false;
         if (other.getTapeBarcode() != null && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
             return false;
+        if (other.getTapeCreatedDate() == null ^ this.getTapeCreatedDate() == null)
+            return false;
+        if (other.getTapeCreatedDate() != null && other.getTapeCreatedDate().equals(this.getTapeCreatedDate()) == false)
+            return false;
         if (other.getTapeSizeInBytes() == null ^ this.getTapeSizeInBytes() == null)
             return false;
         if (other.getTapeSizeInBytes() != null && other.getTapeSizeInBytes().equals(this.getTapeSizeInBytes()) == false)
@@ -405,6 +439,7 @@ public class TapeArchive implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
         hashCode = prime * hashCode + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
+        hashCode = prime * hashCode + ((getTapeCreatedDate() == null) ? 0 : getTapeCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getRetrievedTo() == null) ? 0 : getRetrievedTo().hashCode());

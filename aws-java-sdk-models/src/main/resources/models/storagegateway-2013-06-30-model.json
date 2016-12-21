@@ -16,7 +16,7 @@
     "ActivateGateway" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Activates the gateway you previously deployed on your host. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html\"> Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the you want to use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.</p> <note><p>You must turn on the gateway VM before you can activate your gateway.</p> </note>",
+      "documentation" : "<p>Activates the gateway you previously deployed on your host. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html\"> Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the you want to use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.</p> <note> <p>You must turn on the gateway VM before you can activate your gateway.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -268,7 +268,7 @@
     "CreateCachediSCSIVolume" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.</p> <note><p>Cache storage must be allocated to the gateway before you can create a cached volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>",
+      "documentation" : "<p>Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume architecture.</p> <note> <p>Cache storage must be allocated to the gateway before you can create a cached volume. Use the <a>AddCache</a> operation to add cache storage to a gateway. </p> </note> <p>In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p> <p>Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached volume, which creates an exact copy of the existing volume’s latest recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of the copied volume, in bytes.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -301,10 +301,10 @@
         "shape" : "CreateCachediSCSIVolumeOutput"
       }
     },
-    "CreateSnapshot" : {
+    "CreateNFSFileShare" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API enables you to take ad-hoc snapshot. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html\">Working With Snapshots in the AWS Storage Gateway Console</a>.</p> <p>In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</p> <note><p>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or DeleteSnapshot in the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html\">EC2 API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note on the <a href=\"http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html\">Welcome</a> page.</p> </important>",
+      "documentation" : "<p>Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS) interface.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -317,6 +317,48 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerError"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateNFSFileShareInput",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateNFSFileShare",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateNFSFileShareOutput"
+      }
+    },
+    "CreateSnapshot" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API enables you to take ad-hoc snapshot. For more information, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html\">Working With Snapshots in the AWS Storage Gateway Console</a>.</p> <p>In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to create a volume from a snapshot.</p> <note> <p>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or DeleteSnapshot in the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html\">EC2 API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are changing to a longer length ID format. For more information, see the important note on the <a href=\"http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html\">Welcome</a> page.</p> </important>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidGatewayRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerError"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableError"
       } ],
       "http" : {
         "method" : "POST",
@@ -353,6 +395,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerError"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableError"
       } ],
       "http" : {
         "method" : "POST",
@@ -412,7 +460,7 @@
     "CreateTapeWithBarcode" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.</p> <note><p>Cache storage must be allocated to the gateway before you can create a virtual tape. Use the <a>AddCache</a> operation to add cache storage to a gateway.</p> </note>",
+      "documentation" : "<p>Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.</p> <note> <p>Cache storage must be allocated to the gateway before you can create a virtual tape. Use the <a>AddCache</a> operation to add cache storage to a gateway.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -448,7 +496,7 @@
     "CreateTapes" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.</p> <note><p>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </p> </note>",
+      "documentation" : "<p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.</p> <note> <p>Cache storage must be allocated to the gateway before you can create virtual tapes. Use the <a>AddCache</a> operation to add cache storage to a gateway. </p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -551,6 +599,42 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteChapCredentialsOutput"
+      }
+    },
+    "DeleteFileShare" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a file share from a file gateway.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidGatewayRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerError"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteFileShareInput",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteFileShare",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteFileShareOutput"
       }
     },
     "DeleteGateway" : {
@@ -949,6 +1033,42 @@
         "shape" : "DescribeMaintenanceStartTimeOutput"
       }
     },
+    "DescribeNFSFileShares" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Gets a description for one or more file shares from a file gateway.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidGatewayRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerError"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeNFSFileSharesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeNFSFileShares",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeNFSFileSharesOutput"
+      }
+    },
     "DescribeSnapshotSchedule" : {
       "authtype" : null,
       "deprecated" : false,
@@ -1240,7 +1360,7 @@
     "DisableGateway" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.</p> <p>Use this operation for a gateway-VTL that is not reachable or not functioning.</p> <important><p>Once a gateway is disabled it cannot be enabled.</p> </important>",
+      "documentation" : "<p>Disables a gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.</p> <p>Use this operation for a gateway-VTL that is not reachable or not functioning.</p> <important> <p>Once a gateway is disabled it cannot be enabled.</p> </important>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1271,6 +1391,42 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DisableGatewayOutput"
+      }
+    },
+    "ListFileShares" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling user account. </p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidGatewayRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerError"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListFileSharesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "ListFileShares",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListFileSharesOutput"
       }
     },
     "ListGateways" : {
@@ -1492,7 +1648,7 @@
     "ListVolumes" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> API.</p> <p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes.</p>",
+      "documentation" : "<p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> or the <a>DescribeCachediSCSIVolumes</a> API.</p> <p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1636,7 +1792,7 @@
     "RetrieveTapeRecoveryPoint" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the recovery point for the specified virtual tape.</p> <p>A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.</p> <note><p>The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.</p> </note>",
+      "documentation" : "<p>Retrieves the recovery point for the specified virtual tape.</p> <p>A recovery point is a point in time view of a virtual tape at which all the data on the tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.</p> <note> <p>The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1708,7 +1864,7 @@
     "ShutdownGateway" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p> <p>The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.</p> <note><p>If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>, <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.</p> <note><p>When you make a shutdown request, you will get a <code>200 OK</code> success response immediately. However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a> API to check the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to no longer pay software charges associated with the gateway.</p>",
+      "documentation" : "<p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p> <p>The operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.</p> <note> <p>If you want to shut down the VM, it is recommended that you first shut down the gateway component in the VM to avoid unpredictable conditions.</p> </note> <p>After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>, <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.</p> <note> <p>When you make a shutdown request, you will get a <code>200 OK</code> success response immediately. However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a> API to check the status. For more information, see <a>ActivateGateway</a>.</p> </note> <p>If do not intend to use the gateway again, you must delete the gateway (using <a>DeleteGateway</a>) to no longer pay software charges associated with the gateway.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1744,7 +1900,7 @@
     "StartGateway" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p> <note><p>When you make a request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check the status before making any additional API calls. For more information, see <a>ActivateGateway</a>.</p> </note> <p>To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
+      "documentation" : "<p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p> <note> <p>When you make a request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a> and check the status before making any additional API calls. For more information, see <a>ActivateGateway</a>.</p> </note> <p>To specify which gateway to start, use the Amazon Resource Name (ARN) of the gateway in your request.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1852,7 +2008,7 @@
     "UpdateGatewayInformation" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p> <note><p>For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway name. However, changing the name of the gateway has no effect on the gateway's ARN.</p> </note>",
+      "documentation" : "<p>Updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p> <note> <p>For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway name. However, changing the name of the gateway has no effect on the gateway's ARN.</p> </note>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1888,7 +2044,7 @@
     "UpdateGatewaySoftwareNow" : {
       "authtype" : null,
       "deprecated" : false,
-      "documentation" : "<p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p> <note><p>When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a> to verify the gateway is in the <code>STATE_RUNNING</code> state.</p> </note> <important><p>A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings\">Customizing Your Windows iSCSI Settings</a> and <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings\">Customizing Your Linux iSCSI Settings</a>, respectively.</p> </important>",
+      "documentation" : "<p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p> <note> <p>When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a> to verify the gateway is in the <code>STATE_RUNNING</code> state.</p> </note> <important> <p>A software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings\">Customizing Your Windows iSCSI Settings</a> and <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings\">Customizing Your Linux iSCSI Settings</a>, respectively.</p> </important>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1955,6 +2111,42 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateMaintenanceStartTimeOutput"
+      }
+    },
+    "UpdateNFSFileShare" : {
+      "authtype" : null,
+      "deprecated" : false,
+      "documentation" : "<p>Updates a file share. </p> <note> <p>To leave a file share field unchanged, set the corresponding input field to null.</p> </note>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidGatewayRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerError"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateNFSFileShareInput",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateNFSFileShare",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateNFSFileShareOutput"
       }
     },
     "UpdateSnapshotSchedule" : {
@@ -2146,7 +2338,7 @@
     },
     "ActivateGatewayOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note><p>For gateways activated prior to September 02, 2015 the gateway ARN contains the gateway name rather than the gateway id. Changing the name of the gateway has no effect on the gateway ARN.</p> </note>",
+      "documentation" : "<p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note> <p>For gateways activated prior to September 02, 2015 the gateway ARN contains the gateway name rather than the gateway id. Changing the name of the gateway has no effect on the gateway ARN.</p> </note>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2595,7 +2787,7 @@
       "value" : null,
       "wrapper" : false
     },
-    "CachediSCSIVolume" : {
+    "Boolean" : {
       "deprecated" : false,
       "documentation" : null,
       "enum" : null,
@@ -2606,10 +2798,44 @@
       "key" : null,
       "max" : 0,
       "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CachediSCSIVolume" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes an iSCSI cached volume.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
       "members" : {
-        "SourceSnapshotId" : {
+        "CreatedDate" : {
           "deprecated" : false,
           "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CreatedDate",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SourceSnapshotId" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2622,7 +2848,7 @@
         },
         "VolumeARN" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the storage volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2635,7 +2861,7 @@
         },
         "VolumeId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2648,7 +2874,7 @@
         },
         "VolumeProgress" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the cached volume is not restoring or bootstrapping.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2661,7 +2887,7 @@
         },
         "VolumeSizeInBytes" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The size of the volume in bytes.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2674,7 +2900,7 @@
         },
         "VolumeStatus" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>One of the VolumeStatus values that indicates the state of the storage volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2687,7 +2913,7 @@
         },
         "VolumeType" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>One of the VolumeType enumeration values that describes the type of the volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -2700,7 +2926,7 @@
         },
         "VolumeiSCSIAttributes" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3133,6 +3359,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "SourceVolumeARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN for an existing volume. Specifying this ARN makes the new volume into an exact copy of the specified existing volume's latest recovery point. The <code>VolumeSizeInBytes</code> value for this new volume must be equal to or larger than the size of the existing volume, in bytes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "VolumeARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "TargetName" : {
           "deprecated" : false,
           "documentation" : null,
@@ -3204,6 +3443,167 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "VolumeARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateNFSFileShareInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>CreateNFSFileShareInput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ClientToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>A unique string value that you supply that is used by file gateway to ensure idempotent file share creation.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ClientToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DefaultStorageClass" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageClass",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GatewayARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the file gateway on which you want to create a file share.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GatewayARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KMSEncrypted" : {
+          "deprecated" : false,
+          "documentation" : "<p>True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon S3. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KMSKey" : {
+          "deprecated" : false,
+          "documentation" : "<p>The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is true. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KMSKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LocationARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the backend storage used for storing file data. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LocationARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NFSFileShareDefaults" : {
+          "deprecated" : false,
+          "documentation" : "<p>File share default values. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NFSFileShareDefaults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Role" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the underlying storage. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Role",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ClientToken", "GatewayARN", "Role", "LocationARN" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateNFSFileShareOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>CreateNFSFileShareOutput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the newly created file share. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -3623,7 +4023,7 @@
         },
         "TapeSizeInBytes" : {
           "deprecated" : false,
-          "documentation" : "<p>The size, in bytes, of the virtual tape that you want to create.</p> <note><p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>",
+          "documentation" : "<p>The size, in bytes, of the virtual tape that you want to create.</p> <note> <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3693,7 +4093,7 @@
       "members" : {
         "ClientToken" : {
           "deprecated" : false,
-          "documentation" : "<p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note><p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p> </note>",
+          "documentation" : "<p>A unique identifier that you use to retry a request. If you retry a request, use the same <code>ClientToken</code> you specified in the initial request.</p> <note> <p>Using the same <code>ClientToken</code> prevents creating the tape multiple times.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3732,7 +4132,7 @@
         },
         "TapeBarcodePrefix" : {
           "deprecated" : false,
-          "documentation" : "<p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note><p>The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.</p> </note>",
+          "documentation" : "<p>A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the barcode unique.</p> <note> <p>The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3745,7 +4145,7 @@
         },
         "TapeSizeInBytes" : {
           "deprecated" : false,
-          "documentation" : "<p>The size, in bytes, of the virtual tapes that you want to create.</p> <note><p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>",
+          "documentation" : "<p>The size, in bytes, of the virtual tapes that you want to create.</p> <note> <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3801,6 +4201,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "CreatedDate" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "timestamp",
+      "value" : null,
+      "wrapper" : false
+    },
     "DayOfWeek" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3824,7 +4245,7 @@
     },
     "DeleteBandwidthRateLimitInput" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "<p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3836,7 +4257,7 @@
       "members" : {
         "BandwidthType" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p> <p>Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -3988,6 +4409,76 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "TargetARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteFileShareInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>DeleteFileShareInput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "FileShareARN" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteFileShareOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>DeleteFileShareOutput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the deleted file share. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4959,7 +5450,7 @@
     },
     "DescribeMaintenanceStartTimeOutput" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "<p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$Timezone</a> </p> </li> </ul>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4971,7 +5462,7 @@
       "members" : {
         "DayOfWeek" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An ordinal number between 0 and 6 that represents the day of the week, where 0 represents Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -4997,7 +5488,7 @@
         },
         "HourOfDay" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5010,7 +5501,7 @@
         },
         "MinuteOfHour" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The minute component of the maintenance start time represented as <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the gateway.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5031,6 +5522,76 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "GatewayTimezone",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeNFSFileSharesInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>DescribeNFSFileSharesInput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareARNList" : {
+          "deprecated" : false,
+          "documentation" : "<p>An array containing the Amazon Resource Name (ARN) of each file share to be described. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARNList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "FileShareARNList" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeNFSFileSharesOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>DescribeNFSFileSharesOutput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NFSFileShareInfoList" : {
+          "deprecated" : false,
+          "documentation" : "<p>An array containing a description for each requested file share. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NFSFileShareInfoList",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -5494,7 +6055,7 @@
         },
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note><p>Amazon Web Services may impose its own limit, if this field is not set.</p> </note>",
+          "documentation" : "<p>Specifies that the number of virtual tapes described be limited to the specified number.</p> <note> <p>Amazon Web Services may impose its own limit, if this field is not set.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -5751,7 +6312,7 @@
         },
         "VTLDeviceARNs" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note><p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p> </note>",
+          "documentation" : "<p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -6391,6 +6952,209 @@
       "value" : null,
       "wrapper" : false
     },
+    "FileShareARN" : {
+      "deprecated" : false,
+      "documentation" : "<p>The Amazon Resource Name (ARN) of the file share. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 500,
+      "member" : null,
+      "members" : { },
+      "min" : 50,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileShareARNList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 10,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "FileShareARN",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileShareId" : {
+      "deprecated" : false,
+      "documentation" : "<p>The ID of the file share. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 30,
+      "member" : null,
+      "members" : { },
+      "min" : 12,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileShareInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes a file share.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileShareId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileShareStatus" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GatewayARN" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GatewayARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileShareInfoList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "FileShareInfo",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileShareStatus" : {
+      "deprecated" : false,
+      "documentation" : "<p>The status of the file share. Possible values are CREATING, UPDATING, AVAILABLE and DELETING. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 50,
+      "member" : null,
+      "members" : { },
+      "min" : 3,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "GatewayARN" : {
       "deprecated" : false,
       "documentation" : "<p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and region.</p>",
@@ -6857,6 +7621,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "KMSKey" : {
+      "deprecated" : false,
+      "documentation" : "<p>The ARN of the KMS key used for Amazon S3 server side encryption. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 2048,
+      "member" : null,
+      "members" : { },
+      "min" : 20,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "LastSoftwareUpdate" : {
       "deprecated" : false,
       "documentation" : null,
@@ -6875,6 +7660,128 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListFileSharesInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>ListFileShareInput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "GatewayARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GatewayARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of file shares to return in the response. The value must be an integer with a value greater than zero. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PositiveIntObject",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Marker" : {
+          "deprecated" : false,
+          "documentation" : "<p>Opaque pagination token returned from a previous ListFileShares operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to ListFileShares. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Marker",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListFileSharesOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>ListFileShareOutput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareInfoList" : {
+          "deprecated" : false,
+          "documentation" : "<p>An array of information about the file gateway's file shares. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareInfoList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Marker" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the request includes <code>Marker</code>, the response returns that value in this field. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Marker",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextMarker" : {
+          "deprecated" : false,
+          "documentation" : "<p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Marker",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -7584,6 +8491,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "LocationARN" : {
+      "deprecated" : false,
+      "documentation" : "<p>The ARN of the backend storage used for storing file data. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 310,
+      "member" : null,
+      "members" : { },
+      "min" : 16,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "Marker" : {
       "deprecated" : false,
       "documentation" : null,
@@ -7647,6 +8575,278 @@
       "value" : null,
       "wrapper" : false
     },
+    "NFSFileShareDefaults" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DirectoryMode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Unix directory mode in the form \"nnnn\". For example, \"0666\" represents the default access mode for all directories inside the file share. The default value is 0777.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PermissionMode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileMode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Unix file mode in the form \"nnnn\". For example, \"0666\" represents the default file mode inside the file share. The default value is 0666. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PermissionMode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GroupId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default group ID for the file share (unless the files have another group ID specified). The default value is nfsnobody. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PermissionId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "OwnerId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default owner ID for files in the file share (unless the files have another owner ID specified). The default value is nfsnobody. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PermissionId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "NFSFileShareInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>The Unix file permissions and ownership information assigned, by default, to native S3 objects when Storage Gateway discovers them in S3 buckets.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DefaultStorageClass" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageClass",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileShareId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileShareStatus" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GatewayARN" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GatewayARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KMSEncrypted" : {
+          "deprecated" : false,
+          "documentation" : "<p>True to use Amazon S3 server side encryption with your own KMS key, or false to use a key managed by Amazon S3. Optional. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KMSKey" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KMSKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LocationARN" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LocationARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NFSFileShareDefaults" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NFSFileShareDefaults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Path" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Path",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Role" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Role",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "NFSFileShareInfoList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "NFSFileShareInfo",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "NetworkInterface" : {
       "deprecated" : false,
       "documentation" : "<p>Describes a gateway's network interface.</p>",
@@ -7687,7 +8887,7 @@
         },
         "MacAddress" : {
           "deprecated" : false,
-          "documentation" : "<p>The Media Access Control (MAC) address of the interface.</p> <note><p>This is currently unsupported and will not be returned in output.</p> </note>",
+          "documentation" : "<p>The Media Access Control (MAC) address of the interface.</p> <note> <p>This is currently unsupported and will not be returned in output.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -7768,6 +8968,69 @@
       "required" : null,
       "streaming" : false,
       "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Path" : {
+      "deprecated" : false,
+      "documentation" : "<p>The file share path used by the NFS client to identify the mount point. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PermissionId" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 4294967294,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "long",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PermissionMode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 4,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "^[0-7]{4}$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -8174,6 +9437,75 @@
       "value" : null,
       "wrapper" : false
     },
+    "Role" : {
+      "deprecated" : false,
+      "documentation" : "<p>The ARN of the IAM role that file gateway assumes when it accesses the underlying storage. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 2048,
+      "member" : null,
+      "members" : { },
+      "min" : 20,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ServiceUnavailableError" : {
+      "deprecated" : false,
+      "documentation" : "<p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "error" : {
+          "deprecated" : false,
+          "documentation" : "<p>A <a>StorageGatewayError</a> that provides more information about the cause of the error.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageGatewayError",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "message" : {
+          "deprecated" : false,
+          "documentation" : "<p>A human-readable message describing the error that occurred.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "SetLocalConsolePasswordInput" : {
       "deprecated" : false,
       "documentation" : "<p>SetLocalConsolePasswordInput</p>",
@@ -8439,6 +9771,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "StorageClass" : {
+      "deprecated" : false,
+      "documentation" : "<p/>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 20,
+      "member" : null,
+      "members" : { },
+      "min" : 5,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "StorageGatewayError" : {
       "deprecated" : false,
       "documentation" : "<p>Provides additional information about an error that was returned by the service as an or. See the <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.</p>",
@@ -8489,7 +9842,7 @@
     },
     "StorediSCSIVolume" : {
       "deprecated" : false,
-      "documentation" : null,
+      "documentation" : "<p>Describes an iSCSI stored volume.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8499,9 +9852,22 @@
       "max" : 0,
       "member" : null,
       "members" : {
-        "PreservedExistingData" : {
+        "CreatedDate" : {
           "deprecated" : false,
           "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CreatedDate",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "PreservedExistingData" : {
+          "deprecated" : false,
+          "documentation" : "<p>Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.</p> <p> Valid Values: true, false</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8514,7 +9880,7 @@
         },
         "SourceSnapshotId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>If the stored volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663. Otherwise, this field is not included.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8527,7 +9893,7 @@
         },
         "VolumeARN" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the storage volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8540,7 +9906,7 @@
         },
         "VolumeDiskId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a> operation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8553,7 +9919,7 @@
         },
         "VolumeId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The unique identifier of the volume, e.g. vol-AE4B946D.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8566,7 +9932,7 @@
         },
         "VolumeProgress" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents the percentage complete if the volume is restoring or bootstrapping that represents the percent of data transferred. This field does not appear in the response if the stored volume is not restoring or bootstrapping.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8579,7 +9945,7 @@
         },
         "VolumeSizeInBytes" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The size of the volume in bytes.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8592,7 +9958,7 @@
         },
         "VolumeStatus" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>One of the VolumeStatus values that indicates the state of the storage volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8605,7 +9971,7 @@
         },
         "VolumeType" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>One of the VolumeType enumeration values describing the type of the volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8618,7 +9984,7 @@
         },
         "VolumeiSCSIAttributes" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes for one stored volume.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8879,6 +10245,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "TapeCreatedDate" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Time",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "TapeSizeInBytes" : {
           "deprecated" : false,
           "documentation" : "<p>The size, in bytes, of the virtual tape.</p>",
@@ -8941,7 +10320,7 @@
       "member" : null,
       "members" : { },
       "min" : 50,
-      "pattern" : null,
+      "pattern" : "^arn:(aws|aws-cn):storagegateway:[a-z\\-0-9]+:[0-9]+:tape\\/[0-9A-Z]{7,16}$",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -9043,6 +10422,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "TapeBarcode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TapeCreatedDate" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Time",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -9708,7 +11100,7 @@
         },
         "SecretToAuthenticateInitiator" : {
           "deprecated" : false,
-          "documentation" : "<p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note><p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>",
+          "documentation" : "<p>The secret key that the initiator (for example, the Windows client) must provide to participate in mutual CHAP with the target.</p> <note> <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9721,7 +11113,7 @@
         },
         "SecretToAuthenticateTarget" : {
           "deprecated" : false,
-          "documentation" : "<p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note><p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>",
+          "documentation" : "<p>The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> <p>Byte constraints: Minimum bytes of 12. Maximum bytes of 16.</p> <note> <p>The secret key must be between 12 and 16 bytes when encoded in UTF-8.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9996,7 +11388,7 @@
       "members" : {
         "DayOfWeek" : {
           "deprecated" : false,
-          "documentation" : "<p>The maintenance start time day of the week.</p>",
+          "documentation" : "<p>The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents Sunday and 6 Saturday.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -10078,6 +11470,128 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "GatewayARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateNFSFileShareInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>UpdateNFSFileShareInput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DefaultStorageClass" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageClass",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the file share to be updated. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KMSEncrypted" : {
+          "deprecated" : false,
+          "documentation" : "<p>True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon S3. Optional. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KMSKey" : {
+          "deprecated" : false,
+          "documentation" : "<p>The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is true. Optional. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KMSKey",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NFSFileShareDefaults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default values for the file share. Optional.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NFSFileShareDefaults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "FileShareARN" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateNFSFileShareOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>UpdateNFSFileShareOutput</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FileShareARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the updated file share. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileShareARN",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -10661,7 +12175,7 @@
         },
         "VolumeSizeInBytes" : {
           "deprecated" : false,
-          "documentation" : "<p>The size, in bytes, of the volume.</p> <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>",
+          "documentation" : "<p>The size of the volume in bytes.</p> <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -11115,5 +12629,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS Storage Gateway Service</fullname> <p>AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid disaster recovery.</p> <p>Use the following links to get started using the <i>AWS Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html\">AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST request to AWS Storage Gateway.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html\">Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic describes how sign such a request.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html\">Error Responses</a>: Provides reference information about AWS Storage Gateway errors.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html\">Operations in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response elements, possible errors, and examples of requests and responses.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html\">AWS Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints available for use with AWS Storage Gateway.</p> </li> </ul> <note> <p>AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with the EC2 API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not behave as expected.</p> </note> <important> <p>IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes are changing to a longer format. Starting in December 2016, all new volumes and snapshots will be created with a 17-character string. Starting in April 2016, you will be able to use these longer IDs so you can test your systems with the new format. For more information, see <a href=\"https://aws.amazon.com/ec2/faqs/#longer-ids\">Longer EC2 and EBS Resource IDs</a>.</p> <p> For example, a volume ARN with the longer volume ID format will look like this:</p> <p> <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.</p> <p>A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.</p> <p>For more information, see <a href=\"https://forums.aws.amazon.com/ann.jspa?annID=3557\">Announcement: Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p> </important>"
+  "documentation" : "<fullname>AWS Storage Gateway Service</fullname> <p>AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid disaster recovery.</p> <p>Use the following links to get started using the <i>AWS Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders\">AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST request to AWS Storage Gateway.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests\">Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic describes how sign such a request.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses\">Error Responses</a>: Provides reference information about AWS Storage Gateway errors.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html\">Operations in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response elements, possible errors, and examples of requests and responses.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html\">AWS Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints available for use with AWS Storage Gateway.</p> </li> </ul> <note> <p>AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with the EC2 API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not behave as expected.</p> </note> <important> <p>IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes are changing to a longer format. Starting in December 2016, all new volumes and snapshots will be created with a 17-character string. Starting in April 2016, you will be able to use these longer IDs so you can test your systems with the new format. For more information, see <a href=\"https://aws.amazon.com/ec2/faqs/#longer-ids\">Longer EC2 and EBS Resource IDs</a>.</p> <p> For example, a volume ARN with the longer volume ID format will look like this:</p> <p> <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.</p> <p>A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.</p> <p>For more information, see <a href=\"https://forums.aws.amazon.com/ann.jspa?annID=3557\">Announcement: Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p> </important>"
 }

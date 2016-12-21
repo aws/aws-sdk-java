@@ -72,6 +72,9 @@ public class StorediSCSIVolumeJsonMarshaller {
                 jsonGenerator.writeFieldName("VolumeiSCSIAttributes");
                 VolumeiSCSIAttributesJsonMarshaller.getInstance().marshall(storediSCSIVolume.getVolumeiSCSIAttributes(), jsonGenerator);
             }
+            if (storediSCSIVolume.getCreatedDate() != null) {
+                jsonGenerator.writeFieldName("CreatedDate").writeValue(storediSCSIVolume.getCreatedDate());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

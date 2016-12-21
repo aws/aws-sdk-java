@@ -32,9 +32,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     private String roleARN;
     /**
      * <p>
-     * The ARN of the Amazon ES domain. The IAM role must have permission for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.
+     * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
+     * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
+     * role specified in <b>RoleARN</b>.
      * </p>
      */
     private String domainARN;
@@ -55,20 +55,21 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      * expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      */
     private String indexRotationPeriod;
     /**
      * <p>
-     * Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are used.
+     * The buffering options. If no value is specified, the default values for <b>ElasticsearchBufferingHints</b> are
+     * used.
      * </p>
      */
     private ElasticsearchBufferingHints bufferingHints;
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default value
-     * is 300 (5 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default value is
+     * 300 (5 minutes).
      * </p>
      */
     private ElasticsearchRetryOptions retryOptions;
@@ -83,11 +84,21 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * </p>
      */
     private String s3BackupMode;
-
+    /**
+     * <p>
+     * The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
+     * </p>
+     */
     private S3DestinationConfiguration s3Configuration;
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The data processing configuration.
+     * </p>
+     */
+    private ProcessingConfiguration processingConfiguration;
+    /**
+     * <p>
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
@@ -152,15 +163,15 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The ARN of the Amazon ES domain. The IAM role must have permission for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.
+     * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
+     * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
+     * role specified in <b>RoleARN</b>.
      * </p>
      * 
      * @param domainARN
-     *        The ARN of the Amazon ES domain. The IAM role must have permission for 
-     *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code> , and
-     *        <code>DescribeElasticsearchDomainConfig</code> after assuming <b>RoleARN</b>.
+     *        The ARN of the Amazon ES domain. The IAM role must have permissions for 
+     *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
+     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified in <b>RoleARN</b>.
      */
 
     public void setDomainARN(String domainARN) {
@@ -169,14 +180,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The ARN of the Amazon ES domain. The IAM role must have permission for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.
+     * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
+     * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
+     * role specified in <b>RoleARN</b>.
      * </p>
      * 
-     * @return The ARN of the Amazon ES domain. The IAM role must have permission for 
-     *         <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code> , and
-     *         <code>DescribeElasticsearchDomainConfig</code> after assuming <b>RoleARN</b>.
+     * @return The ARN of the Amazon ES domain. The IAM role must have permissions for 
+     *         <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
+     *         <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified in <b>RoleARN</b>.
      */
 
     public String getDomainARN() {
@@ -185,15 +196,15 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The ARN of the Amazon ES domain. The IAM role must have permission for <code>DescribeElasticsearchDomain</code>,
-     * <code>DescribeElasticsearchDomains</code> , and <code>DescribeElasticsearchDomainConfig</code> after assuming
-     * <b>RoleARN</b>.
+     * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
+     * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
+     * role specified in <b>RoleARN</b>.
      * </p>
      * 
      * @param domainARN
-     *        The ARN of the Amazon ES domain. The IAM role must have permission for 
-     *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code> , and
-     *        <code>DescribeElasticsearchDomainConfig</code> after assuming <b>RoleARN</b>.
+     *        The ARN of the Amazon ES domain. The IAM role must have permissions for 
+     *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
+     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the role specified in <b>RoleARN</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,14 +298,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      * expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      *        expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
      */
 
@@ -307,13 +318,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      * expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @return The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to
      *         facilitate expiration of old data. For more information, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *         for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *         for Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
      */
 
@@ -326,14 +337,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      * expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      *        expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchIndexRotationPeriod
      */
@@ -348,14 +359,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      * expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      *        expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
      */
 
@@ -368,14 +379,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      * expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the IndexName to facilitate
      *        expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for Amazon Elasticsearch Service Destination</a>. The default value is <code>OneDay</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchIndexRotationPeriod
      */
@@ -387,12 +398,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are used.
+     * The buffering options. If no value is specified, the default values for <b>ElasticsearchBufferingHints</b> are
+     * used.
      * </p>
      * 
      * @param bufferingHints
-     *        Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     *        used.
+     *        The buffering options. If no value is specified, the default values for <b>ElasticsearchBufferingHints</b>
+     *        are used.
      */
 
     public void setBufferingHints(ElasticsearchBufferingHints bufferingHints) {
@@ -401,11 +413,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are used.
+     * The buffering options. If no value is specified, the default values for <b>ElasticsearchBufferingHints</b> are
+     * used.
      * </p>
      * 
-     * @return Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     *         used.
+     * @return The buffering options. If no value is specified, the default values for
+     *         <b>ElasticsearchBufferingHints</b> are used.
      */
 
     public ElasticsearchBufferingHints getBufferingHints() {
@@ -414,12 +427,13 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are used.
+     * The buffering options. If no value is specified, the default values for <b>ElasticsearchBufferingHints</b> are
+     * used.
      * </p>
      * 
      * @param bufferingHints
-     *        Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     *        used.
+     *        The buffering options. If no value is specified, the default values for <b>ElasticsearchBufferingHints</b>
+     *        are used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,12 +444,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default value
-     * is 300 (5 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default value is
+     * 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default
+     *        The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default
      *        value is 300 (5 minutes).
      */
 
@@ -445,11 +459,11 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default value
-     * is 300 (5 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default value is
+     * 300 (5 minutes).
      * </p>
      * 
-     * @return Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default
+     * @return The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default
      *         value is 300 (5 minutes).
      */
 
@@ -459,12 +473,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default value
-     * is 300 (5 minutes).
+     * The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default value is
+     * 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        Configures retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. Default
+     *        The retry behavior in the event that Firehose is unable to deliver documents to Amazon ES. The default
      *        value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -603,7 +617,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
+     * </p>
+     * 
      * @param s3Configuration
+     *        The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
      */
 
     public void setS3Configuration(S3DestinationConfiguration s3Configuration) {
@@ -611,7 +630,11 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     }
 
     /**
-     * @return
+     * <p>
+     * The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
+     * </p>
+     * 
+     * @return The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
      */
 
     public S3DestinationConfiguration getS3Configuration() {
@@ -619,7 +642,12 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
+     * </p>
+     * 
      * @param s3Configuration
+     *        The configuration for the intermediate Amazon S3 location from which Amazon ES obtains data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,11 +658,51 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The data processing configuration.
+     * </p>
+     * 
+     * @param processingConfiguration
+     *        The data processing configuration.
+     */
+
+    public void setProcessingConfiguration(ProcessingConfiguration processingConfiguration) {
+        this.processingConfiguration = processingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The data processing configuration.
+     * </p>
+     * 
+     * @return The data processing configuration.
+     */
+
+    public ProcessingConfiguration getProcessingConfiguration() {
+        return this.processingConfiguration;
+    }
+
+    /**
+     * <p>
+     * The data processing configuration.
+     * </p>
+     * 
+     * @param processingConfiguration
+     *        The data processing configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationConfiguration withProcessingConfiguration(ProcessingConfiguration processingConfiguration) {
+        setProcessingConfiguration(processingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        Describes CloudWatch logging options for your delivery stream.
+     *        The CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -643,10 +711,10 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return Describes CloudWatch logging options for your delivery stream.
+     * @return The CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -655,11 +723,11 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Describes CloudWatch logging options for your delivery stream.
+     * The CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        Describes CloudWatch logging options for your delivery stream.
+     *        The CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -697,6 +765,8 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
             sb.append("S3BackupMode: ").append(getS3BackupMode()).append(",");
         if (getS3Configuration() != null)
             sb.append("S3Configuration: ").append(getS3Configuration()).append(",");
+        if (getProcessingConfiguration() != null)
+            sb.append("ProcessingConfiguration: ").append(getProcessingConfiguration()).append(",");
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions());
         sb.append("}");
@@ -749,6 +819,10 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
             return false;
         if (other.getS3Configuration() != null && other.getS3Configuration().equals(this.getS3Configuration()) == false)
             return false;
+        if (other.getProcessingConfiguration() == null ^ this.getProcessingConfiguration() == null)
+            return false;
+        if (other.getProcessingConfiguration() != null && other.getProcessingConfiguration().equals(this.getProcessingConfiguration()) == false)
+            return false;
         if (other.getCloudWatchLoggingOptions() == null ^ this.getCloudWatchLoggingOptions() == null)
             return false;
         if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
@@ -770,6 +844,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
         hashCode = prime * hashCode + ((getRetryOptions() == null) ? 0 : getRetryOptions().hashCode());
         hashCode = prime * hashCode + ((getS3BackupMode() == null) ? 0 : getS3BackupMode().hashCode());
         hashCode = prime * hashCode + ((getS3Configuration() == null) ? 0 : getS3Configuration().hashCode());
+        hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         return hashCode;
     }

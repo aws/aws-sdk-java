@@ -56,7 +56,8 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
     private Integer minuteOfHour;
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      */
     private Integer dayOfWeek;
@@ -181,11 +182,13 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      * 
      * @param dayOfWeek
-     *        The maintenance start time day of the week.
+     *        The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
+     *        represents Sunday and 6 Saturday.
      */
 
     public void setDayOfWeek(Integer dayOfWeek) {
@@ -194,10 +197,12 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      * 
-     * @return The maintenance start time day of the week.
+     * @return The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
+     *         represents Sunday and 6 Saturday.
      */
 
     public Integer getDayOfWeek() {
@@ -206,11 +211,13 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maintenance start time day of the week.
+     * The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0 represents
+     * Sunday and 6 Saturday.
      * </p>
      * 
      * @param dayOfWeek
-     *        The maintenance start time day of the week.
+     *        The maintenance start time day of the week represented as an ordinal number from 0 to 6, where 0
+     *        represents Sunday and 6 Saturday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

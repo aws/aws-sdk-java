@@ -37,29 +37,32 @@ import com.amazonaws.services.storagegateway.model.*;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
- * Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
+ * <a href=
+ * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
- * Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic describes how
- * sign such a request.
+ * <a href=
+ * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
+ * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error Responses</a>:
- * Provides reference information about AWS Storage Gateway errors.
+ * <a
+ * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
+ * Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
- * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request
- * parameters, response elements, possible errors, and examples of requests and responses.
+ * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
+ * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
+ * elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
@@ -396,8 +399,13 @@ public interface AWSStorageGateway {
      * <p>
      * In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address
      * on which to expose the target, and a unique client token. In response, AWS Storage Gateway creates the volume and
-     * returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-     * that initiators can use to connect to the volume target.
+     * returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the
+     * iSCSI target ARN that initiators can use to connect to the volume target.
+     * </p>
+     * <p>
+     * Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached
+     * volume, which creates an exact copy of the existing volume’s latest recovery point. The
+     * <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of the copied volume, in bytes.
      * </p>
      * 
      * @param createCachediSCSIVolumeRequest
@@ -411,6 +419,26 @@ public interface AWSStorageGateway {
      * @sample AWSStorageGateway.CreateCachediSCSIVolume
      */
     CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest);
+
+    /**
+     * <p>
+     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
+     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
+     * interface.
+     * </p>
+     * 
+     * @param createNFSFileShareRequest
+     *        CreateNFSFileShareInput
+     * @return Result of the CreateNFSFileShare operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.CreateNFSFileShare
+     */
+    CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest createNFSFileShareRequest);
 
     /**
      * <p>
@@ -464,6 +492,9 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
+     * @throws ServiceUnavailableErrorException
+     *         An internal server error has occurred because the service is unavailable. For more information, see the
+     *         error and message fields.
      * @sample AWSStorageGateway.CreateSnapshot
      */
     CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest);
@@ -500,6 +531,9 @@ public interface AWSStorageGateway {
      * @throws InternalServerErrorException
      *         An internal server error has occurred during the request. For more information, see the error and message
      *         fields.
+     * @throws ServiceUnavailableErrorException
+     *         An internal server error has occurred because the service is unavailable. For more information, see the
+     *         error and message fields.
      * @sample AWSStorageGateway.CreateSnapshotFromVolumeRecoveryPoint
      */
     CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
@@ -616,6 +650,13 @@ public interface AWSStorageGateway {
      * </p>
      * 
      * @param deleteBandwidthRateLimitRequest
+     *        A JSON object containing the following fields:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>DeleteBandwidthRateLimitInput$BandwidthType</a>
+     *        </p>
+     *        </li>
      * @return Result of the DeleteBandwidthRateLimit operation returned by the service.
      * @throws InvalidGatewayRequestException
      *         An exception occurred because an invalid gateway request was issued to the service. For more information,
@@ -656,6 +697,24 @@ public interface AWSStorageGateway {
      * @sample AWSStorageGateway.DeleteChapCredentials
      */
     DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest);
+
+    /**
+     * <p>
+     * Deletes a file share from a file gateway.
+     * </p>
+     * 
+     * @param deleteFileShareRequest
+     *        DeleteFileShareInput
+     * @return Result of the DeleteFileShare operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DeleteFileShare
+     */
+    DeleteFileShareResult deleteFileShare(DeleteFileShareRequest deleteFileShareRequest);
 
     /**
      * <p>
@@ -915,6 +974,24 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * Gets a description for one or more file shares from a file gateway.
+     * </p>
+     * 
+     * @param describeNFSFileSharesRequest
+     *        DescribeNFSFileSharesInput
+     * @return Result of the DescribeNFSFileShares operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeNFSFileShares
+     */
+    DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest describeNFSFileSharesRequest);
+
+    /**
+     * <p>
      * Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes
      * intervals at which snapshots are automatically initiated on the volume.
      * </p>
@@ -1125,6 +1202,25 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
+     * user account.
+     * </p>
+     * 
+     * @param listFileSharesRequest
+     *        ListFileShareInput
+     * @return Result of the ListFileShares operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.ListFileShares
+     */
+    ListFileSharesResult listFileShares(ListFileSharesRequest listFileSharesRequest);
+
+    /**
+     * <p>
      * Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by
      * gateway Amazon Resource Name (ARN).
      * </p>
@@ -1306,7 +1402,8 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the
-     * volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> API.
+     * volume ARNs. If you want additional volume information, use the <a>DescribeStorediSCSIVolumes</a> or the
+     * <a>DescribeCachediSCSIVolumes</a> API.
      * </p>
      * <p>
      * The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can
@@ -1714,6 +1811,29 @@ public interface AWSStorageGateway {
      * @sample AWSStorageGateway.UpdateMaintenanceStartTime
      */
     UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest);
+
+    /**
+     * <p>
+     * Updates a file share.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null.
+     * </p>
+     * </note>
+     * 
+     * @param updateNFSFileShareRequest
+     *        UpdateNFSFileShareInput
+     * @return Result of the UpdateNFSFileShare operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateNFSFileShare
+     */
+    UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest updateNFSFileShareRequest);
 
     /**
      * <p>

@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Describes CloudWatch logging options for your delivery stream.
+ * Describes the CloudWatch logging options for your delivery stream.
  * </p>
  */
 public class CloudWatchLoggingOptions implements Serializable, Cloneable {
@@ -29,13 +29,13 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * The CloudWatch group name for logging. This value is required if Enabled is true.
+     * The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     * The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      */
     private String logStreamName;
@@ -94,11 +94,11 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch group name for logging. This value is required if Enabled is true.
+     * The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      * 
      * @param logGroupName
-     *        The CloudWatch group name for logging. This value is required if Enabled is true.
+     *        The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -107,10 +107,10 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch group name for logging. This value is required if Enabled is true.
+     * The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      * 
-     * @return The CloudWatch group name for logging. This value is required if Enabled is true.
+     * @return The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      */
 
     public String getLogGroupName() {
@@ -119,11 +119,11 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch group name for logging. This value is required if Enabled is true.
+     * The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      * 
      * @param logGroupName
-     *        The CloudWatch group name for logging. This value is required if Enabled is true.
+     *        The CloudWatch group name for logging. This value is required if CloudWatch logging is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +134,11 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     * The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      * 
      * @param logStreamName
-     *        The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     *        The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      */
 
     public void setLogStreamName(String logStreamName) {
@@ -147,10 +147,10 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     * The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      * 
-     * @return The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     * @return The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      */
 
     public String getLogStreamName() {
@@ -159,11 +159,11 @@ public class CloudWatchLoggingOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     * The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      * </p>
      * 
      * @param logStreamName
-     *        The CloudWatch log stream name for logging. This value is required if Enabled is true.
+     *        The CloudWatch log stream name for logging. This value is required if CloudWatch logging is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
