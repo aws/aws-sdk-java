@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeBackupsRequestMarshaller implements Marshaller<Request<DescribeBackupsRequest>, DescribeBackupsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeBackupsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeBackupsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

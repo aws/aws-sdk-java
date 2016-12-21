@@ -229,4 +229,5 @@ public class ListUserPoolClientsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListUserPoolClientsRequest clone() {
         return (ListUserPoolClientsRequest) super.clone();
     }
+
 }

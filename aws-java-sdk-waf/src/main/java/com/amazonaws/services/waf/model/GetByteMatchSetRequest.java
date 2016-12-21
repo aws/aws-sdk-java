@@ -121,4 +121,5 @@ public class GetByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReques
     public GetByteMatchSetRequest clone() {
         return (GetByteMatchSetRequest) super.clone();
     }
+
 }

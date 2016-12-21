@@ -459,4 +459,5 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateDestinationRequest clone() {
         return (UpdateDestinationRequest) super.clone();
     }
+
 }

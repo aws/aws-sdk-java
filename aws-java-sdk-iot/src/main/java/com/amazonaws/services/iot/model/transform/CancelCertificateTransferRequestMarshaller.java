@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CancelCertificateTransferRequestMarshaller implements Marshaller<Request<CancelCertificateTransferRequest>, CancelCertificateTransferRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CancelCertificateTransferRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CancelCertificateTransferRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

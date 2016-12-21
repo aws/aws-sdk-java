@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSCodeCommitModuleInjector",
     "defaultEndpoint" : "https://codecommit.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "codecommit.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS CodeCommit</fullname> <p>This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions of the operations and data types for AWS CodeCommit API.</p> <p>You can use the AWS CodeCommit API to work with the following objects:</p> <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>, which returns information about one or more repositories associated with your AWS account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li> <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>, which returns information about a specified repository</li> <li><a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with your AWS account</li> <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li> <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default branch for a repository</li> </ul></li> <li>Information about committed code in a repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information about a commit, including commit messages and committer information.</li> </ul></li> <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can be used to create or delete triggers</li> <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger by sending data to the trigger target</li> </ul> </li> </ul> <p>For information about how to use AWS CodeCommit, see the <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html\">AWS CodeCommit User Guide</a>.</p>",
     "endpointPrefix" : "codecommit",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/codecommit",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "CodeCommit",
     "serviceFullName" : "AWS CodeCommit",
     "serviceName" : "CodeCommit",
@@ -1380,6 +1384,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryNames" ],
       "shapeName" : "BatchGetRepositoriesRequest",
       "unmarshaller" : null,
@@ -1923,6 +1929,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetRepositoriesResult",
       "unmarshaller" : {
@@ -1958,6 +1966,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchDoesNotExistException",
       "unmarshaller" : null,
@@ -2217,6 +2227,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchInfo",
       "unmarshaller" : {
@@ -2252,6 +2264,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchNameExistsException",
       "unmarshaller" : null,
@@ -2284,6 +2298,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BranchNameRequiredException",
       "unmarshaller" : null,
@@ -3137,6 +3153,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Commit",
       "unmarshaller" : {
@@ -3172,6 +3190,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitDoesNotExistException",
       "unmarshaller" : null,
@@ -3204,6 +3224,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitIdDoesNotExistException",
       "unmarshaller" : null,
@@ -3236,6 +3258,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CommitIdRequiredException",
       "unmarshaller" : null,
@@ -3615,6 +3639,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "branchName", "commitId" ],
       "shapeName" : "CreateBranchRequest",
       "unmarshaller" : null,
@@ -3647,6 +3673,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBranchResult",
       "unmarshaller" : {
@@ -3916,6 +3944,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "CreateRepositoryRequest",
       "unmarshaller" : null,
@@ -4062,6 +4092,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateRepositoryResult",
       "unmarshaller" : {
@@ -4218,6 +4250,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "DeleteRepositoryRequest",
       "unmarshaller" : null,
@@ -4364,6 +4398,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteRepositoryResult",
       "unmarshaller" : {
@@ -4399,6 +4435,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionIntegrityChecksFailedException",
       "unmarshaller" : null,
@@ -4431,6 +4469,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyAccessDeniedException",
       "unmarshaller" : null,
@@ -4463,6 +4503,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyDisabledException",
       "unmarshaller" : null,
@@ -4495,6 +4537,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyNotFoundException",
       "unmarshaller" : null,
@@ -4527,6 +4571,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyUnavailableException",
       "unmarshaller" : null,
@@ -4793,6 +4839,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetBranchRequest",
       "unmarshaller" : null,
@@ -4939,6 +4987,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetBranchResult",
       "unmarshaller" : {
@@ -5208,6 +5258,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "commitId" ],
       "shapeName" : "GetCommitRequest",
       "unmarshaller" : null,
@@ -5354,6 +5406,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "commit" ],
       "shapeName" : "GetCommitResult",
       "unmarshaller" : {
@@ -5510,6 +5564,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "GetRepositoryRequest",
       "unmarshaller" : null,
@@ -5656,6 +5712,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRepositoryResult",
       "unmarshaller" : {
@@ -5812,6 +5870,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRepositoryTriggersRequest",
       "unmarshaller" : null,
@@ -6213,6 +6273,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRepositoryTriggersResult",
       "unmarshaller" : {
@@ -6248,6 +6310,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidBranchNameException",
       "unmarshaller" : null,
@@ -6280,6 +6344,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCommitIdException",
       "unmarshaller" : null,
@@ -6312,6 +6378,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidContinuationTokenException",
       "unmarshaller" : null,
@@ -6344,6 +6412,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidOrderException",
       "unmarshaller" : null,
@@ -6376,6 +6446,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryDescriptionException",
       "unmarshaller" : null,
@@ -6408,6 +6480,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryNameException",
       "unmarshaller" : null,
@@ -6440,6 +6514,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerBranchNameException",
       "unmarshaller" : null,
@@ -6472,6 +6548,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerCustomDataException",
       "unmarshaller" : null,
@@ -6504,6 +6582,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerDestinationArnException",
       "unmarshaller" : null,
@@ -6536,6 +6616,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerEventsException",
       "unmarshaller" : null,
@@ -6568,6 +6650,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerNameException",
       "unmarshaller" : null,
@@ -6600,6 +6684,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRepositoryTriggerRegionException",
       "unmarshaller" : null,
@@ -6632,6 +6718,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSortByException",
       "unmarshaller" : null,
@@ -6898,6 +6986,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "ListBranchesRequest",
       "unmarshaller" : null,
@@ -7299,6 +7389,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListBranchesResult",
       "unmarshaller" : {
@@ -7681,6 +7773,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRepositoriesRequest",
       "unmarshaller" : null,
@@ -8082,6 +8176,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRepositoriesResult",
       "unmarshaller" : {
@@ -8117,6 +8213,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaximumBranchesExceededException",
       "unmarshaller" : null,
@@ -8149,6 +8247,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaximumRepositoryNamesExceededException",
       "unmarshaller" : null,
@@ -8181,6 +8281,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaximumRepositoryTriggersExceededException",
       "unmarshaller" : null,
@@ -8219,6 +8321,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OrderEnum",
       "unmarshaller" : {
@@ -8630,6 +8734,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutRepositoryTriggersRequest",
       "unmarshaller" : null,
@@ -8776,6 +8882,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutRepositoryTriggersResult",
       "unmarshaller" : {
@@ -8811,6 +8919,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryDoesNotExistException",
       "unmarshaller" : null,
@@ -8843,6 +8953,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryLimitExceededException",
       "unmarshaller" : null,
@@ -10006,6 +10118,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryMetadata",
       "unmarshaller" : {
@@ -10041,6 +10155,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNameExistsException",
       "unmarshaller" : null,
@@ -10300,6 +10416,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNameIdPair",
       "unmarshaller" : {
@@ -10335,6 +10453,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNameRequiredException",
       "unmarshaller" : null,
@@ -10367,6 +10487,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNamesRequiredException",
       "unmarshaller" : null,
@@ -11249,6 +11371,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTrigger",
       "unmarshaller" : {
@@ -11284,6 +11408,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerBranchNameListRequiredException",
       "unmarshaller" : null,
@@ -11316,6 +11442,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerDestinationArnRequiredException",
       "unmarshaller" : null,
@@ -11360,6 +11488,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerEventEnum",
       "unmarshaller" : {
@@ -11395,6 +11525,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerEventsListRequiredException",
       "unmarshaller" : null,
@@ -11654,6 +11786,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerExecutionFailure",
       "unmarshaller" : {
@@ -11689,6 +11823,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggerNameRequiredException",
       "unmarshaller" : null,
@@ -11721,6 +11857,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryTriggersListRequiredException",
       "unmarshaller" : null,
@@ -11759,6 +11897,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SortByEnum",
       "unmarshaller" : {
@@ -12170,6 +12310,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TestRepositoryTriggersRequest",
       "unmarshaller" : null,
@@ -12713,6 +12855,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TestRepositoryTriggersResult",
       "unmarshaller" : {
@@ -12982,6 +13126,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "defaultBranchName" ],
       "shapeName" : "UpdateDefaultBranchRequest",
       "unmarshaller" : null,
@@ -13014,6 +13160,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDefaultBranchResult",
       "unmarshaller" : {
@@ -13283,6 +13431,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "UpdateRepositoryDescriptionRequest",
       "unmarshaller" : null,
@@ -13315,6 +13465,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateRepositoryDescriptionResult",
       "unmarshaller" : {
@@ -13584,6 +13736,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "oldName", "newName" ],
       "shapeName" : "UpdateRepositoryNameRequest",
       "unmarshaller" : null,
@@ -13616,6 +13770,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateRepositoryNameResult",
       "unmarshaller" : {
@@ -13991,6 +14147,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserInfo",
       "unmarshaller" : {
@@ -14009,6 +14167,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

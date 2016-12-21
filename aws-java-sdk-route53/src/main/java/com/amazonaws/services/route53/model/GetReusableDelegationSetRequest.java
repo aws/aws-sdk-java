@@ -116,4 +116,5 @@ public class GetReusableDelegationSetRequest extends com.amazonaws.AmazonWebServ
     public GetReusableDelegationSetRequest clone() {
         return (GetReusableDelegationSetRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     public StopInstanceRequest clone() {
         return (StopInstanceRequest) super.clone();
     }
+
 }

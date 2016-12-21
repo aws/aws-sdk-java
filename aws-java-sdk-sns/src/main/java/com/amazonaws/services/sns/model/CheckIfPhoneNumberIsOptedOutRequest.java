@@ -116,4 +116,5 @@ public class CheckIfPhoneNumberIsOptedOutRequest extends com.amazonaws.AmazonWeb
     public CheckIfPhoneNumberIsOptedOutRequest clone() {
         return (CheckIfPhoneNumberIsOptedOutRequest) super.clone();
     }
+
 }

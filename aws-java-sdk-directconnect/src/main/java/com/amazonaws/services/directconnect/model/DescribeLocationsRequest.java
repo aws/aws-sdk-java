@@ -60,4 +60,5 @@ public class DescribeLocationsRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeLocationsRequest clone() {
         return (DescribeLocationsRequest) super.clone();
     }
+
 }

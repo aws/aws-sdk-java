@@ -742,4 +742,5 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     public DescribeReservedDBInstancesOfferingsRequest clone() {
         return (DescribeReservedDBInstancesOfferingsRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class StopBuildRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public StopBuildRequest clone() {
         return (StopBuildRequest) super.clone();
     }
+
 }

@@ -214,4 +214,5 @@ public class ListSqlInjectionMatchSetsRequest extends com.amazonaws.AmazonWebSer
     public ListSqlInjectionMatchSetsRequest clone() {
         return (ListSqlInjectionMatchSetsRequest) super.clone();
     }
+
 }

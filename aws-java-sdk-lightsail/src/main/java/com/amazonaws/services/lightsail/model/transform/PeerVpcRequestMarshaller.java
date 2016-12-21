@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PeerVpcRequestMarshaller implements Marshaller<Request<PeerVpcRequest>, PeerVpcRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PeerVpcRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PeerVpcRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

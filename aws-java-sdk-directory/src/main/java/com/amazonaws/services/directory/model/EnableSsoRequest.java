@@ -271,4 +271,5 @@ public class EnableSsoRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public EnableSsoRequest clone() {
         return (EnableSsoRequest) super.clone();
     }
+
 }

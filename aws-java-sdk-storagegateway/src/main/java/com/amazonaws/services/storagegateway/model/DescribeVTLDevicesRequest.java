@@ -339,4 +339,5 @@ public class DescribeVTLDevicesRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeVTLDevicesRequest clone() {
         return (DescribeVTLDevicesRequest) super.clone();
     }
+
 }

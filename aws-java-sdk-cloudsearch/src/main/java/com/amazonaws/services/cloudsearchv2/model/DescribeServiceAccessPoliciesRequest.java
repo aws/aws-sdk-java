@@ -192,4 +192,5 @@ public class DescribeServiceAccessPoliciesRequest extends com.amazonaws.AmazonWe
     public DescribeServiceAccessPoliciesRequest clone() {
         return (DescribeServiceAccessPoliciesRequest) super.clone();
     }
+
 }

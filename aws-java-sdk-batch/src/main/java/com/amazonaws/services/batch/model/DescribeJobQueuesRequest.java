@@ -343,4 +343,5 @@ public class DescribeJobQueuesRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeJobQueuesRequest clone() {
         return (DescribeJobQueuesRequest) super.clone();
     }
+
 }

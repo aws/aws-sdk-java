@@ -130,4 +130,5 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetCampaignRequest clone() {
         return (GetCampaignRequest) super.clone();
     }
+
 }

@@ -1629,4 +1629,5 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
     public SimulateCustomPolicyRequest clone() {
         return (SimulateCustomPolicyRequest) super.clone();
     }
+
 }

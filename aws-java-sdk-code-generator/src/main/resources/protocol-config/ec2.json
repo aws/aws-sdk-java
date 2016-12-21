@@ -122,6 +122,9 @@
         }
     ]
   },
+  "baseExceptionClass": {
+    "mainTemplate" : "/templates/common/base-exception-class.ftl"
+  },
   "exceptionClass": {
     "mainTemplate" : "/templates/common/model-exception-class.ftl"
   },

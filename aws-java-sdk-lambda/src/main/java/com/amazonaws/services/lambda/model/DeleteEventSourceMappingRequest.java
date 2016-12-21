@@ -114,4 +114,5 @@ public class DeleteEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     public DeleteEventSourceMappingRequest clone() {
         return (DeleteEventSourceMappingRequest) super.clone();
     }
+
 }

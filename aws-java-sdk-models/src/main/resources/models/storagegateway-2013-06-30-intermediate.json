@@ -73,6 +73,7 @@
     "cucumberModuleInjectorClassName" : "AWSStorageGatewayModuleInjector",
     "defaultEndpoint" : "https://storagegateway.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "storagegateway.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS Storage Gateway Service</fullname> <p>AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid disaster recovery.</p> <p>Use the following links to get started using the <i>AWS Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders\">AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST request to AWS Storage Gateway.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests\">Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic describes how sign such a request.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses\">Error Responses</a>: Provides reference information about AWS Storage Gateway errors.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html\">Operations in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response elements, possible errors, and examples of requests and responses.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html\">AWS Storage Gateway Regions and Endpoints</a>: Provides a list of each of the s and endpoints available for use with AWS Storage Gateway.</p> </li> </ul> <note> <p>AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with the EC2 API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not behave as expected.</p> </note> <important> <p>IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes are changing to a longer format. Starting in December 2016, all new volumes and snapshots will be created with a 17-character string. Starting in April 2016, you will be able to use these longer IDs so you can test your systems with the new format. For more information, see <a href=\"https://aws.amazon.com/ec2/faqs/#longer-ids\">Longer EC2 and EBS Resource IDs</a>.</p> <p> For example, a volume ARN with the longer volume ID format will look like this:</p> <p> <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.</p> <p>A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.</p> <p>For more information, see <a href=\"https://forums.aws.amazon.com/ann.jspa?annID=3557\">Announcement: Heads-up – Longer AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.</p> </important>",
     "endpointPrefix" : "storagegateway",
     "hasApiWithStreamInput" : false,
@@ -83,7 +84,10 @@
     "packagePath" : "com/amazonaws/services/storagegateway",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Storage Gateway",
     "serviceName" : "AWS Storage Gateway",
@@ -3060,6 +3064,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ActivationKey", "GatewayName", "GatewayTimezone", "GatewayRegion" ],
       "shapeName" : "ActivateGatewayRequest",
       "unmarshaller" : null,
@@ -3206,6 +3212,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivateGatewayResult",
       "unmarshaller" : {
@@ -3617,6 +3625,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "DiskIds" ],
       "shapeName" : "AddCacheRequest",
       "unmarshaller" : null,
@@ -3763,6 +3773,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddCacheResult",
       "unmarshaller" : {
@@ -4174,6 +4186,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceARN", "Tags" ],
       "shapeName" : "AddTagsToResourceRequest",
       "unmarshaller" : null,
@@ -4320,6 +4334,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToResourceResult",
       "unmarshaller" : {
@@ -4731,6 +4747,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "DiskIds" ],
       "shapeName" : "AddUploadBufferRequest",
       "unmarshaller" : null,
@@ -4877,6 +4895,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddUploadBufferResult",
       "unmarshaller" : {
@@ -5288,6 +5308,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "DiskIds" ],
       "shapeName" : "AddWorkingStorageRequest",
       "unmarshaller" : null,
@@ -5434,6 +5456,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddWorkingStorageResult",
       "unmarshaller" : {
@@ -6487,6 +6511,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CachediSCSIVolume",
       "unmarshaller" : {
@@ -6756,6 +6782,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "TapeARN" ],
       "shapeName" : "CancelArchivalRequest",
       "unmarshaller" : null,
@@ -6902,6 +6930,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelArchivalResult",
       "unmarshaller" : {
@@ -7171,6 +7201,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "TapeARN" ],
       "shapeName" : "CancelRetrievalRequest",
       "unmarshaller" : null,
@@ -7317,6 +7349,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelRetrievalResult",
       "unmarshaller" : {
@@ -7805,6 +7839,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChapInfo",
       "unmarshaller" : {
@@ -8639,6 +8675,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "VolumeSizeInBytes", "TargetName", "NetworkInterfaceId", "ClientToken" ],
       "shapeName" : "CreateCachediSCSIVolumeRequest",
       "unmarshaller" : null,
@@ -8898,6 +8936,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateCachediSCSIVolumeResult",
       "unmarshaller" : {
@@ -9845,6 +9885,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientToken", "GatewayARN", "Role", "LocationARN" ],
       "shapeName" : "CreateNFSFileShareRequest",
       "unmarshaller" : null,
@@ -9991,6 +10033,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateNFSFileShareResult",
       "unmarshaller" : {
@@ -10260,6 +10304,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN", "SnapshotDescription" ],
       "shapeName" : "CreateSnapshotFromVolumeRecoveryPointRequest",
       "unmarshaller" : null,
@@ -10632,6 +10678,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateSnapshotFromVolumeRecoveryPointResult",
       "unmarshaller" : {
@@ -10901,6 +10949,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN", "SnapshotDescription" ],
       "shapeName" : "CreateSnapshotRequest",
       "unmarshaller" : null,
@@ -11160,6 +11210,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateSnapshotResult",
       "unmarshaller" : {
@@ -11881,6 +11933,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "DiskId", "PreserveExistingData", "TargetName", "NetworkInterfaceId" ],
       "shapeName" : "CreateStorediSCSIVolumeRequest",
       "unmarshaller" : null,
@@ -12253,6 +12307,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateStorediSCSIVolumeResult",
       "unmarshaller" : {
@@ -12635,6 +12691,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "TapeSizeInBytes", "TapeBarcode" ],
       "shapeName" : "CreateTapeWithBarcodeRequest",
       "unmarshaller" : null,
@@ -12781,6 +12839,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateTapeWithBarcodeResult",
       "unmarshaller" : {
@@ -13389,6 +13449,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "TapeSizeInBytes", "ClientToken", "NumTapesToCreate", "TapeBarcodePrefix" ],
       "shapeName" : "CreateTapesRequest",
       "unmarshaller" : null,
@@ -13677,6 +13739,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateTapesResult",
       "unmarshaller" : {
@@ -13946,6 +14010,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "BandwidthType" ],
       "shapeName" : "DeleteBandwidthRateLimitRequest",
       "unmarshaller" : null,
@@ -14092,6 +14158,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBandwidthRateLimitResult",
       "unmarshaller" : {
@@ -14361,6 +14429,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TargetARN", "InitiatorName" ],
       "shapeName" : "DeleteChapCredentialsRequest",
       "unmarshaller" : null,
@@ -14620,6 +14690,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteChapCredentialsResult",
       "unmarshaller" : {
@@ -14776,6 +14848,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FileShareARN" ],
       "shapeName" : "DeleteFileShareRequest",
       "unmarshaller" : null,
@@ -14922,6 +14996,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteFileShareResult",
       "unmarshaller" : {
@@ -15078,6 +15154,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DeleteGatewayRequest",
       "unmarshaller" : null,
@@ -15224,6 +15302,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteGatewayResult",
       "unmarshaller" : {
@@ -15380,6 +15460,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN" ],
       "shapeName" : "DeleteSnapshotScheduleRequest",
       "unmarshaller" : null,
@@ -15526,6 +15608,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteSnapshotScheduleResult",
       "unmarshaller" : {
@@ -15682,6 +15766,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TapeARN" ],
       "shapeName" : "DeleteTapeArchiveRequest",
       "unmarshaller" : null,
@@ -15828,6 +15914,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTapeArchiveResult",
       "unmarshaller" : {
@@ -16097,6 +16185,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "TapeARN" ],
       "shapeName" : "DeleteTapeRequest",
       "unmarshaller" : null,
@@ -16243,6 +16333,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTapeResult",
       "unmarshaller" : {
@@ -16399,6 +16491,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN" ],
       "shapeName" : "DeleteVolumeRequest",
       "unmarshaller" : null,
@@ -16545,6 +16639,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVolumeResult",
       "unmarshaller" : {
@@ -16701,6 +16797,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeBandwidthRateLimitRequest",
       "unmarshaller" : null,
@@ -17073,6 +17171,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBandwidthRateLimitResult",
       "unmarshaller" : {
@@ -17229,6 +17329,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeCacheRequest",
       "unmarshaller" : null,
@@ -18195,6 +18297,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCacheResult",
       "unmarshaller" : {
@@ -18493,6 +18597,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARNs" ],
       "shapeName" : "DescribeCachediSCSIVolumesRequest",
       "unmarshaller" : null,
@@ -18781,6 +18887,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCachediSCSIVolumesResult",
       "unmarshaller" : {
@@ -18937,6 +19045,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TargetARN" ],
       "shapeName" : "DescribeChapCredentialsRequest",
       "unmarshaller" : null,
@@ -19225,6 +19335,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeChapCredentialsResult",
       "unmarshaller" : {
@@ -19381,6 +19493,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeGatewayInformationRequest",
       "unmarshaller" : null,
@@ -20573,6 +20687,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeGatewayInformationResult",
       "unmarshaller" : {
@@ -20729,6 +20845,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeMaintenanceStartTimeRequest",
       "unmarshaller" : null,
@@ -21327,6 +21445,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeMaintenanceStartTimeResult",
       "unmarshaller" : {
@@ -21625,6 +21745,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FileShareARNList" ],
       "shapeName" : "DescribeNFSFileSharesRequest",
       "unmarshaller" : null,
@@ -21913,6 +22035,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeNFSFileSharesResult",
       "unmarshaller" : {
@@ -22069,6 +22193,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN" ],
       "shapeName" : "DescribeSnapshotScheduleRequest",
       "unmarshaller" : null,
@@ -22667,6 +22793,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeSnapshotScheduleResult",
       "unmarshaller" : {
@@ -22965,6 +23093,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARNs" ],
       "shapeName" : "DescribeStorediSCSIVolumesRequest",
       "unmarshaller" : null,
@@ -23253,6 +23383,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeStorediSCSIVolumesResult",
       "unmarshaller" : {
@@ -23777,6 +23909,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTapeArchivesRequest",
       "unmarshaller" : null,
@@ -24178,6 +24312,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTapeArchivesResult",
       "unmarshaller" : {
@@ -24560,6 +24696,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeTapeRecoveryPointsRequest",
       "unmarshaller" : null,
@@ -25074,6 +25212,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTapeRecoveryPointsResult",
       "unmarshaller" : {
@@ -25711,6 +25851,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeTapesRequest",
       "unmarshaller" : null,
@@ -26112,6 +26254,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTapesResult",
       "unmarshaller" : {
@@ -26268,6 +26412,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeUploadBufferRequest",
       "unmarshaller" : null,
@@ -26895,6 +27041,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUploadBufferResult",
       "unmarshaller" : {
@@ -27532,6 +27680,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeVTLDevicesRequest",
       "unmarshaller" : null,
@@ -28046,6 +28196,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVTLDevicesResult",
       "unmarshaller" : {
@@ -28202,6 +28354,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DescribeWorkingStorageRequest",
       "unmarshaller" : null,
@@ -28829,6 +28983,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkingStorageResult",
       "unmarshaller" : {
@@ -29317,6 +29473,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceiSCSIAttributes",
       "unmarshaller" : {
@@ -29473,6 +29631,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "DisableGatewayRequest",
       "unmarshaller" : null,
@@ -29619,6 +29779,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisableGatewayResult",
       "unmarshaller" : {
@@ -30446,6 +30608,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Disk",
       "unmarshaller" : {
@@ -30664,6 +30828,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ErrorCode",
       "unmarshaller" : {
@@ -31152,6 +31318,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FileShareInfo",
       "unmarshaller" : {
@@ -31753,6 +31921,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GatewayInfo",
       "unmarshaller" : {
@@ -31788,6 +31958,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerErrorException",
       "unmarshaller" : null,
@@ -31820,6 +31992,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidGatewayRequestException",
       "unmarshaller" : null,
@@ -32199,6 +32373,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFileSharesRequest",
       "unmarshaller" : null,
@@ -32713,6 +32889,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFileSharesResult",
       "unmarshaller" : {
@@ -32982,6 +33160,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListGatewaysRequest",
       "unmarshaller" : null,
@@ -33383,6 +33563,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListGatewaysResult",
       "unmarshaller" : {
@@ -33539,6 +33721,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "ListLocalDisksRequest",
       "unmarshaller" : null,
@@ -33940,6 +34124,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLocalDisksResult",
       "unmarshaller" : {
@@ -34322,6 +34508,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceARN" ],
       "shapeName" : "ListTagsForResourceRequest",
       "unmarshaller" : null,
@@ -34836,6 +35024,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTagsForResourceResult",
       "unmarshaller" : {
@@ -35360,6 +35550,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTapesRequest",
       "unmarshaller" : null,
@@ -35761,6 +35953,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTapesResult",
       "unmarshaller" : {
@@ -35917,6 +36111,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN" ],
       "shapeName" : "ListVolumeInitiatorsRequest",
       "unmarshaller" : null,
@@ -36205,6 +36401,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListVolumeInitiatorsResult",
       "unmarshaller" : {
@@ -36361,6 +36559,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "ListVolumeRecoveryPointsRequest",
       "unmarshaller" : null,
@@ -36762,6 +36962,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListVolumeRecoveryPointsResult",
       "unmarshaller" : {
@@ -37144,6 +37346,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListVolumesRequest",
       "unmarshaller" : null,
@@ -37658,6 +37862,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListVolumesResult",
       "unmarshaller" : {
@@ -38146,6 +38352,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NFSFileShareDefaults",
       "unmarshaller" : {
@@ -39425,6 +39633,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NFSFileShareInfo",
       "unmarshaller" : {
@@ -39800,6 +40010,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NetworkInterface",
       "unmarshaller" : {
@@ -40211,6 +40423,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceARN", "TagKeys" ],
       "shapeName" : "RemoveTagsFromResourceRequest",
       "unmarshaller" : null,
@@ -40357,6 +40571,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromResourceResult",
       "unmarshaller" : {
@@ -40513,6 +40729,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "ResetCacheRequest",
       "unmarshaller" : null,
@@ -40659,6 +40877,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResetCacheResult",
       "unmarshaller" : {
@@ -40928,6 +41148,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TapeARN", "GatewayARN" ],
       "shapeName" : "RetrieveTapeArchiveRequest",
       "unmarshaller" : null,
@@ -41074,6 +41296,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RetrieveTapeArchiveResult",
       "unmarshaller" : {
@@ -41343,6 +41567,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TapeARN", "GatewayARN" ],
       "shapeName" : "RetrieveTapeRecoveryPointRequest",
       "unmarshaller" : null,
@@ -41489,6 +41715,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RetrieveTapeRecoveryPointResult",
       "unmarshaller" : {
@@ -41638,6 +41866,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceUnavailableErrorException",
       "unmarshaller" : null,
@@ -41904,6 +42134,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "LocalConsolePassword" ],
       "shapeName" : "SetLocalConsolePasswordRequest",
       "unmarshaller" : null,
@@ -42050,6 +42282,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetLocalConsolePasswordResult",
       "unmarshaller" : {
@@ -42206,6 +42440,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "ShutdownGatewayRequest",
       "unmarshaller" : null,
@@ -42352,6 +42588,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ShutdownGatewayResult",
       "unmarshaller" : {
@@ -42508,6 +42746,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "StartGatewayRequest",
       "unmarshaller" : null,
@@ -42654,6 +42894,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartGatewayResult",
       "unmarshaller" : {
@@ -43058,6 +43300,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StorageGatewayError",
       "unmarshaller" : {
@@ -44337,6 +44581,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StorediSCSIVolume",
       "unmarshaller" : {
@@ -44599,6 +44845,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -45426,6 +45674,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Tape",
       "unmarshaller" : {
@@ -46253,6 +46503,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TapeArchive",
       "unmarshaller" : {
@@ -46854,6 +47106,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TapeInfo",
       "unmarshaller" : {
@@ -47342,6 +47596,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TapeRecoveryPointInfo",
       "unmarshaller" : {
@@ -47724,6 +47980,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "UpdateBandwidthRateLimitRequest",
       "unmarshaller" : null,
@@ -47870,6 +48128,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateBandwidthRateLimitResult",
       "unmarshaller" : {
@@ -48365,6 +48625,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TargetARN", "SecretToAuthenticateInitiator", "InitiatorName" ],
       "shapeName" : "UpdateChapCredentialsRequest",
       "unmarshaller" : null,
@@ -48624,6 +48886,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateChapCredentialsResult",
       "unmarshaller" : {
@@ -49006,6 +49270,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "UpdateGatewayInformationRequest",
       "unmarshaller" : null,
@@ -49265,6 +49531,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateGatewayInformationResult",
       "unmarshaller" : {
@@ -49421,6 +49689,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN" ],
       "shapeName" : "UpdateGatewaySoftwareNowRequest",
       "unmarshaller" : null,
@@ -49567,6 +49837,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateGatewaySoftwareNowResult",
       "unmarshaller" : {
@@ -50062,6 +50334,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GatewayARN", "HourOfDay", "MinuteOfHour", "DayOfWeek" ],
       "shapeName" : "UpdateMaintenanceStartTimeRequest",
       "unmarshaller" : null,
@@ -50208,6 +50482,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateMaintenanceStartTimeResult",
       "unmarshaller" : {
@@ -50816,6 +51092,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FileShareARN" ],
       "shapeName" : "UpdateNFSFileShareRequest",
       "unmarshaller" : null,
@@ -50962,6 +51240,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateNFSFileShareResult",
       "unmarshaller" : {
@@ -51457,6 +51737,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VolumeARN", "StartAt", "RecurrenceInHours" ],
       "shapeName" : "UpdateSnapshotScheduleRequest",
       "unmarshaller" : null,
@@ -51603,6 +51885,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateSnapshotScheduleResult",
       "unmarshaller" : {
@@ -51872,6 +52156,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "VTLDeviceARN", "DeviceType" ],
       "shapeName" : "UpdateVTLDeviceTypeRequest",
       "unmarshaller" : null,
@@ -52018,6 +52304,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateVTLDeviceTypeResult",
       "unmarshaller" : {
@@ -52619,6 +52907,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VTLDevice",
       "unmarshaller" : {
@@ -53333,6 +53623,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VolumeInfo",
       "unmarshaller" : {
@@ -53821,6 +54113,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VolumeRecoveryPointInfo",
       "unmarshaller" : {
@@ -54422,6 +54716,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VolumeiSCSIAttributes",
       "unmarshaller" : {
@@ -54440,6 +54736,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "ActivateGateway" : [ {

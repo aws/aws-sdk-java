@@ -183,4 +183,5 @@ public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetRecordsRequest clone() {
         return (GetRecordsRequest) super.clone();
     }
+
 }

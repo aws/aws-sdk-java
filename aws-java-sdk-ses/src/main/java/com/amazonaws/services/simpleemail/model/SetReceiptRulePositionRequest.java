@@ -225,4 +225,5 @@ public class SetReceiptRulePositionRequest extends com.amazonaws.AmazonWebServic
     public SetReceiptRulePositionRequest clone() {
         return (SetReceiptRulePositionRequest) super.clone();
     }
+
 }

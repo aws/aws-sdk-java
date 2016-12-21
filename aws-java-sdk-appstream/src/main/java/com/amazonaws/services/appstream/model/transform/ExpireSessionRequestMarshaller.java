@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ExpireSessionRequestMarshaller implements Marshaller<Request<ExpireSessionRequest>, ExpireSessionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ExpireSessionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ExpireSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

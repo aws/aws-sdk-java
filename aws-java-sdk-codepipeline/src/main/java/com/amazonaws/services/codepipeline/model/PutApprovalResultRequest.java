@@ -342,4 +342,5 @@ public class PutApprovalResultRequest extends com.amazonaws.AmazonWebServiceRequ
     public PutApprovalResultRequest clone() {
         return (PutApprovalResultRequest) super.clone();
     }
+
 }

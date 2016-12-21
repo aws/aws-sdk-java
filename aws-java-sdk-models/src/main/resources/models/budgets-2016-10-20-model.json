@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-10-20",
     "endpointPrefix" : "budgets",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "CreateBudget" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Create a new budget",
       "errors" : [ {
@@ -62,7 +64,8 @@
       }
     },
     "CreateNotification" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Create a new Notification with subscribers for a budget",
       "errors" : [ {
@@ -116,7 +119,8 @@
       }
     },
     "CreateSubscriber" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Create a new Subscriber for a notification",
       "errors" : [ {
@@ -164,7 +168,8 @@
       }
     },
     "DeleteBudget" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Delete a budget and related notifications",
       "errors" : [ {
@@ -206,7 +211,8 @@
       }
     },
     "DeleteNotification" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Delete a notification and related subscribers",
       "errors" : [ {
@@ -248,7 +254,8 @@
       }
     },
     "DeleteSubscriber" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Delete a Subscriber for a notification",
       "errors" : [ {
@@ -290,7 +297,8 @@
       }
     },
     "DescribeBudget" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Get a single budget",
       "errors" : [ {
@@ -332,7 +340,8 @@
       }
     },
     "DescribeBudgets" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Get all budgets for an account",
       "errors" : [ {
@@ -386,7 +395,8 @@
       }
     },
     "DescribeNotificationsForBudget" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Get notifications of a budget",
       "errors" : [ {
@@ -440,7 +450,8 @@
       }
     },
     "DescribeSubscribersForNotification" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Get subscribers of a notification",
       "errors" : [ {
@@ -494,7 +505,8 @@
       }
     },
     "UpdateBudget" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Update the information of a budget already created",
       "errors" : [ {
@@ -536,7 +548,8 @@
       }
     },
     "UpdateNotification" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Update the information about a notification already created",
       "errors" : [ {
@@ -578,7 +591,8 @@
       }
     },
     "UpdateSubscriber" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Update a subscriber",
       "errors" : [ {

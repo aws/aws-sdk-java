@@ -343,4 +343,5 @@ public class ListRolesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ListRolesRequest clone() {
         return (ListRolesRequest) super.clone();
     }
+
 }

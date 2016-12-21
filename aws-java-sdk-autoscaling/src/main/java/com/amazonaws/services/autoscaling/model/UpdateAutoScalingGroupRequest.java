@@ -1041,4 +1041,5 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     public UpdateAutoScalingGroupRequest clone() {
         return (UpdateAutoScalingGroupRequest) super.clone();
     }
+
 }

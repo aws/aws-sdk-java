@@ -351,4 +351,5 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     public DeregisterContainerInstanceRequest clone() {
         return (DeregisterContainerInstanceRequest) super.clone();
     }
+
 }

@@ -169,4 +169,5 @@ public class DeleteDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     public DeleteDeploymentGroupRequest clone() {
         return (DeleteDeploymentGroupRequest) super.clone();
     }
+
 }

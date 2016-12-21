@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteCustomActionTypeRequestMarshaller implements Marshaller<Request<DeleteCustomActionTypeRequest>, DeleteCustomActionTypeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteCustomActionTypeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteCustomActionTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

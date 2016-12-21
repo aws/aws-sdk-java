@@ -238,4 +238,5 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
     public UpdateAssumeRolePolicyRequest clone() {
         return (UpdateAssumeRolePolicyRequest) super.clone();
     }
+
 }

@@ -168,4 +168,5 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public DeleteUserRequest clone() {
         return (DeleteUserRequest) super.clone();
     }
+
 }

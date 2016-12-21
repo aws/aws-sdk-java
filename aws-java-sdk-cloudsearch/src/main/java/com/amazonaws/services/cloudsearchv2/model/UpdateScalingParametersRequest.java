@@ -133,4 +133,5 @@ public class UpdateScalingParametersRequest extends com.amazonaws.AmazonWebServi
     public UpdateScalingParametersRequest clone() {
         return (UpdateScalingParametersRequest) super.clone();
     }
+
 }

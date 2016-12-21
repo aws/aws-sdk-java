@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddTagsRequestMarshaller implements Marshaller<Request<AddTagsRequest>, AddTagsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddTagsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

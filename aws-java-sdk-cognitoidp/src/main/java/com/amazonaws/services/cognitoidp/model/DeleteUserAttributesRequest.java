@@ -199,4 +199,5 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
     public DeleteUserAttributesRequest clone() {
         return (DeleteUserAttributesRequest) super.clone();
     }
+
 }

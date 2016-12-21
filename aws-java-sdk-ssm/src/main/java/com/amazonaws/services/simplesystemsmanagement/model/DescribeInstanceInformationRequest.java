@@ -347,4 +347,5 @@ public class DescribeInstanceInformationRequest extends com.amazonaws.AmazonWebS
     public DescribeInstanceInformationRequest clone() {
         return (DescribeInstanceInformationRequest) super.clone();
     }
+
 }

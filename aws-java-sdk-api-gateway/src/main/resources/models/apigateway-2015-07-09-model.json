@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-07-09",
     "endpointPrefix" : "apigateway",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "CreateApiKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Create an <a>ApiKey</a> resource. </p> <div class=\"seeAlso\"><a href=\"http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html\">AWS CLI</a></div>",
       "errors" : [ {
@@ -74,7 +76,8 @@
       }
     },
     "CreateAuthorizer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.</p> <div class=\"seeAlso\"><a href=\"http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html\">AWS CLI</a></div>",
       "errors" : [ {
@@ -128,7 +131,8 @@
       }
     },
     "CreateBasePathMapping" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new <a>BasePathMapping</a> resource.</p>",
       "errors" : [ {
@@ -182,7 +186,8 @@
       }
     },
     "CreateDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a> callable over the internet.</p>",
       "errors" : [ {
@@ -248,7 +253,8 @@
       }
     },
     "CreateDocumentationPart" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -308,7 +314,8 @@
       }
     },
     "CreateDocumentationVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -368,7 +375,8 @@
       }
     },
     "CreateDomainName" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new domain name.</p>",
       "errors" : [ {
@@ -416,7 +424,8 @@
       }
     },
     "CreateModel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a> resource.</p>",
       "errors" : [ {
@@ -476,7 +485,8 @@
       }
     },
     "CreateResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a <a>Resource</a> resource.</p>",
       "errors" : [ {
@@ -536,7 +546,8 @@
       }
     },
     "CreateRestApi" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new <a>RestApi</a> resource.</p>",
       "errors" : [ {
@@ -584,7 +595,8 @@
       }
     },
     "CreateStage" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new <a>Stage</a> resource that references a pre-existing <a>Deployment</a> for the API. </p>",
       "errors" : [ {
@@ -644,7 +656,8 @@
       }
     },
     "CreateUsagePlan" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a usage plan with the throttle and quota limits, as well as the associated API stages, specified in the payload. </p>",
       "errors" : [ {
@@ -704,7 +717,8 @@
       }
     },
     "CreateUsagePlanKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a usage plan key for adding an existing API key to a usage plan.</p>",
       "errors" : [ {
@@ -758,7 +772,8 @@
       }
     },
     "DeleteApiKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the <a>ApiKey</a> resource.</p>",
       "errors" : [ {
@@ -795,7 +810,8 @@
       "output" : null
     },
     "DeleteAuthorizer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an existing <a>Authorizer</a> resource.</p> <div class=\"seeAlso\"><a href=\"http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html\">AWS CLI</a></div>",
       "errors" : [ {
@@ -844,7 +860,8 @@
       "output" : null
     },
     "DeleteBasePathMapping" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the <a>BasePathMapping</a> resource.</p>",
       "errors" : [ {
@@ -881,7 +898,8 @@
       "output" : null
     },
     "DeleteClientCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the <a>ClientCertificate</a> resource.</p>",
       "errors" : [ {
@@ -924,7 +942,8 @@
       "output" : null
     },
     "DeleteDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed if there are no <a>Stage</a> resources associated with it.</p>",
       "errors" : [ {
@@ -967,7 +986,8 @@
       "output" : null
     },
     "DeleteDocumentationPart" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -1016,7 +1036,8 @@
       "output" : null
     },
     "DeleteDocumentationVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -1065,7 +1086,8 @@
       "output" : null
     },
     "DeleteDomainName" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the <a>DomainName</a> resource.</p>",
       "errors" : [ {
@@ -1102,7 +1124,8 @@
       "output" : null
     },
     "DeleteIntegration" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a delete integration.</p>",
       "errors" : [ {
@@ -1145,7 +1168,8 @@
       "output" : null
     },
     "DeleteIntegrationResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a delete integration response.</p>",
       "errors" : [ {
@@ -1194,7 +1218,8 @@
       "output" : null
     },
     "DeleteMethod" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an existing <a>Method</a> resource.</p>",
       "errors" : [ {
@@ -1237,7 +1262,8 @@
       "output" : null
     },
     "DeleteMethodResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an existing <a>MethodResponse</a> resource.</p>",
       "errors" : [ {
@@ -1286,7 +1312,8 @@
       "output" : null
     },
     "DeleteModel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a model.</p>",
       "errors" : [ {
@@ -1335,7 +1362,8 @@
       "output" : null
     },
     "DeleteResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a <a>Resource</a> resource.</p>",
       "errors" : [ {
@@ -1384,7 +1412,8 @@
       "output" : null
     },
     "DeleteRestApi" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified API.</p>",
       "errors" : [ {
@@ -1427,7 +1456,8 @@
       "output" : null
     },
     "DeleteStage" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a <a>Stage</a> resource.</p>",
       "errors" : [ {
@@ -1470,7 +1500,8 @@
       "output" : null
     },
     "DeleteUsagePlan" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a usage plan of a given plan Id.</p>",
       "errors" : [ {
@@ -1513,7 +1544,8 @@
       "output" : null
     },
     "DeleteUsagePlanKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a usage plan key and remove the underlying API key from the associated usage plan.</p>",
       "errors" : [ {
@@ -1562,7 +1594,8 @@
       "output" : null
     },
     "FlushStageAuthorizersCache" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Flushes all authorizer cache entries on a stage.</p>",
       "errors" : [ {
@@ -1605,7 +1638,8 @@
       "output" : null
     },
     "FlushStageCache" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Flushes a stage's cache.</p>",
       "errors" : [ {
@@ -1648,7 +1682,8 @@
       "output" : null
     },
     "GenerateClientCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Generates a <a>ClientCertificate</a> resource.</p>",
       "errors" : [ {
@@ -1690,7 +1725,8 @@
       }
     },
     "GetAccount" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the current <a>Account</a> resource.</p>",
       "errors" : [ {
@@ -1732,7 +1768,8 @@
       }
     },
     "GetApiKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the current <a>ApiKey</a> resource.</p>",
       "errors" : [ {
@@ -1774,7 +1811,8 @@
       }
     },
     "GetApiKeys" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the current <a>ApiKeys</a> resource.</p>",
       "errors" : [ {
@@ -1816,7 +1854,8 @@
       }
     },
     "GetAuthorizer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describe an existing <a>Authorizer</a> resource.</p> <div class=\"seeAlso\"><a href=\"http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html\">AWS CLI</a></div>",
       "errors" : [ {
@@ -1858,7 +1897,8 @@
       }
     },
     "GetAuthorizers" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describe an existing <a>Authorizers</a> resource.</p> <div class=\"seeAlso\"><a href=\"http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html\">AWS CLI</a></div>",
       "errors" : [ {
@@ -1906,7 +1946,8 @@
       }
     },
     "GetBasePathMapping" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describe a <a>BasePathMapping</a> resource.</p>",
       "errors" : [ {
@@ -1948,7 +1989,8 @@
       }
     },
     "GetBasePathMappings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a collection of <a>BasePathMapping</a> resources.</p>",
       "errors" : [ {
@@ -1990,7 +2032,8 @@
       }
     },
     "GetClientCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the current <a>ClientCertificate</a> resource.</p>",
       "errors" : [ {
@@ -2032,7 +2075,8 @@
       }
     },
     "GetClientCertificates" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a collection of <a>ClientCertificate</a> resources.</p>",
       "errors" : [ {
@@ -2074,7 +2118,8 @@
       }
     },
     "GetDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a <a>Deployment</a> resource.</p>",
       "errors" : [ {
@@ -2122,7 +2167,8 @@
       }
     },
     "GetDeployments" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a <a>Deployments</a> collection.</p>",
       "errors" : [ {
@@ -2170,7 +2216,8 @@
       }
     },
     "GetDocumentationPart" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -2212,7 +2259,8 @@
       }
     },
     "GetDocumentationParts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -2260,7 +2308,8 @@
       }
     },
     "GetDocumentationVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -2302,7 +2351,8 @@
       }
     },
     "GetDocumentationVersions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -2350,7 +2400,8 @@
       }
     },
     "GetDomainName" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a domain name that is contained in a simpler, more intuitive URL that can be called.</p>",
       "errors" : [ {
@@ -2398,7 +2449,8 @@
       }
     },
     "GetDomainNames" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a collection of <a>DomainName</a> resources.</p>",
       "errors" : [ {
@@ -2440,7 +2492,8 @@
       }
     },
     "GetExport" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Exports a deployed version of a <a>RestApi</a> in a specified format.</p>",
       "errors" : [ {
@@ -2488,7 +2541,8 @@
       }
     },
     "GetIntegration" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a get integration.</p>",
       "errors" : [ {
@@ -2530,7 +2584,8 @@
       }
     },
     "GetIntegrationResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a get integration response.</p>",
       "errors" : [ {
@@ -2572,7 +2627,8 @@
       }
     },
     "GetMethod" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describe an existing <a>Method</a> resource.</p>",
       "errors" : [ {
@@ -2614,7 +2670,8 @@
       }
     },
     "GetMethodResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes a <a>MethodResponse</a> resource.</p>",
       "errors" : [ {
@@ -2656,7 +2713,8 @@
       }
     },
     "GetModel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes an existing model defined for a <a>RestApi</a> resource.</p>",
       "errors" : [ {
@@ -2698,7 +2756,8 @@
       }
     },
     "GetModelTemplate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Generates a sample mapping template that can be used to transform a payload into the structure of a model.</p>",
       "errors" : [ {
@@ -2746,7 +2805,8 @@
       }
     },
     "GetModels" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes existing <a>Models</a> defined for a <a>RestApi</a> resource.</p>",
       "errors" : [ {
@@ -2794,7 +2854,8 @@
       }
     },
     "GetResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists information about a resource.</p>",
       "errors" : [ {
@@ -2836,7 +2897,8 @@
       }
     },
     "GetResources" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists information about a collection of <a>Resource</a> resources.</p>",
       "errors" : [ {
@@ -2884,7 +2946,8 @@
       }
     },
     "GetRestApi" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the <a>RestApi</a> resource in the collection.</p>",
       "errors" : [ {
@@ -2926,7 +2989,8 @@
       }
     },
     "GetRestApis" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the <a>RestApis</a> resources for your collection.</p>",
       "errors" : [ {
@@ -2968,7 +3032,8 @@
       }
     },
     "GetSdk" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p>",
       "errors" : [ {
@@ -3016,7 +3081,8 @@
       }
     },
     "GetStage" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a <a>Stage</a> resource.</p>",
       "errors" : [ {
@@ -3058,7 +3124,8 @@
       }
     },
     "GetStages" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more <a>Stage</a> resources.</p>",
       "errors" : [ {
@@ -3100,7 +3167,8 @@
       }
     },
     "GetUsage" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the usage data of a usage plan in a specified time interval.</p>",
       "errors" : [ {
@@ -3148,7 +3216,8 @@
       }
     },
     "GetUsagePlan" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a usage plan of a given plan identifier.</p>",
       "errors" : [ {
@@ -3196,7 +3265,8 @@
       }
     },
     "GetUsagePlanKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a usage plan key of a given key identifier.</p>",
       "errors" : [ {
@@ -3244,7 +3314,8 @@
       }
     },
     "GetUsagePlanKeys" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets all the usage plan keys representing the API keys added to a specified usage plan.</p>",
       "errors" : [ {
@@ -3292,7 +3363,8 @@
       }
     },
     "GetUsagePlans" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets all the usage plans of the caller's account.</p>",
       "errors" : [ {
@@ -3346,7 +3418,8 @@
       }
     },
     "ImportApiKeys" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Import API keys from an external source, such as a CSV-formatted file.</p>",
       "errors" : [ {
@@ -3406,7 +3479,8 @@
       }
     },
     "ImportDocumentationParts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -3460,7 +3534,8 @@
       }
     },
     "ImportRestApi" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>A feature of the Amazon API Gateway control service for creating a new API from an external API definition file.</p>",
       "errors" : [ {
@@ -3514,7 +3589,8 @@
       }
     },
     "PutIntegration" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a put integration.</p>",
       "errors" : [ {
@@ -3568,7 +3644,8 @@
       }
     },
     "PutIntegrationResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents a put integration.</p>",
       "errors" : [ {
@@ -3628,7 +3705,8 @@
       }
     },
     "PutMethod" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Add a method to an existing <a>Resource</a> resource.</p>",
       "errors" : [ {
@@ -3688,7 +3766,8 @@
       }
     },
     "PutMethodResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds a <a>MethodResponse</a> to an existing <a>Method</a> resource.</p>",
       "errors" : [ {
@@ -3748,7 +3827,8 @@
       }
     },
     "PutRestApi" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>A feature of the Amazon API Gateway control service for updating an existing API with an input of external API definitions. The update can take the form of merging the supplied definition into the existing API or overwriting the existing API.</p>",
       "errors" : [ {
@@ -3808,7 +3888,8 @@
       }
     },
     "TestInvokeAuthorizer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers, parameters, and an incoming request body.</p> <div class=\"seeAlso\"> <a href=\"http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html\">Enable custom authorizers</a> </div>",
       "errors" : [ {
@@ -3856,7 +3937,8 @@
       }
     },
     "TestInvokeMethod" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with headers, parameters, and an incoming request body.</p>",
       "errors" : [ {
@@ -3904,7 +3986,8 @@
       }
     },
     "UpdateAccount" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about the current <a>Account</a> resource.</p>",
       "errors" : [ {
@@ -3952,7 +4035,8 @@
       }
     },
     "UpdateApiKey" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about an <a>ApiKey</a> resource.</p>",
       "errors" : [ {
@@ -4006,7 +4090,8 @@
       }
     },
     "UpdateAuthorizer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing <a>Authorizer</a> resource.</p> <div class=\"seeAlso\"><a href=\"http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html\">AWS CLI</a></div>",
       "errors" : [ {
@@ -4054,7 +4139,8 @@
       }
     },
     "UpdateBasePathMapping" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about the <a>BasePathMapping</a> resource.</p>",
       "errors" : [ {
@@ -4108,7 +4194,8 @@
       }
     },
     "UpdateClientCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about an <a>ClientCertificate</a> resource.</p>",
       "errors" : [ {
@@ -4156,7 +4243,8 @@
       }
     },
     "UpdateDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about a <a>Deployment</a> resource.</p>",
       "errors" : [ {
@@ -4210,7 +4298,8 @@
       }
     },
     "UpdateDocumentationPart" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -4270,7 +4359,8 @@
       }
     },
     "UpdateDocumentationVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -4324,7 +4414,8 @@
       }
     },
     "UpdateDomainName" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about the <a>DomainName</a> resource.</p>",
       "errors" : [ {
@@ -4378,7 +4469,8 @@
       }
     },
     "UpdateIntegration" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents an update integration.</p>",
       "errors" : [ {
@@ -4432,7 +4524,8 @@
       }
     },
     "UpdateIntegrationResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Represents an update integration response.</p>",
       "errors" : [ {
@@ -4486,7 +4579,8 @@
       }
     },
     "UpdateMethod" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing <a>Method</a> resource.</p>",
       "errors" : [ {
@@ -4540,7 +4634,8 @@
       }
     },
     "UpdateMethodResponse" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing <a>MethodResponse</a> resource.</p>",
       "errors" : [ {
@@ -4600,7 +4695,8 @@
       }
     },
     "UpdateModel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about a model.</p>",
       "errors" : [ {
@@ -4654,7 +4750,8 @@
       }
     },
     "UpdateResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about a <a>Resource</a> resource.</p>",
       "errors" : [ {
@@ -4708,7 +4805,8 @@
       }
     },
     "UpdateRestApi" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about the specified API.</p>",
       "errors" : [ {
@@ -4762,7 +4860,8 @@
       }
     },
     "UpdateStage" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about a <a>Stage</a> resource.</p>",
       "errors" : [ {
@@ -4816,7 +4915,8 @@
       }
     },
     "UpdateUsage" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Grants a temporary extension to the reamining quota of a usage plan associated with a specified API key.</p>",
       "errors" : [ {
@@ -4864,7 +4964,8 @@
       }
     },
     "UpdateUsagePlan" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates a usage plan of a given plan Id.</p>",
       "errors" : [ {

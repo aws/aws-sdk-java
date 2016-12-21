@@ -114,4 +114,5 @@ public class DescribeRefreshSchemasStatusRequest extends com.amazonaws.AmazonWeb
     public DescribeRefreshSchemasStatusRequest clone() {
         return (DescribeRefreshSchemasStatusRequest) super.clone();
     }
+
 }

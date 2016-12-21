@@ -374,4 +374,5 @@ public class PutPipelineDefinitionRequest extends com.amazonaws.AmazonWebService
     public PutPipelineDefinitionRequest clone() {
         return (PutPipelineDefinitionRequest) super.clone();
     }
+
 }

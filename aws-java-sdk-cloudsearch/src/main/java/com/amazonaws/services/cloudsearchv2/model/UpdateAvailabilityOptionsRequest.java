@@ -181,4 +181,5 @@ public class UpdateAvailabilityOptionsRequest extends com.amazonaws.AmazonWebSer
     public UpdateAvailabilityOptionsRequest clone() {
         return (UpdateAvailabilityOptionsRequest) super.clone();
     }
+
 }

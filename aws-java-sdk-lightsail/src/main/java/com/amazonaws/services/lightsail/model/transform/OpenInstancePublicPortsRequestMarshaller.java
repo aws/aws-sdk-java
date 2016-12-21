@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class OpenInstancePublicPortsRequestMarshaller implements Marshaller<Request<OpenInstancePublicPortsRequest>, OpenInstancePublicPortsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public OpenInstancePublicPortsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public OpenInstancePublicPortsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

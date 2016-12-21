@@ -97,4 +97,5 @@ public class UpdateGatewaySoftwareNowRequest extends com.amazonaws.AmazonWebServ
     public UpdateGatewaySoftwareNowRequest clone() {
         return (UpdateGatewaySoftwareNowRequest) super.clone();
     }
+
 }

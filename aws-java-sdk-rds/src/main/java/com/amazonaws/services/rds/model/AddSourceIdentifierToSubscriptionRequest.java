@@ -349,4 +349,5 @@ public class AddSourceIdentifierToSubscriptionRequest extends com.amazonaws.Amaz
     public AddSourceIdentifierToSubscriptionRequest clone() {
         return (AddSourceIdentifierToSubscriptionRequest) super.clone();
     }
+
 }

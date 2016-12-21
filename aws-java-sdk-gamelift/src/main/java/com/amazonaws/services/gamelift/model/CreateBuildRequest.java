@@ -315,4 +315,5 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateBuildRequest clone() {
         return (CreateBuildRequest) super.clone();
     }
+
 }

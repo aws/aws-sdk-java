@@ -509,4 +509,5 @@ public class GetShippingLabelRequest extends com.amazonaws.AmazonWebServiceReque
     public GetShippingLabelRequest clone() {
         return (GetShippingLabelRequest) super.clone();
     }
+
 }

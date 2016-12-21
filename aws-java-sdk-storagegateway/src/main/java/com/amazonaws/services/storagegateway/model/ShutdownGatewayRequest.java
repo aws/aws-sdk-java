@@ -97,4 +97,5 @@ public class ShutdownGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     public ShutdownGatewayRequest clone() {
         return (ShutdownGatewayRequest) super.clone();
     }
+
 }

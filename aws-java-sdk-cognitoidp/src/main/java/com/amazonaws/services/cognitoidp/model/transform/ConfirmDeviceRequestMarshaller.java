@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ConfirmDeviceRequestMarshaller implements Marshaller<Request<ConfirmDeviceRequest>, ConfirmDeviceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ConfirmDeviceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ConfirmDeviceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

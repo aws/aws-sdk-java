@@ -132,4 +132,5 @@ public class DeleteTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteTopicRequest clone() {
         return (DeleteTopicRequest) super.clone();
     }
+
 }

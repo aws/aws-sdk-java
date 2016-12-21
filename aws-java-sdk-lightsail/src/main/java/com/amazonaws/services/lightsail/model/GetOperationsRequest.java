@@ -114,4 +114,5 @@ public class GetOperationsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetOperationsRequest clone() {
         return (GetOperationsRequest) super.clone();
     }
+
 }

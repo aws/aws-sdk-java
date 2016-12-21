@@ -62,44 +62,45 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.AccessDeniedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidImageFormatException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.InvalidImageFormatException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.ThrottlingException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ImageTooLargeException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.ImageTooLargeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.ResourceAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.InvalidPaginationTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withModeledClass(
-                            com.amazonaws.services.rekognition.model.InvalidS3ObjectException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                            com.amazonaws.services.rekognition.model.InternalServerErrorException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.rekognition.model.AmazonRekognitionException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidImageFormatException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.InvalidImageFormatException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ImageTooLargeException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ImageTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.InvalidPaginationTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.InvalidS3ObjectException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
+                                    com.amazonaws.services.rekognition.model.InternalServerErrorException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.rekognition.model.AmazonRekognitionException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Rekognition. A credentials provider chain will be

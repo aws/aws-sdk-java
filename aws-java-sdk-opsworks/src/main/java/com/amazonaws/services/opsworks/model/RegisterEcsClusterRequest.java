@@ -167,4 +167,5 @@ public class RegisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceReq
     public RegisterEcsClusterRequest clone() {
         return (RegisterEcsClusterRequest) super.clone();
     }
+
 }

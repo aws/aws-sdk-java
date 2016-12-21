@@ -174,4 +174,5 @@ public class DescribeTrustedAdvisorCheckResultRequest extends com.amazonaws.Amaz
     public DescribeTrustedAdvisorCheckResultRequest clone() {
         return (DescribeTrustedAdvisorCheckResultRequest) super.clone();
     }
+
 }

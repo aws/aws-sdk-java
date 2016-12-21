@@ -433,4 +433,5 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
     public GetParametersForImportRequest clone() {
         return (GetParametersForImportRequest) super.clone();
     }
+
 }

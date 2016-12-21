@@ -118,4 +118,5 @@ public class CreateStreamingDistributionWithTagsRequest extends com.amazonaws.Am
     public CreateStreamingDistributionWithTagsRequest clone() {
         return (CreateStreamingDistributionWithTagsRequest) super.clone();
     }
+
 }

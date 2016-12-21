@@ -116,4 +116,5 @@ public class GetRunRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     public GetRunRequest clone() {
         return (GetRunRequest) super.clone();
     }
+
 }

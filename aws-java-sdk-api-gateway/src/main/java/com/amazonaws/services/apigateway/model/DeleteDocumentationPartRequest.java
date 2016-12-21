@@ -169,4 +169,5 @@ public class DeleteDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     public DeleteDocumentationPartRequest clone() {
         return (DeleteDocumentationPartRequest) super.clone();
     }
+
 }

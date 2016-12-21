@@ -390,4 +390,5 @@ public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServic
     public RequestEnvironmentInfoRequest clone() {
         return (RequestEnvironmentInfoRequest) super.clone();
     }
+
 }

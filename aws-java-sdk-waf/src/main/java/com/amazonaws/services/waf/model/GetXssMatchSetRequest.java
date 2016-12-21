@@ -123,4 +123,5 @@ public class GetXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetXssMatchSetRequest clone() {
         return (GetXssMatchSetRequest) super.clone();
     }
+
 }

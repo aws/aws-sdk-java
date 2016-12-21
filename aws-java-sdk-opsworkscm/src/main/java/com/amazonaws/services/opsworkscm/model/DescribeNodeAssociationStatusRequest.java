@@ -130,4 +130,5 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     public DescribeNodeAssociationStatusRequest clone() {
         return (DescribeNodeAssociationStatusRequest) super.clone();
     }
+
 }

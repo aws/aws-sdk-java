@@ -121,4 +121,5 @@ public class GetJobUnlockCodeRequest extends com.amazonaws.AmazonWebServiceReque
     public GetJobUnlockCodeRequest clone() {
         return (GetJobUnlockCodeRequest) super.clone();
     }
+
 }

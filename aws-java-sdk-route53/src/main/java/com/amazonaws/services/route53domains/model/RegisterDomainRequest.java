@@ -1537,4 +1537,5 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     public RegisterDomainRequest clone() {
         return (RegisterDomainRequest) super.clone();
     }
+
 }

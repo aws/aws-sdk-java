@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetCampaignActivitiesRequestMarshaller implements Marshaller<Request<GetCampaignActivitiesRequest>, GetCampaignActivitiesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetCampaignActivitiesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetCampaignActivitiesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

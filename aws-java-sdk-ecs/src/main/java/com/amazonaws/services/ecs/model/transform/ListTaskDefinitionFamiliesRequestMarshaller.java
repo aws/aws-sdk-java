@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListTaskDefinitionFamiliesRequestMarshaller implements Marshaller<Request<ListTaskDefinitionFamiliesRequest>, ListTaskDefinitionFamiliesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListTaskDefinitionFamiliesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListTaskDefinitionFamiliesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

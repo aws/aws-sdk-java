@@ -252,4 +252,5 @@ public class DescribeSSLPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeSSLPoliciesRequest clone() {
         return (DescribeSSLPoliciesRequest) super.clone();
     }
+
 }

@@ -603,4 +603,5 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     public ActivateGatewayRequest clone() {
         return (ActivateGatewayRequest) super.clone();
     }
+
 }

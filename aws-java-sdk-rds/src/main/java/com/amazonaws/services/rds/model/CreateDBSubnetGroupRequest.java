@@ -363,4 +363,5 @@ public class CreateDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     public CreateDBSubnetGroupRequest clone() {
         return (CreateDBSubnetGroupRequest) super.clone();
     }
+
 }

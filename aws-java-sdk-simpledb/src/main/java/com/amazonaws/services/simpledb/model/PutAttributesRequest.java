@@ -322,4 +322,5 @@ public class PutAttributesRequest extends com.amazonaws.AmazonWebServiceRequest 
     public PutAttributesRequest clone() {
         return (PutAttributesRequest) super.clone();
     }
+
 }

@@ -165,4 +165,5 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public ListJobsRequest clone() {
         return (ListJobsRequest) super.clone();
     }
+
 }

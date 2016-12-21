@@ -255,4 +255,5 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateDeviceStatusRequest clone() {
         return (UpdateDeviceStatusRequest) super.clone();
     }
+
 }

@@ -220,4 +220,5 @@ public class AdminRemoveUserFromGroupRequest extends com.amazonaws.AmazonWebServ
     public AdminRemoveUserFromGroupRequest clone() {
         return (AdminRemoveUserFromGroupRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeScalingPoliciesRequestMarshaller implements Marshaller<Request<DescribeScalingPoliciesRequest>, DescribeScalingPoliciesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeScalingPoliciesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeScalingPoliciesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

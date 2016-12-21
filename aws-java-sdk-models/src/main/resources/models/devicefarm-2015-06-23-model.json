@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-06-23",
     "endpointPrefix" : "devicefarm",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "CreateDevicePool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a device pool.</p>",
       "errors" : [ {
@@ -62,7 +64,8 @@
       }
     },
     "CreateProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new project.</p>",
       "errors" : [ {
@@ -110,7 +113,8 @@
       }
     },
     "CreateRemoteAccessSession" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Specifies and starts a remote access session.</p>",
       "errors" : [ {
@@ -158,7 +162,8 @@
       }
     },
     "CreateUpload" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Uploads an app or test scripts.</p>",
       "errors" : [ {
@@ -206,7 +211,8 @@
       }
     },
     "DeleteDevicePool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>",
       "errors" : [ {
@@ -254,7 +260,8 @@
       }
     },
     "DeleteProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an AWS Device Farm project, given the project ARN.</p> <p> <b>Note</b> Deleting this resource does not stop an in-progress run.</p>",
       "errors" : [ {
@@ -302,7 +309,8 @@
       }
     },
     "DeleteRemoteAccessSession" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a completed remote access session and its results.</p>",
       "errors" : [ {
@@ -350,7 +358,8 @@
       }
     },
     "DeleteRun" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this resource does not stop an in-progress run.</p>",
       "errors" : [ {
@@ -398,7 +407,8 @@
       }
     },
     "DeleteUpload" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an upload given the upload ARN.</p>",
       "errors" : [ {
@@ -446,7 +456,8 @@
       }
     },
     "GetAccountSettings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account.</p>",
       "errors" : [ {
@@ -494,7 +505,8 @@
       }
     },
     "GetDevice" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a unique device type.</p>",
       "errors" : [ {
@@ -542,7 +554,8 @@
       }
     },
     "GetDevicePool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a device pool.</p>",
       "errors" : [ {
@@ -590,7 +603,8 @@
       }
     },
     "GetDevicePoolCompatibility" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about compatibility with a device pool.</p>",
       "errors" : [ {
@@ -638,7 +652,8 @@
       }
     },
     "GetJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a job.</p>",
       "errors" : [ {
@@ -686,7 +701,8 @@
       }
     },
     "GetOfferingStatus" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>",
       "errors" : [ {
@@ -740,7 +756,8 @@
       }
     },
     "GetProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a project.</p>",
       "errors" : [ {
@@ -788,7 +805,8 @@
       }
     },
     "GetRemoteAccessSession" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a link to a currently running remote access session.</p>",
       "errors" : [ {
@@ -836,7 +854,8 @@
       }
     },
     "GetRun" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a run.</p>",
       "errors" : [ {
@@ -884,7 +903,8 @@
       }
     },
     "GetSuite" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a suite.</p>",
       "errors" : [ {
@@ -932,7 +952,8 @@
       }
     },
     "GetTest" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a test.</p>",
       "errors" : [ {
@@ -980,7 +1001,8 @@
       }
     },
     "GetUpload" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about an upload.</p>",
       "errors" : [ {
@@ -1028,7 +1050,8 @@
       }
     },
     "InstallToRemoteAccessSession" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Installs an application to the device in a remote access session. For Android applications, the file must be in .apk format. For iOS applications, the file must be in .ipa format.</p>",
       "errors" : [ {
@@ -1076,7 +1099,8 @@
       }
     },
     "ListArtifacts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about artifacts.</p>",
       "errors" : [ {
@@ -1124,7 +1148,8 @@
       }
     },
     "ListDevicePools" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about device pools.</p>",
       "errors" : [ {
@@ -1172,7 +1197,8 @@
       }
     },
     "ListDevices" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about unique device types.</p>",
       "errors" : [ {
@@ -1220,7 +1246,8 @@
       }
     },
     "ListJobs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about jobs.</p>",
       "errors" : [ {
@@ -1268,7 +1295,8 @@
       }
     },
     "ListOfferingTransactions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>",
       "errors" : [ {
@@ -1322,7 +1350,8 @@
       }
     },
     "ListOfferings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a list of products or offerings that the user can manage through the API. Each offering record indicates the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>",
       "errors" : [ {
@@ -1376,7 +1405,8 @@
       }
     },
     "ListProjects" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about projects.</p>",
       "errors" : [ {
@@ -1424,7 +1454,8 @@
       }
     },
     "ListRemoteAccessSessions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a list of all currently running remote access sessions.</p>",
       "errors" : [ {
@@ -1472,7 +1503,8 @@
       }
     },
     "ListRuns" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about runs, given an AWS Device Farm project ARN.</p>",
       "errors" : [ {
@@ -1520,7 +1552,8 @@
       }
     },
     "ListSamples" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about samples, given an AWS Device Farm project ARN</p>",
       "errors" : [ {
@@ -1568,7 +1601,8 @@
       }
     },
     "ListSuites" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about suites.</p>",
       "errors" : [ {
@@ -1616,7 +1650,8 @@
       }
     },
     "ListTests" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about tests.</p>",
       "errors" : [ {
@@ -1664,7 +1699,8 @@
       }
     },
     "ListUniqueProblems" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about unique problems.</p>",
       "errors" : [ {
@@ -1712,7 +1748,8 @@
       }
     },
     "ListUploads" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about uploads, given an AWS Device Farm project ARN.</p>",
       "errors" : [ {
@@ -1760,7 +1797,8 @@
       }
     },
     "PurchaseOffering" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>",
       "errors" : [ {
@@ -1814,7 +1852,8 @@
       }
     },
     "RenewOffering" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. Please contact <a href=\"mailto:aws-devicefarm-support@amazon.com\">aws-devicefarm-support@amazon.com</a> if you believe that you should be able to invoke this operation.</p>",
       "errors" : [ {
@@ -1868,7 +1907,8 @@
       }
     },
     "ScheduleRun" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Schedules a run.</p>",
       "errors" : [ {
@@ -1922,7 +1962,8 @@
       }
     },
     "StopRemoteAccessSession" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Ends a specified remote access session.</p>",
       "errors" : [ {
@@ -1970,7 +2011,8 @@
       }
     },
     "StopRun" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Initiates a stop request for the current test run. AWS Device Farm will immediately stop the run on devices where tests have not started executing, and you will not be billed for these devices. On devices where tests have started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on those devices. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.</p>",
       "errors" : [ {
@@ -2018,7 +2060,8 @@
       }
     },
     "UpdateDevicePool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>",
       "errors" : [ {
@@ -2066,7 +2109,8 @@
       }
     },
     "UpdateProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Modifies the specified project name, given the project ARN and a new name.</p>",
       "errors" : [ {

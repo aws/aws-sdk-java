@@ -170,4 +170,5 @@ public class GetTrafficPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public GetTrafficPolicyRequest clone() {
         return (GetTrafficPolicyRequest) super.clone();
     }
+
 }

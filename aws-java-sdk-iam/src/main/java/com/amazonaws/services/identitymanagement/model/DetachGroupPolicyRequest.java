@@ -231,4 +231,5 @@ public class DetachGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     public DetachGroupPolicyRequest clone() {
         return (DetachGroupPolicyRequest) super.clone();
     }
+
 }

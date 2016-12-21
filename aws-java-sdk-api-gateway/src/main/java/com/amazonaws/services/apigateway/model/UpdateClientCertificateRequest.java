@@ -203,4 +203,5 @@ public class UpdateClientCertificateRequest extends com.amazonaws.AmazonWebServi
     public UpdateClientCertificateRequest clone() {
         return (UpdateClientCertificateRequest) super.clone();
     }
+
 }

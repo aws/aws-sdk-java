@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetTraceGraphRequestMarshaller implements Marshaller<Request<GetTraceGraphRequest>, GetTraceGraphRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetTraceGraphRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetTraceGraphRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

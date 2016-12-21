@@ -617,4 +617,5 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     public RegisterTaskDefinitionRequest clone() {
         return (RegisterTaskDefinitionRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class DescribeWorkflowExecutionRequest extends com.amazonaws.AmazonWebSer
     public DescribeWorkflowExecutionRequest clone() {
         return (DescribeWorkflowExecutionRequest) super.clone();
     }
+
 }

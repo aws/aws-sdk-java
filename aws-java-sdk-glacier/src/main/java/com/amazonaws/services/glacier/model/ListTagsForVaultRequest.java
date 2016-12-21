@@ -190,4 +190,5 @@ public class ListTagsForVaultRequest extends com.amazonaws.AmazonWebServiceReque
     public ListTagsForVaultRequest clone() {
         return (ListTagsForVaultRequest) super.clone();
     }
+
 }

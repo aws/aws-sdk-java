@@ -150,4 +150,5 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateAccountRequest clone() {
         return (UpdateAccountRequest) super.clone();
     }
+
 }

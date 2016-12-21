@@ -635,4 +635,5 @@ public class PutLifecycleHookRequest extends com.amazonaws.AmazonWebServiceReque
     public PutLifecycleHookRequest clone() {
         return (PutLifecycleHookRequest) super.clone();
     }
+
 }

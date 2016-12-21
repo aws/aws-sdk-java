@@ -67,48 +67,49 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidSampleRateException").withModeledClass(
-                            com.amazonaws.services.polly.model.InvalidSampleRateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MaxLexiconsNumberExceededException").withModeledClass(
-                            com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MaxLexemeLengthExceededException").withModeledClass(
-                            com.amazonaws.services.polly.model.MaxLexemeLengthExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsLanguageException").withModeledClass(
-                            com.amazonaws.services.polly.model.UnsupportedPlsLanguageException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsAlphabetException").withModeledClass(
-                            com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TextLengthExceededException").withModeledClass(
-                            com.amazonaws.services.polly.model.TextLengthExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LexiconNotFoundException").withModeledClass(
-                            com.amazonaws.services.polly.model.LexiconNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LexiconSizeExceededException").withModeledClass(
-                            com.amazonaws.services.polly.model.LexiconSizeExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidLexiconException").withModeledClass(
-                            com.amazonaws.services.polly.model.InvalidLexiconException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidSsmlException").withModeledClass(
-                            com.amazonaws.services.polly.model.InvalidSsmlException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                            com.amazonaws.services.polly.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withModeledClass(
-                            com.amazonaws.services.polly.model.ServiceFailureException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.polly.model.AmazonPollyException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSampleRateException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidSampleRateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxLexiconsNumberExceededException").withModeledClass(
+                                    com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxLexemeLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.polly.model.MaxLexemeLengthExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsLanguageException").withModeledClass(
+                                    com.amazonaws.services.polly.model.UnsupportedPlsLanguageException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlsAlphabetException").withModeledClass(
+                                    com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TextLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.polly.model.TextLengthExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LexiconNotFoundException").withModeledClass(
+                                    com.amazonaws.services.polly.model.LexiconNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LexiconSizeExceededException").withModeledClass(
+                                    com.amazonaws.services.polly.model.LexiconSizeExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLexiconException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidLexiconException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSsmlException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidSsmlException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.polly.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withModeledClass(
+                                    com.amazonaws.services.polly.model.ServiceFailureException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.polly.model.AmazonPollyException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Polly. A credentials provider chain will be used that

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RemoveTagsFromCertificateRequestMarshaller implements Marshaller<Request<RemoveTagsFromCertificateRequest>, RemoveTagsFromCertificateRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemoveTagsFromCertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemoveTagsFromCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

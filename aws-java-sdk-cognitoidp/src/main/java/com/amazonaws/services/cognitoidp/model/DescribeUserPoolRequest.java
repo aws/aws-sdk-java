@@ -116,4 +116,5 @@ public class DescribeUserPoolRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeUserPoolRequest clone() {
         return (DescribeUserPoolRequest) super.clone();
     }
+
 }

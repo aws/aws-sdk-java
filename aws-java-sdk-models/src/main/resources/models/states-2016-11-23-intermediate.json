@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSStepFunctionsModuleInjector",
     "defaultEndpoint" : "states.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "states.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS Step Functions</fullname> <p>AWS Step Functions is a web service that enables you to coordinate the components of distributed applications and microservices using visual workflows. You build applications from individual components that each perform a discrete function, or <i>task</i>, allowing you to scale and change applications quickly. Step Functions provides a graphical console to visualize the components of your application as a series of steps. It automatically triggers and tracks each step, and retries when there are errors, so your application executes in order and as expected, every time. Step Functions logs the state of each step, so when things do go wrong, you can diagnose and debug problems quickly.</p> <p>Step Functions manages the operations and underlying infrastructure for you to ensure your application is available at any scale. You can run tasks on the AWS cloud, on your own servers, or an any system that has access to AWS. Step Functions can be accessed and used with the Step Functions console, the AWS SDKs (included with your Beta release invitation email), or an HTTP API (the subject of this document).</p>",
     "endpointPrefix" : "states",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/stepfunctions",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWS SFN",
     "serviceFullName" : "AWS Step Functions",
     "serviceName" : "AWS SFN",
@@ -735,6 +739,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityDoesNotExistException",
       "unmarshaller" : null,
@@ -994,6 +1000,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityFailedEventDetails",
       "unmarshaller" : {
@@ -1029,6 +1037,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityLimitExceededException",
       "unmarshaller" : null,
@@ -1401,6 +1411,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activityArn", "name", "creationDate" ],
       "shapeName" : "ActivityListItem",
       "unmarshaller" : {
@@ -1663,6 +1675,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityScheduleFailedEventDetails",
       "unmarshaller" : {
@@ -2151,6 +2165,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "resource" ],
       "shapeName" : "ActivityScheduledEventDetails",
       "unmarshaller" : {
@@ -2300,6 +2316,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityStartedEventDetails",
       "unmarshaller" : {
@@ -2449,6 +2467,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivitySucceededEventDetails",
       "unmarshaller" : {
@@ -2711,6 +2731,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityTimedOutEventDetails",
       "unmarshaller" : {
@@ -2746,6 +2768,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActivityWorkerLimitExceededException",
       "unmarshaller" : null,
@@ -2899,6 +2923,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "CreateActivityRequest",
       "unmarshaller" : null,
@@ -3158,6 +3184,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activityArn", "creationDate" ],
       "shapeName" : "CreateActivityResult",
       "unmarshaller" : {
@@ -3540,6 +3568,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name", "definition", "roleArn" ],
       "shapeName" : "CreateStateMachineRequest",
       "unmarshaller" : null,
@@ -3799,6 +3829,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn", "creationDate" ],
       "shapeName" : "CreateStateMachineResult",
       "unmarshaller" : {
@@ -3955,6 +3987,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activityArn" ],
       "shapeName" : "DeleteActivityRequest",
       "unmarshaller" : null,
@@ -3987,6 +4021,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteActivityResult",
       "unmarshaller" : {
@@ -4143,6 +4179,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn" ],
       "shapeName" : "DeleteStateMachineRequest",
       "unmarshaller" : null,
@@ -4175,6 +4213,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteStateMachineResult",
       "unmarshaller" : {
@@ -4331,6 +4371,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activityArn" ],
       "shapeName" : "DescribeActivityRequest",
       "unmarshaller" : null,
@@ -4703,6 +4745,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activityArn", "name", "creationDate" ],
       "shapeName" : "DescribeActivityResult",
       "unmarshaller" : {
@@ -4859,6 +4903,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executionArn" ],
       "shapeName" : "DescribeExecutionRequest",
       "unmarshaller" : null,
@@ -5796,6 +5842,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executionArn", "stateMachineArn", "status", "startDate", "input" ],
       "shapeName" : "DescribeExecutionResult",
       "unmarshaller" : {
@@ -5952,6 +6000,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn" ],
       "shapeName" : "DescribeStateMachineRequest",
       "unmarshaller" : null,
@@ -6663,6 +6713,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn", "name", "definition", "roleArn", "creationDate" ],
       "shapeName" : "DescribeStateMachineResult",
       "unmarshaller" : {
@@ -6925,6 +6977,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionAbortedEventDetails",
       "unmarshaller" : {
@@ -6960,6 +7014,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionAlreadyExistsException",
       "unmarshaller" : null,
@@ -6992,6 +7048,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionDoesNotExistException",
       "unmarshaller" : null,
@@ -7251,6 +7309,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionFailedEventDetails",
       "unmarshaller" : {
@@ -7286,6 +7346,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionLimitExceededException",
       "unmarshaller" : null,
@@ -7997,6 +8059,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executionArn", "stateMachineArn", "name", "status", "startDate" ],
       "shapeName" : "ExecutionListItem",
       "unmarshaller" : {
@@ -8259,6 +8323,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionStartedEventDetails",
       "unmarshaller" : {
@@ -8309,6 +8375,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionStatus",
       "unmarshaller" : {
@@ -8458,6 +8526,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionSucceededEventDetails",
       "unmarshaller" : {
@@ -8720,6 +8790,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionTimedOutEventDetails",
       "unmarshaller" : {
@@ -8989,6 +9061,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activityArn" ],
       "shapeName" : "GetActivityTaskRequest",
       "unmarshaller" : null,
@@ -9248,6 +9322,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetActivityTaskResult",
       "unmarshaller" : {
@@ -9743,6 +9819,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executionArn" ],
       "shapeName" : "GetExecutionHistoryRequest",
       "unmarshaller" : null,
@@ -10144,6 +10222,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "events" ],
       "shapeName" : "GetExecutionHistoryResult",
       "unmarshaller" : {
@@ -12779,6 +12859,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "timestamp", "type", "id" ],
       "shapeName" : "HistoryEvent",
       "unmarshaller" : {
@@ -12907,6 +12989,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HistoryEventType",
       "unmarshaller" : {
@@ -12942,6 +13026,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidArnException",
       "unmarshaller" : null,
@@ -12974,6 +13060,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDefinitionException",
       "unmarshaller" : null,
@@ -13006,6 +13094,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidExecutionInputException",
       "unmarshaller" : null,
@@ -13038,6 +13128,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNameException",
       "unmarshaller" : null,
@@ -13070,6 +13162,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidOutputException",
       "unmarshaller" : null,
@@ -13102,6 +13196,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTokenException",
       "unmarshaller" : null,
@@ -13361,6 +13457,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaFunctionFailedEventDetails",
       "unmarshaller" : {
@@ -13623,6 +13721,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaFunctionScheduleFailedEventDetails",
       "unmarshaller" : {
@@ -13998,6 +14098,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "resource" ],
       "shapeName" : "LambdaFunctionScheduledEventDetails",
       "unmarshaller" : {
@@ -14260,6 +14362,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaFunctionStartFailedEventDetails",
       "unmarshaller" : {
@@ -14409,6 +14513,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaFunctionSucceededEventDetails",
       "unmarshaller" : {
@@ -14671,6 +14777,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaFunctionTimedOutEventDetails",
       "unmarshaller" : {
@@ -14940,6 +15048,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListActivitiesRequest",
       "unmarshaller" : null,
@@ -15341,6 +15451,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "activities" ],
       "shapeName" : "ListActivitiesResult",
       "unmarshaller" : {
@@ -15836,6 +15948,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn" ],
       "shapeName" : "ListExecutionsRequest",
       "unmarshaller" : null,
@@ -16237,6 +16351,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executions" ],
       "shapeName" : "ListExecutionsResult",
       "unmarshaller" : {
@@ -16506,6 +16622,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStateMachinesRequest",
       "unmarshaller" : null,
@@ -16907,6 +17025,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachines" ],
       "shapeName" : "ListStateMachinesResult",
       "unmarshaller" : {
@@ -17289,6 +17409,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "taskToken" ],
       "shapeName" : "SendTaskFailureRequest",
       "unmarshaller" : null,
@@ -17321,6 +17443,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SendTaskFailureResult",
       "unmarshaller" : {
@@ -17477,6 +17601,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "taskToken" ],
       "shapeName" : "SendTaskHeartbeatRequest",
       "unmarshaller" : null,
@@ -17509,6 +17635,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SendTaskHeartbeatResult",
       "unmarshaller" : {
@@ -17778,6 +17906,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "taskToken", "output" ],
       "shapeName" : "SendTaskSuccessRequest",
       "unmarshaller" : null,
@@ -17810,6 +17940,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SendTaskSuccessResult",
       "unmarshaller" : {
@@ -18192,6 +18324,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn" ],
       "shapeName" : "StartExecutionRequest",
       "unmarshaller" : null,
@@ -18451,6 +18585,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executionArn", "startDate" ],
       "shapeName" : "StartExecutionResult",
       "unmarshaller" : {
@@ -18713,6 +18849,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "StateEnteredEventDetails",
       "unmarshaller" : {
@@ -18975,6 +19113,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "StateExitedEventDetails",
       "unmarshaller" : {
@@ -19010,6 +19150,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StateMachineAlreadyExistsException",
       "unmarshaller" : null,
@@ -19042,6 +19184,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StateMachineDeletingException",
       "unmarshaller" : null,
@@ -19074,6 +19218,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StateMachineDoesNotExistException",
       "unmarshaller" : null,
@@ -19106,6 +19252,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StateMachineLimitExceededException",
       "unmarshaller" : null,
@@ -19478,6 +19626,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stateMachineArn", "name", "creationDate" ],
       "shapeName" : "StateMachineListItem",
       "unmarshaller" : {
@@ -19519,6 +19669,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StateMachineStatus",
       "unmarshaller" : {
@@ -19901,6 +20053,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "executionArn" ],
       "shapeName" : "StopExecutionRequest",
       "unmarshaller" : null,
@@ -20047,6 +20201,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "stopDate" ],
       "shapeName" : "StopExecutionResult",
       "unmarshaller" : {
@@ -20082,6 +20238,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TaskDoesNotExistException",
       "unmarshaller" : null,
@@ -20114,6 +20272,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TaskTimedOutException",
       "unmarshaller" : null,
@@ -20129,6 +20289,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

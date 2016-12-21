@@ -332,4 +332,5 @@ public class RevokeClusterSecurityGroupIngressRequest extends com.amazonaws.Amaz
     public RevokeClusterSecurityGroupIngressRequest clone() {
         return (RevokeClusterSecurityGroupIngressRequest) super.clone();
     }
+
 }

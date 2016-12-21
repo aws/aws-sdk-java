@@ -381,4 +381,5 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public GetUsageRequest clone() {
         return (GetUsageRequest) super.clone();
     }
+
 }

@@ -338,4 +338,5 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateMicrosoftADRequest clone() {
         return (CreateMicrosoftADRequest) super.clone();
     }
+
 }

@@ -469,4 +469,5 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
     public ModifyDBSnapshotAttributeRequest clone() {
         return (ModifyDBSnapshotAttributeRequest) super.clone();
     }
+
 }

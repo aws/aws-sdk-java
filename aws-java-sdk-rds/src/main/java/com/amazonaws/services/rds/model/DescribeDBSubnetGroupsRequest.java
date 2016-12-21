@@ -373,4 +373,5 @@ public class DescribeDBSubnetGroupsRequest extends com.amazonaws.AmazonWebServic
     public DescribeDBSubnetGroupsRequest clone() {
         return (DescribeDBSubnetGroupsRequest) super.clone();
     }
+
 }

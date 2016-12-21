@@ -301,4 +301,5 @@ public class DescribeDirectoriesRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeDirectoriesRequest clone() {
         return (DescribeDirectoriesRequest) super.clone();
     }
+
 }

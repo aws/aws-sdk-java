@@ -190,4 +190,5 @@ public class CreateInvalidationRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateInvalidationRequest clone() {
         return (CreateInvalidationRequest) super.clone();
     }
+
 }

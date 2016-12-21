@@ -147,4 +147,5 @@ public class DescribeTimeBasedAutoScalingRequest extends com.amazonaws.AmazonWeb
     public DescribeTimeBasedAutoScalingRequest clone() {
         return (DescribeTimeBasedAutoScalingRequest) super.clone();
     }
+
 }

@@ -158,4 +158,5 @@ public class DescribePipelinesRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribePipelinesRequest clone() {
         return (DescribePipelinesRequest) super.clone();
     }
+
 }

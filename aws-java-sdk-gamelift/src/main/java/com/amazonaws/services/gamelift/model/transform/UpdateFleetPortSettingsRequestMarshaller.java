@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateFleetPortSettingsRequestMarshaller implements Marshaller<Request<UpdateFleetPortSettingsRequest>, UpdateFleetPortSettingsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateFleetPortSettingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateFleetPortSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

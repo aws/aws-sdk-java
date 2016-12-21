@@ -133,4 +133,5 @@ public class DefineExpressionRequest extends com.amazonaws.AmazonWebServiceReque
     public DefineExpressionRequest clone() {
         return (DefineExpressionRequest) super.clone();
     }
+
 }

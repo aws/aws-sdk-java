@@ -396,4 +396,5 @@ public class AuthorizeDBSecurityGroupIngressRequest extends com.amazonaws.Amazon
     public AuthorizeDBSecurityGroupIngressRequest clone() {
         return (AuthorizeDBSecurityGroupIngressRequest) super.clone();
     }
+
 }

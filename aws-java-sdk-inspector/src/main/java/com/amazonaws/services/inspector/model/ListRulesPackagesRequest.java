@@ -188,4 +188,5 @@ public class ListRulesPackagesRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListRulesPackagesRequest clone() {
         return (ListRulesPackagesRequest) super.clone();
     }
+
 }

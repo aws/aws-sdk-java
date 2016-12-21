@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeCachediSCSIVolumesRequestMarshaller implements Marshaller<Request<DescribeCachediSCSIVolumesRequest>, DescribeCachediSCSIVolumesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeCachediSCSIVolumesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeCachediSCSIVolumesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

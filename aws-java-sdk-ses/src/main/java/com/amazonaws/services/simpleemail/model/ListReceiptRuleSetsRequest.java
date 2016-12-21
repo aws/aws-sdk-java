@@ -126,4 +126,5 @@ public class ListReceiptRuleSetsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListReceiptRuleSetsRequest clone() {
         return (ListReceiptRuleSetsRequest) super.clone();
     }
+
 }

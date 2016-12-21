@@ -424,4 +424,5 @@ public class UpdateSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebSe
     public UpdateSqlInjectionMatchSetRequest clone() {
         return (UpdateSqlInjectionMatchSetRequest) super.clone();
     }
+
 }

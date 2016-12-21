@@ -169,4 +169,5 @@ public class ListBranchesRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ListBranchesRequest clone() {
         return (ListBranchesRequest) super.clone();
     }
+
 }

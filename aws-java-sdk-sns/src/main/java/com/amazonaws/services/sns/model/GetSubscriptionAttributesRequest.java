@@ -134,4 +134,5 @@ public class GetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
     public GetSubscriptionAttributesRequest clone() {
         return (GetSubscriptionAttributesRequest) super.clone();
     }
+
 }

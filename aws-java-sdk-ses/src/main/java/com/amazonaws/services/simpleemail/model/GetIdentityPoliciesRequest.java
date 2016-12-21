@@ -255,4 +255,5 @@ public class GetIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
     public GetIdentityPoliciesRequest clone() {
         return (GetIdentityPoliciesRequest) super.clone();
     }
+
 }

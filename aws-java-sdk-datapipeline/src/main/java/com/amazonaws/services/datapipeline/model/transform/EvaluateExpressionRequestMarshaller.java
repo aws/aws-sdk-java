@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class EvaluateExpressionRequestMarshaller implements Marshaller<Request<EvaluateExpressionRequest>, EvaluateExpressionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public EvaluateExpressionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public EvaluateExpressionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

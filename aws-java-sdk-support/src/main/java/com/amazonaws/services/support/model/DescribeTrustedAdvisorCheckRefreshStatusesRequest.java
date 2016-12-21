@@ -156,4 +156,5 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
     public DescribeTrustedAdvisorCheckRefreshStatusesRequest clone() {
         return (DescribeTrustedAdvisorCheckRefreshStatusesRequest) super.clone();
     }
+
 }

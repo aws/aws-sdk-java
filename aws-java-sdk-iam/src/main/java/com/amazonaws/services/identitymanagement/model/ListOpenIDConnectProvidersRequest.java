@@ -60,4 +60,5 @@ public class ListOpenIDConnectProvidersRequest extends com.amazonaws.AmazonWebSe
     public ListOpenIDConnectProvidersRequest clone() {
         return (ListOpenIDConnectProvidersRequest) super.clone();
     }
+
 }

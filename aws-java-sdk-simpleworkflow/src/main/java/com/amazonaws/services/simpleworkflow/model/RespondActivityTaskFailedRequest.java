@@ -241,4 +241,5 @@ public class RespondActivityTaskFailedRequest extends com.amazonaws.AmazonWebSer
     public RespondActivityTaskFailedRequest clone() {
         return (RespondActivityTaskFailedRequest) super.clone();
     }
+
 }

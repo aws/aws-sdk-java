@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetDiscoverySummaryRequestMarshaller implements Marshaller<Request<GetDiscoverySummaryRequest>, GetDiscoverySummaryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDiscoverySummaryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDiscoverySummaryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

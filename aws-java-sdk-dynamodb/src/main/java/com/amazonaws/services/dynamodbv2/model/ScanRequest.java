@@ -3777,4 +3777,5 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
     public ScanRequest clone() {
         return (ScanRequest) super.clone();
     }
+
 }

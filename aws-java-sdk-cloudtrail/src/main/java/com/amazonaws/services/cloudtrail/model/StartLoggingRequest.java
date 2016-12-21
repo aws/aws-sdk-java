@@ -141,4 +141,5 @@ public class StartLoggingRequest extends com.amazonaws.AmazonWebServiceRequest i
     public StartLoggingRequest clone() {
         return (StartLoggingRequest) super.clone();
     }
+
 }

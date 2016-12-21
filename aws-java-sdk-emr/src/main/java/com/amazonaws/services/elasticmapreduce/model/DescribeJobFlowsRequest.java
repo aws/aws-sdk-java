@@ -387,4 +387,5 @@ public class DescribeJobFlowsRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeJobFlowsRequest clone() {
         return (DescribeJobFlowsRequest) super.clone();
     }
+
 }

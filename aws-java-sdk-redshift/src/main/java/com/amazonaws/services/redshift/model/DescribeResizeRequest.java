@@ -135,4 +135,5 @@ public class DescribeResizeRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeResizeRequest clone() {
         return (DescribeResizeRequest) super.clone();
     }
+
 }

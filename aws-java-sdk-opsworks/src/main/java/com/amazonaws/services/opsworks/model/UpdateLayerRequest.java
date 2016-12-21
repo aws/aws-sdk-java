@@ -1293,4 +1293,5 @@ public class UpdateLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateLayerRequest clone() {
         return (UpdateLayerRequest) super.clone();
     }
+
 }

@@ -354,4 +354,5 @@ public class DescribeComplianceByConfigRuleRequest extends com.amazonaws.AmazonW
     public DescribeComplianceByConfigRuleRequest clone() {
         return (DescribeComplianceByConfigRuleRequest) super.clone();
     }
+
 }

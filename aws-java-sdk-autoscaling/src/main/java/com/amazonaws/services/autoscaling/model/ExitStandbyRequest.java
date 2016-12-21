@@ -202,4 +202,5 @@ public class ExitStandbyRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ExitStandbyRequest clone() {
         return (ExitStandbyRequest) super.clone();
     }
+
 }

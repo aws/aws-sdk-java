@@ -300,4 +300,5 @@ public class DescribeDefaultClusterParametersRequest extends com.amazonaws.Amazo
     public DescribeDefaultClusterParametersRequest clone() {
         return (DescribeDefaultClusterParametersRequest) super.clone();
     }
+
 }

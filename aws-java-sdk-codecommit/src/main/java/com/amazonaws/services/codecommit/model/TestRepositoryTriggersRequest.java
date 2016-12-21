@@ -199,4 +199,5 @@ public class TestRepositoryTriggersRequest extends com.amazonaws.AmazonWebServic
     public TestRepositoryTriggersRequest clone() {
         return (TestRepositoryTriggersRequest) super.clone();
     }
+
 }

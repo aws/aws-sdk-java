@@ -275,4 +275,5 @@ public class DeleteIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     public DeleteIntegrationResponseRequest clone() {
         return (DeleteIntegrationResponseRequest) super.clone();
     }
+
 }

@@ -179,4 +179,5 @@ public class GetBundlesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetBundlesRequest clone() {
         return (GetBundlesRequest) super.clone();
     }
+
 }

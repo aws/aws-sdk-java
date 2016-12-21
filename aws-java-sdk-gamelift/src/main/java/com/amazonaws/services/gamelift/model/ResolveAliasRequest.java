@@ -116,4 +116,5 @@ public class ResolveAliasRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ResolveAliasRequest clone() {
         return (ResolveAliasRequest) super.clone();
     }
+
 }

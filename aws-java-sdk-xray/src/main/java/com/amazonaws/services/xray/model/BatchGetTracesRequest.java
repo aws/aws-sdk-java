@@ -197,4 +197,5 @@ public class BatchGetTracesRequest extends com.amazonaws.AmazonWebServiceRequest
     public BatchGetTracesRequest clone() {
         return (BatchGetTracesRequest) super.clone();
     }
+
 }

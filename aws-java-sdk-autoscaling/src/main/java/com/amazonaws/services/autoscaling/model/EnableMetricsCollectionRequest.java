@@ -629,4 +629,5 @@ public class EnableMetricsCollectionRequest extends com.amazonaws.AmazonWebServi
     public EnableMetricsCollectionRequest clone() {
         return (EnableMetricsCollectionRequest) super.clone();
     }
+
 }

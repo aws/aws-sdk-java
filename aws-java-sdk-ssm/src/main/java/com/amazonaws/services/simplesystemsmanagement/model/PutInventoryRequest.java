@@ -200,4 +200,5 @@ public class PutInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
     public PutInventoryRequest clone() {
         return (PutInventoryRequest) super.clone();
     }
+
 }

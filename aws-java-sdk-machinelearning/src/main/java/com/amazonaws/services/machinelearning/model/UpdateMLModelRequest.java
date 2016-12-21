@@ -259,4 +259,5 @@ public class UpdateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateMLModelRequest clone() {
         return (UpdateMLModelRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class UnassignInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     public UnassignInstanceRequest clone() {
         return (UnassignInstanceRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class OpenInstancePublicPortsRequest extends com.amazonaws.AmazonWebServi
     public OpenInstancePublicPortsRequest clone() {
         return (OpenInstancePublicPortsRequest) super.clone();
     }
+
 }

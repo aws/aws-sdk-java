@@ -183,4 +183,5 @@ public class CreateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateHealthCheckRequest clone() {
         return (CreateHealthCheckRequest) super.clone();
     }
+
 }

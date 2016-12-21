@@ -114,4 +114,5 @@ public class StartMaintenanceRequest extends com.amazonaws.AmazonWebServiceReque
     public StartMaintenanceRequest clone() {
         return (StartMaintenanceRequest) super.clone();
     }
+
 }

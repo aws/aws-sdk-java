@@ -241,4 +241,5 @@ public class DescribeFindingsRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeFindingsRequest clone() {
         return (DescribeFindingsRequest) super.clone();
     }
+
 }

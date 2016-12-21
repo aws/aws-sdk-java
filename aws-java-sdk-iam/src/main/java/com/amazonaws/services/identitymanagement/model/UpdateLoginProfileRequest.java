@@ -342,4 +342,5 @@ public class UpdateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateLoginProfileRequest clone() {
         return (UpdateLoginProfileRequest) super.clone();
     }
+
 }

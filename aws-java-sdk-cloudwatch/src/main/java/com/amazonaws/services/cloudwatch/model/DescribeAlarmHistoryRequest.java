@@ -412,4 +412,5 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeAlarmHistoryRequest clone() {
         return (DescribeAlarmHistoryRequest) super.clone();
     }
+
 }

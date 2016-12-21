@@ -693,4 +693,5 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
     public GenerateDataKeyWithoutPlaintextRequest clone() {
         return (GenerateDataKeyWithoutPlaintextRequest) super.clone();
     }
+
 }

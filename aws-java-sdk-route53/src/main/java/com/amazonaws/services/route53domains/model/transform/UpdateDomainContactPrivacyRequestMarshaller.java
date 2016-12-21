@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateDomainContactPrivacyRequestMarshaller implements Marshaller<Request<UpdateDomainContactPrivacyRequest>, UpdateDomainContactPrivacyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateDomainContactPrivacyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateDomainContactPrivacyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

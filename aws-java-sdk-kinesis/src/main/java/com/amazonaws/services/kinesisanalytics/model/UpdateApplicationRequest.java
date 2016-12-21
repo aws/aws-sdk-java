@@ -223,4 +223,5 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateApplicationRequest clone() {
         return (UpdateApplicationRequest) super.clone();
     }
+
 }

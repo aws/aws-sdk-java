@@ -97,4 +97,5 @@ public class StartGatewayRequest extends com.amazonaws.AmazonWebServiceRequest i
     public StartGatewayRequest clone() {
         return (StartGatewayRequest) super.clone();
     }
+
 }

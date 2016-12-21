@@ -269,4 +269,5 @@ public class DescribeMaintenanceWindowsRequest extends com.amazonaws.AmazonWebSe
     public DescribeMaintenanceWindowsRequest clone() {
         return (DescribeMaintenanceWindowsRequest) super.clone();
     }
+
 }

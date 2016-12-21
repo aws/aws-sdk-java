@@ -116,4 +116,5 @@ public class ListTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListTagsForDomainRequest clone() {
         return (ListTagsForDomainRequest) super.clone();
     }
+
 }

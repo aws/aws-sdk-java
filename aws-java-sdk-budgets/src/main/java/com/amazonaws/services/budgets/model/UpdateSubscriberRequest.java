@@ -235,4 +235,5 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateSubscriberRequest clone() {
         return (UpdateSubscriberRequest) super.clone();
     }
+
 }

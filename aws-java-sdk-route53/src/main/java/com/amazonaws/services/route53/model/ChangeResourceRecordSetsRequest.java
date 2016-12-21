@@ -190,4 +190,5 @@ public class ChangeResourceRecordSetsRequest extends com.amazonaws.AmazonWebServ
     public ChangeResourceRecordSetsRequest clone() {
         return (ChangeResourceRecordSetsRequest) super.clone();
     }
+
 }

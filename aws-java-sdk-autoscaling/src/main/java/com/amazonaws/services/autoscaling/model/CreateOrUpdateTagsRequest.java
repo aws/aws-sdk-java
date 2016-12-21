@@ -149,4 +149,5 @@ public class CreateOrUpdateTagsRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateOrUpdateTagsRequest clone() {
         return (CreateOrUpdateTagsRequest) super.clone();
     }
+
 }

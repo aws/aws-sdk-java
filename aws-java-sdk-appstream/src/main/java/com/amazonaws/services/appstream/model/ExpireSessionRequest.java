@@ -114,4 +114,5 @@ public class ExpireSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ExpireSessionRequest clone() {
         return (ExpireSessionRequest) super.clone();
     }
+
 }

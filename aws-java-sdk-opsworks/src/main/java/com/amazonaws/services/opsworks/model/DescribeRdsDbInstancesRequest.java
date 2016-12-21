@@ -207,4 +207,5 @@ public class DescribeRdsDbInstancesRequest extends com.amazonaws.AmazonWebServic
     public DescribeRdsDbInstancesRequest clone() {
         return (DescribeRdsDbInstancesRequest) super.clone();
     }
+
 }

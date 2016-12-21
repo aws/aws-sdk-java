@@ -362,4 +362,5 @@ public class PutUserPolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
     public PutUserPolicyRequest clone() {
         return (PutUserPolicyRequest) super.clone();
     }
+
 }

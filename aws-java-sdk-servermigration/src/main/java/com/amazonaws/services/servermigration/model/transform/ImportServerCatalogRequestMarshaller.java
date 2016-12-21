@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ImportServerCatalogRequestMarshaller implements Marshaller<Request<ImportServerCatalogRequest>, ImportServerCatalogRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ImportServerCatalogRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ImportServerCatalogRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

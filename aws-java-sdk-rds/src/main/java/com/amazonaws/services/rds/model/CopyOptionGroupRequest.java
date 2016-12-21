@@ -642,4 +642,5 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
     public CopyOptionGroupRequest clone() {
         return (CopyOptionGroupRequest) super.clone();
     }
+
 }

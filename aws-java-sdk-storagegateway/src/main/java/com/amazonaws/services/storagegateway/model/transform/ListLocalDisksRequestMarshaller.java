@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListLocalDisksRequestMarshaller implements Marshaller<Request<ListLocalDisksRequest>, ListLocalDisksRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListLocalDisksRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListLocalDisksRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

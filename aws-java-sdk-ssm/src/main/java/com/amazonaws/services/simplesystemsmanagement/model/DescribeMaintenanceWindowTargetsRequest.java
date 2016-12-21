@@ -322,4 +322,5 @@ public class DescribeMaintenanceWindowTargetsRequest extends com.amazonaws.Amazo
     public DescribeMaintenanceWindowTargetsRequest clone() {
         return (DescribeMaintenanceWindowTargetsRequest) super.clone();
     }
+
 }

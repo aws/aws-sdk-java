@@ -114,4 +114,5 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeProtectionRequest clone() {
         return (DescribeProtectionRequest) super.clone();
     }
+
 }

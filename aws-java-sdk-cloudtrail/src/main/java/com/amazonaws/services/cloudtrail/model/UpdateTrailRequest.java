@@ -1222,4 +1222,5 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateTrailRequest clone() {
         return (UpdateTrailRequest) super.clone();
     }
+
 }

@@ -191,4 +191,5 @@ public class TagLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     public TagLogGroupRequest clone() {
         return (TagLogGroupRequest) super.clone();
     }
+
 }

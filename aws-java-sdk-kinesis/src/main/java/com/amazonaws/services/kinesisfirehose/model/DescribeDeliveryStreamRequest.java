@@ -230,4 +230,5 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
     public DescribeDeliveryStreamRequest clone() {
         return (DescribeDeliveryStreamRequest) super.clone();
     }
+
 }

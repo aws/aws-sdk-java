@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteRemoteAccessSessionRequestMarshaller implements Marshaller<Request<DeleteRemoteAccessSessionRequest>, DeleteRemoteAccessSessionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteRemoteAccessSessionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteRemoteAccessSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

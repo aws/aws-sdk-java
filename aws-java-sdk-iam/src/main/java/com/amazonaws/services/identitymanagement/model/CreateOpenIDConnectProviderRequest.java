@@ -576,4 +576,5 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
     public CreateOpenIDConnectProviderRequest clone() {
         return (CreateOpenIDConnectProviderRequest) super.clone();
     }
+
 }

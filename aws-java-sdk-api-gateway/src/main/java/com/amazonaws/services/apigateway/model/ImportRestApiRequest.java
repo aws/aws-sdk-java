@@ -288,4 +288,5 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ImportRestApiRequest clone() {
         return (ImportRestApiRequest) super.clone();
     }
+
 }

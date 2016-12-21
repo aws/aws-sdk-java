@@ -211,4 +211,5 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
     public PutThirdPartyJobFailureResultRequest clone() {
         return (PutThirdPartyJobFailureResultRequest) super.clone();
     }
+
 }

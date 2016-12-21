@@ -181,4 +181,5 @@ public class GetContactReachabilityStatusRequest extends com.amazonaws.AmazonWeb
     public GetContactReachabilityStatusRequest clone() {
         return (GetContactReachabilityStatusRequest) super.clone();
     }
+
 }

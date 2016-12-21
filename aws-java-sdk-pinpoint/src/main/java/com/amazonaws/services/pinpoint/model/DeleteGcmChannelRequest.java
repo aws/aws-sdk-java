@@ -95,4 +95,5 @@ public class DeleteGcmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteGcmChannelRequest clone() {
         return (DeleteGcmChannelRequest) super.clone();
     }
+
 }

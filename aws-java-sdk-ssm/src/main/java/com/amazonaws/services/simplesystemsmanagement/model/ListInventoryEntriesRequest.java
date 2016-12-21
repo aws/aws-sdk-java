@@ -366,4 +366,5 @@ public class ListInventoryEntriesRequest extends com.amazonaws.AmazonWebServiceR
     public ListInventoryEntriesRequest clone() {
         return (ListInventoryEntriesRequest) super.clone();
     }
+
 }

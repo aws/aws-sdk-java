@@ -335,4 +335,5 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     public ConfirmForgotPasswordRequest clone() {
         return (ConfirmForgotPasswordRequest) super.clone();
     }
+
 }

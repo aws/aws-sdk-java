@@ -202,4 +202,5 @@ public class BatchGetDeploymentInstancesRequest extends com.amazonaws.AmazonWebS
     public BatchGetDeploymentInstancesRequest clone() {
         return (BatchGetDeploymentInstancesRequest) super.clone();
     }
+
 }

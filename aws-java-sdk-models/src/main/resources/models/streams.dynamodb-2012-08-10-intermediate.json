@@ -90,6 +90,7 @@
     "cucumberModuleInjectorClassName" : "AmazonDynamoDBStreamsModuleInjector",
     "defaultEndpoint" : "https://streams.dynamodb.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "streams.dynamodb.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>Amazon DynamoDB</fullname> <p>Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about application development with Streams, see <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html\">Capturing Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.</p> <p>The following are short descriptions of each low-level DynamoDB Streams action:</p> <ul> <li> <p> <i>DescribeStream</i> - Returns detailed information about a particular stream.</p> </li> <li> <p> <i>GetRecords</i> - Retrieves the stream records from within a shard.</p> </li> <li> <p> <i>GetShardIterator</i> - Returns information on how to retrieve the streams record from a shard with a given shard ID.</p> </li> <li> <p> <i>ListStreams</i> - Returns a list of all the streams associated with the current AWS account and endpoint.</p> </li> </ul>",
     "endpointPrefix" : "streams.dynamodb",
     "hasApiWithStreamInput" : false,
@@ -100,7 +101,10 @@
     "packagePath" : "com/amazonaws/services/dynamodbv2",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon DynamoDB Streams",
     "serviceName" : "Amazon DynamoDB Streams",
@@ -2132,6 +2136,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttributeValue",
       "unmarshaller" : {
@@ -2514,6 +2520,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "StreamArn" ],
       "shapeName" : "DescribeStreamRequest",
       "unmarshaller" : null,
@@ -2660,6 +2668,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeStreamResult",
       "unmarshaller" : {
@@ -2695,6 +2705,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredIteratorException",
       "unmarshaller" : null,
@@ -2961,6 +2973,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ShardIterator" ],
       "shapeName" : "GetRecordsRequest",
       "unmarshaller" : null,
@@ -3362,6 +3376,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRecordsResult",
       "unmarshaller" : {
@@ -3857,6 +3873,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "StreamArn", "ShardId", "ShardIteratorType" ],
       "shapeName" : "GetShardIteratorRequest",
       "unmarshaller" : null,
@@ -4003,6 +4021,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetShardIteratorResult",
       "unmarshaller" : {
@@ -4038,6 +4058,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerErrorException",
       "unmarshaller" : null,
@@ -4297,6 +4319,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName", "KeyType" ],
       "shapeName" : "KeySchemaElement",
       "unmarshaller" : {
@@ -4338,6 +4362,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KeyType",
       "unmarshaller" : {
@@ -4373,6 +4399,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -4752,6 +4780,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStreamsRequest",
       "unmarshaller" : null,
@@ -5153,6 +5183,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStreamsResult",
       "unmarshaller" : {
@@ -5197,6 +5229,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationType",
       "unmarshaller" : {
@@ -5911,6 +5945,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Record",
       "unmarshaller" : {
@@ -5946,6 +5982,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -6205,6 +6243,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SequenceNumberRange",
       "unmarshaller" : {
@@ -6580,6 +6620,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Shard",
       "unmarshaller" : {
@@ -6627,6 +6669,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ShardIteratorType",
       "unmarshaller" : {
@@ -7002,6 +7046,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Stream",
       "unmarshaller" : {
@@ -8339,6 +8385,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamDescription",
       "unmarshaller" : {
@@ -9592,6 +9640,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamRecord",
       "unmarshaller" : {
@@ -9639,6 +9689,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamStatus",
       "unmarshaller" : {
@@ -9686,6 +9738,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StreamViewType",
       "unmarshaller" : {
@@ -9721,6 +9775,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TrimmedDataAccessException",
       "unmarshaller" : null,
@@ -9736,6 +9792,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

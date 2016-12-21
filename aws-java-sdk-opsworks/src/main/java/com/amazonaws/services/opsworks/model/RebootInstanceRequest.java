@@ -114,4 +114,5 @@ public class RebootInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     public RebootInstanceRequest clone() {
         return (RebootInstanceRequest) super.clone();
     }
+
 }

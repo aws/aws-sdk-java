@@ -369,4 +369,5 @@ public class GetOpenIdTokenForDeveloperIdentityRequest extends com.amazonaws.Ama
     public GetOpenIdTokenForDeveloperIdentityRequest clone() {
         return (GetOpenIdTokenForDeveloperIdentityRequest) super.clone();
     }
+
 }

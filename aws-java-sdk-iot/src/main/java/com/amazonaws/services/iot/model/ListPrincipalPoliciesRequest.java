@@ -287,4 +287,5 @@ public class ListPrincipalPoliciesRequest extends com.amazonaws.AmazonWebService
     public ListPrincipalPoliciesRequest clone() {
         return (ListPrincipalPoliciesRequest) super.clone();
     }
+
 }

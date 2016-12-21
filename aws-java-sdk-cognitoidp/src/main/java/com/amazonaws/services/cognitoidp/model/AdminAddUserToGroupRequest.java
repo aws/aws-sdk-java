@@ -220,4 +220,5 @@ public class AdminAddUserToGroupRequest extends com.amazonaws.AmazonWebServiceRe
     public AdminAddUserToGroupRequest clone() {
         return (AdminAddUserToGroupRequest) super.clone();
     }
+
 }

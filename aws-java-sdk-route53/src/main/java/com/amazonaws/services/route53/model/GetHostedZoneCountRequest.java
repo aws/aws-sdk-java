@@ -63,4 +63,5 @@ public class GetHostedZoneCountRequest extends com.amazonaws.AmazonWebServiceReq
     public GetHostedZoneCountRequest clone() {
         return (GetHostedZoneCountRequest) super.clone();
     }
+
 }

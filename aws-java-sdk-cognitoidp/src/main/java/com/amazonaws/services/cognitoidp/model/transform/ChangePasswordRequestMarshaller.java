@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ChangePasswordRequestMarshaller implements Marshaller<Request<ChangePasswordRequest>, ChangePasswordRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ChangePasswordRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ChangePasswordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

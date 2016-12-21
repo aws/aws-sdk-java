@@ -169,4 +169,5 @@ public class UpdateDefaultBranchRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateDefaultBranchRequest clone() {
         return (UpdateDefaultBranchRequest) super.clone();
     }
+
 }

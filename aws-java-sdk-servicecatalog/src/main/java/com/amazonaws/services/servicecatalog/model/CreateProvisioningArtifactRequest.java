@@ -361,4 +361,5 @@ public class CreateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     public CreateProvisioningArtifactRequest clone() {
         return (CreateProvisioningArtifactRequest) super.clone();
     }
+
 }

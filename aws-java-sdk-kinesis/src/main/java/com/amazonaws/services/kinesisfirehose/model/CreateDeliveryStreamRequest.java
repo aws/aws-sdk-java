@@ -337,4 +337,5 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     public CreateDeliveryStreamRequest clone() {
         return (CreateDeliveryStreamRequest) super.clone();
     }
+
 }

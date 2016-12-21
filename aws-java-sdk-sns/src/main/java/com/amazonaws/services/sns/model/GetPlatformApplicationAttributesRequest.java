@@ -116,4 +116,5 @@ public class GetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
     public GetPlatformApplicationAttributesRequest clone() {
         return (GetPlatformApplicationAttributesRequest) super.clone();
     }
+
 }

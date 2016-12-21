@@ -121,4 +121,5 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetWebACLRequest clone() {
         return (GetWebACLRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class IsVpcPeeredRequest extends com.amazonaws.AmazonWebServiceRequest im
     public IsVpcPeeredRequest clone() {
         return (IsVpcPeeredRequest) super.clone();
     }
+
 }

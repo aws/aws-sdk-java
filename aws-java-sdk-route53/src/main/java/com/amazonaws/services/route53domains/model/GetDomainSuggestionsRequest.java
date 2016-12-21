@@ -173,4 +173,5 @@ public class GetDomainSuggestionsRequest extends com.amazonaws.AmazonWebServiceR
     public GetDomainSuggestionsRequest clone() {
         return (GetDomainSuggestionsRequest) super.clone();
     }
+
 }

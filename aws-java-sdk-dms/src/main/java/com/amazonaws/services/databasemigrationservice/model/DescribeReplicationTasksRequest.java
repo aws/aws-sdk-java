@@ -342,4 +342,5 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
     public DescribeReplicationTasksRequest clone() {
         return (DescribeReplicationTasksRequest) super.clone();
     }
+
 }

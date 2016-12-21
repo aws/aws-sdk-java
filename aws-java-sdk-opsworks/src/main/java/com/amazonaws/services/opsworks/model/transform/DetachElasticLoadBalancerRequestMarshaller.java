@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DetachElasticLoadBalancerRequestMarshaller implements Marshaller<Request<DetachElasticLoadBalancerRequest>, DetachElasticLoadBalancerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DetachElasticLoadBalancerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DetachElasticLoadBalancerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

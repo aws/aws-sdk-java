@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class StartSchemaExtensionRequestMarshaller implements Marshaller<Request<StartSchemaExtensionRequest>, StartSchemaExtensionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public StartSchemaExtensionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public StartSchemaExtensionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

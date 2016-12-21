@@ -870,4 +870,5 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
     public DescribeScalableTargetsRequest clone() {
         return (DescribeScalableTargetsRequest) super.clone();
     }
+
 }

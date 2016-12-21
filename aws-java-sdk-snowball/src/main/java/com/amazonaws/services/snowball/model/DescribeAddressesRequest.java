@@ -181,4 +181,5 @@ public class DescribeAddressesRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeAddressesRequest clone() {
         return (DescribeAddressesRequest) super.clone();
     }
+
 }

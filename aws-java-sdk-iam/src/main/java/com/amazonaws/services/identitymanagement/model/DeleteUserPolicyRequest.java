@@ -261,4 +261,5 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteUserPolicyRequest clone() {
         return (DeleteUserPolicyRequest) super.clone();
     }
+
 }

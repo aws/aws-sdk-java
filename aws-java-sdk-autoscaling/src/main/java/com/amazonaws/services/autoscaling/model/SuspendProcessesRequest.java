@@ -576,4 +576,5 @@ public class SuspendProcessesRequest extends com.amazonaws.AmazonWebServiceReque
     public SuspendProcessesRequest clone() {
         return (SuspendProcessesRequest) super.clone();
     }
+
 }

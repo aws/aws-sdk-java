@@ -134,4 +134,5 @@ public class CheckDNSAvailabilityRequest extends com.amazonaws.AmazonWebServiceR
     public CheckDNSAvailabilityRequest clone() {
         return (CheckDNSAvailabilityRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class CreateStorageLocationRequest extends com.amazonaws.AmazonWebService
     public CreateStorageLocationRequest clone() {
         return (CreateStorageLocationRequest) super.clone();
     }
+
 }

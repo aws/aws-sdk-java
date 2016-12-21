@@ -275,4 +275,5 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
     public AdminListDevicesRequest clone() {
         return (AdminListDevicesRequest) super.clone();
     }
+
 }

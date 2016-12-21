@@ -203,4 +203,5 @@ public class UpdateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
     public UpdateUsagePlanRequest clone() {
         return (UpdateUsagePlanRequest) super.clone();
     }
+
 }

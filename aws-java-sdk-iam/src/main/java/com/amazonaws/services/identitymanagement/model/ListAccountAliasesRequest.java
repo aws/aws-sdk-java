@@ -234,4 +234,5 @@ public class ListAccountAliasesRequest extends com.amazonaws.AmazonWebServiceReq
     public ListAccountAliasesRequest clone() {
         return (ListAccountAliasesRequest) super.clone();
     }
+
 }

@@ -165,4 +165,5 @@ public class UpdateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateSegmentRequest clone() {
         return (UpdateSegmentRequest) super.clone();
     }
+
 }

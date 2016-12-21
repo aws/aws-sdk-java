@@ -219,4 +219,5 @@ public class SetIdentityPoolConfigurationRequest extends com.amazonaws.AmazonWeb
     public SetIdentityPoolConfigurationRequest clone() {
         return (SetIdentityPoolConfigurationRequest) super.clone();
     }
+
 }

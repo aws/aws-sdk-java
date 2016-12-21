@@ -411,4 +411,5 @@ public class CreateClusterSecurityGroupRequest extends com.amazonaws.AmazonWebSe
     public CreateClusterSecurityGroupRequest clone() {
         return (CreateClusterSecurityGroupRequest) super.clone();
     }
+
 }

@@ -354,4 +354,5 @@ public class AssociateProductWithPortfolioRequest extends com.amazonaws.AmazonWe
     public AssociateProductWithPortfolioRequest clone() {
         return (AssociateProductWithPortfolioRequest) super.clone();
     }
+
 }

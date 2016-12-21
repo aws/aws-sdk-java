@@ -97,4 +97,5 @@ public class DescribeWorkingStorageRequest extends com.amazonaws.AmazonWebServic
     public DescribeWorkingStorageRequest clone() {
         return (DescribeWorkingStorageRequest) super.clone();
     }
+
 }

@@ -68,38 +68,39 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.InvalidTagException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.TooManyTagsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RequestInProgressException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.RequestInProgressException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.InvalidStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDomainValidationOptionsException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.InvalidArnException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.certificatemanager.model.LimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.InvalidTagException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.TooManyTagsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestInProgressException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.RequestInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.InvalidStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDomainValidationOptionsException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.InvalidArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.certificatemanager.model.LimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException.class));
 
     /**
      * Constructs a new client to invoke service methods on ACM. A credentials provider chain will be used that searches

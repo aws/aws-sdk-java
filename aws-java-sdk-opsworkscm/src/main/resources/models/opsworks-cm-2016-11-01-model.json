@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-11-01",
     "endpointPrefix" : "opsworks-cm",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AssociateNode" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -56,7 +58,8 @@
       }
     },
     "CreateBackup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Creates an application-level backup of a server. While the server is <code>BACKING_UP</code>, the server can not be modified and no additional backup can be created. </p> <p> Backups can be created for <code>RUNNING</code>, <code>HEALTHY</code> and <code>UNHEALTHY</code> servers. </p> <p> This operation is asnychronous. </p> <p> By default 50 manual backups can be created. </p> <p> A <code>LimitExceededException</code> is thrown then the maximum number of manual backup is reached. A <code>InvalidStateException</code> is thrown when the server is not in any of RUNNING, HEALTHY, UNHEALTHY. A <code>ResourceNotFoundException</code> is thrown when the server is not found. A <code>ValidationException</code> is thrown when parameters of the request are not valid. </p>",
       "errors" : [ {
@@ -104,7 +107,8 @@
       }
     },
     "CreateServer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Creates and immedately starts a new Server. The server can be used once it has reached the <code>HEALTHY</code> state. </p> <p> This operation is asnychronous. </p> <p> A <code>LimitExceededException</code> is thrown then the maximum number of server backup is reached. A <code>ResourceAlreadyExistsException</code> is raise when a server with the same name already exists in the account. A <code>ResourceNotFoundException</code> is thrown when a backupId is passed, but the backup does not exist. A <code>ValidationException</code> is thrown when parameters of the request are not valid. </p> <p> By default 10 servers can be created. A <code>LimitExceededException</code> is raised when the limit is exceeded. </p> <p> When no security groups are provided by using <code>SecurityGroupIds</code>, AWS OpsWorks creates a new security group. This security group opens the Chef server to the world on TCP port 443. If a KeyName is present, SSH access is enabled. SSH is also open to the world on TCP port 22. </p> <p>By default, the Chef Server is accessible from any IP address. We recommend that you update your security group rules to allow access from known IP addresses and address ranges only. To edit security group rules, open Security Groups in the navigation pane of the EC2 management console. </p>",
       "errors" : [ {
@@ -152,7 +156,8 @@
       }
     },
     "DeleteBackup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Deletes a backup. You can delete both manual and automated backups. </p> <p> This operation is asynchronous. </p> <p> A <code>InvalidStateException</code> is thrown then a backup is already deleting. A <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A <code>ValidationException</code> is thrown when parameters of the request are not valid. </p>",
       "errors" : [ {
@@ -194,7 +199,8 @@
       }
     },
     "DeleteServer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Deletes the server and the underlying AWS CloudFormation stack (including the server's EC2 instance). The server status updated to <code>DELETING</code>. Once the server is successfully deleted, it will no longer be returned by <code>DescribeServer</code> requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be deleted. </p> <p> This operation is asynchronous. </p> <p> A <code>InvalidStateException</code> is thrown then a server is already deleting. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p> <p> </p>",
       "errors" : [ {
@@ -236,7 +242,8 @@
       }
     },
     "DescribeAccountAttributes" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Describes your account attributes, and creates requests to increase limits before they are reached or exceeded. </p> <p> This operation is synchronous. </p>",
       "errors" : null,
@@ -260,7 +267,8 @@
       }
     },
     "DescribeBackups" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Describes backups. The results are ordered by time, with newest backups first. If you do not specify a BackupId or ServerName, the command returns all backups. </p> <p> This operation is synchronous. </p> <p> A <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p>",
       "errors" : [ {
@@ -302,7 +310,8 @@
       }
     },
     "DescribeEvents" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Describes events for a specified server. Results are ordered by time, with newest events first. </p> <p> This operation is synchronous. </p> <p> A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p>",
       "errors" : [ {
@@ -344,7 +353,8 @@
       }
     },
     "DescribeNodeAssociationStatus" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -380,7 +390,8 @@
       }
     },
     "DescribeServers" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks for Chef Automate does not query other services. </p> <p> This operation is synchronous. </p> <p> A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p>",
       "errors" : [ {
@@ -422,7 +433,8 @@
       }
     },
     "DisassociateNode" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : null,
       "errors" : [ {
@@ -464,7 +476,8 @@
       }
     },
     "RestoreServer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Restores a backup to a server that is in a <code>RUNNING</code>, <code>FAILED</code>, or <code>HEALTHY</code> state. When you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing server endpoint, so configuration management of all of the server's client devices should continue to work. </p> <p> This operation is asynchronous. </p> <p> A <code>InvalidStateException</code> is thrown when the server is not in a valid state. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p>",
       "errors" : [ {
@@ -506,7 +519,8 @@
       }
     },
     "StartMaintenance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Manually starts server maintenance. This command can be useful if an earlier maintenance attempt failed, and the underlying cause of maintenance failure has been resolved. The server will switch to <code>UNDER_MAINTENANCE</code> state, while maintenace is in progress. </p> <p> Maintenace can only be started for <code>HEALTHY</code> and <code>UNHEALTHY</code> servers. A <code>InvalidStateException</code> is thrown otherwise. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p>",
       "errors" : [ {
@@ -548,7 +562,8 @@
       }
     },
     "UpdateServer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Updates settings for a server. </p> <p> This operation is synchronous. </p>",
       "errors" : [ {
@@ -590,7 +605,8 @@
       }
     },
     "UpdateServerEngineAttributes" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p> Updates engine specific attributes on a specified server. Server will enter the <code>MODIFYING</code> state when this operation is in progress. Only one update can take place at a time. </p> <p> This operation can be use to reset Chef Server main API key (<code>CHEF_PIVOTAL_KEY</code>). </p> <p> This operation is asynchronous. </p> <p> </p> <p> This operation can only be called for <code>HEALTHY</code> and <code>UNHEALTHY</code> servers. Otherwise a <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid. </p>",
       "errors" : [ {

@@ -170,4 +170,5 @@ public class UpdateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateDataSourceRequest clone() {
         return (UpdateDataSourceRequest) super.clone();
     }
+
 }

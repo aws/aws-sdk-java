@@ -218,4 +218,5 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
     public DescribeEventCategoriesRequest clone() {
         return (DescribeEventCategoriesRequest) super.clone();
     }
+
 }

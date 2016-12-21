@@ -431,4 +431,5 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeAgentsRequest clone() {
         return (DescribeAgentsRequest) super.clone();
     }
+
 }

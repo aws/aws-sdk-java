@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteAuthorizerRequestMarshaller implements Marshaller<Request<DeleteAuthorizerRequest>, DeleteAuthorizerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteAuthorizerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteAuthorizerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

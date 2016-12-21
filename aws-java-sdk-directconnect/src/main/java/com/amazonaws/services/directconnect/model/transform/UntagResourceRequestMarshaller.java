@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UntagResourceRequestMarshaller implements Marshaller<Request<UntagResourceRequest>, UntagResourceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UntagResourceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UntagResourceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

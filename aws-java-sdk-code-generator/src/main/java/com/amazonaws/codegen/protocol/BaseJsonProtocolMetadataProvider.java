@@ -42,4 +42,9 @@ public abstract class BaseJsonProtocolMetadataProvider extends BaseProtocolMetad
     public String getExceptionUnmarshallerImpl() {
         return null;
     }
+
+    @Override
+    public String getProtocolFactoryImplFqcn() {
+        return "com.amazonaws.protocol.json.SdkJsonProtocolFactory";
+    }
 }

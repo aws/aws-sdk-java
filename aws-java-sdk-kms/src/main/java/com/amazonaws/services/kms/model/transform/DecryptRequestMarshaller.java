@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DecryptRequestMarshaller implements Marshaller<Request<DecryptRequest>, DecryptRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DecryptRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DecryptRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

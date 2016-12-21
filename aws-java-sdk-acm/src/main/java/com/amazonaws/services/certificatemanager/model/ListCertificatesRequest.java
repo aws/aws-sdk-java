@@ -305,4 +305,5 @@ public class ListCertificatesRequest extends com.amazonaws.AmazonWebServiceReque
     public ListCertificatesRequest clone() {
         return (ListCertificatesRequest) super.clone();
     }
+
 }

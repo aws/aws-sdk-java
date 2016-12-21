@@ -353,4 +353,5 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
     public GetTemplateSummaryRequest clone() {
         return (GetTemplateSummaryRequest) super.clone();
     }
+
 }

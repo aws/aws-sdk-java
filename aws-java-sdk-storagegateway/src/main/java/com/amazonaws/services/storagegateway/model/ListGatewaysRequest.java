@@ -181,4 +181,5 @@ public class ListGatewaysRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ListGatewaysRequest clone() {
         return (ListGatewaysRequest) super.clone();
     }
+
 }

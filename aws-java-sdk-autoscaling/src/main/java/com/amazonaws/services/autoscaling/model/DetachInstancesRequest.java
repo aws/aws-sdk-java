@@ -277,4 +277,5 @@ public class DetachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     public DetachInstancesRequest clone() {
         return (DetachInstancesRequest) super.clone();
     }
+
 }

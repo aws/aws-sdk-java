@@ -204,4 +204,5 @@ public class DescribeFleetsRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeFleetsRequest clone() {
         return (DescribeFleetsRequest) super.clone();
     }
+
 }

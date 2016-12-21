@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateNFSFileShareRequestMarshaller implements Marshaller<Request<CreateNFSFileShareRequest>, CreateNFSFileShareRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateNFSFileShareRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateNFSFileShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -537,4 +537,5 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     public RegisterContainerInstanceRequest clone() {
         return (RegisterContainerInstanceRequest) super.clone();
     }
+
 }

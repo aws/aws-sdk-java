@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class GetWorkflowExecutionHistoryRequestMarshaller implements
         Marshaller<Request<GetWorkflowExecutionHistoryRequest>, GetWorkflowExecutionHistoryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetWorkflowExecutionHistoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetWorkflowExecutionHistoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

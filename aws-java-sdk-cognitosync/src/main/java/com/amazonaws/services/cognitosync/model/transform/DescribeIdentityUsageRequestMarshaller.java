@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeIdentityUsageRequestMarshaller implements Marshaller<Request<DescribeIdentityUsageRequest>, DescribeIdentityUsageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeIdentityUsageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeIdentityUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

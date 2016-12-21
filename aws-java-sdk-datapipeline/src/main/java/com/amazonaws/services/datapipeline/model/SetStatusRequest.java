@@ -278,4 +278,5 @@ public class SetStatusRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public SetStatusRequest clone() {
         return (SetStatusRequest) super.clone();
     }
+
 }

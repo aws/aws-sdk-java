@@ -244,4 +244,5 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetFunctionRequest clone() {
         return (GetFunctionRequest) super.clone();
     }
+
 }

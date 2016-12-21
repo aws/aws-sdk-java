@@ -885,4 +885,5 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     public CopyDBSnapshotRequest clone() {
         return (CopyDBSnapshotRequest) super.clone();
     }
+
 }

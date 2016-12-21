@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class RespondActivityTaskCanceledRequestMarshaller implements
         Marshaller<Request<RespondActivityTaskCanceledRequest>, RespondActivityTaskCanceledRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RespondActivityTaskCanceledRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RespondActivityTaskCanceledRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

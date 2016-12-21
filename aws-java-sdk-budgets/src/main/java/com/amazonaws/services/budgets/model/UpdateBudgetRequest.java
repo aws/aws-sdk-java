@@ -130,4 +130,5 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     public UpdateBudgetRequest clone() {
         return (UpdateBudgetRequest) super.clone();
     }
+
 }

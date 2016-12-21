@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateStreamRequestMarshaller implements Marshaller<Request<CreateStreamRequest>, CreateStreamRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateStreamRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateStreamRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

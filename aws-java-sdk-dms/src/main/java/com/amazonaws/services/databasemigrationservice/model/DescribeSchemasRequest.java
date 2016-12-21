@@ -280,4 +280,5 @@ public class DescribeSchemasRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeSchemasRequest clone() {
         return (DescribeSchemasRequest) super.clone();
     }
+
 }

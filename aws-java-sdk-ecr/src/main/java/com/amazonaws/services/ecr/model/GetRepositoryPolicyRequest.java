@@ -174,4 +174,5 @@ public class GetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     public GetRepositoryPolicyRequest clone() {
         return (GetRepositoryPolicyRequest) super.clone();
     }
+
 }

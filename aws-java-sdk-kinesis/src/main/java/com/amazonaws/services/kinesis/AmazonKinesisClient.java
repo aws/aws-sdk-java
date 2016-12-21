@@ -66,29 +66,30 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(true)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
-                            com.amazonaws.services.kinesis.model.InvalidArgumentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.kinesis.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.kinesis.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withModeledClass(
-                            com.amazonaws.services.kinesis.model.ExpiredIteratorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
-                            com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.kinesis.model.LimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.kinesis.model.AmazonKinesisException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(true)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
+                                    com.amazonaws.services.kinesis.model.InvalidArgumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.kinesis.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.kinesis.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withModeledClass(
+                                    com.amazonaws.services.kinesis.model.ExpiredIteratorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
+                                    com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.kinesis.model.LimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesis.model.AmazonKinesisException.class));
 
     /**
      * Constructs a new client to invoke service methods on Kinesis. A credentials provider chain will be used that

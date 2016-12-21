@@ -319,4 +319,5 @@ public class ListAssessmentRunAgentsRequest extends com.amazonaws.AmazonWebServi
     public ListAssessmentRunAgentsRequest clone() {
         return (ListAssessmentRunAgentsRequest) super.clone();
     }
+
 }

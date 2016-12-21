@@ -350,4 +350,5 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     public InitiateAuthRequest clone() {
         return (InitiateAuthRequest) super.clone();
     }
+
 }

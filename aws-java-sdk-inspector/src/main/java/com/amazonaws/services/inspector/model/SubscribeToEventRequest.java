@@ -256,4 +256,5 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
     public SubscribeToEventRequest clone() {
         return (SubscribeToEventRequest) super.clone();
     }
+
 }

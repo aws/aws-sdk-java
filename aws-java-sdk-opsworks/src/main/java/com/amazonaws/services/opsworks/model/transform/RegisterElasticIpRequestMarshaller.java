@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RegisterElasticIpRequestMarshaller implements Marshaller<Request<RegisterElasticIpRequest>, RegisterElasticIpRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RegisterElasticIpRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RegisterElasticIpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

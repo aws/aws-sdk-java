@@ -200,4 +200,5 @@ public class GetCampaignActivitiesRequest extends com.amazonaws.AmazonWebService
     public GetCampaignActivitiesRequest clone() {
         return (GetCampaignActivitiesRequest) super.clone();
     }
+
 }

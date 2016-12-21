@@ -248,4 +248,5 @@ public class DescribePortfolioRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribePortfolioRequest clone() {
         return (DescribePortfolioRequest) super.clone();
     }
+
 }

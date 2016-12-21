@@ -333,4 +333,5 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateActivationRequest clone() {
         return (CreateActivationRequest) super.clone();
     }
+
 }

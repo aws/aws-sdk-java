@@ -65,4 +65,5 @@ public class ListReceiptFiltersRequest extends com.amazonaws.AmazonWebServiceReq
     public ListReceiptFiltersRequest clone() {
         return (ListReceiptFiltersRequest) super.clone();
     }
+
 }

@@ -349,4 +349,5 @@ public class ListAssessmentTemplatesRequest extends com.amazonaws.AmazonWebServi
     public ListAssessmentTemplatesRequest clone() {
         return (ListAssessmentTemplatesRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class RegisterPatchBaselineForPatchGroupRequest extends com.amazonaws.Ama
     public RegisterPatchBaselineForPatchGroupRequest clone() {
         return (RegisterPatchBaselineForPatchGroupRequest) super.clone();
     }
+
 }

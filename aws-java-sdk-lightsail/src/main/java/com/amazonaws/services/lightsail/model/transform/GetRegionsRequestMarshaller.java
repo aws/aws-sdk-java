@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetRegionsRequestMarshaller implements Marshaller<Request<GetRegionsRequest>, GetRegionsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetRegionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetRegionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

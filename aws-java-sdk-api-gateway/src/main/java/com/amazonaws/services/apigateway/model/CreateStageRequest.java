@@ -530,4 +530,5 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateStageRequest clone() {
         return (CreateStageRequest) super.clone();
     }
+
 }

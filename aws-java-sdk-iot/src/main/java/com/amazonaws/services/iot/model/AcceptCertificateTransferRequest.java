@@ -181,4 +181,5 @@ public class AcceptCertificateTransferRequest extends com.amazonaws.AmazonWebSer
     public AcceptCertificateTransferRequest clone() {
         return (AcceptCertificateTransferRequest) super.clone();
     }
+
 }

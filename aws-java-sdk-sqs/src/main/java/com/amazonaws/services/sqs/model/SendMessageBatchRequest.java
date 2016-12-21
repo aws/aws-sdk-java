@@ -254,4 +254,5 @@ public class SendMessageBatchRequest extends com.amazonaws.AmazonWebServiceReque
     public SendMessageBatchRequest clone() {
         return (SendMessageBatchRequest) super.clone();
     }
+
 }

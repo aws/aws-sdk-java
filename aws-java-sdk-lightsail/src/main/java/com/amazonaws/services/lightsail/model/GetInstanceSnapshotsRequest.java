@@ -114,4 +114,5 @@ public class GetInstanceSnapshotsRequest extends com.amazonaws.AmazonWebServiceR
     public GetInstanceSnapshotsRequest clone() {
         return (GetInstanceSnapshotsRequest) super.clone();
     }
+
 }

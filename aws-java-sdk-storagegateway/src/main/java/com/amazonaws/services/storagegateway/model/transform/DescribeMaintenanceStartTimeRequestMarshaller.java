@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeMaintenanceStartTimeRequestMarshaller implements
         Marshaller<Request<DescribeMaintenanceStartTimeRequest>, DescribeMaintenanceStartTimeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeMaintenanceStartTimeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeMaintenanceStartTimeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

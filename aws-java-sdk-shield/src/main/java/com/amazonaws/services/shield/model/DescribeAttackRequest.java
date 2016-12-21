@@ -114,4 +114,5 @@ public class DescribeAttackRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeAttackRequest clone() {
         return (DescribeAttackRequest) super.clone();
     }
+
 }

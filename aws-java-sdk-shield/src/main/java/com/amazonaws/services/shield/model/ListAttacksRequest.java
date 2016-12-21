@@ -379,4 +379,5 @@ public class ListAttacksRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListAttacksRequest clone() {
         return (ListAttacksRequest) super.clone();
     }
+
 }

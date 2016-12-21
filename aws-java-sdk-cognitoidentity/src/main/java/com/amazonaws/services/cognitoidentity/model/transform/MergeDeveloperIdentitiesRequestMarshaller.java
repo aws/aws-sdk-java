@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class MergeDeveloperIdentitiesRequestMarshaller implements Marshaller<Request<MergeDeveloperIdentitiesRequest>, MergeDeveloperIdentitiesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public MergeDeveloperIdentitiesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public MergeDeveloperIdentitiesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

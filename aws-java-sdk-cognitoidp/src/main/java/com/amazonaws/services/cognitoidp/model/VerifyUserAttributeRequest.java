@@ -222,4 +222,5 @@ public class VerifyUserAttributeRequest extends com.amazonaws.AmazonWebServiceRe
     public VerifyUserAttributeRequest clone() {
         return (VerifyUserAttributeRequest) super.clone();
     }
+
 }

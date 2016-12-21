@@ -149,4 +149,5 @@ public class DescribeConfigurationRecordersRequest extends com.amazonaws.AmazonW
     public DescribeConfigurationRecordersRequest clone() {
         return (DescribeConfigurationRecordersRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateAssociationBatchRequestMarshaller implements Marshaller<Request<CreateAssociationBatchRequest>, CreateAssociationBatchRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateAssociationBatchRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateAssociationBatchRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

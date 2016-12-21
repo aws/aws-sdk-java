@@ -409,4 +409,5 @@ public class CreateAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
     public CreateAssessmentTemplateRequest clone() {
         return (CreateAssessmentTemplateRequest) super.clone();
     }
+
 }

@@ -198,4 +198,5 @@ public class DiscoverPollEndpointRequest extends com.amazonaws.AmazonWebServiceR
     public DiscoverPollEndpointRequest clone() {
         return (DiscoverPollEndpointRequest) super.clone();
     }
+
 }

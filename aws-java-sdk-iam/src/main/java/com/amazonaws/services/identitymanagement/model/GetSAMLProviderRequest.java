@@ -146,4 +146,5 @@ public class GetSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReques
     public GetSAMLProviderRequest clone() {
         return (GetSAMLProviderRequest) super.clone();
     }
+
 }

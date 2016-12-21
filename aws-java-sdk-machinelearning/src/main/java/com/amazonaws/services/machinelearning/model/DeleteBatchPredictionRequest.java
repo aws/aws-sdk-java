@@ -114,4 +114,5 @@ public class DeleteBatchPredictionRequest extends com.amazonaws.AmazonWebService
     public DeleteBatchPredictionRequest clone() {
         return (DeleteBatchPredictionRequest) super.clone();
     }
+
 }

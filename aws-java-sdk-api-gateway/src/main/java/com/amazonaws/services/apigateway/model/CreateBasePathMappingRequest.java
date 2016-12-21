@@ -296,4 +296,5 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     public CreateBasePathMappingRequest clone() {
         return (CreateBasePathMappingRequest) super.clone();
     }
+
 }

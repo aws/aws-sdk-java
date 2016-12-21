@@ -114,4 +114,5 @@ public class DeleteAssessmentTemplateRequest extends com.amazonaws.AmazonWebServ
     public DeleteAssessmentTemplateRequest clone() {
         return (DeleteAssessmentTemplateRequest) super.clone();
     }
+
 }

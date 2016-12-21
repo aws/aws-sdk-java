@@ -114,4 +114,5 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateActivityRequest clone() {
         return (CreateActivityRequest) super.clone();
     }
+
 }

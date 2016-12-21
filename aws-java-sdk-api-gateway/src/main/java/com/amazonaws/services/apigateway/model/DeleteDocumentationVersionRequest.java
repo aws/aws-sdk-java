@@ -169,4 +169,5 @@ public class DeleteDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
     public DeleteDocumentationVersionRequest clone() {
         return (DeleteDocumentationVersionRequest) super.clone();
     }
+
 }

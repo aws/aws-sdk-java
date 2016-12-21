@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UploadArchiveRequestMarshaller implements Marshaller<Request<UploadArchiveRequest>, UploadArchiveRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UploadArchiveRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UploadArchiveRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

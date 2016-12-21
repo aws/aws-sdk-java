@@ -203,4 +203,5 @@ public class ConfirmPrivateVirtualInterfaceRequest extends com.amazonaws.AmazonW
     public ConfirmPrivateVirtualInterfaceRequest clone() {
         return (ConfirmPrivateVirtualInterfaceRequest) super.clone();
     }
+
 }

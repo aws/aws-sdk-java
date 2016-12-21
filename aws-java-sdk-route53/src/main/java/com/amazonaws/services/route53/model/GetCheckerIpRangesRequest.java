@@ -62,4 +62,5 @@ public class GetCheckerIpRangesRequest extends com.amazonaws.AmazonWebServiceReq
     public GetCheckerIpRangesRequest clone() {
         return (GetCheckerIpRangesRequest) super.clone();
     }
+
 }

@@ -347,4 +347,5 @@ public class DescribeInstancesHealthRequest extends com.amazonaws.AmazonWebServi
     public DescribeInstancesHealthRequest clone() {
         return (DescribeInstancesHealthRequest) super.clone();
     }
+
 }

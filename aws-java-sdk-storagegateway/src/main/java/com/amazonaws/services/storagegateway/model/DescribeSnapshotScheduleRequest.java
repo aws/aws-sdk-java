@@ -123,4 +123,5 @@ public class DescribeSnapshotScheduleRequest extends com.amazonaws.AmazonWebServ
     public DescribeSnapshotScheduleRequest clone() {
         return (DescribeSnapshotScheduleRequest) super.clone();
     }
+
 }

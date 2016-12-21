@@ -60,4 +60,5 @@ public class ListVerifiedEmailAddressesRequest extends com.amazonaws.AmazonWebSe
     public ListVerifiedEmailAddressesRequest clone() {
         return (ListVerifiedEmailAddressesRequest) super.clone();
     }
+
 }

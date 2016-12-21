@@ -302,4 +302,5 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
     public ListRepositoriesRequest clone() {
         return (ListRepositoriesRequest) super.clone();
     }
+
 }

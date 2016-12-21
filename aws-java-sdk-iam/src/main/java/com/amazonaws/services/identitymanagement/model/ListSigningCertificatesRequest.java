@@ -319,4 +319,5 @@ public class ListSigningCertificatesRequest extends com.amazonaws.AmazonWebServi
     public ListSigningCertificatesRequest clone() {
         return (ListSigningCertificatesRequest) super.clone();
     }
+
 }

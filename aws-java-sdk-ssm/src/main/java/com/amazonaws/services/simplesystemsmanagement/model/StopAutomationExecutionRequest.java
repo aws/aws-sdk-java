@@ -114,4 +114,5 @@ public class StopAutomationExecutionRequest extends com.amazonaws.AmazonWebServi
     public StopAutomationExecutionRequest clone() {
         return (StopAutomationExecutionRequest) super.clone();
     }
+
 }

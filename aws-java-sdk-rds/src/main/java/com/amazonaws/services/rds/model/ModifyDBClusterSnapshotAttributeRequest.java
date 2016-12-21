@@ -476,4 +476,5 @@ public class ModifyDBClusterSnapshotAttributeRequest extends com.amazonaws.Amazo
     public ModifyDBClusterSnapshotAttributeRequest clone() {
         return (ModifyDBClusterSnapshotAttributeRequest) super.clone();
     }
+
 }

@@ -211,4 +211,5 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateStreamRequest clone() {
         return (CreateStreamRequest) super.clone();
     }
+
 }

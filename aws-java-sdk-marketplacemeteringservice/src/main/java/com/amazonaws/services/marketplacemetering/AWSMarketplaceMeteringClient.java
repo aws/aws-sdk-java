@@ -94,41 +94,42 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidTokenException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InvalidTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ExpiredTokenException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.ExpiredTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidEndpointRegionException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TimestampOutOfBoundsException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InternalServiceErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidUsageDimensionException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.ThrottlingException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateRequestException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidCustomerIdentifierException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidProductCodeException").withModeledClass(
-                            com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTokenException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredTokenException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.ExpiredTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEndpointRegionException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TimestampOutOfBoundsException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InternalServiceErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUsageDimensionException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequestException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCustomerIdentifierException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidProductCodeException").withModeledClass(
+                                    com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWSMarketplace Metering. A credentials provider chain will

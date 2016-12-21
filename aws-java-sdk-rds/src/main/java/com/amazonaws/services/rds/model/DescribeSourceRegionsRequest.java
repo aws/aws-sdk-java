@@ -440,4 +440,5 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
     public DescribeSourceRegionsRequest clone() {
         return (DescribeSourceRegionsRequest) super.clone();
     }
+
 }

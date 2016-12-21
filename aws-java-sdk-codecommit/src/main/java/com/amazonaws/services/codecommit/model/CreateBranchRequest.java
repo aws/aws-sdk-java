@@ -222,4 +222,5 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateBranchRequest clone() {
         return (CreateBranchRequest) super.clone();
     }
+
 }

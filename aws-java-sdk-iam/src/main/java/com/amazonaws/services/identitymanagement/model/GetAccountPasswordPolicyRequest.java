@@ -60,4 +60,5 @@ public class GetAccountPasswordPolicyRequest extends com.amazonaws.AmazonWebServ
     public GetAccountPasswordPolicyRequest clone() {
         return (GetAccountPasswordPolicyRequest) super.clone();
     }
+
 }

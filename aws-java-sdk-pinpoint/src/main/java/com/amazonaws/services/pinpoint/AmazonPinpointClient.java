@@ -60,30 +60,31 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                            com.amazonaws.services.pinpoint.model.NotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MethodNotAllowedException").withModeledClass(
-                            com.amazonaws.services.pinpoint.model.MethodNotAllowedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
-                            com.amazonaws.services.pinpoint.model.ForbiddenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                            com.amazonaws.services.pinpoint.model.TooManyRequestsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                            com.amazonaws.services.pinpoint.model.BadRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
-                            com.amazonaws.services.pinpoint.model.InternalServerErrorException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.pinpoint.model.AmazonPinpointException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MethodNotAllowedException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.MethodNotAllowedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.ForbiddenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.BadRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
+                                    com.amazonaws.services.pinpoint.model.InternalServerErrorException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.pinpoint.model.AmazonPinpointException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Pinpoint. A credentials provider chain will be used

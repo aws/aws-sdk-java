@@ -144,4 +144,5 @@ public class StopDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWeb
     public StopDataCollectionByAgentIdsRequest clone() {
         return (StopDataCollectionByAgentIdsRequest) super.clone();
     }
+
 }

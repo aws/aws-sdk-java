@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DeleteReplicationSubnetGroupRequestMarshaller implements
         Marshaller<Request<DeleteReplicationSubnetGroupRequest>, DeleteReplicationSubnetGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteReplicationSubnetGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteReplicationSubnetGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

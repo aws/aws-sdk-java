@@ -226,4 +226,5 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateNotificationRequest clone() {
         return (CreateNotificationRequest) super.clone();
     }
+
 }

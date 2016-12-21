@@ -902,4 +902,5 @@ public class RegisterActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     public RegisterActivityTypeRequest clone() {
         return (RegisterActivityTypeRequest) super.clone();
     }
+
 }

@@ -553,4 +553,5 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateGameSessionRequest clone() {
         return (UpdateGameSessionRequest) super.clone();
     }
+
 }

@@ -176,4 +176,5 @@ public class GetThirdPartyJobDetailsRequest extends com.amazonaws.AmazonWebServi
     public GetThirdPartyJobDetailsRequest clone() {
         return (GetThirdPartyJobDetailsRequest) super.clone();
     }
+
 }

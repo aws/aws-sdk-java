@@ -192,4 +192,5 @@ public class DescribeAvailabilityOptionsRequest extends com.amazonaws.AmazonWebS
     public DescribeAvailabilityOptionsRequest clone() {
         return (DescribeAvailabilityOptionsRequest) super.clone();
     }
+
 }

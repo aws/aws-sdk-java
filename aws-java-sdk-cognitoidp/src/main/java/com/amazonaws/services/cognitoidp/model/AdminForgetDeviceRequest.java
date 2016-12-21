@@ -222,4 +222,5 @@ public class AdminForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     public AdminForgetDeviceRequest clone() {
         return (AdminForgetDeviceRequest) super.clone();
     }
+
 }

@@ -173,4 +173,5 @@ public class DeleteConfigurationSetEventDestinationRequest extends com.amazonaws
     public DeleteConfigurationSetEventDestinationRequest clone() {
         return (DeleteConfigurationSetEventDestinationRequest) super.clone();
     }
+
 }

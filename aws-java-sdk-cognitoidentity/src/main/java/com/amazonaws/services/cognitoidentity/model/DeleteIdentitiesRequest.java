@@ -146,4 +146,5 @@ public class DeleteIdentitiesRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteIdentitiesRequest clone() {
         return (DeleteIdentitiesRequest) super.clone();
     }
+
 }

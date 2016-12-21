@@ -169,4 +169,5 @@ public class GetBranchRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetBranchRequest clone() {
         return (GetBranchRequest) super.clone();
     }
+
 }

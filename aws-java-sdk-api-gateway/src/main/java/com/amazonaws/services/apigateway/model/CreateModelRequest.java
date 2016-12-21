@@ -335,4 +335,5 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateModelRequest clone() {
         return (CreateModelRequest) super.clone();
     }
+
 }

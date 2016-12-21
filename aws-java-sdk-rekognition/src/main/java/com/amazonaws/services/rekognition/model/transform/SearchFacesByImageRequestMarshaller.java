@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SearchFacesByImageRequestMarshaller implements Marshaller<Request<SearchFacesByImageRequest>, SearchFacesByImageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SearchFacesByImageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SearchFacesByImageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

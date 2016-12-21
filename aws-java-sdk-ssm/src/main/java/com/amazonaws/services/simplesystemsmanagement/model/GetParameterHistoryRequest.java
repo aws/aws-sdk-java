@@ -301,4 +301,5 @@ public class GetParameterHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     public GetParameterHistoryRequest clone() {
         return (GetParameterHistoryRequest) super.clone();
     }
+
 }

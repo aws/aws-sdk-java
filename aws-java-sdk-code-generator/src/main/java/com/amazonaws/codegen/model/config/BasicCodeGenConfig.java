@@ -25,12 +25,14 @@ public class BasicCodeGenConfig {
     private final String interfaceName;
     private final String packageName;
     private final String endPoint;
+    private final String defaultRegion;
 
     public BasicCodeGenConfig(
             @JsonProperty(value = "serviceInterfaceName", required = true) String interfaceName,
             @Deprecated @JsonProperty(value = "sourcePackageName") String packageName,
             @JsonProperty(value = "packageSuffix") String packageSuffix,
-            @JsonProperty(value = "defaultEndpoint") String endpoint) {
+            @JsonProperty(value = "defaultEndpoint") String endpoint,
+            @JsonProperty(value = "defaultRegion") String defaultRegion) {
 
         this.interfaceName = interfaceName;
 
@@ -53,6 +55,7 @@ public class BasicCodeGenConfig {
         }
 
         this.endPoint = endpoint;
+        this.defaultRegion = defaultRegion;
     }
 
     public String getInterfaceName() {
@@ -65,5 +68,9 @@ public class BasicCodeGenConfig {
 
     public String getEndpoint() {
         return endPoint;
+    }
+
+    public String getDefaultRegion() {
+        return defaultRegion;
     }
 }

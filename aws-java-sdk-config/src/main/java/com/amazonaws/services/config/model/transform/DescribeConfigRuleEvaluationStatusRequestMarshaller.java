@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeConfigRuleEvaluationStatusRequestMarshaller implements
         Marshaller<Request<DescribeConfigRuleEvaluationStatusRequest>, DescribeConfigRuleEvaluationStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeConfigRuleEvaluationStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeConfigRuleEvaluationStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -341,4 +341,5 @@ public class GetGroupRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public GetGroupRequest clone() {
         return (GetGroupRequest) super.clone();
     }
+
 }

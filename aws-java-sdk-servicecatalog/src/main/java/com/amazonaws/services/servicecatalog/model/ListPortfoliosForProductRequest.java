@@ -364,4 +364,5 @@ public class ListPortfoliosForProductRequest extends com.amazonaws.AmazonWebServ
     public ListPortfoliosForProductRequest clone() {
         return (ListPortfoliosForProductRequest) super.clone();
     }
+
 }

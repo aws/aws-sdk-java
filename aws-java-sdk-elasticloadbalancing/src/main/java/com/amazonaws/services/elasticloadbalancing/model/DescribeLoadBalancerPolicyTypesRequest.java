@@ -158,4 +158,5 @@ public class DescribeLoadBalancerPolicyTypesRequest extends com.amazonaws.Amazon
     public DescribeLoadBalancerPolicyTypesRequest clone() {
         return (DescribeLoadBalancerPolicyTypesRequest) super.clone();
     }
+
 }

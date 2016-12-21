@@ -220,4 +220,5 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateStackRequest clone() {
         return (CreateStackRequest) super.clone();
     }
+
 }

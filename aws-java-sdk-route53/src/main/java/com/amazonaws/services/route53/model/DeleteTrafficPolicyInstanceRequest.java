@@ -152,4 +152,5 @@ public class DeleteTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     public DeleteTrafficPolicyInstanceRequest clone() {
         return (DeleteTrafficPolicyInstanceRequest) super.clone();
     }
+
 }

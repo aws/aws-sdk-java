@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DisableGatewayRequestMarshaller implements Marshaller<Request<DisableGatewayRequest>, DisableGatewayRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisableGatewayRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisableGatewayRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

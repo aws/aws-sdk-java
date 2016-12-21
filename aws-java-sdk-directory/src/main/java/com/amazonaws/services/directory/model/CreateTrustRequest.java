@@ -494,4 +494,5 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateTrustRequest clone() {
         return (CreateTrustRequest) super.clone();
     }
+
 }

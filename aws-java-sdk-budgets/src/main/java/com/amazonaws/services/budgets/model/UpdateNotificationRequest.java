@@ -200,4 +200,5 @@ public class UpdateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateNotificationRequest clone() {
         return (UpdateNotificationRequest) super.clone();
     }
+
 }

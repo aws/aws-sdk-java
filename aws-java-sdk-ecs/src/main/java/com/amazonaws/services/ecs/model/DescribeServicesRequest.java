@@ -207,4 +207,5 @@ public class DescribeServicesRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeServicesRequest clone() {
         return (DescribeServicesRequest) super.clone();
     }
+
 }

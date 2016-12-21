@@ -15,19 +15,21 @@
 
 package com.amazonaws.codegen;
 
-import com.amazonaws.codegen.C2jModels;
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.customization.processors.DefaultCustomizationProcessor;
 import com.amazonaws.codegen.internal.TypeUtils;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
+import com.amazonaws.codegen.model.intermediate.AuthorizerModel;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.OperationModel;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ServiceExamples;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.WaiterDefinitionModel;
+import com.amazonaws.codegen.model.service.AuthType;
 import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Waiters;
@@ -107,9 +109,11 @@ public class IntermediateModelBuilder {
         final Map<String, OperationModel> operations = new TreeMap<>();
         final Map<String, ShapeModel> shapes = new HashMap<>();
         final Map<String, WaiterDefinitionModel> waiters = new HashMap<>();
+        final Map<String, AuthorizerModel> authorizers = new HashMap<>();
 
         operations.putAll(new AddOperations(this).constructOperations());
         waiters.putAll(new AddWaiters(this.waiters, operations, codeGenBinDirectory).constructWaiters());
+        authorizers.putAll(new AddCustomAuthorizers(this.service, getNamingStrategy()).constructAuthorizers());
 
         for (IntermediateModelShapeProcessor processor : shapeProcessors) {
             shapes.putAll(processor.process(Collections.unmodifiableMap(operations),
@@ -120,7 +124,7 @@ public class IntermediateModelBuilder {
 
         IntermediateModel fullModel = new IntermediateModel(
                 constructMetadata(service, codeGenConfig, customConfig), operations, shapes,
-                customConfig, examples, waiters);
+                customConfig, examples, waiters, authorizers);
 
         customization.postprocess(fullModel);
 
@@ -136,10 +140,12 @@ public class IntermediateModelBuilder {
                                                                trimmedShapes,
                                                                fullModel.getCustomizationConfig(),
                                                                fullModel.getExamples(),
-                                                               fullModel.getWaiters());
+                                                               fullModel.getWaiters(),
+                                                               fullModel.getCustomAuthorizers());
 
         linkMembersToShapes(trimmedModel);
         linkOperationsToInputOutputShapes(trimmedModel);
+        linkCustomAuthorizationToRequestShapes(trimmedModel);
 
         return trimmedModel;
     }
@@ -163,9 +169,8 @@ public class IntermediateModelBuilder {
     private void linkOperationsToInputOutputShapes(IntermediateModel model) {
         for (Map.Entry<String, OperationModel> entry : model.getOperations().entrySet()) {
             Operation operation = service.getOperations().get(entry.getKey());
-            if (operation.getInput() != null) {
-                String inputShapeName = operation.getInput().getShape();
-                entry.getValue().setInputShape(model.getShapeByC2jName(inputShapeName));
+            if (entry.getValue().getInput() != null) {
+                entry.getValue().setInputShape(model.getShapes().get(entry.getValue().getInput().getSimpleType()));
             }
             if (operation.getOutput() != null) {
                 String outputShapeName = operation.getOutput().getShape();
@@ -181,6 +186,30 @@ public class IntermediateModelBuilder {
             }
 
         }
+    }
+
+    private void linkCustomAuthorizationToRequestShapes(IntermediateModel model) {
+        if (model.getMetadata().getProtocol() != Protocol.API_GATEWAY) {
+            return;
+        }
+
+        model.getOperations().values().stream()
+                .filter(OperationModel::isAuthenticated)
+                .forEach(operation -> {
+                    Operation c2jOperation = service.getOperation(operation.getOperationName());
+
+                    ShapeModel shape = operation.getInputShape();
+                    if(AuthType.CUSTOM.equals(c2jOperation.getAuthType())) {
+                        AuthorizerModel auth = model.getCustomAuthorizers().get(c2jOperation.getAuthorizer());
+                        if (auth == null) {
+                            throw new RuntimeException(String.format("Required custom auth not defined: %s", c2jOperation.getAuthorizer()));
+                        }
+                        shape.setRequestSignerClassFqcn(model.getMetadata().getPackageName() + ".auth." + auth.getInterfaceName());
+                    } else if (AuthType.IAM.equals(c2jOperation.getAuthType())) {
+                        model.getMetadata().setRequiresIamSigners(true);
+                        shape.setRequestSignerClassFqcn("com.amazonaws.opensdk.protect.auth.IamRequestSigner");
+                    }
+                });
     }
 
     public CustomizationConfig getCustomConfig() {

@@ -60,4 +60,5 @@ public class DescribeLimitsRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeLimitsRequest clone() {
         return (DescribeLimitsRequest) super.clone();
     }
+
 }

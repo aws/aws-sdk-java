@@ -241,4 +241,5 @@ public class ListEventSubscriptionsRequest extends com.amazonaws.AmazonWebServic
     public ListEventSubscriptionsRequest clone() {
         return (ListEventSubscriptionsRequest) super.clone();
     }
+
 }

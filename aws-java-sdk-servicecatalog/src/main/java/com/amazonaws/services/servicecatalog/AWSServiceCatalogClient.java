@@ -87,26 +87,27 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.servicecatalog.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParametersException").withModeledClass(
-                            com.amazonaws.services.servicecatalog.model.InvalidParametersException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withModeledClass(
-                            com.amazonaws.services.servicecatalog.model.DuplicateResourceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.servicecatalog.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.servicecatalog.model.ResourceNotFoundException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParametersException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.InvalidParametersException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.DuplicateResourceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.ResourceNotFoundException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Service Catalog. A credentials provider chain will be

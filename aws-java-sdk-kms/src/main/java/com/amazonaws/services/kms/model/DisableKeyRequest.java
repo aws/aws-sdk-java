@@ -216,4 +216,5 @@ public class DisableKeyRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public DisableKeyRequest clone() {
         return (DisableKeyRequest) super.clone();
     }
+
 }

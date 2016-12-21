@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-06-02",
     "endpointPrefix" : "shield",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "CreateProtection" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, or an Amazon Route 53 hosted zone.</p>",
       "errors" : [ {
@@ -80,7 +82,8 @@
       }
     },
     "CreateSubscription" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Activates AWS Shield Advanced for an account.</p>",
       "errors" : [ {
@@ -116,7 +119,8 @@
       }
     },
     "DeleteProtection" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an AWS Shield Advanced <a>Protection</a>.</p>",
       "errors" : [ {
@@ -158,7 +162,8 @@
       }
     },
     "DeleteSubscription" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Removes AWS Shield Advanced from an account.</p>",
       "errors" : [ {
@@ -200,7 +205,8 @@
       }
     },
     "DescribeAttack" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes the details of a DDoS attack. </p>",
       "errors" : [ {
@@ -236,7 +242,8 @@
       }
     },
     "DescribeProtection" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the details of a <a>Protection</a> object.</p>",
       "errors" : [ {
@@ -272,7 +279,8 @@
       }
     },
     "DescribeSubscription" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Provides details about the AWS Shield Advanced subscription for an account.</p>",
       "errors" : [ {
@@ -308,7 +316,8 @@
       }
     },
     "ListAttacks" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p>",
       "errors" : [ {
@@ -350,7 +359,8 @@
       }
     },
     "ListProtections" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all <a>Protection</a> objects for the account.</p>",
       "errors" : [ {

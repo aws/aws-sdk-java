@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SynthesizeSpeechRequestMarshaller implements Marshaller<Request<SynthesizeSpeechRequest>, SynthesizeSpeechRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SynthesizeSpeechRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SynthesizeSpeechRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

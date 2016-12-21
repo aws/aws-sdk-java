@@ -97,4 +97,5 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreatePipelineRequest clone() {
         return (CreatePipelineRequest) super.clone();
     }
+
 }

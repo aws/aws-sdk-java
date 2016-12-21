@@ -15,16 +15,16 @@
 
 package com.amazonaws.codegen;
 
-import com.amazonaws.codegen.IntermediateModelBuilder;
-import com.amazonaws.codegen.C2jModels;
 import com.amazonaws.codegen.emitters.CodeEmitter;
 import com.amazonaws.codegen.emitters.GeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTaskExecutor;
 import com.amazonaws.codegen.emitters.GeneratorTaskParams;
+import com.amazonaws.codegen.emitters.tasks.ApiGatewayGeneratorTasks;
 import com.amazonaws.codegen.emitters.tasks.AwsGeneratorTasks;
 import com.amazonaws.codegen.internal.Jackson;
 import com.amazonaws.codegen.internal.Utils;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 
 import java.io.File;
 import java.io.IOException;
@@ -116,7 +116,11 @@ public class CodeGenerator {
     private Iterable<GeneratorTask> createGeneratorTasks(IntermediateModel intermediateModel) {
         // For clients built internally, the output directory and source directory are the same.
         GeneratorTaskParams params = GeneratorTaskParams.create(intermediateModel, outputDirectory, outputDirectory);
-        return new AwsGeneratorTasks(params);
+        if (params.getModel().getMetadata().getProtocol() == Protocol.API_GATEWAY) {
+            return new ApiGatewayGeneratorTasks(params);
+        } else {
+            return new AwsGeneratorTasks(params);
+        }
     }
 
     public static File getModelDirectory(String outputDirectory) {

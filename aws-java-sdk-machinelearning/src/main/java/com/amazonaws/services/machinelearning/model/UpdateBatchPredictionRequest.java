@@ -167,4 +167,5 @@ public class UpdateBatchPredictionRequest extends com.amazonaws.AmazonWebService
     public UpdateBatchPredictionRequest clone() {
         return (UpdateBatchPredictionRequest) super.clone();
     }
+
 }

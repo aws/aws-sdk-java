@@ -202,4 +202,5 @@ public class BatchGetApplicationRevisionsRequest extends com.amazonaws.AmazonWeb
     public BatchGetApplicationRevisionsRequest clone() {
         return (BatchGetApplicationRevisionsRequest) super.clone();
     }
+
 }

@@ -264,4 +264,5 @@ public class PutNotificationConfigurationRequest extends com.amazonaws.AmazonWeb
     public PutNotificationConfigurationRequest clone() {
         return (PutNotificationConfigurationRequest) super.clone();
     }
+
 }

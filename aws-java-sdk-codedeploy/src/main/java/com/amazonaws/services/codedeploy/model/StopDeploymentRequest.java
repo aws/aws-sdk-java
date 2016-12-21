@@ -190,4 +190,5 @@ public class StopDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest
     public StopDeploymentRequest clone() {
         return (StopDeploymentRequest) super.clone();
     }
+
 }

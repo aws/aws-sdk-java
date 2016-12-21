@@ -116,4 +116,5 @@ public class DeletePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeletePresetRequest clone() {
         return (DeletePresetRequest) super.clone();
     }
+
 }

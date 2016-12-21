@@ -597,4 +597,5 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
     public AssumeRoleWithSAMLRequest clone() {
         return (AssumeRoleWithSAMLRequest) super.clone();
     }
+
 }

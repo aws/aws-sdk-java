@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PollForDecisionTaskRequestMarshaller implements Marshaller<Request<PollForDecisionTaskRequest>, PollForDecisionTaskRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PollForDecisionTaskRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PollForDecisionTaskRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -292,4 +292,5 @@ public class ResetDBClusterParameterGroupRequest extends com.amazonaws.AmazonWeb
     public ResetDBClusterParameterGroupRequest clone() {
         return (ResetDBClusterParameterGroupRequest) super.clone();
     }
+
 }

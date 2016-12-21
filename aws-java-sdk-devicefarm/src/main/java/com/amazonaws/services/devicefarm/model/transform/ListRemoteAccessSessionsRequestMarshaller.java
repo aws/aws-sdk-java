@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListRemoteAccessSessionsRequestMarshaller implements Marshaller<Request<ListRemoteAccessSessionsRequest>, ListRemoteAccessSessionsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListRemoteAccessSessionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListRemoteAccessSessionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

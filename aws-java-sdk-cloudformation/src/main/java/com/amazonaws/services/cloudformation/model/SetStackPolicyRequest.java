@@ -257,4 +257,5 @@ public class SetStackPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     public SetStackPolicyRequest clone() {
         return (SetStackPolicyRequest) super.clone();
     }
+
 }

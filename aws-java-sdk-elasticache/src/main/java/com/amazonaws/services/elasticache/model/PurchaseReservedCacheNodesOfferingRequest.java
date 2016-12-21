@@ -315,4 +315,5 @@ public class PurchaseReservedCacheNodesOfferingRequest extends com.amazonaws.Ama
     public PurchaseReservedCacheNodesOfferingRequest clone() {
         return (PurchaseReservedCacheNodesOfferingRequest) super.clone();
     }
+
 }

@@ -146,4 +146,5 @@ public class GetRoleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public GetRoleRequest clone() {
         return (GetRoleRequest) super.clone();
     }
+
 }

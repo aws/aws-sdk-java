@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteVirtualInterfaceRequestMarshaller implements Marshaller<Request<DeleteVirtualInterfaceRequest>, DeleteVirtualInterfaceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteVirtualInterfaceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteVirtualInterfaceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

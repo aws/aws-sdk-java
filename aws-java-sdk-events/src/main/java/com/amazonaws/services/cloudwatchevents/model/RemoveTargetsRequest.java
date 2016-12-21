@@ -199,4 +199,5 @@ public class RemoveTargetsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public RemoveTargetsRequest clone() {
         return (RemoveTargetsRequest) super.clone();
     }
+
 }

@@ -176,4 +176,5 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreatePolicyRequest clone() {
         return (CreatePolicyRequest) super.clone();
     }
+
 }

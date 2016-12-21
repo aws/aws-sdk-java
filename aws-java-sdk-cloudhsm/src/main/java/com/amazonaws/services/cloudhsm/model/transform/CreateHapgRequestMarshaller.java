@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateHapgRequestMarshaller implements Marshaller<Request<CreateHapgRequest>, CreateHapgRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateHapgRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateHapgRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

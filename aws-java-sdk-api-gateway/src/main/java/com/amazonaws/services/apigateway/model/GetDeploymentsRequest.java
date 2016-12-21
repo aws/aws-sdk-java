@@ -236,4 +236,5 @@ public class GetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetDeploymentsRequest clone() {
         return (GetDeploymentsRequest) super.clone();
     }
+
 }

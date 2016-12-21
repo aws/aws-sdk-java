@@ -207,4 +207,5 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeTasksRequest clone() {
         return (DescribeTasksRequest) super.clone();
     }
+
 }

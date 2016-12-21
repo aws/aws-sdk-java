@@ -168,4 +168,5 @@ public class DeleteLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteLoginProfileRequest clone() {
         return (DeleteLoginProfileRequest) super.clone();
     }
+
 }

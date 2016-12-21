@@ -200,4 +200,5 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     public GetSegmentImportJobsRequest clone() {
         return (GetSegmentImportJobsRequest) super.clone();
     }
+
 }

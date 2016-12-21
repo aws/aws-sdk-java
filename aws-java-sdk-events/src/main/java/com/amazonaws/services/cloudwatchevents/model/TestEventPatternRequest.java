@@ -169,4 +169,5 @@ public class TestEventPatternRequest extends com.amazonaws.AmazonWebServiceReque
     public TestEventPatternRequest clone() {
         return (TestEventPatternRequest) super.clone();
     }
+
 }

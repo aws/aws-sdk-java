@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeAgentVersionsRequestMarshaller implements Marshaller<Request<DescribeAgentVersionsRequest>, DescribeAgentVersionsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeAgentVersionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeAgentVersionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

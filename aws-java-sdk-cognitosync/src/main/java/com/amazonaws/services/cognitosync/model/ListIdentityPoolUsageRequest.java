@@ -147,4 +147,5 @@ public class ListIdentityPoolUsageRequest extends com.amazonaws.AmazonWebService
     public ListIdentityPoolUsageRequest clone() {
         return (ListIdentityPoolUsageRequest) super.clone();
     }
+
 }

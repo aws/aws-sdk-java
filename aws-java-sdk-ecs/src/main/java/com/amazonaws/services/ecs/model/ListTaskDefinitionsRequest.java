@@ -589,4 +589,5 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListTaskDefinitionsRequest clone() {
         return (ListTaskDefinitionsRequest) super.clone();
     }
+
 }

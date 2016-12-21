@@ -112,32 +112,33 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.ValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.InternalServiceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.ObjectNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("FailedResourceAccessException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withModeledClass(
-                            com.amazonaws.services.applicationautoscaling.model.ConcurrentUpdateException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.InternalServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.ObjectNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FailedResourceAccessException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withModeledClass(
+                                    com.amazonaws.services.applicationautoscaling.model.ConcurrentUpdateException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class));
 
     /**
      * Constructs a new client to invoke service methods on Application Auto Scaling. A credentials provider chain will

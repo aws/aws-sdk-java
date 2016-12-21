@@ -150,4 +150,5 @@ public class CancelRetrievalRequest extends com.amazonaws.AmazonWebServiceReques
     public CancelRetrievalRequest clone() {
         return (CancelRetrievalRequest) super.clone();
     }
+
 }

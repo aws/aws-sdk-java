@@ -60,38 +60,39 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.ConcurrentModificationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnableToDetectSchemaException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.UnableToDetectSchemaException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CodeValidationException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.CodeValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.InvalidArgumentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceProvisionedThroughputExceededException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.ResourceProvisionedThroughputExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.kinesisanalytics.model.LimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToDetectSchemaException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.UnableToDetectSchemaException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CodeValidationException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.CodeValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.InvalidArgumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceProvisionedThroughputExceededException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.ResourceProvisionedThroughputExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.LimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Kinesis Analytics. A credentials provider chain will be used

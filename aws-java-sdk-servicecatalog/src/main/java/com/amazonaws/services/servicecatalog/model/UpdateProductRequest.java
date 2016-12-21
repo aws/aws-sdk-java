@@ -785,4 +785,5 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateProductRequest clone() {
         return (UpdateProductRequest) super.clone();
     }
+
 }

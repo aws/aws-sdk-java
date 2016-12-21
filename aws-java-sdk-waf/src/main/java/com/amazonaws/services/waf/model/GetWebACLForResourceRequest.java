@@ -114,4 +114,5 @@ public class GetWebACLForResourceRequest extends com.amazonaws.AmazonWebServiceR
     public GetWebACLForResourceRequest clone() {
         return (GetWebACLForResourceRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class DeleteSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteSubscriptionRequest clone() {
         return (DeleteSubscriptionRequest) super.clone();
     }
+
 }

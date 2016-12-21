@@ -224,4 +224,5 @@ public class DeleteSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteSSHPublicKeyRequest clone() {
         return (DeleteSSHPublicKeyRequest) super.clone();
     }
+
 }

@@ -119,4 +119,5 @@ public class CreateConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     public CreateConfigurationSetRequest clone() {
         return (CreateConfigurationSetRequest) super.clone();
     }
+
 }

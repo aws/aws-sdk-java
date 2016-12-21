@@ -414,4 +414,5 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
     public ConnectDirectoryRequest clone() {
         return (ConnectDirectoryRequest) super.clone();
     }
+
 }

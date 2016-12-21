@@ -849,4 +849,5 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateProductRequest clone() {
         return (CreateProductRequest) super.clone();
     }
+
 }

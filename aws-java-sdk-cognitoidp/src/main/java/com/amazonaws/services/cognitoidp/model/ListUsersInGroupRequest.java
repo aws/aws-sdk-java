@@ -280,4 +280,5 @@ public class ListUsersInGroupRequest extends com.amazonaws.AmazonWebServiceReque
     public ListUsersInGroupRequest clone() {
         return (ListUsersInGroupRequest) super.clone();
     }
+
 }

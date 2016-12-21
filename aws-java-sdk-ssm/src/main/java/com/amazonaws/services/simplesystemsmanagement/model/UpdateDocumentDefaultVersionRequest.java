@@ -167,4 +167,5 @@ public class UpdateDocumentDefaultVersionRequest extends com.amazonaws.AmazonWeb
     public UpdateDocumentDefaultVersionRequest clone() {
         return (UpdateDocumentDefaultVersionRequest) super.clone();
     }
+
 }

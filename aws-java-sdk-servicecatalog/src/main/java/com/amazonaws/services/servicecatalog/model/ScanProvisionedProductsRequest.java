@@ -364,4 +364,5 @@ public class ScanProvisionedProductsRequest extends com.amazonaws.AmazonWebServi
     public ScanProvisionedProductsRequest clone() {
         return (ScanProvisionedProductsRequest) super.clone();
     }
+
 }

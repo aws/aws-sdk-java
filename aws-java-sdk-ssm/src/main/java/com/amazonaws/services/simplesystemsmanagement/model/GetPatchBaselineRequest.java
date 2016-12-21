@@ -114,4 +114,5 @@ public class GetPatchBaselineRequest extends com.amazonaws.AmazonWebServiceReque
     public GetPatchBaselineRequest clone() {
         return (GetPatchBaselineRequest) super.clone();
     }
+
 }

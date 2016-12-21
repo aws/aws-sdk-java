@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ConnectDirectoryRequestMarshaller implements Marshaller<Request<ConnectDirectoryRequest>, ConnectDirectoryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ConnectDirectoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ConnectDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

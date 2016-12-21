@@ -1578,4 +1578,5 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateServerRequest clone() {
         return (CreateServerRequest) super.clone();
     }
+
 }

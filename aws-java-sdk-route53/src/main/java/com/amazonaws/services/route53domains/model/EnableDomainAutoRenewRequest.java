@@ -95,4 +95,5 @@ public class EnableDomainAutoRenewRequest extends com.amazonaws.AmazonWebService
     public EnableDomainAutoRenewRequest clone() {
         return (EnableDomainAutoRenewRequest) super.clone();
     }
+
 }

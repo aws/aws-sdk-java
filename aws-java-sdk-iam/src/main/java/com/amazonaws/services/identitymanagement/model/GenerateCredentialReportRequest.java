@@ -60,4 +60,5 @@ public class GenerateCredentialReportRequest extends com.amazonaws.AmazonWebServ
     public GenerateCredentialReportRequest clone() {
         return (GenerateCredentialReportRequest) super.clone();
     }
+
 }

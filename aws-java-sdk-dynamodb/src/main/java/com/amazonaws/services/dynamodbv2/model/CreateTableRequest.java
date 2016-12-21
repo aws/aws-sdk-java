@@ -2474,4 +2474,5 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateTableRequest clone() {
         return (CreateTableRequest) super.clone();
     }
+
 }

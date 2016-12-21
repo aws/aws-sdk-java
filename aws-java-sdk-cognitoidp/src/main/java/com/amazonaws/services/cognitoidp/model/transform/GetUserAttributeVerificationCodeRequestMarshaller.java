@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class GetUserAttributeVerificationCodeRequestMarshaller implements
         Marshaller<Request<GetUserAttributeVerificationCodeRequest>, GetUserAttributeVerificationCodeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetUserAttributeVerificationCodeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetUserAttributeVerificationCodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

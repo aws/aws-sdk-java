@@ -114,4 +114,5 @@ public class AllocateStaticIpRequest extends com.amazonaws.AmazonWebServiceReque
     public AllocateStaticIpRequest clone() {
         return (AllocateStaticIpRequest) super.clone();
     }
+
 }

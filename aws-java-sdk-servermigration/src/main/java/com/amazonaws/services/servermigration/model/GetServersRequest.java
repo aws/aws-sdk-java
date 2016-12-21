@@ -130,4 +130,5 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetServersRequest clone() {
         return (GetServersRequest) super.clone();
     }
+
 }

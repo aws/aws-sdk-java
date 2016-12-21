@@ -274,4 +274,5 @@ public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateCertificateRequest clone() {
         return (UpdateCertificateRequest) super.clone();
     }
+
 }

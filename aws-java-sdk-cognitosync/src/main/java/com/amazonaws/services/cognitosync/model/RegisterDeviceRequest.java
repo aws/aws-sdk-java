@@ -315,4 +315,5 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
     public RegisterDeviceRequest clone() {
         return (RegisterDeviceRequest) super.clone();
     }
+
 }

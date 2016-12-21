@@ -2518,4 +2518,5 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public RunJobFlowRequest clone() {
         return (RunJobFlowRequest) super.clone();
     }
+
 }

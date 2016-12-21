@@ -497,4 +497,5 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateApiKeyRequest clone() {
         return (CreateApiKeyRequest) super.clone();
     }
+
 }

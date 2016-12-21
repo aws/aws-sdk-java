@@ -169,4 +169,5 @@ public class AdminDisableUserRequest extends com.amazonaws.AmazonWebServiceReque
     public AdminDisableUserRequest clone() {
         return (AdminDisableUserRequest) super.clone();
     }
+
 }

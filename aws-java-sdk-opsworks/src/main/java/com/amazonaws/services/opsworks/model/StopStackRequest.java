@@ -114,4 +114,5 @@ public class StopStackRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public StopStackRequest clone() {
         return (StopStackRequest) super.clone();
     }
+
 }

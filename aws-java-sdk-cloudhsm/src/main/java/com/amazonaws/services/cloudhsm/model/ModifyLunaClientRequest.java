@@ -167,4 +167,5 @@ public class ModifyLunaClientRequest extends com.amazonaws.AmazonWebServiceReque
     public ModifyLunaClientRequest clone() {
         return (ModifyLunaClientRequest) super.clone();
     }
+
 }

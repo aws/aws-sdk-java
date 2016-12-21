@@ -132,4 +132,5 @@ public class DeleteRetentionPolicyRequest extends com.amazonaws.AmazonWebService
     public DeleteRetentionPolicyRequest clone() {
         return (DeleteRetentionPolicyRequest) super.clone();
     }
+
 }

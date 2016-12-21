@@ -172,4 +172,5 @@ public class DeleteReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteReceiptRuleRequest clone() {
         return (DeleteReceiptRuleRequest) super.clone();
     }
+
 }

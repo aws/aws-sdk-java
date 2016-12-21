@@ -116,4 +116,5 @@ public class DeleteRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteRepositoryRequest clone() {
         return (DeleteRepositoryRequest) super.clone();
     }
+
 }

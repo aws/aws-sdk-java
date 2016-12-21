@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetSnapshotLimitsRequestMarshaller implements Marshaller<Request<GetSnapshotLimitsRequest>, GetSnapshotLimitsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetSnapshotLimitsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetSnapshotLimitsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

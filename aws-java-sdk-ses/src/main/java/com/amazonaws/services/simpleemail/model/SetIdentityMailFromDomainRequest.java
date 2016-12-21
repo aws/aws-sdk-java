@@ -364,4 +364,5 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
     public SetIdentityMailFromDomainRequest clone() {
         return (SetIdentityMailFromDomainRequest) super.clone();
     }
+
 }

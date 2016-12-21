@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeWorkingStorageRequestMarshaller implements Marshaller<Request<DescribeWorkingStorageRequest>, DescribeWorkingStorageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeWorkingStorageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeWorkingStorageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

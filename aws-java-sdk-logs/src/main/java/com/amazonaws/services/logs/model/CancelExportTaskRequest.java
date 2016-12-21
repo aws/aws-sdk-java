@@ -114,4 +114,5 @@ public class CancelExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     public CancelExportTaskRequest clone() {
         return (CancelExportTaskRequest) super.clone();
     }
+
 }

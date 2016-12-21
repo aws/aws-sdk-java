@@ -335,4 +335,5 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
     public DescribeScalingActivitiesRequest clone() {
         return (DescribeScalingActivitiesRequest) super.clone();
     }
+
 }

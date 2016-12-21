@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DiscoverPollEndpointRequestMarshaller implements Marshaller<Request<DiscoverPollEndpointRequest>, DiscoverPollEndpointRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DiscoverPollEndpointRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DiscoverPollEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -633,4 +633,5 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
     public BatchWriteItemRequest clone() {
         return (BatchWriteItemRequest) super.clone();
     }
+
 }

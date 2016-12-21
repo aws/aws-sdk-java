@@ -231,4 +231,5 @@ public class AttachUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public AttachUserPolicyRequest clone() {
         return (AttachUserPolicyRequest) super.clone();
     }
+
 }

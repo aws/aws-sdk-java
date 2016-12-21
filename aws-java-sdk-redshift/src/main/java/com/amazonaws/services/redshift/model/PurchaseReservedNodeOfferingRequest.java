@@ -185,4 +185,5 @@ public class PurchaseReservedNodeOfferingRequest extends com.amazonaws.AmazonWeb
     public PurchaseReservedNodeOfferingRequest clone() {
         return (PurchaseReservedNodeOfferingRequest) super.clone();
     }
+
 }

@@ -39,4 +39,8 @@ public abstract class BaseXmlProtocolMetadataProvider extends BaseProtocolMetada
         return "StandardErrorUnmarshaller";
     }
 
+    @Override
+    public String getProtocolFactoryImplFqcn() {
+        return null;
+    }
 }

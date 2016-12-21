@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetIPSetRequestMarshaller implements Marshaller<Request<GetIPSetRequest>, GetIPSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetIPSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetIPSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -516,4 +516,5 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     public UpdateFleetAttributesRequest clone() {
         return (UpdateFleetAttributesRequest) super.clone();
     }
+
 }

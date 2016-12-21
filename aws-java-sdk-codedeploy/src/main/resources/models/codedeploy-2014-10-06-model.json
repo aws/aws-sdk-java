@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2014-10-06",
     "endpointPrefix" : "codedeploy",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AddTagsToOnPremisesInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds tags to on-premises instances.</p>",
       "errors" : [ {
@@ -69,7 +71,8 @@
       "output" : null
     },
     "BatchGetApplicationRevisions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more application revisions.</p>",
       "errors" : [ {
@@ -129,7 +132,8 @@
       }
     },
     "BatchGetApplications" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more applications.</p>",
       "errors" : [ {
@@ -177,7 +181,8 @@
       }
     },
     "BatchGetDeploymentGroups" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Get information about one or more deployment groups.</p>",
       "errors" : [ {
@@ -237,7 +242,8 @@
       }
     },
     "BatchGetDeploymentInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more instance that are part of a deployment group.</p>",
       "errors" : [ {
@@ -297,7 +303,8 @@
       }
     },
     "BatchGetDeployments" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more deployments.</p>",
       "errors" : [ {
@@ -339,7 +346,8 @@
       }
     },
     "BatchGetOnPremisesInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more on-premises instances.</p>",
       "errors" : [ {
@@ -381,7 +389,8 @@
       }
     },
     "CreateApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates an application.</p>",
       "errors" : [ {
@@ -429,7 +438,8 @@
       }
     },
     "CreateDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deploys an application revision through the specified deployment group.</p>",
       "errors" : [ {
@@ -537,7 +547,8 @@
       }
     },
     "CreateDeploymentConfig" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a deployment configuration.</p>",
       "errors" : [ {
@@ -591,7 +602,8 @@
       }
     },
     "CreateDeploymentGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a deployment group to which application revisions will be deployed.</p>",
       "errors" : [ {
@@ -735,7 +747,8 @@
       }
     },
     "DeleteApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an application.</p>",
       "errors" : [ {
@@ -766,7 +779,8 @@
       "output" : null
     },
     "DeleteDeploymentConfig" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a deployment configuration.</p> <note> <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p> </note>",
       "errors" : [ {
@@ -809,7 +823,8 @@
       "output" : null
     },
     "DeleteDeploymentGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a deployment group.</p>",
       "errors" : [ {
@@ -863,7 +878,8 @@
       }
     },
     "DeregisterOnPremisesInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deregisters an on-premises instance.</p>",
       "errors" : [ {
@@ -894,7 +910,8 @@
       "output" : null
     },
     "GetApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about an application.</p>",
       "errors" : [ {
@@ -936,7 +953,8 @@
       }
     },
     "GetApplicationRevision" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about an application revision.</p>",
       "errors" : [ {
@@ -996,7 +1014,8 @@
       }
     },
     "GetDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a deployment.</p>",
       "errors" : [ {
@@ -1038,7 +1057,8 @@
       }
     },
     "GetDeploymentConfig" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a deployment configuration.</p>",
       "errors" : [ {
@@ -1080,7 +1100,8 @@
       }
     },
     "GetDeploymentGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about a deployment group.</p>",
       "errors" : [ {
@@ -1140,7 +1161,8 @@
       }
     },
     "GetDeploymentInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about an instance as part of a deployment.</p>",
       "errors" : [ {
@@ -1200,7 +1222,8 @@
       }
     },
     "GetOnPremisesInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about an on-premises instance.</p>",
       "errors" : [ {
@@ -1242,7 +1265,8 @@
       }
     },
     "ListApplicationRevisions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists information about revisions for an application.</p>",
       "errors" : [ {
@@ -1326,7 +1350,8 @@
       }
     },
     "ListApplications" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the applications registered with the applicable IAM user or AWS account.</p>",
       "errors" : [ {
@@ -1356,7 +1381,8 @@
       }
     },
     "ListDeploymentConfigs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the deployment configurations with the applicable IAM user or AWS account.</p>",
       "errors" : [ {
@@ -1386,7 +1412,8 @@
       }
     },
     "ListDeploymentGroups" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the deployment groups for an application registered with the applicable IAM user or AWS account.</p>",
       "errors" : [ {
@@ -1434,7 +1461,8 @@
       }
     },
     "ListDeploymentInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the instance for a deployment associated with the applicable IAM user or AWS account.</p>",
       "errors" : [ {
@@ -1494,7 +1522,8 @@
       }
     },
     "ListDeployments" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the deployments in a deployment group for an application registered with the applicable IAM user or AWS account.</p>",
       "errors" : [ {
@@ -1572,7 +1601,8 @@
       }
     },
     "ListOnPremisesInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a list of names for one or more on-premises instances.</p> <p>Unless otherwise specified, both registered and deregistered on-premises instance names will be listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>",
       "errors" : [ {
@@ -1614,7 +1644,8 @@
       }
     },
     "RegisterApplicationRevision" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Registers with AWS CodeDeploy a revision for the specified application.</p>",
       "errors" : [ {
@@ -1669,7 +1700,8 @@
       "output" : null
     },
     "RegisterOnPremisesInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Registers an on-premises instance.</p>",
       "errors" : [ {
@@ -1724,7 +1756,8 @@
       "output" : null
     },
     "RemoveTagsFromOnPremisesInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Removes one or more tags from one or more on-premises instances.</p>",
       "errors" : [ {
@@ -1779,7 +1812,8 @@
       "output" : null
     },
     "StopDeployment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attempts to stop an ongoing deployment.</p>",
       "errors" : [ {
@@ -1827,7 +1861,8 @@
       }
     },
     "UpdateApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes the name of an application.</p>",
       "errors" : [ {
@@ -1870,7 +1905,8 @@
       "output" : null
     },
     "UpdateDeploymentGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes information about a deployment group.</p>",
       "errors" : [ {

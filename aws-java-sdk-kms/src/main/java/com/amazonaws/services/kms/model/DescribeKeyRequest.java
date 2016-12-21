@@ -399,4 +399,5 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DescribeKeyRequest clone() {
         return (DescribeKeyRequest) super.clone();
     }
+
 }

@@ -467,4 +467,5 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     public UpdateMaintenanceWindowRequest clone() {
         return (UpdateMaintenanceWindowRequest) super.clone();
     }
+
 }

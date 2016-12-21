@@ -498,4 +498,5 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
     public CreateDataSourceFromS3Request clone() {
         return (CreateDataSourceFromS3Request) super.clone();
     }
+
 }

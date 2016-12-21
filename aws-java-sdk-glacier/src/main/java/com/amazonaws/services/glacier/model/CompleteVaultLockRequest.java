@@ -246,4 +246,5 @@ public class CompleteVaultLockRequest extends com.amazonaws.AmazonWebServiceRequ
     public CompleteVaultLockRequest clone() {
         return (CompleteVaultLockRequest) super.clone();
     }
+
 }

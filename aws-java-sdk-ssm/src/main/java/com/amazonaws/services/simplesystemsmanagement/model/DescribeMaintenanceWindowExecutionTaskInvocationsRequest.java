@@ -376,4 +376,5 @@ public class DescribeMaintenanceWindowExecutionTaskInvocationsRequest extends co
     public DescribeMaintenanceWindowExecutionTaskInvocationsRequest clone() {
         return (DescribeMaintenanceWindowExecutionTaskInvocationsRequest) super.clone();
     }
+
 }

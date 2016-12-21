@@ -134,4 +134,5 @@ public class DescribeTableRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeTableRequest clone() {
         return (DescribeTableRequest) super.clone();
     }
+
 }

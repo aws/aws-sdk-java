@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteEndpointRequestMarshaller implements Marshaller<Request<DeleteEndpointRequest>, DeleteEndpointRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteEndpointRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

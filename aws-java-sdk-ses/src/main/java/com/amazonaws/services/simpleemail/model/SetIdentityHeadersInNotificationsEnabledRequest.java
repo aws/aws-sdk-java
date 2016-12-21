@@ -331,4 +331,5 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     public SetIdentityHeadersInNotificationsEnabledRequest clone() {
         return (SetIdentityHeadersInNotificationsEnabledRequest) super.clone();
     }
+
 }

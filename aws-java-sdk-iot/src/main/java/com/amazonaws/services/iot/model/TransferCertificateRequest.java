@@ -222,4 +222,5 @@ public class TransferCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     public TransferCertificateRequest clone() {
         return (TransferCertificateRequest) super.clone();
     }
+
 }

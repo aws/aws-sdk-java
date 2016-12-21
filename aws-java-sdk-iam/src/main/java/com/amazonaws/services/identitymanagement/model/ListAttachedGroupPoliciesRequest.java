@@ -418,4 +418,5 @@ public class ListAttachedGroupPoliciesRequest extends com.amazonaws.AmazonWebSer
     public ListAttachedGroupPoliciesRequest clone() {
         return (ListAttachedGroupPoliciesRequest) super.clone();
     }
+
 }

@@ -561,4 +561,5 @@ public class DescribeSnapshotCopyGrantsRequest extends com.amazonaws.AmazonWebSe
     public DescribeSnapshotCopyGrantsRequest clone() {
         return (DescribeSnapshotCopyGrantsRequest) super.clone();
     }
+
 }

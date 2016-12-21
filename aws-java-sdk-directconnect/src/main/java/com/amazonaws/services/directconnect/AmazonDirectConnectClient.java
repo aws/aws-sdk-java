@@ -69,23 +69,24 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                            com.amazonaws.services.directconnect.model.TooManyTagsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DirectConnectServerException").withModeledClass(
-                            com.amazonaws.services.directconnect.model.DirectConnectServerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DirectConnectClientException").withModeledClass(
-                            com.amazonaws.services.directconnect.model.DirectConnectClientException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateTagKeysException").withModeledClass(
-                            com.amazonaws.services.directconnect.model.DuplicateTagKeysException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.directconnect.model.AmazonDirectConnectException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
+                                    com.amazonaws.services.directconnect.model.TooManyTagsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectConnectServerException").withModeledClass(
+                                    com.amazonaws.services.directconnect.model.DirectConnectServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectConnectClientException").withModeledClass(
+                                    com.amazonaws.services.directconnect.model.DirectConnectClientException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateTagKeysException").withModeledClass(
+                                    com.amazonaws.services.directconnect.model.DuplicateTagKeysException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.directconnect.model.AmazonDirectConnectException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Direct Connect. A credentials provider chain will be

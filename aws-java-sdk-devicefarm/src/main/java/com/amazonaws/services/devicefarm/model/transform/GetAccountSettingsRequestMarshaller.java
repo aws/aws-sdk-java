@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetAccountSettingsRequestMarshaller implements Marshaller<Request<GetAccountSettingsRequest>, GetAccountSettingsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetAccountSettingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetAccountSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

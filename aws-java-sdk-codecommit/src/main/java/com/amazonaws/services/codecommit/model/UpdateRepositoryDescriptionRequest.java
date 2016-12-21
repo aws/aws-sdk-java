@@ -176,4 +176,5 @@ public class UpdateRepositoryDescriptionRequest extends com.amazonaws.AmazonWebS
     public UpdateRepositoryDescriptionRequest clone() {
         return (UpdateRepositoryDescriptionRequest) super.clone();
     }
+
 }

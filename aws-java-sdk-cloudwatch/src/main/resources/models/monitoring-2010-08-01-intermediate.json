@@ -57,6 +57,7 @@
     "cucumberModuleInjectorClassName" : "AmazonCloudWatchModuleInjector",
     "defaultEndpoint" : "https://monitoring.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "monitoring.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time. You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources and applications.</p> <p>CloudWatch alarms send notifications or automatically make changes to the resources you are monitoring based on rules that you define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon Elastic Compute Cloud (Amazon EC2) instances and then use this data to determine whether you should launch additional instances to handle increased load. You can also use this data to stop under-used instances to save money.</p> <p>In addition to monitoring the built-in metrics that come with AWS, you can monitor your own custom metrics. With CloudWatch, you gain system-wide visibility into resource utilization, application performance, and operational health.</p>",
     "endpointPrefix" : "monitoring",
     "hasApiWithStreamInput" : false,
@@ -67,7 +68,10 @@
     "packagePath" : "com/amazonaws/services/cloudwatch",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "protocolFactory" : null,
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "CloudWatch",
     "serviceFullName" : "Amazon CloudWatch",
     "serviceName" : "CloudWatch",
@@ -1029,6 +1033,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AlarmHistoryItem",
       "unmarshaller" : {
@@ -1076,6 +1082,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparisonOperator",
       "unmarshaller" : {
@@ -2158,6 +2166,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Datapoint",
       "unmarshaller" : {
@@ -2456,6 +2466,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AlarmNames" ],
       "shapeName" : "DeleteAlarmsRequest",
       "unmarshaller" : null,
@@ -2488,6 +2500,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteAlarmsResult",
       "unmarshaller" : {
@@ -3209,6 +3223,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAlarmHistoryRequest",
       "unmarshaller" : null,
@@ -3610,6 +3626,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAlarmHistoryResult",
       "unmarshaller" : {
@@ -4586,6 +4604,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MetricName", "Namespace" ],
       "shapeName" : "DescribeAlarmsForMetricRequest",
       "unmarshaller" : null,
@@ -4874,6 +4894,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAlarmsForMetricResult",
       "unmarshaller" : {
@@ -5737,6 +5759,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAlarmsRequest",
       "unmarshaller" : null,
@@ -6138,6 +6162,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAlarmsResult",
       "unmarshaller" : {
@@ -6400,6 +6426,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
       "shapeName" : "Dimension",
       "unmarshaller" : {
@@ -6662,6 +6690,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "DimensionFilter",
       "unmarshaller" : {
@@ -6960,6 +6990,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AlarmNames" ],
       "shapeName" : "DisableAlarmActionsRequest",
       "unmarshaller" : null,
@@ -6992,6 +7024,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisableAlarmActionsResult",
       "unmarshaller" : {
@@ -7290,6 +7324,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AlarmNames" ],
       "shapeName" : "EnableAlarmActionsRequest",
       "unmarshaller" : null,
@@ -7322,6 +7358,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EnableAlarmActionsResult",
       "unmarshaller" : {
@@ -8808,6 +8846,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Namespace", "MetricName", "StartTime", "EndTime", "Period" ],
       "shapeName" : "GetMetricStatisticsRequest",
       "unmarshaller" : null,
@@ -9209,6 +9249,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetMetricStatisticsResult",
       "unmarshaller" : {
@@ -9253,6 +9295,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HistoryItemType",
       "unmarshaller" : {
@@ -9288,6 +9332,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServiceException",
       "unmarshaller" : null,
@@ -9320,6 +9366,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidFormatException",
       "unmarshaller" : null,
@@ -9352,6 +9400,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -9384,6 +9434,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterCombinationException",
       "unmarshaller" : null,
@@ -9416,6 +9468,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterValueException",
       "unmarshaller" : null,
@@ -9448,6 +9502,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -10082,6 +10138,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListMetricsRequest",
       "unmarshaller" : null,
@@ -10483,6 +10541,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListMetricsResult",
       "unmarshaller" : {
@@ -11000,6 +11060,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Metric",
       "unmarshaller" : {
@@ -14090,6 +14152,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MetricAlarm",
       "unmarshaller" : {
@@ -14946,6 +15010,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MetricName" ],
       "shapeName" : "MetricDatum",
       "unmarshaller" : {
@@ -14981,6 +15047,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingRequiredParameterException",
       "unmarshaller" : null,
@@ -17397,6 +17465,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AlarmName", "MetricName", "Namespace", "Period", "EvaluationPeriods", "Threshold", "ComparisonOperator" ],
       "shapeName" : "PutMetricAlarmRequest",
       "unmarshaller" : null,
@@ -17429,6 +17499,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutMetricAlarmResult",
       "unmarshaller" : {
@@ -17840,6 +17912,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Namespace", "MetricData" ],
       "shapeName" : "PutMetricDataRequest",
       "unmarshaller" : null,
@@ -17872,6 +17946,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutMetricDataResult",
       "unmarshaller" : {
@@ -17907,6 +17983,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -18399,6 +18477,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AlarmName", "StateValue", "StateReason" ],
       "shapeName" : "SetAlarmStateRequest",
       "unmarshaller" : null,
@@ -18431,6 +18511,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetAlarmStateResult",
       "unmarshaller" : {
@@ -18547,6 +18629,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StandardUnit",
       "unmarshaller" : {
@@ -18591,6 +18675,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StateValue",
       "unmarshaller" : {
@@ -18641,6 +18727,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Statistic",
       "unmarshaller" : {
@@ -19129,6 +19217,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SampleCount", "Sum", "Minimum", "Maximum" ],
       "shapeName" : "StatisticSet",
       "unmarshaller" : {
@@ -19147,6 +19237,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

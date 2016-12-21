@@ -316,4 +316,5 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateCACertificateRequest clone() {
         return (UpdateCACertificateRequest) super.clone();
     }
+
 }

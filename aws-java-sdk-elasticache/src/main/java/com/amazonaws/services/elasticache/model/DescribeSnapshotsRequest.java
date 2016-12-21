@@ -545,4 +545,5 @@ public class DescribeSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeSnapshotsRequest clone() {
         return (DescribeSnapshotsRequest) super.clone();
     }
+
 }

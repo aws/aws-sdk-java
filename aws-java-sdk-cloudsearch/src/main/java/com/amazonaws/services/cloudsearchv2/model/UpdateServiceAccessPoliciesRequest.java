@@ -151,4 +151,5 @@ public class UpdateServiceAccessPoliciesRequest extends com.amazonaws.AmazonWebS
     public UpdateServiceAccessPoliciesRequest clone() {
         return (UpdateServiceAccessPoliciesRequest) super.clone();
     }
+
 }

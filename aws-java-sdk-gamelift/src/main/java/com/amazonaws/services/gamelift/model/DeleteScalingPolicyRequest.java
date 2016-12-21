@@ -169,4 +169,5 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteScalingPolicyRequest clone() {
         return (DeleteScalingPolicyRequest) super.clone();
     }
+
 }

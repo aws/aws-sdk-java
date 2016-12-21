@@ -487,4 +487,5 @@ public class CreateInstancesFromSnapshotRequest extends com.amazonaws.AmazonWebS
     public CreateInstancesFromSnapshotRequest clone() {
         return (CreateInstancesFromSnapshotRequest) super.clone();
     }
+
 }

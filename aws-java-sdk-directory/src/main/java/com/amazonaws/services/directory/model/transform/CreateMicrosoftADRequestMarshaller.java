@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateMicrosoftADRequestMarshaller implements Marshaller<Request<CreateMicrosoftADRequest>, CreateMicrosoftADRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateMicrosoftADRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateMicrosoftADRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

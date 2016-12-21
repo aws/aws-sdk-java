@@ -381,4 +381,5 @@ public class ScheduleRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ScheduleRunRequest clone() {
         return (ScheduleRunRequest) super.clone();
     }
+
 }

@@ -193,4 +193,5 @@ public class AddTagsToStreamRequest extends com.amazonaws.AmazonWebServiceReques
     public AddTagsToStreamRequest clone() {
         return (AddTagsToStreamRequest) super.clone();
     }
+
 }

@@ -123,4 +123,5 @@ public class DescribeChapCredentialsRequest extends com.amazonaws.AmazonWebServi
     public DescribeChapCredentialsRequest clone() {
         return (DescribeChapCredentialsRequest) super.clone();
     }
+
 }

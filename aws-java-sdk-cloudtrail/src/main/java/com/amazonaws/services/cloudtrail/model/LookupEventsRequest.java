@@ -392,4 +392,5 @@ public class LookupEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public LookupEventsRequest clone() {
         return (LookupEventsRequest) super.clone();
     }
+
 }

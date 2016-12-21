@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-01-01",
     "endpointPrefix" : "es",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AddTags" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging\" target=\"_blank\"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>",
       "errors" : [ {
@@ -57,7 +59,8 @@
       "output" : null
     },
     "CreateElasticsearchDomain" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new Elasticsearch domain. For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>",
       "errors" : [ {
@@ -123,7 +126,8 @@
       }
     },
     "DeleteElasticsearchDomain" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>",
       "errors" : [ {
@@ -171,7 +175,8 @@
       }
     },
     "DescribeElasticsearchDomain" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns domain configuration information about the specified Elasticsearch domain, including the domain ID, domain endpoint, and domain ARN.</p>",
       "errors" : [ {
@@ -219,7 +224,8 @@
       }
     },
     "DescribeElasticsearchDomainConfig" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>",
       "errors" : [ {
@@ -267,7 +273,8 @@
       }
     },
     "DescribeElasticsearchDomains" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>",
       "errors" : [ {
@@ -309,7 +316,8 @@
       }
     },
     "ListDomainNames" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the name of all Elasticsearch domains owned by the current user's account. </p>",
       "errors" : [ {
@@ -340,7 +348,8 @@
       }
     },
     "ListTags" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns all tags for the given Elasticsearch domain.</p>",
       "errors" : [ {
@@ -388,7 +397,8 @@
       }
     },
     "RemoveTags" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Removes the specified set of tags from the specified Elasticsearch domain.</p>",
       "errors" : [ {
@@ -425,7 +435,8 @@
       "output" : null
     },
     "UpdateElasticsearchDomainConfig" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>",
       "errors" : [ {

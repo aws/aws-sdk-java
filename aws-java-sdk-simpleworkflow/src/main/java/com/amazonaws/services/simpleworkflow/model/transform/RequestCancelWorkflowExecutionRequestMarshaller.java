@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class RequestCancelWorkflowExecutionRequestMarshaller implements
         Marshaller<Request<RequestCancelWorkflowExecutionRequest>, RequestCancelWorkflowExecutionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RequestCancelWorkflowExecutionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RequestCancelWorkflowExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

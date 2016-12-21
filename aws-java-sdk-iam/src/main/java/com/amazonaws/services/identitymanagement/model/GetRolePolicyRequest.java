@@ -231,4 +231,5 @@ public class GetRolePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetRolePolicyRequest clone() {
         return (GetRolePolicyRequest) super.clone();
     }
+
 }

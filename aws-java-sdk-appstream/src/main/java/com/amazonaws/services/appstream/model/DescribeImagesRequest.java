@@ -144,4 +144,5 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeImagesRequest clone() {
         return (DescribeImagesRequest) super.clone();
     }
+
 }

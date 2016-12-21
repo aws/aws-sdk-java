@@ -95,4 +95,5 @@ public class DeleteApnsChannelRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteApnsChannelRequest clone() {
         return (DeleteApnsChannelRequest) super.clone();
     }
+
 }

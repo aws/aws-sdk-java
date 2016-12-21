@@ -279,4 +279,5 @@ public class PollForTaskRequest extends com.amazonaws.AmazonWebServiceRequest im
     public PollForTaskRequest clone() {
         return (PollForTaskRequest) super.clone();
     }
+
 }

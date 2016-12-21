@@ -235,4 +235,5 @@ public class DescribeSubscribersForNotificationRequest extends com.amazonaws.Ama
     public DescribeSubscribersForNotificationRequest clone() {
         return (DescribeSubscribersForNotificationRequest) super.clone();
     }
+
 }

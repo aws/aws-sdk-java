@@ -123,4 +123,5 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     public ListApplicationsRequest clone() {
         return (ListApplicationsRequest) super.clone();
     }
+
 }

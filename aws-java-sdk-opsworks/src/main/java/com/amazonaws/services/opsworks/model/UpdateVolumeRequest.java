@@ -220,4 +220,5 @@ public class UpdateVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
     public UpdateVolumeRequest clone() {
         return (UpdateVolumeRequest) super.clone();
     }
+
 }

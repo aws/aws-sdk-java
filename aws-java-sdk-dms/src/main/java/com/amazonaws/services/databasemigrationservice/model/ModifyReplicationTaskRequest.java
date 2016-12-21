@@ -595,4 +595,5 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     public ModifyReplicationTaskRequest clone() {
         return (ModifyReplicationTaskRequest) super.clone();
     }
+
 }

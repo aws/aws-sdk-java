@@ -231,4 +231,5 @@ public class RemoveRoleFromInstanceProfileRequest extends com.amazonaws.AmazonWe
     public RemoveRoleFromInstanceProfileRequest clone() {
         return (RemoveRoleFromInstanceProfileRequest) super.clone();
     }
+
 }

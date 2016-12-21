@@ -114,4 +114,5 @@ public class DeleteSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteSAMLProviderRequest clone() {
         return (DeleteSAMLProviderRequest) super.clone();
     }
+
 }

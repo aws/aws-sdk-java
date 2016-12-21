@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetParameterHistoryRequestMarshaller implements Marshaller<Request<GetParameterHistoryRequest>, GetParameterHistoryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetParameterHistoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetParameterHistoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

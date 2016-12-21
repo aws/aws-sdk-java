@@ -1780,4 +1780,5 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     public CreateLaunchConfigurationRequest clone() {
         return (CreateLaunchConfigurationRequest) super.clone();
     }
+
 }

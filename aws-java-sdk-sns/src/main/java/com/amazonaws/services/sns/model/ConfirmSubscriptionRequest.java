@@ -276,4 +276,5 @@ public class ConfirmSubscriptionRequest extends com.amazonaws.AmazonWebServiceRe
     public ConfirmSubscriptionRequest clone() {
         return (ConfirmSubscriptionRequest) super.clone();
     }
+
 }

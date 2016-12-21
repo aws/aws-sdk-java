@@ -130,4 +130,5 @@ public class GetEndpointRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetEndpointRequest clone() {
         return (GetEndpointRequest) super.clone();
     }
+
 }

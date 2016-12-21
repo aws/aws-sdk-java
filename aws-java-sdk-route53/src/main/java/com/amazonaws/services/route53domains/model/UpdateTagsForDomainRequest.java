@@ -879,4 +879,5 @@ public class UpdateTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateTagsForDomainRequest clone() {
         return (UpdateTagsForDomainRequest) super.clone();
     }
+
 }

@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DecreaseStreamRetentionPeriodRequestMarshaller implements
         Marshaller<Request<DecreaseStreamRetentionPeriodRequest>, DecreaseStreamRetentionPeriodRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DecreaseStreamRetentionPeriodRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DecreaseStreamRetentionPeriodRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

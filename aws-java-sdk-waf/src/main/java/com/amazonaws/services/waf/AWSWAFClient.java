@@ -67,44 +67,45 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFReferencedItemException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFReferencedItemException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFLimitsExceededException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFStaleDataException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFStaleDataException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFInternalErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFInvalidAccountException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFInvalidAccountException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFDisallowedNameException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFDisallowedNameException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFInvalidOperationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentContainerException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WAFNonEmptyEntityException").withModeledClass(
-                            com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.waf.model.AWSWAFException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFReferencedItemException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFReferencedItemException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFLimitsExceededException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFStaleDataException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFStaleDataException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFInternalErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidAccountException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFInvalidAccountException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFDisallowedNameException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFDisallowedNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFInvalidOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentContainerException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonEmptyEntityException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.waf.model.AWSWAFException.class));
 
     /**
      * Constructs a new client to invoke service methods on WAF. A credentials provider chain will be used that searches

@@ -255,4 +255,5 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     public RevokeGrantRequest clone() {
         return (RevokeGrantRequest) super.clone();
     }
+
 }

@@ -183,4 +183,5 @@ public class GetBasePathMappingRequest extends com.amazonaws.AmazonWebServiceReq
     public GetBasePathMappingRequest clone() {
         return (GetBasePathMappingRequest) super.clone();
     }
+
 }

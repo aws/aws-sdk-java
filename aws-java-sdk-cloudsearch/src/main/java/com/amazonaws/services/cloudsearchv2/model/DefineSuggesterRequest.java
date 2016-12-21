@@ -133,4 +133,5 @@ public class DefineSuggesterRequest extends com.amazonaws.AmazonWebServiceReques
     public DefineSuggesterRequest clone() {
         return (DefineSuggesterRequest) super.clone();
     }
+
 }

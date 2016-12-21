@@ -131,4 +131,5 @@ public class UpdateApplicationSettingsRequest extends com.amazonaws.AmazonWebSer
     public UpdateApplicationSettingsRequest clone() {
         return (UpdateApplicationSettingsRequest) super.clone();
     }
+
 }

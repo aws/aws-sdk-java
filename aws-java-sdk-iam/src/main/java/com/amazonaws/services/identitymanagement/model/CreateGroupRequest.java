@@ -303,4 +303,5 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateGroupRequest clone() {
         return (CreateGroupRequest) super.clone();
     }
+
 }

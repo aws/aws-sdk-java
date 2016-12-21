@@ -121,4 +121,5 @@ public class GetChangeTokenStatusRequest extends com.amazonaws.AmazonWebServiceR
     public GetChangeTokenStatusRequest clone() {
         return (GetChangeTokenStatusRequest) super.clone();
     }
+
 }

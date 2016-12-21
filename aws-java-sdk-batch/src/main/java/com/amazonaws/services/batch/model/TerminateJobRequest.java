@@ -177,4 +177,5 @@ public class TerminateJobRequest extends com.amazonaws.AmazonWebServiceRequest i
     public TerminateJobRequest clone() {
         return (TerminateJobRequest) super.clone();
     }
+
 }

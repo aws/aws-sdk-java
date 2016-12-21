@@ -200,4 +200,5 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     public GetCampaignVersionsRequest clone() {
         return (GetCampaignVersionsRequest) super.clone();
     }
+
 }

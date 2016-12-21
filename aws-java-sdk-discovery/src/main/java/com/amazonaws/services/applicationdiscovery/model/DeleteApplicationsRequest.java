@@ -144,4 +144,5 @@ public class DeleteApplicationsRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteApplicationsRequest clone() {
         return (DeleteApplicationsRequest) super.clone();
     }
+
 }

@@ -177,4 +177,5 @@ public class CreateVPCAssociationAuthorizationRequest extends com.amazonaws.Amaz
     public CreateVPCAssociationAuthorizationRequest clone() {
         return (CreateVPCAssociationAuthorizationRequest) super.clone();
     }
+
 }

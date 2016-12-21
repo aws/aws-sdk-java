@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class StartGatewayRequestMarshaller implements Marshaller<Request<StartGatewayRequest>, StartGatewayRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public StartGatewayRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public StartGatewayRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

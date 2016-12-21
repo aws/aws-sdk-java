@@ -57,6 +57,7 @@
     "cucumberModuleInjectorClassName" : "AmazonWorkspacesModuleInjector",
     "defaultEndpoint" : "https://workspaces.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "workspaces.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>Amazon WorkSpaces Service</fullname> <p>This reference provides detailed information about the Amazon WorkSpaces operations.</p>",
     "endpointPrefix" : "workspaces",
     "hasApiWithStreamInput" : false,
@@ -67,7 +68,10 @@
     "packagePath" : "com/amazonaws/services/workspaces",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon WorkSpaces",
     "serviceName" : "Amazon WorkSpaces",
@@ -560,6 +564,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AccessDeniedException",
       "unmarshaller" : null,
@@ -601,6 +607,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Compute",
       "unmarshaller" : {
@@ -750,6 +758,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComputeType",
       "unmarshaller" : {
@@ -794,6 +804,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConnectionState",
       "unmarshaller" : {
@@ -1205,6 +1217,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId", "Tags" ],
       "shapeName" : "CreateTagsRequest",
       "unmarshaller" : null,
@@ -1237,6 +1251,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateTagsResult",
       "unmarshaller" : {
@@ -1535,6 +1551,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Workspaces" ],
       "shapeName" : "CreateWorkspacesRequest",
       "unmarshaller" : null,
@@ -2078,6 +2096,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateWorkspacesResult",
       "unmarshaller" : {
@@ -2679,6 +2699,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DefaultWorkspaceCreationProperties",
       "unmarshaller" : {
@@ -3090,6 +3112,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId", "TagKeys" ],
       "shapeName" : "DeleteTagsRequest",
       "unmarshaller" : null,
@@ -3122,6 +3146,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTagsResult",
       "unmarshaller" : {
@@ -3278,6 +3304,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId" ],
       "shapeName" : "DescribeTagsRequest",
       "unmarshaller" : null,
@@ -3566,6 +3594,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTagsResult",
       "unmarshaller" : {
@@ -4090,6 +4120,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspaceBundlesRequest",
       "unmarshaller" : null,
@@ -4491,6 +4523,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspaceBundlesResult",
       "unmarshaller" : {
@@ -4902,6 +4936,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspaceDirectoriesRequest",
       "unmarshaller" : null,
@@ -5303,6 +5339,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspaceDirectoriesResult",
       "unmarshaller" : {
@@ -5714,6 +5752,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspacesConnectionStatusRequest",
       "unmarshaller" : null,
@@ -6115,6 +6155,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspacesConnectionStatusResult",
       "unmarshaller" : {
@@ -6978,6 +7020,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspacesRequest",
       "unmarshaller" : null,
@@ -7379,6 +7423,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeWorkspacesResult",
       "unmarshaller" : {
@@ -7754,6 +7800,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailedCreateWorkspaceRequest",
       "unmarshaller" : {
@@ -8129,6 +8177,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailedWorkspaceChangeRequest",
       "unmarshaller" : {
@@ -8164,6 +8214,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterValuesException",
       "unmarshaller" : null,
@@ -8196,6 +8248,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidResourceStateException",
       "unmarshaller" : null,
@@ -8462,6 +8516,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "WorkspaceId", "WorkspaceProperties" ],
       "shapeName" : "ModifyWorkspacePropertiesRequest",
       "unmarshaller" : null,
@@ -8494,6 +8550,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyWorkspacePropertiesResult",
       "unmarshaller" : {
@@ -8529,6 +8587,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationInProgressException",
       "unmarshaller" : null,
@@ -8675,6 +8735,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "WorkspaceId" ],
       "shapeName" : "RebootRequest",
       "unmarshaller" : {
@@ -8973,6 +9035,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RebootWorkspaceRequests" ],
       "shapeName" : "RebootWorkspacesRequest",
       "unmarshaller" : null,
@@ -9261,6 +9325,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RebootWorkspacesResult",
       "unmarshaller" : {
@@ -9410,6 +9476,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "WorkspaceId" ],
       "shapeName" : "RebuildRequest",
       "unmarshaller" : {
@@ -9708,6 +9776,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RebuildWorkspaceRequests" ],
       "shapeName" : "RebuildWorkspacesRequest",
       "unmarshaller" : null,
@@ -9996,6 +10066,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RebuildWorkspacesResult",
       "unmarshaller" : {
@@ -10031,6 +10103,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceLimitExceededException",
       "unmarshaller" : null,
@@ -10177,6 +10251,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -10323,6 +10399,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceUnavailableException",
       "unmarshaller" : null,
@@ -10361,6 +10439,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RunningMode",
       "unmarshaller" : {
@@ -10510,6 +10590,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartRequest",
       "unmarshaller" : {
@@ -10808,6 +10890,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "StartWorkspaceRequests" ],
       "shapeName" : "StartWorkspacesRequest",
       "unmarshaller" : null,
@@ -11096,6 +11180,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartWorkspacesResult",
       "unmarshaller" : {
@@ -11245,6 +11331,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopRequest",
       "unmarshaller" : {
@@ -11543,6 +11631,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "StopWorkspaceRequests" ],
       "shapeName" : "StopWorkspacesRequest",
       "unmarshaller" : null,
@@ -11831,6 +11921,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopWorkspacesResult",
       "unmarshaller" : {
@@ -12093,6 +12185,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Key" ],
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -12242,6 +12336,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "WorkspaceId" ],
       "shapeName" : "TerminateRequest",
       "unmarshaller" : {
@@ -12540,6 +12636,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TerminateWorkspaceRequests" ],
       "shapeName" : "TerminateWorkspacesRequest",
       "unmarshaller" : null,
@@ -12828,6 +12926,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TerminateWorkspacesResult",
       "unmarshaller" : {
@@ -12863,6 +12963,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedWorkspaceConfigurationException",
       "unmarshaller" : null,
@@ -13009,6 +13111,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserStorage",
       "unmarshaller" : {
@@ -14627,6 +14731,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Workspace",
       "unmarshaller" : {
@@ -15341,6 +15447,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceBundle",
       "unmarshaller" : {
@@ -15829,6 +15937,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceConnectionStatus",
       "unmarshaller" : {
@@ -17505,6 +17615,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceDirectory",
       "unmarshaller" : {
@@ -17555,6 +17667,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceDirectoryState",
       "unmarshaller" : {
@@ -17596,6 +17710,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceDirectoryType",
       "unmarshaller" : {
@@ -17858,6 +17974,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceProperties",
       "unmarshaller" : {
@@ -18940,6 +19058,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DirectoryId", "UserName", "BundleId" ],
       "shapeName" : "WorkspaceRequest",
       "unmarshaller" : {
@@ -19017,6 +19137,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "WorkspaceState",
       "unmarshaller" : {
@@ -19035,6 +19157,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

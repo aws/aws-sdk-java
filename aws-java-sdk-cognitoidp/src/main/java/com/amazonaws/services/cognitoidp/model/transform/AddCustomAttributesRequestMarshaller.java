@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddCustomAttributesRequestMarshaller implements Marshaller<Request<AddCustomAttributesRequest>, AddCustomAttributesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddCustomAttributesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddCustomAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

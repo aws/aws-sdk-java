@@ -1099,4 +1099,5 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateEnvironmentRequest clone() {
         return (CreateEnvironmentRequest) super.clone();
     }
+
 }

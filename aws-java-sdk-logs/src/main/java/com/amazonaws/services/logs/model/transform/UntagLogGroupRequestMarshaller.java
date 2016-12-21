@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UntagLogGroupRequestMarshaller implements Marshaller<Request<UntagLogGroupRequest>, UntagLogGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UntagLogGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UntagLogGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

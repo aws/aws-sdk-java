@@ -114,4 +114,5 @@ public class DeleteReplicationTaskRequest extends com.amazonaws.AmazonWebService
     public DeleteReplicationTaskRequest clone() {
         return (DeleteReplicationTaskRequest) super.clone();
     }
+
 }

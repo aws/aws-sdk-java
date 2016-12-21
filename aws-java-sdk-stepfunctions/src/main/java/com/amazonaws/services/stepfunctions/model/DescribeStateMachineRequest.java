@@ -114,4 +114,5 @@ public class DescribeStateMachineRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeStateMachineRequest clone() {
         return (DescribeStateMachineRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RetireGrantRequestMarshaller implements Marshaller<Request<RetireGrantRequest>, RetireGrantRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RetireGrantRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RetireGrantRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

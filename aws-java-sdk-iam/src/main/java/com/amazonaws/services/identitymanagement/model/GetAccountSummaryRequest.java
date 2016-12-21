@@ -60,4 +60,5 @@ public class GetAccountSummaryRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetAccountSummaryRequest clone() {
         return (GetAccountSummaryRequest) super.clone();
     }
+
 }

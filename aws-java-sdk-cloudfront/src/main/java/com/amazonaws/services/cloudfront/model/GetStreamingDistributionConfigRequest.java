@@ -134,4 +134,5 @@ public class GetStreamingDistributionConfigRequest extends com.amazonaws.AmazonW
     public GetStreamingDistributionConfigRequest clone() {
         return (GetStreamingDistributionConfigRequest) super.clone();
     }
+
 }

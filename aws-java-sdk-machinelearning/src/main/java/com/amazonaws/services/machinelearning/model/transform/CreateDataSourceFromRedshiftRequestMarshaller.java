@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class CreateDataSourceFromRedshiftRequestMarshaller implements
         Marshaller<Request<CreateDataSourceFromRedshiftRequest>, CreateDataSourceFromRedshiftRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateDataSourceFromRedshiftRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateDataSourceFromRedshiftRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

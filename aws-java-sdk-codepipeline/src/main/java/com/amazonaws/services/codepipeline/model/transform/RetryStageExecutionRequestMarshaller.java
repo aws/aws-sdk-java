@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RetryStageExecutionRequestMarshaller implements Marshaller<Request<RetryStageExecutionRequest>, RetryStageExecutionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RetryStageExecutionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RetryStageExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

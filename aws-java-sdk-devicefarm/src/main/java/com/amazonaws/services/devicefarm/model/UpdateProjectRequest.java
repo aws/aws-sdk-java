@@ -169,4 +169,5 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateProjectRequest clone() {
         return (UpdateProjectRequest) super.clone();
     }
+
 }

@@ -261,4 +261,5 @@ public class UploadSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     public UploadSigningCertificateRequest clone() {
         return (UploadSigningCertificateRequest) super.clone();
     }
+
 }

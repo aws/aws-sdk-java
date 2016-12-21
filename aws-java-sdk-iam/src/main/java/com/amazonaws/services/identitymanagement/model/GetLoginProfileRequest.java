@@ -168,4 +168,5 @@ public class GetLoginProfileRequest extends com.amazonaws.AmazonWebServiceReques
     public GetLoginProfileRequest clone() {
         return (GetLoginProfileRequest) super.clone();
     }
+
 }

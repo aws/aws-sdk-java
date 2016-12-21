@@ -303,4 +303,5 @@ public class SetIdentityPoolRolesRequest extends com.amazonaws.AmazonWebServiceR
     public SetIdentityPoolRolesRequest clone() {
         return (SetIdentityPoolRolesRequest) super.clone();
     }
+
 }

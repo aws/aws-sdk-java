@@ -252,4 +252,5 @@ public class AdminSetUserSettingsRequest extends com.amazonaws.AmazonWebServiceR
     public AdminSetUserSettingsRequest clone() {
         return (AdminSetUserSettingsRequest) super.clone();
     }
+
 }

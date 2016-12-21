@@ -223,4 +223,5 @@ public class RegisterInstancesWithLoadBalancerRequest extends com.amazonaws.Amaz
     public RegisterInstancesWithLoadBalancerRequest clone() {
         return (RegisterInstancesWithLoadBalancerRequest) super.clone();
     }
+
 }

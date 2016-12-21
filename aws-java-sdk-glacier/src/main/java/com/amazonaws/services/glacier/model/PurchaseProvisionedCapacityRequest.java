@@ -129,4 +129,5 @@ public class PurchaseProvisionedCapacityRequest extends com.amazonaws.AmazonWebS
     public PurchaseProvisionedCapacityRequest clone() {
         return (PurchaseProvisionedCapacityRequest) super.clone();
     }
+
 }

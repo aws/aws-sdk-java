@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ModifyReplicationInstanceRequestMarshaller implements Marshaller<Request<ModifyReplicationInstanceRequest>, ModifyReplicationInstanceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ModifyReplicationInstanceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ModifyReplicationInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

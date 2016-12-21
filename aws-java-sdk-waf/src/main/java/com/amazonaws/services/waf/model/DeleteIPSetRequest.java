@@ -174,4 +174,5 @@ public class DeleteIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteIPSetRequest clone() {
         return (DeleteIPSetRequest) super.clone();
     }
+
 }

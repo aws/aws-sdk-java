@@ -151,4 +151,5 @@ public class GetIdentityMailFromDomainAttributesRequest extends com.amazonaws.Am
     public GetIdentityMailFromDomainAttributesRequest clone() {
         return (GetIdentityMailFromDomainAttributesRequest) super.clone();
     }
+
 }

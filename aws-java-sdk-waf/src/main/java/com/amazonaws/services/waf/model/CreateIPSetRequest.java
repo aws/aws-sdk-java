@@ -174,4 +174,5 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateIPSetRequest clone() {
         return (CreateIPSetRequest) super.clone();
     }
+
 }

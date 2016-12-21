@@ -258,4 +258,5 @@ public class DeleteApplicationOutputRequest extends com.amazonaws.AmazonWebServi
     public DeleteApplicationOutputRequest clone() {
         return (DeleteApplicationOutputRequest) super.clone();
     }
+
 }

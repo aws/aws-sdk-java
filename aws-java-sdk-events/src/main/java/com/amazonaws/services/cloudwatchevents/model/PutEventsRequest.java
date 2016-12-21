@@ -155,4 +155,5 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public PutEventsRequest clone() {
         return (PutEventsRequest) super.clone();
     }
+
 }

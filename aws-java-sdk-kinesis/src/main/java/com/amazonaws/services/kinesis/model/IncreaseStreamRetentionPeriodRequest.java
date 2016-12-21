@@ -169,4 +169,5 @@ public class IncreaseStreamRetentionPeriodRequest extends com.amazonaws.AmazonWe
     public IncreaseStreamRetentionPeriodRequest clone() {
         return (IncreaseStreamRetentionPeriodRequest) super.clone();
     }
+
 }

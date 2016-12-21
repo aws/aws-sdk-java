@@ -334,4 +334,5 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListOperationsRequest clone() {
         return (ListOperationsRequest) super.clone();
     }
+
 }

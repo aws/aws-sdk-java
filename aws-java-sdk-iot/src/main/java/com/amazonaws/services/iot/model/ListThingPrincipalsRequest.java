@@ -116,4 +116,5 @@ public class ListThingPrincipalsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListThingPrincipalsRequest clone() {
         return (ListThingPrincipalsRequest) super.clone();
     }
+
 }

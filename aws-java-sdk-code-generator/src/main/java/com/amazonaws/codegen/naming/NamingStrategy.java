@@ -57,6 +57,12 @@ public interface NamingStrategy {
     String getJavaClassName(String shapeName);
 
     /**
+     * @param shapeName Name of an authorizer shape used to derive the authorizer name
+     * @return Appropriate name to use for a Java class for an Authorizer
+     */
+    String getAuthorizerClassName(String shapeName);
+
+    /**
      * @param memberName Member name to name getter for.
      * @return Name of the getter method for a model class member.
      */

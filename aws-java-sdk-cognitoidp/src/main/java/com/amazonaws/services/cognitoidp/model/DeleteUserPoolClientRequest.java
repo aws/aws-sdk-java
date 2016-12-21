@@ -169,4 +169,5 @@ public class DeleteUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     public DeleteUserPoolClientRequest clone() {
         return (DeleteUserPoolClientRequest) super.clone();
     }
+
 }

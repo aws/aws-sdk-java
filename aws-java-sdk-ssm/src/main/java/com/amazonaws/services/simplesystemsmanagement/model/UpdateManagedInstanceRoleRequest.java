@@ -167,4 +167,5 @@ public class UpdateManagedInstanceRoleRequest extends com.amazonaws.AmazonWebSer
     public UpdateManagedInstanceRoleRequest clone() {
         return (UpdateManagedInstanceRoleRequest) super.clone();
     }
+
 }

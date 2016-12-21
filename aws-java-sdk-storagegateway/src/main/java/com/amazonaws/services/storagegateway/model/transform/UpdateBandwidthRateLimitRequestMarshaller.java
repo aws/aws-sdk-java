@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateBandwidthRateLimitRequestMarshaller implements Marshaller<Request<UpdateBandwidthRateLimitRequest>, UpdateBandwidthRateLimitRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateBandwidthRateLimitRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateBandwidthRateLimitRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

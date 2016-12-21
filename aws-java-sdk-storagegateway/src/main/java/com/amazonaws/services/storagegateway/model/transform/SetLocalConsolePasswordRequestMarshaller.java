@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetLocalConsolePasswordRequestMarshaller implements Marshaller<Request<SetLocalConsolePasswordRequest>, SetLocalConsolePasswordRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetLocalConsolePasswordRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetLocalConsolePasswordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

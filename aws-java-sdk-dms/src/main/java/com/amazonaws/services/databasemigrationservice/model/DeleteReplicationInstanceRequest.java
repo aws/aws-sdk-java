@@ -114,4 +114,5 @@ public class DeleteReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     public DeleteReplicationInstanceRequest clone() {
         return (DeleteReplicationInstanceRequest) super.clone();
     }
+
 }

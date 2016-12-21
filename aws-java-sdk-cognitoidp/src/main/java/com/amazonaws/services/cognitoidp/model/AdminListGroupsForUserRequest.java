@@ -280,4 +280,5 @@ public class AdminListGroupsForUserRequest extends com.amazonaws.AmazonWebServic
     public AdminListGroupsForUserRequest clone() {
         return (AdminListGroupsForUserRequest) super.clone();
     }
+
 }

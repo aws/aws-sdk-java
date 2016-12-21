@@ -227,4 +227,5 @@ public class GetInventorySchemaRequest extends com.amazonaws.AmazonWebServiceReq
     public GetInventorySchemaRequest clone() {
         return (GetInventorySchemaRequest) super.clone();
     }
+
 }

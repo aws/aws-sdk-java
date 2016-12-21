@@ -256,4 +256,5 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     public UpdateCloudFrontOriginAccessIdentityRequest clone() {
         return (UpdateCloudFrontOriginAccessIdentityRequest) super.clone();
     }
+
 }

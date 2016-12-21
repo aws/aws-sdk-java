@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteTapeArchiveRequestMarshaller implements Marshaller<Request<DeleteTapeArchiveRequest>, DeleteTapeArchiveRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteTapeArchiveRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteTapeArchiveRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

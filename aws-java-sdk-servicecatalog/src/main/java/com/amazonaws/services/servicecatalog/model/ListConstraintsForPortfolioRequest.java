@@ -417,4 +417,5 @@ public class ListConstraintsForPortfolioRequest extends com.amazonaws.AmazonWebS
     public ListConstraintsForPortfolioRequest clone() {
         return (ListConstraintsForPortfolioRequest) super.clone();
     }
+
 }

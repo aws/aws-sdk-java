@@ -176,4 +176,5 @@ public class CreateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateXssMatchSetRequest clone() {
         return (CreateXssMatchSetRequest) super.clone();
     }
+
 }

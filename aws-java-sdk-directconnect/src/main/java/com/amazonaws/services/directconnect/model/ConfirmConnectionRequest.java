@@ -97,4 +97,5 @@ public class ConfirmConnectionRequest extends com.amazonaws.AmazonWebServiceRequ
     public ConfirmConnectionRequest clone() {
         return (ConfirmConnectionRequest) super.clone();
     }
+
 }

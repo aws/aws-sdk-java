@@ -238,4 +238,5 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
     public UploadSSHPublicKeyRequest clone() {
         return (UploadSSHPublicKeyRequest) super.clone();
     }
+
 }

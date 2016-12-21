@@ -342,4 +342,5 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
     public DescribeReplicationInstancesRequest clone() {
         return (DescribeReplicationInstancesRequest) super.clone();
     }
+
 }

@@ -253,4 +253,5 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateDocumentRequest clone() {
         return (CreateDocumentRequest) super.clone();
     }
+
 }

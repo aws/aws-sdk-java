@@ -248,4 +248,5 @@ public class AcceptPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     public AcceptPortfolioShareRequest clone() {
         return (AcceptPortfolioShareRequest) super.clone();
     }
+
 }

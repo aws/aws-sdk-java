@@ -114,4 +114,5 @@ public class DescribeActivityRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeActivityRequest clone() {
         return (DescribeActivityRequest) super.clone();
     }
+
 }

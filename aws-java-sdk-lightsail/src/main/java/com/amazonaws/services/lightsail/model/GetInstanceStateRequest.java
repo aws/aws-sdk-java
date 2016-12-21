@@ -114,4 +114,5 @@ public class GetInstanceStateRequest extends com.amazonaws.AmazonWebServiceReque
     public GetInstanceStateRequest clone() {
         return (GetInstanceStateRequest) super.clone();
     }
+
 }

@@ -213,4 +213,5 @@ public class DeleteClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     public DeleteClusterSnapshotRequest clone() {
         return (DeleteClusterSnapshotRequest) super.clone();
     }
+
 }

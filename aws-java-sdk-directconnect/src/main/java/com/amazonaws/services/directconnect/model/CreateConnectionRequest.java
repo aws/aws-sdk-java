@@ -167,4 +167,5 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateConnectionRequest clone() {
         return (CreateConnectionRequest) super.clone();
     }
+
 }

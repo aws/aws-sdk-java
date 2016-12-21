@@ -243,4 +243,5 @@ public class ListTagsForStreamRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListTagsForStreamRequest clone() {
         return (ListTagsForStreamRequest) super.clone();
     }
+
 }

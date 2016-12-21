@@ -304,4 +304,5 @@ public class DescribeConfigurationSettingsRequest extends com.amazonaws.AmazonWe
     public DescribeConfigurationSettingsRequest clone() {
         return (DescribeConfigurationSettingsRequest) super.clone();
     }
+
 }

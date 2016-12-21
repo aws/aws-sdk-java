@@ -293,4 +293,5 @@ public class SetInstanceHealthRequest extends com.amazonaws.AmazonWebServiceRequ
     public SetInstanceHealthRequest clone() {
         return (SetInstanceHealthRequest) super.clone();
     }
+
 }

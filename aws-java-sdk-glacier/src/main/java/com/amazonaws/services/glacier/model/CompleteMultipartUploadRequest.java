@@ -431,4 +431,5 @@ public class CompleteMultipartUploadRequest extends com.amazonaws.AmazonWebServi
     public CompleteMultipartUploadRequest clone() {
         return (CompleteMultipartUploadRequest) super.clone();
     }
+
 }

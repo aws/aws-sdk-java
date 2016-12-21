@@ -169,4 +169,5 @@ public class GetAuthorizerRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetAuthorizerRequest clone() {
         return (GetAuthorizerRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
     public ListDomainNamesRequest clone() {
         return (ListDomainNamesRequest) super.clone();
     }
+
 }

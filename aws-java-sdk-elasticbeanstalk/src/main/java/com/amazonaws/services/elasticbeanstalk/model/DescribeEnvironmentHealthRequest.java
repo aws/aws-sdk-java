@@ -330,4 +330,5 @@ public class DescribeEnvironmentHealthRequest extends com.amazonaws.AmazonWebSer
     public DescribeEnvironmentHealthRequest clone() {
         return (DescribeEnvironmentHealthRequest) super.clone();
     }
+
 }

@@ -802,4 +802,5 @@ public class ListClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWeb
     public ListClosedWorkflowExecutionsRequest clone() {
         return (ListClosedWorkflowExecutionsRequest) super.clone();
     }
+
 }

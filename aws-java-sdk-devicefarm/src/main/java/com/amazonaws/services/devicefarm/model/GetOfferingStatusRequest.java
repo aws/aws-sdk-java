@@ -123,4 +123,5 @@ public class GetOfferingStatusRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetOfferingStatusRequest clone() {
         return (GetOfferingStatusRequest) super.clone();
     }
+
 }

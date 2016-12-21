@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CancelStepsRequestMarshaller implements Marshaller<Request<CancelStepsRequest>, CancelStepsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CancelStepsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CancelStepsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

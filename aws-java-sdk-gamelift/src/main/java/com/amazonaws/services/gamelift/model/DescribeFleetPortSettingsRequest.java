@@ -116,4 +116,5 @@ public class DescribeFleetPortSettingsRequest extends com.amazonaws.AmazonWebSer
     public DescribeFleetPortSettingsRequest clone() {
         return (DescribeFleetPortSettingsRequest) super.clone();
     }
+
 }

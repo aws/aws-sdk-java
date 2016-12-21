@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class GetContactReachabilityStatusRequestMarshaller implements
         Marshaller<Request<GetContactReachabilityStatusRequest>, GetContactReachabilityStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetContactReachabilityStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetContactReachabilityStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

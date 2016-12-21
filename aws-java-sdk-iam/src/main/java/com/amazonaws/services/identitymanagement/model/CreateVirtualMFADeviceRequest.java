@@ -273,4 +273,5 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     public CreateVirtualMFADeviceRequest clone() {
         return (CreateVirtualMFADeviceRequest) super.clone();
     }
+
 }

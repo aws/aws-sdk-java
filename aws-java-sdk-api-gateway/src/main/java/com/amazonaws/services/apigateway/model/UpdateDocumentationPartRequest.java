@@ -256,4 +256,5 @@ public class UpdateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     public UpdateDocumentationPartRequest clone() {
         return (UpdateDocumentationPartRequest) super.clone();
     }
+
 }

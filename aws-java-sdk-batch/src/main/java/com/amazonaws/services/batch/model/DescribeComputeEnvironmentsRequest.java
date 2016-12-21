@@ -355,4 +355,5 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
     public DescribeComputeEnvironmentsRequest clone() {
         return (DescribeComputeEnvironmentsRequest) super.clone();
     }
+
 }

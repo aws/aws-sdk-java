@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteTrustRequestMarshaller implements Marshaller<Request<DeleteTrustRequest>, DeleteTrustRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteTrustRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteTrustRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

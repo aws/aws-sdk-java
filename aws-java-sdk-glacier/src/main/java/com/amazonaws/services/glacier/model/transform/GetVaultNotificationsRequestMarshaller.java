@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetVaultNotificationsRequestMarshaller implements Marshaller<Request<GetVaultNotificationsRequest>, GetVaultNotificationsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetVaultNotificationsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetVaultNotificationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

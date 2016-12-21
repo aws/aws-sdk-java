@@ -179,4 +179,5 @@ public class ListConfigurationSetsRequest extends com.amazonaws.AmazonWebService
     public ListConfigurationSetsRequest clone() {
         return (ListConfigurationSetsRequest) super.clone();
     }
+
 }

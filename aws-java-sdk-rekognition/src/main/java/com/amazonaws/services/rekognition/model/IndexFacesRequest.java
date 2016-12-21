@@ -385,4 +385,5 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public IndexFacesRequest clone() {
         return (IndexFacesRequest) super.clone();
     }
+
 }

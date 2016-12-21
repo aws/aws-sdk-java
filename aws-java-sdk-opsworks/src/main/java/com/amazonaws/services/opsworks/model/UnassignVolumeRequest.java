@@ -114,4 +114,5 @@ public class UnassignVolumeRequest extends com.amazonaws.AmazonWebServiceRequest
     public UnassignVolumeRequest clone() {
         return (UnassignVolumeRequest) super.clone();
     }
+
 }

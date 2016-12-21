@@ -368,4 +368,5 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateServiceRequest clone() {
         return (UpdateServiceRequest) super.clone();
     }
+
 }

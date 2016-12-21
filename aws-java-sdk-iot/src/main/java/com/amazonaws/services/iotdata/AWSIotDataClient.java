@@ -66,42 +66,43 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedDocumentEncodingException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MethodNotAllowedException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.MethodNotAllowedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.ConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.ServiceUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.InternalFailureException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.UnauthorizedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RequestEntityTooLargeException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.RequestEntityTooLargeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.InvalidRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.ThrottlingException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.iotdata.model.ResourceNotFoundException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.iotdata.model.AWSIotDataException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedDocumentEncodingException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MethodNotAllowedException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.MethodNotAllowedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.ConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.InternalFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestEntityTooLargeException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.RequestEntityTooLargeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.iotdata.model.ResourceNotFoundException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iotdata.model.AWSIotDataException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane. A credentials provider chain will be

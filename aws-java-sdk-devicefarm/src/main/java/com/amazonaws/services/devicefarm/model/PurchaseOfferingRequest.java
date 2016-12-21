@@ -169,4 +169,5 @@ public class PurchaseOfferingRequest extends com.amazonaws.AmazonWebServiceReque
     public PurchaseOfferingRequest clone() {
         return (PurchaseOfferingRequest) super.clone();
     }
+
 }

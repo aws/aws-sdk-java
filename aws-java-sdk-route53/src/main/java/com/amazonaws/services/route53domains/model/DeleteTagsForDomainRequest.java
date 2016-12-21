@@ -407,4 +407,5 @@ public class DeleteTagsForDomainRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteTagsForDomainRequest clone() {
         return (DeleteTagsForDomainRequest) super.clone();
     }
+
 }

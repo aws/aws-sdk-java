@@ -114,4 +114,5 @@ public class StartInstanceRequest extends com.amazonaws.AmazonWebServiceRequest 
     public StartInstanceRequest clone() {
         return (StartInstanceRequest) super.clone();
     }
+
 }

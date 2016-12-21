@@ -150,4 +150,5 @@ public class SetLocalConsolePasswordRequest extends com.amazonaws.AmazonWebServi
     public SetLocalConsolePasswordRequest clone() {
         return (SetLocalConsolePasswordRequest) super.clone();
     }
+
 }

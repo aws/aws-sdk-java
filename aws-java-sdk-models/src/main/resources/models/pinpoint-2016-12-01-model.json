@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-12-01",
     "endpointPrefix" : "pinpoint",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "CreateCampaign" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Creates or updates a campaign.",
       "errors" : [ {
@@ -74,7 +76,8 @@
       }
     },
     "CreateImportJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Creates or updates an import job.",
       "errors" : [ {
@@ -134,7 +137,8 @@
       }
     },
     "CreateSegment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Used to create or update a segment.",
       "errors" : [ {
@@ -194,7 +198,8 @@
       }
     },
     "DeleteApnsChannel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Deletes the APNs channel for an app.",
       "errors" : [ {
@@ -254,7 +259,8 @@
       }
     },
     "DeleteCampaign" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Deletes a campaign.",
       "errors" : [ {
@@ -314,7 +320,8 @@
       }
     },
     "DeleteGcmChannel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Deletes the GCM channel for an app.",
       "errors" : [ {
@@ -374,7 +381,8 @@
       }
     },
     "DeleteSegment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Deletes a segment.",
       "errors" : [ {
@@ -434,7 +442,8 @@
       }
     },
     "GetApnsChannel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about the APNs channel for an app.",
       "errors" : [ {
@@ -494,7 +503,8 @@
       }
     },
     "GetApplicationSettings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Used to request the settings for an app.",
       "errors" : [ {
@@ -554,7 +564,8 @@
       }
     },
     "GetCampaign" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about a campaign.",
       "errors" : [ {
@@ -614,7 +625,8 @@
       }
     },
     "GetCampaignActivities" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about the activity performed by a campaign.",
       "errors" : [ {
@@ -674,7 +686,8 @@
       }
     },
     "GetCampaignVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about your campaign versions.",
       "errors" : [ {
@@ -734,7 +747,8 @@
       }
     },
     "GetCampaignVersions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about your campaign versions.",
       "errors" : [ {
@@ -794,7 +808,8 @@
       }
     },
     "GetCampaigns" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about your campaigns.",
       "errors" : [ {
@@ -854,7 +869,8 @@
       }
     },
     "GetEndpoint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about an endpoint.",
       "errors" : [ {
@@ -914,7 +930,8 @@
       }
     },
     "GetGcmChannel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about the GCM channel for an app.",
       "errors" : [ {
@@ -974,7 +991,8 @@
       }
     },
     "GetImportJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about an import job.",
       "errors" : [ {
@@ -1034,7 +1052,8 @@
       }
     },
     "GetImportJobs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about your import jobs.",
       "errors" : [ {
@@ -1094,7 +1113,8 @@
       }
     },
     "GetSegment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about a segment.",
       "errors" : [ {
@@ -1154,7 +1174,8 @@
       }
     },
     "GetSegmentImportJobs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns a list of import jobs for a specific segment.",
       "errors" : [ {
@@ -1214,7 +1235,8 @@
       }
     },
     "GetSegmentVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about a segment version.",
       "errors" : [ {
@@ -1274,7 +1296,8 @@
       }
     },
     "GetSegmentVersions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Returns information about your segment versions.",
       "errors" : [ {
@@ -1334,7 +1357,8 @@
       }
     },
     "GetSegments" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Used to get information about your segments.",
       "errors" : [ {
@@ -1394,7 +1418,8 @@
       }
     },
     "UpdateApnsChannel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update the APNs channel for an app.",
       "errors" : [ {
@@ -1454,7 +1479,8 @@
       }
     },
     "UpdateApplicationSettings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Used to update the settings for an app.",
       "errors" : [ {
@@ -1514,7 +1540,8 @@
       }
     },
     "UpdateCampaign" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update a campaign.",
       "errors" : [ {
@@ -1574,7 +1601,8 @@
       }
     },
     "UpdateEndpoint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update an endpoint.",
       "errors" : [ {
@@ -1634,7 +1662,8 @@
       }
     },
     "UpdateEndpointsBatch" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update your endpoints.",
       "errors" : [ {
@@ -1694,7 +1723,8 @@
       }
     },
     "UpdateGcmChannel" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update the GCM channel for an app.",
       "errors" : [ {
@@ -1754,7 +1784,8 @@
       }
     },
     "UpdateSegment" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update a segment.",
       "errors" : [ {

@@ -566,4 +566,5 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public EncryptRequest clone() {
         return (EncryptRequest) super.clone();
     }
+
 }

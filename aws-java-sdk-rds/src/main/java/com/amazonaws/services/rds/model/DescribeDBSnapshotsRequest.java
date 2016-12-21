@@ -1273,4 +1273,5 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeDBSnapshotsRequest clone() {
         return (DescribeDBSnapshotsRequest) super.clone();
     }
+
 }

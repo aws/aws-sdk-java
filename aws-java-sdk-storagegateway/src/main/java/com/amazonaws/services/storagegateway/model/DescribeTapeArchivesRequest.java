@@ -259,4 +259,5 @@ public class DescribeTapeArchivesRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeTapeArchivesRequest clone() {
         return (DescribeTapeArchivesRequest) super.clone();
     }
+
 }

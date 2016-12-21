@@ -169,4 +169,5 @@ public class DescribeUserPoolClientRequest extends com.amazonaws.AmazonWebServic
     public DescribeUserPoolClientRequest clone() {
         return (DescribeUserPoolClientRequest) super.clone();
     }
+
 }

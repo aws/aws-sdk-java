@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ResetCacheRequestMarshaller implements Marshaller<Request<ResetCacheRequest>, ResetCacheRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ResetCacheRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ResetCacheRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

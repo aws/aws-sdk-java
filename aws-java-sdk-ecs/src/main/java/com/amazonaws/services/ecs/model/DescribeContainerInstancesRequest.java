@@ -207,4 +207,5 @@ public class DescribeContainerInstancesRequest extends com.amazonaws.AmazonWebSe
     public DescribeContainerInstancesRequest clone() {
         return (DescribeContainerInstancesRequest) super.clone();
     }
+
 }

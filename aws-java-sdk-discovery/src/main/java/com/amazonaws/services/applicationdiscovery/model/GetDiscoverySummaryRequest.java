@@ -60,4 +60,5 @@ public class GetDiscoverySummaryRequest extends com.amazonaws.AmazonWebServiceRe
     public GetDiscoverySummaryRequest clone() {
         return (GetDiscoverySummaryRequest) super.clone();
     }
+
 }

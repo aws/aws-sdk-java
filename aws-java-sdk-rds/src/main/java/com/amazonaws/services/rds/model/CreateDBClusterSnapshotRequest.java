@@ -569,4 +569,5 @@ public class CreateDBClusterSnapshotRequest extends com.amazonaws.AmazonWebServi
     public CreateDBClusterSnapshotRequest clone() {
         return (CreateDBClusterSnapshotRequest) super.clone();
     }
+
 }

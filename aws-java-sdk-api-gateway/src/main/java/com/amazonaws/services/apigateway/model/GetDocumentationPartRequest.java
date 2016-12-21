@@ -169,4 +169,5 @@ public class GetDocumentationPartRequest extends com.amazonaws.AmazonWebServiceR
     public GetDocumentationPartRequest clone() {
         return (GetDocumentationPartRequest) super.clone();
     }
+
 }

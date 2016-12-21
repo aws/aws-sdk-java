@@ -203,4 +203,5 @@ public class AddWorkingStorageRequest extends com.amazonaws.AmazonWebServiceRequ
     public AddWorkingStorageRequest clone() {
         return (AddWorkingStorageRequest) super.clone();
     }
+
 }

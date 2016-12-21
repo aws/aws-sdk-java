@@ -114,4 +114,5 @@ public class DeleteInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
     public DeleteInstanceSnapshotRequest clone() {
         return (DeleteInstanceSnapshotRequest) super.clone();
     }
+
 }

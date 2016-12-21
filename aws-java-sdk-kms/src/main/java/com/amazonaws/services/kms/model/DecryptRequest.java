@@ -352,4 +352,5 @@ public class DecryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public DecryptRequest clone() {
         return (DecryptRequest) super.clone();
     }
+
 }

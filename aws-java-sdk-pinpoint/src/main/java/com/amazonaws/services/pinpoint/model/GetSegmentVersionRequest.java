@@ -165,4 +165,5 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetSegmentVersionRequest clone() {
         return (GetSegmentVersionRequest) super.clone();
     }
+
 }

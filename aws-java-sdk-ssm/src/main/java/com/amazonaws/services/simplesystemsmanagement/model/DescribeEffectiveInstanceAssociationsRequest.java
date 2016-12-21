@@ -227,4 +227,5 @@ public class DescribeEffectiveInstanceAssociationsRequest extends com.amazonaws.
     public DescribeEffectiveInstanceAssociationsRequest clone() {
         return (DescribeEffectiveInstanceAssociationsRequest) super.clone();
     }
+
 }

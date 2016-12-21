@@ -259,4 +259,5 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
     public GetFunctionConfigurationRequest clone() {
         return (GetFunctionConfigurationRequest) super.clone();
     }
+
 }

@@ -217,4 +217,5 @@ public class DeleteDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteDatasetRequest clone() {
         return (DeleteDatasetRequest) super.clone();
     }
+
 }

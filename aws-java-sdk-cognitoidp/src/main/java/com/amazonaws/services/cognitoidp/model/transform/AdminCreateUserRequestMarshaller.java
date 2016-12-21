@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminCreateUserRequestMarshaller implements Marshaller<Request<AdminCreateUserRequest>, AdminCreateUserRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminCreateUserRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminCreateUserRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

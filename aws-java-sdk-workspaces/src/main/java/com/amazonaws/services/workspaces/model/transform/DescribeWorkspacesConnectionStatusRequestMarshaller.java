@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeWorkspacesConnectionStatusRequestMarshaller implements
         Marshaller<Request<DescribeWorkspacesConnectionStatusRequest>, DescribeWorkspacesConnectionStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeWorkspacesConnectionStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeWorkspacesConnectionStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

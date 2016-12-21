@@ -174,4 +174,5 @@ public class DescribePermissionsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribePermissionsRequest clone() {
         return (DescribePermissionsRequest) super.clone();
     }
+
 }

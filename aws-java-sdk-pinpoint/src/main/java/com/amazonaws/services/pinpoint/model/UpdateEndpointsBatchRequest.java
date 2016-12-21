@@ -130,4 +130,5 @@ public class UpdateEndpointsBatchRequest extends com.amazonaws.AmazonWebServiceR
     public UpdateEndpointsBatchRequest clone() {
         return (UpdateEndpointsBatchRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeCACertificateRequestMarshaller implements Marshaller<Request<DescribeCACertificateRequest>, DescribeCACertificateRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeCACertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeCACertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

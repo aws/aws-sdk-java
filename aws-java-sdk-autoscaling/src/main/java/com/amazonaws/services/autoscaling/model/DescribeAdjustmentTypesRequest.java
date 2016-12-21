@@ -60,4 +60,5 @@ public class DescribeAdjustmentTypesRequest extends com.amazonaws.AmazonWebServi
     public DescribeAdjustmentTypesRequest clone() {
         return (DescribeAdjustmentTypesRequest) super.clone();
     }
+
 }

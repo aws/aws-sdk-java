@@ -474,4 +474,5 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public SendBounceRequest clone() {
         return (SendBounceRequest) super.clone();
     }
+
 }

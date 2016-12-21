@@ -63,18 +63,19 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                            com.amazonaws.services.xray.model.InvalidRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ThrottledException").withModeledClass(
-                            com.amazonaws.services.xray.model.ThrottledException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.xray.model.AWSXRayException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
+                                    com.amazonaws.services.xray.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottledException").withModeledClass(
+                                    com.amazonaws.services.xray.model.ThrottledException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.xray.model.AWSXRayException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS X-Ray. A credentials provider chain will be used that

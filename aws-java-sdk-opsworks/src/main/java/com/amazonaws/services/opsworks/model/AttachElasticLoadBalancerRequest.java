@@ -167,4 +167,5 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
     public AttachElasticLoadBalancerRequest clone() {
         return (AttachElasticLoadBalancerRequest) super.clone();
     }
+
 }

@@ -282,4 +282,5 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
     public DescribeFleetUtilizationRequest clone() {
         return (DescribeFleetUtilizationRequest) super.clone();
     }
+
 }

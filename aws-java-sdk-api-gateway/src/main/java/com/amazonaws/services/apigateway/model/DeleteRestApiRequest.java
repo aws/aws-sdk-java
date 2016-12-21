@@ -116,4 +116,5 @@ public class DeleteRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteRestApiRequest clone() {
         return (DeleteRestApiRequest) super.clone();
     }
+
 }

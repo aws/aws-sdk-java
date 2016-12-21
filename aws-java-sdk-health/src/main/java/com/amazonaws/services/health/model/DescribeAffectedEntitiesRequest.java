@@ -294,4 +294,5 @@ public class DescribeAffectedEntitiesRequest extends com.amazonaws.AmazonWebServ
     public DescribeAffectedEntitiesRequest clone() {
         return (DescribeAffectedEntitiesRequest) super.clone();
     }
+
 }

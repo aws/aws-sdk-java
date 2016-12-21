@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class GenerateDataKeyWithoutPlaintextRequestMarshaller implements
         Marshaller<Request<GenerateDataKeyWithoutPlaintextRequest>, GenerateDataKeyWithoutPlaintextRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GenerateDataKeyWithoutPlaintextRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GenerateDataKeyWithoutPlaintextRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

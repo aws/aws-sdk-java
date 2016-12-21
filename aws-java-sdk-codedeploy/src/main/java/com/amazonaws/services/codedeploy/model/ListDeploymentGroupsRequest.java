@@ -176,4 +176,5 @@ public class ListDeploymentGroupsRequest extends com.amazonaws.AmazonWebServiceR
     public ListDeploymentGroupsRequest clone() {
         return (ListDeploymentGroupsRequest) super.clone();
     }
+
 }

@@ -188,4 +188,5 @@ public class GetComplianceSummaryByResourceTypeRequest extends com.amazonaws.Ama
     public GetComplianceSummaryByResourceTypeRequest clone() {
         return (GetComplianceSummaryByResourceTypeRequest) super.clone();
     }
+
 }

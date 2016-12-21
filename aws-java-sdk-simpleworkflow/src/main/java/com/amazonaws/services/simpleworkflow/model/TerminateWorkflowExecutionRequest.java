@@ -577,4 +577,5 @@ public class TerminateWorkflowExecutionRequest extends com.amazonaws.AmazonWebSe
     public TerminateWorkflowExecutionRequest clone() {
         return (TerminateWorkflowExecutionRequest) super.clone();
     }
+
 }

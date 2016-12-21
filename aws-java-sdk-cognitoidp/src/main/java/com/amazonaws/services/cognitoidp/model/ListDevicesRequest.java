@@ -222,4 +222,5 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListDevicesRequest clone() {
         return (ListDevicesRequest) super.clone();
     }
+
 }

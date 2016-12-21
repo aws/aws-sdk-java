@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class TransferDomainRequestMarshaller implements Marshaller<Request<TransferDomainRequest>, TransferDomainRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TransferDomainRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TransferDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

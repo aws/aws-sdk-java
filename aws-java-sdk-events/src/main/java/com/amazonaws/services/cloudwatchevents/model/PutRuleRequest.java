@@ -414,4 +414,5 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public PutRuleRequest clone() {
         return (PutRuleRequest) super.clone();
     }
+
 }

@@ -66,33 +66,34 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.AccessDeniedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IncompatibleVersionException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.ValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.InternalServiceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.elastictranscoder.model.LimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncompatibleVersionException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.InternalServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.elastictranscoder.model.LimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elastic Transcoder. A credentials provider chain will

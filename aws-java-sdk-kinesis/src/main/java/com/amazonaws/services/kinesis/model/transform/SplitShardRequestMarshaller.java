@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SplitShardRequestMarshaller implements Marshaller<Request<SplitShardRequest>, SplitShardRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SplitShardRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SplitShardRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

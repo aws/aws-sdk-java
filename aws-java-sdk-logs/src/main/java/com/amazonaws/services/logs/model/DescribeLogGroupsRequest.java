@@ -220,4 +220,5 @@ public class DescribeLogGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeLogGroupsRequest clone() {
         return (DescribeLogGroupsRequest) super.clone();
     }
+
 }

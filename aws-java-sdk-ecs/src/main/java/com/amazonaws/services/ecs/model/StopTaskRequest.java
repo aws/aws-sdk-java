@@ -244,4 +244,5 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public StopTaskRequest clone() {
         return (StopTaskRequest) super.clone();
     }
+
 }

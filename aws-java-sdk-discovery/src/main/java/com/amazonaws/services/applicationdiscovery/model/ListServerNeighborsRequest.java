@@ -389,4 +389,5 @@ public class ListServerNeighborsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListServerNeighborsRequest clone() {
         return (ListServerNeighborsRequest) super.clone();
     }
+
 }

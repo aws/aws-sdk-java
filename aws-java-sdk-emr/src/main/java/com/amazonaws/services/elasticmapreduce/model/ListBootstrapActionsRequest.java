@@ -169,4 +169,5 @@ public class ListBootstrapActionsRequest extends com.amazonaws.AmazonWebServiceR
     public ListBootstrapActionsRequest clone() {
         return (ListBootstrapActionsRequest) super.clone();
     }
+
 }

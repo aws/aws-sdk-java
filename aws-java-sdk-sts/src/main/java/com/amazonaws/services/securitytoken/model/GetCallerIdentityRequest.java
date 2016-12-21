@@ -60,4 +60,5 @@ public class GetCallerIdentityRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetCallerIdentityRequest clone() {
         return (GetCallerIdentityRequest) super.clone();
     }
+
 }

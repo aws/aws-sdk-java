@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateConstraintRequestMarshaller implements Marshaller<Request<CreateConstraintRequest>, CreateConstraintRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateConstraintRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateConstraintRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

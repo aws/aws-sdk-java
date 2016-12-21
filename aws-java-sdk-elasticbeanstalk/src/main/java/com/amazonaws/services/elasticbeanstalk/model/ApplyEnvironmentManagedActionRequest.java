@@ -222,4 +222,5 @@ public class ApplyEnvironmentManagedActionRequest extends com.amazonaws.AmazonWe
     public ApplyEnvironmentManagedActionRequest clone() {
         return (ApplyEnvironmentManagedActionRequest) super.clone();
     }
+
 }

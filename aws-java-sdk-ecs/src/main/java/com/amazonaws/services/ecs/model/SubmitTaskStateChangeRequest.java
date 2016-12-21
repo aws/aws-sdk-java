@@ -273,4 +273,5 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     public SubmitTaskStateChangeRequest clone() {
         return (SubmitTaskStateChangeRequest) super.clone();
     }
+
 }

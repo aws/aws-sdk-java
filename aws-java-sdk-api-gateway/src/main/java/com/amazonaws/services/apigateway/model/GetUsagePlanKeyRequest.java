@@ -176,4 +176,5 @@ public class GetUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReques
     public GetUsagePlanKeyRequest clone() {
         return (GetUsagePlanKeyRequest) super.clone();
     }
+
 }

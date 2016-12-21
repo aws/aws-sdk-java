@@ -186,4 +186,5 @@ public class UpdateThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateThingShadowRequest clone() {
         return (UpdateThingShadowRequest) super.clone();
     }
+
 }

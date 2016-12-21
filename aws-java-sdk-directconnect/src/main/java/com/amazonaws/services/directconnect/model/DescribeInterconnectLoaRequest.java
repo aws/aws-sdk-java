@@ -236,4 +236,5 @@ public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServi
     public DescribeInterconnectLoaRequest clone() {
         return (DescribeInterconnectLoaRequest) super.clone();
     }
+
 }

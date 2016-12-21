@@ -203,4 +203,5 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateDomainNameRequest clone() {
         return (UpdateDomainNameRequest) super.clone();
     }
+
 }

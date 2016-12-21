@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateImportJobRequestMarshaller implements Marshaller<Request<CreateImportJobRequest>, CreateImportJobRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateImportJobRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateImportJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateBGPPeerRequestMarshaller implements Marshaller<Request<CreateBGPPeerRequest>, CreateBGPPeerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateBGPPeerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateBGPPeerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

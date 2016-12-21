@@ -227,4 +227,5 @@ public class DescribeOrderableReplicationInstancesRequest extends com.amazonaws.
     public DescribeOrderableReplicationInstancesRequest clone() {
         return (DescribeOrderableReplicationInstancesRequest) super.clone();
     }
+
 }

@@ -88,95 +88,96 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoRunningConfigurationRecorderException").withModeledClass(
-                            com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotDiscoveredException").withModeledClass(
-                            com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidParameterValueException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.config.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoAvailableDeliveryChannelException").withModeledClass(
-                            com.amazonaws.services.config.model.NoAvailableDeliveryChannelException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResultTokenException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidResultTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withModeledClass(
-                            com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InsufficientDeliveryPolicyException").withModeledClass(
-                            com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withModeledClass(
-                            com.amazonaws.services.config.model.NoSuchBucketException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoAvailableConfigurationRecorderException").withModeledClass(
-                            com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoSuchDeliveryChannelException").withModeledClass(
-                            com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRecordingGroupException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationRecorderNameException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.config.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LastDeliveryChannelDeleteFailedException").withModeledClass(
-                            com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidSNSTopicARNException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidTimeRangeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigRuleException").withModeledClass(
-                            com.amazonaws.services.config.model.NoSuchConfigRuleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidLimitException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidRoleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withModeledClass(
-                            com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationRecorderException").withModeledClass(
-                            com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                            com.amazonaws.services.config.model.ValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDeliveryChannelNameException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigRulesExceededException").withModeledClass(
-                            com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
-                            com.amazonaws.services.config.model.InsufficientPermissionsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyPrefixException").withModeledClass(
-                            com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.config.model.AmazonConfigException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoRunningConfigurationRecorderException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotDiscoveredException").withModeledClass(
+                                    com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.config.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableDeliveryChannelException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoAvailableDeliveryChannelException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResultTokenException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidResultTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientDeliveryPolicyException").withModeledClass(
+                                    com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchBucketException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableConfigurationRecorderException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchDeliveryChannelException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRecordingGroupException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationRecorderNameException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LastDeliveryChannelDeleteFailedException").withModeledClass(
+                                    com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSNSTopicARNException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidTimeRangeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigRuleException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchConfigRuleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationRecorderException").withModeledClass(
+                                    com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.config.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeliveryChannelNameException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigRulesExceededException").withModeledClass(
+                                    com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
+                                    com.amazonaws.services.config.model.InsufficientPermissionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyPrefixException").withModeledClass(
+                                    com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.config.model.AmazonConfigException.class));
 
     /**
      * Constructs a new client to invoke service methods on Config Service. A credentials provider chain will be used

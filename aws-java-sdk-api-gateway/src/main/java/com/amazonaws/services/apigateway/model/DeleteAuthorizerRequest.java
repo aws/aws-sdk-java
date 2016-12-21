@@ -169,4 +169,5 @@ public class DeleteAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteAuthorizerRequest clone() {
         return (DeleteAuthorizerRequest) super.clone();
     }
+
 }

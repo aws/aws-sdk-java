@@ -227,4 +227,5 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public PutImageRequest clone() {
         return (PutImageRequest) super.clone();
     }
+
 }

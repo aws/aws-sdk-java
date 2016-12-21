@@ -116,4 +116,5 @@ public class DescribeElasticsearchDomainRequest extends com.amazonaws.AmazonWebS
     public DescribeElasticsearchDomainRequest clone() {
         return (DescribeElasticsearchDomainRequest) super.clone();
     }
+
 }

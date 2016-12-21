@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeNodeAssociationStatusRequestMarshaller implements
         Marshaller<Request<DescribeNodeAssociationStatusRequest>, DescribeNodeAssociationStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeNodeAssociationStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeNodeAssociationStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

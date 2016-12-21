@@ -303,4 +303,5 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CreateUserRequest clone() {
         return (CreateUserRequest) super.clone();
     }
+
 }

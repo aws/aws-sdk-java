@@ -60,6 +60,7 @@
     "cucumberModuleInjectorClassName" : "AWSSupportModuleInjector",
     "defaultEndpoint" : "https://support.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "support.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS Support</fullname> <p>The AWS Support API reference is intended for programmers who need detailed information about the AWS Support operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP methods that return results in JSON format.</p> <p>The AWS Support service also exposes a set of <a href=\"http://aws.amazon.com/premiumsupport/trustedadvisor/\">Trusted Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify checks to refresh, and get the refresh status of checks. </p> <p>The following list describes the AWS Support case management operations:</p> <ul> <li> <p> <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return AWS service names, service codes, service categories, and problem severity levels. You use these values when you call the <a>CreateCase</a> operation. </p> </li> <li> <p> <b>Case creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>, <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases, retrieve information about cases, and resolve cases.</p> </li> <li> <p> <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments to AWS Support cases. </p> </li> </ul> <p>The following list describes the operations available from the AWS Support service for Trusted Advisor:</p> <ul> <li> <p> <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run against your AWS resources.</p> </li> <li> <p>Using the <code>checkId</code> for a specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check you specified.</p> </li> <li> <p> <a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results for one or more Trusted Advisor checks.</p> </li> <li> <p> <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a specified check. </p> </li> <li> <p> <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status of one or more checks. </p> </li> </ul> <p>For authentication of requests, AWS Support uses <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4 Signing Process</a>.</p> <p>See <a href=\"http://docs.aws.amazon.com/awssupport/latest/user/Welcome.html\">About the AWS Support API</a> in the <i>AWS Support User Guide</i> for information about how to use this service to create and manage your support cases, and how to call Trusted Advisor for results of checks on your resources. </p>",
     "endpointPrefix" : "support",
     "hasApiWithStreamInput" : false,
@@ -70,7 +71,10 @@
     "packagePath" : "com/amazonaws/services/support",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Support",
     "serviceName" : "AWS Support",
@@ -975,6 +979,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "attachments" ],
       "shapeName" : "AddAttachmentsToSetRequest",
       "unmarshaller" : null,
@@ -1234,6 +1240,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddAttachmentsToSetResult",
       "unmarshaller" : {
@@ -1871,6 +1879,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "communicationBody" ],
       "shapeName" : "AddCommunicationToCaseRequest",
       "unmarshaller" : null,
@@ -2017,6 +2027,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddCommunicationToCaseResult",
       "unmarshaller" : {
@@ -2279,6 +2291,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Attachment",
       "unmarshaller" : {
@@ -2541,6 +2555,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttachmentDetails",
       "unmarshaller" : {
@@ -2576,6 +2592,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttachmentIdNotFoundException",
       "unmarshaller" : null,
@@ -2608,6 +2626,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttachmentLimitExceededException",
       "unmarshaller" : null,
@@ -2640,6 +2660,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttachmentSetExpiredException",
       "unmarshaller" : null,
@@ -2672,6 +2694,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttachmentSetIdNotFoundException",
       "unmarshaller" : null,
@@ -2704,6 +2728,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttachmentSetSizeLimitExceededException",
       "unmarshaller" : null,
@@ -2736,6 +2762,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CaseCreationLimitExceededException",
       "unmarshaller" : null,
@@ -4267,6 +4295,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CaseDetails",
       "unmarshaller" : {
@@ -4302,6 +4332,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CaseIdNotFoundException",
       "unmarshaller" : null,
@@ -4561,6 +4593,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Category",
       "unmarshaller" : {
@@ -5304,6 +5338,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Communication",
       "unmarshaller" : {
@@ -6506,6 +6542,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "subject", "communicationBody" ],
       "shapeName" : "CreateCaseRequest",
       "unmarshaller" : null,
@@ -6652,6 +6690,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateCaseResult",
       "unmarshaller" : {
@@ -6687,6 +6727,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAttachmentLimitExceededException",
       "unmarshaller" : null,
@@ -6840,6 +6882,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "attachmentId" ],
       "shapeName" : "DescribeAttachmentRequest",
       "unmarshaller" : null,
@@ -6986,6 +7030,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAttachmentResult",
       "unmarshaller" : {
@@ -8188,6 +8234,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCasesRequest",
       "unmarshaller" : null,
@@ -8589,6 +8637,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCasesResult",
       "unmarshaller" : {
@@ -9197,6 +9247,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "caseId" ],
       "shapeName" : "DescribeCommunicationsRequest",
       "unmarshaller" : null,
@@ -9598,6 +9650,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCommunicationsResult",
       "unmarshaller" : {
@@ -10009,6 +10063,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeServicesRequest",
       "unmarshaller" : null,
@@ -10297,6 +10353,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeServicesResult",
       "unmarshaller" : {
@@ -10453,6 +10511,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeSeverityLevelsRequest",
       "unmarshaller" : null,
@@ -10741,6 +10801,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeSeverityLevelsResult",
       "unmarshaller" : {
@@ -11039,6 +11101,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkIds" ],
       "shapeName" : "DescribeTrustedAdvisorCheckRefreshStatusesRequest",
       "unmarshaller" : null,
@@ -11327,6 +11391,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "statuses" ],
       "shapeName" : "DescribeTrustedAdvisorCheckRefreshStatusesResult",
       "unmarshaller" : {
@@ -11596,6 +11662,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkId" ],
       "shapeName" : "DescribeTrustedAdvisorCheckResultRequest",
       "unmarshaller" : null,
@@ -11742,6 +11810,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTrustedAdvisorCheckResultResult",
       "unmarshaller" : {
@@ -12040,6 +12110,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkIds" ],
       "shapeName" : "DescribeTrustedAdvisorCheckSummariesRequest",
       "unmarshaller" : null,
@@ -12328,6 +12400,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "summaries" ],
       "shapeName" : "DescribeTrustedAdvisorCheckSummariesResult",
       "unmarshaller" : {
@@ -12484,6 +12558,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "language" ],
       "shapeName" : "DescribeTrustedAdvisorChecksRequest",
       "unmarshaller" : null,
@@ -12772,6 +12848,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checks" ],
       "shapeName" : "DescribeTrustedAdvisorChecksResult",
       "unmarshaller" : {
@@ -12807,6 +12885,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerErrorException",
       "unmarshaller" : null,
@@ -13208,6 +13288,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RecentCaseCommunications",
       "unmarshaller" : {
@@ -13364,6 +13446,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkId" ],
       "shapeName" : "RefreshTrustedAdvisorCheckRequest",
       "unmarshaller" : null,
@@ -13510,6 +13594,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "status" ],
       "shapeName" : "RefreshTrustedAdvisorCheckResult",
       "unmarshaller" : {
@@ -13666,6 +13752,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResolveCaseRequest",
       "unmarshaller" : null,
@@ -13925,6 +14013,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResolveCaseResult",
       "unmarshaller" : {
@@ -14442,6 +14532,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Service",
       "unmarshaller" : {
@@ -14704,6 +14796,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SeverityLevel",
       "unmarshaller" : {
@@ -14853,6 +14947,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TrustedAdvisorCategorySpecificSummary",
       "unmarshaller" : {
@@ -15596,6 +15692,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "id", "name", "description", "category", "metadata" ],
       "shapeName" : "TrustedAdvisorCheckDescription",
       "unmarshaller" : {
@@ -15971,6 +16069,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkId", "status", "millisUntilNextRefreshable" ],
       "shapeName" : "TrustedAdvisorCheckRefreshStatus",
       "unmarshaller" : {
@@ -16827,6 +16927,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkId", "timestamp", "status", "resourcesSummary", "categorySpecificSummary", "flaggedResources" ],
       "shapeName" : "TrustedAdvisorCheckResult",
       "unmarshaller" : {
@@ -17541,6 +17643,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "checkId", "timestamp", "status", "resourcesSummary", "categorySpecificSummary" ],
       "shapeName" : "TrustedAdvisorCheckSummary",
       "unmarshaller" : {
@@ -17803,6 +17907,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "estimatedMonthlySavings", "estimatedPercentMonthlySavings" ],
       "shapeName" : "TrustedAdvisorCostOptimizingSummary",
       "unmarshaller" : {
@@ -18546,6 +18652,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "status", "resourceId", "metadata" ],
       "shapeName" : "TrustedAdvisorResourceDetail",
       "unmarshaller" : {
@@ -19034,6 +19142,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "resourcesProcessed", "resourcesFlagged", "resourcesIgnored", "resourcesSuppressed" ],
       "shapeName" : "TrustedAdvisorResourcesSummary",
       "unmarshaller" : {
@@ -19052,6 +19162,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

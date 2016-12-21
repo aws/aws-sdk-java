@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteFacesRequestMarshaller implements Marshaller<Request<DeleteFacesRequest>, DeleteFacesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteFacesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteFacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

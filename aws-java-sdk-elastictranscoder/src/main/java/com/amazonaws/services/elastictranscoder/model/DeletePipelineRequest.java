@@ -116,4 +116,5 @@ public class DeletePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeletePipelineRequest clone() {
         return (DeletePipelineRequest) super.clone();
     }
+
 }

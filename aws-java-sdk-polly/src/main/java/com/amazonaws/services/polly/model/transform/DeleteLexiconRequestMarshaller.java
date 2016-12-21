@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteLexiconRequestMarshaller implements Marshaller<Request<DeleteLexiconRequest>, DeleteLexiconRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteLexiconRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteLexiconRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

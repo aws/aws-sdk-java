@@ -116,4 +116,5 @@ public class GetDomainNameRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetDomainNameRequest clone() {
         return (GetDomainNameRequest) super.clone();
     }
+
 }

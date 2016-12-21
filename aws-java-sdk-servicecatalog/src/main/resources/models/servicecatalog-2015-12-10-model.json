@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-12-10",
     "endpointPrefix" : "servicecatalog",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AcceptPortfolioShare" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Accepts an offer to share a portfolio.</p>",
       "errors" : [ {
@@ -56,7 +58,8 @@
       }
     },
     "AssociatePrincipalWithPortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Associates the specified principal ARN with the specified portfolio.</p>",
       "errors" : [ {
@@ -98,7 +101,8 @@
       }
     },
     "AssociateProductWithPortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Associates a product with a portfolio.</p>",
       "errors" : [ {
@@ -140,7 +144,8 @@
       }
     },
     "CreateConstraint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new constraint.</p>",
       "errors" : [ {
@@ -188,7 +193,8 @@
       }
     },
     "CreatePortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new portfolio.</p>",
       "errors" : [ {
@@ -224,7 +230,8 @@
       }
     },
     "CreatePortfolioShare" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new portfolio share.</p>",
       "errors" : [ {
@@ -266,7 +273,8 @@
       }
     },
     "CreateProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new product.</p>",
       "errors" : [ {
@@ -302,7 +310,8 @@
       }
     },
     "CreateProvisioningArtifact" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Create a new provisioning artifact for the specified product. This operation will not work with a product that has been shared with you.</p>",
       "errors" : [ {
@@ -344,7 +353,8 @@
       }
     },
     "DeleteConstraint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified constraint.</p>",
       "errors" : [ {
@@ -380,7 +390,8 @@
       }
     },
     "DeletePortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or if it has products, users, constraints, or shared accounts associated with it.</p>",
       "errors" : [ {
@@ -422,7 +433,8 @@
       }
     },
     "DeletePortfolioShare" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified portfolio share.</p>",
       "errors" : [ {
@@ -452,7 +464,8 @@
       }
     },
     "DeleteProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified product. This operation will not work with a product that has been shared with you or is associated with a portfolio. </p>",
       "errors" : [ {
@@ -494,7 +507,8 @@
       }
     },
     "DeleteProvisioningArtifact" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated with a product that has been shared with you, or on the last provisioning artifact associated with a product (a product must have at least one provisioning artifact).</p>",
       "errors" : [ {
@@ -536,7 +550,8 @@
       }
     },
     "DescribeConstraint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves detailed information for a specified constraint.</p>",
       "errors" : [ {
@@ -566,7 +581,8 @@
       }
     },
     "DescribePortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves detailed information and any tags associated with the specified portfolio.</p>",
       "errors" : [ {
@@ -596,7 +612,8 @@
       }
     },
     "DescribeProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a specified product.</p> <p>This operation is functionally identical to <a>DescribeProductView</a> except that it takes as input <code>ProductId</code> instead of <code>ProductViewId</code>.</p>",
       "errors" : [ {
@@ -632,7 +649,8 @@
       }
     },
     "DescribeProductAsAdmin" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a specified product, run with administrator access.</p>",
       "errors" : [ {
@@ -662,7 +680,8 @@
       }
     },
     "DescribeProductView" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a specified product.</p> <p>This operation is functionally identical to <a>DescribeProduct</a> except that it takes as input <code>ProductViewId</code> instead of <code>ProductId</code>.</p>",
       "errors" : [ {
@@ -698,7 +717,8 @@
       }
     },
     "DescribeProvisioningArtifact" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves detailed information about the specified provisioning artifact.</p>",
       "errors" : [ {
@@ -728,7 +748,8 @@
       }
     },
     "DescribeProvisioningParameters" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Provides information about parameters required to provision a specified product in a specified manner. Use this operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the <a>ProvisionProduct</a> operation for the specified product.</p>",
       "errors" : [ {
@@ -764,7 +785,8 @@
       }
     },
     "DescribeRecord" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves a paginated list of the full details of a specific request. Use this operation after calling a request operation (<a>ProvisionProduct</a>, <a>TerminateProvisionedProduct</a>, or <a>UpdateProvisionedProduct</a>). </p>",
       "errors" : [ {
@@ -794,7 +816,8 @@
       }
     },
     "DisassociatePrincipalFromPortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Disassociates a previously associated principal ARN from a specified portfolio.</p>",
       "errors" : [ {
@@ -830,7 +853,8 @@
       }
     },
     "DisassociateProductFromPortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Disassociates the specified product from the specified portfolio. </p>",
       "errors" : [ {
@@ -866,7 +890,8 @@
       }
     },
     "ListAcceptedPortfolioShares" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists details of all portfolios for which sharing was accepted by this account.</p>",
       "errors" : [ {
@@ -896,7 +921,8 @@
       }
     },
     "ListConstraintsForPortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves detailed constraint information for the specified portfolio and product.</p>",
       "errors" : [ {
@@ -932,7 +958,8 @@
       }
     },
     "ListLaunchPaths" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a paginated list of all paths to a specified product. A path is how the user has access to a specified product, and is necessary when provisioning a product. A path also determines the constraints put on the product.</p>",
       "errors" : [ {
@@ -968,7 +995,8 @@
       }
     },
     "ListPortfolioAccess" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the account IDs that have been authorized sharing of the specified portfolio.</p>",
       "errors" : [ {
@@ -998,7 +1026,8 @@
       }
     },
     "ListPortfolios" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all portfolios in the catalog.</p>",
       "errors" : [ {
@@ -1028,7 +1057,8 @@
       }
     },
     "ListPortfoliosForProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all portfolios that the specified product is associated with.</p>",
       "errors" : [ {
@@ -1064,7 +1094,8 @@
       }
     },
     "ListPrincipalsForPortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all principal ARNs associated with the specified portfolio.</p>",
       "errors" : [ {
@@ -1100,7 +1131,8 @@
       }
     },
     "ListProvisioningArtifacts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all provisioning artifacts associated with the specified product.</p>",
       "errors" : [ {
@@ -1136,7 +1168,8 @@
       }
     },
     "ListRecordHistory" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a paginated list of all performed requests, in the form of RecordDetails objects that are filtered as specified.</p>",
       "errors" : [ {
@@ -1166,7 +1199,8 @@
       }
     },
     "ProvisionProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is a resourced instance for a product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation stack and all the underlying resources that come with it. </p> <p>You can check the status of this request using the <a>DescribeRecord</a> operation.</p>",
       "errors" : [ {
@@ -1208,7 +1242,8 @@
       }
     },
     "RejectPortfolioShare" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Rejects an offer to share a portfolio.</p>",
       "errors" : [ {
@@ -1238,7 +1273,8 @@
       }
     },
     "ScanProvisionedProducts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a paginated list of all the ProvisionedProduct objects that are currently available (not terminated). </p>",
       "errors" : [ {
@@ -1268,7 +1304,8 @@
       }
     },
     "SearchProducts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a paginated list all of the <code>Products</code> objects to which the caller has access. </p> <p>The output of this operation can be used as input for other operations, such as <a>DescribeProductView</a>.</p>",
       "errors" : [ {
@@ -1298,7 +1335,8 @@
       }
     },
     "SearchProductsAsAdmin" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves summary and status information about all products created within the caller's account. If a portfolio ID is provided, this operation retrieves information for only those products that are associated with the specified portfolio.</p>",
       "errors" : [ {
@@ -1334,7 +1372,8 @@
       }
     },
     "TerminateProvisionedProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Requests termination of an existing ProvisionedProduct object. If there are <code>Tags</code> associated with the object, they are terminated when the ProvisionedProduct object is terminated. </p> <p>This operation does not delete any records associated with the ProvisionedProduct object.</p> <p>You can check the status of this request using the <a>DescribeRecord</a> operation.</p>",
       "errors" : [ {
@@ -1364,7 +1403,8 @@
       }
     },
     "UpdateConstraint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing constraint.</p>",
       "errors" : [ {
@@ -1400,7 +1440,8 @@
       }
     },
     "UpdatePortfolio" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the specified portfolio's details. This operation will not work with a product that has been shared with you.</p>",
       "errors" : [ {
@@ -1442,7 +1483,8 @@
       }
     },
     "UpdateProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing product.</p>",
       "errors" : [ {
@@ -1478,7 +1520,8 @@
       }
     },
     "UpdateProvisionedProduct" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Requests updates to the configuration of an existing ProvisionedProduct object. If there are tags associated with the object, they cannot be updated or added with this operation. Depending on the specific updates requested, this operation may update with no interruption, with some interruption, or replace the ProvisionedProduct object entirely. </p> <p>You can check the status of this request using the <a>DescribeRecord</a> operation.</p>",
       "errors" : [ {
@@ -1514,7 +1557,8 @@
       }
     },
     "UpdateProvisioningArtifact" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact associated with a product that has been shared with you.</p>",
       "errors" : [ {

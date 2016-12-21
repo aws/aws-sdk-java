@@ -559,4 +559,5 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
     public ListEntitiesForPolicyRequest clone() {
         return (ListEntitiesForPolicyRequest) super.clone();
     }
+
 }

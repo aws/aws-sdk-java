@@ -6761,4 +6761,5 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public UpdateItemRequest clone() {
         return (UpdateItemRequest) super.clone();
     }
+
 }

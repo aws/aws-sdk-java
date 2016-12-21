@@ -114,4 +114,5 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public DeleteAppRequest clone() {
         return (DeleteAppRequest) super.clone();
     }
+
 }

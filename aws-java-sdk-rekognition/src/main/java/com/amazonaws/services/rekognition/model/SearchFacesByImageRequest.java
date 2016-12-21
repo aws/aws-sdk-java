@@ -269,4 +269,5 @@ public class SearchFacesByImageRequest extends com.amazonaws.AmazonWebServiceReq
     public SearchFacesByImageRequest clone() {
         return (SearchFacesByImageRequest) super.clone();
     }
+
 }

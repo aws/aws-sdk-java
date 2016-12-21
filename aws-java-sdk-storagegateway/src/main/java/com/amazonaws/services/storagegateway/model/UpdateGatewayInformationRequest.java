@@ -165,4 +165,5 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
     public UpdateGatewayInformationRequest clone() {
         return (UpdateGatewayInformationRequest) super.clone();
     }
+
 }

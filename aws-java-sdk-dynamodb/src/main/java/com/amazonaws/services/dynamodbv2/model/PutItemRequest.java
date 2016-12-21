@@ -4419,4 +4419,5 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public PutItemRequest clone() {
         return (PutItemRequest) super.clone();
     }
+
 }

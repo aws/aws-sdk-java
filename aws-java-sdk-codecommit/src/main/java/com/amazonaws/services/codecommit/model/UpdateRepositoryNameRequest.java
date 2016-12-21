@@ -169,4 +169,5 @@ public class UpdateRepositoryNameRequest extends com.amazonaws.AmazonWebServiceR
     public UpdateRepositoryNameRequest clone() {
         return (UpdateRepositoryNameRequest) super.clone();
     }
+
 }

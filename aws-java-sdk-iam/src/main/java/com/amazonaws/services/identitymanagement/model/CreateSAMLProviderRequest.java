@@ -252,4 +252,5 @@ public class CreateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateSAMLProviderRequest clone() {
         return (CreateSAMLProviderRequest) super.clone();
     }
+
 }

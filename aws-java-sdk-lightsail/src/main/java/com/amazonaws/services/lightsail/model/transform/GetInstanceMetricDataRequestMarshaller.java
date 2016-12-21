@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetInstanceMetricDataRequestMarshaller implements Marshaller<Request<GetInstanceMetricDataRequest>, GetInstanceMetricDataRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetInstanceMetricDataRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetInstanceMetricDataRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -776,4 +776,5 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
     public DisableEnhancedMonitoringRequest clone() {
         return (DisableEnhancedMonitoringRequest) super.clone();
     }
+
 }

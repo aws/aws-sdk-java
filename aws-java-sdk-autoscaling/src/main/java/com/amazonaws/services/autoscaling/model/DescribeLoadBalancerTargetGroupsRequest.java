@@ -222,4 +222,5 @@ public class DescribeLoadBalancerTargetGroupsRequest extends com.amazonaws.Amazo
     public DescribeLoadBalancerTargetGroupsRequest clone() {
         return (DescribeLoadBalancerTargetGroupsRequest) super.clone();
     }
+
 }

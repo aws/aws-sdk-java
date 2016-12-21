@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class UpdateDocumentDefaultVersionRequestMarshaller implements
         Marshaller<Request<UpdateDocumentDefaultVersionRequest>, UpdateDocumentDefaultVersionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateDocumentDefaultVersionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateDocumentDefaultVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -114,4 +114,5 @@ public class DeleteSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     public DeleteSecurityConfigurationRequest clone() {
         return (DeleteSecurityConfigurationRequest) super.clone();
     }
+
 }

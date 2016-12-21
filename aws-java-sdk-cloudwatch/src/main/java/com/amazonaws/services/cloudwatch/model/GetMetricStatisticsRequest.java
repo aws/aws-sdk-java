@@ -1084,4 +1084,5 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     public GetMetricStatisticsRequest clone() {
         return (GetMetricStatisticsRequest) super.clone();
     }
+
 }

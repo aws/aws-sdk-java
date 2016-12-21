@@ -285,4 +285,5 @@ public class DescribeElasticIpsRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeElasticIpsRequest clone() {
         return (DescribeElasticIpsRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     public DeregisterTargetFromMaintenanceWindowRequest clone() {
         return (DeregisterTargetFromMaintenanceWindowRequest) super.clone();
     }
+
 }

@@ -209,4 +209,5 @@ public class AssignInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     public AssignInstanceRequest clone() {
         return (AssignInstanceRequest) super.clone();
     }
+
 }

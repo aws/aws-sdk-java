@@ -329,4 +329,5 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
     public FailoverDBClusterRequest clone() {
         return (FailoverDBClusterRequest) super.clone();
     }
+
 }

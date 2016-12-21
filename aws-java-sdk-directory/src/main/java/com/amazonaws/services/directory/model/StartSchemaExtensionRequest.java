@@ -286,4 +286,5 @@ public class StartSchemaExtensionRequest extends com.amazonaws.AmazonWebServiceR
     public StartSchemaExtensionRequest clone() {
         return (StartSchemaExtensionRequest) super.clone();
     }
+
 }

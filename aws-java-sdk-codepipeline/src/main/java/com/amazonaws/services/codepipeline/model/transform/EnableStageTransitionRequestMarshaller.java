@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class EnableStageTransitionRequestMarshaller implements Marshaller<Request<EnableStageTransitionRequest>, EnableStageTransitionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public EnableStageTransitionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public EnableStageTransitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

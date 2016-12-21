@@ -114,4 +114,5 @@ public class DeleteDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     public DeleteDeliveryStreamRequest clone() {
         return (DeleteDeliveryStreamRequest) super.clone();
     }
+
 }

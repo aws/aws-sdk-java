@@ -168,4 +168,5 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateAccountAliasRequest clone() {
         return (CreateAccountAliasRequest) super.clone();
     }
+
 }

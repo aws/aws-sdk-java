@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateTapesRequestMarshaller implements Marshaller<Request<CreateTapesRequest>, CreateTapesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateTapesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateTapesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

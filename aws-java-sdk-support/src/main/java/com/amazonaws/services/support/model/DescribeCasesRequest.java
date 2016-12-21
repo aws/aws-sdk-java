@@ -634,4 +634,5 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeCasesRequest clone() {
         return (DescribeCasesRequest) super.clone();
     }
+
 }

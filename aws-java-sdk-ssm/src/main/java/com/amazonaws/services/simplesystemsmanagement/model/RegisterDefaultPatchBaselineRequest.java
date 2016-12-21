@@ -114,4 +114,5 @@ public class RegisterDefaultPatchBaselineRequest extends com.amazonaws.AmazonWeb
     public RegisterDefaultPatchBaselineRequest clone() {
         return (RegisterDefaultPatchBaselineRequest) super.clone();
     }
+
 }

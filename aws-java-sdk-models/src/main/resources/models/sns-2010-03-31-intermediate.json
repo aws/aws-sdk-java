@@ -164,6 +164,7 @@
     "cucumberModuleInjectorClassName" : "AmazonSNSModuleInjector",
     "defaultEndpoint" : "https://sns.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "sns.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>Amazon Simple Notification Service</fullname> <p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see <a href=\"http://aws.amazon.com/sns/\">http://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features and their associated API calls, see the <a href=\"http://docs.aws.amazon.com/sns/latest/dg/\">Amazon SNS Developer Guide</a>. </p> <p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>. </p>",
     "endpointPrefix" : "sns",
     "hasApiWithStreamInput" : false,
@@ -174,7 +175,10 @@
     "packagePath" : "com/amazonaws/services/sns",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "protocolFactory" : null,
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon SNS",
     "serviceFullName" : "Amazon Simple Notification Service",
     "serviceName" : "Amazon SNS",
@@ -2239,6 +2243,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn", "Label", "AWSAccountId", "ActionName" ],
       "shapeName" : "AddPermissionRequest",
       "unmarshaller" : null,
@@ -2271,6 +2277,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddPermissionResult",
       "unmarshaller" : {
@@ -2306,6 +2314,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AuthorizationErrorException",
       "unmarshaller" : null,
@@ -2459,6 +2469,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "phoneNumber" ],
       "shapeName" : "CheckIfPhoneNumberIsOptedOutRequest",
       "unmarshaller" : null,
@@ -2605,6 +2617,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CheckIfPhoneNumberIsOptedOutResult",
       "unmarshaller" : {
@@ -2987,6 +3001,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn", "Token" ],
       "shapeName" : "ConfirmSubscriptionRequest",
       "unmarshaller" : null,
@@ -3133,6 +3149,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmSubscriptionResult",
       "unmarshaller" : {
@@ -3657,6 +3675,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Platform", "Attributes" ],
       "shapeName" : "CreatePlatformApplicationRequest",
       "unmarshaller" : null,
@@ -3803,6 +3823,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePlatformApplicationResult",
       "unmarshaller" : {
@@ -4440,6 +4462,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PlatformApplicationArn", "Token" ],
       "shapeName" : "CreatePlatformEndpointRequest",
       "unmarshaller" : null,
@@ -4586,6 +4610,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePlatformEndpointResult",
       "unmarshaller" : {
@@ -4742,6 +4768,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "CreateTopicRequest",
       "unmarshaller" : null,
@@ -4888,6 +4916,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateTopicResult",
       "unmarshaller" : {
@@ -5044,6 +5074,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EndpointArn" ],
       "shapeName" : "DeleteEndpointRequest",
       "unmarshaller" : null,
@@ -5076,6 +5108,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteEndpointResult",
       "unmarshaller" : {
@@ -5232,6 +5266,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PlatformApplicationArn" ],
       "shapeName" : "DeletePlatformApplicationRequest",
       "unmarshaller" : null,
@@ -5264,6 +5300,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeletePlatformApplicationResult",
       "unmarshaller" : {
@@ -5420,6 +5458,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn" ],
       "shapeName" : "DeleteTopicRequest",
       "unmarshaller" : null,
@@ -5452,6 +5492,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTopicResult",
       "unmarshaller" : {
@@ -5856,6 +5898,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Endpoint",
       "unmarshaller" : {
@@ -5891,6 +5935,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EndpointDisabledException",
       "unmarshaller" : null,
@@ -6044,6 +6090,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EndpointArn" ],
       "shapeName" : "GetEndpointAttributesRequest",
       "unmarshaller" : null,
@@ -6332,6 +6380,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetEndpointAttributesResult",
       "unmarshaller" : {
@@ -6488,6 +6538,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PlatformApplicationArn" ],
       "shapeName" : "GetPlatformApplicationAttributesRequest",
       "unmarshaller" : null,
@@ -6776,6 +6828,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetPlatformApplicationAttributesResult",
       "unmarshaller" : {
@@ -7074,6 +7128,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSMSAttributesRequest",
       "unmarshaller" : null,
@@ -7362,6 +7418,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSMSAttributesResult",
       "unmarshaller" : {
@@ -7518,6 +7576,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SubscriptionArn" ],
       "shapeName" : "GetSubscriptionAttributesRequest",
       "unmarshaller" : null,
@@ -7806,6 +7866,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetSubscriptionAttributesResult",
       "unmarshaller" : {
@@ -7962,6 +8024,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn" ],
       "shapeName" : "GetTopicAttributesRequest",
       "unmarshaller" : null,
@@ -8250,6 +8314,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetTopicAttributesResult",
       "unmarshaller" : {
@@ -8285,6 +8351,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
       "unmarshaller" : null,
@@ -8317,6 +8385,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
       "unmarshaller" : null,
@@ -8349,6 +8419,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterValueException",
       "unmarshaller" : null,
@@ -8615,6 +8687,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PlatformApplicationArn" ],
       "shapeName" : "ListEndpointsByPlatformApplicationRequest",
       "unmarshaller" : null,
@@ -9016,6 +9090,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListEndpointsByPlatformApplicationResult",
       "unmarshaller" : {
@@ -9172,6 +9248,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPhoneNumbersOptedOutRequest",
       "unmarshaller" : null,
@@ -9573,6 +9651,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPhoneNumbersOptedOutResult",
       "unmarshaller" : {
@@ -9729,6 +9809,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPlatformApplicationsRequest",
       "unmarshaller" : null,
@@ -10130,6 +10212,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPlatformApplicationsResult",
       "unmarshaller" : {
@@ -10399,6 +10483,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn" ],
       "shapeName" : "ListSubscriptionsByTopicRequest",
       "unmarshaller" : null,
@@ -10800,6 +10886,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSubscriptionsByTopicResult",
       "unmarshaller" : {
@@ -10956,6 +11044,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSubscriptionsRequest",
       "unmarshaller" : null,
@@ -11357,6 +11447,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListSubscriptionsResult",
       "unmarshaller" : {
@@ -11513,6 +11605,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTopicsRequest",
       "unmarshaller" : null,
@@ -11914,6 +12008,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTopicsResult",
       "unmarshaller" : {
@@ -12289,6 +12385,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataType" ],
       "shapeName" : "MessageAttributeValue",
       "unmarshaller" : {
@@ -12324,6 +12422,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotFoundException",
       "unmarshaller" : null,
@@ -12477,6 +12577,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "phoneNumber" ],
       "shapeName" : "OptInPhoneNumberRequest",
       "unmarshaller" : null,
@@ -12509,6 +12611,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OptInPhoneNumberResult",
       "unmarshaller" : {
@@ -12913,6 +13017,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PlatformApplication",
       "unmarshaller" : {
@@ -12948,6 +13054,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PlatformApplicationDisabledException",
       "unmarshaller" : null,
@@ -13921,6 +14029,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
       "shapeName" : "PublishRequest",
       "unmarshaller" : null,
@@ -14067,6 +14177,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PublishResult",
       "unmarshaller" : {
@@ -14336,6 +14448,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn", "Label" ],
       "shapeName" : "RemovePermissionRequest",
       "unmarshaller" : null,
@@ -14368,6 +14482,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemovePermissionResult",
       "unmarshaller" : {
@@ -14779,6 +14895,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EndpointArn", "Attributes" ],
       "shapeName" : "SetEndpointAttributesRequest",
       "unmarshaller" : null,
@@ -14811,6 +14929,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetEndpointAttributesResult",
       "unmarshaller" : {
@@ -15222,6 +15342,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PlatformApplicationArn", "Attributes" ],
       "shapeName" : "SetPlatformApplicationAttributesRequest",
       "unmarshaller" : null,
@@ -15254,6 +15376,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetPlatformApplicationAttributesResult",
       "unmarshaller" : {
@@ -15552,6 +15676,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "attributes" ],
       "shapeName" : "SetSMSAttributesRequest",
       "unmarshaller" : null,
@@ -15584,6 +15710,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetSMSAttributesResult",
       "unmarshaller" : {
@@ -15966,6 +16094,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SubscriptionArn", "AttributeName" ],
       "shapeName" : "SetSubscriptionAttributesRequest",
       "unmarshaller" : null,
@@ -15998,6 +16128,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetSubscriptionAttributesResult",
       "unmarshaller" : {
@@ -16380,6 +16512,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn", "AttributeName" ],
       "shapeName" : "SetTopicAttributesRequest",
       "unmarshaller" : null,
@@ -16412,6 +16546,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetTopicAttributesResult",
       "unmarshaller" : {
@@ -16794,6 +16930,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TopicArn", "Protocol" ],
       "shapeName" : "SubscribeRequest",
       "unmarshaller" : null,
@@ -16940,6 +17078,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscribeResult",
       "unmarshaller" : {
@@ -17541,6 +17681,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Subscription",
       "unmarshaller" : {
@@ -17576,6 +17718,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscriptionLimitExceededException",
       "unmarshaller" : null,
@@ -17608,6 +17752,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThrottledException",
       "unmarshaller" : null,
@@ -17754,6 +17900,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Topic",
       "unmarshaller" : {
@@ -17789,6 +17937,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TopicLimitExceededException",
       "unmarshaller" : null,
@@ -17942,6 +18092,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SubscriptionArn" ],
       "shapeName" : "UnsubscribeRequest",
       "unmarshaller" : null,
@@ -17974,6 +18126,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsubscribeResult",
       "unmarshaller" : {
@@ -17992,6 +18146,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

@@ -116,4 +116,5 @@ public class ReadJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public ReadJobRequest clone() {
         return (ReadJobRequest) super.clone();
     }
+
 }

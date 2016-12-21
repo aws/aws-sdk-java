@@ -544,4 +544,5 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     public PollForDecisionTaskRequest clone() {
         return (PollForDecisionTaskRequest) super.clone();
     }
+
 }

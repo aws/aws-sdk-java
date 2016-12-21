@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AbortMultipartUploadRequestMarshaller implements Marshaller<Request<AbortMultipartUploadRequest>, AbortMultipartUploadRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AbortMultipartUploadRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AbortMultipartUploadRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

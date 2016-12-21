@@ -167,4 +167,5 @@ public class DescribeWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeWorkflowTypeRequest clone() {
         return (DescribeWorkflowTypeRequest) super.clone();
     }
+
 }

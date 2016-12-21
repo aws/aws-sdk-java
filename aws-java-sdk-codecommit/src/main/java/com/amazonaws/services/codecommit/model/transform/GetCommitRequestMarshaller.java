@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetCommitRequestMarshaller implements Marshaller<Request<GetCommitRequest>, GetCommitRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetCommitRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetCommitRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

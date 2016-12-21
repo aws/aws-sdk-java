@@ -222,4 +222,5 @@ public class AdminGetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
     public AdminGetDeviceRequest clone() {
         return (AdminGetDeviceRequest) super.clone();
     }
+
 }

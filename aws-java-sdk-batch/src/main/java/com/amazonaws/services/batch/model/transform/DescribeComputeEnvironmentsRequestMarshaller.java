@@ -44,9 +44,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeComputeEnvironmentsRequestMarshaller implements
         Marshaller<Request<DescribeComputeEnvironmentsRequest>, DescribeComputeEnvironmentsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeComputeEnvironmentsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeComputeEnvironmentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

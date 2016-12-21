@@ -119,4 +119,5 @@ public class DeleteReceiptFilterRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteReceiptFilterRequest clone() {
         return (DeleteReceiptFilterRequest) super.clone();
     }
+
 }

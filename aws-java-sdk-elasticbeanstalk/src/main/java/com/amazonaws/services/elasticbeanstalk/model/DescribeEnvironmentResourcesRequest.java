@@ -219,4 +219,5 @@ public class DescribeEnvironmentResourcesRequest extends com.amazonaws.AmazonWeb
     public DescribeEnvironmentResourcesRequest clone() {
         return (DescribeEnvironmentResourcesRequest) super.clone();
     }
+
 }

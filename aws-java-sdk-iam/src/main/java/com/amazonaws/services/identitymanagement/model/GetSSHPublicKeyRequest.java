@@ -321,4 +321,5 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
     public GetSSHPublicKeyRequest clone() {
         return (GetSSHPublicKeyRequest) super.clone();
     }
+
 }

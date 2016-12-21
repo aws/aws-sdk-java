@@ -321,4 +321,5 @@ public class UpdateSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateSSHPublicKeyRequest clone() {
         return (UpdateSSHPublicKeyRequest) super.clone();
     }
+
 }

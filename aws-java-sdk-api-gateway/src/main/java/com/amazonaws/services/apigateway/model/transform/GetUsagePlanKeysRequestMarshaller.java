@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetUsagePlanKeysRequestMarshaller implements Marshaller<Request<GetUsagePlanKeysRequest>, GetUsagePlanKeysRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetUsagePlanKeysRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetUsagePlanKeysRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

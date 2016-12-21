@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class ConfirmPublicVirtualInterfaceRequestMarshaller implements
         Marshaller<Request<ConfirmPublicVirtualInterfaceRequest>, ConfirmPublicVirtualInterfaceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ConfirmPublicVirtualInterfaceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ConfirmPublicVirtualInterfaceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

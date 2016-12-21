@@ -15,6 +15,7 @@
 
 package com.amazonaws.codegen.model.intermediate;
 
+import com.amazonaws.codegen.protocol.ApiGatewayProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsCborProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsJsonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.Ec2ProtocolMetdataProvider;
@@ -33,6 +34,7 @@ public enum Protocol {
     CBOR("cbor", new AwsCborProtocolMetadataProvider()),
     QUERY("query", new QueryProtocolMetadataProvider()),
     REST_XML("rest-xml", new RestXmlProtocolMetadataProvider()),
+    API_GATEWAY("api-gateway", new ApiGatewayProtocolMetadataProvider()),
     ION("ion", new IonProtocolMetadataProvider());
 
     private String protocol;

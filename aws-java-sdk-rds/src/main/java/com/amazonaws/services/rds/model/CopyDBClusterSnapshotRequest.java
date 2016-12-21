@@ -556,4 +556,5 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     public CopyDBClusterSnapshotRequest clone() {
         return (CopyDBClusterSnapshotRequest) super.clone();
     }
+
 }

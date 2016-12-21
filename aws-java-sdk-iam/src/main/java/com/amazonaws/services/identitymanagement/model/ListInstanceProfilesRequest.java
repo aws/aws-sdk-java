@@ -343,4 +343,5 @@ public class ListInstanceProfilesRequest extends com.amazonaws.AmazonWebServiceR
     public ListInstanceProfilesRequest clone() {
         return (ListInstanceProfilesRequest) super.clone();
     }
+
 }

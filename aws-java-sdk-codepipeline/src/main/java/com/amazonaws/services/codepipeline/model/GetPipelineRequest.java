@@ -177,4 +177,5 @@ public class GetPipelineRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetPipelineRequest clone() {
         return (GetPipelineRequest) super.clone();
     }
+
 }

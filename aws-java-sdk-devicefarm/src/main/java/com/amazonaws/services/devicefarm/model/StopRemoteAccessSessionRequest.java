@@ -116,4 +116,5 @@ public class StopRemoteAccessSessionRequest extends com.amazonaws.AmazonWebServi
     public StopRemoteAccessSessionRequest clone() {
         return (StopRemoteAccessSessionRequest) super.clone();
     }
+
 }

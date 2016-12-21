@@ -424,4 +424,5 @@ public class UpdateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateByteMatchSetRequest clone() {
         return (UpdateByteMatchSetRequest) super.clone();
     }
+
 }

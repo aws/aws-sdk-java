@@ -60,4 +60,5 @@ public class DescribeTerminationPolicyTypesRequest extends com.amazonaws.AmazonW
     public DescribeTerminationPolicyTypesRequest clone() {
         return (DescribeTerminationPolicyTypesRequest) super.clone();
     }
+
 }

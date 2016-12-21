@@ -134,4 +134,5 @@ public class ListSubscriptionsRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListSubscriptionsRequest clone() {
         return (ListSubscriptionsRequest) super.clone();
     }
+
 }

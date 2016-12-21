@@ -215,4 +215,5 @@ public class StartApplicationRequest extends com.amazonaws.AmazonWebServiceReque
     public StartApplicationRequest clone() {
         return (StartApplicationRequest) super.clone();
     }
+
 }

@@ -179,4 +179,5 @@ public class GetBlueprintsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetBlueprintsRequest clone() {
         return (GetBlueprintsRequest) super.clone();
     }
+
 }

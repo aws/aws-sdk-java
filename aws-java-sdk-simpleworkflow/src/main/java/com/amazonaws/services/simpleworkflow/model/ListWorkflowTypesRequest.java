@@ -504,4 +504,5 @@ public class ListWorkflowTypesRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListWorkflowTypesRequest clone() {
         return (ListWorkflowTypesRequest) super.clone();
     }
+
 }

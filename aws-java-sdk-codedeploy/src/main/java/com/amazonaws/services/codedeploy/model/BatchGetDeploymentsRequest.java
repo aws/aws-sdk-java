@@ -149,4 +149,5 @@ public class BatchGetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
     public BatchGetDeploymentsRequest clone() {
         return (BatchGetDeploymentsRequest) super.clone();
     }
+
 }

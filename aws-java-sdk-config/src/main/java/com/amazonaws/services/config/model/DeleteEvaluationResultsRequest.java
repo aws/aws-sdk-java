@@ -114,4 +114,5 @@ public class DeleteEvaluationResultsRequest extends com.amazonaws.AmazonWebServi
     public DeleteEvaluationResultsRequest clone() {
         return (DeleteEvaluationResultsRequest) super.clone();
     }
+
 }

@@ -366,4 +366,5 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ListCommandsRequest clone() {
         return (ListCommandsRequest) super.clone();
     }
+
 }

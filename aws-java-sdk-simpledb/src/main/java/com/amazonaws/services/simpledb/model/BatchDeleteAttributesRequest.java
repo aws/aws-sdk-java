@@ -199,4 +199,5 @@ public class BatchDeleteAttributesRequest extends com.amazonaws.AmazonWebService
     public BatchDeleteAttributesRequest clone() {
         return (BatchDeleteAttributesRequest) super.clone();
     }
+
 }

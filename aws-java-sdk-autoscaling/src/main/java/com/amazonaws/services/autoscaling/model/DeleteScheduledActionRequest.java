@@ -169,4 +169,5 @@ public class DeleteScheduledActionRequest extends com.amazonaws.AmazonWebService
     public DeleteScheduledActionRequest clone() {
         return (DeleteScheduledActionRequest) super.clone();
     }
+
 }

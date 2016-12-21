@@ -169,4 +169,5 @@ public class ListInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceReq
     public ListInstanceGroupsRequest clone() {
         return (ListInstanceGroupsRequest) super.clone();
     }
+
 }

@@ -123,4 +123,5 @@ public class ListVolumeInitiatorsRequest extends com.amazonaws.AmazonWebServiceR
     public ListVolumeInitiatorsRequest clone() {
         return (ListVolumeInitiatorsRequest) super.clone();
     }
+
 }

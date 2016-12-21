@@ -114,4 +114,5 @@ public class CreateCollectionRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateCollectionRequest clone() {
         return (CreateCollectionRequest) super.clone();
     }
+
 }

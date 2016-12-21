@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class RegisterCrossAccountAccessRoleRequestMarshaller implements
         Marshaller<Request<RegisterCrossAccountAccessRoleRequest>, RegisterCrossAccountAccessRoleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RegisterCrossAccountAccessRoleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RegisterCrossAccountAccessRoleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -119,4 +119,5 @@ public class SetActiveReceiptRuleSetRequest extends com.amazonaws.AmazonWebServi
     public SetActiveReceiptRuleSetRequest clone() {
         return (SetActiveReceiptRuleSetRequest) super.clone();
     }
+
 }

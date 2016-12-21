@@ -114,4 +114,5 @@ public class StartFleetRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public StartFleetRequest clone() {
         return (StartFleetRequest) super.clone();
     }
+
 }

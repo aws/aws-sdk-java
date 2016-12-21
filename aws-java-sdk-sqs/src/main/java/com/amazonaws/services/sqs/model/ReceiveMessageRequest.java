@@ -2964,4 +2964,5 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
     public ReceiveMessageRequest clone() {
         return (ReceiveMessageRequest) super.clone();
     }
+
 }

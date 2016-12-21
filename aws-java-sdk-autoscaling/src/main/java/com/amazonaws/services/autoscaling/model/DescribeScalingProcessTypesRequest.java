@@ -60,4 +60,5 @@ public class DescribeScalingProcessTypesRequest extends com.amazonaws.AmazonWebS
     public DescribeScalingProcessTypesRequest clone() {
         return (DescribeScalingProcessTypesRequest) super.clone();
     }
+
 }

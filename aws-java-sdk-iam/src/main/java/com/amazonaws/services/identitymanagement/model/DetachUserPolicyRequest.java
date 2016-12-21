@@ -231,4 +231,5 @@ public class DetachUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public DetachUserPolicyRequest clone() {
         return (DetachUserPolicyRequest) super.clone();
     }
+
 }

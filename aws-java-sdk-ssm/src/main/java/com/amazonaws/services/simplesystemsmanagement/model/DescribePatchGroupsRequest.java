@@ -167,4 +167,5 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribePatchGroupsRequest clone() {
         return (DescribePatchGroupsRequest) super.clone();
     }
+
 }

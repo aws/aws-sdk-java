@@ -132,4 +132,5 @@ public class RotateEncryptionKeyRequest extends com.amazonaws.AmazonWebServiceRe
     public RotateEncryptionKeyRequest clone() {
         return (RotateEncryptionKeyRequest) super.clone();
     }
+
 }

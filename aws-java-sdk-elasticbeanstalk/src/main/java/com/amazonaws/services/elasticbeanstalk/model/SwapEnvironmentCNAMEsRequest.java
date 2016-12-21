@@ -403,4 +403,5 @@ public class SwapEnvironmentCNAMEsRequest extends com.amazonaws.AmazonWebService
     public SwapEnvironmentCNAMEsRequest clone() {
         return (SwapEnvironmentCNAMEsRequest) super.clone();
     }
+
 }

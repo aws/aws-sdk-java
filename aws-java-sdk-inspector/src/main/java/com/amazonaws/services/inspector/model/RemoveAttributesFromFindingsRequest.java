@@ -227,4 +227,5 @@ public class RemoveAttributesFromFindingsRequest extends com.amazonaws.AmazonWeb
     public RemoveAttributesFromFindingsRequest clone() {
         return (RemoveAttributesFromFindingsRequest) super.clone();
     }
+
 }

@@ -561,4 +561,5 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateDeploymentRequest clone() {
         return (CreateDeploymentRequest) super.clone();
     }
+
 }

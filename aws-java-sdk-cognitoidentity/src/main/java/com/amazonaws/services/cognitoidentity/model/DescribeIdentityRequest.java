@@ -116,4 +116,5 @@ public class DescribeIdentityRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeIdentityRequest clone() {
         return (DescribeIdentityRequest) super.clone();
     }
+
 }

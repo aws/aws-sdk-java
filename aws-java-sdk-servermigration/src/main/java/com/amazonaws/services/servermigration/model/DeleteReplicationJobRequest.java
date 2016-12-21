@@ -95,4 +95,5 @@ public class DeleteReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     public DeleteReplicationJobRequest clone() {
         return (DeleteReplicationJobRequest) super.clone();
     }
+
 }

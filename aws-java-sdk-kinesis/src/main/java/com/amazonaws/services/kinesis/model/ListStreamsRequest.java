@@ -169,4 +169,5 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListStreamsRequest clone() {
         return (ListStreamsRequest) super.clone();
     }
+
 }

@@ -66,38 +66,39 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("OptimisticLockException").withModeledClass(
-                            com.amazonaws.services.shield.model.OptimisticLockException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LockedSubscriptionException").withModeledClass(
-                            com.amazonaws.services.shield.model.LockedSubscriptionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withModeledClass(
-                            com.amazonaws.services.shield.model.InvalidResourceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.shield.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
-                            com.amazonaws.services.shield.model.InvalidOperationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.shield.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.shield.model.ResourceAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                            com.amazonaws.services.shield.model.InternalErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withModeledClass(
-                            com.amazonaws.services.shield.model.LimitsExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.shield.model.AWSShieldException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OptimisticLockException").withModeledClass(
+                                    com.amazonaws.services.shield.model.OptimisticLockException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LockedSubscriptionException").withModeledClass(
+                                    com.amazonaws.services.shield.model.LockedSubscriptionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withModeledClass(
+                                    com.amazonaws.services.shield.model.InvalidResourceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.shield.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
+                                    com.amazonaws.services.shield.model.InvalidOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.shield.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.shield.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
+                                    com.amazonaws.services.shield.model.InternalErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withModeledClass(
+                                    com.amazonaws.services.shield.model.LimitsExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.shield.model.AWSShieldException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Shield. A credentials provider chain will be used that

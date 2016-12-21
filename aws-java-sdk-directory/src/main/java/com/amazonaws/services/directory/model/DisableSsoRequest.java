@@ -271,4 +271,5 @@ public class DisableSsoRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public DisableSsoRequest clone() {
         return (DisableSsoRequest) super.clone();
     }
+
 }

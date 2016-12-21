@@ -241,4 +241,5 @@ public class SetVisibleToAllUsersRequest extends com.amazonaws.AmazonWebServiceR
     public SetVisibleToAllUsersRequest clone() {
         return (SetVisibleToAllUsersRequest) super.clone();
     }
+
 }

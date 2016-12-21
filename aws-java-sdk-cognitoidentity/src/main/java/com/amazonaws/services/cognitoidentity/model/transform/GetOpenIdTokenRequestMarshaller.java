@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetOpenIdTokenRequestMarshaller implements Marshaller<Request<GetOpenIdTokenRequest>, GetOpenIdTokenRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetOpenIdTokenRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetOpenIdTokenRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

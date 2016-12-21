@@ -220,4 +220,5 @@ public class RequestCancelWorkflowExecutionRequest extends com.amazonaws.AmazonW
     public RequestCancelWorkflowExecutionRequest clone() {
         return (RequestCancelWorkflowExecutionRequest) super.clone();
     }
+
 }

@@ -639,4 +639,5 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     public UploadServerCertificateRequest clone() {
         return (UploadServerCertificateRequest) super.clone();
     }
+
 }

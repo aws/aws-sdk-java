@@ -117,4 +117,5 @@ public class DeleteVerifiedEmailAddressRequest extends com.amazonaws.AmazonWebSe
     public DeleteVerifiedEmailAddressRequest clone() {
         return (DeleteVerifiedEmailAddressRequest) super.clone();
     }
+
 }

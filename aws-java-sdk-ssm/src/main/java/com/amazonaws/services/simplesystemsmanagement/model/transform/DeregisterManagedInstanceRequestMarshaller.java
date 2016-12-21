@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeregisterManagedInstanceRequestMarshaller implements Marshaller<Request<DeregisterManagedInstanceRequest>, DeregisterManagedInstanceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeregisterManagedInstanceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeregisterManagedInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

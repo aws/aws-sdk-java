@@ -257,4 +257,5 @@ public class BatchCheckLayerAvailabilityRequest extends com.amazonaws.AmazonWebS
     public BatchCheckLayerAvailabilityRequest clone() {
         return (BatchCheckLayerAvailabilityRequest) super.clone();
     }
+
 }

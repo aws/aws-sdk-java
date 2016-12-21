@@ -227,4 +227,5 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListGroupsRequest clone() {
         return (ListGroupsRequest) super.clone();
     }
+
 }

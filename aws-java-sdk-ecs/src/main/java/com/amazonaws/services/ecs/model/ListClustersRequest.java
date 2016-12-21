@@ -259,4 +259,5 @@ public class ListClustersRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ListClustersRequest clone() {
         return (ListClustersRequest) super.clone();
     }
+
 }

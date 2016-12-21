@@ -60,4 +60,5 @@ public class GetChangeTokenRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetChangeTokenRequest clone() {
         return (GetChangeTokenRequest) super.clone();
     }
+
 }

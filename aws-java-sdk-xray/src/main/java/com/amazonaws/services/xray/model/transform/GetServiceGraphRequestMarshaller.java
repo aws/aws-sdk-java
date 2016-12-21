@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetServiceGraphRequestMarshaller implements Marshaller<Request<GetServiceGraphRequest>, GetServiceGraphRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetServiceGraphRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetServiceGraphRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

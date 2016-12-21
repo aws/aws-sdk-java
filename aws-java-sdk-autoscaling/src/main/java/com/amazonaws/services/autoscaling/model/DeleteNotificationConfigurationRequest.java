@@ -169,4 +169,5 @@ public class DeleteNotificationConfigurationRequest extends com.amazonaws.Amazon
     public DeleteNotificationConfigurationRequest clone() {
         return (DeleteNotificationConfigurationRequest) super.clone();
     }
+
 }

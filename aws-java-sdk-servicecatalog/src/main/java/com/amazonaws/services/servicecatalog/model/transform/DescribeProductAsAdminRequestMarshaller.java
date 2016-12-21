@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeProductAsAdminRequestMarshaller implements Marshaller<Request<DescribeProductAsAdminRequest>, DescribeProductAsAdminRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeProductAsAdminRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeProductAsAdminRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

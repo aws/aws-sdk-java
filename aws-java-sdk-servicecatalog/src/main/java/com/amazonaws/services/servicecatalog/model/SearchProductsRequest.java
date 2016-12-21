@@ -564,4 +564,5 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
     public SearchProductsRequest clone() {
         return (SearchProductsRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeSnapshotScheduleRequestMarshaller implements Marshaller<Request<DescribeSnapshotScheduleRequest>, DescribeSnapshotScheduleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeSnapshotScheduleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeSnapshotScheduleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

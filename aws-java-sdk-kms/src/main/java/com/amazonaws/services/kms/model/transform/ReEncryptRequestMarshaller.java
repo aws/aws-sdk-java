@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ReEncryptRequestMarshaller implements Marshaller<Request<ReEncryptRequest>, ReEncryptRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ReEncryptRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ReEncryptRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

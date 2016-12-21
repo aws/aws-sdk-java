@@ -2591,4 +2591,5 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ModifyClusterRequest clone() {
         return (ModifyClusterRequest) super.clone();
     }
+
 }

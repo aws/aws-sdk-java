@@ -703,4 +703,5 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
     public SearchProductsAsAdminRequest clone() {
         return (SearchProductsAsAdminRequest) super.clone();
     }
+
 }

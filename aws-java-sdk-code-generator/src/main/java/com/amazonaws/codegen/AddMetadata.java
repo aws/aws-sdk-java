@@ -20,12 +20,12 @@ import com.amazonaws.codegen.model.config.BasicCodeGenConfig;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.Metadata;
 import com.amazonaws.codegen.model.intermediate.Protocol;
+import com.amazonaws.codegen.model.service.Operation;
 import com.amazonaws.codegen.model.service.ServiceMetadata;
 import com.amazonaws.codegen.model.service.ServiceModel;
 
 /**
- * Constructs the metadata that is required for generating the java client from the service meta
- * data.
+ * Constructs the metadata that is required for generating the java client from the service meta data.
  */
 final class AddMetadata {
 
@@ -46,6 +46,7 @@ final class AddMetadata {
                 .withDefaultEndpoint(codeGenConfig.getEndpoint())
                 .withDefaultEndpointWithoutHttpProtocol(
                         Utils.getDefaultEndpointWithoutHttpProtocol(codeGenConfig.getEndpoint()))
+                .withDefaultRegion(codeGenConfig.getDefaultRegion())
                 .withDocumentation(serviceModel.getDocumentation())
                 .withPackageName(packageName)
                 .withPackagePath(packageName.replace(".", "/"))
@@ -56,7 +57,8 @@ final class AddMetadata {
                 .withProtocol(Protocol.fromValue(serviceMetadata.getProtocol()))
                 .withJsonVersion(serviceMetadata.getJsonVersion())
                 .withEndpointPrefix(serviceMetadata.getEndpointPrefix())
-                .withSigningName(serviceMetadata.getSigningName());
+                .withSigningName(serviceMetadata.getSigningName())
+                .withRequiresApiKey(requiresApiKey(serviceModel));
 
         final String jsonVersion = getJsonVersion(metadata, serviceMetadata);
         metadata.setJsonVersion(jsonVersion);
@@ -74,5 +76,15 @@ final class AddMetadata {
         } else {
             return serviceMetadata.getJsonVersion();
         }
+    }
+
+    /**
+     * If any operation requires an API key we generate a setter on the builder.
+     *
+     * @return True if any operation requires an API key. False otherwise.
+     */
+    private static boolean requiresApiKey(ServiceModel serviceModel) {
+        return serviceModel.getOperations().values().stream()
+                .anyMatch(Operation::requiresApiKey);
     }
 }

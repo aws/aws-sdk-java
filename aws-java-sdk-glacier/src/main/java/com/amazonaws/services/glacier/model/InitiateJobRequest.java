@@ -284,4 +284,5 @@ public class InitiateJobRequest extends com.amazonaws.AmazonWebServiceRequest im
     public InitiateJobRequest clone() {
         return (InitiateJobRequest) super.clone();
     }
+
 }

@@ -267,4 +267,5 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListIdentitiesRequest clone() {
         return (ListIdentitiesRequest) super.clone();
     }
+
 }

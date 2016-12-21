@@ -160,4 +160,5 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListQueuesRequest clone() {
         return (ListQueuesRequest) super.clone();
     }
+
 }

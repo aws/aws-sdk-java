@@ -571,4 +571,5 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     public FilterLogEventsRequest clone() {
         return (FilterLogEventsRequest) super.clone();
     }
+
 }

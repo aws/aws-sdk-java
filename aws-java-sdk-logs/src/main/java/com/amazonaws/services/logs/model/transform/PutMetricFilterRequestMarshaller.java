@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PutMetricFilterRequestMarshaller implements Marshaller<Request<PutMetricFilterRequest>, PutMetricFilterRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutMetricFilterRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutMetricFilterRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

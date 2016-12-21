@@ -222,4 +222,5 @@ public class ListTargetsByRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListTargetsByRuleRequest clone() {
         return (ListTargetsByRuleRequest) super.clone();
     }
+
 }

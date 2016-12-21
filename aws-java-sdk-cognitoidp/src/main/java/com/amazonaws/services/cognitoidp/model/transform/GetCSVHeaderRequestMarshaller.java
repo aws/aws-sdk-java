@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetCSVHeaderRequestMarshaller implements Marshaller<Request<GetCSVHeaderRequest>, GetCSVHeaderRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetCSVHeaderRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetCSVHeaderRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

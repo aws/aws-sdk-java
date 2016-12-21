@@ -461,4 +461,5 @@ public class DescribeScheduledActionsRequest extends com.amazonaws.AmazonWebServ
     public DescribeScheduledActionsRequest clone() {
         return (DescribeScheduledActionsRequest) super.clone();
     }
+
 }

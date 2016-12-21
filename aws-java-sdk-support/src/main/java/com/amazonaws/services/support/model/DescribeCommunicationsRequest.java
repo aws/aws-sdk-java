@@ -347,4 +347,5 @@ public class DescribeCommunicationsRequest extends com.amazonaws.AmazonWebServic
     public DescribeCommunicationsRequest clone() {
         return (DescribeCommunicationsRequest) super.clone();
     }
+
 }

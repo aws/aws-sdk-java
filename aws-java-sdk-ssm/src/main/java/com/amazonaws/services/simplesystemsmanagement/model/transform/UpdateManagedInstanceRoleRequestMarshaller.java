@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateManagedInstanceRoleRequestMarshaller implements Marshaller<Request<UpdateManagedInstanceRoleRequest>, UpdateManagedInstanceRoleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateManagedInstanceRoleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateManagedInstanceRoleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

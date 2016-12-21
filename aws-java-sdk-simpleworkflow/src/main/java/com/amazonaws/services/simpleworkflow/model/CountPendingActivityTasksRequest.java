@@ -167,4 +167,5 @@ public class CountPendingActivityTasksRequest extends com.amazonaws.AmazonWebSer
     public CountPendingActivityTasksRequest clone() {
         return (CountPendingActivityTasksRequest) super.clone();
     }
+
 }

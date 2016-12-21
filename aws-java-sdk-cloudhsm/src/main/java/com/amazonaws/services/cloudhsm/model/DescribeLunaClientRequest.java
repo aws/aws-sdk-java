@@ -167,4 +167,5 @@ public class DescribeLunaClientRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeLunaClientRequest clone() {
         return (DescribeLunaClientRequest) super.clone();
     }
+
 }

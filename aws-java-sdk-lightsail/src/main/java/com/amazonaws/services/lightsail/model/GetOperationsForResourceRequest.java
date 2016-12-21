@@ -167,4 +167,5 @@ public class GetOperationsForResourceRequest extends com.amazonaws.AmazonWebServ
     public GetOperationsForResourceRequest clone() {
         return (GetOperationsForResourceRequest) super.clone();
     }
+
 }

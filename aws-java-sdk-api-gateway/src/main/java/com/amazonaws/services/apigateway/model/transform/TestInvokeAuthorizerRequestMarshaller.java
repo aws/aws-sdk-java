@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class TestInvokeAuthorizerRequestMarshaller implements Marshaller<Request<TestInvokeAuthorizerRequest>, TestInvokeAuthorizerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TestInvokeAuthorizerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TestInvokeAuthorizerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -735,4 +735,5 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     public DescribeScalingPoliciesRequest clone() {
         return (DescribeScalingPoliciesRequest) super.clone();
     }
+
 }

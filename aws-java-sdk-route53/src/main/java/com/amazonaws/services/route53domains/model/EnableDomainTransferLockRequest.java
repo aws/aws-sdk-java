@@ -204,4 +204,5 @@ public class EnableDomainTransferLockRequest extends com.amazonaws.AmazonWebServ
     public EnableDomainTransferLockRequest clone() {
         return (EnableDomainTransferLockRequest) super.clone();
     }
+
 }

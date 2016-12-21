@@ -266,4 +266,5 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest 
     public BatchGetImageRequest clone() {
         return (BatchGetImageRequest) super.clone();
     }
+
 }

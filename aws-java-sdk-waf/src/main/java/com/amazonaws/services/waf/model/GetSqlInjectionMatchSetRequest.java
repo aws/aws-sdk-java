@@ -130,4 +130,5 @@ public class GetSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebServi
     public GetSqlInjectionMatchSetRequest clone() {
         return (GetSqlInjectionMatchSetRequest) super.clone();
     }
+
 }

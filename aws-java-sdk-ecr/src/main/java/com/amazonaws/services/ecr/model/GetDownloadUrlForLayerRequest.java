@@ -227,4 +227,5 @@ public class GetDownloadUrlForLayerRequest extends com.amazonaws.AmazonWebServic
     public GetDownloadUrlForLayerRequest clone() {
         return (GetDownloadUrlForLayerRequest) super.clone();
     }
+
 }

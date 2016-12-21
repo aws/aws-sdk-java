@@ -343,4 +343,5 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
     public ListEventSourceMappingsRequest clone() {
         return (ListEventSourceMappingsRequest) super.clone();
     }
+
 }

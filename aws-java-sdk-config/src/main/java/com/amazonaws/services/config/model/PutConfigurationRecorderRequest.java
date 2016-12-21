@@ -116,4 +116,5 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
     public PutConfigurationRecorderRequest clone() {
         return (PutConfigurationRecorderRequest) super.clone();
     }
+
 }

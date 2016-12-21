@@ -765,4 +765,5 @@ public class UpdateDomainContactPrivacyRequest extends com.amazonaws.AmazonWebSe
     public UpdateDomainContactPrivacyRequest clone() {
         return (UpdateDomainContactPrivacyRequest) super.clone();
     }
+
 }

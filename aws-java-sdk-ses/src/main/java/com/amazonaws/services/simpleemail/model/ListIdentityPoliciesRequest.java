@@ -154,4 +154,5 @@ public class ListIdentityPoliciesRequest extends com.amazonaws.AmazonWebServiceR
     public ListIdentityPoliciesRequest clone() {
         return (ListIdentityPoliciesRequest) super.clone();
     }
+
 }

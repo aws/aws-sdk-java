@@ -520,4 +520,5 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeLogStreamsRequest clone() {
         return (DescribeLogStreamsRequest) super.clone();
     }
+
 }

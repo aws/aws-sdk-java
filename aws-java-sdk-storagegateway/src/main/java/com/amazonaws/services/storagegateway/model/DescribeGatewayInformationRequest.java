@@ -97,4 +97,5 @@ public class DescribeGatewayInformationRequest extends com.amazonaws.AmazonWebSe
     public DescribeGatewayInformationRequest clone() {
         return (DescribeGatewayInformationRequest) super.clone();
     }
+
 }

@@ -169,4 +169,5 @@ public class AdminUserGlobalSignOutRequest extends com.amazonaws.AmazonWebServic
     public AdminUserGlobalSignOutRequest clone() {
         return (AdminUserGlobalSignOutRequest) super.clone();
     }
+
 }

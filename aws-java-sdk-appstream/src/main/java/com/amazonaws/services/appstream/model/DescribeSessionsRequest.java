@@ -333,4 +333,5 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeSessionsRequest clone() {
         return (DescribeSessionsRequest) super.clone();
     }
+
 }

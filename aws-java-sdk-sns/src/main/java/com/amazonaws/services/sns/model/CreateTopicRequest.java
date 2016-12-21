@@ -162,4 +162,5 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateTopicRequest clone() {
         return (CreateTopicRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeprecateThingTypeRequestMarshaller implements Marshaller<Request<DeprecateThingTypeRequest>, DeprecateThingTypeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeprecateThingTypeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeprecateThingTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

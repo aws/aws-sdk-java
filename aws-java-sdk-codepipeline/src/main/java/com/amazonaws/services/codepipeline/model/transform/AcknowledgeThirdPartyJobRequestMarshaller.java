@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AcknowledgeThirdPartyJobRequestMarshaller implements Marshaller<Request<AcknowledgeThirdPartyJobRequest>, AcknowledgeThirdPartyJobRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AcknowledgeThirdPartyJobRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AcknowledgeThirdPartyJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

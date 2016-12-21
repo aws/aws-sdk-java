@@ -188,4 +188,5 @@ public class RespondActivityTaskCompletedRequest extends com.amazonaws.AmazonWeb
     public RespondActivityTaskCompletedRequest clone() {
         return (RespondActivityTaskCompletedRequest) super.clone();
     }
+
 }

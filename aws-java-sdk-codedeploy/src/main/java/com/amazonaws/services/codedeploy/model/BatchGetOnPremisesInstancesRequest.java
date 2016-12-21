@@ -149,4 +149,5 @@ public class BatchGetOnPremisesInstancesRequest extends com.amazonaws.AmazonWebS
     public BatchGetOnPremisesInstancesRequest clone() {
         return (BatchGetOnPremisesInstancesRequest) super.clone();
     }
+
 }

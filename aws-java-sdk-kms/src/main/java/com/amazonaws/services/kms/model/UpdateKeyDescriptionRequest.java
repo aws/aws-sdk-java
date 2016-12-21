@@ -255,4 +255,5 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
     public UpdateKeyDescriptionRequest clone() {
         return (UpdateKeyDescriptionRequest) super.clone();
     }
+
 }

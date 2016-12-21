@@ -384,4 +384,5 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateJobQueueRequest clone() {
         return (CreateJobQueueRequest) super.clone();
     }
+
 }

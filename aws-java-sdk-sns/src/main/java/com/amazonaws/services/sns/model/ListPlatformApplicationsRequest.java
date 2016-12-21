@@ -123,4 +123,5 @@ public class ListPlatformApplicationsRequest extends com.amazonaws.AmazonWebServ
     public ListPlatformApplicationsRequest clone() {
         return (ListPlatformApplicationsRequest) super.clone();
     }
+
 }

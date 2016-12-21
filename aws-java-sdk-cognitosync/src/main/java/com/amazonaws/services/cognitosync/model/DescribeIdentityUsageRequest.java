@@ -165,4 +165,5 @@ public class DescribeIdentityUsageRequest extends com.amazonaws.AmazonWebService
     public DescribeIdentityUsageRequest clone() {
         return (DescribeIdentityUsageRequest) super.clone();
     }
+
 }

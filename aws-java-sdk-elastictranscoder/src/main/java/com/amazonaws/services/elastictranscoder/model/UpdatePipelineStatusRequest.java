@@ -250,4 +250,5 @@ public class UpdatePipelineStatusRequest extends com.amazonaws.AmazonWebServiceR
     public UpdatePipelineStatusRequest clone() {
         return (UpdatePipelineStatusRequest) super.clone();
     }
+
 }

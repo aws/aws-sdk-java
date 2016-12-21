@@ -294,4 +294,5 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
     public UpdateMaintenanceStartTimeRequest clone() {
         return (UpdateMaintenanceStartTimeRequest) super.clone();
     }
+
 }

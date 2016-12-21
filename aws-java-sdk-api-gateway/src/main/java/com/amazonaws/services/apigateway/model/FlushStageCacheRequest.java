@@ -169,4 +169,5 @@ public class FlushStageCacheRequest extends com.amazonaws.AmazonWebServiceReques
     public FlushStageCacheRequest clone() {
         return (FlushStageCacheRequest) super.clone();
     }
+
 }

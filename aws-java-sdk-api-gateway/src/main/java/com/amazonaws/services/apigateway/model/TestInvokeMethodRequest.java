@@ -543,4 +543,5 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
     public TestInvokeMethodRequest clone() {
         return (TestInvokeMethodRequest) super.clone();
     }
+
 }

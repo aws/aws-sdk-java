@@ -244,4 +244,5 @@ public class DeleteInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteInstanceRequest clone() {
         return (DeleteInstanceRequest) super.clone();
     }
+
 }

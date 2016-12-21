@@ -349,4 +349,5 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ListFindingsRequest clone() {
         return (ListFindingsRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RemoveAutoScalingPolicyRequestMarshaller implements Marshaller<Request<RemoveAutoScalingPolicyRequest>, RemoveAutoScalingPolicyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemoveAutoScalingPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemoveAutoScalingPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

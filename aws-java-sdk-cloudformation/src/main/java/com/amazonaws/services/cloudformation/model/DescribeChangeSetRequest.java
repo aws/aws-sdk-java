@@ -236,4 +236,5 @@ public class DescribeChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeChangeSetRequest clone() {
         return (DescribeChangeSetRequest) super.clone();
     }
+
 }

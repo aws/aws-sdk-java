@@ -222,4 +222,5 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateAliasRequest clone() {
         return (CreateAliasRequest) super.clone();
     }
+
 }

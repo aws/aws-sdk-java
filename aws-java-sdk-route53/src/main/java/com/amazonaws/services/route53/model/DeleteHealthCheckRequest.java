@@ -117,4 +117,5 @@ public class DeleteHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteHealthCheckRequest clone() {
         return (DeleteHealthCheckRequest) super.clone();
     }
+
 }

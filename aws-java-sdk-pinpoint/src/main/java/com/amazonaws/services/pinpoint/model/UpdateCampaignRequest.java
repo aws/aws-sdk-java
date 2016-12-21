@@ -165,4 +165,5 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdateCampaignRequest clone() {
         return (UpdateCampaignRequest) super.clone();
     }
+
 }

@@ -1142,4 +1142,5 @@ public class DescribeReservedCacheNodesOfferingsRequest extends com.amazonaws.Am
     public DescribeReservedCacheNodesOfferingsRequest clone() {
         return (DescribeReservedCacheNodesOfferingsRequest) super.clone();
     }
+
 }

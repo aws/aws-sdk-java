@@ -144,4 +144,5 @@ public class DescribeAssessmentRunsRequest extends com.amazonaws.AmazonWebServic
     public DescribeAssessmentRunsRequest clone() {
         return (DescribeAssessmentRunsRequest) super.clone();
     }
+
 }

@@ -407,4 +407,5 @@ public class RevokeDBSecurityGroupIngressRequest extends com.amazonaws.AmazonWeb
     public RevokeDBSecurityGroupIngressRequest clone() {
         return (RevokeDBSecurityGroupIngressRequest) super.clone();
     }
+
 }

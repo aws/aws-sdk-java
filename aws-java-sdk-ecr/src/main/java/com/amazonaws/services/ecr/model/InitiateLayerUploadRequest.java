@@ -174,4 +174,5 @@ public class InitiateLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
     public InitiateLayerUploadRequest clone() {
         return (InitiateLayerUploadRequest) super.clone();
     }
+
 }

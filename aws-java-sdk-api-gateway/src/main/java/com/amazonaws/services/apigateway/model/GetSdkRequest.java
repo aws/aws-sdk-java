@@ -331,4 +331,5 @@ public class GetSdkRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     public GetSdkRequest clone() {
         return (GetSdkRequest) super.clone();
     }
+
 }

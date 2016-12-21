@@ -229,4 +229,5 @@ public class DescribeStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeStreamRequest clone() {
         return (DescribeStreamRequest) super.clone();
     }
+
 }

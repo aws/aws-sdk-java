@@ -327,4 +327,5 @@ public class TestRoleRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public TestRoleRequest clone() {
         return (TestRoleRequest) super.clone();
     }
+
 }

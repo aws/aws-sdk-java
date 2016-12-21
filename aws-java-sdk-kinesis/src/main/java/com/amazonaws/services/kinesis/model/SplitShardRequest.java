@@ -253,4 +253,5 @@ public class SplitShardRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public SplitShardRequest clone() {
         return (SplitShardRequest) super.clone();
     }
+
 }

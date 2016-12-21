@@ -371,4 +371,5 @@ public class DescribeConfigurationOptionsRequest extends com.amazonaws.AmazonWeb
     public DescribeConfigurationOptionsRequest clone() {
         return (DescribeConfigurationOptionsRequest) super.clone();
     }
+
 }

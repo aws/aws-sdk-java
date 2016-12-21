@@ -117,4 +117,5 @@ public class DescribeJobRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DescribeJobRequest clone() {
         return (DescribeJobRequest) super.clone();
     }
+
 }

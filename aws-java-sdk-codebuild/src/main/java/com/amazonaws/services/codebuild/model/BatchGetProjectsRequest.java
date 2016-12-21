@@ -144,4 +144,5 @@ public class BatchGetProjectsRequest extends com.amazonaws.AmazonWebServiceReque
     public BatchGetProjectsRequest clone() {
         return (BatchGetProjectsRequest) super.clone();
     }
+
 }

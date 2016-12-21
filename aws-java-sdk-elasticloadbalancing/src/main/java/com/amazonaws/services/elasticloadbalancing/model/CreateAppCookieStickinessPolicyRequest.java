@@ -254,4 +254,5 @@ public class CreateAppCookieStickinessPolicyRequest extends com.amazonaws.Amazon
     public CreateAppCookieStickinessPolicyRequest clone() {
         return (CreateAppCookieStickinessPolicyRequest) super.clone();
     }
+
 }

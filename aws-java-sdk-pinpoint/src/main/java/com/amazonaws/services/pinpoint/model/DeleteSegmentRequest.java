@@ -130,4 +130,5 @@ public class DeleteSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteSegmentRequest clone() {
         return (DeleteSegmentRequest) super.clone();
     }
+
 }

@@ -184,4 +184,5 @@ public class DeleteVPCAssociationAuthorizationRequest extends com.amazonaws.Amaz
     public DeleteVPCAssociationAuthorizationRequest clone() {
         return (DeleteVPCAssociationAuthorizationRequest) super.clone();
     }
+
 }

@@ -116,4 +116,5 @@ public class DeleteLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     public DeleteLaunchConfigurationRequest clone() {
         return (DeleteLaunchConfigurationRequest) super.clone();
     }
+
 }

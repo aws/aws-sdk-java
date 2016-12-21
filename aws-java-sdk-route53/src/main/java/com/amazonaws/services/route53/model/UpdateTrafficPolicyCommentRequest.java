@@ -222,4 +222,5 @@ public class UpdateTrafficPolicyCommentRequest extends com.amazonaws.AmazonWebSe
     public UpdateTrafficPolicyCommentRequest clone() {
         return (UpdateTrafficPolicyCommentRequest) super.clone();
     }
+
 }

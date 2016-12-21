@@ -275,4 +275,5 @@ public class ConfirmDeviceRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ConfirmDeviceRequest clone() {
         return (ConfirmDeviceRequest) super.clone();
     }
+
 }

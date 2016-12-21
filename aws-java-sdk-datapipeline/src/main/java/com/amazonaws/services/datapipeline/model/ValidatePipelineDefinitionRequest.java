@@ -374,4 +374,5 @@ public class ValidatePipelineDefinitionRequest extends com.amazonaws.AmazonWebSe
     public ValidatePipelineDefinitionRequest clone() {
         return (ValidatePipelineDefinitionRequest) super.clone();
     }
+
 }

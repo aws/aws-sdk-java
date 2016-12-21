@@ -308,4 +308,5 @@ public class DescribeApplicationVersionsRequest extends com.amazonaws.AmazonWebS
     public DescribeApplicationVersionsRequest clone() {
         return (DescribeApplicationVersionsRequest) super.clone();
     }
+
 }

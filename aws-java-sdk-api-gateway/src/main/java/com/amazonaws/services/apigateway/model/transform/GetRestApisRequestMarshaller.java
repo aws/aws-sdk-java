@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetRestApisRequestMarshaller implements Marshaller<Request<GetRestApisRequest>, GetRestApisRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetRestApisRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetRestApisRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -594,4 +594,5 @@ public class DescribeClusterSecurityGroupsRequest extends com.amazonaws.AmazonWe
     public DescribeClusterSecurityGroupsRequest clone() {
         return (DescribeClusterSecurityGroupsRequest) super.clone();
     }
+
 }

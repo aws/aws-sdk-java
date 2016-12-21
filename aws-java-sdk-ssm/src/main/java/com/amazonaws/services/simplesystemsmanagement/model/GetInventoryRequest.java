@@ -346,4 +346,5 @@ public class GetInventoryRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetInventoryRequest clone() {
         return (GetInventoryRequest) super.clone();
     }
+
 }

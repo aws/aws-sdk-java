@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetActiveNamesRequestMarshaller implements Marshaller<Request<GetActiveNamesRequest>, GetActiveNamesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetActiveNamesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetActiveNamesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

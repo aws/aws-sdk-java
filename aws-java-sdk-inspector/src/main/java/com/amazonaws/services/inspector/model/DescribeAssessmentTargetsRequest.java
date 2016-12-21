@@ -144,4 +144,5 @@ public class DescribeAssessmentTargetsRequest extends com.amazonaws.AmazonWebSer
     public DescribeAssessmentTargetsRequest clone() {
         return (DescribeAssessmentTargetsRequest) super.clone();
     }
+
 }

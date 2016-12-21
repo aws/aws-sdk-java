@@ -135,4 +135,5 @@ public class ListProvisionedCapacityRequest extends com.amazonaws.AmazonWebServi
     public ListProvisionedCapacityRequest clone() {
         return (ListProvisionedCapacityRequest) super.clone();
     }
+
 }

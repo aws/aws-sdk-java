@@ -153,4 +153,5 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
     public GetOpenIDConnectProviderRequest clone() {
         return (GetOpenIDConnectProviderRequest) super.clone();
     }
+
 }

@@ -169,4 +169,5 @@ public class AdminResetUserPasswordRequest extends com.amazonaws.AmazonWebServic
     public AdminResetUserPasswordRequest clone() {
         return (AdminResetUserPasswordRequest) super.clone();
     }
+
 }

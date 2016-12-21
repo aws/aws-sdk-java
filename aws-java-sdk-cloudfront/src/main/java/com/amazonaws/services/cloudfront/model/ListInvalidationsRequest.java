@@ -268,4 +268,5 @@ public class ListInvalidationsRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListInvalidationsRequest clone() {
         return (ListInvalidationsRequest) super.clone();
     }
+
 }

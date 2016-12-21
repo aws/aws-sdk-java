@@ -115,4 +115,5 @@ public class DeleteReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
     public DeleteReplicationSubnetGroupRequest clone() {
         return (DeleteReplicationSubnetGroupRequest) super.clone();
     }
+
 }

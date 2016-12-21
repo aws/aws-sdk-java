@@ -222,4 +222,5 @@ public class RegisterApplicationRevisionRequest extends com.amazonaws.AmazonWebS
     public RegisterApplicationRevisionRequest clone() {
         return (RegisterApplicationRevisionRequest) super.clone();
     }
+
 }

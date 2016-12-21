@@ -169,4 +169,5 @@ public class ForgetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ForgetDeviceRequest clone() {
         return (ForgetDeviceRequest) super.clone();
     }
+
 }

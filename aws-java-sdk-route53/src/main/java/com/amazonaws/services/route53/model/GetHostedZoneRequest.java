@@ -134,4 +134,5 @@ public class GetHostedZoneRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetHostedZoneRequest clone() {
         return (GetHostedZoneRequest) super.clone();
     }
+
 }

@@ -2374,4 +2374,5 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     public RestoreDBInstanceFromDBSnapshotRequest clone() {
         return (RestoreDBInstanceFromDBSnapshotRequest) super.clone();
     }
+
 }

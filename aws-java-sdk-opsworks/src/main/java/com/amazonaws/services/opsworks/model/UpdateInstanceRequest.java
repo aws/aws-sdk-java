@@ -1471,4 +1471,5 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdateInstanceRequest clone() {
         return (UpdateInstanceRequest) super.clone();
     }
+
 }

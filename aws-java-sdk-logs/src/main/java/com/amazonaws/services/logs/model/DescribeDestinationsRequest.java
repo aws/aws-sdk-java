@@ -220,4 +220,5 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeDestinationsRequest clone() {
         return (DescribeDestinationsRequest) super.clone();
     }
+
 }

@@ -123,4 +123,5 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ListOfferingsRequest clone() {
         return (ListOfferingsRequest) super.clone();
     }
+
 }

@@ -1250,4 +1250,5 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     public CreateReplicationInstanceRequest clone() {
         return (CreateReplicationInstanceRequest) super.clone();
     }
+
 }

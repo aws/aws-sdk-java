@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetCredentialsForIdentityRequestMarshaller implements Marshaller<Request<GetCredentialsForIdentityRequest>, GetCredentialsForIdentityRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetCredentialsForIdentityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetCredentialsForIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

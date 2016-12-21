@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PutTraceSegmentsRequestMarshaller implements Marshaller<Request<PutTraceSegmentsRequest>, PutTraceSegmentsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutTraceSegmentsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutTraceSegmentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

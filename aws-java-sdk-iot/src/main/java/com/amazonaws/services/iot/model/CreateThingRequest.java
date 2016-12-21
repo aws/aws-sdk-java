@@ -241,4 +241,5 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateThingRequest clone() {
         return (CreateThingRequest) super.clone();
     }
+
 }

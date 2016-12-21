@@ -116,4 +116,5 @@ public class DeleteSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteSnapshotRequest clone() {
         return (DeleteSnapshotRequest) super.clone();
     }
+
 }

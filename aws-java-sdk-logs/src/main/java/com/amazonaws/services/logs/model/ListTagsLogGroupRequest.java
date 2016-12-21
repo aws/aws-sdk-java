@@ -114,4 +114,5 @@ public class ListTagsLogGroupRequest extends com.amazonaws.AmazonWebServiceReque
     public ListTagsLogGroupRequest clone() {
         return (ListTagsLogGroupRequest) super.clone();
     }
+
 }

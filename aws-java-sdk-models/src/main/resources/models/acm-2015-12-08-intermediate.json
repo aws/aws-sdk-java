@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSCertificateManagerModuleInjector",
     "defaultEndpoint" : "https://acm.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "acm.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate Manager (ACM) API documentation.</p> <p>You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information about using ACM, see the <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/\"> <i>AWS Certificate Manager User Guide</i> </a>.</p>",
     "endpointPrefix" : "acm",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/certificatemanager",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "ACM",
     "serviceFullName" : "AWS Certificate Manager",
     "serviceName" : "ACM",
@@ -838,6 +842,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn", "Tags" ],
       "shapeName" : "AddTagsToCertificateRequest",
       "unmarshaller" : null,
@@ -870,6 +876,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToCertificateResult",
       "unmarshaller" : {
@@ -3592,6 +3600,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateDetail",
       "unmarshaller" : {
@@ -3648,6 +3658,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateStatus",
       "unmarshaller" : {
@@ -3910,6 +3922,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateSummary",
       "unmarshaller" : {
@@ -3951,6 +3965,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CertificateType",
       "unmarshaller" : {
@@ -4107,6 +4123,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "DeleteCertificateRequest",
       "unmarshaller" : null,
@@ -4139,6 +4157,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteCertificateResult",
       "unmarshaller" : {
@@ -4295,6 +4315,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "DescribeCertificateRequest",
       "unmarshaller" : null,
@@ -4441,6 +4463,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeCertificateResult",
       "unmarshaller" : {
@@ -4958,6 +4982,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DomainValidation",
       "unmarshaller" : {
@@ -5220,6 +5246,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ValidationDomain" ],
       "shapeName" : "DomainValidationOption",
       "unmarshaller" : {
@@ -5270,6 +5298,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailureReason",
       "unmarshaller" : {
@@ -5426,6 +5456,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "GetCertificateRequest",
       "unmarshaller" : null,
@@ -5685,6 +5717,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetCertificateResult",
       "unmarshaller" : {
@@ -6180,6 +6214,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Certificate", "PrivateKey" ],
       "shapeName" : "ImportCertificateRequest",
       "unmarshaller" : null,
@@ -6326,6 +6362,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImportCertificateResult",
       "unmarshaller" : {
@@ -6361,6 +6399,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidArnException",
       "unmarshaller" : null,
@@ -6393,6 +6433,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDomainValidationOptionsException",
       "unmarshaller" : null,
@@ -6425,6 +6467,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidStateException",
       "unmarshaller" : null,
@@ -6457,6 +6501,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTagException",
       "unmarshaller" : null,
@@ -6498,6 +6544,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "KeyAlgorithm",
       "unmarshaller" : {
@@ -6533,6 +6581,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -7054,6 +7104,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCertificatesRequest",
       "unmarshaller" : null,
@@ -7455,6 +7507,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCertificatesResult",
       "unmarshaller" : {
@@ -7611,6 +7665,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn" ],
       "shapeName" : "ListTagsForCertificateRequest",
       "unmarshaller" : null,
@@ -7899,6 +7955,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTagsForCertificateResult",
       "unmarshaller" : {
@@ -8310,6 +8368,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn", "Tags" ],
       "shapeName" : "RemoveTagsFromCertificateRequest",
       "unmarshaller" : null,
@@ -8342,6 +8402,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromCertificateResult",
       "unmarshaller" : {
@@ -9121,6 +9183,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "RequestCertificateRequest",
       "unmarshaller" : null,
@@ -9267,6 +9331,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestCertificateResult",
       "unmarshaller" : {
@@ -9302,6 +9368,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestInProgressException",
       "unmarshaller" : null,
@@ -9681,6 +9749,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CertificateArn", "Domain", "ValidationDomain" ],
       "shapeName" : "ResendValidationEmailRequest",
       "unmarshaller" : null,
@@ -9713,6 +9783,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendValidationEmailResult",
       "unmarshaller" : {
@@ -9748,6 +9820,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceInUseException",
       "unmarshaller" : null,
@@ -9780,6 +9854,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -9842,6 +9918,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevocationReason",
       "unmarshaller" : {
@@ -10104,6 +10182,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Key" ],
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -10139,6 +10219,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyTagsException",
       "unmarshaller" : null,
@@ -10154,6 +10236,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

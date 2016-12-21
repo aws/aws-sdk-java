@@ -199,4 +199,5 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
     public SetSecurityGroupsRequest clone() {
         return (SetSecurityGroupsRequest) super.clone();
     }
+
 }

@@ -393,4 +393,5 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateThingRequest clone() {
         return (UpdateThingRequest) super.clone();
     }
+
 }

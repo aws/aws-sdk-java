@@ -121,4 +121,5 @@ public class GetRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public GetRuleRequest clone() {
         return (GetRuleRequest) super.clone();
     }
+
 }

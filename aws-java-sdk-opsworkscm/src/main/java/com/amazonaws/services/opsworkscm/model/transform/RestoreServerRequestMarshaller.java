@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RestoreServerRequestMarshaller implements Marshaller<Request<RestoreServerRequest>, RestoreServerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RestoreServerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RestoreServerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

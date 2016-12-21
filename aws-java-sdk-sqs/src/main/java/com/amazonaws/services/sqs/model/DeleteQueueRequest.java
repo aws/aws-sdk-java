@@ -152,4 +152,5 @@ public class DeleteQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteQueueRequest clone() {
         return (DeleteQueueRequest) super.clone();
     }
+
 }

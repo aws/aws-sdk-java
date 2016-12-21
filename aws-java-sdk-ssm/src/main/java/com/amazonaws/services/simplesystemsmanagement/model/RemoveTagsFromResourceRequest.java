@@ -286,4 +286,5 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
     public RemoveTagsFromResourceRequest clone() {
         return (RemoveTagsFromResourceRequest) super.clone();
     }
+
 }

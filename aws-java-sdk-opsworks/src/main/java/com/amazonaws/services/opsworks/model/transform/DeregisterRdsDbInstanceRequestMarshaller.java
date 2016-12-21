@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeregisterRdsDbInstanceRequestMarshaller implements Marshaller<Request<DeregisterRdsDbInstanceRequest>, DeregisterRdsDbInstanceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeregisterRdsDbInstanceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeregisterRdsDbInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

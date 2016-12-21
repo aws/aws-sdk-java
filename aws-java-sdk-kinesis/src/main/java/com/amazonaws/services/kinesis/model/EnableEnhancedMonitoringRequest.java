@@ -776,4 +776,5 @@ public class EnableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebServ
     public EnableEnhancedMonitoringRequest clone() {
         return (EnableEnhancedMonitoringRequest) super.clone();
     }
+
 }

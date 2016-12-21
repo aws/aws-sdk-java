@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateRealtimeEndpointRequestMarshaller implements Marshaller<Request<CreateRealtimeEndpointRequest>, CreateRealtimeEndpointRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateRealtimeEndpointRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateRealtimeEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

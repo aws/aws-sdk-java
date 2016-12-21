@@ -147,4 +147,5 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
     public StopWorkspacesRequest clone() {
         return (StopWorkspacesRequest) super.clone();
     }
+
 }

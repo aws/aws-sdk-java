@@ -116,4 +116,5 @@ public class DescribeHapgRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DescribeHapgRequest clone() {
         return (DescribeHapgRequest) super.clone();
     }
+
 }

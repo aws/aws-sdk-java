@@ -235,80 +235,81 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidClientTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidJobStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PipelineVersionNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidApprovalTokenException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidActionDeclarationException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.PipelineExecutionNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ApprovalAlreadyCompletedException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PipelineNameInUseException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.PipelineNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidJobException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidJobException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ActionTypeNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("StageNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.StageNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.StageNotRetryableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidStructureException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ActionNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.ActionNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidStageDeclarationException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.ValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNonceException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.InvalidNonceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.JobNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withModeledClass(
-                            com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidClientTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidJobStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineVersionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidApprovalTokenException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidActionDeclarationException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.PipelineExecutionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ApprovalAlreadyCompletedException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineNameInUseException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.PipelineNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidJobException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ActionTypeNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StageNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.StageNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.StageNotRetryableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidStructureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ActionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.ActionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStageDeclarationException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNonceException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.InvalidNonceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.JobNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withModeledClass(
+                                    com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class));
 
     /**
      * Constructs a new client to invoke service methods on CodePipeline. A credentials provider chain will be used that

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteDirectoryRequestMarshaller implements Marshaller<Request<DeleteDirectoryRequest>, DeleteDirectoryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteDirectoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

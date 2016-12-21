@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleRequest>, TestRoleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TestRoleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TestRoleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

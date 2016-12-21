@@ -199,4 +199,5 @@ public class BatchPutAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     public BatchPutAttributesRequest clone() {
         return (BatchPutAttributesRequest) super.clone();
     }
+
 }

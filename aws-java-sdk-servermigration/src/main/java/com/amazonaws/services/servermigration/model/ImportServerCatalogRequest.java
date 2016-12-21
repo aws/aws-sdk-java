@@ -60,4 +60,5 @@ public class ImportServerCatalogRequest extends com.amazonaws.AmazonWebServiceRe
     public ImportServerCatalogRequest clone() {
         return (ImportServerCatalogRequest) super.clone();
     }
+
 }

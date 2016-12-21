@@ -275,4 +275,5 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     public CreateRemoteAccessSessionRequest clone() {
         return (CreateRemoteAccessSessionRequest) super.clone();
     }
+
 }

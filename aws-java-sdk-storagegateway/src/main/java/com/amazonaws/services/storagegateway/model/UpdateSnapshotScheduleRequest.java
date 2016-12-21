@@ -311,4 +311,5 @@ public class UpdateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     public UpdateSnapshotScheduleRequest clone() {
         return (UpdateSnapshotScheduleRequest) super.clone();
     }
+
 }

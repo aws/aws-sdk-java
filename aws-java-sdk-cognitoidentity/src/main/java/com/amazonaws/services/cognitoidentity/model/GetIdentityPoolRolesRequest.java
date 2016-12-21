@@ -116,4 +116,5 @@ public class GetIdentityPoolRolesRequest extends com.amazonaws.AmazonWebServiceR
     public GetIdentityPoolRolesRequest clone() {
         return (GetIdentityPoolRolesRequest) super.clone();
     }
+
 }

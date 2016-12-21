@@ -383,4 +383,5 @@ public class DescribeInstancePatchStatesForPatchGroupRequest extends com.amazona
     public DescribeInstancePatchStatesForPatchGroupRequest clone() {
         return (DescribeInstancePatchStatesForPatchGroupRequest) super.clone();
     }
+
 }

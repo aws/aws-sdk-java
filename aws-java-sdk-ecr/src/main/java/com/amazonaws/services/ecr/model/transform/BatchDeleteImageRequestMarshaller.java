@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class BatchDeleteImageRequestMarshaller implements Marshaller<Request<BatchDeleteImageRequest>, BatchDeleteImageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public BatchDeleteImageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public BatchDeleteImageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

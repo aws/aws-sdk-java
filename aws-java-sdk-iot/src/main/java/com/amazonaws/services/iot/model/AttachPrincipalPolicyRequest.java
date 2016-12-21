@@ -176,4 +176,5 @@ public class AttachPrincipalPolicyRequest extends com.amazonaws.AmazonWebService
     public AttachPrincipalPolicyRequest clone() {
         return (AttachPrincipalPolicyRequest) super.clone();
     }
+
 }

@@ -97,4 +97,5 @@ public class DeleteInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteInterconnectRequest clone() {
         return (DeleteInterconnectRequest) super.clone();
     }
+
 }

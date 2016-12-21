@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateGameSessionRequestMarshaller implements Marshaller<Request<UpdateGameSessionRequest>, UpdateGameSessionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateGameSessionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateGameSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

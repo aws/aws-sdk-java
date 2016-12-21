@@ -223,4 +223,5 @@ public class AddInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
     public AddInstanceGroupsRequest clone() {
         return (AddInstanceGroupsRequest) super.clone();
     }
+
 }

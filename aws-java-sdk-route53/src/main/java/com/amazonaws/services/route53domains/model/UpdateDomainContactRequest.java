@@ -603,4 +603,5 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateDomainContactRequest clone() {
         return (UpdateDomainContactRequest) super.clone();
     }
+
 }

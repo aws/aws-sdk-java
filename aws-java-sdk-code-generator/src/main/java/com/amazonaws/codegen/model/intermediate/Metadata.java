@@ -36,6 +36,8 @@ public class Metadata {
 
     private String defaultEndpoint;
 
+    private String defaultRegion;
+
     private String defaultEndpointWithoutHttpProtocol;
 
     private String syncInterface;
@@ -63,6 +65,10 @@ public class Metadata {
     private String endpointPrefix;
 
     private String signingName;
+
+    private boolean requiresIamSigners;
+
+    private boolean requiresApiKey;
 
     public String getApiVersion() {
         return apiVersion;
@@ -135,6 +141,19 @@ public class Metadata {
 
     public Metadata withDefaultEndpoint(String defaultEndpoint) {
         setDefaultEndpoint(defaultEndpoint);
+        return this;
+    }
+
+    public String getDefaultRegion() {
+        return defaultRegion;
+    }
+
+    public void setDefaultRegion(String defaultRegion) {
+        this.defaultRegion = defaultRegion;
+    }
+
+    public Metadata withDefaultRegion(String defaultRegion) {
+        setDefaultRegion(defaultRegion);
         return this;
     }
 
@@ -407,8 +426,29 @@ public class Metadata {
         return protocolMetadataProvider.getUnmarshallerClassSuffix();
     }
 
+    public String getProtocolFactory() {
+        return protocolMetadataProvider.getProtocolFactoryImplFqcn();
+    }
+
+    public boolean isRequiresIamSigners() {
+        return requiresIamSigners;
+    }
+
+    public void setRequiresIamSigners(boolean requiresIamSigners) {
+        this.requiresIamSigners = requiresIamSigners;
+    }
+
     public String getRequestBaseFqcn() {
         return protocolMetadataProvider.getRequestBaseFqcn();
+    }
+
+    public boolean isRequiresApiKey() {
+        return requiresApiKey;
+    }
+
+    public Metadata withRequiresApiKey(boolean requiresApiKey) {
+        this.requiresApiKey = requiresApiKey;
+        return this;
     }
 
 }

@@ -139,4 +139,5 @@ public class DisableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceRe
     public DisableSnapshotCopyRequest clone() {
         return (DisableSnapshotCopyRequest) super.clone();
     }
+
 }

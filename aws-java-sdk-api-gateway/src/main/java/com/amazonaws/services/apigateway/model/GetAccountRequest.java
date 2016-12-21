@@ -62,4 +62,5 @@ public class GetAccountRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetAccountRequest clone() {
         return (GetAccountRequest) super.clone();
     }
+
 }

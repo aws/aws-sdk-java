@@ -134,4 +134,5 @@ public class GetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     public GetTopicAttributesRequest clone() {
         return (GetTopicAttributesRequest) super.clone();
     }
+
 }

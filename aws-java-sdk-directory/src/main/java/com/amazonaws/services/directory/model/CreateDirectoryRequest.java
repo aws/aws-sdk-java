@@ -421,4 +421,5 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateDirectoryRequest clone() {
         return (CreateDirectoryRequest) super.clone();
     }
+
 }

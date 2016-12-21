@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateRadiusRequestMarshaller implements Marshaller<Request<UpdateRadiusRequest>, UpdateRadiusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateRadiusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateRadiusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

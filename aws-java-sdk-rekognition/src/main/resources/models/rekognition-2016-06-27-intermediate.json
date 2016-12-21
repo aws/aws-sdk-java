@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AmazonRekognitionModuleInjector",
     "defaultEndpoint" : "rekognition.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "rekognition.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>This is Amazon Rekognition API guide.</p>",
     "endpointPrefix" : "rekognition",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/rekognition",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Rekognition",
     "serviceName" : "Amazon Rekognition",
@@ -709,6 +713,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AccessDeniedException",
       "unmarshaller" : null,
@@ -747,6 +753,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Attribute",
       "unmarshaller" : {
@@ -1009,6 +1017,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Beard",
       "unmarshaller" : {
@@ -1497,6 +1507,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BoundingBox",
       "unmarshaller" : {
@@ -1759,6 +1771,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompareFacesMatch",
       "unmarshaller" : {
@@ -2141,6 +2155,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SourceImage", "TargetImage" ],
       "shapeName" : "CompareFacesRequest",
       "unmarshaller" : null,
@@ -2542,6 +2558,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompareFacesResult",
       "unmarshaller" : {
@@ -2804,6 +2822,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparedFace",
       "unmarshaller" : {
@@ -3066,6 +3086,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparedSourceImageFace",
       "unmarshaller" : {
@@ -3222,6 +3244,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId" ],
       "shapeName" : "CreateCollectionRequest",
       "unmarshaller" : null,
@@ -3481,6 +3505,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateCollectionResult",
       "unmarshaller" : {
@@ -3637,6 +3663,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId" ],
       "shapeName" : "DeleteCollectionRequest",
       "unmarshaller" : null,
@@ -3783,6 +3811,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteCollectionResult",
       "unmarshaller" : {
@@ -4194,6 +4224,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "FaceIds" ],
       "shapeName" : "DeleteFacesRequest",
       "unmarshaller" : null,
@@ -4482,6 +4514,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteFacesResult",
       "unmarshaller" : {
@@ -4893,6 +4927,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Image" ],
       "shapeName" : "DetectFacesRequest",
       "unmarshaller" : null,
@@ -5294,6 +5330,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DetectFacesResult",
       "unmarshaller" : {
@@ -5676,6 +5714,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Image" ],
       "shapeName" : "DetectLabelsRequest",
       "unmarshaller" : null,
@@ -6077,6 +6117,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DetectLabelsResult",
       "unmarshaller" : {
@@ -6339,6 +6381,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Emotion",
       "unmarshaller" : {
@@ -6398,6 +6442,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EmotionName",
       "unmarshaller" : {
@@ -6660,6 +6706,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EyeOpen",
       "unmarshaller" : {
@@ -6922,6 +6970,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Eyeglasses",
       "unmarshaller" : {
@@ -7523,6 +7573,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Face",
       "unmarshaller" : {
@@ -9425,6 +9477,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaceDetail",
       "unmarshaller" : {
@@ -9687,6 +9741,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaceMatch",
       "unmarshaller" : {
@@ -9949,6 +10005,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaceRecord",
       "unmarshaller" : {
@@ -10211,6 +10269,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Gender",
       "unmarshaller" : {
@@ -10252,6 +10312,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenderType",
       "unmarshaller" : {
@@ -10514,6 +10576,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Image",
       "unmarshaller" : {
@@ -10776,6 +10840,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageQuality",
       "unmarshaller" : {
@@ -10811,6 +10877,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageTooLargeException",
       "unmarshaller" : null,
@@ -11445,6 +11513,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "Image" ],
       "shapeName" : "IndexFacesRequest",
       "unmarshaller" : null,
@@ -11846,6 +11916,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IndexFacesResult",
       "unmarshaller" : {
@@ -11881,6 +11953,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerErrorException",
       "unmarshaller" : null,
@@ -11913,6 +11987,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidImageFormatException",
       "unmarshaller" : null,
@@ -11945,6 +12021,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidPaginationTokenException",
       "unmarshaller" : null,
@@ -11977,6 +12055,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
       "unmarshaller" : null,
@@ -12009,6 +12089,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidS3ObjectException",
       "unmarshaller" : null,
@@ -12268,6 +12350,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Label",
       "unmarshaller" : {
@@ -12643,6 +12727,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Landmark",
       "unmarshaller" : {
@@ -12753,6 +12839,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LandmarkType",
       "unmarshaller" : {
@@ -13022,6 +13110,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCollectionsRequest",
       "unmarshaller" : null,
@@ -13423,6 +13513,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListCollectionsResult",
       "unmarshaller" : {
@@ -13805,6 +13897,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId" ],
       "shapeName" : "ListFacesRequest",
       "unmarshaller" : null,
@@ -14206,6 +14300,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFacesResult",
       "unmarshaller" : {
@@ -14468,6 +14564,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MouthOpen",
       "unmarshaller" : {
@@ -14730,6 +14828,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Mustache",
       "unmarshaller" : {
@@ -14777,6 +14877,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OrientationCorrection",
       "unmarshaller" : {
@@ -15152,6 +15254,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Pose",
       "unmarshaller" : {
@@ -15187,6 +15291,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionedThroughputExceededException",
       "unmarshaller" : null,
@@ -15219,6 +15325,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceAlreadyExistsException",
       "unmarshaller" : null,
@@ -15251,6 +15359,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -15623,6 +15733,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3Object",
       "unmarshaller" : {
@@ -16118,6 +16230,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "Image" ],
       "shapeName" : "SearchFacesByImageRequest",
       "unmarshaller" : null,
@@ -16632,6 +16746,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchFacesByImageResult",
       "unmarshaller" : {
@@ -17127,6 +17243,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "CollectionId", "FaceId" ],
       "shapeName" : "SearchFacesRequest",
       "unmarshaller" : null,
@@ -17528,6 +17646,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchFacesResult",
       "unmarshaller" : {
@@ -17790,6 +17910,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Smile",
       "unmarshaller" : {
@@ -18052,6 +18174,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Sunglasses",
       "unmarshaller" : {
@@ -18087,6 +18211,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThrottlingException",
       "unmarshaller" : null,
@@ -18102,6 +18228,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

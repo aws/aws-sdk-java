@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class FlushStageAuthorizersCacheRequestMarshaller implements Marshaller<Request<FlushStageAuthorizersCacheRequest>, FlushStageAuthorizersCacheRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public FlushStageAuthorizersCacheRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public FlushStageAuthorizersCacheRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

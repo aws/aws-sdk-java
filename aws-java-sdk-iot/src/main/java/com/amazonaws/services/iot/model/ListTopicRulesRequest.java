@@ -287,4 +287,5 @@ public class ListTopicRulesRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListTopicRulesRequest clone() {
         return (ListTopicRulesRequest) super.clone();
     }
+
 }

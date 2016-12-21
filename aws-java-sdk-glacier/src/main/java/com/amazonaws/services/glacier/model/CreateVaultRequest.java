@@ -229,4 +229,5 @@ public class CreateVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateVaultRequest clone() {
         return (CreateVaultRequest) super.clone();
     }
+
 }

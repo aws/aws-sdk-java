@@ -1320,4 +1320,5 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     public PutIntegrationRequest clone() {
         return (PutIntegrationRequest) super.clone();
     }
+
 }

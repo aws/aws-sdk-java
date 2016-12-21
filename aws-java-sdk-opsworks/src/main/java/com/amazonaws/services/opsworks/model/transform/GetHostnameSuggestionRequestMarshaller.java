@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetHostnameSuggestionRequestMarshaller implements Marshaller<Request<GetHostnameSuggestionRequest>, GetHostnameSuggestionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetHostnameSuggestionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetHostnameSuggestionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -184,4 +184,5 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
     public StartDataCollectionByAgentIdsRequest clone() {
         return (StartDataCollectionByAgentIdsRequest) super.clone();
     }
+
 }

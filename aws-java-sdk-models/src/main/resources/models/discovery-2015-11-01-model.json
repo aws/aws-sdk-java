@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-11-01",
     "endpointPrefix" : "discovery",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AssociateConfigurationItemsToApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Associates one or more configuration items with an application.</p>",
       "errors" : [ {
@@ -62,7 +64,8 @@
       }
     },
     "CreateApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates an application with the given name and description.</p>",
       "errors" : [ {
@@ -110,7 +113,8 @@
       }
     },
     "CreateTags" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p>",
       "errors" : [ {
@@ -164,7 +168,8 @@
       }
     },
     "DeleteApplications" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a list of applications and their associations with configuration items.</p>",
       "errors" : [ {
@@ -212,7 +217,8 @@
       }
     },
     "DeleteTags" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the association between configuration items and one or more tags. This API accepts a list of multiple configuration items.</p>",
       "errors" : [ {
@@ -266,7 +272,8 @@
       }
     },
     "DescribeAgents" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists agents or the Connector by ID or lists all agents/Connectors associated with your user account if you did not specify an ID.</p>",
       "errors" : [ {
@@ -314,7 +321,8 @@
       }
     },
     "DescribeConfigurations" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves attributes for a list of configuration item IDs. All of the supplied IDs must be for the same asset type (server, application, process, or connection). Output fields are specific to the asset type selected. For example, the output for a <i>server</i> configuration item includes a list of attributes about the server, such as host name, operating system, and number of network cards.</p> <p>For a complete list of outputs for each asset type, see <a href=\"http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations\">Querying Discovered Configuration Items</a>.</p>",
       "errors" : [ {
@@ -362,7 +370,8 @@
       }
     },
     "DescribeExportConfigurations" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.</p>",
       "errors" : [ {
@@ -416,7 +425,8 @@
       }
     },
     "DescribeTags" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves a list of all tags assigned to a specific configuration item.</p>",
       "errors" : [ {
@@ -470,7 +480,8 @@
       }
     },
     "DisassociateConfigurationItemsFromApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Disassociates one or more configuration items from an application.</p>",
       "errors" : [ {
@@ -518,7 +529,8 @@
       }
     },
     "ExportConfigurations" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system performance. This API returns an export ID which you can query using the <i>DescribeExportConfigurations</i> API. The system imposes a limit of two configuration exports in six hours.</p>",
       "errors" : [ {
@@ -567,7 +579,8 @@
       }
     },
     "GetDiscoverySummary" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves a short summary of discovered assets.</p>",
       "errors" : [ {
@@ -615,7 +628,8 @@
       }
     },
     "ListConfigurations" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria identify relationship requirements.</p>",
       "errors" : [ {
@@ -669,7 +683,8 @@
       }
     },
     "ListServerNeighbors" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves a list of servers which are one network hop away from a specified server.</p>",
       "errors" : [ {
@@ -717,7 +732,8 @@
       }
     },
     "StartDataCollectionByAgentIds" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Instructs the specified agents or Connectors to start collecting data.</p>",
       "errors" : [ {
@@ -765,7 +781,8 @@
       }
     },
     "StopDataCollectionByAgentIds" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Instructs the specified agents or Connectors to stop collecting data.</p>",
       "errors" : [ {
@@ -813,7 +830,8 @@
       }
     },
     "UpdateApplication" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates metadata about an application.</p>",
       "errors" : [ {

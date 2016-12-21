@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeRefreshSchemasStatusRequestMarshaller implements
         Marshaller<Request<DescribeRefreshSchemasStatusRequest>, DescribeRefreshSchemasStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeRefreshSchemasStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeRefreshSchemasStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

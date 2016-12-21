@@ -552,4 +552,5 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     public UpdateUserPoolClientRequest clone() {
         return (UpdateUserPoolClientRequest) super.clone();
     }
+
 }

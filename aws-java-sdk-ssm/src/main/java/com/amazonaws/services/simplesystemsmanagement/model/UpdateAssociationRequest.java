@@ -393,4 +393,5 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateAssociationRequest clone() {
         return (UpdateAssociationRequest) super.clone();
     }
+
 }

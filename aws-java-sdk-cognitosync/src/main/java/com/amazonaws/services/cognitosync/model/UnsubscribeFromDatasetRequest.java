@@ -282,4 +282,5 @@ public class UnsubscribeFromDatasetRequest extends com.amazonaws.AmazonWebServic
     public UnsubscribeFromDatasetRequest clone() {
         return (UnsubscribeFromDatasetRequest) super.clone();
     }
+
 }

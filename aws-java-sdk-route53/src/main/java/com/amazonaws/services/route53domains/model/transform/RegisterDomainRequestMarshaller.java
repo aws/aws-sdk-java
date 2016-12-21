@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RegisterDomainRequestMarshaller implements Marshaller<Request<RegisterDomainRequest>, RegisterDomainRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RegisterDomainRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RegisterDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

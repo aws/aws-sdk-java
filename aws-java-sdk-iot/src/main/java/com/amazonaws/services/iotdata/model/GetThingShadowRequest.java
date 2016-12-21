@@ -116,4 +116,5 @@ public class GetThingShadowRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetThingShadowRequest clone() {
         return (GetThingShadowRequest) super.clone();
     }
+
 }

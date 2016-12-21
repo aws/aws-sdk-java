@@ -5558,4 +5558,5 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     public ModifyDBInstanceRequest clone() {
         return (ModifyDBInstanceRequest) super.clone();
     }
+
 }

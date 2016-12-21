@@ -624,4 +624,5 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CreateCaseRequest clone() {
         return (CreateCaseRequest) super.clone();
     }
+
 }

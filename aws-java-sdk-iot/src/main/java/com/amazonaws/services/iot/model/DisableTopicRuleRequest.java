@@ -116,4 +116,5 @@ public class DisableTopicRuleRequest extends com.amazonaws.AmazonWebServiceReque
     public DisableTopicRuleRequest clone() {
         return (DisableTopicRuleRequest) super.clone();
     }
+
 }

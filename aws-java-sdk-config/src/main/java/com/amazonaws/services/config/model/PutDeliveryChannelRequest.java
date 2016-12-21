@@ -123,4 +123,5 @@ public class PutDeliveryChannelRequest extends com.amazonaws.AmazonWebServiceReq
     public PutDeliveryChannelRequest clone() {
         return (PutDeliveryChannelRequest) super.clone();
     }
+
 }

@@ -97,4 +97,5 @@ public class DeleteGatewayRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteGatewayRequest clone() {
         return (DeleteGatewayRequest) super.clone();
     }
+
 }

@@ -43,6 +43,7 @@
     "cucumberModuleInjectorClassName" : "AmazonPollyModuleInjector",
     "defaultEndpoint" : "polly.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "polly.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>Amazon Polly is a web service that makes it easy to synthesize speech from text.</p> <p>The Amazon Polly service provides API operations for synthesizing high-quality speech from plain text and Speech Synthesis Markup Language (SSML), along with managing pronunciations lexicons that enable you to get the best results for your application domain.</p>",
     "endpointPrefix" : "polly",
     "hasApiWithStreamInput" : false,
@@ -53,7 +54,10 @@
     "packagePath" : "com/amazonaws/services/polly",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Polly",
     "serviceName" : "Amazon Polly",
@@ -451,6 +455,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "DeleteLexiconRequest",
       "unmarshaller" : null,
@@ -483,6 +489,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteLexiconResult",
       "unmarshaller" : {
@@ -752,6 +760,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVoicesRequest",
       "unmarshaller" : null,
@@ -1153,6 +1163,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVoicesResult",
       "unmarshaller" : {
@@ -1194,6 +1206,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Gender",
       "unmarshaller" : {
@@ -1350,6 +1364,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "GetLexiconRequest",
       "unmarshaller" : null,
@@ -1609,6 +1625,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetLexiconResult",
       "unmarshaller" : {
@@ -1644,6 +1662,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLexiconException",
       "unmarshaller" : null,
@@ -1676,6 +1696,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -1708,6 +1730,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSampleRateException",
       "unmarshaller" : null,
@@ -1740,6 +1764,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSsmlException",
       "unmarshaller" : null,
@@ -1844,6 +1870,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LanguageCode",
       "unmarshaller" : {
@@ -2106,6 +2134,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Lexicon",
       "unmarshaller" : {
@@ -2820,6 +2850,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconAttributes",
       "unmarshaller" : {
@@ -3082,6 +3114,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconDescription",
       "unmarshaller" : {
@@ -3117,6 +3151,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconNotFoundException",
       "unmarshaller" : null,
@@ -3149,6 +3185,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconSizeExceededException",
       "unmarshaller" : null,
@@ -3302,6 +3340,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLexiconsRequest",
       "unmarshaller" : null,
@@ -3703,6 +3743,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLexiconsResult",
       "unmarshaller" : {
@@ -3738,6 +3780,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaxLexemeLengthExceededException",
       "unmarshaller" : null,
@@ -3770,6 +3814,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaxLexiconsNumberExceededException",
       "unmarshaller" : null,
@@ -3811,6 +3857,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OutputFormat",
       "unmarshaller" : {
@@ -4080,6 +4128,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Content" ],
       "shapeName" : "PutLexiconRequest",
       "unmarshaller" : null,
@@ -4112,6 +4162,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutLexiconResult",
       "unmarshaller" : {
@@ -4147,6 +4199,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceFailureException",
       "unmarshaller" : null,
@@ -5007,6 +5061,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OutputFormat", "Text", "VoiceId" ],
       "shapeName" : "SynthesizeSpeechRequest",
       "unmarshaller" : null,
@@ -5379,6 +5435,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SynthesizeSpeechResult",
       "unmarshaller" : {
@@ -5414,6 +5472,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextLengthExceededException",
       "unmarshaller" : null,
@@ -5452,6 +5512,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextType",
       "unmarshaller" : {
@@ -5487,6 +5549,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedPlsAlphabetException",
       "unmarshaller" : null,
@@ -5519,6 +5583,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedPlsLanguageException",
       "unmarshaller" : null,
@@ -6117,6 +6183,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Voice",
       "unmarshaller" : {
@@ -6293,6 +6361,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VoiceId",
       "unmarshaller" : {
@@ -6311,6 +6381,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

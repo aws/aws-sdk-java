@@ -149,4 +149,5 @@ public class DescribeDeliveryChannelStatusRequest extends com.amazonaws.AmazonWe
     public DescribeDeliveryChannelStatusRequest clone() {
         return (DescribeDeliveryChannelStatusRequest) super.clone();
     }
+
 }

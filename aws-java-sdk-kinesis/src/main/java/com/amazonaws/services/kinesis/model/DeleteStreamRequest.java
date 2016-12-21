@@ -116,4 +116,5 @@ public class DeleteStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteStreamRequest clone() {
         return (DeleteStreamRequest) super.clone();
     }
+
 }

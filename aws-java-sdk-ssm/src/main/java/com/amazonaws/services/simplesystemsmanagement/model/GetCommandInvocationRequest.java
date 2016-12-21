@@ -234,4 +234,5 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     public GetCommandInvocationRequest clone() {
         return (GetCommandInvocationRequest) super.clone();
     }
+
 }

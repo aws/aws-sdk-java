@@ -220,4 +220,5 @@ public class GetServiceGraphRequest extends com.amazonaws.AmazonWebServiceReques
     public GetServiceGraphRequest clone() {
         return (GetServiceGraphRequest) super.clone();
     }
+
 }

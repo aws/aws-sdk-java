@@ -272,4 +272,5 @@ public class PromoteReadReplicaDBClusterRequest extends com.amazonaws.AmazonWebS
     public PromoteReadReplicaDBClusterRequest clone() {
         return (PromoteReadReplicaDBClusterRequest) super.clone();
     }
+
 }

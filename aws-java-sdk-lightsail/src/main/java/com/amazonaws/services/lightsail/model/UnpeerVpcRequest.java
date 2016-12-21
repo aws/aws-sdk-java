@@ -60,4 +60,5 @@ public class UnpeerVpcRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public UnpeerVpcRequest clone() {
         return (UnpeerVpcRequest) super.clone();
     }
+
 }

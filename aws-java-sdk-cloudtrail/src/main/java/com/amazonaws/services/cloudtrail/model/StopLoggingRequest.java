@@ -141,4 +141,5 @@ public class StopLoggingRequest extends com.amazonaws.AmazonWebServiceRequest im
     public StopLoggingRequest clone() {
         return (StopLoggingRequest) super.clone();
     }
+
 }

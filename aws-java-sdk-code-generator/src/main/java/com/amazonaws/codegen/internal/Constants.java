@@ -43,6 +43,8 @@ public class Constants {
 
     public static final String PACKAGE_NAME_WAITERS_SUFFIX = "waiters";
 
+    public static final String PACKAGE_NAME_CUSTOM_AUTH_SUFFIX = "auth";
+
     public static final String AUTH_POLICY_ENUM_CLASS_DIR = "com/amazonaws/auth/policy/actions";
 
     public static final String REQUEST_CLASS_SUFFIX = "Request";
@@ -54,6 +56,8 @@ public class Constants {
     public static final String FAULT_CLASS_SUFFIX = "Fault";
 
     public static final String VARIABLE_NAME_SUFFIX = "Value";
+
+    public static final String AUTHORIZER_NAME_PREFIX = "I";
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 

@@ -638,4 +638,5 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
     public EnableLoggingRequest clone() {
         return (EnableLoggingRequest) super.clone();
     }
+
 }

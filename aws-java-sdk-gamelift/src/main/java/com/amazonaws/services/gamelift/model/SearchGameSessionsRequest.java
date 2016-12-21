@@ -1015,4 +1015,5 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
     public SearchGameSessionsRequest clone() {
         return (SearchGameSessionsRequest) super.clone();
     }
+
 }

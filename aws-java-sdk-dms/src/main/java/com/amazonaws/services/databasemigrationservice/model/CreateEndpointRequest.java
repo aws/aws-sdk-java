@@ -938,4 +938,5 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateEndpointRequest clone() {
         return (CreateEndpointRequest) super.clone();
     }
+
 }

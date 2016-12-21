@@ -60,4 +60,5 @@ public class DescribeVirtualGatewaysRequest extends com.amazonaws.AmazonWebServi
     public DescribeVirtualGatewaysRequest clone() {
         return (DescribeVirtualGatewaysRequest) super.clone();
     }
+
 }

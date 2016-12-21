@@ -260,4 +260,5 @@ public class DescribeActivationsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeActivationsRequest clone() {
         return (DescribeActivationsRequest) super.clone();
     }
+
 }

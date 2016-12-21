@@ -128,4 +128,5 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateRepositoryRequest clone() {
         return (CreateRepositoryRequest) super.clone();
     }
+
 }

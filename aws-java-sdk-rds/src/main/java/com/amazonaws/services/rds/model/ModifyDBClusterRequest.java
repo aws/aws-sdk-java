@@ -1670,4 +1670,5 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     public ModifyDBClusterRequest clone() {
         return (ModifyDBClusterRequest) super.clone();
     }
+
 }

@@ -255,4 +255,5 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     public DeleteCustomActionTypeRequest clone() {
         return (DeleteCustomActionTypeRequest) super.clone();
     }
+
 }

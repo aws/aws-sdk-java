@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetUserSettingsRequestMarshaller implements Marshaller<Request<SetUserSettingsRequest>, SetUserSettingsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetUserSettingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetUserSettingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

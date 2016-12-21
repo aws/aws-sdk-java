@@ -97,4 +97,5 @@ public class DescribeInterconnectsRequest extends com.amazonaws.AmazonWebService
     public DescribeInterconnectsRequest clone() {
         return (DescribeInterconnectsRequest) super.clone();
     }
+
 }

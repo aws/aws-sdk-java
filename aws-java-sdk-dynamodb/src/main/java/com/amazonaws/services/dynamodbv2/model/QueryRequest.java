@@ -5815,4 +5815,5 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     public QueryRequest clone() {
         return (QueryRequest) super.clone();
     }
+
 }

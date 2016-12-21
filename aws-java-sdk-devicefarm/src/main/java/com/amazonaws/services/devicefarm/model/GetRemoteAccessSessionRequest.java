@@ -119,4 +119,5 @@ public class GetRemoteAccessSessionRequest extends com.amazonaws.AmazonWebServic
     public GetRemoteAccessSessionRequest clone() {
         return (GetRemoteAccessSessionRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class AbortEnvironmentUpdateRequest extends com.amazonaws.AmazonWebServic
     public AbortEnvironmentUpdateRequest clone() {
         return (AbortEnvironmentUpdateRequest) super.clone();
     }
+
 }

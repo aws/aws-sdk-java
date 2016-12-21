@@ -261,4 +261,5 @@ public class DeleteGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteGroupPolicyRequest clone() {
         return (DeleteGroupPolicyRequest) super.clone();
     }
+
 }

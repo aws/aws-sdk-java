@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AmazonKinesisFirehoseModuleInjector",
     "defaultEndpoint" : "https://firehose.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "firehose.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>Amazon Kinesis Firehose API Reference</fullname> <p>Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), and Amazon Redshift.</p>",
     "endpointPrefix" : "firehose",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/kinesisfirehose",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "Firehose",
     "serviceFullName" : "Amazon Kinesis Firehose",
     "serviceName" : "Firehose",
@@ -572,6 +576,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BufferingHints",
       "unmarshaller" : {
@@ -947,6 +953,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudWatchLoggingOptions",
       "unmarshaller" : {
@@ -994,6 +1002,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompressionFormat",
       "unmarshaller" : {
@@ -1029,6 +1039,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConcurrentModificationException",
       "unmarshaller" : null,
@@ -1401,6 +1413,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataTableName" ],
       "shapeName" : "CopyCommand",
       "unmarshaller" : {
@@ -2009,6 +2023,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName" ],
       "shapeName" : "CreateDeliveryStreamRequest",
       "unmarshaller" : null,
@@ -2155,6 +2171,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDeliveryStreamResult",
       "unmarshaller" : {
@@ -2311,6 +2329,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName" ],
       "shapeName" : "DeleteDeliveryStreamRequest",
       "unmarshaller" : null,
@@ -2343,6 +2363,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteDeliveryStreamResult",
       "unmarshaller" : {
@@ -3425,6 +3447,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName", "DeliveryStreamARN", "DeliveryStreamStatus", "VersionId", "Destinations", "HasMoreDestinations" ],
       "shapeName" : "DeliveryStreamDescription",
       "unmarshaller" : {
@@ -3469,6 +3493,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeliveryStreamStatus",
       "unmarshaller" : {
@@ -3851,6 +3877,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName" ],
       "shapeName" : "DescribeDeliveryStreamRequest",
       "unmarshaller" : null,
@@ -3997,6 +4025,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamDescription" ],
       "shapeName" : "DescribeDeliveryStreamResult",
       "unmarshaller" : {
@@ -4598,6 +4628,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DestinationId" ],
       "shapeName" : "DestinationDescription",
       "unmarshaller" : {
@@ -4860,6 +4892,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ElasticsearchBufferingHints",
       "unmarshaller" : {
@@ -6139,6 +6173,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "DomainARN", "IndexName", "TypeName", "S3Configuration" ],
       "shapeName" : "ElasticsearchDestinationConfiguration",
       "unmarshaller" : {
@@ -7418,6 +7454,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ElasticsearchDestinationDescription",
       "unmarshaller" : {
@@ -8584,6 +8622,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ElasticsearchDestinationUpdate",
       "unmarshaller" : {
@@ -8634,6 +8674,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ElasticsearchIndexRotationPeriod",
       "unmarshaller" : {
@@ -8783,6 +8825,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ElasticsearchRetryOptions",
       "unmarshaller" : {
@@ -8824,6 +8868,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ElasticsearchS3BackupMode",
       "unmarshaller" : {
@@ -9086,6 +9132,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionConfiguration",
       "unmarshaller" : {
@@ -10252,6 +10300,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "BucketARN" ],
       "shapeName" : "ExtendedS3DestinationConfiguration",
       "unmarshaller" : {
@@ -11418,6 +11468,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "BucketARN", "BufferingHints", "CompressionFormat", "EncryptionConfiguration" ],
       "shapeName" : "ExtendedS3DestinationDescription",
       "unmarshaller" : {
@@ -12584,6 +12636,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExtendedS3DestinationUpdate",
       "unmarshaller" : {
@@ -12619,6 +12673,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidArgumentException",
       "unmarshaller" : null,
@@ -12765,6 +12821,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AWSKMSKeyARN" ],
       "shapeName" : "KMSEncryptionConfig",
       "unmarshaller" : {
@@ -12800,6 +12858,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -13066,6 +13126,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeliveryStreamsRequest",
       "unmarshaller" : null,
@@ -13467,6 +13529,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamNames", "HasMoreDeliveryStreams" ],
       "shapeName" : "ListDeliveryStreamsResult",
       "unmarshaller" : {
@@ -13505,6 +13569,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoEncryptionConfig",
       "unmarshaller" : {
@@ -13909,6 +13975,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProcessingConfiguration",
       "unmarshaller" : {
@@ -14313,6 +14381,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Type" ],
       "shapeName" : "Processor",
       "unmarshaller" : {
@@ -14575,6 +14645,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ParameterName", "ParameterValue" ],
       "shapeName" : "ProcessorParameter",
       "unmarshaller" : {
@@ -14616,6 +14688,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProcessorParameterName",
       "unmarshaller" : {
@@ -14654,6 +14728,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProcessorType",
       "unmarshaller" : {
@@ -15065,6 +15141,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName", "Records" ],
       "shapeName" : "PutRecordBatchRequest",
       "unmarshaller" : null,
@@ -15437,6 +15515,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutRecordBatchResponseEntry",
       "unmarshaller" : {
@@ -15841,6 +15921,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FailedPutCount", "RequestResponses" ],
       "shapeName" : "PutRecordBatchResult",
       "unmarshaller" : {
@@ -16110,6 +16192,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName", "Record" ],
       "shapeName" : "PutRecordRequest",
       "unmarshaller" : null,
@@ -16256,6 +16340,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RecordId" ],
       "shapeName" : "PutRecordResult",
       "unmarshaller" : {
@@ -16405,6 +16491,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Data" ],
       "shapeName" : "Record",
       "unmarshaller" : {
@@ -17684,6 +17772,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "ClusterJDBCURL", "CopyCommand", "Username", "Password", "S3Configuration" ],
       "shapeName" : "RedshiftDestinationConfiguration",
       "unmarshaller" : {
@@ -18850,6 +18940,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "ClusterJDBCURL", "CopyCommand", "Username", "S3DestinationDescription" ],
       "shapeName" : "RedshiftDestinationDescription",
       "unmarshaller" : {
@@ -20129,6 +20221,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RedshiftDestinationUpdate",
       "unmarshaller" : {
@@ -20278,6 +20372,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RedshiftRetryOptions",
       "unmarshaller" : {
@@ -20319,6 +20415,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RedshiftS3BackupMode",
       "unmarshaller" : {
@@ -20354,6 +20452,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceInUseException",
       "unmarshaller" : null,
@@ -20386,6 +20486,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -20424,6 +20526,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3BackupMode",
       "unmarshaller" : {
@@ -21251,6 +21355,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "BucketARN" ],
       "shapeName" : "S3DestinationConfiguration",
       "unmarshaller" : {
@@ -22078,6 +22184,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "RoleARN", "BucketARN", "BufferingHints", "CompressionFormat", "EncryptionConfiguration" ],
       "shapeName" : "S3DestinationDescription",
       "unmarshaller" : {
@@ -22905,6 +23013,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3DestinationUpdate",
       "unmarshaller" : {
@@ -22940,6 +23050,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceUnavailableException",
       "unmarshaller" : null,
@@ -23771,6 +23883,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeliveryStreamName", "CurrentDeliveryStreamVersionId", "DestinationId" ],
       "shapeName" : "UpdateDestinationRequest",
       "unmarshaller" : null,
@@ -23803,6 +23917,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDestinationResult",
       "unmarshaller" : {
@@ -23821,6 +23937,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

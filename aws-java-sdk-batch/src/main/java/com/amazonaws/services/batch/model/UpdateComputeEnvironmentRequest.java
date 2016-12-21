@@ -328,4 +328,5 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     public UpdateComputeEnvironmentRequest clone() {
         return (UpdateComputeEnvironmentRequest) super.clone();
     }
+
 }

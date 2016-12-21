@@ -231,4 +231,5 @@ public class AttachRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public AttachRolePolicyRequest clone() {
         return (AttachRolePolicyRequest) super.clone();
     }
+
 }

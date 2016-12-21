@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class AdminRespondToAuthChallengeRequestMarshaller implements
         Marshaller<Request<AdminRespondToAuthChallengeRequest>, AdminRespondToAuthChallengeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminRespondToAuthChallengeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminRespondToAuthChallengeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

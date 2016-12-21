@@ -961,4 +961,5 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public UpdateAppRequest clone() {
         return (UpdateAppRequest) super.clone();
     }
+
 }

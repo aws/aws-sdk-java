@@ -322,4 +322,5 @@ public class ScheduleKeyDeletionRequest extends com.amazonaws.AmazonWebServiceRe
     public ScheduleKeyDeletionRequest clone() {
         return (ScheduleKeyDeletionRequest) super.clone();
     }
+
 }

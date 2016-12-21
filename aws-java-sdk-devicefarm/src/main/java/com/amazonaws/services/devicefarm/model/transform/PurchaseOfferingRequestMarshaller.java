@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PurchaseOfferingRequestMarshaller implements Marshaller<Request<PurchaseOfferingRequest>, PurchaseOfferingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PurchaseOfferingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PurchaseOfferingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

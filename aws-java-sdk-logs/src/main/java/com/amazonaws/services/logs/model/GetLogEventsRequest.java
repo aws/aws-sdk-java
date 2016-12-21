@@ -495,4 +495,5 @@ public class GetLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetLogEventsRequest clone() {
         return (GetLogEventsRequest) super.clone();
     }
+
 }

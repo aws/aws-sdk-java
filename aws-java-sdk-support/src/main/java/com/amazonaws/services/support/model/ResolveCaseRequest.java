@@ -121,4 +121,5 @@ public class ResolveCaseRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ResolveCaseRequest clone() {
         return (ResolveCaseRequest) super.clone();
     }
+
 }

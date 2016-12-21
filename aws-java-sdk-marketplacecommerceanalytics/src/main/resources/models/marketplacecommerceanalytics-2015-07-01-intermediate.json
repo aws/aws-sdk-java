@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSMarketplaceCommerceAnalyticsModuleInjector",
     "defaultEndpoint" : "https://marketplacecommerceanalytics.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "marketplacecommerceanalytics.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "Provides AWS Marketplace business intelligence data on-demand.",
     "endpointPrefix" : "marketplacecommerceanalytics",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/marketplacecommerceanalytics",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Marketplace Commerce Analytics",
     "serviceName" : "AWS Marketplace Commerce Analytics",
@@ -211,6 +215,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataSetType",
       "unmarshaller" : {
@@ -1187,6 +1193,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "dataSetType", "dataSetPublicationDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
       "shapeName" : "GenerateDataSetRequest",
       "unmarshaller" : null,
@@ -1333,6 +1341,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenerateDataSetResult",
       "unmarshaller" : {
@@ -1368,6 +1378,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MarketplaceCommerceAnalyticsException",
       "unmarshaller" : null,
@@ -2341,6 +2353,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "dataSetType", "fromDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
       "shapeName" : "StartSupportDataExportRequest",
       "unmarshaller" : null,
@@ -2487,6 +2501,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartSupportDataExportResult",
       "unmarshaller" : {
@@ -2528,6 +2544,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SupportDataSetType",
       "unmarshaller" : {
@@ -2546,6 +2564,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

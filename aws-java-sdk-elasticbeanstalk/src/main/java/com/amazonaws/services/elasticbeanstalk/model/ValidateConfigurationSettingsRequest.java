@@ -365,4 +365,5 @@ public class ValidateConfigurationSettingsRequest extends com.amazonaws.AmazonWe
     public ValidateConfigurationSettingsRequest clone() {
         return (ValidateConfigurationSettingsRequest) super.clone();
     }
+
 }

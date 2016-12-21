@@ -194,4 +194,5 @@ public class SetCognitoEventsRequest extends com.amazonaws.AmazonWebServiceReque
     public SetCognitoEventsRequest clone() {
         return (SetCognitoEventsRequest) super.clone();
     }
+
 }

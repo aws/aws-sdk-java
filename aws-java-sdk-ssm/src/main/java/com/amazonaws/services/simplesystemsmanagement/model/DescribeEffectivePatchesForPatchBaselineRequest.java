@@ -220,4 +220,5 @@ public class DescribeEffectivePatchesForPatchBaselineRequest extends com.amazona
     public DescribeEffectivePatchesForPatchBaselineRequest clone() {
         return (DescribeEffectivePatchesForPatchBaselineRequest) super.clone();
     }
+
 }

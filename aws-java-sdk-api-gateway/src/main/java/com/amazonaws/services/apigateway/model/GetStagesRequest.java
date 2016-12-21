@@ -169,4 +169,5 @@ public class GetStagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetStagesRequest clone() {
         return (GetStagesRequest) super.clone();
     }
+
 }

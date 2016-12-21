@@ -987,4 +987,5 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateMLModelRequest clone() {
         return (CreateMLModelRequest) super.clone();
     }
+
 }

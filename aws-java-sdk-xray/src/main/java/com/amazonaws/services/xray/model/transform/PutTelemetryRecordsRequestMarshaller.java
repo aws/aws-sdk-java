@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PutTelemetryRecordsRequestMarshaller implements Marshaller<Request<PutTelemetryRecordsRequest>, PutTelemetryRecordsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutTelemetryRecordsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutTelemetryRecordsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

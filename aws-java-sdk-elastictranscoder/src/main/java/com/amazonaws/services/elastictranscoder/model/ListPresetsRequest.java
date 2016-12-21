@@ -183,4 +183,5 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListPresetsRequest clone() {
         return (ListPresetsRequest) super.clone();
     }
+
 }

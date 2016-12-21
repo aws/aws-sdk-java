@@ -169,4 +169,5 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
     public PutRetentionPolicyRequest clone() {
         return (PutRetentionPolicyRequest) super.clone();
     }
+
 }

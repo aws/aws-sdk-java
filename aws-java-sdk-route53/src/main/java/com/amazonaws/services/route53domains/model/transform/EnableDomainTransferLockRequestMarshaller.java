@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class EnableDomainTransferLockRequestMarshaller implements Marshaller<Request<EnableDomainTransferLockRequest>, EnableDomainTransferLockRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public EnableDomainTransferLockRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public EnableDomainTransferLockRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

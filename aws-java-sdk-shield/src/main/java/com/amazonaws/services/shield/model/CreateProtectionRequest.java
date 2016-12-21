@@ -167,4 +167,5 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateProtectionRequest clone() {
         return (CreateProtectionRequest) super.clone();
     }
+
 }

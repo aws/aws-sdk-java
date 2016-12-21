@@ -202,4 +202,5 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
     public GetKeyRotationStatusRequest clone() {
         return (GetKeyRotationStatusRequest) super.clone();
     }
+
 }

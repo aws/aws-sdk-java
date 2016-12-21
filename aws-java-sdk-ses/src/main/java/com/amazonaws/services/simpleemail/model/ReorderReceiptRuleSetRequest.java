@@ -205,4 +205,5 @@ public class ReorderReceiptRuleSetRequest extends com.amazonaws.AmazonWebService
     public ReorderReceiptRuleSetRequest clone() {
         return (ReorderReceiptRuleSetRequest) super.clone();
     }
+
 }

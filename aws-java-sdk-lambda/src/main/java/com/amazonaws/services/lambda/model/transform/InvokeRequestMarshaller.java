@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class InvokeRequestMarshaller implements Marshaller<Request<InvokeRequest>, InvokeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public InvokeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public InvokeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

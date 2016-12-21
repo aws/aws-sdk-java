@@ -252,4 +252,5 @@ public class ListStacksRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListStacksRequest clone() {
         return (ListStacksRequest) super.clone();
     }
+
 }

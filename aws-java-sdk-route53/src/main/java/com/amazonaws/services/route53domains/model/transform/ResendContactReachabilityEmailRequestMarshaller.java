@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class ResendContactReachabilityEmailRequestMarshaller implements
         Marshaller<Request<ResendContactReachabilityEmailRequest>, ResendContactReachabilityEmailRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ResendContactReachabilityEmailRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ResendContactReachabilityEmailRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

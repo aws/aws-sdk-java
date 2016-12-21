@@ -229,4 +229,5 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetModelsRequest clone() {
         return (GetModelsRequest) super.clone();
     }
+
 }

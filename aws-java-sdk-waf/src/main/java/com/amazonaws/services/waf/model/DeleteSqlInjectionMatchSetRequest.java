@@ -183,4 +183,5 @@ public class DeleteSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebSe
     public DeleteSqlInjectionMatchSetRequest clone() {
         return (DeleteSqlInjectionMatchSetRequest) super.clone();
     }
+
 }

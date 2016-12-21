@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateTrailRequestMarshaller implements Marshaller<Request<CreateTrailRequest>, CreateTrailRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateTrailRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateTrailRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -121,4 +121,5 @@ public class GetAutomationExecutionRequest extends com.amazonaws.AmazonWebServic
     public GetAutomationExecutionRequest clone() {
         return (GetAutomationExecutionRequest) super.clone();
     }
+
 }

@@ -188,4 +188,5 @@ public class DeleteMetricFilterRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteMetricFilterRequest clone() {
         return (DeleteMetricFilterRequest) super.clone();
     }
+
 }

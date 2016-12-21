@@ -676,4 +676,5 @@ public class GetJobOutputRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetJobOutputRequest clone() {
         return (GetJobOutputRequest) super.clone();
     }
+
 }

@@ -222,4 +222,5 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetIntegrationRequest clone() {
         return (GetIntegrationRequest) super.clone();
     }
+
 }

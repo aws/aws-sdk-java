@@ -200,4 +200,5 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
     public DescribeDocumentPermissionRequest clone() {
         return (DescribeDocumentPermissionRequest) super.clone();
     }
+
 }

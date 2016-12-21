@@ -158,4 +158,5 @@ public class DescribeConfigurationRecorderStatusRequest extends com.amazonaws.Am
     public DescribeConfigurationRecorderStatusRequest clone() {
         return (DescribeConfigurationRecorderStatusRequest) super.clone();
     }
+
 }

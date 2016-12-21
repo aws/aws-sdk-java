@@ -273,4 +273,5 @@ public class RegisterRdsDbInstanceRequest extends com.amazonaws.AmazonWebService
     public RegisterRdsDbInstanceRequest clone() {
         return (RegisterRdsDbInstanceRequest) super.clone();
     }
+
 }

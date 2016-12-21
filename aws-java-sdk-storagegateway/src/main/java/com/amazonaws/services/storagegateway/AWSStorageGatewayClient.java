@@ -135,20 +135,21 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidGatewayRequestException").withModeledClass(
-                            com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableError").withModeledClass(
-                            com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                            com.amazonaws.services.storagegateway.model.InternalServerErrorException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.storagegateway.model.AWSStorageGatewayException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGatewayRequestException").withModeledClass(
+                                    com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableError").withModeledClass(
+                                    com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
+                                    com.amazonaws.services.storagegateway.model.InternalServerErrorException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.storagegateway.model.AWSStorageGatewayException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Storage Gateway. A credentials provider chain will be

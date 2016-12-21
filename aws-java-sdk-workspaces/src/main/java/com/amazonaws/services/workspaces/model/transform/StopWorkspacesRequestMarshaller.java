@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class StopWorkspacesRequestMarshaller implements Marshaller<Request<StopWorkspacesRequest>, StopWorkspacesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public StopWorkspacesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public StopWorkspacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

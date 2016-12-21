@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeletePresetRequestMarshaller implements Marshaller<Request<DeletePresetRequest>, DeletePresetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeletePresetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeletePresetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

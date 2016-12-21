@@ -387,4 +387,5 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
     public AssociatePrincipalWithPortfolioRequest clone() {
         return (AssociatePrincipalWithPortfolioRequest) super.clone();
     }
+
 }

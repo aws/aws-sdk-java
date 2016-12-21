@@ -779,4 +779,5 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
     public GetShardIteratorRequest clone() {
         return (GetShardIteratorRequest) super.clone();
     }
+
 }

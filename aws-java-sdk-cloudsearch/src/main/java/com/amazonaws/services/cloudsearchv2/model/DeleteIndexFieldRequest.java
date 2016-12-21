@@ -151,4 +151,5 @@ public class DeleteIndexFieldRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteIndexFieldRequest clone() {
         return (DeleteIndexFieldRequest) super.clone();
     }
+
 }

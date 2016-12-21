@@ -266,4 +266,5 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
     public SetSubscriptionAttributesRequest clone() {
         return (SetSubscriptionAttributesRequest) super.clone();
     }
+
 }

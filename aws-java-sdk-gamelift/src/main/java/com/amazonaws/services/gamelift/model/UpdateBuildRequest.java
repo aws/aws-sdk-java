@@ -222,4 +222,5 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateBuildRequest clone() {
         return (UpdateBuildRequest) super.clone();
     }
+
 }

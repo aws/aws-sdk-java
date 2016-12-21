@@ -319,4 +319,5 @@ public class ListInstanceProfilesForRoleRequest extends com.amazonaws.AmazonWebS
     public ListInstanceProfilesForRoleRequest clone() {
         return (ListInstanceProfilesForRoleRequest) super.clone();
     }
+
 }

@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-10-06",
     "endpointPrefix" : "codebuild",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "BatchGetBuilds" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more builds.</p>",
       "errors" : [ {
@@ -44,7 +46,8 @@
       }
     },
     "BatchGetProjects" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more build projects.</p>",
       "errors" : [ {
@@ -74,7 +77,8 @@
       }
     },
     "CreateProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a build project.</p>",
       "errors" : [ {
@@ -116,7 +120,8 @@
       }
     },
     "DeleteProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a build project.</p>",
       "errors" : [ {
@@ -146,7 +151,8 @@
       }
     },
     "ListBuilds" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a list of build IDs, with each build ID representing a single build.</p>",
       "errors" : [ {
@@ -176,7 +182,8 @@
       }
     },
     "ListBuildsForProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a list of build IDs for the specified build project, with each build ID representing a single build.</p>",
       "errors" : [ {
@@ -212,7 +219,8 @@
       }
     },
     "ListCuratedEnvironmentImages" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about Docker images that are managed by AWS CodeBuild.</p>",
       "errors" : null,
@@ -236,7 +244,8 @@
       }
     },
     "ListProjects" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a list of build project names, with each build project name representing a single build project.</p>",
       "errors" : [ {
@@ -266,7 +275,8 @@
       }
     },
     "StartBuild" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Starts running a build.</p>",
       "errors" : [ {
@@ -308,7 +318,8 @@
       }
     },
     "StopBuild" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attempts to stop running a build.</p> <note> <p>Completed builds cannot be stopped.</p> </note>",
       "errors" : [ {
@@ -344,7 +355,8 @@
       }
     },
     "UpdateProject" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Changes the settings of an existing build project.</p>",
       "errors" : [ {

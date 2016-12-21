@@ -507,4 +507,5 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     public TestDNSAnswerRequest clone() {
         return (TestDNSAnswerRequest) super.clone();
     }
+
 }

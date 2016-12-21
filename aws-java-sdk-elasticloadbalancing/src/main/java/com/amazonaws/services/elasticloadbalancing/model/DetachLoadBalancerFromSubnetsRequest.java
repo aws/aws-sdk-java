@@ -202,4 +202,5 @@ public class DetachLoadBalancerFromSubnetsRequest extends com.amazonaws.AmazonWe
     public DetachLoadBalancerFromSubnetsRequest clone() {
         return (DetachLoadBalancerFromSubnetsRequest) super.clone();
     }
+
 }

@@ -341,4 +341,5 @@ public class ListGroupPoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListGroupPoliciesRequest clone() {
         return (ListGroupPoliciesRequest) super.clone();
     }
+
 }

@@ -220,4 +220,5 @@ public class UpdateRdsDbInstanceRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateRdsDbInstanceRequest clone() {
         return (UpdateRdsDbInstanceRequest) super.clone();
     }
+
 }

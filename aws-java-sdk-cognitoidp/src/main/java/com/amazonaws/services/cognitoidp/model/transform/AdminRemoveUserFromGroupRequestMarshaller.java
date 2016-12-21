@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminRemoveUserFromGroupRequestMarshaller implements Marshaller<Request<AdminRemoveUserFromGroupRequest>, AdminRemoveUserFromGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminRemoveUserFromGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminRemoveUserFromGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

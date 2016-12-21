@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-11-28",
     "endpointPrefix" : "lightsail",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AllocateStaticIp" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Allocates a static IP address.</p>",
       "errors" : [ {
@@ -80,7 +82,8 @@
       }
     },
     "AttachStaticIp" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>",
       "errors" : [ {
@@ -146,7 +149,8 @@
       }
     },
     "CloseInstancePublicPorts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Closes the public ports on a specific Amazon Lightsail instance.</p>",
       "errors" : [ {
@@ -212,7 +216,8 @@
       }
     },
     "CreateDomain" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a domain resource for the specified domain (e.g., example.com).</p>",
       "errors" : [ {
@@ -278,7 +283,8 @@
       }
     },
     "CreateDomainEntry" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX record.</p>",
       "errors" : [ {
@@ -344,7 +350,8 @@
       }
     },
     "CreateInstanceSnapshot" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a new instance that is based on that snapshot.</p>",
       "errors" : [ {
@@ -410,7 +417,8 @@
       }
     },
     "CreateInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.</p>",
       "errors" : [ {
@@ -476,7 +484,8 @@
       }
     },
     "CreateInstancesFromSnapshot" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Uses a specific snapshot as a blueprint for creating one or more new instances that are based on that identical configuration.</p>",
       "errors" : [ {
@@ -542,7 +551,8 @@
       }
     },
     "CreateKeyPair" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates sn SSH key pair.</p>",
       "errors" : [ {
@@ -608,7 +618,8 @@
       }
     },
     "DeleteDomain" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified domain recordset and all of its domain records.</p>",
       "errors" : [ {
@@ -674,7 +685,8 @@
       }
     },
     "DeleteDomainEntry" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a specific domain entry.</p>",
       "errors" : [ {
@@ -740,7 +752,8 @@
       }
     },
     "DeleteInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.</p>",
       "errors" : [ {
@@ -806,7 +819,8 @@
       }
     },
     "DeleteInstanceSnapshot" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a specific snapshot of a virtual private server (or <i>instance</i>).</p>",
       "errors" : [ {
@@ -872,7 +886,8 @@
       }
     },
     "DeleteKeyPair" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a specific SSH key pair.</p>",
       "errors" : [ {
@@ -938,7 +953,8 @@
       }
     },
     "DetachStaticIp" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Detaches a static IP from the Amazon Lightsail instance to which it is attached.</p>",
       "errors" : [ {
@@ -1004,7 +1020,8 @@
       }
     },
     "DownloadDefaultKeyPair" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Downloads the default SSH key pair from the user's account.</p>",
       "errors" : [ {
@@ -1070,7 +1087,8 @@
       }
     },
     "GetActiveNames" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the names of all active (not deleted) resources.</p>",
       "errors" : [ {
@@ -1136,7 +1154,8 @@
       }
     },
     "GetBlueprints" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new virtual private server already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p>",
       "errors" : [ {
@@ -1202,7 +1221,8 @@
       }
     },
     "GetBundles" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the list of bundles that are available for purchase. A bundle describes the specs for your virtual private server (or <i>instance</i>).</p>",
       "errors" : [ {
@@ -1268,7 +1288,8 @@
       }
     },
     "GetDomain" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a specific domain recordset.</p>",
       "errors" : [ {
@@ -1334,7 +1355,8 @@
       }
     },
     "GetDomains" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a list of all domains in the user's account.</p>",
       "errors" : [ {
@@ -1400,7 +1422,8 @@
       }
     },
     "GetInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a specific Amazon Lightsail instance, which is a virtual private server.</p>",
       "errors" : [ {
@@ -1466,7 +1489,8 @@
       }
     },
     "GetInstanceAccessDetails" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or <i>instance</i>.</p>",
       "errors" : [ {
@@ -1532,7 +1556,8 @@
       }
     },
     "GetInstanceMetricData" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the data points for the specified Amazon Lightsail instance metric, given an instance name.</p>",
       "errors" : [ {
@@ -1598,7 +1623,8 @@
       }
     },
     "GetInstancePortStates" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the port states for a specific virtual private server, or <i>instance</i>.</p>",
       "errors" : [ {
@@ -1664,7 +1690,8 @@
       }
     },
     "GetInstanceSnapshot" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a specific instance snapshot.</p>",
       "errors" : [ {
@@ -1730,7 +1757,8 @@
       }
     },
     "GetInstanceSnapshots" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns all instance snapshots for the user's account.</p>",
       "errors" : [ {
@@ -1796,7 +1824,8 @@
       }
     },
     "GetInstanceState" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the state of a specific instance. Works on one instance at a time.</p>",
       "errors" : [ {
@@ -1862,7 +1891,8 @@
       }
     },
     "GetInstances" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about all Amazon Lightsail virtual private servers, or <i>instances</i>.</p>",
       "errors" : [ {
@@ -1928,7 +1958,8 @@
       }
     },
     "GetKeyPair" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a specific key pair.</p>",
       "errors" : [ {
@@ -1994,7 +2025,8 @@
       }
     },
     "GetKeyPairs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about all key pairs in the user's account.</p>",
       "errors" : [ {
@@ -2060,7 +2092,8 @@
       }
     },
     "GetOperation" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a specific operation. Operations include events such as when you create an instance, allocate a static IP, attach a static IP, and so on.</p>",
       "errors" : [ {
@@ -2126,7 +2159,8 @@
       }
     },
     "GetOperations" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about all operations.</p> <p>Results are returned from oldest to newest, up to a maximum of 200. Results can be paged by making each subsequent call to <code>GetOperations</code> use the maximum (last) <code>statusChangedAt</code> value from the previous request.</p>",
       "errors" : [ {
@@ -2192,7 +2226,8 @@
       }
     },
     "GetOperationsForResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets operations for a specific resource (e.g., an instance or a static IP).</p>",
       "errors" : [ {
@@ -2258,7 +2293,8 @@
       }
     },
     "GetRegions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a list of all valid regions for Amazon Lightsail.</p>",
       "errors" : [ {
@@ -2324,7 +2360,8 @@
       }
     },
     "GetStaticIp" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a specific static IP.</p>",
       "errors" : [ {
@@ -2390,7 +2427,8 @@
       }
     },
     "GetStaticIps" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about all static IPs in the user's account.</p>",
       "errors" : [ {
@@ -2456,7 +2494,8 @@
       }
     },
     "ImportKeyPair" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Imports a public SSH key from a specific key pair.</p>",
       "errors" : [ {
@@ -2522,7 +2561,8 @@
       }
     },
     "IsVpcPeered" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>",
       "errors" : [ {
@@ -2588,7 +2628,8 @@
       }
     },
     "OpenInstancePublicPorts" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds public ports to an Amazon Lightsail instance.</p>",
       "errors" : [ {
@@ -2654,7 +2695,8 @@
       }
     },
     "PeerVpc" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Tries to peer the Lightsail VPC with the user's default VPC.</p>",
       "errors" : [ {
@@ -2720,7 +2762,8 @@
       }
     },
     "RebootInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting, Lightsail assigns a new public IP address. To use the same IP address after restarting, create a static IP address and attach it to the instance.</p>",
       "errors" : [ {
@@ -2786,7 +2829,8 @@
       }
     },
     "ReleaseStaticIp" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a specific static IP from your account.</p>",
       "errors" : [ {
@@ -2852,7 +2896,8 @@
       }
     },
     "StartInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the reboot instance operation.</p>",
       "errors" : [ {
@@ -2918,7 +2963,8 @@
       }
     },
     "StopInstance" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Stops a specific Amazon Lightsail instance that is currently running.</p>",
       "errors" : [ {
@@ -2984,7 +3030,8 @@
       }
     },
     "UnpeerVpc" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attempts to unpeer the Lightsail VPC from the user's default VPC.</p>",
       "errors" : [ {
@@ -3050,7 +3097,8 @@
       }
     },
     "UpdateDomainEntry" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates a domain recordset after it is created.</p>",
       "errors" : [ {

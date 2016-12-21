@@ -222,4 +222,5 @@ public class SuggestRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public SuggestRequest clone() {
         return (SuggestRequest) super.clone();
     }
+
 }

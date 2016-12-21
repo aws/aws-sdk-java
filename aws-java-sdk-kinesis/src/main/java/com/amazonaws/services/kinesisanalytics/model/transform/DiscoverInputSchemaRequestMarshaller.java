@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DiscoverInputSchemaRequestMarshaller implements Marshaller<Request<DiscoverInputSchemaRequest>, DiscoverInputSchemaRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DiscoverInputSchemaRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DiscoverInputSchemaRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

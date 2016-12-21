@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobRequest>, CancelJobRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CancelJobRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CancelJobRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

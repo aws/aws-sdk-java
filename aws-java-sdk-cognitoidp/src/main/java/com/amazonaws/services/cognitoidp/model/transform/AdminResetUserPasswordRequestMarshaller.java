@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminResetUserPasswordRequestMarshaller implements Marshaller<Request<AdminResetUserPasswordRequest>, AdminResetUserPasswordRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminResetUserPasswordRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminResetUserPasswordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

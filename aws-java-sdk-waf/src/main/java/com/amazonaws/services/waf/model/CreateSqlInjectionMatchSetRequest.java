@@ -176,4 +176,5 @@ public class CreateSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebSe
     public CreateSqlInjectionMatchSetRequest clone() {
         return (CreateSqlInjectionMatchSetRequest) super.clone();
     }
+
 }

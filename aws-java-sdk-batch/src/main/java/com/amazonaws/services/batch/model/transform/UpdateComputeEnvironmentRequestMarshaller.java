@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateComputeEnvironmentRequestMarshaller implements Marshaller<Request<UpdateComputeEnvironmentRequest>, UpdateComputeEnvironmentRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateComputeEnvironmentRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateComputeEnvironmentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -205,4 +205,5 @@ public class ReportTaskProgressRequest extends com.amazonaws.AmazonWebServiceReq
     public ReportTaskProgressRequest clone() {
         return (ReportTaskProgressRequest) super.clone();
     }
+
 }

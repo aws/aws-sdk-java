@@ -231,4 +231,5 @@ public class AddRoleToInstanceProfileRequest extends com.amazonaws.AmazonWebServ
     public AddRoleToInstanceProfileRequest clone() {
         return (AddRoleToInstanceProfileRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteRestApiRequestMarshaller implements Marshaller<Request<DeleteRestApiRequest>, DeleteRestApiRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteRestApiRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteRestApiRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

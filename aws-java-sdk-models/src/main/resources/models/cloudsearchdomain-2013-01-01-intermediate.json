@@ -68,6 +68,7 @@
     "cucumberModuleInjectorClassName" : "AmazonCloudSearchDomainModuleInjector",
     "defaultEndpoint" : null,
     "defaultEndpointWithoutHttpProtocol" : null,
+    "defaultRegion" : null,
     "documentation" : "<p>You use the AmazonCloudSearch2013 API to upload documents to a search domain and search those documents. </p> <p>The endpoints for submitting <code>UploadDocuments</code>, <code>Search</code>, and <code>Suggest</code> requests are domain-specific. To get the endpoints for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. The domain endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. You submit suggest requests to the search endpoint. </p> <p>For more information, see the <a href=\"http://docs.aws.amazon.com/cloudsearch/latest/developerguide\">Amazon CloudSearch Developer Guide</a>.</p>",
     "endpointPrefix" : "cloudsearchdomain",
     "hasApiWithStreamInput" : false,
@@ -78,7 +79,10 @@
     "packagePath" : "com/amazonaws/services/cloudsearchdomain",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon CloudSearch Domain",
     "serviceName" : "Amazon CloudSearch Domain",
@@ -433,6 +437,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Bucket",
       "unmarshaller" : {
@@ -724,6 +730,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BucketInfo",
       "unmarshaller" : {
@@ -765,6 +773,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContentType",
       "unmarshaller" : {
@@ -914,6 +924,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DocumentServiceException",
       "unmarshaller" : null,
@@ -1060,6 +1072,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DocumentServiceWarning",
       "unmarshaller" : {
@@ -2000,6 +2014,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FieldStats",
       "unmarshaller" : {
@@ -3056,6 +3072,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Hit",
       "unmarshaller" : {
@@ -3686,6 +3704,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Hits",
       "unmarshaller" : {
@@ -3733,6 +3753,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "QueryParser",
       "unmarshaller" : {
@@ -3768,6 +3790,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchException",
       "unmarshaller" : null,
@@ -5390,6 +5414,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "query" ],
       "shapeName" : "SearchRequest",
       "unmarshaller" : null,
@@ -6159,6 +6185,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchResult",
       "unmarshaller" : {
@@ -6421,6 +6449,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchStatus",
       "unmarshaller" : {
@@ -6938,6 +6968,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SuggestModel",
       "unmarshaller" : {
@@ -7320,6 +7352,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "query", "suggester" ],
       "shapeName" : "SuggestRequest",
       "unmarshaller" : null,
@@ -7579,6 +7613,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SuggestResult",
       "unmarshaller" : {
@@ -7841,6 +7877,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SuggestStatus",
       "unmarshaller" : {
@@ -8216,6 +8254,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SuggestionMatch",
       "unmarshaller" : {
@@ -8598,6 +8638,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "documents", "contentType" ],
       "shapeName" : "UploadDocumentsRequest",
       "unmarshaller" : null,
@@ -9225,6 +9267,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadDocumentsResult",
       "unmarshaller" : {
@@ -9243,6 +9287,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

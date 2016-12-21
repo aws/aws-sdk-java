@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ShutdownGatewayRequestMarshaller implements Marshaller<Request<ShutdownGatewayRequest>, ShutdownGatewayRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ShutdownGatewayRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ShutdownGatewayRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

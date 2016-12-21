@@ -174,4 +174,5 @@ public class DeleteRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public DeleteRuleRequest clone() {
         return (DeleteRuleRequest) super.clone();
     }
+
 }

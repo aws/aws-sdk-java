@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class ListConstraintsForPortfolioRequestMarshaller implements
         Marshaller<Request<ListConstraintsForPortfolioRequest>, ListConstraintsForPortfolioRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListConstraintsForPortfolioRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListConstraintsForPortfolioRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

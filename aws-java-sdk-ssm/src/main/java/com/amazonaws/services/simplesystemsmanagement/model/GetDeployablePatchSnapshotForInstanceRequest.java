@@ -167,4 +167,5 @@ public class GetDeployablePatchSnapshotForInstanceRequest extends com.amazonaws.
     public GetDeployablePatchSnapshotForInstanceRequest clone() {
         return (GetDeployablePatchSnapshotForInstanceRequest) super.clone();
     }
+
 }

@@ -417,4 +417,5 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateXssMatchSetRequest clone() {
         return (UpdateXssMatchSetRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PredictRequestMarshaller implements Marshaller<Request<PredictRequest>, PredictRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PredictRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PredictRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

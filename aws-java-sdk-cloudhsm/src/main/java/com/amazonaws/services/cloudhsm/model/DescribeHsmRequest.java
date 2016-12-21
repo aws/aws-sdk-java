@@ -172,4 +172,5 @@ public class DescribeHsmRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DescribeHsmRequest clone() {
         return (DescribeHsmRequest) super.clone();
     }
+
 }

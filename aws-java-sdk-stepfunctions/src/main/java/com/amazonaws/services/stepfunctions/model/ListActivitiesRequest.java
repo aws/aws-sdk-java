@@ -231,4 +231,5 @@ public class ListActivitiesRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListActivitiesRequest clone() {
         return (ListActivitiesRequest) super.clone();
     }
+
 }

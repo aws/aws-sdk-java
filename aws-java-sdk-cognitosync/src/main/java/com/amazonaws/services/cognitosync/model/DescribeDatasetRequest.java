@@ -217,4 +217,5 @@ public class DescribeDatasetRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeDatasetRequest clone() {
         return (DescribeDatasetRequest) super.clone();
     }
+
 }

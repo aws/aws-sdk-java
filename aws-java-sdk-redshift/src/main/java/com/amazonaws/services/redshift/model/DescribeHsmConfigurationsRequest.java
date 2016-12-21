@@ -551,4 +551,5 @@ public class DescribeHsmConfigurationsRequest extends com.amazonaws.AmazonWebSer
     public DescribeHsmConfigurationsRequest clone() {
         return (DescribeHsmConfigurationsRequest) super.clone();
     }
+
 }

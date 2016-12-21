@@ -310,4 +310,5 @@ public class CompleteLayerUploadRequest extends com.amazonaws.AmazonWebServiceRe
     public CompleteLayerUploadRequest clone() {
         return (CompleteLayerUploadRequest) super.clone();
     }
+
 }

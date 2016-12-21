@@ -169,4 +169,5 @@ public class AdminGetUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     public AdminGetUserRequest clone() {
         return (AdminGetUserRequest) super.clone();
     }
+
 }

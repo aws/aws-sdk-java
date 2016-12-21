@@ -114,4 +114,5 @@ public class GetDomainRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetDomainRequest clone() {
         return (GetDomainRequest) super.clone();
     }
+
 }

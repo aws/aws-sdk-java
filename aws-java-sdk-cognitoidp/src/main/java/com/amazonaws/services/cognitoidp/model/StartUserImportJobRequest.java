@@ -169,4 +169,5 @@ public class StartUserImportJobRequest extends com.amazonaws.AmazonWebServiceReq
     public StartUserImportJobRequest clone() {
         return (StartUserImportJobRequest) super.clone();
     }
+
 }

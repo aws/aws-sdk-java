@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeOrderableReplicationInstancesRequestMarshaller implements
         Marshaller<Request<DescribeOrderableReplicationInstancesRequest>, DescribeOrderableReplicationInstancesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeOrderableReplicationInstancesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeOrderableReplicationInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -212,4 +212,5 @@ public class ListIPSetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListIPSetsRequest clone() {
         return (ListIPSetsRequest) super.clone();
     }
+
 }

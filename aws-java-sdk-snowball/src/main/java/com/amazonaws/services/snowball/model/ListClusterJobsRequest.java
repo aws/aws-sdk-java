@@ -237,4 +237,5 @@ public class ListClusterJobsRequest extends com.amazonaws.AmazonWebServiceReques
     public ListClusterJobsRequest clone() {
         return (ListClusterJobsRequest) super.clone();
     }
+
 }

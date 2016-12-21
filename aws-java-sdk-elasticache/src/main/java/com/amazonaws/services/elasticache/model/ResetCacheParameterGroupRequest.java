@@ -349,4 +349,5 @@ public class ResetCacheParameterGroupRequest extends com.amazonaws.AmazonWebServ
     public ResetCacheParameterGroupRequest clone() {
         return (ResetCacheParameterGroupRequest) super.clone();
     }
+
 }

@@ -93,44 +93,45 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.ConcurrentModificationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DeveloperUserAlreadyRegisteredException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.ResourceConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ExternalServiceException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.ExternalServiceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.NotAuthorizedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidIdentityPoolConfigurationException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.InternalErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.TooManyRequestsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.cognitoidentity.model.LimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeveloperUserAlreadyRegisteredException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.ResourceConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExternalServiceException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.ExternalServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.NotAuthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIdentityPoolConfigurationException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.InternalErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.cognitoidentity.model.LimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Identity. A credentials provider chain will

@@ -183,4 +183,5 @@ public class DeleteTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteTrustRequest clone() {
         return (DeleteTrustRequest) super.clone();
     }
+
 }

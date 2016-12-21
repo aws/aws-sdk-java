@@ -528,4 +528,5 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateGameSessionRequest clone() {
         return (CreateGameSessionRequest) super.clone();
     }
+
 }

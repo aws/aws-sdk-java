@@ -169,4 +169,5 @@ public class RegisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWebSe
     public RegisterOnPremisesInstanceRequest clone() {
         return (RegisterOnPremisesInstanceRequest) super.clone();
     }
+
 }

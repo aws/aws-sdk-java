@@ -167,4 +167,5 @@ public class DeprecateWorkflowTypeRequest extends com.amazonaws.AmazonWebService
     public DeprecateWorkflowTypeRequest clone() {
         return (DeprecateWorkflowTypeRequest) super.clone();
     }
+
 }

@@ -45,6 +45,7 @@
     "cucumberModuleInjectorClassName" : "AmazonGameLiftModuleInjector",
     "defaultEndpoint" : "https://gamelift.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "gamelift.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>Amazon GameLift Service</fullname> <p>Welcome to the <i>Amazon GameLift API Reference</i>. Amazon GameLift is a managed Amazon Web Services (AWS) service for developers who need a scalable, server-based solution for multiplayer games. Amazon GameLift provides setup and deployment of game servers, and handles infrastructure scaling and session management.</p> <p>This reference describes the low-level service API for GameLift. You can call this API directly or use the <a href=\"http://aws.amazon.com/tools/#sdk\">AWS SDK</a> for your preferred language. The AWS SDK includes a set of high-level GameLift actions multiplayer game sessions. Alternatively, you can use the <a href=\"http://aws.amazon.com/cli/\">AWS command-line interface</a> (CLI) tool, which includes commands for GameLift. For administrative actions, you can also use the Amazon GameLift console. </p> <p> <b>More Resources</b> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/gamelift/latest/developerguide/\">Amazon GameLift Developer Guide</a>: Learn more about GameLift features and how to use them </p> </li> <li> <p> <a href=\"https://gamedev.amazon.com/forums/tutorials\">Lumberyard and GameLift Tutorials</a>: Get started fast with walkthroughs and sample projects</p> </li> <li> <p> <a href=\"http://aws.amazon.com/blogs/gamedev/\">GameDev Blog</a>: Stay up to date with new features and techniques</p> </li> <li> <p> <a href=\"https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html\">GameDev Forums</a>: Connect with the GameDev community</p> </li> </ul> <p> <b>Manage Games and Players Through GameLift</b> </p> <p>Call these actions from your game clients and/or services to create and manage multiplayer game sessions and player sessions.</p> <ul> <li> <p> <b>Game sessions:</b> </p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p> <a>SearchGameSessions</a> </p> </li> </ul> </li> <li> <p> <b>Player sessions:</b> </p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> </ul> </li> <li> <p> <b>Other actions:</b> </p> <ul> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> </ul> </li> </ul> <p> <b>Set Up and Manage Game Servers</b> </p> <p>Use these administrative actions to configure GameLift to host your game servers. When setting up GameLift, you will need to (1) configure a build for your game and upload build files, and (2) set up one or more fleets to host game sessions. Once you've created and activated a fleet, you can assign aliases to it, scale capacity, track performance and utilization, etc.</p> <ul> <li> <p> <b>Game builds:</b> </p> <ul> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li> <li> <p> <a>RequestUploadCredentials</a> </p> </li> </ul> </li> <li> <p> <b>Fleets:</b> </p> <ul> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p> <a>DescribeFleetUtilization</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a> </p> </li> <li> <p> <a>DescribeRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p> <a>DeleteFleet</a> </p> </li> </ul> </li> <li> <p> <b>Manage your instances:</b> </p> <ul> <li> <p> <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li> </ul> </li> <li> <p> <b>Manage fleet aliases:</b> </p> <ul> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul> </li> <li> <p> <b>Manage autoscaling:</b> </p> <ul> <li> <p> <a>PutScalingPolicy</a> </p> </li> <li> <p> <a>DescribeScalingPolicies</a> </p> </li> <li> <p> <a>DeleteScalingPolicy</a> </p> </li> </ul> </li> </ul> <p>To view changes to the API, see the GameLift <a href=\"http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html\">Document History</a> page.</p>",
     "endpointPrefix" : "gamelift",
     "hasApiWithStreamInput" : false,
@@ -55,7 +56,10 @@
     "packagePath" : "com/amazonaws/services/gamelift",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon GameLift",
     "serviceName" : "Amazon GameLift",
@@ -2605,6 +2609,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Alias",
       "unmarshaller" : {
@@ -3432,6 +3438,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Build",
       "unmarshaller" : {
@@ -3476,6 +3484,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BuildStatus",
       "unmarshaller" : {
@@ -3523,6 +3533,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparisonOperatorType",
       "unmarshaller" : {
@@ -3558,6 +3570,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConflictException",
       "unmarshaller" : null,
@@ -3937,6 +3951,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "RoutingStrategy" ],
       "shapeName" : "CreateAliasRequest",
       "unmarshaller" : null,
@@ -4083,6 +4099,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateAliasResult",
       "unmarshaller" : {
@@ -4578,6 +4596,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBuildRequest",
       "unmarshaller" : null,
@@ -4950,6 +4970,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBuildResult",
       "unmarshaller" : {
@@ -6520,6 +6542,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "BuildId", "EC2InstanceType" ],
       "shapeName" : "CreateFleetRequest",
       "unmarshaller" : null,
@@ -6666,6 +6690,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateFleetResult",
       "unmarshaller" : {
@@ -7642,6 +7668,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MaximumPlayerSessionCount" ],
       "shapeName" : "CreateGameSessionRequest",
       "unmarshaller" : null,
@@ -7788,6 +7816,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateGameSessionResult",
       "unmarshaller" : {
@@ -8057,6 +8087,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GameSessionId", "PlayerId" ],
       "shapeName" : "CreatePlayerSessionRequest",
       "unmarshaller" : null,
@@ -8203,6 +8235,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePlayerSessionResult",
       "unmarshaller" : {
@@ -8614,6 +8648,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GameSessionId", "PlayerIds" ],
       "shapeName" : "CreatePlayerSessionsRequest",
       "unmarshaller" : null,
@@ -8902,6 +8938,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePlayerSessionsResult",
       "unmarshaller" : {
@@ -9277,6 +9315,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Credentials",
       "unmarshaller" : {
@@ -9433,6 +9473,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AliasId" ],
       "shapeName" : "DeleteAliasRequest",
       "unmarshaller" : null,
@@ -9465,6 +9507,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteAliasResult",
       "unmarshaller" : {
@@ -9621,6 +9665,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BuildId" ],
       "shapeName" : "DeleteBuildRequest",
       "unmarshaller" : null,
@@ -9653,6 +9699,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBuildResult",
       "unmarshaller" : {
@@ -9809,6 +9857,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "DeleteFleetRequest",
       "unmarshaller" : null,
@@ -9841,6 +9891,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteFleetResult",
       "unmarshaller" : {
@@ -10110,6 +10162,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "FleetId" ],
       "shapeName" : "DeleteScalingPolicyRequest",
       "unmarshaller" : null,
@@ -10142,6 +10196,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteScalingPolicyResult",
       "unmarshaller" : {
@@ -10298,6 +10354,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AliasId" ],
       "shapeName" : "DescribeAliasRequest",
       "unmarshaller" : null,
@@ -10444,6 +10502,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeAliasResult",
       "unmarshaller" : {
@@ -10600,6 +10660,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BuildId" ],
       "shapeName" : "DescribeBuildRequest",
       "unmarshaller" : null,
@@ -10746,6 +10808,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBuildResult",
       "unmarshaller" : {
@@ -10902,6 +10966,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEC2InstanceLimitsRequest",
       "unmarshaller" : null,
@@ -11190,6 +11256,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEC2InstanceLimitsResult",
       "unmarshaller" : {
@@ -11714,6 +11782,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetAttributesRequest",
       "unmarshaller" : null,
@@ -12115,6 +12185,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetAttributesResult",
       "unmarshaller" : {
@@ -12639,6 +12711,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetCapacityRequest",
       "unmarshaller" : null,
@@ -13040,6 +13114,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetCapacityResult",
       "unmarshaller" : {
@@ -13648,6 +13724,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "DescribeFleetEventsRequest",
       "unmarshaller" : null,
@@ -14049,6 +14127,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetEventsResult",
       "unmarshaller" : {
@@ -14205,6 +14285,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "DescribeFleetPortSettingsRequest",
       "unmarshaller" : null,
@@ -14493,6 +14575,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetPortSettingsResult",
       "unmarshaller" : {
@@ -15017,6 +15101,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetUtilizationRequest",
       "unmarshaller" : null,
@@ -15418,6 +15504,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeFleetUtilizationResult",
       "unmarshaller" : {
@@ -16139,6 +16227,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeGameSessionDetailsRequest",
       "unmarshaller" : null,
@@ -16540,6 +16630,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeGameSessionDetailsResult",
       "unmarshaller" : {
@@ -17261,6 +17353,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeGameSessionsRequest",
       "unmarshaller" : null,
@@ -17662,6 +17756,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeGameSessionsResult",
       "unmarshaller" : {
@@ -18157,6 +18253,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "DescribeInstancesRequest",
       "unmarshaller" : null,
@@ -18558,6 +18656,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeInstancesResult",
       "unmarshaller" : {
@@ -19279,6 +19379,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribePlayerSessionsRequest",
       "unmarshaller" : null,
@@ -19680,6 +19782,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribePlayerSessionsResult",
       "unmarshaller" : {
@@ -19836,6 +19940,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "DescribeRuntimeConfigurationRequest",
       "unmarshaller" : null,
@@ -19982,6 +20088,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeRuntimeConfigurationResult",
       "unmarshaller" : {
@@ -20477,6 +20585,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "DescribeScalingPoliciesRequest",
       "unmarshaller" : null,
@@ -20878,6 +20988,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeScalingPoliciesResult",
       "unmarshaller" : {
@@ -21705,6 +21817,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EC2InstanceCounts",
       "unmarshaller" : {
@@ -22080,6 +22194,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EC2InstanceLimit",
       "unmarshaller" : {
@@ -22199,6 +22315,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EC2InstanceType",
       "unmarshaller" : {
@@ -22800,6 +22918,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Event",
       "unmarshaller" : {
@@ -22910,6 +23030,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EventCode",
       "unmarshaller" : {
@@ -24557,6 +24679,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FleetAttributes",
       "unmarshaller" : {
@@ -24932,6 +25056,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FleetCapacity",
       "unmarshaller" : {
@@ -24967,6 +25093,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FleetCapacityExceededException",
       "unmarshaller" : null,
@@ -25026,6 +25154,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FleetStatus",
       "unmarshaller" : {
@@ -25627,6 +25757,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FleetUtilization",
       "unmarshaller" : {
@@ -25889,6 +26021,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
       "shapeName" : "GameProperty",
       "unmarshaller" : {
@@ -27536,6 +27670,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GameSession",
       "unmarshaller" : {
@@ -27798,6 +27934,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GameSessionDetail",
       "unmarshaller" : {
@@ -27833,6 +27971,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GameSessionFullException",
       "unmarshaller" : null,
@@ -27880,6 +28020,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GameSessionStatus",
       "unmarshaller" : {
@@ -28036,6 +28178,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GameSessionId" ],
       "shapeName" : "GetGameSessionLogUrlRequest",
       "unmarshaller" : null,
@@ -28182,6 +28326,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetGameSessionLogUrlResult",
       "unmarshaller" : {
@@ -28451,6 +28597,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId", "InstanceId" ],
       "shapeName" : "GetInstanceAccessRequest",
       "unmarshaller" : null,
@@ -28597,6 +28745,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetInstanceAccessResult",
       "unmarshaller" : {
@@ -28632,6 +28782,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IdempotentParameterMismatchException",
       "unmarshaller" : null,
@@ -29456,6 +29608,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Instance",
       "unmarshaller" : {
@@ -30057,6 +30211,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceAccess",
       "unmarshaller" : {
@@ -30319,6 +30475,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceCredentials",
       "unmarshaller" : {
@@ -30363,6 +30521,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceStatus",
       "unmarshaller" : {
@@ -30398,6 +30558,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServiceException",
       "unmarshaller" : null,
@@ -30430,6 +30592,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidFleetStatusException",
       "unmarshaller" : null,
@@ -30462,6 +30626,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidGameSessionStatusException",
       "unmarshaller" : null,
@@ -30494,6 +30660,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRequestException",
       "unmarshaller" : null,
@@ -30979,6 +31147,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FromPort", "ToPort", "IpRange", "Protocol" ],
       "shapeName" : "IpPermission",
       "unmarshaller" : {
@@ -31020,6 +31190,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IpProtocol",
       "unmarshaller" : {
@@ -31055,6 +31227,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -31547,6 +31721,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAliasesRequest",
       "unmarshaller" : null,
@@ -31948,6 +32124,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAliasesResult",
       "unmarshaller" : {
@@ -32330,6 +32508,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListBuildsRequest",
       "unmarshaller" : null,
@@ -32731,6 +32911,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListBuildsResult",
       "unmarshaller" : {
@@ -33113,6 +33295,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFleetsRequest",
       "unmarshaller" : null,
@@ -33514,6 +33698,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListFleetsResult",
       "unmarshaller" : {
@@ -33567,6 +33753,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MetricName",
       "unmarshaller" : {
@@ -33602,6 +33790,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotFoundException",
       "unmarshaller" : null,
@@ -33640,6 +33830,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperatingSystem",
       "unmarshaller" : {
@@ -34693,6 +34885,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PlayerSession",
       "unmarshaller" : {
@@ -34734,6 +34928,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PlayerSessionCreationPolicy",
       "unmarshaller" : {
@@ -34781,6 +34977,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PlayerSessionStatus",
       "unmarshaller" : {
@@ -34822,6 +35020,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProtectionPolicy",
       "unmarshaller" : {
@@ -35769,6 +35969,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "FleetId", "ScalingAdjustment", "ScalingAdjustmentType", "Threshold", "ComparisonOperator", "EvaluationPeriods", "MetricName" ],
       "shapeName" : "PutScalingPolicyRequest",
       "unmarshaller" : null,
@@ -35915,6 +36117,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutScalingPolicyResult",
       "unmarshaller" : {
@@ -36071,6 +36275,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BuildId" ],
       "shapeName" : "RequestUploadCredentialsRequest",
       "unmarshaller" : null,
@@ -36330,6 +36536,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestUploadCredentialsResult",
       "unmarshaller" : {
@@ -36486,6 +36694,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AliasId" ],
       "shapeName" : "ResolveAliasRequest",
       "unmarshaller" : null,
@@ -36632,6 +36842,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResolveAliasResult",
       "unmarshaller" : {
@@ -36894,6 +37106,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceCreationLimitPolicy",
       "unmarshaller" : {
@@ -37269,6 +37483,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RoutingStrategy",
       "unmarshaller" : {
@@ -37310,6 +37526,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RoutingStrategyType",
       "unmarshaller" : {
@@ -37601,6 +37819,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RuntimeConfiguration",
       "unmarshaller" : {
@@ -37976,6 +38196,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3Location",
       "unmarshaller" : {
@@ -38020,6 +38242,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScalingAdjustmentType",
       "unmarshaller" : {
@@ -39073,6 +39297,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScalingPolicy",
       "unmarshaller" : {
@@ -39129,6 +39355,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScalingStatusType",
       "unmarshaller" : {
@@ -39850,6 +40078,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchGameSessionsRequest",
       "unmarshaller" : null,
@@ -40251,6 +40481,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchGameSessionsResult",
       "unmarshaller" : {
@@ -40626,6 +40858,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "LaunchPath", "ConcurrentExecutions" ],
       "shapeName" : "ServerProcess",
       "unmarshaller" : {
@@ -40661,6 +40895,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TerminalRoutingStrategyException",
       "unmarshaller" : null,
@@ -40693,6 +40929,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnauthorizedException",
       "unmarshaller" : null,
@@ -41185,6 +41423,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AliasId" ],
       "shapeName" : "UpdateAliasRequest",
       "unmarshaller" : null,
@@ -41331,6 +41571,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateAliasResult",
       "unmarshaller" : {
@@ -41713,6 +41955,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BuildId" ],
       "shapeName" : "UpdateBuildRequest",
       "unmarshaller" : null,
@@ -41859,6 +42103,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateBuildResult",
       "unmarshaller" : {
@@ -42467,6 +42713,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "UpdateFleetAttributesRequest",
       "unmarshaller" : null,
@@ -42613,6 +42861,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateFleetAttributesResult",
       "unmarshaller" : {
@@ -43108,6 +43358,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "UpdateFleetCapacityRequest",
       "unmarshaller" : null,
@@ -43254,6 +43506,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateFleetCapacityResult",
       "unmarshaller" : {
@@ -43920,6 +44174,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId" ],
       "shapeName" : "UpdateFleetPortSettingsRequest",
       "unmarshaller" : null,
@@ -44066,6 +44322,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateFleetPortSettingsResult",
       "unmarshaller" : {
@@ -44674,6 +44932,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GameSessionId" ],
       "shapeName" : "UpdateGameSessionRequest",
       "unmarshaller" : null,
@@ -44820,6 +45080,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateGameSessionResult",
       "unmarshaller" : {
@@ -45089,6 +45351,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "FleetId", "RuntimeConfiguration" ],
       "shapeName" : "UpdateRuntimeConfigurationRequest",
       "unmarshaller" : null,
@@ -45235,6 +45499,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateRuntimeConfigurationResult",
       "unmarshaller" : {
@@ -45253,6 +45519,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

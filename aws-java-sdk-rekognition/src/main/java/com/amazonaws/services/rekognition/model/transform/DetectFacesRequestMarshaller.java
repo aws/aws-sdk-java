@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DetectFacesRequestMarshaller implements Marshaller<Request<DetectFacesRequest>, DetectFacesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DetectFacesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DetectFacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

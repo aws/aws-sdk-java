@@ -261,4 +261,5 @@ public class AddUserToGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     public AddUserToGroupRequest clone() {
         return (AddUserToGroupRequest) super.clone();
     }
+
 }

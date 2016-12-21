@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PutRetentionPolicyRequestMarshaller implements Marshaller<Request<PutRetentionPolicyRequest>, PutRetentionPolicyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutRetentionPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutRetentionPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

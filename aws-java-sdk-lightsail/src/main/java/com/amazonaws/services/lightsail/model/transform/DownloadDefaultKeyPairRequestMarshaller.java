@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DownloadDefaultKeyPairRequestMarshaller implements Marshaller<Request<DownloadDefaultKeyPairRequest>, DownloadDefaultKeyPairRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DownloadDefaultKeyPairRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DownloadDefaultKeyPairRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

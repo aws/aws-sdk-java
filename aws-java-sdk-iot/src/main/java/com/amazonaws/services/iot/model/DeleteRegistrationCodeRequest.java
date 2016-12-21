@@ -62,4 +62,5 @@ public class DeleteRegistrationCodeRequest extends com.amazonaws.AmazonWebServic
     public DeleteRegistrationCodeRequest clone() {
         return (DeleteRegistrationCodeRequest) super.clone();
     }
+
 }

@@ -488,4 +488,5 @@ public class ResendValidationEmailRequest extends com.amazonaws.AmazonWebService
     public ResendValidationEmailRequest clone() {
         return (ResendValidationEmailRequest) super.clone();
     }
+
 }

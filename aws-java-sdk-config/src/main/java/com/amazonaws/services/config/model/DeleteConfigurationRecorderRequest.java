@@ -123,4 +123,5 @@ public class DeleteConfigurationRecorderRequest extends com.amazonaws.AmazonWebS
     public DeleteConfigurationRecorderRequest clone() {
         return (DeleteConfigurationRecorderRequest) super.clone();
     }
+
 }

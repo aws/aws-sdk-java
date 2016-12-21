@@ -347,4 +347,5 @@ public class EstimateTemplateCostRequest extends com.amazonaws.AmazonWebServiceR
     public EstimateTemplateCostRequest clone() {
         return (EstimateTemplateCostRequest) super.clone();
     }
+
 }

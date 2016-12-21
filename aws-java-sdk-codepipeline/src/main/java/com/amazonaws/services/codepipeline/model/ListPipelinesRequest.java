@@ -123,4 +123,5 @@ public class ListPipelinesRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ListPipelinesRequest clone() {
         return (ListPipelinesRequest) super.clone();
     }
+
 }

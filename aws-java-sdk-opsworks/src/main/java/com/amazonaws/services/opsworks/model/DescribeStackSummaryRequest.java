@@ -114,4 +114,5 @@ public class DescribeStackSummaryRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeStackSummaryRequest clone() {
         return (DescribeStackSummaryRequest) super.clone();
     }
+
 }

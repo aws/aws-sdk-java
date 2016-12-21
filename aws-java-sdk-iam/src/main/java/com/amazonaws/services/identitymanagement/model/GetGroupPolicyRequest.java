@@ -261,4 +261,5 @@ public class GetGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetGroupPolicyRequest clone() {
         return (GetGroupPolicyRequest) super.clone();
     }
+
 }

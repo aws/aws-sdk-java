@@ -383,4 +383,5 @@ public class InitiateMultipartUploadRequest extends com.amazonaws.AmazonWebServi
     public InitiateMultipartUploadRequest clone() {
         return (InitiateMultipartUploadRequest) super.clone();
     }
+
 }

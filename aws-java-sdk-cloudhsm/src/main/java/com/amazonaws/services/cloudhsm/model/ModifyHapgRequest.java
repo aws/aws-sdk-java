@@ -253,4 +253,5 @@ public class ModifyHapgRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ModifyHapgRequest clone() {
         return (ModifyHapgRequest) super.clone();
     }
+
 }

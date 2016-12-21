@@ -174,4 +174,5 @@ public class AddClientIDToOpenIDConnectProviderRequest extends com.amazonaws.Ama
     public AddClientIDToOpenIDConnectProviderRequest clone() {
         return (AddClientIDToOpenIDConnectProviderRequest) super.clone();
     }
+
 }

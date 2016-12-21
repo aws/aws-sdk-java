@@ -613,4 +613,5 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateFleetRequest clone() {
         return (UpdateFleetRequest) super.clone();
     }
+
 }

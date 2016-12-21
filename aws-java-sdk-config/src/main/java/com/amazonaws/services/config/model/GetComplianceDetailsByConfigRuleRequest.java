@@ -377,4 +377,5 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
     public GetComplianceDetailsByConfigRuleRequest clone() {
         return (GetComplianceDetailsByConfigRuleRequest) super.clone();
     }
+
 }

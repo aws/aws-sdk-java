@@ -310,4 +310,5 @@ public class SetRepositoryPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     public SetRepositoryPolicyRequest clone() {
         return (SetRepositoryPolicyRequest) super.clone();
     }
+
 }

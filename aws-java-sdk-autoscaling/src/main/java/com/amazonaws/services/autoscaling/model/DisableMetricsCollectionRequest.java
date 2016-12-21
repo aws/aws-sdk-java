@@ -576,4 +576,5 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
     public DisableMetricsCollectionRequest clone() {
         return (DisableMetricsCollectionRequest) super.clone();
     }
+
 }

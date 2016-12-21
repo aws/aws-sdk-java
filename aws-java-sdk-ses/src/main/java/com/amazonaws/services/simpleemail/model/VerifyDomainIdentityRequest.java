@@ -118,4 +118,5 @@ public class VerifyDomainIdentityRequest extends com.amazonaws.AmazonWebServiceR
     public VerifyDomainIdentityRequest clone() {
         return (VerifyDomainIdentityRequest) super.clone();
     }
+
 }

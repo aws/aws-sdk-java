@@ -1142,4 +1142,5 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateTrailRequest clone() {
         return (CreateTrailRequest) super.clone();
     }
+
 }

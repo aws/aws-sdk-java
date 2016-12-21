@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminDeleteUserAttributesRequestMarshaller implements Marshaller<Request<AdminDeleteUserAttributesRequest>, AdminDeleteUserAttributesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminDeleteUserAttributesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminDeleteUserAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

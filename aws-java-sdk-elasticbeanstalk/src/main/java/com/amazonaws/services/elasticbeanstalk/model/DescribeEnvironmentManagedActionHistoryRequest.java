@@ -275,4 +275,5 @@ public class DescribeEnvironmentManagedActionHistoryRequest extends com.amazonaw
     public DescribeEnvironmentManagedActionHistoryRequest clone() {
         return (DescribeEnvironmentManagedActionHistoryRequest) super.clone();
     }
+
 }

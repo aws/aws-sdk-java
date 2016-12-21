@@ -248,4 +248,5 @@ public class ListProvisioningArtifactsRequest extends com.amazonaws.AmazonWebSer
     public ListProvisioningArtifactsRequest clone() {
         return (ListProvisioningArtifactsRequest) super.clone();
     }
+
 }

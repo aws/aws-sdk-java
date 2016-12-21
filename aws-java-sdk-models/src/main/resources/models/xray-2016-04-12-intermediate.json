@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSXRayModuleInjector",
     "defaultEndpoint" : "xray.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "xray.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>AWS X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing those traces.</p>",
     "endpointPrefix" : "xray",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/xray",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS X-Ray",
     "serviceName" : "AWS X-Ray",
@@ -784,6 +788,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Alias",
       "unmarshaller" : {
@@ -1159,6 +1165,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AnnotationValue",
       "unmarshaller" : {
@@ -1873,6 +1881,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BackendConnectionErrors",
       "unmarshaller" : {
@@ -2284,6 +2294,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TraceIds" ],
       "shapeName" : "BatchGetTracesRequest",
       "unmarshaller" : null,
@@ -2940,6 +2952,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetTracesResult",
       "unmarshaller" : {
@@ -3938,6 +3952,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Edge",
       "unmarshaller" : {
@@ -4539,6 +4555,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EdgeStatistics",
       "unmarshaller" : {
@@ -4914,6 +4932,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ErrorStatistics",
       "unmarshaller" : {
@@ -5176,6 +5196,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FaultStatistics",
       "unmarshaller" : {
@@ -5558,6 +5580,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "StartTime", "EndTime" ],
       "shapeName" : "GetServiceGraphRequest",
       "unmarshaller" : null,
@@ -6185,6 +6209,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetServiceGraphResult",
       "unmarshaller" : {
@@ -6596,6 +6622,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TraceIds" ],
       "shapeName" : "GetTraceGraphRequest",
       "unmarshaller" : null,
@@ -6997,6 +7025,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetTraceGraphResult",
       "unmarshaller" : {
@@ -7605,6 +7635,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "StartTime", "EndTime" ],
       "shapeName" : "GetTraceSummariesRequest",
       "unmarshaller" : null,
@@ -8232,6 +8264,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetTraceSummariesResult",
       "unmarshaller" : {
@@ -8494,6 +8528,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HistogramEntry",
       "unmarshaller" : {
@@ -9095,6 +9131,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Http",
       "unmarshaller" : {
@@ -9130,6 +9168,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRequestException",
       "unmarshaller" : null,
@@ -9764,6 +9804,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TelemetryRecords" ],
       "shapeName" : "PutTelemetryRecordsRequest",
       "unmarshaller" : null,
@@ -9796,6 +9838,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutTelemetryRecordsResult",
       "unmarshaller" : {
@@ -10094,6 +10138,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TraceSegmentDocuments" ],
       "shapeName" : "PutTraceSegmentsRequest",
       "unmarshaller" : null,
@@ -10382,6 +10428,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutTraceSegmentsResult",
       "unmarshaller" : {
@@ -10644,6 +10692,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Segment",
       "unmarshaller" : {
@@ -12462,6 +12512,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Service",
       "unmarshaller" : {
@@ -13092,6 +13144,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceId",
       "unmarshaller" : {
@@ -13693,6 +13747,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceStatistics",
       "unmarshaller" : {
@@ -14407,6 +14463,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TelemetryRecord",
       "unmarshaller" : {
@@ -14442,6 +14500,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThrottledException",
       "unmarshaller" : null,
@@ -14956,6 +15016,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Trace",
       "unmarshaller" : {
@@ -16803,6 +16865,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TraceSummary",
       "unmarshaller" : {
@@ -17207,6 +17271,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TraceUser",
       "unmarshaller" : {
@@ -17582,6 +17648,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnprocessedTraceSegment",
       "unmarshaller" : {
@@ -17986,6 +18054,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ValueWithServiceIds",
       "unmarshaller" : {
@@ -18004,6 +18074,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

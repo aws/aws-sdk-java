@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetSnowballUsageRequestMarshaller implements Marshaller<Request<GetSnowballUsageRequest>, GetSnowballUsageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetSnowballUsageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetSnowballUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

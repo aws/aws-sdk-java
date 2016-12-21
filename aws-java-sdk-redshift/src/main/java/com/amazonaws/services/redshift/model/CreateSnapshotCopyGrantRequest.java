@@ -469,4 +469,5 @@ public class CreateSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
     public CreateSnapshotCopyGrantRequest clone() {
         return (CreateSnapshotCopyGrantRequest) super.clone();
     }
+
 }

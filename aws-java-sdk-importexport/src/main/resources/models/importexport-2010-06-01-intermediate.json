@@ -51,6 +51,7 @@
     "cucumberModuleInjectorClassName" : "AmazonImportExportModuleInjector",
     "defaultEndpoint" : "https://importexport.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "importexport.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS Import/Export Service</fullname> AWS Import/Export accelerates transferring large amounts of data between the AWS cloud and portable storage devices that you mail to us. AWS Import/Export transfers data directly onto and off of your storage devices using Amazon's high-speed internal network and bypassing the Internet. For large data sets, AWS Import/Export is often faster than Internet transfer and more cost effective than upgrading your connectivity.",
     "endpointPrefix" : "importexport",
     "hasApiWithStreamInput" : false,
@@ -61,7 +62,10 @@
     "packagePath" : "com/amazonaws/services/importexport",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "protocolFactory" : null,
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Import/Export",
     "serviceName" : "AWS Import/Export",
@@ -705,6 +709,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Artifact",
       "unmarshaller" : {
@@ -740,6 +746,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BucketPermissionException",
       "unmarshaller" : null,
@@ -1006,6 +1014,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "CancelJobRequest",
       "unmarshaller" : null,
@@ -1152,6 +1162,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelJobResult",
       "unmarshaller" : {
@@ -1187,6 +1199,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CanceledJobIdException",
       "unmarshaller" : null,
@@ -1219,6 +1233,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobQuotaExceededException",
       "unmarshaller" : null,
@@ -1824,6 +1840,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "JobType", "Manifest", "ValidateOnly" ],
       "shapeName" : "CreateJobRequest",
       "unmarshaller" : null,
@@ -2677,6 +2695,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobResult",
       "unmarshaller" : {
@@ -2712,6 +2732,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredJobIdException",
       "unmarshaller" : null,
@@ -4250,6 +4272,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobIds" ],
       "shapeName" : "GetShippingLabelRequest",
       "unmarshaller" : null,
@@ -4509,6 +4533,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetShippingLabelResult",
       "unmarshaller" : {
@@ -4778,6 +4804,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "GetStatusRequest",
       "unmarshaller" : null,
@@ -6761,6 +6789,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetStatusResult",
       "unmarshaller" : {
@@ -6796,6 +6826,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAccessKeyIdException",
       "unmarshaller" : null,
@@ -6828,6 +6860,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAddressException",
       "unmarshaller" : null,
@@ -6860,6 +6894,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCustomsException",
       "unmarshaller" : null,
@@ -6892,6 +6928,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidFileSystemException",
       "unmarshaller" : null,
@@ -6924,6 +6962,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidJobIdException",
       "unmarshaller" : null,
@@ -6956,6 +6996,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidManifestFieldException",
       "unmarshaller" : null,
@@ -6988,6 +7030,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
       "unmarshaller" : null,
@@ -7020,6 +7064,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidVersionException",
       "unmarshaller" : null,
@@ -7505,6 +7551,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Job",
       "unmarshaller" : {
@@ -7546,6 +7594,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobType",
       "unmarshaller" : {
@@ -7928,6 +7978,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsRequest",
       "unmarshaller" : null,
@@ -8329,6 +8381,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsResult",
       "unmarshaller" : {
@@ -8364,6 +8418,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MalformedManifestException",
       "unmarshaller" : null,
@@ -8396,6 +8452,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingCustomsException",
       "unmarshaller" : null,
@@ -8428,6 +8486,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingManifestFieldException",
       "unmarshaller" : null,
@@ -8460,6 +8520,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingParameterException",
       "unmarshaller" : null,
@@ -8492,6 +8554,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MultipleRegionsException",
       "unmarshaller" : null,
@@ -8524,6 +8588,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoSuchBucketException",
       "unmarshaller" : null,
@@ -8556,6 +8622,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnableToCancelJobIdException",
       "unmarshaller" : null,
@@ -8588,6 +8656,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnableToUpdateJobIdException",
       "unmarshaller" : null,
@@ -9193,6 +9263,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "JobId", "Manifest", "JobType", "ValidateOnly" ],
       "shapeName" : "UpdateJobRequest",
       "unmarshaller" : null,
@@ -9707,6 +9779,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateJobResult",
       "unmarshaller" : {
@@ -9725,6 +9799,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

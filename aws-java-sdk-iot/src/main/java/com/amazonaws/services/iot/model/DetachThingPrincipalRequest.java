@@ -176,4 +176,5 @@ public class DetachThingPrincipalRequest extends com.amazonaws.AmazonWebServiceR
     public DetachThingPrincipalRequest clone() {
         return (DetachThingPrincipalRequest) super.clone();
     }
+
 }

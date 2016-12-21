@@ -220,4 +220,5 @@ public class DescribeInstanceHealthRequest extends com.amazonaws.AmazonWebServic
     public DescribeInstanceHealthRequest clone() {
         return (DescribeInstanceHealthRequest) super.clone();
     }
+
 }

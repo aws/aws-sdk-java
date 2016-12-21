@@ -499,4 +499,5 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
     public RestoreTableFromClusterSnapshotRequest clone() {
         return (RestoreTableFromClusterSnapshotRequest) super.clone();
     }
+
 }

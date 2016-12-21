@@ -363,4 +363,5 @@ public class LookupDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
     public LookupDeveloperIdentityRequest clone() {
         return (LookupDeveloperIdentityRequest) super.clone();
     }
+
 }

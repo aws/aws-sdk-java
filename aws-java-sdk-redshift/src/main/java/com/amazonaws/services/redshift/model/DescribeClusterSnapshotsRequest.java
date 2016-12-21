@@ -898,4 +898,5 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     public DescribeClusterSnapshotsRequest clone() {
         return (DescribeClusterSnapshotsRequest) super.clone();
     }
+
 }

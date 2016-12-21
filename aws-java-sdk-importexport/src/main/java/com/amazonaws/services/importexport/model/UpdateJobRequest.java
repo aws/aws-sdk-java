@@ -266,4 +266,5 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public UpdateJobRequest clone() {
         return (UpdateJobRequest) super.clone();
     }
+
 }

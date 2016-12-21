@@ -269,4 +269,5 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     public PublishVersionRequest clone() {
         return (PublishVersionRequest) super.clone();
     }
+
 }

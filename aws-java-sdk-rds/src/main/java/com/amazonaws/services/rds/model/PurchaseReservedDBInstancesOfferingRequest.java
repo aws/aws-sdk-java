@@ -359,4 +359,5 @@ public class PurchaseReservedDBInstancesOfferingRequest extends com.amazonaws.Am
     public PurchaseReservedDBInstancesOfferingRequest clone() {
         return (PurchaseReservedDBInstancesOfferingRequest) super.clone();
     }
+
 }

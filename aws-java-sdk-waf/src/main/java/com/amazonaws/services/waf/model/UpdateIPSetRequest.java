@@ -370,4 +370,5 @@ public class UpdateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateIPSetRequest clone() {
         return (UpdateIPSetRequest) super.clone();
     }
+
 }

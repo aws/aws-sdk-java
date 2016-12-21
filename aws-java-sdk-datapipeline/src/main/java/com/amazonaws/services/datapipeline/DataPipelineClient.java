@@ -79,26 +79,27 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                            com.amazonaws.services.datapipeline.model.InvalidRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TaskNotFoundException").withModeledClass(
-                            com.amazonaws.services.datapipeline.model.TaskNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PipelineDeletedException").withModeledClass(
-                            com.amazonaws.services.datapipeline.model.PipelineDeletedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withModeledClass(
-                            com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withModeledClass(
-                            com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.datapipeline.model.DataPipelineException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
+                                    com.amazonaws.services.datapipeline.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TaskNotFoundException").withModeledClass(
+                                    com.amazonaws.services.datapipeline.model.TaskNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineDeletedException").withModeledClass(
+                                    com.amazonaws.services.datapipeline.model.PipelineDeletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withModeledClass(
+                                    com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withModeledClass(
+                                    com.amazonaws.services.datapipeline.model.InternalServiceErrorException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.datapipeline.model.DataPipelineException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Data Pipeline. A credentials provider chain will be used

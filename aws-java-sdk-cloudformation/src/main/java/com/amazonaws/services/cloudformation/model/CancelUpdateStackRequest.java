@@ -116,4 +116,5 @@ public class CancelUpdateStackRequest extends com.amazonaws.AmazonWebServiceRequ
     public CancelUpdateStackRequest clone() {
         return (CancelUpdateStackRequest) super.clone();
     }
+
 }

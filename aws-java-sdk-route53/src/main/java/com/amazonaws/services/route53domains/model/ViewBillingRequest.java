@@ -607,4 +607,5 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ViewBillingRequest clone() {
         return (ViewBillingRequest) super.clone();
     }
+
 }

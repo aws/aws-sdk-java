@@ -116,4 +116,5 @@ public class GetProjectRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetProjectRequest clone() {
         return (GetProjectRequest) super.clone();
     }
+
 }

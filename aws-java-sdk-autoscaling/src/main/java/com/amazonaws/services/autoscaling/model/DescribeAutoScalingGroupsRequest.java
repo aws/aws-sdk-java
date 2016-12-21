@@ -255,4 +255,5 @@ public class DescribeAutoScalingGroupsRequest extends com.amazonaws.AmazonWebSer
     public DescribeAutoScalingGroupsRequest clone() {
         return (DescribeAutoScalingGroupsRequest) super.clone();
     }
+
 }

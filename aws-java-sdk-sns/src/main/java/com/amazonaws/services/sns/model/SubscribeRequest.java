@@ -914,4 +914,5 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public SubscribeRequest clone() {
         return (SubscribeRequest) super.clone();
     }
+
 }

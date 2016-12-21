@@ -431,4 +431,5 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
     public ListOnPremisesInstancesRequest clone() {
         return (ListOnPremisesInstancesRequest) super.clone();
     }
+
 }

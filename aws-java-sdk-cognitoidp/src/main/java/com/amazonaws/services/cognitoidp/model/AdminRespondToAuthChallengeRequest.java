@@ -382,4 +382,5 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
     public AdminRespondToAuthChallengeRequest clone() {
         return (AdminRespondToAuthChallengeRequest) super.clone();
     }
+
 }

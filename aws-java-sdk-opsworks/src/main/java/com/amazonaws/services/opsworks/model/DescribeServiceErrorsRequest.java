@@ -276,4 +276,5 @@ public class DescribeServiceErrorsRequest extends com.amazonaws.AmazonWebService
     public DescribeServiceErrorsRequest clone() {
         return (DescribeServiceErrorsRequest) super.clone();
     }
+
 }

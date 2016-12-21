@@ -397,4 +397,5 @@ public class DescribeMetricFiltersRequest extends com.amazonaws.AmazonWebService
     public DescribeMetricFiltersRequest clone() {
         return (DescribeMetricFiltersRequest) super.clone();
     }
+
 }

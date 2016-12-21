@@ -169,4 +169,5 @@ public class ReplaceTopicRuleRequest extends com.amazonaws.AmazonWebServiceReque
     public ReplaceTopicRuleRequest clone() {
         return (ReplaceTopicRuleRequest) super.clone();
     }
+
 }

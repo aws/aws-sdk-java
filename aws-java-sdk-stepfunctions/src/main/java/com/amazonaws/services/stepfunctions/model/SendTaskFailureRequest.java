@@ -227,4 +227,5 @@ public class SendTaskFailureRequest extends com.amazonaws.AmazonWebServiceReques
     public SendTaskFailureRequest clone() {
         return (SendTaskFailureRequest) super.clone();
     }
+
 }

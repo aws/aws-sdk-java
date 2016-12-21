@@ -169,4 +169,5 @@ public class DeleteStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteStageRequest clone() {
         return (DeleteStageRequest) super.clone();
     }
+
 }

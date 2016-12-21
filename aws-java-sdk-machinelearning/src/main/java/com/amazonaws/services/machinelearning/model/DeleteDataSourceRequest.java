@@ -114,4 +114,5 @@ public class DeleteDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteDataSourceRequest clone() {
         return (DeleteDataSourceRequest) super.clone();
     }
+
 }

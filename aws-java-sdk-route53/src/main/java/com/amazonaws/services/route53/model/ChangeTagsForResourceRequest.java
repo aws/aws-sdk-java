@@ -542,4 +542,5 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
     public ChangeTagsForResourceRequest clone() {
         return (ChangeTagsForResourceRequest) super.clone();
     }
+
 }

@@ -612,4 +612,5 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeDBInstancesRequest clone() {
         return (DescribeDBInstancesRequest) super.clone();
     }
+
 }

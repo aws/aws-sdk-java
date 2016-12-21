@@ -168,4 +168,5 @@ public class DeleteServerCertificateRequest extends com.amazonaws.AmazonWebServi
     public DeleteServerCertificateRequest clone() {
         return (DeleteServerCertificateRequest) super.clone();
     }
+
 }

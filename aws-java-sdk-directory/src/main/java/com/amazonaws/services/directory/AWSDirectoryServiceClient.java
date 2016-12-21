@@ -64,53 +64,54 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withModeledClass(
-                            com.amazonaws.services.directory.model.DirectoryUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.directory.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
-                            com.amazonaws.services.directory.model.ServiceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("SnapshotLimitExceededException").withModeledClass(
-                            com.amazonaws.services.directory.model.SnapshotLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("EntityDoesNotExistException").withModeledClass(
-                            com.amazonaws.services.directory.model.EntityDoesNotExistException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DirectoryLimitExceededException").withModeledClass(
-                            com.amazonaws.services.directory.model.DirectoryLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                            com.amazonaws.services.directory.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
-                            com.amazonaws.services.directory.model.UnsupportedOperationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClientException")
-                            .withModeledClass(com.amazonaws.services.directory.model.ClientException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IpRouteLimitExceededException").withModeledClass(
-                            com.amazonaws.services.directory.model.IpRouteLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AuthenticationFailedException").withModeledClass(
-                            com.amazonaws.services.directory.model.AuthenticationFailedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
-                            com.amazonaws.services.directory.model.InsufficientPermissionsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
-                            com.amazonaws.services.directory.model.TagLimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.directory.model.AWSDirectoryServiceException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DirectoryUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.directory.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
+                                    com.amazonaws.services.directory.model.ServiceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SnapshotLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.SnapshotLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.directory.model.EntityAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntityDoesNotExistException").withModeledClass(
+                                    com.amazonaws.services.directory.model.EntityDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DirectoryLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.directory.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
+                                    com.amazonaws.services.directory.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
+                                    com.amazonaws.services.directory.model.ClientException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IpRouteLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.IpRouteLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AuthenticationFailedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.AuthenticationFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
+                                    com.amazonaws.services.directory.model.InsufficientPermissionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.TagLimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.directory.model.AWSDirectoryServiceException.class));
 
     /**
      * Constructs a new client to invoke service methods on Directory Service. A credentials provider chain will be used

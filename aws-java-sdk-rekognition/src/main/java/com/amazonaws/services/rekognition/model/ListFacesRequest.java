@@ -230,4 +230,5 @@ public class ListFacesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ListFacesRequest clone() {
         return (ListFacesRequest) super.clone();
     }
+
 }

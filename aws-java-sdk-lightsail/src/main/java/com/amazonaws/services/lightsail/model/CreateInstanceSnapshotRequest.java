@@ -167,4 +167,5 @@ public class CreateInstanceSnapshotRequest extends com.amazonaws.AmazonWebServic
     public CreateInstanceSnapshotRequest clone() {
         return (CreateInstanceSnapshotRequest) super.clone();
     }
+
 }

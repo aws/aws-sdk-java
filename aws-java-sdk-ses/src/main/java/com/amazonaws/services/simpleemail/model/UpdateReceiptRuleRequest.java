@@ -172,4 +172,5 @@ public class UpdateReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateReceiptRuleRequest clone() {
         return (UpdateReceiptRuleRequest) super.clone();
     }
+
 }

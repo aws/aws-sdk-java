@@ -169,4 +169,5 @@ public class CreateLunaClientRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateLunaClientRequest clone() {
         return (CreateLunaClientRequest) super.clone();
     }
+
 }

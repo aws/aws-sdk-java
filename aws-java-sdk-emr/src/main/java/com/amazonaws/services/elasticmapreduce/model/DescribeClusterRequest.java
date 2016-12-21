@@ -116,4 +116,5 @@ public class DescribeClusterRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeClusterRequest clone() {
         return (DescribeClusterRequest) super.clone();
     }
+
 }

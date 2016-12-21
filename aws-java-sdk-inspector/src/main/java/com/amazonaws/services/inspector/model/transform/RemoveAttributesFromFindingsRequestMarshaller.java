@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class RemoveAttributesFromFindingsRequestMarshaller implements
         Marshaller<Request<RemoveAttributesFromFindingsRequest>, RemoveAttributesFromFindingsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemoveAttributesFromFindingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemoveAttributesFromFindingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

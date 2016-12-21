@@ -116,4 +116,5 @@ public class DescribeAliasRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeAliasRequest clone() {
         return (DescribeAliasRequest) super.clone();
     }
+
 }

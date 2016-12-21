@@ -414,4 +414,5 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeRepositoriesRequest clone() {
         return (DescribeRepositoriesRequest) super.clone();
     }
+
 }

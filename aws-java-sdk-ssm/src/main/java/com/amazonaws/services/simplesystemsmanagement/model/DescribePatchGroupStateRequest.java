@@ -114,4 +114,5 @@ public class DescribePatchGroupStateRequest extends com.amazonaws.AmazonWebServi
     public DescribePatchGroupStateRequest clone() {
         return (DescribePatchGroupStateRequest) super.clone();
     }
+
 }

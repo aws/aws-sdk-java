@@ -116,4 +116,5 @@ public class DeleteDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteDevicePoolRequest clone() {
         return (DeleteDevicePoolRequest) super.clone();
     }
+
 }

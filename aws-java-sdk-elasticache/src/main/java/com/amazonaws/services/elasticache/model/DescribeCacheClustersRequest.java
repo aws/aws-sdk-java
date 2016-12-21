@@ -370,4 +370,5 @@ public class DescribeCacheClustersRequest extends com.amazonaws.AmazonWebService
     public DescribeCacheClustersRequest clone() {
         return (DescribeCacheClustersRequest) super.clone();
     }
+
 }

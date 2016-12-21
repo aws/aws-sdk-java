@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RevokeGrantRequestMarshaller implements Marshaller<Request<RevokeGrantRequest>, RevokeGrantRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RevokeGrantRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RevokeGrantRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

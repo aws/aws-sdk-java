@@ -169,4 +169,5 @@ public class DeleteTrafficPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteTrafficPolicyRequest clone() {
         return (DeleteTrafficPolicyRequest) super.clone();
     }
+
 }

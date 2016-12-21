@@ -269,4 +269,5 @@ public class DeactivateMFADeviceRequest extends com.amazonaws.AmazonWebServiceRe
     public DeactivateMFADeviceRequest clone() {
         return (DeactivateMFADeviceRequest) super.clone();
     }
+
 }

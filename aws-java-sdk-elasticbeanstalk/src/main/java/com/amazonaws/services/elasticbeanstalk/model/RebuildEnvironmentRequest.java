@@ -217,4 +217,5 @@ public class RebuildEnvironmentRequest extends com.amazonaws.AmazonWebServiceReq
     public RebuildEnvironmentRequest clone() {
         return (RebuildEnvironmentRequest) super.clone();
     }
+
 }

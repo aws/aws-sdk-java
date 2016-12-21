@@ -116,4 +116,5 @@ public class GetRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetRestApiRequest clone() {
         return (GetRestApiRequest) super.clone();
     }
+
 }

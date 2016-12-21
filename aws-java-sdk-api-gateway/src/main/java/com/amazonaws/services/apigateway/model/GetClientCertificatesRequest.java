@@ -176,4 +176,5 @@ public class GetClientCertificatesRequest extends com.amazonaws.AmazonWebService
     public GetClientCertificatesRequest clone() {
         return (GetClientCertificatesRequest) super.clone();
     }
+
 }

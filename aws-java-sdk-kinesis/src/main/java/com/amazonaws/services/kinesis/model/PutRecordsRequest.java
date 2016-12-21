@@ -202,4 +202,5 @@ public class PutRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public PutRecordsRequest clone() {
         return (PutRecordsRequest) super.clone();
     }
+
 }

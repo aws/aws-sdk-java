@@ -495,4 +495,5 @@ public class UpdateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
     public UpdateConfigurationTemplateRequest clone() {
         return (UpdateConfigurationTemplateRequest) super.clone();
     }
+
 }

@@ -294,4 +294,5 @@ public class ModifyCacheSubnetGroupRequest extends com.amazonaws.AmazonWebServic
     public ModifyCacheSubnetGroupRequest clone() {
         return (ModifyCacheSubnetGroupRequest) super.clone();
     }
+
 }

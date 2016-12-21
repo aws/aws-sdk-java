@@ -176,4 +176,5 @@ public class CreateResourceGroupRequest extends com.amazonaws.AmazonWebServiceRe
     public CreateResourceGroupRequest clone() {
         return (CreateResourceGroupRequest) super.clone();
     }
+
 }

@@ -190,4 +190,5 @@ public class ListCloudFrontOriginAccessIdentitiesRequest extends com.amazonaws.A
     public ListCloudFrontOriginAccessIdentitiesRequest clone() {
         return (ListCloudFrontOriginAccessIdentitiesRequest) super.clone();
     }
+
 }

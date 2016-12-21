@@ -256,4 +256,5 @@ public class UpdateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
     public UpdateDocumentationVersionRequest clone() {
         return (UpdateDocumentationVersionRequest) super.clone();
     }
+
 }

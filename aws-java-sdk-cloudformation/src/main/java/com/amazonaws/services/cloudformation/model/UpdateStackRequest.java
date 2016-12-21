@@ -1818,4 +1818,5 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateStackRequest clone() {
         return (UpdateStackRequest) super.clone();
     }
+
 }

@@ -267,4 +267,5 @@ public class SetInstanceProtectionRequest extends com.amazonaws.AmazonWebService
     public SetInstanceProtectionRequest clone() {
         return (SetInstanceProtectionRequest) super.clone();
     }
+
 }

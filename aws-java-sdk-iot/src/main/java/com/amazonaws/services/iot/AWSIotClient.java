@@ -71,70 +71,73 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
-                            com.amazonaws.services.iot.model.InternalFailureException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DeleteConflictException").withModeledClass(
-                            com.amazonaws.services.iot.model.DeleteConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                            com.amazonaws.services.iot.model.InvalidRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CertificateConflictException").withModeledClass(
-                            com.amazonaws.services.iot.model.CertificateConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RegistrationCodeValidationException").withModeledClass(
-                            com.amazonaws.services.iot.model.RegistrationCodeValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                            com.amazonaws.services.iot.model.ThrottlingException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
-                            com.amazonaws.services.iot.model.UnauthorizedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.iot.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CertificateStateException").withModeledClass(
-                            com.amazonaws.services.iot.model.CertificateStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TransferAlreadyCompletedException").withModeledClass(
-                            com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("VersionConflictException").withModeledClass(
-                            com.amazonaws.services.iot.model.VersionConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.iot.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("SqlParseException").withModeledClass(com.amazonaws.services.iot.model.SqlParseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withModeledClass(
-                            com.amazonaws.services.iot.model.MalformedPolicyException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                            com.amazonaws.services.iot.model.ServiceUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withModeledClass(
-                            com.amazonaws.services.iot.model.CertificateValidationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(com.amazonaws.services.iot.model.InternalException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("VersionsLimitExceededException").withModeledClass(
-                            com.amazonaws.services.iot.model.VersionsLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TransferConflictException").withModeledClass(
-                            com.amazonaws.services.iot.model.TransferConflictException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.iot.model.AWSIotException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InternalFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeleteConflictException").withModeledClass(
+                                    com.amazonaws.services.iot.model.DeleteConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateConflictException").withModeledClass(
+                                    com.amazonaws.services.iot.model.CertificateConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RegistrationCodeValidationException").withModeledClass(
+                                    com.amazonaws.services.iot.model.RegistrationCodeValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ThrottlingException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
+                                    com.amazonaws.services.iot.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.iot.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateStateException").withModeledClass(
+                                    com.amazonaws.services.iot.model.CertificateStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TransferAlreadyCompletedException").withModeledClass(
+                                    com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("VersionConflictException").withModeledClass(
+                                    com.amazonaws.services.iot.model.VersionConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SqlParseException").withModeledClass(
+                                    com.amazonaws.services.iot.model.SqlParseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withModeledClass(
+                                    com.amazonaws.services.iot.model.MalformedPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withModeledClass(
+                                    com.amazonaws.services.iot.model.CertificateValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.iot.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("VersionsLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.iot.model.VersionsLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TransferConflictException").withModeledClass(
+                                    com.amazonaws.services.iot.model.TransferConflictException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iot.model.AWSIotException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT. A credentials provider chain will be used that

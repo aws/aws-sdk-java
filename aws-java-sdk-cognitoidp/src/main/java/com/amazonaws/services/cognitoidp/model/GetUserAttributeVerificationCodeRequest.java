@@ -169,4 +169,5 @@ public class GetUserAttributeVerificationCodeRequest extends com.amazonaws.Amazo
     public GetUserAttributeVerificationCodeRequest clone() {
         return (GetUserAttributeVerificationCodeRequest) super.clone();
     }
+
 }

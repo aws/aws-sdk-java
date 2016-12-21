@@ -299,4 +299,5 @@ public class ModifyDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     public ModifyDBSubnetGroupRequest clone() {
         return (ModifyDBSubnetGroupRequest) super.clone();
     }
+
 }

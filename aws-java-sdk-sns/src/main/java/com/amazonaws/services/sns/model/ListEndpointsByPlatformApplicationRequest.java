@@ -176,4 +176,5 @@ public class ListEndpointsByPlatformApplicationRequest extends com.amazonaws.Ama
     public ListEndpointsByPlatformApplicationRequest clone() {
         return (ListEndpointsByPlatformApplicationRequest) super.clone();
     }
+
 }

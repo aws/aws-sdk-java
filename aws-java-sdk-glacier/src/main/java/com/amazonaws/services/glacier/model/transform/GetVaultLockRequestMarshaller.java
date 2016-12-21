@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetVaultLockRequestMarshaller implements Marshaller<Request<GetVaultLockRequest>, GetVaultLockRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetVaultLockRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetVaultLockRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

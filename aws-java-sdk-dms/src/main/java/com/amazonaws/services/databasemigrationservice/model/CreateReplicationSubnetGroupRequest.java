@@ -381,4 +381,5 @@ public class CreateReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
     public CreateReplicationSubnetGroupRequest clone() {
         return (CreateReplicationSubnetGroupRequest) super.clone();
     }
+
 }

@@ -417,4 +417,5 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
     public SetTaskStatusRequest clone() {
         return (SetTaskStatusRequest) super.clone();
     }
+
 }

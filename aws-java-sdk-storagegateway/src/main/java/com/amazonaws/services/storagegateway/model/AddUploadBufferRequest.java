@@ -159,4 +159,5 @@ public class AddUploadBufferRequest extends com.amazonaws.AmazonWebServiceReques
     public AddUploadBufferRequest clone() {
         return (AddUploadBufferRequest) super.clone();
     }
+
 }

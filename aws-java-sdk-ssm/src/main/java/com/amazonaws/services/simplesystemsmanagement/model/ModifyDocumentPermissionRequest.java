@@ -399,4 +399,5 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
     public ModifyDocumentPermissionRequest clone() {
         return (ModifyDocumentPermissionRequest) super.clone();
     }
+
 }

@@ -341,4 +341,5 @@ public class ListGroupsForUserRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListGroupsForUserRequest clone() {
         return (ListGroupsForUserRequest) super.clone();
     }
+
 }

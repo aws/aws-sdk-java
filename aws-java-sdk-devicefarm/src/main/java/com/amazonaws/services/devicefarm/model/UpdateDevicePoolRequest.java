@@ -314,4 +314,5 @@ public class UpdateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateDevicePoolRequest clone() {
         return (UpdateDevicePoolRequest) super.clone();
     }
+
 }

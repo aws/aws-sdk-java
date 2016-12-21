@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetInventoryRequestMarshaller implements Marshaller<Request<GetInventoryRequest>, GetInventoryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetInventoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetInventoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

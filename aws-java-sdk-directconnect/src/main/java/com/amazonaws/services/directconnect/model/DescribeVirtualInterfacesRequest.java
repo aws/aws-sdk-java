@@ -132,4 +132,5 @@ public class DescribeVirtualInterfacesRequest extends com.amazonaws.AmazonWebSer
     public DescribeVirtualInterfacesRequest clone() {
         return (DescribeVirtualInterfacesRequest) super.clone();
     }
+
 }

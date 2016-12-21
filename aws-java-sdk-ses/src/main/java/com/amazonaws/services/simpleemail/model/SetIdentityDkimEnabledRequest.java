@@ -192,4 +192,5 @@ public class SetIdentityDkimEnabledRequest extends com.amazonaws.AmazonWebServic
     public SetIdentityDkimEnabledRequest clone() {
         return (SetIdentityDkimEnabledRequest) super.clone();
     }
+
 }

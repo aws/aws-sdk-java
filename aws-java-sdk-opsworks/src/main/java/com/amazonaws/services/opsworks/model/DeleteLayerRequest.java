@@ -114,4 +114,5 @@ public class DeleteLayerRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteLayerRequest clone() {
         return (DeleteLayerRequest) super.clone();
     }
+
 }

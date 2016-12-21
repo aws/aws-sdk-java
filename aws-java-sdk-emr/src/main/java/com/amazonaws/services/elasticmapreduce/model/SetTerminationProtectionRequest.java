@@ -232,4 +232,5 @@ public class SetTerminationProtectionRequest extends com.amazonaws.AmazonWebServ
     public SetTerminationProtectionRequest clone() {
         return (SetTerminationProtectionRequest) super.clone();
     }
+
 }

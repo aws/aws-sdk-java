@@ -254,4 +254,5 @@ public class DeleteMessageBatchRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteMessageBatchRequest clone() {
         return (DeleteMessageBatchRequest) super.clone();
     }
+
 }

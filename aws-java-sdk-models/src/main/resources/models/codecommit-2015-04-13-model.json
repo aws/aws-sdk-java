@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-04-13",
     "endpointPrefix" : "codecommit",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "BatchGetRepositories" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about one or more repositories.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
       "errors" : [ {
@@ -86,7 +88,8 @@
       }
     },
     "CreateBranch" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new branch in a repository and points the branch to a commit.</p> <note><p>Calling the create branch operation does not set a repository's default branch. To do this, call the update default branch operation.</p></note>",
       "errors" : [ {
@@ -189,7 +192,8 @@
       "output" : null
     },
     "CreateRepository" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new, empty repository.</p>",
       "errors" : [ {
@@ -273,7 +277,8 @@
       }
     },
     "DeleteRepository" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a repository. If a specified repository was already deleted, a null repository ID will be returned.</p> <important>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository will fail.</important>",
       "errors" : [ {
@@ -339,7 +344,8 @@
       }
     },
     "GetBranch" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a repository branch, including its name and the last commit ID.</p>",
       "errors" : [ {
@@ -429,7 +435,8 @@
       }
     },
     "GetCommit" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a commit, including commit message and committer information.</p>",
       "errors" : [ {
@@ -519,7 +526,8 @@
       }
     },
     "GetRepository" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns information about a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
       "errors" : [ {
@@ -591,7 +599,8 @@
       }
     },
     "GetRepositoryTriggers" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about triggers configured for a repository.</p>",
       "errors" : [ {
@@ -663,7 +672,8 @@
       }
     },
     "ListBranches" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more branches in a repository.</p>",
       "errors" : [ {
@@ -741,7 +751,8 @@
       }
     },
     "ListRepositories" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about one or more repositories.</p>",
       "errors" : [ {
@@ -783,7 +794,8 @@
       }
     },
     "PutRepositoryTriggers" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Replaces all triggers for a repository. This can be used to create or delete triggers.</p>",
       "errors" : [ {
@@ -933,7 +945,8 @@
       }
     },
     "TestRepositoryTriggers" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test will send data from the last commit. If no data is available, sample data will be generated.</p>",
       "errors" : [ {
@@ -1083,7 +1096,8 @@
       }
     },
     "UpdateDefaultBranch" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Sets or changes the default branch name for the specified repository.</p> <note><p>If you use this operation to change the default branch name to the current default branch name, a success message is returned even though the default branch did not change.</p></note>",
       "errors" : [ {
@@ -1168,7 +1182,8 @@
       "output" : null
     },
     "UpdateRepositoryDescription" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Sets or changes the comment or description for a repository.</p> <note><p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a web page could expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a web page.</p></note>",
       "errors" : [ {
@@ -1241,7 +1256,8 @@
       "output" : null
     },
     "UpdateRepositoryName" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Renames a repository. The repository name must be unique across the calling AWS account. In addition, repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix \".git\" is prohibited. For a full description of the limits on repository names, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">Limits</a> in the AWS CodeCommit User Guide.</p>",
       "errors" : [ {

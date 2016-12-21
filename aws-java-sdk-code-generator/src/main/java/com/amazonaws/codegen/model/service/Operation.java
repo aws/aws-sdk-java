@@ -16,7 +16,6 @@
 package com.amazonaws.codegen.model.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;
 
@@ -34,11 +33,14 @@ public class Operation {
 
     private String documentation;
 
+    private String authorizer;
+
     private List<ErrorMap> errors;
 
+    private boolean requiresApiKey;
+
     @JsonProperty("authtype")
-    @JsonDeserialize(using = AuthTypeDeserializer.class)
-    private AuthType authType;
+    private AuthType authType = AuthType.IAM;
 
     public String getName() {
         return name;
@@ -117,5 +119,21 @@ public class Operation {
 
     public void setAuthType(AuthType authType) {
         this.authType = authType;
+    }
+
+    public String getAuthorizer() {
+        return authorizer;
+    }
+
+    public void setAuthorizer(String authorizer) {
+        this.authorizer = authorizer;
+    }
+
+    public boolean requiresApiKey() {
+        return requiresApiKey;
+    }
+
+    public void setRequiresApiKey(boolean requiresApiKey) {
+        this.requiresApiKey = requiresApiKey;
     }
 }

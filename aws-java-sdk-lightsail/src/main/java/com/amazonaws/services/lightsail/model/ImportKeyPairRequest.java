@@ -167,4 +167,5 @@ public class ImportKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ImportKeyPairRequest clone() {
         return (ImportKeyPairRequest) super.clone();
     }
+
 }

@@ -417,4 +417,5 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
     public RegisterTargetWithMaintenanceWindowRequest clone() {
         return (RegisterTargetWithMaintenanceWindowRequest) super.clone();
     }
+
 }

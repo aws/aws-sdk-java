@@ -236,4 +236,5 @@ public class ListJobsByPipelineRequest extends com.amazonaws.AmazonWebServiceReq
     public ListJobsByPipelineRequest clone() {
         return (ListJobsByPipelineRequest) super.clone();
     }
+
 }

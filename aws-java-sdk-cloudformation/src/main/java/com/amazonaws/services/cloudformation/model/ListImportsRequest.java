@@ -177,4 +177,5 @@ public class ListImportsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListImportsRequest clone() {
         return (ListImportsRequest) super.clone();
     }
+
 }

@@ -220,4 +220,5 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateStateMachineRequest clone() {
         return (CreateStateMachineRequest) super.clone();
     }
+
 }

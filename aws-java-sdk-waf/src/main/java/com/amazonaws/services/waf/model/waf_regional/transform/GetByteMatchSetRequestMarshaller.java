@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetByteMatchSetRequestMarshaller implements Marshaller<Request<GetByteMatchSetRequest>, GetByteMatchSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetByteMatchSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetByteMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

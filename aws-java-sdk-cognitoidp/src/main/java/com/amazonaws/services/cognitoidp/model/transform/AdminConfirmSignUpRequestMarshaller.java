@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminConfirmSignUpRequestMarshaller implements Marshaller<Request<AdminConfirmSignUpRequest>, AdminConfirmSignUpRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminConfirmSignUpRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminConfirmSignUpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

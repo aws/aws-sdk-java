@@ -2615,4 +2615,5 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     public RestoreDBClusterFromS3Request clone() {
         return (RestoreDBClusterFromS3Request) super.clone();
     }
+
 }

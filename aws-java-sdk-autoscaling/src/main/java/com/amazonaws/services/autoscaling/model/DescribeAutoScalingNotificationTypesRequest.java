@@ -60,4 +60,5 @@ public class DescribeAutoScalingNotificationTypesRequest extends com.amazonaws.A
     public DescribeAutoScalingNotificationTypesRequest clone() {
         return (DescribeAutoScalingNotificationTypesRequest) super.clone();
     }
+
 }

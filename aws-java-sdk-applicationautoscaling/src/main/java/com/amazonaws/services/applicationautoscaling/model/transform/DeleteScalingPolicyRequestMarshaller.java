@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteScalingPolicyRequestMarshaller implements Marshaller<Request<DeleteScalingPolicyRequest>, DeleteScalingPolicyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteScalingPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteScalingPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

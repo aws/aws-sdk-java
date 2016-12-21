@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SignUpRequestMarshaller implements Marshaller<Request<SignUpRequest>, SignUpRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SignUpRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SignUpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

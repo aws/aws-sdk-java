@@ -236,4 +236,5 @@ public class AcknowledgeThirdPartyJobRequest extends com.amazonaws.AmazonWebServ
     public AcknowledgeThirdPartyJobRequest clone() {
         return (AcknowledgeThirdPartyJobRequest) super.clone();
     }
+
 }

@@ -302,4 +302,5 @@ public class ListVaultsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListVaultsRequest clone() {
         return (ListVaultsRequest) super.clone();
     }
+
 }

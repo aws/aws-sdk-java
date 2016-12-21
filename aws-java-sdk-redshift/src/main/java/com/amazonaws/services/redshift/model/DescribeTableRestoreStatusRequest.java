@@ -315,4 +315,5 @@ public class DescribeTableRestoreStatusRequest extends com.amazonaws.AmazonWebSe
     public DescribeTableRestoreStatusRequest clone() {
         return (DescribeTableRestoreStatusRequest) super.clone();
     }
+
 }

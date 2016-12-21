@@ -118,4 +118,5 @@ public class VerifyDomainDkimRequest extends com.amazonaws.AmazonWebServiceReque
     public VerifyDomainDkimRequest clone() {
         return (VerifyDomainDkimRequest) super.clone();
     }
+
 }

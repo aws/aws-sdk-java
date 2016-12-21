@@ -222,4 +222,5 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateResourceRequest clone() {
         return (CreateResourceRequest) super.clone();
     }
+
 }

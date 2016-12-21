@@ -135,38 +135,39 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AttachmentSetIdNotFound").withModeledClass(
-                            com.amazonaws.services.support.model.AttachmentSetIdNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CaseCreationLimitExceeded").withModeledClass(
-                            com.amazonaws.services.support.model.CaseCreationLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AttachmentIdNotFound").withModeledClass(
-                            com.amazonaws.services.support.model.AttachmentIdNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AttachmentSetExpired").withModeledClass(
-                            com.amazonaws.services.support.model.AttachmentSetExpiredException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AttachmentLimitExceeded").withModeledClass(
-                            com.amazonaws.services.support.model.AttachmentLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CaseIdNotFound").withModeledClass(
-                            com.amazonaws.services.support.model.CaseIdNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DescribeAttachmentLimitExceeded").withModeledClass(
-                            com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                            com.amazonaws.services.support.model.InternalServerErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AttachmentSetSizeLimitExceeded").withModeledClass(
-                            com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.support.model.AWSSupportException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetIdNotFound").withModeledClass(
+                                    com.amazonaws.services.support.model.AttachmentSetIdNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CaseCreationLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.support.model.CaseCreationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentIdNotFound").withModeledClass(
+                                    com.amazonaws.services.support.model.AttachmentIdNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetExpired").withModeledClass(
+                                    com.amazonaws.services.support.model.AttachmentSetExpiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.support.model.AttachmentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CaseIdNotFound").withModeledClass(
+                                    com.amazonaws.services.support.model.CaseIdNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DescribeAttachmentLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.support.model.DescribeAttachmentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
+                                    com.amazonaws.services.support.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AttachmentSetSizeLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.support.model.AWSSupportException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Support. A credentials provider chain will be used that

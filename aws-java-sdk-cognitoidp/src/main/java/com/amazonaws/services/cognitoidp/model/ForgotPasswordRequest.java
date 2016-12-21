@@ -229,4 +229,5 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     public ForgotPasswordRequest clone() {
         return (ForgotPasswordRequest) super.clone();
     }
+
 }

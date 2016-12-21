@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DisableRuleRequestMarshaller implements Marshaller<Request<DisableRuleRequest>, DisableRuleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisableRuleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisableRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -149,4 +149,5 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateWorkspacesRequest clone() {
         return (CreateWorkspacesRequest) super.clone();
     }
+
 }

@@ -206,4 +206,5 @@ public class DescribeEventDetailsRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeEventDetailsRequest clone() {
         return (DescribeEventDetailsRequest) super.clone();
     }
+
 }

@@ -1532,4 +1532,5 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     public PutMetricAlarmRequest clone() {
         return (PutMetricAlarmRequest) super.clone();
     }
+
 }

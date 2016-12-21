@@ -194,4 +194,5 @@ public class CreateReusableDelegationSetRequest extends com.amazonaws.AmazonWebS
     public CreateReusableDelegationSetRequest clone() {
         return (CreateReusableDelegationSetRequest) super.clone();
     }
+
 }

@@ -190,4 +190,5 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
     public CreatePlayerSessionRequest clone() {
         return (CreatePlayerSessionRequest) super.clone();
     }
+
 }

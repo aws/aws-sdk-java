@@ -116,4 +116,5 @@ public class DeleteFileShareRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteFileShareRequest clone() {
         return (DeleteFileShareRequest) super.clone();
     }
+
 }

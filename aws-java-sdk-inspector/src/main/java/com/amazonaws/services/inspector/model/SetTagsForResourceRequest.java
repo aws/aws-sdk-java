@@ -197,4 +197,5 @@ public class SetTagsForResourceRequest extends com.amazonaws.AmazonWebServiceReq
     public SetTagsForResourceRequest clone() {
         return (SetTagsForResourceRequest) super.clone();
     }
+
 }

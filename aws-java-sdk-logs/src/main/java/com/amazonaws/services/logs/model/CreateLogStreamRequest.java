@@ -188,4 +188,5 @@ public class CreateLogStreamRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateLogStreamRequest clone() {
         return (CreateLogStreamRequest) super.clone();
     }
+
 }

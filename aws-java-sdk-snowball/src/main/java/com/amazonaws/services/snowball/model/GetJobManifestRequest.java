@@ -121,4 +121,5 @@ public class GetJobManifestRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetJobManifestRequest clone() {
         return (GetJobManifestRequest) super.clone();
     }
+
 }

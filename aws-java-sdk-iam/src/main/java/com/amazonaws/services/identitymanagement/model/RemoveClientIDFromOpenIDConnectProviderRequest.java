@@ -213,4 +213,5 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
     public RemoveClientIDFromOpenIDConnectProviderRequest clone() {
         return (RemoveClientIDFromOpenIDConnectProviderRequest) super.clone();
     }
+
 }

@@ -248,4 +248,5 @@ public class DeleteReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     public DeleteReplicationGroupRequest clone() {
         return (DeleteReplicationGroupRequest) super.clone();
     }
+
 }

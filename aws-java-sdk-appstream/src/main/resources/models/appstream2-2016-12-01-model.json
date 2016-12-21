@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-12-01",
     "endpointPrefix" : "appstream2",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AssociateFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Associate a fleet to a stack.</p>",
       "errors" : [ {
@@ -50,7 +52,8 @@
       }
     },
     "CreateFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new fleet.</p>",
       "errors" : [ {
@@ -104,7 +107,8 @@
       }
     },
     "CreateStack" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Create a new stack.</p>",
       "errors" : [ {
@@ -140,7 +144,8 @@
       }
     },
     "CreateStreamingURL" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a URL to start an AppStream 2.0 streaming session for a user. By default, the URL is valid only for 1 minute from the time that it is generated.</p>",
       "errors" : [ {
@@ -182,7 +187,8 @@
       }
     },
     "DeleteFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a fleet.</p>",
       "errors" : [ {
@@ -218,7 +224,8 @@
       }
     },
     "DeleteStack" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the stack. After this operation completes, the environment can no longer be activated, and any reservations made for the stack are released.</p>",
       "errors" : [ {
@@ -254,7 +261,8 @@
       }
     },
     "DescribeFleets" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>If fleet names are provided, this operation describes the specified fleets; otherwise, all the fleets in the account are described.</p>",
       "errors" : [ {
@@ -284,7 +292,8 @@
       }
     },
     "DescribeImages" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes the images. If a list of names is not provided, all images in your account are returned. This operation does not return a paginated result.</p>",
       "errors" : [ {
@@ -314,7 +323,8 @@
       }
     },
     "DescribeSessions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>",
       "errors" : null,
@@ -338,7 +348,8 @@
       }
     },
     "DescribeStacks" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve the next set of items.</p>",
       "errors" : [ {
@@ -368,7 +379,8 @@
       }
     },
     "DisassociateFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Disassociates a fleet from a stack.</p>",
       "errors" : [ {
@@ -404,7 +416,8 @@
       }
     },
     "ExpireSession" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>This operation immediately stops a streaming session.</p>",
       "errors" : null,
@@ -428,7 +441,8 @@
       }
     },
     "ListAssociatedFleets" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all fleets associated with the stack.</p>",
       "errors" : null,
@@ -452,7 +466,8 @@
       }
     },
     "ListAssociatedStacks" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all stacks to which the specified fleet is associated.</p>",
       "errors" : null,
@@ -476,7 +491,8 @@
       }
     },
     "StartFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Starts a fleet.</p>",
       "errors" : [ {
@@ -512,7 +528,8 @@
       }
     },
     "StopFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Stops a fleet.</p>",
       "errors" : [ {
@@ -542,7 +559,8 @@
       }
     },
     "UpdateFleet" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state. Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state. </p>",
       "errors" : [ {
@@ -590,7 +608,8 @@
       }
     },
     "UpdateStack" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the specified fields in the stack with the specified name.</p>",
       "errors" : [ {

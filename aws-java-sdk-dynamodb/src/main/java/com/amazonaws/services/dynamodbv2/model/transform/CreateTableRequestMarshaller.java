@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateTableRequestMarshaller implements Marshaller<Request<CreateTableRequest>, CreateTableRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateTableRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateTableRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

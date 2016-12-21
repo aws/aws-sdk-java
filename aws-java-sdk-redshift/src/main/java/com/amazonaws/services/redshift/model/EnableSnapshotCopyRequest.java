@@ -383,4 +383,5 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
     public EnableSnapshotCopyRequest clone() {
         return (EnableSnapshotCopyRequest) super.clone();
     }
+
 }

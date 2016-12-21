@@ -337,4 +337,5 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
     public DisableStageTransitionRequest clone() {
         return (DisableStageTransitionRequest) super.clone();
     }
+
 }

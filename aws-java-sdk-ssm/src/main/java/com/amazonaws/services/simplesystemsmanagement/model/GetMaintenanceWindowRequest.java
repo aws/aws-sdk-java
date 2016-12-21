@@ -114,4 +114,5 @@ public class GetMaintenanceWindowRequest extends com.amazonaws.AmazonWebServiceR
     public GetMaintenanceWindowRequest clone() {
         return (GetMaintenanceWindowRequest) super.clone();
     }
+
 }

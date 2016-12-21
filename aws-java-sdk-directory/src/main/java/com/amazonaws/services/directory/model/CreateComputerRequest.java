@@ -369,4 +369,5 @@ public class CreateComputerRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateComputerRequest clone() {
         return (CreateComputerRequest) super.clone();
     }
+
 }

@@ -893,4 +893,5 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
     public CreateDataSourceFromRDSRequest clone() {
         return (CreateDataSourceFromRDSRequest) super.clone();
     }
+
 }

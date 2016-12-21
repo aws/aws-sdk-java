@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SuggestRequestMarshaller implements Marshaller<Request<SuggestRequest>, SuggestRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SuggestRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SuggestRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

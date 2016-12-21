@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetApnsChannelRequestMarshaller implements Marshaller<Request<GetApnsChannelRequest>, GetApnsChannelRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetApnsChannelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetApnsChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -97,4 +97,5 @@ public class DescribeMaintenanceStartTimeRequest extends com.amazonaws.AmazonWeb
     public DescribeMaintenanceStartTimeRequest clone() {
         return (DescribeMaintenanceStartTimeRequest) super.clone();
     }
+
 }

@@ -174,4 +174,5 @@ public class DeleteByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteByteMatchSetRequest clone() {
         return (DeleteByteMatchSetRequest) super.clone();
     }
+
 }

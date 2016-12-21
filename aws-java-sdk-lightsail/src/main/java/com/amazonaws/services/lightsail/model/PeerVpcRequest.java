@@ -60,4 +60,5 @@ public class PeerVpcRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public PeerVpcRequest clone() {
         return (PeerVpcRequest) super.clone();
     }
+
 }

@@ -327,4 +327,5 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
     public DescribeEventAggregatesRequest clone() {
         return (DescribeEventAggregatesRequest) super.clone();
     }
+
 }

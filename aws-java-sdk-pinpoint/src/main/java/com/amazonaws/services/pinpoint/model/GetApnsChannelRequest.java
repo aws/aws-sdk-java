@@ -95,4 +95,5 @@ public class GetApnsChannelRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetApnsChannelRequest clone() {
         return (GetApnsChannelRequest) super.clone();
     }
+
 }

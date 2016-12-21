@@ -576,4 +576,5 @@ public class ResumeProcessesRequest extends com.amazonaws.AmazonWebServiceReques
     public ResumeProcessesRequest clone() {
         return (ResumeProcessesRequest) super.clone();
     }
+
 }

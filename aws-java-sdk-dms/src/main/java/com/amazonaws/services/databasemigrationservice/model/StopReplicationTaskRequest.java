@@ -114,4 +114,5 @@ public class StopReplicationTaskRequest extends com.amazonaws.AmazonWebServiceRe
     public StopReplicationTaskRequest clone() {
         return (StopReplicationTaskRequest) super.clone();
     }
+
 }

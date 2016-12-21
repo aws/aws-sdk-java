@@ -197,4 +197,5 @@ public class AssociateConfigurationItemsToApplicationRequest extends com.amazona
     public AssociateConfigurationItemsToApplicationRequest clone() {
         return (AssociateConfigurationItemsToApplicationRequest) super.clone();
     }
+
 }

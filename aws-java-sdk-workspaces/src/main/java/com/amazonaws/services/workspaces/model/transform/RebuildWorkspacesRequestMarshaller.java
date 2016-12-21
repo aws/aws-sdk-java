@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RebuildWorkspacesRequestMarshaller implements Marshaller<Request<RebuildWorkspacesRequest>, RebuildWorkspacesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RebuildWorkspacesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RebuildWorkspacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

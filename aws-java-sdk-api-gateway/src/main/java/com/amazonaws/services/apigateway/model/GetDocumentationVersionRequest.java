@@ -169,4 +169,5 @@ public class GetDocumentationVersionRequest extends com.amazonaws.AmazonWebServi
     public GetDocumentationVersionRequest clone() {
         return (GetDocumentationVersionRequest) super.clone();
     }
+
 }

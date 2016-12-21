@@ -877,4 +877,5 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateEnvironmentRequest clone() {
         return (UpdateEnvironmentRequest) super.clone();
     }
+
 }

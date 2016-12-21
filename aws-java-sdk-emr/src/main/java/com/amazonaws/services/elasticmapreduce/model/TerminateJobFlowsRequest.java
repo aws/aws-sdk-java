@@ -167,4 +167,5 @@ public class TerminateJobFlowsRequest extends com.amazonaws.AmazonWebServiceRequ
     public TerminateJobFlowsRequest clone() {
         return (TerminateJobFlowsRequest) super.clone();
     }
+
 }

@@ -345,4 +345,5 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public UpdateUserRequest clone() {
         return (UpdateUserRequest) super.clone();
     }
+
 }

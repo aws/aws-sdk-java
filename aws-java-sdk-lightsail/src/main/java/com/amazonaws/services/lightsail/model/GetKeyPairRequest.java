@@ -114,4 +114,5 @@ public class GetKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetKeyPairRequest clone() {
         return (GetKeyPairRequest) super.clone();
     }
+
 }

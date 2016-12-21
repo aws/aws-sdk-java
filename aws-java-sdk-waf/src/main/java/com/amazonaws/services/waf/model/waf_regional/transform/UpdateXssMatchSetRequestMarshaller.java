@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateXssMatchSetRequestMarshaller implements Marshaller<Request<UpdateXssMatchSetRequest>, UpdateXssMatchSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateXssMatchSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateXssMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2016-04-18",
     "endpointPrefix" : "cognito-idp",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AddCustomAttributes" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds additional user attributes to the user pool schema.</p>",
       "errors" : [ {
@@ -74,7 +76,8 @@
       }
     },
     "AdminAddUserToGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds the specified user to the specified group.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -129,7 +132,8 @@
       "output" : null
     },
     "AdminConfirmSignUp" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Confirms user registration as an admin without using a confirmation code. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -219,7 +223,8 @@
       }
     },
     "AdminCreateUser" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template includes your custom sign-up instructions and placeholders for user name and temporary password.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -339,7 +344,8 @@
       }
     },
     "AdminDeleteUser" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a user as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -394,7 +400,8 @@
       "output" : null
     },
     "AdminDeleteUserAttributes" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the user attributes in a user pool as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -454,7 +461,8 @@
       }
     },
     "AdminDisableUser" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Disables the specified user as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -514,7 +522,8 @@
       }
     },
     "AdminEnableUser" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Enables the specified user as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -574,7 +583,8 @@
       }
     },
     "AdminForgetDevice" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Forgets the device, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -635,7 +645,8 @@
       "output" : null
     },
     "AdminGetDevice" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the device, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -695,7 +706,8 @@
       }
     },
     "AdminGetUser" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the specified user by user name in a user pool as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -755,7 +767,8 @@
       }
     },
     "AdminInitiateAuth" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Initiates the authentication flow, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -869,7 +882,8 @@
       }
     },
     "AdminListDevices" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists devices, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -929,7 +943,8 @@
       }
     },
     "AdminListGroupsForUser" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the groups that the user belongs to.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -989,7 +1004,8 @@
       }
     },
     "AdminRemoveUserFromGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Removes the specified user from the specified group.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1044,7 +1060,8 @@
       "output" : null
     },
     "AdminResetUserPassword" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Resets the specified user's password in a user pool as an administrator. Works on any user.</p> <p>When a developer calls this API, the current password is invalidated, so it must be changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException exception back and should direct the user down the flow to reset the password, which is the same as the forgot password flow. In addition, if the user pool has phone verification selected and a verified phone number exists for the user, or if email verification is selected and a verified email exists for the user, calling this API will also result in sending a message to the end user with the code to change their password.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1128,7 +1145,8 @@
       }
     },
     "AdminRespondToAuthChallenge" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Responds to an authentication challenge, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1266,7 +1284,8 @@
       }
     },
     "AdminSetUserSettings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Sets all the user settings for a specified user name. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1320,7 +1339,8 @@
       }
     },
     "AdminUpdateDeviceStatus" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the device status as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1386,7 +1406,8 @@
       }
     },
     "AdminUpdateUserAttributes" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1470,7 +1491,8 @@
       }
     },
     "AdminUserGlobalSignOut" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Signs out users from all devices, as an administrator.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1530,6 +1552,7 @@
       }
     },
     "ChangePassword" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Changes the password for a specified user in a user pool.</p>",
@@ -1614,7 +1637,8 @@
       }
     },
     "ConfirmDevice" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Confirms tracking of the device. This API call is the call that beings device tracking.</p>",
       "errors" : [ {
@@ -1710,6 +1734,7 @@
       }
     },
     "ConfirmForgotPassword" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Allows a user to enter a code provided when they reset their password to update their password.</p>",
@@ -1824,6 +1849,7 @@
       }
     },
     "ConfirmSignUp" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Confirms registration of a user and handles the existing alias from a previous user.</p>",
@@ -1932,7 +1958,8 @@
       }
     },
     "CreateGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new group in the specified user pool.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -1998,7 +2025,8 @@
       }
     },
     "CreateUserImportJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates the user import job.</p>",
       "errors" : [ {
@@ -2064,7 +2092,8 @@
       }
     },
     "CreateUserPool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p>",
       "errors" : [ {
@@ -2142,7 +2171,8 @@
       }
     },
     "CreateUserPoolClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates the user pool client.</p>",
       "errors" : [ {
@@ -2202,7 +2232,8 @@
       }
     },
     "DeleteGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a group. Currently only groups with no members can be deleted.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -2251,6 +2282,7 @@
       "output" : null
     },
     "DeleteUser" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Allows a user to delete one's self.</p>",
@@ -2318,6 +2350,7 @@
       "output" : null
     },
     "DeleteUserAttributes" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Deletes the attributes for a user.</p>",
@@ -2390,7 +2423,8 @@
       }
     },
     "DeleteUserPool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified Amazon Cognito user pool.</p>",
       "errors" : [ {
@@ -2445,7 +2479,8 @@
       "output" : null
     },
     "DeleteUserPoolClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Allows the developer to delete the user pool client.</p>",
       "errors" : [ {
@@ -2494,7 +2529,8 @@
       "output" : null
     },
     "DescribeUserImportJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes the user import job.</p>",
       "errors" : [ {
@@ -2548,7 +2584,8 @@
       }
     },
     "DescribeUserPool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns the configuration information and metadata of the specified user pool.</p>",
       "errors" : [ {
@@ -2608,7 +2645,8 @@
       }
     },
     "DescribeUserPoolClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Client method for returning the configuration information and metadata of the specified user pool client.</p>",
       "errors" : [ {
@@ -2662,7 +2700,8 @@
       }
     },
     "ForgetDevice" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Forgets the specified device.</p>",
       "errors" : [ {
@@ -2735,6 +2774,7 @@
       "output" : null
     },
     "ForgotPassword" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Retrieves the password for the specified client ID or username.</p>",
@@ -2849,7 +2889,8 @@
       }
     },
     "GetCSVHeader" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the header information for the .csv file to be used as input for the user import job.</p>",
       "errors" : [ {
@@ -2903,7 +2944,8 @@
       }
     },
     "GetDevice" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the device.</p>",
       "errors" : [ {
@@ -2981,7 +3023,8 @@
       }
     },
     "GetGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a group.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -3035,6 +3078,7 @@
       }
     },
     "GetUser" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Gets the user attributes and metadata for a user.</p>",
@@ -3107,6 +3151,7 @@
       }
     },
     "GetUserAttributeVerificationCode" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Gets the user attribute verification code for the specified attribute name.</p>",
@@ -3227,7 +3272,8 @@
       }
     },
     "GlobalSignOut" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Signs out users from all devices.</p>",
       "errors" : [ {
@@ -3293,7 +3339,8 @@
       }
     },
     "InitiateAuth" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Initiates the authentication flow.</p>",
       "errors" : [ {
@@ -3389,7 +3436,8 @@
       }
     },
     "ListDevices" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the devices.</p>",
       "errors" : [ {
@@ -3467,7 +3515,8 @@
       }
     },
     "ListGroups" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the groups associated with a user pool.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -3521,7 +3570,8 @@
       }
     },
     "ListUserImportJobs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the user import jobs.</p>",
       "errors" : [ {
@@ -3575,7 +3625,8 @@
       }
     },
     "ListUserPoolClients" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the clients that have been created for the specified user pool.</p>",
       "errors" : [ {
@@ -3629,7 +3680,8 @@
       }
     },
     "ListUserPools" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the user pools associated with an AWS account.</p>",
       "errors" : [ {
@@ -3677,7 +3729,8 @@
       }
     },
     "ListUsers" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the users in the Amazon Cognito user pool.</p>",
       "errors" : [ {
@@ -3731,7 +3784,8 @@
       }
     },
     "ListUsersInGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the users in the specified group.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -3785,6 +3839,7 @@
       }
     },
     "ResendConfirmationCode" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Resends the confirmation (for confirmation of registration) to a specific user in the user pool.</p>",
@@ -3893,7 +3948,8 @@
       }
     },
     "RespondToAuthChallenge" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Responds to the authentication challenge.</p>",
       "errors" : [ {
@@ -4031,6 +4087,7 @@
       }
     },
     "SetUserSettings" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Sets the user settings like multi-factor authentication (MFA). If MFA is to be removed for a particular attribute pass the attribute with code delivery as null. If null list is passed, all MFA options are removed.</p>",
@@ -4097,6 +4154,7 @@
       }
     },
     "SignUp" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Registers the user in the specified user pool and creates a user name, password, and user attributes.</p>",
@@ -4205,7 +4263,8 @@
       }
     },
     "StartUserImportJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Starts the user import.</p>",
       "errors" : [ {
@@ -4265,7 +4324,8 @@
       }
     },
     "StopUserImportJob" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Stops the user import job.</p>",
       "errors" : [ {
@@ -4325,7 +4385,8 @@
       }
     },
     "UpdateDeviceStatus" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the device status.</p>",
       "errors" : [ {
@@ -4403,7 +4464,8 @@
       }
     },
     "UpdateGroup" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the specified group with the specified attributes.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
@@ -4457,6 +4519,7 @@
       }
     },
     "UpdateUserAttributes" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Allows a user to update a specific attribute (one at a time).</p>",
@@ -4589,7 +4652,8 @@
       }
     },
     "UpdateUserPool" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the specified user pool with the specified attributes.</p>",
       "errors" : [ {
@@ -4679,7 +4743,8 @@
       }
     },
     "UpdateUserPoolClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Allows the developer to update the specified user pool client and password policy.</p>",
       "errors" : [ {
@@ -4733,6 +4798,7 @@
       }
     },
     "VerifyUserAttribute" : {
+      "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
       "documentation" : "<p>Verifies the specified user attributes in the user pool.</p>",

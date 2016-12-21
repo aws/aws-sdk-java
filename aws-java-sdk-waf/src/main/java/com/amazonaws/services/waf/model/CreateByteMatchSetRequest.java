@@ -174,4 +174,5 @@ public class CreateByteMatchSetRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateByteMatchSetRequest clone() {
         return (CreateByteMatchSetRequest) super.clone();
     }
+
 }

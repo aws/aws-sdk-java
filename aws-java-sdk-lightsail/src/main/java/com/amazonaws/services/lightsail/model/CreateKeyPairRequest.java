@@ -114,4 +114,5 @@ public class CreateKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateKeyPairRequest clone() {
         return (CreateKeyPairRequest) super.clone();
     }
+
 }

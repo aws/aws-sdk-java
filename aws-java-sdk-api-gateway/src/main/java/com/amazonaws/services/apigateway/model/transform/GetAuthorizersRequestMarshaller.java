@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetAuthorizersRequestMarshaller implements Marshaller<Request<GetAuthorizersRequest>, GetAuthorizersRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetAuthorizersRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetAuthorizersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

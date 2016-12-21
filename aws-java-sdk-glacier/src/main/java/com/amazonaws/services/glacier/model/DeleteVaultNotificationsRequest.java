@@ -225,4 +225,5 @@ public class DeleteVaultNotificationsRequest extends com.amazonaws.AmazonWebServ
     public DeleteVaultNotificationsRequest clone() {
         return (DeleteVaultNotificationsRequest) super.clone();
     }
+
 }

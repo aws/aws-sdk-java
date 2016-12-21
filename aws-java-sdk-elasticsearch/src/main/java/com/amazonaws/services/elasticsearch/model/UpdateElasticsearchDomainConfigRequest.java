@@ -430,4 +430,5 @@ public class UpdateElasticsearchDomainConfigRequest extends com.amazonaws.Amazon
     public UpdateElasticsearchDomainConfigRequest clone() {
         return (UpdateElasticsearchDomainConfigRequest) super.clone();
     }
+
 }

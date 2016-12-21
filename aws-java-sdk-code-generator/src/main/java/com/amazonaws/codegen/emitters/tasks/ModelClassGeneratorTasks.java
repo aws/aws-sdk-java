@@ -18,6 +18,7 @@ import com.amazonaws.codegen.emitters.FreemarkerGeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTaskParams;
 import com.amazonaws.codegen.model.intermediate.Metadata;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
 import com.amazonaws.util.ImmutableMapParameter;
@@ -64,6 +65,7 @@ public class ModelClassGeneratorTasks extends BaseGeneratorTasks {
                 .put("metadata", metadata)
                 .put("baseClassFqcn", getModelBaseClassFqcn(shapeModel.getShapeType()))
                 .put("customConfig", model.getCustomizationConfig())
+                .put("shouldGenerateSdkRequestConfigSetter", shouldGenerateSdkRequestConfigSetter(shapeModel))
                 .build();
 
         // Submit task for generating the
@@ -72,6 +74,16 @@ public class ModelClassGeneratorTasks extends BaseGeneratorTasks {
                                            javaShapeName,
                                            freemarker.getShapeTemplate(shapeModel),
                                            dataModel);
+    }
+
+    /**
+     * For API Gateway request classes we override the sdkRequestConfig fluent setter to return the correct concrete request type
+     * for better method chaining.
+     *
+     * @return True if sdkRequestConfig should be overriden by template. False if not.
+     */
+    private boolean shouldGenerateSdkRequestConfigSetter(ShapeModel shape) {
+        return model.getMetadata().getProtocol() == Protocol.API_GATEWAY && shape.getShapeType() == ShapeType.Request;
     }
 
     /**

@@ -227,4 +227,5 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
     public PutDestinationRequest clone() {
         return (PutDestinationRequest) super.clone();
     }
+
 }

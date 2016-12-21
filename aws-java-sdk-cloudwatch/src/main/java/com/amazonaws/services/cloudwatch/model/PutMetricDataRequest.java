@@ -225,4 +225,5 @@ public class PutMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     public PutMetricDataRequest clone() {
         return (PutMetricDataRequest) super.clone();
     }
+
 }

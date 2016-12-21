@@ -176,4 +176,5 @@ public class DeleteXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteXssMatchSetRequest clone() {
         return (DeleteXssMatchSetRequest) super.clone();
     }
+
 }

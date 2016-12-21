@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetTimeBasedAutoScalingRequestMarshaller implements Marshaller<Request<SetTimeBasedAutoScalingRequest>, SetTimeBasedAutoScalingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetTimeBasedAutoScalingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetTimeBasedAutoScalingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -97,4 +97,5 @@ public class DeleteConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteConnectionRequest clone() {
         return (DeleteConnectionRequest) super.clone();
     }
+
 }

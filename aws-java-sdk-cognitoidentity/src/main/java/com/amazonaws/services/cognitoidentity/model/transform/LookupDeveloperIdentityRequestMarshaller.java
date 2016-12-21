@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class LookupDeveloperIdentityRequestMarshaller implements Marshaller<Request<LookupDeveloperIdentityRequest>, LookupDeveloperIdentityRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public LookupDeveloperIdentityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public LookupDeveloperIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

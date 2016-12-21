@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateMLModelRequestMarshaller implements Marshaller<Request<UpdateMLModelRequest>, UpdateMLModelRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateMLModelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateMLModelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

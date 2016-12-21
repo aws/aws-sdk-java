@@ -266,4 +266,5 @@ public class ListAssessmentTargetsRequest extends com.amazonaws.AmazonWebService
     public ListAssessmentTargetsRequest clone() {
         return (ListAssessmentTargetsRequest) super.clone();
     }
+
 }

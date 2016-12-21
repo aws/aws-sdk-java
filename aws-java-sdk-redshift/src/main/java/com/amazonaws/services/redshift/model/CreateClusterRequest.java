@@ -3638,4 +3638,5 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateClusterRequest clone() {
         return (CreateClusterRequest) super.clone();
     }
+
 }

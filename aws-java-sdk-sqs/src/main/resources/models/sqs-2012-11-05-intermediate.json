@@ -154,6 +154,7 @@
     "cucumberModuleInjectorClassName" : "AmazonSQSModuleInjector",
     "defaultEndpoint" : "https://sqs.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "sqs.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>Welcome to the <i>Amazon Simple Queue Service API Reference</i>.</p> <p>Amazon Simple Queue Service (Amazon SQS) is a reliable, highly-scalable hosted queue for storing messages as they travel between applications or microservices. Amazon SQS moves data between distributed application components and helps you decouple these components.</p> <note> <p> <a href=\"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html\">Standard queues</a> are available in all regions. <a href=\"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html\">FIFO queues</a> are available in US West (Oregon) and US East (Ohio).</p> </note> <p>You can use <a href=\"http://aws.amazon.com/tools/#sdk\">AWS SDKs</a> to access Amazon SQS using your favorite programming language. The SDKs perform tasks such as the following automatically:</p> <ul> <li> <p>Cryptographically sign your service requests</p> </li> <li> <p>Retry requests</p> </li> <li> <p>Handle error responses</p> </li> </ul> <p> <b>Additional Information</b> </p> <ul> <li> <p> <a href=\"http://aws.amazon.com/sqs/\">Amazon SQS Product Page</a> </p> </li> <li> <p> <i>Amazon SQS Developer Guide</i> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html\">Making API Requests</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html\">Using Amazon SQS Message Attributes</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html\">Using Amazon SQS Dead Letter Queues</a> </p> </li> </ul> </li> <li> <p> <i>Amazon Web Services General Reference</i> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region\">Regions and Endpoints</a> </p> </li> </ul> </li> </ul>",
     "endpointPrefix" : "sqs",
     "hasApiWithStreamInput" : false,
@@ -164,7 +165,10 @@
     "packagePath" : "com/amazonaws/services/sqs",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "protocolFactory" : null,
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon SQS",
     "serviceFullName" : "Amazon Simple Queue Service",
     "serviceName" : "Amazon SQS",
@@ -1522,6 +1526,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "Label", "AWSAccountIds", "Actions" ],
       "shapeName" : "AddPermissionRequest",
       "unmarshaller" : null,
@@ -1554,6 +1560,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddPermissionResult",
       "unmarshaller" : {
@@ -1589,6 +1597,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchEntryIdsNotDistinctException",
       "unmarshaller" : null,
@@ -1621,6 +1631,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchRequestTooLongException",
       "unmarshaller" : null,
@@ -2106,6 +2118,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id", "SenderFault", "Code" ],
       "shapeName" : "BatchResultErrorEntry",
       "unmarshaller" : {
@@ -2517,6 +2531,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "Entries" ],
       "shapeName" : "ChangeMessageVisibilityBatchRequest",
       "unmarshaller" : null,
@@ -2889,6 +2905,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id", "ReceiptHandle" ],
       "shapeName" : "ChangeMessageVisibilityBatchRequestEntry",
       "unmarshaller" : {
@@ -3435,6 +3453,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Successful", "Failed" ],
       "shapeName" : "ChangeMessageVisibilityBatchResult",
       "unmarshaller" : {
@@ -3584,6 +3604,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "ChangeMessageVisibilityBatchResultEntry",
       "unmarshaller" : {
@@ -3966,6 +3988,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "ReceiptHandle", "VisibilityTimeout" ],
       "shapeName" : "ChangeMessageVisibilityRequest",
       "unmarshaller" : null,
@@ -3998,6 +4022,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChangeMessageVisibilityResult",
       "unmarshaller" : {
@@ -4521,6 +4547,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueName" ],
       "shapeName" : "CreateQueueRequest",
       "unmarshaller" : null,
@@ -4667,6 +4695,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateQueueResult",
       "unmarshaller" : {
@@ -5078,6 +5108,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "Entries" ],
       "shapeName" : "DeleteMessageBatchRequest",
       "unmarshaller" : null,
@@ -5337,6 +5369,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id", "ReceiptHandle" ],
       "shapeName" : "DeleteMessageBatchRequestEntry",
       "unmarshaller" : {
@@ -5883,6 +5917,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Successful", "Failed" ],
       "shapeName" : "DeleteMessageBatchResult",
       "unmarshaller" : {
@@ -6032,6 +6068,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DeleteMessageBatchResultEntry",
       "unmarshaller" : {
@@ -6301,6 +6339,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "ReceiptHandle" ],
       "shapeName" : "DeleteMessageRequest",
       "unmarshaller" : null,
@@ -6333,6 +6373,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteMessageResult",
       "unmarshaller" : {
@@ -6489,6 +6531,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl" ],
       "shapeName" : "DeleteQueueRequest",
       "unmarshaller" : null,
@@ -6521,6 +6565,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteQueueResult",
       "unmarshaller" : {
@@ -6556,6 +6602,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EmptyBatchRequestException",
       "unmarshaller" : null,
@@ -6964,6 +7012,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl" ],
       "shapeName" : "GetQueueAttributesRequest",
       "unmarshaller" : null,
@@ -7364,6 +7414,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetQueueAttributesResult",
       "unmarshaller" : {
@@ -7633,6 +7685,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueName" ],
       "shapeName" : "GetQueueUrlRequest",
       "unmarshaller" : null,
@@ -7779,6 +7833,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetQueueUrlResult",
       "unmarshaller" : {
@@ -7814,6 +7870,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAttributeNameException",
       "unmarshaller" : null,
@@ -7846,6 +7904,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidBatchEntryIdException",
       "unmarshaller" : null,
@@ -7878,6 +7938,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidIdFormatException",
       "unmarshaller" : null,
@@ -7910,6 +7972,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidMessageContentsException",
       "unmarshaller" : null,
@@ -8063,6 +8127,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl" ],
       "shapeName" : "ListDeadLetterSourceQueuesRequest",
       "unmarshaller" : null,
@@ -8351,6 +8417,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "queueUrls" ],
       "shapeName" : "ListDeadLetterSourceQueuesResult",
       "unmarshaller" : {
@@ -8507,6 +8575,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListQueuesRequest",
       "unmarshaller" : null,
@@ -8795,6 +8865,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListQueuesResult",
       "unmarshaller" : {
@@ -10018,6 +10090,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Message",
       "unmarshaller" : {
@@ -10903,6 +10977,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataType" ],
       "shapeName" : "MessageAttributeValue",
       "unmarshaller" : {
@@ -10938,6 +11014,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MessageNotInflightException",
       "unmarshaller" : null,
@@ -10991,6 +11069,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MessageSystemAttributeName",
       "unmarshaller" : {
@@ -11026,6 +11106,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OverLimitException",
       "unmarshaller" : null,
@@ -11058,6 +11140,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PurgeQueueInProgressException",
       "unmarshaller" : null,
@@ -11211,6 +11295,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl" ],
       "shapeName" : "PurgeQueueRequest",
       "unmarshaller" : null,
@@ -11243,6 +11329,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PurgeQueueResult",
       "unmarshaller" : {
@@ -11326,6 +11414,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "QueueAttributeName",
       "unmarshaller" : {
@@ -11361,6 +11451,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "QueueDeletedRecentlyException",
       "unmarshaller" : null,
@@ -11393,6 +11485,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "QueueDoesNotExistException",
       "unmarshaller" : null,
@@ -11425,6 +11519,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "QueueNameExistsException",
       "unmarshaller" : null,
@@ -11457,6 +11553,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReceiptHandleIsInvalidException",
       "unmarshaller" : null,
@@ -12572,6 +12670,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl" ],
       "shapeName" : "ReceiveMessageRequest",
       "unmarshaller" : null,
@@ -12860,6 +12960,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReceiveMessageResult",
       "unmarshaller" : {
@@ -13129,6 +13231,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "Label" ],
       "shapeName" : "RemovePermissionRequest",
       "unmarshaller" : null,
@@ -13161,6 +13265,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemovePermissionResult",
       "unmarshaller" : {
@@ -13572,6 +13678,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "Entries" ],
       "shapeName" : "SendMessageBatchRequest",
       "unmarshaller" : null,
@@ -14425,6 +14533,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id", "MessageBody" ],
       "shapeName" : "SendMessageBatchRequestEntry",
       "unmarshaller" : {
@@ -14971,6 +15081,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Successful", "Failed" ],
       "shapeName" : "SendMessageBatchResult",
       "unmarshaller" : {
@@ -15572,6 +15684,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id", "MessageId", "MD5OfMessageBody" ],
       "shapeName" : "SendMessageBatchResultEntry",
       "unmarshaller" : {
@@ -16435,6 +16549,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "MessageBody" ],
       "shapeName" : "SendMessageRequest",
       "unmarshaller" : null,
@@ -16920,6 +17036,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SendMessageResult",
       "unmarshaller" : {
@@ -17443,6 +17561,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "QueueUrl", "Attributes" ],
       "shapeName" : "SetQueueAttributesRequest",
       "unmarshaller" : null,
@@ -17475,6 +17595,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetQueueAttributesResult",
       "unmarshaller" : {
@@ -17510,6 +17632,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyEntriesInBatchRequestException",
       "unmarshaller" : null,
@@ -17542,6 +17666,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedOperationException",
       "unmarshaller" : null,
@@ -17557,6 +17683,7 @@
     }
   },
   "clientConfigFactory" : "com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

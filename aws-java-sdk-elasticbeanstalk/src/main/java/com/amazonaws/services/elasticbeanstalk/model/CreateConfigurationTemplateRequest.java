@@ -733,4 +733,5 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
     public CreateConfigurationTemplateRequest clone() {
         return (CreateConfigurationTemplateRequest) super.clone();
     }
+
 }

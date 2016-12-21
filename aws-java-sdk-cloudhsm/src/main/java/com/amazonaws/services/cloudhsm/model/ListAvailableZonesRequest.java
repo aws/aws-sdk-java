@@ -62,4 +62,5 @@ public class ListAvailableZonesRequest extends com.amazonaws.AmazonWebServiceReq
     public ListAvailableZonesRequest clone() {
         return (ListAvailableZonesRequest) super.clone();
     }
+
 }

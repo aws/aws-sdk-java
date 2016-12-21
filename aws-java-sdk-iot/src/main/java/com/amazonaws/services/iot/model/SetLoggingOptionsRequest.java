@@ -116,4 +116,5 @@ public class SetLoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRequ
     public SetLoggingOptionsRequest clone() {
         return (SetLoggingOptionsRequest) super.clone();
     }
+
 }

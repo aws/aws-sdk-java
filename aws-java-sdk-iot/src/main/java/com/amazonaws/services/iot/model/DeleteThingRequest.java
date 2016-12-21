@@ -183,4 +183,5 @@ public class DeleteThingRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteThingRequest clone() {
         return (DeleteThingRequest) super.clone();
     }
+
 }

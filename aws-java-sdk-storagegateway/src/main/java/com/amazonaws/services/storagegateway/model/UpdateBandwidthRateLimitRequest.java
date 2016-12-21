@@ -217,4 +217,5 @@ public class UpdateBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
     public UpdateBandwidthRateLimitRequest clone() {
         return (UpdateBandwidthRateLimitRequest) super.clone();
     }
+
 }

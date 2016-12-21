@@ -235,4 +235,5 @@ public class RemoveTagsFromOnPremisesInstancesRequest extends com.amazonaws.Amaz
     public RemoveTagsFromOnPremisesInstancesRequest clone() {
         return (RemoveTagsFromOnPremisesInstancesRequest) super.clone();
     }
+
 }

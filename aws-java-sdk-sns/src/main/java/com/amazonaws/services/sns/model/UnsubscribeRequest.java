@@ -134,4 +134,5 @@ public class UnsubscribeRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UnsubscribeRequest clone() {
         return (UnsubscribeRequest) super.clone();
     }
+
 }

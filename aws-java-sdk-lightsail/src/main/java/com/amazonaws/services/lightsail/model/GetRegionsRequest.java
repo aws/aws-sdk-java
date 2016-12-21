@@ -135,4 +135,5 @@ public class GetRegionsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetRegionsRequest clone() {
         return (GetRegionsRequest) super.clone();
     }
+
 }

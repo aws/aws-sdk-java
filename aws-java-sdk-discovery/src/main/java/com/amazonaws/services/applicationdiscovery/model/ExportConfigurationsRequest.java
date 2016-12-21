@@ -60,4 +60,5 @@ public class ExportConfigurationsRequest extends com.amazonaws.AmazonWebServiceR
     public ExportConfigurationsRequest clone() {
         return (ExportConfigurationsRequest) super.clone();
     }
+
 }

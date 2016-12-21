@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteLunaClientRequestMarshaller implements Marshaller<Request<DeleteLunaClientRequest>, DeleteLunaClientRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteLunaClientRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteLunaClientRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

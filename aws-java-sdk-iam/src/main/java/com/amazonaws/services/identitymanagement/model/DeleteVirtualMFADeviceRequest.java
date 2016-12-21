@@ -153,4 +153,5 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     public DeleteVirtualMFADeviceRequest clone() {
         return (DeleteVirtualMFADeviceRequest) super.clone();
     }
+
 }

@@ -402,4 +402,5 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     public CreateMaintenanceWindowRequest clone() {
         return (CreateMaintenanceWindowRequest) super.clone();
     }
+
 }

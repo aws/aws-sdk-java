@@ -132,4 +132,5 @@ public class DisableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest
     public DisableLoggingRequest clone() {
         return (DisableLoggingRequest) super.clone();
     }
+
 }

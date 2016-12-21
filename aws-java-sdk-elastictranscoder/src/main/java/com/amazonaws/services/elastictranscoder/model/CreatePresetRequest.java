@@ -402,4 +402,5 @@ public class CreatePresetRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreatePresetRequest clone() {
         return (CreatePresetRequest) super.clone();
     }
+
 }

@@ -282,4 +282,5 @@ public class RecordLifecycleActionHeartbeatRequest extends com.amazonaws.AmazonW
     public RecordLifecycleActionHeartbeatRequest clone() {
         return (RecordLifecycleActionHeartbeatRequest) super.clone();
     }
+
 }

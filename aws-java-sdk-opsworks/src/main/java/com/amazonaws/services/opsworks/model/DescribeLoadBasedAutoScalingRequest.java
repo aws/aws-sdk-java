@@ -147,4 +147,5 @@ public class DescribeLoadBasedAutoScalingRequest extends com.amazonaws.AmazonWeb
     public DescribeLoadBasedAutoScalingRequest clone() {
         return (DescribeLoadBasedAutoScalingRequest) super.clone();
     }
+
 }

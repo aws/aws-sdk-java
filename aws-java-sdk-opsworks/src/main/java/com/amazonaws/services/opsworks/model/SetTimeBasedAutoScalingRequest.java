@@ -167,4 +167,5 @@ public class SetTimeBasedAutoScalingRequest extends com.amazonaws.AmazonWebServi
     public SetTimeBasedAutoScalingRequest clone() {
         return (SetTimeBasedAutoScalingRequest) super.clone();
     }
+
 }

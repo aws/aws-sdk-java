@@ -190,4 +190,5 @@ public class DeleteVaultAccessPolicyRequest extends com.amazonaws.AmazonWebServi
     public DeleteVaultAccessPolicyRequest clone() {
         return (DeleteVaultAccessPolicyRequest) super.clone();
     }
+
 }

@@ -134,4 +134,5 @@ public class GetDistributionConfigRequest extends com.amazonaws.AmazonWebService
     public GetDistributionConfigRequest clone() {
         return (GetDistributionConfigRequest) super.clone();
     }
+
 }

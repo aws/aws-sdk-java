@@ -527,4 +527,5 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public CreateHsmRequest clone() {
         return (CreateHsmRequest) super.clone();
     }
+
 }

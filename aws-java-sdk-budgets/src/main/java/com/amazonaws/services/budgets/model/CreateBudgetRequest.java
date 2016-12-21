@@ -191,4 +191,5 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateBudgetRequest clone() {
         return (CreateBudgetRequest) super.clone();
     }
+
 }

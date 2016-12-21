@@ -114,4 +114,5 @@ public class GetTelemetryMetadataRequest extends com.amazonaws.AmazonWebServiceR
     public GetTelemetryMetadataRequest clone() {
         return (GetTelemetryMetadataRequest) super.clone();
     }
+
 }

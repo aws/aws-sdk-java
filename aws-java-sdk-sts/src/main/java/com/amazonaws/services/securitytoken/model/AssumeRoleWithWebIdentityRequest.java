@@ -723,4 +723,5 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
     public AssumeRoleWithWebIdentityRequest clone() {
         return (AssumeRoleWithWebIdentityRequest) super.clone();
     }
+
 }

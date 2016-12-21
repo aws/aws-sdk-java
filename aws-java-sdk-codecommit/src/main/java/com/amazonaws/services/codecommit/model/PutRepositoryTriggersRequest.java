@@ -199,4 +199,5 @@ public class PutRepositoryTriggersRequest extends com.amazonaws.AmazonWebService
     public PutRepositoryTriggersRequest clone() {
         return (PutRepositoryTriggersRequest) super.clone();
     }
+
 }

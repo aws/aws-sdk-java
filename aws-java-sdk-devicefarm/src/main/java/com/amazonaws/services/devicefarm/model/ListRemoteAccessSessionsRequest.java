@@ -176,4 +176,5 @@ public class ListRemoteAccessSessionsRequest extends com.amazonaws.AmazonWebServ
     public ListRemoteAccessSessionsRequest clone() {
         return (ListRemoteAccessSessionsRequest) super.clone();
     }
+
 }

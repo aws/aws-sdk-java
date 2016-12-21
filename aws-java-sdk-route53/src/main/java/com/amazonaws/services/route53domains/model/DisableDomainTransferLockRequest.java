@@ -204,4 +204,5 @@ public class DisableDomainTransferLockRequest extends com.amazonaws.AmazonWebSer
     public DisableDomainTransferLockRequest clone() {
         return (DisableDomainTransferLockRequest) super.clone();
     }
+
 }

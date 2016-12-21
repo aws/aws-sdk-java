@@ -32,9 +32,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ${shapeName}Marshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ${shapeName}Marshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

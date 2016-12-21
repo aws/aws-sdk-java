@@ -116,4 +116,5 @@ public class DeleteThingShadowRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteThingShadowRequest clone() {
         return (DeleteThingShadowRequest) super.clone();
     }
+
 }

@@ -253,4 +253,5 @@ public class DescribeInstancePatchStatesRequest extends com.amazonaws.AmazonWebS
     public DescribeInstancePatchStatesRequest clone() {
         return (DescribeInstancePatchStatesRequest) super.clone();
     }
+
 }

@@ -423,4 +423,5 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
     public EnableMFADeviceRequest clone() {
         return (EnableMFADeviceRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class TestConnectionRequest extends com.amazonaws.AmazonWebServiceRequest
     public TestConnectionRequest clone() {
         return (TestConnectionRequest) super.clone();
     }
+
 }

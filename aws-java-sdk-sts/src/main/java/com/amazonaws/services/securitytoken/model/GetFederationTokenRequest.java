@@ -506,4 +506,5 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
     public GetFederationTokenRequest clone() {
         return (GetFederationTokenRequest) super.clone();
     }
+
 }

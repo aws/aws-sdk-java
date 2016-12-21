@@ -114,4 +114,5 @@ public class DecodeAuthorizationMessageRequest extends com.amazonaws.AmazonWebSe
     public DecodeAuthorizationMessageRequest clone() {
         return (DecodeAuthorizationMessageRequest) super.clone();
     }
+
 }

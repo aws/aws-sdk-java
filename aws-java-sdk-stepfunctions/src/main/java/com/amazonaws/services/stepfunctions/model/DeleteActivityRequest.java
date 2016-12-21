@@ -114,4 +114,5 @@ public class DeleteActivityRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteActivityRequest clone() {
         return (DeleteActivityRequest) super.clone();
     }
+
 }

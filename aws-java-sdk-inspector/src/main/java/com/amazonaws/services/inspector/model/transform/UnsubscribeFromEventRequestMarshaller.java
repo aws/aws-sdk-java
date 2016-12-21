@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UnsubscribeFromEventRequestMarshaller implements Marshaller<Request<UnsubscribeFromEventRequest>, UnsubscribeFromEventRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UnsubscribeFromEventRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UnsubscribeFromEventRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

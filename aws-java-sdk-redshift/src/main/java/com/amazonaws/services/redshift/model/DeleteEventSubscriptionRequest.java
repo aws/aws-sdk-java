@@ -114,4 +114,5 @@ public class DeleteEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     public DeleteEventSubscriptionRequest clone() {
         return (DeleteEventSubscriptionRequest) super.clone();
     }
+
 }

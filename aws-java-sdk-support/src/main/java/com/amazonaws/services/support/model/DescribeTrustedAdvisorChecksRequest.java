@@ -121,4 +121,5 @@ public class DescribeTrustedAdvisorChecksRequest extends com.amazonaws.AmazonWeb
     public DescribeTrustedAdvisorChecksRequest clone() {
         return (DescribeTrustedAdvisorChecksRequest) super.clone();
     }
+
 }

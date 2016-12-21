@@ -895,4 +895,5 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
     public GenerateDataSetRequest clone() {
         return (GenerateDataSetRequest) super.clone();
     }
+
 }

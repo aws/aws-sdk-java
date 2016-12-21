@@ -320,4 +320,5 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     public PutThirdPartyJobSuccessResultRequest clone() {
         return (PutThirdPartyJobSuccessResultRequest) super.clone();
     }
+
 }

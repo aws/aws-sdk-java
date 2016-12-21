@@ -719,4 +719,5 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
     public ResetDBParameterGroupRequest clone() {
         return (ResetDBParameterGroupRequest) super.clone();
     }
+
 }

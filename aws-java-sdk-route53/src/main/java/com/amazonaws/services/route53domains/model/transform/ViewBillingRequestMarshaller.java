@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ViewBillingRequestMarshaller implements Marshaller<Request<ViewBillingRequest>, ViewBillingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ViewBillingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ViewBillingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -20,6 +20,7 @@ import com.amazonaws.codegen.internal.Jackson;
 import com.amazonaws.codegen.model.intermediate.Protocol;
 
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -45,17 +46,23 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate modelEnum;
     private TopLevelTemplate modelUnmarshaller;
     private TopLevelTemplate modelMarshaller;
+    private TopLevelTemplate baseExceptionClass;
     private TopLevelTemplate exceptionClass;
     private TopLevelTemplate exceptionUnmarshaller;
     private TopLevelTemplate policyActionClass;
     private TopLevelTemplate packageInfo;
+    private TopLevelTemplate customRequestSignerClass;
     private TopLevelTemplate cucumberModuleInjector = new TopLevelTemplate("/templates/cucumber/ModuleInjector.ftl", null);
     private TopLevelTemplate cucumberTest = new TopLevelTemplate("/templates/cucumber/RunCucumberTest.ftl", null);
     private TopLevelTemplate cucumberPropertiesFile = new TopLevelTemplate("/templates/cucumber/cucumberProperties.ftl", null);
+    private TopLevelTemplate apiGatewayPomTemplate = new TopLevelTemplate("/templates/api-gateway/maven/pom.xml.ftl", null);
+    private TopLevelTemplate apiGatewayGradleBuildTemplate = new TopLevelTemplate("/templates/api-gateway/gradle/build.gradle.ftl", null);
+    private TopLevelTemplate apiGatewayGradleSettingsTemplate = new TopLevelTemplate("/templates/api-gateway/gradle/settings.gradle.ftl", null);
+    private TopLevelTemplate apiGatewayReadmeTemplate =
+            new TopLevelTemplate("/templates/api-gateway/README.md.ftl", Collections.singletonList(
+                    new ChildTemplate("/templates/api-gateway/README_Dependencies.ftl", "README_Dependencies")));
 
     private List<ChildTemplate> commonChildTemplates;
-    private TopLevelTemplate baseExceptionClass = new TopLevelTemplate(
-            "/templates/common/base-exception-class.ftl", null);
 
     public static CodeGenTemplatesConfig load(Protocol protocol) {
 
@@ -130,6 +137,9 @@ public class CodeGenTemplatesConfig {
 
         merged.setPackageInfo(TopLevelTemplate.merge(
                 config.getPackageInfo(), override.getPackageInfo()));
+
+        merged.setCustomRequestSignerClass(TopLevelTemplate.merge(
+                config.getCustomRequestSignerClass(), override.getCustomRequestSignerClass()));
 
         List<ChildTemplate> commonChildTemplates = new LinkedList<ChildTemplate>();
         if (config.getCommonChildTemplates() != null) {
@@ -340,5 +350,29 @@ public class CodeGenTemplatesConfig {
 
     public TopLevelTemplate getCucumberPropertiesFile() {
         return cucumberPropertiesFile;
+    }
+
+    public TopLevelTemplate getCustomRequestSignerClass() {
+        return customRequestSignerClass;
+    }
+
+    public void setCustomRequestSignerClass(TopLevelTemplate customRequestSignerClass) {
+        this.customRequestSignerClass = customRequestSignerClass;
+    }
+
+    public TopLevelTemplate getApiGatewayPomTemplate() {
+        return apiGatewayPomTemplate;
+    }
+
+    public TopLevelTemplate getApiGatewayGradleBuildTemplate() {
+        return apiGatewayGradleBuildTemplate;
+    }
+
+    public TopLevelTemplate getApiGatewayGradleSettingsTemplate() {
+        return apiGatewayGradleSettingsTemplate;
+    }
+
+    public TopLevelTemplate getApiGatewayReadmeTemplate() {
+        return apiGatewayReadmeTemplate;
     }
 }

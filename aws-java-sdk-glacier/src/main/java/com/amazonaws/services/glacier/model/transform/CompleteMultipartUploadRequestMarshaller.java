@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Request<CompleteMultipartUploadRequest>, CompleteMultipartUploadRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CompleteMultipartUploadRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CompleteMultipartUploadRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

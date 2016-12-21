@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteComputeEnvironmentRequestMarshaller implements Marshaller<Request<DeleteComputeEnvironmentRequest>, DeleteComputeEnvironmentRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteComputeEnvironmentRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteComputeEnvironmentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

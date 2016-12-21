@@ -826,4 +826,5 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     public RegisterScalableTargetRequest clone() {
         return (RegisterScalableTargetRequest) super.clone();
     }
+
 }

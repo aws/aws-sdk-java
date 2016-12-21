@@ -169,4 +169,5 @@ public class RenewOfferingRequest extends com.amazonaws.AmazonWebServiceRequest 
     public RenewOfferingRequest clone() {
         return (RenewOfferingRequest) super.clone();
     }
+
 }

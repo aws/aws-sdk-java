@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetSizeConstraintSetRequestMarshaller implements Marshaller<Request<GetSizeConstraintSetRequest>, GetSizeConstraintSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetSizeConstraintSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetSizeConstraintSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

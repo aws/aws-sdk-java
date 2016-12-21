@@ -3146,4 +3146,5 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CloneStackRequest clone() {
         return (CloneStackRequest) super.clone();
     }
+
 }

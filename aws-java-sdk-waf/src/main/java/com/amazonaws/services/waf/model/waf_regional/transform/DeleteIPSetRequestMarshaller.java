@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteIPSetRequestMarshaller implements Marshaller<Request<DeleteIPSetRequest>, DeleteIPSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteIPSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteIPSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -214,4 +214,5 @@ public class DescribeWorkspaceDirectoriesRequest extends com.amazonaws.AmazonWeb
     public DescribeWorkspaceDirectoriesRequest clone() {
         return (DescribeWorkspaceDirectoriesRequest) super.clone();
     }
+
 }

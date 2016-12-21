@@ -274,4 +274,5 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     public CreatePlatformApplicationRequest clone() {
         return (CreatePlatformApplicationRequest) super.clone();
     }
+
 }

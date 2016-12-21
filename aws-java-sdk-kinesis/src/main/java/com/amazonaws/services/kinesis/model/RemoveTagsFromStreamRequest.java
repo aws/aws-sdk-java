@@ -202,4 +202,5 @@ public class RemoveTagsFromStreamRequest extends com.amazonaws.AmazonWebServiceR
     public RemoveTagsFromStreamRequest clone() {
         return (RemoveTagsFromStreamRequest) super.clone();
     }
+
 }

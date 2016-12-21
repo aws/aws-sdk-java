@@ -248,4 +248,5 @@ public class DeleteProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteProductRequest clone() {
         return (DeleteProductRequest) super.clone();
     }
+
 }

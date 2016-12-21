@@ -114,4 +114,5 @@ public class DeleteRealtimeEndpointRequest extends com.amazonaws.AmazonWebServic
     public DeleteRealtimeEndpointRequest clone() {
         return (DeleteRealtimeEndpointRequest) super.clone();
     }
+
 }

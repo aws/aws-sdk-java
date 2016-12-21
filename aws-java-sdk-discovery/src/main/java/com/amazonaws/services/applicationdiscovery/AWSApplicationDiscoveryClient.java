@@ -124,29 +124,30 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServerInternalErrorException").withModeledClass(
-                            com.amazonaws.services.applicationdiscovery.model.ServerInternalErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.applicationdiscovery.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                            com.amazonaws.services.applicationdiscovery.model.InvalidParameterValueException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.applicationdiscovery.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
-                            com.amazonaws.services.applicationdiscovery.model.OperationNotPermittedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AuthorizationErrorException").withModeledClass(
-                            com.amazonaws.services.applicationdiscovery.model.AuthorizationErrorException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServerInternalErrorException").withModeledClass(
+                                    com.amazonaws.services.applicationdiscovery.model.ServerInternalErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.applicationdiscovery.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
+                                    com.amazonaws.services.applicationdiscovery.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.applicationdiscovery.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
+                                    com.amazonaws.services.applicationdiscovery.model.OperationNotPermittedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AuthorizationErrorException").withModeledClass(
+                                    com.amazonaws.services.applicationdiscovery.model.AuthorizationErrorException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Application Discovery Service. A credentials provider

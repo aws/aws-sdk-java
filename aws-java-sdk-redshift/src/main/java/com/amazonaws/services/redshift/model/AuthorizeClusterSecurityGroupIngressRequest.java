@@ -298,4 +298,5 @@ public class AuthorizeClusterSecurityGroupIngressRequest extends com.amazonaws.A
     public AuthorizeClusterSecurityGroupIngressRequest clone() {
         return (AuthorizeClusterSecurityGroupIngressRequest) super.clone();
     }
+
 }

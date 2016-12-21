@@ -311,4 +311,5 @@ public class ListPortfoliosRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListPortfoliosRequest clone() {
         return (ListPortfoliosRequest) super.clone();
     }
+
 }

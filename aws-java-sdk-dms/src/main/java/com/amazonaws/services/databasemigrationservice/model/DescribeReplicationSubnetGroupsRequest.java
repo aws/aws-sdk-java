@@ -310,4 +310,5 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
     public DescribeReplicationSubnetGroupsRequest clone() {
         return (DescribeReplicationSubnetGroupsRequest) super.clone();
     }
+
 }

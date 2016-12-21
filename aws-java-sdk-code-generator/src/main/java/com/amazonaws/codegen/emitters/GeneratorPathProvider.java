@@ -17,6 +17,7 @@ package com.amazonaws.codegen.emitters;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 
 import static com.amazonaws.codegen.internal.Constants.AUTH_POLICY_ENUM_CLASS_DIR;
+import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_CUSTOM_AUTH_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_MODEL_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.PACKAGE_NAME_WAITERS_SUFFIX;
 import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
@@ -68,6 +69,10 @@ public class GeneratorPathProvider {
 
     public String getPolicyEnumDirectory() {
         return getOutputDirectory() + "/" + AUTH_POLICY_ENUM_CLASS_DIR;
+    }
+
+    public String getAuthorizerDirectory() {
+        return getBasePackageDirectory() + "/" + PACKAGE_NAME_CUSTOM_AUTH_SUFFIX;
     }
 
     private String getPackagePath() {

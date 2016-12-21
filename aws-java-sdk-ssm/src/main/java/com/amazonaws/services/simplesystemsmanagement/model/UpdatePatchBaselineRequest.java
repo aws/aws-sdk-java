@@ -498,4 +498,5 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdatePatchBaselineRequest clone() {
         return (UpdatePatchBaselineRequest) super.clone();
     }
+
 }

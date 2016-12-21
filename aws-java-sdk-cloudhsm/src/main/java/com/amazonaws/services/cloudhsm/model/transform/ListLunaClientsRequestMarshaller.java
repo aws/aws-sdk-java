@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListLunaClientsRequestMarshaller implements Marshaller<Request<ListLunaClientsRequest>, ListLunaClientsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListLunaClientsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListLunaClientsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

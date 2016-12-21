@@ -116,4 +116,5 @@ public class ReadPipelineRequest extends com.amazonaws.AmazonWebServiceRequest i
     public ReadPipelineRequest clone() {
         return (ReadPipelineRequest) super.clone();
     }
+
 }

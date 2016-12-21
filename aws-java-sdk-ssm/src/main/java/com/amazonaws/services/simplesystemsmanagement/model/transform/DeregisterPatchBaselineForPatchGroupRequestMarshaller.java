@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DeregisterPatchBaselineForPatchGroupRequestMarshaller implements
         Marshaller<Request<DeregisterPatchBaselineForPatchGroupRequest>, DeregisterPatchBaselineForPatchGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeregisterPatchBaselineForPatchGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeregisterPatchBaselineForPatchGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -174,4 +174,5 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     public PutDestinationPolicyRequest clone() {
         return (PutDestinationPolicyRequest) super.clone();
     }
+
 }

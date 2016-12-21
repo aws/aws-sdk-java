@@ -188,4 +188,5 @@ public class RecordActivityTaskHeartbeatRequest extends com.amazonaws.AmazonWebS
     public RecordActivityTaskHeartbeatRequest clone() {
         return (RecordActivityTaskHeartbeatRequest) super.clone();
     }
+
 }

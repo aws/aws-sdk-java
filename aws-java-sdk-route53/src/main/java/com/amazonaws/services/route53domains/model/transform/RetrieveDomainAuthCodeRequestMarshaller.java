@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RetrieveDomainAuthCodeRequestMarshaller implements Marshaller<Request<RetrieveDomainAuthCodeRequest>, RetrieveDomainAuthCodeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RetrieveDomainAuthCodeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RetrieveDomainAuthCodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

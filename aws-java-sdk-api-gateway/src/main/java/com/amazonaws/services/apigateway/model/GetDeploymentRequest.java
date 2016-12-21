@@ -170,4 +170,5 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetDeploymentRequest clone() {
         return (GetDeploymentRequest) super.clone();
     }
+
 }

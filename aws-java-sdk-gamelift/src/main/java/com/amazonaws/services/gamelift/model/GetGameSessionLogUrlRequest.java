@@ -137,4 +137,5 @@ public class GetGameSessionLogUrlRequest extends com.amazonaws.AmazonWebServiceR
     public GetGameSessionLogUrlRequest clone() {
         return (GetGameSessionLogUrlRequest) super.clone();
     }
+
 }

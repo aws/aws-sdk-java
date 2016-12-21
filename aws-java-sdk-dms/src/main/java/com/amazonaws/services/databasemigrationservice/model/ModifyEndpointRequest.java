@@ -838,4 +838,5 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     public ModifyEndpointRequest clone() {
         return (ModifyEndpointRequest) super.clone();
     }
+
 }

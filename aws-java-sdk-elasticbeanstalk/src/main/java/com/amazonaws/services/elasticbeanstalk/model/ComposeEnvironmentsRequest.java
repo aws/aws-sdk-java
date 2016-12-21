@@ -298,4 +298,5 @@ public class ComposeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceRe
     public ComposeEnvironmentsRequest clone() {
         return (ComposeEnvironmentsRequest) super.clone();
     }
+
 }

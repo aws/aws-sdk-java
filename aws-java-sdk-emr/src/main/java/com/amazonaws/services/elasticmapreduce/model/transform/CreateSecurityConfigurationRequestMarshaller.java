@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class CreateSecurityConfigurationRequestMarshaller implements
         Marshaller<Request<CreateSecurityConfigurationRequest>, CreateSecurityConfigurationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateSecurityConfigurationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateSecurityConfigurationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

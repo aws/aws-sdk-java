@@ -174,4 +174,5 @@ public class CreateAssessmentTargetRequest extends com.amazonaws.AmazonWebServic
     public CreateAssessmentTargetRequest clone() {
         return (CreateAssessmentTargetRequest) super.clone();
     }
+
 }

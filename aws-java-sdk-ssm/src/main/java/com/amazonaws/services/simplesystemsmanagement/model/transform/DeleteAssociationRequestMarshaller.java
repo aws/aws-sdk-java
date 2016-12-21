@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteAssociationRequestMarshaller implements Marshaller<Request<DeleteAssociationRequest>, DeleteAssociationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteAssociationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteAssociationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

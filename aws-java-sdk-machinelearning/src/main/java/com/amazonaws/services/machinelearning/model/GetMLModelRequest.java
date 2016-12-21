@@ -229,4 +229,5 @@ public class GetMLModelRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetMLModelRequest clone() {
         return (GetMLModelRequest) super.clone();
     }
+
 }

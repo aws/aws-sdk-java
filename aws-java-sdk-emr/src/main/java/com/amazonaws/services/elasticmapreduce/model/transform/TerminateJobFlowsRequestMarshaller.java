@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class TerminateJobFlowsRequestMarshaller implements Marshaller<Request<TerminateJobFlowsRequest>, TerminateJobFlowsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TerminateJobFlowsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TerminateJobFlowsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

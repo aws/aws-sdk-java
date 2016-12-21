@@ -440,4 +440,5 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     public ListGeoLocationsRequest clone() {
         return (ListGeoLocationsRequest) super.clone();
     }
+
 }

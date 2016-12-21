@@ -341,4 +341,5 @@ public class ListMFADevicesRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListMFADevicesRequest clone() {
         return (ListMFADevicesRequest) super.clone();
     }
+
 }

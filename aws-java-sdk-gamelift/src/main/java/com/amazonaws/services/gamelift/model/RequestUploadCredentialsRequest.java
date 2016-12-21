@@ -116,4 +116,5 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
     public RequestUploadCredentialsRequest clone() {
         return (RequestUploadCredentialsRequest) super.clone();
     }
+
 }

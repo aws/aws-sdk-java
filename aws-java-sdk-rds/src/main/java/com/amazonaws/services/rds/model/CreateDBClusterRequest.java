@@ -2339,4 +2339,5 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateDBClusterRequest clone() {
         return (CreateDBClusterRequest) super.clone();
     }
+
 }

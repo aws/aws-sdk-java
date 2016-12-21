@@ -179,4 +179,5 @@ public class GetPipelineDefinitionRequest extends com.amazonaws.AmazonWebService
     public GetPipelineDefinitionRequest clone() {
         return (GetPipelineDefinitionRequest) super.clone();
     }
+
 }

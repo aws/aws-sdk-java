@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SubmitContainerStateChangeRequestMarshaller implements Marshaller<Request<SubmitContainerStateChangeRequest>, SubmitContainerStateChangeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SubmitContainerStateChangeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SubmitContainerStateChangeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

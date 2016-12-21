@@ -517,4 +517,5 @@ public class ListTrafficPolicyInstancesByHostedZoneRequest extends com.amazonaws
     public ListTrafficPolicyInstancesByHostedZoneRequest clone() {
         return (ListTrafficPolicyInstancesByHostedZoneRequest) super.clone();
     }
+
 }

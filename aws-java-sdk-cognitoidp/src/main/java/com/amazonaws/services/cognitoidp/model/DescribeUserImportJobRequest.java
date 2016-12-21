@@ -169,4 +169,5 @@ public class DescribeUserImportJobRequest extends com.amazonaws.AmazonWebService
     public DescribeUserImportJobRequest clone() {
         return (DescribeUserImportJobRequest) super.clone();
     }
+
 }

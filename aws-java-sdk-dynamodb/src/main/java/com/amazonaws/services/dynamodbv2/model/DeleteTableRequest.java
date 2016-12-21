@@ -134,4 +134,5 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteTableRequest clone() {
         return (DeleteTableRequest) super.clone();
     }
+
 }

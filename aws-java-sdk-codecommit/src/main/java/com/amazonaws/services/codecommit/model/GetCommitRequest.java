@@ -169,4 +169,5 @@ public class GetCommitRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetCommitRequest clone() {
         return (GetCommitRequest) super.clone();
     }
+
 }

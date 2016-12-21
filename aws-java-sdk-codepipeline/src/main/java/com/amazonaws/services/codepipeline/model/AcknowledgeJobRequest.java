@@ -179,4 +179,5 @@ public class AcknowledgeJobRequest extends com.amazonaws.AmazonWebServiceRequest
     public AcknowledgeJobRequest clone() {
         return (AcknowledgeJobRequest) super.clone();
     }
+
 }

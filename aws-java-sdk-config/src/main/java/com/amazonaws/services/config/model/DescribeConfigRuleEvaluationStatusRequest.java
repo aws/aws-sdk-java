@@ -322,4 +322,5 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
     public DescribeConfigRuleEvaluationStatusRequest clone() {
         return (DescribeConfigRuleEvaluationStatusRequest) super.clone();
     }
+
 }

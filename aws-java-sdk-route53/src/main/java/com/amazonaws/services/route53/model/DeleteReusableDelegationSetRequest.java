@@ -116,4 +116,5 @@ public class DeleteReusableDelegationSetRequest extends com.amazonaws.AmazonWebS
     public DeleteReusableDelegationSetRequest clone() {
         return (DeleteReusableDelegationSetRequest) super.clone();
     }
+
 }

@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class RemoveTagsFromOnPremisesInstancesRequestMarshaller implements
         Marshaller<Request<RemoveTagsFromOnPremisesInstancesRequest>, RemoveTagsFromOnPremisesInstancesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemoveTagsFromOnPremisesInstancesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemoveTagsFromOnPremisesInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

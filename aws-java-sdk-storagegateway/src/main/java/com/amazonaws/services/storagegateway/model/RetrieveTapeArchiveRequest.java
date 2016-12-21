@@ -195,4 +195,5 @@ public class RetrieveTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRe
     public RetrieveTapeArchiveRequest clone() {
         return (RetrieveTapeArchiveRequest) super.clone();
     }
+
 }

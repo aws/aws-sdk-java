@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminDisableUserRequestMarshaller implements Marshaller<Request<AdminDisableUserRequest>, AdminDisableUserRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminDisableUserRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminDisableUserRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

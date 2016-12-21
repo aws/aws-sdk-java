@@ -2003,4 +2003,5 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     public ModifyReplicationGroupRequest clone() {
         return (ModifyReplicationGroupRequest) super.clone();
     }
+
 }

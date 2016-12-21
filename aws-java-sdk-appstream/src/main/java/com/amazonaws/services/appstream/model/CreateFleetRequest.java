@@ -550,4 +550,5 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateFleetRequest clone() {
         return (CreateFleetRequest) super.clone();
     }
+
 }

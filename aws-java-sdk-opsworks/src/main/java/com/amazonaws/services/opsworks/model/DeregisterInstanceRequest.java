@@ -114,4 +114,5 @@ public class DeregisterInstanceRequest extends com.amazonaws.AmazonWebServiceReq
     public DeregisterInstanceRequest clone() {
         return (DeregisterInstanceRequest) super.clone();
     }
+
 }

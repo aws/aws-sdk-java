@@ -204,4 +204,5 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     public AddTagsToResourceRequest clone() {
         return (AddTagsToResourceRequest) super.clone();
     }
+
 }

@@ -315,4 +315,5 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     public RetryStageExecutionRequest clone() {
         return (RetryStageExecutionRequest) super.clone();
     }
+
 }

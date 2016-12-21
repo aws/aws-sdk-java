@@ -600,4 +600,5 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     public PutScheduledUpdateGroupActionRequest clone() {
         return (PutScheduledUpdateGroupActionRequest) super.clone();
     }
+
 }

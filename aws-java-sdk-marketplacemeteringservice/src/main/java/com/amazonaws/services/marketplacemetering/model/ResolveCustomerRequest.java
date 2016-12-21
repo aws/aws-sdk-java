@@ -123,4 +123,5 @@ public class ResolveCustomerRequest extends com.amazonaws.AmazonWebServiceReques
     public ResolveCustomerRequest clone() {
         return (ResolveCustomerRequest) super.clone();
     }
+
 }

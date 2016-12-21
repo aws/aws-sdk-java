@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetLoggingOptionsRequestMarshaller implements Marshaller<Request<SetLoggingOptionsRequest>, SetLoggingOptionsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetLoggingOptionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetLoggingOptionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

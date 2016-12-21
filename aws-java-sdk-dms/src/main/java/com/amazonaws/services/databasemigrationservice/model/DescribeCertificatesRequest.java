@@ -289,4 +289,5 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeCertificatesRequest clone() {
         return (DescribeCertificatesRequest) super.clone();
     }
+
 }

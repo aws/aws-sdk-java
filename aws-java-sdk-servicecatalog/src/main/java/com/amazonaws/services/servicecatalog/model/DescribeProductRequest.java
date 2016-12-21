@@ -248,4 +248,5 @@ public class DescribeProductRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeProductRequest clone() {
         return (DescribeProductRequest) super.clone();
     }
+
 }

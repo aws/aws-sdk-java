@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DisassociateNodeRequestMarshaller implements Marshaller<Request<DisassociateNodeRequest>, DisassociateNodeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisassociateNodeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisassociateNodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

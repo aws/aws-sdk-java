@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RemoveIpRoutesRequestMarshaller implements Marshaller<Request<RemoveIpRoutesRequest>, RemoveIpRoutesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemoveIpRoutesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemoveIpRoutesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

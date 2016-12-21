@@ -190,4 +190,5 @@ public class GetVaultAccessPolicyRequest extends com.amazonaws.AmazonWebServiceR
     public GetVaultAccessPolicyRequest clone() {
         return (GetVaultAccessPolicyRequest) super.clone();
     }
+
 }

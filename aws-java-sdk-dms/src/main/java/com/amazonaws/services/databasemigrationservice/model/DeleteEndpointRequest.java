@@ -114,4 +114,5 @@ public class DeleteEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteEndpointRequest clone() {
         return (DeleteEndpointRequest) super.clone();
     }
+
 }

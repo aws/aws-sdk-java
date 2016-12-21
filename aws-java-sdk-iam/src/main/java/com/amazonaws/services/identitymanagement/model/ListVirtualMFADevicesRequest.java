@@ -342,4 +342,5 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     public ListVirtualMFADevicesRequest clone() {
         return (ListVirtualMFADevicesRequest) super.clone();
     }
+
 }

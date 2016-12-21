@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListVolumeRecoveryPointsRequestMarshaller implements Marshaller<Request<ListVolumeRecoveryPointsRequest>, ListVolumeRecoveryPointsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListVolumeRecoveryPointsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListVolumeRecoveryPointsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

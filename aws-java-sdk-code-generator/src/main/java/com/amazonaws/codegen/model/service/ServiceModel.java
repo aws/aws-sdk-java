@@ -17,6 +17,7 @@ package com.amazonaws.codegen.model.service;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Collections;
 import java.util.Map;
 
 public class ServiceModel {
@@ -26,15 +27,18 @@ public class ServiceModel {
     private final Map<String, Operation> operations;
 
     private final Map<String, Shape> shapes;
+    private final Map<String, Authorizer> authorizers;
 
     private String documentation;
 
     public ServiceModel(@JsonProperty(value = "metadata", required = true) ServiceMetadata metadata,
                         @JsonProperty(value = "operations", required = true) Map<String, Operation> operations,
-                        @JsonProperty(value = "shapes", required = true) Map<String, Shape> shapes) {
+                        @JsonProperty(value = "shapes", required = true) Map<String, Shape> shapes,
+                        @JsonProperty(value = "authorizers") Map<String, Authorizer> authorizers) {
         this.metadata = metadata;
         this.operations = operations;
         this.shapes = shapes;
+        this.authorizers = authorizers;
     }
 
     public ServiceMetadata getMetadata() {
@@ -75,5 +79,9 @@ public class ServiceModel {
 
     public void setDocumentation(String documentation) {
         this.documentation = documentation;
+    }
+
+    public Map<String, Authorizer> getAuthorizers() {
+        return authorizers != null ? authorizers : Collections.emptyMap();
     }
 }

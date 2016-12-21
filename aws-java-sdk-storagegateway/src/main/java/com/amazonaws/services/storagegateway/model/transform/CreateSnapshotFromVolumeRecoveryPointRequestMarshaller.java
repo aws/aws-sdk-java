@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class CreateSnapshotFromVolumeRecoveryPointRequestMarshaller implements
         Marshaller<Request<CreateSnapshotFromVolumeRecoveryPointRequest>, CreateSnapshotFromVolumeRecoveryPointRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateSnapshotFromVolumeRecoveryPointRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateSnapshotFromVolumeRecoveryPointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

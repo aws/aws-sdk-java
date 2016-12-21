@@ -113,4 +113,5 @@ public class GetBulkPublishDetailsRequest extends com.amazonaws.AmazonWebService
     public GetBulkPublishDetailsRequest clone() {
         return (GetBulkPublishDetailsRequest) super.clone();
     }
+
 }

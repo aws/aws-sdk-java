@@ -315,4 +315,5 @@ public class GetAttributesRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetAttributesRequest clone() {
         return (GetAttributesRequest) super.clone();
     }
+
 }

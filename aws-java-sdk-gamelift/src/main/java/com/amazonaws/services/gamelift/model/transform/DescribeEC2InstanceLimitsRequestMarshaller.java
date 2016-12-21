@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeEC2InstanceLimitsRequestMarshaller implements Marshaller<Request<DescribeEC2InstanceLimitsRequest>, DescribeEC2InstanceLimitsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeEC2InstanceLimitsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeEC2InstanceLimitsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

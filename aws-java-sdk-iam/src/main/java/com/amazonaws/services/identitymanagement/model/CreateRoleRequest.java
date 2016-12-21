@@ -372,4 +372,5 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CreateRoleRequest clone() {
         return (CreateRoleRequest) super.clone();
     }
+
 }

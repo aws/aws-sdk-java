@@ -116,4 +116,5 @@ public class DescribeCACertificateRequest extends com.amazonaws.AmazonWebService
     public DescribeCACertificateRequest clone() {
         return (DescribeCACertificateRequest) super.clone();
     }
+
 }

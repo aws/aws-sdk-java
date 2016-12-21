@@ -612,4 +612,5 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeDBClustersRequest clone() {
         return (DescribeDBClustersRequest) super.clone();
     }
+
 }

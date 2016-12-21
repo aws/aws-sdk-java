@@ -225,4 +225,5 @@ public class DeleteVaultRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteVaultRequest clone() {
         return (DeleteVaultRequest) super.clone();
     }
+
 }

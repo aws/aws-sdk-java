@@ -121,4 +121,5 @@ public class CancelClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CancelClusterRequest clone() {
         return (CancelClusterRequest) super.clone();
     }
+
 }

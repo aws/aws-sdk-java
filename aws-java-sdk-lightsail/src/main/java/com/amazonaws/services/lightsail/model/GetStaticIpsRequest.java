@@ -114,4 +114,5 @@ public class GetStaticIpsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetStaticIpsRequest clone() {
         return (GetStaticIpsRequest) super.clone();
     }
+
 }

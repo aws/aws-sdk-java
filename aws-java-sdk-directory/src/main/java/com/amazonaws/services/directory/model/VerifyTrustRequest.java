@@ -117,4 +117,5 @@ public class VerifyTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
     public VerifyTrustRequest clone() {
         return (VerifyTrustRequest) super.clone();
     }
+
 }

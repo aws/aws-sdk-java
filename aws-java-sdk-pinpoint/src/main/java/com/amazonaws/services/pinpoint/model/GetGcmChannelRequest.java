@@ -95,4 +95,5 @@ public class GetGcmChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetGcmChannelRequest clone() {
         return (GetGcmChannelRequest) super.clone();
     }
+
 }

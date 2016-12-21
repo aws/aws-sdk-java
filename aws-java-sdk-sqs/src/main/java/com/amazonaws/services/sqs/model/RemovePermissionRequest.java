@@ -216,4 +216,5 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     public RemovePermissionRequest clone() {
         return (RemovePermissionRequest) super.clone();
     }
+
 }

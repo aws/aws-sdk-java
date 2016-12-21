@@ -254,4 +254,5 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateDistributionRequest clone() {
         return (UpdateDistributionRequest) super.clone();
     }
+
 }

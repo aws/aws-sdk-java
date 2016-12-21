@@ -176,4 +176,5 @@ public class UpdateHostedZoneCommentRequest extends com.amazonaws.AmazonWebServi
     public UpdateHostedZoneCommentRequest clone() {
         return (UpdateHostedZoneCommentRequest) super.clone();
     }
+
 }

@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSCognitoIdentityProviderModuleInjector",
     "defaultEndpoint" : "https://cognito-idp.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "cognito-idp.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies.</p> <p>This API reference provides information about user pools in Amazon Cognito Your User Pools.</p> <p>For more information, see the Amazon Cognito Documentation.</p>",
     "endpointPrefix" : "cognito-idp",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/cognitoidp",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Cognito Identity Provider",
     "serviceName" : "Amazon Cognito Identity Provider",
@@ -4419,6 +4423,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "CustomAttributes" ],
       "shapeName" : "AddCustomAttributesRequest",
       "unmarshaller" : null,
@@ -4451,6 +4457,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddCustomAttributesResult",
       "unmarshaller" : {
@@ -4833,6 +4841,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "GroupName" ],
       "shapeName" : "AdminAddUserToGroupRequest",
       "unmarshaller" : null,
@@ -4865,6 +4875,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminAddUserToGroupResult",
       "unmarshaller" : {
@@ -5134,6 +5146,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminConfirmSignUpRequest",
       "unmarshaller" : null,
@@ -5166,6 +5180,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminConfirmSignUpResult",
       "unmarshaller" : {
@@ -5541,6 +5557,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminCreateUserConfigType",
       "unmarshaller" : {
@@ -6914,6 +6932,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminCreateUserRequest",
       "unmarshaller" : null,
@@ -7060,6 +7080,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminCreateUserResult",
       "unmarshaller" : {
@@ -7584,6 +7606,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "UserAttributeNames" ],
       "shapeName" : "AdminDeleteUserAttributesRequest",
       "unmarshaller" : null,
@@ -7616,6 +7640,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminDeleteUserAttributesResult",
       "unmarshaller" : {
@@ -7885,6 +7911,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminDeleteUserRequest",
       "unmarshaller" : null,
@@ -7917,6 +7945,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminDeleteUserResult",
       "unmarshaller" : {
@@ -8186,6 +8216,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminDisableUserRequest",
       "unmarshaller" : null,
@@ -8218,6 +8250,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminDisableUserResult",
       "unmarshaller" : {
@@ -8487,6 +8521,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminEnableUserRequest",
       "unmarshaller" : null,
@@ -8519,6 +8555,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminEnableUserResult",
       "unmarshaller" : {
@@ -8901,6 +8939,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "DeviceKey" ],
       "shapeName" : "AdminForgetDeviceRequest",
       "unmarshaller" : null,
@@ -8933,6 +8973,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminForgetDeviceResult",
       "unmarshaller" : {
@@ -9315,6 +9357,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeviceKey", "UserPoolId", "Username" ],
       "shapeName" : "AdminGetDeviceRequest",
       "unmarshaller" : null,
@@ -9461,6 +9505,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Device" ],
       "shapeName" : "AdminGetDeviceResult",
       "unmarshaller" : {
@@ -9730,6 +9776,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminGetUserRequest",
       "unmarshaller" : null,
@@ -10838,6 +10886,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Username" ],
       "shapeName" : "AdminGetUserResult",
       "unmarshaller" : {
@@ -11730,6 +11780,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId", "AuthFlow" ],
       "shapeName" : "AdminInitiateAuthRequest",
       "unmarshaller" : null,
@@ -12357,6 +12409,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminInitiateAuthResult",
       "unmarshaller" : {
@@ -12852,6 +12906,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminListDevicesRequest",
       "unmarshaller" : null,
@@ -13253,6 +13309,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminListDevicesResult",
       "unmarshaller" : {
@@ -13748,6 +13806,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Username", "UserPoolId" ],
       "shapeName" : "AdminListGroupsForUserRequest",
       "unmarshaller" : null,
@@ -14149,6 +14209,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminListGroupsForUserResult",
       "unmarshaller" : {
@@ -14531,6 +14593,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "GroupName" ],
       "shapeName" : "AdminRemoveUserFromGroupRequest",
       "unmarshaller" : null,
@@ -14563,6 +14627,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminRemoveUserFromGroupResult",
       "unmarshaller" : {
@@ -14832,6 +14898,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminResetUserPasswordRequest",
       "unmarshaller" : null,
@@ -14864,6 +14932,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminResetUserPasswordResult",
       "unmarshaller" : {
@@ -15614,6 +15684,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId", "ChallengeName" ],
       "shapeName" : "AdminRespondToAuthChallengeRequest",
       "unmarshaller" : null,
@@ -16241,6 +16313,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminRespondToAuthChallengeResult",
       "unmarshaller" : {
@@ -16765,6 +16839,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "MFAOptions" ],
       "shapeName" : "AdminSetUserSettingsRequest",
       "unmarshaller" : null,
@@ -16797,6 +16873,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminSetUserSettingsResult",
       "unmarshaller" : {
@@ -17292,6 +17370,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "DeviceKey" ],
       "shapeName" : "AdminUpdateDeviceStatusRequest",
       "unmarshaller" : null,
@@ -17324,6 +17404,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminUpdateDeviceStatusResult",
       "unmarshaller" : {
@@ -17848,6 +17930,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username", "UserAttributes" ],
       "shapeName" : "AdminUpdateUserAttributesRequest",
       "unmarshaller" : null,
@@ -17880,6 +17964,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminUpdateUserAttributesResult",
       "unmarshaller" : {
@@ -18149,6 +18235,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "Username" ],
       "shapeName" : "AdminUserGlobalSignOutRequest",
       "unmarshaller" : null,
@@ -18181,6 +18269,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdminUserGlobalSignOutResult",
       "unmarshaller" : {
@@ -18225,6 +18315,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AliasAttributeType",
       "unmarshaller" : {
@@ -18260,6 +18352,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AliasExistsException",
       "unmarshaller" : null,
@@ -18304,6 +18398,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttributeDataType",
       "unmarshaller" : {
@@ -18566,6 +18662,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "AttributeType",
       "unmarshaller" : {
@@ -18616,6 +18714,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AuthFlowType",
       "unmarshaller" : {
@@ -19330,6 +19430,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AuthenticationResultType",
       "unmarshaller" : {
@@ -19386,6 +19488,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChallengeNameType",
       "unmarshaller" : {
@@ -19768,6 +19872,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PreviousPassword", "ProposedPassword" ],
       "shapeName" : "ChangePasswordRequest",
       "unmarshaller" : null,
@@ -19800,6 +19906,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ChangePasswordResult",
       "unmarshaller" : {
@@ -20175,6 +20283,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CodeDeliveryDetailsType",
       "unmarshaller" : {
@@ -20210,6 +20320,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CodeDeliveryFailureException",
       "unmarshaller" : null,
@@ -20242,6 +20354,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CodeMismatchException",
       "unmarshaller" : null,
@@ -20274,6 +20388,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConcurrentModificationException",
       "unmarshaller" : null,
@@ -20766,6 +20882,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken", "DeviceKey" ],
       "shapeName" : "ConfirmDeviceRequest",
       "unmarshaller" : null,
@@ -20912,6 +21030,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmDeviceResult",
       "unmarshaller" : {
@@ -21520,6 +21640,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username", "ConfirmationCode", "Password" ],
       "shapeName" : "ConfirmForgotPasswordRequest",
       "unmarshaller" : null,
@@ -21552,6 +21674,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmForgotPasswordResult",
       "unmarshaller" : {
@@ -22160,6 +22284,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username", "ConfirmationCode" ],
       "shapeName" : "ConfirmSignUpRequest",
       "unmarshaller" : null,
@@ -22192,6 +22318,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmSignUpResult",
       "unmarshaller" : {
@@ -22800,6 +22928,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "CreateGroupRequest",
       "unmarshaller" : null,
@@ -22946,6 +23076,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateGroupResult",
       "unmarshaller" : {
@@ -23328,6 +23460,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "JobName", "UserPoolId", "CloudWatchLogsRoleArn" ],
       "shapeName" : "CreateUserImportJobRequest",
       "unmarshaller" : null,
@@ -23474,6 +23608,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateUserImportJobResult",
       "unmarshaller" : {
@@ -24734,6 +24870,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientName" ],
       "shapeName" : "CreateUserPoolClientRequest",
       "unmarshaller" : null,
@@ -24880,6 +25018,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateUserPoolClientResult",
       "unmarshaller" : {
@@ -27299,6 +27439,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PoolName" ],
       "shapeName" : "CreateUserPoolRequest",
       "unmarshaller" : null,
@@ -27445,6 +27587,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateUserPoolResult",
       "unmarshaller" : {
@@ -27714,6 +27858,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "DeleteGroupRequest",
       "unmarshaller" : null,
@@ -27746,6 +27892,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteGroupResult",
       "unmarshaller" : {
@@ -28157,6 +28305,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserAttributeNames" ],
       "shapeName" : "DeleteUserAttributesRequest",
       "unmarshaller" : null,
@@ -28189,6 +28339,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserAttributesResult",
       "unmarshaller" : {
@@ -28458,6 +28610,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId" ],
       "shapeName" : "DeleteUserPoolClientRequest",
       "unmarshaller" : null,
@@ -28490,6 +28644,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserPoolClientResult",
       "unmarshaller" : {
@@ -28646,6 +28802,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "DeleteUserPoolRequest",
       "unmarshaller" : null,
@@ -28678,6 +28836,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserPoolResult",
       "unmarshaller" : {
@@ -28834,6 +28994,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserRequest",
       "unmarshaller" : null,
@@ -28866,6 +29028,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteUserResult",
       "unmarshaller" : {
@@ -28907,6 +29071,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeliveryMediumType",
       "unmarshaller" : {
@@ -29176,6 +29342,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "JobId" ],
       "shapeName" : "DescribeUserImportJobRequest",
       "unmarshaller" : null,
@@ -29322,6 +29490,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUserImportJobResult",
       "unmarshaller" : {
@@ -29591,6 +29761,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId" ],
       "shapeName" : "DescribeUserPoolClientRequest",
       "unmarshaller" : null,
@@ -29737,6 +29909,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUserPoolClientResult",
       "unmarshaller" : {
@@ -29893,6 +30067,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "DescribeUserPoolRequest",
       "unmarshaller" : null,
@@ -30039,6 +30215,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeUserPoolResult",
       "unmarshaller" : {
@@ -30301,6 +30479,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceConfigurationType",
       "unmarshaller" : {
@@ -30342,6 +30522,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceRememberedStatusType",
       "unmarshaller" : {
@@ -30604,6 +30786,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceSecretVerifierConfigType",
       "unmarshaller" : {
@@ -31347,6 +31531,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeviceType",
       "unmarshaller" : {
@@ -31609,6 +31795,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EmailConfigurationType",
       "unmarshaller" : {
@@ -31644,6 +31832,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredCodeException",
       "unmarshaller" : null,
@@ -31682,6 +31872,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExplicitAuthFlowsType",
       "unmarshaller" : {
@@ -31951,6 +32143,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeviceKey" ],
       "shapeName" : "ForgetDeviceRequest",
       "unmarshaller" : null,
@@ -31983,6 +32177,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ForgetDeviceResult",
       "unmarshaller" : {
@@ -32365,6 +32561,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username" ],
       "shapeName" : "ForgotPasswordRequest",
       "unmarshaller" : null,
@@ -32511,6 +32709,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ForgotPasswordResult",
       "unmarshaller" : {
@@ -32667,6 +32867,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "GetCSVHeaderRequest",
       "unmarshaller" : null,
@@ -33068,6 +33270,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetCSVHeaderResult",
       "unmarshaller" : {
@@ -33337,6 +33541,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DeviceKey" ],
       "shapeName" : "GetDeviceRequest",
       "unmarshaller" : null,
@@ -33483,6 +33689,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Device" ],
       "shapeName" : "GetDeviceResult",
       "unmarshaller" : {
@@ -33752,6 +33960,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "GetGroupRequest",
       "unmarshaller" : null,
@@ -33898,6 +34108,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetGroupResult",
       "unmarshaller" : {
@@ -34167,6 +34379,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName" ],
       "shapeName" : "GetUserAttributeVerificationCodeRequest",
       "unmarshaller" : null,
@@ -34313,6 +34527,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetUserAttributeVerificationCodeResult",
       "unmarshaller" : {
@@ -34469,6 +34685,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetUserRequest",
       "unmarshaller" : null,
@@ -35125,6 +35343,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Username", "UserAttributes" ],
       "shapeName" : "GetUserResult",
       "unmarshaller" : {
@@ -35281,6 +35501,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GlobalSignOutRequest",
       "unmarshaller" : null,
@@ -35313,6 +35535,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GlobalSignOutResult",
       "unmarshaller" : {
@@ -35348,6 +35572,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GroupExistsException",
       "unmarshaller" : null,
@@ -36172,6 +36398,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GroupType",
       "unmarshaller" : {
@@ -36951,6 +37179,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AuthFlow", "ClientId" ],
       "shapeName" : "InitiateAuthRequest",
       "unmarshaller" : null,
@@ -37578,6 +37808,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateAuthResult",
       "unmarshaller" : {
@@ -37613,6 +37845,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
       "unmarshaller" : null,
@@ -37645,6 +37879,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidEmailRoleAccessPolicyException",
       "unmarshaller" : null,
@@ -37677,6 +37913,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLambdaResponseException",
       "unmarshaller" : null,
@@ -37709,6 +37947,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
       "unmarshaller" : null,
@@ -37741,6 +37981,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidPasswordException",
       "unmarshaller" : null,
@@ -37773,6 +38015,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSmsRoleAccessPolicyException",
       "unmarshaller" : null,
@@ -37805,6 +38049,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSmsRoleTrustRelationshipException",
       "unmarshaller" : null,
@@ -37837,6 +38083,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidUserPoolConfigurationException",
       "unmarshaller" : null,
@@ -38774,6 +39022,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LambdaConfigType",
       "unmarshaller" : {
@@ -38809,6 +39059,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -39188,6 +39440,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken" ],
       "shapeName" : "ListDevicesRequest",
       "unmarshaller" : null,
@@ -39589,6 +39843,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDevicesResult",
       "unmarshaller" : {
@@ -39971,6 +40227,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "ListGroupsRequest",
       "unmarshaller" : null,
@@ -40372,6 +40630,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListGroupsResult",
       "unmarshaller" : {
@@ -40754,6 +41014,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "MaxResults" ],
       "shapeName" : "ListUserImportJobsRequest",
       "unmarshaller" : null,
@@ -41155,6 +41417,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUserImportJobsResult",
       "unmarshaller" : {
@@ -41537,6 +41801,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "ListUserPoolClientsRequest",
       "unmarshaller" : null,
@@ -41938,6 +42204,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUserPoolClientsResult",
       "unmarshaller" : {
@@ -42207,6 +42475,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MaxResults" ],
       "shapeName" : "ListUserPoolsRequest",
       "unmarshaller" : null,
@@ -42608,6 +42878,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUserPoolsResult",
       "unmarshaller" : {
@@ -43103,6 +43375,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "GroupName" ],
       "shapeName" : "ListUsersInGroupRequest",
       "unmarshaller" : null,
@@ -43504,6 +43778,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUsersInGroupResult",
       "unmarshaller" : {
@@ -44254,6 +44530,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "ListUsersRequest",
       "unmarshaller" : null,
@@ -44655,6 +44933,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListUsersResult",
       "unmarshaller" : {
@@ -44690,6 +44970,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MFAMethodNotFoundException",
       "unmarshaller" : null,
@@ -44949,6 +45231,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MFAOptionType",
       "unmarshaller" : {
@@ -44990,6 +45274,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MessageActionType",
       "unmarshaller" : {
@@ -45365,6 +45651,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MessageTemplateType",
       "unmarshaller" : {
@@ -45627,6 +45915,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NewDeviceMetadataType",
       "unmarshaller" : {
@@ -45662,6 +45952,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotAuthorizedException",
       "unmarshaller" : null,
@@ -45921,6 +46213,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberAttributeConstraintsType",
       "unmarshaller" : {
@@ -46522,6 +46816,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PasswordPolicyType",
       "unmarshaller" : {
@@ -46557,6 +46853,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PasswordResetRequiredException",
       "unmarshaller" : null,
@@ -46589,6 +46887,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PreconditionNotMetException",
       "unmarshaller" : null,
@@ -46968,6 +47268,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username" ],
       "shapeName" : "ResendConfirmationCodeRequest",
       "unmarshaller" : null,
@@ -47114,6 +47416,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendConfirmationCodeResult",
       "unmarshaller" : {
@@ -47149,6 +47453,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -47783,6 +48089,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "ChallengeName" ],
       "shapeName" : "RespondToAuthChallengeRequest",
       "unmarshaller" : null,
@@ -48410,6 +48718,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RespondToAuthChallengeResult",
       "unmarshaller" : {
@@ -49237,6 +49547,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SchemaAttributeType",
       "unmarshaller" : {
@@ -49648,6 +49960,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken", "MFAOptions" ],
       "shapeName" : "SetUserSettingsRequest",
       "unmarshaller" : null,
@@ -49680,6 +49994,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetUserSettingsResult",
       "unmarshaller" : {
@@ -50685,6 +51001,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientId", "Username", "Password" ],
       "shapeName" : "SignUpRequest",
       "unmarshaller" : null,
@@ -50944,6 +51262,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SignUpResult",
       "unmarshaller" : {
@@ -51206,6 +51526,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SnsCallerArn" ],
       "shapeName" : "SmsConfigurationType",
       "unmarshaller" : {
@@ -51475,6 +51797,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "JobId" ],
       "shapeName" : "StartUserImportJobRequest",
       "unmarshaller" : null,
@@ -51621,6 +51945,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartUserImportJobResult",
       "unmarshaller" : {
@@ -51662,6 +51988,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StatusType",
       "unmarshaller" : {
@@ -51931,6 +52259,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "JobId" ],
       "shapeName" : "StopUserImportJobRequest",
       "unmarshaller" : null,
@@ -52077,6 +52407,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopUserImportJobResult",
       "unmarshaller" : {
@@ -52339,6 +52671,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StringAttributeConstraintsType",
       "unmarshaller" : {
@@ -52374,6 +52708,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyFailedAttemptsException",
       "unmarshaller" : null,
@@ -52406,6 +52742,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyRequestsException",
       "unmarshaller" : null,
@@ -52438,6 +52776,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnexpectedLambdaException",
       "unmarshaller" : null,
@@ -52470,6 +52810,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedUserStateException",
       "unmarshaller" : null,
@@ -52849,6 +53191,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccessToken", "DeviceKey" ],
       "shapeName" : "UpdateDeviceStatusRequest",
       "unmarshaller" : null,
@@ -52881,6 +53225,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDeviceStatusResult",
       "unmarshaller" : {
@@ -53489,6 +53835,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "GroupName", "UserPoolId" ],
       "shapeName" : "UpdateGroupRequest",
       "unmarshaller" : null,
@@ -53635,6 +53983,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateGroupResult",
       "unmarshaller" : {
@@ -54046,6 +54396,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserAttributes" ],
       "shapeName" : "UpdateUserAttributesRequest",
       "unmarshaller" : null,
@@ -54334,6 +54686,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateUserAttributesResult",
       "unmarshaller" : {
@@ -55594,6 +55948,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId", "ClientId" ],
       "shapeName" : "UpdateUserPoolClientRequest",
       "unmarshaller" : null,
@@ -55740,6 +56096,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateUserPoolClientResult",
       "unmarshaller" : {
@@ -57649,6 +58007,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UserPoolId" ],
       "shapeName" : "UpdateUserPoolRequest",
       "unmarshaller" : null,
@@ -57681,6 +58041,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateUserPoolResult",
       "unmarshaller" : {
@@ -57716,6 +58078,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserImportInProgressException",
       "unmarshaller" : null,
@@ -57772,6 +58136,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserImportJobStatusType",
       "unmarshaller" : {
@@ -59277,6 +59643,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserImportJobType",
       "unmarshaller" : {
@@ -59312,6 +59680,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserLambdaValidationException",
       "unmarshaller" : null,
@@ -59344,6 +59714,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserNotConfirmedException",
       "unmarshaller" : null,
@@ -59376,6 +59748,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserNotFoundException",
       "unmarshaller" : null,
@@ -59748,6 +60122,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolClientDescription",
       "unmarshaller" : {
@@ -61340,6 +61716,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolClientType",
       "unmarshaller" : {
@@ -62054,6 +62432,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolDescriptionType",
       "unmarshaller" : {
@@ -62098,6 +62478,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolMfaType",
       "unmarshaller" : {
@@ -62247,6 +62629,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolPolicyType",
       "unmarshaller" : {
@@ -62282,6 +62666,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolTaggingException",
       "unmarshaller" : null,
@@ -65482,6 +65868,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserPoolType",
       "unmarshaller" : {
@@ -65538,6 +65926,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserStatusType",
       "unmarshaller" : {
@@ -66649,6 +67039,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UserType",
       "unmarshaller" : {
@@ -66684,6 +67076,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsernameExistsException",
       "unmarshaller" : null,
@@ -66722,6 +67116,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VerifiedAttributeType",
       "unmarshaller" : {
@@ -67104,6 +67500,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AttributeName", "Code" ],
       "shapeName" : "VerifyUserAttributeRequest",
       "unmarshaller" : null,
@@ -67136,6 +67534,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VerifyUserAttributeResult",
       "unmarshaller" : {
@@ -67154,6 +67554,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

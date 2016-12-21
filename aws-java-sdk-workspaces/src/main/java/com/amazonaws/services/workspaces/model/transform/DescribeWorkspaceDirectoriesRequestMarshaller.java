@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeWorkspaceDirectoriesRequestMarshaller implements
         Marshaller<Request<DescribeWorkspaceDirectoriesRequest>, DescribeWorkspaceDirectoriesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeWorkspaceDirectoriesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeWorkspaceDirectoriesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

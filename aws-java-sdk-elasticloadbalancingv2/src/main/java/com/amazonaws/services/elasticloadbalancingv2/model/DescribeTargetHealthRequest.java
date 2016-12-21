@@ -199,4 +199,5 @@ public class DescribeTargetHealthRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeTargetHealthRequest clone() {
         return (DescribeTargetHealthRequest) super.clone();
     }
+
 }

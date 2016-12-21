@@ -309,4 +309,5 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
     public UpdateMethodRequest clone() {
         return (UpdateMethodRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteHapgRequestMarshaller implements Marshaller<Request<DeleteHapgRequest>, DeleteHapgRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteHapgRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteHapgRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -63,35 +63,36 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.InvalidTagException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.InvalidInputException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.IdempotentParameterMismatchException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.TagLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.InternalServerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PredictorNotMountedException").withModeledClass(
-                            com.amazonaws.services.machinelearning.model.PredictorNotMountedException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.machinelearning.model.AmazonMachineLearningException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.InvalidTagException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.InvalidInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.IdempotentParameterMismatchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.TagLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.InternalServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PredictorNotMountedException").withModeledClass(
+                                    com.amazonaws.services.machinelearning.model.PredictorNotMountedException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.machinelearning.model.AmazonMachineLearningException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Machine Learning. A credentials provider chain will

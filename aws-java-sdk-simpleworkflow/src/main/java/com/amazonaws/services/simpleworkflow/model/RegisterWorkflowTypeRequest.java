@@ -1025,4 +1025,5 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
     public RegisterWorkflowTypeRequest clone() {
         return (RegisterWorkflowTypeRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteSqlInjectionMatchSetRequestMarshaller implements Marshaller<Request<DeleteSqlInjectionMatchSetRequest>, DeleteSqlInjectionMatchSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteSqlInjectionMatchSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteSqlInjectionMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

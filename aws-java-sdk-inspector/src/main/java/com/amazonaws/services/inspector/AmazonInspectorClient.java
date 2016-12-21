@@ -66,35 +66,36 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AssessmentRunInProgressException").withModeledClass(
-                            com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.inspector.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                            com.amazonaws.services.inspector.model.AccessDeniedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                            com.amazonaws.services.inspector.model.InvalidInputException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoSuchEntityException").withModeledClass(
-                            com.amazonaws.services.inspector.model.NoSuchEntityException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AgentsAlreadyRunningAssessmentException").withModeledClass(
-                            com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidCrossAccountRoleException").withModeledClass(
-                            com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
-                            com.amazonaws.services.inspector.model.InternalException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.inspector.model.AmazonInspectorException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssessmentRunInProgressException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.InvalidInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchEntityException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.NoSuchEntityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AgentsAlreadyRunningAssessmentException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCrossAccountRoleException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.InternalException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.inspector.model.AmazonInspectorException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector. A credentials provider chain will be used

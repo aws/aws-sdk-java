@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetDataRetrievalPolicyRequestMarshaller implements Marshaller<Request<GetDataRetrievalPolicyRequest>, GetDataRetrievalPolicyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDataRetrievalPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDataRetrievalPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

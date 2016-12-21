@@ -126,4 +126,5 @@ public class CreateReceiptFilterRequest extends com.amazonaws.AmazonWebServiceRe
     public CreateReceiptFilterRequest clone() {
         return (CreateReceiptFilterRequest) super.clone();
     }
+
 }

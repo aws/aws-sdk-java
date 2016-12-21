@@ -274,4 +274,5 @@ public class ListStackResourcesRequest extends com.amazonaws.AmazonWebServiceReq
     public ListStackResourcesRequest clone() {
         return (ListStackResourcesRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateBasePathMappingRequestMarshaller implements Marshaller<Request<CreateBasePathMappingRequest>, CreateBasePathMappingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateBasePathMappingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateBasePathMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

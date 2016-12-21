@@ -116,4 +116,5 @@ public class CancelCertificateTransferRequest extends com.amazonaws.AmazonWebSer
     public CancelCertificateTransferRequest clone() {
         return (CancelCertificateTransferRequest) super.clone();
     }
+
 }

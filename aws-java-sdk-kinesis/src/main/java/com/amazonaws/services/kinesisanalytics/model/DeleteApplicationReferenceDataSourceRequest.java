@@ -248,4 +248,5 @@ public class DeleteApplicationReferenceDataSourceRequest extends com.amazonaws.A
     public DeleteApplicationReferenceDataSourceRequest clone() {
         return (DeleteApplicationReferenceDataSourceRequest) super.clone();
     }
+
 }

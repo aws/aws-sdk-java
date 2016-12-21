@@ -113,4 +113,5 @@ public class BulkPublishRequest extends com.amazonaws.AmazonWebServiceRequest im
     public BulkPublishRequest clone() {
         return (BulkPublishRequest) super.clone();
     }
+
 }

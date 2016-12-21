@@ -176,4 +176,5 @@ public class CreateThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateThingTypeRequest clone() {
         return (CreateThingTypeRequest) super.clone();
     }
+
 }

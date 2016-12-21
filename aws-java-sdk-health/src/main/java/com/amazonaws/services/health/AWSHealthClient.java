@@ -128,17 +128,18 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withModeledClass(
-                            com.amazonaws.services.health.model.UnsupportedLocaleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationToken").withModeledClass(
-                            com.amazonaws.services.health.model.InvalidPaginationTokenException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.health.model.AWSHealthException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withModeledClass(
+                                    com.amazonaws.services.health.model.UnsupportedLocaleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationToken").withModeledClass(
+                                    com.amazonaws.services.health.model.InvalidPaginationTokenException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.health.model.AWSHealthException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWSHealth. A credentials provider chain will be used that

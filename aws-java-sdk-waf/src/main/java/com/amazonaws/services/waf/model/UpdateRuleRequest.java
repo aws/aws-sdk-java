@@ -415,4 +415,5 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public UpdateRuleRequest clone() {
         return (UpdateRuleRequest) super.clone();
     }
+
 }

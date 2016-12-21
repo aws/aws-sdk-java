@@ -116,4 +116,5 @@ public class GetDevicePoolRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetDevicePoolRequest clone() {
         return (GetDevicePoolRequest) super.clone();
     }
+
 }

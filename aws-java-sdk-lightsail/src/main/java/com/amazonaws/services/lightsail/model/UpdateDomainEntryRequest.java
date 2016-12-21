@@ -167,4 +167,5 @@ public class UpdateDomainEntryRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateDomainEntryRequest clone() {
         return (UpdateDomainEntryRequest) super.clone();
     }
+
 }

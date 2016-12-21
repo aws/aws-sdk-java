@@ -356,4 +356,5 @@ public class GetEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetEventSelectorsRequest clone() {
         return (GetEventSelectorsRequest) super.clone();
     }
+
 }

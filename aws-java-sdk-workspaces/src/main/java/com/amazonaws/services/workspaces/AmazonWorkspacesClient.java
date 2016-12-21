@@ -63,35 +63,36 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.AccessDeniedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedWorkspaceConfigurationException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.InvalidResourceStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValuesException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.InvalidParameterValuesException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("OperationInProgressException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.OperationInProgressException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.ResourceUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
-                            com.amazonaws.services.workspaces.model.ResourceLimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.AccessDeniedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedWorkspaceConfigurationException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.InvalidResourceStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValuesException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.InvalidParameterValuesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationInProgressException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.OperationInProgressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.ResourceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.ResourceLimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon WorkSpaces. A credentials provider chain will be used

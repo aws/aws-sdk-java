@@ -236,4 +236,5 @@ public class CreateTrafficPolicyVersionRequest extends com.amazonaws.AmazonWebSe
     public CreateTrafficPolicyVersionRequest clone() {
         return (CreateTrafficPolicyVersionRequest) super.clone();
     }
+
 }

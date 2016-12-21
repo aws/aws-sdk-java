@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetKeyPairRequestMarshaller implements Marshaller<Request<GetKeyPairRequest>, GetKeyPairRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetKeyPairRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetKeyPairRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

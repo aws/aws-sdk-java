@@ -72,18 +72,19 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("SearchException").withModeledClass(
-                            com.amazonaws.services.cloudsearchdomain.model.SearchException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DocumentServiceException").withModeledClass(
-                            com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SearchException").withModeledClass(
+                                    com.amazonaws.services.cloudsearchdomain.model.SearchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentServiceException").withModeledClass(
+                                    com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudSearch Domain. A credentials provider chain will

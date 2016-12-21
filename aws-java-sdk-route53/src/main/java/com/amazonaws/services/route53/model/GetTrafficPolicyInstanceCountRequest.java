@@ -63,4 +63,5 @@ public class GetTrafficPolicyInstanceCountRequest extends com.amazonaws.AmazonWe
     public GetTrafficPolicyInstanceCountRequest clone() {
         return (GetTrafficPolicyInstanceCountRequest) super.clone();
     }
+
 }

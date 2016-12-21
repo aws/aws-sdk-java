@@ -362,4 +362,5 @@ public class DescribeEcsClustersRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeEcsClustersRequest clone() {
         return (DescribeEcsClustersRequest) super.clone();
     }
+
 }

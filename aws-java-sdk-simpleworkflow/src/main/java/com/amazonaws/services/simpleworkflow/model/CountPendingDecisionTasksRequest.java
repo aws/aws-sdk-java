@@ -167,4 +167,5 @@ public class CountPendingDecisionTasksRequest extends com.amazonaws.AmazonWebSer
     public CountPendingDecisionTasksRequest clone() {
         return (CountPendingDecisionTasksRequest) super.clone();
     }
+
 }

@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class GetComplianceSummaryByConfigRuleRequestMarshaller implements
         Marshaller<Request<GetComplianceSummaryByConfigRuleRequest>, GetComplianceSummaryByConfigRuleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetComplianceSummaryByConfigRuleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetComplianceSummaryByConfigRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

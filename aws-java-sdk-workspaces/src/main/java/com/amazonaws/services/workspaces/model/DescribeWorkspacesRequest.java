@@ -486,4 +486,5 @@ public class DescribeWorkspacesRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeWorkspacesRequest clone() {
         return (DescribeWorkspacesRequest) super.clone();
     }
+
 }

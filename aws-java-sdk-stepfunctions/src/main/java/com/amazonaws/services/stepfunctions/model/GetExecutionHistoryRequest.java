@@ -349,4 +349,5 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     public GetExecutionHistoryRequest clone() {
         return (GetExecutionHistoryRequest) super.clone();
     }
+
 }

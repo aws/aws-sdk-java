@@ -162,4 +162,5 @@ public class DescribeStorediSCSIVolumesRequest extends com.amazonaws.AmazonWebSe
     public DescribeStorediSCSIVolumesRequest clone() {
         return (DescribeStorediSCSIVolumesRequest) super.clone();
     }
+
 }

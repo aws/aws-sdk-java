@@ -252,4 +252,5 @@ public class ModifyReplicationSubnetGroupRequest extends com.amazonaws.AmazonWeb
     public ModifyReplicationSubnetGroupRequest clone() {
         return (ModifyReplicationSubnetGroupRequest) super.clone();
     }
+
 }

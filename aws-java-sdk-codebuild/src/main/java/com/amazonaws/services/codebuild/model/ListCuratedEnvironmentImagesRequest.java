@@ -60,4 +60,5 @@ public class ListCuratedEnvironmentImagesRequest extends com.amazonaws.AmazonWeb
     public ListCuratedEnvironmentImagesRequest clone() {
         return (ListCuratedEnvironmentImagesRequest) super.clone();
     }
+
 }

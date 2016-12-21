@@ -130,4 +130,5 @@ public class CreateSegmentRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateSegmentRequest clone() {
         return (CreateSegmentRequest) super.clone();
     }
+
 }

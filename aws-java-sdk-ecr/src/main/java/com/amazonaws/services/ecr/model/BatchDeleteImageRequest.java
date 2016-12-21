@@ -269,4 +269,5 @@ public class BatchDeleteImageRequest extends com.amazonaws.AmazonWebServiceReque
     public BatchDeleteImageRequest clone() {
         return (BatchDeleteImageRequest) super.clone();
     }
+
 }

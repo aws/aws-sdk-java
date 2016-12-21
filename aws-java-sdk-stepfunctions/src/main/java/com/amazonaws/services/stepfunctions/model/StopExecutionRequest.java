@@ -220,4 +220,5 @@ public class StopExecutionRequest extends com.amazonaws.AmazonWebServiceRequest 
     public StopExecutionRequest clone() {
         return (StopExecutionRequest) super.clone();
     }
+
 }

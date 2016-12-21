@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetDirectoryLimitsRequestMarshaller implements Marshaller<Request<GetDirectoryLimitsRequest>, GetDirectoryLimitsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDirectoryLimitsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDirectoryLimitsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

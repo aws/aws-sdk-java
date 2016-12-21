@@ -464,4 +464,5 @@ public class DescribeStackResourcesRequest extends com.amazonaws.AmazonWebServic
     public DescribeStackResourcesRequest clone() {
         return (DescribeStackResourcesRequest) super.clone();
     }
+
 }

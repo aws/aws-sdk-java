@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2014-05-30",
     "endpointPrefix" : "cloudhsm",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AddTagsToResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>",
       "errors" : [ {
@@ -56,7 +58,8 @@
       }
     },
     "CreateHapg" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",
       "errors" : [ {
@@ -98,7 +101,8 @@
       }
     },
     "CreateHsm" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged for each HSM instance that you create with the <a>CreateHsm</a> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href=\"https://console.aws.amazon.com/support/home#/\">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> </important>",
       "errors" : [ {
@@ -140,7 +144,8 @@
       }
     },
     "CreateLunaClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates an HSM client.</p>",
       "errors" : [ {
@@ -182,7 +187,8 @@
       }
     },
     "DeleteHapg" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a high-availability partition group.</p>",
       "errors" : [ {
@@ -224,7 +230,8 @@
       }
     },
     "DeleteHsm" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>",
       "errors" : [ {
@@ -266,7 +273,8 @@
       }
     },
     "DeleteLunaClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a client.</p>",
       "errors" : [ {
@@ -308,7 +316,8 @@
       }
     },
     "DescribeHapg" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about a high-availability partition group.</p>",
       "errors" : [ {
@@ -350,7 +359,8 @@
       }
     },
     "DescribeHsm" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>",
       "errors" : [ {
@@ -392,7 +402,8 @@
       }
     },
     "DescribeLunaClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves information about an HSM client.</p>",
       "errors" : [ {
@@ -434,7 +445,8 @@
       }
     },
     "GetConfig" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>",
       "errors" : [ {
@@ -476,7 +488,8 @@
       }
     },
     "ListAvailableZones" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>",
       "errors" : [ {
@@ -518,7 +531,8 @@
       }
     },
     "ListHapgs" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the high-availability partition groups for the account.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHapgs</a> to retrieve the next set of items.</p>",
       "errors" : [ {
@@ -560,7 +574,8 @@
       }
     },
     "ListHsms" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListHsms</a> to retrieve the next set of items.</p>",
       "errors" : [ {
@@ -602,7 +617,8 @@
       }
     },
     "ListLunaClients" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <i>NextToken</i> member. If more results are available, the <i>NextToken</i> member of the response contains a token that you pass in the next call to <a>ListLunaClients</a> to retrieve the next set of items.</p>",
       "errors" : [ {
@@ -644,7 +660,8 @@
       }
     },
     "ListTagsForResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>",
       "errors" : [ {
@@ -686,7 +703,8 @@
       }
     },
     "ModifyHapg" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Modifies an existing high-availability partition group.</p>",
       "errors" : [ {
@@ -728,7 +746,8 @@
       }
     },
     "ModifyHsm" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Modifies an HSM.</p> <important> <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p> </important>",
       "errors" : [ {
@@ -770,7 +789,8 @@
       }
     },
     "ModifyLunaClient" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>",
       "errors" : [ {
@@ -800,7 +820,8 @@
       }
     },
     "RemoveTagsFromResource" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
       "errors" : [ {

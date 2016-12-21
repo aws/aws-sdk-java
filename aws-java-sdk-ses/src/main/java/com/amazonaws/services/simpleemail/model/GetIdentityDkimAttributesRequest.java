@@ -152,4 +152,5 @@ public class GetIdentityDkimAttributesRequest extends com.amazonaws.AmazonWebSer
     public GetIdentityDkimAttributesRequest clone() {
         return (GetIdentityDkimAttributesRequest) super.clone();
     }
+
 }

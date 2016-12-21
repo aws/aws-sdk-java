@@ -121,4 +121,5 @@ public class DeregisterJobDefinitionRequest extends com.amazonaws.AmazonWebServi
     public DeregisterJobDefinitionRequest clone() {
         return (DeregisterJobDefinitionRequest) super.clone();
     }
+
 }

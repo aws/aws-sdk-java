@@ -114,4 +114,5 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
     public StopAssessmentRunRequest clone() {
         return (StopAssessmentRunRequest) super.clone();
     }
+
 }

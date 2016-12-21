@@ -264,4 +264,5 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateUsageRequest clone() {
         return (UpdateUsageRequest) super.clone();
     }
+
 }

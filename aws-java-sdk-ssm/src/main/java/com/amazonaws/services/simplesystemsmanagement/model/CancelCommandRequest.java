@@ -209,4 +209,5 @@ public class CancelCommandRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CancelCommandRequest clone() {
         return (CancelCommandRequest) super.clone();
     }
+
 }

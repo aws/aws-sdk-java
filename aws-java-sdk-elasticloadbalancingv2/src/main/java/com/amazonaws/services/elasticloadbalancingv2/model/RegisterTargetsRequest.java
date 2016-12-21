@@ -208,4 +208,5 @@ public class RegisterTargetsRequest extends com.amazonaws.AmazonWebServiceReques
     public RegisterTargetsRequest clone() {
         return (RegisterTargetsRequest) super.clone();
     }
+
 }

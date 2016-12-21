@@ -275,4 +275,5 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateAliasRequest clone() {
         return (UpdateAliasRequest) super.clone();
     }
+
 }

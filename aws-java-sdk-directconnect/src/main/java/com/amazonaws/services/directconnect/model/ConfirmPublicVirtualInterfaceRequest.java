@@ -97,4 +97,5 @@ public class ConfirmPublicVirtualInterfaceRequest extends com.amazonaws.AmazonWe
     public ConfirmPublicVirtualInterfaceRequest clone() {
         return (ConfirmPublicVirtualInterfaceRequest) super.clone();
     }
+
 }

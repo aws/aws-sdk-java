@@ -97,4 +97,5 @@ public class DisableGatewayRequest extends com.amazonaws.AmazonWebServiceRequest
     public DisableGatewayRequest clone() {
         return (DisableGatewayRequest) super.clone();
     }
+
 }

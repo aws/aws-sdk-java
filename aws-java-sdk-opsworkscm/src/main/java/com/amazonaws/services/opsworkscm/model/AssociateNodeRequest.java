@@ -191,4 +191,5 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     public AssociateNodeRequest clone() {
         return (AssociateNodeRequest) super.clone();
     }
+
 }

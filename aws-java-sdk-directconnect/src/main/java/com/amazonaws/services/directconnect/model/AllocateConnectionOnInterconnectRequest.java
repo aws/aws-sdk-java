@@ -544,4 +544,5 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
     public AllocateConnectionOnInterconnectRequest clone() {
         return (AllocateConnectionOnInterconnectRequest) super.clone();
     }
+
 }

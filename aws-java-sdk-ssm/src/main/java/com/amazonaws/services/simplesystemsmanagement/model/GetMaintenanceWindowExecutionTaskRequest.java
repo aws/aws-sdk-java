@@ -167,4 +167,5 @@ public class GetMaintenanceWindowExecutionTaskRequest extends com.amazonaws.Amaz
     public GetMaintenanceWindowExecutionTaskRequest clone() {
         return (GetMaintenanceWindowExecutionTaskRequest) super.clone();
     }
+
 }

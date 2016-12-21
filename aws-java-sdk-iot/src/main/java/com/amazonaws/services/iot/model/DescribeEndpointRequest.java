@@ -62,4 +62,5 @@ public class DescribeEndpointRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeEndpointRequest clone() {
         return (DescribeEndpointRequest) super.clone();
     }
+
 }

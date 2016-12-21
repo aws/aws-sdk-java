@@ -322,4 +322,5 @@ public class AddCommunicationToCaseRequest extends com.amazonaws.AmazonWebServic
     public AddCommunicationToCaseRequest clone() {
         return (AddCommunicationToCaseRequest) super.clone();
     }
+
 }

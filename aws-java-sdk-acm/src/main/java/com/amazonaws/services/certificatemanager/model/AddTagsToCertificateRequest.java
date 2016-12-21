@@ -253,4 +253,5 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
     public AddTagsToCertificateRequest clone() {
         return (AddTagsToCertificateRequest) super.clone();
     }
+
 }

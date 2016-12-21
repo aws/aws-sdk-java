@@ -642,4 +642,5 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateTableRequest clone() {
         return (UpdateTableRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class DisassociateElasticIpRequest extends com.amazonaws.AmazonWebService
     public DisassociateElasticIpRequest clone() {
         return (DisassociateElasticIpRequest) super.clone();
     }
+
 }

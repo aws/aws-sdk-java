@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeFileSystemsRequestMarshaller implements Marshaller<Request<DescribeFileSystemsRequest>, DescribeFileSystemsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeFileSystemsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeFileSystemsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

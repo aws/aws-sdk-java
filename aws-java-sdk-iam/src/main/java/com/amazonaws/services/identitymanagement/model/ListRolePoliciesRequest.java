@@ -319,4 +319,5 @@ public class ListRolePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     public ListRolePoliciesRequest clone() {
         return (ListRolePoliciesRequest) super.clone();
     }
+
 }

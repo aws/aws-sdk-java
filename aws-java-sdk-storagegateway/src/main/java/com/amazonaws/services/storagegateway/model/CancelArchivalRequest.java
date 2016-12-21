@@ -150,4 +150,5 @@ public class CancelArchivalRequest extends com.amazonaws.AmazonWebServiceRequest
     public CancelArchivalRequest clone() {
         return (CancelArchivalRequest) super.clone();
     }
+
 }

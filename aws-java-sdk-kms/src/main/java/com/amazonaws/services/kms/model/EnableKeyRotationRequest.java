@@ -202,4 +202,5 @@ public class EnableKeyRotationRequest extends com.amazonaws.AmazonWebServiceRequ
     public EnableKeyRotationRequest clone() {
         return (EnableKeyRotationRequest) super.clone();
     }
+
 }

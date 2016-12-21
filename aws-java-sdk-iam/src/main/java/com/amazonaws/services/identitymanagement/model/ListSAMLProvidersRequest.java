@@ -60,4 +60,5 @@ public class ListSAMLProvidersRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListSAMLProvidersRequest clone() {
         return (ListSAMLProvidersRequest) super.clone();
     }
+
 }

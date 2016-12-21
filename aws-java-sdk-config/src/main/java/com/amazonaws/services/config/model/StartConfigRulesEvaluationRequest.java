@@ -147,4 +147,5 @@ public class StartConfigRulesEvaluationRequest extends com.amazonaws.AmazonWebSe
     public StartConfigRulesEvaluationRequest clone() {
         return (StartConfigRulesEvaluationRequest) super.clone();
     }
+
 }

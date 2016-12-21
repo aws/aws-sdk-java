@@ -134,6 +134,7 @@
     "cucumberModuleInjectorClassName" : "AmazonSimpleDBModuleInjector",
     "defaultEndpoint" : "sdb.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "sdb.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "Amazon SimpleDB is a web service providing the core database functions of data indexing and querying in the cloud. By offloading the time and effort associated with building and operating a web-scale database, SimpleDB provides developers the freedom to focus on application development. <p> A traditional, clustered relational database requires a sizable upfront capital outlay, is complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven computing environment, are able to scale instantly, and pay only for what they use. </p> <p> Visit <a href=\"http://aws.amazon.com/simpledb/\">http://aws.amazon.com/simpledb/</a> for more information. </p>",
     "endpointPrefix" : "sdb",
     "hasApiWithStreamInput" : false,
@@ -144,7 +145,10 @@
     "packagePath" : "com/amazonaws/services/simpledb",
     "protocol" : "query",
     "protocolDefaultExceptionUmarshallerImpl" : "StandardErrorUnmarshaller",
+    "protocolFactory" : null,
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon SimpleDB",
     "serviceName" : "Amazon SimpleDB",
@@ -1062,6 +1066,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
       "shapeName" : "Attribute",
       "unmarshaller" : {
@@ -1211,6 +1217,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AttributeDoesNotExistException",
       "unmarshaller" : null,
@@ -1619,6 +1627,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Items" ],
       "shapeName" : "BatchDeleteAttributesRequest",
       "unmarshaller" : null,
@@ -1651,6 +1661,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchDeleteAttributesResult",
       "unmarshaller" : {
@@ -2062,6 +2074,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Items" ],
       "shapeName" : "BatchPutAttributesRequest",
       "unmarshaller" : null,
@@ -2094,6 +2108,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchPutAttributesResult",
       "unmarshaller" : {
@@ -2250,6 +2266,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "CreateDomainRequest",
       "unmarshaller" : null,
@@ -2282,6 +2300,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDomainResult",
       "unmarshaller" : {
@@ -2686,6 +2706,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "DeletableItem",
       "unmarshaller" : {
@@ -3323,6 +3345,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ItemName" ],
       "shapeName" : "DeleteAttributesRequest",
       "unmarshaller" : null,
@@ -3355,6 +3379,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteAttributesResult",
       "unmarshaller" : {
@@ -3511,6 +3537,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DeleteDomainRequest",
       "unmarshaller" : null,
@@ -3543,6 +3571,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteDomainResult",
       "unmarshaller" : {
@@ -3699,6 +3729,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DomainMetadataRequest",
       "unmarshaller" : null,
@@ -4523,6 +4555,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainMetadataResult",
       "unmarshaller" : {
@@ -4672,6 +4706,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateItemNameException",
       "unmarshaller" : null,
@@ -5306,6 +5342,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ItemName" ],
       "shapeName" : "GetAttributesRequest",
       "unmarshaller" : null,
@@ -5594,6 +5632,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetAttributesResult",
       "unmarshaller" : {
@@ -5743,6 +5783,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -5889,6 +5931,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNumberPredicatesException",
       "unmarshaller" : null,
@@ -6035,6 +6079,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNumberValueTestsException",
       "unmarshaller" : null,
@@ -6181,6 +6227,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterValueException",
       "unmarshaller" : null,
@@ -6327,6 +6375,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidQueryExpressionException",
       "unmarshaller" : null,
@@ -6841,6 +6891,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Attributes" ],
       "shapeName" : "Item",
       "unmarshaller" : {
@@ -7110,6 +7162,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDomainsRequest",
       "unmarshaller" : null,
@@ -7511,6 +7565,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDomainsResult",
       "unmarshaller" : {
@@ -7660,6 +7716,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingParameterException",
       "unmarshaller" : null,
@@ -7806,6 +7864,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoSuchDomainException",
       "unmarshaller" : null,
@@ -7952,6 +8012,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberDomainAttributesExceededException",
       "unmarshaller" : null,
@@ -8098,6 +8160,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberDomainBytesExceededException",
       "unmarshaller" : null,
@@ -8244,6 +8308,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberDomainsExceededException",
       "unmarshaller" : null,
@@ -8390,6 +8456,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberItemAttributesExceededException",
       "unmarshaller" : null,
@@ -8536,6 +8604,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberSubmittedAttributesExceededException",
       "unmarshaller" : null,
@@ -8682,6 +8752,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NumberSubmittedItemsExceededException",
       "unmarshaller" : null,
@@ -9316,6 +9388,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ItemName", "Attributes" ],
       "shapeName" : "PutAttributesRequest",
       "unmarshaller" : null,
@@ -9348,6 +9422,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutAttributesResult",
       "unmarshaller" : {
@@ -9723,6 +9799,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
       "shapeName" : "ReplaceableAttribute",
       "unmarshaller" : {
@@ -10127,6 +10205,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Attributes" ],
       "shapeName" : "ReplaceableItem",
       "unmarshaller" : {
@@ -10276,6 +10356,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestTimeoutException",
       "unmarshaller" : null,
@@ -10655,6 +10737,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SelectExpression" ],
       "shapeName" : "SelectRequest",
       "unmarshaller" : null,
@@ -11056,6 +11140,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SelectResult",
       "unmarshaller" : {
@@ -11205,6 +11291,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyRequestedAttributesException",
       "unmarshaller" : null,
@@ -11577,6 +11665,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateCondition",
       "unmarshaller" : {
@@ -11595,6 +11685,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

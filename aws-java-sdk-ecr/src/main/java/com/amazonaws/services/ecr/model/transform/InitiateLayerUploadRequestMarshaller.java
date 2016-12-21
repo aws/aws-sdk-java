@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class InitiateLayerUploadRequestMarshaller implements Marshaller<Request<InitiateLayerUploadRequest>, InitiateLayerUploadRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public InitiateLayerUploadRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public InitiateLayerUploadRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

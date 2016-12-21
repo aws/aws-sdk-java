@@ -114,4 +114,5 @@ public class DescribeSecurityConfigurationRequest extends com.amazonaws.AmazonWe
     public DescribeSecurityConfigurationRequest clone() {
         return (DescribeSecurityConfigurationRequest) super.clone();
     }
+
 }

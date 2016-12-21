@@ -95,6 +95,7 @@
     "cucumberModuleInjectorClassName" : "AWSCloudHSMModuleInjector",
     "defaultEndpoint" : "https://cloudhsm.us-east-1.amazonaws.com/",
     "defaultEndpointWithoutHttpProtocol" : "cloudhsm.us-east-1.amazonaws.com/",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS CloudHSM Service</fullname>",
     "endpointPrefix" : "cloudhsm",
     "hasApiWithStreamInput" : false,
@@ -105,7 +106,10 @@
     "packagePath" : "com/amazonaws/services/cloudhsm",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "CloudHSM",
     "serviceFullName" : "Amazon CloudHSM",
     "serviceName" : "CloudHSM",
@@ -1288,6 +1292,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagList" ],
       "shapeName" : "AddTagsToResourceRequest",
       "unmarshaller" : null,
@@ -1434,6 +1440,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "AddTagsToResourceResult",
       "unmarshaller" : {
@@ -1475,6 +1483,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ClientVersion",
       "unmarshaller" : {
@@ -1510,6 +1520,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudHsmInternalException",
       "unmarshaller" : null,
@@ -1551,6 +1563,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudHsmObjectState",
       "unmarshaller" : {
@@ -1586,6 +1600,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CloudHsmServiceException",
       "unmarshaller" : null,
@@ -1739,6 +1755,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Label" ],
       "shapeName" : "CreateHapgRequest",
       "unmarshaller" : null,
@@ -1885,6 +1903,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateHapgResult",
       "unmarshaller" : {
@@ -2832,6 +2852,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SubnetId", "SshKey", "IamRoleArn", "SubscriptionType" ],
       "shapeName" : "CreateHsmRequest",
       "unmarshaller" : null,
@@ -2978,6 +3000,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateHsmResult",
       "unmarshaller" : {
@@ -3247,6 +3271,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Certificate" ],
       "shapeName" : "CreateLunaClientRequest",
       "unmarshaller" : null,
@@ -3393,6 +3419,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateLunaClientResult",
       "unmarshaller" : {
@@ -3549,6 +3577,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
       "shapeName" : "DeleteHapgRequest",
       "unmarshaller" : null,
@@ -3695,6 +3725,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "DeleteHapgResult",
       "unmarshaller" : {
@@ -3851,6 +3883,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "HsmArn" ],
       "shapeName" : "DeleteHsmRequest",
       "unmarshaller" : null,
@@ -3997,6 +4031,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "DeleteHsmResult",
       "unmarshaller" : {
@@ -4153,6 +4189,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn" ],
       "shapeName" : "DeleteLunaClientRequest",
       "unmarshaller" : null,
@@ -4299,6 +4337,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "DeleteLunaClientResult",
       "unmarshaller" : {
@@ -4455,6 +4495,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
       "shapeName" : "DescribeHapgRequest",
       "unmarshaller" : null,
@@ -6073,6 +6115,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeHapgResult",
       "unmarshaller" : {
@@ -6342,6 +6386,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeHsmRequest",
       "unmarshaller" : null,
@@ -8890,6 +8936,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeHsmResult",
       "unmarshaller" : {
@@ -9159,6 +9207,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLunaClientRequest",
       "unmarshaller" : null,
@@ -9757,6 +9807,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLunaClientResult",
       "unmarshaller" : {
@@ -10281,6 +10333,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn", "ClientVersion", "HapgList" ],
       "shapeName" : "GetConfigRequest",
       "unmarshaller" : null,
@@ -10653,6 +10707,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetConfigResult",
       "unmarshaller" : {
@@ -10709,6 +10765,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "HsmStatus",
       "unmarshaller" : {
@@ -10744,6 +10802,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRequestException",
       "unmarshaller" : null,
@@ -10783,6 +10843,8 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAvailableZonesRequest",
       "unmarshaller" : null,
@@ -11071,6 +11133,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAvailableZonesResult",
       "unmarshaller" : {
@@ -11227,6 +11291,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListHapgsRequest",
       "unmarshaller" : null,
@@ -11628,6 +11694,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "HapgList" ],
       "shapeName" : "ListHapgsResult",
       "unmarshaller" : {
@@ -11784,6 +11852,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListHsmsRequest",
       "unmarshaller" : null,
@@ -12185,6 +12255,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListHsmsResult",
       "unmarshaller" : {
@@ -12341,6 +12413,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLunaClientsRequest",
       "unmarshaller" : null,
@@ -12742,6 +12816,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientList" ],
       "shapeName" : "ListLunaClientsResult",
       "unmarshaller" : {
@@ -12898,6 +12974,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
       "shapeName" : "ListTagsForResourceRequest",
       "unmarshaller" : null,
@@ -13186,6 +13264,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TagList" ],
       "shapeName" : "ListTagsForResourceResult",
       "unmarshaller" : {
@@ -13710,6 +13790,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
       "shapeName" : "ModifyHapgRequest",
       "unmarshaller" : null,
@@ -13856,6 +13938,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyHapgResult",
       "unmarshaller" : {
@@ -14577,6 +14661,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "HsmArn" ],
       "shapeName" : "ModifyHsmRequest",
       "unmarshaller" : null,
@@ -14723,6 +14809,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyHsmResult",
       "unmarshaller" : {
@@ -14992,6 +15080,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn", "Certificate" ],
       "shapeName" : "ModifyLunaClientRequest",
       "unmarshaller" : null,
@@ -15138,6 +15228,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ModifyLunaClientResult",
       "unmarshaller" : {
@@ -15549,6 +15641,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagKeyList" ],
       "shapeName" : "RemoveTagsFromResourceRequest",
       "unmarshaller" : null,
@@ -15695,6 +15789,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
       "shapeName" : "RemoveTagsFromResourceResult",
       "unmarshaller" : {
@@ -15733,6 +15829,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscriptionType",
       "unmarshaller" : {
@@ -15995,6 +16093,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -16013,6 +16113,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

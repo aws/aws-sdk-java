@@ -835,4 +835,5 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     public UpdateDeploymentGroupRequest clone() {
         return (UpdateDeploymentGroupRequest) super.clone();
     }
+
 }

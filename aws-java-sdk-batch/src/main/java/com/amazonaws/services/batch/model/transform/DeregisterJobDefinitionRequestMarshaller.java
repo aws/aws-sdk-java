@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeregisterJobDefinitionRequestMarshaller implements Marshaller<Request<DeregisterJobDefinitionRequest>, DeregisterJobDefinitionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeregisterJobDefinitionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeregisterJobDefinitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

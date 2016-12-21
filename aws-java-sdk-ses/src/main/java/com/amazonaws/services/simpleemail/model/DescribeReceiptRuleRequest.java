@@ -172,4 +172,5 @@ public class DescribeReceiptRuleRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeReceiptRuleRequest clone() {
         return (DescribeReceiptRuleRequest) super.clone();
     }
+
 }

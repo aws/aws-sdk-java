@@ -134,4 +134,5 @@ public class GetStreamingDistributionRequest extends com.amazonaws.AmazonWebServ
     public GetStreamingDistributionRequest clone() {
         return (GetStreamingDistributionRequest) super.clone();
     }
+
 }

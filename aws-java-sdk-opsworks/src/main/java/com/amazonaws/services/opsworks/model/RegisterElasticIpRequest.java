@@ -167,4 +167,5 @@ public class RegisterElasticIpRequest extends com.amazonaws.AmazonWebServiceRequ
     public RegisterElasticIpRequest clone() {
         return (RegisterElasticIpRequest) super.clone();
     }
+
 }

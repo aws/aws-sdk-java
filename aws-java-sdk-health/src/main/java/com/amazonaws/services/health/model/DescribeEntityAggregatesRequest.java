@@ -153,4 +153,5 @@ public class DescribeEntityAggregatesRequest extends com.amazonaws.AmazonWebServ
     public DescribeEntityAggregatesRequest clone() {
         return (DescribeEntityAggregatesRequest) super.clone();
     }
+
 }

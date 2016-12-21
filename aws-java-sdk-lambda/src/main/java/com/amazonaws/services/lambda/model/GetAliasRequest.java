@@ -174,4 +174,5 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public GetAliasRequest clone() {
         return (GetAliasRequest) super.clone();
     }
+
 }

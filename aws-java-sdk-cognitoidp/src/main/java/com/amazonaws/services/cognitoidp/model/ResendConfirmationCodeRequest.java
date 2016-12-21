@@ -229,4 +229,5 @@ public class ResendConfirmationCodeRequest extends com.amazonaws.AmazonWebServic
     public ResendConfirmationCodeRequest clone() {
         return (ResendConfirmationCodeRequest) super.clone();
     }
+
 }

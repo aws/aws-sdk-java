@@ -243,4 +243,5 @@ public class ListOutgoingCertificatesRequest extends com.amazonaws.AmazonWebServ
     public ListOutgoingCertificatesRequest clone() {
         return (ListOutgoingCertificatesRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class DescribeMetricCollectionTypesRequest extends com.amazonaws.AmazonWe
     public DescribeMetricCollectionTypesRequest clone() {
         return (DescribeMetricCollectionTypesRequest) super.clone();
     }
+
 }

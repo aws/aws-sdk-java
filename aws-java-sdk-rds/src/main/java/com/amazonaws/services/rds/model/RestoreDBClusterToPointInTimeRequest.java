@@ -1451,4 +1451,5 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     public RestoreDBClusterToPointInTimeRequest clone() {
         return (RestoreDBClusterToPointInTimeRequest) super.clone();
     }
+
 }

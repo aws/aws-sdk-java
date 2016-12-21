@@ -65,33 +65,34 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.NotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.UnauthorizedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.ConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.ServiceUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.TooManyRequestsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                            com.amazonaws.services.apigateway.model.BadRequestException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.apigateway.model.AmazonApiGatewayException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.UnauthorizedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.ConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.TooManyRequestsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
+                                    com.amazonaws.services.apigateway.model.BadRequestException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.apigateway.model.AmazonApiGatewayException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon API Gateway. A credentials provider chain will be

@@ -282,4 +282,5 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
     public DescribeFleetCapacityRequest clone() {
         return (DescribeFleetCapacityRequest) super.clone();
     }
+
 }

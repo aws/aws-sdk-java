@@ -266,4 +266,5 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     public SetTopicAttributesRequest clone() {
         return (SetTopicAttributesRequest) super.clone();
     }
+
 }

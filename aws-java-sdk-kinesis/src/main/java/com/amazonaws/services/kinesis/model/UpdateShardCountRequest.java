@@ -253,4 +253,5 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateShardCountRequest clone() {
         return (UpdateShardCountRequest) super.clone();
     }
+
 }

@@ -194,4 +194,5 @@ public class DeactivatePipelineRequest extends com.amazonaws.AmazonWebServiceReq
     public DeactivatePipelineRequest clone() {
         return (DeactivatePipelineRequest) super.clone();
     }
+
 }

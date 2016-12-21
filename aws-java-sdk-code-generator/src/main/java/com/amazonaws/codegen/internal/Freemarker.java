@@ -181,6 +181,22 @@ public class Freemarker {
         return getTemplate(templateConfig.getCucumberPropertiesFile());
     }
 
+    public Template getApiGatewayPomTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayPomTemplate());
+    }
+
+    public Template getApiGatewayGradleBuildTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayGradleBuildTemplate());
+    }
+
+    public Template getApiGatewayGradleSettingsTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayGradleSettingsTemplate());
+    }
+
+    public Template getApiGatewayReadmeTemplate() throws IOException {
+        return getTemplate(templateConfig.getApiGatewayReadmeTemplate());
+    }
+
     public Template getShapeTemplate(ShapeModel shape) throws IOException {
         switch (shape.getShapeType()) {
         case Request:
@@ -218,7 +234,9 @@ public class Freemarker {
 
     public Template getWaiterTemplate() throws IOException{
         return getTemplate(templateConfig.getWaiterClass());
+    }
 
-
+    public Template getCustomAuthorizerTemplate() throws IOException{
+        return getTemplate(templateConfig.getCustomRequestSignerClass());
     }
 }

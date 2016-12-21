@@ -759,4 +759,5 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     public RegisterTaskWithMaintenanceWindowRequest clone() {
         return (RegisterTaskWithMaintenanceWindowRequest) super.clone();
     }
+
 }

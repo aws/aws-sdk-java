@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListOnPremisesInstancesRequestMarshaller implements Marshaller<Request<ListOnPremisesInstancesRequest>, ListOnPremisesInstancesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListOnPremisesInstancesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListOnPremisesInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

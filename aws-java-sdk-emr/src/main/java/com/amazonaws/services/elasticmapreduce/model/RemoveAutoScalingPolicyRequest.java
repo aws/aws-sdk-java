@@ -174,4 +174,5 @@ public class RemoveAutoScalingPolicyRequest extends com.amazonaws.AmazonWebServi
     public RemoveAutoScalingPolicyRequest clone() {
         return (RemoveAutoScalingPolicyRequest) super.clone();
     }
+
 }

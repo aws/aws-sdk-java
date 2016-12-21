@@ -266,4 +266,5 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
     public ListTrafficPoliciesRequest clone() {
         return (ListTrafficPoliciesRequest) super.clone();
     }
+
 }

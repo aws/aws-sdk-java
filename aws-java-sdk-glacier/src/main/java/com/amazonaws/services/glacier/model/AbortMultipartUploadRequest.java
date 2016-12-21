@@ -291,4 +291,5 @@ public class AbortMultipartUploadRequest extends com.amazonaws.AmazonWebServiceR
     public AbortMultipartUploadRequest clone() {
         return (AbortMultipartUploadRequest) super.clone();
     }
+
 }

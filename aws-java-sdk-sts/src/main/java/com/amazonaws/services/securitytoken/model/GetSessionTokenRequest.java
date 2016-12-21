@@ -343,4 +343,5 @@ public class GetSessionTokenRequest extends com.amazonaws.AmazonWebServiceReques
     public GetSessionTokenRequest clone() {
         return (GetSessionTokenRequest) super.clone();
     }
+
 }

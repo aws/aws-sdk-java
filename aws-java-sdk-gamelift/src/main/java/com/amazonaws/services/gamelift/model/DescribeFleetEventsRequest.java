@@ -370,4 +370,5 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeFleetEventsRequest clone() {
         return (DescribeFleetEventsRequest) super.clone();
     }
+
 }

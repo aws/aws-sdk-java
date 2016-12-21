@@ -116,4 +116,5 @@ public class GetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
     public GetEndpointAttributesRequest clone() {
         return (GetEndpointAttributesRequest) super.clone();
     }
+
 }

@@ -227,4 +227,5 @@ public class DescribeInstanceAssociationsStatusRequest extends com.amazonaws.Ama
     public DescribeInstanceAssociationsStatusRequest clone() {
         return (DescribeInstanceAssociationsStatusRequest) super.clone();
     }
+
 }

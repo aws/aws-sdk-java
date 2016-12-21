@@ -223,4 +223,5 @@ public class DeregisterInstancesFromLoadBalancerRequest extends com.amazonaws.Am
     public DeregisterInstancesFromLoadBalancerRequest clone() {
         return (DeregisterInstancesFromLoadBalancerRequest) super.clone();
     }
+
 }

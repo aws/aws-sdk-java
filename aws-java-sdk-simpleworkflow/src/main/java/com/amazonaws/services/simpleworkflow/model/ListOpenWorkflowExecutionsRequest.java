@@ -626,4 +626,5 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
     public ListOpenWorkflowExecutionsRequest clone() {
         return (ListOpenWorkflowExecutionsRequest) super.clone();
     }
+
 }

@@ -277,4 +277,5 @@ public class PutTelemetryRecordsRequest extends com.amazonaws.AmazonWebServiceRe
     public PutTelemetryRecordsRequest clone() {
         return (PutTelemetryRecordsRequest) super.clone();
     }
+
 }

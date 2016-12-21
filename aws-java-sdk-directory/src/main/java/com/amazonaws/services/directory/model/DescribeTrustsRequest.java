@@ -348,4 +348,5 @@ public class DescribeTrustsRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeTrustsRequest clone() {
         return (DescribeTrustsRequest) super.clone();
     }
+
 }

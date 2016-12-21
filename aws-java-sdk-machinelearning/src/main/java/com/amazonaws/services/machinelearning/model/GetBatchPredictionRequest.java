@@ -114,4 +114,5 @@ public class GetBatchPredictionRequest extends com.amazonaws.AmazonWebServiceReq
     public GetBatchPredictionRequest clone() {
         return (GetBatchPredictionRequest) super.clone();
     }
+
 }

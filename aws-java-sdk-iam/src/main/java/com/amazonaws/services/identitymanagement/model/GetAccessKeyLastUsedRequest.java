@@ -139,4 +139,5 @@ public class GetAccessKeyLastUsedRequest extends com.amazonaws.AmazonWebServiceR
     public GetAccessKeyLastUsedRequest clone() {
         return (GetAccessKeyLastUsedRequest) super.clone();
     }
+
 }

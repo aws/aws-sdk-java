@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListRuleNamesByTargetRequestMarshaller implements Marshaller<Request<ListRuleNamesByTargetRequest>, ListRuleNamesByTargetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListRuleNamesByTargetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListRuleNamesByTargetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

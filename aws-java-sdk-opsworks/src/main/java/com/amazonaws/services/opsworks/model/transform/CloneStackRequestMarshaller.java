@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStackRequest>, CloneStackRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CloneStackRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CloneStackRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

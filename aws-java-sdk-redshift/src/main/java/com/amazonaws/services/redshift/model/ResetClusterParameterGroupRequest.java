@@ -324,4 +324,5 @@ public class ResetClusterParameterGroupRequest extends com.amazonaws.AmazonWebSe
     public ResetClusterParameterGroupRequest clone() {
         return (ResetClusterParameterGroupRequest) super.clone();
     }
+
 }

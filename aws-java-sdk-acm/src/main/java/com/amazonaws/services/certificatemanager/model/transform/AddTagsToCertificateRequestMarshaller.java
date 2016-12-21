@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddTagsToCertificateRequestMarshaller implements Marshaller<Request<AddTagsToCertificateRequest>, AddTagsToCertificateRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddTagsToCertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddTagsToCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

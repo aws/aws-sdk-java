@@ -243,4 +243,5 @@ public class AssociateVPCWithHostedZoneRequest extends com.amazonaws.AmazonWebSe
     public AssociateVPCWithHostedZoneRequest clone() {
         return (AssociateVPCWithHostedZoneRequest) super.clone();
     }
+
 }

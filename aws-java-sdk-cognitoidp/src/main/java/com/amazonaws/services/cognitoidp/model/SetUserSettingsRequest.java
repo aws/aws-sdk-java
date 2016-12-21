@@ -199,4 +199,5 @@ public class SetUserSettingsRequest extends com.amazonaws.AmazonWebServiceReques
     public SetUserSettingsRequest clone() {
         return (SetUserSettingsRequest) super.clone();
     }
+
 }

@@ -298,4 +298,5 @@ public class UpdateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     public UpdateApplicationVersionRequest clone() {
         return (UpdateApplicationVersionRequest) super.clone();
     }
+
 }

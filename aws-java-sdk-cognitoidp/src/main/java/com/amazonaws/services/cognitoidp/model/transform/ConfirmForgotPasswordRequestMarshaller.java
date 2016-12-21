@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ConfirmForgotPasswordRequestMarshaller implements Marshaller<Request<ConfirmForgotPasswordRequest>, ConfirmForgotPasswordRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ConfirmForgotPasswordRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ConfirmForgotPasswordRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -114,4 +114,5 @@ public class GetEventSourceMappingRequest extends com.amazonaws.AmazonWebService
     public GetEventSourceMappingRequest clone() {
         return (GetEventSourceMappingRequest) super.clone();
     }
+
 }

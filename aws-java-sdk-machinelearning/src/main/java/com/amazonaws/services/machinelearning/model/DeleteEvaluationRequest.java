@@ -114,4 +114,5 @@ public class DeleteEvaluationRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteEvaluationRequest clone() {
         return (DeleteEvaluationRequest) super.clone();
     }
+
 }

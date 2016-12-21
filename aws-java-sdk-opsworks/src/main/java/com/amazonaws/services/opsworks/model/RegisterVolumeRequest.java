@@ -167,4 +167,5 @@ public class RegisterVolumeRequest extends com.amazonaws.AmazonWebServiceRequest
     public RegisterVolumeRequest clone() {
         return (RegisterVolumeRequest) super.clone();
     }
+
 }

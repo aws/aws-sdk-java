@@ -198,4 +198,5 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     public DeleteCloudFrontOriginAccessIdentityRequest clone() {
         return (DeleteCloudFrontOriginAccessIdentityRequest) super.clone();
     }
+
 }

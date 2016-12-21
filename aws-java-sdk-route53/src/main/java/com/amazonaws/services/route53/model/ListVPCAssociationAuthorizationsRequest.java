@@ -246,4 +246,5 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
     public ListVPCAssociationAuthorizationsRequest clone() {
         return (ListVPCAssociationAuthorizationsRequest) super.clone();
     }
+
 }

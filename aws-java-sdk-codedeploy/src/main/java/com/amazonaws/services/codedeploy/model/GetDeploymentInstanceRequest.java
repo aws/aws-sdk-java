@@ -169,4 +169,5 @@ public class GetDeploymentInstanceRequest extends com.amazonaws.AmazonWebService
     public GetDeploymentInstanceRequest clone() {
         return (GetDeploymentInstanceRequest) super.clone();
     }
+
 }

@@ -506,4 +506,5 @@ public class GetGeoLocationRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetGeoLocationRequest clone() {
         return (GetGeoLocationRequest) super.clone();
     }
+
 }

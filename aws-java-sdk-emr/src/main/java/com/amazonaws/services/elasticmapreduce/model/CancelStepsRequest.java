@@ -218,4 +218,5 @@ public class CancelStepsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CancelStepsRequest clone() {
         return (CancelStepsRequest) super.clone();
     }
+
 }

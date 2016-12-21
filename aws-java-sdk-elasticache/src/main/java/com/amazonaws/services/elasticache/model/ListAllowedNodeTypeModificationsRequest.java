@@ -261,4 +261,5 @@ public class ListAllowedNodeTypeModificationsRequest extends com.amazonaws.Amazo
     public ListAllowedNodeTypeModificationsRequest clone() {
         return (ListAllowedNodeTypeModificationsRequest) super.clone();
     }
+
 }

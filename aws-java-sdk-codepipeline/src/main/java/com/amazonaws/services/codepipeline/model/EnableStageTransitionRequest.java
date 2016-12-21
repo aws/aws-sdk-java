@@ -278,4 +278,5 @@ public class EnableStageTransitionRequest extends com.amazonaws.AmazonWebService
     public EnableStageTransitionRequest clone() {
         return (EnableStageTransitionRequest) super.clone();
     }
+
 }

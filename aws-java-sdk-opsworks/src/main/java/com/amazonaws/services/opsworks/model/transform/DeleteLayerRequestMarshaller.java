@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteLayerRequestMarshaller implements Marshaller<Request<DeleteLayerRequest>, DeleteLayerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteLayerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteLayerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

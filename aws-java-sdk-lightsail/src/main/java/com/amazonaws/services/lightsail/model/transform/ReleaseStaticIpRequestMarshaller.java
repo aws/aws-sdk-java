@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ReleaseStaticIpRequestMarshaller implements Marshaller<Request<ReleaseStaticIpRequest>, ReleaseStaticIpRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ReleaseStaticIpRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ReleaseStaticIpRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

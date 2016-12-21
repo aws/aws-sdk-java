@@ -190,4 +190,5 @@ public class ConfigureHealthCheckRequest extends com.amazonaws.AmazonWebServiceR
     public ConfigureHealthCheckRequest clone() {
         return (ConfigureHealthCheckRequest) super.clone();
     }
+
 }

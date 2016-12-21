@@ -97,4 +97,5 @@ public class DeleteVirtualInterfaceRequest extends com.amazonaws.AmazonWebServic
     public DeleteVirtualInterfaceRequest clone() {
         return (DeleteVirtualInterfaceRequest) super.clone();
     }
+
 }

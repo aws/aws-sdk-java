@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListAvailableZonesRequestMarshaller implements Marshaller<Request<ListAvailableZonesRequest>, ListAvailableZonesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListAvailableZonesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListAvailableZonesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

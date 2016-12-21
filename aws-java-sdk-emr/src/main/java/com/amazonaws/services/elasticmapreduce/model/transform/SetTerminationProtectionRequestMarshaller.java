@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetTerminationProtectionRequestMarshaller implements Marshaller<Request<SetTerminationProtectionRequest>, SetTerminationProtectionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetTerminationProtectionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetTerminationProtectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

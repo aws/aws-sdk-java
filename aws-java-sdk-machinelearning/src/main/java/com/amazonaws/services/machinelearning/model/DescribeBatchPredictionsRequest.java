@@ -1149,4 +1149,5 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
     public DescribeBatchPredictionsRequest clone() {
         return (DescribeBatchPredictionsRequest) super.clone();
     }
+
 }

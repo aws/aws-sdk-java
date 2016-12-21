@@ -593,4 +593,5 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
     public ContinueUpdateRollbackRequest clone() {
         return (ContinueUpdateRollbackRequest) super.clone();
     }
+
 }

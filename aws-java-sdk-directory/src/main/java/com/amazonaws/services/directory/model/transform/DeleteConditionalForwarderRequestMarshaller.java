@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteConditionalForwarderRequestMarshaller implements Marshaller<Request<DeleteConditionalForwarderRequest>, DeleteConditionalForwarderRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteConditionalForwarderRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteConditionalForwarderRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

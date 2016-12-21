@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class StopTaskRequestMarshaller implements Marshaller<Request<StopTaskRequest>, StopTaskRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public StopTaskRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public StopTaskRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

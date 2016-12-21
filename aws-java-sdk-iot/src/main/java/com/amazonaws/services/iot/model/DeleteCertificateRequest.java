@@ -116,4 +116,5 @@ public class DeleteCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteCertificateRequest clone() {
         return (DeleteCertificateRequest) super.clone();
     }
+
 }

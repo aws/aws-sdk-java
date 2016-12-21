@@ -60,6 +60,7 @@
     "cucumberModuleInjectorClassName" : "AmazonMachineLearningModuleInjector",
     "defaultEndpoint" : "https://machinelearning.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "machinelearning.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "Definition of the public APIs exposed by Amazon Machine Learning",
     "endpointPrefix" : "machinelearning",
     "hasApiWithStreamInput" : false,
@@ -70,7 +71,10 @@
     "packagePath" : "com/amazonaws/services/machinelearning",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Machine Learning",
     "serviceName" : "Amazon Machine Learning",
@@ -1690,6 +1694,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Tags", "ResourceId", "ResourceType" ],
       "shapeName" : "AddTagsRequest",
       "unmarshaller" : null,
@@ -1949,6 +1955,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsResult",
       "unmarshaller" : {
@@ -1987,6 +1995,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Algorithm",
       "unmarshaller" : {
@@ -3831,6 +3841,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchPrediction",
       "unmarshaller" : {
@@ -3890,6 +3902,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchPredictionFilterVariable",
       "unmarshaller" : {
@@ -4498,6 +4512,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BatchPredictionId", "MLModelId", "BatchPredictionDataSourceId", "OutputUri" ],
       "shapeName" : "CreateBatchPredictionRequest",
       "unmarshaller" : null,
@@ -4644,6 +4660,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBatchPredictionResult",
       "unmarshaller" : {
@@ -5252,6 +5270,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataSourceId", "RDSData", "RoleARN" ],
       "shapeName" : "CreateDataSourceFromRDSRequest",
       "unmarshaller" : null,
@@ -5398,6 +5418,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDataSourceFromRDSResult",
       "unmarshaller" : {
@@ -6006,6 +6028,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataSourceId", "DataSpec", "RoleARN" ],
       "shapeName" : "CreateDataSourceFromRedshiftRequest",
       "unmarshaller" : null,
@@ -6152,6 +6176,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDataSourceFromRedshiftResult",
       "unmarshaller" : {
@@ -6647,6 +6673,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataSourceId", "DataSpec" ],
       "shapeName" : "CreateDataSourceFromS3Request",
       "unmarshaller" : null,
@@ -6793,6 +6821,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDataSourceFromS3Result",
       "unmarshaller" : {
@@ -7288,6 +7318,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EvaluationId", "MLModelId", "EvaluationDataSourceId" ],
       "shapeName" : "CreateEvaluationRequest",
       "unmarshaller" : null,
@@ -7434,6 +7466,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateEvaluationResult",
       "unmarshaller" : {
@@ -8410,6 +8444,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId", "MLModelType", "TrainingDataSourceId" ],
       "shapeName" : "CreateMLModelRequest",
       "unmarshaller" : null,
@@ -8556,6 +8592,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateMLModelResult",
       "unmarshaller" : {
@@ -8712,6 +8750,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId" ],
       "shapeName" : "CreateRealtimeEndpointRequest",
       "unmarshaller" : null,
@@ -8971,6 +9011,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateRealtimeEndpointResult",
       "unmarshaller" : {
@@ -11041,6 +11083,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataSource",
       "unmarshaller" : {
@@ -11094,6 +11138,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataSourceFilterVariable",
       "unmarshaller" : {
@@ -11250,6 +11296,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BatchPredictionId" ],
       "shapeName" : "DeleteBatchPredictionRequest",
       "unmarshaller" : null,
@@ -11396,6 +11444,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBatchPredictionResult",
       "unmarshaller" : {
@@ -11552,6 +11602,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataSourceId" ],
       "shapeName" : "DeleteDataSourceRequest",
       "unmarshaller" : null,
@@ -11698,6 +11750,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteDataSourceResult",
       "unmarshaller" : {
@@ -11854,6 +11908,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EvaluationId" ],
       "shapeName" : "DeleteEvaluationRequest",
       "unmarshaller" : null,
@@ -12000,6 +12056,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteEvaluationResult",
       "unmarshaller" : {
@@ -12156,6 +12214,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId" ],
       "shapeName" : "DeleteMLModelRequest",
       "unmarshaller" : null,
@@ -12302,6 +12362,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteMLModelResult",
       "unmarshaller" : {
@@ -12458,6 +12520,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId" ],
       "shapeName" : "DeleteRealtimeEndpointRequest",
       "unmarshaller" : null,
@@ -12717,6 +12781,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteRealtimeEndpointResult",
       "unmarshaller" : {
@@ -13241,6 +13307,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TagKeys", "ResourceId", "ResourceType" ],
       "shapeName" : "DeleteTagsRequest",
       "unmarshaller" : null,
@@ -13500,6 +13568,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTagsResult",
       "unmarshaller" : {
@@ -14786,6 +14856,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBatchPredictionsRequest",
       "unmarshaller" : null,
@@ -15187,6 +15259,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBatchPredictionsResult",
       "unmarshaller" : {
@@ -16473,6 +16547,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeDataSourcesRequest",
       "unmarshaller" : null,
@@ -16874,6 +16950,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeDataSourcesResult",
       "unmarshaller" : {
@@ -18160,6 +18238,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEvaluationsRequest",
       "unmarshaller" : null,
@@ -18561,6 +18641,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeEvaluationsResult",
       "unmarshaller" : {
@@ -19847,6 +19929,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeMLModelsRequest",
       "unmarshaller" : null,
@@ -20248,6 +20332,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeMLModelsResult",
       "unmarshaller" : {
@@ -20517,6 +20603,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ResourceId", "ResourceType" ],
       "shapeName" : "DescribeTagsRequest",
       "unmarshaller" : null,
@@ -21031,6 +21119,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTagsResult",
       "unmarshaller" : {
@@ -21072,6 +21162,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DetailsAttributes",
       "unmarshaller" : {
@@ -21122,6 +21214,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EntityStatus",
       "unmarshaller" : {
@@ -22740,6 +22834,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Evaluation",
       "unmarshaller" : {
@@ -22799,6 +22895,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EvaluationFilterVariable",
       "unmarshaller" : {
@@ -22955,6 +23053,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BatchPredictionId" ],
       "shapeName" : "GetBatchPredictionRequest",
       "unmarshaller" : null,
@@ -24909,6 +25009,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetBatchPredictionResult",
       "unmarshaller" : {
@@ -25178,6 +25280,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataSourceId" ],
       "shapeName" : "GetDataSourceRequest",
       "unmarshaller" : null,
@@ -27471,6 +27575,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDataSourceResult",
       "unmarshaller" : {
@@ -27627,6 +27733,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EvaluationId" ],
       "shapeName" : "GetEvaluationRequest",
       "unmarshaller" : null,
@@ -29355,6 +29463,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetEvaluationResult",
       "unmarshaller" : {
@@ -29624,6 +29734,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId" ],
       "shapeName" : "GetMLModelRequest",
       "unmarshaller" : null,
@@ -32172,6 +32284,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetMLModelResult",
       "unmarshaller" : {
@@ -32321,6 +32435,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IdempotentParameterMismatchException",
       "unmarshaller" : null,
@@ -32467,6 +32583,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServerException",
       "unmarshaller" : null,
@@ -32613,6 +32731,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInputException",
       "unmarshaller" : null,
@@ -32645,6 +32765,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTagException",
       "unmarshaller" : null,
@@ -32791,6 +32913,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -35113,6 +35237,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MLModel",
       "unmarshaller" : {
@@ -35178,6 +35304,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MLModelFilterVariable",
       "unmarshaller" : {
@@ -35222,6 +35350,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MLModelType",
       "unmarshaller" : {
@@ -35513,6 +35643,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PerformanceMetrics",
       "unmarshaller" : {
@@ -36037,6 +36169,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId", "Record", "PredictEndpoint" ],
       "shapeName" : "PredictRequest",
       "unmarshaller" : null,
@@ -36183,6 +36317,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PredictResult",
       "unmarshaller" : {
@@ -37067,6 +37203,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Prediction",
       "unmarshaller" : {
@@ -37102,6 +37240,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PredictorNotMountedException",
       "unmarshaller" : null,
@@ -38520,6 +38660,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DatabaseInformation", "SelectSqlQuery", "DatabaseCredentials", "S3StagingLocation", "ResourceRole", "ServiceRole", "SubnetId", "SecurityGroupIds" ],
       "shapeName" : "RDSDataSpec",
       "unmarshaller" : {
@@ -38782,6 +38924,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "InstanceIdentifier", "DatabaseName" ],
       "shapeName" : "RDSDatabase",
       "unmarshaller" : {
@@ -39044,6 +39188,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Username", "Password" ],
       "shapeName" : "RDSDatabaseCredentials",
       "unmarshaller" : {
@@ -39758,6 +39904,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RDSMetadata",
       "unmarshaller" : {
@@ -40246,6 +40394,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RealtimeEndpointInfo",
       "unmarshaller" : {
@@ -40293,6 +40443,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RealtimeEndpointStatus",
       "unmarshaller" : {
@@ -41120,6 +41272,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DatabaseInformation", "SelectSqlQuery", "DatabaseCredentials", "S3StagingLocation" ],
       "shapeName" : "RedshiftDataSpec",
       "unmarshaller" : {
@@ -41382,6 +41536,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DatabaseName", "ClusterIdentifier" ],
       "shapeName" : "RedshiftDatabase",
       "unmarshaller" : {
@@ -41644,6 +41800,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Username", "Password" ],
       "shapeName" : "RedshiftDatabaseCredentials",
       "unmarshaller" : {
@@ -42019,6 +42177,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RedshiftMetadata",
       "unmarshaller" : {
@@ -42168,6 +42328,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -42653,6 +42815,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataLocationS3" ],
       "shapeName" : "S3DataSpec",
       "unmarshaller" : {
@@ -42694,6 +42858,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SortOrder",
       "unmarshaller" : {
@@ -42956,6 +43122,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -42991,6 +43159,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagLimitExceededException",
       "unmarshaller" : null,
@@ -43035,6 +43205,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TaggableResourceType",
       "unmarshaller" : {
@@ -43304,6 +43476,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BatchPredictionId", "BatchPredictionName" ],
       "shapeName" : "UpdateBatchPredictionRequest",
       "unmarshaller" : null,
@@ -43450,6 +43624,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateBatchPredictionResult",
       "unmarshaller" : {
@@ -43719,6 +43895,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DataSourceId", "DataSourceName" ],
       "shapeName" : "UpdateDataSourceRequest",
       "unmarshaller" : null,
@@ -43865,6 +44043,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDataSourceResult",
       "unmarshaller" : {
@@ -44134,6 +44314,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "EvaluationId", "EvaluationName" ],
       "shapeName" : "UpdateEvaluationRequest",
       "unmarshaller" : null,
@@ -44280,6 +44462,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateEvaluationResult",
       "unmarshaller" : {
@@ -44662,6 +44846,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "MLModelId" ],
       "shapeName" : "UpdateMLModelRequest",
       "unmarshaller" : null,
@@ -44808,6 +44994,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateMLModelResult",
       "unmarshaller" : {
@@ -44826,6 +45014,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

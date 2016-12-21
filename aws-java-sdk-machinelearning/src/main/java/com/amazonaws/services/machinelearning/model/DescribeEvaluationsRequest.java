@@ -1116,4 +1116,5 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeEvaluationsRequest clone() {
         return (DescribeEvaluationsRequest) super.clone();
     }
+
 }

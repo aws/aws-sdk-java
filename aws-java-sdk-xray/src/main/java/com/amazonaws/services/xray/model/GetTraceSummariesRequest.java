@@ -341,4 +341,5 @@ public class GetTraceSummariesRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetTraceSummariesRequest clone() {
         return (GetTraceSummariesRequest) super.clone();
     }
+
 }

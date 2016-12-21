@@ -190,4 +190,5 @@ public class DeprecateThingTypeRequest extends com.amazonaws.AmazonWebServiceReq
     public DeprecateThingTypeRequest clone() {
         return (DeprecateThingTypeRequest) super.clone();
     }
+
 }

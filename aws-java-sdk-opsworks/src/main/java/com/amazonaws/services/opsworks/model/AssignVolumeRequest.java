@@ -167,4 +167,5 @@ public class AssignVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
     public AssignVolumeRequest clone() {
         return (AssignVolumeRequest) super.clone();
     }
+
 }

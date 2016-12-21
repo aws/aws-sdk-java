@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateAssessmentTemplateRequestMarshaller implements Marshaller<Request<CreateAssessmentTemplateRequest>, CreateAssessmentTemplateRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateAssessmentTemplateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateAssessmentTemplateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

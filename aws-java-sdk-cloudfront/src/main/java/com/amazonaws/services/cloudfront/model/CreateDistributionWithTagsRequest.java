@@ -116,4 +116,5 @@ public class CreateDistributionWithTagsRequest extends com.amazonaws.AmazonWebSe
     public CreateDistributionWithTagsRequest clone() {
         return (CreateDistributionWithTagsRequest) super.clone();
     }
+
 }

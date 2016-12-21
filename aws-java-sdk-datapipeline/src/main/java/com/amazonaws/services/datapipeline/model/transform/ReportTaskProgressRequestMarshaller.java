@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ReportTaskProgressRequestMarshaller implements Marshaller<Request<ReportTaskProgressRequest>, ReportTaskProgressRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ReportTaskProgressRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ReportTaskProgressRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

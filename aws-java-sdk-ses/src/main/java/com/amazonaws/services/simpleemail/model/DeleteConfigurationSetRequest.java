@@ -119,4 +119,5 @@ public class DeleteConfigurationSetRequest extends com.amazonaws.AmazonWebServic
     public DeleteConfigurationSetRequest clone() {
         return (DeleteConfigurationSetRequest) super.clone();
     }
+
 }

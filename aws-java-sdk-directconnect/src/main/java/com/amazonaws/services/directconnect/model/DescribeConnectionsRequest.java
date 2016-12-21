@@ -97,4 +97,5 @@ public class DescribeConnectionsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeConnectionsRequest clone() {
         return (DescribeConnectionsRequest) super.clone();
     }
+
 }

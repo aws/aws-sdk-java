@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CountPendingActivityTasksRequestMarshaller implements Marshaller<Request<CountPendingActivityTasksRequest>, CountPendingActivityTasksRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CountPendingActivityTasksRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CountPendingActivityTasksRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

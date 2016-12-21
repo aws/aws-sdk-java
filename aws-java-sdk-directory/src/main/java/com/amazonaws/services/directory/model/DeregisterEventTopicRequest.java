@@ -176,4 +176,5 @@ public class DeregisterEventTopicRequest extends com.amazonaws.AmazonWebServiceR
     public DeregisterEventTopicRequest clone() {
         return (DeregisterEventTopicRequest) super.clone();
     }
+
 }

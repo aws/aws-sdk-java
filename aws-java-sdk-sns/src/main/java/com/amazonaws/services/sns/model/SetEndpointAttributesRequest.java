@@ -344,4 +344,5 @@ public class SetEndpointAttributesRequest extends com.amazonaws.AmazonWebService
     public SetEndpointAttributesRequest clone() {
         return (SetEndpointAttributesRequest) super.clone();
     }
+
 }

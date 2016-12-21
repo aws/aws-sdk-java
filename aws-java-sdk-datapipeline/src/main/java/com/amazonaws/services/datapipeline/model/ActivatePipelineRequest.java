@@ -258,4 +258,5 @@ public class ActivatePipelineRequest extends com.amazonaws.AmazonWebServiceReque
     public ActivatePipelineRequest clone() {
         return (ActivatePipelineRequest) super.clone();
     }
+
 }

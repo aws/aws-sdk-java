@@ -1227,4 +1227,5 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
     public StartWorkflowExecutionRequest clone() {
         return (StartWorkflowExecutionRequest) super.clone();
     }
+
 }

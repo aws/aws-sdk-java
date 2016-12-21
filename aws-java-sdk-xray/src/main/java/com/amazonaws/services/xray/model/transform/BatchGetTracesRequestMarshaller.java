@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class BatchGetTracesRequestMarshaller implements Marshaller<Request<BatchGetTracesRequest>, BatchGetTracesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public BatchGetTracesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public BatchGetTracesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

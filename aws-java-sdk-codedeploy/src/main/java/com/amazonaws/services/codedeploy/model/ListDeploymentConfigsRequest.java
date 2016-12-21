@@ -123,4 +123,5 @@ public class ListDeploymentConfigsRequest extends com.amazonaws.AmazonWebService
     public ListDeploymentConfigsRequest clone() {
         return (ListDeploymentConfigsRequest) super.clone();
     }
+
 }

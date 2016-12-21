@@ -114,4 +114,5 @@ public class DeleteDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteDestinationRequest clone() {
         return (DeleteDestinationRequest) super.clone();
     }
+
 }

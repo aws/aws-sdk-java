@@ -116,4 +116,5 @@ public class DeleteTopicRuleRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteTopicRuleRequest clone() {
         return (DeleteTopicRuleRequest) super.clone();
     }
+
 }

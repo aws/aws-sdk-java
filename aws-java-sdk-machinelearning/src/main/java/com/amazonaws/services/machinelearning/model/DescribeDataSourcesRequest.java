@@ -1100,4 +1100,5 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeDataSourcesRequest clone() {
         return (DescribeDataSourcesRequest) super.clone();
     }
+
 }

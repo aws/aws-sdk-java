@@ -95,4 +95,5 @@ public class GetApplicationSettingsRequest extends com.amazonaws.AmazonWebServic
     public GetApplicationSettingsRequest clone() {
         return (GetApplicationSettingsRequest) super.clone();
     }
+
 }

@@ -230,4 +230,5 @@ public class RevokeSnapshotAccessRequest extends com.amazonaws.AmazonWebServiceR
     public RevokeSnapshotAccessRequest clone() {
         return (RevokeSnapshotAccessRequest) super.clone();
     }
+
 }

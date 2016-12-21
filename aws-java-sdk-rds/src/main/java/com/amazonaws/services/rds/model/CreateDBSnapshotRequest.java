@@ -629,4 +629,5 @@ public class CreateDBSnapshotRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateDBSnapshotRequest clone() {
         return (CreateDBSnapshotRequest) super.clone();
     }
+
 }

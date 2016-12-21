@@ -176,4 +176,5 @@ public class ListSuitesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListSuitesRequest clone() {
         return (ListSuitesRequest) super.clone();
     }
+
 }

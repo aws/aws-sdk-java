@@ -116,4 +116,5 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
     public RestoreFromSnapshotRequest clone() {
         return (RestoreFromSnapshotRequest) super.clone();
     }
+
 }

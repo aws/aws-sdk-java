@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AttachThingPrincipalRequestMarshaller implements Marshaller<Request<AttachThingPrincipalRequest>, AttachThingPrincipalRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AttachThingPrincipalRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AttachThingPrincipalRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -174,4 +174,5 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends com.amazonaws
     public RemoveSourceIdentifierFromSubscriptionRequest clone() {
         return (RemoveSourceIdentifierFromSubscriptionRequest) super.clone();
     }
+
 }

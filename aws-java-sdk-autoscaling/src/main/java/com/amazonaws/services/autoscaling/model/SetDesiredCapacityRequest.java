@@ -256,4 +256,5 @@ public class SetDesiredCapacityRequest extends com.amazonaws.AmazonWebServiceReq
     public SetDesiredCapacityRequest clone() {
         return (SetDesiredCapacityRequest) super.clone();
     }
+
 }

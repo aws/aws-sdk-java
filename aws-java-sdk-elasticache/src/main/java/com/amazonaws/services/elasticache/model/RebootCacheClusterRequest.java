@@ -233,4 +233,5 @@ public class RebootCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     public RebootCacheClusterRequest clone() {
         return (RebootCacheClusterRequest) super.clone();
     }
+
 }

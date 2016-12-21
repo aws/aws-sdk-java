@@ -227,4 +227,5 @@ public class PutAutoScalingPolicyRequest extends com.amazonaws.AmazonWebServiceR
     public PutAutoScalingPolicyRequest clone() {
         return (PutAutoScalingPolicyRequest) super.clone();
     }
+
 }

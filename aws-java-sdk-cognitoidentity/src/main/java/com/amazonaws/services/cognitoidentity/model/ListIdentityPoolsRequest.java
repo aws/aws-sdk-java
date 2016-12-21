@@ -169,4 +169,5 @@ public class ListIdentityPoolsRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListIdentityPoolsRequest clone() {
         return (ListIdentityPoolsRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeGatewayInformationRequestMarshaller implements Marshaller<Request<DescribeGatewayInformationRequest>, DescribeGatewayInformationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeGatewayInformationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeGatewayInformationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

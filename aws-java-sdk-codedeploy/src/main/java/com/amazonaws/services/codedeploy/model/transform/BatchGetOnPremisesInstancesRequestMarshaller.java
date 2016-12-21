@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class BatchGetOnPremisesInstancesRequestMarshaller implements
         Marshaller<Request<BatchGetOnPremisesInstancesRequest>, BatchGetOnPremisesInstancesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public BatchGetOnPremisesInstancesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public BatchGetOnPremisesInstancesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

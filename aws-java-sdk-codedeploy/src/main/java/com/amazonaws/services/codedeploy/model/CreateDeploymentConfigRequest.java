@@ -337,4 +337,5 @@ public class CreateDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
     public CreateDeploymentConfigRequest clone() {
         return (CreateDeploymentConfigRequest) super.clone();
     }
+
 }

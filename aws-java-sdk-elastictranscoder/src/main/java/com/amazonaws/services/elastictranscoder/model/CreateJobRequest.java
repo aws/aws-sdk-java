@@ -705,4 +705,5 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public CreateJobRequest clone() {
         return (CreateJobRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class DescribeAddressRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeAddressRequest clone() {
         return (DescribeAddressRequest) super.clone();
     }
+
 }

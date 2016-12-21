@@ -273,4 +273,5 @@ public class RemoveTagsFromVaultRequest extends com.amazonaws.AmazonWebServiceRe
     public RemoveTagsFromVaultRequest clone() {
         return (RemoveTagsFromVaultRequest) super.clone();
     }
+
 }

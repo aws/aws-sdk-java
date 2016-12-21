@@ -618,4 +618,5 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
     public DescribeOrderableDBInstanceOptionsRequest clone() {
         return (DescribeOrderableDBInstanceOptionsRequest) super.clone();
     }
+
 }

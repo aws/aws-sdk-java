@@ -263,4 +263,5 @@ public class UpdateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateDeploymentRequest clone() {
         return (UpdateDeploymentRequest) super.clone();
     }
+
 }

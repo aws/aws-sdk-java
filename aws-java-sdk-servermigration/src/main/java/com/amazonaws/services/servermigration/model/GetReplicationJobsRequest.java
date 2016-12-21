@@ -165,4 +165,5 @@ public class GetReplicationJobsRequest extends com.amazonaws.AmazonWebServiceReq
     public GetReplicationJobsRequest clone() {
         return (GetReplicationJobsRequest) super.clone();
     }
+
 }

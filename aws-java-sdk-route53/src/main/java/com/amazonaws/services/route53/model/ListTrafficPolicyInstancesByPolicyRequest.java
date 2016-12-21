@@ -712,4 +712,5 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
     public ListTrafficPolicyInstancesByPolicyRequest clone() {
         return (ListTrafficPolicyInstancesByPolicyRequest) super.clone();
     }
+
 }

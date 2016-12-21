@@ -202,4 +202,5 @@ public class DescribeLifecycleHooksRequest extends com.amazonaws.AmazonWebServic
     public DescribeLifecycleHooksRequest clone() {
         return (DescribeLifecycleHooksRequest) super.clone();
     }
+
 }

@@ -248,4 +248,5 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
     public DescribeProductAsAdminRequest clone() {
         return (DescribeProductAsAdminRequest) super.clone();
     }
+
 }

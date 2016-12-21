@@ -95,4 +95,5 @@ public class ListVolumeRecoveryPointsRequest extends com.amazonaws.AmazonWebServ
     public ListVolumeRecoveryPointsRequest clone() {
         return (ListVolumeRecoveryPointsRequest) super.clone();
     }
+
 }

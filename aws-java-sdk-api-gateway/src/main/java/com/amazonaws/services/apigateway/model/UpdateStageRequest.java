@@ -256,4 +256,5 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateStageRequest clone() {
         return (UpdateStageRequest) super.clone();
     }
+
 }

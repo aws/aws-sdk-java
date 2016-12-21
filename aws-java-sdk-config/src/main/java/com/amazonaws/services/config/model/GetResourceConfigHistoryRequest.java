@@ -532,4 +532,5 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
     public GetResourceConfigHistoryRequest clone() {
         return (GetResourceConfigHistoryRequest) super.clone();
     }
+
 }

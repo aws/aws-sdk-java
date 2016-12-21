@@ -133,4 +133,5 @@ public class GetHealthCheckLastFailureReasonRequest extends com.amazonaws.Amazon
     public GetHealthCheckLastFailureReasonRequest clone() {
         return (GetHealthCheckLastFailureReasonRequest) super.clone();
     }
+
 }

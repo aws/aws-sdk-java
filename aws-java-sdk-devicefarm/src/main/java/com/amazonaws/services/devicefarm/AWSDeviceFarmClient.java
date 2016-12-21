@@ -63,29 +63,30 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotEligibleException").withModeledClass(
-                            com.amazonaws.services.devicefarm.model.NotEligibleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ArgumentException").withModeledClass(
-                            com.amazonaws.services.devicefarm.model.ArgumentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                            com.amazonaws.services.devicefarm.model.NotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.devicefarm.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceAccountException").withModeledClass(
-                            com.amazonaws.services.devicefarm.model.ServiceAccountException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withModeledClass(
-                            com.amazonaws.services.devicefarm.model.IdempotencyException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotEligibleException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.NotEligibleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ArgumentException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.ArgumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceAccountException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.ServiceAccountException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.IdempotencyException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Device Farm. A credentials provider chain will be used

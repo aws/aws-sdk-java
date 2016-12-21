@@ -167,4 +167,5 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
     public UpdateElasticIpRequest clone() {
         return (UpdateElasticIpRequest) super.clone();
     }
+
 }

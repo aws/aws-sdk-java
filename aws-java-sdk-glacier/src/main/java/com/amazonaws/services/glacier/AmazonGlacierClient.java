@@ -102,36 +102,37 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RequestTimeoutException").withModeledClass(
-                            com.amazonaws.services.glacier.model.RequestTimeoutException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MissingParameterValueException").withModeledClass(
-                            com.amazonaws.services.glacier.model.MissingParameterValueException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                            com.amazonaws.services.glacier.model.InvalidParameterValueException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                            com.amazonaws.services.glacier.model.ResourceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                            com.amazonaws.services.glacier.model.ServiceUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InsufficientCapacityException").withModeledClass(
-                            com.amazonaws.services.glacier.model.InsufficientCapacityException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.glacier.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("PolicyEnforcedException").withModeledClass(
-                            com.amazonaws.services.glacier.model.PolicyEnforcedException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.glacier.model.AmazonGlacierException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestTimeoutException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.RequestTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MissingParameterValueException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.MissingParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.InvalidParameterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientCapacityException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.InsufficientCapacityException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyEnforcedException").withModeledClass(
+                                    com.amazonaws.services.glacier.model.PolicyEnforcedException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.glacier.model.AmazonGlacierException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Glacier. A credentials provider chain will be used

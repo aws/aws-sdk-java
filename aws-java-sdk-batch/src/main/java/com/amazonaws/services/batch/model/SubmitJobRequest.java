@@ -486,4 +486,5 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public SubmitJobRequest clone() {
         return (SubmitJobRequest) super.clone();
     }
+
 }

@@ -165,4 +165,5 @@ public class GetImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetImportJobsRequest clone() {
         return (GetImportJobsRequest) super.clone();
     }
+
 }

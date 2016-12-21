@@ -1187,4 +1187,5 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribeMLModelsRequest clone() {
         return (DescribeMLModelsRequest) super.clone();
     }
+
 }

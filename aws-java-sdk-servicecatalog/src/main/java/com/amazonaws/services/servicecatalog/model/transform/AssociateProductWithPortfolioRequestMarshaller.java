@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class AssociateProductWithPortfolioRequestMarshaller implements
         Marshaller<Request<AssociateProductWithPortfolioRequest>, AssociateProductWithPortfolioRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AssociateProductWithPortfolioRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AssociateProductWithPortfolioRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

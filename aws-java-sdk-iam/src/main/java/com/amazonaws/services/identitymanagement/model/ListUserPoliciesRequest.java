@@ -341,4 +341,5 @@ public class ListUserPoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     public ListUserPoliciesRequest clone() {
         return (ListUserPoliciesRequest) super.clone();
     }
+
 }

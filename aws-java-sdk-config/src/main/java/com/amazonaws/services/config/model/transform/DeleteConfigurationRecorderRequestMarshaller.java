@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DeleteConfigurationRecorderRequestMarshaller implements
         Marshaller<Request<DeleteConfigurationRecorderRequest>, DeleteConfigurationRecorderRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteConfigurationRecorderRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteConfigurationRecorderRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

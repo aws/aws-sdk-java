@@ -74,16 +74,19 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(com.amazonaws.services.batch.model.ServerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(com.amazonaws.services.batch.model.ClientException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.batch.model.AWSBatchException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
+                                    com.amazonaws.services.batch.model.ServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
+                                    com.amazonaws.services.batch.model.ClientException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.batch.model.AWSBatchException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Batch. A credentials provider chain will be used that

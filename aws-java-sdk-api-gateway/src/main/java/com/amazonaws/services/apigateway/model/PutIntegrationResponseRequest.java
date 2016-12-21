@@ -810,4 +810,5 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
     public PutIntegrationResponseRequest clone() {
         return (PutIntegrationResponseRequest) super.clone();
     }
+
 }

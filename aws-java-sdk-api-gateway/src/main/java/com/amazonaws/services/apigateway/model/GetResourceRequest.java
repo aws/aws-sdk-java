@@ -169,4 +169,5 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetResourceRequest clone() {
         return (GetResourceRequest) super.clone();
     }
+
 }

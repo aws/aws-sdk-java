@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ConfirmConnectionRequestMarshaller implements Marshaller<Request<ConfirmConnectionRequest>, ConfirmConnectionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ConfirmConnectionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ConfirmConnectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -130,4 +130,5 @@ public class GetSegmentRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetSegmentRequest clone() {
         return (GetSegmentRequest) super.clone();
     }
+
 }

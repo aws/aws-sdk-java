@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListPolicyVersionsRequestMarshaller implements Marshaller<Request<ListPolicyVersionsRequest>, ListPolicyVersionsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListPolicyVersionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListPolicyVersionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

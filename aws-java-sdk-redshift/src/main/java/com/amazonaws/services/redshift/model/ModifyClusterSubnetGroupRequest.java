@@ -253,4 +253,5 @@ public class ModifyClusterSubnetGroupRequest extends com.amazonaws.AmazonWebServ
     public ModifyClusterSubnetGroupRequest clone() {
         return (ModifyClusterSubnetGroupRequest) super.clone();
     }
+
 }

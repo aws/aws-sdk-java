@@ -114,4 +114,5 @@ public class DeleteConfigRuleRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteConfigRuleRequest clone() {
         return (DeleteConfigRuleRequest) super.clone();
     }
+
 }

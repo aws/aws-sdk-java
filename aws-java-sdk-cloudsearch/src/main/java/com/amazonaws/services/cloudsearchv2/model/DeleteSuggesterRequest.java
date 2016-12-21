@@ -151,4 +151,5 @@ public class DeleteSuggesterRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteSuggesterRequest clone() {
         return (DeleteSuggesterRequest) super.clone();
     }
+
 }

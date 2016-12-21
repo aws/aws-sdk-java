@@ -121,4 +121,5 @@ public class RefreshTrustedAdvisorCheckRequest extends com.amazonaws.AmazonWebSe
     public RefreshTrustedAdvisorCheckRequest clone() {
         return (RefreshTrustedAdvisorCheckRequest) super.clone();
     }
+
 }

@@ -552,4 +552,5 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateInstancesRequest clone() {
         return (CreateInstancesRequest) super.clone();
     }
+
 }

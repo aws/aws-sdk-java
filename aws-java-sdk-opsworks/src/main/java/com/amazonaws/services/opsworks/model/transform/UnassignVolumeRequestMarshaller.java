@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UnassignVolumeRequestMarshaller implements Marshaller<Request<UnassignVolumeRequest>, UnassignVolumeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UnassignVolumeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UnassignVolumeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

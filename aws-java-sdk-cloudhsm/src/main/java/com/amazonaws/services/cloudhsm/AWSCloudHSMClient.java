@@ -60,20 +60,21 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalException").withModeledClass(
-                            com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                            com.amazonaws.services.cloudhsm.model.InvalidRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withModeledClass(
-                            com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalException").withModeledClass(
+                                    com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
+                                    com.amazonaws.services.cloudhsm.model.InvalidRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withModeledClass(
+                                    com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class));
 
     /**
      * Constructs a new client to invoke service methods on CloudHSM. A credentials provider chain will be used that

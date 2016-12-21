@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetCognitoEventsRequestMarshaller implements Marshaller<Request<SetCognitoEventsRequest>, SetCognitoEventsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetCognitoEventsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetCognitoEventsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddAttributesToFindingsRequestMarshaller implements Marshaller<Request<AddAttributesToFindingsRequest>, AddAttributesToFindingsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddAttributesToFindingsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddAttributesToFindingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

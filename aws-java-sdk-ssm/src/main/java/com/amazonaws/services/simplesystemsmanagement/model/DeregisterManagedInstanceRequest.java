@@ -114,4 +114,5 @@ public class DeregisterManagedInstanceRequest extends com.amazonaws.AmazonWebSer
     public DeregisterManagedInstanceRequest clone() {
         return (DeregisterManagedInstanceRequest) super.clone();
     }
+
 }

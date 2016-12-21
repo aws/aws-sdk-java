@@ -117,4 +117,5 @@ public class DescribeElasticsearchDomainConfigRequest extends com.amazonaws.Amaz
     public DescribeElasticsearchDomainConfigRequest clone() {
         return (DescribeElasticsearchDomainConfigRequest) super.clone();
     }
+
 }

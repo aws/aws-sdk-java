@@ -116,4 +116,5 @@ public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetApplicationRequest clone() {
         return (GetApplicationRequest) super.clone();
     }
+
 }

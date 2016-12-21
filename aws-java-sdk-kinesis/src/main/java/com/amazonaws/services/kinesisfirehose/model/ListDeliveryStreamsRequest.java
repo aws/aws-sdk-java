@@ -168,4 +168,5 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListDeliveryStreamsRequest clone() {
         return (ListDeliveryStreamsRequest) super.clone();
     }
+
 }

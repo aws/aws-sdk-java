@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GenerateDataKeyRequestMarshaller implements Marshaller<Request<GenerateDataKeyRequest>, GenerateDataKeyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GenerateDataKeyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GenerateDataKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

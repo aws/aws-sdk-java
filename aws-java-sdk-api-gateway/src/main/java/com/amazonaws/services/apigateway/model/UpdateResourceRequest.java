@@ -256,4 +256,5 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdateResourceRequest clone() {
         return (UpdateResourceRequest) super.clone();
     }
+
 }

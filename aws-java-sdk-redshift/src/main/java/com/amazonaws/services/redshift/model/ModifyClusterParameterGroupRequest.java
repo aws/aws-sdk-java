@@ -269,4 +269,5 @@ public class ModifyClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
     public ModifyClusterParameterGroupRequest clone() {
         return (ModifyClusterParameterGroupRequest) super.clone();
     }
+
 }

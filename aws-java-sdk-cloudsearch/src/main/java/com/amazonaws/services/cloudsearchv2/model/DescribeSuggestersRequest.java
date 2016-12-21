@@ -279,4 +279,5 @@ public class DescribeSuggestersRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeSuggestersRequest clone() {
         return (DescribeSuggestersRequest) super.clone();
     }
+
 }

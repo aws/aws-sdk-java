@@ -95,4 +95,5 @@ public class DisableDomainAutoRenewRequest extends com.amazonaws.AmazonWebServic
     public DisableDomainAutoRenewRequest clone() {
         return (DisableDomainAutoRenewRequest) super.clone();
     }
+
 }

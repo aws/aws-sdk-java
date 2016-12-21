@@ -258,4 +258,5 @@ public class AddApplicationReferenceDataSourceRequest extends com.amazonaws.Amaz
     public AddApplicationReferenceDataSourceRequest clone() {
         return (AddApplicationReferenceDataSourceRequest) super.clone();
     }
+
 }

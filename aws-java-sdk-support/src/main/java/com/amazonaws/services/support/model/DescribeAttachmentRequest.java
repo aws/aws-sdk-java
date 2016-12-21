@@ -117,4 +117,5 @@ public class DescribeAttachmentRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeAttachmentRequest clone() {
         return (DescribeAttachmentRequest) super.clone();
     }
+
 }

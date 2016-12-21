@@ -169,4 +169,5 @@ public class PutJobFailureResultRequest extends com.amazonaws.AmazonWebServiceRe
     public PutJobFailureResultRequest clone() {
         return (PutJobFailureResultRequest) super.clone();
     }
+
 }

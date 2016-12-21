@@ -116,4 +116,5 @@ public class GlobalSignOutRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GlobalSignOutRequest clone() {
         return (GlobalSignOutRequest) super.clone();
     }
+
 }

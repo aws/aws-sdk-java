@@ -44,9 +44,9 @@ import com.amazonaws.protocol.json.*;
 public class SetIdentityPoolConfigurationRequestMarshaller implements
         Marshaller<Request<SetIdentityPoolConfigurationRequest>, SetIdentityPoolConfigurationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetIdentityPoolConfigurationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetIdentityPoolConfigurationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

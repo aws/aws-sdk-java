@@ -265,4 +265,5 @@ public class CreateLBCookieStickinessPolicyRequest extends com.amazonaws.AmazonW
     public CreateLBCookieStickinessPolicyRequest clone() {
         return (CreateLBCookieStickinessPolicyRequest) super.clone();
     }
+
 }

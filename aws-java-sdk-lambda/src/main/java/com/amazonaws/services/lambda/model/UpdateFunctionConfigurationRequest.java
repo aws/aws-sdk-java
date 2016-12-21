@@ -869,4 +869,5 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     public UpdateFunctionConfigurationRequest clone() {
         return (UpdateFunctionConfigurationRequest) super.clone();
     }
+
 }

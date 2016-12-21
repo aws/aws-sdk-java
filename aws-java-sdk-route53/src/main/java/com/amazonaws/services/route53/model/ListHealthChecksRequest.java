@@ -361,4 +361,5 @@ public class ListHealthChecksRequest extends com.amazonaws.AmazonWebServiceReque
     public ListHealthChecksRequest clone() {
         return (ListHealthChecksRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteCACertificateRequestMarshaller implements Marshaller<Request<DeleteCACertificateRequest>, DeleteCACertificateRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteCACertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteCACertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

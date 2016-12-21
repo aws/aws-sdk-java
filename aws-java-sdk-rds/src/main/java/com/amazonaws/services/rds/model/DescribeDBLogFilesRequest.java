@@ -630,4 +630,5 @@ public class DescribeDBLogFilesRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeDBLogFilesRequest clone() {
         return (DescribeDBLogFilesRequest) super.clone();
     }
+
 }

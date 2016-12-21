@@ -288,4 +288,5 @@ public class DescribeExpressionsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeExpressionsRequest clone() {
         return (DescribeExpressionsRequest) super.clone();
     }
+
 }

@@ -420,4 +420,5 @@ public class UpdateDomainNameserversRequest extends com.amazonaws.AmazonWebServi
     public UpdateDomainNameserversRequest clone() {
         return (UpdateDomainNameserversRequest) super.clone();
     }
+
 }

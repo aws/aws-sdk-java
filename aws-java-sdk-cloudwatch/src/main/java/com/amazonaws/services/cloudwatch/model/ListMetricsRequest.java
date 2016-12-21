@@ -306,4 +306,5 @@ public class ListMetricsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListMetricsRequest clone() {
         return (ListMetricsRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class GetLexiconRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public GetLexiconRequest clone() {
         return (GetLexiconRequest) super.clone();
     }
+
 }

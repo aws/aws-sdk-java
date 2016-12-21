@@ -208,4 +208,5 @@ public class PredictRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public PredictRequest clone() {
         return (PredictRequest) super.clone();
     }
+
 }

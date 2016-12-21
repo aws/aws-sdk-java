@@ -146,4 +146,5 @@ public class BatchGetRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     public BatchGetRepositoriesRequest clone() {
         return (BatchGetRepositoriesRequest) super.clone();
     }
+
 }

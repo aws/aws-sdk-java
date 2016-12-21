@@ -207,4 +207,5 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CreateTagsRequest clone() {
         return (CreateTagsRequest) super.clone();
     }
+
 }

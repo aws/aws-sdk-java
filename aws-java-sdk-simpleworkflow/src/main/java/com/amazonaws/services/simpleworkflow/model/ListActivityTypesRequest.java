@@ -504,4 +504,5 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListActivityTypesRequest clone() {
         return (ListActivityTypesRequest) super.clone();
     }
+
 }

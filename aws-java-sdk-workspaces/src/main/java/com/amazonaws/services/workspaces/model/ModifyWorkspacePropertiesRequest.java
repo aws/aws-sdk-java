@@ -167,4 +167,5 @@ public class ModifyWorkspacePropertiesRequest extends com.amazonaws.AmazonWebSer
     public ModifyWorkspacePropertiesRequest clone() {
         return (ModifyWorkspacePropertiesRequest) super.clone();
     }
+
 }

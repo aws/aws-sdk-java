@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteSizeConstraintSetRequestMarshaller implements Marshaller<Request<DeleteSizeConstraintSetRequest>, DeleteSizeConstraintSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteSizeConstraintSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteSizeConstraintSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

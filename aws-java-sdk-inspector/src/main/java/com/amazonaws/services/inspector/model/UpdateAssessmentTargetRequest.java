@@ -227,4 +227,5 @@ public class UpdateAssessmentTargetRequest extends com.amazonaws.AmazonWebServic
     public UpdateAssessmentTargetRequest clone() {
         return (UpdateAssessmentTargetRequest) super.clone();
     }
+
 }

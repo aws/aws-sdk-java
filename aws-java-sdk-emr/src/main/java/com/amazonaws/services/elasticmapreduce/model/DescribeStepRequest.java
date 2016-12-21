@@ -169,4 +169,5 @@ public class DescribeStepRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DescribeStepRequest clone() {
         return (DescribeStepRequest) super.clone();
     }
+
 }

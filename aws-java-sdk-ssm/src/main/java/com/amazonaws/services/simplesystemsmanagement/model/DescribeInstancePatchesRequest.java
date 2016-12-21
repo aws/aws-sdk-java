@@ -356,4 +356,5 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
     public DescribeInstancePatchesRequest clone() {
         return (DescribeInstancePatchesRequest) super.clone();
     }
+
 }

@@ -394,4 +394,5 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
     public RenewDomainRequest clone() {
         return (RenewDomainRequest) super.clone();
     }
+
 }

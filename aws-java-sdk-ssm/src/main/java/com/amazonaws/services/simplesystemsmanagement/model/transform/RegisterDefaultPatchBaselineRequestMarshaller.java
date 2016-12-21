@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class RegisterDefaultPatchBaselineRequestMarshaller implements
         Marshaller<Request<RegisterDefaultPatchBaselineRequest>, RegisterDefaultPatchBaselineRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RegisterDefaultPatchBaselineRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RegisterDefaultPatchBaselineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

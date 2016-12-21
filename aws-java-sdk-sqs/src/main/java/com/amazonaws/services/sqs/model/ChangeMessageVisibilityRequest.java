@@ -280,4 +280,5 @@ public class ChangeMessageVisibilityRequest extends com.amazonaws.AmazonWebServi
     public ChangeMessageVisibilityRequest clone() {
         return (ChangeMessageVisibilityRequest) super.clone();
     }
+
 }

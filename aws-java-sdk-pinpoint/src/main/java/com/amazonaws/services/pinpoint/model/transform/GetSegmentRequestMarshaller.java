@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetSegmentRequestMarshaller implements Marshaller<Request<GetSegmentRequest>, GetSegmentRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetSegmentRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetSegmentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

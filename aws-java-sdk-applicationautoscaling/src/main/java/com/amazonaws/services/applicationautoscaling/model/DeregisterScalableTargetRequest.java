@@ -646,4 +646,5 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
     public DeregisterScalableTargetRequest clone() {
         return (DeregisterScalableTargetRequest) super.clone();
     }
+
 }

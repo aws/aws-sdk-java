@@ -243,4 +243,5 @@ public class SetVaultAccessPolicyRequest extends com.amazonaws.AmazonWebServiceR
     public SetVaultAccessPolicyRequest clone() {
         return (SetVaultAccessPolicyRequest) super.clone();
     }
+
 }

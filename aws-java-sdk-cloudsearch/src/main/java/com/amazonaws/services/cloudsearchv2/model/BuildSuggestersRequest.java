@@ -98,4 +98,5 @@ public class BuildSuggestersRequest extends com.amazonaws.AmazonWebServiceReques
     public BuildSuggestersRequest clone() {
         return (BuildSuggestersRequest) super.clone();
     }
+
 }

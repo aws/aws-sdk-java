@@ -275,4 +275,5 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateFleetCapacityRequest clone() {
         return (UpdateFleetCapacityRequest) super.clone();
     }
+
 }

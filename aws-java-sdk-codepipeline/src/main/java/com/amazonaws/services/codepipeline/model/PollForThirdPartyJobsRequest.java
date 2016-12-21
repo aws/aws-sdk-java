@@ -150,4 +150,5 @@ public class PollForThirdPartyJobsRequest extends com.amazonaws.AmazonWebService
     public PollForThirdPartyJobsRequest clone() {
         return (PollForThirdPartyJobsRequest) super.clone();
     }
+
 }

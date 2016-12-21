@@ -114,4 +114,5 @@ public class DeprecateDomainRequest extends com.amazonaws.AmazonWebServiceReques
     public DeprecateDomainRequest clone() {
         return (DeprecateDomainRequest) super.clone();
     }
+
 }

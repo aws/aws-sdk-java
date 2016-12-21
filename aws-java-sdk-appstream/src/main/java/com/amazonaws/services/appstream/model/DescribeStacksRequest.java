@@ -204,4 +204,5 @@ public class DescribeStacksRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeStacksRequest clone() {
         return (DescribeStacksRequest) super.clone();
     }
+
 }

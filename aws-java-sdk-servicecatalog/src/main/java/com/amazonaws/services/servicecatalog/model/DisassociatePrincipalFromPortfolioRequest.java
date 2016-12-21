@@ -301,4 +301,5 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
     public DisassociatePrincipalFromPortfolioRequest clone() {
         return (DisassociatePrincipalFromPortfolioRequest) super.clone();
     }
+
 }

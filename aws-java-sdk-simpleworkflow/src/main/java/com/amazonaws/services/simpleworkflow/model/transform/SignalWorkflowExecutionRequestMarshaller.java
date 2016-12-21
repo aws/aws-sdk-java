@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SignalWorkflowExecutionRequestMarshaller implements Marshaller<Request<SignalWorkflowExecutionRequest>, SignalWorkflowExecutionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SignalWorkflowExecutionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SignalWorkflowExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

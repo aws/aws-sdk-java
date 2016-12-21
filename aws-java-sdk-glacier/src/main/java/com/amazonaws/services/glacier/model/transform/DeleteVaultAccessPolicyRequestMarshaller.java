@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteVaultAccessPolicyRequestMarshaller implements Marshaller<Request<DeleteVaultAccessPolicyRequest>, DeleteVaultAccessPolicyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteVaultAccessPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteVaultAccessPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

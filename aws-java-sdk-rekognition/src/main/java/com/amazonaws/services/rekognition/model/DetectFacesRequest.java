@@ -286,4 +286,5 @@ public class DetectFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DetectFacesRequest clone() {
         return (DetectFacesRequest) super.clone();
     }
+
 }

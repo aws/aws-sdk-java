@@ -1387,4 +1387,5 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public PublishRequest clone() {
         return (PublishRequest) super.clone();
     }
+
 }

@@ -95,4 +95,5 @@ public class DeleteSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     public DeleteSnapshotScheduleRequest clone() {
         return (DeleteSnapshotScheduleRequest) super.clone();
     }
+
 }

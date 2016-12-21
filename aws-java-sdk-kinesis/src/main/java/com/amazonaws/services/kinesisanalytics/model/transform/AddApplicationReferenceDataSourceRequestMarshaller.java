@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class AddApplicationReferenceDataSourceRequestMarshaller implements
         Marshaller<Request<AddApplicationReferenceDataSourceRequest>, AddApplicationReferenceDataSourceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddApplicationReferenceDataSourceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddApplicationReferenceDataSourceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

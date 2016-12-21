@@ -193,4 +193,5 @@ public class SetDataRetrievalPolicyRequest extends com.amazonaws.AmazonWebServic
     public SetDataRetrievalPolicyRequest clone() {
         return (SetDataRetrievalPolicyRequest) super.clone();
     }
+
 }

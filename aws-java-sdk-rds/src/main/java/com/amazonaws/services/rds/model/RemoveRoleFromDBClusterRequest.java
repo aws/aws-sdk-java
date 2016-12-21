@@ -174,4 +174,5 @@ public class RemoveRoleFromDBClusterRequest extends com.amazonaws.AmazonWebServi
     public RemoveRoleFromDBClusterRequest clone() {
         return (RemoveRoleFromDBClusterRequest) super.clone();
     }
+
 }

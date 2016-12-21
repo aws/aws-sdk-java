@@ -116,4 +116,5 @@ public class DeleteDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
     public DeleteDeploymentConfigRequest clone() {
         return (DeleteDeploymentConfigRequest) super.clone();
     }
+
 }

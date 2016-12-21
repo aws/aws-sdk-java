@@ -167,4 +167,5 @@ public class CreateDomainEntryRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateDomainEntryRequest clone() {
         return (CreateDomainEntryRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeprecateWorkflowTypeRequestMarshaller implements Marshaller<Request<DeprecateWorkflowTypeRequest>, DeprecateWorkflowTypeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeprecateWorkflowTypeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeprecateWorkflowTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

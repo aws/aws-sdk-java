@@ -294,4 +294,5 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
     public RestoreServerRequest clone() {
         return (RestoreServerRequest) super.clone();
     }
+
 }

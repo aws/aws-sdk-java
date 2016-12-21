@@ -222,4 +222,5 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     public ListTagsForResourceRequest clone() {
         return (ListTagsForResourceRequest) super.clone();
     }
+
 }

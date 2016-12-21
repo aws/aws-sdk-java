@@ -204,4 +204,5 @@ public class GetDomainDetailRequest extends com.amazonaws.AmazonWebServiceReques
     public GetDomainDetailRequest clone() {
         return (GetDomainDetailRequest) super.clone();
     }
+
 }

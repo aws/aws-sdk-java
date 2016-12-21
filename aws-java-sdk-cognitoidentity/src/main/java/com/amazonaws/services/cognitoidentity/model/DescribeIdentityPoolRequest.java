@@ -116,4 +116,5 @@ public class DescribeIdentityPoolRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeIdentityPoolRequest clone() {
         return (DescribeIdentityPoolRequest) super.clone();
     }
+
 }

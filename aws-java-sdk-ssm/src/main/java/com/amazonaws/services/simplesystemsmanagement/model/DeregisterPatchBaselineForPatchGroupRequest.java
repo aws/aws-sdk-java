@@ -167,4 +167,5 @@ public class DeregisterPatchBaselineForPatchGroupRequest extends com.amazonaws.A
     public DeregisterPatchBaselineForPatchGroupRequest clone() {
         return (DeregisterPatchBaselineForPatchGroupRequest) super.clone();
     }
+
 }

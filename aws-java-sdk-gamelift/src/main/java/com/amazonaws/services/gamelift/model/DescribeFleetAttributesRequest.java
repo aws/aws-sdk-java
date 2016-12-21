@@ -282,4 +282,5 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     public DescribeFleetAttributesRequest clone() {
         return (DescribeFleetAttributesRequest) super.clone();
     }
+
 }

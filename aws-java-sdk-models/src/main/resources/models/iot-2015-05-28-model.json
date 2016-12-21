@@ -1,4 +1,5 @@
 {
+  "authorizers" : { },
   "metadata" : {
     "apiVersion" : "2015-05-28",
     "endpointPrefix" : "iot",
@@ -14,7 +15,8 @@
   },
   "operations" : {
     "AcceptCertificateTransfer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p>",
       "errors" : [ {
@@ -96,7 +98,8 @@
       "output" : null
     },
     "AttachPrincipalPolicy" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attaches the specified policy to the specified principal (certificate or other credential).</p>",
       "errors" : [ {
@@ -178,7 +181,8 @@
       "output" : null
     },
     "AttachThingPrincipal" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Attaches the specified principal to the specified thing.</p>",
       "errors" : [ {
@@ -256,7 +260,8 @@
       }
     },
     "CancelCertificateTransfer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Cancels a pending transfer for the specified certificate.</p> <p><b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer, AWS IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p>",
       "errors" : [ {
@@ -338,7 +343,8 @@
       "output" : null
     },
     "CreateCertificateFromCsr" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates an X.509 certificate using the specified certificate signing request.</p> <p><b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> <p>You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. </p> <p>Assuming a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is:</p> <p>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</p> <p> This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the aws iot create-certificate-from-csr AWS CLI command to create a certificate for the corresponding CSR. </p> <p> The aws iot create-certificate-from-csr part of the command can also be run in parallel to speed up the certificate creation process: </p> <p> $ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </p> <p> On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </p> <p> On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is: </p> <p> &gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\"</p>",
       "errors" : [ {
@@ -407,7 +413,8 @@
       }
     },
     "CreateKeysAndCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key.</p> <p><b>Note</b> This is the only time AWS IoT issues the private key for this certificate, so it is important to keep it in a secure location.</p>",
       "errors" : [ {
@@ -476,7 +483,8 @@
       }
     },
     "CreatePolicy" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates an AWS IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p>",
       "errors" : [ {
@@ -563,7 +571,8 @@
       }
     },
     "CreatePolicyVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new version of the specified AWS IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p>",
       "errors" : [ {
@@ -659,7 +668,8 @@
       }
     },
     "CreateThing" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a thing record in the thing registry.</p>",
       "errors" : [ {
@@ -746,7 +756,8 @@
       }
     },
     "CreateThingType" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a new thing type.</p>",
       "errors" : [ {
@@ -824,7 +835,8 @@
       }
     },
     "CreateTopicRule" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p>",
       "errors" : [ {
@@ -888,7 +900,8 @@
       "output" : null
     },
     "DeleteCACertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a registered CA certificate.</p>",
       "errors" : [ {
@@ -975,7 +988,8 @@
       }
     },
     "DeleteCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPrincipalPolicy</a> API to detach all policies. Next, use the <a>UpdateCertificate</a> API to set the certificate to the INACTIVE status.</p>",
       "errors" : [ {
@@ -1066,7 +1080,8 @@
       "output" : null
     },
     "DeletePolicy" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the DeletePolicyVersion API to delete all non-default versions of the policy; use the DetachPrincipalPolicy API to detach the policy from any certificate; and then use the DeletePolicy API to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p>",
       "errors" : [ {
@@ -1148,7 +1163,8 @@
       "output" : null
     },
     "DeletePolicyVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this API. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>",
       "errors" : [ {
@@ -1230,7 +1246,8 @@
       "output" : null
     },
     "DeleteRegistrationCode" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes a CA certificate registration code.</p>",
       "errors" : [ {
@@ -1299,7 +1316,8 @@
       }
     },
     "DeleteThing" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified thing.</p>",
       "errors" : [ {
@@ -1386,7 +1404,8 @@
       }
     },
     "DeleteThingType" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified thing type . You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.</p>",
       "errors" : [ {
@@ -1464,7 +1483,8 @@
       }
     },
     "DeleteTopicRule" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deletes the specified rule.</p>",
       "errors" : [ {
@@ -1519,7 +1539,8 @@
       "output" : null
     },
     "DeprecateThingType" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Deprecates a thing type. You can not associate new things with deprecated thing type.</p>",
       "errors" : [ {
@@ -1597,7 +1618,8 @@
       }
     },
     "DescribeCACertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Describes a registered CA certificate.</p>",
       "errors" : [ {
@@ -1675,7 +1697,8 @@
       }
     },
     "DescribeCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the specified certificate.</p>",
       "errors" : [ {
@@ -1753,7 +1776,8 @@
       }
     },
     "DescribeEndpoint" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Returns a unique endpoint specific to the AWS account making the call.</p>",
       "errors" : [ {
@@ -1804,7 +1828,8 @@
       }
     },
     "DescribeThing" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the specified thing.</p>",
       "errors" : [ {
@@ -1882,7 +1907,8 @@
       }
     },
     "DescribeThingType" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the specified thing type.</p>",
       "errors" : [ {
@@ -1960,7 +1986,8 @@
       }
     },
     "DetachPrincipalPolicy" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Removes the specified policy from the specified certificate.</p>",
       "errors" : [ {
@@ -2033,7 +2060,8 @@
       "output" : null
     },
     "DetachThingPrincipal" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Detaches the specified principal from the specified thing.</p>",
       "errors" : [ {
@@ -2111,7 +2139,8 @@
       }
     },
     "DisableTopicRule" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Disables the specified rule.</p>",
       "errors" : [ {
@@ -2166,7 +2195,8 @@
       "output" : null
     },
     "EnableTopicRule" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Enables the specified rule.</p>",
       "errors" : [ {
@@ -2221,7 +2251,8 @@
       "output" : null
     },
     "GetLoggingOptions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets the logging options.</p>",
       "errors" : [ {
@@ -2272,7 +2303,8 @@
       }
     },
     "GetPolicy" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the specified policy with the policy document of the default version.</p>",
       "errors" : [ {
@@ -2350,7 +2382,8 @@
       }
     },
     "GetPolicyVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the specified policy version.</p>",
       "errors" : [ {
@@ -2428,7 +2461,8 @@
       }
     },
     "GetRegistrationCode" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets a registration code used to register a CA certificate with AWS IoT.</p>",
       "errors" : [ {
@@ -2497,7 +2531,8 @@
       }
     },
     "GetTopicRule" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Gets information about the specified rule.</p>",
       "errors" : [ {
@@ -2557,7 +2592,8 @@
       }
     },
     "ListCACertificates" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the CA certificates registered for your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
       "errors" : [ {
@@ -2626,7 +2662,8 @@
       }
     },
     "ListCertificates" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the certificates registered in your AWS account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p>",
       "errors" : [ {
@@ -2695,7 +2732,8 @@
       }
     },
     "ListCertificatesByCA" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>List the device certificates signed by the specified CA certificate.</p>",
       "errors" : [ {
@@ -2764,7 +2802,8 @@
       }
     },
     "ListOutgoingCertificates" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists certificates that are being transfered but not yet accepted.</p>",
       "errors" : [ {
@@ -2833,7 +2872,8 @@
       }
     },
     "ListPolicies" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists your policies.</p>",
       "errors" : [ {
@@ -2902,7 +2942,8 @@
       }
     },
     "ListPolicyPrincipals" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the principals associated with the specified policy.</p>",
       "errors" : [ {
@@ -2980,7 +3021,8 @@
       }
     },
     "ListPolicyVersions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the versions of the specified policy and identifies the default version.</p>",
       "errors" : [ {
@@ -3058,7 +3100,8 @@
       }
     },
     "ListPrincipalPolicies" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href=\"http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax\">AmazonCognito Identity format</a>.</p>",
       "errors" : [ {
@@ -3136,7 +3179,8 @@
       }
     },
     "ListPrincipalThings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the things associated with the specified principal.</p>",
       "errors" : [ {
@@ -3214,7 +3258,8 @@
       }
     },
     "ListThingPrincipals" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the principals associated with the specified thing.</p>",
       "errors" : [ {
@@ -3292,7 +3337,8 @@
       }
     },
     "ListThingTypes" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the existing thing types.</p>",
       "errors" : [ {
@@ -3361,7 +3407,8 @@
       }
     },
     "ListThings" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. </p>",
       "errors" : [ {
@@ -3430,7 +3477,8 @@
       }
     },
     "ListTopicRules" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Lists the rules for the specific topic.</p>",
       "errors" : [ {
@@ -3481,7 +3529,8 @@
       }
     },
     "RegisterCACertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same subject field and public key. This enables you to have up to 10 certificate authorities sign your device certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you register your device certificates with the RegisterCertificate API.</p>",
       "errors" : [ {
@@ -3586,7 +3635,8 @@
       }
     },
     "RegisterCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Registers a device certificate with AWS IoT. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.</p>",
       "errors" : [ {
@@ -3691,7 +3741,8 @@
       }
     },
     "RejectCertificateTransfer" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Rejects a pending certificate transfer. After AWS IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p>",
       "errors" : [ {
@@ -3773,7 +3824,8 @@
       "output" : null
     },
     "ReplaceTopicRule" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Replaces the specified rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p>",
       "errors" : [ {
@@ -3837,7 +3889,8 @@
       "output" : null
     },
     "SetDefaultPolicyVersion" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicy API.</p>",
       "errors" : [ {
@@ -3910,7 +3963,8 @@
       "output" : null
     },
     "SetLoggingOptions" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Sets the logging options.</p>",
       "errors" : [ {
@@ -3956,7 +4010,8 @@
       "output" : null
     },
     "TransferCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Transfers the specified certificate to the specified AWS account.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the UpdateCertificate API to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the DetachPrincipalPolicy API to detach them.</p>",
       "errors" : [ {
@@ -4052,7 +4107,8 @@
       }
     },
     "UpdateCACertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates a registered CA certificate.</p>",
       "errors" : [ {
@@ -4125,7 +4181,8 @@
       "output" : null
     },
     "UpdateCertificate" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices, but these devices will be unable to reconnect.</p> <p>The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.</p>",
       "errors" : [ {
@@ -4207,7 +4264,8 @@
       "output" : null
     },
     "UpdateThing" : {
-      "authtype" : null,
+      "authorizer" : null,
+      "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "<p>Updates the data for a thing.</p>",
       "errors" : [ {

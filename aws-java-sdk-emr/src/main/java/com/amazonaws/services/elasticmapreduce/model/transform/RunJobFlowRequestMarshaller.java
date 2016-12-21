@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlowRequest>, RunJobFlowRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RunJobFlowRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RunJobFlowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

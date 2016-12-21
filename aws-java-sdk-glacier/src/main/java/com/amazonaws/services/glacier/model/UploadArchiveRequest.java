@@ -445,4 +445,5 @@ public class UploadArchiveRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UploadArchiveRequest clone() {
         return (UploadArchiveRequest) super.clone();
     }
+
 }

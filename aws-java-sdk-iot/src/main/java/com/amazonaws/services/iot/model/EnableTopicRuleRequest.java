@@ -116,4 +116,5 @@ public class EnableTopicRuleRequest extends com.amazonaws.AmazonWebServiceReques
     public EnableTopicRuleRequest clone() {
         return (EnableTopicRuleRequest) super.clone();
     }
+
 }

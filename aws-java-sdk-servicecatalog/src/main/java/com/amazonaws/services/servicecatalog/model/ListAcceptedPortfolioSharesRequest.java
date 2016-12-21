@@ -311,4 +311,5 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
     public ListAcceptedPortfolioSharesRequest clone() {
         return (ListAcceptedPortfolioSharesRequest) super.clone();
     }
+
 }

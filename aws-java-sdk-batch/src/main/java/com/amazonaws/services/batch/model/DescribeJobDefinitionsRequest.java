@@ -451,4 +451,5 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
     public DescribeJobDefinitionsRequest clone() {
         return (DescribeJobDefinitionsRequest) super.clone();
     }
+
 }

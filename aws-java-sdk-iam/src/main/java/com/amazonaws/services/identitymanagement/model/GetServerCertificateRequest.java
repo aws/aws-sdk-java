@@ -168,4 +168,5 @@ public class GetServerCertificateRequest extends com.amazonaws.AmazonWebServiceR
     public GetServerCertificateRequest clone() {
         return (GetServerCertificateRequest) super.clone();
     }
+
 }

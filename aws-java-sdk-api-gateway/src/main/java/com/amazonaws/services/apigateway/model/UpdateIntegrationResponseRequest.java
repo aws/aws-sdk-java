@@ -362,4 +362,5 @@ public class UpdateIntegrationResponseRequest extends com.amazonaws.AmazonWebSer
     public UpdateIntegrationResponseRequest clone() {
         return (UpdateIntegrationResponseRequest) super.clone();
     }
+
 }

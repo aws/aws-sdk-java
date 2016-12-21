@@ -146,4 +146,5 @@ public class SetRulePrioritiesRequest extends com.amazonaws.AmazonWebServiceRequ
     public SetRulePrioritiesRequest clone() {
         return (SetRulePrioritiesRequest) super.clone();
     }
+
 }

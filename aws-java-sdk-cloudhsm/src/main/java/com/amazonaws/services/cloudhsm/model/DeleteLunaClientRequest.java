@@ -114,4 +114,5 @@ public class DeleteLunaClientRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteLunaClientRequest clone() {
         return (DeleteLunaClientRequest) super.clone();
     }
+
 }

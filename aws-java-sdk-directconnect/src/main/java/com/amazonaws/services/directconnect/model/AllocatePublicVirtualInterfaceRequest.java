@@ -277,4 +277,5 @@ public class AllocatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonW
     public AllocatePublicVirtualInterfaceRequest clone() {
         return (AllocatePublicVirtualInterfaceRequest) super.clone();
     }
+
 }

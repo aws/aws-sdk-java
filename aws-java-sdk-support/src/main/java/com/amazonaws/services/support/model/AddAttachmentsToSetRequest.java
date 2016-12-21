@@ -223,4 +223,5 @@ public class AddAttachmentsToSetRequest extends com.amazonaws.AmazonWebServiceRe
     public AddAttachmentsToSetRequest clone() {
         return (AddAttachmentsToSetRequest) super.clone();
     }
+
 }

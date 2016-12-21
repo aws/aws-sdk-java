@@ -114,4 +114,5 @@ public class GetMaintenanceWindowExecutionRequest extends com.amazonaws.AmazonWe
     public GetMaintenanceWindowExecutionRequest clone() {
         return (GetMaintenanceWindowExecutionRequest) super.clone();
     }
+
 }

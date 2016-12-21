@@ -329,4 +329,5 @@ public class SignalWorkflowExecutionRequest extends com.amazonaws.AmazonWebServi
     public SignalWorkflowExecutionRequest clone() {
         return (SignalWorkflowExecutionRequest) super.clone();
     }
+
 }

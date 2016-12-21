@@ -362,4 +362,5 @@ public class PutGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     public PutGroupPolicyRequest clone() {
         return (PutGroupPolicyRequest) super.clone();
     }
+
 }

@@ -200,4 +200,5 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
     public DescribeWorkspacesConnectionStatusRequest clone() {
         return (DescribeWorkspacesConnectionStatusRequest) super.clone();
     }
+
 }

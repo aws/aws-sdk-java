@@ -116,4 +116,5 @@ public class GetUsagePlanRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetUsagePlanRequest clone() {
         return (GetUsagePlanRequest) super.clone();
     }
+
 }

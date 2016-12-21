@@ -656,4 +656,5 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateAuthorizerRequest clone() {
         return (CreateAuthorizerRequest) super.clone();
     }
+
 }

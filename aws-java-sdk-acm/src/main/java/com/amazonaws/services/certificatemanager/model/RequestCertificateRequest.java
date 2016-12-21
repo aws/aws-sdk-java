@@ -668,4 +668,5 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     public RequestCertificateRequest clone() {
         return (RequestCertificateRequest) super.clone();
     }
+
 }

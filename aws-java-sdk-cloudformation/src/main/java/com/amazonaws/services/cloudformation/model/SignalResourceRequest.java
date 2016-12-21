@@ -340,4 +340,5 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     public SignalResourceRequest clone() {
         return (SignalResourceRequest) super.clone();
     }
+
 }

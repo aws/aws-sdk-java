@@ -386,4 +386,5 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateStreamingURLRequest clone() {
         return (CreateStreamingURLRequest) super.clone();
     }
+
 }

@@ -638,4 +638,5 @@ public class ListDeploymentInstancesRequest extends com.amazonaws.AmazonWebServi
     public ListDeploymentInstancesRequest clone() {
         return (ListDeploymentInstancesRequest) super.clone();
     }
+
 }

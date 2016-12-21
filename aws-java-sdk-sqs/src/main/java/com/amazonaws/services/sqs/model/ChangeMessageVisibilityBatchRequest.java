@@ -241,4 +241,5 @@ public class ChangeMessageVisibilityBatchRequest extends com.amazonaws.AmazonWeb
     public ChangeMessageVisibilityBatchRequest clone() {
         return (ChangeMessageVisibilityBatchRequest) super.clone();
     }
+
 }

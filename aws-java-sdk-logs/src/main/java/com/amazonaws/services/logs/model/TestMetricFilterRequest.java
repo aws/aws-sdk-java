@@ -181,4 +181,5 @@ public class TestMetricFilterRequest extends com.amazonaws.AmazonWebServiceReque
     public TestMetricFilterRequest clone() {
         return (TestMetricFilterRequest) super.clone();
     }
+
 }

@@ -346,4 +346,5 @@ public class CreateLoginProfileRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateLoginProfileRequest clone() {
         return (CreateLoginProfileRequest) super.clone();
     }
+
 }

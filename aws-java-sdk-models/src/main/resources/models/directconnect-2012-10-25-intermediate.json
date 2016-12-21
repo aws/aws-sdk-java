@@ -63,6 +63,7 @@
     "cucumberModuleInjectorClassName" : "AmazonDirectConnectModuleInjector",
     "defaultEndpoint" : "https://directconnect.us-east-1.amazonaws.com/",
     "defaultEndpointWithoutHttpProtocol" : "directconnect.us-east-1.amazonaws.com/",
+    "defaultRegion" : null,
     "documentation" : "<p>AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. With this connection in place, you can create virtual interfaces directly to the AWS cloud (for example, to Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)) and to Amazon Virtual Private Cloud (Amazon VPC), bypassing Internet service providers in your network path. An AWS Direct Connect location provides access to AWS in the region it is associated with, as well as access to other US regions. For example, you can provision a single connection to any AWS Direct Connect location in the US and use it to access public AWS services in all US Regions and AWS GovCloud (US).</p>",
     "endpointPrefix" : "directconnect",
     "hasApiWithStreamInput" : false,
@@ -73,7 +74,10 @@
     "packagePath" : "com/amazonaws/services/directconnect",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Direct Connect",
     "serviceName" : "AWS Direct Connect",
@@ -1032,6 +1036,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddressFamily",
       "unmarshaller" : {
@@ -1640,6 +1646,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "bandwidth", "connectionName", "ownerAccount", "interconnectId", "vlan" ],
       "shapeName" : "AllocateConnectionOnInterconnectRequest",
       "unmarshaller" : null,
@@ -2803,6 +2811,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AllocateConnectionOnInterconnectResult",
       "unmarshaller" : {
@@ -3185,6 +3195,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId", "ownerAccount", "newPrivateVirtualInterfaceAllocation" ],
       "shapeName" : "AllocatePrivateVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -5423,6 +5435,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AllocatePrivateVirtualInterfaceResult",
       "unmarshaller" : {
@@ -5805,6 +5819,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId", "ownerAccount", "newPublicVirtualInterfaceAllocation" ],
       "shapeName" : "AllocatePublicVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -8043,6 +8059,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AllocatePublicVirtualInterfaceResult",
       "unmarshaller" : {
@@ -8870,6 +8888,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BGPPeer",
       "unmarshaller" : {
@@ -8920,6 +8940,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BGPPeerState",
       "unmarshaller" : {
@@ -8961,6 +8983,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BGPStatus",
       "unmarshaller" : {
@@ -9117,6 +9141,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId" ],
       "shapeName" : "ConfirmConnectionRequest",
       "unmarshaller" : null,
@@ -9263,6 +9289,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmConnectionResult",
       "unmarshaller" : {
@@ -9532,6 +9560,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceId", "virtualGatewayId" ],
       "shapeName" : "ConfirmPrivateVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -9678,6 +9708,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmPrivateVirtualInterfaceResult",
       "unmarshaller" : {
@@ -9834,6 +9866,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceId" ],
       "shapeName" : "ConfirmPublicVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -9980,6 +10014,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConfirmPublicVirtualInterfaceResult",
       "unmarshaller" : {
@@ -11146,6 +11182,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Connection",
       "unmarshaller" : {
@@ -11205,6 +11243,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConnectionState",
       "unmarshaller" : {
@@ -11474,6 +11514,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBGPPeerRequest",
       "unmarshaller" : null,
@@ -11620,6 +11662,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBGPPeerResult",
       "unmarshaller" : {
@@ -12002,6 +12046,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "location", "bandwidth", "connectionName" ],
       "shapeName" : "CreateConnectionRequest",
       "unmarshaller" : null,
@@ -13165,6 +13211,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateConnectionResult",
       "unmarshaller" : {
@@ -13547,6 +13595,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "interconnectName", "bandwidth", "location" ],
       "shapeName" : "CreateInterconnectRequest",
       "unmarshaller" : null,
@@ -14371,6 +14421,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateInterconnectResult",
       "unmarshaller" : {
@@ -14640,6 +14692,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId", "newPrivateVirtualInterface" ],
       "shapeName" : "CreatePrivateVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -16878,6 +16932,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePrivateVirtualInterfaceResult",
       "unmarshaller" : {
@@ -17147,6 +17203,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId", "newPublicVirtualInterface" ],
       "shapeName" : "CreatePublicVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -19385,6 +19443,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePublicVirtualInterfaceResult",
       "unmarshaller" : {
@@ -19767,6 +19827,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBGPPeerRequest",
       "unmarshaller" : null,
@@ -19913,6 +19975,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBGPPeerResult",
       "unmarshaller" : {
@@ -20069,6 +20133,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId" ],
       "shapeName" : "DeleteConnectionRequest",
       "unmarshaller" : null,
@@ -21232,6 +21298,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteConnectionResult",
       "unmarshaller" : {
@@ -21388,6 +21456,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "interconnectId" ],
       "shapeName" : "DeleteInterconnectRequest",
       "unmarshaller" : null,
@@ -21534,6 +21604,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteInterconnectResult",
       "unmarshaller" : {
@@ -21690,6 +21762,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceId" ],
       "shapeName" : "DeleteVirtualInterfaceRequest",
       "unmarshaller" : null,
@@ -21836,6 +21910,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVirtualInterfaceResult",
       "unmarshaller" : {
@@ -22218,6 +22294,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "connectionId" ],
       "shapeName" : "DescribeConnectionLoaRequest",
       "unmarshaller" : null,
@@ -22364,6 +22442,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeConnectionLoaResult",
       "unmarshaller" : {
@@ -22520,6 +22600,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "interconnectId" ],
       "shapeName" : "DescribeConnectionsOnInterconnectRequest",
       "unmarshaller" : null,
@@ -22808,6 +22890,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeConnectionsOnInterconnectResult",
       "unmarshaller" : {
@@ -22964,6 +23048,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeConnectionsRequest",
       "unmarshaller" : null,
@@ -23252,6 +23338,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeConnectionsResult",
       "unmarshaller" : {
@@ -23634,6 +23722,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "interconnectId" ],
       "shapeName" : "DescribeInterconnectLoaRequest",
       "unmarshaller" : null,
@@ -23780,6 +23870,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeInterconnectLoaResult",
       "unmarshaller" : {
@@ -23936,6 +24028,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeInterconnectsRequest",
       "unmarshaller" : null,
@@ -24224,6 +24318,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeInterconnectsResult",
       "unmarshaller" : {
@@ -24266,6 +24362,8 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLocationsRequest",
       "unmarshaller" : null,
@@ -24554,6 +24652,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeLocationsResult",
       "unmarshaller" : {
@@ -24852,6 +24952,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "resourceArns" ],
       "shapeName" : "DescribeTagsRequest",
       "unmarshaller" : null,
@@ -25140,6 +25242,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeTagsResult",
       "unmarshaller" : {
@@ -25182,6 +25286,8 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVirtualGatewaysRequest",
       "unmarshaller" : null,
@@ -25470,6 +25576,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVirtualGatewaysResult",
       "unmarshaller" : {
@@ -25739,6 +25847,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVirtualInterfacesRequest",
       "unmarshaller" : null,
@@ -26027,6 +26137,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVirtualInterfacesResult",
       "unmarshaller" : {
@@ -26062,6 +26174,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DirectConnectClientException",
       "unmarshaller" : null,
@@ -26094,6 +26208,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DirectConnectServerException",
       "unmarshaller" : null,
@@ -26126,6 +26242,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateTagKeysException",
       "unmarshaller" : null,
@@ -26950,6 +27068,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Interconnect",
       "unmarshaller" : {
@@ -27003,6 +27123,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InterconnectState",
       "unmarshaller" : {
@@ -27265,6 +27387,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Loa",
       "unmarshaller" : {
@@ -27303,6 +27427,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LoaContentType",
       "unmarshaller" : {
@@ -27565,6 +27691,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Location",
       "unmarshaller" : {
@@ -28166,6 +28294,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NewBGPPeer",
       "unmarshaller" : {
@@ -29106,6 +29236,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceName", "vlan", "asn", "virtualGatewayId" ],
       "shapeName" : "NewPrivateVirtualInterface",
       "unmarshaller" : {
@@ -29933,6 +30065,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceName", "vlan", "asn" ],
       "shapeName" : "NewPrivateVirtualInterfaceAllocation",
       "unmarshaller" : {
@@ -31015,6 +31149,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceName", "vlan", "asn" ],
       "shapeName" : "NewPublicVirtualInterface",
       "unmarshaller" : {
@@ -32097,6 +32233,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "virtualInterfaceName", "vlan", "asn" ],
       "shapeName" : "NewPublicVirtualInterfaceAllocation",
       "unmarshaller" : {
@@ -32501,6 +32639,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceTag",
       "unmarshaller" : {
@@ -32650,6 +32790,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RouteFilterPrefix",
       "unmarshaller" : {
@@ -32912,6 +33054,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "key" ],
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -33323,6 +33467,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tags" ],
       "shapeName" : "TagResourceRequest",
       "unmarshaller" : null,
@@ -33355,6 +33501,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagResourceResult",
       "unmarshaller" : {
@@ -33390,6 +33538,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TooManyTagsException",
       "unmarshaller" : null,
@@ -33798,6 +33948,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tagKeys" ],
       "shapeName" : "UntagResourceRequest",
       "unmarshaller" : null,
@@ -33830,6 +33982,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UntagResourceResult",
       "unmarshaller" : {
@@ -34092,6 +34246,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VirtualGateway",
       "unmarshaller" : {
@@ -36333,6 +36489,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VirtualInterface",
       "unmarshaller" : {
@@ -36392,6 +36550,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VirtualInterfaceState",
       "unmarshaller" : {
@@ -36410,6 +36570,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

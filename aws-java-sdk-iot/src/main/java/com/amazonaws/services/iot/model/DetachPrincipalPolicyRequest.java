@@ -194,4 +194,5 @@ public class DetachPrincipalPolicyRequest extends com.amazonaws.AmazonWebService
     public DetachPrincipalPolicyRequest clone() {
         return (DetachPrincipalPolicyRequest) super.clone();
     }
+
 }

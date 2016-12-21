@@ -165,4 +165,5 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdateEndpointRequest clone() {
         return (UpdateEndpointRequest) super.clone();
     }
+
 }

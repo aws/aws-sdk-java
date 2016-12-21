@@ -208,4 +208,5 @@ public class DeleteMessageRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteMessageRequest clone() {
         return (DeleteMessageRequest) super.clone();
     }
+
 }

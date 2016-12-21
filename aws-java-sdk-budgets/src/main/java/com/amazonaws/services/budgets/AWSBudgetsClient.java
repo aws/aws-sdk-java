@@ -60,32 +60,33 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                            com.amazonaws.services.budgets.model.NotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.budgets.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateRecordException").withModeledClass(
-                            com.amazonaws.services.budgets.model.DuplicateRecordException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                            com.amazonaws.services.budgets.model.InternalErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CreationLimitExceededException").withModeledClass(
-                            com.amazonaws.services.budgets.model.CreationLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                            com.amazonaws.services.budgets.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withModeledClass(
-                            com.amazonaws.services.budgets.model.ExpiredNextTokenException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.budgets.model.AWSBudgetsException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRecordException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.DuplicateRecordException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.InternalErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CreationLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.CreationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withModeledClass(
+                                    com.amazonaws.services.budgets.model.ExpiredNextTokenException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.budgets.model.AWSBudgetsException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWSBudgets. A credentials provider chain will be used that

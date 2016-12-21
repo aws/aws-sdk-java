@@ -174,4 +174,5 @@ public class GetActivityTaskRequest extends com.amazonaws.AmazonWebServiceReques
     public GetActivityTaskRequest clone() {
         return (GetActivityTaskRequest) super.clone();
     }
+
 }

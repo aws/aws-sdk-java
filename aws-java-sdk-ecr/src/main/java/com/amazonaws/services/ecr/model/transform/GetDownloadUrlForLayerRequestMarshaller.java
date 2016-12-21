@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetDownloadUrlForLayerRequestMarshaller implements Marshaller<Request<GetDownloadUrlForLayerRequest>, GetDownloadUrlForLayerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDownloadUrlForLayerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDownloadUrlForLayerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

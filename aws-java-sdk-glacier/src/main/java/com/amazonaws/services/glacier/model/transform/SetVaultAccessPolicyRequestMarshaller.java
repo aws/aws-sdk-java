@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetVaultAccessPolicyRequestMarshaller implements Marshaller<Request<SetVaultAccessPolicyRequest>, SetVaultAccessPolicyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetVaultAccessPolicyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetVaultAccessPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

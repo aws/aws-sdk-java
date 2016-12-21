@@ -202,4 +202,5 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UntagResourceRequest clone() {
         return (UntagResourceRequest) super.clone();
     }
+
 }

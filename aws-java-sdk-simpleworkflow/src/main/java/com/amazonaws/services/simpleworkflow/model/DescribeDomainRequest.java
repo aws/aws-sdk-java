@@ -114,4 +114,5 @@ public class DescribeDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeDomainRequest clone() {
         return (DescribeDomainRequest) super.clone();
     }
+
 }

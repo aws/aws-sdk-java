@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteInterconnectRequestMarshaller implements Marshaller<Request<DeleteInterconnectRequest>, DeleteInterconnectRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteInterconnectRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteInterconnectRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

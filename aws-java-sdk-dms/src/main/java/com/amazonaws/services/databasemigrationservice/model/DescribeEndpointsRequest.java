@@ -333,4 +333,5 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeEndpointsRequest clone() {
         return (DescribeEndpointsRequest) super.clone();
     }
+
 }

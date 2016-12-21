@@ -494,4 +494,5 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public RunTaskRequest clone() {
         return (RunTaskRequest) super.clone();
     }
+
 }

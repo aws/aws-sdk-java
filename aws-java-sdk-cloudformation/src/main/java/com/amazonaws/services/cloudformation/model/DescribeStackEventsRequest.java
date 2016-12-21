@@ -274,4 +274,5 @@ public class DescribeStackEventsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeStackEventsRequest clone() {
         return (DescribeStackEventsRequest) super.clone();
     }
+
 }

@@ -275,4 +275,5 @@ public class UnlinkDeveloperIdentityRequest extends com.amazonaws.AmazonWebServi
     public UnlinkDeveloperIdentityRequest clone() {
         return (UnlinkDeveloperIdentityRequest) super.clone();
     }
+
 }

@@ -188,4 +188,5 @@ public class DeleteLogStreamRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteLogStreamRequest clone() {
         return (DeleteLogStreamRequest) super.clone();
     }
+
 }

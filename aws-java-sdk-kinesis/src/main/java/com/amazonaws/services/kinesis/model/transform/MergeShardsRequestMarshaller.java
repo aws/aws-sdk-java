@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class MergeShardsRequestMarshaller implements Marshaller<Request<MergeShardsRequest>, MergeShardsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public MergeShardsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public MergeShardsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

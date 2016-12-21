@@ -397,4 +397,5 @@ public class ModifyOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     public ModifyOptionGroupRequest clone() {
         return (ModifyOptionGroupRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteImportedKeyMaterialRequestMarshaller implements Marshaller<Request<DeleteImportedKeyMaterialRequest>, DeleteImportedKeyMaterialRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteImportedKeyMaterialRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteImportedKeyMaterialRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetStatusRequestMarshaller implements Marshaller<Request<SetStatusRequest>, SetStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

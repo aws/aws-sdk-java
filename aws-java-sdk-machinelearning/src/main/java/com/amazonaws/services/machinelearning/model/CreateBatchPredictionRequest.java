@@ -379,4 +379,5 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
     public CreateBatchPredictionRequest clone() {
         return (CreateBatchPredictionRequest) super.clone();
     }
+
 }

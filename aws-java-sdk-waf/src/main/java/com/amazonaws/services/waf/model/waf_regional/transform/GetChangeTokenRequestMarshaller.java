@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetChangeTokenRequestMarshaller implements Marshaller<Request<GetChangeTokenRequest>, GetChangeTokenRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetChangeTokenRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetChangeTokenRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

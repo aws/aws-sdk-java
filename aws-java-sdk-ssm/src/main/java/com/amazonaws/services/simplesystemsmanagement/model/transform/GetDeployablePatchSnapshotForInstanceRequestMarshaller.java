@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class GetDeployablePatchSnapshotForInstanceRequestMarshaller implements
         Marshaller<Request<GetDeployablePatchSnapshotForInstanceRequest>, GetDeployablePatchSnapshotForInstanceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDeployablePatchSnapshotForInstanceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDeployablePatchSnapshotForInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

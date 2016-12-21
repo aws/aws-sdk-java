@@ -114,4 +114,5 @@ public class DeleteMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteMLModelRequest clone() {
         return (DeleteMLModelRequest) super.clone();
     }
+
 }

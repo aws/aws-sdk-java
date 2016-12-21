@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GenerateClientCertificateRequestMarshaller implements Marshaller<Request<GenerateClientCertificateRequest>, GenerateClientCertificateRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GenerateClientCertificateRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GenerateClientCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

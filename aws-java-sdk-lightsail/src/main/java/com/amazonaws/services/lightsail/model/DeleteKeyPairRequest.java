@@ -114,4 +114,5 @@ public class DeleteKeyPairRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteKeyPairRequest clone() {
         return (DeleteKeyPairRequest) super.clone();
     }
+
 }

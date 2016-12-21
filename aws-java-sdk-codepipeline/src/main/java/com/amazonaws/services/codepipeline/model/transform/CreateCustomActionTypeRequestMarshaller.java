@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateCustomActionTypeRequestMarshaller implements Marshaller<Request<CreateCustomActionTypeRequest>, CreateCustomActionTypeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateCustomActionTypeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateCustomActionTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -123,4 +123,5 @@ public class ListPhoneNumbersOptedOutRequest extends com.amazonaws.AmazonWebServ
     public ListPhoneNumbersOptedOutRequest clone() {
         return (ListPhoneNumbersOptedOutRequest) super.clone();
     }
+
 }

@@ -221,4 +221,5 @@ public class GetParametersRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetParametersRequest clone() {
         return (GetParametersRequest) super.clone();
     }
+
 }

@@ -345,4 +345,5 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateGroupRequest clone() {
         return (UpdateGroupRequest) super.clone();
     }
+
 }

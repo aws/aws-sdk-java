@@ -198,4 +198,5 @@ public class DeleteStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     public DeleteStreamingDistributionRequest clone() {
         return (DeleteStreamingDistributionRequest) super.clone();
     }
+
 }

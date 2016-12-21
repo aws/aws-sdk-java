@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class PutThirdPartyJobFailureResultRequestMarshaller implements
         Marshaller<Request<PutThirdPartyJobFailureResultRequest>, PutThirdPartyJobFailureResultRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutThirdPartyJobFailureResultRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutThirdPartyJobFailureResultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

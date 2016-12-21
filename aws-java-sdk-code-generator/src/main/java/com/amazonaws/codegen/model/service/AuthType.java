@@ -14,9 +14,13 @@
  */
 package com.amazonaws.codegen.model.service;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+import java.util.Arrays;
+
 public enum AuthType {
 
-    NONE("none");
+    NONE("none"), CUSTOM("custom"), IAM("iam");
 
     private final String value;
 
@@ -24,12 +28,11 @@ public enum AuthType {
         this.value = value;
     }
 
+    @JsonCreator
     public static AuthType fromValue(String value) {
-        for (AuthType authType : AuthType.values()) {
-            if (authType.value.equals(value)) {
-                return authType;
-            }
-        }
-        throw new IllegalArgumentException("Unsupported auth type " + value);
+        return Arrays.stream(values())
+                .filter(authType -> authType.value.equals(value))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(String.format("Unknown AuthType '%s'", value)));
     }
 }

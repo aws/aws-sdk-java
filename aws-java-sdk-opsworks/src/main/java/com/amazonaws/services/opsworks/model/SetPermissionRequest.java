@@ -578,4 +578,5 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     public SetPermissionRequest clone() {
         return (SetPermissionRequest) super.clone();
     }
+
 }

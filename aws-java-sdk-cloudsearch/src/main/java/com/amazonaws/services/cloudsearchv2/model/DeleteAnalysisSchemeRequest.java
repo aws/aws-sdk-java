@@ -151,4 +151,5 @@ public class DeleteAnalysisSchemeRequest extends com.amazonaws.AmazonWebServiceR
     public DeleteAnalysisSchemeRequest clone() {
         return (DeleteAnalysisSchemeRequest) super.clone();
     }
+
 }

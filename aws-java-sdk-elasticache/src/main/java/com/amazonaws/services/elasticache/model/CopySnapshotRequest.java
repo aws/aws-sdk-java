@@ -313,4 +313,5 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CopySnapshotRequest clone() {
         return (CopySnapshotRequest) super.clone();
     }
+
 }

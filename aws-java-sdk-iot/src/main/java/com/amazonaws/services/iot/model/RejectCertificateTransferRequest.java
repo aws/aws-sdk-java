@@ -169,4 +169,5 @@ public class RejectCertificateTransferRequest extends com.amazonaws.AmazonWebSer
     public RejectCertificateTransferRequest clone() {
         return (RejectCertificateTransferRequest) super.clone();
     }
+
 }

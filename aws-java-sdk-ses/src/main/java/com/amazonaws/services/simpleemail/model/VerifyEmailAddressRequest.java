@@ -119,4 +119,5 @@ public class VerifyEmailAddressRequest extends com.amazonaws.AmazonWebServiceReq
     public VerifyEmailAddressRequest clone() {
         return (VerifyEmailAddressRequest) super.clone();
     }
+
 }

@@ -420,4 +420,5 @@ public class ModifyHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ModifyHsmRequest clone() {
         return (ModifyHsmRequest) super.clone();
     }
+
 }

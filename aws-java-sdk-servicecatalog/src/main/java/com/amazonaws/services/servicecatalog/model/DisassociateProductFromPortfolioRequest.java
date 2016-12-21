@@ -301,4 +301,5 @@ public class DisassociateProductFromPortfolioRequest extends com.amazonaws.Amazo
     public DisassociateProductFromPortfolioRequest clone() {
         return (DisassociateProductFromPortfolioRequest) super.clone();
     }
+
 }

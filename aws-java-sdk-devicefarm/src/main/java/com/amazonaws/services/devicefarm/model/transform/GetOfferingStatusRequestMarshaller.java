@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetOfferingStatusRequestMarshaller implements Marshaller<Request<GetOfferingStatusRequest>, GetOfferingStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetOfferingStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetOfferingStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

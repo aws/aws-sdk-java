@@ -190,4 +190,5 @@ public class GetVaultLockRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetVaultLockRequest clone() {
         return (GetVaultLockRequest) super.clone();
     }
+
 }

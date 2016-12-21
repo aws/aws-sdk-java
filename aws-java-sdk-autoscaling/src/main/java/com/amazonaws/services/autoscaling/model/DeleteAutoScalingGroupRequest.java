@@ -194,4 +194,5 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     public DeleteAutoScalingGroupRequest clone() {
         return (DeleteAutoScalingGroupRequest) super.clone();
     }
+
 }

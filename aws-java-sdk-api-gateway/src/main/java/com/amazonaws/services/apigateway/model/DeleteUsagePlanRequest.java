@@ -116,4 +116,5 @@ public class DeleteUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteUsagePlanRequest clone() {
         return (DeleteUsagePlanRequest) super.clone();
     }
+
 }

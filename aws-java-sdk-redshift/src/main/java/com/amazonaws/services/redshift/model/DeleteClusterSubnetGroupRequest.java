@@ -114,4 +114,5 @@ public class DeleteClusterSubnetGroupRequest extends com.amazonaws.AmazonWebServ
     public DeleteClusterSubnetGroupRequest clone() {
         return (DeleteClusterSubnetGroupRequest) super.clone();
     }
+
 }

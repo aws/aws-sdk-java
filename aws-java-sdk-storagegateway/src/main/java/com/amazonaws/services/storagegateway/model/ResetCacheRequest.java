@@ -95,4 +95,5 @@ public class ResetCacheRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ResetCacheRequest clone() {
         return (ResetCacheRequest) super.clone();
     }
+
 }

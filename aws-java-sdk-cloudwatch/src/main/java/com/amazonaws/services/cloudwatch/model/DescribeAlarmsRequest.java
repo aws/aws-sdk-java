@@ -445,4 +445,5 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeAlarmsRequest clone() {
         return (DescribeAlarmsRequest) super.clone();
     }
+
 }

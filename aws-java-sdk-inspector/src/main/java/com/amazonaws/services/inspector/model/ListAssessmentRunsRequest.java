@@ -349,4 +349,5 @@ public class ListAssessmentRunsRequest extends com.amazonaws.AmazonWebServiceReq
     public ListAssessmentRunsRequest clone() {
         return (ListAssessmentRunsRequest) super.clone();
     }
+
 }

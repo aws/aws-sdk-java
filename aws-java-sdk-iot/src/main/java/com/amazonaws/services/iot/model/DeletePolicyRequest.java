@@ -116,4 +116,5 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeletePolicyRequest clone() {
         return (DeletePolicyRequest) super.clone();
     }
+
 }

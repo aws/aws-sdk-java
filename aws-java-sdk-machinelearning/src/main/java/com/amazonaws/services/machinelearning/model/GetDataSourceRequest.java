@@ -233,4 +233,5 @@ public class GetDataSourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetDataSourceRequest clone() {
         return (GetDataSourceRequest) super.clone();
     }
+
 }

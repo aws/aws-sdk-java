@@ -167,4 +167,5 @@ public class CloseInstancePublicPortsRequest extends com.amazonaws.AmazonWebServ
     public CloseInstancePublicPortsRequest clone() {
         return (CloseInstancePublicPortsRequest) super.clone();
     }
+
 }

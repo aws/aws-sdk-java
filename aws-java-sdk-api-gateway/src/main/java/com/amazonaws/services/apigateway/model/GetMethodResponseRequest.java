@@ -275,4 +275,5 @@ public class GetMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetMethodResponseRequest clone() {
         return (GetMethodResponseRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DisableDomainAutoRenewRequestMarshaller implements Marshaller<Request<DisableDomainAutoRenewRequest>, DisableDomainAutoRenewRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisableDomainAutoRenewRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisableDomainAutoRenewRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

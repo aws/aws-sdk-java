@@ -116,4 +116,5 @@ public class DeliverConfigSnapshotRequest extends com.amazonaws.AmazonWebService
     public DeliverConfigSnapshotRequest clone() {
         return (DeliverConfigSnapshotRequest) super.clone();
     }
+
 }

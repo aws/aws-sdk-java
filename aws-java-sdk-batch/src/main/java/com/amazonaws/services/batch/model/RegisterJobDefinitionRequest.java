@@ -348,4 +348,5 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     public RegisterJobDefinitionRequest clone() {
         return (RegisterJobDefinitionRequest) super.clone();
     }
+
 }

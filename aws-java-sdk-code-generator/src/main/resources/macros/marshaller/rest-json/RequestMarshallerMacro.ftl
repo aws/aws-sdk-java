@@ -39,9 +39,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>, ${shapeName}> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ${shapeName}Marshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ${shapeName}Marshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
@@ -83,9 +83,33 @@ public class ${shapeName}Marshaller implements Marshaller<Request<${shapeName}>,
 
                     ${member.variable.variableType} ${member.variable.variableName} = ${shape.variable.variableName}.${member.getterMethodName}();
                     if (${member.variable.variableName} != null) {
+                    <#if member.isList()>
+                        <#local loopVariable = member.variable.variableName + "Value"/>
+                        jsonGenerator.writeStartArray();
+                        for (${member.listModel.memberType} ${loopVariable} : ${member.variable.variableName}) {
+                            if (${loopVariable} != null) {
+                            <@ListMemberMacro.content member loopVariable/>
+                            }
+                        }
+                        jsonGenerator.writeEndArray();
+                   <#elseif member.isSimple()>
+                        jsonGenerator.writeValue(${member.variable.variableName});
+                   <#elseif member.isMap()>
+                      <#local loopVariable = member.variable.variableName + "Entry"/>
+                      jsonGenerator.writeStartObject();
+                      for(Map.Entry<${member.mapModel.keyType},${member.mapModel.valueType}> ${loopVariable} : ${member.variable.variableName}.entrySet()) {
+                          if (${loopVariable}.getValue() != null) {
+                              jsonGenerator.writeFieldName(${loopVariable}.getKey());
+
+                              <@MapMemberMacro.content member loopVariable+".getValue()"/>
+                          }
+                      }
+                      jsonGenerator.writeEndObject();
+                   <#else>
                         jsonGenerator.writeStartObject();
                         <@MemberMarshallerMacro.content customConfig member.c2jShape member.variable.variableName shapes/>
                         jsonGenerator.writeEndObject();
+                   </#if>
                     }
 
                     byte[] content = jsonGenerator.getBytes();

@@ -399,4 +399,5 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     public UpdateEventSourceMappingRequest clone() {
         return (UpdateEventSourceMappingRequest) super.clone();
     }
+
 }

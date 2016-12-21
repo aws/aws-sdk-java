@@ -114,4 +114,5 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     public StopApplicationRequest clone() {
         return (StopApplicationRequest) super.clone();
     }
+
 }

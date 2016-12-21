@@ -455,4 +455,5 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
     public DescribeComplianceByResourceRequest clone() {
         return (DescribeComplianceByResourceRequest) super.clone();
     }
+
 }

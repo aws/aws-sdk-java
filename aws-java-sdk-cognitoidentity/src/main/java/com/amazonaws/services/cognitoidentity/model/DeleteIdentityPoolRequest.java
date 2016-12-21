@@ -116,4 +116,5 @@ public class DeleteIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteIdentityPoolRequest clone() {
         return (DeleteIdentityPoolRequest) super.clone();
     }
+
 }

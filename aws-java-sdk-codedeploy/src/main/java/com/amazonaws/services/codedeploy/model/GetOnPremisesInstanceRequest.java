@@ -116,4 +116,5 @@ public class GetOnPremisesInstanceRequest extends com.amazonaws.AmazonWebService
     public GetOnPremisesInstanceRequest clone() {
         return (GetOnPremisesInstanceRequest) super.clone();
     }
+
 }

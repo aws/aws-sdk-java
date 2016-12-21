@@ -308,4 +308,5 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
     public AdminUpdateDeviceStatusRequest clone() {
         return (AdminUpdateDeviceStatusRequest) super.clone();
     }
+
 }

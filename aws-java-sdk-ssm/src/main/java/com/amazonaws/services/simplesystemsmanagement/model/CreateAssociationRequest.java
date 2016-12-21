@@ -546,4 +546,5 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateAssociationRequest clone() {
         return (CreateAssociationRequest) super.clone();
     }
+
 }

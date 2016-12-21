@@ -60,4 +60,5 @@ public class DescribeMyUserProfileRequest extends com.amazonaws.AmazonWebService
     public DescribeMyUserProfileRequest clone() {
         return (DescribeMyUserProfileRequest) super.clone();
     }
+
 }

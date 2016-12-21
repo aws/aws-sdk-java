@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetGcmChannelRequestMarshaller implements Marshaller<Request<GetGcmChannelRequest>, GetGcmChannelRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetGcmChannelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetGcmChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -241,4 +241,5 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     public StartAutomationExecutionRequest clone() {
         return (StartAutomationExecutionRequest) super.clone();
     }
+
 }

@@ -133,4 +133,5 @@ public class DefineAnalysisSchemeRequest extends com.amazonaws.AmazonWebServiceR
     public DefineAnalysisSchemeRequest clone() {
         return (DefineAnalysisSchemeRequest) super.clone();
     }
+
 }

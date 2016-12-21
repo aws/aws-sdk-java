@@ -114,4 +114,5 @@ public class DeleteClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteClusterRequest clone() {
         return (DeleteClusterRequest) super.clone();
     }
+
 }

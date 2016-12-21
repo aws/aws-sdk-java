@@ -318,4 +318,5 @@ public class CreateLoadBalancerPolicyRequest extends com.amazonaws.AmazonWebServ
     public CreateLoadBalancerPolicyRequest clone() {
         return (CreateLoadBalancerPolicyRequest) super.clone();
     }
+
 }

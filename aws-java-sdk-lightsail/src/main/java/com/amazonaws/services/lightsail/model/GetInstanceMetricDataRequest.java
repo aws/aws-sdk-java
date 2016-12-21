@@ -556,4 +556,5 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
     public GetInstanceMetricDataRequest clone() {
         return (GetInstanceMetricDataRequest) super.clone();
     }
+
 }

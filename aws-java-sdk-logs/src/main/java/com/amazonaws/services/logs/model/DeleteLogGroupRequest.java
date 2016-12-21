@@ -132,4 +132,5 @@ public class DeleteLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteLogGroupRequest clone() {
         return (DeleteLogGroupRequest) super.clone();
     }
+
 }

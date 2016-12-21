@@ -181,4 +181,5 @@ public class CreateCertificateFromCsrRequest extends com.amazonaws.AmazonWebServ
     public CreateCertificateFromCsrRequest clone() {
         return (CreateCertificateFromCsrRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServi
     public GetDefaultPatchBaselineRequest clone() {
         return (GetDefaultPatchBaselineRequest) super.clone();
     }
+
 }

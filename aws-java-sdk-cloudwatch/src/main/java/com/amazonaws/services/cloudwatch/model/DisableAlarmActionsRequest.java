@@ -147,4 +147,5 @@ public class DisableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceRe
     public DisableAlarmActionsRequest clone() {
         return (DisableAlarmActionsRequest) super.clone();
     }
+
 }

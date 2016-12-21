@@ -254,4 +254,5 @@ public class SelectRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     public SelectRequest clone() {
         return (SelectRequest) super.clone();
     }
+
 }

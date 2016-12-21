@@ -168,4 +168,5 @@ public class CreatePublicVirtualInterfaceRequest extends com.amazonaws.AmazonWeb
     public CreatePublicVirtualInterfaceRequest clone() {
         return (CreatePublicVirtualInterfaceRequest) super.clone();
     }
+
 }

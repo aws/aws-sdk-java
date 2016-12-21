@@ -526,4 +526,5 @@ public class DescribePendingMaintenanceActionsRequest extends com.amazonaws.Amaz
     public DescribePendingMaintenanceActionsRequest clone() {
         return (DescribePendingMaintenanceActionsRequest) super.clone();
     }
+
 }

@@ -417,4 +417,5 @@ public class ListRecordHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListRecordHistoryRequest clone() {
         return (ListRecordHistoryRequest) super.clone();
     }
+
 }

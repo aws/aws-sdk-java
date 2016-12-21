@@ -58,6 +58,7 @@
     "cucumberModuleInjectorClassName" : "AWSBudgetsModuleInjector",
     "defaultEndpoint" : "budgets.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "budgets.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "All public APIs for AWS Budgets",
     "endpointPrefix" : "budgets",
     "hasApiWithStreamInput" : false,
@@ -68,7 +69,10 @@
     "packagePath" : "com/amazonaws/services/budgets",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "AWSBudgets",
     "serviceFullName" : "AWS Budgets",
     "serviceName" : "AWSBudgets",
@@ -1839,6 +1843,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "BudgetName", "BudgetLimit", "CostTypes", "TimeUnit", "TimePeriod", "BudgetType" ],
       "shapeName" : "Budget",
       "unmarshaller" : {
@@ -1880,6 +1886,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BudgetType",
       "unmarshaller" : {
@@ -2142,6 +2150,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ActualSpend" ],
       "shapeName" : "CalculatedSpend",
       "unmarshaller" : {
@@ -2186,6 +2196,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ComparisonOperator",
       "unmarshaller" : {
@@ -2561,6 +2573,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "IncludeTax", "IncludeSubscription", "UseBlended" ],
       "shapeName" : "CostTypes",
       "unmarshaller" : {
@@ -3085,6 +3099,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "Budget" ],
       "shapeName" : "CreateBudgetRequest",
       "unmarshaller" : null,
@@ -3117,6 +3133,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateBudgetResult",
       "unmarshaller" : {
@@ -3754,6 +3772,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscribers" ],
       "shapeName" : "CreateNotificationRequest",
       "unmarshaller" : null,
@@ -3786,6 +3806,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateNotificationResult",
       "unmarshaller" : {
@@ -4281,6 +4303,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
       "shapeName" : "CreateSubscriberRequest",
       "unmarshaller" : null,
@@ -4313,6 +4337,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateSubscriberResult",
       "unmarshaller" : {
@@ -4348,6 +4374,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreationLimitExceededException",
       "unmarshaller" : null,
@@ -4614,6 +4642,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
       "shapeName" : "DeleteBudgetRequest",
       "unmarshaller" : null,
@@ -4646,6 +4676,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteBudgetResult",
       "unmarshaller" : {
@@ -5028,6 +5060,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification" ],
       "shapeName" : "DeleteNotificationRequest",
       "unmarshaller" : null,
@@ -5060,6 +5094,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteNotificationResult",
       "unmarshaller" : {
@@ -5555,6 +5591,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
       "shapeName" : "DeleteSubscriberRequest",
       "unmarshaller" : null,
@@ -5587,6 +5625,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteSubscriberResult",
       "unmarshaller" : {
@@ -5856,6 +5896,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
       "shapeName" : "DescribeBudgetRequest",
       "unmarshaller" : null,
@@ -6002,6 +6044,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBudgetResult",
       "unmarshaller" : {
@@ -6384,6 +6428,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId" ],
       "shapeName" : "DescribeBudgetsRequest",
       "unmarshaller" : null,
@@ -6785,6 +6831,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeBudgetsResult",
       "unmarshaller" : {
@@ -7280,6 +7328,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName" ],
       "shapeName" : "DescribeNotificationsForBudgetRequest",
       "unmarshaller" : null,
@@ -7681,6 +7731,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeNotificationsForBudgetResult",
       "unmarshaller" : {
@@ -8289,6 +8341,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification" ],
       "shapeName" : "DescribeSubscribersForNotificationRequest",
       "unmarshaller" : null,
@@ -8690,6 +8744,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeSubscribersForNotificationResult",
       "unmarshaller" : {
@@ -8725,6 +8781,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateRecordException",
       "unmarshaller" : null,
@@ -8757,6 +8815,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredNextTokenException",
       "unmarshaller" : null,
@@ -8789,6 +8849,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalErrorException",
       "unmarshaller" : null,
@@ -8821,6 +8883,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -8853,6 +8917,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
       "unmarshaller" : null,
@@ -8885,6 +8951,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotFoundException",
       "unmarshaller" : null,
@@ -9257,6 +9325,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "NotificationType", "ComparisonOperator", "Threshold" ],
       "shapeName" : "Notification",
       "unmarshaller" : {
@@ -9298,6 +9368,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotificationType",
       "unmarshaller" : {
@@ -9702,6 +9774,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Notification", "Subscribers" ],
       "shapeName" : "NotificationWithSubscribers",
       "unmarshaller" : {
@@ -9964,6 +10038,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Amount", "Unit" ],
       "shapeName" : "Spend",
       "unmarshaller" : {
@@ -10226,6 +10302,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "SubscriptionType", "Address" ],
       "shapeName" : "Subscriber",
       "unmarshaller" : {
@@ -10267,6 +10345,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SubscriptionType",
       "unmarshaller" : {
@@ -10529,6 +10609,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Start", "End" ],
       "shapeName" : "TimePeriod",
       "unmarshaller" : {
@@ -10573,6 +10655,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimeUnit",
       "unmarshaller" : {
@@ -10842,6 +10926,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "NewBudget" ],
       "shapeName" : "UpdateBudgetRequest",
       "unmarshaller" : null,
@@ -10874,6 +10960,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateBudgetResult",
       "unmarshaller" : {
@@ -11369,6 +11457,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "OldNotification", "NewNotification" ],
       "shapeName" : "UpdateNotificationRequest",
       "unmarshaller" : null,
@@ -11401,6 +11491,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateNotificationResult",
       "unmarshaller" : {
@@ -12009,6 +12101,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AccountId", "BudgetName", "Notification", "OldSubscriber", "NewSubscriber" ],
       "shapeName" : "UpdateSubscriberRequest",
       "unmarshaller" : null,
@@ -12041,6 +12135,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateSubscriberResult",
       "unmarshaller" : {
@@ -12059,6 +12155,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

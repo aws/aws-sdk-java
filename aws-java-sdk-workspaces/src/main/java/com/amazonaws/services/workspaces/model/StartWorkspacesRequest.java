@@ -147,4 +147,5 @@ public class StartWorkspacesRequest extends com.amazonaws.AmazonWebServiceReques
     public StartWorkspacesRequest clone() {
         return (StartWorkspacesRequest) super.clone();
     }
+
 }

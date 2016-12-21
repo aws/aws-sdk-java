@@ -116,4 +116,5 @@ public class GetJobDetailsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetJobDetailsRequest clone() {
         return (GetJobDetailsRequest) super.clone();
     }
+
 }

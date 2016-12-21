@@ -149,4 +149,5 @@ public class TerminateWorkspacesRequest extends com.amazonaws.AmazonWebServiceRe
     public TerminateWorkspacesRequest clone() {
         return (TerminateWorkspacesRequest) super.clone();
     }
+
 }

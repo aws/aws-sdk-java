@@ -60,4 +60,5 @@ public class DescribeAccountAttributesRequest extends com.amazonaws.AmazonWebSer
     public DescribeAccountAttributesRequest clone() {
         return (DescribeAccountAttributesRequest) super.clone();
     }
+
 }

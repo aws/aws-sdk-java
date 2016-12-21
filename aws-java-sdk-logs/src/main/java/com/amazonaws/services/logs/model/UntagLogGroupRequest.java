@@ -200,4 +200,5 @@ public class UntagLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UntagLogGroupRequest clone() {
         return (UntagLogGroupRequest) super.clone();
     }
+
 }

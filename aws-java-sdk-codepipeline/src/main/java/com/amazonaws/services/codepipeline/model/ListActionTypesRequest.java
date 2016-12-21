@@ -209,4 +209,5 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
     public ListActionTypesRequest clone() {
         return (ListActionTypesRequest) super.clone();
     }
+
 }

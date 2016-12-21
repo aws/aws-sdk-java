@@ -167,4 +167,5 @@ public class CreateSecurityConfigurationRequest extends com.amazonaws.AmazonWebS
     public CreateSecurityConfigurationRequest clone() {
         return (CreateSecurityConfigurationRequest) super.clone();
     }
+
 }

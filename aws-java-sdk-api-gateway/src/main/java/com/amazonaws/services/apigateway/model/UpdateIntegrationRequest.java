@@ -309,4 +309,5 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateIntegrationRequest clone() {
         return (UpdateIntegrationRequest) super.clone();
     }
+
 }

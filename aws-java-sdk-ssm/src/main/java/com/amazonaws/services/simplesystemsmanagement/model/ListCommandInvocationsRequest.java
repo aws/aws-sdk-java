@@ -440,4 +440,5 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     public ListCommandInvocationsRequest clone() {
         return (ListCommandInvocationsRequest) super.clone();
     }
+
 }

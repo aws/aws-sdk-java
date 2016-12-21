@@ -60,4 +60,5 @@ public class DeleteServerCatalogRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteServerCatalogRequest clone() {
         return (DeleteServerCatalogRequest) super.clone();
     }
+
 }

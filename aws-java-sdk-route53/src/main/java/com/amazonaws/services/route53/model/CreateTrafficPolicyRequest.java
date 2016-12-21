@@ -236,4 +236,5 @@ public class CreateTrafficPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     public CreateTrafficPolicyRequest clone() {
         return (CreateTrafficPolicyRequest) super.clone();
     }
+
 }

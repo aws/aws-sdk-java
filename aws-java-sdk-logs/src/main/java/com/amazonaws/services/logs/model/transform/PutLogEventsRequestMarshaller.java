@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PutLogEventsRequestMarshaller implements Marshaller<Request<PutLogEventsRequest>, PutLogEventsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutLogEventsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutLogEventsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

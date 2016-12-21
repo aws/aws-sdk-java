@@ -170,4 +170,5 @@ public class InstallToRemoteAccessSessionRequest extends com.amazonaws.AmazonWeb
     public InstallToRemoteAccessSessionRequest clone() {
         return (InstallToRemoteAccessSessionRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGetItemRequest>, BatchGetItemRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public BatchGetItemRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public BatchGetItemRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

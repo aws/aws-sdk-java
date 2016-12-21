@@ -609,4 +609,5 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     public DescribePlayerSessionsRequest clone() {
         return (DescribePlayerSessionsRequest) super.clone();
     }
+
 }

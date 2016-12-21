@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetOperationsRequestMarshaller implements Marshaller<Request<GetOperationsRequest>, GetOperationsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetOperationsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetOperationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

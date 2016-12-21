@@ -784,4 +784,5 @@ public class DescribeReservedDBInstancesRequest extends com.amazonaws.AmazonWebS
     public DescribeReservedDBInstancesRequest clone() {
         return (DescribeReservedDBInstancesRequest) super.clone();
     }
+
 }

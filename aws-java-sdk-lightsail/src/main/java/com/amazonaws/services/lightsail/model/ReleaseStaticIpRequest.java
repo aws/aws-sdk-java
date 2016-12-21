@@ -114,4 +114,5 @@ public class ReleaseStaticIpRequest extends com.amazonaws.AmazonWebServiceReques
     public ReleaseStaticIpRequest clone() {
         return (ReleaseStaticIpRequest) super.clone();
     }
+
 }

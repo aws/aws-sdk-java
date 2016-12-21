@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class TestConnectionRequestMarshaller implements Marshaller<Request<TestConnectionRequest>, TestConnectionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TestConnectionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TestConnectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

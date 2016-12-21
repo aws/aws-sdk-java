@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RenewOfferingRequestMarshaller implements Marshaller<Request<RenewOfferingRequest>, RenewOfferingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RenewOfferingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RenewOfferingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

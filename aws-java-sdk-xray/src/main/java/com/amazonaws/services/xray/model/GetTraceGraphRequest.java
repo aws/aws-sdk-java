@@ -197,4 +197,5 @@ public class GetTraceGraphRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetTraceGraphRequest clone() {
         return (GetTraceGraphRequest) super.clone();
     }
+
 }

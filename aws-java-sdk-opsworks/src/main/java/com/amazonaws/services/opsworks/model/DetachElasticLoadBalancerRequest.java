@@ -167,4 +167,5 @@ public class DetachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
     public DetachElasticLoadBalancerRequest clone() {
         return (DetachElasticLoadBalancerRequest) super.clone();
     }
+
 }

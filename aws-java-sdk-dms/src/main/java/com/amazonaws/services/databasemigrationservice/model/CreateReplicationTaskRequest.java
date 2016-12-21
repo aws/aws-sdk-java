@@ -770,4 +770,5 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
     public CreateReplicationTaskRequest clone() {
         return (CreateReplicationTaskRequest) super.clone();
     }
+
 }

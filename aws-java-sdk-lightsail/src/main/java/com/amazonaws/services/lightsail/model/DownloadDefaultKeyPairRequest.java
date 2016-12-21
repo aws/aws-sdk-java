@@ -60,4 +60,5 @@ public class DownloadDefaultKeyPairRequest extends com.amazonaws.AmazonWebServic
     public DownloadDefaultKeyPairRequest clone() {
         return (DownloadDefaultKeyPairRequest) super.clone();
     }
+
 }

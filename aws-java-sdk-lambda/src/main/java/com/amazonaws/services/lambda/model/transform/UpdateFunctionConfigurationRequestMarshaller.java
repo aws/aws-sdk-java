@@ -44,9 +44,9 @@ import com.amazonaws.protocol.json.*;
 public class UpdateFunctionConfigurationRequestMarshaller implements
         Marshaller<Request<UpdateFunctionConfigurationRequest>, UpdateFunctionConfigurationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateFunctionConfigurationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateFunctionConfigurationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

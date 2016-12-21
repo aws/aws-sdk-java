@@ -60,4 +60,5 @@ public class DescribeLifecycleHookTypesRequest extends com.amazonaws.AmazonWebSe
     public DescribeLifecycleHookTypesRequest clone() {
         return (DescribeLifecycleHookTypesRequest) super.clone();
     }
+
 }

@@ -142,4 +142,5 @@ public class GetChangeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetChangeRequest clone() {
         return (GetChangeRequest) super.clone();
     }
+
 }

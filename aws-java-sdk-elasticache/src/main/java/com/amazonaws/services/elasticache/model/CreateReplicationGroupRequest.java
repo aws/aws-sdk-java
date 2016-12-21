@@ -4041,4 +4041,5 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     public CreateReplicationGroupRequest clone() {
         return (CreateReplicationGroupRequest) super.clone();
     }
+
 }

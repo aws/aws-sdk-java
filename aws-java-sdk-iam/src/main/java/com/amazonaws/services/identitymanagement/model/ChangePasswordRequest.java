@@ -216,4 +216,5 @@ public class ChangePasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     public ChangePasswordRequest clone() {
         return (ChangePasswordRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class MeterUsageRequestMarshaller implements Marshaller<Request<MeterUsageRequest>, MeterUsageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public MeterUsageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public MeterUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

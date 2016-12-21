@@ -209,4 +209,5 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     public AddApplicationInputRequest clone() {
         return (AddApplicationInputRequest) super.clone();
     }
+
 }

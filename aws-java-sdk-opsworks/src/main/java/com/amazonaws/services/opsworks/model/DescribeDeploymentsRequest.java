@@ -280,4 +280,5 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeDeploymentsRequest clone() {
         return (DescribeDeploymentsRequest) super.clone();
     }
+
 }

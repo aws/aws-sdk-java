@@ -114,4 +114,5 @@ public class ListHapgsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ListHapgsRequest clone() {
         return (ListHapgsRequest) super.clone();
     }
+
 }

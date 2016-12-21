@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class EnableSsoRequestMarshaller implements Marshaller<Request<EnableSsoRequest>, EnableSsoRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public EnableSsoRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public EnableSsoRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class AllocatePrivateVirtualInterfaceRequestMarshaller implements
         Marshaller<Request<AllocatePrivateVirtualInterfaceRequest>, AllocatePrivateVirtualInterfaceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AllocatePrivateVirtualInterfaceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AllocatePrivateVirtualInterfaceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

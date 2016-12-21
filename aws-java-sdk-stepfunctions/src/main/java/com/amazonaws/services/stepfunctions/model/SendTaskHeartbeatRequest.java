@@ -121,4 +121,5 @@ public class SendTaskHeartbeatRequest extends com.amazonaws.AmazonWebServiceRequ
     public SendTaskHeartbeatRequest clone() {
         return (SendTaskHeartbeatRequest) super.clone();
     }
+
 }

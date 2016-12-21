@@ -146,4 +146,5 @@ public class DeleteRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public DeleteRoleRequest clone() {
         return (DeleteRoleRequest) super.clone();
     }
+
 }

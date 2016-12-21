@@ -282,4 +282,5 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ModifyRuleRequest clone() {
         return (ModifyRuleRequest) super.clone();
     }
+
 }

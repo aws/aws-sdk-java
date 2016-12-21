@@ -343,4 +343,5 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteStackRequest clone() {
         return (DeleteStackRequest) super.clone();
     }
+
 }

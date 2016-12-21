@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateVTLDeviceTypeRequestMarshaller implements Marshaller<Request<UpdateVTLDeviceTypeRequest>, UpdateVTLDeviceTypeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateVTLDeviceTypeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateVTLDeviceTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

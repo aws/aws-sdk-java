@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeEffectivePatchesForPatchBaselineRequestMarshaller implements
         Marshaller<Request<DescribeEffectivePatchesForPatchBaselineRequest>, DescribeEffectivePatchesForPatchBaselineRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeEffectivePatchesForPatchBaselineRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeEffectivePatchesForPatchBaselineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -147,4 +147,5 @@ public class EnableAlarmActionsRequest extends com.amazonaws.AmazonWebServiceReq
     public EnableAlarmActionsRequest clone() {
         return (EnableAlarmActionsRequest) super.clone();
     }
+
 }

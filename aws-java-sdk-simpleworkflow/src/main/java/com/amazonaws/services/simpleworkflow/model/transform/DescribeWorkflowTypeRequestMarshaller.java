@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeWorkflowTypeRequestMarshaller implements Marshaller<Request<DescribeWorkflowTypeRequest>, DescribeWorkflowTypeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeWorkflowTypeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeWorkflowTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

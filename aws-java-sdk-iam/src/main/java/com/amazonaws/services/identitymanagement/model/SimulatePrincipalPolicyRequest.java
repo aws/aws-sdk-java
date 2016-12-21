@@ -1741,4 +1741,5 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     public SimulatePrincipalPolicyRequest clone() {
         return (SimulatePrincipalPolicyRequest) super.clone();
     }
+
 }

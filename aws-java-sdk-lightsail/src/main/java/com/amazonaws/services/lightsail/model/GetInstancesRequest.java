@@ -114,4 +114,5 @@ public class GetInstancesRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetInstancesRequest clone() {
         return (GetInstancesRequest) super.clone();
     }
+
 }

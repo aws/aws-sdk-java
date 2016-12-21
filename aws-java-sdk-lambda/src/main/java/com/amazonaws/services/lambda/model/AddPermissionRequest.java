@@ -799,4 +799,5 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     public AddPermissionRequest clone() {
         return (AddPermissionRequest) super.clone();
     }
+
 }

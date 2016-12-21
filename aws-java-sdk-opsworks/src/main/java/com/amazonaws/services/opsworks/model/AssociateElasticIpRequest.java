@@ -167,4 +167,5 @@ public class AssociateElasticIpRequest extends com.amazonaws.AmazonWebServiceReq
     public AssociateElasticIpRequest clone() {
         return (AssociateElasticIpRequest) super.clone();
     }
+
 }

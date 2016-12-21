@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListProvisionedCapacityRequestMarshaller implements Marshaller<Request<ListProvisionedCapacityRequest>, ListProvisionedCapacityRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListProvisionedCapacityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListProvisionedCapacityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

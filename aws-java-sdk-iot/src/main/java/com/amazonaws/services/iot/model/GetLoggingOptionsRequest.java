@@ -62,4 +62,5 @@ public class GetLoggingOptionsRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetLoggingOptionsRequest clone() {
         return (GetLoggingOptionsRequest) super.clone();
     }
+
 }

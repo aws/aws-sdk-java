@@ -762,4 +762,5 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteDBInstanceRequest clone() {
         return (DeleteDBInstanceRequest) super.clone();
     }
+
 }

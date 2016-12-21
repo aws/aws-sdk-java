@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeTapeRecoveryPointsRequestMarshaller implements Marshaller<Request<DescribeTapeRecoveryPointsRequest>, DescribeTapeRecoveryPointsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeTapeRecoveryPointsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeTapeRecoveryPointsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -74,38 +74,39 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClientConfigurationFactory configFactory = new com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflowClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.0")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DomainAlreadyExistsFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TypeAlreadyExistsFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.OperationNotPermittedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TypeDeprecatedFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("WorkflowExecutionAlreadyStartedFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnknownResourceFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DomainDeprecatedFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DefaultUndefinedFault").withModeledClass(
-                            com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.0")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DomainAlreadyExistsFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TypeAlreadyExistsFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.OperationNotPermittedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TypeDeprecatedFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WorkflowExecutionAlreadyStartedFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.UnknownResourceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DomainDeprecatedFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DefaultUndefinedFault").withModeledClass(
+                                    com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SWF. A credentials provider chain will be used that

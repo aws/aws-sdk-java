@@ -288,4 +288,5 @@ public class DescribeIndexFieldsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeIndexFieldsRequest clone() {
         return (DescribeIndexFieldsRequest) super.clone();
     }
+
 }

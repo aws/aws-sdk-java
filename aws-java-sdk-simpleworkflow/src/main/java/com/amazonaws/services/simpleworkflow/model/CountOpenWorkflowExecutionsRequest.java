@@ -368,4 +368,5 @@ public class CountOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebS
     public CountOpenWorkflowExecutionsRequest clone() {
         return (CountOpenWorkflowExecutionsRequest) super.clone();
     }
+
 }

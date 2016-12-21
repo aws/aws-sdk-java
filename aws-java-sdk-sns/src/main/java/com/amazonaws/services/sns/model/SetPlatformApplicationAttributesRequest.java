@@ -578,4 +578,5 @@ public class SetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
     public SetPlatformApplicationAttributesRequest clone() {
         return (SetPlatformApplicationAttributesRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateDirectoryRequestMarshaller implements Marshaller<Request<CreateDirectoryRequest>, CreateDirectoryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateDirectoryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

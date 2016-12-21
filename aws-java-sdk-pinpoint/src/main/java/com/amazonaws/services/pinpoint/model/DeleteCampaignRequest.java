@@ -130,4 +130,5 @@ public class DeleteCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteCampaignRequest clone() {
         return (DeleteCampaignRequest) super.clone();
     }
+
 }

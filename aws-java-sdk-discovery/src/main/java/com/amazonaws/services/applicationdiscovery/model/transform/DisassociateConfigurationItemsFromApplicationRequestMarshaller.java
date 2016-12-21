@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DisassociateConfigurationItemsFromApplicationRequestMarshaller implements
         Marshaller<Request<DisassociateConfigurationItemsFromApplicationRequest>, DisassociateConfigurationItemsFromApplicationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisassociateConfigurationItemsFromApplicationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisassociateConfigurationItemsFromApplicationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

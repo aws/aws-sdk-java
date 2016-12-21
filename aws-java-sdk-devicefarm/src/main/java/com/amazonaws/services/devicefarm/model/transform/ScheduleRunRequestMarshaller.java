@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ScheduleRunRequestMarshaller implements Marshaller<Request<ScheduleRunRequest>, ScheduleRunRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ScheduleRunRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ScheduleRunRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

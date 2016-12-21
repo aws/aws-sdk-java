@@ -119,4 +119,5 @@ public class VerifyEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     public VerifyEmailIdentityRequest clone() {
         return (VerifyEmailIdentityRequest) super.clone();
     }
+
 }

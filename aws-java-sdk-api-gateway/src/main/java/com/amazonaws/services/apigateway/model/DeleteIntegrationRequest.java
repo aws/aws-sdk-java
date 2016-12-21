@@ -222,4 +222,5 @@ public class DeleteIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteIntegrationRequest clone() {
         return (DeleteIntegrationRequest) super.clone();
     }
+
 }

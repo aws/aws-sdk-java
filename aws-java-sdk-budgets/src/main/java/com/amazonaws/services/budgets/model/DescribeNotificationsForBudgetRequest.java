@@ -200,4 +200,5 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     public DescribeNotificationsForBudgetRequest clone() {
         return (DescribeNotificationsForBudgetRequest) super.clone();
     }
+
 }

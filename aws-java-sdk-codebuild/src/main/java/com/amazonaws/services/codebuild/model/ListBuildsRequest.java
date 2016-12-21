@@ -351,4 +351,5 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListBuildsRequest clone() {
         return (ListBuildsRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class DeleteAssessmentTargetRequest extends com.amazonaws.AmazonWebServic
     public DeleteAssessmentTargetRequest clone() {
         return (DeleteAssessmentTargetRequest) super.clone();
     }
+
 }

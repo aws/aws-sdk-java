@@ -301,4 +301,5 @@ public class DeletePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     public DeletePortfolioShareRequest clone() {
         return (DeletePortfolioShareRequest) super.clone();
     }
+
 }

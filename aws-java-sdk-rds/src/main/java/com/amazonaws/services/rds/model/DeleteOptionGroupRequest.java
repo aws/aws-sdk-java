@@ -143,4 +143,5 @@ public class DeleteOptionGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteOptionGroupRequest clone() {
         return (DeleteOptionGroupRequest) super.clone();
     }
+
 }

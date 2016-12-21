@@ -244,4 +244,5 @@ public class ListFileSharesRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListFileSharesRequest clone() {
         return (ListFileSharesRequest) super.clone();
     }
+
 }

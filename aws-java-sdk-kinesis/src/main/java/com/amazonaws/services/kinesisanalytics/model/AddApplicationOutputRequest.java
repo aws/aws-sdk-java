@@ -248,4 +248,5 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     public AddApplicationOutputRequest clone() {
         return (AddApplicationOutputRequest) super.clone();
     }
+
 }

@@ -260,4 +260,5 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeParametersRequest clone() {
         return (DescribeParametersRequest) super.clone();
     }
+
 }

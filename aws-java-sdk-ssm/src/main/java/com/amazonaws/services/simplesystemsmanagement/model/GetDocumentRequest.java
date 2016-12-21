@@ -167,4 +167,5 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetDocumentRequest clone() {
         return (GetDocumentRequest) super.clone();
     }
+
 }

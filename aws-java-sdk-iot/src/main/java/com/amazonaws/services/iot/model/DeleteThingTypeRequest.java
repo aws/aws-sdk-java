@@ -116,4 +116,5 @@ public class DeleteThingTypeRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteThingTypeRequest clone() {
         return (DeleteThingTypeRequest) super.clone();
     }
+
 }

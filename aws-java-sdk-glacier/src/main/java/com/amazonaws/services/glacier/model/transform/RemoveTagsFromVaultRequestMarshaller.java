@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RemoveTagsFromVaultRequestMarshaller implements Marshaller<Request<RemoveTagsFromVaultRequest>, RemoveTagsFromVaultRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemoveTagsFromVaultRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemoveTagsFromVaultRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

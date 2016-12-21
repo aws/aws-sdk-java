@@ -207,4 +207,5 @@ public class GetOpenIdTokenRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetOpenIdTokenRequest clone() {
         return (GetOpenIdTokenRequest) super.clone();
     }
+
 }

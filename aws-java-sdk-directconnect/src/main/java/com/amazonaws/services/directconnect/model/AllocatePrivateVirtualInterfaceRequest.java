@@ -278,4 +278,5 @@ public class AllocatePrivateVirtualInterfaceRequest extends com.amazonaws.Amazon
     public AllocatePrivateVirtualInterfaceRequest clone() {
         return (AllocatePrivateVirtualInterfaceRequest) super.clone();
     }
+
 }

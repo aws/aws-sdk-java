@@ -328,4 +328,5 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ListThingsRequest clone() {
         return (ListThingsRequest) super.clone();
     }
+
 }

@@ -292,4 +292,5 @@ public class DescribeStackResourceRequest extends com.amazonaws.AmazonWebService
     public DescribeStackResourceRequest clone() {
         return (DescribeStackResourceRequest) super.clone();
     }
+
 }

@@ -330,4 +330,5 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public PutLogEventsRequest clone() {
         return (PutLogEventsRequest) super.clone();
     }
+
 }

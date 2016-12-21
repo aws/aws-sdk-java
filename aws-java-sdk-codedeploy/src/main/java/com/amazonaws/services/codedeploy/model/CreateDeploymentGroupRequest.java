@@ -1226,4 +1226,5 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     public CreateDeploymentGroupRequest clone() {
         return (CreateDeploymentGroupRequest) super.clone();
     }
+
 }

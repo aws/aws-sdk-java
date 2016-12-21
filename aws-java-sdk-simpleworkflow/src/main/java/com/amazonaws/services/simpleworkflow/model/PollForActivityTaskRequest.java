@@ -262,4 +262,5 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
     public PollForActivityTaskRequest clone() {
         return (PollForActivityTaskRequest) super.clone();
     }
+
 }

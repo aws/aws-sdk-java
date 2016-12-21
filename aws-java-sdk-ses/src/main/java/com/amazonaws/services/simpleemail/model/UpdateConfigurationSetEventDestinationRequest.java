@@ -172,4 +172,5 @@ public class UpdateConfigurationSetEventDestinationRequest extends com.amazonaws
     public UpdateConfigurationSetEventDestinationRequest clone() {
         return (UpdateConfigurationSetEventDestinationRequest) super.clone();
     }
+
 }

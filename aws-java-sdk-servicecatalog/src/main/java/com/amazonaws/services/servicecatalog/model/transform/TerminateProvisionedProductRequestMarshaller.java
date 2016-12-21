@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class TerminateProvisionedProductRequestMarshaller implements
         Marshaller<Request<TerminateProvisionedProductRequest>, TerminateProvisionedProductRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TerminateProvisionedProductRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TerminateProvisionedProductRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

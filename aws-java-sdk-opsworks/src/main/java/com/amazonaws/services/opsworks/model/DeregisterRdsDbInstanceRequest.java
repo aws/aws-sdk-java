@@ -114,4 +114,5 @@ public class DeregisterRdsDbInstanceRequest extends com.amazonaws.AmazonWebServi
     public DeregisterRdsDbInstanceRequest clone() {
         return (DeregisterRdsDbInstanceRequest) super.clone();
     }
+
 }

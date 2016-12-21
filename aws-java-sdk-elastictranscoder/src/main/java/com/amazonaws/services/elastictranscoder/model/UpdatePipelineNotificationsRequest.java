@@ -394,4 +394,5 @@ public class UpdatePipelineNotificationsRequest extends com.amazonaws.AmazonWebS
     public UpdatePipelineNotificationsRequest clone() {
         return (UpdatePipelineNotificationsRequest) super.clone();
     }
+
 }

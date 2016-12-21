@@ -174,4 +174,5 @@ public class ListAssociatedStacksRequest extends com.amazonaws.AmazonWebServiceR
     public ListAssociatedStacksRequest clone() {
         return (ListAssociatedStacksRequest) super.clone();
     }
+
 }

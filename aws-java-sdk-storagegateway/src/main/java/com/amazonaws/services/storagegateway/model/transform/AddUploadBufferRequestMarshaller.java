@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddUploadBufferRequest>, AddUploadBufferRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddUploadBufferRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddUploadBufferRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

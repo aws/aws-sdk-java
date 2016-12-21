@@ -98,4 +98,5 @@ public class IndexDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest
     public IndexDocumentsRequest clone() {
         return (IndexDocumentsRequest) super.clone();
     }
+
 }

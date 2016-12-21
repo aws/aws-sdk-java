@@ -114,4 +114,5 @@ public class StartStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public StartStackRequest clone() {
         return (StartStackRequest) super.clone();
     }
+
 }

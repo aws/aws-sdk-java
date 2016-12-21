@@ -147,4 +147,5 @@ public class DescribeUserProfilesRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeUserProfilesRequest clone() {
         return (DescribeUserProfilesRequest) super.clone();
     }
+
 }

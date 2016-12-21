@@ -197,4 +197,5 @@ public class PutRecordBatchRequest extends com.amazonaws.AmazonWebServiceRequest
     public PutRecordBatchRequest clone() {
         return (PutRecordBatchRequest) super.clone();
     }
+
 }

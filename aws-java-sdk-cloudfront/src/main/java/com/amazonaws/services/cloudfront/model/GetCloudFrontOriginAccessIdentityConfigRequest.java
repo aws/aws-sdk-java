@@ -135,4 +135,5 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends com.amazonaw
     public GetCloudFrontOriginAccessIdentityConfigRequest clone() {
         return (GetCloudFrontOriginAccessIdentityConfigRequest) super.clone();
     }
+
 }

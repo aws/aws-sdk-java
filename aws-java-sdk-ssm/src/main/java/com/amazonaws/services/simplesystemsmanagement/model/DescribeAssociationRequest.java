@@ -220,4 +220,5 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeAssociationRequest clone() {
         return (DescribeAssociationRequest) super.clone();
     }
+
 }

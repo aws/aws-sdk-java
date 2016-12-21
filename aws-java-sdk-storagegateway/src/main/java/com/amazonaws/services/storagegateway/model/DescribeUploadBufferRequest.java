@@ -95,4 +95,5 @@ public class DescribeUploadBufferRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeUploadBufferRequest clone() {
         return (DescribeUploadBufferRequest) super.clone();
     }
+
 }

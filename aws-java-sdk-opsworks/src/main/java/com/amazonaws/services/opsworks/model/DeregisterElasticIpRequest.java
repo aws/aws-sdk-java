@@ -114,4 +114,5 @@ public class DeregisterElasticIpRequest extends com.amazonaws.AmazonWebServiceRe
     public DeregisterElasticIpRequest clone() {
         return (DeregisterElasticIpRequest) super.clone();
     }
+
 }

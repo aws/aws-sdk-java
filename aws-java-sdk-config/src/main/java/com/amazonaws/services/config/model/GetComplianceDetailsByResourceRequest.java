@@ -370,4 +370,5 @@ public class GetComplianceDetailsByResourceRequest extends com.amazonaws.AmazonW
     public GetComplianceDetailsByResourceRequest clone() {
         return (GetComplianceDetailsByResourceRequest) super.clone();
     }
+
 }

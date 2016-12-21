@@ -190,4 +190,5 @@ public class DeleteConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
     public DeleteConfigurationTemplateRequest clone() {
         return (DeleteConfigurationTemplateRequest) super.clone();
     }
+
 }

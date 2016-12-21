@@ -1149,4 +1149,5 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
     public ListApplicationRevisionsRequest clone() {
         return (ListApplicationRevisionsRequest) super.clone();
     }
+
 }

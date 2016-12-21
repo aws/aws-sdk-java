@@ -174,4 +174,5 @@ public class AddRoleToDBClusterRequest extends com.amazonaws.AmazonWebServiceReq
     public AddRoleToDBClusterRequest clone() {
         return (AddRoleToDBClusterRequest) super.clone();
     }
+
 }

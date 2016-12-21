@@ -650,4 +650,5 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     public CreateApplicationVersionRequest clone() {
         return (CreateApplicationVersionRequest) super.clone();
     }
+
 }

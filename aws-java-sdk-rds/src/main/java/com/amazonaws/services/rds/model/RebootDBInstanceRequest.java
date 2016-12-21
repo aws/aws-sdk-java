@@ -376,4 +376,5 @@ public class RebootDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     public RebootDBInstanceRequest clone() {
         return (RebootDBInstanceRequest) super.clone();
     }
+
 }

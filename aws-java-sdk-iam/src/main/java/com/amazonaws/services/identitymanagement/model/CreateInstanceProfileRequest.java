@@ -273,4 +273,5 @@ public class CreateInstanceProfileRequest extends com.amazonaws.AmazonWebService
     public CreateInstanceProfileRequest clone() {
         return (CreateInstanceProfileRequest) super.clone();
     }
+
 }

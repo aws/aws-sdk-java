@@ -222,4 +222,5 @@ public class EvaluateExpressionRequest extends com.amazonaws.AmazonWebServiceReq
     public EvaluateExpressionRequest clone() {
         return (EvaluateExpressionRequest) super.clone();
     }
+
 }

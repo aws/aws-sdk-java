@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DisableKeyRotationRequestMarshaller implements Marshaller<Request<DisableKeyRotationRequest>, DisableKeyRotationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisableKeyRotationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisableKeyRotationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

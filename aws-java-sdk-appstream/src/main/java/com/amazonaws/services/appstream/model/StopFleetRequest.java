@@ -114,4 +114,5 @@ public class StopFleetRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public StopFleetRequest clone() {
         return (StopFleetRequest) super.clone();
     }
+
 }

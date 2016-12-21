@@ -422,4 +422,5 @@ public class ListDevicePoolsRequest extends com.amazonaws.AmazonWebServiceReques
     public ListDevicePoolsRequest clone() {
         return (ListDevicePoolsRequest) super.clone();
     }
+
 }

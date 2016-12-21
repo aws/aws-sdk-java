@@ -60,4 +60,5 @@ public class GetSendQuotaRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetSendQuotaRequest clone() {
         return (GetSendQuotaRequest) super.clone();
     }
+
 }

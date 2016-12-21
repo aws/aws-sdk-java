@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetTrailStatusRequestMarshaller implements Marshaller<Request<GetTrailStatusRequest>, GetTrailStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetTrailStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetTrailStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

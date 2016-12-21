@@ -114,4 +114,5 @@ public class GetHostnameSuggestionRequest extends com.amazonaws.AmazonWebService
     public GetHostnameSuggestionRequest clone() {
         return (GetHostnameSuggestionRequest) super.clone();
     }
+
 }

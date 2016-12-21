@@ -373,4 +373,5 @@ public class DescribeEventSubscriptionsRequest extends com.amazonaws.AmazonWebSe
     public DescribeEventSubscriptionsRequest clone() {
         return (DescribeEventSubscriptionsRequest) super.clone();
     }
+
 }

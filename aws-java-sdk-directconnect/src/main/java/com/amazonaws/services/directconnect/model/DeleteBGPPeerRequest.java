@@ -225,4 +225,5 @@ public class DeleteBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteBGPPeerRequest clone() {
         return (DeleteBGPPeerRequest) super.clone();
     }
+
 }

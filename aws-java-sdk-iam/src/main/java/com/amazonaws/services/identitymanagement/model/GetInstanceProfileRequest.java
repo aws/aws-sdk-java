@@ -146,4 +146,5 @@ public class GetInstanceProfileRequest extends com.amazonaws.AmazonWebServiceReq
     public GetInstanceProfileRequest clone() {
         return (GetInstanceProfileRequest) super.clone();
     }
+
 }

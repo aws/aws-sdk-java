@@ -220,4 +220,5 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public RemoveTagsRequest clone() {
         return (RemoveTagsRequest) super.clone();
     }
+
 }

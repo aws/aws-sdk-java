@@ -261,4 +261,5 @@ public class RemoveUserFromGroupRequest extends com.amazonaws.AmazonWebServiceRe
     public RemoveUserFromGroupRequest clone() {
         return (RemoveUserFromGroupRequest) super.clone();
     }
+
 }

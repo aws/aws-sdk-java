@@ -305,4 +305,5 @@ public class CreateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateDevicePoolRequest clone() {
         return (CreateDevicePoolRequest) super.clone();
     }
+
 }

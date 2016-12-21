@@ -190,4 +190,5 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
     public UpdateRuntimeConfigurationRequest clone() {
         return (UpdateRuntimeConfigurationRequest) super.clone();
     }
+
 }

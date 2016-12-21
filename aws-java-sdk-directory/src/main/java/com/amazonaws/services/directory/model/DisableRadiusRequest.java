@@ -116,4 +116,5 @@ public class DisableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DisableRadiusRequest clone() {
         return (DisableRadiusRequest) super.clone();
     }
+
 }

@@ -230,4 +230,5 @@ public class AuthorizeSnapshotAccessRequest extends com.amazonaws.AmazonWebServi
     public AuthorizeSnapshotAccessRequest clone() {
         return (AuthorizeSnapshotAccessRequest) super.clone();
     }
+
 }

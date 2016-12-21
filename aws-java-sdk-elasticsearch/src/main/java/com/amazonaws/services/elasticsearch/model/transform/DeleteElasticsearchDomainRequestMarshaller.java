@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteElasticsearchDomainRequestMarshaller implements Marshaller<Request<DeleteElasticsearchDomainRequest>, DeleteElasticsearchDomainRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteElasticsearchDomainRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteElasticsearchDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

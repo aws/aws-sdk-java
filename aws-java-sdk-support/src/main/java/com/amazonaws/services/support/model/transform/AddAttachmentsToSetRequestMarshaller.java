@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddAttachmentsToSetRequestMarshaller implements Marshaller<Request<AddAttachmentsToSetRequest>, AddAttachmentsToSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddAttachmentsToSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddAttachmentsToSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

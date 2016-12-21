@@ -116,4 +116,5 @@ public class GetTestRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public GetTestRequest clone() {
         return (GetTestRequest) super.clone();
     }
+
 }

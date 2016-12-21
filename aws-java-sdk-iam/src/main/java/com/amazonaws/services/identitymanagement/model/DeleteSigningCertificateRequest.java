@@ -245,4 +245,5 @@ public class DeleteSigningCertificateRequest extends com.amazonaws.AmazonWebServ
     public DeleteSigningCertificateRequest clone() {
         return (DeleteSigningCertificateRequest) super.clone();
     }
+
 }

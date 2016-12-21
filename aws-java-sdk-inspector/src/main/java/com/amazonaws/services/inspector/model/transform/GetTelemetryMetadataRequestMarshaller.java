@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetTelemetryMetadataRequestMarshaller implements Marshaller<Request<GetTelemetryMetadataRequest>, GetTelemetryMetadataRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetTelemetryMetadataRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetTelemetryMetadataRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

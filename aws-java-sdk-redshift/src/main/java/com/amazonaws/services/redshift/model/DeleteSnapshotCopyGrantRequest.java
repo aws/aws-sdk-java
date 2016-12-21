@@ -116,4 +116,5 @@ public class DeleteSnapshotCopyGrantRequest extends com.amazonaws.AmazonWebServi
     public DeleteSnapshotCopyGrantRequest clone() {
         return (DeleteSnapshotCopyGrantRequest) super.clone();
     }
+
 }

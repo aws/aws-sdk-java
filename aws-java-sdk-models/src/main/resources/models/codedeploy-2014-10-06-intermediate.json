@@ -72,6 +72,7 @@
     "cucumberModuleInjectorClassName" : "AmazonCodeDeployModuleInjector",
     "defaultEndpoint" : "https://codedeploy.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "codedeploy.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS CodeDeploy</fullname> <p> <b>Overview</b> </p> <p>This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information about AWS CodeDeploy, see the <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide\">AWS CodeDeploy User Guide</a>.</p> <p> <b>Using the APIs</b> </p> <p>You can use the AWS CodeDeploy APIs to work with the following:</p> <ul> <li> <p>Applications are unique identifiers used by AWS CodeDeploy to ensure the correct combinations of revisions, deployment configurations, and deployment groups are being referenced during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, list, and update applications.</p> </li> <li> <p>Deployment configurations are sets of deployment rules and success and failure conditions used by AWS CodeDeploy during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, and list deployment configurations.</p> </li> <li> <p>Deployment groups are groups of instances to which application revisions can be deployed.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, list, and update deployment groups.</p> </li> <li> <p>Instances represent Amazon EC2 instances to which application revisions are deployed. Instances are identified by their Amazon EC2 tags or Auto Scaling group names. Instances belong to deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get and list instance.</p> </li> <li> <p>Deployments represent the process of deploying revisions to instances.</p> <p>You can use the AWS CodeDeploy APIs to create, get, list, and stop deployments.</p> </li> <li> <p>Application revisions are archive files stored in Amazon S3 buckets or GitHub repositories. These revisions contain source content (such as source code, web pages, executable files, and deployment scripts) along with an application specification (AppSpec) file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to execute.) For application revisions stored in Amazon S3 buckets, an application revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For application revisions stored in GitHub repositories, an application revision is uniquely identified by its repository name and commit ID. Application revisions are deployed through deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get, list, and register application revisions.</p> </li> </ul>",
     "endpointPrefix" : "codedeploy",
     "hasApiWithStreamInput" : false,
@@ -82,7 +83,10 @@
     "packagePath" : "com/amazonaws/services/codedeploy",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "CodeDeploy",
     "serviceFullName" : "AWS CodeDeploy",
     "serviceName" : "CodeDeploy",
@@ -2376,6 +2380,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "tags", "instanceNames" ],
       "shapeName" : "AddTagsToOnPremisesInstancesRequest",
       "unmarshaller" : null,
@@ -2408,6 +2414,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToOnPremisesInstancesResult",
       "unmarshaller" : {
@@ -2557,6 +2565,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Alarm",
       "unmarshaller" : {
@@ -3074,6 +3084,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AlarmConfiguration",
       "unmarshaller" : {
@@ -3109,6 +3121,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AlarmsLimitExceededException",
       "unmarshaller" : null,
@@ -3141,6 +3155,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApplicationAlreadyExistsException",
       "unmarshaller" : null,
@@ -3173,6 +3189,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApplicationDoesNotExistException",
       "unmarshaller" : null,
@@ -3658,6 +3676,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApplicationInfo",
       "unmarshaller" : {
@@ -3693,6 +3713,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApplicationLimitExceededException",
       "unmarshaller" : null,
@@ -3725,6 +3747,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApplicationNameRequiredException",
       "unmarshaller" : null,
@@ -3766,6 +3790,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApplicationRevisionSortBy",
       "unmarshaller" : {
@@ -4170,6 +4196,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AutoRollbackConfiguration",
       "unmarshaller" : {
@@ -4214,6 +4242,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AutoRollbackEvent",
       "unmarshaller" : {
@@ -4476,6 +4506,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AutoScalingGroup",
       "unmarshaller" : {
@@ -4887,6 +4919,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "revisions" ],
       "shapeName" : "BatchGetApplicationRevisionsRequest",
       "unmarshaller" : null,
@@ -5401,6 +5435,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetApplicationRevisionsResult",
       "unmarshaller" : {
@@ -5699,6 +5735,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetApplicationsRequest",
       "unmarshaller" : null,
@@ -5987,6 +6025,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetApplicationsResult",
       "unmarshaller" : {
@@ -6398,6 +6438,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "deploymentGroupNames" ],
       "shapeName" : "BatchGetDeploymentGroupsRequest",
       "unmarshaller" : null,
@@ -6799,6 +6841,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetDeploymentGroupsResult",
       "unmarshaller" : {
@@ -7210,6 +7254,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentId", "instanceIds" ],
       "shapeName" : "BatchGetDeploymentInstancesRequest",
       "unmarshaller" : null,
@@ -7611,6 +7657,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetDeploymentInstancesResult",
       "unmarshaller" : {
@@ -7909,6 +7957,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetDeploymentsRequest",
       "unmarshaller" : null,
@@ -8197,6 +8247,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetDeploymentsResult",
       "unmarshaller" : {
@@ -8495,6 +8547,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetOnPremisesInstancesRequest",
       "unmarshaller" : null,
@@ -8783,6 +8837,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetOnPremisesInstancesResult",
       "unmarshaller" : {
@@ -8818,6 +8874,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchLimitExceededException",
       "unmarshaller" : null,
@@ -8850,6 +8908,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BucketNameFilterRequiredException",
       "unmarshaller" : null,
@@ -8891,6 +8951,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BundleType",
       "unmarshaller" : {
@@ -9047,6 +9109,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName" ],
       "shapeName" : "CreateApplicationRequest",
       "unmarshaller" : null,
@@ -9193,6 +9257,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateApplicationResult",
       "unmarshaller" : {
@@ -9462,6 +9528,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentConfigName" ],
       "shapeName" : "CreateDeploymentConfigRequest",
       "unmarshaller" : null,
@@ -9608,6 +9676,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDeploymentConfigResult",
       "unmarshaller" : {
@@ -11349,6 +11419,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "deploymentGroupName", "serviceRoleArn" ],
       "shapeName" : "CreateDeploymentGroupRequest",
       "unmarshaller" : null,
@@ -11495,6 +11567,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDeploymentGroupResult",
       "unmarshaller" : {
@@ -12442,6 +12516,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName" ],
       "shapeName" : "CreateDeploymentRequest",
       "unmarshaller" : null,
@@ -12588,6 +12664,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateDeploymentResult",
       "unmarshaller" : {
@@ -12744,6 +12822,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName" ],
       "shapeName" : "DeleteApplicationRequest",
       "unmarshaller" : null,
@@ -12776,6 +12856,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteApplicationResult",
       "unmarshaller" : {
@@ -12932,6 +13014,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentConfigName" ],
       "shapeName" : "DeleteDeploymentConfigRequest",
       "unmarshaller" : null,
@@ -12964,6 +13048,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteDeploymentConfigResult",
       "unmarshaller" : {
@@ -13233,6 +13319,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "deploymentGroupName" ],
       "shapeName" : "DeleteDeploymentGroupRequest",
       "unmarshaller" : null,
@@ -13521,6 +13609,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteDeploymentGroupResult",
       "unmarshaller" : {
@@ -13556,6 +13646,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentAlreadyCompletedException",
       "unmarshaller" : null,
@@ -13588,6 +13680,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentConfigAlreadyExistsException",
       "unmarshaller" : null,
@@ -13620,6 +13714,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentConfigDoesNotExistException",
       "unmarshaller" : null,
@@ -13652,6 +13748,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentConfigInUseException",
       "unmarshaller" : null,
@@ -14137,6 +14235,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentConfigInfo",
       "unmarshaller" : {
@@ -14172,6 +14272,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentConfigLimitExceededException",
       "unmarshaller" : null,
@@ -14204,6 +14306,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentConfigNameRequiredException",
       "unmarshaller" : null,
@@ -14245,6 +14349,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentCreator",
       "unmarshaller" : {
@@ -14280,6 +14386,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentDoesNotExistException",
       "unmarshaller" : null,
@@ -14312,6 +14420,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentGroupAlreadyExistsException",
       "unmarshaller" : null,
@@ -14344,6 +14454,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentGroupDoesNotExistException",
       "unmarshaller" : null,
@@ -16301,6 +16413,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentGroupInfo",
       "unmarshaller" : {
@@ -16336,6 +16450,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentGroupLimitExceededException",
       "unmarshaller" : null,
@@ -16368,6 +16484,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentGroupNameRequiredException",
       "unmarshaller" : null,
@@ -16400,6 +16518,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentIdRequiredException",
       "unmarshaller" : null,
@@ -18354,6 +18474,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentInfo",
       "unmarshaller" : {
@@ -18389,6 +18511,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentLimitExceededException",
       "unmarshaller" : null,
@@ -18421,6 +18545,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentNotStartedException",
       "unmarshaller" : null,
@@ -19019,6 +19145,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentOverview",
       "unmarshaller" : {
@@ -19072,6 +19200,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeploymentStatus",
       "unmarshaller" : {
@@ -19228,6 +19358,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "instanceName" ],
       "shapeName" : "DeregisterOnPremisesInstanceRequest",
       "unmarshaller" : null,
@@ -19260,6 +19392,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeregisterOnPremisesInstanceResult",
       "unmarshaller" : {
@@ -19295,6 +19429,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescriptionTooLongException",
       "unmarshaller" : null,
@@ -19780,6 +19916,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Diagnostics",
       "unmarshaller" : {
@@ -20155,6 +20293,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EC2TagFilter",
       "unmarshaller" : {
@@ -20199,6 +20339,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EC2TagFilterType",
       "unmarshaller" : {
@@ -20288,6 +20430,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ErrorCode",
       "unmarshaller" : {
@@ -20550,6 +20694,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ErrorInformation",
       "unmarshaller" : {
@@ -21293,6 +21439,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenericRevisionInfo",
       "unmarshaller" : {
@@ -21449,6 +21597,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName" ],
       "shapeName" : "GetApplicationRequest",
       "unmarshaller" : null,
@@ -21595,6 +21745,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetApplicationResult",
       "unmarshaller" : {
@@ -21864,6 +22016,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "revision" ],
       "shapeName" : "GetApplicationRevisionRequest",
       "unmarshaller" : null,
@@ -22236,6 +22390,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetApplicationRevisionResult",
       "unmarshaller" : {
@@ -22392,6 +22548,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentConfigName" ],
       "shapeName" : "GetDeploymentConfigRequest",
       "unmarshaller" : null,
@@ -22538,6 +22696,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDeploymentConfigResult",
       "unmarshaller" : {
@@ -22807,6 +22967,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "deploymentGroupName" ],
       "shapeName" : "GetDeploymentGroupRequest",
       "unmarshaller" : null,
@@ -22953,6 +23115,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDeploymentGroupResult",
       "unmarshaller" : {
@@ -23222,6 +23386,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentId", "instanceId" ],
       "shapeName" : "GetDeploymentInstanceRequest",
       "unmarshaller" : null,
@@ -23368,6 +23534,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDeploymentInstanceResult",
       "unmarshaller" : {
@@ -23524,6 +23692,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentId" ],
       "shapeName" : "GetDeploymentRequest",
       "unmarshaller" : null,
@@ -23670,6 +23840,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDeploymentResult",
       "unmarshaller" : {
@@ -23826,6 +23998,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "instanceName" ],
       "shapeName" : "GetOnPremisesInstanceRequest",
       "unmarshaller" : null,
@@ -23972,6 +24146,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetOnPremisesInstanceResult",
       "unmarshaller" : {
@@ -24234,6 +24410,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GitHubLocation",
       "unmarshaller" : {
@@ -24269,6 +24447,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IamUserArnAlreadyRegisteredException",
       "unmarshaller" : null,
@@ -24301,6 +24481,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "IamUserArnRequiredException",
       "unmarshaller" : null,
@@ -24333,6 +24515,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceDoesNotExistException",
       "unmarshaller" : null,
@@ -24365,6 +24549,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceIdRequiredException",
       "unmarshaller" : null,
@@ -25218,6 +25404,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceInfo",
       "unmarshaller" : {
@@ -25253,6 +25441,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceLimitExceededException",
       "unmarshaller" : null,
@@ -25285,6 +25475,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceNameAlreadyRegisteredException",
       "unmarshaller" : null,
@@ -25317,6 +25509,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceNameRequiredException",
       "unmarshaller" : null,
@@ -25349,6 +25543,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceNotRegisteredException",
       "unmarshaller" : null,
@@ -25399,6 +25595,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceStatus",
       "unmarshaller" : {
@@ -26142,6 +26340,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InstanceSummary",
       "unmarshaller" : {
@@ -26177,6 +26377,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAlarmConfigException",
       "unmarshaller" : null,
@@ -26209,6 +26411,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidApplicationNameException",
       "unmarshaller" : null,
@@ -26241,6 +26445,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAutoRollbackConfigException",
       "unmarshaller" : null,
@@ -26273,6 +26479,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAutoScalingGroupException",
       "unmarshaller" : null,
@@ -26305,6 +26513,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidBucketNameFilterException",
       "unmarshaller" : null,
@@ -26337,6 +26547,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDeployedStateFilterException",
       "unmarshaller" : null,
@@ -26369,6 +26581,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDeploymentConfigNameException",
       "unmarshaller" : null,
@@ -26401,6 +26615,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDeploymentGroupNameException",
       "unmarshaller" : null,
@@ -26433,6 +26649,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDeploymentIdException",
       "unmarshaller" : null,
@@ -26465,6 +26683,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidDeploymentStatusException",
       "unmarshaller" : null,
@@ -26497,6 +26717,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidEC2TagException",
       "unmarshaller" : null,
@@ -26529,6 +26751,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidIamUserArnException",
       "unmarshaller" : null,
@@ -26561,6 +26785,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInstanceNameException",
       "unmarshaller" : null,
@@ -26593,6 +26819,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInstanceStatusException",
       "unmarshaller" : null,
@@ -26625,6 +26853,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidKeyPrefixFilterException",
       "unmarshaller" : null,
@@ -26657,6 +26887,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidMinimumHealthyHostValueException",
       "unmarshaller" : null,
@@ -26689,6 +26921,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -26721,6 +26955,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidOperationException",
       "unmarshaller" : null,
@@ -26753,6 +26989,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRegistrationStatusException",
       "unmarshaller" : null,
@@ -26785,6 +27023,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRevisionException",
       "unmarshaller" : null,
@@ -26817,6 +27057,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidRoleException",
       "unmarshaller" : null,
@@ -26849,6 +27091,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSortByException",
       "unmarshaller" : null,
@@ -26881,6 +27125,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSortOrderException",
       "unmarshaller" : null,
@@ -26913,6 +27159,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTagException",
       "unmarshaller" : null,
@@ -26945,6 +27193,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTagFilterException",
       "unmarshaller" : null,
@@ -26977,6 +27227,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTimeRangeException",
       "unmarshaller" : null,
@@ -27009,6 +27261,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTriggerConfigException",
       "unmarshaller" : null,
@@ -27059,6 +27313,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LifecycleErrorCode",
       "unmarshaller" : {
@@ -27660,6 +27916,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LifecycleEvent",
       "unmarshaller" : {
@@ -27713,6 +27971,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LifecycleEventStatus",
       "unmarshaller" : {
@@ -27748,6 +28008,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LifecycleHookLimitExceededException",
       "unmarshaller" : null,
@@ -28579,6 +28841,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName" ],
       "shapeName" : "ListApplicationRevisionsRequest",
       "unmarshaller" : null,
@@ -28980,6 +29244,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListApplicationRevisionsResult",
       "unmarshaller" : {
@@ -29136,6 +29402,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListApplicationsRequest",
       "unmarshaller" : null,
@@ -29537,6 +29805,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListApplicationsResult",
       "unmarshaller" : {
@@ -29693,6 +29963,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeploymentConfigsRequest",
       "unmarshaller" : null,
@@ -30094,6 +30366,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeploymentConfigsResult",
       "unmarshaller" : {
@@ -30363,6 +30637,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName" ],
       "shapeName" : "ListDeploymentGroupsRequest",
       "unmarshaller" : null,
@@ -30877,6 +31153,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeploymentGroupsResult",
       "unmarshaller" : {
@@ -31401,6 +31679,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentId" ],
       "shapeName" : "ListDeploymentInstancesRequest",
       "unmarshaller" : null,
@@ -31802,6 +32082,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeploymentInstancesResult",
       "unmarshaller" : {
@@ -32552,6 +32834,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeploymentsRequest",
       "unmarshaller" : null,
@@ -32953,6 +33237,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDeploymentsResult",
       "unmarshaller" : {
@@ -33477,6 +33763,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListOnPremisesInstancesRequest",
       "unmarshaller" : null,
@@ -33878,6 +34166,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListOnPremisesInstancesResult",
       "unmarshaller" : {
@@ -33922,6 +34212,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListStateFilterAction",
       "unmarshaller" : {
@@ -34184,6 +34476,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MinimumHealthyHosts",
       "unmarshaller" : {
@@ -34225,6 +34519,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MinimumHealthyHostsType",
       "unmarshaller" : {
@@ -34607,6 +34903,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "revision" ],
       "shapeName" : "RegisterApplicationRevisionRequest",
       "unmarshaller" : null,
@@ -34639,6 +34937,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RegisterApplicationRevisionResult",
       "unmarshaller" : {
@@ -34908,6 +35208,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "instanceName", "iamUserArn" ],
       "shapeName" : "RegisterOnPremisesInstanceRequest",
       "unmarshaller" : null,
@@ -34940,6 +35242,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RegisterOnPremisesInstanceResult",
       "unmarshaller" : {
@@ -34981,6 +35285,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RegistrationStatus",
       "unmarshaller" : {
@@ -35534,6 +35840,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "tags", "instanceNames" ],
       "shapeName" : "RemoveTagsFromOnPremisesInstancesRequest",
       "unmarshaller" : null,
@@ -35566,6 +35874,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromOnPremisesInstancesResult",
       "unmarshaller" : {
@@ -35601,6 +35911,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevisionDoesNotExistException",
       "unmarshaller" : null,
@@ -35860,6 +36172,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevisionInfo",
       "unmarshaller" : {
@@ -36235,6 +36549,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevisionLocation",
       "unmarshaller" : {
@@ -36276,6 +36592,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevisionLocationType",
       "unmarshaller" : {
@@ -36311,6 +36629,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RevisionRequiredException",
       "unmarshaller" : null,
@@ -36343,6 +36663,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RoleRequiredException",
       "unmarshaller" : null,
@@ -36715,6 +37037,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RollbackInfo",
       "unmarshaller" : {
@@ -37316,6 +37640,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "S3Location",
       "unmarshaller" : {
@@ -37357,6 +37683,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SortOrder",
       "unmarshaller" : {
@@ -37626,6 +37954,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "deploymentId" ],
       "shapeName" : "StopDeploymentRequest",
       "unmarshaller" : null,
@@ -37885,6 +38215,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopDeploymentResult",
       "unmarshaller" : {
@@ -37926,6 +38258,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StopStatus",
       "unmarshaller" : {
@@ -38188,6 +38522,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -38563,6 +38899,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagFilter",
       "unmarshaller" : {
@@ -38607,6 +38945,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagFilterType",
       "unmarshaller" : {
@@ -38642,6 +38982,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagLimitExceededException",
       "unmarshaller" : null,
@@ -38674,6 +39016,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagRequiredException",
       "unmarshaller" : null,
@@ -38933,6 +39277,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimeRange",
       "unmarshaller" : {
@@ -39450,6 +39796,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TriggerConfig",
       "unmarshaller" : {
@@ -39509,6 +39857,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TriggerEventType",
       "unmarshaller" : {
@@ -39544,6 +39894,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TriggerTargetsLimitExceededException",
       "unmarshaller" : null,
@@ -39810,6 +40162,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateApplicationRequest",
       "unmarshaller" : null,
@@ -39842,6 +40196,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateApplicationResult",
       "unmarshaller" : {
@@ -41696,6 +42052,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "applicationName", "currentDeploymentGroupName" ],
       "shapeName" : "UpdateDeploymentGroupRequest",
       "unmarshaller" : null,
@@ -41984,6 +42342,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateDeploymentGroupResult",
       "unmarshaller" : {
@@ -42002,6 +42362,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

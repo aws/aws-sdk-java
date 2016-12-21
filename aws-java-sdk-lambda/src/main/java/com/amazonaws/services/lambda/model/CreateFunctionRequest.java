@@ -1020,4 +1020,5 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateFunctionRequest clone() {
         return (CreateFunctionRequest) super.clone();
     }
+
 }

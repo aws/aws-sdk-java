@@ -151,4 +151,5 @@ public class DeleteExpressionRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteExpressionRequest clone() {
         return (DeleteExpressionRequest) super.clone();
     }
+
 }

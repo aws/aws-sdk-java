@@ -255,4 +255,5 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
     public DescribeLaunchConfigurationsRequest clone() {
         return (DescribeLaunchConfigurationsRequest) super.clone();
     }
+
 }

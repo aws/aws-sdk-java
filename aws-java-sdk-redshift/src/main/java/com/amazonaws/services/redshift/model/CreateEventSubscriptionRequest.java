@@ -937,4 +937,5 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     public CreateEventSubscriptionRequest clone() {
         return (CreateEventSubscriptionRequest) super.clone();
     }
+
 }

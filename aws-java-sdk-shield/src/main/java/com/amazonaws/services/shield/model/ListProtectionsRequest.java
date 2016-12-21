@@ -181,4 +181,5 @@ public class ListProtectionsRequest extends com.amazonaws.AmazonWebServiceReques
     public ListProtectionsRequest clone() {
         return (ListProtectionsRequest) super.clone();
     }
+
 }

@@ -116,4 +116,5 @@ public class GetPipelineStateRequest extends com.amazonaws.AmazonWebServiceReque
     public GetPipelineStateRequest clone() {
         return (GetPipelineStateRequest) super.clone();
     }
+
 }

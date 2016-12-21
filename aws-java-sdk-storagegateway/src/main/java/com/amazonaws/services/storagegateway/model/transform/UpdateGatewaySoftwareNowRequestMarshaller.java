@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateGatewaySoftwareNowRequestMarshaller implements Marshaller<Request<UpdateGatewaySoftwareNowRequest>, UpdateGatewaySoftwareNowRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateGatewaySoftwareNowRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateGatewaySoftwareNowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

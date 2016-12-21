@@ -190,4 +190,5 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetApiKeyRequest clone() {
         return (GetApiKeyRequest) super.clone();
     }
+
 }

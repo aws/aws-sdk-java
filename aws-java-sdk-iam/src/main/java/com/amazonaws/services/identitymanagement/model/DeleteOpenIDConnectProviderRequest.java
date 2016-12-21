@@ -121,4 +121,5 @@ public class DeleteOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
     public DeleteOpenIDConnectProviderRequest clone() {
         return (DeleteOpenIDConnectProviderRequest) super.clone();
     }
+
 }

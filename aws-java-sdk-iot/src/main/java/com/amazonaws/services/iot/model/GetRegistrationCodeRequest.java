@@ -62,4 +62,5 @@ public class GetRegistrationCodeRequest extends com.amazonaws.AmazonWebServiceRe
     public GetRegistrationCodeRequest clone() {
         return (GetRegistrationCodeRequest) super.clone();
     }
+
 }

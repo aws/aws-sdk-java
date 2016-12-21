@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeVTLDevicesRequestMarshaller implements Marshaller<Request<DescribeVTLDevicesRequest>, DescribeVTLDevicesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeVTLDevicesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeVTLDevicesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

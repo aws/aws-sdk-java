@@ -596,4 +596,5 @@ public class CreateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateIdentityPoolRequest clone() {
         return (CreateIdentityPoolRequest) super.clone();
     }
+
 }

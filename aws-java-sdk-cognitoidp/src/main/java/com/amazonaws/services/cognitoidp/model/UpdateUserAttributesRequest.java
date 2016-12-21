@@ -199,4 +199,5 @@ public class UpdateUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
     public UpdateUserAttributesRequest clone() {
         return (UpdateUserAttributesRequest) super.clone();
     }
+
 }

@@ -1718,4 +1718,5 @@ public class GetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     public GetQueueAttributesRequest clone() {
         return (GetQueueAttributesRequest) super.clone();
     }
+
 }

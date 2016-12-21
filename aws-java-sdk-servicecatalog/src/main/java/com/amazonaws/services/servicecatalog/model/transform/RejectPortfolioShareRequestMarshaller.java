@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RejectPortfolioShareRequestMarshaller implements Marshaller<Request<RejectPortfolioShareRequest>, RejectPortfolioShareRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RejectPortfolioShareRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RejectPortfolioShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

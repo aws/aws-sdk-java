@@ -122,4 +122,5 @@ public class DomainMetadataRequest extends com.amazonaws.AmazonWebServiceRequest
     public DomainMetadataRequest clone() {
         return (DomainMetadataRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class DeprecateActivityTypeRequest extends com.amazonaws.AmazonWebService
     public DeprecateActivityTypeRequest clone() {
         return (DeprecateActivityTypeRequest) super.clone();
     }
+
 }

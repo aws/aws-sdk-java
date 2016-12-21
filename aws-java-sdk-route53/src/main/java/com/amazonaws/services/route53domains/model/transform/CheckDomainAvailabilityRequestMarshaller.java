@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CheckDomainAvailabilityRequestMarshaller implements Marshaller<Request<CheckDomainAvailabilityRequest>, CheckDomainAvailabilityRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CheckDomainAvailabilityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CheckDomainAvailabilityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

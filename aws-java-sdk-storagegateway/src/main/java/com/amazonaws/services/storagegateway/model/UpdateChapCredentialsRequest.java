@@ -401,4 +401,5 @@ public class UpdateChapCredentialsRequest extends com.amazonaws.AmazonWebService
     public UpdateChapCredentialsRequest clone() {
         return (UpdateChapCredentialsRequest) super.clone();
     }
+
 }

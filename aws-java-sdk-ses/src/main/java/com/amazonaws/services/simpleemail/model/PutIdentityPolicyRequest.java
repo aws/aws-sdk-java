@@ -314,4 +314,5 @@ public class PutIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     public PutIdentityPolicyRequest clone() {
         return (PutIdentityPolicyRequest) super.clone();
     }
+
 }

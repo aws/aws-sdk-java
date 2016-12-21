@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetThingShadowRequestMarshaller implements Marshaller<Request<GetThingShadowRequest>, GetThingShadowRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetThingShadowRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetThingShadowRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -250,4 +250,5 @@ public class ListJobsByStatusRequest extends com.amazonaws.AmazonWebServiceReque
     public ListJobsByStatusRequest clone() {
         return (ListJobsByStatusRequest) super.clone();
     }
+
 }

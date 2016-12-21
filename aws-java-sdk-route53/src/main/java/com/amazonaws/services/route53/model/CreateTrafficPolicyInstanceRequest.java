@@ -367,4 +367,5 @@ public class CreateTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebS
     public CreateTrafficPolicyInstanceRequest clone() {
         return (CreateTrafficPolicyInstanceRequest) super.clone();
     }
+
 }

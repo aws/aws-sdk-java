@@ -1205,4 +1205,5 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     public SendCommandRequest clone() {
         return (SendCommandRequest) super.clone();
     }
+
 }

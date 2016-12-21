@@ -116,4 +116,5 @@ public class GenerateClientCertificateRequest extends com.amazonaws.AmazonWebSer
     public GenerateClientCertificateRequest clone() {
         return (GenerateClientCertificateRequest) super.clone();
     }
+
 }

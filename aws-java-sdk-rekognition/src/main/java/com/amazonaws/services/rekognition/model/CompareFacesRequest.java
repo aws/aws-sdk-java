@@ -220,4 +220,5 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CompareFacesRequest clone() {
         return (CompareFacesRequest) super.clone();
     }
+
 }

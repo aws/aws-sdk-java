@@ -411,4 +411,5 @@ public class ListPartsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ListPartsRequest clone() {
         return (ListPartsRequest) super.clone();
     }
+
 }

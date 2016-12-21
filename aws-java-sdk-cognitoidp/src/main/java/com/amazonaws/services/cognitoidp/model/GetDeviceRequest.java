@@ -169,4 +169,5 @@ public class GetDeviceRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetDeviceRequest clone() {
         return (GetDeviceRequest) super.clone();
     }
+
 }

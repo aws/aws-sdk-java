@@ -204,4 +204,5 @@ public class DeleteIdentityPolicyRequest extends com.amazonaws.AmazonWebServiceR
     public DeleteIdentityPolicyRequest clone() {
         return (DeleteIdentityPolicyRequest) super.clone();
     }
+
 }

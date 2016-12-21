@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteRuleRequestMarshaller implements Marshaller<Request<DeleteRuleRequest>, DeleteRuleRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteRuleRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

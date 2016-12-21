@@ -333,4 +333,5 @@ public class PutMetricFilterRequest extends com.amazonaws.AmazonWebServiceReques
     public PutMetricFilterRequest clone() {
         return (PutMetricFilterRequest) super.clone();
     }
+
 }

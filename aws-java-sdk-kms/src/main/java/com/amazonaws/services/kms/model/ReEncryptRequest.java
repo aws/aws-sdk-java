@@ -631,4 +631,5 @@ public class ReEncryptRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ReEncryptRequest clone() {
         return (ReEncryptRequest) super.clone();
     }
+
 }

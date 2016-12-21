@@ -116,4 +116,5 @@ public class StartConfigurationRecorderRequest extends com.amazonaws.AmazonWebSe
     public StartConfigurationRecorderRequest clone() {
         return (StartConfigurationRecorderRequest) super.clone();
     }
+
 }

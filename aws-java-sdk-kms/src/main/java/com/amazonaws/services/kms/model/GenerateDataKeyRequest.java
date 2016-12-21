@@ -693,4 +693,5 @@ public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceReques
     public GenerateDataKeyRequest clone() {
         return (GenerateDataKeyRequest) super.clone();
     }
+
 }

@@ -116,4 +116,5 @@ public class GetTopicRuleRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetTopicRuleRequest clone() {
         return (GetTopicRuleRequest) super.clone();
     }
+
 }

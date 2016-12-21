@@ -203,4 +203,5 @@ public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateRestApiRequest clone() {
         return (UpdateRestApiRequest) super.clone();
     }
+
 }

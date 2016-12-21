@@ -229,4 +229,5 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
     public ListUserImportJobsRequest clone() {
         return (ListUserImportJobsRequest) super.clone();
     }
+
 }

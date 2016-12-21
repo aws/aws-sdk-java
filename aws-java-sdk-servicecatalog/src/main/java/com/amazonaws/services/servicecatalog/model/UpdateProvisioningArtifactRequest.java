@@ -407,4 +407,5 @@ public class UpdateProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     public UpdateProvisioningArtifactRequest clone() {
         return (UpdateProvisioningArtifactRequest) super.clone();
     }
+
 }

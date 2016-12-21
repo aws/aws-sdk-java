@@ -146,4 +146,5 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetPolicyRequest clone() {
         return (GetPolicyRequest) super.clone();
     }
+
 }

@@ -260,4 +260,5 @@ public class ListAssociationsRequest extends com.amazonaws.AmazonWebServiceReque
     public ListAssociationsRequest clone() {
         return (ListAssociationsRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateAuthorizerRequestMarshaller implements Marshaller<Request<UpdateAuthorizerRequest>, UpdateAuthorizerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateAuthorizerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateAuthorizerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

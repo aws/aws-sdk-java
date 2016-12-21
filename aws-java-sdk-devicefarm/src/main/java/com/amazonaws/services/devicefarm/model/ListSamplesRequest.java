@@ -176,4 +176,5 @@ public class ListSamplesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListSamplesRequest clone() {
         return (ListSamplesRequest) super.clone();
     }
+
 }

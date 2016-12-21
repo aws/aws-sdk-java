@@ -222,4 +222,5 @@ public class ListThingTypesRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListThingTypesRequest clone() {
         return (ListThingTypesRequest) super.clone();
     }
+
 }

@@ -67,32 +67,33 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withModeledClass(
-                            com.amazonaws.services.snowball.model.InvalidJobStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withModeledClass(
-                            com.amazonaws.services.snowball.model.InvalidResourceException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("KMSRequestFailedException").withModeledClass(
-                            com.amazonaws.services.snowball.model.KMSRequestFailedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedAddressException").withModeledClass(
-                            com.amazonaws.services.snowball.model.UnsupportedAddressException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClusterLimitExceededException").withModeledClass(
-                            com.amazonaws.services.snowball.model.ClusterLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidInputCombinationException").withModeledClass(
-                            com.amazonaws.services.snowball.model.InvalidInputCombinationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidAddressException").withModeledClass(
-                            com.amazonaws.services.snowball.model.InvalidAddressException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.snowball.model.AmazonSnowballException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.InvalidJobStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.InvalidResourceException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSRequestFailedException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.KMSRequestFailedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAddressException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.UnsupportedAddressException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.ClusterLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputCombinationException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.InvalidInputCombinationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAddressException").withModeledClass(
+                                    com.amazonaws.services.snowball.model.InvalidAddressException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.snowball.model.AmazonSnowballException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Snowball. A credentials provider chain will be used

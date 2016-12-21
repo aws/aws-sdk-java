@@ -60,4 +60,5 @@ public class DescribeCrossAccountAccessRoleRequest extends com.amazonaws.AmazonW
     public DescribeCrossAccountAccessRoleRequest clone() {
         return (DescribeCrossAccountAccessRoleRequest) super.clone();
     }
+
 }

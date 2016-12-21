@@ -572,4 +572,5 @@ public class CopyClusterSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
     public CopyClusterSnapshotRequest clone() {
         return (CopyClusterSnapshotRequest) super.clone();
     }
+
 }

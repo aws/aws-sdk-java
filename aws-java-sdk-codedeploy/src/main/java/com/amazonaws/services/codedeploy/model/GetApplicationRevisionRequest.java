@@ -169,4 +169,5 @@ public class GetApplicationRevisionRequest extends com.amazonaws.AmazonWebServic
     public GetApplicationRevisionRequest clone() {
         return (GetApplicationRevisionRequest) super.clone();
     }
+
 }

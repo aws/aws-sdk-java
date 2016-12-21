@@ -44,9 +44,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeMountTargetSecurityGroupsRequestMarshaller implements
         Marshaller<Request<DescribeMountTargetSecurityGroupsRequest>, DescribeMountTargetSecurityGroupsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeMountTargetSecurityGroupsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeMountTargetSecurityGroupsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

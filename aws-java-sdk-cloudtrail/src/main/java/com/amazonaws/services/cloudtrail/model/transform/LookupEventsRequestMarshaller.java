@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class LookupEventsRequestMarshaller implements Marshaller<Request<LookupEventsRequest>, LookupEventsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public LookupEventsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public LookupEventsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

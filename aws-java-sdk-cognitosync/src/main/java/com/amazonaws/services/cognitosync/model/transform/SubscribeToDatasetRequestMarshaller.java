@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SubscribeToDatasetRequestMarshaller implements Marshaller<Request<SubscribeToDatasetRequest>, SubscribeToDatasetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SubscribeToDatasetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SubscribeToDatasetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

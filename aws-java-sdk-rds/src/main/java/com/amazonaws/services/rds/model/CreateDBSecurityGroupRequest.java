@@ -472,4 +472,5 @@ public class CreateDBSecurityGroupRequest extends com.amazonaws.AmazonWebService
     public CreateDBSecurityGroupRequest clone() {
         return (CreateDBSecurityGroupRequest) super.clone();
     }
+
 }

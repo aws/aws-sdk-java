@@ -1224,4 +1224,5 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public PutScalingPolicyRequest clone() {
         return (PutScalingPolicyRequest) super.clone();
     }
+
 }

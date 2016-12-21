@@ -147,4 +147,5 @@ public class CreateAssociationBatchRequest extends com.amazonaws.AmazonWebServic
     public CreateAssociationBatchRequest clone() {
         return (CreateAssociationBatchRequest) super.clone();
     }
+
 }

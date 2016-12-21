@@ -257,4 +257,5 @@ public class CheckDomainAvailabilityRequest extends com.amazonaws.AmazonWebServi
     public CheckDomainAvailabilityRequest clone() {
         return (CheckDomainAvailabilityRequest) super.clone();
     }
+
 }

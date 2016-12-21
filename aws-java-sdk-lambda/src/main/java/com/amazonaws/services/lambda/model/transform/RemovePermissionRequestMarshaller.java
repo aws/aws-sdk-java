@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RemovePermissionRequestMarshaller implements Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RemovePermissionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RemovePermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -335,4 +335,5 @@ public class DescribeLoadBalancersRequest extends com.amazonaws.AmazonWebService
     public DescribeLoadBalancersRequest clone() {
         return (DescribeLoadBalancersRequest) super.clone();
     }
+
 }

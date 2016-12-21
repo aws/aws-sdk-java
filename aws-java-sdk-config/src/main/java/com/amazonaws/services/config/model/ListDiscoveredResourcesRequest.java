@@ -496,4 +496,5 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
     public ListDiscoveredResourcesRequest clone() {
         return (ListDiscoveredResourcesRequest) super.clone();
     }
+
 }

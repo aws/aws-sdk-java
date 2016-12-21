@@ -216,4 +216,5 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeConfigRulesRequest clone() {
         return (DescribeConfigRulesRequest) super.clone();
     }
+
 }

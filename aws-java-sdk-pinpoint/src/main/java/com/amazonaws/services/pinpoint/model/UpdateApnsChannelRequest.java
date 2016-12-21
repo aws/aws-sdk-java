@@ -130,4 +130,5 @@ public class UpdateApnsChannelRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateApnsChannelRequest clone() {
         return (UpdateApnsChannelRequest) super.clone();
     }
+
 }

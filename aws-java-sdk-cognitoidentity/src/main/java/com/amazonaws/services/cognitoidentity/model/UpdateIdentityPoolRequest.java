@@ -611,4 +611,5 @@ public class UpdateIdentityPoolRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateIdentityPoolRequest clone() {
         return (UpdateIdentityPoolRequest) super.clone();
     }
+
 }

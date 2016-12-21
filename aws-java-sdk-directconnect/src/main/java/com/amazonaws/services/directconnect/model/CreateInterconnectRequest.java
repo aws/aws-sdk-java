@@ -360,4 +360,5 @@ public class CreateInterconnectRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateInterconnectRequest clone() {
         return (CreateInterconnectRequest) super.clone();
     }
+
 }

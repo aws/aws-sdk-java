@@ -364,4 +364,5 @@ public class ListPrincipalsForPortfolioRequest extends com.amazonaws.AmazonWebSe
     public ListPrincipalsForPortfolioRequest clone() {
         return (ListPrincipalsForPortfolioRequest) super.clone();
     }
+
 }

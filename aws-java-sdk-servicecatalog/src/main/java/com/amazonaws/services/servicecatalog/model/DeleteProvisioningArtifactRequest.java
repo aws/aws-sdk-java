@@ -301,4 +301,5 @@ public class DeleteProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     public DeleteProvisioningArtifactRequest clone() {
         return (DeleteProvisioningArtifactRequest) super.clone();
     }
+
 }

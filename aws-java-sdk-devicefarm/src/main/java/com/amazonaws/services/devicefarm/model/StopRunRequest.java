@@ -116,4 +116,5 @@ public class StopRunRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public StopRunRequest clone() {
         return (StopRunRequest) super.clone();
     }
+
 }

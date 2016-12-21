@@ -60,4 +60,5 @@ public class GetSendStatisticsRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetSendStatisticsRequest clone() {
         return (GetSendStatisticsRequest) super.clone();
     }
+
 }

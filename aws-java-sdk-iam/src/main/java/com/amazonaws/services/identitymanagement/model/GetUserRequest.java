@@ -153,4 +153,5 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public GetUserRequest clone() {
         return (GetUserRequest) super.clone();
     }
+
 }

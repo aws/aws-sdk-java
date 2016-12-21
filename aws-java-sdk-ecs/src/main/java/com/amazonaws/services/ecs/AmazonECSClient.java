@@ -75,42 +75,45 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.ecs.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoUpdateAvailableException").withModeledClass(
-                            com.amazonaws.services.ecs.model.NoUpdateAvailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClusterContainsServicesException").withModeledClass(
-                            com.amazonaws.services.ecs.model.ClusterContainsServicesException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MissingVersionException").withModeledClass(
-                            com.amazonaws.services.ecs.model.MissingVersionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClusterContainsContainerInstancesException").withModeledClass(
-                            com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecs.model.ServiceNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServiceNotActiveException").withModeledClass(
-                            com.amazonaws.services.ecs.model.ServiceNotActiveException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(com.amazonaws.services.ecs.model.ServerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(com.amazonaws.services.ecs.model.ClientException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UpdateInProgressException").withModeledClass(
-                            com.amazonaws.services.ecs.model.UpdateInProgressException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.ecs.model.AmazonECSException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoUpdateAvailableException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.NoUpdateAvailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsServicesException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ClusterContainsServicesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MissingVersionException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.MissingVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsContainerInstancesException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ServiceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceNotActiveException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ServiceNotActiveException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.ClientException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UpdateInProgressException").withModeledClass(
+                                    com.amazonaws.services.ecs.model.UpdateInProgressException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ecs.model.AmazonECSException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECS. A credentials provider chain will be used that

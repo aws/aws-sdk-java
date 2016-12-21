@@ -284,4 +284,5 @@ public class DeleteArchiveRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DeleteArchiveRequest clone() {
         return (DeleteArchiveRequest) super.clone();
     }
+
 }

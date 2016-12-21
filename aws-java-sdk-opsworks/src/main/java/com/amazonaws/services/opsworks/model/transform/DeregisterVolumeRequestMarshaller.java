@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeregisterVolumeRequestMarshaller implements Marshaller<Request<DeregisterVolumeRequest>, DeregisterVolumeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeregisterVolumeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeregisterVolumeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

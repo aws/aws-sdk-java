@@ -169,4 +169,5 @@ public class DeleteBasePathMappingRequest extends com.amazonaws.AmazonWebService
     public DeleteBasePathMappingRequest clone() {
         return (DeleteBasePathMappingRequest) super.clone();
     }
+
 }

@@ -282,4 +282,5 @@ public class SubscribeToDatasetRequest extends com.amazonaws.AmazonWebServiceReq
     public SubscribeToDatasetRequest clone() {
         return (SubscribeToDatasetRequest) super.clone();
     }
+
 }

@@ -716,4 +716,5 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateApplicationRequest clone() {
         return (CreateApplicationRequest) super.clone();
     }
+
 }

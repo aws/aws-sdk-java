@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AssociateNodeRequestMarshaller implements Marshaller<Request<AssociateNodeRequest>, AssociateNodeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AssociateNodeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AssociateNodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

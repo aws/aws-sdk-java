@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeLoadBasedAutoScalingRequestMarshaller implements
         Marshaller<Request<DescribeLoadBasedAutoScalingRequest>, DescribeLoadBasedAutoScalingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeLoadBasedAutoScalingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeLoadBasedAutoScalingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

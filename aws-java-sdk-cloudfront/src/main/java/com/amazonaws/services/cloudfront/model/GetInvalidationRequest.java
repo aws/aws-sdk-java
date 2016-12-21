@@ -190,4 +190,5 @@ public class GetInvalidationRequest extends com.amazonaws.AmazonWebServiceReques
     public GetInvalidationRequest clone() {
         return (GetInvalidationRequest) super.clone();
     }
+
 }

@@ -116,4 +116,5 @@ public class GetUploadRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetUploadRequest clone() {
         return (GetUploadRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class ListSecurityConfigurationsRequest extends com.amazonaws.AmazonWebSe
     public ListSecurityConfigurationsRequest clone() {
         return (ListSecurityConfigurationsRequest) super.clone();
     }
+
 }

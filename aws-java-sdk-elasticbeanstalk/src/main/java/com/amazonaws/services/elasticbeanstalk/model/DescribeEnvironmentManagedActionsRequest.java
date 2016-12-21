@@ -255,4 +255,5 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
     public DescribeEnvironmentManagedActionsRequest clone() {
         return (DescribeEnvironmentManagedActionsRequest) super.clone();
     }
+
 }

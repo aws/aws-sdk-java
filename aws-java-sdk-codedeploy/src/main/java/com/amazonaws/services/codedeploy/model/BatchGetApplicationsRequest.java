@@ -149,4 +149,5 @@ public class BatchGetApplicationsRequest extends com.amazonaws.AmazonWebServiceR
     public BatchGetApplicationsRequest clone() {
         return (BatchGetApplicationsRequest) super.clone();
     }
+
 }

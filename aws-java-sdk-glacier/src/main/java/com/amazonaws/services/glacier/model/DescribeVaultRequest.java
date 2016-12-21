@@ -225,4 +225,5 @@ public class DescribeVaultRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeVaultRequest clone() {
         return (DescribeVaultRequest) super.clone();
     }
+
 }

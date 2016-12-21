@@ -280,4 +280,5 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
     public DescribeTableStatisticsRequest clone() {
         return (DescribeTableStatisticsRequest) super.clone();
     }
+
 }

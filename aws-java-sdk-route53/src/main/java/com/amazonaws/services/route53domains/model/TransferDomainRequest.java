@@ -1792,4 +1792,5 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     public TransferDomainRequest clone() {
         return (TransferDomainRequest) super.clone();
     }
+
 }

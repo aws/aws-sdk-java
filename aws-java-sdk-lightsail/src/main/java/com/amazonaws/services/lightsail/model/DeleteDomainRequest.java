@@ -114,4 +114,5 @@ public class DeleteDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteDomainRequest clone() {
         return (DeleteDomainRequest) super.clone();
     }
+
 }

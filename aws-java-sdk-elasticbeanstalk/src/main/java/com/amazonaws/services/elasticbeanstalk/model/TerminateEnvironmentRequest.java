@@ -561,4 +561,5 @@ public class TerminateEnvironmentRequest extends com.amazonaws.AmazonWebServiceR
     public TerminateEnvironmentRequest clone() {
         return (TerminateEnvironmentRequest) super.clone();
     }
+
 }

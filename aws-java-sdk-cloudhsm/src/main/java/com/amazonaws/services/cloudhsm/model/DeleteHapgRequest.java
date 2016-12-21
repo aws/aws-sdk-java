@@ -116,4 +116,5 @@ public class DeleteHapgRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public DeleteHapgRequest clone() {
         return (DeleteHapgRequest) super.clone();
     }
+
 }

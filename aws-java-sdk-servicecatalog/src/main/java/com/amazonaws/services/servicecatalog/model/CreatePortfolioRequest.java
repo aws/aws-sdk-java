@@ -497,4 +497,5 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     public CreatePortfolioRequest clone() {
         return (CreatePortfolioRequest) super.clone();
     }
+
 }

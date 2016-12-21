@@ -296,4 +296,5 @@ public class PutJobSuccessResultRequest extends com.amazonaws.AmazonWebServiceRe
     public PutJobSuccessResultRequest clone() {
         return (PutJobSuccessResultRequest) super.clone();
     }
+
 }

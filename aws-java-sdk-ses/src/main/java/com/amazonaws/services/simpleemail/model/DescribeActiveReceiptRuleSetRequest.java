@@ -65,4 +65,5 @@ public class DescribeActiveReceiptRuleSetRequest extends com.amazonaws.AmazonWeb
     public DescribeActiveReceiptRuleSetRequest clone() {
         return (DescribeActiveReceiptRuleSetRequest) super.clone();
     }
+
 }

@@ -203,4 +203,5 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public SetSubnetsRequest clone() {
         return (SetSubnetsRequest) super.clone();
     }
+
 }

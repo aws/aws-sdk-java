@@ -231,4 +231,5 @@ public class AttachGroupPolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     public AttachGroupPolicyRequest clone() {
         return (AttachGroupPolicyRequest) super.clone();
     }
+
 }

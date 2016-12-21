@@ -323,4 +323,5 @@ public class PutRolePolicyRequest extends com.amazonaws.AmazonWebServiceRequest 
     public PutRolePolicyRequest clone() {
         return (PutRolePolicyRequest) super.clone();
     }
+
 }

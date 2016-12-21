@@ -534,4 +534,5 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public StartBuildRequest clone() {
         return (StartBuildRequest) super.clone();
     }
+
 }

@@ -357,4 +357,5 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     public RetireGrantRequest clone() {
         return (RetireGrantRequest) super.clone();
     }
+
 }

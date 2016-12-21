@@ -349,4 +349,5 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateDomainNameRequest clone() {
         return (CreateDomainNameRequest) super.clone();
     }
+
 }

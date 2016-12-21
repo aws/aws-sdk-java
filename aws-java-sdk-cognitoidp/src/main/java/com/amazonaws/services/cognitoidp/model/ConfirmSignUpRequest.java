@@ -378,4 +378,5 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ConfirmSignUpRequest clone() {
         return (ConfirmSignUpRequest) super.clone();
     }
+
 }

@@ -43,6 +43,7 @@
     "cucumberModuleInjectorClassName" : "AWSApplicationAutoScalingModuleInjector",
     "defaultEndpoint" : "https://autoscaling.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "autoscaling.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>With Application Auto Scaling, you can automatically scale your AWS resources. The experience similar to that of <a href=\"https://aws.amazon.com/autoscaling/\">Auto Scaling</a>. You can use Application Auto Scaling to accomplish the following tasks:</p> <ul> <li> <p>Define scaling policies to automatically scale your AWS resources</p> </li> <li> <p>Scale your resources in response to CloudWatch alarms</p> </li> <li> <p>View the history of your scaling events</p> </li> </ul> <p>Application Auto Scaling can scale the following AWS resources:</p> <ul> <li> <p>Amazon ECS services. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html\">Service Auto Scaling</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p> </li> <li> <p>Amazon EC2 Spot fleets. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html\">Automatic Scaling for Spot Fleet</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> <li> <p>Amazon EMR clusters. For more information, see <a href=\"http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html\">Using Automatic Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p> </li> </ul> <p>For a list of supported regions, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region\">AWS Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General Reference</i>.</p>",
     "endpointPrefix" : "autoscaling",
     "hasApiWithStreamInput" : false,
@@ -53,7 +54,10 @@
     "packagePath" : "com/amazonaws/services/applicationautoscaling",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Application Auto Scaling",
     "serviceName" : "Application Auto Scaling",
@@ -406,6 +410,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AdjustmentType",
       "unmarshaller" : {
@@ -668,6 +674,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AlarmName", "AlarmARN" ],
       "shapeName" : "Alarm",
       "unmarshaller" : {
@@ -703,6 +711,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConcurrentUpdateException",
       "unmarshaller" : null,
@@ -1195,6 +1205,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PolicyName", "ServiceNamespace", "ResourceId", "ScalableDimension" ],
       "shapeName" : "DeleteScalingPolicyRequest",
       "unmarshaller" : null,
@@ -1227,6 +1239,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteScalingPolicyResult",
       "unmarshaller" : {
@@ -1609,6 +1623,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ServiceNamespace", "ResourceId", "ScalableDimension" ],
       "shapeName" : "DeregisterScalableTargetRequest",
       "unmarshaller" : null,
@@ -1641,6 +1657,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeregisterScalableTargetResult",
       "unmarshaller" : {
@@ -2391,6 +2409,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ServiceNamespace" ],
       "shapeName" : "DescribeScalableTargetsRequest",
       "unmarshaller" : null,
@@ -2792,6 +2812,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeScalableTargetsResult",
       "unmarshaller" : {
@@ -3400,6 +3422,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ServiceNamespace" ],
       "shapeName" : "DescribeScalingActivitiesRequest",
       "unmarshaller" : null,
@@ -3801,6 +3825,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeScalingActivitiesResult",
       "unmarshaller" : {
@@ -4664,6 +4690,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ServiceNamespace" ],
       "shapeName" : "DescribeScalingPoliciesRequest",
       "unmarshaller" : null,
@@ -5065,6 +5093,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeScalingPoliciesResult",
       "unmarshaller" : {
@@ -5100,6 +5130,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailedResourceAccessException",
       "unmarshaller" : null,
@@ -5132,6 +5164,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServiceException",
       "unmarshaller" : null,
@@ -5164,6 +5198,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -5196,6 +5232,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -5237,6 +5275,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MetricAggregationType",
       "unmarshaller" : {
@@ -5272,6 +5312,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ObjectNotFoundException",
       "unmarshaller" : null,
@@ -5307,6 +5349,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PolicyType",
       "unmarshaller" : {
@@ -6028,6 +6072,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PolicyName", "ServiceNamespace", "ResourceId", "ScalableDimension" ],
       "shapeName" : "PutScalingPolicyRequest",
       "unmarshaller" : null,
@@ -6174,6 +6220,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PolicyARN" ],
       "shapeName" : "PutScalingPolicyResult",
       "unmarshaller" : {
@@ -6895,6 +6943,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ServiceNamespace", "ResourceId", "ScalableDimension" ],
       "shapeName" : "RegisterScalableTargetRequest",
       "unmarshaller" : null,
@@ -6927,6 +6977,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RegisterScalableTargetResult",
       "unmarshaller" : {
@@ -6971,6 +7023,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScalableDimension",
       "unmarshaller" : {
@@ -7798,6 +7852,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ServiceNamespace", "ResourceId", "ScalableDimension", "MinCapacity", "MaxCapacity", "RoleARN", "CreationTime" ],
       "shapeName" : "ScalableTarget",
       "unmarshaller" : {
@@ -9077,6 +9133,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ActivityId", "ServiceNamespace", "ResourceId", "ScalableDimension", "Description", "Cause", "StartTime", "StatusCode" ],
       "shapeName" : "ScalingActivity",
       "unmarshaller" : {
@@ -9130,6 +9188,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScalingActivityStatusCode",
       "unmarshaller" : {
@@ -10325,6 +10385,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PolicyARN", "PolicyName", "ServiceNamespace", "ResourceId", "ScalableDimension", "PolicyType", "CreationTime" ],
       "shapeName" : "ScalingPolicy",
       "unmarshaller" : {
@@ -10369,6 +10431,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceNamespace",
       "unmarshaller" : {
@@ -10744,6 +10808,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ScalingAdjustment" ],
       "shapeName" : "StepAdjustment",
       "unmarshaller" : {
@@ -11487,6 +11553,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StepScalingPolicyConfiguration",
       "unmarshaller" : {
@@ -11522,6 +11590,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ValidationException",
       "unmarshaller" : null,
@@ -11537,6 +11607,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "DeleteScalingPolicy" : [ {

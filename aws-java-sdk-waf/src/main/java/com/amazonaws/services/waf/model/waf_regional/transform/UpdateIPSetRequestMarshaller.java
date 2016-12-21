@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateIPSetRequestMarshaller implements Marshaller<Request<UpdateIPSetRequest>, UpdateIPSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateIPSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateIPSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -167,4 +167,5 @@ public class AssociateFleetRequest extends com.amazonaws.AmazonWebServiceRequest
     public AssociateFleetRequest clone() {
         return (AssociateFleetRequest) super.clone();
     }
+
 }

@@ -167,4 +167,5 @@ public class DeleteGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteGroupRequest clone() {
         return (DeleteGroupRequest) super.clone();
     }
+
 }

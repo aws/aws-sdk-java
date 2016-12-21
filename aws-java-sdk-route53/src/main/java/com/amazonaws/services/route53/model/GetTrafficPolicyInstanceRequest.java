@@ -120,4 +120,5 @@ public class GetTrafficPolicyInstanceRequest extends com.amazonaws.AmazonWebServ
     public GetTrafficPolicyInstanceRequest clone() {
         return (GetTrafficPolicyInstanceRequest) super.clone();
     }
+
 }

@@ -321,4 +321,5 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
     public ListRetirableGrantsRequest clone() {
         return (ListRetirableGrantsRequest) super.clone();
     }
+
 }

@@ -229,4 +229,5 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
     public GetBasePathMappingsRequest clone() {
         return (GetBasePathMappingsRequest) super.clone();
     }
+
 }

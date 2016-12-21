@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GenerateRandomRequestMarshaller implements Marshaller<Request<GenerateRandomRequest>, GenerateRandomRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GenerateRandomRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GenerateRandomRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

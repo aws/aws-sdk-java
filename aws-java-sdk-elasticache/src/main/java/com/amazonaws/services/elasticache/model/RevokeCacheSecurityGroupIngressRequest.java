@@ -254,4 +254,5 @@ public class RevokeCacheSecurityGroupIngressRequest extends com.amazonaws.Amazon
     public RevokeCacheSecurityGroupIngressRequest clone() {
         return (RevokeCacheSecurityGroupIngressRequest) super.clone();
     }
+
 }

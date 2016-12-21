@@ -248,4 +248,5 @@ public class RejectPortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     public RejectPortfolioShareRequest clone() {
         return (RejectPortfolioShareRequest) super.clone();
     }
+
 }

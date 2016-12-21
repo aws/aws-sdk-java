@@ -304,4 +304,5 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DescribeTagsRequest clone() {
         return (DescribeTagsRequest) super.clone();
     }
+
 }

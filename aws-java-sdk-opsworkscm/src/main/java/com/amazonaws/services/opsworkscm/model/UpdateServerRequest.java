@@ -311,4 +311,5 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public UpdateServerRequest clone() {
         return (UpdateServerRequest) super.clone();
     }
+
 }

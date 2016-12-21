@@ -116,4 +116,5 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
     public DescribeRuntimeConfigurationRequest clone() {
         return (DescribeRuntimeConfigurationRequest) super.clone();
     }
+
 }

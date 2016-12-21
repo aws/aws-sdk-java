@@ -200,4 +200,5 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
     public GetInstanceAccessDetailsRequest clone() {
         return (GetInstanceAccessDetailsRequest) super.clone();
     }
+
 }

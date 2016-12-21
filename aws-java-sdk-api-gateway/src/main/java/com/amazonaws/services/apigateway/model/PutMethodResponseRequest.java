@@ -489,4 +489,5 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
     public PutMethodResponseRequest clone() {
         return (PutMethodResponseRequest) super.clone();
     }
+
 }

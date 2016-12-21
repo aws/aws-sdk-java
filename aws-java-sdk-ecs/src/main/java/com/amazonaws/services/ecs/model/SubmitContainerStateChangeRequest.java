@@ -465,4 +465,5 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
     public SubmitContainerStateChangeRequest clone() {
         return (SubmitContainerStateChangeRequest) super.clone();
     }
+
 }

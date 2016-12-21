@@ -2678,4 +2678,5 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     public RestoreDBInstanceToPointInTimeRequest clone() {
         return (RestoreDBInstanceToPointInTimeRequest) super.clone();
     }
+
 }

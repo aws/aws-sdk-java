@@ -76,209 +76,210 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyTagsError").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.TooManyTagsErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ItemSizeLimitExceededException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameters").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidKeyId").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedParameterType").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidFilter").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidSchedule").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedInventorySchemaVersionException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidUpdate").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidPluginName").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNextToken").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AssociationAlreadyExists").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateDocumentContent").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentSchemaVersion").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentSchemaVersionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidActivationId").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvocationDoesNotExist").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatch").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.IdempotentParameterMismatchException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResultAttributeException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionVersionNotFoundException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidAutomationExecutionParametersException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResourceId").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ResourceLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidPermissionType").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ResourceInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDocument").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentVersion").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidOutputFolder").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentOperation").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionLimitExceededException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidResourceType").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidNotificationConfig").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidCommandId").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ParameterNotFound").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DocumentPermissionLimit").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DocumentLimitExceeded").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionNotFoundException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceId").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TotalSizeLimitExceededException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ItemContentMismatchException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidActivation").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateInstanceId").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TooManyUpdates").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DocumentAlreadyExists").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentContent").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionNotFoundException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceInformationFilterValue").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("StatusUnchanged").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AssociationDoesNotExist").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidTarget").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlatformType").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MaxDocumentSizeExceeded").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidRole").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidRoleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AssociatedInstances").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidOutputLocation").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ParameterLimitExceeded").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidFilterValue").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterValueException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DocumentVersionLimitExceeded").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidTypeNameException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DoesNotExistException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("CustomSchemaCountLimitExceededException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ParameterAlreadyExists").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidFilterKey").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidItemContentException").withModeledClass(
-                            com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsError").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.TooManyTagsErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ItemSizeLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameters").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKeyId").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedParameterType").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilter").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSchedule").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedInventorySchemaVersionException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUpdate").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPluginName").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextToken").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidNextTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssociationAlreadyExists").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateDocumentContent").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentSchemaVersion").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentSchemaVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidActivationId").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvocationDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatch").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.IdempotentParameterMismatchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResultAttributeException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionVersionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutomationExecutionParametersException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceId").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ResourceLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPermissionType").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ResourceInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDocument").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentVersion").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutputFolder").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentOperation").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceType").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNotificationConfig").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommandId").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterNotFound").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentPermissionLimit").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceId").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TotalSizeLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ItemContentMismatchException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidActivation").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateInstanceId").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyUpdates").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentAlreadyExists").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentContent").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentContentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionNotFoundException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceInformationFilterValue").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StatusUnchanged").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssociationDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AssociationDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTarget").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedPlatformType").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaxDocumentSizeExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRole").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssociatedInstances").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutputLocation").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilterValue").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentVersionLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeNameException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DoesNotExistException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CustomSchemaCountLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterAlreadyExists").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilterKey").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InternalServerErrorException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidItemContentException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SSM. A credentials provider chain will be used that

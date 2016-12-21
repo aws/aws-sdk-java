@@ -114,4 +114,5 @@ public class GetInstancePortStatesRequest extends com.amazonaws.AmazonWebService
     public GetInstancePortStatesRequest clone() {
         return (GetInstancePortStatesRequest) super.clone();
     }
+
 }

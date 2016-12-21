@@ -202,4 +202,5 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public EnableKeyRequest clone() {
         return (EnableKeyRequest) super.clone();
     }
+
 }

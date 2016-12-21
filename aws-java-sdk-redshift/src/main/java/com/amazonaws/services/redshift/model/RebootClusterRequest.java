@@ -114,4 +114,5 @@ public class RebootClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     public RebootClusterRequest clone() {
         return (RebootClusterRequest) super.clone();
     }
+
 }

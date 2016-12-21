@@ -375,4 +375,5 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
     public ImportDocumentationPartsRequest clone() {
         return (ImportDocumentationPartsRequest) super.clone();
     }
+
 }

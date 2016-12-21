@@ -352,4 +352,5 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     public ListMultipartUploadsRequest clone() {
         return (ListMultipartUploadsRequest) super.clone();
     }
+
 }

@@ -572,4 +572,5 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     public CreateCustomActionTypeRequest clone() {
         return (CreateCustomActionTypeRequest) super.clone();
     }
+
 }

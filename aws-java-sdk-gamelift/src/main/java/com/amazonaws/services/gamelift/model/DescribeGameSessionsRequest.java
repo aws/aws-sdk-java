@@ -436,4 +436,5 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeGameSessionsRequest clone() {
         return (DescribeGameSessionsRequest) super.clone();
     }
+
 }

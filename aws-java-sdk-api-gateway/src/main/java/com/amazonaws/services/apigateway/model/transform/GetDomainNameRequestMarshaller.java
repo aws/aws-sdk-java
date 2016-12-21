@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetDomainNameRequestMarshaller implements Marshaller<Request<GetDomainNameRequest>, GetDomainNameRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDomainNameRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDomainNameRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

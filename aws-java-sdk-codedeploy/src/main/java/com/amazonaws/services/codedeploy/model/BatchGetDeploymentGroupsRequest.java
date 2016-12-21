@@ -202,4 +202,5 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
     public BatchGetDeploymentGroupsRequest clone() {
         return (BatchGetDeploymentGroupsRequest) super.clone();
     }
+
 }

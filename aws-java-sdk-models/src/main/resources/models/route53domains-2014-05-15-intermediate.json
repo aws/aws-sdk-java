@@ -54,6 +54,7 @@
     "cucumberModuleInjectorClassName" : "AmazonRoute53DomainsModuleInjector",
     "defaultEndpoint" : "https://route53domains.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "route53domains.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : null,
     "endpointPrefix" : "route53domains",
     "hasApiWithStreamInput" : false,
@@ -64,7 +65,10 @@
     "packagePath" : "com/amazonaws/services/route53domains",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Route 53 Domains",
     "serviceName" : "Amazon Route 53 Domains",
@@ -1582,6 +1586,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BillingRecord",
       "unmarshaller" : {
@@ -1851,6 +1857,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "CheckDomainAvailabilityRequest",
       "unmarshaller" : null,
@@ -1997,6 +2005,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Availability" ],
       "shapeName" : "CheckDomainAvailabilityResult",
       "unmarshaller" : {
@@ -3757,6 +3767,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContactDetail",
       "unmarshaller" : {
@@ -3807,6 +3819,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ContactType",
       "unmarshaller" : {
@@ -4529,6 +4543,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CountryCode",
       "unmarshaller" : {
@@ -4940,6 +4956,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "TagsToDelete" ],
       "shapeName" : "DeleteTagsForDomainRequest",
       "unmarshaller" : null,
@@ -4972,6 +4990,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteTagsForDomainResult",
       "unmarshaller" : {
@@ -5128,6 +5148,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DisableDomainAutoRenewRequest",
       "unmarshaller" : null,
@@ -5160,6 +5182,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisableDomainAutoRenewResult",
       "unmarshaller" : {
@@ -5316,6 +5340,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DisableDomainTransferLockRequest",
       "unmarshaller" : null,
@@ -5462,6 +5488,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "DisableDomainTransferLockResult",
       "unmarshaller" : {
@@ -5521,6 +5549,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainAvailability",
       "unmarshaller" : {
@@ -5556,6 +5586,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainLimitExceededException",
       "unmarshaller" : null,
@@ -5815,6 +5847,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DomainSuggestion",
       "unmarshaller" : {
@@ -6303,6 +6337,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "DomainSummary",
       "unmarshaller" : {
@@ -6338,6 +6374,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateRequestException",
       "unmarshaller" : null,
@@ -6491,6 +6529,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "EnableDomainAutoRenewRequest",
       "unmarshaller" : null,
@@ -6523,6 +6563,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EnableDomainAutoRenewResult",
       "unmarshaller" : {
@@ -6679,6 +6721,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "EnableDomainTransferLockRequest",
       "unmarshaller" : null,
@@ -6825,6 +6869,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "EnableDomainTransferLockResult",
       "unmarshaller" : {
@@ -7087,6 +7133,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
       "shapeName" : "ExtraParam",
       "unmarshaller" : {
@@ -7185,6 +7233,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExtraParamName",
       "unmarshaller" : {
@@ -7341,6 +7391,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetContactReachabilityStatusRequest",
       "unmarshaller" : null,
@@ -7600,6 +7652,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetContactReachabilityStatusResult",
       "unmarshaller" : {
@@ -7756,6 +7810,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "GetDomainDetailRequest",
       "unmarshaller" : null,
@@ -10446,6 +10502,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Nameservers", "AdminContact", "RegistrantContact", "TechContact" ],
       "shapeName" : "GetDomainDetailResult",
       "unmarshaller" : {
@@ -10828,6 +10886,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "SuggestionCount", "OnlyAvailable" ],
       "shapeName" : "GetDomainSuggestionsRequest",
       "unmarshaller" : null,
@@ -11116,6 +11176,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDomainSuggestionsResult",
       "unmarshaller" : {
@@ -11272,6 +11334,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "GetOperationDetailRequest",
       "unmarshaller" : null,
@@ -11983,6 +12047,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetOperationDetailResult",
       "unmarshaller" : {
@@ -12018,6 +12084,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidInputException",
       "unmarshaller" : null,
@@ -12284,6 +12352,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListDomainsRequest",
       "unmarshaller" : null,
@@ -12685,6 +12755,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Domains" ],
       "shapeName" : "ListDomainsResult",
       "unmarshaller" : {
@@ -12954,6 +13026,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListOperationsRequest",
       "unmarshaller" : null,
@@ -13355,6 +13429,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Operations" ],
       "shapeName" : "ListOperationsResult",
       "unmarshaller" : {
@@ -13511,6 +13587,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "ListTagsForDomainRequest",
       "unmarshaller" : null,
@@ -13799,6 +13877,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TagList" ],
       "shapeName" : "ListTagsForDomainResult",
       "unmarshaller" : {
@@ -14203,6 +14283,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "Nameserver",
       "unmarshaller" : {
@@ -14238,6 +14320,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationLimitExceededException",
       "unmarshaller" : null,
@@ -14285,6 +14369,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationStatus",
       "unmarshaller" : {
@@ -14773,6 +14859,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId", "Status", "Type", "SubmittedDate" ],
       "shapeName" : "OperationSummary",
       "unmarshaller" : {
@@ -14829,6 +14917,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OperationType",
       "unmarshaller" : {
@@ -14873,6 +14963,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ReachabilityStatus",
       "unmarshaller" : {
@@ -16046,6 +16138,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "DurationInYears", "AdminContact", "RegistrantContact", "TechContact" ],
       "shapeName" : "RegisterDomainRequest",
       "unmarshaller" : null,
@@ -16192,6 +16286,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "RegisterDomainResult",
       "unmarshaller" : {
@@ -16574,6 +16670,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "CurrentExpiryYear" ],
       "shapeName" : "RenewDomainRequest",
       "unmarshaller" : null,
@@ -16720,6 +16818,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "RenewDomainResult",
       "unmarshaller" : {
@@ -16876,6 +16976,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendContactReachabilityEmailRequest",
       "unmarshaller" : null,
@@ -17248,6 +17350,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResendContactReachabilityEmailResult",
       "unmarshaller" : {
@@ -17404,6 +17508,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "RetrieveDomainAuthCodeRequest",
       "unmarshaller" : null,
@@ -17550,6 +17656,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "AuthCode" ],
       "shapeName" : "RetrieveDomainAuthCodeResult",
       "unmarshaller" : {
@@ -17585,6 +17693,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TLDRulesViolationException",
       "unmarshaller" : null,
@@ -17844,6 +17954,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -19385,6 +19497,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "DurationInYears", "AdminContact", "RegistrantContact", "TechContact" ],
       "shapeName" : "TransferDomainRequest",
       "unmarshaller" : null,
@@ -19531,6 +19645,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "TransferDomainResult",
       "unmarshaller" : {
@@ -19566,6 +19682,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedTLDException",
       "unmarshaller" : null,
@@ -20058,6 +20176,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "UpdateDomainContactPrivacyRequest",
       "unmarshaller" : null,
@@ -20204,6 +20324,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "UpdateDomainContactPrivacyResult",
       "unmarshaller" : {
@@ -20699,6 +20821,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "UpdateDomainContactRequest",
       "unmarshaller" : null,
@@ -20845,6 +20969,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "UpdateDomainContactResult",
       "unmarshaller" : {
@@ -21369,6 +21495,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Nameservers" ],
       "shapeName" : "UpdateDomainNameserversRequest",
       "unmarshaller" : null,
@@ -21515,6 +21643,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "OperationId" ],
       "shapeName" : "UpdateDomainNameserversResult",
       "unmarshaller" : {
@@ -21926,6 +22056,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
       "shapeName" : "UpdateTagsForDomainRequest",
       "unmarshaller" : null,
@@ -21958,6 +22090,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateTagsForDomainResult",
       "unmarshaller" : {
@@ -22453,6 +22587,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ViewBillingRequest",
       "unmarshaller" : null,
@@ -22854,6 +22990,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ViewBillingResult",
       "unmarshaller" : {
@@ -22872,6 +23010,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

@@ -220,4 +220,5 @@ public class DeleteAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteAssociationRequest clone() {
         return (DeleteAssociationRequest) super.clone();
     }
+
 }

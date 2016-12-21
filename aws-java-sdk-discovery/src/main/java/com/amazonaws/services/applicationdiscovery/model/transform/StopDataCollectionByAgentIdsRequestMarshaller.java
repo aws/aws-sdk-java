@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class StopDataCollectionByAgentIdsRequestMarshaller implements
         Marshaller<Request<StopDataCollectionByAgentIdsRequest>, StopDataCollectionByAgentIdsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public StopDataCollectionByAgentIdsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public StopDataCollectionByAgentIdsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

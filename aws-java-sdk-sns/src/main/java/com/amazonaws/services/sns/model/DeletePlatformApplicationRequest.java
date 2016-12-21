@@ -116,4 +116,5 @@ public class DeletePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     public DeletePlatformApplicationRequest clone() {
         return (DeletePlatformApplicationRequest) super.clone();
     }
+
 }

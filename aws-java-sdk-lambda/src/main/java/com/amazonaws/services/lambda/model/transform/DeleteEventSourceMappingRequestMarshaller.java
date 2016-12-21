@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteEventSourceMappingRequestMarshaller implements Marshaller<Request<DeleteEventSourceMappingRequest>, DeleteEventSourceMappingRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteEventSourceMappingRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteEventSourceMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

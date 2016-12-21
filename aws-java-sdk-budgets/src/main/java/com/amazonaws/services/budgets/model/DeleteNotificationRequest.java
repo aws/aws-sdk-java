@@ -165,4 +165,5 @@ public class DeleteNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteNotificationRequest clone() {
         return (DeleteNotificationRequest) super.clone();
     }
+
 }

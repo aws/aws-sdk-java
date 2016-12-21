@@ -169,4 +169,5 @@ public class DeleteLifecycleHookRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteLifecycleHookRequest clone() {
         return (DeleteLifecycleHookRequest) super.clone();
     }
+
 }

@@ -246,4 +246,5 @@ public class InitiateVaultLockRequest extends com.amazonaws.AmazonWebServiceRequ
     public InitiateVaultLockRequest clone() {
         return (InitiateVaultLockRequest) super.clone();
     }
+
 }

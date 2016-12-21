@@ -121,4 +121,5 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public GetIPSetRequest clone() {
         return (GetIPSetRequest) super.clone();
     }
+
 }

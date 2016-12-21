@@ -116,4 +116,5 @@ public class DeleteDeliveryChannelRequest extends com.amazonaws.AmazonWebService
     public DeleteDeliveryChannelRequest clone() {
         return (DeleteDeliveryChannelRequest) super.clone();
     }
+
 }

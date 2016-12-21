@@ -167,4 +167,5 @@ public class CancelSchemaExtensionRequest extends com.amazonaws.AmazonWebService
     public CancelSchemaExtensionRequest clone() {
         return (CancelSchemaExtensionRequest) super.clone();
     }
+
 }

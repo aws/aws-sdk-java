@@ -169,4 +169,5 @@ public class SetDefaultPolicyVersionRequest extends com.amazonaws.AmazonWebServi
     public SetDefaultPolicyVersionRequest clone() {
         return (SetDefaultPolicyVersionRequest) super.clone();
     }
+
 }

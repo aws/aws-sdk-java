@@ -294,4 +294,5 @@ public class DescribeEventTypesRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeEventTypesRequest clone() {
         return (DescribeEventTypesRequest) super.clone();
     }
+
 }

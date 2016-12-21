@@ -307,4 +307,5 @@ public class DescribeReplicationGroupsRequest extends com.amazonaws.AmazonWebSer
     public DescribeReplicationGroupsRequest clone() {
         return (DescribeReplicationGroupsRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
     public GenerateRandomRequest clone() {
         return (GenerateRandomRequest) super.clone();
     }
+
 }

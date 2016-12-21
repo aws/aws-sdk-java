@@ -165,4 +165,5 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeBudgetsRequest clone() {
         return (DescribeBudgetsRequest) super.clone();
     }
+
 }

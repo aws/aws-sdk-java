@@ -415,4 +415,5 @@ public class ResyncMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
     public ResyncMFADeviceRequest clone() {
         return (ResyncMFADeviceRequest) super.clone();
     }
+
 }

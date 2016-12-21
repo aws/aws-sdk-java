@@ -212,4 +212,5 @@ public class GetSMSAttributesRequest extends com.amazonaws.AmazonWebServiceReque
     public GetSMSAttributesRequest clone() {
         return (GetSMSAttributesRequest) super.clone();
     }
+
 }

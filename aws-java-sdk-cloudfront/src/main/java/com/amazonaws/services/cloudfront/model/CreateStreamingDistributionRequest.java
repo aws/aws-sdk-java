@@ -134,4 +134,5 @@ public class CreateStreamingDistributionRequest extends com.amazonaws.AmazonWebS
     public CreateStreamingDistributionRequest clone() {
         return (CreateStreamingDistributionRequest) super.clone();
     }
+
 }

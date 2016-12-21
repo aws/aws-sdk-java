@@ -220,4 +220,5 @@ public class ModifyInstanceGroupsRequest extends com.amazonaws.AmazonWebServiceR
     public ModifyInstanceGroupsRequest clone() {
         return (ModifyInstanceGroupsRequest) super.clone();
     }
+
 }

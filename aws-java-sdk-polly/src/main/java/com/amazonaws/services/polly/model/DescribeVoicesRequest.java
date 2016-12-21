@@ -223,4 +223,5 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeVoicesRequest clone() {
         return (DescribeVoicesRequest) super.clone();
     }
+
 }

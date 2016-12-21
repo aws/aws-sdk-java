@@ -169,4 +169,5 @@ public class AttachThingPrincipalRequest extends com.amazonaws.AmazonWebServiceR
     public AttachThingPrincipalRequest clone() {
         return (AttachThingPrincipalRequest) super.clone();
     }
+
 }

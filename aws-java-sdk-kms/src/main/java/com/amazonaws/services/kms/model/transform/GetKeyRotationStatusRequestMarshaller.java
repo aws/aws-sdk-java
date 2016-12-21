@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetKeyRotationStatusRequestMarshaller implements Marshaller<Request<GetKeyRotationStatusRequest>, GetKeyRotationStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetKeyRotationStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetKeyRotationStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

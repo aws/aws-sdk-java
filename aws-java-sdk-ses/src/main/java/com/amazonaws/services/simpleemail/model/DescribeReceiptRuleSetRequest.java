@@ -119,4 +119,5 @@ public class DescribeReceiptRuleSetRequest extends com.amazonaws.AmazonWebServic
     public DescribeReceiptRuleSetRequest clone() {
         return (DescribeReceiptRuleSetRequest) super.clone();
     }
+
 }

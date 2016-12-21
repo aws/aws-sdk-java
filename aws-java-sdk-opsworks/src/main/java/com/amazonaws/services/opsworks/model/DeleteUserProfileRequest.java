@@ -114,4 +114,5 @@ public class DeleteUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteUserProfileRequest clone() {
         return (DeleteUserProfileRequest) super.clone();
     }
+
 }

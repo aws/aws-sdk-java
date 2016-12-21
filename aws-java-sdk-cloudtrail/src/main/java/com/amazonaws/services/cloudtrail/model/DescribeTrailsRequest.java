@@ -466,4 +466,5 @@ public class DescribeTrailsRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeTrailsRequest clone() {
         return (DescribeTrailsRequest) super.clone();
     }
+
 }

@@ -180,4 +180,5 @@ public class CreateConfigurationSetEventDestinationRequest extends com.amazonaws
     public CreateConfigurationSetEventDestinationRequest clone() {
         return (CreateConfigurationSetEventDestinationRequest) super.clone();
     }
+
 }

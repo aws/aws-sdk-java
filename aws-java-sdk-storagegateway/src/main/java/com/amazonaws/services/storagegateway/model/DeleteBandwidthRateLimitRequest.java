@@ -175,4 +175,5 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
     public DeleteBandwidthRateLimitRequest clone() {
         return (DeleteBandwidthRateLimitRequest) super.clone();
     }
+
 }

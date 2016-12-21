@@ -1584,4 +1584,5 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     public CreateAutoScalingGroupRequest clone() {
         return (CreateAutoScalingGroupRequest) super.clone();
     }
+
 }

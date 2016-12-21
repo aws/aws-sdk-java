@@ -169,4 +169,5 @@ public class StopUserImportJobRequest extends com.amazonaws.AmazonWebServiceRequ
     public StopUserImportJobRequest clone() {
         return (StopUserImportJobRequest) super.clone();
     }
+
 }

@@ -60,4 +60,5 @@ public class GetComplianceSummaryByConfigRuleRequest extends com.amazonaws.Amazo
     public GetComplianceSummaryByConfigRuleRequest clone() {
         return (GetComplianceSummaryByConfigRuleRequest) super.clone();
     }
+
 }

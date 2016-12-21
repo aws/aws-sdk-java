@@ -202,4 +202,5 @@ public class CreateSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateSnapshotRequest clone() {
         return (CreateSnapshotRequest) super.clone();
     }
+
 }

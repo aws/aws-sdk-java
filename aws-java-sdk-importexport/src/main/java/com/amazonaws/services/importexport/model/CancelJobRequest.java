@@ -130,4 +130,5 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public CancelJobRequest clone() {
         return (CancelJobRequest) super.clone();
     }
+
 }

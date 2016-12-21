@@ -155,4 +155,5 @@ public class DescribeConnectionsOnInterconnectRequest extends com.amazonaws.Amaz
     public DescribeConnectionsOnInterconnectRequest clone() {
         return (DescribeConnectionsOnInterconnectRequest) super.clone();
     }
+
 }

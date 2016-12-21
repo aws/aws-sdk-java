@@ -114,4 +114,5 @@ public class DeleteStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     public DeleteStateMachineRequest clone() {
         return (DeleteStateMachineRequest) super.clone();
     }
+
 }

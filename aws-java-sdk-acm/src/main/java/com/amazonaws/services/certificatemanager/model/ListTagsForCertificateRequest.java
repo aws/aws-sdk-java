@@ -174,4 +174,5 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
     public ListTagsForCertificateRequest clone() {
         return (ListTagsForCertificateRequest) super.clone();
     }
+
 }

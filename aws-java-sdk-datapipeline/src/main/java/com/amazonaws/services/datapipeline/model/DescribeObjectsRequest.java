@@ -347,4 +347,5 @@ public class DescribeObjectsRequest extends com.amazonaws.AmazonWebServiceReques
     public DescribeObjectsRequest clone() {
         return (DescribeObjectsRequest) super.clone();
     }
+
 }

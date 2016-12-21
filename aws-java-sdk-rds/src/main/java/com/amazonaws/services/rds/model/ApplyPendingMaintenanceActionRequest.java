@@ -406,4 +406,5 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
     public ApplyPendingMaintenanceActionRequest clone() {
         return (ApplyPendingMaintenanceActionRequest) super.clone();
     }
+
 }

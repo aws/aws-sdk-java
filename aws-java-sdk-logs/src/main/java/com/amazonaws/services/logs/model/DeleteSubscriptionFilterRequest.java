@@ -167,4 +167,5 @@ public class DeleteSubscriptionFilterRequest extends com.amazonaws.AmazonWebServ
     public DeleteSubscriptionFilterRequest clone() {
         return (DeleteSubscriptionFilterRequest) super.clone();
     }
+
 }

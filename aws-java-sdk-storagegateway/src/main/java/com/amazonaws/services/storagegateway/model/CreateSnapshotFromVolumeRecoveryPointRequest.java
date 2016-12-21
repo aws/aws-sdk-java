@@ -130,4 +130,5 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     public CreateSnapshotFromVolumeRecoveryPointRequest clone() {
         return (CreateSnapshotFromVolumeRecoveryPointRequest) super.clone();
     }
+
 }

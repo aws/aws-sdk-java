@@ -167,4 +167,5 @@ public class ListCollectionsRequest extends com.amazonaws.AmazonWebServiceReques
     public ListCollectionsRequest clone() {
         return (ListCollectionsRequest) super.clone();
     }
+
 }

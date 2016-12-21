@@ -477,4 +477,5 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ListArtifactsRequest clone() {
         return (ListArtifactsRequest) super.clone();
     }
+
 }

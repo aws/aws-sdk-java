@@ -320,4 +320,5 @@ public class UpdateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateUserProfileRequest clone() {
         return (UpdateUserProfileRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SendTaskHeartbeatRequestMarshaller implements Marshaller<Request<SendTaskHeartbeatRequest>, SendTaskHeartbeatRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SendTaskHeartbeatRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SendTaskHeartbeatRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

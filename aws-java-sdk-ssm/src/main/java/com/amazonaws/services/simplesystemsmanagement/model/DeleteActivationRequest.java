@@ -114,4 +114,5 @@ public class DeleteActivationRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteActivationRequest clone() {
         return (DeleteActivationRequest) super.clone();
     }
+
 }

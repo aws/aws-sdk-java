@@ -485,4 +485,5 @@ public class DescribeOptionGroupsRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeOptionGroupsRequest clone() {
         return (DescribeOptionGroupsRequest) super.clone();
     }
+
 }

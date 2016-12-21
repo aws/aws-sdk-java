@@ -116,4 +116,5 @@ public class GetDeploymentConfigRequest extends com.amazonaws.AmazonWebServiceRe
     public GetDeploymentConfigRequest clone() {
         return (GetDeploymentConfigRequest) super.clone();
     }
+
 }

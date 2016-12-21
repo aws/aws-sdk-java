@@ -311,4 +311,5 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteFunctionRequest clone() {
         return (DeleteFunctionRequest) super.clone();
     }
+
 }

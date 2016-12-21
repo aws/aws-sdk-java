@@ -60,4 +60,5 @@ public class CreateSubscriptionRequest extends com.amazonaws.AmazonWebServiceReq
     public CreateSubscriptionRequest clone() {
         return (CreateSubscriptionRequest) super.clone();
     }
+
 }

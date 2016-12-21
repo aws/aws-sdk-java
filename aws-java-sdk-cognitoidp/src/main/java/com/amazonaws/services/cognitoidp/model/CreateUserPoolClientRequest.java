@@ -564,4 +564,5 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     public CreateUserPoolClientRequest clone() {
         return (CreateUserPoolClientRequest) super.clone();
     }
+
 }

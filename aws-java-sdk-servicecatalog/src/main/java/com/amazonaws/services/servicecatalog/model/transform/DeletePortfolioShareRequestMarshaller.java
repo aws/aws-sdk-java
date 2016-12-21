@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeletePortfolioShareRequestMarshaller implements Marshaller<Request<DeletePortfolioShareRequest>, DeletePortfolioShareRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeletePortfolioShareRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeletePortfolioShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

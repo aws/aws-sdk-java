@@ -114,4 +114,5 @@ public class DeleteServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteServerRequest clone() {
         return (DeleteServerRequest) super.clone();
     }
+
 }

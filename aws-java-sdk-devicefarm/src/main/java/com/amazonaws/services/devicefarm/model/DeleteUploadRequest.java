@@ -116,4 +116,5 @@ public class DeleteUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteUploadRequest clone() {
         return (DeleteUploadRequest) super.clone();
     }
+
 }

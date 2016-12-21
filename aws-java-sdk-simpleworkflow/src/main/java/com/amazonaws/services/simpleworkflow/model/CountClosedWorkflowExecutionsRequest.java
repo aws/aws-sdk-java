@@ -523,4 +523,5 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
     public CountClosedWorkflowExecutionsRequest clone() {
         return (CountClosedWorkflowExecutionsRequest) super.clone();
     }
+
 }

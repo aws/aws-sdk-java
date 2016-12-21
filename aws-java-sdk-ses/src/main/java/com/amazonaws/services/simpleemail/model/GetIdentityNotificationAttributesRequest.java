@@ -169,4 +169,5 @@ public class GetIdentityNotificationAttributesRequest extends com.amazonaws.Amaz
     public GetIdentityNotificationAttributesRequest clone() {
         return (GetIdentityNotificationAttributesRequest) super.clone();
     }
+
 }

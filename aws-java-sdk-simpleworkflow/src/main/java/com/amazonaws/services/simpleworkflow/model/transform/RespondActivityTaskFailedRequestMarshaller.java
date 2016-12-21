@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RespondActivityTaskFailedRequestMarshaller implements Marshaller<Request<RespondActivityTaskFailedRequest>, RespondActivityTaskFailedRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RespondActivityTaskFailedRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RespondActivityTaskFailedRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

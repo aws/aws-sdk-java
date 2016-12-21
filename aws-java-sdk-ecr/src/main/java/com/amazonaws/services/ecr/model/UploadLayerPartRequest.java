@@ -406,4 +406,5 @@ public class UploadLayerPartRequest extends com.amazonaws.AmazonWebServiceReques
     public UploadLayerPartRequest clone() {
         return (UploadLayerPartRequest) super.clone();
     }
+
 }

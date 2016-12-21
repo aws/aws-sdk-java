@@ -300,4 +300,5 @@ public class DescribeReservedNodesRequest extends com.amazonaws.AmazonWebService
     public DescribeReservedNodesRequest clone() {
         return (DescribeReservedNodesRequest) super.clone();
     }
+
 }

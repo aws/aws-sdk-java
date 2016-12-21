@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class FlushStageCacheRequestMarshaller implements Marshaller<Request<FlushStageCacheRequest>, FlushStageCacheRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public FlushStageCacheRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public FlushStageCacheRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

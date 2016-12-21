@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UnlinkDeveloperIdentityRequestMarshaller implements Marshaller<Request<UnlinkDeveloperIdentityRequest>, UnlinkDeveloperIdentityRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UnlinkDeveloperIdentityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UnlinkDeveloperIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class VerifyTrustRequestMarshaller implements Marshaller<Request<VerifyTrustRequest>, VerifyTrustRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public VerifyTrustRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public VerifyTrustRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

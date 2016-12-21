@@ -199,4 +199,5 @@ public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWeb
     public ModifyLoadBalancerAttributesRequest clone() {
         return (ModifyLoadBalancerAttributesRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateConditionalForwarderRequestMarshaller implements Marshaller<Request<UpdateConditionalForwarderRequest>, UpdateConditionalForwarderRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateConditionalForwarderRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateConditionalForwarderRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

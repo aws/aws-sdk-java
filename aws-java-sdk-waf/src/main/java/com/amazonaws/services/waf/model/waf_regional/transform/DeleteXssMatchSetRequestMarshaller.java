@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteXssMatchSetRequestMarshaller implements Marshaller<Request<DeleteXssMatchSetRequest>, DeleteXssMatchSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteXssMatchSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteXssMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

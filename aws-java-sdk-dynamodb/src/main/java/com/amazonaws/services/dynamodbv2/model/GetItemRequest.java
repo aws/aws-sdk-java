@@ -1354,4 +1354,5 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public GetItemRequest clone() {
         return (GetItemRequest) super.clone();
     }
+
 }

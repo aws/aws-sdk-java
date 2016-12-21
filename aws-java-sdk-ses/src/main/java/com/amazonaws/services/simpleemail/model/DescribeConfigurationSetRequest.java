@@ -235,4 +235,5 @@ public class DescribeConfigurationSetRequest extends com.amazonaws.AmazonWebServ
     public DescribeConfigurationSetRequest clone() {
         return (DescribeConfigurationSetRequest) super.clone();
     }
+
 }

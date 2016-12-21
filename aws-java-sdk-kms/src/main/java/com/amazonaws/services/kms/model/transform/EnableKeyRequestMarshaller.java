@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class EnableKeyRequestMarshaller implements Marshaller<Request<EnableKeyRequest>, EnableKeyRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public EnableKeyRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public EnableKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

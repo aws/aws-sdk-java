@@ -672,4 +672,5 @@ public class ModifyEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     public ModifyEventSubscriptionRequest clone() {
         return (ModifyEventSubscriptionRequest) super.clone();
     }
+
 }

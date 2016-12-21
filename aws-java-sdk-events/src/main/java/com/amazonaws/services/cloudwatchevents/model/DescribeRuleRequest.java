@@ -116,4 +116,5 @@ public class DescribeRuleRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DescribeRuleRequest clone() {
         return (DescribeRuleRequest) super.clone();
     }
+
 }

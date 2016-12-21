@@ -97,4 +97,5 @@ public class DescribeBandwidthRateLimitRequest extends com.amazonaws.AmazonWebSe
     public DescribeBandwidthRateLimitRequest clone() {
         return (DescribeBandwidthRateLimitRequest) super.clone();
     }
+
 }

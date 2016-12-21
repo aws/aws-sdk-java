@@ -612,4 +612,5 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     public PutSubscriptionFilterRequest clone() {
         return (PutSubscriptionFilterRequest) super.clone();
     }
+
 }

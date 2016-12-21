@@ -279,4 +279,5 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
     public SetIdentityNotificationTopicRequest clone() {
         return (SetIdentityNotificationTopicRequest) super.clone();
     }
+
 }

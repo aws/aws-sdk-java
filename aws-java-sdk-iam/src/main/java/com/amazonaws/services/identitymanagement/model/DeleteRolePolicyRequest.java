@@ -231,4 +231,5 @@ public class DeleteRolePolicyRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteRolePolicyRequest clone() {
         return (DeleteRolePolicyRequest) super.clone();
     }
+
 }

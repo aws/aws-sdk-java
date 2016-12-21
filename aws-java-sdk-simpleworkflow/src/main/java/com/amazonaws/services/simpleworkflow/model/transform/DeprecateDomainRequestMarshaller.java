@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeprecateDomainRequestMarshaller implements Marshaller<Request<DeprecateDomainRequest>, DeprecateDomainRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeprecateDomainRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeprecateDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

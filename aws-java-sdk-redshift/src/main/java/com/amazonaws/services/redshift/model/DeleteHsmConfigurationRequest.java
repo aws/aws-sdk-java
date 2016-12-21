@@ -114,4 +114,5 @@ public class DeleteHsmConfigurationRequest extends com.amazonaws.AmazonWebServic
     public DeleteHsmConfigurationRequest clone() {
         return (DeleteHsmConfigurationRequest) super.clone();
     }
+
 }

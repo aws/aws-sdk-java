@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeDocumentPermissionRequestMarshaller implements Marshaller<Request<DescribeDocumentPermissionRequest>, DescribeDocumentPermissionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeDocumentPermissionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeDocumentPermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

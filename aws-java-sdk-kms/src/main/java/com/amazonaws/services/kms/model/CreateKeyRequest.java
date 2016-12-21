@@ -945,4 +945,5 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public CreateKeyRequest clone() {
         return (CreateKeyRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateRdsDbInstanceRequestMarshaller implements Marshaller<Request<UpdateRdsDbInstanceRequest>, UpdateRdsDbInstanceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateRdsDbInstanceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateRdsDbInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

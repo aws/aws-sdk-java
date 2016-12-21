@@ -152,4 +152,5 @@ public class PurgeQueueRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public PurgeQueueRequest clone() {
         return (PurgeQueueRequest) super.clone();
     }
+
 }

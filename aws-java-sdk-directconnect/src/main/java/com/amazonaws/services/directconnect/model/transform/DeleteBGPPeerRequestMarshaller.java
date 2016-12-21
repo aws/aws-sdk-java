@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteBGPPeerRequestMarshaller implements Marshaller<Request<DeleteBGPPeerRequest>, DeleteBGPPeerRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteBGPPeerRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteBGPPeerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

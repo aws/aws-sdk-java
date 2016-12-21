@@ -256,4 +256,5 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     public UpdateModelRequest clone() {
         return (UpdateModelRequest) super.clone();
     }
+
 }

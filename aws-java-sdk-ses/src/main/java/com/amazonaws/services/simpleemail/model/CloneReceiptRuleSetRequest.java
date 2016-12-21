@@ -288,4 +288,5 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
     public CloneReceiptRuleSetRequest clone() {
         return (CloneReceiptRuleSetRequest) super.clone();
     }
+
 }

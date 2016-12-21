@@ -114,4 +114,5 @@ public class GetActiveNamesRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetActiveNamesRequest clone() {
         return (GetActiveNamesRequest) super.clone();
     }
+
 }

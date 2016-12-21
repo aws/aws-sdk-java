@@ -116,4 +116,5 @@ public class StopConfigurationRecorderRequest extends com.amazonaws.AmazonWebSer
     public StopConfigurationRecorderRequest clone() {
         return (StopConfigurationRecorderRequest) super.clone();
     }
+
 }

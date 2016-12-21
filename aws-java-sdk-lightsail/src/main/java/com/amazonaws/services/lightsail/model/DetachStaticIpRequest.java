@@ -114,4 +114,5 @@ public class DetachStaticIpRequest extends com.amazonaws.AmazonWebServiceRequest
     public DetachStaticIpRequest clone() {
         return (DetachStaticIpRequest) super.clone();
     }
+
 }

@@ -248,4 +248,5 @@ public class ListPortfolioAccessRequest extends com.amazonaws.AmazonWebServiceRe
     public ListPortfolioAccessRequest clone() {
         return (ListPortfolioAccessRequest) super.clone();
     }
+
 }

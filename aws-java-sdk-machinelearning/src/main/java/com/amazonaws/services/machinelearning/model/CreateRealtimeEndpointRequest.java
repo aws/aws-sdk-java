@@ -114,4 +114,5 @@ public class CreateRealtimeEndpointRequest extends com.amazonaws.AmazonWebServic
     public CreateRealtimeEndpointRequest clone() {
         return (CreateRealtimeEndpointRequest) super.clone();
     }
+
 }

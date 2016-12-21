@@ -193,4 +193,5 @@ public class AbortVaultLockRequest extends com.amazonaws.AmazonWebServiceRequest
     public AbortVaultLockRequest clone() {
         return (AbortVaultLockRequest) super.clone();
     }
+
 }

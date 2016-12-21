@@ -136,4 +136,5 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends com.amazonaws.A
     public CreateCloudFrontOriginAccessIdentityRequest clone() {
         return (CreateCloudFrontOriginAccessIdentityRequest) super.clone();
     }
+
 }

@@ -174,4 +174,5 @@ public class SendTaskSuccessRequest extends com.amazonaws.AmazonWebServiceReques
     public SendTaskSuccessRequest clone() {
         return (SendTaskSuccessRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class EnableEnhancedMonitoringRequestMarshaller implements Marshaller<Request<EnableEnhancedMonitoringRequest>, EnableEnhancedMonitoringRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public EnableEnhancedMonitoringRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public EnableEnhancedMonitoringRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

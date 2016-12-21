@@ -573,4 +573,5 @@ public class UpdatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     public UpdatePortfolioRequest clone() {
         return (UpdatePortfolioRequest) super.clone();
     }
+
 }

@@ -262,4 +262,5 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     public GetKeyPolicyRequest clone() {
         return (GetKeyPolicyRequest) super.clone();
     }
+
 }

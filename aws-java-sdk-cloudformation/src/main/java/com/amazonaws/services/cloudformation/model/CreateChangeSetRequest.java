@@ -1820,4 +1820,5 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateChangeSetRequest clone() {
         return (CreateChangeSetRequest) super.clone();
     }
+
 }

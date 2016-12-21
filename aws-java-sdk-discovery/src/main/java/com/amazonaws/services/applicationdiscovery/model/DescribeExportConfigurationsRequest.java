@@ -271,4 +271,5 @@ public class DescribeExportConfigurationsRequest extends com.amazonaws.AmazonWeb
     public DescribeExportConfigurationsRequest clone() {
         return (DescribeExportConfigurationsRequest) super.clone();
     }
+
 }

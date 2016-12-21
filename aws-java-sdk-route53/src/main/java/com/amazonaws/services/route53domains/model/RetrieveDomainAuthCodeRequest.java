@@ -204,4 +204,5 @@ public class RetrieveDomainAuthCodeRequest extends com.amazonaws.AmazonWebServic
     public RetrieveDomainAuthCodeRequest clone() {
         return (RetrieveDomainAuthCodeRequest) super.clone();
     }
+
 }

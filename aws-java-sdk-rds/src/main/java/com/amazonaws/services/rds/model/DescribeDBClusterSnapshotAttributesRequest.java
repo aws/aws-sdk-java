@@ -114,4 +114,5 @@ public class DescribeDBClusterSnapshotAttributesRequest extends com.amazonaws.Am
     public DescribeDBClusterSnapshotAttributesRequest clone() {
         return (DescribeDBClusterSnapshotAttributesRequest) super.clone();
     }
+
 }

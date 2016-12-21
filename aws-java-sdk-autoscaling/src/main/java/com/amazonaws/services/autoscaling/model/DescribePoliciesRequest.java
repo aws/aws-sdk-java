@@ -412,4 +412,5 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     public DescribePoliciesRequest clone() {
         return (DescribePoliciesRequest) super.clone();
     }
+
 }

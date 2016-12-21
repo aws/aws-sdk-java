@@ -329,4 +329,5 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     public RespondToAuthChallengeRequest clone() {
         return (RespondToAuthChallengeRequest) super.clone();
     }
+
 }

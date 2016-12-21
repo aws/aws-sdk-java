@@ -227,4 +227,5 @@ public class AddAttributesToFindingsRequest extends com.amazonaws.AmazonWebServi
     public AddAttributesToFindingsRequest clone() {
         return (AddAttributesToFindingsRequest) super.clone();
     }
+
 }

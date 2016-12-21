@@ -399,4 +399,5 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
     public DescribeMaintenanceWindowExecutionsRequest clone() {
         return (DescribeMaintenanceWindowExecutionsRequest) super.clone();
     }
+
 }

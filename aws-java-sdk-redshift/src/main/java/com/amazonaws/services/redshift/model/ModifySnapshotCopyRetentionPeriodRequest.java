@@ -252,4 +252,5 @@ public class ModifySnapshotCopyRetentionPeriodRequest extends com.amazonaws.Amaz
     public ModifySnapshotCopyRetentionPeriodRequest clone() {
         return (ModifySnapshotCopyRetentionPeriodRequest) super.clone();
     }
+
 }

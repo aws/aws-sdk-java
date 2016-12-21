@@ -264,4 +264,5 @@ public class ReportTaskRunnerHeartbeatRequest extends com.amazonaws.AmazonWebSer
     public ReportTaskRunnerHeartbeatRequest clone() {
         return (ReportTaskRunnerHeartbeatRequest) super.clone();
     }
+
 }

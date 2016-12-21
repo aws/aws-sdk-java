@@ -116,4 +116,5 @@ public class EnableRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public EnableRuleRequest clone() {
         return (EnableRuleRequest) super.clone();
     }
+
 }

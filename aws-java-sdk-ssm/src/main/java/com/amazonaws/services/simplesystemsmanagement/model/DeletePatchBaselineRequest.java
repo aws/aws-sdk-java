@@ -114,4 +114,5 @@ public class DeletePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     public DeletePatchBaselineRequest clone() {
         return (DeletePatchBaselineRequest) super.clone();
     }
+
 }

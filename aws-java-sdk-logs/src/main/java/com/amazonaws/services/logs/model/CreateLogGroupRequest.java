@@ -209,4 +209,5 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     public CreateLogGroupRequest clone() {
         return (CreateLogGroupRequest) super.clone();
     }
+
 }

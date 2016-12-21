@@ -114,4 +114,5 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteDocumentRequest clone() {
         return (DeleteDocumentRequest) super.clone();
     }
+
 }

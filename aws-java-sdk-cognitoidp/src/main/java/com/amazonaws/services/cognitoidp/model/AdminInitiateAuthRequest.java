@@ -403,4 +403,5 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
     public AdminInitiateAuthRequest clone() {
         return (AdminInitiateAuthRequest) super.clone();
     }
+
 }

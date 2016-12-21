@@ -471,4 +471,5 @@ public class GetIdRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     public GetIdRequest clone() {
         return (GetIdRequest) super.clone();
     }
+
 }

@@ -169,4 +169,5 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     public TagResourceRequest clone() {
         return (TagResourceRequest) super.clone();
     }
+
 }

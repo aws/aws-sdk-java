@@ -448,4 +448,5 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     public SignUpRequest clone() {
         return (SignUpRequest) super.clone();
     }
+
 }

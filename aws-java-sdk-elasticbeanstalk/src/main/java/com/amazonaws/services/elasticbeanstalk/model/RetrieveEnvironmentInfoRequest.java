@@ -376,4 +376,5 @@ public class RetrieveEnvironmentInfoRequest extends com.amazonaws.AmazonWebServi
     public RetrieveEnvironmentInfoRequest clone() {
         return (RetrieveEnvironmentInfoRequest) super.clone();
     }
+
 }

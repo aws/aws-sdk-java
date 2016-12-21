@@ -121,4 +121,5 @@ public class RegisterCrossAccountAccessRoleRequest extends com.amazonaws.AmazonW
     public RegisterCrossAccountAccessRoleRequest clone() {
         return (RegisterCrossAccountAccessRoleRequest) super.clone();
     }
+
 }

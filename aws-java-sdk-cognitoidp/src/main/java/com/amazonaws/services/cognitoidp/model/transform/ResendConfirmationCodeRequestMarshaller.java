@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ResendConfirmationCodeRequestMarshaller implements Marshaller<Request<ResendConfirmationCodeRequest>, ResendConfirmationCodeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ResendConfirmationCodeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ResendConfirmationCodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

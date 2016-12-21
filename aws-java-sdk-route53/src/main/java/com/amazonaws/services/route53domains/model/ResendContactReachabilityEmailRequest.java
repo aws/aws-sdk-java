@@ -181,4 +181,5 @@ public class ResendContactReachabilityEmailRequest extends com.amazonaws.AmazonW
     public ResendContactReachabilityEmailRequest clone() {
         return (ResendContactReachabilityEmailRequest) super.clone();
     }
+
 }

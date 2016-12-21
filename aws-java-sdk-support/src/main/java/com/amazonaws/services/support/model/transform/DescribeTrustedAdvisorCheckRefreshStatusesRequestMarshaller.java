@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller implements
         Marshaller<Request<DescribeTrustedAdvisorCheckRefreshStatusesRequest>, DescribeTrustedAdvisorCheckRefreshStatusesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -169,4 +169,5 @@ public class AdminDeleteUserRequest extends com.amazonaws.AmazonWebServiceReques
     public AdminDeleteUserRequest clone() {
         return (AdminDeleteUserRequest) super.clone();
     }
+
 }

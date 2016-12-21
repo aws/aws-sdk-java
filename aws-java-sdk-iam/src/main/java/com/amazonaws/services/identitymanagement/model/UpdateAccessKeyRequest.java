@@ -416,4 +416,5 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     public UpdateAccessKeyRequest clone() {
         return (UpdateAccessKeyRequest) super.clone();
     }
+
 }

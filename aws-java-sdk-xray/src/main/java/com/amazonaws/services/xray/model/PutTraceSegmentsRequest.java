@@ -756,4 +756,5 @@ public class PutTraceSegmentsRequest extends com.amazonaws.AmazonWebServiceReque
     public PutTraceSegmentsRequest clone() {
         return (PutTraceSegmentsRequest) super.clone();
     }
+
 }

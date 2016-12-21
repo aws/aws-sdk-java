@@ -116,4 +116,5 @@ public class DeleteRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     public DeleteRemoteAccessSessionRequest clone() {
         return (DeleteRemoteAccessSessionRequest) super.clone();
     }
+
 }

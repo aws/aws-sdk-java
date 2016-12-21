@@ -74,6 +74,25 @@
         "childTemplates" : null,
         "mainTemplate" : "/templates/waiter/Acceptor.ftl"
       },
+      "apiGatewayGradleBuildTemplate" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/api-gateway/gradle/build.gradle.ftl"
+      },
+      "apiGatewayGradleSettingsTemplate" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/api-gateway/gradle/settings.gradle.ftl"
+      },
+      "apiGatewayPomTemplate" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/api-gateway/maven/pom.xml.ftl"
+      },
+      "apiGatewayReadmeTemplate" : {
+        "childTemplates" : [ {
+          "importAsNamespace" : "README_Dependencies",
+          "location" : "/templates/api-gateway/README_Dependencies.ftl"
+        } ],
+        "mainTemplate" : "/templates/api-gateway/README.md.ftl"
+      },
       "asyncAbstractClass" : null,
       "asyncClient" : null,
       "asyncClientBuilder" : {
@@ -81,10 +100,7 @@
         "mainTemplate" : "/templates/common/AsyncClientBuilder.ftl"
       },
       "asyncInterface" : null,
-      "baseExceptionClass" : {
-        "childTemplates" : null,
-        "mainTemplate" : "/templates/common/base-exception-class.ftl"
-      },
+      "baseExceptionClass" : null,
       "commonChildTemplates" : null,
       "cucumberModuleInjector" : {
         "childTemplates" : null,
@@ -98,6 +114,7 @@
         "childTemplates" : null,
         "mainTemplate" : "/templates/cucumber/RunCucumberTest.ftl"
       },
+      "customRequestSignerClass" : null,
       "exceptionClass" : null,
       "exceptionUnmarshaller" : null,
       "modelClass" : null,
@@ -208,6 +225,7 @@
     "cucumberModuleInjectorClassName" : "AmazonGlacierModuleInjector",
     "defaultEndpoint" : "https://glacier.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "glacier.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>Amazon Glacier is a storage solution for \"cold data.\"</p> <p>Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With Amazon Glacier, customers can store their data cost effectively for months, years, or decades. Amazon Glacier also enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and recovery, or time-consuming hardware migrations.</p> <p>Amazon Glacier is a great storage choice when low storage cost is paramount, your data is rarely retrieved, and retrieval latency of several hours is acceptable. If your application requires fast or frequent access to your data, consider using Amazon S3. For more information, see <a href=\"http://aws.amazon.com/s3/\">Amazon Simple Storage Service (Amazon S3)</a>.</p> <p>You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in Amazon Glacier.</p> <p>If you are a first-time user of Amazon Glacier, we recommend that you begin by reading the following sections in the <i>Amazon Glacier Developer Guide</i>:</p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html\">What is Amazon Glacier</a> - This section of the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.</p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html\">Getting Started with Amazon Glacier</a> - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives.</p> </li> </ul>",
     "endpointPrefix" : "glacier",
     "hasApiWithStreamInput" : false,
@@ -218,7 +236,10 @@
     "packagePath" : "com/amazonaws/services/glacier",
     "protocol" : "rest-json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "Amazon Glacier",
     "serviceName" : "Amazon Glacier",
@@ -2027,6 +2048,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "AbortMultipartUploadRequest",
       "unmarshaller" : null,
@@ -2059,6 +2082,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AbortMultipartUploadResult",
       "unmarshaller" : {
@@ -2328,6 +2353,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "AbortVaultLockRequest",
       "unmarshaller" : null,
@@ -2360,6 +2387,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AbortVaultLockResult",
       "unmarshaller" : {
@@ -2401,6 +2430,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionCode",
       "unmarshaller" : {
@@ -2925,6 +2956,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "AddTagsToVaultRequest",
       "unmarshaller" : null,
@@ -2957,6 +2990,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AddTagsToVaultResult",
       "unmarshaller" : {
@@ -3565,6 +3600,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "CompleteMultipartUploadRequest",
       "unmarshaller" : null,
@@ -3937,6 +3974,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompleteMultipartUploadResult",
       "unmarshaller" : {
@@ -4319,6 +4358,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "lockId" ],
       "shapeName" : "CompleteVaultLockRequest",
       "unmarshaller" : null,
@@ -4351,6 +4392,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompleteVaultLockResult",
       "unmarshaller" : {
@@ -4620,6 +4663,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "CreateVaultRequest",
       "unmarshaller" : null,
@@ -4766,6 +4811,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateVaultResult",
       "unmarshaller" : {
@@ -5057,6 +5104,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataRetrievalPolicy",
       "unmarshaller" : {
@@ -5319,6 +5368,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataRetrievalRule",
       "unmarshaller" : {
@@ -5701,6 +5752,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "archiveId" ],
       "shapeName" : "DeleteArchiveRequest",
       "unmarshaller" : null,
@@ -5733,6 +5786,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteArchiveResult",
       "unmarshaller" : {
@@ -6002,6 +6057,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DeleteVaultAccessPolicyRequest",
       "unmarshaller" : null,
@@ -6034,6 +6091,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVaultAccessPolicyResult",
       "unmarshaller" : {
@@ -6303,6 +6362,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DeleteVaultNotificationsRequest",
       "unmarshaller" : null,
@@ -6335,6 +6396,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVaultNotificationsResult",
       "unmarshaller" : {
@@ -6604,6 +6667,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DeleteVaultRequest",
       "unmarshaller" : null,
@@ -6636,6 +6701,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteVaultResult",
       "unmarshaller" : {
@@ -7018,6 +7085,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "jobId" ],
       "shapeName" : "DescribeJobRequest",
       "unmarshaller" : null,
@@ -9085,6 +9154,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeJobResult",
       "unmarshaller" : {
@@ -9799,6 +9870,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVaultOutput",
       "unmarshaller" : {
@@ -10068,6 +10141,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "DescribeVaultRequest",
       "unmarshaller" : null,
@@ -10779,6 +10854,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVaultResult",
       "unmarshaller" : {
@@ -10935,6 +11012,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "GetDataRetrievalPolicyRequest",
       "unmarshaller" : null,
@@ -11081,6 +11160,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDataRetrievalPolicyResult",
       "unmarshaller" : {
@@ -11576,6 +11657,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "jobId" ],
       "shapeName" : "GetJobOutputRequest",
       "unmarshaller" : null,
@@ -12400,6 +12483,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetJobOutputResult",
       "unmarshaller" : {
@@ -12669,6 +12754,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "GetVaultAccessPolicyRequest",
       "unmarshaller" : null,
@@ -12815,6 +12902,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetVaultAccessPolicyResult",
       "unmarshaller" : {
@@ -13084,6 +13173,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "GetVaultLockRequest",
       "unmarshaller" : null,
@@ -13569,6 +13660,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetVaultLockResult",
       "unmarshaller" : {
@@ -13838,6 +13931,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "GetVaultNotificationsRequest",
       "unmarshaller" : null,
@@ -13984,6 +14079,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetVaultNotificationsResult",
       "unmarshaller" : {
@@ -16054,6 +16151,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GlacierJobDescription",
       "unmarshaller" : {
@@ -16436,6 +16535,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "InitiateJobRequest",
       "unmarshaller" : null,
@@ -16695,6 +16796,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateJobResult",
       "unmarshaller" : {
@@ -17190,6 +17293,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "InitiateMultipartUploadRequest",
       "unmarshaller" : null,
@@ -17449,6 +17554,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateMultipartUploadResult",
       "unmarshaller" : {
@@ -17831,6 +17938,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "InitiateVaultLockRequest",
       "unmarshaller" : null,
@@ -17977,6 +18086,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateVaultLockResult",
       "unmarshaller" : {
@@ -18239,6 +18350,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InsufficientCapacityException",
       "unmarshaller" : null,
@@ -18498,6 +18611,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterValueException",
       "unmarshaller" : null,
@@ -19096,6 +19211,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InventoryRetrievalJobDescription",
       "unmarshaller" : {
@@ -19584,6 +19701,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InventoryRetrievalJobInput",
       "unmarshaller" : {
@@ -20524,6 +20643,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobParameters",
       "unmarshaller" : {
@@ -20786,6 +20907,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -21504,6 +21627,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "ListJobsRequest",
       "unmarshaller" : null,
@@ -21905,6 +22030,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsResult",
       "unmarshaller" : {
@@ -22400,6 +22527,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "ListMultipartUploadsRequest",
       "unmarshaller" : null,
@@ -22801,6 +22930,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListMultipartUploadsResult",
       "unmarshaller" : {
@@ -23409,6 +23540,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "ListPartsRequest",
       "unmarshaller" : null,
@@ -24375,6 +24508,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPartsResult",
       "unmarshaller" : {
@@ -24531,6 +24666,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "ListProvisionedCapacityRequest",
       "unmarshaller" : null,
@@ -24819,6 +24956,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListProvisionedCapacityResult",
       "unmarshaller" : {
@@ -25088,6 +25227,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "ListTagsForVaultRequest",
       "unmarshaller" : null,
@@ -25376,6 +25517,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListTagsForVaultResult",
       "unmarshaller" : {
@@ -25758,6 +25901,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "ListVaultsRequest",
       "unmarshaller" : null,
@@ -26159,6 +26304,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListVaultsResult",
       "unmarshaller" : {
@@ -26421,6 +26568,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingParameterValueException",
       "unmarshaller" : null,
@@ -26680,6 +26829,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PartListElement",
       "unmarshaller" : {
@@ -26942,6 +27093,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PolicyEnforcedException",
       "unmarshaller" : null,
@@ -27314,6 +27467,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionedCapacityDescription",
       "unmarshaller" : {
@@ -27470,6 +27625,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "PurchaseProvisionedCapacityRequest",
       "unmarshaller" : null,
@@ -27616,6 +27773,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PurchaseProvisionedCapacityResult",
       "unmarshaller" : {
@@ -28140,6 +28299,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "RemoveTagsFromVaultRequest",
       "unmarshaller" : null,
@@ -28172,6 +28333,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RemoveTagsFromVaultResult",
       "unmarshaller" : {
@@ -28434,6 +28597,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RequestTimeoutException",
       "unmarshaller" : null,
@@ -28693,6 +28858,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -28952,6 +29119,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceUnavailableException",
       "unmarshaller" : null,
@@ -29218,6 +29387,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId" ],
       "shapeName" : "SetDataRetrievalPolicyRequest",
       "unmarshaller" : null,
@@ -29250,6 +29421,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetDataRetrievalPolicyResult",
       "unmarshaller" : {
@@ -29632,6 +29805,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "SetVaultAccessPolicyRequest",
       "unmarshaller" : null,
@@ -29664,6 +29839,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetVaultAccessPolicyResult",
       "unmarshaller" : {
@@ -30046,6 +30223,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName" ],
       "shapeName" : "SetVaultNotificationsRequest",
       "unmarshaller" : null,
@@ -30078,6 +30257,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetVaultNotificationsResult",
       "unmarshaller" : {
@@ -30122,6 +30303,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StatusCode",
       "unmarshaller" : {
@@ -30843,6 +31026,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "vaultName", "accountId" ],
       "shapeName" : "UploadArchiveRequest",
       "unmarshaller" : null,
@@ -31215,6 +31400,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadArchiveResult",
       "unmarshaller" : {
@@ -31816,6 +32003,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadListElement",
       "unmarshaller" : {
@@ -32537,6 +32726,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accountId", "vaultName", "uploadId" ],
       "shapeName" : "UploadMultipartPartRequest",
       "unmarshaller" : null,
@@ -32683,6 +32874,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadMultipartPartResult",
       "unmarshaller" : {
@@ -32832,6 +33025,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VaultAccessPolicy",
       "unmarshaller" : {
@@ -32981,6 +33176,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VaultLockPolicy",
       "unmarshaller" : {
@@ -33385,6 +33582,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VaultNotificationConfig",
       "unmarshaller" : {
@@ -33403,6 +33602,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

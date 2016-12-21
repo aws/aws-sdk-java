@@ -220,4 +220,5 @@ public class UpdateSAMLProviderRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateSAMLProviderRequest clone() {
         return (UpdateSAMLProviderRequest) super.clone();
     }
+
 }

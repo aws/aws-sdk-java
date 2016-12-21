@@ -121,4 +121,5 @@ public class GetEvaluationRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetEvaluationRequest clone() {
         return (GetEvaluationRequest) super.clone();
     }
+
 }

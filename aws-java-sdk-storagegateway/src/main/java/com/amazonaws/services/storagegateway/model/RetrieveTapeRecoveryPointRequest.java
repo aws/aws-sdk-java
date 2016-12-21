@@ -151,4 +151,5 @@ public class RetrieveTapeRecoveryPointRequest extends com.amazonaws.AmazonWebSer
     public RetrieveTapeRecoveryPointRequest clone() {
         return (RetrieveTapeRecoveryPointRequest) super.clone();
     }
+
 }

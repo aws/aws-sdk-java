@@ -95,4 +95,5 @@ public class DescribeCacheRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeCacheRequest clone() {
         return (DescribeCacheRequest) super.clone();
     }
+
 }

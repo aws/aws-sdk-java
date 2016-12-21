@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminUserGlobalSignOutRequestMarshaller implements Marshaller<Request<AdminUserGlobalSignOutRequest>, AdminUserGlobalSignOutRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminUserGlobalSignOutRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminUserGlobalSignOutRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

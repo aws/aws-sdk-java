@@ -169,4 +169,5 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     public DeleteResourceRequest clone() {
         return (DeleteResourceRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListXssMatchSetsRequestMarshaller implements Marshaller<Request<ListXssMatchSetsRequest>, ListXssMatchSetsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListXssMatchSetsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListXssMatchSetsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

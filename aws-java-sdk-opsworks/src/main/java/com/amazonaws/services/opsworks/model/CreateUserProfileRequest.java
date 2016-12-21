@@ -320,4 +320,5 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     public CreateUserProfileRequest clone() {
         return (CreateUserProfileRequest) super.clone();
     }
+
 }

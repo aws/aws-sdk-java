@@ -116,4 +116,5 @@ public class OptInPhoneNumberRequest extends com.amazonaws.AmazonWebServiceReque
     public OptInPhoneNumberRequest clone() {
         return (OptInPhoneNumberRequest) super.clone();
     }
+
 }

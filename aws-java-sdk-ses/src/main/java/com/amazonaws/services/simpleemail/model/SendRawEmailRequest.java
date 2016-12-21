@@ -1313,4 +1313,5 @@ public class SendRawEmailRequest extends com.amazonaws.AmazonWebServiceRequest i
     public SendRawEmailRequest clone() {
         return (SendRawEmailRequest) super.clone();
     }
+
 }

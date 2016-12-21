@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteGcmChannelRequestMarshaller implements Marshaller<Request<DeleteGcmChannelRequest>, DeleteGcmChannelRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteGcmChannelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteGcmChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

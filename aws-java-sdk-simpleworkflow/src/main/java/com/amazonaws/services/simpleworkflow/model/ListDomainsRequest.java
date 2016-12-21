@@ -398,4 +398,5 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public ListDomainsRequest clone() {
         return (ListDomainsRequest) super.clone();
     }
+
 }

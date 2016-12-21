@@ -254,4 +254,5 @@ public class AuthorizeCacheSecurityGroupIngressRequest extends com.amazonaws.Ama
     public AuthorizeCacheSecurityGroupIngressRequest clone() {
         return (AuthorizeCacheSecurityGroupIngressRequest) super.clone();
     }
+
 }

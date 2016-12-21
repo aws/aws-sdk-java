@@ -144,4 +144,5 @@ public class DescribeConfigurationsRequest extends com.amazonaws.AmazonWebServic
     public DescribeConfigurationsRequest clone() {
         return (DescribeConfigurationsRequest) super.clone();
     }
+
 }

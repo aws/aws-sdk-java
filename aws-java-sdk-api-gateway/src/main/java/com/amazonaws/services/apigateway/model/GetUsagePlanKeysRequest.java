@@ -282,4 +282,5 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
     public GetUsagePlanKeysRequest clone() {
         return (GetUsagePlanKeysRequest) super.clone();
     }
+
 }

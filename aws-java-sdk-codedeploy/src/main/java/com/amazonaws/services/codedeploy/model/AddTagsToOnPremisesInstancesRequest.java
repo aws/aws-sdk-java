@@ -258,4 +258,5 @@ public class AddTagsToOnPremisesInstancesRequest extends com.amazonaws.AmazonWeb
     public AddTagsToOnPremisesInstancesRequest clone() {
         return (AddTagsToOnPremisesInstancesRequest) super.clone();
     }
+
 }

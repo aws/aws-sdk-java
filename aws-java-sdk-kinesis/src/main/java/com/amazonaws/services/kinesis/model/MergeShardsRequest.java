@@ -222,4 +222,5 @@ public class MergeShardsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public MergeShardsRequest clone() {
         return (MergeShardsRequest) super.clone();
     }
+
 }

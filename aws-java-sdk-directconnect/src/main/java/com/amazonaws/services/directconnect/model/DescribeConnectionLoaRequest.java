@@ -236,4 +236,5 @@ public class DescribeConnectionLoaRequest extends com.amazonaws.AmazonWebService
     public DescribeConnectionLoaRequest clone() {
         return (DescribeConnectionLoaRequest) super.clone();
     }
+
 }

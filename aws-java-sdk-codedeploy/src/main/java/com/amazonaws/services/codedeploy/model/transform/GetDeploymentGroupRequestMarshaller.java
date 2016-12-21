@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class GetDeploymentGroupRequestMarshaller implements Marshaller<Request<GetDeploymentGroupRequest>, GetDeploymentGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public GetDeploymentGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public GetDeploymentGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

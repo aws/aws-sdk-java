@@ -114,4 +114,5 @@ public class DeleteAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteAssessmentRunRequest clone() {
         return (DeleteAssessmentRunRequest) super.clone();
     }
+
 }

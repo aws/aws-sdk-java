@@ -176,4 +176,5 @@ public class DeleteChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteChangeSetRequest clone() {
         return (DeleteChangeSetRequest) super.clone();
     }
+
 }

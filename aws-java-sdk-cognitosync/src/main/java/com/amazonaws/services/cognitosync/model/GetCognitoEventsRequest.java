@@ -116,4 +116,5 @@ public class GetCognitoEventsRequest extends com.amazonaws.AmazonWebServiceReque
     public GetCognitoEventsRequest clone() {
         return (GetCognitoEventsRequest) super.clone();
     }
+
 }

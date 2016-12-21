@@ -304,4 +304,5 @@ public class ModifyClusterIamRolesRequest extends com.amazonaws.AmazonWebService
     public ModifyClusterIamRolesRequest clone() {
         return (ModifyClusterIamRolesRequest) super.clone();
     }
+
 }

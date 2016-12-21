@@ -147,4 +147,5 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends com.amazonaws.A
     public DescribeTrustedAdvisorCheckSummariesRequest clone() {
         return (DescribeTrustedAdvisorCheckSummariesRequest) super.clone();
     }
+
 }

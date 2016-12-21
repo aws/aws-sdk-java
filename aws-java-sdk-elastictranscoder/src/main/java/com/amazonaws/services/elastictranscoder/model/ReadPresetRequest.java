@@ -116,4 +116,5 @@ public class ReadPresetRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public ReadPresetRequest clone() {
         return (ReadPresetRequest) super.clone();
     }
+
 }

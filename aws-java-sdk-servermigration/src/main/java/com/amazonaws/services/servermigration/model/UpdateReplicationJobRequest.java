@@ -293,4 +293,5 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     public UpdateReplicationJobRequest clone() {
         return (UpdateReplicationJobRequest) super.clone();
     }
+
 }

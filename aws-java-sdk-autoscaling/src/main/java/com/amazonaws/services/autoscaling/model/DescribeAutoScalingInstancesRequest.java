@@ -264,4 +264,5 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
     public DescribeAutoScalingInstancesRequest clone() {
         return (DescribeAutoScalingInstancesRequest) super.clone();
     }
+
 }

@@ -114,4 +114,5 @@ public class CreateAddressRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateAddressRequest clone() {
         return (CreateAddressRequest) super.clone();
     }
+
 }

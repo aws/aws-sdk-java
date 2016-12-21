@@ -241,4 +241,5 @@ public class DescribeEventTopicsRequest extends com.amazonaws.AmazonWebServiceRe
     public DescribeEventTopicsRequest clone() {
         return (DescribeEventTopicsRequest) super.clone();
     }
+
 }

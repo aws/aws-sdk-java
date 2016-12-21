@@ -1086,4 +1086,5 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
     public GetDevicePoolCompatibilityRequest clone() {
         return (GetDevicePoolCompatibilityRequest) super.clone();
     }
+
 }

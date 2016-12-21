@@ -60,4 +60,5 @@ public class ListAvailableSolutionStacksRequest extends com.amazonaws.AmazonWebS
     public ListAvailableSolutionStacksRequest clone() {
         return (ListAvailableSolutionStacksRequest) super.clone();
     }
+
 }

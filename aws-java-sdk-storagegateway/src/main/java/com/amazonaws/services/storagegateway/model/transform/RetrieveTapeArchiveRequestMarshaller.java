@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class RetrieveTapeArchiveRequestMarshaller implements Marshaller<Request<RetrieveTapeArchiveRequest>, RetrieveTapeArchiveRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public RetrieveTapeArchiveRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public RetrieveTapeArchiveRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

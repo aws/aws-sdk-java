@@ -256,4 +256,5 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateAuthorizerRequest clone() {
         return (UpdateAuthorizerRequest) super.clone();
     }
+
 }

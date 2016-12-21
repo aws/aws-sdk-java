@@ -404,4 +404,5 @@ public class GetSampledRequestsRequest extends com.amazonaws.AmazonWebServiceReq
     public GetSampledRequestsRequest clone() {
         return (GetSampledRequestsRequest) super.clone();
     }
+
 }

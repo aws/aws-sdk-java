@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>, QueryRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public QueryRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public QueryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

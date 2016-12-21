@@ -305,4 +305,5 @@ public class CreateEvaluationRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateEvaluationRequest clone() {
         return (CreateEvaluationRequest) super.clone();
     }
+
 }

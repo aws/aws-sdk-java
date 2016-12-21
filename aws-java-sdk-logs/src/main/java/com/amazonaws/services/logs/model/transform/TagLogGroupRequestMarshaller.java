@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class TagLogGroupRequestMarshaller implements Marshaller<Request<TagLogGroupRequest>, TagLogGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public TagLogGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public TagLogGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

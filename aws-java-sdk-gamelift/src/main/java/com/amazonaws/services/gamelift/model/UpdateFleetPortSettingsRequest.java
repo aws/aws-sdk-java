@@ -283,4 +283,5 @@ public class UpdateFleetPortSettingsRequest extends com.amazonaws.AmazonWebServi
     public UpdateFleetPortSettingsRequest clone() {
         return (UpdateFleetPortSettingsRequest) super.clone();
     }
+
 }

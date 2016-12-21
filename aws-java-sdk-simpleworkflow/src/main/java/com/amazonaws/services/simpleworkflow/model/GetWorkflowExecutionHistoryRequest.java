@@ -418,4 +418,5 @@ public class GetWorkflowExecutionHistoryRequest extends com.amazonaws.AmazonWebS
     public GetWorkflowExecutionHistoryRequest clone() {
         return (GetWorkflowExecutionHistoryRequest) super.clone();
     }
+
 }

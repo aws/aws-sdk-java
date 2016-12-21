@@ -174,4 +174,5 @@ public class StartAssessmentRunRequest extends com.amazonaws.AmazonWebServiceReq
     public StartAssessmentRunRequest clone() {
         return (StartAssessmentRunRequest) super.clone();
     }
+
 }

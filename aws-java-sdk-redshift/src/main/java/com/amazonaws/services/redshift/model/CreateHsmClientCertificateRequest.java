@@ -208,4 +208,5 @@ public class CreateHsmClientCertificateRequest extends com.amazonaws.AmazonWebSe
     public CreateHsmClientCertificateRequest clone() {
         return (CreateHsmClientCertificateRequest) super.clone();
     }
+
 }

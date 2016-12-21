@@ -305,4 +305,5 @@ public class SetLoadBasedAutoScalingRequest extends com.amazonaws.AmazonWebServi
     public SetLoadBasedAutoScalingRequest clone() {
         return (SetLoadBasedAutoScalingRequest) super.clone();
     }
+
 }

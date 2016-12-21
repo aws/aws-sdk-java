@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class CreateReplicationSubnetGroupRequestMarshaller implements
         Marshaller<Request<CreateReplicationSubnetGroupRequest>, CreateReplicationSubnetGroupRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateReplicationSubnetGroupRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateReplicationSubnetGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -169,4 +169,5 @@ public class GetModelTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     public GetModelTemplateRequest clone() {
         return (GetModelTemplateRequest) super.clone();
     }
+
 }

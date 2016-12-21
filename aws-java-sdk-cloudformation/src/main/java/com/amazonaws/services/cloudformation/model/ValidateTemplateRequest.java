@@ -261,4 +261,5 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     public ValidateTemplateRequest clone() {
         return (ValidateTemplateRequest) super.clone();
     }
+
 }

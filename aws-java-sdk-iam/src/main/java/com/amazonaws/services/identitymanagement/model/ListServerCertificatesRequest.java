@@ -340,4 +340,5 @@ public class ListServerCertificatesRequest extends com.amazonaws.AmazonWebServic
     public ListServerCertificatesRequest clone() {
         return (ListServerCertificatesRequest) super.clone();
     }
+
 }

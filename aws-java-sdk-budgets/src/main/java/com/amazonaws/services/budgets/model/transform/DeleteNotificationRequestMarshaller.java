@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteNotificationRequestMarshaller implements Marshaller<Request<DeleteNotificationRequest>, DeleteNotificationRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteNotificationRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteNotificationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

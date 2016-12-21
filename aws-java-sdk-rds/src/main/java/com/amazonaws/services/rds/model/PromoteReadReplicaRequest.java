@@ -729,4 +729,5 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
     public PromoteReadReplicaRequest clone() {
         return (PromoteReadReplicaRequest) super.clone();
     }
+
 }

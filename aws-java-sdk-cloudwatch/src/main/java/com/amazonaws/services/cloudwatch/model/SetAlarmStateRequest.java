@@ -309,4 +309,5 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
     public SetAlarmStateRequest clone() {
         return (SetAlarmStateRequest) super.clone();
     }
+
 }

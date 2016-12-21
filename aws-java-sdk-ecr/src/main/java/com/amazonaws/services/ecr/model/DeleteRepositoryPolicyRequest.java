@@ -174,4 +174,5 @@ public class DeleteRepositoryPolicyRequest extends com.amazonaws.AmazonWebServic
     public DeleteRepositoryPolicyRequest clone() {
         return (DeleteRepositoryPolicyRequest) super.clone();
     }
+
 }

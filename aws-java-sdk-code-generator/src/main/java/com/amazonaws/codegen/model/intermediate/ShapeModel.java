@@ -39,6 +39,7 @@ public class ShapeModel extends DocumentationModel {
     private boolean hasStatusCodeMember;
     private boolean hasStreamingMember;
     private boolean wrapper;
+    private String requestSignerClassFqcn;
 
     private List<MemberModel> members;
     // Any constructor in addition to the default no-arg
@@ -407,4 +408,17 @@ public class ShapeModel extends DocumentationModel {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
+
+    public boolean isRequestSignerAware() {
+        return requestSignerClassFqcn != null;
+    }
+
+    public String getRequestSignerClassFqcn() {
+        return requestSignerClassFqcn;
+    }
+
+    public void setRequestSignerClassFqcn(String authorizerClass) {
+        this.requestSignerClassFqcn = authorizerClass;
+    }
+
 }

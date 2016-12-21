@@ -264,4 +264,5 @@ public class DeleteApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     public DeleteApplicationVersionRequest clone() {
         return (DeleteApplicationVersionRequest) super.clone();
     }
+
 }

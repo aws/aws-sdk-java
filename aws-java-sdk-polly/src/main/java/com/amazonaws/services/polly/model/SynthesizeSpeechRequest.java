@@ -605,4 +605,5 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
     public SynthesizeSpeechRequest clone() {
         return (SynthesizeSpeechRequest) super.clone();
     }
+
 }

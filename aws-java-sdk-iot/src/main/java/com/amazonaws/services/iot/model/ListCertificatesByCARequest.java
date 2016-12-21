@@ -303,4 +303,5 @@ public class ListCertificatesByCARequest extends com.amazonaws.AmazonWebServiceR
     public ListCertificatesByCARequest clone() {
         return (ListCertificatesByCARequest) super.clone();
     }
+
 }

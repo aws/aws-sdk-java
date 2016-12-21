@@ -251,4 +251,5 @@ public class UpdateOpenIDConnectProviderThumbprintRequest extends com.amazonaws.
     public UpdateOpenIDConnectProviderThumbprintRequest clone() {
         return (UpdateOpenIDConnectProviderThumbprintRequest) super.clone();
     }
+
 }

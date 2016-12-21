@@ -188,4 +188,5 @@ public class RespondActivityTaskCanceledRequest extends com.amazonaws.AmazonWebS
     public RespondActivityTaskCanceledRequest clone() {
         return (RespondActivityTaskCanceledRequest) super.clone();
     }
+
 }

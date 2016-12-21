@@ -472,4 +472,5 @@ public class CreateHsmConfigurationRequest extends com.amazonaws.AmazonWebServic
     public CreateHsmConfigurationRequest clone() {
         return (CreateHsmConfigurationRequest) super.clone();
     }
+
 }

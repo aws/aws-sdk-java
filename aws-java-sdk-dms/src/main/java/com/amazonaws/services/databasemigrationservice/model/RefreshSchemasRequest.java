@@ -167,4 +167,5 @@ public class RefreshSchemasRequest extends com.amazonaws.AmazonWebServiceRequest
     public RefreshSchemasRequest clone() {
         return (RefreshSchemasRequest) super.clone();
     }
+
 }

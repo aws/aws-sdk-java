@@ -234,4 +234,5 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public ListTagsRequest clone() {
         return (ListTagsRequest) super.clone();
     }
+
 }

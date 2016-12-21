@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AbortVaultLockRequestMarshaller implements Marshaller<Request<AbortVaultLockRequest>, AbortVaultLockRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AbortVaultLockRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AbortVaultLockRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -341,4 +341,5 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     public CompleteLifecycleActionRequest clone() {
         return (CompleteLifecycleActionRequest) super.clone();
     }
+
 }

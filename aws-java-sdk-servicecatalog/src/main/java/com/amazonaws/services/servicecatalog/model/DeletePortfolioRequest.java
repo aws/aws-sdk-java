@@ -248,4 +248,5 @@ public class DeletePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     public DeletePortfolioRequest clone() {
         return (DeletePortfolioRequest) super.clone();
     }
+
 }

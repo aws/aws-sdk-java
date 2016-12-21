@@ -1627,4 +1627,5 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     public SendMessageRequest clone() {
         return (SendMessageRequest) super.clone();
     }
+
 }

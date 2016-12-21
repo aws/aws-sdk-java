@@ -228,4 +228,5 @@ public class DiscoverInputSchemaRequest extends com.amazonaws.AmazonWebServiceRe
     public DiscoverInputSchemaRequest clone() {
         return (DiscoverInputSchemaRequest) super.clone();
     }
+
 }

@@ -169,4 +169,5 @@ public class ListStreamingDistributionsRequest extends com.amazonaws.AmazonWebSe
     public ListStreamingDistributionsRequest clone() {
         return (ListStreamingDistributionsRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteVolumeRequestMarshaller implements Marshaller<Request<DeleteVolumeRequest>, DeleteVolumeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteVolumeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteVolumeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

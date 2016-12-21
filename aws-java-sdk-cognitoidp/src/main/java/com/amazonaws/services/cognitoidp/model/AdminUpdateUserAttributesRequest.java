@@ -252,4 +252,5 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
     public AdminUpdateUserAttributesRequest clone() {
         return (AdminUpdateUserAttributesRequest) super.clone();
     }
+
 }

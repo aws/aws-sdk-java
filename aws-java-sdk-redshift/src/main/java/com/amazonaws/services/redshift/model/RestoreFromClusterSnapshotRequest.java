@@ -2373,4 +2373,5 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     public RestoreFromClusterSnapshotRequest clone() {
         return (RestoreFromClusterSnapshotRequest) super.clone();
     }
+
 }

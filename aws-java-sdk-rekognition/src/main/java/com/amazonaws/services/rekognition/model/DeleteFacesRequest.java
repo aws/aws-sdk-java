@@ -197,4 +197,5 @@ public class DeleteFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteFacesRequest clone() {
         return (DeleteFacesRequest) super.clone();
     }
+
 }

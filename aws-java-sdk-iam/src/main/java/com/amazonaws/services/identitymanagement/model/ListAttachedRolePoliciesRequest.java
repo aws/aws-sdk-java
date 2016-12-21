@@ -418,4 +418,5 @@ public class ListAttachedRolePoliciesRequest extends com.amazonaws.AmazonWebServ
     public ListAttachedRolePoliciesRequest clone() {
         return (ListAttachedRolePoliciesRequest) super.clone();
     }
+
 }

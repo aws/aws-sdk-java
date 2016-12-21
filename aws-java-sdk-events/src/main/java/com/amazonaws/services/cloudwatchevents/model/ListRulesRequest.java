@@ -222,4 +222,5 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public ListRulesRequest clone() {
         return (ListRulesRequest) super.clone();
     }
+
 }

@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AmazonECRModuleInjector",
     "defaultEndpoint" : "ecr.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "ecr.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<p>Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private Docker repositories with resource-based permissions using AWS IAM so that specific users or Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.</p>",
     "endpointPrefix" : "ecr",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/ecr",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "Amazon ECR",
     "serviceFullName" : "Amazon EC2 Container Registry",
     "serviceName" : "Amazon ECR",
@@ -1163,6 +1167,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AuthorizationData",
       "unmarshaller" : {
@@ -1687,6 +1693,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "layerDigests" ],
       "shapeName" : "BatchCheckLayerAvailabilityRequest",
       "unmarshaller" : null,
@@ -2230,6 +2238,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchCheckLayerAvailabilityResult",
       "unmarshaller" : {
@@ -2754,6 +2764,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "imageIds" ],
       "shapeName" : "BatchDeleteImageRequest",
       "unmarshaller" : null,
@@ -3297,6 +3309,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchDeleteImageResult",
       "unmarshaller" : {
@@ -3821,6 +3835,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "imageIds" ],
       "shapeName" : "BatchGetImageRequest",
       "unmarshaller" : null,
@@ -4364,6 +4380,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchGetImageResult",
       "unmarshaller" : {
@@ -5001,6 +5019,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "uploadId", "layerDigests" ],
       "shapeName" : "CompleteLayerUploadRequest",
       "unmarshaller" : null,
@@ -5486,6 +5506,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CompleteLayerUploadResult",
       "unmarshaller" : {
@@ -5642,6 +5664,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "CreateRepositoryRequest",
       "unmarshaller" : null,
@@ -5788,6 +5812,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateRepositoryResult",
       "unmarshaller" : {
@@ -6057,6 +6083,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "DeleteRepositoryPolicyRequest",
       "unmarshaller" : null,
@@ -6429,6 +6457,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteRepositoryPolicyResult",
       "unmarshaller" : {
@@ -6811,6 +6841,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "DeleteRepositoryRequest",
       "unmarshaller" : null,
@@ -6957,6 +6989,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteRepositoryResult",
       "unmarshaller" : {
@@ -7106,6 +7140,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeImagesFilter",
       "unmarshaller" : {
@@ -7969,6 +8005,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "DescribeImagesRequest",
       "unmarshaller" : null,
@@ -8370,6 +8408,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeImagesResult",
       "unmarshaller" : {
@@ -9007,6 +9047,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeRepositoriesRequest",
       "unmarshaller" : null,
@@ -9408,6 +9450,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeRepositoriesResult",
       "unmarshaller" : {
@@ -9443,6 +9487,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EmptyUploadException",
       "unmarshaller" : null,
@@ -9738,6 +9784,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetAuthorizationTokenRequest",
       "unmarshaller" : null,
@@ -10026,6 +10074,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetAuthorizationTokenResult",
       "unmarshaller" : {
@@ -10408,6 +10458,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "layerDigest" ],
       "shapeName" : "GetDownloadUrlForLayerRequest",
       "unmarshaller" : null,
@@ -10667,6 +10719,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetDownloadUrlForLayerResult",
       "unmarshaller" : {
@@ -10936,6 +10990,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "GetRepositoryPolicyRequest",
       "unmarshaller" : null,
@@ -11308,6 +11364,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetRepositoryPolicyResult",
       "unmarshaller" : {
@@ -11796,6 +11854,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Image",
       "unmarshaller" : {
@@ -11831,6 +11891,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageAlreadyExistsException",
       "unmarshaller" : null,
@@ -12684,6 +12746,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageDetail",
       "unmarshaller" : {
@@ -13059,6 +13123,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageFailure",
       "unmarshaller" : {
@@ -13109,6 +13175,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageFailureCode",
       "unmarshaller" : {
@@ -13371,6 +13439,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageIdentifier",
       "unmarshaller" : {
@@ -13406,6 +13476,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ImageNotFoundException",
       "unmarshaller" : null,
@@ -13672,6 +13744,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "InitiateLayerUploadRequest",
       "unmarshaller" : null,
@@ -13931,6 +14005,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InitiateLayerUploadResult",
       "unmarshaller" : {
@@ -13966,6 +14042,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLayerException",
       "unmarshaller" : null,
@@ -14451,6 +14529,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLayerPartException",
       "unmarshaller" : null,
@@ -14483,6 +14563,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
       "unmarshaller" : null,
@@ -14855,6 +14937,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Layer",
       "unmarshaller" : {
@@ -14890,6 +14974,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayerAlreadyExistsException",
       "unmarshaller" : null,
@@ -14928,6 +15014,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayerAvailability",
       "unmarshaller" : {
@@ -15303,6 +15391,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayerFailure",
       "unmarshaller" : {
@@ -15344,6 +15434,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayerFailureCode",
       "unmarshaller" : {
@@ -15379,6 +15471,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayerInaccessibleException",
       "unmarshaller" : null,
@@ -15411,6 +15505,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayerPartTooSmallException",
       "unmarshaller" : null,
@@ -15443,6 +15539,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LayersNotFoundException",
       "unmarshaller" : null,
@@ -15475,6 +15573,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -15621,6 +15721,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListImagesFilter",
       "unmarshaller" : {
@@ -16229,6 +16331,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName" ],
       "shapeName" : "ListImagesRequest",
       "unmarshaller" : null,
@@ -16630,6 +16734,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListImagesResult",
       "unmarshaller" : {
@@ -17012,6 +17118,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "imageManifest" ],
       "shapeName" : "PutImageRequest",
       "unmarshaller" : null,
@@ -17158,6 +17266,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutImageResult",
       "unmarshaller" : {
@@ -17759,6 +17869,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Repository",
       "unmarshaller" : {
@@ -17794,6 +17906,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryAlreadyExistsException",
       "unmarshaller" : null,
@@ -17826,6 +17940,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNotEmptyException",
       "unmarshaller" : null,
@@ -17858,6 +17974,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryNotFoundException",
       "unmarshaller" : null,
@@ -17890,6 +18008,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RepositoryPolicyNotFoundException",
       "unmarshaller" : null,
@@ -17922,6 +18042,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServerException",
       "unmarshaller" : null,
@@ -18414,6 +18536,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "policyText" ],
       "shapeName" : "SetRepositoryPolicyRequest",
       "unmarshaller" : null,
@@ -18786,6 +18910,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SetRepositoryPolicyResult",
       "unmarshaller" : {
@@ -18827,6 +18953,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TagStatus",
       "unmarshaller" : {
@@ -19548,6 +19676,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "repositoryName", "uploadId", "partFirstByte", "partLastByte", "layerPartBlob" ],
       "shapeName" : "UploadLayerPartRequest",
       "unmarshaller" : null,
@@ -20033,6 +20163,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadLayerPartResult",
       "unmarshaller" : {
@@ -20068,6 +20200,8 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UploadNotFoundException",
       "unmarshaller" : null,
@@ -20083,6 +20217,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "BatchDeleteImage" : [ {

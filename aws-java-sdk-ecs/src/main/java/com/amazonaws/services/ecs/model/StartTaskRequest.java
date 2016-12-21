@@ -544,4 +544,5 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public StartTaskRequest clone() {
         return (StartTaskRequest) super.clone();
     }
+
 }

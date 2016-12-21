@@ -147,4 +147,5 @@ public class DeleteAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteAlarmsRequest clone() {
         return (DeleteAlarmsRequest) super.clone();
     }
+
 }

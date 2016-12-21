@@ -370,4 +370,5 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdateJobQueueRequest clone() {
         return (UpdateJobQueueRequest) super.clone();
     }
+
 }

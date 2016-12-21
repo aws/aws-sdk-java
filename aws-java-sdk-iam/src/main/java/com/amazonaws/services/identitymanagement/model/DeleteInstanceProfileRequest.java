@@ -146,4 +146,5 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
     public DeleteInstanceProfileRequest clone() {
         return (DeleteInstanceProfileRequest) super.clone();
     }
+
 }

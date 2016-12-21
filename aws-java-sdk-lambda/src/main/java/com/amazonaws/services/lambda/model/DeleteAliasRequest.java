@@ -174,4 +174,5 @@ public class DeleteAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteAliasRequest clone() {
         return (DeleteAliasRequest) super.clone();
     }
+
 }

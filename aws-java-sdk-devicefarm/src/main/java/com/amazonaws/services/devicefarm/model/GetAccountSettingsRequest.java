@@ -62,4 +62,5 @@ public class GetAccountSettingsRequest extends com.amazonaws.AmazonWebServiceReq
     public GetAccountSettingsRequest clone() {
         return (GetAccountSettingsRequest) super.clone();
     }
+
 }

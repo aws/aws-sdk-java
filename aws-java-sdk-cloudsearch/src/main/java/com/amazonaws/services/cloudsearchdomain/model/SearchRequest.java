@@ -2837,4 +2837,5 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     public SearchRequest clone() {
         return (SearchRequest) super.clone();
     }
+
 }

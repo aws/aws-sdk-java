@@ -257,4 +257,5 @@ public class RemoveTagsFromCertificateRequest extends com.amazonaws.AmazonWebSer
     public RemoveTagsFromCertificateRequest clone() {
         return (RemoveTagsFromCertificateRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateSqlInjectionMatchSetRequestMarshaller implements Marshaller<Request<CreateSqlInjectionMatchSetRequest>, CreateSqlInjectionMatchSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateSqlInjectionMatchSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateSqlInjectionMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

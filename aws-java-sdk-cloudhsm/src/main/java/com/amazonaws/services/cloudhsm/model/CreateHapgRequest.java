@@ -116,4 +116,5 @@ public class CreateHapgRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CreateHapgRequest clone() {
         return (CreateHapgRequest) super.clone();
     }
+
 }

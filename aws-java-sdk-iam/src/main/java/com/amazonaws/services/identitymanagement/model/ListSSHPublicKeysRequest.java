@@ -326,4 +326,5 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListSSHPublicKeysRequest clone() {
         return (ListSSHPublicKeysRequest) super.clone();
     }
+
 }

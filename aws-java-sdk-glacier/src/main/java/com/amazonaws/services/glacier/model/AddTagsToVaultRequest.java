@@ -265,4 +265,5 @@ public class AddTagsToVaultRequest extends com.amazonaws.AmazonWebServiceRequest
     public AddTagsToVaultRequest clone() {
         return (AddTagsToVaultRequest) super.clone();
     }
+
 }

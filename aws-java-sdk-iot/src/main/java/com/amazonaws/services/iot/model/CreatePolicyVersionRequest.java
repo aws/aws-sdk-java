@@ -255,4 +255,5 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
     public CreatePolicyVersionRequest clone() {
         return (CreatePolicyVersionRequest) super.clone();
     }
+
 }

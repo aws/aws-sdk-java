@@ -114,4 +114,5 @@ public class DeleteMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     public DeleteMaintenanceWindowRequest clone() {
         return (DeleteMaintenanceWindowRequest) super.clone();
     }
+
 }

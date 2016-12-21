@@ -66,66 +66,67 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .withContentTypeOverride("")
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MountTargetNotFound").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("SubnetNotFound").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IncorrectMountTargetState").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedAvailabilityZone").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IpAddressInUse").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MountTargetConflict").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("SecurityGroupNotFound").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("FileSystemInUse").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("FileSystemAlreadyExists").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("SecurityGroupLimitExceeded").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NetworkInterfaceLimitExceeded").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IncorrectFileSystemLifeCycleState").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DependencyTimeout").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.DependencyTimeoutException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NoFreeAddressesInSubnet").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("FileSystemLimitExceeded").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.FileSystemNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("BadRequest").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.BadRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                            com.amazonaws.services.elasticfilesystem.model.InternalServerErrorException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MountTargetNotFound").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetNotFound").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncorrectMountTargetState").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAvailabilityZone").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IpAddressInUse").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MountTargetConflict").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SecurityGroupNotFound").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileSystemInUse").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileSystemAlreadyExists").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SecurityGroupLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NetworkInterfaceLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncorrectFileSystemLifeCycleState").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DependencyTimeout").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.DependencyTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoFreeAddressesInSubnet").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileSystemLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.FileSystemNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequest").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.BadRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
+                                    com.amazonaws.services.elasticfilesystem.model.InternalServerErrorException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException.class));
 
     /**
      * Constructs a new client to invoke service methods on EFS. A credentials provider chain will be used that searches

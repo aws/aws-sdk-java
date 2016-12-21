@@ -222,4 +222,5 @@ public class DeleteMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteMethodRequest clone() {
         return (DeleteMethodRequest) super.clone();
     }
+
 }

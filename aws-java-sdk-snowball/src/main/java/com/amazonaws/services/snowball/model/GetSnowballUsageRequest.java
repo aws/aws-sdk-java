@@ -60,4 +60,5 @@ public class GetSnowballUsageRequest extends com.amazonaws.AmazonWebServiceReque
     public GetSnowballUsageRequest clone() {
         return (GetSnowballUsageRequest) super.clone();
     }
+
 }

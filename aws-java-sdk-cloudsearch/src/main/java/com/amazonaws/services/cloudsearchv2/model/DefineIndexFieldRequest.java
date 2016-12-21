@@ -151,4 +151,5 @@ public class DefineIndexFieldRequest extends com.amazonaws.AmazonWebServiceReque
     public DefineIndexFieldRequest clone() {
         return (DefineIndexFieldRequest) super.clone();
     }
+
 }

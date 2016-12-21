@@ -188,4 +188,5 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
     public GetInstanceAccessRequest clone() {
         return (GetInstanceAccessRequest) super.clone();
     }
+
 }

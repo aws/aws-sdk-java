@@ -206,4 +206,5 @@ public class BatchMeterUsageRequest extends com.amazonaws.AmazonWebServiceReques
     public BatchMeterUsageRequest clone() {
         return (BatchMeterUsageRequest) super.clone();
     }
+
 }

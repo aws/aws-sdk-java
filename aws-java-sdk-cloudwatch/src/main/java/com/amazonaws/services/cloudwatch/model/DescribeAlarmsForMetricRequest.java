@@ -551,4 +551,5 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
     public DescribeAlarmsForMetricRequest clone() {
         return (DescribeAlarmsForMetricRequest) super.clone();
     }
+
 }

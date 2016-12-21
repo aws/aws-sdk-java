@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class BatchCheckLayerAvailabilityRequestMarshaller implements
         Marshaller<Request<BatchCheckLayerAvailabilityRequest>, BatchCheckLayerAvailabilityRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public BatchCheckLayerAvailabilityRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public BatchCheckLayerAvailabilityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

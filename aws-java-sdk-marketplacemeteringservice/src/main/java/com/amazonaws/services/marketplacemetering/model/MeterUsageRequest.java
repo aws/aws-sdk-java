@@ -357,4 +357,5 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public MeterUsageRequest clone() {
         return (MeterUsageRequest) super.clone();
     }
+
 }

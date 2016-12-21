@@ -645,4 +645,5 @@ public class DownloadDBLogFilePortionRequest extends com.amazonaws.AmazonWebServ
     public DownloadDBLogFilePortionRequest clone() {
         return (DownloadDBLogFilePortionRequest) super.clone();
     }
+
 }

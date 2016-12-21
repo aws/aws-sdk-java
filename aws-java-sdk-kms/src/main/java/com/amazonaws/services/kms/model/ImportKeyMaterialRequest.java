@@ -563,4 +563,5 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
     public ImportKeyMaterialRequest clone() {
         return (ImportKeyMaterialRequest) super.clone();
     }
+
 }

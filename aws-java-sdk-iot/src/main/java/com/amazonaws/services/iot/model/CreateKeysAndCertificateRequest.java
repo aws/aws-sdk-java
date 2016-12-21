@@ -128,4 +128,5 @@ public class CreateKeysAndCertificateRequest extends com.amazonaws.AmazonWebServ
     public CreateKeysAndCertificateRequest clone() {
         return (CreateKeysAndCertificateRequest) super.clone();
     }
+
 }

@@ -123,4 +123,5 @@ public class DeleteTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteTrailRequest clone() {
         return (DeleteTrailRequest) super.clone();
     }
+
 }

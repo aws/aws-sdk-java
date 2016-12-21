@@ -144,4 +144,5 @@ public class DescribeResourceGroupsRequest extends com.amazonaws.AmazonWebServic
     public DescribeResourceGroupsRequest clone() {
         return (DescribeResourceGroupsRequest) super.clone();
     }
+
 }

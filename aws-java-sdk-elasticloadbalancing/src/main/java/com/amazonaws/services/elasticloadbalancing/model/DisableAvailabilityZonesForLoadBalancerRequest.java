@@ -223,4 +223,5 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends com.amazonaw
     public DisableAvailabilityZonesForLoadBalancerRequest clone() {
         return (DisableAvailabilityZonesForLoadBalancerRequest) super.clone();
     }
+
 }

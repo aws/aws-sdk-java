@@ -95,4 +95,5 @@ public class PutConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest 
     public PutConfigRuleRequest clone() {
         return (PutConfigRuleRequest) super.clone();
     }
+
 }

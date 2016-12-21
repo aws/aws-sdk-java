@@ -260,4 +260,5 @@ public class UnsubscribeFromEventRequest extends com.amazonaws.AmazonWebServiceR
     public UnsubscribeFromEventRequest clone() {
         return (UnsubscribeFromEventRequest) super.clone();
     }
+
 }

@@ -66,61 +66,63 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LayerPartTooSmallException").withModeledClass(
-                            com.amazonaws.services.ecr.model.LayerPartTooSmallException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidLayerPartException").withModeledClass(
-                            com.amazonaws.services.ecr.model.InvalidLayerPartException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                            com.amazonaws.services.ecr.model.InvalidParameterException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(com.amazonaws.services.ecr.model.ServerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withModeledClass(
-                            com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withModeledClass(
-                            com.amazonaws.services.ecr.model.EmptyUploadException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ImageNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecr.model.ImageNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LayersNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecr.model.LayersNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidLayerException").withModeledClass(
-                            com.amazonaws.services.ecr.model.InvalidLayerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RepositoryNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecr.model.RepositoryNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LayerInaccessibleException").withModeledClass(
-                            com.amazonaws.services.ecr.model.LayerInaccessibleException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.ecr.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UploadNotFoundException").withModeledClass(
-                            com.amazonaws.services.ecr.model.UploadNotFoundException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.ecr.model.AmazonECRException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LayerPartTooSmallException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LayerPartTooSmallException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLayerPartException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.InvalidLayerPartException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.ServerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.EmptyUploadException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ImageNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.ImageNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LayersNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LayersNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLayerException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.InvalidLayerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LayerInaccessibleException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LayerInaccessibleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UploadNotFoundException").withModeledClass(
+                                    com.amazonaws.services.ecr.model.UploadNotFoundException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ecr.model.AmazonECRException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECR. A credentials provider chain will be used that

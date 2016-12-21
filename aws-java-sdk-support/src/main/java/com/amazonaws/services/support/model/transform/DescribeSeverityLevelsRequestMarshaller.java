@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DescribeSeverityLevelsRequestMarshaller implements Marshaller<Request<DescribeSeverityLevelsRequest>, DescribeSeverityLevelsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeSeverityLevelsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeSeverityLevelsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -116,4 +116,5 @@ public class DeleteBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     public DeleteBuildRequest clone() {
         return (DeleteBuildRequest) super.clone();
     }
+
 }

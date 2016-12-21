@@ -47,6 +47,7 @@
     "cucumberModuleInjectorClassName" : "AWSServiceCatalogModuleInjector",
     "defaultEndpoint" : "servicecatalog.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "servicecatalog.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS Service Catalog</fullname> <p> <b>Overview</b> </p> <p> <a href=\"https://aws.amazon.com/servicecatalog/\">AWS Service Catalog</a> allows organizations to create and manage catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS Service Catalog end user API. To get the most out of this documentation, you need to be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html\">AWS Service Catalog Concepts</a>.</p> <p> <i>Additional Resources</i> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html\">AWS Service Catalog Administrator Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/userguide/introduction.html\">AWS Service Catalog User Guide</a> </p> </li> </ul>",
     "endpointPrefix" : "servicecatalog",
     "hasApiWithStreamInput" : false,
@@ -57,7 +58,10 @@
     "packagePath" : "com/amazonaws/services/servicecatalog",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : null,
     "serviceFullName" : "AWS Service Catalog",
     "serviceName" : "AWS Service Catalog",
@@ -1823,6 +1827,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId" ],
       "shapeName" : "AcceptPortfolioShareRequest",
       "unmarshaller" : null,
@@ -1855,6 +1861,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AcceptPortfolioShareResult",
       "unmarshaller" : {
@@ -2117,6 +2125,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AccessLevelFilter",
       "unmarshaller" : {
@@ -2161,6 +2171,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AccessLevelFilterKey",
       "unmarshaller" : {
@@ -2656,6 +2668,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId", "PrincipalARN", "PrincipalType" ],
       "shapeName" : "AssociatePrincipalWithPortfolioRequest",
       "unmarshaller" : null,
@@ -2688,6 +2702,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssociatePrincipalWithPortfolioResult",
       "unmarshaller" : {
@@ -3183,6 +3199,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "PortfolioId" ],
       "shapeName" : "AssociateProductWithPortfolioRequest",
       "unmarshaller" : null,
@@ -3215,6 +3233,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AssociateProductWithPortfolioResult",
       "unmarshaller" : {
@@ -3703,6 +3723,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConstraintDetail",
       "unmarshaller" : {
@@ -3965,6 +3987,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ConstraintSummary",
       "unmarshaller" : {
@@ -4799,6 +4823,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId", "ProductId", "Parameters", "Type", "IdempotencyToken" ],
       "shapeName" : "CreateConstraintRequest",
       "unmarshaller" : null,
@@ -5171,6 +5197,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateConstraintResult",
       "unmarshaller" : {
@@ -6034,6 +6062,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "DisplayName", "ProviderName", "IdempotencyToken" ],
       "shapeName" : "CreatePortfolioRequest",
       "unmarshaller" : null,
@@ -6435,6 +6465,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePortfolioResult",
       "unmarshaller" : {
@@ -6817,6 +6849,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId", "AccountId" ],
       "shapeName" : "CreatePortfolioShareRequest",
       "unmarshaller" : null,
@@ -6849,6 +6883,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePortfolioShareResult",
       "unmarshaller" : {
@@ -8390,6 +8426,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Owner", "ProductType", "ProvisioningArtifactParameters", "IdempotencyToken" ],
       "shapeName" : "CreateProductRequest",
       "unmarshaller" : null,
@@ -8904,6 +8942,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateProductResult",
       "unmarshaller" : {
@@ -9399,6 +9439,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "Parameters", "IdempotencyToken" ],
       "shapeName" : "CreateProvisioningArtifactRequest",
       "unmarshaller" : null,
@@ -9913,6 +9955,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateProvisioningArtifactResult",
       "unmarshaller" : {
@@ -10182,6 +10226,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DeleteConstraintRequest",
       "unmarshaller" : null,
@@ -10214,6 +10260,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteConstraintResult",
       "unmarshaller" : {
@@ -10483,6 +10531,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DeletePortfolioRequest",
       "unmarshaller" : null,
@@ -10515,6 +10565,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeletePortfolioResult",
       "unmarshaller" : {
@@ -10897,6 +10949,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId", "AccountId" ],
       "shapeName" : "DeletePortfolioShareRequest",
       "unmarshaller" : null,
@@ -10929,6 +10983,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeletePortfolioShareResult",
       "unmarshaller" : {
@@ -11198,6 +11254,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DeleteProductRequest",
       "unmarshaller" : null,
@@ -11230,6 +11288,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteProductResult",
       "unmarshaller" : {
@@ -11612,6 +11672,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "ProvisioningArtifactId" ],
       "shapeName" : "DeleteProvisioningArtifactRequest",
       "unmarshaller" : null,
@@ -11644,6 +11706,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteProvisioningArtifactResult",
       "unmarshaller" : {
@@ -11913,6 +11977,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DescribeConstraintRequest",
       "unmarshaller" : null,
@@ -12285,6 +12351,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeConstraintResult",
       "unmarshaller" : {
@@ -12554,6 +12622,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DescribePortfolioRequest",
       "unmarshaller" : null,
@@ -12955,6 +13025,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribePortfolioResult",
       "unmarshaller" : {
@@ -13224,6 +13296,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DescribeProductAsAdminRequest",
       "unmarshaller" : null,
@@ -13625,6 +13699,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeProductAsAdminResult",
       "unmarshaller" : {
@@ -13894,6 +13970,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DescribeProductRequest",
       "unmarshaller" : null,
@@ -14295,6 +14373,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeProductResult",
       "unmarshaller" : {
@@ -14564,6 +14644,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DescribeProductViewRequest",
       "unmarshaller" : null,
@@ -14965,6 +15047,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeProductViewResult",
       "unmarshaller" : {
@@ -15347,6 +15431,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProvisioningArtifactId", "ProductId" ],
       "shapeName" : "DescribeProvisioningArtifactRequest",
       "unmarshaller" : null,
@@ -15861,6 +15947,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeProvisioningArtifactResult",
       "unmarshaller" : {
@@ -16356,6 +16444,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "ProvisioningArtifactId" ],
       "shapeName" : "DescribeProvisioningParametersRequest",
       "unmarshaller" : null,
@@ -17154,6 +17244,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeProvisioningParametersResult",
       "unmarshaller" : {
@@ -17649,6 +17741,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "DescribeRecordRequest",
       "unmarshaller" : null,
@@ -18163,6 +18257,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeRecordResult",
       "unmarshaller" : {
@@ -18545,6 +18641,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId", "PrincipalARN" ],
       "shapeName" : "DisassociatePrincipalFromPortfolioRequest",
       "unmarshaller" : null,
@@ -18577,6 +18675,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisassociatePrincipalFromPortfolioResult",
       "unmarshaller" : {
@@ -18959,6 +19059,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "PortfolioId" ],
       "shapeName" : "DisassociateProductFromPortfolioRequest",
       "unmarshaller" : null,
@@ -18991,6 +19093,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisassociateProductFromPortfolioResult",
       "unmarshaller" : {
@@ -19026,6 +19130,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateResourceException",
       "unmarshaller" : null,
@@ -19058,6 +19164,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParametersException",
       "unmarshaller" : null,
@@ -19827,6 +19935,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LaunchPathSummary",
       "unmarshaller" : {
@@ -19862,6 +19972,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -20241,6 +20353,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAcceptedPortfolioSharesRequest",
       "unmarshaller" : null,
@@ -20642,6 +20756,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListAcceptedPortfolioSharesResult",
       "unmarshaller" : {
@@ -21250,6 +21366,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId" ],
       "shapeName" : "ListConstraintsForPortfolioRequest",
       "unmarshaller" : null,
@@ -21651,6 +21769,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListConstraintsForPortfolioResult",
       "unmarshaller" : {
@@ -22146,6 +22266,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId" ],
       "shapeName" : "ListLaunchPathsRequest",
       "unmarshaller" : null,
@@ -22547,6 +22669,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLaunchPathsResult",
       "unmarshaller" : {
@@ -22816,6 +22940,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId" ],
       "shapeName" : "ListPortfolioAccessRequest",
       "unmarshaller" : null,
@@ -23217,6 +23343,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPortfolioAccessResult",
       "unmarshaller" : {
@@ -23712,6 +23840,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId" ],
       "shapeName" : "ListPortfoliosForProductRequest",
       "unmarshaller" : null,
@@ -24113,6 +24243,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPortfoliosForProductResult",
       "unmarshaller" : {
@@ -24495,6 +24627,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPortfoliosRequest",
       "unmarshaller" : null,
@@ -24896,6 +25030,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPortfoliosResult",
       "unmarshaller" : {
@@ -25391,6 +25527,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId" ],
       "shapeName" : "ListPrincipalsForPortfolioRequest",
       "unmarshaller" : null,
@@ -25792,6 +25930,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPrincipalsForPortfolioResult",
       "unmarshaller" : {
@@ -26061,6 +26201,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId" ],
       "shapeName" : "ListProvisioningArtifactsRequest",
       "unmarshaller" : null,
@@ -26462,6 +26604,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListProvisioningArtifactsResult",
       "unmarshaller" : {
@@ -27070,6 +27214,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRecordHistoryRequest",
       "unmarshaller" : null,
@@ -27471,6 +27617,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRecordHistoryResult",
       "unmarshaller" : {
@@ -27733,6 +27881,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListRecordHistorySearchFilter",
       "unmarshaller" : {
@@ -28024,6 +28174,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ParameterConstraints",
       "unmarshaller" : {
@@ -28738,6 +28890,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PortfolioDetail",
       "unmarshaller" : {
@@ -29000,6 +29154,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Principal",
       "unmarshaller" : {
@@ -29038,6 +29194,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PrincipalType",
       "unmarshaller" : {
@@ -29076,6 +29234,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductSource",
       "unmarshaller" : {
@@ -29114,6 +29274,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductType",
       "unmarshaller" : {
@@ -29376,6 +29538,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductViewAggregationValue",
       "unmarshaller" : {
@@ -29864,6 +30028,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductViewDetail",
       "unmarshaller" : {
@@ -29908,6 +30074,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductViewFilterBy",
       "unmarshaller" : {
@@ -29952,6 +30120,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductViewSortBy",
       "unmarshaller" : {
@@ -31231,6 +31401,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProductViewSummary",
       "unmarshaller" : {
@@ -32717,6 +32889,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "ProvisioningArtifactId", "ProvisionedProductName", "ProvisionToken" ],
       "shapeName" : "ProvisionProductRequest",
       "unmarshaller" : null,
@@ -32863,6 +33037,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionProductResult",
       "unmarshaller" : {
@@ -33916,6 +34092,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisionedProductDetail",
       "unmarshaller" : {
@@ -34404,6 +34582,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisioningArtifact",
       "unmarshaller" : {
@@ -35005,6 +35185,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisioningArtifactDetail",
       "unmarshaller" : {
@@ -35719,6 +35901,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisioningArtifactParameter",
       "unmarshaller" : {
@@ -36349,6 +36533,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Info" ],
       "shapeName" : "ProvisioningArtifactProperties",
       "unmarshaller" : {
@@ -36387,6 +36573,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisioningArtifactType",
       "unmarshaller" : {
@@ -36649,6 +36837,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ProvisioningParameter",
       "unmarshaller" : {
@@ -38438,6 +38628,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RecordDetail",
       "unmarshaller" : {
@@ -38700,6 +38892,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RecordError",
       "unmarshaller" : {
@@ -39075,6 +39269,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RecordOutput",
       "unmarshaller" : {
@@ -39119,6 +39315,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RecordStatus",
       "unmarshaller" : {
@@ -39381,6 +39579,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RecordTag",
       "unmarshaller" : {
@@ -39650,6 +39850,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "PortfolioId" ],
       "shapeName" : "RejectPortfolioShareRequest",
       "unmarshaller" : null,
@@ -39682,6 +39884,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RejectPortfolioShareResult",
       "unmarshaller" : {
@@ -39717,6 +39921,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceInUseException",
       "unmarshaller" : null,
@@ -39749,6 +39955,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResourceNotFoundException",
       "unmarshaller" : null,
@@ -40241,6 +40449,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScanProvisionedProductsRequest",
       "unmarshaller" : null,
@@ -40642,6 +40852,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ScanProvisionedProductsResult",
       "unmarshaller" : {
@@ -41985,6 +42197,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchProductsAsAdminRequest",
       "unmarshaller" : null,
@@ -42386,6 +42600,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchProductsAsAdminResult",
       "unmarshaller" : {
@@ -43503,6 +43719,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchProductsRequest",
       "unmarshaller" : null,
@@ -44301,6 +44519,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SearchProductsResult",
       "unmarshaller" : {
@@ -44342,6 +44562,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SortOrder",
       "unmarshaller" : {
@@ -44386,6 +44608,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Status",
       "unmarshaller" : {
@@ -44648,6 +44872,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
       "shapeName" : "Tag",
       "unmarshaller" : {
@@ -45256,6 +45482,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "TerminateToken" ],
       "shapeName" : "TerminateProvisionedProductRequest",
       "unmarshaller" : null,
@@ -45402,6 +45630,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TerminateProvisionedProductResult",
       "unmarshaller" : {
@@ -45784,6 +46014,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "UpdateConstraintRequest",
       "unmarshaller" : null,
@@ -46156,6 +46388,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateConstraintResult",
       "unmarshaller" : {
@@ -47274,6 +47508,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "UpdatePortfolioRequest",
       "unmarshaller" : null,
@@ -47675,6 +47911,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdatePortfolioResult",
       "unmarshaller" : {
@@ -49245,6 +49483,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "Id" ],
       "shapeName" : "UpdateProductRequest",
       "unmarshaller" : null,
@@ -49646,6 +49886,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateProductResult",
       "unmarshaller" : {
@@ -50735,6 +50977,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "UpdateToken" ],
       "shapeName" : "UpdateProvisionedProductRequest",
       "unmarshaller" : null,
@@ -50881,6 +51125,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateProvisionedProductResult",
       "unmarshaller" : {
@@ -51489,6 +51735,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "ProductId", "ProvisioningArtifactId" ],
       "shapeName" : "UpdateProvisioningArtifactRequest",
       "unmarshaller" : null,
@@ -52003,6 +52251,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateProvisioningArtifactResult",
       "unmarshaller" : {
@@ -52378,6 +52628,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateProvisioningParameter",
       "unmarshaller" : {
@@ -52640,6 +52892,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsageInstruction",
       "unmarshaller" : {
@@ -52658,6 +52912,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

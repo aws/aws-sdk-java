@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPermissionRequest>, AddPermissionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddPermissionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddPermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

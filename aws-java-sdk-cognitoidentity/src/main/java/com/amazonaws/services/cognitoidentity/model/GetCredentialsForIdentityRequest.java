@@ -257,4 +257,5 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
     public GetCredentialsForIdentityRequest clone() {
         return (GetCredentialsForIdentityRequest) super.clone();
     }
+
 }

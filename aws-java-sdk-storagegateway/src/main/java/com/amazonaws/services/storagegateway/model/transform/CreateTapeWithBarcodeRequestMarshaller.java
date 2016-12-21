@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class CreateTapeWithBarcodeRequestMarshaller implements Marshaller<Request<CreateTapeWithBarcodeRequest>, CreateTapeWithBarcodeRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CreateTapeWithBarcodeRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CreateTapeWithBarcodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

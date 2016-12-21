@@ -116,4 +116,5 @@ public class GetRepositoryRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetRepositoryRequest clone() {
         return (GetRepositoryRequest) super.clone();
     }
+
 }

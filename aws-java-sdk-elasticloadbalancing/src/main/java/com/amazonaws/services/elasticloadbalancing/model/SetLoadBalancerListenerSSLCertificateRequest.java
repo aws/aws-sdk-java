@@ -246,4 +246,5 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends com.amazonaws.
     public SetLoadBalancerListenerSSLCertificateRequest clone() {
         return (SetLoadBalancerListenerSSLCertificateRequest) super.clone();
     }
+
 }

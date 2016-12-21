@@ -174,4 +174,5 @@ public class DescribeActivityTypeRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeActivityTypeRequest clone() {
         return (DescribeActivityTypeRequest) super.clone();
     }
+
 }

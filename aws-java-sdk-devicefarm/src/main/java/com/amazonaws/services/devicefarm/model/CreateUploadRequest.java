@@ -1303,4 +1303,5 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateUploadRequest clone() {
         return (CreateUploadRequest) super.clone();
     }
+
 }

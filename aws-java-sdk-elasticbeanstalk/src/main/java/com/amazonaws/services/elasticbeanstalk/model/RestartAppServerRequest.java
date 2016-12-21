@@ -217,4 +217,5 @@ public class RestartAppServerRequest extends com.amazonaws.AmazonWebServiceReque
     public RestartAppServerRequest clone() {
         return (RestartAppServerRequest) super.clone();
     }
+
 }

@@ -322,4 +322,5 @@ public class DescribeMaintenanceWindowExecutionTasksRequest extends com.amazonaw
     public DescribeMaintenanceWindowExecutionTasksRequest clone() {
         return (DescribeMaintenanceWindowExecutionTasksRequest) super.clone();
     }
+
 }

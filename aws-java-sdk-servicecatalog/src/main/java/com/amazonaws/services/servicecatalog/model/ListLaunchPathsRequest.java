@@ -371,4 +371,5 @@ public class ListLaunchPathsRequest extends com.amazonaws.AmazonWebServiceReques
     public ListLaunchPathsRequest clone() {
         return (ListLaunchPathsRequest) super.clone();
     }
+
 }

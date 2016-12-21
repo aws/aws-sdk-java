@@ -519,4 +519,5 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     public CreateElasticsearchDomainRequest clone() {
         return (CreateElasticsearchDomainRequest) super.clone();
     }
+
 }

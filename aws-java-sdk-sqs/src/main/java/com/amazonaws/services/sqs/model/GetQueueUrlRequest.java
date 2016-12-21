@@ -213,4 +213,5 @@ public class GetQueueUrlRequest extends com.amazonaws.AmazonWebServiceRequest im
     public GetQueueUrlRequest clone() {
         return (GetQueueUrlRequest) super.clone();
     }
+
 }

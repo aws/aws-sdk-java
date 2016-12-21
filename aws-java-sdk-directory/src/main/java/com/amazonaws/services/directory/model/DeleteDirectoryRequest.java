@@ -116,4 +116,5 @@ public class DeleteDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteDirectoryRequest clone() {
         return (DeleteDirectoryRequest) super.clone();
     }
+
 }

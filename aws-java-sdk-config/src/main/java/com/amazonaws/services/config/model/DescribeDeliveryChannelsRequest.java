@@ -149,4 +149,5 @@ public class DescribeDeliveryChannelsRequest extends com.amazonaws.AmazonWebServ
     public DescribeDeliveryChannelsRequest clone() {
         return (DescribeDeliveryChannelsRequest) super.clone();
     }
+
 }

@@ -130,4 +130,5 @@ public class GetConnectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public GetConnectorsRequest clone() {
         return (GetConnectorsRequest) super.clone();
     }
+
 }

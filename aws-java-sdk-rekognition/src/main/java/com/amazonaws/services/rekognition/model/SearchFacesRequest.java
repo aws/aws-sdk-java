@@ -287,4 +287,5 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     public SearchFacesRequest clone() {
         return (SearchFacesRequest) super.clone();
     }
+
 }

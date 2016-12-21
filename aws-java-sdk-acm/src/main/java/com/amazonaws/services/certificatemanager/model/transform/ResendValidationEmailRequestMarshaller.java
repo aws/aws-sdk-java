@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ResendValidationEmailRequestMarshaller implements Marshaller<Request<ResendValidationEmailRequest>, ResendValidationEmailRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ResendValidationEmailRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ResendValidationEmailRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

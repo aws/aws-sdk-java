@@ -167,4 +167,5 @@ public class DeleteDomainEntryRequest extends com.amazonaws.AmazonWebServiceRequ
     public DeleteDomainEntryRequest clone() {
         return (DeleteDomainEntryRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateShardCountRequestMarshaller implements Marshaller<Request<UpdateShardCountRequest>, UpdateShardCountRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateShardCountRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateShardCountRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

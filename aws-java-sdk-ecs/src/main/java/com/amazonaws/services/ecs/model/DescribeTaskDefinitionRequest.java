@@ -128,4 +128,5 @@ public class DescribeTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     public DescribeTaskDefinitionRequest clone() {
         return (DescribeTaskDefinitionRequest) super.clone();
     }
+
 }

@@ -116,4 +116,5 @@ public class GetSuiteRequest extends com.amazonaws.AmazonWebServiceRequest imple
     public GetSuiteRequest clone() {
         return (GetSuiteRequest) super.clone();
     }
+
 }

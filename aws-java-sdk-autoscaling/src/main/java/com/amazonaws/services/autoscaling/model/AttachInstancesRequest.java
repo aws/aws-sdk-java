@@ -202,4 +202,5 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     public AttachInstancesRequest clone() {
         return (AttachInstancesRequest) super.clone();
     }
+
 }

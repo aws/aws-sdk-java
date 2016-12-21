@@ -114,4 +114,5 @@ public class DeleteCollectionRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteCollectionRequest clone() {
         return (DeleteCollectionRequest) super.clone();
     }
+
 }

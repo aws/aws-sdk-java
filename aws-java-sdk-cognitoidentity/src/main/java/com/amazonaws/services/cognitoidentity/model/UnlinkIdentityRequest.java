@@ -273,4 +273,5 @@ public class UnlinkIdentityRequest extends com.amazonaws.AmazonWebServiceRequest
     public UnlinkIdentityRequest clone() {
         return (UnlinkIdentityRequest) super.clone();
     }
+
 }

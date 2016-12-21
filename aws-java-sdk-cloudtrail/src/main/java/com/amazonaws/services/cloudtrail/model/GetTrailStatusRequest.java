@@ -148,4 +148,5 @@ public class GetTrailStatusRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetTrailStatusRequest clone() {
         return (GetTrailStatusRequest) super.clone();
     }
+
 }

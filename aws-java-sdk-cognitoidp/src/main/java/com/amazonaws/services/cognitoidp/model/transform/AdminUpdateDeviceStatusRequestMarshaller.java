@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminUpdateDeviceStatusRequestMarshaller implements Marshaller<Request<AdminUpdateDeviceStatusRequest>, AdminUpdateDeviceStatusRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminUpdateDeviceStatusRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminUpdateDeviceStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

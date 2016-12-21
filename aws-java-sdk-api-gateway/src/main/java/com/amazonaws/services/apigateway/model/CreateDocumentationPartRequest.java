@@ -229,4 +229,5 @@ public class CreateDocumentationPartRequest extends com.amazonaws.AmazonWebServi
     public CreateDocumentationPartRequest clone() {
         return (CreateDocumentationPartRequest) super.clone();
     }
+
 }

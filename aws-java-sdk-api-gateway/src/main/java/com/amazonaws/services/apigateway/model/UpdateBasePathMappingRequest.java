@@ -256,4 +256,5 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     public UpdateBasePathMappingRequest clone() {
         return (UpdateBasePathMappingRequest) super.clone();
     }
+
 }

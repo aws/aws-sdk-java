@@ -60,29 +60,30 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withModeledClass(
-                            com.amazonaws.services.route53domains.model.DuplicateRequestException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidInput").withModeledClass(
-                            com.amazonaws.services.route53domains.model.InvalidInputException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("TLDRulesViolation").withModeledClass(
-                            com.amazonaws.services.route53domains.model.TLDRulesViolationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DomainLimitExceeded").withModeledClass(
-                            com.amazonaws.services.route53domains.model.DomainLimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedTLD").withModeledClass(
-                            com.amazonaws.services.route53domains.model.UnsupportedTLDException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withModeledClass(
-                            com.amazonaws.services.route53domains.model.OperationLimitExceededException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withModeledClass(
+                                    com.amazonaws.services.route53domains.model.DuplicateRequestException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInput").withModeledClass(
+                                    com.amazonaws.services.route53domains.model.InvalidInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TLDRulesViolation").withModeledClass(
+                                    com.amazonaws.services.route53domains.model.TLDRulesViolationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DomainLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.route53domains.model.DomainLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedTLD").withModeledClass(
+                                    com.amazonaws.services.route53domains.model.UnsupportedTLDException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.route53domains.model.OperationLimitExceededException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53 Domains. A credentials provider chain will

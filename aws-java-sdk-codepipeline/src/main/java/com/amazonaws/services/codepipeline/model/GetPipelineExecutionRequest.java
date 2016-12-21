@@ -169,4 +169,5 @@ public class GetPipelineExecutionRequest extends com.amazonaws.AmazonWebServiceR
     public GetPipelineExecutionRequest clone() {
         return (GetPipelineExecutionRequest) super.clone();
     }
+
 }

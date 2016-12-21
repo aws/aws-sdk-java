@@ -275,4 +275,5 @@ public class GetIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
     public GetIntegrationResponseRequest clone() {
         return (GetIntegrationResponseRequest) super.clone();
     }
+
 }

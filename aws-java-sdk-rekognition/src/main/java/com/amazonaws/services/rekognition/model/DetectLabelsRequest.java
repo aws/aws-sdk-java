@@ -259,4 +259,5 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DetectLabelsRequest clone() {
         return (DetectLabelsRequest) super.clone();
     }
+
 }

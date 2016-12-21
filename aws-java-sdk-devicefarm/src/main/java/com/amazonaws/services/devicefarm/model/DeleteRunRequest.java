@@ -116,4 +116,5 @@ public class DeleteRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public DeleteRunRequest clone() {
         return (DeleteRunRequest) super.clone();
     }
+
 }

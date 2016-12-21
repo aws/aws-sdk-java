@@ -284,4 +284,5 @@ public class SetVaultNotificationsRequest extends com.amazonaws.AmazonWebService
     public SetVaultNotificationsRequest clone() {
         return (SetVaultNotificationsRequest) super.clone();
     }
+
 }

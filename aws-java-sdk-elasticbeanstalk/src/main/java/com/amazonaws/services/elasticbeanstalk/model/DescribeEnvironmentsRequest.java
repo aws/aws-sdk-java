@@ -552,4 +552,5 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeEnvironmentsRequest clone() {
         return (DescribeEnvironmentsRequest) super.clone();
     }
+
 }

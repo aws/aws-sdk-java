@@ -114,4 +114,5 @@ public class DeregisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceR
     public DeregisterEcsClusterRequest clone() {
         return (DeregisterEcsClusterRequest) super.clone();
     }
+
 }

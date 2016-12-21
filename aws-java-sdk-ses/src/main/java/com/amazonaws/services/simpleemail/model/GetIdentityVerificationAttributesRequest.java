@@ -152,4 +152,5 @@ public class GetIdentityVerificationAttributesRequest extends com.amazonaws.Amaz
     public GetIdentityVerificationAttributesRequest clone() {
         return (GetIdentityVerificationAttributesRequest) super.clone();
     }
+
 }

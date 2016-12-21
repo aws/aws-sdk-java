@@ -424,4 +424,5 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     public CreateComputeEnvironmentRequest clone() {
         return (CreateComputeEnvironmentRequest) super.clone();
     }
+
 }

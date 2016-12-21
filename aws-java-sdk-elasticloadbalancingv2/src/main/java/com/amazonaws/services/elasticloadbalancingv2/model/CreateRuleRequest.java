@@ -592,4 +592,5 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public CreateRuleRequest clone() {
         return (CreateRuleRequest) super.clone();
     }
+
 }

@@ -169,4 +169,5 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
     public AdminEnableUserRequest clone() {
         return (AdminEnableUserRequest) super.clone();
     }
+
 }

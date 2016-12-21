@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ReadPresetRequestMarshaller implements Marshaller<Request<ReadPresetRequest>, ReadPresetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ReadPresetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ReadPresetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -116,4 +116,5 @@ public class DeregisterOnPremisesInstanceRequest extends com.amazonaws.AmazonWeb
     public DeregisterOnPremisesInstanceRequest clone() {
         return (DeregisterOnPremisesInstanceRequest) super.clone();
     }
+
 }

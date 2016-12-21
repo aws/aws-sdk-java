@@ -130,4 +130,5 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteBudgetRequest clone() {
         return (DeleteBudgetRequest) super.clone();
     }
+
 }

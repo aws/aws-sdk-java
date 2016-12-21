@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class UpdateEndpointsBatchRequestMarshaller implements Marshaller<Request<UpdateEndpointsBatchRequest>, UpdateEndpointsBatchRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public UpdateEndpointsBatchRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public UpdateEndpointsBatchRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

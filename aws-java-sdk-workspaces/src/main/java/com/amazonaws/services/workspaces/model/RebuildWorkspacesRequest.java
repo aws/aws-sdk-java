@@ -149,4 +149,5 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
     public RebuildWorkspacesRequest clone() {
         return (RebuildWorkspacesRequest) super.clone();
     }
+
 }

@@ -220,4 +220,5 @@ public class UpdateAssociationStatusRequest extends com.amazonaws.AmazonWebServi
     public UpdateAssociationStatusRequest clone() {
         return (UpdateAssociationStatusRequest) super.clone();
     }
+
 }

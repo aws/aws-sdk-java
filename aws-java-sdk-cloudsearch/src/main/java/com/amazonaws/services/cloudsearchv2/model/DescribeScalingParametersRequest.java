@@ -98,4 +98,5 @@ public class DescribeScalingParametersRequest extends com.amazonaws.AmazonWebSer
     public DescribeScalingParametersRequest clone() {
         return (DescribeScalingParametersRequest) super.clone();
     }
+
 }

@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ImportApiKeysRequestMarshaller implements Marshaller<Request<ImportApiKeysRequest>, ImportApiKeysRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ImportApiKeysRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ImportApiKeysRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

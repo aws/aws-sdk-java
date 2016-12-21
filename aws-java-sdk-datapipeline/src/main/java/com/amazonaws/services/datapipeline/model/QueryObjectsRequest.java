@@ -370,4 +370,5 @@ public class QueryObjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public QueryObjectsRequest clone() {
         return (QueryObjectsRequest) super.clone();
     }
+
 }

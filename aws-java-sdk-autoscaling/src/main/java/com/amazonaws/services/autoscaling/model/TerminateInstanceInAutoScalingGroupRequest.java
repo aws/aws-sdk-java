@@ -182,4 +182,5 @@ public class TerminateInstanceInAutoScalingGroupRequest extends com.amazonaws.Am
     public TerminateInstanceInAutoScalingGroupRequest clone() {
         return (TerminateInstanceInAutoScalingGroupRequest) super.clone();
     }
+
 }

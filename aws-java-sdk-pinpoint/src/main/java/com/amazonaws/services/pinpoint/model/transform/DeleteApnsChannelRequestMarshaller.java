@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteApnsChannelRequestMarshaller implements Marshaller<Request<DeleteApnsChannelRequest>, DeleteApnsChannelRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteApnsChannelRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteApnsChannelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

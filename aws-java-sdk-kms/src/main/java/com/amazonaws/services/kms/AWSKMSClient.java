@@ -161,69 +161,72 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
-    private final SdkJsonProtocolFactory protocolFactory = new SdkJsonProtocolFactory(new JsonClientMetadata()
-            .withProtocolVersion("1.1")
-            .withSupportsCbor(false)
-            .withSupportsIon(false)
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("ExpiredImportTokenException").withModeledClass(
-                            com.amazonaws.services.kms.model.ExpiredImportTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withModeledClass(
-                            com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("IncorrectKeyMaterialException").withModeledClass(
-                            com.amazonaws.services.kms.model.IncorrectKeyMaterialException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidImportTokenException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidImportTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidArnException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
-                            com.amazonaws.services.kms.model.KMSInvalidStateException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DisabledException").withModeledClass(com.amazonaws.services.kms.model.DisabledException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(com.amazonaws.services.kms.model.NotFoundException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("KeyUnavailableException").withModeledClass(
-                            com.amazonaws.services.kms.model.KeyUnavailableException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                            com.amazonaws.services.kms.model.LimitExceededException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidCiphertextException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidCiphertextException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidGrantIdException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidGrantIdException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidGrantTokenException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
-                            com.amazonaws.services.kms.model.UnsupportedOperationException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
-                            com.amazonaws.services.kms.model.AlreadyExistsException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidKeyUsageException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidMarkerException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidMarkerException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("InvalidAliasNameException").withModeledClass(
-                            com.amazonaws.services.kms.model.InvalidAliasNameException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("DependencyTimeoutException").withModeledClass(
-                            com.amazonaws.services.kms.model.DependencyTimeoutException.class))
-            .addErrorMetadata(
-                    new JsonErrorShapeMetadata().withErrorCode("KMSInternalException").withModeledClass(
-                            com.amazonaws.services.kms.model.KMSInternalException.class))
-            .withBaseServiceExceptionClass(com.amazonaws.services.kms.model.AWSKMSException.class));
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredImportTokenException").withModeledClass(
+                                    com.amazonaws.services.kms.model.ExpiredImportTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withModeledClass(
+                                    com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncorrectKeyMaterialException").withModeledClass(
+                                    com.amazonaws.services.kms.model.IncorrectKeyMaterialException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportTokenException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidImportTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
+                                    com.amazonaws.services.kms.model.KMSInvalidStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DisabledException").withModeledClass(
+                                    com.amazonaws.services.kms.model.DisabledException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.kms.model.NotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KeyUnavailableException").withModeledClass(
+                                    com.amazonaws.services.kms.model.KeyUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.kms.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCiphertextException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidCiphertextException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGrantIdException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidGrantIdException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGrantTokenException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
+                                    com.amazonaws.services.kms.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.kms.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKeyUsageException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMarkerException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidMarkerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAliasNameException").withModeledClass(
+                                    com.amazonaws.services.kms.model.InvalidAliasNameException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DependencyTimeoutException").withModeledClass(
+                                    com.amazonaws.services.kms.model.DependencyTimeoutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInternalException").withModeledClass(
+                                    com.amazonaws.services.kms.model.KMSInternalException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kms.model.AWSKMSException.class));
 
     /**
      * Constructs a new client to invoke service methods on KMS. A credentials provider chain will be used that searches

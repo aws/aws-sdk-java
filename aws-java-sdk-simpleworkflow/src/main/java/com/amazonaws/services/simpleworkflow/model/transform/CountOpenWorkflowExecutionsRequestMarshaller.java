@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class CountOpenWorkflowExecutionsRequestMarshaller implements
         Marshaller<Request<CountOpenWorkflowExecutionsRequest>, CountOpenWorkflowExecutionsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public CountOpenWorkflowExecutionsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public CountOpenWorkflowExecutionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

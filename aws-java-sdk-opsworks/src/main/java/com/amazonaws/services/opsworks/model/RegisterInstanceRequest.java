@@ -435,4 +435,5 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     public RegisterInstanceRequest clone() {
         return (RegisterInstanceRequest) super.clone();
     }
+
 }

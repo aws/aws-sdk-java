@@ -220,4 +220,5 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdateDocumentRequest clone() {
         return (UpdateDocumentRequest) super.clone();
     }
+
 }

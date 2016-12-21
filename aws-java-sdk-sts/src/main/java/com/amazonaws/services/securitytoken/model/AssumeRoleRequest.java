@@ -908,4 +908,5 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public AssumeRoleRequest clone() {
         return (AssumeRoleRequest) super.clone();
     }
+
 }

@@ -117,4 +117,5 @@ public class DeleteElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     public DeleteElasticsearchDomainRequest clone() {
         return (DeleteElasticsearchDomainRequest) super.clone();
     }
+
 }

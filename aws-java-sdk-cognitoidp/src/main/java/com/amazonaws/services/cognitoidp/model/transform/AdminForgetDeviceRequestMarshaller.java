@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AdminForgetDeviceRequestMarshaller implements Marshaller<Request<AdminForgetDeviceRequest>, AdminForgetDeviceRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AdminForgetDeviceRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AdminForgetDeviceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

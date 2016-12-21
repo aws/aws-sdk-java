@@ -44,9 +44,9 @@ import com.amazonaws.protocol.json.*;
 public class DescribeElasticsearchDomainRequestMarshaller implements
         Marshaller<Request<DescribeElasticsearchDomainRequest>, DescribeElasticsearchDomainRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DescribeElasticsearchDomainRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DescribeElasticsearchDomainRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

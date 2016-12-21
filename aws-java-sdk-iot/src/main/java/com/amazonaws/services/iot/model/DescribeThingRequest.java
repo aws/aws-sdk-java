@@ -116,4 +116,5 @@ public class DescribeThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     public DescribeThingRequest clone() {
         return (DescribeThingRequest) super.clone();
     }
+
 }

@@ -1369,4 +1369,5 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     public RestoreDBClusterFromSnapshotRequest clone() {
         return (RestoreDBClusterFromSnapshotRequest) super.clone();
     }
+
 }

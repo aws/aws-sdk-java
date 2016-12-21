@@ -168,4 +168,5 @@ public class CreatePrivateVirtualInterfaceRequest extends com.amazonaws.AmazonWe
     public CreatePrivateVirtualInterfaceRequest clone() {
         return (CreatePrivateVirtualInterfaceRequest) super.clone();
     }
+
 }

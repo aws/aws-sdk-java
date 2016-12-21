@@ -532,4 +532,5 @@ public class ListConfigurationsRequest extends com.amazonaws.AmazonWebServiceReq
     public ListConfigurationsRequest clone() {
         return (ListConfigurationsRequest) super.clone();
     }
+
 }

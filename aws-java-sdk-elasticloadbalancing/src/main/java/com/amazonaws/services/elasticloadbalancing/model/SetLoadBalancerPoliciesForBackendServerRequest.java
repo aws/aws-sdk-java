@@ -259,4 +259,5 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends com.amazonaw
     public SetLoadBalancerPoliciesForBackendServerRequest clone() {
         return (SetLoadBalancerPoliciesForBackendServerRequest) super.clone();
     }
+
 }

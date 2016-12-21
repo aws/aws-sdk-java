@@ -371,4 +371,5 @@ public class DescribeRecordRequest extends com.amazonaws.AmazonWebServiceRequest
     public DescribeRecordRequest clone() {
         return (DescribeRecordRequest) super.clone();
     }
+
 }

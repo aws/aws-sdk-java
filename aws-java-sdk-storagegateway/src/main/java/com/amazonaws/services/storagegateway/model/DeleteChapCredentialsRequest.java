@@ -188,4 +188,5 @@ public class DeleteChapCredentialsRequest extends com.amazonaws.AmazonWebService
     public DeleteChapCredentialsRequest clone() {
         return (DeleteChapCredentialsRequest) super.clone();
     }
+
 }

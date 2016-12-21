@@ -114,4 +114,5 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
     public GetPatchBaselineForPatchGroupRequest clone() {
         return (GetPatchBaselineForPatchGroupRequest) super.clone();
     }
+
 }

@@ -280,4 +280,5 @@ public class RespondDecisionTaskCompletedRequest extends com.amazonaws.AmazonWeb
     public RespondDecisionTaskCompletedRequest clone() {
         return (RespondDecisionTaskCompletedRequest) super.clone();
     }
+
 }

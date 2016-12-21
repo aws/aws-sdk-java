@@ -130,4 +130,5 @@ public class UpdateGcmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateGcmChannelRequest clone() {
         return (UpdateGcmChannelRequest) super.clone();
     }
+
 }

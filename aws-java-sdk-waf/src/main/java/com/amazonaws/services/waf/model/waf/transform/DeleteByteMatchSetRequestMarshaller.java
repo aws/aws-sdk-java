@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteByteMatchSetRequestMarshaller implements Marshaller<Request<DeleteByteMatchSetRequest>, DeleteByteMatchSetRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteByteMatchSetRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteByteMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

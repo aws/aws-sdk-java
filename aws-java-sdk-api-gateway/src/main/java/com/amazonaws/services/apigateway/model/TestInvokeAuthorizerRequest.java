@@ -511,4 +511,5 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
     public TestInvokeAuthorizerRequest clone() {
         return (TestInvokeAuthorizerRequest) super.clone();
     }
+
 }

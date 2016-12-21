@@ -253,4 +253,5 @@ public class DescribeAvailablePatchesRequest extends com.amazonaws.AmazonWebServ
     public DescribeAvailablePatchesRequest clone() {
         return (DescribeAvailablePatchesRequest) super.clone();
     }
+
 }

@@ -231,4 +231,5 @@ public class SetIdentityFeedbackForwardingEnabledRequest extends com.amazonaws.A
     public SetIdentityFeedbackForwardingEnabledRequest clone() {
         return (SetIdentityFeedbackForwardingEnabledRequest) super.clone();
     }
+
 }

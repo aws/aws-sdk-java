@@ -216,4 +216,5 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
     public PutEvaluationsRequest clone() {
         return (PutEvaluationsRequest) super.clone();
     }
+
 }

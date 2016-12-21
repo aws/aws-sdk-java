@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteDomainNameRequestMarshaller implements Marshaller<Request<DeleteDomainNameRequest>, DeleteDomainNameRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteDomainNameRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteDomainNameRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

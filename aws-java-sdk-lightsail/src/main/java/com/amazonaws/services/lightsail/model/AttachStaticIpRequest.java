@@ -167,4 +167,5 @@ public class AttachStaticIpRequest extends com.amazonaws.AmazonWebServiceRequest
     public AttachStaticIpRequest clone() {
         return (AttachStaticIpRequest) super.clone();
     }
+
 }

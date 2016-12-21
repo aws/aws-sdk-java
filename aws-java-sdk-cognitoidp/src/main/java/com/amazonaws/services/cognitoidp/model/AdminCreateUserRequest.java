@@ -1218,4 +1218,5 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     public AdminCreateUserRequest clone() {
         return (AdminCreateUserRequest) super.clone();
     }
+
 }

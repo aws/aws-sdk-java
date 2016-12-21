@@ -1534,4 +1534,5 @@ public class SetQueueAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     public SetQueueAttributesRequest clone() {
         return (SetQueueAttributesRequest) super.clone();
     }
+
 }

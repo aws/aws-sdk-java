@@ -286,4 +286,5 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public GetConfigRequest clone() {
         return (GetConfigRequest) super.clone();
     }
+
 }

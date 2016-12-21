@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListPipelinesRequestMarshaller implements Marshaller<Request<ListPipelinesRequest>, ListPipelinesRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListPipelinesRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListPipelinesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

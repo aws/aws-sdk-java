@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddCacheRequestMarshaller implements Marshaller<Request<AddCacheRequest>, AddCacheRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddCacheRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddCacheRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

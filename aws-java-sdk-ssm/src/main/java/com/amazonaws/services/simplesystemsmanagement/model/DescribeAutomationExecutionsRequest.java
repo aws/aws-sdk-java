@@ -260,4 +260,5 @@ public class DescribeAutomationExecutionsRequest extends com.amazonaws.AmazonWeb
     public DescribeAutomationExecutionsRequest clone() {
         return (DescribeAutomationExecutionsRequest) super.clone();
     }
+
 }

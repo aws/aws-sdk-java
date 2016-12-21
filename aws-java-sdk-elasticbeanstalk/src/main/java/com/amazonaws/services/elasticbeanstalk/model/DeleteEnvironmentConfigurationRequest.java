@@ -190,4 +190,5 @@ public class DeleteEnvironmentConfigurationRequest extends com.amazonaws.AmazonW
     public DeleteEnvironmentConfigurationRequest clone() {
         return (DeleteEnvironmentConfigurationRequest) super.clone();
     }
+
 }

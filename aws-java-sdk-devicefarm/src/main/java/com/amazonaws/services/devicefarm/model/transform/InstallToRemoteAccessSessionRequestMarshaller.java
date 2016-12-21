@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class InstallToRemoteAccessSessionRequestMarshaller implements
         Marshaller<Request<InstallToRemoteAccessSessionRequest>, InstallToRemoteAccessSessionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public InstallToRemoteAccessSessionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public InstallToRemoteAccessSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

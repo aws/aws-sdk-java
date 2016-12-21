@@ -176,4 +176,5 @@ public class RegisterEventTopicRequest extends com.amazonaws.AmazonWebServiceReq
     public RegisterEventTopicRequest clone() {
         return (RegisterEventTopicRequest) super.clone();
     }
+
 }

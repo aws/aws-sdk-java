@@ -113,4 +113,5 @@ public class DescribeIdentityPoolUsageRequest extends com.amazonaws.AmazonWebSer
     public DescribeIdentityPoolUsageRequest clone() {
         return (DescribeIdentityPoolUsageRequest) super.clone();
     }
+
 }

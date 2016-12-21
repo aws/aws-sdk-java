@@ -418,4 +418,5 @@ public class ListAttachedUserPoliciesRequest extends com.amazonaws.AmazonWebServ
     public ListAttachedUserPoliciesRequest clone() {
         return (ListAttachedUserPoliciesRequest) super.clone();
     }
+
 }

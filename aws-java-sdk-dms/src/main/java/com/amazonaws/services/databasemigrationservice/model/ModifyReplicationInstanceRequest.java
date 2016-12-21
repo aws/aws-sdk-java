@@ -948,4 +948,5 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
     public ModifyReplicationInstanceRequest clone() {
         return (ModifyReplicationInstanceRequest) super.clone();
     }
+
 }

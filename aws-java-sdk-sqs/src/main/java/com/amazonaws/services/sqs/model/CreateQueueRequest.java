@@ -1583,4 +1583,5 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     public CreateQueueRequest clone() {
         return (CreateQueueRequest) super.clone();
     }
+
 }

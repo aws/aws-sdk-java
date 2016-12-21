@@ -202,4 +202,5 @@ public class AttachLoadBalancerToSubnetsRequest extends com.amazonaws.AmazonWebS
     public AttachLoadBalancerToSubnetsRequest clone() {
         return (AttachLoadBalancerToSubnetsRequest) super.clone();
     }
+
 }

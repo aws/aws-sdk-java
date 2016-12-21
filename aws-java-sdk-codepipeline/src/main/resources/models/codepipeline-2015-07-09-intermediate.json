@@ -43,6 +43,7 @@
     "cucumberModuleInjectorClassName" : "AWSCodePipelineModuleInjector",
     "defaultEndpoint" : "https://codepipeline.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "codepipeline.us-east-1.amazonaws.com",
+    "defaultRegion" : null,
     "documentation" : "<fullname>AWS CodePipeline</fullname> <p> <b>Overview</b> </p> <p>This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information, see the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html\">AWS CodePipeline User Guide</a>.</p> <p>You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described below.</p> <p> <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions, gates, and stages. </p> <p>You can work with pipelines by calling:</p> <ul> <li> <p> <a>CreatePipeline</a>, which creates a uniquely-named pipeline.</p> </li> <li> <p> <a>DeletePipeline</a>, which deletes the specified pipeline.</p> </li> <li> <p> <a>GetPipeline</a>, which returns information about a pipeline structure.</p> </li> <li> <p> <a>GetPipelineExecution</a>, which returns information about a specific execution of a pipeline.</p> </li> <li> <p> <a>GetPipelineState</a>, which returns information about the current state of the stages and actions of a pipeline.</p> </li> <li> <p> <a>ListPipelines</a>, which gets a summary of all of the pipelines associated with your account.</p> </li> <li> <p> <a>StartPipelineExecution</a>, which runs the the most recent revision of an artifact through the pipeline.</p> </li> <li> <p> <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the structure of the pipeline.</p> </li> </ul> <p>Pipelines include <i>stages</i>, which are logical groupings of gates and actions. Each stage contains one or more actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, also refer to the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html\">AWS CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include <i>actions</i>, which are categorized into categories such as source or build actions performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and <a>GetPipelineState</a>. </p> <p>Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.</p> <p>You can work with transitions by calling:</p> <ul> <li> <p> <a>DisableStageTransition</a>, which prevents artifacts from transitioning to the next stage in a pipeline.</p> </li> <li> <p> <a>EnableStageTransition</a>, which enables transition of artifacts between stages in a pipeline. </p> </li> </ul> <p> <b>Using the API to integrate with AWS CodePipeline</b> </p> <p>For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the expected sequence varies from the standard API user. In order to integrate with AWS CodePipeline, developers will need to work with the following items:</p> <p> <b>Jobs</b>, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source. </p> <p>You can work with jobs by calling:</p> <ul> <li> <p> <a>AcknowledgeJob</a>, which confirms whether a job worker has received the specified job,</p> </li> <li> <p> <a>GetJobDetails</a>, which returns the details of a job,</p> </li> <li> <p> <a>PollForJobs</a>, which determines whether there are any jobs to act upon, </p> </li> <li> <p> <a>PutJobFailureResult</a>, which provides details of a job failure, and</p> </li> <li> <p> <a>PutJobSuccessResult</a>, which provides details of a job success.</p> </li> </ul> <p> <b>Third party jobs</b>, which are instances of an action created by a partner action and integrated into AWS CodePipeline. Partner actions are created by members of the AWS Partner Network.</p> <p>You can work with third party jobs by calling:</p> <ul> <li> <p> <a>AcknowledgeThirdPartyJob</a>, which confirms whether a job worker has received the specified job,</p> </li> <li> <p> <a>GetThirdPartyJobDetails</a>, which requests the details of a job for a partner action,</p> </li> <li> <p> <a>PollForThirdPartyJobs</a>, which determines whether there are any jobs to act upon, </p> </li> <li> <p> <a>PutThirdPartyJobFailureResult</a>, which provides details of a job failure, and</p> </li> <li> <p> <a>PutThirdPartyJobSuccessResult</a>, which provides details of a job success.</p> </li> </ul>",
     "endpointPrefix" : "codepipeline",
     "hasApiWithStreamInput" : false,
@@ -53,7 +54,10 @@
     "packagePath" : "com/amazonaws/services/codepipeline",
     "protocol" : "json",
     "protocolDefaultExceptionUmarshallerImpl" : null,
+    "protocolFactory" : "com.amazonaws.protocol.json.SdkJsonProtocolFactory",
     "requestBaseFqcn" : "com.amazonaws.AmazonWebServiceRequest",
+    "requiresApiKey" : false,
+    "requiresIamSigners" : false,
     "serviceAbbreviation" : "CodePipeline",
     "serviceFullName" : "AWS CodePipeline",
     "serviceName" : "CodePipeline",
@@ -1454,6 +1458,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "accessKeyId", "secretAccessKey", "sessionToken" ],
       "shapeName" : "AWSSessionCredentials",
       "unmarshaller" : {
@@ -1723,6 +1729,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "nonce" ],
       "shapeName" : "AcknowledgeJobRequest",
       "unmarshaller" : null,
@@ -1869,6 +1877,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AcknowledgeJobResult",
       "unmarshaller" : {
@@ -2251,6 +2261,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "nonce", "clientToken" ],
       "shapeName" : "AcknowledgeThirdPartyJobRequest",
       "unmarshaller" : null,
@@ -2397,6 +2409,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "AcknowledgeThirdPartyJobResult",
       "unmarshaller" : {
@@ -2450,6 +2464,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionCategory",
       "unmarshaller" : {
@@ -2741,6 +2757,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionConfiguration",
       "unmarshaller" : {
@@ -3568,6 +3586,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name", "required", "key", "secret" ],
       "shapeName" : "ActionConfigurationProperty",
       "unmarshaller" : {
@@ -3612,6 +3632,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionConfigurationPropertyType",
       "unmarshaller" : {
@@ -3761,6 +3783,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionContext",
       "unmarshaller" : {
@@ -5014,6 +5038,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name", "actionTypeId" ],
       "shapeName" : "ActionDeclaration",
       "unmarshaller" : {
@@ -6067,6 +6093,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionExecution",
       "unmarshaller" : {
@@ -6111,6 +6139,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionExecutionStatus",
       "unmarshaller" : {
@@ -6146,6 +6176,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionNotFoundException",
       "unmarshaller" : null,
@@ -6187,6 +6219,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionOwner",
       "unmarshaller" : {
@@ -6562,6 +6596,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "revisionId", "revisionChangeId", "created" ],
       "shapeName" : "ActionRevision",
       "unmarshaller" : {
@@ -7163,6 +7199,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionState",
       "unmarshaller" : {
@@ -7906,6 +7944,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "id", "inputArtifactDetails", "outputArtifactDetails" ],
       "shapeName" : "ActionType",
       "unmarshaller" : {
@@ -8394,6 +8434,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "category", "owner", "provider", "version" ],
       "shapeName" : "ActionTypeId",
       "unmarshaller" : {
@@ -8429,6 +8471,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionTypeNotFoundException",
       "unmarshaller" : null,
@@ -8914,6 +8958,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ActionTypeSettings",
       "unmarshaller" : {
@@ -8949,6 +8995,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApprovalAlreadyCompletedException",
       "unmarshaller" : null,
@@ -9208,6 +9256,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "summary", "status" ],
       "shapeName" : "ApprovalResult",
       "unmarshaller" : {
@@ -9249,6 +9299,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ApprovalStatus",
       "unmarshaller" : {
@@ -9624,6 +9676,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Artifact",
       "unmarshaller" : {
@@ -9886,6 +9940,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "minimumCount", "maximumCount" ],
       "shapeName" : "ArtifactDetails",
       "unmarshaller" : {
@@ -10148,6 +10204,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ArtifactLocation",
       "unmarshaller" : {
@@ -10186,6 +10244,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ArtifactLocationType",
       "unmarshaller" : {
@@ -10900,6 +10960,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ArtifactRevision",
       "unmarshaller" : {
@@ -11275,6 +11337,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "type", "location" ],
       "shapeName" : "ArtifactStore",
       "unmarshaller" : {
@@ -11313,6 +11377,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ArtifactStoreType",
       "unmarshaller" : {
@@ -11575,6 +11641,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name", "type" ],
       "shapeName" : "BlockerDeclaration",
       "unmarshaller" : {
@@ -11613,6 +11681,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BlockerType",
       "unmarshaller" : {
@@ -12589,6 +12659,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "category", "provider", "version", "inputArtifactDetails", "outputArtifactDetails" ],
       "shapeName" : "CreateCustomActionTypeRequest",
       "unmarshaller" : null,
@@ -12735,6 +12807,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "actionType" ],
       "shapeName" : "CreateCustomActionTypeResult",
       "unmarshaller" : {
@@ -12891,6 +12965,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipeline" ],
       "shapeName" : "CreatePipelineRequest",
       "unmarshaller" : null,
@@ -13037,6 +13113,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreatePipelineResult",
       "unmarshaller" : {
@@ -13525,6 +13603,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "revision", "changeIdentifier" ],
       "shapeName" : "CurrentRevision",
       "unmarshaller" : {
@@ -13907,6 +13987,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "category", "provider", "version" ],
       "shapeName" : "DeleteCustomActionTypeRequest",
       "unmarshaller" : null,
@@ -13939,6 +14021,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteCustomActionTypeResult",
       "unmarshaller" : {
@@ -14095,6 +14179,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "DeletePipelineRequest",
       "unmarshaller" : null,
@@ -14127,6 +14213,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeletePipelineResult",
       "unmarshaller" : {
@@ -14622,6 +14710,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineName", "stageName", "transitionType", "reason" ],
       "shapeName" : "DisableStageTransitionRequest",
       "unmarshaller" : null,
@@ -14654,6 +14744,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DisableStageTransitionResult",
       "unmarshaller" : {
@@ -15036,6 +15128,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineName", "stageName", "transitionType" ],
       "shapeName" : "EnableStageTransitionRequest",
       "unmarshaller" : null,
@@ -15068,6 +15162,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EnableStageTransitionResult",
       "unmarshaller" : {
@@ -15330,6 +15426,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "id", "type" ],
       "shapeName" : "EncryptionKey",
       "unmarshaller" : {
@@ -15368,6 +15466,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "EncryptionKeyType",
       "unmarshaller" : {
@@ -15630,6 +15730,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ErrorDetails",
       "unmarshaller" : {
@@ -16005,6 +16107,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExecutionDetails",
       "unmarshaller" : {
@@ -16380,6 +16484,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "type", "message" ],
       "shapeName" : "FailureDetails",
       "unmarshaller" : {
@@ -16433,6 +16539,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "FailureType",
       "unmarshaller" : {
@@ -16589,6 +16697,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId" ],
       "shapeName" : "GetJobDetailsRequest",
       "unmarshaller" : null,
@@ -16735,6 +16845,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetJobDetailsResult",
       "unmarshaller" : {
@@ -17004,6 +17116,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineName", "pipelineExecutionId" ],
       "shapeName" : "GetPipelineExecutionRequest",
       "unmarshaller" : null,
@@ -17150,6 +17264,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetPipelineExecutionResult",
       "unmarshaller" : {
@@ -17419,6 +17535,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "GetPipelineRequest",
       "unmarshaller" : null,
@@ -17565,6 +17683,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetPipelineResult",
       "unmarshaller" : {
@@ -17721,6 +17841,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "GetPipelineStateRequest",
       "unmarshaller" : null,
@@ -18461,6 +18583,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetPipelineStateResult",
       "unmarshaller" : {
@@ -18730,6 +18854,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "clientToken" ],
       "shapeName" : "GetThirdPartyJobDetailsRequest",
       "unmarshaller" : null,
@@ -18876,6 +19002,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetThirdPartyJobDetailsResult",
       "unmarshaller" : {
@@ -19025,6 +19153,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "InputArtifact",
       "unmarshaller" : {
@@ -19060,6 +19190,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidActionDeclarationException",
       "unmarshaller" : null,
@@ -19092,6 +19224,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidApprovalTokenException",
       "unmarshaller" : null,
@@ -19124,6 +19258,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidBlockerDeclarationException",
       "unmarshaller" : null,
@@ -19156,6 +19292,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidClientTokenException",
       "unmarshaller" : null,
@@ -19188,6 +19326,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidJobException",
       "unmarshaller" : null,
@@ -19220,6 +19360,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidJobStateException",
       "unmarshaller" : null,
@@ -19252,6 +19394,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
       "unmarshaller" : null,
@@ -19284,6 +19428,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNonceException",
       "unmarshaller" : null,
@@ -19316,6 +19462,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidStageDeclarationException",
       "unmarshaller" : null,
@@ -19348,6 +19496,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidStructureException",
       "unmarshaller" : null,
@@ -19833,6 +19983,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Job",
       "unmarshaller" : {
@@ -21057,6 +21209,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobData",
       "unmarshaller" : {
@@ -21432,6 +21586,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobDetails",
       "unmarshaller" : {
@@ -21467,6 +21623,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobNotFoundException",
       "unmarshaller" : null,
@@ -21520,6 +21678,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobStatus",
       "unmarshaller" : {
@@ -21555,6 +21715,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LimitExceededException",
       "unmarshaller" : null,
@@ -21821,6 +21983,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListActionTypesRequest",
       "unmarshaller" : null,
@@ -22222,6 +22386,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "actionTypes" ],
       "shapeName" : "ListActionTypesResult",
       "unmarshaller" : {
@@ -22378,6 +22544,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPipelinesRequest",
       "unmarshaller" : null,
@@ -22779,6 +22947,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListPipelinesResult",
       "unmarshaller" : {
@@ -22814,6 +22984,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NotLatestPipelineExecutionException",
       "unmarshaller" : null,
@@ -22960,6 +23132,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "OutputArtifact",
       "unmarshaller" : {
@@ -23335,6 +23509,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineContext",
       "unmarshaller" : {
@@ -24078,6 +24254,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name", "roleArn", "artifactStore", "stages" ],
       "shapeName" : "PipelineDeclaration",
       "unmarshaller" : {
@@ -24821,6 +24999,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineExecution",
       "unmarshaller" : {
@@ -24856,6 +25036,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineExecutionNotFoundException",
       "unmarshaller" : null,
@@ -24900,6 +25082,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineExecutionStatus",
       "unmarshaller" : {
@@ -24935,6 +25119,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineNameInUseException",
       "unmarshaller" : null,
@@ -24967,6 +25153,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineNotFoundException",
       "unmarshaller" : null,
@@ -25452,6 +25640,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineSummary",
       "unmarshaller" : {
@@ -25487,6 +25677,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PipelineVersionNotFoundException",
       "unmarshaller" : null,
@@ -26008,6 +26200,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "actionTypeId" ],
       "shapeName" : "PollForJobsRequest",
       "unmarshaller" : null,
@@ -26296,6 +26490,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PollForJobsResult",
       "unmarshaller" : {
@@ -26565,6 +26761,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "actionTypeId" ],
       "shapeName" : "PollForThirdPartyJobsRequest",
       "unmarshaller" : null,
@@ -26853,6 +27051,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PollForThirdPartyJobsResult",
       "unmarshaller" : {
@@ -27348,6 +27548,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineName", "stageName", "actionName", "actionRevision" ],
       "shapeName" : "PutActionRevisionRequest",
       "unmarshaller" : null,
@@ -27607,6 +27809,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutActionRevisionResult",
       "unmarshaller" : {
@@ -28215,6 +28419,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineName", "stageName", "actionName", "result", "token" ],
       "shapeName" : "PutApprovalResultRequest",
       "unmarshaller" : null,
@@ -28361,6 +28567,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutApprovalResultResult",
       "unmarshaller" : {
@@ -28630,6 +28838,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "failureDetails" ],
       "shapeName" : "PutJobFailureResultRequest",
       "unmarshaller" : null,
@@ -28662,6 +28872,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutJobFailureResultResult",
       "unmarshaller" : {
@@ -29157,6 +29369,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId" ],
       "shapeName" : "PutJobSuccessResultRequest",
       "unmarshaller" : null,
@@ -29189,6 +29403,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutJobSuccessResultResult",
       "unmarshaller" : {
@@ -29571,6 +29787,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "clientToken", "failureDetails" ],
       "shapeName" : "PutThirdPartyJobFailureResultRequest",
       "unmarshaller" : null,
@@ -29603,6 +29821,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutThirdPartyJobFailureResultResult",
       "unmarshaller" : {
@@ -30211,6 +30431,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "clientToken" ],
       "shapeName" : "PutThirdPartyJobSuccessResultRequest",
       "unmarshaller" : null,
@@ -30243,6 +30465,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutThirdPartyJobSuccessResultResult",
       "unmarshaller" : {
@@ -30738,6 +30962,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineName", "stageName", "pipelineExecutionId", "retryMode" ],
       "shapeName" : "RetryStageExecutionRequest",
       "unmarshaller" : null,
@@ -30884,6 +31110,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "RetryStageExecutionResult",
       "unmarshaller" : {
@@ -31146,6 +31374,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "bucketName", "objectKey" ],
       "shapeName" : "S3ArtifactLocation",
       "unmarshaller" : {
@@ -31295,6 +31525,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageContext",
       "unmarshaller" : {
@@ -31954,6 +32186,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name", "actions" ],
       "shapeName" : "StageDeclaration",
       "unmarshaller" : {
@@ -32216,6 +32450,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipelineExecutionId", "status" ],
       "shapeName" : "StageExecution",
       "unmarshaller" : {
@@ -32260,6 +32496,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageExecutionStatus",
       "unmarshaller" : {
@@ -32295,6 +32533,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageNotFoundException",
       "unmarshaller" : null,
@@ -32327,6 +32567,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageNotRetryableException",
       "unmarshaller" : null,
@@ -32362,6 +32604,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageRetryMode",
       "unmarshaller" : {
@@ -32992,6 +33236,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageState",
       "unmarshaller" : {
@@ -33033,6 +33279,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StageTransitionType",
       "unmarshaller" : {
@@ -33189,6 +33437,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "name" ],
       "shapeName" : "StartPipelineExecutionRequest",
       "unmarshaller" : null,
@@ -33335,6 +33585,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartPipelineExecutionResult",
       "unmarshaller" : {
@@ -33597,6 +33849,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThirdPartyJob",
       "unmarshaller" : {
@@ -34821,6 +35075,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThirdPartyJobData",
       "unmarshaller" : {
@@ -35196,6 +35452,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThirdPartyJobDetails",
       "unmarshaller" : {
@@ -35684,6 +35942,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TransitionState",
       "unmarshaller" : {
@@ -35840,6 +36100,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : [ "pipeline" ],
       "shapeName" : "UpdatePipelineRequest",
       "unmarshaller" : null,
@@ -35986,6 +36248,8 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdatePipelineResult",
       "unmarshaller" : {
@@ -36021,6 +36285,8 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ValidationException",
       "unmarshaller" : null,
@@ -36036,6 +36302,7 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
+  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

@@ -617,4 +617,5 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     public UpdateProvisionedProductRequest clone() {
         return (UpdateProvisionedProductRequest) super.clone();
     }
+
 }

@@ -174,4 +174,5 @@ public class CreateSizeConstraintSetRequest extends com.amazonaws.AmazonWebServi
     public CreateSizeConstraintSetRequest clone() {
         return (CreateSizeConstraintSetRequest) super.clone();
     }
+
 }

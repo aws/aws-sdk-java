@@ -439,4 +439,5 @@ public class UpdateRecordsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateRecordsRequest clone() {
         return (UpdateRecordsRequest) super.clone();
     }
+
 }

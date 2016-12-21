@@ -541,4 +541,5 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     public ImportCertificateRequest clone() {
         return (ImportCertificateRequest) super.clone();
     }
+
 }

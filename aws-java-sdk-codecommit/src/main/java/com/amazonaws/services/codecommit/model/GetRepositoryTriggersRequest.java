@@ -116,4 +116,5 @@ public class GetRepositoryTriggersRequest extends com.amazonaws.AmazonWebService
     public GetRepositoryTriggersRequest clone() {
         return (GetRepositoryTriggersRequest) super.clone();
     }
+
 }

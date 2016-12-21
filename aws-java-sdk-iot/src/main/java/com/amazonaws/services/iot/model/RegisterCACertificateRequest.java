@@ -299,4 +299,5 @@ public class RegisterCACertificateRequest extends com.amazonaws.AmazonWebService
     public RegisterCACertificateRequest clone() {
         return (RegisterCACertificateRequest) super.clone();
     }
+
 }

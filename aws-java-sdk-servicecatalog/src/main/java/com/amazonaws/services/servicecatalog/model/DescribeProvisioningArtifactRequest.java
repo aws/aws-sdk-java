@@ -301,4 +301,5 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
     public DescribeProvisioningArtifactRequest clone() {
         return (DescribeProvisioningArtifactRequest) super.clone();
     }
+
 }

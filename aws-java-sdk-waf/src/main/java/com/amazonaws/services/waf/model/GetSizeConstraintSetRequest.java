@@ -128,4 +128,5 @@ public class GetSizeConstraintSetRequest extends com.amazonaws.AmazonWebServiceR
     public GetSizeConstraintSetRequest clone() {
         return (GetSizeConstraintSetRequest) super.clone();
     }
+
 }

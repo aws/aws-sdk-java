@@ -479,4 +479,5 @@ public class UploadMultipartPartRequest extends com.amazonaws.AmazonWebServiceRe
     public UploadMultipartPartRequest clone() {
         return (UploadMultipartPartRequest) super.clone();
     }
+
 }

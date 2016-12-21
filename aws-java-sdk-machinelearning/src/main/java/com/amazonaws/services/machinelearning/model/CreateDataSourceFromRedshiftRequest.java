@@ -811,4 +811,5 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
     public CreateDataSourceFromRedshiftRequest clone() {
         return (CreateDataSourceFromRedshiftRequest) super.clone();
     }
+
 }

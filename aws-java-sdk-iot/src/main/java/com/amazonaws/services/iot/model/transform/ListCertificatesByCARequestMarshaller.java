@@ -43,9 +43,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class ListCertificatesByCARequestMarshaller implements Marshaller<Request<ListCertificatesByCARequest>, ListCertificatesByCARequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public ListCertificatesByCARequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public ListCertificatesByCARequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

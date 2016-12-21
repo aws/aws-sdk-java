@@ -114,4 +114,5 @@ public class DeleteProtectionRequest extends com.amazonaws.AmazonWebServiceReque
     public DeleteProtectionRequest clone() {
         return (DeleteProtectionRequest) super.clone();
     }
+
 }

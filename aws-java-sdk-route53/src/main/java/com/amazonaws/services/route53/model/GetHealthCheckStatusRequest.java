@@ -533,4 +533,5 @@ public class GetHealthCheckStatusRequest extends com.amazonaws.AmazonWebServiceR
     public GetHealthCheckStatusRequest clone() {
         return (GetHealthCheckStatusRequest) super.clone();
     }
+
 }

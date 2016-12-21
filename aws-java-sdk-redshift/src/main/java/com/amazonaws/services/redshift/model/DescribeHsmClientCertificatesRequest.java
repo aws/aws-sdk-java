@@ -552,4 +552,5 @@ public class DescribeHsmClientCertificatesRequest extends com.amazonaws.AmazonWe
     public DescribeHsmClientCertificatesRequest clone() {
         return (DescribeHsmClientCertificatesRequest) super.clone();
     }
+
 }

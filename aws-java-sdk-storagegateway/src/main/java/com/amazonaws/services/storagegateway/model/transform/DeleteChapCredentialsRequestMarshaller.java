@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class DeleteChapCredentialsRequestMarshaller implements Marshaller<Request<DeleteChapCredentialsRequest>, DeleteChapCredentialsRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DeleteChapCredentialsRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DeleteChapCredentialsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

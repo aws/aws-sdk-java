@@ -296,4 +296,5 @@ public class MergeDeveloperIdentitiesRequest extends com.amazonaws.AmazonWebServ
     public MergeDeveloperIdentitiesRequest clone() {
         return (MergeDeveloperIdentitiesRequest) super.clone();
     }
+
 }

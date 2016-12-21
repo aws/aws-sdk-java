@@ -123,4 +123,5 @@ public class DeleteVolumeRequest extends com.amazonaws.AmazonWebServiceRequest i
     public DeleteVolumeRequest clone() {
         return (DeleteVolumeRequest) super.clone();
     }
+
 }

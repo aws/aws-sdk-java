@@ -231,4 +231,5 @@ public class ListStateMachinesRequest extends com.amazonaws.AmazonWebServiceRequ
     public ListStateMachinesRequest clone() {
         return (ListStateMachinesRequest) super.clone();
     }
+
 }

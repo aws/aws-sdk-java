@@ -116,4 +116,5 @@ public class GetStackPolicyRequest extends com.amazonaws.AmazonWebServiceRequest
     public GetStackPolicyRequest clone() {
         return (GetStackPolicyRequest) super.clone();
     }
+
 }

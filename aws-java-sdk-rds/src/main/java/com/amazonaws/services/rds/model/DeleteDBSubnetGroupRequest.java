@@ -213,4 +213,5 @@ public class DeleteDBSubnetGroupRequest extends com.amazonaws.AmazonWebServiceRe
     public DeleteDBSubnetGroupRequest clone() {
         return (DeleteDBSubnetGroupRequest) super.clone();
     }
+
 }

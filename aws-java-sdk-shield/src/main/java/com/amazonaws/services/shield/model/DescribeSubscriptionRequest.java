@@ -60,4 +60,5 @@ public class DescribeSubscriptionRequest extends com.amazonaws.AmazonWebServiceR
     public DescribeSubscriptionRequest clone() {
         return (DescribeSubscriptionRequest) super.clone();
     }
+
 }

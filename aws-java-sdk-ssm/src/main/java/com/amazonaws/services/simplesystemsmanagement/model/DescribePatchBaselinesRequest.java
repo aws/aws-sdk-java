@@ -303,4 +303,5 @@ public class DescribePatchBaselinesRequest extends com.amazonaws.AmazonWebServic
     public DescribePatchBaselinesRequest clone() {
         return (DescribePatchBaselinesRequest) super.clone();
     }
+
 }

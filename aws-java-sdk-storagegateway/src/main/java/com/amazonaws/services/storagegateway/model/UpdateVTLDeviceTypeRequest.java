@@ -185,4 +185,5 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
     public UpdateVTLDeviceTypeRequest clone() {
         return (UpdateVTLDeviceTypeRequest) super.clone();
     }
+
 }

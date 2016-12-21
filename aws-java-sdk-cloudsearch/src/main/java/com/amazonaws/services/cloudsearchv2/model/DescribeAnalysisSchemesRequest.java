@@ -279,4 +279,5 @@ public class DescribeAnalysisSchemesRequest extends com.amazonaws.AmazonWebServi
     public DescribeAnalysisSchemesRequest clone() {
         return (DescribeAnalysisSchemesRequest) super.clone();
     }
+
 }

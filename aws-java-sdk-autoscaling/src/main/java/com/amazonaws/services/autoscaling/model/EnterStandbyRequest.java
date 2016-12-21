@@ -286,4 +286,5 @@ public class EnterStandbyRequest extends com.amazonaws.AmazonWebServiceRequest i
     public EnterStandbyRequest clone() {
         return (EnterStandbyRequest) super.clone();
     }
+
 }

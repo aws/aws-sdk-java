@@ -227,4 +227,5 @@ public class ListSchemaExtensionsRequest extends com.amazonaws.AmazonWebServiceR
     public ListSchemaExtensionsRequest clone() {
         return (ListSchemaExtensionsRequest) super.clone();
     }
+
 }

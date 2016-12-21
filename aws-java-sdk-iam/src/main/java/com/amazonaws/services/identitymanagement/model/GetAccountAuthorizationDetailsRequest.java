@@ -403,4 +403,5 @@ public class GetAccountAuthorizationDetailsRequest extends com.amazonaws.AmazonW
     public GetAccountAuthorizationDetailsRequest clone() {
         return (GetAccountAuthorizationDetailsRequest) super.clone();
     }
+
 }

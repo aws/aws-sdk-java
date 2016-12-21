@@ -121,4 +121,5 @@ public class DescribeAssessmentTemplatesRequest extends com.amazonaws.AmazonWebS
     public DescribeAssessmentTemplatesRequest clone() {
         return (DescribeAssessmentTemplatesRequest) super.clone();
     }
+
 }

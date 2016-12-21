@@ -170,4 +170,5 @@ public class UpdateEvaluationRequest extends com.amazonaws.AmazonWebServiceReque
     public UpdateEvaluationRequest clone() {
         return (UpdateEvaluationRequest) super.clone();
     }
+
 }

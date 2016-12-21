@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class AddCommunicationToCaseRequestMarshaller implements Marshaller<Request<AddCommunicationToCaseRequest>, AddCommunicationToCaseRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public AddCommunicationToCaseRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public AddCommunicationToCaseRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

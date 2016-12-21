@@ -367,4 +367,5 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateRestApiRequest clone() {
         return (CreateRestApiRequest) super.clone();
     }
+
 }

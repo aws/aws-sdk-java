@@ -276,4 +276,5 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     public DescribeInstancesRequest clone() {
         return (DescribeInstancesRequest) super.clone();
     }
+
 }

@@ -260,4 +260,5 @@ public class ListDocumentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public ListDocumentsRequest clone() {
         return (ListDocumentsRequest) super.clone();
     }
+
 }

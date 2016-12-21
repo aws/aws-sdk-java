@@ -200,4 +200,5 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     public CreateSubscriberRequest clone() {
         return (CreateSubscriberRequest) super.clone();
     }
+
 }

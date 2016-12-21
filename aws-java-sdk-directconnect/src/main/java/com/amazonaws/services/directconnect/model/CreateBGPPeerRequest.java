@@ -226,4 +226,5 @@ public class CreateBGPPeerRequest extends com.amazonaws.AmazonWebServiceRequest 
     public CreateBGPPeerRequest clone() {
         return (CreateBGPPeerRequest) super.clone();
     }
+
 }

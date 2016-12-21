@@ -301,4 +301,5 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     public CreatePortfolioShareRequest clone() {
         return (CreatePortfolioShareRequest) super.clone();
     }
+
 }

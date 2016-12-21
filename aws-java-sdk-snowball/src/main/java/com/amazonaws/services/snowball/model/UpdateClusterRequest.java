@@ -496,4 +496,5 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     public UpdateClusterRequest clone() {
         return (UpdateClusterRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class SetVisibleToAllUsersRequestMarshaller implements Marshaller<Request<SetVisibleToAllUsersRequest>, SetVisibleToAllUsersRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public SetVisibleToAllUsersRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public SetVisibleToAllUsersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

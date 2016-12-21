@@ -366,4 +366,5 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     public UpdateNFSFileShareRequest clone() {
         return (UpdateNFSFileShareRequest) super.clone();
     }
+
 }

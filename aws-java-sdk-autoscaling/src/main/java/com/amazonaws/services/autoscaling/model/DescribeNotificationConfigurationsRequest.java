@@ -255,4 +255,5 @@ public class DescribeNotificationConfigurationsRequest extends com.amazonaws.Ama
     public DescribeNotificationConfigurationsRequest clone() {
         return (DescribeNotificationConfigurationsRequest) super.clone();
     }
+
 }

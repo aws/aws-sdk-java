@@ -201,4 +201,5 @@ public class ListSubscriptionsByTopicRequest extends com.amazonaws.AmazonWebServ
     public ListSubscriptionsByTopicRequest clone() {
         return (ListSubscriptionsByTopicRequest) super.clone();
     }
+
 }

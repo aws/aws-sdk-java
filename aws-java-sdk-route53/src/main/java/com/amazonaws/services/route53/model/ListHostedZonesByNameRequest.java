@@ -390,4 +390,5 @@ public class ListHostedZonesByNameRequest extends com.amazonaws.AmazonWebService
     public ListHostedZonesByNameRequest clone() {
         return (ListHostedZonesByNameRequest) super.clone();
     }
+
 }

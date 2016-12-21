@@ -97,4 +97,5 @@ public class ListLocalDisksRequest extends com.amazonaws.AmazonWebServiceRequest
     public ListLocalDisksRequest clone() {
         return (ListLocalDisksRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class PutImageRequestMarshaller implements Marshaller<Request<PutImageRequest>, PutImageRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public PutImageRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public PutImageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -643,4 +643,5 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     public DeleteDBClusterRequest clone() {
         return (DeleteDBClusterRequest) super.clone();
     }
+
 }

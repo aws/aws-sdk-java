@@ -116,4 +116,5 @@ public class UpdatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     public UpdatePipelineRequest clone() {
         return (UpdatePipelineRequest) super.clone();
     }
+
 }

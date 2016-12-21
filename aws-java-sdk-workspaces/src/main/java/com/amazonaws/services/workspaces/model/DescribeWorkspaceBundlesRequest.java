@@ -372,4 +372,5 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
     public DescribeWorkspaceBundlesRequest clone() {
         return (DescribeWorkspaceBundlesRequest) super.clone();
     }
+
 }

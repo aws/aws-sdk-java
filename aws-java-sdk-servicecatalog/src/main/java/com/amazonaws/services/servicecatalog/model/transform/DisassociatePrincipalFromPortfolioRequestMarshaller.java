@@ -36,9 +36,9 @@ import com.amazonaws.protocol.json.*;
 public class DisassociatePrincipalFromPortfolioRequestMarshaller implements
         Marshaller<Request<DisassociatePrincipalFromPortfolioRequest>, DisassociatePrincipalFromPortfolioRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public DisassociatePrincipalFromPortfolioRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public DisassociatePrincipalFromPortfolioRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

@@ -220,4 +220,5 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public AddTagsRequest clone() {
         return (AddTagsRequest) super.clone();
     }
+
 }

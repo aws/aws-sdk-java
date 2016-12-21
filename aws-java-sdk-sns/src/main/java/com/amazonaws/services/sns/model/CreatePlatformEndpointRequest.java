@@ -335,4 +335,5 @@ public class CreatePlatformEndpointRequest extends com.amazonaws.AmazonWebServic
     public CreatePlatformEndpointRequest clone() {
         return (CreatePlatformEndpointRequest) super.clone();
     }
+
 }

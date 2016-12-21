@@ -273,4 +273,5 @@ public class DescribeSubscriptionFiltersRequest extends com.amazonaws.AmazonWebS
     public DescribeSubscriptionFiltersRequest clone() {
         return (DescribeSubscriptionFiltersRequest) super.clone();
     }
+
 }

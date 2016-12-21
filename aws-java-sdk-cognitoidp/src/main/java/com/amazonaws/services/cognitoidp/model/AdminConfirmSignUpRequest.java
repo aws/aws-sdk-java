@@ -169,4 +169,5 @@ public class AdminConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceReq
     public AdminConfirmSignUpRequest clone() {
         return (AdminConfirmSignUpRequest) super.clone();
     }
+
 }

@@ -35,9 +35,9 @@ import com.amazonaws.protocol.json.*;
  */
 public class StopRemoteAccessSessionRequestMarshaller implements Marshaller<Request<StopRemoteAccessSessionRequest>, StopRemoteAccessSessionRequest> {
 
-    private final SdkJsonProtocolFactory protocolFactory;
+    private final SdkJsonMarshallerFactory protocolFactory;
 
-    public StopRemoteAccessSessionRequestMarshaller(SdkJsonProtocolFactory protocolFactory) {
+    public StopRemoteAccessSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 

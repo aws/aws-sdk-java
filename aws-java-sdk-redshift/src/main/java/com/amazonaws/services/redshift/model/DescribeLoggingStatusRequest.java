@@ -132,4 +132,5 @@ public class DescribeLoggingStatusRequest extends com.amazonaws.AmazonWebService
     public DescribeLoggingStatusRequest clone() {
         return (DescribeLoggingStatusRequest) super.clone();
     }
+
 }

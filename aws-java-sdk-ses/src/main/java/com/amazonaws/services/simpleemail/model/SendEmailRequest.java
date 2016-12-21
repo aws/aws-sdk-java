@@ -1002,4 +1002,5 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public SendEmailRequest clone() {
         return (SendEmailRequest) super.clone();
     }
+
 }

@@ -2626,4 +2626,5 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
     public UpdateHealthCheckRequest clone() {
         return (UpdateHealthCheckRequest) super.clone();
     }
+
 }

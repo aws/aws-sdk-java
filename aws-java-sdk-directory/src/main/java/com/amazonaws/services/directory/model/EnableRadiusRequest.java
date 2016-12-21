@@ -169,4 +169,5 @@ public class EnableRadiusRequest extends com.amazonaws.AmazonWebServiceRequest i
     public EnableRadiusRequest clone() {
         return (EnableRadiusRequest) super.clone();
     }
+
 }
