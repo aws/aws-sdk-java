@@ -25,9 +25,9 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the IAM user to associate the SSH public key with.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -36,10 +36,10 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String sSHPublicKeyBody;
@@ -49,15 +49,15 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the IAM user to associate the SSH public key with.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user to associate the SSH public key with.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -71,14 +71,14 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the IAM user to associate the SSH public key with.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name of the IAM user to associate the SSH public key with.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -92,15 +92,15 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the IAM user to associate the SSH public key with.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user to associate the SSH public key with.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -116,16 +116,16 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param sSHPublicKeyBody
      *        The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -140,15 +140,15 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -163,16 +163,16 @@ public class UploadSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      * The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param sSHPublicKeyBody
      *        The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).

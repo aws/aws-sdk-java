@@ -1403,6 +1403,37 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Modifies lifecycle settings for an application.
+     * </p>
+     * 
+     * @param updateApplicationResourceLifecycleRequest
+     * @return A Java Future containing the result of the UpdateApplicationResourceLifecycle operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsync.UpdateApplicationResourceLifecycle
+     */
+    java.util.concurrent.Future<UpdateApplicationResourceLifecycleResult> updateApplicationResourceLifecycleAsync(
+            UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest);
+
+    /**
+     * <p>
+     * Modifies lifecycle settings for an application.
+     * </p>
+     * 
+     * @param updateApplicationResourceLifecycleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplicationResourceLifecycle operation returned by the
+     *         service.
+     * @sample AWSElasticBeanstalkAsyncHandler.UpdateApplicationResourceLifecycle
+     */
+    java.util.concurrent.Future<UpdateApplicationResourceLifecycleResult> updateApplicationResourceLifecycleAsync(
+            UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationResourceLifecycleRequest, UpdateApplicationResourceLifecycleResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the specified application version to have the specified properties.
      * </p>
      * <note>

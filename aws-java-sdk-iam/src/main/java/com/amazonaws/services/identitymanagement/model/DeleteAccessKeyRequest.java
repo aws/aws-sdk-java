@@ -25,9 +25,9 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the user whose access key pair you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -36,8 +36,8 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The access key ID for the access key ID and secret access key you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      */
     private String accessKeyId;
@@ -56,14 +56,14 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * @param userName
      *        The name of the user whose access key pair you want to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @param accessKeyId
      *        The access key ID for the access key ID and secret access key you want to delete.
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      */
     public DeleteAccessKeyRequest(String userName, String accessKeyId) {
@@ -76,15 +76,15 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the user whose access key pair you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user whose access key pair you want to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -98,14 +98,14 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the user whose access key pair you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name of the user whose access key pair you want to delete.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -119,15 +119,15 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the user whose access key pair you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user whose access key pair you want to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -143,14 +143,14 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The access key ID for the access key ID and secret access key you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param accessKeyId
      *        The access key ID for the access key ID and secret access key you want to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      */
 
@@ -163,13 +163,13 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The access key ID for the access key ID and secret access key you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @return The access key ID for the access key ID and secret access key you want to delete.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters that can consist of any upper or lowercased letter or digit.
      */
 
@@ -182,14 +182,14 @@ public class DeleteAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * The access key ID for the access key ID and secret access key you want to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param accessKeyId
      *        The access key ID for the access key ID and secret access key you want to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

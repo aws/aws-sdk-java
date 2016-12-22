@@ -86,6 +86,14 @@ public class Method implements Serializable, Cloneable {
     private Boolean apiKeyRequired;
     /**
      * <p>
+     * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * </p>
+     */
+    private String operationName;
+    /**
+     * <p>
      * A key-value map defining required or optional method request parameters that can be accepted by Amazon API
      * Gateway. A key is a method request parameter name matching the pattern of
      * <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>,
@@ -338,6 +346,58 @@ public class Method implements Serializable, Cloneable {
 
     public Boolean isApiKeyRequired() {
         return this.apiKeyRequired;
+    }
+
+    /**
+     * <p>
+     * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * </p>
+     * 
+     * @param operationName
+     *        A human-friendly operation identifier for the method. For example, you can assign the
+     *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     *        href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     */
+
+    public void setOperationName(String operationName) {
+        this.operationName = operationName;
+    }
+
+    /**
+     * <p>
+     * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * </p>
+     * 
+     * @return A human-friendly operation identifier for the method. For example, you can assign the
+     *         <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     *         href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     */
+
+    public String getOperationName() {
+        return this.operationName;
+    }
+
+    /**
+     * <p>
+     * A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code>
+     * of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     * href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * </p>
+     * 
+     * @param operationName
+     *        A human-friendly operation identifier for the method. For example, you can assign the
+     *        <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a
+     *        href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a> example.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Method withOperationName(String operationName) {
+        setOperationName(operationName);
+        return this;
     }
 
     /**
@@ -906,6 +966,8 @@ public class Method implements Serializable, Cloneable {
             sb.append("AuthorizerId: ").append(getAuthorizerId()).append(",");
         if (getApiKeyRequired() != null)
             sb.append("ApiKeyRequired: ").append(getApiKeyRequired()).append(",");
+        if (getOperationName() != null)
+            sb.append("OperationName: ").append(getOperationName()).append(",");
         if (getRequestParameters() != null)
             sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestModels() != null)
@@ -944,6 +1006,10 @@ public class Method implements Serializable, Cloneable {
             return false;
         if (other.getApiKeyRequired() != null && other.getApiKeyRequired().equals(this.getApiKeyRequired()) == false)
             return false;
+        if (other.getOperationName() == null ^ this.getOperationName() == null)
+            return false;
+        if (other.getOperationName() != null && other.getOperationName().equals(this.getOperationName()) == false)
+            return false;
         if (other.getRequestParameters() == null ^ this.getRequestParameters() == null)
             return false;
         if (other.getRequestParameters() != null && other.getRequestParameters().equals(this.getRequestParameters()) == false)
@@ -972,6 +1038,7 @@ public class Method implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthorizationType() == null) ? 0 : getAuthorizationType().hashCode());
         hashCode = prime * hashCode + ((getAuthorizerId() == null) ? 0 : getAuthorizerId().hashCode());
         hashCode = prime * hashCode + ((getApiKeyRequired() == null) ? 0 : getApiKeyRequired().hashCode());
+        hashCode = prime * hashCode + ((getOperationName() == null) ? 0 : getOperationName().hashCode());
         hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
         hashCode = prime * hashCode + ((getRequestModels() == null) ? 0 : getRequestModels().hashCode());
         hashCode = prime * hashCode + ((getMethodResponses() == null) ? 0 : getMethodResponses().hashCode());

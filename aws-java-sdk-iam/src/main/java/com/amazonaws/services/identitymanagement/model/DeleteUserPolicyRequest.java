@@ -25,9 +25,9 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) identifying the user that the policy is embedded in.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -36,9 +36,9 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name identifying the policy document to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String policyName;
@@ -57,14 +57,14 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param userName
      *        The name (friendly name, not ARN) identifying the user that the policy is embedded in.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @param policyName
      *        The name identifying the policy document to delete.
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -78,15 +78,15 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) identifying the user that the policy is embedded in.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name (friendly name, not ARN) identifying the user that the policy is embedded in.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -100,14 +100,14 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) identifying the user that the policy is embedded in.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name (friendly name, not ARN) identifying the user that the policy is embedded in.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -121,15 +121,15 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name (friendly name, not ARN) identifying the user that the policy is embedded in.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name (friendly name, not ARN) identifying the user that the policy is embedded in.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -145,15 +145,15 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name identifying the policy document to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param policyName
      *        The name identifying the policy document to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -167,14 +167,14 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name identifying the policy document to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name identifying the policy document to delete.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -188,15 +188,15 @@ public class DeleteUserPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The name identifying the policy document to delete.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param policyName
      *        The name identifying the policy document to delete.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.

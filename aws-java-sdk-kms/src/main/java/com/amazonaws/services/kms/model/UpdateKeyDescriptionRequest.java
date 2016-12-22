@@ -22,8 +22,8 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN to a
+     * key.
      * </p>
      * <ul>
      * <li>
@@ -41,15 +41,15 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
     private String keyId;
     /**
      * <p>
-     * New description for the key.
+     * New description for the CMK.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN to a
+     * key.
      * </p>
      * <ul>
      * <li>
@@ -65,8 +65,8 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *        fully specified ARN to a key.</p>
+     *        A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN
+     *        to a key.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -86,8 +86,8 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN to a
+     * key.
      * </p>
      * <ul>
      * <li>
@@ -102,8 +102,8 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * 
-     * @return A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *         fully specified ARN to a key.</p>
+     * @return A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified
+     *         ARN to a key.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -123,8 +123,8 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier or the fully
-     * specified ARN to a key.
+     * A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN to a
+     * key.
      * </p>
      * <ul>
      * <li>
@@ -140,8 +140,8 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier or the
-     *        fully specified ARN to a key.</p>
+     *        A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN
+     *        to a key.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -163,11 +163,11 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * New description for the key.
+     * New description for the CMK.
      * </p>
      * 
      * @param description
-     *        New description for the key.
+     *        New description for the CMK.
      */
 
     public void setDescription(String description) {
@@ -176,10 +176,10 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * New description for the key.
+     * New description for the CMK.
      * </p>
      * 
-     * @return New description for the key.
+     * @return New description for the CMK.
      */
 
     public String getDescription() {
@@ -188,11 +188,11 @@ public class UpdateKeyDescriptionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * New description for the key.
+     * New description for the CMK.
      * </p>
      * 
      * @param description
-     *        New description for the key.
+     *        New description for the CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

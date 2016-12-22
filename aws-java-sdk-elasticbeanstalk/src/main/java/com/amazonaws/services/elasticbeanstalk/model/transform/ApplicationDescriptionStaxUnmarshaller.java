@@ -85,6 +85,10 @@ public class ApplicationDescriptionStaxUnmarshaller implements Unmarshaller<Appl
                     continue;
                 }
 
+                if (context.testExpression("ResourceLifecycleConfig", targetDepth)) {
+                    applicationDescription.setResourceLifecycleConfig(ApplicationResourceLifecycleConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return applicationDescription;

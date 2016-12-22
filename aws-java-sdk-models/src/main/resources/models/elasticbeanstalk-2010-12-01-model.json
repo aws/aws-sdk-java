@@ -975,6 +975,37 @@
         "shape" : "ApplicationDescriptionMessage"
       }
     },
+    "UpdateApplicationResourceLifecycle" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Modifies lifecycle settings for an application.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InsufficientPrivilegesException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateApplicationResourceLifecycleMessage",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateApplicationResourceLifecycle",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : "UpdateApplicationResourceLifecycleResult",
+        "shape" : "ApplicationResourceLifecycleDescriptionMessage"
+      }
+    },
     "UpdateApplicationVersion" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -1322,6 +1353,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ResourceLifecycleConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The lifecycle settings for the application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationResourceLifecycleConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Versions" : {
           "deprecated" : false,
           "documentation" : "<p>The names of the versions for this application.</p>",
@@ -1576,6 +1620,102 @@
       "value" : null,
       "wrapper" : false
     },
+    "ApplicationResourceLifecycleConfig" : {
+      "deprecated" : false,
+      "documentation" : "<p>The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ServiceRole" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VersionLifecycleConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The application version lifecycle configuration.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationVersionLifecycleConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ApplicationResourceLifecycleDescriptionMessage" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceLifecycleConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The lifecycle configuration.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationResourceLifecycleConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ApplicationVersionDescription" : {
       "deprecated" : false,
       "documentation" : "<p>Describes the properties of an application version.</p>",
@@ -1818,6 +1958,54 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Token",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ApplicationVersionLifecycleConfig" : {
+      "deprecated" : false,
+      "documentation" : "<p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p> <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MaxAgeRule" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MaxAgeRule",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxCountRule" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MaxCountRule",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -2160,6 +2348,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BoxedBoolean" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
       "value" : null,
       "wrapper" : false
     },
@@ -3512,6 +3721,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Description",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceLifecycleConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationResourceLifecycleConfig",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -8189,6 +8411,128 @@
       "value" : null,
       "wrapper" : false
     },
+    "MaxAgeRule" : {
+      "deprecated" : false,
+      "documentation" : "<p>A lifecycle rule that deletes application versions after the specified number of days.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DeleteSourceFromS3" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BoxedBoolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BoxedBoolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxAgeInDays" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify the number of days to retain an application versions.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BoxedInt",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Enabled" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MaxCountRule" : {
+      "deprecated" : false,
+      "documentation" : "<p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DeleteSourceFromS3" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BoxedBoolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BoxedBoolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxCount" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specify the maximum number of application versions to retain.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BoxedInt",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Enabled" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "MaxRecords" : {
       "deprecated" : false,
       "documentation" : null,
@@ -10444,6 +10788,54 @@
       "pattern" : null,
       "payload" : null,
       "required" : [ "ApplicationName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateApplicationResourceLifecycleMessage" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceLifecycleConfig" : {
+          "deprecated" : false,
+          "documentation" : "<p>The lifecycle configuration.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationResourceLifecycleConfig",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationName", "ResourceLifecycleConfig" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,

@@ -25,9 +25,9 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String policyName;
@@ -44,10 +44,10 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String path;
@@ -56,10 +56,10 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String policyDocument;
@@ -82,15 +82,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param policyName
      *        The friendly name of the policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -104,14 +104,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The friendly name of the policy.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -125,15 +125,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param policyName
      *        The friendly name of the policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -157,10 +157,10 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -174,7 +174,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *        including most punctuation characters, digits, and upper and lowercased letters.
@@ -197,10 +197,10 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The path for the policy.</p>
@@ -213,7 +213,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *         including most punctuation characters, digits, and upper and lowercased letters.
@@ -236,10 +236,10 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -253,7 +253,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *        including most punctuation characters, digits, and upper and lowercased letters.
@@ -270,16 +270,16 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for the new policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -294,15 +294,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The JSON policy document that you want to use as the content for the new policy.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -317,16 +317,16 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The JSON policy document that you want to use as the content for the new policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for the new policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).

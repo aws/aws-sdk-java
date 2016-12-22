@@ -87,6 +87,8 @@ public enum ElasticBeanstalkActions implements Action {
     TerminateEnvironment("elasticbeanstalk:TerminateEnvironment"),
     /** Action for the UpdateApplication operation. */
     UpdateApplication("elasticbeanstalk:UpdateApplication"),
+    /** Action for the UpdateApplicationResourceLifecycle operation. */
+    UpdateApplicationResourceLifecycle("elasticbeanstalk:UpdateApplicationResourceLifecycle"),
     /** Action for the UpdateApplicationVersion operation. */
     UpdateApplicationVersion("elasticbeanstalk:UpdateApplicationVersion"),
     /** Action for the UpdateConfigurationTemplate operation. */

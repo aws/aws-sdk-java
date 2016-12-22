@@ -22,28 +22,18 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon Resource Name
+     * (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
@@ -73,54 +63,34 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon Resource Name
+     * (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     *        specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
+     *        A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon
+     *        Resource Name (ARN) of the CMK. Examples:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Alias Name Example - alias/MyAliasName
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      */
@@ -131,53 +101,33 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon Resource Name
+     * (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     *         specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
+     * @return A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon
+     *         Resource Name (ARN) of the CMK. Examples:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Alias Name Example - alias/MyAliasName
+     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *         </p>
      *         </li>
      */
@@ -188,54 +138,34 @@ public class ListKeyPoliciesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     * specified ARN to either an alias or a key, or an alias name prefixed by "alias/".
+     * A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon Resource Name
+     * (ARN) of the CMK. Examples:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias Name Example - alias/MyAliasName
+     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key. This value can be a globally unique identifier, a fully
-     *        specified ARN to either an alias or a key, or an alias name prefixed by "alias/".</p>
+     *        A unique identifier for the customer master key (CMK). You can use the unique key ID or the Amazon
+     *        Resource Name (ARN) of the CMK. Examples:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Alias Name Example - alias/MyAliasName
+     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

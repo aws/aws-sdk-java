@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Metadata assigned to an Amazon Directory Services directory consisting of a key-value pair.
+ * Metadata assigned to a directory consisting of a key-value pair.
  * </p>
  */
 public class Tag implements Serializable, Cloneable {

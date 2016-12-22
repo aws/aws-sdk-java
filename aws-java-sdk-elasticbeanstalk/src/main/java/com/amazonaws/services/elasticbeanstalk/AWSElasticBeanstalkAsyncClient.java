@@ -1439,6 +1439,40 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApplicationResourceLifecycleResult> updateApplicationResourceLifecycleAsync(
+            UpdateApplicationResourceLifecycleRequest request) {
+
+        return updateApplicationResourceLifecycleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResourceLifecycleResult> updateApplicationResourceLifecycleAsync(
+            final UpdateApplicationResourceLifecycleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApplicationResourceLifecycleRequest, UpdateApplicationResourceLifecycleResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApplicationResourceLifecycleResult>() {
+            @Override
+            public UpdateApplicationResourceLifecycleResult call() throws Exception {
+                UpdateApplicationResourceLifecycleResult result;
+
+                try {
+                    result = updateApplicationResourceLifecycle(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateApplicationVersionResult> updateApplicationVersionAsync(UpdateApplicationVersionRequest request) {
 
         return updateApplicationVersionAsync(request, null);

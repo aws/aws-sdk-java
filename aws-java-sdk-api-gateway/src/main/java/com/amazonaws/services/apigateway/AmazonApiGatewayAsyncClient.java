@@ -2264,6 +2264,70 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetSdkTypeResult> getSdkTypeAsync(GetSdkTypeRequest request) {
+
+        return getSdkTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkTypeResult> getSdkTypeAsync(final GetSdkTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSdkTypeRequest, GetSdkTypeResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSdkTypeResult>() {
+            @Override
+            public GetSdkTypeResult call() throws Exception {
+                GetSdkTypeResult result;
+
+                try {
+                    result = getSdkType(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkTypesResult> getSdkTypesAsync(GetSdkTypesRequest request) {
+
+        return getSdkTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkTypesResult> getSdkTypesAsync(final GetSdkTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSdkTypesRequest, GetSdkTypesResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSdkTypesResult>() {
+            @Override
+            public GetSdkTypesResult call() throws Exception {
+                GetSdkTypesResult result;
+
+                try {
+                    result = getSdkTypes(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStageResult> getStageAsync(GetStageRequest request) {
 
         return getStageAsync(request, null);

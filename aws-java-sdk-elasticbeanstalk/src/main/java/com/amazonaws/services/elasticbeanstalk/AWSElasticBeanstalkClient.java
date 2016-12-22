@@ -1864,6 +1864,50 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Modifies lifecycle settings for an application.
+     * </p>
+     * 
+     * @param updateApplicationResourceLifecycleRequest
+     * @return Result of the UpdateApplicationResourceLifecycle operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @sample AWSElasticBeanstalk.UpdateApplicationResourceLifecycle
+     */
+    @Override
+    public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(
+            UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApplicationResourceLifecycleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationResourceLifecycleRequest> request = null;
+        Response<UpdateApplicationResourceLifecycleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationResourceLifecycleRequestMarshaller()
+                        .marshall(super.beforeMarshalling(updateApplicationResourceLifecycleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateApplicationResourceLifecycleResult> responseHandler = new StaxResponseHandler<UpdateApplicationResourceLifecycleResult>(
+                    new UpdateApplicationResourceLifecycleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the specified application version to have the specified properties.
      * </p>
      * <note>

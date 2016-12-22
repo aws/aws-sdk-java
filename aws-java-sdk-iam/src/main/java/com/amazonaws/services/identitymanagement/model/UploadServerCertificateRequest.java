@@ -27,11 +27,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting
-     * of either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
+     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -48,9 +48,9 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String serverCertificateName;
@@ -59,10 +59,10 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String certificateBody;
@@ -71,10 +71,10 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String privateKey;
@@ -84,10 +84,10 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String certificateChain;
@@ -107,14 +107,14 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        The name for the server certificate. Do not include the path in this value. The name of the certificate
      *        cannot contain any spaces.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -122,7 +122,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        The contents of the private key in PEM-encoded format.
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -140,11 +140,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting
-     * of either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
+     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -159,11 +159,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     *        consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     *        slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     *        most punctuation characters, digits, and upper and lowercased letters.
+     *        This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per
+     *        its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
+     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing
+     *        any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     *        characters, digits, and upper and lowercased letters.
      *        </p>
      *        <note>
      *        <p>
@@ -184,11 +184,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting
-     * of either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
+     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -202,11 +202,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
-     *         This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     *         href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     *         consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     *         slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     *         most punctuation characters, digits, and upper and lowercased letters.
+     *         This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per
+     *         its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
+     *         either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing
+     *         any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     *         characters, digits, and upper and lowercased letters.
      *         </p>
      *         <note>
      *         <p>
@@ -227,11 +227,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting
-     * of either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
+     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
+     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -246,11 +246,11 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to a slash (/). The <a
-     *        href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     *        consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     *        slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     *        most punctuation characters, digits, and upper and lowercased letters.
+     *        This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per
+     *        its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
+     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing
+     *        any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
+     *        characters, digits, and upper and lowercased letters.
      *        </p>
      *        <note>
      *        <p>
@@ -272,16 +272,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param serverCertificateName
      *        The name for the server certificate. Do not include the path in this value. The name of the certificate
      *        cannot contain any spaces.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -296,15 +296,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name for the server certificate. Do not include the path in this value. The name of the certificate
      *         cannot contain any spaces.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -319,16 +319,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param serverCertificateName
      *        The name for the server certificate. Do not include the path in this value. The name of the certificate
      *        cannot contain any spaces.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -344,16 +344,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -368,15 +368,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The contents of the public key certificate in PEM-encoded format.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -391,16 +391,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the public key certificate in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -417,16 +417,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -441,15 +441,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The contents of the private key in PEM-encoded format.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -464,16 +464,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The contents of the private key in PEM-encoded format.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -491,17 +491,17 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *        certificates of the chain.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -517,16 +517,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *         certificates of the chain.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -542,17 +542,17 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * certificates of the chain.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *        certificates of the chain.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).

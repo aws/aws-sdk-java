@@ -36,10 +36,10 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String policyDocument;
@@ -131,16 +131,16 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -155,15 +155,15 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -178,16 +178,16 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * The JSON policy document that you want to use as the content for this new version of the policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).

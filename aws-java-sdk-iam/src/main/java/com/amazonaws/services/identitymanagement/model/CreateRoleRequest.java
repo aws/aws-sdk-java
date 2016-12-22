@@ -30,10 +30,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String path;
@@ -42,10 +42,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles named
-     * both "PRODROLE" and "prodrole".
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".
      * </p>
      */
     private String roleName;
@@ -54,10 +54,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String assumeRolePolicyDocument;
@@ -72,10 +72,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -86,7 +86,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *        including most punctuation characters, digits, and upper and lowercased letters.
@@ -106,10 +106,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
@@ -119,7 +119,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *         including most punctuation characters, digits, and upper and lowercased letters.
@@ -139,10 +139,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -153,7 +153,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *        including most punctuation characters, digits, and upper and lowercased letters.
@@ -170,16 +170,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles named
-     * both "PRODROLE" and "prodrole".
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".
      * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot
      *        create roles named both "PRODROLE" and "prodrole".
@@ -194,15 +194,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles named
-     * both "PRODROLE" and "prodrole".
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".
      * </p>
      * 
      * @return The name of the role to create.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot
      *         create roles named both "PRODROLE" and "prodrole".
@@ -217,16 +217,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles named
-     * both "PRODROLE" and "prodrole".
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot create roles
+     * named both "PRODROLE" and "prodrole".
      * </p>
      * 
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-. Role names are not distinguished by case. For example, you cannot
      *        create roles named both "PRODROLE" and "prodrole".
@@ -243,16 +243,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -267,15 +267,15 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -290,16 +290,16 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The trust relationship policy document that grants an entity permission to assume the role.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).

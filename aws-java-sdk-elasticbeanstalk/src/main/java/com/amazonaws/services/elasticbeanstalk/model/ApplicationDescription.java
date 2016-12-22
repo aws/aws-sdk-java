@@ -57,6 +57,12 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> configurationTemplates;
+    /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     */
+    private ApplicationResourceLifecycleConfig resourceLifecycleConfig;
 
     /**
      * <p>
@@ -365,6 +371,46 @@ public class ApplicationDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     * 
+     * @param resourceLifecycleConfig
+     *        The lifecycle settings for the application.
+     */
+
+    public void setResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
+        this.resourceLifecycleConfig = resourceLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     * 
+     * @return The lifecycle settings for the application.
+     */
+
+    public ApplicationResourceLifecycleConfig getResourceLifecycleConfig() {
+        return this.resourceLifecycleConfig;
+    }
+
+    /**
+     * <p>
+     * The lifecycle settings for the application.
+     * </p>
+     * 
+     * @param resourceLifecycleConfig
+     *        The lifecycle settings for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDescription withResourceLifecycleConfig(ApplicationResourceLifecycleConfig resourceLifecycleConfig) {
+        setResourceLifecycleConfig(resourceLifecycleConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -386,7 +432,9 @@ public class ApplicationDescription implements Serializable, Cloneable {
         if (getVersions() != null)
             sb.append("Versions: ").append(getVersions()).append(",");
         if (getConfigurationTemplates() != null)
-            sb.append("ConfigurationTemplates: ").append(getConfigurationTemplates());
+            sb.append("ConfigurationTemplates: ").append(getConfigurationTemplates()).append(",");
+        if (getResourceLifecycleConfig() != null)
+            sb.append("ResourceLifecycleConfig: ").append(getResourceLifecycleConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -425,6 +473,10 @@ public class ApplicationDescription implements Serializable, Cloneable {
             return false;
         if (other.getConfigurationTemplates() != null && other.getConfigurationTemplates().equals(this.getConfigurationTemplates()) == false)
             return false;
+        if (other.getResourceLifecycleConfig() == null ^ this.getResourceLifecycleConfig() == null)
+            return false;
+        if (other.getResourceLifecycleConfig() != null && other.getResourceLifecycleConfig().equals(this.getResourceLifecycleConfig()) == false)
+            return false;
         return true;
     }
 
@@ -439,6 +491,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode());
         hashCode = prime * hashCode + ((getVersions() == null) ? 0 : getVersions().hashCode());
         hashCode = prime * hashCode + ((getConfigurationTemplates() == null) ? 0 : getConfigurationTemplates().hashCode());
+        hashCode = prime * hashCode + ((getResourceLifecycleConfig() == null) ? 0 : getResourceLifecycleConfig().hashCode());
         return hashCode;
     }
 

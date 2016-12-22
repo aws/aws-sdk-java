@@ -79,6 +79,9 @@ public class PutMethodRequestMarshaller implements Marshaller<Request<PutMethodR
             if (putMethodRequest.getApiKeyRequired() != null) {
                 jsonGenerator.writeFieldName("apiKeyRequired").writeValue(putMethodRequest.getApiKeyRequired());
             }
+            if (putMethodRequest.getOperationName() != null) {
+                jsonGenerator.writeFieldName("operationName").writeValue(putMethodRequest.getOperationName());
+            }
 
             java.util.Map<String, Boolean> requestParametersMap = putMethodRequest.getRequestParameters();
             if (requestParametersMap != null) {

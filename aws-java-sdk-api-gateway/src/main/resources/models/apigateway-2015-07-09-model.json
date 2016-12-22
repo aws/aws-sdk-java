@@ -3080,6 +3080,86 @@
         "shape" : "SdkResponse"
       }
     },
+    "GetSdkType" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : null,
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/sdktypes/{sdktype_id}",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetSdkTypeRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetSdkType",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "SdkType"
+      }
+    },
+    "GetSdkTypes" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : null,
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/sdktypes",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetSdkTypesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetSdkTypes",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "SdkTypes"
+      }
+    },
     "GetStage" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -10668,6 +10748,89 @@
       "value" : null,
       "wrapper" : false
     },
+    "GetSdkTypeRequest" : {
+      "deprecated" : false,
+      "documentation" : "<p>Get an <a>SdkType</a> instance.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of the queried <a>SdkType</a> instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "uri",
+          "locationName" : "sdktype_id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "id" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetSdkTypesRequest" : {
+      "deprecated" : false,
+      "documentation" : "<p>Get the <a>SdkTypes</a> collection.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of <a>SdkType</a> instances to be returned. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "querystring",
+          "locationName" : "limit",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NullableInteger",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "position" : {
+          "deprecated" : false,
+          "documentation" : "<p>The position of the last fetched element in the <a>SdkTypes</a> collection.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : "querystring",
+          "locationName" : "position",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "GetStageRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Requests Amazon API Gateway to get information about a <a>Stage</a> resource.</p>",
@@ -11301,7 +11464,7 @@
     },
     "Integration" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p> <div class=\"remarks\">In the API Gateway console, the built-in Lambda integration is an AWS integration.</div> <div class=\"seeAlso\"> <a href=\"http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html\">Creating an API</a>, <a href=\"http://docs.aws.amazon.com/apigateway/latest/developerguide/.html\"/> </div>",
+      "documentation" : "<p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p> <div class=\"remarks\">In the API Gateway console, the built-in Lambda integration is an AWS integration.</div> <div class=\"seeAlso\"> <a href=\"http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html\">Creating an API</a> </div>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11443,7 +11606,7 @@
         },
         "uri" : {
           "deprecated" : false,
-          "documentation" : "<p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a href=\"https://www.ietf.org/rfc/rfc3986.txt\" target=\"_blank\">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint. For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>.</p>",
+          "documentation" : "<p>Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a href=\"https://en.wikipedia.org/wiki/Uniform_Resource_Identifier\" target=\"_blank\">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>. <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint. For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -12105,6 +12268,72 @@
         "payload" : false,
         "queryName" : null,
         "shape" : "RestApi",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListOfSdkConfigurationProperty" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "SdkConfigurationProperty",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListOfSdkType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "SdkType",
         "streaming" : false,
         "xmlNamespace" : null
       },
@@ -12874,6 +13103,19 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "MapOfMethodResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "operationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a href=\"http://petstore-demo-endpoint.execute-api.com/petstore/pets\">PetStore</a> example.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -13931,6 +14173,19 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "operationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in <a href=\"http://petstore-demo-endpoint.execute-api.com/petstore/pets\">PetStore</a> example.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "requestModels" : {
           "deprecated" : false,
           "documentation" : "<p>Specifies the <a>Model</a> resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a <a>Model</a> name as the value.</p>",
@@ -14579,6 +14834,93 @@
       "value" : null,
       "wrapper" : false
     },
+    "SdkConfigurationProperty" : {
+      "deprecated" : false,
+      "documentation" : "<p>A configuration property of an SDK type.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "defaultValue" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default value of an <a>SdkType</a> configuration property.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description of an <a>SdkType</a> configuration property.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "friendlyName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user-friendly name of an <a>SdkType</a> configuration property.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of a an <a>SdkType</a> configuration property.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "required" : {
+          "deprecated" : false,
+          "documentation" : "<p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "SdkResponse" : {
       "deprecated" : false,
       "documentation" : "<p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>",
@@ -14634,6 +14976,128 @@
       "min" : 0,
       "pattern" : null,
       "payload" : "body",
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SdkType" : {
+      "deprecated" : false,
+      "documentation" : "<p>A type of SDK that API Gateway can generate.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "configurationProperties" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of configuration properties of an <a>SdkType</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ListOfSdkConfigurationProperty",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The description of an <a>SdkType</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "friendlyName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user-friendly name of an <a>SdkType</a> instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identifier of an <a>SdkType</a> instance.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SdkTypes" : {
+      "deprecated" : false,
+      "documentation" : "<p>The collection of <a>SdkType</a> instances.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "items" : {
+          "deprecated" : false,
+          "documentation" : "<p>The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : "item",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ListOfSdkType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "position" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
       "required" : null,
       "streaming" : false,
       "type" : "structure",

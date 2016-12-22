@@ -20,8 +20,7 @@ import java.io.Serializable;
  * </p>
  * <div class="remarks">In the API Gateway console, the built-in Lambda integration is an AWS integration.</div> <div
  * class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>, <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/.html"/> </div>
+ * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a> </div>
  */
 public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
@@ -43,7 +42,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
-     * formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
      * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
@@ -318,7 +317,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
-     * formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
      * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
@@ -330,8 +329,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * 
      * @param uri
      *        Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a
-     *        fully formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
-     *        target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     *        fully formed, encoded HTTP(S) URL according to the <a
+     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
+     *        specification</a>. For AWS integrations, the URI should be of the form
      *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      *        <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right
      *        endpoint. For AWS services that use the <code>Action=</code> query string parameter,
@@ -347,7 +347,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
-     * formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
      * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
@@ -358,8 +358,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @return Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a
-     *         fully formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
-     *         target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     *         fully formed, encoded HTTP(S) URL according to the <a
+     *         href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
+     *         specification</a>. For AWS integrations, the URI should be of the form
      *         <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      *         <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right
      *         endpoint. For AWS services that use the <code>Action=</code> query string parameter,
@@ -375,7 +376,7 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
-     * formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
      * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
@@ -387,8 +388,9 @@ public class UpdateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * 
      * @param uri
      *        Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a
-     *        fully formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
-     *        target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     *        fully formed, encoded HTTP(S) URL according to the <a
+     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
+     *        specification</a>. For AWS integrations, the URI should be of the form
      *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
      *        <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right
      *        endpoint. For AWS services that use the <code>Action=</code> query string parameter,

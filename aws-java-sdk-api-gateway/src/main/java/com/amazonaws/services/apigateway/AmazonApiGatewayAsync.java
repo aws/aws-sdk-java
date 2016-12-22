@@ -1865,6 +1865,48 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
             com.amazonaws.handlers.AsyncHandler<GetSdkRequest, GetSdkResult> asyncHandler);
 
     /**
+     * @param getSdkTypeRequest
+     *        Get an <a>SdkType</a> instance.
+     * @return A Java Future containing the result of the GetSdkType operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetSdkType
+     */
+    java.util.concurrent.Future<GetSdkTypeResult> getSdkTypeAsync(GetSdkTypeRequest getSdkTypeRequest);
+
+    /**
+     * @param getSdkTypeRequest
+     *        Get an <a>SdkType</a> instance.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSdkType operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetSdkType
+     */
+    java.util.concurrent.Future<GetSdkTypeResult> getSdkTypeAsync(GetSdkTypeRequest getSdkTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSdkTypeRequest, GetSdkTypeResult> asyncHandler);
+
+    /**
+     * @param getSdkTypesRequest
+     *        Get the <a>SdkTypes</a> collection.
+     * @return A Java Future containing the result of the GetSdkTypes operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetSdkTypes
+     */
+    java.util.concurrent.Future<GetSdkTypesResult> getSdkTypesAsync(GetSdkTypesRequest getSdkTypesRequest);
+
+    /**
+     * @param getSdkTypesRequest
+     *        Get the <a>SdkTypes</a> collection.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSdkTypes operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetSdkTypes
+     */
+    java.util.concurrent.Future<GetSdkTypesResult> getSdkTypesAsync(GetSdkTypesRequest getSdkTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSdkTypesRequest, GetSdkTypesResult> asyncHandler);
+
+    /**
      * <p>
      * Gets information about a <a>Stage</a> resource.
      * </p>

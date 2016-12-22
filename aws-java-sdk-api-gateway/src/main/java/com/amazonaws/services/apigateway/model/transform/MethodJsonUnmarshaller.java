@@ -63,6 +63,10 @@ public class MethodJsonUnmarshaller implements Unmarshaller<Method, JsonUnmarsha
                     context.nextToken();
                     method.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("operationName", targetDepth)) {
+                    context.nextToken();
+                    method.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("requestParameters", targetDepth)) {
                     context.nextToken();
                     method.setRequestParameters(new MapUnmarshaller<String, Boolean>(context.getUnmarshaller(String.class), context

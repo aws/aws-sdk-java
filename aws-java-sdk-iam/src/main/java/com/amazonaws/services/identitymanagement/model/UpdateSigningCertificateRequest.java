@@ -25,9 +25,9 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -36,8 +36,8 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      */
     private String certificateId;
@@ -63,7 +63,7 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
@@ -81,7 +81,7 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @param status
      *        The status you want to assign to the certificate. <code>Active</code> means the certificate can be used
@@ -97,15 +97,15 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user the signing certificate belongs to.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -119,14 +119,14 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name of the IAM user the signing certificate belongs to.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -140,15 +140,15 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The name of the IAM user the signing certificate belongs to.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user the signing certificate belongs to.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -164,14 +164,14 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      */
 
@@ -184,13 +184,13 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @return The ID of the signing certificate you want to update.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters that can consist of any upper or lowercased letter or digit.
      */
 
@@ -203,14 +203,14 @@ public class UpdateSigningCertificateRequest extends com.amazonaws.AmazonWebServ
      * The ID of the signing certificate you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param certificateId
      *        The ID of the signing certificate you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

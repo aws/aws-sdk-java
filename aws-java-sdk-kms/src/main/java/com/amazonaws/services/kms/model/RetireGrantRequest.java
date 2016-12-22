@@ -28,18 +28,12 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String grantToken;
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant. This value can be a globally unique
-     * identifier or a fully specified ARN of the key.
+     * The Amazon Resource Name of the CMK associated with the grant. Example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      * </p>
      * </li>
      * </ul>
@@ -47,7 +41,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String keyId;
     /**
      * <p>
-     * Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code> function.
+     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
+     * operation.
      * </p>
      * <ul>
      * <li>
@@ -101,34 +96,22 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant. This value can be a globally unique
-     * identifier or a fully specified ARN of the key.
+     * The Amazon Resource Name of the CMK associated with the grant. Example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key associated with the grant. This value can be a globally
-     *        unique identifier or a fully specified ARN of the key.</p>
+     *        The Amazon Resource Name of the CMK associated with the grant. Example:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      *        </p>
      *        </li>
      */
@@ -139,33 +122,21 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant. This value can be a globally unique
-     * identifier or a fully specified ARN of the key.
+     * The Amazon Resource Name of the CMK associated with the grant. Example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A unique identifier for the customer master key associated with the grant. This value can be a globally
-     *         unique identifier or a fully specified ARN of the key.</p>
+     * @return The Amazon Resource Name of the CMK associated with the grant. Example:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *         arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      *         </p>
      *         </li>
      */
@@ -176,34 +147,22 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant. This value can be a globally unique
-     * identifier or a fully specified ARN of the key.
+     * The Amazon Resource Name of the CMK associated with the grant. Example:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key associated with the grant. This value can be a globally
-     *        unique identifier or a fully specified ARN of the key.</p>
+     *        The Amazon Resource Name of the CMK associated with the grant. Example:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -216,7 +175,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code> function.
+     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
+     * operation.
      * </p>
      * <ul>
      * <li>
@@ -227,8 +187,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param grantId
-     *        Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code>
-     *        function.</p>
+     *        Unique identifier of the grant to retire. The grant ID is returned in the response to a
+     *        <code>CreateGrant</code> operation.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -243,7 +203,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code> function.
+     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
+     * operation.
      * </p>
      * <ul>
      * <li>
@@ -253,8 +214,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code>
-     *         function.</p>
+     * @return Unique identifier of the grant to retire. The grant ID is returned in the response to a
+     *         <code>CreateGrant</code> operation.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -269,7 +230,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code> function.
+     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
+     * operation.
      * </p>
      * <ul>
      * <li>
@@ -280,8 +242,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param grantId
-     *        Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code>
-     *        function.</p>
+     *        Unique identifier of the grant to retire. The grant ID is returned in the response to a
+     *        <code>CreateGrant</code> operation.</p>
      *        <ul>
      *        <li>
      *        <p>

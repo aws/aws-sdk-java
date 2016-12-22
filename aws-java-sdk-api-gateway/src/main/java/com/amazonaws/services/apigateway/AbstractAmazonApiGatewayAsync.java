@@ -857,6 +857,32 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetSdkTypeResult> getSdkTypeAsync(GetSdkTypeRequest request) {
+
+        return getSdkTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkTypeResult> getSdkTypeAsync(GetSdkTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSdkTypeRequest, GetSdkTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkTypesResult> getSdkTypesAsync(GetSdkTypesRequest request) {
+
+        return getSdkTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkTypesResult> getSdkTypesAsync(GetSdkTypesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSdkTypesRequest, GetSdkTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStageResult> getStageAsync(GetStageRequest request) {
 
         return getStageAsync(request, null);

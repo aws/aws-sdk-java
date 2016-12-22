@@ -28,7 +28,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     private String resourceId;
     /**
      * <p>
-     * The tags to be assigned to the Amazon Directory Services directory.
+     * The tags to be assigned to the directory.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -75,10 +75,10 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to be assigned to the Amazon Directory Services directory.
+     * The tags to be assigned to the directory.
      * </p>
      * 
-     * @return The tags to be assigned to the Amazon Directory Services directory.
+     * @return The tags to be assigned to the directory.
      */
 
     public java.util.List<Tag> getTags() {
@@ -90,11 +90,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to be assigned to the Amazon Directory Services directory.
+     * The tags to be assigned to the directory.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the Amazon Directory Services directory.
+     *        The tags to be assigned to the directory.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -108,7 +108,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to be assigned to the Amazon Directory Services directory.
+     * The tags to be assigned to the directory.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the Amazon Directory Services directory.
+     *        The tags to be assigned to the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The tags to be assigned to the Amazon Directory Services directory.
+     * The tags to be assigned to the directory.
      * </p>
      * 
      * @param tags
-     *        The tags to be assigned to the Amazon Directory Services directory.
+     *        The tags to be assigned to the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -53,6 +53,9 @@ public class MethodJsonMarshaller {
             if (method.getApiKeyRequired() != null) {
                 jsonGenerator.writeFieldName("apiKeyRequired").writeValue(method.getApiKeyRequired());
             }
+            if (method.getOperationName() != null) {
+                jsonGenerator.writeFieldName("operationName").writeValue(method.getOperationName());
+            }
 
             java.util.Map<String, Boolean> requestParametersMap = method.getRequestParameters();
             if (requestParametersMap != null) {

@@ -845,6 +845,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
+            CreateServiceSpecificCredentialRequest request) {
+
+        return createServiceSpecificCredentialAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceSpecificCredentialResult> createServiceSpecificCredentialAsync(
+            final CreateServiceSpecificCredentialRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateServiceSpecificCredentialRequest, CreateServiceSpecificCredentialResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateServiceSpecificCredentialResult>() {
+            @Override
+            public CreateServiceSpecificCredentialResult call() throws Exception {
+                CreateServiceSpecificCredentialResult result;
+
+                try {
+                    result = createServiceSpecificCredential(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
@@ -1427,6 +1461,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = deleteServerCertificate(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
+            DeleteServiceSpecificCredentialRequest request) {
+
+        return deleteServiceSpecificCredentialAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceSpecificCredentialResult> deleteServiceSpecificCredentialAsync(
+            final DeleteServiceSpecificCredentialRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteServiceSpecificCredentialRequest, DeleteServiceSpecificCredentialResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteServiceSpecificCredentialResult>() {
+            @Override
+            public DeleteServiceSpecificCredentialResult call() throws Exception {
+                DeleteServiceSpecificCredentialResult result;
+
+                try {
+                    result = deleteServiceSpecificCredential(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3419,6 +3487,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListServiceSpecificCredentialsResult> listServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request) {
+
+        return listServiceSpecificCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceSpecificCredentialsResult> listServiceSpecificCredentialsAsync(
+            final ListServiceSpecificCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListServiceSpecificCredentialsRequest, ListServiceSpecificCredentialsResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ListServiceSpecificCredentialsResult>() {
+            @Override
+            public ListServiceSpecificCredentialsResult call() throws Exception {
+                ListServiceSpecificCredentialsResult result;
+
+                try {
+                    result = listServiceSpecificCredentials(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSigningCertificatesResult> listSigningCertificatesAsync(ListSigningCertificatesRequest request) {
 
         return listSigningCertificatesAsync(request, null);
@@ -3791,6 +3892,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = removeUserFromGroup(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetServiceSpecificCredentialResult> resetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request) {
+
+        return resetServiceSpecificCredentialAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetServiceSpecificCredentialResult> resetServiceSpecificCredentialAsync(
+            final ResetServiceSpecificCredentialRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetServiceSpecificCredentialRequest, ResetServiceSpecificCredentialResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetServiceSpecificCredentialResult>() {
+            @Override
+            public ResetServiceSpecificCredentialResult call() throws Exception {
+                ResetServiceSpecificCredentialResult result;
+
+                try {
+                    result = resetServiceSpecificCredential(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4209,6 +4343,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = updateServerCertificate(request);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(request, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSpecificCredentialResult> updateServiceSpecificCredentialAsync(
+            UpdateServiceSpecificCredentialRequest request) {
+
+        return updateServiceSpecificCredentialAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceSpecificCredentialResult> updateServiceSpecificCredentialAsync(
+            final UpdateServiceSpecificCredentialRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateServiceSpecificCredentialRequest, UpdateServiceSpecificCredentialResult> asyncHandler) {
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateServiceSpecificCredentialResult>() {
+            @Override
+            public UpdateServiceSpecificCredentialResult call() throws Exception {
+                UpdateServiceSpecificCredentialResult result;
+
+                try {
+                    result = updateServiceSpecificCredential(request);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

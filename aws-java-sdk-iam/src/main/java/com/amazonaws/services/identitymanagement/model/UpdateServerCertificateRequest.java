@@ -25,9 +25,9 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The name of the server certificate that you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String serverCertificateName;
@@ -36,10 +36,10 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The new path for the server certificate. Include this only if you are updating the server certificate's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String newPath;
@@ -49,9 +49,9 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * name of the certificate cannot contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String newServerCertificateName;
@@ -70,7 +70,7 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * @param serverCertificateName
      *        The name of the server certificate that you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -83,15 +83,15 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The name of the server certificate that you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param serverCertificateName
      *        The name of the server certificate that you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -105,14 +105,14 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The name of the server certificate that you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name of the server certificate that you want to update.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -126,15 +126,15 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The name of the server certificate that you want to update.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param serverCertificateName
      *        The name of the server certificate that you want to update.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -150,17 +150,17 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The new path for the server certificate. Include this only if you are updating the server certificate's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param newPath
      *        The new path for the server certificate. Include this only if you are updating the server certificate's
      *        path.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *        including most punctuation characters, digits, and upper and lowercased letters.
@@ -175,16 +175,16 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The new path for the server certificate. Include this only if you are updating the server certificate's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The new path for the server certificate. Include this only if you are updating the server certificate's
      *         path.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *         including most punctuation characters, digits, and upper and lowercased letters.
@@ -199,17 +199,17 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * The new path for the server certificate. Include this only if you are updating the server certificate's path.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes,
-     * containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.
+     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param newPath
      *        The new path for the server certificate. Include this only if you are updating the server certificate's
      *        path.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
      *        including most punctuation characters, digits, and upper and lowercased letters.
@@ -227,16 +227,16 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * name of the certificate cannot contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param newServerCertificateName
      *        The new name for the server certificate. Include this only if you are updating the server certificate's
      *        name. The name of the certificate cannot contain any spaces.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -251,15 +251,15 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * name of the certificate cannot contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The new name for the server certificate. Include this only if you are updating the server certificate's
      *         name. The name of the certificate cannot contain any spaces.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -274,16 +274,16 @@ public class UpdateServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * name of the certificate cannot contain any spaces.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param newServerCertificateName
      *        The new name for the server certificate. Include this only if you are updating the server certificate's
      *        name. The name of the certificate cannot contain any spaces.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.

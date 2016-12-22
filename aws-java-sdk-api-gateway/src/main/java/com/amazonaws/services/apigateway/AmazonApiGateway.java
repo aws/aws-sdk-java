@@ -1099,6 +1099,27 @@ public interface AmazonApiGateway {
     GetSdkResult getSdk(GetSdkRequest getSdkRequest);
 
     /**
+     * @param getSdkTypeRequest
+     *        Get an <a>SdkType</a> instance.
+     * @return Result of the GetSdkType operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetSdkType
+     */
+    GetSdkTypeResult getSdkType(GetSdkTypeRequest getSdkTypeRequest);
+
+    /**
+     * @param getSdkTypesRequest
+     *        Get the <a>SdkTypes</a> collection.
+     * @return Result of the GetSdkTypes operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetSdkTypes
+     */
+    GetSdkTypesResult getSdkTypes(GetSdkTypesRequest getSdkTypesRequest);
+
+    /**
      * <p>
      * Gets information about a <a>Stage</a> resource.
      * </p>

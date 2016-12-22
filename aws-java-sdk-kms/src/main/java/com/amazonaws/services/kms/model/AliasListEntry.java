@@ -35,7 +35,7 @@ public class AliasListEntry implements Serializable, Cloneable {
     private String aliasArn;
     /**
      * <p>
-     * String that contains the key identifier pointed to by the alias.
+     * String that contains the key identifier referred to by the alias.
      * </p>
      */
     private String targetKeyId;
@@ -122,11 +122,11 @@ public class AliasListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the key identifier pointed to by the alias.
+     * String that contains the key identifier referred to by the alias.
      * </p>
      * 
      * @param targetKeyId
-     *        String that contains the key identifier pointed to by the alias.
+     *        String that contains the key identifier referred to by the alias.
      */
 
     public void setTargetKeyId(String targetKeyId) {
@@ -135,10 +135,10 @@ public class AliasListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the key identifier pointed to by the alias.
+     * String that contains the key identifier referred to by the alias.
      * </p>
      * 
-     * @return String that contains the key identifier pointed to by the alias.
+     * @return String that contains the key identifier referred to by the alias.
      */
 
     public String getTargetKeyId() {
@@ -147,11 +147,11 @@ public class AliasListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * String that contains the key identifier pointed to by the alias.
+     * String that contains the key identifier referred to by the alias.
      * </p>
      * 
      * @param targetKeyId
-     *        String that contains the key identifier pointed to by the alias.
+     *        String that contains the key identifier referred to by the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

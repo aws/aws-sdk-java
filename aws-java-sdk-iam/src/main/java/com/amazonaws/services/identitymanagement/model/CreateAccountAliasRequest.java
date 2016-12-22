@@ -25,9 +25,9 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
      * The account alias to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two
-     * dashes in a row.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can
+     * you have two dashes in a row.
      * </p>
      */
     private String accountAlias;
@@ -46,7 +46,7 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
      * @param accountAlias
      *        The account alias to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash,
      *        nor can you have two dashes in a row.
      */
@@ -59,15 +59,15 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
      * The account alias to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two
-     * dashes in a row.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can
+     * you have two dashes in a row.
      * </p>
      * 
      * @param accountAlias
      *        The account alias to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash,
      *        nor can you have two dashes in a row.
      */
@@ -81,14 +81,14 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
      * The account alias to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two
-     * dashes in a row.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can
+     * you have two dashes in a row.
      * </p>
      * 
      * @return The account alias to create.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash,
      *         nor can you have two dashes in a row.
      */
@@ -102,15 +102,15 @@ public class CreateAccountAliasRequest extends com.amazonaws.AmazonWebServiceReq
      * The account alias to create.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two
-     * dashes in a row.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can
+     * you have two dashes in a row.
      * </p>
      * 
      * @param accountAlias
      *        The account alias to create.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash,
      *        nor can you have two dashes in a row.
      * @return Returns a reference to this object so that method calls can be chained together.

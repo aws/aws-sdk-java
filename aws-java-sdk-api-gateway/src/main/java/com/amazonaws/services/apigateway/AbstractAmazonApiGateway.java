@@ -355,6 +355,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetSdkTypeResult getSdkType(GetSdkTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSdkTypesResult getSdkTypes(GetSdkTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStageResult getStage(GetStageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

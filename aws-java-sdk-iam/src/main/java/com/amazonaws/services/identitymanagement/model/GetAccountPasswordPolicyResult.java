@@ -21,10 +21,20 @@ import java.io.Serializable;
  */
 public class GetAccountPasswordPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Contains information about the account password policy.
+     * </p>
+     */
     private PasswordPolicy passwordPolicy;
 
     /**
+     * <p>
+     * Contains information about the account password policy.
+     * </p>
+     * 
      * @param passwordPolicy
+     *        Contains information about the account password policy.
      */
 
     public void setPasswordPolicy(PasswordPolicy passwordPolicy) {
@@ -32,7 +42,11 @@ public class GetAccountPasswordPolicyResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * Contains information about the account password policy.
+     * </p>
+     * 
+     * @return Contains information about the account password policy.
      */
 
     public PasswordPolicy getPasswordPolicy() {
@@ -40,7 +54,12 @@ public class GetAccountPasswordPolicyResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Contains information about the account password policy.
+     * </p>
+     * 
      * @param passwordPolicy
+     *        Contains information about the account password policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

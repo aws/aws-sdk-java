@@ -34,7 +34,9 @@ public class StartSchemaExtensionRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean createSnapshotBeforeSchemaExtension;
     /**
      * <p>
-     * The LDIF file represented as a string. The file size can be no larger than 1MB.
+     * The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be
+     * formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger
+     * than 1MB.
      * </p>
      */
     private String ldifContent;
@@ -139,11 +141,15 @@ public class StartSchemaExtensionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The LDIF file represented as a string. The file size can be no larger than 1MB.
+     * The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be
+     * formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger
+     * than 1MB.
      * </p>
      * 
      * @param ldifContent
-     *        The LDIF file represented as a string. The file size can be no larger than 1MB.
+     *        The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would
+     *        be formatted in an ldif file with \n. See the example request below for more details. The file size can be
+     *        no larger than 1MB.
      */
 
     public void setLdifContent(String ldifContent) {
@@ -152,10 +158,14 @@ public class StartSchemaExtensionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The LDIF file represented as a string. The file size can be no larger than 1MB.
+     * The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be
+     * formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger
+     * than 1MB.
      * </p>
      * 
-     * @return The LDIF file represented as a string. The file size can be no larger than 1MB.
+     * @return The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would
+     *         be formatted in an ldif file with \n. See the example request below for more details. The file size can
+     *         be no larger than 1MB.
      */
 
     public String getLdifContent() {
@@ -164,11 +174,15 @@ public class StartSchemaExtensionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The LDIF file represented as a string. The file size can be no larger than 1MB.
+     * The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be
+     * formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger
+     * than 1MB.
      * </p>
      * 
      * @param ldifContent
-     *        The LDIF file represented as a string. The file size can be no larger than 1MB.
+     *        The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would
+     *        be formatted in an ldif file with \n. See the example request below for more details. The file size can be
+     *        no larger than 1MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

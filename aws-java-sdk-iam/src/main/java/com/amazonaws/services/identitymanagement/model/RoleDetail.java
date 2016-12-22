@@ -61,7 +61,11 @@ public class RoleDetail implements Serializable, Cloneable {
      * </p>
      */
     private String assumeRolePolicyDocument;
-
+    /**
+     * <p>
+     * A list of instance profiles that contain this role.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<InstanceProfile> instanceProfileList;
     /**
      * <p>
@@ -333,7 +337,11 @@ public class RoleDetail implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * A list of instance profiles that contain this role.
+     * </p>
+     * 
+     * @return A list of instance profiles that contain this role.
      */
 
     public java.util.List<InstanceProfile> getInstanceProfileList() {
@@ -344,7 +352,12 @@ public class RoleDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of instance profiles that contain this role.
+     * </p>
+     * 
      * @param instanceProfileList
+     *        A list of instance profiles that contain this role.
      */
 
     public void setInstanceProfileList(java.util.Collection<InstanceProfile> instanceProfileList) {
@@ -358,12 +371,16 @@ public class RoleDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of instance profiles that contain this role.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceProfileList(java.util.Collection)} or {@link #withInstanceProfileList(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param instanceProfileList
+     *        A list of instance profiles that contain this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,7 +395,12 @@ public class RoleDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of instance profiles that contain this role.
+     * </p>
+     * 
      * @param instanceProfileList
+     *        A list of instance profiles that contain this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

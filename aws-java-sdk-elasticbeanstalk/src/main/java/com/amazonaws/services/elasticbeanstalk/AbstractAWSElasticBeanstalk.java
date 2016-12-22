@@ -235,6 +235,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateApplicationVersionResult updateApplicationVersion(UpdateApplicationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

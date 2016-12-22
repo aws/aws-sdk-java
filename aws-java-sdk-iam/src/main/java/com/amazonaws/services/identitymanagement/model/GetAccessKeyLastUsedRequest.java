@@ -25,8 +25,8 @@ public class GetAccessKeyLastUsedRequest extends com.amazonaws.AmazonWebServiceR
      * The identifier of an access key.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      */
     private String accessKeyId;
@@ -36,14 +36,14 @@ public class GetAccessKeyLastUsedRequest extends com.amazonaws.AmazonWebServiceR
      * The identifier of an access key.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param accessKeyId
      *        The identifier of an access key.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      */
 
@@ -56,13 +56,13 @@ public class GetAccessKeyLastUsedRequest extends com.amazonaws.AmazonWebServiceR
      * The identifier of an access key.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @return The identifier of an access key.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters that can consist of any upper or lowercased letter or digit.
      */
 
@@ -75,14 +75,14 @@ public class GetAccessKeyLastUsedRequest extends com.amazonaws.AmazonWebServiceR
      * The identifier of an access key.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
-     * can consist of any upper or lowercased letter or digit.
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @param accessKeyId
      *        The identifier of an access key.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -790,6 +790,20 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Modifies lifecycle settings for an application.
+     * </p>
+     * 
+     * @param updateApplicationResourceLifecycleRequest
+     * @return Result of the UpdateApplicationResourceLifecycle operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @sample AWSElasticBeanstalk.UpdateApplicationResourceLifecycle
+     */
+    UpdateApplicationResourceLifecycleResult updateApplicationResourceLifecycle(
+            UpdateApplicationResourceLifecycleRequest updateApplicationResourceLifecycleRequest);
+
+    /**
+     * <p>
      * Updates the specified application version to have the specified properties.
      * </p>
      * <note>

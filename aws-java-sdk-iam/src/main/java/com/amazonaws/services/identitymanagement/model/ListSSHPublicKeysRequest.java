@@ -26,9 +26,9 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
      * implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      */
     private String userName;
@@ -42,15 +42,15 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
     private String marker;
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -61,16 +61,16 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
      * implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is
      *        determined implicitly based on the AWS access key used to sign the request.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      */
@@ -85,15 +85,15 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
      * implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @return The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is
      *         determined implicitly based on the AWS access key used to sign the request.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: =,.@-
      */
@@ -108,16 +108,16 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
      * implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
+     * the following characters: =,.@-
      * </p>
      * 
      * @param userName
      *        The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is
      *        determined implicitly based on the AWS access key used to sign the request.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: =,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -182,26 +182,26 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     *        <code>true</code>.</p>
+     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
+     *        element is <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
-     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
-     *        call that tells the service where to continue from.
+     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
+     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     *        the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -210,25 +210,25 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      * 
-     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
-     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.</p>
+     * @return (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     *         response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
+     *         element is <code>true</code>.</p>
      *         <p>
-     *         This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return
-     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
-     *         response element returns <code>true</code> and <code>Marker</code> contains a value to include in the
-     *         subsequent call that tells the service where to continue from.
+     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
+     *         when there are more results available. In that case, the <code>IsTruncated</code> response element
+     *         returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that
+     *         tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -237,26 +237,26 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     *        <code>true</code>.</p>
+     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
+     *        element is <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
-     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
-     *        call that tells the service where to continue from.
+     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
+     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     *        the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

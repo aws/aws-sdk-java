@@ -21,26 +21,26 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The reencrypted data.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
     /**
      * <p>
-     * Unique identifier of the key used to originally encrypt the data.
+     * Unique identifier of the CMK used to originally encrypt the data.
      * </p>
      */
     private String sourceKeyId;
     /**
      * <p>
-     * Unique identifier of the key used to re-encrypt the data.
+     * Unique identifier of the CMK used to reencrypt the data.
      * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The reencrypted data.
      * </p>
      * <p>
      * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
@@ -54,8 +54,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param ciphertextBlob
-     *        The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not
-     *        encoded.
+     *        The reencrypted data.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -64,7 +63,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The reencrypted data.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -74,8 +73,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * {@code position}.
      * </p>
      * 
-     * @return The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not
-     *         encoded.
+     * @return The reencrypted data.
      */
 
     public java.nio.ByteBuffer getCiphertextBlob() {
@@ -84,12 +82,11 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not encoded.
+     * The reencrypted data.
      * </p>
      * 
      * @param ciphertextBlob
-     *        The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise, it is not
-     *        encoded.
+     *        The reencrypted data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +97,11 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Unique identifier of the key used to originally encrypt the data.
+     * Unique identifier of the CMK used to originally encrypt the data.
      * </p>
      * 
      * @param sourceKeyId
-     *        Unique identifier of the key used to originally encrypt the data.
+     *        Unique identifier of the CMK used to originally encrypt the data.
      */
 
     public void setSourceKeyId(String sourceKeyId) {
@@ -113,10 +110,10 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Unique identifier of the key used to originally encrypt the data.
+     * Unique identifier of the CMK used to originally encrypt the data.
      * </p>
      * 
-     * @return Unique identifier of the key used to originally encrypt the data.
+     * @return Unique identifier of the CMK used to originally encrypt the data.
      */
 
     public String getSourceKeyId() {
@@ -125,11 +122,11 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Unique identifier of the key used to originally encrypt the data.
+     * Unique identifier of the CMK used to originally encrypt the data.
      * </p>
      * 
      * @param sourceKeyId
-     *        Unique identifier of the key used to originally encrypt the data.
+     *        Unique identifier of the CMK used to originally encrypt the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +137,11 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Unique identifier of the key used to re-encrypt the data.
+     * Unique identifier of the CMK used to reencrypt the data.
      * </p>
      * 
      * @param keyId
-     *        Unique identifier of the key used to re-encrypt the data.
+     *        Unique identifier of the CMK used to reencrypt the data.
      */
 
     public void setKeyId(String keyId) {
@@ -153,10 +150,10 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Unique identifier of the key used to re-encrypt the data.
+     * Unique identifier of the CMK used to reencrypt the data.
      * </p>
      * 
-     * @return Unique identifier of the key used to re-encrypt the data.
+     * @return Unique identifier of the CMK used to reencrypt the data.
      */
 
     public String getKeyId() {
@@ -165,11 +162,11 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Unique identifier of the key used to re-encrypt the data.
+     * Unique identifier of the CMK used to reencrypt the data.
      * </p>
      * 
      * @param keyId
-     *        Unique identifier of the key used to re-encrypt the data.
+     *        Unique identifier of the CMK used to reencrypt the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

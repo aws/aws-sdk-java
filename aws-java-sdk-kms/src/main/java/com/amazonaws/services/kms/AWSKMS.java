@@ -1138,16 +1138,18 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Encrypts data on the server side with a new customer master key without exposing the plaintext of the data on the
-     * client side. The data is first decrypted and then encrypted. This operation can also be used to change the
-     * encryption context of a ciphertext.
+     * Encrypts data on the server side with a new customer master key (CMK) without exposing the plaintext of the data
+     * on the client side. The data is first decrypted and then reencrypted. You can also use this operation to change
+     * the encryption context of a ciphertext.
      * </p>
      * <p>
-     * Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code> on the
-     * source key and once as <code>ReEncryptTo</code> on the destination key. We therefore recommend that you include
-     * the <code>"action":"kms:ReEncrypt*"</code> statement in your key policies to permit re-encryption from or to the
-     * key. The statement is included automatically when you authorize use of the key through the console but must be
-     * included manually when you set a policy by using the <a>PutKeyPolicy</a> function.
+     * Unlike other operations, <code>ReEncrypt</code> is authorized twice, once as <code>ReEncryptFrom</code> on the
+     * source CMK and once as <code>ReEncryptTo</code> on the destination CMK. We recommend that you include the
+     * <code>"kms:ReEncrypt*"</code> permission in your <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key policies</a> to permit
+     * reencryption from or to the CMK. This permission is automatically included in the key policy when you create a
+     * CMK through the console, but you must include it manually when you create a CMK programmatically or when you set
+     * a key policy with the <a>PutKeyPolicy</a> operation.
      * </p>
      * 
      * @param reEncryptRequest
@@ -1180,30 +1182,30 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Retires a grant. You can retire a grant when you're done using it to clean up. You should revoke a grant when you
-     * intend to actively deny operations that depend on it. The following are permitted to call this API:
+     * Retires a grant. To clean up, you can retire a grant when you're done using it. You should revoke a grant when
+     * you intend to actively deny operations that depend on it. The following are permitted to call this API:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The account that created the grant
+     * The AWS account (root user) under which the grant was created
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>RetiringPrincipal</code>, if present
+     * The <code>RetiringPrincipal</code>, if present in the grant
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation
+     * The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is an operation specified in the grant
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The grant to retire must be identified by its grant token or by a combination of the key ARN and the grant ID. A
-     * grant token is a unique variable-length base64-encoded string. A grant ID is a 64 character unique identifier of
-     * a grant. Both are returned by the <code>CreateGrant</code> function.
+     * You must identify the grant to retire by its grant token or by a combination of the grant ID and the Amazon
+     * Resource Name (ARN) of the customer master key (CMK). A grant token is a unique variable-length base64-encoded
+     * string. A grant ID is a 64 character unique identifier of a grant. The <a>CreateGrant</a> operation returns both.
      * </p>
      * 
      * @param retireGrantRequest
@@ -1268,7 +1270,7 @@ public interface AWSKMS {
      * before deletion occurs. If you do not provide a waiting period, the default period of 30 days is used. When this
      * operation is successful, the state of the CMK changes to <code>PendingDeletion</code>. Before the waiting period
      * ends, you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the waiting period ends, AWS
-     * KMS deletes the CMK and all AWS KMS data associated with it, including all aliases that point to it.
+     * KMS deletes the CMK and all AWS KMS data associated with it, including all aliases that refer to it.
      * </p>
      * <important>
      * <p>
@@ -1340,7 +1342,7 @@ public interface AWSKMS {
 
     /**
      * <p>
-     * Updates the description of a key.
+     * Updates the description of a customer master key (CMK).
      * </p>
      * 
      * @param updateKeyDescriptionRequest

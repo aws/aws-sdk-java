@@ -50,6 +50,56 @@ public class CreateApplicationRequestMarshaller implements Marshaller<Request<Cr
             request.addParameter("Description", StringUtils.fromString(createApplicationRequest.getDescription()));
         }
 
+        ApplicationResourceLifecycleConfig resourceLifecycleConfig = createApplicationRequest.getResourceLifecycleConfig();
+        if (resourceLifecycleConfig != null) {
+
+            if (resourceLifecycleConfig.getServiceRole() != null) {
+                request.addParameter("ResourceLifecycleConfig.ServiceRole", StringUtils.fromString(resourceLifecycleConfig.getServiceRole()));
+            }
+
+            ApplicationVersionLifecycleConfig versionLifecycleConfig = resourceLifecycleConfig.getVersionLifecycleConfig();
+            if (versionLifecycleConfig != null) {
+
+                MaxCountRule maxCountRule = versionLifecycleConfig.getMaxCountRule();
+                if (maxCountRule != null) {
+
+                    if (maxCountRule.getEnabled() != null) {
+                        request.addParameter("ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.Enabled",
+                                StringUtils.fromBoolean(maxCountRule.getEnabled()));
+                    }
+
+                    if (maxCountRule.getMaxCount() != null) {
+                        request.addParameter("ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.MaxCount",
+                                StringUtils.fromInteger(maxCountRule.getMaxCount()));
+                    }
+
+                    if (maxCountRule.getDeleteSourceFromS3() != null) {
+                        request.addParameter("ResourceLifecycleConfig.VersionLifecycleConfig.MaxCountRule.DeleteSourceFromS3",
+                                StringUtils.fromBoolean(maxCountRule.getDeleteSourceFromS3()));
+                    }
+                }
+
+                MaxAgeRule maxAgeRule = versionLifecycleConfig.getMaxAgeRule();
+                if (maxAgeRule != null) {
+
+                    if (maxAgeRule.getEnabled() != null) {
+                        request.addParameter("ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.Enabled",
+                                StringUtils.fromBoolean(maxAgeRule.getEnabled()));
+                    }
+
+                    if (maxAgeRule.getMaxAgeInDays() != null) {
+                        request.addParameter("ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.MaxAgeInDays",
+                                StringUtils.fromInteger(maxAgeRule.getMaxAgeInDays()));
+                    }
+
+                    if (maxAgeRule.getDeleteSourceFromS3() != null) {
+                        request.addParameter("ResourceLifecycleConfig.VersionLifecycleConfig.MaxAgeRule.DeleteSourceFromS3",
+                                StringUtils.fromBoolean(maxAgeRule.getDeleteSourceFromS3()));
+                    }
+                }
+            }
+        }
+
         return request;
     }
 

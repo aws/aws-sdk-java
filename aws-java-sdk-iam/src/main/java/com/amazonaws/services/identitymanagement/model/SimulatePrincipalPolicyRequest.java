@@ -40,10 +40,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
@@ -79,10 +79,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      */
     private String resourcePolicy;
@@ -200,15 +200,15 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     private String resourceHandlingOption;
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      */
     private Integer maxItems;
@@ -312,16 +312,16 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return An optional list of additional policy documents to include in the simulation. Each document is specified
      *         as a string containing the complete, valid JSON text of an IAM policy.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -340,17 +340,17 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param policyInputList
      *        An optional list of additional policy documents to include in the simulation. Each document is specified
      *        as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -371,10 +371,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -386,7 +386,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        An optional list of additional policy documents to include in the simulation. Each document is specified
      *        as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -409,17 +409,17 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * string containing the complete, valid JSON text of an IAM policy.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param policyInputList
      *        An optional list of additional policy documents to include in the simulation. Each document is specified
      *        as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -691,10 +691,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param resourcePolicy
@@ -702,7 +702,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        is treated as if it had this policy attached. You can include only one resource-based policy in a
      *        simulation.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -718,17 +718,17 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @return A resource-based policy to include in the simulation provided as a string. Each resource in the
      *         simulation is treated as if it had this policy attached. You can include only one resource-based policy
      *         in a simulation.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of any printable ASCII character ranging from the space character ( ) through end
      *         of the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ),
      *         and carriage return ( ).
@@ -744,10 +744,10 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      * treated as if it had this policy attached. You can include only one resource-based policy in a simulation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters
-     * consisting of any printable ASCII character ranging from the space character ( ) through end of the ASCII
-     * character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return (
-     * ).
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
+     * ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage
+     * return ( ).
      * </p>
      * 
      * @param resourcePolicy
@@ -755,7 +755,7 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
      *        is treated as if it had this policy attached. You can include only one resource-based policy in a
      *        simulation.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of any printable ASCII character ranging from the space character ( ) through end of
      *        the ASCII character range (\u00FF). It also includes the special characters tab ( ), line feed ( ), and
      *        carriage return ( ).
@@ -1489,26 +1489,26 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     *        <code>true</code>.</p>
+     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
+     *        element is <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
-     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
-     *        call that tells the service where to continue from.
+     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
+     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     *        the service where to continue from.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -1517,25 +1517,25 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      * 
-     * @return Use this only when paginating results to indicate the maximum number of items you want in the response.
-     *         If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.</p>
+     * @return (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     *         response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
+     *         element is <code>true</code>.</p>
      *         <p>
-     *         This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return
-     *         fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
-     *         response element returns <code>true</code> and <code>Marker</code> contains a value to include in the
-     *         subsequent call that tells the service where to continue from.
+     *         If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
+     *         when there are more results available. In that case, the <code>IsTruncated</code> response element
+     *         returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that
+     *         tells the service where to continue from.
      */
 
     public Integer getMaxItems() {
@@ -1544,26 +1544,26 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     * additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.
+     * (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     * response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element
+     * is <code>true</code>.
      * </p>
      * <p>
-     * This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     * results, even when there are more results available. In that case, the <code>IsTruncated</code> response element
-     * returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
-     * the service where to continue from.
+     * If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even when
+     * there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     * <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells the
+     * service where to continue from.
      * </p>
      * 
      * @param maxItems
-     *        Use this only when paginating results to indicate the maximum number of items you want in the response. If
-     *        additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is
-     *        <code>true</code>.</p>
+     *        (Optional) Use this only when paginating results to indicate the maximum number of items you want in the
+     *        response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response
+     *        element is <code>true</code>.</p>
      *        <p>
-     *        This parameter is optional. If you do not include it, it defaults to 100. Note that IAM might return fewer
-     *        results, even when there are more results available. In that case, the <code>IsTruncated</code> response
-     *        element returns <code>true</code> and <code>Marker</code> contains a value to include in the subsequent
-     *        call that tells the service where to continue from.
+     *        If you do not include this parameter, it defaults to 100. Note that IAM might return fewer results, even
+     *        when there are more results available. In that case, the <code>IsTruncated</code> response element returns
+     *        <code>true</code> and <code>Marker</code> contains a value to include in the subsequent call that tells
+     *        the service where to continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

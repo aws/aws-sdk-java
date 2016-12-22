@@ -3138,6 +3138,85 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * @param getSdkTypeRequest
+     *        Get an <a>SdkType</a> instance.
+     * @return Result of the GetSdkType operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetSdkType
+     */
+    @Override
+    public GetSdkTypeResult getSdkType(GetSdkTypeRequest getSdkTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSdkTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSdkTypeRequest> request = null;
+        Response<GetSdkTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSdkTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSdkTypeResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSdkTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param getSdkTypesRequest
+     *        Get the <a>SdkTypes</a> collection.
+     * @return Result of the GetSdkTypes operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetSdkTypes
+     */
+    @Override
+    public GetSdkTypesResult getSdkTypes(GetSdkTypesRequest getSdkTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSdkTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSdkTypesRequest> request = null;
+        Response<GetSdkTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSdkTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSdkTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSdkTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSdkTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Gets information about a <a>Stage</a> resource.
      * </p>

@@ -85,7 +85,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.</p>",
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1338,7 +1338,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Enables single-sign on for a directory.</p>",
+      "documentation" : "<p>Enables single sign-on for a directory.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1583,7 +1583,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Lists all tags on an Amazon Directory Services directory.</p>",
+      "documentation" : "<p>Lists all tags on a directory.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1742,7 +1742,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Removes tags from an Amazon Directory Services directory.</p>",
+      "documentation" : "<p>Removes tags from a directory.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2194,7 +2194,7 @@
         },
         "Tags" : {
           "deprecated" : false,
-          "documentation" : "<p>The tags to be assigned to the Amazon Directory Services directory.</p>",
+          "documentation" : "<p>The tags to be assigned to the directory.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -8971,7 +8971,7 @@
         },
         "LdifContent" : {
           "deprecated" : false,
-          "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+          "documentation" : "<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "location" : null,
@@ -9125,7 +9125,7 @@
     },
     "Tag" : {
       "deprecated" : false,
-      "documentation" : "<p>Metadata assigned to an Amazon Directory Services directory consisting of a key-value pair.</p>",
+      "documentation" : "<p>Metadata assigned to a directory consisting of a key-value pair.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10121,5 +10121,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS Directory Service</fullname> <p>This is the <i>AWS Directory Service API Reference</i>. This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors.</p>"
+  "documentation" : "<fullname>AWS Directory Service</fullname> <p>AWS Directory Service is a web service that makes it easy for you to setup and run directories in the AWS cloud, or connect your AWS resources with an existing on-premises Microsoft Active Directory. This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors. For information about AWS Directory Services features, see <a href=\"https://aws.amazon.com/directoryservice/\">AWS Directory Service</a> and the <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html\">AWS Directory Service Administration Guide</a>.</p> <note> <p>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS Directory Service and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> </note>"
 }

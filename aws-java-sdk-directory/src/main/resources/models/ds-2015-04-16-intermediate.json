@@ -58,7 +58,7 @@
     "defaultEndpoint" : "https://ds.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "ds.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<fullname>AWS Directory Service</fullname> <p>This is the <i>AWS Directory Service API Reference</i>. This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors.</p>",
+    "documentation" : "<fullname>AWS Directory Service</fullname> <p>AWS Directory Service is a web service that makes it easy for you to setup and run directories in the AWS cloud, or connect your AWS resources with an existing on-premises Microsoft Active Directory. This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors. For information about AWS Directory Services features, see <a href=\"https://aws.amazon.com/directoryservice/\">AWS Directory Service</a> and the <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html\">AWS Directory Service Administration Guide</a>.</p> <note> <p>AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS Directory Service and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> </note>",
     "endpointPrefix" : "ds",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -147,7 +147,7 @@
       "asyncReturnType" : "AddTagsToResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Adds or overwrites one or more tags for the specified Amazon Directory Services directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.</p>",
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>",
@@ -1220,7 +1220,7 @@
       "asyncReturnType" : "EnableSsoResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Enables single-sign on for a directory.</p>",
+      "documentation" : "<p>Enables single sign-on for a directory.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>",
@@ -1435,7 +1435,7 @@
       "asyncReturnType" : "ListTagsForResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Lists all tags on an Amazon Directory Services directory.</p>",
+      "documentation" : "<p>Lists all tags on a directory.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>",
@@ -1572,7 +1572,7 @@
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Removes tags from an Amazon Directory Services directory.</p>",
+      "documentation" : "<p>Removes tags from a directory.</p>",
       "exceptions" : [ {
         "exceptionName" : "EntityDoesNotExistException",
         "documentation" : "<p>The specified entity could not be found.</p>",
@@ -2489,11 +2489,11 @@
         "c2jName" : "Tags",
         "c2jShape" : "Tags",
         "deprecated" : false,
-        "documentation" : "<p>The tags to be assigned to the Amazon Directory Services directory.</p>",
+        "documentation" : "<p>The tags to be assigned to the directory.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n@param tags The tags to be assigned to the Amazon Directory Services directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n@param tags The tags to be assigned to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTags",
-        "getterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n@return The tags to be assigned to the Amazon Directory Services directory.*/",
+        "getterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n@return The tags to be assigned to the directory.*/",
         "getterMethodName" : "getTags",
         "getterModel" : {
           "returnType" : "java.util.List<Tag>",
@@ -2591,7 +2591,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "Tags",
-        "setterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n@param tags The tags to be assigned to the Amazon Directory Services directory.*/",
+        "setterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n@param tags The tags to be assigned to the directory.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
@@ -2602,12 +2602,12 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "simple" : false,
-        "varargSetterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags to be assigned to the Amazon Directory Services directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags to be assigned to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
           "variableName" : "tags",
           "variableType" : "java.util.List<Tag>",
-          "documentation" : "<p>The tags to be assigned to the Amazon Directory Services directory.</p>",
+          "documentation" : "<p>The tags to be assigned to the directory.</p>",
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
@@ -2675,11 +2675,11 @@
           "c2jName" : "Tags",
           "c2jShape" : "Tags",
           "deprecated" : false,
-          "documentation" : "<p>The tags to be assigned to the Amazon Directory Services directory.</p>",
+          "documentation" : "<p>The tags to be assigned to the directory.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n@param tags The tags to be assigned to the Amazon Directory Services directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n@param tags The tags to be assigned to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTags",
-          "getterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n@return The tags to be assigned to the Amazon Directory Services directory.*/",
+          "getterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n@return The tags to be assigned to the directory.*/",
           "getterMethodName" : "getTags",
           "getterModel" : {
             "returnType" : "java.util.List<Tag>",
@@ -2777,7 +2777,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "Tags",
-          "setterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n@param tags The tags to be assigned to the Amazon Directory Services directory.*/",
+          "setterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n@param tags The tags to be assigned to the directory.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
@@ -2788,12 +2788,12 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "simple" : false,
-          "varargSetterDocumentation" : "/**<p>The tags to be assigned to the Amazon Directory Services directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags to be assigned to the Amazon Directory Services directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The tags to be assigned to the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags to be assigned to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Tag>",
             "variableName" : "tags",
             "variableType" : "java.util.List<Tag>",
-            "documentation" : "<p>The tags to be assigned to the Amazon Directory Services directory.</p>",
+            "documentation" : "<p>The tags to be assigned to the directory.</p>",
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
@@ -35398,11 +35398,11 @@
         "c2jName" : "LdifContent",
         "c2jShape" : "LdifContent",
         "deprecated" : false,
-        "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+        "documentation" : "<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLdifContent",
-        "getterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@return The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+        "getterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@return The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.*/",
         "getterMethodName" : "getLdifContent",
         "getterModel" : {
           "returnType" : "String",
@@ -35429,7 +35429,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "LdifContent",
-        "setterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+        "setterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.*/",
         "setterMethodName" : "setLdifContent",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -35440,12 +35440,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "ldifContent",
           "variableType" : "String",
-          "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+          "documentation" : "<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -35683,11 +35683,11 @@
           "c2jName" : "LdifContent",
           "c2jShape" : "LdifContent",
           "deprecated" : false,
-          "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+          "documentation" : "<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLdifContent",
-          "getterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@return The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+          "getterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@return The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.*/",
           "getterMethodName" : "getLdifContent",
           "getterModel" : {
             "returnType" : "String",
@@ -35714,7 +35714,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "LdifContent",
-          "setterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.*/",
+          "setterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.*/",
           "setterMethodName" : "setLdifContent",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -35725,12 +35725,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>\n@param ldifContent The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "ldifContent",
             "variableType" : "String",
-            "documentation" : "<p>The LDIF file represented as a string. The file size can be no larger than 1MB.</p>",
+            "documentation" : "<p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -35912,7 +35912,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Metadata assigned to an Amazon Directory Services directory consisting of a key-value pair.</p>",
+      "documentation" : "<p>Metadata assigned to a directory consisting of a key-value pair.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
