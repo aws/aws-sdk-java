@@ -82,7 +82,7 @@
       "asyncReturnType" : "BatchCheckLayerAvailabilityResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Check the availability of multiple image layers in a specified registry and repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
+      "documentation" : "<p>Check the availability of multiple image layers in a specified registry and repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "RepositoryNotFoundException",
         "documentation" : "<p>The specified repository could not be found. Check the spelling of the specified repository and ensure that you are performing operations on the correct registry.</p>",
@@ -121,7 +121,7 @@
       "asyncReturnType" : "BatchDeleteImageResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes a list of specified images within a specified repository. Images are specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>",
+      "documentation" : "<p>Deletes a list of specified images within a specified repository. Images are specified with either <code>imageTag</code> or <code>imageDigest</code>.</p> <p>You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag from an image, the image is deleted from your repository.</p> <p>You can completely delete an image (and all of its tags) by specifying the image's digest in your request.</p>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -199,7 +199,7 @@
       "asyncReturnType" : "CompleteLayerUploadResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
+      "documentation" : "<p>Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -387,7 +387,7 @@
       "asyncReturnType" : "DescribeImagesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns metadata about the images in a repository, including image size and creation date.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
+      "documentation" : "<p>Returns metadata about the images in a repository, including image size, image tags, and creation date.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -504,7 +504,7 @@
       "asyncReturnType" : "GetDownloadUrlForLayerResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can only get URLs for image layers that are referenced in an image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
+      "documentation" : "<p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can only get URLs for image layers that are referenced in an image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -594,7 +594,7 @@
       "asyncReturnType" : "InitiateLayerUploadResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Notify Amazon ECR that you intend to upload an image layer.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
+      "documentation" : "<p>Notify Amazon ECR that you intend to upload an image layer.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -672,7 +672,7 @@
       "asyncReturnType" : "PutImageResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates or updates the image manifest associated with an image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
+      "documentation" : "<p>Creates or updates the image manifest and tags associated with an image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -762,7 +762,7 @@
       "asyncReturnType" : "UploadLayerPartResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
+      "documentation" : "<p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended for general use by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServerException",
         "documentation" : "<p>These errors are usually caused by a server-side issue.</p>",
@@ -3590,8 +3590,263 @@
           "variableSetterType" : "java.util.Collection<ImageIdentifier>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "acceptedMediaTypes",
+        "c2jShape" : "MediaTypeList",
+        "deprecated" : false,
+        "documentation" : "<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n@param acceptedMediaTypes The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAcceptedMediaTypes",
+        "getterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n@return The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>*/",
+        "getterMethodName" : "getAcceptedMediaTypes",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "acceptedMediaTypes",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "acceptedMediaTypes",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "MediaType",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "name" : "AcceptedMediaTypes",
+        "setterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n@param acceptedMediaTypes The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>*/",
+        "setterMethodName" : "setAcceptedMediaTypes",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "acceptedMediaTypes",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "varargSetterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceptedMediaTypes(java.util.Collection)} or {@link #withAcceptedMediaTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param acceptedMediaTypes The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "acceptedMediaTypes",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AcceptedMediaTypes" : {
+          "c2jName" : "acceptedMediaTypes",
+          "c2jShape" : "MediaTypeList",
+          "deprecated" : false,
+          "documentation" : "<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n@param acceptedMediaTypes The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAcceptedMediaTypes",
+          "getterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n@return The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>*/",
+          "getterMethodName" : "getAcceptedMediaTypes",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "acceptedMediaTypes",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "acceptedMediaTypes",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "MediaType",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "name" : "AcceptedMediaTypes",
+          "setterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n@param acceptedMediaTypes The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>*/",
+          "setterMethodName" : "setAcceptedMediaTypes",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "acceptedMediaTypes",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "varargSetterDocumentation" : "/**<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAcceptedMediaTypes(java.util.Collection)} or {@link #withAcceptedMediaTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param acceptedMediaTypes The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "acceptedMediaTypes",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The accepted media types for the request.</p> <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "ImageIds" : {
           "c2jName" : "imageIds",
           "c2jShape" : "ImageIdentifierList",
@@ -7186,11 +7441,11 @@
         "c2jName" : "registryId",
         "c2jShape" : "RegistryId",
         "deprecated" : false,
-        "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+        "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRegistryId",
-        "getterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@return The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+        "getterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@return The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.*/",
         "getterMethodName" : "getRegistryId",
         "getterModel" : {
           "returnType" : "String",
@@ -7217,7 +7472,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "RegistryId",
-        "setterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+        "setterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.*/",
         "setterMethodName" : "setRegistryId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -7228,12 +7483,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "registryId",
           "variableType" : "String",
-          "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+          "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7894,11 +8149,11 @@
           "c2jName" : "registryId",
           "c2jShape" : "RegistryId",
           "deprecated" : false,
-          "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+          "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRegistryId",
-          "getterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@return The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+          "getterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@return The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.*/",
           "getterMethodName" : "getRegistryId",
           "getterModel" : {
             "returnType" : "String",
@@ -7925,7 +8180,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "RegistryId",
-          "setterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.*/",
+          "setterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.*/",
           "setterMethodName" : "setRegistryId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -7936,12 +8191,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>\n@param registryId The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "registryId",
             "variableType" : "String",
-            "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>",
+            "documentation" : "<p>The AWS account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14655,11 +14910,11 @@
         "c2jName" : "layerAvailability",
         "c2jShape" : "LayerAvailability",
         "deprecated" : false,
-        "documentation" : "<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>",
+        "documentation" : "<p>The availability status of the image layer.</p>",
         "enumType" : "LayerAvailability",
-        "fluentSetterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@param layerAvailability The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
+        "fluentSetterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@param layerAvailability The availability status of the image layer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
         "fluentSetterMethodName" : "withLayerAvailability",
-        "getterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@return The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@see LayerAvailability*/",
+        "getterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@return The availability status of the image layer.\n@see LayerAvailability*/",
         "getterMethodName" : "getLayerAvailability",
         "getterModel" : {
           "returnType" : "String",
@@ -14686,7 +14941,7 @@
         "map" : false,
         "mapModel" : null,
         "name" : "LayerAvailability",
-        "setterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@param layerAvailability The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@see LayerAvailability*/",
+        "setterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@param layerAvailability The availability status of the image layer.\n@see LayerAvailability*/",
         "setterMethodName" : "setLayerAvailability",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -14697,12 +14952,12 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@param layerAvailability The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
+        "varargSetterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@param layerAvailability The availability status of the image layer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "layerAvailability",
           "variableType" : "String",
-          "documentation" : "<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>",
+          "documentation" : "<p>The availability status of the image layer.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -14763,17 +15018,73 @@
           "variableSetterType" : "Long"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "mediaType",
+        "c2jShape" : "MediaType",
+        "deprecated" : false,
+        "documentation" : "<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@param mediaType The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMediaType",
+        "getterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@return The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.*/",
+        "getterMethodName" : "getMediaType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "mediaType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "mediaType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "MediaType",
+        "setterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@param mediaType The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.*/",
+        "setterMethodName" : "setMediaType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "mediaType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@param mediaType The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "mediaType",
+          "variableType" : "String",
+          "documentation" : "<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "LayerAvailability" : {
           "c2jName" : "layerAvailability",
           "c2jShape" : "LayerAvailability",
           "deprecated" : false,
-          "documentation" : "<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>",
+          "documentation" : "<p>The availability status of the image layer.</p>",
           "enumType" : "LayerAvailability",
-          "fluentSetterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@param layerAvailability The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
+          "fluentSetterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@param layerAvailability The availability status of the image layer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
           "fluentSetterMethodName" : "withLayerAvailability",
-          "getterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@return The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@see LayerAvailability*/",
+          "getterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@return The availability status of the image layer.\n@see LayerAvailability*/",
           "getterMethodName" : "getLayerAvailability",
           "getterModel" : {
             "returnType" : "String",
@@ -14800,7 +15111,7 @@
           "map" : false,
           "mapModel" : null,
           "name" : "LayerAvailability",
-          "setterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@param layerAvailability The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@see LayerAvailability*/",
+          "setterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@param layerAvailability The availability status of the image layer.\n@see LayerAvailability*/",
           "setterMethodName" : "setLayerAvailability",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -14811,12 +15122,12 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>\n@param layerAvailability The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
+          "varargSetterDocumentation" : "/**<p>The availability status of the image layer.</p>\n@param layerAvailability The availability status of the image layer.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LayerAvailability*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "layerAvailability",
             "variableType" : "String",
-            "documentation" : "<p>The availability status of the image layer. Valid values are <code>AVAILABLE</code> and <code>UNAVAILABLE</code>.</p>",
+            "documentation" : "<p>The availability status of the image layer.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14933,6 +15244,63 @@
             "documentation" : "<p>The size, in bytes, of the image layer.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MediaType" : {
+          "c2jName" : "mediaType",
+          "c2jShape" : "MediaType",
+          "deprecated" : false,
+          "documentation" : "<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@param mediaType The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMediaType",
+          "getterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@return The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.*/",
+          "getterMethodName" : "getMediaType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "mediaType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "mediaType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "MediaType",
+          "setterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@param mediaType The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.*/",
+          "setterMethodName" : "setMediaType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "mediaType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>\n@param mediaType The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "mediaType",
+            "variableType" : "String",
+            "documentation" : "<p>The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code> or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         }
@@ -16944,6 +17312,62 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "imageTag",
+        "c2jShape" : "ImageTag",
+        "deprecated" : false,
+        "documentation" : "<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withImageTag",
+        "getterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@return The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.*/",
+        "getterMethodName" : "getImageTag",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocationName" : "imageTag",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageTag",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "name" : "ImageTag",
+        "setterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.*/",
+        "setterMethodName" : "setImageTag",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "imageTag",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "varargSetterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "imageTag",
+          "variableType" : "String",
+          "documentation" : "<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ImageManifest" : {
@@ -16998,6 +17422,63 @@
             "variableName" : "imageManifest",
             "variableType" : "String",
             "documentation" : "<p>The image manifest corresponding to the image to be uploaded.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ImageTag" : {
+          "c2jName" : "imageTag",
+          "c2jShape" : "ImageTag",
+          "deprecated" : false,
+          "documentation" : "<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withImageTag",
+          "getterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@return The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.*/",
+          "getterMethodName" : "getImageTag",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocationName" : "imageTag",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageTag",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "name" : "ImageTag",
+          "setterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.*/",
+          "setterMethodName" : "setImageTag",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "imageTag",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "varargSetterDocumentation" : "/**<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>\n@param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "imageTag",
+            "variableType" : "String",
+            "documentation" : "<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

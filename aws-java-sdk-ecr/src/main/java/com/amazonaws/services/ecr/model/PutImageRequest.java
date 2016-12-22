@@ -39,6 +39,13 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      */
     private String imageManifest;
+    /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     */
+    private String imageTag;
 
     /**
      * <p>
@@ -167,6 +174,52 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     * 
+     * @param imageTag
+     *        The tag to associate with the image. This parameter is required for images that use the Docker Image
+     *        Manifest V2 Schema 2 or OCI formats.
+     */
+
+    public void setImageTag(String imageTag) {
+        this.imageTag = imageTag;
+    }
+
+    /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     * 
+     * @return The tag to associate with the image. This parameter is required for images that use the Docker Image
+     *         Manifest V2 Schema 2 or OCI formats.
+     */
+
+    public String getImageTag() {
+        return this.imageTag;
+    }
+
+    /**
+     * <p>
+     * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
+     * Schema 2 or OCI formats.
+     * </p>
+     * 
+     * @param imageTag
+     *        The tag to associate with the image. This parameter is required for images that use the Docker Image
+     *        Manifest V2 Schema 2 or OCI formats.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutImageRequest withImageTag(String imageTag) {
+        setImageTag(imageTag);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -182,7 +235,9 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getRepositoryName() != null)
             sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageManifest() != null)
-            sb.append("ImageManifest: ").append(getImageManifest());
+            sb.append("ImageManifest: ").append(getImageManifest()).append(",");
+        if (getImageTag() != null)
+            sb.append("ImageTag: ").append(getImageTag());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +264,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getImageManifest() != null && other.getImageManifest().equals(this.getImageManifest()) == false)
             return false;
+        if (other.getImageTag() == null ^ this.getImageTag() == null)
+            return false;
+        if (other.getImageTag() != null && other.getImageTag().equals(this.getImageTag()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +279,7 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getImageManifest() == null) ? 0 : getImageManifest().hashCode());
+        hashCode = prime * hashCode + ((getImageTag() == null) ? 0 : getImageTag().hashCode());
         return hashCode;
     }
 

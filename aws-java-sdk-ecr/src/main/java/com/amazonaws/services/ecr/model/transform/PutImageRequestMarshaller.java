@@ -68,6 +68,9 @@ public class PutImageRequestMarshaller implements Marshaller<Request<PutImageReq
             if (putImageRequest.getImageManifest() != null) {
                 jsonGenerator.writeFieldName("imageManifest").writeValue(putImageRequest.getImageManifest());
             }
+            if (putImageRequest.getImageTag() != null) {
+                jsonGenerator.writeFieldName("imageTag").writeValue(putImageRequest.getImageTag());
+            }
 
             jsonGenerator.writeEndObject();
 

@@ -40,6 +40,17 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<ImageIdentifier> imageIds;
+    /**
+     * <p>
+     * The accepted media types for the request.
+     * </p>
+     * <p>
+     * Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code>
+     * </p>
+     */
+    private java.util.List<String> acceptedMediaTypes;
 
     /**
      * <p>
@@ -206,6 +217,112 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The accepted media types for the request.
+     * </p>
+     * <p>
+     * Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code>
+     * </p>
+     * 
+     * @return The accepted media types for the request.</p>
+     *         <p>
+     *         Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     *         <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     *         <code>application/vnd.oci.image.manifest.v1+json</code>
+     */
+
+    public java.util.List<String> getAcceptedMediaTypes() {
+        return acceptedMediaTypes;
+    }
+
+    /**
+     * <p>
+     * The accepted media types for the request.
+     * </p>
+     * <p>
+     * Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code>
+     * </p>
+     * 
+     * @param acceptedMediaTypes
+     *        The accepted media types for the request.</p>
+     *        <p>
+     *        Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     *        <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     *        <code>application/vnd.oci.image.manifest.v1+json</code>
+     */
+
+    public void setAcceptedMediaTypes(java.util.Collection<String> acceptedMediaTypes) {
+        if (acceptedMediaTypes == null) {
+            this.acceptedMediaTypes = null;
+            return;
+        }
+
+        this.acceptedMediaTypes = new java.util.ArrayList<String>(acceptedMediaTypes);
+    }
+
+    /**
+     * <p>
+     * The accepted media types for the request.
+     * </p>
+     * <p>
+     * Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAcceptedMediaTypes(java.util.Collection)} or {@link #withAcceptedMediaTypes(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param acceptedMediaTypes
+     *        The accepted media types for the request.</p>
+     *        <p>
+     *        Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     *        <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     *        <code>application/vnd.oci.image.manifest.v1+json</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetImageRequest withAcceptedMediaTypes(String... acceptedMediaTypes) {
+        if (this.acceptedMediaTypes == null) {
+            setAcceptedMediaTypes(new java.util.ArrayList<String>(acceptedMediaTypes.length));
+        }
+        for (String ele : acceptedMediaTypes) {
+            this.acceptedMediaTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The accepted media types for the request.
+     * </p>
+     * <p>
+     * Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     * <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     * <code>application/vnd.oci.image.manifest.v1+json</code>
+     * </p>
+     * 
+     * @param acceptedMediaTypes
+     *        The accepted media types for the request.</p>
+     *        <p>
+     *        Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+     *        <code>application/vnd.docker.distribution.manifest.v2+json</code> |
+     *        <code>application/vnd.oci.image.manifest.v1+json</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetImageRequest withAcceptedMediaTypes(java.util.Collection<String> acceptedMediaTypes) {
+        setAcceptedMediaTypes(acceptedMediaTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -221,7 +338,9 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getRepositoryName() != null)
             sb.append("RepositoryName: ").append(getRepositoryName()).append(",");
         if (getImageIds() != null)
-            sb.append("ImageIds: ").append(getImageIds());
+            sb.append("ImageIds: ").append(getImageIds()).append(",");
+        if (getAcceptedMediaTypes() != null)
+            sb.append("AcceptedMediaTypes: ").append(getAcceptedMediaTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +367,10 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
             return false;
+        if (other.getAcceptedMediaTypes() == null ^ this.getAcceptedMediaTypes() == null)
+            return false;
+        if (other.getAcceptedMediaTypes() != null && other.getAcceptedMediaTypes().equals(this.getAcceptedMediaTypes()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +382,7 @@ public class BatchGetImageRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
         hashCode = prime * hashCode + ((getRepositoryName() == null) ? 0 : getRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
+        hashCode = prime * hashCode + ((getAcceptedMediaTypes() == null) ? 0 : getAcceptedMediaTypes().hashCode());
         return hashCode;
     }
 

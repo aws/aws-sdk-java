@@ -59,6 +59,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                     context.nextToken();
                     layer.setLayerSize(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("mediaType", targetDepth)) {
+                    context.nextToken();
+                    layer.setMediaType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

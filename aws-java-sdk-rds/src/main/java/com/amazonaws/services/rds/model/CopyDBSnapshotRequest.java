@@ -109,8 +109,19 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
+     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If you copy an encrypted
+     * snapshot to a different AWS region, then you must specify a KMS key for the destination AWS region.
+     * </p>
+     * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
      * <code>KmsKeyId</code>.
+     * </p>
+     * <p>
+     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
+     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
+     * that they are created in, and you cannot use encryption keys from one region in another region.
      * </p>
      */
     private String kmsKeyId;
@@ -123,6 +134,46 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Boolean copyTags;
+    /**
+     * <p>
+     * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
+     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
+     * when copying an encrypted DB snapshot from another AWS region.
+     * </p>
+     * <p>
+     * The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
+     * the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL request must contain
+     * the following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot in the
+     * destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in
+     * the destination region, and the action contained in the pre-signed URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be copied.
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
+     * would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
+     * Version 4 Signing Process</a>.
+     * </p>
+     */
+    private String preSignedUrl;
+    /** The region where the source snapshot is located. */
+    private String sourceRegion;
 
     /**
      * <p>
@@ -586,8 +637,19 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
+     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If you copy an encrypted
+     * snapshot to a different AWS region, then you must specify a KMS key for the destination AWS region.
+     * </p>
+     * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
      * <code>KmsKeyId</code>.
+     * </p>
+     * <p>
+     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
+     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
+     * that they are created in, and you cannot use encryption keys from one region in another region.
      * </p>
      * 
      * @param kmsKeyId
@@ -604,8 +666,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        DB snapshot.
      *        </p>
      *        <p>
+     *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for
+     *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     *        <code>KmsKeyId</code>, then the copy of the DB snapshot is encrypted with the same KMS key as the source
+     *        DB snapshot. If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key
+     *        for the destination AWS region.
+     *        </p>
+     *        <p>
      *        If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
      *        value for <code>KmsKeyId</code>.
+     *        </p>
+     *        <p>
+     *        To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     *        used to encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to
+     *        the region that they are created in, and you cannot use encryption keys from one region in another region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -627,8 +701,19 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
+     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If you copy an encrypted
+     * snapshot to a different AWS region, then you must specify a KMS key for the destination AWS region.
+     * </p>
+     * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
      * <code>KmsKeyId</code>.
+     * </p>
+     * <p>
+     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
+     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
+     * that they are created in, and you cannot use encryption keys from one region in another region.
      * </p>
      * 
      * @return The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
@@ -644,8 +729,21 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         DB snapshot.
      *         </p>
      *         <p>
+     *         If you copy an encrypted DB snapshot from your AWS account, you can specify a value for
+     *         <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     *         <code>KmsKeyId</code>, then the copy of the DB snapshot is encrypted with the same KMS key as the source
+     *         DB snapshot. If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key
+     *         for the destination AWS region.
+     *         </p>
+     *         <p>
      *         If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
      *         value for <code>KmsKeyId</code>.
+     *         </p>
+     *         <p>
+     *         To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     *         used to encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific
+     *         to the region that they are created in, and you cannot use encryption keys from one region in another
+     *         region.
      */
 
     public String getKmsKeyId() {
@@ -667,8 +765,19 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
+     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
+     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot. If you copy an encrypted
+     * snapshot to a different AWS region, then you must specify a KMS key for the destination AWS region.
+     * </p>
+     * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
      * <code>KmsKeyId</code>.
+     * </p>
+     * <p>
+     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
+     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
+     * that they are created in, and you cannot use encryption keys from one region in another region.
      * </p>
      * 
      * @param kmsKeyId
@@ -685,8 +794,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        DB snapshot.
      *        </p>
      *        <p>
+     *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for
+     *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     *        <code>KmsKeyId</code>, then the copy of the DB snapshot is encrypted with the same KMS key as the source
+     *        DB snapshot. If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key
+     *        for the destination AWS region.
+     *        </p>
+     *        <p>
      *        If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
      *        value for <code>KmsKeyId</code>.
+     *        </p>
+     *        <p>
+     *        To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
+     *        used to encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to
+     *        the region that they are created in, and you cannot use encryption keys from one region in another region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -811,6 +932,269 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
+     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
+     * when copying an encrypted DB snapshot from another AWS region.
+     * </p>
+     * <p>
+     * The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
+     * the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL request must contain
+     * the following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot in the
+     * destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in
+     * the destination region, and the action contained in the pre-signed URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be copied.
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
+     * would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
+     * Version 4 Signing Process</a>.
+     * </p>
+     * 
+     * @param preSignedUrl
+     *        The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
+     *        in the AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter
+     *        must be used when copying an encrypted DB snapshot from another AWS region.</p>
+     *        <p>
+     *        The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
+     *        executed in the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL
+     *        request must contain the following parameter values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot
+     *        in the destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action
+     *        that is called in the destination region, and the action contained in the pre-signed URL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be
+     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
+     *        example, if you are copying an encrypted DB snapshot from the us-west-2 region, then your
+     *        <code>SourceDBSnapshotIdentifier</code> would look like Example:
+     *        <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To learn how to generate a Signature Version 4 signed request, see <a href=
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     *        Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     *        Signature Version 4 Signing Process</a>.
+     */
+
+    public void setPreSignedUrl(String preSignedUrl) {
+        this.preSignedUrl = preSignedUrl;
+    }
+
+    /**
+     * <p>
+     * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
+     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
+     * when copying an encrypted DB snapshot from another AWS region.
+     * </p>
+     * <p>
+     * The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
+     * the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL request must contain
+     * the following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot in the
+     * destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in
+     * the destination region, and the action contained in the pre-signed URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be copied.
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
+     * would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
+     * Version 4 Signing Process</a>.
+     * </p>
+     * 
+     * @return The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
+     *         in the AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter
+     *         must be used when copying an encrypted DB snapshot from another AWS region.</p>
+     *         <p>
+     *         The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
+     *         executed in the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL
+     *         request must contain the following parameter values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot
+     *         in the destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action
+     *         that is called in the destination region, and the action contained in the pre-signed URL.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be
+     *         copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
+     *         example, if you are copying an encrypted DB snapshot from the us-west-2 region, then your
+     *         <code>SourceDBSnapshotIdentifier</code> would look like Example:
+     *         <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To learn how to generate a Signature Version 4 signed request, see <a href=
+     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     *         Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     *         Signature Version 4 Signing Process</a>.
+     */
+
+    public String getPreSignedUrl() {
+        return this.preSignedUrl;
+    }
+
+    /**
+     * <p>
+     * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
+     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
+     * when copying an encrypted DB snapshot from another AWS region.
+     * </p>
+     * <p>
+     * The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
+     * the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL request must contain
+     * the following parameter values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot in the
+     * destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action that is called in
+     * the destination region, and the action contained in the pre-signed URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be copied.
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
+     * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
+     * would look like Example:
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To learn how to generate a Signature Version 4 signed request, see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
+     * Version 4 Signing Process</a>.
+     * </p>
+     * 
+     * @param preSignedUrl
+     *        The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
+     *        in the AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter
+     *        must be used when copying an encrypted DB snapshot from another AWS region.</p>
+     *        <p>
+     *        The pre-signed URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
+     *        executed in the source region that contains the encrypted DB snapshot to be copied. The pre-signed URL
+     *        request must contain the following parameter values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB snapshot
+     *        in the destination region. This is the same identifier for both the <code>CopyDBSnapshot</code> action
+     *        that is called in the destination region, and the action contained in the pre-signed URL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SourceDBSnapshotIdentifier</code> - the DB snapshot identifier for the encrypted snapshot to be
+     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
+     *        example, if you are copying an encrypted DB snapshot from the us-west-2 region, then your
+     *        <code>SourceDBSnapshotIdentifier</code> would look like Example:
+     *        <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To learn how to generate a Signature Version 4 signed request, see <a href=
+     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     *        Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     *        Signature Version 4 Signing Process</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDBSnapshotRequest withPreSignedUrl(String preSignedUrl) {
+        setPreSignedUrl(preSignedUrl);
+        return this;
+    }
+
+    /**
+     * The region where the source snapshot is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source snapshot is located.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * The region where the source snapshot is located.
+     * 
+     * @return The region where the source snapshot is located.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * The region where the source snapshot is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source snapshot is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDBSnapshotRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -830,7 +1214,11 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCopyTags() != null)
-            sb.append("CopyTags: ").append(getCopyTags());
+            sb.append("CopyTags: ").append(getCopyTags()).append(",");
+        if (getPreSignedUrl() != null)
+            sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -865,6 +1253,14 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getCopyTags() != null && other.getCopyTags().equals(this.getCopyTags()) == false)
             return false;
+        if (other.getPreSignedUrl() == null ^ this.getPreSignedUrl() == null)
+            return false;
+        if (other.getPreSignedUrl() != null && other.getPreSignedUrl().equals(this.getPreSignedUrl()) == false)
+            return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -878,6 +1274,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
+        hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

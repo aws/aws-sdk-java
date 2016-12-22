@@ -50,6 +50,9 @@ public class LayerJsonMarshaller {
             if (layer.getLayerSize() != null) {
                 jsonGenerator.writeFieldName("layerSize").writeValue(layer.getLayerSize());
             }
+            if (layer.getMediaType() != null) {
+                jsonGenerator.writeFieldName("mediaType").writeValue(layer.getMediaType());
+            }
 
             jsonGenerator.writeEndObject();
         } catch (Throwable t) {

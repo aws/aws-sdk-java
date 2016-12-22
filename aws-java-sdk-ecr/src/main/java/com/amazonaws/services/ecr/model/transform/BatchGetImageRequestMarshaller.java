@@ -79,6 +79,18 @@ public class BatchGetImageRequestMarshaller implements Marshaller<Request<BatchG
                 jsonGenerator.writeEndArray();
             }
 
+            java.util.List<String> acceptedMediaTypesList = batchGetImageRequest.getAcceptedMediaTypes();
+            if (acceptedMediaTypesList != null) {
+                jsonGenerator.writeFieldName("acceptedMediaTypes");
+                jsonGenerator.writeStartArray();
+                for (String acceptedMediaTypesListValue : acceptedMediaTypesList) {
+                    if (acceptedMediaTypesListValue != null) {
+                        jsonGenerator.writeValue(acceptedMediaTypesListValue);
+                    }
+                }
+                jsonGenerator.writeEndArray();
+            }
+
             jsonGenerator.writeEndObject();
 
             byte[] content = jsonGenerator.getBytes();
