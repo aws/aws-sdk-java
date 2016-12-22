@@ -14,6 +14,7 @@ package com.amazonaws.services.sqs;
 
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.client.AwsAsyncClientParams;
+import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.annotation.ThreadSafe;
 
 /**
@@ -241,6 +242,30 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
     }
 
     /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon SQS using the provided AWS account
+     * credentials provider and client configuration options.
+     * <p>
+     * Asynchronous methods are delegated to a fixed-size thread pool containing a number of threads equal to the
+     * maximum number of concurrent connections configured via {@code ClientConfiguration.getMaxConnections()}.
+     *
+     * @param awsCredentialsProvider
+     *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings, etc).
+     * @param requestMetricCollector
+     *        optional request metric collector
+     *
+     * @see com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+     * @see java.util.concurrent.Executors#newFixedThreadPool(int)
+     */
+    public AmazonSQSAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration,
+        RequestMetricCollector requestMetricCollector) {
+
+        this(awsCredentialsProvider, clientConfiguration, java.util.concurrent.Executors.newFixedThreadPool(clientConfiguration.getMaxConnections()),
+            requestMetricCollector);
+    }
+
+    /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SQS using the specified AWS account
      * credentials provider and executor service. Default client settings will be used.
      *
@@ -268,7 +293,26 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient implements AmazonSQSAs
     public AmazonSQSAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration,
             java.util.concurrent.ExecutorService executorService) {
 
-        super(awsCredentialsProvider, clientConfiguration);
+        this(awsCredentialsProvider, clientConfiguration, executorService, null);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon SQS using the specified AWS account
+     * credentials provider, executor service, and client configuration options.
+     *
+     * @param awsCredentialsProvider
+     *        The AWS credentials provider which will provide credentials to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *        Client configuration options (ex: max retry limit, proxy settings, etc).
+     * @param executorService
+     *        The executor service by which all asynchronous requests will be executed.
+     * @param requestMetricCollector
+     *        optional request metric collector
+     */
+    public AmazonSQSAsyncClient(com.amazonaws.auth.AWSCredentialsProvider awsCredentialsProvider, com.amazonaws.ClientConfiguration clientConfiguration,
+            java.util.concurrent.ExecutorService executorService, RequestMetricCollector requestMetricCollector) {
+
+        super(awsCredentialsProvider, clientConfiguration, requestMetricCollector);
         this.executorService = executorService;
     }
 
