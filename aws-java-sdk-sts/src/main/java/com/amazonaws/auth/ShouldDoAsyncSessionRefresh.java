@@ -26,9 +26,12 @@ import java.util.concurrent.TimeUnit;
  * return existing credentials to the caller. This is done within a comfortable margin of session
  * expiration so we can optimistically fetch new credentials from STS and never have to block the
  * caller.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.ShouldDoAsyncSessionRefresh}
  */
 @SdkInternalApi
 @ThreadSafe
+@Deprecated
 class ShouldDoAsyncSessionRefresh extends SdkPredicate<SessionCredentialsHolder> {
 
     /**

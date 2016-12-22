@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon SimpleDB.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.simpledb.auth.policy.actions.SimpleDBActions}
  */
-
+@Deprecated
 public enum SimpleDBActions implements Action {
 
     /** Represents any action executed on Amazon SimpleDB. */

@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-cloudwatchmetrics</artifactId>
+  <packaging>bundle</packaging>
   <name>CloudWatch Metrics for AWS Java SDK</name>
   <description>This package holds the classes for uploading the clientside metrics collected from AWS Java SDK to Amazon CloudWatch</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.private.pkg>
+      com.amazonaws.metrics.*
+    </aws.osgi.private.pkg>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

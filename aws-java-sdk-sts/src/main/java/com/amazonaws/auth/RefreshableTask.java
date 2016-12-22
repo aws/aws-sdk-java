@@ -35,9 +35,12 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Handles refreshing a value with a simple synchronization policy. Does a blocking, synchronous
  * refresh if needed, otherwise queues an asynchronous refresh and returns the current value.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.RefreshableTask}
  */
 @ThreadSafe
 @SdkInternalApi
+@Deprecated
 class RefreshableTask<T> {
 
     /**

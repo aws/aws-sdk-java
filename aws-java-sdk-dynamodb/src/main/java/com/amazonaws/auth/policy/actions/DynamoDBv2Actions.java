@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for DynamoDB.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.dynamodbv2.auth.policy.actions.DynamoDBv2Actions}
  */
-
+@Deprecated
 public enum DynamoDBv2Actions implements Action {
 
     /** Represents any action executed on DynamoDB. */

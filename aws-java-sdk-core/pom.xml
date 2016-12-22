@@ -9,9 +9,25 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-core</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS SDK for Java - Core</name>
   <description>The AWS SDK for Java - Core module holds the classes that are used by the individual service clients to interact with Amazon Web Services. Users need to depend on aws-java-sdk artifact for accessing individual client classes.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.*
+    </aws.osgi.export>
+    <aws.osgi.private.pkg>
+      com.amazonaws.auth.internal.*,
+      com.amazonaws.auth.policy.internal.*,
+      com.amazonaws.auth.profile.internal.*,
+      com.amazonaws.internal.*,
+      com.amazonaws.metrics.internal.*,
+      com.amazonaws.retry.internal.*
+    </aws.osgi.private.pkg>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>commons-logging</groupId>

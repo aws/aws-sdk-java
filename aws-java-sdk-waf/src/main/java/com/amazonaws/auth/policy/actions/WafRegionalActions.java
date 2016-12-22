@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for WAF Regional.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.waf.auth.policy.actions.WafRegionalActions}
  */
-
+@Deprecated
 public enum WafRegionalActions implements Action {
 
     /** Represents any action executed on WAF Regional. */

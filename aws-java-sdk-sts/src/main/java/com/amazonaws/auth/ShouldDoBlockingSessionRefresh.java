@@ -23,9 +23,12 @@ import java.util.Date;
 /**
  * Predicate to determine when we do a blocking, synchronous refresh of session credentials in
  * STSSessionCredentialsProvider and STSAssumeRoleSessionCredentialsProvider.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.ShouldDoBlockingSessionRefresh}
  */
 @SdkInternalApi
 @ThreadSafe
+@Deprecated
 class ShouldDoBlockingSessionRefresh extends SdkPredicate<SessionCredentialsHolder> {
 
     /**

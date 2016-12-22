@@ -24,7 +24,10 @@ import com.amazonaws.services.s3.AmazonS3;
  * The available AWS access control policy actions for Amazon S3.
  *
  * @see Statement#setActions(java.util.Collection)
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.actions.S3Actions}
  */
+@Deprecated
 public enum S3Actions implements Action {
 
     /** Represents any action being taken on Amazon S3. */

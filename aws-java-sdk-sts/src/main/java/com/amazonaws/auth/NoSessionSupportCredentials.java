@@ -17,5 +17,8 @@ package com.amazonaws.auth;
 /**
  * Marker interface for credentials that should not be used to start
  * AWS Security Token Service sessions.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.NoSessionSupportCredentials}
  */
+@Deprecated
 public interface NoSessionSupportCredentials {}

@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon SWF.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.simpleworkflow.auth.policy.actions.SwfActions}
  */
-
+@Deprecated
 public enum SwfActions implements Action {
 
     /** Represents any action executed on Amazon SWF. */

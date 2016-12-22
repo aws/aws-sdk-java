@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-xray</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for AWS X-Ray</name>
   <description>The AWS Java SDK for AWS X-Ray module holds the client classes that are used for communicating with AWS X-Ray Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.xray.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

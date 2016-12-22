@@ -23,7 +23,10 @@ import com.amazonaws.auth.policy.conditions.StringCondition.StringComparisonType
  * control policy condition keys specific to Amazon SNS, as well as methods for
  * quickly creating common SNS specific policy conditions such as
  * {@link #newEndpointCondition(String)}.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.sns.auth.policy.conditions.SNSConditionFactory}
  */
+@Deprecated
 public class SNSConditionFactory {
 
     /**

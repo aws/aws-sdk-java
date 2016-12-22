@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon SES.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.simpleemail.auth.policy.actions.SimpleEmailServiceActions}
  */
-
+@Deprecated
 public enum SimpleEmailServiceActions implements Action {
 
     /** Represents any action executed on Amazon SES. */

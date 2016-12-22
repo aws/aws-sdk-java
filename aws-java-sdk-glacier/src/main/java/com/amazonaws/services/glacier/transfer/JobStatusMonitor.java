@@ -22,7 +22,7 @@ import com.amazonaws.auth.policy.Principal;
 import com.amazonaws.auth.policy.Resource;
 import com.amazonaws.auth.policy.Statement;
 import com.amazonaws.auth.policy.Statement.Effect;
-import com.amazonaws.auth.policy.actions.SQSActions;
+import com.amazonaws.services.sqs.auth.policy.actions.SQSActions;
 import com.amazonaws.auth.policy.conditions.ConditionFactory;
 import com.amazonaws.services.glacier.model.StatusCode;
 import com.amazonaws.services.sns.AmazonSNSClient;

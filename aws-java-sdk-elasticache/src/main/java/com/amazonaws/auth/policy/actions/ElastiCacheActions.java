@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon ElastiCache.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.elasticache.auth.policy.actions.ElastiCacheActions}
  */
-
+@Deprecated
 public enum ElastiCacheActions implements Action {
 
     /** Represents any action executed on Amazon ElastiCache. */

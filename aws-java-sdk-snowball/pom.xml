@@ -9,9 +9,16 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-snowball</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for Amazon Snowball</name>
   <description>The AWS Java SDK for Amazon Snowball module holds the client classes that are used for communicating with Amazon Snowball.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.snowball.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

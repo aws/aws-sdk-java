@@ -14,6 +14,10 @@
  */
 package com.amazonaws.auth;
 
+/**
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.ChunkContentIterator}
+ */
+@Deprecated
 class ChunkContentIterator {
 
     private final byte[] signedChunk;

@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for CloudFront.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.policy.actions.CloudFrontActions}
  */
-
+@Deprecated
 public enum CloudFrontActions implements Action {
 
     /** Represents any action executed on CloudFront. */

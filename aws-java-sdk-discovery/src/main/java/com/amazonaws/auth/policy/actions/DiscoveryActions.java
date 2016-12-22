@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for AWS Application Discovery Service.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.applicationdiscovery.auth.policy.actions.DiscoveryActions}
  */
-
+@Deprecated
 public enum DiscoveryActions implements Action {
 
     /** Represents any action executed on AWS Application Discovery Service. */

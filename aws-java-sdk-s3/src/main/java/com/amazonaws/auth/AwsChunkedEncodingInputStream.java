@@ -34,7 +34,10 @@ import com.amazonaws.util.BinaryUtils;
 
 /**
  * A wrapper class of InputStream that implements chunked-encoding.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.AwsChunkedEncodingInputStream}
  */
+@Deprecated
 public final class AwsChunkedEncodingInputStream extends SdkInputStream {
     protected static final String DEFAULT_ENCODING = "UTF-8";
 

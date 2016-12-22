@@ -27,8 +27,11 @@ import java.util.concurrent.Callable;
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to create
  * temporary, short-lived sessions to use for authentication.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.STSSessionCredentialsProvider}
  */
 @ThreadSafe
+@Deprecated
 public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvider {
 
     /**

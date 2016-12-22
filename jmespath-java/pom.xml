@@ -9,6 +9,7 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>jmespath-java</artifactId>
+  <packaging>bundle</packaging>
   <name>JMES Path Query library</name>
   <description>Implementation of the JMES Path JSON Query langauge for Java.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
@@ -32,6 +33,12 @@
   <scm>
     <url>https://github.com/aws/aws-sdk-java.git</url>
   </scm>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.jmespath.*;version=${project.version}
+    </aws.osgi.export>
+  </properties>
 
   <dependencies>
       <dependency>

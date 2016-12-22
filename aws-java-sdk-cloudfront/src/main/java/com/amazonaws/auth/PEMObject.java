@@ -21,7 +21,10 @@ import org.apache.http.annotation.Immutable;
  *<p>
  * A PEM file can contain one or multiple PEM objects, each with a beginning
  * and ending marker.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.PEMObject}
  */
+@Deprecated
 @Immutable
 public class PEMObject {
     private final String beginMarker;

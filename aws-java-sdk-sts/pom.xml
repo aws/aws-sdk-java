@@ -9,9 +9,21 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-sts</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for AWS STS</name>
   <description>The AWS Java SDK for AWS STS module holds the client classes that are used for communicating with AWS Security Token Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.securitytoken.*;version=${project.version}
+    </aws.osgi.export>
+    <aws.osgi.private.pkg>
+      com.amazonaws.auth.*,
+      com.amazonaws.services.securitytoken.internal.*
+    </aws.osgi.private.pkg>
+  </properties>
+
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for CloudWatch.
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudwatch.auth.policy.actions.CloudWatchActions}
  */
-
+@Deprecated
 public enum CloudWatchActions implements Action {
 
     /** Represents any action executed on CloudWatch. */

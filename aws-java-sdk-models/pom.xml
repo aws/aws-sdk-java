@@ -10,13 +10,15 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-models</artifactId>
-  <packaging>jar</packaging>
+  <packaging>bundle</packaging>
 
   <name>AWS SDK for Java - Models</name>
   <description>The model files used to generate the client SDKs.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <aws.osgi.export>
+      models.*;version=${project.version}
+    </aws.osgi.export>
   </properties>
 </project>

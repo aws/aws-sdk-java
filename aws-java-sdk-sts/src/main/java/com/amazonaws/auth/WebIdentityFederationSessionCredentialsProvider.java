@@ -27,7 +27,10 @@ import com.amazonaws.services.securitytoken.model.Credentials;
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token
  * Service to create temporary, short-lived sessions to use for authentication.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.WebIdentityFederationSessionCredentialsProvider}
  */
+@Deprecated
 public class WebIdentityFederationSessionCredentialsProvider implements AWSSessionCredentialsProvider {
 
     /** Default duration for started sessions */

@@ -31,7 +31,10 @@ import java.math.BigInteger;
  * only handle integers and strings.
  * 
  * @author zhang
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.Asn1Object}
  */
+@Deprecated
 class Asn1Object {
     protected final int type;
     protected final int length;

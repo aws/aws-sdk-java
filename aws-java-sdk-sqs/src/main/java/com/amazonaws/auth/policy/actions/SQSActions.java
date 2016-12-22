@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon SQS.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.sqs.auth.policy.actions.SQSActions}
  */
-
+@Deprecated
 public enum SQSActions implements Action {
 
     /** Represents any action executed on Amazon SQS. */

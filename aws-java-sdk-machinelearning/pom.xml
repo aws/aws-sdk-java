@@ -9,9 +9,19 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-machinelearning</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for Amazon Machine Learning</name>
   <description>The AWS Java SDK for Amazon Machine Learning module holds the client classes that is used for communicating with Amazon Machine Learning Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.machinelearning.*;version=${project.version}
+    </aws.osgi.export>
+    <aws.osgi.private.pkg>
+      com.amazonaws.services.machinelearning.internal.*
+    </aws.osgi.private.pkg>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon EMR.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.elasticmapreduce.auth.policy.actions.ElasticMapReduceActions}
  */
-
+@Deprecated
 public enum ElasticMapReduceActions implements Action {
 
     /** Represents any action executed on Amazon EMR. */

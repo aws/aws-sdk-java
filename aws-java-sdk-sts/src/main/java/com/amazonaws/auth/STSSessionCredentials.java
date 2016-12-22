@@ -35,6 +35,8 @@ import com.amazonaws.services.securitytoken.model.GetSessionTokenResult;
  * <p>
  * This class is deprecated and should not be used anymore.
  * Instead, use {@link STSSessionCredentialsProvider}.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.securitytoken.auth.STSSessionCredentialsProvider}
  */
 @Deprecated
 public class STSSessionCredentials implements AWSRefreshableSessionCredentials {

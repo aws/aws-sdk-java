@@ -16,8 +16,10 @@ import com.amazonaws.auth.policy.Action;
 
 /**
  * The available AWS access control policy actions for Amazon Polly.
+ *
+ * @deprecated in favor of {@link com.amazonaws.services.polly.auth.policy.actions.PollyActions}
  */
-
+@Deprecated
 public enum PollyActions implements Action {
 
     /** Represents any action executed on Amazon Polly. */

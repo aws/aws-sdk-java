@@ -19,6 +19,10 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.SdkClientException;
 
+/**
+ * @deprecated in favor of {@link com.amazonaws.services.s3.auth.policy.DecodedStreamBuffer}
+ */
+@Deprecated
 class DecodedStreamBuffer {
     private static final Log log = LogFactory.getLog(DecodedStreamBuffer.class);
 

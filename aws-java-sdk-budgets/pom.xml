@@ -9,9 +9,19 @@
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-budgets</artifactId>
+  <packaging>bundle</packaging>
   <name>AWS Java SDK for AWS Budgets</name>
   <description>The AWS Java SDK for AWS Budgets module holds the client classes that are used for communicating with AWS Budgets Service</description>
   <url>https://aws.amazon.com/sdkforjava</url>
+
+  <properties>
+    <aws.osgi.export>
+      com.amazonaws.services.budgets.*;version=${project.version}
+    </aws.osgi.export>
+    <aws.osgi.private.pkg>
+      com.amazonaws.auth.policy.actions.*
+    </aws.osgi.private.pkg>
+  </properties>
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>

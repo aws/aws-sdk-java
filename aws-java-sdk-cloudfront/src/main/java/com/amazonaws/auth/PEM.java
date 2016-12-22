@@ -47,7 +47,10 @@ import com.amazonaws.util.Base64;
  * 
  * </li>
  * </ul>
+ * 
+ * @deprecated in favor of {@link com.amazonaws.services.cloudfront.auth.PEM}
  */
+@Deprecated
 public enum PEM {
     ;
     private static final String BEGIN_MARKER = "-----BEGIN ";
