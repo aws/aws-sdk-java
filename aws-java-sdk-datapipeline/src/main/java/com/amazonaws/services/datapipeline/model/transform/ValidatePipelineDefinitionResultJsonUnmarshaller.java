@@ -12,13 +12,7 @@
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
-import java.util.Map;
-import java.util.Map.Entry;
-import java.math.*;
-import java.nio.ByteBuffer;
-
 import com.amazonaws.services.datapipeline.model.*;
-import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
 import com.fasterxml.jackson.core.JsonToken;

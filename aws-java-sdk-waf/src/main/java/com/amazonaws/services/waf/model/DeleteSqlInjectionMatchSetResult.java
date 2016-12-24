@@ -107,9 +107,7 @@ public class DeleteSqlInjectionMatchSetResult extends com.amazonaws.AmazonWebSer
         DeleteSqlInjectionMatchSetResult other = (DeleteSqlInjectionMatchSetResult) obj;
         if (other.getChangeToken() == null ^ this.getChangeToken() == null)
             return false;
-        if (other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false)
-            return false;
-        return true;
+        return !(other.getChangeToken() != null && other.getChangeToken().equals(this.getChangeToken()) == false);
     }
 
     @Override

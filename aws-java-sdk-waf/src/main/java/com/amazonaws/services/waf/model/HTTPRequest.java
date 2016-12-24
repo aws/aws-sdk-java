@@ -510,9 +510,7 @@ public class HTTPRequest implements Serializable, Cloneable {
             return false;
         if (other.getHeaders() == null ^ this.getHeaders() == null)
             return false;
-        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
-            return false;
-        return true;
+        return !(other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false);
     }
 
     @Override

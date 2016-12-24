@@ -24,7 +24,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 @NotThreadSafe
 public final class AWSWAFRegionalAsyncClientBuilder extends AwsAsyncClientBuilder<AWSWAFRegionalAsyncClientBuilder, AWSWAFRegionalAsync> {
 
-    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();;
+    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();
 
     /**
      * @return Create new instance of builder with all defaults set.

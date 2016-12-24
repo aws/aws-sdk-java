@@ -197,9 +197,7 @@ public class RuleUpdate implements Serializable, Cloneable {
             return false;
         if (other.getPredicate() == null ^ this.getPredicate() == null)
             return false;
-        if (other.getPredicate() != null && other.getPredicate().equals(this.getPredicate()) == false)
-            return false;
-        return true;
+        return !(other.getPredicate() != null && other.getPredicate().equals(this.getPredicate()) == false);
     }
 
     @Override

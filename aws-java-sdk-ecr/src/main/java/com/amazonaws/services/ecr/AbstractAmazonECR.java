@@ -13,7 +13,6 @@
 package com.amazonaws.services.ecr;
 
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonECR}. Convenient method forms pass through to the corresponding overload that

@@ -13,7 +13,6 @@
 package com.amazonaws.services.simpleworkflow;
 
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonSimpleWorkflow}. Convenient method forms pass through to the corresponding

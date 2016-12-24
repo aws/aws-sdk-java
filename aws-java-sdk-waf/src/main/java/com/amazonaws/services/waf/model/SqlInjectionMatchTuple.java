@@ -1679,9 +1679,7 @@ public class SqlInjectionMatchTuple implements Serializable, Cloneable {
             return false;
         if (other.getTextTransformation() == null ^ this.getTextTransformation() == null)
             return false;
-        if (other.getTextTransformation() != null && other.getTextTransformation().equals(this.getTextTransformation()) == false)
-            return false;
-        return true;
+        return !(other.getTextTransformation() != null && other.getTextTransformation().equals(this.getTextTransformation()) == false);
     }
 
     @Override

@@ -20,7 +20,6 @@ import com.amazonaws.regions.AbstractRegionMetadataProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.util.ValidationUtils;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

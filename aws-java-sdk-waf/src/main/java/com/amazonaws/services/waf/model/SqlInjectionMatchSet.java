@@ -295,9 +295,7 @@ public class SqlInjectionMatchSet implements Serializable, Cloneable {
             return false;
         if (other.getSqlInjectionMatchTuples() == null ^ this.getSqlInjectionMatchTuples() == null)
             return false;
-        if (other.getSqlInjectionMatchTuples() != null && other.getSqlInjectionMatchTuples().equals(this.getSqlInjectionMatchTuples()) == false)
-            return false;
-        return true;
+        return !(other.getSqlInjectionMatchTuples() != null && other.getSqlInjectionMatchTuples().equals(this.getSqlInjectionMatchTuples()) == false);
     }
 
     @Override

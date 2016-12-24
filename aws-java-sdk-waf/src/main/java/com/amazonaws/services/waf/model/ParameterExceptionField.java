@@ -29,7 +29,7 @@ public enum ParameterExceptionField {
 
     private String value;
 
-    private ParameterExceptionField(String value) {
+    ParameterExceptionField(String value) {
         this.value = value;
     }
 

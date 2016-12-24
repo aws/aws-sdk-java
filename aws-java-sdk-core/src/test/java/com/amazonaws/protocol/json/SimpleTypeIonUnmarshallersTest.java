@@ -24,7 +24,6 @@ import java.util.TimeZone;
 
 import org.junit.Test;
 
-import com.amazonaws.protocol.json.IonFactory;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.SimpleTypeIonUnmarshallers.BigDecimalIonUnmarshaller;

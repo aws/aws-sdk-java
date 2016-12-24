@@ -13,7 +13,6 @@
 package com.amazonaws.services.rds;
 
 import com.amazonaws.services.rds.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.rds.waiters.AmazonRDSWaiters;
 
 /**

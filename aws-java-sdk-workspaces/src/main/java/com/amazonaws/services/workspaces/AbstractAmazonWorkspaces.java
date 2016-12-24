@@ -13,7 +13,6 @@
 package com.amazonaws.services.workspaces;
 
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonWorkspaces}. Convenient method forms pass through to the corresponding

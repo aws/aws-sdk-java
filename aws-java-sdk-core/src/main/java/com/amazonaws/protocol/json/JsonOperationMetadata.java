@@ -17,8 +17,6 @@ package com.amazonaws.protocol.json;
 
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
-import com.amazonaws.transform.JsonUnmarshallerContext;
-import com.amazonaws.transform.Unmarshaller;
 
 /**
  * Contains various information needed to create a {@link com.amazonaws.http.JsonResponseHandler}

@@ -13,7 +13,6 @@
 package com.amazonaws.services.servicecatalog;
 
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSServiceCatalog}. Convenient method forms pass through to the corresponding

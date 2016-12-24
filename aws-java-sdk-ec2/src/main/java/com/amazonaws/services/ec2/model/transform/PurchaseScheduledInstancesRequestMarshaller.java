@@ -12,10 +12,6 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;

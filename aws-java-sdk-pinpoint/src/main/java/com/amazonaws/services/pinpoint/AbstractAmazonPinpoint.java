@@ -13,7 +13,6 @@
 package com.amazonaws.services.pinpoint;
 
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonPinpoint}. Convenient method forms pass through to the corresponding overload

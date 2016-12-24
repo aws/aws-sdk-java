@@ -13,7 +13,6 @@
 package com.amazonaws.services.devicefarm;
 
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSDeviceFarm}. Convenient method forms pass through to the corresponding overload

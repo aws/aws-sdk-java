@@ -624,9 +624,7 @@ public class FieldToMatch implements Serializable, Cloneable {
             return false;
         if (other.getData() == null ^ this.getData() == null)
             return false;
-        if (other.getData() != null && other.getData().equals(this.getData()) == false)
-            return false;
-        return true;
+        return !(other.getData() != null && other.getData().equals(this.getData()) == false);
     }
 
     @Override

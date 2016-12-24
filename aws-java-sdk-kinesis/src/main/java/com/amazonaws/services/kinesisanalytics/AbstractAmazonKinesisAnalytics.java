@@ -13,7 +13,6 @@
 package com.amazonaws.services.kinesisanalytics;
 
 import com.amazonaws.services.kinesisanalytics.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonKinesisAnalytics}. Convenient method forms pass through to the corresponding

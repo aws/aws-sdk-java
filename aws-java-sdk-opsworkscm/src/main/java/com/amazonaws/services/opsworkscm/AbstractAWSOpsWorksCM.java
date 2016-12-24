@@ -13,7 +13,6 @@
 package com.amazonaws.services.opsworkscm;
 
 import com.amazonaws.services.opsworkscm.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSOpsWorksCM}. Convenient method forms pass through to the corresponding overload

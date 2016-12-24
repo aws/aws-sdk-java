@@ -205,9 +205,7 @@ public class SizeConstraintSetSummary implements Serializable, Cloneable {
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
-        return true;
+        return !(other.getName() != null && other.getName().equals(this.getName()) == false);
     }
 
     @Override

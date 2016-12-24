@@ -20,7 +20,6 @@ import static org.junit.Assert.assertNull;
 import org.junit.Test;
 
 import com.amazonaws.http.HttpResponse;
-import com.amazonaws.internal.http.JsonErrorCodeParser;
 import com.amazonaws.protocol.json.JsonContent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;

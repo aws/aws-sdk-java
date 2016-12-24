@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
@@ -404,9 +403,7 @@ public class UpdateSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getUpdates() == null ^ this.getUpdates() == null)
             return false;
-        if (other.getUpdates() != null && other.getUpdates().equals(this.getUpdates()) == false)
-            return false;
-        return true;
+        return !(other.getUpdates() != null && other.getUpdates().equals(this.getUpdates()) == false);
     }
 
     @Override

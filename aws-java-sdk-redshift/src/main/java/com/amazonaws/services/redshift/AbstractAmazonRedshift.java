@@ -13,7 +13,6 @@
 package com.amazonaws.services.redshift;
 
 import com.amazonaws.services.redshift.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 
 /**

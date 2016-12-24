@@ -13,7 +13,6 @@
 package com.amazonaws.services.cognitosync;
 
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonCognitoSync}. Convenient method forms pass through to the corresponding

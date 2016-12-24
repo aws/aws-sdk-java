@@ -13,7 +13,6 @@
 package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>

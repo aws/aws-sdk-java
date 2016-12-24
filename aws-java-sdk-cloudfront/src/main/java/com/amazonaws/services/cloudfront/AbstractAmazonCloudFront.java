@@ -13,7 +13,6 @@
 package com.amazonaws.services.cloudfront;
 
 import com.amazonaws.services.cloudfront.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
 /**

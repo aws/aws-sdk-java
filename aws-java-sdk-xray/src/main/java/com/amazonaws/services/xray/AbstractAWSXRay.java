@@ -13,7 +13,6 @@
 package com.amazonaws.services.xray;
 
 import com.amazonaws.services.xray.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSXRay}. Convenient method forms pass through to the corresponding overload that

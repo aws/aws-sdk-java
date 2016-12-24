@@ -189,9 +189,7 @@ public class IPSetUpdate implements Serializable, Cloneable {
             return false;
         if (other.getIPSetDescriptor() == null ^ this.getIPSetDescriptor() == null)
             return false;
-        if (other.getIPSetDescriptor() != null && other.getIPSetDescriptor().equals(this.getIPSetDescriptor()) == false)
-            return false;
-        return true;
+        return !(other.getIPSetDescriptor() != null && other.getIPSetDescriptor().equals(this.getIPSetDescriptor()) == false);
     }
 
     @Override

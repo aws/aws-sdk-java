@@ -26,7 +26,7 @@ public enum ComparisonOperator {
 
     private String value;
 
-    private ComparisonOperator(String value) {
+    ComparisonOperator(String value) {
         this.value = value;
     }
 

@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticsearch;
 
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSElasticsearch}. Convenient method forms pass through to the corresponding

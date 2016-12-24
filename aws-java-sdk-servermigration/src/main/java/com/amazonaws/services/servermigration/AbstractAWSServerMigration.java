@@ -13,7 +13,6 @@
 package com.amazonaws.services.servermigration;
 
 import com.amazonaws.services.servermigration.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSServerMigration}. Convenient method forms pass through to the corresponding

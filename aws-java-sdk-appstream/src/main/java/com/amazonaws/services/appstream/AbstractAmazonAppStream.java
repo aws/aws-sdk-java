@@ -13,7 +13,6 @@
 package com.amazonaws.services.appstream;
 
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
 
 /**

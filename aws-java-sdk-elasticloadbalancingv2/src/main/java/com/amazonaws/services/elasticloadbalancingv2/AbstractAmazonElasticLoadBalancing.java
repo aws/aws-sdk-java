@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticloadbalancingv2;
 
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonElasticLoadBalancing}. Convenient method forms pass through to the

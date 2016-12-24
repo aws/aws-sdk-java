@@ -13,7 +13,6 @@
 package com.amazonaws.services.glacier;
 
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 
 /**

@@ -48,13 +48,11 @@ import org.apache.http.protocol.HttpContext;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.http.AmazonHttpClient;
-import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.client.HttpClientFactory;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.request.EmptyHttpRequest;
 import com.amazonaws.http.response.HttpResponseProxy;
 import com.amazonaws.http.response.NullErrorResponseHandler;
-import com.amazonaws.http.response.NullResponseHandler;
 import com.amazonaws.http.timers.client.ClientExecutionTimer;
 import com.amazonaws.http.timers.request.HttpRequestTimer;
 

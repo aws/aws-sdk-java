@@ -13,7 +13,6 @@
 package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * A request to post updates to records or add and delete records for a dataset and user.

@@ -185,9 +185,7 @@ public class TimeWindow implements Serializable, Cloneable {
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
-        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
-            return false;
-        return true;
+        return !(other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false);
     }
 
     @Override

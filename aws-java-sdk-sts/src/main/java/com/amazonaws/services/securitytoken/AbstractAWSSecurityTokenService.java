@@ -13,7 +13,6 @@
 package com.amazonaws.services.securitytoken;
 
 import com.amazonaws.services.securitytoken.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSSecurityTokenService}. Convenient method forms pass through to the corresponding

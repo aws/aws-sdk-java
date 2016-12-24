@@ -260,9 +260,7 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getTimeWindow() == null ^ this.getTimeWindow() == null)
             return false;
-        if (other.getTimeWindow() != null && other.getTimeWindow().equals(this.getTimeWindow()) == false)
-            return false;
-        return true;
+        return !(other.getTimeWindow() != null && other.getTimeWindow().equals(this.getTimeWindow()) == false);
     }
 
     @Override

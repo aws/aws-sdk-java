@@ -13,7 +13,6 @@
 package com.amazonaws.services.databasemigrationservice;
 
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSDatabaseMigrationService}. Convenient method forms pass through to the

@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticloadbalancing;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBalancingWaiters;
 
 /**

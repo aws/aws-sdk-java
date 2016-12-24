@@ -13,7 +13,6 @@
 package com.amazonaws.services.polly;
 
 import com.amazonaws.services.polly.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonPolly}. Convenient method forms pass through to the corresponding overload

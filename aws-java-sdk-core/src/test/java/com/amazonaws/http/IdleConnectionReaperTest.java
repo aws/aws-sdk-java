@@ -33,11 +33,7 @@ import static org.mockito.Mockito.verify;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.ClientConnectionRequest;
-import org.apache.http.conn.ManagedClientConnection;
 import org.apache.http.conn.routing.HttpRoute;
-import org.apache.http.conn.scheme.SchemeRegistry;
 import org.junit.Before;
 import org.junit.Test;
 

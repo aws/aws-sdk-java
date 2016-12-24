@@ -12,8 +12,6 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.SdkClientException;
@@ -23,7 +21,6 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
-import com.amazonaws.util.IdempotentUtils;
 
 /**
  * SendMessageBatchRequest Marshaller

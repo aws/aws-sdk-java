@@ -13,7 +13,6 @@
 package com.amazonaws.services.opsworks;
 
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
 
 /**

@@ -207,9 +207,7 @@ public class ListSqlInjectionMatchSetsResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getSqlInjectionMatchSets() == null ^ this.getSqlInjectionMatchSets() == null)
             return false;
-        if (other.getSqlInjectionMatchSets() != null && other.getSqlInjectionMatchSets().equals(this.getSqlInjectionMatchSets()) == false)
-            return false;
-        return true;
+        return !(other.getSqlInjectionMatchSets() != null && other.getSqlInjectionMatchSets().equals(this.getSqlInjectionMatchSets()) == false);
     }
 
     @Override

@@ -25,7 +25,7 @@ public enum MatchFieldType {
 
     private String value;
 
-    private MatchFieldType(String value) {
+    MatchFieldType(String value) {
         this.value = value;
     }
 

@@ -50,8 +50,6 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
 
-import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
-
 /**
  * Factory class to create connection manager used by the apache client.
  */

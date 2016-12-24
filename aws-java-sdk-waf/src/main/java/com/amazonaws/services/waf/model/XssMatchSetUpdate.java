@@ -201,9 +201,7 @@ public class XssMatchSetUpdate implements Serializable, Cloneable {
             return false;
         if (other.getXssMatchTuple() == null ^ this.getXssMatchTuple() == null)
             return false;
-        if (other.getXssMatchTuple() != null && other.getXssMatchTuple().equals(this.getXssMatchTuple()) == false)
-            return false;
-        return true;
+        return !(other.getXssMatchTuple() != null && other.getXssMatchTuple().equals(this.getXssMatchTuple()) == false);
     }
 
     @Override

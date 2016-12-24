@@ -13,7 +13,6 @@
 package com.amazonaws.services.snowball;
 
 import com.amazonaws.services.snowball.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonSnowball}. Convenient method forms pass through to the corresponding overload

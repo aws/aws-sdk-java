@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -103,9 +102,7 @@ public class GetWebACLRequest extends com.amazonaws.AmazonWebServiceRequest impl
         GetWebACLRequest other = (GetWebACLRequest) obj;
         if (other.getWebACLId() == null ^ this.getWebACLId() == null)
             return false;
-        if (other.getWebACLId() != null && other.getWebACLId().equals(this.getWebACLId()) == false)
-            return false;
-        return true;
+        return !(other.getWebACLId() != null && other.getWebACLId().equals(this.getWebACLId()) == false);
     }
 
     @Override

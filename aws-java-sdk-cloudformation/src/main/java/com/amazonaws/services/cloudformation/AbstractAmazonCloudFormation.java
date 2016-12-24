@@ -13,7 +13,6 @@
 package com.amazonaws.services.cloudformation;
 
 import com.amazonaws.services.cloudformation.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters;
 
 /**

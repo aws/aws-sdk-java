@@ -13,7 +13,6 @@
 package com.amazonaws.services.stepfunctions;
 
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSStepFunctions}. Convenient method forms pass through to the corresponding

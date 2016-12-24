@@ -13,7 +13,6 @@
 package com.amazonaws.services.budgets;
 
 import com.amazonaws.services.budgets.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSBudgets}. Convenient method forms pass through to the corresponding overload

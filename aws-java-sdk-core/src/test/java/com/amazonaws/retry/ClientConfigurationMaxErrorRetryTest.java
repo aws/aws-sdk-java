@@ -24,7 +24,6 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
-import com.amazonaws.http.response.NullResponseHandler;
 import com.amazonaws.util.RetryTestUtils;
 import org.junit.Assert;
 import org.junit.Before;

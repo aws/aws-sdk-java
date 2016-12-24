@@ -197,9 +197,7 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         GetRuleResult other = (GetRuleResult) obj;
         if (other.getRule() == null ^ this.getRule() == null)
             return false;
-        if (other.getRule() != null && other.getRule().equals(this.getRule()) == false)
-            return false;
-        return true;
+        return !(other.getRule() != null && other.getRule().equals(this.getRule()) == false);
     }
 
     @Override

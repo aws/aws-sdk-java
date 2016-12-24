@@ -21,7 +21,6 @@ package com.amazonaws.util;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.RequestConfig;
 import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.internal.StaticCredentialsProvider;
 
 public class CredentialUtils {
 

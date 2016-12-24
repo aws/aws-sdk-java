@@ -13,7 +13,6 @@
 package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 

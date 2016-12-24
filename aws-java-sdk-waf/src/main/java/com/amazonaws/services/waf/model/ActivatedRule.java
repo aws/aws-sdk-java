@@ -398,9 +398,7 @@ public class ActivatedRule implements Serializable, Cloneable {
             return false;
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
-        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
-            return false;
-        return true;
+        return !(other.getAction() != null && other.getAction().equals(this.getAction()) == false);
     }
 
     @Override

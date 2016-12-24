@@ -13,7 +13,6 @@
 package com.amazonaws.services.marketplacemetering;
 
 import com.amazonaws.services.marketplacemetering.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSMarketplaceMetering}. Convenient method forms pass through to the corresponding

@@ -13,7 +13,6 @@
 package com.amazonaws.services.codepipeline;
 
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSCodePipeline}. Convenient method forms pass through to the corresponding

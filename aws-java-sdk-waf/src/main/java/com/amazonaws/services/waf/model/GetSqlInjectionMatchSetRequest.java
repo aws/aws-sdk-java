@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
@@ -112,9 +111,7 @@ public class GetSqlInjectionMatchSetRequest extends com.amazonaws.AmazonWebServi
         GetSqlInjectionMatchSetRequest other = (GetSqlInjectionMatchSetRequest) obj;
         if (other.getSqlInjectionMatchSetId() == null ^ this.getSqlInjectionMatchSetId() == null)
             return false;
-        if (other.getSqlInjectionMatchSetId() != null && other.getSqlInjectionMatchSetId().equals(this.getSqlInjectionMatchSetId()) == false)
-            return false;
-        return true;
+        return !(other.getSqlInjectionMatchSetId() != null && other.getSqlInjectionMatchSetId().equals(this.getSqlInjectionMatchSetId()) == false);
     }
 
     @Override

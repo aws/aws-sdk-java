@@ -15,7 +15,6 @@
 package com.amazonaws.profile.path;
 
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
 
 import java.io.File;
 import java.util.ArrayList;

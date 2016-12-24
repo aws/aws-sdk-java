@@ -19,8 +19,6 @@ import java.util.List;
 
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.model.*;
-import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
-import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;

@@ -13,7 +13,6 @@
 package com.amazonaws.services.kinesis;
 
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.*;
 import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 
 /**

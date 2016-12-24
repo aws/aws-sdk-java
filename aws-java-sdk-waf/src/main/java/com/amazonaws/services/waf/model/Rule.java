@@ -376,9 +376,7 @@ public class Rule implements Serializable, Cloneable {
             return false;
         if (other.getPredicates() == null ^ this.getPredicates() == null)
             return false;
-        if (other.getPredicates() != null && other.getPredicates().equals(this.getPredicates()) == false)
-            return false;
-        return true;
+        return !(other.getPredicates() != null && other.getPredicates().equals(this.getPredicates()) == false);
     }
 
     @Override

@@ -31,16 +31,9 @@ import java.security.PrivateKey;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.services.cloudfront.util.SignerUtils;
 import com.amazonaws.services.cloudfront.util.SignerUtils.Protocol;
 import com.amazonaws.util.DateUtils;
 

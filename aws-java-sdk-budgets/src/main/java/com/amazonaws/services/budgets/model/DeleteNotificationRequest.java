@@ -13,7 +13,6 @@
 package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Request of DeleteNotification

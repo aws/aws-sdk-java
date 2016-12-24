@@ -289,9 +289,7 @@ public class SizeConstraintSet implements Serializable, Cloneable {
             return false;
         if (other.getSizeConstraints() == null ^ this.getSizeConstraints() == null)
             return false;
-        if (other.getSizeConstraints() != null && other.getSizeConstraints().equals(this.getSizeConstraints()) == false)
-            return false;
-        return true;
+        return !(other.getSizeConstraints() != null && other.getSizeConstraints().equals(this.getSizeConstraints()) == false);
     }
 
     @Override

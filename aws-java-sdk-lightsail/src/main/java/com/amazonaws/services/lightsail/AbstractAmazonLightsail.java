@@ -13,7 +13,6 @@
 package com.amazonaws.services.lightsail;
 
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonLightsail}. Convenient method forms pass through to the corresponding

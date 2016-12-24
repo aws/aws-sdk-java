@@ -24,12 +24,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.nio.ByteBuffer;
-import java.util.Locale;
 import java.util.Random;
 
 import org.hamcrest.Matchers;
-import org.hamcrest.core.IsEqual;
-import org.hamcrest.text.IsEmptyString;
 import org.junit.Assert;
 import org.junit.Test;
 

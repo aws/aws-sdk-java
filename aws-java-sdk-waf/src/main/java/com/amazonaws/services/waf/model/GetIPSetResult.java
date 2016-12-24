@@ -190,9 +190,7 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
         GetIPSetResult other = (GetIPSetResult) obj;
         if (other.getIPSet() == null ^ this.getIPSet() == null)
             return false;
-        if (other.getIPSet() != null && other.getIPSet().equals(this.getIPSet()) == false)
-            return false;
-        return true;
+        return !(other.getIPSet() != null && other.getIPSet().equals(this.getIPSet()) == false);
     }
 
     @Override

@@ -433,9 +433,7 @@ public class IPSetDescriptor implements Serializable, Cloneable {
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
-        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
-            return false;
-        return true;
+        return !(other.getValue() != null && other.getValue().equals(this.getValue()) == false);
     }
 
     @Override

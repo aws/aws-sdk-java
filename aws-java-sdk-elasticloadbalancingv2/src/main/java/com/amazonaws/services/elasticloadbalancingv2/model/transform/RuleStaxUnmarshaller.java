@@ -12,16 +12,12 @@
  */
 package com.amazonaws.services.elasticloadbalancingv2.model.transform;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
 import com.amazonaws.transform.Unmarshaller;
-import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 

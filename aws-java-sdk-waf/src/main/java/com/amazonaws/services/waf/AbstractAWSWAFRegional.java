@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf;
 
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AWSWAFRegional}. Convenient method forms pass through to the corresponding overload

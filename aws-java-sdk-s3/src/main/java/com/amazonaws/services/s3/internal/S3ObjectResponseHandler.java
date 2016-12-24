@@ -21,7 +21,6 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
-import com.amazonaws.util.BinaryUtils;
 
 /**
  * S3 HTTP response handler that knows how to pull S3 object content and

@@ -13,7 +13,6 @@
 
 package com.amazonaws.services.simpleemail.waiters;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.waiters.WaiterAcceptor;
 import com.amazonaws.waiters.WaiterState;

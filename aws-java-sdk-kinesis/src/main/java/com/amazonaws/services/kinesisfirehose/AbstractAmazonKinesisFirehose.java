@@ -13,7 +13,6 @@
 package com.amazonaws.services.kinesisfirehose;
 
 import com.amazonaws.services.kinesisfirehose.model.*;
-import com.amazonaws.*;
 
 /**
  * Abstract implementation of {@code AmazonKinesisFirehose}. Convenient method forms pass through to the corresponding

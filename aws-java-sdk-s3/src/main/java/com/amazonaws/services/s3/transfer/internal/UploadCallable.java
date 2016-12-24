@@ -26,8 +26,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import com.amazonaws.services.s3.model.ObjectTagging;
-import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

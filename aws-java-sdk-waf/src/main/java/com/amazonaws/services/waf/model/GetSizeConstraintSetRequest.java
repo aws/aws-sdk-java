@@ -13,7 +13,6 @@
 package com.amazonaws.services.waf.model;
 
 import java.io.Serializable;
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
@@ -110,9 +109,7 @@ public class GetSizeConstraintSetRequest extends com.amazonaws.AmazonWebServiceR
         GetSizeConstraintSetRequest other = (GetSizeConstraintSetRequest) obj;
         if (other.getSizeConstraintSetId() == null ^ this.getSizeConstraintSetId() == null)
             return false;
-        if (other.getSizeConstraintSetId() != null && other.getSizeConstraintSetId().equals(this.getSizeConstraintSetId()) == false)
-            return false;
-        return true;
+        return !(other.getSizeConstraintSetId() != null && other.getSizeConstraintSetId().equals(this.getSizeConstraintSetId()) == false);
     }
 
     @Override
