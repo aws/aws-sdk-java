@@ -12,14 +12,8 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.util.Map;
-import java.util.List;
-
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
 import com.amazonaws.protocol.json.*;
 
 /**
